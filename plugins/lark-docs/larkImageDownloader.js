@@ -54,7 +54,12 @@ class larkImageDownloader {
             await this.s3.send(putObjectCommand);
             console.log(`Successfully uploaded image to ${key}`);
         } catch (err) {
-            console.error("Error uploading image:", err);
+            if (err.Code === 'NoSuchKey') {
+                const putObjectCommand = new PutObjectCommand(put_params);
+                await this.s3.send(putObjectCommand);
+            } else {
+                console.error("Error uploading image:", err);
+            }
         }
     }
 
