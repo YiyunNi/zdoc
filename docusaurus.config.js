@@ -139,10 +139,6 @@ const config = {
         receiveId: 'oc_0e36909edb9247c7b6ecb437e99f1d68'
       }
     ],
-    [
-      './plugins/i18n-translator',
-      i18nTranslatorConfig
-    ],
     './plugins/mdx-parse',
   ],
   themeConfig:
