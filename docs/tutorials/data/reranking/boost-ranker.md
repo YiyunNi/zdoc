@@ -21,10 +21,10 @@ keywords:
   - result reranking
   - boost
   - boost ranker
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
 
 ---
 
@@ -77,7 +77,7 @@ Before finalizing the results, Milvus processes these candidates with the Boost 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You cannot use Boost Ranker as the ranker in a multi-vector hybrid search. However, you can use it as the ranker in any of its sub-requests (<code>AnnSearchRequest</code>).</p>
+<p>Boost Ranker cannot be used in multi-vector hybrid search.</p>
 
 </Admonition>
 
