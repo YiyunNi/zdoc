@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cu
   - select
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
 
 ---
 
