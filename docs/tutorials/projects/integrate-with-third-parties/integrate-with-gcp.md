@@ -2,7 +2,7 @@
 title: "Integrate with Google Cloud Storage | Cloud"
 slug: /integrate-with-gcp
 sidebar_label: "Google Cloud Storage"
-beta: PRIVATE
+beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE

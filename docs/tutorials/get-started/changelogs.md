@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - changelogs
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
 
 ---
 
@@ -53,6 +53,24 @@ import Grid from '@site/src/components/Grid';
 ## 2025\{#2025}
 
 <Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **Dec 26, 2025**
+
+    </div>
+
+    <div>
+
+        - 🔥  Milvus v2.6.x becomes generally available (GA)
+
+        - 👏  Tiered storage becomes GA, and [billing starts](./storage-cost)
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,75">
 
     <div>
 

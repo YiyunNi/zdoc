@@ -2,7 +2,7 @@
 title: "Integrate with Azure Blob Storage | Cloud"
 slug: /integrate-with-azure-blob-storage
 sidebar_label: "Azure Blob Storage"
-beta: PRIVATE
+beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE

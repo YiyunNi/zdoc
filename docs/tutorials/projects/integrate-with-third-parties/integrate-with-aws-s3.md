@@ -2,7 +2,7 @@
 title: "Integrate with AWS S3 | Cloud"
 slug: /integrate-with-aws-s3
 sidebar_label: "AWS S3"
-beta: PRIVATE
+beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE

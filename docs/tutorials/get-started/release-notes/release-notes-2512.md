@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
 
 ---
 
@@ -29,6 +29,26 @@ import Admonition from '@theme/Admonition';
 import Grid from '@site/src/components/Grid';
 
 # December 2025 Release Notes
+
+<Grid columnSize="2" widthRatios="16,83">
+
+    <div>
+
+        **2025-12-26**
+
+    </div>
+
+    <div>
+
+        ## Milvus v2.6 GA\{#milvus-v26-ga}
+
+        This release marks the GA milestone for the Milvus v2.6.x, bringing production-ready stability and full feature support on Zilliz Cloud, including Geometry, Struct, and TimestampTz data types, field addition without downtime, enhanced full-text search, accelerated JSON filtering, new reranking functions, INT8 vector support, partial upserts, and the MINHASH_LSH index.
+
+        Tiered Storage also reaches GA, introducing the upgraded hot/warm/cold architecture and beginning cold data-access billing. See [Storage Cost](./storage-cost#cold-data-access) for full details.
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="16,83">
 
@@ -96,7 +116,7 @@ import Grid from '@site/src/components/Grid';
 
             The Organization owner can define trusted IPv4 addresses or CIDR ranges for console access; traffic from unapproved sources is blocked.
 
-        - **Comprehensive Auditing** 
+        - **Comprehensive Auditing 
 
             All allowlist lifecycle events (enable, disable, rule changes) are recorded in Platform Audit Logs.
 

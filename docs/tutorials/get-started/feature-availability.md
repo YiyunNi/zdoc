@@ -92,38 +92,6 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 </Admonition>
 
-### Public preview\{#public-preview}
-
-- [JSON index](./use-json-fields)
-
-- [JSON shredding](./json-shredding)
-
-- [Add fields to an existing collection](./add-fields-to-an-existing-collection)
-
-- [Boost ranker](./boost-ranker)
-
-- [Decay ranker](./decay-ranker-oveview)
-
-- [INT8_VECTOR data type](./use-dense-vector)
-
-- [Ngram index](./ngram-index-type)
-
-- [MINHASH_LSH index](./minhash-lsh)
-
-- [Multi-language analyzer](./multi-language-analyzers)
-
-- [Tiered-storage cluster type](./cu-types-explained)
-
-- [Geometry Field](./use-geometry-field)
-
-- [Array of Structs](./use-array-of-structs)
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>Upgrade your cluster Milvus version to access these features.</p>
-
-</Admonition>
-
 ### Deprecation notice\{#deprecation-notice}
 
 - [Import Data from NumPy Files](./data-import-numpy)
