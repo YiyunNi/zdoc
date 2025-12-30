@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
 
 ---
 
@@ -116,7 +116,7 @@ import Grid from '@site/src/components/Grid';
 
             The Organization owner can define trusted IPv4 addresses or CIDR ranges for console access; traffic from unapproved sources is blocked.
 
-        - **Comprehensive Auditing 
+        - **Comprehensive Auditing**
 
             All allowlist lifecycle events (enable, disable, rule changes) are recorded in Platform Audit Logs.
 
