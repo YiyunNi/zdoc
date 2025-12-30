@@ -1330,7 +1330,11 @@ class larkDocWriter {
                         .replace(/^\n/, '')
                         .replace(/<br\/>/g, '\n\n');
 
-                    cell_text = converter.makeHtml(cell_text).replace(/\n/g, '').replace(/&amp;/g, '&');
+                    cell_text = converter.makeHtml(cell_text)
+                        .replace(/\n/g, '')
+                        .replace(/&amp;/g, '&')
+                        .replace(/\*/g, '&ast;');
+
                     if (i === 0) {
                         html += ` ${' '.repeat(indent)}    <th${colspan}${rowspan}>${cell_text}</th>\n`;
                     } else {
