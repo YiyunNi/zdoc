@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-export default function Procedures({ children, active }) {
+export default function Procedures({ children, active = true }) {
     if (children.type !== 'ol') throw new Error('Procedures component must have ordered list as children');
 
     children = children.props.children.filter((child) => child !== '\n');
