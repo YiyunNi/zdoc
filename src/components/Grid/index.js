@@ -22,7 +22,7 @@ export default function Grid({ columnSize, widthRatios, children }) {
   }
 
   return (
-    <div style={{ display: 'flex', width: '100%', marginTop: '20px' }}>
+    <div style={{ display: 'flex', width: '100%', marginTop: '0' }}>
       {columns}
     </div>
   );
