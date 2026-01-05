@@ -38934,10 +38934,10 @@
 									},
 									"dbCollections": {
 										"type": "array",
-										"description": "The collections that need to be backed up. This is mandatory when the `backupType` is set to `COLLECTION`.",
+										"description": "The collections that need to be backed up. This is mandatory when the `backupType` is set to `COLLECTION`. Note that all collections listed in this field must belong to the same database.",
 										"x-i18n": {
 											"zh-CN": {
-												"description": "需要备份的 Collection 列表。当 `backupType` 设置为 `COLLECTION` 时，该字段为必填项。"
+												"description": "需要备份的 Collection 列表。当 `backupType` 设置为 `COLLECTION` 时，该字段为必填项。注意，该字段中列出的所有 Collection 必须属于同一个数据库。"
 											}
 										},
 										"items": {
