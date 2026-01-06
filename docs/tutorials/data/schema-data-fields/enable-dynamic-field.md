@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - dynamic field
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
 
 ---
 
@@ -723,7 +723,7 @@ export nestedIndex='{
 
 If a dynamic field key contains values in an incorrect format, (e.g. numbers stored as strings), you can use a cast function to convert it:
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
 
 ```python
@@ -804,6 +804,18 @@ export stringPriceIndex='{
     "json_cast_function": "STRING_TO_DOUBLE"
   }
 }'
+
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+milvus::IndexDesc string_price_index("dynamic_json", "json_string_price_index", milvus::IndexType::AUTOINDEX);
+string_price_index.AddExtraParam("json_cast_type", "double");
+string_price_index.AddExtraParam("json_path", "dynamic_json['string_price']");
+string_price_index.AddExtraParam("json_cast_function", "STRING_TO_DOUBLE");
 
 ```
 
@@ -964,9 +976,9 @@ filter := 'dynamic_json["nested"]["value"] < 50'
 
 ```bash
 # restful
-export filterOverview='overview == "Great product"'
-export filterWords='words >= 100'
-export filterNestedValue='dynamic_json["nested"]["value"] < 50'
+export filter='overview == "Great product"'
+export filter='words >= 100'
+export filter='dynamic_json["nested"]["value"] < 50'
 ```
 
 </TabItem>
@@ -987,7 +999,7 @@ results = client.search(
     # highlight-start
     output_fields=[
         "overview",                        # Simple dynamic field key
-        'dynamic_json["varchar"]'          # Nested JSON key
+        "dynamic_json"          # Nested JSON key
     ]
     # highlight-end
 )
@@ -1015,7 +1027,7 @@ SearchReq searchReq = SearchReq.builder()
         .data(Collections.singletonList(queryVector))
         .topK(5)
         .filter(filter)
-        .outputFields(Arrays.asList("overview", "dynamic_json['varchar']"))
+        .outputFields(Arrays.asList("overview", "dynamic_json"))
         .build();
 
 SearchResp searchResp = client.search(searchReq);
@@ -1039,7 +1051,7 @@ const res = await client.search({
     data: [query_vector],
     limit: 5,
     filters: filter,
-    output_fields: ["overview", "dynamic_json['varchar']"]
+    output_fields: ["overview", "dynamic_json"]
 })
 ```
 
@@ -1081,7 +1093,7 @@ resultSets, err := client.Search(ctx, milvusclient.NewSearchOption(
 ).WithConsistencyLevel(entity.ClStrong).
     WithANNSField("my_vector").
     WithFilter(filter).
-    WithOutputFields("overview", "dynamic_json['varchar']"))
+    WithOutputFields("overview", "dynamic_json"))
 if err != nil {
     fmt.Println(err.Error())
     // handle error
@@ -1109,7 +1121,7 @@ curl --request POST \
   \"annsField\": \"my_vector\",
   \"filter\": \"${FILTER}\",
   \"limit\": 5,
-  \"outputFields\": [\"overview\", \"dynamic_json.varchar\"]
+  \"outputFields\": [\"overview\", \"dynamic_json\"]
 }"
 ```
 

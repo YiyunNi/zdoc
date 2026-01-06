@@ -11,7 +11,7 @@ description: "Last updated Dec 1, 2025 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 16
-keywords: 
+keywords:
   - zilliz
   - vector database
   - cloud
@@ -42,9 +42,9 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Hosted embedding & reranking models via model provider integrations, and
+        - 🤖 Hosted embedding & reranking models via model provider integrations, and
 
-        - Many new features become available in Prviate Preview.
+        - ✨ Many new features become available in Prviate Preview.
 
     </div>
 
@@ -64,9 +64,9 @@ import Grid from '@site/src/components/Grid';
 
         - 😘  Stage has been renamed to [Volume](./volume-explained), and becomes GA
 
-        - [🔔  Organization-level IP Whitelist](./setup-console-ip-allowlist) becomes available
+        - 🔔  [Organization-level IP Whitelist](./setup-console-ip-allowlist) becomes available
 
-        - [🚀  ](./multi-factor-auth)[TOTP-based MFA](./multi-factor-auth) becomes available
+        - 🚀  [TOTP-based MFA](./multi-factor-auth) becomes available
 
     </div>
 
@@ -82,19 +82,19 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Milvus v2.6.x becomes available on the Zilliz Cloud with more data types:
+        - 🚀 Milvus v2.6.x becomes available on the Zilliz Cloud with more data types:
 
             - [Geometry](./use-geometry-field), and
 
             - [Array of Structs](./use-array-of-structs)
 
-        - Full-text search capabilities are now available during [migrations](./via-endpoint#getting-started).
+        - 🔍 Full-text search capabilities are now available during [migrations](./via-endpoint#getting-started).
 
-        - Customizing the [notification interval](./manage-project-alerts#alert-settings) to suppress repeated alerts.
+        - ⏰ Customizing the [notification interval](./manage-project-alerts#alert-settings) to suppress repeated alerts.
 
-        - The [dynamic field can be enabled for existing collections](./modify-collections#example-4-enable-dynamic-field) without collection recreations.
+        - 🔧 The [dynamic field can be enabled for existing collections](./modify-collections#example-4-enable-dynamic-field) without collection recreations.
 
-        - Subscription plans have been shifted to the project level, while clusters have several deployment options. Read [Detailed Plan Comparison](./select-zilliz-cloud-service-plans) to find more.
+        - 💳 Subscription plans have been shifted to the project level, while clusters have several deployment options. Read [Detailed Plan Comparison](./select-zilliz-cloud-service-plans) to find more.
 
     </div>
 
@@ -110,23 +110,23 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Milvus v2.6.x becomes available on the Zilliz Cloud
+        - 🚀 Milvus v2.6.x becomes available on the Zilliz Cloud
 
-            - [Field addition](./add-fields-to-an-existing-collection) without downtime
+            - ➕ [Field addition](./add-fields-to-an-existing-collection) without downtime
 
-            - Enhanced full-text search with [multi-language analyzers](./multi-language-analyzers) and [phrase match](./phrase-match)
+            - 🔍 Enhanced full-text search with [multi-language analyzers](./multi-language-analyzers) and [phrase match](./phrase-match)
 
-            - Accelerated JSON filtering with [JSON indexing](./json-indexing) and [Shredding](./json-shredding)
+            - ⚡ Accelerated JSON filtering with [JSON indexing](./json-indexing) and [Shredding](./json-shredding)
 
-            - [Boost ranker](./boost-ranker) and [Decay rankers](./decay-ranker) for search result refinement
+            - 🎯 [Boost ranker](./boost-ranker) and [Decay rankers](./decay-ranker) for search result refinement
 
-            - Support for [INT8_VECTOR data type](./use-dense-vector)
+            - 🔢 Support for [INT8_VECTOR data type](./use-dense-vector)
 
-        - Tiered storage upgrade for extended capacity clusters
+        - 💾 Tiered storage upgrade for extended capacity clusters
 
-        - [Cross-region backup](./backup-to-other-regions) for business continuity strategy
+        - 🔄 [Cross-region backup](./backup-to-other-regions) for business continuity strategy
 
-        - [Index build levels](./tune-index-build-level) for you to tailor index settings for scenarios
+        - ⚙️ [Index build levels](./tune-index-build-level) for you to tailor index settings for scenarios
 
         - 🚧 Pipelines become deprecated
 
@@ -144,11 +144,11 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Autoscaling upgrade](./scale-cluster#dynamic-scaling) with simplified configuration
+        - 📈 [Autoscaling upgrade](./scale-cluster#dynamic-scaling) with simplified configuration
 
-        - [Audit logs](./audit-logs) become generally available
+        - 📋 [Audit logs](./audit-logs) become generally available
 
-        - [SSO](./single-sign-on) experience improved
+        - 🔐 [SSO](./single-sign-on) experience improved
 
     </div>
 
@@ -180,19 +180,19 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Merge data API](./merge-data) for schema evolution.
+        - 🔗 [Merge data API](./merge-data) for schema evolution.
 
-        - [Stage](./manage-stages) as a shared staging layer for migration and data import
+        - 📦 [Stage](./manage-stages) as a shared staging layer for migration and data import
 
-        - [Schedule-based cluster autoscaling](./scale-cluster)
+        - 📅 [Schedule-based cluster autoscaling](./scale-cluster)
 
-        - [Partial restoration](./restore-from-snapshot#restore-a-partial-cluster) of a cluster
+        - 🔄 [Partial restoration](./restore-from-snapshot#restore-a-partial-cluster) of a cluster
 
-        - [JSON index](./json-indexing) settings on the Zilliz Cloud console
+        - ⚙️ [JSON index](./json-indexing) settings on the Zilliz Cloud console
 
-        - Quota settings for BYOC projects
+        - 📊 Quota settings for BYOC projects
 
-        - Restoration of RBAC settings during cluster restores
+        - 🔐 Restoration of RBAC settings during cluster restores
 
     </div>
 
@@ -208,15 +208,15 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Migration docs and best practices](./migrations) refactored
+        - 📚 [Migration docs and best practices](./migrations) refactored
 
-        - [Policy-based alerts](./manage-project-alerts) for granular and flexible monitoring
+        - 🚨 [Policy-based alerts](./manage-project-alerts) for granular and flexible monitoring
 
-        - mmap settings on the Zilliz Cloud console
+        - ⚙️ mmap settings on the Zilliz Cloud console
 
-        - BYOC becomes available on the Google Cloud Platform (GCP)
+        - ☁️ BYOC becomes available on the Google Cloud Platform (GCP)
 
-        - Well-designed AI assistant on your commands
+        - 🤖 Well-designed AI assistant on your commands
 
     </div>
 
@@ -232,13 +232,13 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Zero-downtime migration](./zero-downtime-migration) becomes available
+        - 🔄 [Zero-downtime migration](./zero-downtime-migration) becomes available
 
-        - Instance settings and AWS PrivateLink support for BYOC projects
+        - ⚙️ Instance settings and AWS PrivateLink support for BYOC projects
 
-        - Fine-granular filtering on a JSON field using [JSON index](./use-json-fields)
+        - 🔍 Fine-granular filtering on a JSON field using [JSON index](./use-json-fields)
 
-        - Use the RESTful API to [modify the replica count of your cluster](/reference/restful/modify-cluster-replica-v2).
+        - 🛠️ Use the RESTful API to [modify the replica count of your cluster](/reference/restful/modify-cluster-replica-v2).
 
     </div>
 
@@ -254,9 +254,9 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - BYOC-I provides complete data sovereignty
+        - 🔒 BYOC-I provides complete data sovereignty
 
-        - [Audit logs for your clusters](./audit-logs) become available
+        - 📋 [Audit logs for your clusters](./audit-logs) become available
 
     </div>
 
@@ -272,13 +272,13 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Milvus v2.5.x becomes available on the Zilliz Cloud
+        - 🚀 Milvus v2.5.x becomes available on the Zilliz Cloud
 
-        - [Full Text Search](./full-text-search) complements existing semantic search capability
+        - 🔍 [Full Text Search](./full-text-search) complements existing semantic search capability
 
-        - [Audit logs for your clusters](./audit-logs) become available
+        - 📋 [Audit logs for your clusters](./audit-logs) become available
 
-        - [BYOC on AWS](/docs/byoc/deploy-byoc-aws) with enhanced security
+        - ☁️ [BYOC on AWS](/docs/byoc/deploy-byoc-aws) with enhanced security
 
     </div>
 
@@ -296,17 +296,17 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - High recall rate by [turning the search level](./tune-recall-rate)
+        - 🎯 High recall rate by [turning the search level](./tune-recall-rate)
 
-        - [Collection-level RBAC support](./cluster-privileges#collection-level-privilege-groups)
+        - 🔐 [Collection-level RBAC support](./cluster-privileges#collection-level-privilege-groups)
 
-        - [mmap](./use-mmap) support for expanded data capacity
+        - 💾 [mmap](./use-mmap) support for expanded data capacity
 
-        - [Database](/docs/database) for multi-tenancy becomes available
+        - 🗂️ [Database](/docs/database) for multi-tenancy becomes available
 
         - **New Region**: 🇺🇸 GCP us-central1 (Iowa)
 
-        - [BYOC](/docs/byoc/deploy-byoc-aws) becomes available on AWS
+        - ☁️ [BYOC](/docs/byoc/deploy-byoc-aws) becomes available on AWS
 
     </div>
 
@@ -322,9 +322,9 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Zilliz Cloud console refactored
+        - 🎨 Zilliz Cloud console refactored
 
-        - Data migration with expanded sources: 
+        - 🔄 Data migration with expanded sources:
 
             - [Qdrant](./migrate-from-qdrant),
 
@@ -332,7 +332,7 @@ import Grid from '@site/src/components/Grid';
 
             - [Tencent Cloud](./migrate-from-tencent-cloud)
 
-        - Improved payment process and redesigned [invoice page](./view-invoice)
+        - 💳 Improved payment process and redesigned [invoice page](./view-invoice)
 
     </div>
 
@@ -348,19 +348,19 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Notebook gallery](https://zilliz.com/learn/milvus-notebooks) is online
+        - 📚 [Notebook gallery](https://zilliz.com/learn/milvus-notebooks) is online
 
-        - Performance-optimized clusters with expanded capacity
+        - ⚡ Performance-optimized clusters with expanded capacity
 
-        - [Multi-replica](./manage-replica) becomes generally available
+        - 🔄 [Multi-replica](./manage-replica) becomes generally available
 
         - **New Region**: 🇯🇵 AWS Tokyo (ap-northeast-1)
 
-        - [Integrate with Prometheus](./prometheus-monitoring)
+        - 📊 [Integrate with Prometheus](./prometheus-monitoring)
 
-        - [Single sign-on (SSO)](./single-sign-on) with Auth0
+        - 🔑 [Single sign-on (SSO)](./single-sign-on) with Auth0
 
-        - Free trail using AWS Marketplace
+        - 🎁 Free trail using AWS Marketplace
 
     </div>
 
@@ -376,11 +376,11 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Serverless clusters become generally available
+        - ☁️ Serverless clusters become generally available
 
-        - [Multi-replica](./manage-replica) becomes available for public preview
+        - 🔄 [Multi-replica](./manage-replica) becomes available for public preview
 
-        - Migration service for you to migrate data to Zilliz Cloud:
+        - 📦 Migration service for you to migrate data to Zilliz Cloud:
 
             - [Milvus](./migrate-from-milvus)
 
@@ -390,7 +390,7 @@ import Grid from '@site/src/components/Grid';
 
             - [Across Zilliz Cloud clusters](./offline-migration)
 
-        - RESTful API endpoints for backup, restore, migration, and job management
+        - 🛠️ RESTful API endpoints for backup, restore, migration, and job management
 
     </div>
 
@@ -406,15 +406,15 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - RESTful API endpoints refactored
+        - 🛠️ RESTful API endpoints refactored
 
-        - Chatbot for easy information retrieval
+        - 🤖 Chatbot for easy information retrieval
 
-        - [One-stop job monitoring](./job-center) for backup, restore, migration, and data import
+        - 📋 [One-stop job monitoring](./job-center) for backup, restore, migration, and data import
 
-        - [Autoscaling](./manage-cluster) becomes available for private preview
+        - 📈 [Autoscaling](./manage-cluster) becomes available for private preview
 
-        - Pipelines enhanced with image searches
+        - 🖼️ Pipelines enhanced with image searches
 
     </div>
 
@@ -430,21 +430,21 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Milvus v2.4.x becomes available on the Zilliz Cloud
+        - 🚀 Milvus v2.4.x becomes available on the Zilliz Cloud
 
-            - [Sparse vector](./use-sparse-vector) data type support
+            - 🌾 [Sparse vector](./use-sparse-vector) data type support
 
-            - Float16 & BFloat16 vector data type support
+            - 🔢 Float16 & BFloat16 vector data type support
 
-            - [Multi-vector hybrid search](./hybrid-search)
+            - 🔀 [Multi-vector hybrid search](./hybrid-search)
 
-            - [Inverted index](./index-scalar-fields) and [fuzzy match](./basic-filtering-operators#example-2-using-like-for-pattern-matching)
+            - 📇 [Inverted index](./index-scalar-fields) and [fuzzy match](./basic-filtering-operators#example-2-using-like-for-pattern-matching)
 
-            - [Grouping search](./grouping-search)
+            - 📊 [Grouping search](./grouping-search)
 
-            - Refined MilvusClient interfaces
+            - ✨ Refined MilvusClient interfaces
 
-        - Pipelines now monitor token usage
+        - 📊 Pipelines now monitor token usage
 
     </div>
 
@@ -460,13 +460,13 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Serverless clusters are in beta now
+        - ☁️ Serverless clusters are in beta now
 
         - **New Region**: 🇩🇪 Azure Germany West Central (Frankfurt)
 
         - **New Region**: 🇩🇪 GCP europe-west3 (Frankfurt) and 🇺🇸 us-east-4 (Virginia)
 
-        - Text pipelines and image pipelines become available
+        - 🧠 Text pipelines and image pipelines become available
 
     </div>
 
@@ -482,15 +482,15 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=PlansAndPrice) goes online
+        - 🛒 [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=PlansAndPrice) goes online
 
-        - Pipelines now support connectors
+        - 🔌 Pipelines now support connectors
 
-        - Pipelines introduce rerankers for search pipelines
+        - 🔄 Pipelines introduce rerankers for search pipelines
 
-        - [Metric monitoring through RESTful API](/reference/restful/query-metrics) is available
+        - 📊 [Metric monitoring through RESTful API](/reference/restful/query-metrics) is available
 
-        - Cross-cloud [data import](./data-import) and [migration](./migrations)
+        - 🌐 Cross-cloud [data import](./data-import) and [migration](./migrations)
 
     </div>
 
@@ -506,9 +506,9 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Pipelines now support more embedding models
+        - 🧠 Pipelines now support more embedding models
 
-        - The collection playground becomes available on the Zilliz Cloud console
+        - 🎮 The collection playground becomes available on the Zilliz Cloud console
 
     </div>
 
@@ -524,11 +524,11 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Data import](./data-import) from Parquet files
+        - 📥 [Data import](./data-import) from Parquet files
 
-        - [API keys](./manage-api-keys) enhanced with RBAC principles
+        - 🔐 [API keys](./manage-api-keys) enhanced with RBAC principles
 
-        - [Metric boards and alert system](./metrics-and-alerts) refactored
+        - 📊 [Metric boards and alert system](./metrics-and-alerts) refactored
 
     </div>
 
@@ -546,15 +546,15 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Zilliz Cloud becomes available on Azure with the following regions:
+        - ☁️ Zilliz Cloud becomes available on Azure with the following regions:
 
             - **New Region**: 🇺🇸  Azure East US
 
-        - Pipelines become available in beta
+        - 🚀 Pipelines become available in beta
 
-        - RBAC and credential management in your clusters
+        - 🔐 RBAC and credential management in your clusters
 
-        - Cluster-related RESTful API endpoints
+        - 🛠️ Cluster-related RESTful API endpoints
 
     </div>
 
@@ -572,21 +572,21 @@ import Grid from '@site/src/components/Grid';
 
         - **New Region**: 🇩🇪 AWS Frankfurt (aws-en-central-1)
 
-        - Milvus v2.3.x becomes available for public preview
+        - 🚀 Milvus v2.3.x becomes available for public preview
 
-            - [Range search](./range-search)
+            - 🎯 [Range search](./range-search)
 
-            - [Upsert](./upsert-entities)
+            - ✏️ [Upsert](./upsert-entities)
 
-            - [Cosine metric type](./search-metrics-explained)
+            - 📐 [Cosine metric type](./search-metrics-explained)
 
-            - [Access control](./access-control)
+            - 🔐 [Access control](./access-control)
 
-            - Raw vectors in return
+            - 🔢 Raw vectors in return
 
-            - [JSON_CONTAINS filter](./json-filtering-operators)
+            - 🔍 [JSON_CONTAINS filter](./json-filtering-operators)
 
-            - [Entity count](./count-entities)
+            - 📊 [Entity count](./count-entities)
 
     </div>
 
@@ -602,7 +602,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Support for advance pay
+        - 💰 Support for advance pay
 
         - **New Region**: 🇺🇸 AWS US East 1 (aws-us-east-1)
 
@@ -620,11 +620,11 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Data migration across Zilliz Cloud clusters](./offline-migration)
+        - 🔄 [Data migration across Zilliz Cloud clusters](./offline-migration)
 
-        - [Easy migration from Elasticsearch](./migrate-from-elasticsearch)
+        - 🚀 [Easy migration from Elasticsearch](./migrate-from-elasticsearch)
 
-        - [Data import enhancements](./prepare-data-import)
+        - 📥 [Data import enhancements](./prepare-data-import)
 
     </div>
 
@@ -644,9 +644,9 @@ import Grid from '@site/src/components/Grid';
 
         - **New Region**: 🇸🇬 GCP Singapore (asia-southeast-1)
 
-        - Migration support from serverless clusters to dedicated ones
+        - 🔄 Migration support from serverless clusters to dedicated ones
 
-        - Bulk insert support
+        - 📤 Bulk insert support
 
     </div>
 
@@ -662,17 +662,17 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Serverless clusters become available
+        - ☁️ Serverless clusters become available
 
-        - [Zilliz Cloud plan tiers introduced](https://zilliz.com/pricing)
+        - 💰 [Zilliz Cloud plan tiers introduced](https://zilliz.com/pricing)
 
-        - Organization, collaboration and RBAC for [access control](./access-control)
+        - 👥 Organization, collaboration and RBAC for [access control](./access-control)
 
-        - Partition key for namespacing introduced
+        - 🏷️ Partition key for namespacing introduced
 
-        - Dynamic schema becomes available
+        - 📝 Dynamic schema becomes available
 
-        - New data type: JSON
+        - 📊 New data type: JSON
 
     </div>
 
@@ -688,13 +688,13 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [Pricing calculator](https://zilliz.com/pricing#calculator)
+        - 💰 [Pricing calculator](https://zilliz.com/pricing#calculator)
 
-        - [Back & restore](./backup-and-restore) on GCP
+        - 💾 [Back & restore](./backup-and-restore) on GCP
 
-        - [Custom timezone](./organization-settings#manage-timezone)
+        - ⏰ [Custom timezone](./organization-settings#manage-timezone)
 
-        - [Collection renaming](./manage-collections-console)
+        - 🔄 [Collection renaming](./manage-collections-console)
 
     </div>
 
@@ -712,13 +712,13 @@ import Grid from '@site/src/components/Grid';
 
         - **New Region**: 🇺🇸 GCP Oregon (us-west1)
 
-        - Zilliz Cloud becomes available on the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-iqbidum7feuio)
+        - ☁️ Zilliz Cloud becomes available on the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-iqbidum7feuio)
 
-        - [Backup & Restore](./backup-and-restore) becomes available on AWS
+        - 💾 [Backup & Restore](./backup-and-restore) becomes available on AWS
 
-        - [Recycle bin](./use-recycle-bin) for data continuity strategy
+        - 🗑️ [Recycle bin](./use-recycle-bin) for data continuity strategy
 
-        - [Migration from Milvus](./migrations)
+        - 🔄 [Migration from Milvus](./migrations)
 
     </div>
 
@@ -734,9 +734,9 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Email notifications
+        - 📧 Email notifications
 
-        - In-line guidance for beginners
+        - 📚 In-line guidance for beginners
 
     </div>
 
@@ -752,9 +752,9 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Data preview for collections
+        - 👁️ Data preview for collections
 
-        - Demo dataset to help beginners get familiar with vector databases
+        - 📚 Demo dataset to help beginners get familiar with vector databases
 
     </div>
 
@@ -772,13 +772,13 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Zilliz Cloud console with new design
+        - 🎨 Zilliz Cloud console with new design
 
         - **New Region**: 🇺🇸 AWS Ohio (us-east-2)
 
-        - [Private Link](./setup-a-private-link) becomes available
+        - 🔐 [Private Link](./setup-a-private-link) becomes available
 
-        - [Data import](./data-import) becomes available
+        - 📥 [Data import](./data-import) becomes available
 
     </div>
 
@@ -794,15 +794,15 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Zilliz Cloud opens to the public without invitation
+        - 🚀 Zilliz Cloud opens to the public without invitation
 
-        - Capacity-optimized CUs go online
+        - ⚡ Capacity-optimized CUs go online
 
-        - Resource monitors for QPS and query latency
+        - 📊 Resource monitors for QPS and query latency
 
-        - AUTOINDEX to simplify indexing
+        - 🛠️ AUTOINDEX to simplify indexing
 
-        - Optimize the UI performance for a better user experience
+        - ⚡ Optimize the UI performance for a better user experience
 
     </div>
 
@@ -818,13 +818,13 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Collection view refactored
+        - 🎨 Collection view refactored
 
-        - Vector search view refactored
+        - 🔍 Vector search view refactored
 
-        - Signup with Google becomes available
+        - 🧑‍💻 Signup with Google becomes available
 
-        - [System maintenance settings](./organization-settings) become available
+        - ⚙️ [System maintenance settings](./organization-settings) become available
 
     </div>
 
@@ -840,21 +840,21 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Larger standard vector database.
+        - 📊 Larger standard vector database.
 
-        - Managing collections on Cloud UI.
+        - ⚙️ Managing collections on Cloud UI.
 
-        - Managing index on Cloud UI.
+        - ⚙️ Managing index on Cloud UI.
 
-        - Executing vector search on Cloud UI.
+        - 🔍 Executing vector search on Cloud UI.
 
-        - Disables database access from the Internet by default for security concerns.
+        - 🔐 Disables database access from the Internet by default for security concerns.
 
-        - Improves whitelisting experience.
+        - 🔐 Improves whitelisting experience.
 
-        - Supports credits.
+        - 💰 Supports credits.
 
-        - Improves Cloud UI for better interaction.
+        - 🚀 Improves Cloud UI for better interaction.
 
     </div>
 
@@ -870,17 +870,17 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Viewing collections on Cloud UI.
+        - 👁️ Viewing collections on Cloud UI.
 
-        - Viewing collections schema on Cloud UI.
+        - 👁️ Viewing collections schema on Cloud UI.
 
-        - Creating collections on Cloud UI.
+        - ➕ Creating collections on Cloud UI.
 
-        - Deleting collections on Cloud UI.
+        - ➖ Deleting collections on Cloud UI.
 
-        - Viewing index on Cloud UI.
+        - 👁️ Viewing index on Cloud UI.
 
-        - Cloud UI for better interaction.
+        - 🚀 Cloud UI for better interaction.
 
     </div>
 
@@ -898,21 +898,21 @@ import Grid from '@site/src/components/Grid';
 
         - **New Region**: 🇺🇸 AWS Oregon (us-west-2)
 
-        - Supports all Core Milvus features.
+        - ✅ Supports all Core Milvus features.
 
-        - Supports suspending and resuming vector databases.
+        - ⏸️ Supports suspending and resuming vector databases.
 
-        - Supports viewing basic vector database metrics.
+        - 📊 Supports viewing basic vector database metrics.
 
-        - Supports database user management.
+        - 👥 Supports database user management.
 
-        - Supports creating multiple projects.
+        - ➕ Supports creating multiple projects.
 
-        - Supports setting IP Whitelist at the project level.
+        - 🔐 Supports setting IP Whitelist at the project level.
 
-        - Supports viewing user operational events.
+        - 👁️ Supports viewing user operational events.
 
-        - Supports enabling MFA with email.
+        - 🔐 Supports enabling MFA with email.
 
     </div>
 

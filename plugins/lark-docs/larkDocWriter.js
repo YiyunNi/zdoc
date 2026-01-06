@@ -838,7 +838,10 @@ class larkDocWriter {
                             }
                             break;
                         case 'unexpected-character':
-                            if (error.message.includes('U+002C') || error.message.includes('U+002A')) {
+                            if (error.message.includes('U+002C') || 
+                                error.message.includes('U+002A') || 
+                                error.message.includes('U+3001') || 
+                                error.message.includes('U+003D')) { {
                                 offset = error.place.offset;
                                 if (offset !== undefined && offset > 0 && offset < patchedContent.length) {
                                     for (let i = offset-1; i >= 0; i--) {
