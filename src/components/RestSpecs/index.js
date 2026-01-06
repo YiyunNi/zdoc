@@ -147,23 +147,23 @@ const Items = ({ name, description, obj, required, lang, target }) => {
                 { description && <div className={styles.description} dangerouslySetInnerHTML={{__html: description ? textFilter(description, target) : `<i>${i18n[lang]["to.be.added.soon"]}</i>`}}></div> }
             </div> }
             <div style={{ margin: name ? '0 0 0 2rem' : '0' }}>
-                { obj.items && Object.keys(obj.items).includes('anyOf') && <AnyOf name={`[]${name}`} description={obj.items.description}
+                { obj.items && Object.keys(obj.items).includes('anyOf') && <AnyOf name={`[]${name}`} description={obj.items["x-i18n"]?.[lang]?.description ? obj.items["x-i18n"][lang].description : obj.items.description}
                     arr={obj.items.anyOf} required={obj.items.required}
                     lang={lang}
-                    target={target} /> }  
-                { obj.items && Object.keys(obj.items).includes('oneOf') && <OneOf name={`[]${name}`} description={obj.items.description}
+                    target={target} /> }
+                { obj.items && Object.keys(obj.items).includes('oneOf') && <OneOf name={`[]${name}`} description={obj.items["x-i18n"]?.[lang]?.description ? obj.items["x-i18n"][lang].description : obj.items.description}
                     arr={obj.items.oneOf} required={obj.items.required}
                     lang={lang}
                     target={target} /> }
-                { obj.items?.type === 'object' && <Properties name={`[]${name}`} 
-                    description= {obj.items.description}
-                    properties={obj.items.properties} 
-                    requiredFields={obj.items.required} 
+                { obj.items?.type === 'object' && <Properties name={`[]${name}`}
+                    description={obj.items["x-i18n"]?.[lang]?.description ? obj.items["x-i18n"][lang].description : obj.items.description}
+                    properties={obj.items.properties}
+                    requiredFields={obj.items.required}
                     required={required}
                     lang={lang}
                     target={target} /> }
                 { obj.items?.type === 'array' && <Items name={`[]${name}`}
-                    description= {obj.items.description}
+                    description={obj.items["x-i18n"]?.[lang]?.description ? obj.items["x-i18n"][lang].description : obj.items.description}
                     obj={obj.items.items}
                     required={obj.items.items.required}
                     lang={lang}
@@ -179,8 +179,9 @@ const Items = ({ name, description, obj, required, lang, target }) => {
 }
 
 const Primitive = ({ name, obj, required, lang, target }) => {
-    const { type, format, minimum, maximum, defaultValue, example } = obj;
+    const { type, format, minimum, maximum, defaultValue } = obj;
     const description = obj["x-i18n"]?.[lang]?.description ? obj["x-i18n"][lang].description : obj.description
+    const example = obj["x-i18n"]?.[lang]?.example ? obj["x-i18n"][lang].example : obj.example
     const enums = obj.enum ? obj.enum : []
 
     return (

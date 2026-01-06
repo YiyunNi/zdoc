@@ -39002,7 +39002,8 @@
 													"example": "aws-us-west-2",
 													"x-i18n": {
 														"zh-CN": {
-															"description": "目标云区域 ID，当前集群的备份将被复制到该区域。"
+															"description": "目标云区域 ID，当前集群的备份将被复制到该区域。",
+															"example": "ali-cn-hangzhou"
 														}
 													}
 												}
@@ -39041,6 +39042,7 @@
 								"3": {
 									"summary": "Cross-Region Copies",
 									"x-target-response": "OPTION 3",
+									"x-target-lang": "en-US",
 									"value": {
 										"backupType": "COLLECTION",
 										"dbCollections": [
@@ -39058,6 +39060,31 @@
 											},
 											{
 												"regionId": "aws-us-east-1"
+											}
+										]
+									}
+								},
+								"4": {
+									"summary": "Cross-Region Copies",
+									"x-target-response": "OPTION 3",
+									"x-target-lang": "zh-CN",
+									"value": {
+										"backupType": "COLLECTION",
+										"dbCollections": [
+											{
+												"dbName": "my_database",
+												"collectionNames": [
+													"collection_1",
+													"collection_2"
+												]
+											}
+										],
+										"crossRegionCopies": [
+											{
+												"regionId": "ali-cn-hangzhou"
+											},
+											{
+												"regionId": "ali-cn-shanghai"
 											}
 										]
 									}
@@ -39325,7 +39352,8 @@
 																		"example": "aws-us-west-2",
 																		"x-i18n": {
 																			"zh-CN": {
-																				"description": "目标云区域 ID。"
+																				"description": "目标云区域 ID。",
+																				"example": "ali-cn-hangzhou"
 																			}
 																		}
 																	},
@@ -39346,7 +39374,8 @@
 																		"description": "The region code.",
 																		"x-i18n": {
 																			"zh-CN": {
-																				"description": "区域代码。"
+																				"description": "区域代码。",
+																				"example": "cn-hangzhou"
 																			}
 																		},
 																		"example": "us-west-2"
@@ -39397,6 +39426,7 @@
 									"1": {
 										"summary": "success",
 										"x-target-response": "OPTION 1",
+										"x-target-lang": "en-US",
 										"value": {
 											"code": 0,
 											"data": {
@@ -39422,6 +39452,34 @@
 
 									},
 									"2": {
+										"summary": "success",
+										"x-target-response": "OPTION 1",
+										"x-target-lang": "zh-CN",
+										"value": {
+											"code": 0,
+											"data": {
+											  "clusterId": "inxx-xxxxxxxxxxxxxxx",
+											  "status": "ENABLED",        
+											  "startTime": "02:00-04:00", 
+											  "frequency": "1,2,3,5",     
+											  "retentionDays": 7,
+											  "crossRegionPolicies": [
+												{
+												  "regionId": "ali-cn-hangzhou",
+												  "retentionDays": 7,
+												  "region": "cn-hangzhou"
+												},
+												{
+												  "regionId": "ali-cn-shanghai",
+												  "retentionDays": 7,
+												  "region": "cn-shanghai"
+												}
+											  ]
+											}
+										  }
+
+									},
+									"3": {
 										"summary": "failure",
 										"x-target-response": "OPTION 2",
 										"value": {
@@ -39554,7 +39612,8 @@
 													"example": "aws-us-west-2",
 													"x-i18n": {
 														"zh-CN": {
-															"description": "目标云区域 ID。"
+															"description": "目标云区域 ID。",
+															"example": "ali-cn-hangzhou"
 														}
 													}
 												},
@@ -39575,7 +39634,8 @@
 													"description": "The region code.",
 													"x-i18n": {
 														"zh-CN": {
-															"description": "区域代码。"
+															"description": "区域代码。",
+															"example": "cn-hangzhou"
 														}
 													},
 													"example": "us-west-2"
@@ -39605,7 +39665,8 @@
 									}
 								},
 								"3": {
-									"summary": "set cross-region policies",
+									"summary": "cross-region policies",
+									"x-target-lang": "en-US",
 									"value": {
 										"frequency": "1,2,3,5",
 										"startTime": "02:00-04:00",
@@ -39621,6 +39682,28 @@
 												"regionId": "aws-us-east-1",
 												"retentionDays": 7,
 												"region": "us-east-1"
+											}
+										]
+									}
+								},
+								"4": {
+									"summary": "cross-region policies",
+									"x-target-lang": "zh-CN",
+									"value": {
+										"frequency": "1,2,3,5",
+										"startTime": "02:00-04:00",
+										"retentionDays": 7,
+										"enabled": true,
+										"crossRegionPolicies": [
+											{
+												"regionId": "ali-cn-hangzhou",
+												"retentionDays": 7,
+												"region": "cn-hangzhou"
+											},
+											{
+												"regionId": "ali-cn-shanghai",
+												"retentionDays": 7,
+												"region": "cn-shanghai"
 											}
 										]
 									}
