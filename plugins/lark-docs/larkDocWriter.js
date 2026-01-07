@@ -548,6 +548,10 @@ class larkDocWriter {
             imports = imports + "\n\nimport Grid from '@site/src/components/Grid';"
         }
 
+        if (markdown.martch(/\<Procedure/g)) {
+            imports = imports + "\n\nimport Procedure from '@site/src/components/Procedure';"
+        }
+
         if (path) {
             front_matter = front_matter.split('\n')
             front_matter.splice(5, 0, `added_since: ${addedSince ? addedSince : 'FALSE'}`)
