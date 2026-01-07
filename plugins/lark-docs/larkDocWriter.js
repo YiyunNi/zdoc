@@ -548,8 +548,8 @@ class larkDocWriter {
             imports = imports + "\n\nimport Grid from '@site/src/components/Grid';"
         }
 
-        if (markdown.martch(/\<Procedure/g)) {
-            imports = imports + "\n\nimport Procedure from '@site/src/components/Procedure';"
+        if (markdown.match(/\<Procedures/g)) {
+            imports = imports + "\n\nimport Procedures from '@site/src/components/Procedures';"
         }
 
         if (path) {

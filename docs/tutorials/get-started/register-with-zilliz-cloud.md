@@ -17,15 +17,17 @@ keywords:
   - register
   - cloud
   - milvus
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Register with Zilliz Cloud
 
@@ -35,7 +37,7 @@ This guide provides comprehensive instructions on how to create an account for a
 
 You are welcome to visit Zilliz Cloud to [sign up](https://cloud.zilliz.com/signup).
 
-![sign_up](https://zdoc-images.s3.us-west-2.amazonaws.com/sign_up.png "sign_up")
+![sign_up](/img/sign_up.png "sign_up")
 
 ## Registration options\{#registration-options}
 
@@ -52,6 +54,8 @@ Maintain consistency with your chosen registration method for login purposes. If
 ### With work email and password\{#with-work-email-and-password}
 
 Follow the steps below to create a Zilliz Cloud account using your work email and password:
+
+<Procedures>
 
 1. Enter your work email address in the **Work Email** field.
 
@@ -75,6 +79,8 @@ Follow the steps below to create a Zilliz Cloud account using your work email an
 
     If the confirmation code is not received, click **Resend Code** to attempt again.
 
+</Procedures>
+
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>On your first login, we will ask for more information to better tailor our services to your needs.</p>
@@ -85,6 +91,8 @@ Follow the steps below to create a Zilliz Cloud account using your work email an
 
 To link your Google account with Zilliz Cloud, follow the steps below.
 
+<Procedures>
+
 1. Click the Google logo button.
 
 1. Select the checkbox for **I agree to the [Terms of Service](https://zilliz.com/terms-and-conditions) and [Privacy Policy](https://zilliz.com/privacy-policy)** and click **Submit**.
@@ -92,6 +100,8 @@ To link your Google account with Zilliz Cloud, follow the steps below.
 1. You will be redirected to [Google Account login page](https://accounts.google.com/). Enter the email address or phone number and the corresponding password associated with your Google account,
 
 1. Upon successful authentication, you will be redirected back to Zilliz Cloud, and a success notification will appear.
+
+</Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -105,6 +115,8 @@ To link your Google account with Zilliz Cloud, follow the steps below.
 
 If you try to register with Github, you must have a public email address associated with your GitHub account. Follow the steps below to set your email address public on GitHub:
 
+<Procedures>
+
 1. Log into GitHub, click **Settings** on your profile menu.
 
 1. Click **Emails** from the left side navigation.
@@ -115,9 +127,13 @@ If you try to register with Github, you must have a public email address associa
 
 1. Click **Update profile** to save the changes.
 
+</Procedures>
+
 #### Procedures\{#procedures}
 
 To link your GitHub account with us, follow the steps below.
+
+<Procedures>
 
 1. Click the GitHub logo button.
 
@@ -126,6 +142,8 @@ To link your GitHub account with us, follow the steps below.
 1. You will be redirected to [GitHub sign in page](https://github.com/login). Enter your username or email address and the corresponding password associated with your GitHub account.
 
 1. Upon successful authentication, you will be redirected back to Zilliz Cloud, and a success notification will appear.
+
+</Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 
