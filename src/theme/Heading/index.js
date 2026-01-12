@@ -5,6 +5,8 @@ import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
+import CopyPage from '@site/src/components/CopyPage';
+
 const BetaTag = (tag) => {
   var tag_caption = "";
   var tag_color = "";
@@ -59,7 +61,7 @@ const BetaTagComponent = (children, tag, linkable, destination_url) => {
   const { tag_caption, tag_color } = BetaTag(tag);
 
   return (
-    <span style={{ 
+    <span style={{
         display: "inline-block",
         verticalAlign: 'center',
         minHeight: '2rem',
@@ -98,8 +100,8 @@ const BetaTagComponent = (children, tag, linkable, destination_url) => {
                   }}>
                   { tag_caption }
               </span>
-            </Link> )}       
-        </div>    
+            </Link> )}
+        </div>
 
     </span>
   );
@@ -155,13 +157,13 @@ const OpenInButtonLink = ({
     return ( notebook &&
       <Link to={prefix + notebook} style={{ color: "#000000"}}>
         <OpenInButtonComponent caption={caption} icon={icon} />
-      </Link> || 
+      </Link> ||
       <Link to={prefix} style={{ color: "#000000"}}>
         <OpenInButtonComponent caption={caption} icon={icon} />
       </Link>
     )
   }
-} 
+}
 
 const Banner = ({ message, backgroundColor = '#f0f0f0', textColor = '#333', onClose }) => {
   const [isVisible, setIsVisible] = React.useState(true);
@@ -169,7 +171,7 @@ const Banner = ({ message, backgroundColor = '#f0f0f0', textColor = '#333', onCl
   const handleClose = () => {
     setIsVisible(false);
     if (onClose) {
-      onClose(); // TODO: Call the onClose callback if provided 
+      onClose(); // TODO: Call the onClose callback if provided
     }
   };
 
@@ -213,7 +215,7 @@ export default function HeadingWrapper(props) {
     }
 
     if (props.as.match(/h[2-6]/) && props.children.includes('|')) {
-      const [title, tag] = props.children.split('|') 
+      const [title, tag] = props.children.split('|')
       const linkable = tag?.trim() === 'CONTACT SALES'
       const destination_url = 'https://zilliz.com/contact-sales'
 
@@ -223,22 +225,25 @@ export default function HeadingWrapper(props) {
         children: tag ? BetaTagComponent(title.trim(), tag?.trim(), linkable, destination_url) : title.trim()
       }
     }
-  
+
     const Colab = require('@site/static/icons/colab-icon.svg').default;
     const Github = require('@site/static/icons/github-icon.svg').default;
-  
+
     return (
       <>
         {
           props.as === 'h1' && siteConfig.baseUrl === '/ja-JP/' && slug !== '/home' && (
-            <Banner 
+            <Banner
               message="[説明] このページは機械翻訳された日本語版です。内容に誤りがございましたら、報告していただけると助かります。"
               backgroundColor="rgb(255, 248, 230)"/>
           )
         }
 
         { tags?.length > 0 && <span style={{ fontWeight: '400', color: 'rgb(18, 17, 66)'  }}>{tags[0]}</span> }
-        <Heading {...props} />
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+          <Heading {...props} />
+          { props.as === 'h1' && <CopyPage /> }
+        </div>
 
         {
           props.as === 'h1' && (added_since || last_modified || deprecate_since) && (
@@ -336,7 +341,7 @@ export default function HeadingWrapper(props) {
             </div>
           )
         }
-  
+
         {
           props.as === 'h1' && notebook && (
             <div id="exec" style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
