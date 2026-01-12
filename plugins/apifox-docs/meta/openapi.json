@@ -19601,7 +19601,7 @@
 															},
 															"plan": {
 																"type": "string",
-																"description": "The subscription plan of the current project. Possible values are `Standard` and `Enterprise`.",
+																"description": "The subscription plan of the current project. Possible values are `Standard`, `Enterprise`, or `BusinessCritical`.",
 																"x-i18n": {
 																	"zh-CN": {
 																		"description": "当前项目的订阅计划。当前仅支持 `Enterprise` 一种。"
@@ -19741,7 +19741,7 @@
 									},								
 									"plan": {
 										"type": "string",
-										"description": "The subscription plan of the project. The possible values are `Standard` and `Enterprise`.",
+										"description": "The subscription plan of the project. The possible values are `Standard`, `Enterprise`, and `BusinessCritical`.",
 										"x-i18n": {
 											"zh-CN": {
 												"description": "项目的订阅计划。当前仅支持 `Enterprise` 一种。"
@@ -19988,7 +19988,7 @@
 														},
 														"plan": {
 															"type": "string",
-															"description": "The subscription plan of the current project. The possible values are `Standard` and `Enterprise`.",
+															"description": "The subscription plan of the current project. The possible values are `Standard`, `Enterprise`, or `BusinessCritical`.",
 															"x-i18n": {
 																"zh-CN": {
 																	"description": "当前项目的订阅计划。当前仅支持 `Enterprise` 一种。"
@@ -20092,6 +20092,11 @@
 						"example": "Bearer {{TOKEN}}",
 						"schema": {
 							"type": "string"
+						},
+						"x-i18n": {
+							"zh-CN": {
+								"description": "认证令牌，应为<include target=\"zilliz\">具备适当权限的 API 密钥或</include>用冒号分隔的用户名和密码，如 `username:password`。"
+							}
 						}
 					},
 					{
@@ -20102,6 +20107,11 @@
 						"example": "proj-xx",
 						"schema": {
 							"type": "string"
+						},
+						"x-i18n": {
+							"zh-CN": {
+								"description": "待升级项目的 ID。"
+							}
 						}
 					}
 				],
@@ -20113,11 +20123,12 @@
 								"properties": {
 									"plan": {
 										"type": "string",
-										"description": "The subscription plan to upgrade to.",
-										"enum": [
-											"Standard",
-											"Enterprise"
-										],
+										"description": "The subscription plan to upgrade to. Possible values are `Standard`, `Enterprise`, or `BusinessCritical`.",
+										"x-i18n": {
+											"zh-CN": {
+												"description": "升级到的订阅计划。当前仅支持 `Enterprise` 一种。"
+											}
+										},
 										"default": "Standard"
 									}
 								}
@@ -20146,7 +20157,12 @@
 												"code": {
 													"description": "Response code.",
 													"type": "integer",
-													"example": 0
+													"example": 0,
+													"x-i18n": {
+														"zh-CN": {
+															"description": "响应码。"
+														}
+													}
 												},
 												"data": {
 													"type": "object",
@@ -20177,11 +20193,21 @@
 											"properties": {
 												"code": {
 													"type": "integer",
-													"description": "Response code."
+													"description": "Response code.",
+													"x-i18n": {
+														"zh-CN": {
+															"description": "响应码。"
+														}
+													}
 												},
 												"message": {
 													"type": "string",
-													"description": "Error message."
+													"description": "Error message.",
+													"x-i18n": {
+														"zh-CN": {
+															"description": "错误描述。"
+														}
+													}
 												}
 											}
 										}
