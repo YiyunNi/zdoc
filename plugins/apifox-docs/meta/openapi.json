@@ -4988,7 +4988,8 @@
 																		"description": "The type of CU associated with the cluster.",
 																		"enum": [
 																			"Performance-optimized",
-																			"Capacity-optimized"
+																			"Capacity-optimized",
+																			"Tiered-storage"
 																		],
 																		"x-i18n": {
 																			"zh-CN": {
@@ -27594,7 +27595,8 @@
 										"type": "string",
 										"enum": [
 											"Performance-optimized",
-											"Capacity-optimized"
+											"Capacity-optimized",
+											"Tiered-storage"
 										],
 										"description": "CU type of the cluster.<br/> This applies to dedicated clusters only. For free and serverless clusters, the value is empty.",
 										"x-i18n": {
@@ -27606,11 +27608,11 @@
 									"cuSize": {
 										"type": "integer",
 										"minimum": 1,
-										"maximum": 256,
-										"description": "CU size of the cluster. For free and serverless clusters, the value is always `0`.",
+										"maximum": 1024,
+										"description": "CU size of the cluster.<br/>For free and serverless clusters, the value is always `0`.<br/>For dedicated clusters in Standard plan, the value can be `1` to `32`, and possible values can be 1, 2, 4, 8, 12, 16, 20, 24, 28, 32.<br/>For dedicated clusters in Enterprise plan, the value can be `1` to `1,024`, and possible values can be 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,...,64, 72, 80, 88,...,256, 272, 288, ...,1024.<br/>For details on the increment rules for the CU size, refer to the `Deployment` section in [Detailed Plan Comparison](https://docs.zilliz.com/docs/select-zilliz-cloud-service-plans#deployment).",
 										"x-i18n": {
 											"zh-CN": {
-												"description": "待创建集群使用的 CU 大小。对于 Free 和 Serverless 集群，该值始终为 `0`。"
+												"description": "待创建集群使用的 CU 大小。<br/>对于 Free 和 Serverless 集群，该值始终为 `0`。<br/>对于 Standard 计划的 Dedicated 集群，该值取值范围为 `1` 到 `32`，可能的值为1、2、4、8、12、16、20、24、28、32。<br/>对于 Enterprise 计划的 Dedicated 集群，该值取值范围为 `1` 到 `1024`，可能的值为1、2、4、8、12、16、20、24、28、32、...、64、72、80、88、...、256、272、288、...、1024。<br/>关于 CU 大小的增量规则，请参阅 [详细计划对比](https://docs.zilliz.com/docs/select-zilliz-cloud-service-plans#deployment) 中的 `Deployment` 部分。"
 											}
 										}
 									}
@@ -28596,14 +28598,14 @@
 								"properties": {
 									"cuSize": {
 										"type": "integer",
-										"description": "The size of CU to be associated with your cluster after modification.",
+										"description": "The size of CU to be associated with your cluster after modification.<br/>For free and serverless clusters, the value is always `0`.<br/>For dedicated clusters in Standard plan, the value can be `1` to `32`, and possible values can be 1, 2, 4, 8, 12, 16, 20, 24, 28, 32.<br/>For dedicated clusters in Enterprise plan, the value can be `1` to `1,024`, and possible values can be 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,...,64, 72, 80, 88,...,256, 272, 288, ...,1024.<br/>For details on the increment rules for the CU size, refer to the `Deployment` section in [Detailed Plan Comparison](https://docs.zilliz.com/docs/select-zilliz-cloud-service-plans#deployment).",
 										"x-i18n": {
 											"zh-CN": {
-												"description": "集群修改后关联的 CU 大小。"
+												"description": "集群修改后关联的 CU 大小。<br/>对于 Free 和 Serverless 集群，该值始终为 `0`。<br/>对于 Standard 计划的 Dedicated 集群，该值取值范围为 `1` 到 `32`，可能的值为1、2、4、8、12、16、20、24、28、32。<br/>对于 Enterprise 计划的 Dedicated 集群，该值取值范围为 `1` 到 `1024`，可能的值为1、2、4、8、12、16、20、24、28、32、...、64、72、80、88、...、256、272、288、...、1024。<br/>关于 CU 大小的增量规则，请参阅 [详细计划对比](https://docs.zilliz.com/docs/select-zilliz-cloud-service-plans#deployment) 中的 `Deployment` 部分。"
 											}
 										},
 										"minimum": 1,
-										"maximum": 256
+										"maximum": 1024
 									}
 								},
 								"x-i18n-langs": [
@@ -36007,22 +36009,22 @@
 								"properties": {
 									"cuSize": {
 										"type": "integer",
-										"description": "Number of CUs allocated to this cluster after the modification. This parameter and `autoscaling.cu` are mutually exclusive; you can specify only one of them. The product of this parameter and `replica` should not exceed 256.",
+										"description": "Number of CUs allocated to this cluster after the modification. This parameter and `autoscaling.cu` are mutually exclusive; you can specify only one of them. The product of this parameter and `replica` should not exceed 1024.<br/>For dedicated clusters in Standard plan, the value can be `1` to `32`, and possible values can be 1, 2, 4, 8, 12, 16, 20, 24, 28, 32.<br/>For dedicated clusters in Enterprise plan, the value can be `1` to `1,024`, and possible values can be 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,...,64, 72, 80, 88,...,256, 272, 288, ...,1024.<br/>For details on the increment rules for the CU size, refer to the `Deployment` section in [Detailed Plan Comparison](https://docs.zilliz.com/docs/select-zilliz-cloud-service-plans#deployment).",
 										"x-i18n": {
 											"zh-CN": {
-												"description": "修改后分配给指定集群的 CU 数量。此参数与 `autoscaling.cu` 互斥；您只能指定其中一个。此参数与 `replica` 的乘积不得超过 256。"
+												"description": "修改后分配给指定集群的 CU 数量。此参数与 `autoscaling.cu` 互斥；您只能指定其中一个。此参数与 `replica` 的乘积不得超过 1024。<br/>对于 Standard 计划的 Dedicated 集群，该值取值范围为 `1` 到 `32`，可能的值为1、2、4、8、12、16、20、24、28、32。<br/>对于 Enterprise 计划的 Dedicated 集群，该值取值范围为 `1` 到 `1024`，可能的值为1、2、4、8、12、16、20、24、28、32、...、64、72、80、88、...、256、272、288、...、1024。<br/>关于 CU 大小的增量规则，请参阅 [详细计划对比](https://docs.zilliz.com/docs/select-zilliz-cloud-service-plans#deployment) 中的 `Deployment` 部分。"
 											}
 										},
 										"minimum": 1,
-										"maximum": 256,
+										"maximum": 1024,
 										"exclusiveMinimum": true
 									},
 									"replica": {
 										"type": "integer",
-										"description": "Number of replicas for this cluster after the modification. This parameter and `autoscaling.replica` are mutually exclusive; you can specify only one of them. The product of this parameter and `cuSize` should not exceed 256.",
+										"description": "Number of replicas for this cluster after the modification. This parameter and `autoscaling.replica` are mutually exclusive; you can specify only one of them. The product of this parameter and `cuSize` should not exceed 1024.",
 										"x-i18n": {
 											"zh-CN": {
-												"description": "修改后指定集群的副本数量。此参数与 `autoscaling.replica` 互斥；您只能指定其中一个。此参数与 `cuSize` 的乘积不得超过 256。"
+												"description": "修改后指定集群的副本数量。此参数与 `autoscaling.replica` 互斥；您只能指定其中一个。此参数与 `cuSize` 的乘积不得超过 1024。"
 											}
 										},
 										"minimum": 1,
@@ -36040,10 +36042,10 @@
 										"properties": {
 											"cu": {
 												"type": "object",
-												"description": "Auto-scaling configuration for CUs. This is unavailable if you have already set `cuSize`. The product of the maximum number of CUs and the maximum number of replicas should not exceed 256.",
+												"description": "Auto-scaling configuration for CUs. This is unavailable if you have already set `cuSize`. The product of the maximum number of CUs and the maximum number of replicas should not exceed 1024.",
 												"x-i18n": {
 													"zh-CN": {
-														"description": "CU 的自动扩缩容配置。如果您已设置 `cuSize`，则无法使用此配置。最大 CU 数量与最大副本数量的乘积不得超过 256。"
+														"description": "CU 的自动扩缩容配置。如果您已设置 `cuSize`，则无法使用此配置。最大 CU 数量与最大副本数量的乘积不得超过 1024。"
 													}
 												},
 												"properties": {
@@ -36056,7 +36058,7 @@
 															}
 														},
 														"minimum": 1,
-														"maximum": 256,
+														"maximum": 1024,
 														"exclusiveMinimum": true
 													},
 													"max": {
@@ -36068,7 +36070,7 @@
 															}
 														},
 														"minimum": 1,
-														"maximum": 256,
+														"maximum": 1024,
 														"exclusiveMinimum": true
 													},
 													"schedules": {
@@ -37148,12 +37150,13 @@
 												"description": "The CU type to use for the destination cluster.",
 												"enum": [
 													"Performance-optimized",
-													"Capacity-optimized"
+													"Capacity-optimized",
+													"Tiered-storage"
 												]
 											},
 											"cuSize": {
 												"minimum": 1,
-												"maximum": 256,
+												"maximum": 1024,
 												"type": "integer",
 												"description": "The CU size to use for the destination cluster."
 											}
@@ -39915,7 +39918,7 @@
 										"type": "integer",
 										"description": "The CU size allocated to the restored cluster.",
 										"minimum": 1,
-										"maximum": 256,
+										"maximum": 1024,
 										"x-i18n": {
 											"zh-CN": {
 												"description": "恢复后的集群的 CU 大小。"
