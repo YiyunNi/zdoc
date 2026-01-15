@@ -56,7 +56,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[January 15, 2025](./release-notes-2601)**
+        **[January 15, 2026](./release-notes-2601)**
 
     </div>
 
