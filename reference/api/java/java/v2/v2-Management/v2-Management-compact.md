@@ -12,19 +12,19 @@ type: docx
 token: Df6GdjeIXoThhVxM6dMcvDqenSe
 sidebar_position: 2
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
   - zilliz
   - zilliz cloud
   - cloud
   - compact()
   - javaV226
+  - dimension reduction
   - hnsw algorithm
   - vector similarity search
   - approximate nearest neighbor search
-  - DiskANN
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

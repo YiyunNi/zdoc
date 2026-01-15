@@ -84,7 +84,7 @@ func NewHybridSearchOption(collectionName string, limit int, annRequests ...*Ann
    <tr>
      <td><p><code>annRequests</code></p></td>
      <td><p>One or multiple search requests.</p></td>
-     <td><p><a href="./v2-Vector-HybridSearch#annrequest"><code>...*AnnRequest</code></a></p></td>
+     <td><p><a href="./v2-Vector-HybridSearch#annrequest"><code>...&ast;AnnRequest</code></a></p></td>
    </tr>
 </table>
 

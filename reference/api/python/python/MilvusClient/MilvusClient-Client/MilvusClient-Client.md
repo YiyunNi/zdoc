@@ -12,10 +12,10 @@ token: ZEQZf4BtildBijdf1T6cdDnmnZb
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
   - zilliz
   - zilliz cloud
   - cloud

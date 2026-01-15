@@ -101,7 +101,7 @@ type ClientConfig struct {
    <tr>
      <td><p><code>RetryRateLimit</code></p></td>
      <td><p>Specifies the retry rate limit in case the connection fails.</p><p>For details, refer to the <a href="./v2-Client-New#retryratelimitoption">RetryRateLimitOption</a> section.</p></td>
-     <td><p><a href="./v2-Client-New#retryratelimitoption"><code>*RetryRateLimitOption</code></a></p></td>
+     <td><p><a href="./v2-Client-New#retryratelimitoption"><code>&ast;RetryRateLimitOption</code></a></p></td>
    </tr>
 </table>
 

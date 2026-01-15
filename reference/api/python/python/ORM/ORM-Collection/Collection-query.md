@@ -21,10 +21,10 @@ keywords:
   - cloud
   - query()
   - pymilvus26
-  - hnsw algorithm
   - vector similarity search
   - approximate nearest neighbor search
   - DiskANN
+  - Sparse vector
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

@@ -79,7 +79,7 @@ func NewCreateCollectionOption(name string, collectionSchema *entity.Schema) *cr
    <tr>
      <td><p><code>collectionSchema</code></p></td>
      <td><p>Schema of the collection.</p><p>This parameter applies when creating a collection with a custom schema.</p></td>
-     <td><p><code>*entity.Schema</code></p></td>
+     <td><p><code>&ast;entity.Schema</code></p></td>
    </tr>
 </table>
 
@@ -473,7 +473,7 @@ func (s *entity.Schema) WithField(f *entity.Field) *entity.Schema
    <tr>
      <td><p><code>f</code></p></td>
      <td><p>An <code>entity.Field</code> object.</p></td>
-     <td><p><a href="./v2-Collection-CreateCollection#entityfield"><code>*entity.Field</code></a></p></td>
+     <td><p><a href="./v2-Collection-CreateCollection#entityfield"><code>&ast;entity.Field</code></a></p></td>
    </tr>
 </table>
 
@@ -494,7 +494,7 @@ func (s *entity.Schema) WithFunction(f *entity.Function) *entity.Schema
    <tr>
      <td><p><code>f</code></p></td>
      <td><p>An <code>entity.Function</code> object.</p></td>
-     <td><p><a href="./v2-Collection-CreateCollection#entityfunction"><code>*entity.Function</code></a></p></td>
+     <td><p><a href="./v2-Collection-CreateCollection#entityfunction"><code>&ast;entity.Function</code></a></p></td>
    </tr>
 </table>
 

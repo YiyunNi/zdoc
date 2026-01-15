@@ -126,7 +126,7 @@ This method does not take any input parameters. The following table lists the va
    <tr>
      <td><p><code>channelCheckpoints</code></p></td>
      <td><p>Channel check points</p></td>
-     <td><p><code>map[string]*msgpb.MsgPosition</code></p></td>
+     <td><p><code>map[string]&ast;msgpb.MsgPosition</code></p></td>
    </tr>
 </table>
 

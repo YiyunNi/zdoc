@@ -772,7 +772,7 @@ func NewColumnDynamic(column *ColumnJSONBytes, outputField string) *ColumnDynami
    <tr>
      <td><p><code>column</code></p></td>
      <td><p>A column of the JSON type.</p></td>
-     <td><p><a href="./v2-Vector-Insert#columncolumnjsonbytes"><code>*column.ColumnJSONBytes</code></a></p></td>
+     <td><p><a href="./v2-Vector-Insert#columncolumnjsonbytes"><code>&ast;column.ColumnJSONBytes</code></a></p></td>
    </tr>
    <tr>
      <td><p><code>outputField</code></p></td>

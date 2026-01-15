@@ -12,19 +12,19 @@ type: docx
 token: N6afdOON2o3U0YxMAt7cMiBqnXg
 sidebar_position: 6
 keywords: 
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
   - search()
   - pymilvus26
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -44,6 +44,7 @@ search(
     self,
     collection_name: str,
     data: Union[List[list], list],
+    
     filter: str = "",
     limit: int = 10,
     output_fields: Optional[List[str]] = None,
@@ -52,6 +53,7 @@ search(
     partition_names: Optional[List[str]] = None,
     anns_field: Optional[str] = None,
     ranker: Optional[Union[Function, FunctionScore]] = None,
+    highlighter: Optional[Highlighter] = None,
     **kwargs,
 ) -> List[List[dict]]
 ```
@@ -194,11 +196,15 @@ search(
 
     The value defaults to **None**. If specified, only the specified partitions are involved in queries.
 
-- **ranker** (*Function* | *FunctionScore*)
+- **ranker** (*Function* | *FunctionScore*) -
 
     The ranker to use for the search.
 
     For details, refer to [Decay Ranker Overview](/docs/decay-ranker-oveview) and .
+
+- **highlighter** (*Highlighter*) -
+
+    The highlighter to highlight matched terms in search operations. For details, refer to [Text Highlighter](https://milvus.io/docs/text-highlighter.md).
 
 - **kwargs** -
 
@@ -215,6 +221,18 @@ search(
         The number of decimal places that Zilliz Cloud rounds the calculated distances to.
 
         The value defaults to **-1**, indicating that Zilliz Cloud skips rounding the calculated distances and returns the raw value.
+
+    - **timezone** (*str*)
+
+        Temporarily override the collection or database default time zone for a single query by setting an [IANA identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (for example, **Asia/Shanghai**, **America/Chicago**, or **UTC**). This controls how `TIMESTAMPTZ` values are interpreted, displayed, and compared during that operation only; it does not modify stored data or collection settings.
+
+        For more information, refer to [TIMESTAMPZ Field](/docs/timestamptz-field).
+
+    - **time_fields** (*str*)
+
+        Extract specific time components from a `TIMESTAMPTZ` field during query or search operations. Use a comma-separated list to specify which elements to extract. Supported elements include: `year`, `month`, `day`, `hour`, `minute`, `second`, and `microsecond`.
+
+        For more information, refer to TIMESTAMPZ Field.
 
 **RETURN TYPE:**
 
