@@ -17,10 +17,10 @@ keywords:
   - cloud
   - activities
   - view
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
 
 ---
 

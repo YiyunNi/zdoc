@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Similarity metrics are used to measure similarities among vectors. Choosing an appropriate distance metric helps improve classification and clustering performance significantly. | BYOC"
 type: origin
 token: EOxmwUDxMiy2cpkOfIsc1dYzn4c
-sidebar_position: 20
+sidebar_position: 21
 keywords: 
   - zilliz
   - vector database
@@ -23,10 +23,10 @@ keywords:
   - IP
   - COSINE
   - Jaccard
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
 
 ---
 
@@ -80,7 +80,7 @@ The table below summarizes the mapping between different field types and their c
    </tr>
    <tr>
      <td><p><code>BINARY_VECTOR</code></p></td>
-     <td><p>8-32,768*8</p></td>
+     <td><p>8-32,768&ast;8</p></td>
      <td><p><code>HAMMING</code>, <code>JACCARD</code>, <code>MHJACCARD</code></p></td>
      <td><p><code>HAMMING</code></p></td>
    </tr>

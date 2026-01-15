@@ -20,10 +20,10 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - vector database
+  - IVF
+  - knn
+  - Image Search
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create a Cross-Account Service Account
 
@@ -58,6 +60,8 @@ You will create an instance group manager custom role and assign the custom role
 
 The steps for creating the instance group manager custom role are as follows:
 
+<Procedures>
+
 1. On the GCP console, find and click **IAM & Admin**.
 
 1. Choose **Roles** from the left navigation pane.
@@ -78,6 +82,8 @@ The steps for creating the instance group manager custom role are as follows:
 
 1. Click **Create**.
 
+</Procedures>
+
 #### Create an IAM custom role\{#create-an-iam-custom-role}
 
 You will create an IAM custom role and assign the custom role to the service account created above so that the service account has the minimum required permissions to manage IAM policies.
@@ -85,6 +91,8 @@ You will create an IAM custom role and assign the custom role to the service acc
 <Supademo id="cmbri7b73cdexsn1r99xrvvfd" title=""  />
 
 The steps for creating a custom role are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **IAM & Admin**.
 
@@ -106,6 +114,8 @@ The steps for creating a custom role are as follows:
 
 1. Click **Create**.
 
+</Procedures>
+
 ### Step 2: Create a service account\{#step-2-create-a-service-account}
 
 In this step, you will create a service account for Zilliz Cloud to manage VPC resources on your behalf and paste the service account email address back to Zilliz Cloud console.
@@ -113,6 +123,8 @@ In this step, you will create a service account for Zilliz Cloud to manage VPC r
 <Supademo id="cmc1pq4ikjo9nsn1rzuxbs1p0" title=""  />
 
 The steps for creating a service account are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **IAM & Admin**.
 
@@ -139,7 +151,7 @@ The steps for creating a service account are as follows:
        <tr>
          <td><p><a href="./create-cross-account-sa">Instance group manager custom role</a></p></td>
          <td><p>Custom</p></td>
-         <td><p><code>resource.name.extract("projects/&lt;name&gt;").startsWith("PROJECT_ID") &amp;&amp;resource.name.extract("zones/&lt;name&gt;").startsWith("REGION") &amp;&amp;resource.name.extract("instanceGroupManagers/&lt;name&gt;").startsWith("gke-CLUSTER_NAME")</code></p></td>
+         <td><p><code>resource.name.extract("projects/&lt;name&gt;").startsWith("PROJECT_ID") &&resource.name.extract("zones/&lt;name&gt;").startsWith("REGION") &&resource.name.extract("instanceGroupManagers/&lt;name&gt;").startsWith("gke-CLUSTER_NAME")</code></p></td>
        </tr>
        <tr>
          <td><p><a href="./create-cross-account-sa">IAM custom role</a></p></td>
@@ -183,6 +195,8 @@ The steps for creating a service account are as follows:
 
 1. Click **Save**.
 
+</Procedures>
+
 #### Grant access to other service accounts\{#grant-access-to-other-service-accounts}
 
 You will grant the cross-account service account created in the previous step access to several other service accounts.
@@ -190,6 +204,8 @@ You will grant the cross-account service account created in the previous step ac
 <Supademo id="cmbq9hdfjbatwsn1rv37dqcnr" title=""  />
 
 Follow the steps below to grant the cross-account service account access to these service accounts.
+
+<Procedures>
 
 1. On the GCP console, find and click **Service Account**.
 
@@ -219,6 +235,8 @@ Follow the steps below to grant the cross-account service account access to thes
 
 1. Select **Service Account User** in **Assign roles** > **Role**.
 
+</Procedures>
+
 #### Impersonate Zilliz Cloud's service account\{#impersonate-zilliz-clouds-service-account}
 
 You will have the cross-account service account to impersonate Zilliz Cloud's service account provided on the Zilliz Cloud console.
@@ -226,6 +244,8 @@ You will have the cross-account service account to impersonate Zilliz Cloud's se
 <Supademo id="cmbhbv9xj5iuasn1rj0od2qzt" title=""  />
 
 The steps for impersonating the service account that Zilliz Cloud provides are as follows:
+
+<Procedures>
 
 1. On the Zilliz Cloud console, copy the service account Zilliz Cloud provides.
 
@@ -243,3 +263,4 @@ The steps for impersonating the service account that Zilliz Cloud provides are a
 
 1. Click **Save**.
 
+</Procedures>

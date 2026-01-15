@@ -39,7 +39,7 @@ This article demonstrates how to count entities in a collection and explains why
 
 Zilliz Cloud provides two ways for you to count entities in a collection. 
 
-- **Query with count(*) as the output field**
+- **Query with count(&ast;) as the output field**
 
     To get the precise entity count in a collection, you should use this method and ensure that:
 
@@ -98,7 +98,7 @@ res = client.query(
     collection_name="test_collection",
     # highlight-start
     output_fields=['count(*)'],
-    partition_names=['default']
+    partition_names=['_default']
     # highlight-end
 )
 
@@ -140,7 +140,7 @@ countR = client.query(QueryReq.builder()
         .filter("")
         // highlight-start
         .outputFields(Collections.singletonList("count(*)"))
-        .partitionNames(Collections.singletonList("default"))
+        .partitionNames(Collections.singletonList("_default"))
         // highlight-end
         .build());
 
@@ -190,7 +190,7 @@ let res = await client.query({
 res = await client.query({
     collection_name: "test_collection",
     output_fields: ["count(*)"],
-    partition_names: ['default']
+    partition_names: ['_default']
 });
 
 // Get the entity count

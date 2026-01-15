@@ -18,10 +18,10 @@ keywords:
   - data import
   - milvus
   - format options
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 

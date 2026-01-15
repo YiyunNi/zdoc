@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Elasticsearch, built on Apache Lucene, is a leading open-source search engine. However, it faces challenges in modern AI applications, including high update costs, poor real-time performance, inefficient shard management, a non-cloud-native design, and excessive resource demands. As a cloud-native vector database, Milvus overcomes these issues with decoupled storage and computing, efficient indexing for high-dimensional data, and seamless integration with modern infrastructures. It offers superior performance and scalability for AI workloads. | BYOC"
 type: origin
 token: OFl9wHXpriM8aEkoONScpU1lnIf
-sidebar_position: 14
+sidebar_position: 15
 keywords: 
   - zilliz
   - vector database
@@ -22,10 +22,10 @@ keywords:
   - filtering
   - elasticsearch queries
   - query mapping
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
 
 ---
 
@@ -525,7 +525,6 @@ search_params_sparse = {
     "anns_field": "text_sparse",
     "param": {
         "metric_type": "BM25",
-        "params": {"drop_ratio_search": 0.2}
     }
 }
 
@@ -543,7 +542,7 @@ This example demonstrates a hybrid search in Milvus that combines:
 
 1. **Dense vector search**: Using the inner product (IP) metric for approximate nearest neighbor (ANN) search on the `vector` field.
 
-1. **Sparse vector search**: Using the BM25 similarity metric with a `drop_ratio_search` parameter of 0.2 on the `text_sparse` field.
+1. **Sparse vector search**: Using the BM25 similarity metric on the `text_sparse` field.
 
 The results from these searches are executed separately, combined, and reranked using the Reciprocal Rank Fusion (RRF) ranker. The hybrid search returns the top 10 entities from the reranked list.
 

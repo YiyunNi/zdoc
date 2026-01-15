@@ -18,10 +18,10 @@ keywords:
   - collection
   - data insertions
   - DDL
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
 
 ---
 

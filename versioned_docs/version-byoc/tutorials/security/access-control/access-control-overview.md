@@ -18,10 +18,10 @@ keywords:
   - cluster
   - access control
   - rbac
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
 
 ---
 

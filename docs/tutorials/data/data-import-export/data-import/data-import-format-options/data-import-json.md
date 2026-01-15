@@ -1,7 +1,7 @@
 ---
-title: "Import from a JSON File | Cloud"
+title: "Import from a JSON/JSON Lines File | Cloud"
 slug: /data-import-json
-sidebar_label: "JSON"
+sidebar_label: "JSON/JSON Line"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -19,19 +19,41 @@ keywords:
   - milvus
   - format options
   - json
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Import from a JSON File
+# Import from a JSON/JSON Lines File
 
 [JSON](https://www.json.org/json-en.html) (JavaScript Object Notation) is a lightweight, human-readable data format that machines can parse and generate easily. Language-independent, it follows conventions familiar to C-family language programmers, making it an ideal data interchange format.
+
+A JSON Line is a text format where each line is a complete, valid JSON object, making it easy to process data streams incrementally with standard text tools.
+
+The following table provides an example of data in a JSON or JSON Line file.
+
+<table>
+   <tr>
+     <th><p><strong>File Format</strong></p></th>
+     <th><p><strong>Example</strong></p></th>
+     <th></th>
+   </tr>
+   <tr>
+     <td><p>JSON (.json)</p></td>
+     <td><pre><code class="json language-json"> [     \{"primary_key":89,"vector":[0.7857309327639853,0.6185684289533679]},     \{"primary_key":-22,"vector":[0.7227987733802379,0.6910585598920134]},     \{"primary_key":85,"vector":[0.7948503430666686,0.6068055142521362]} ]</code></pre></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td><p>JSON Lines (.ndjson, .jsonl)</p></td>
+     <td><pre><code class="json language-json"> \{"primary_key":89,"vector":[0.7857309327639853,0.6185684289533679]} \{"primary_key":-22,"vector":[0.7227987733802379,0.6910585598920134]} \{"primary_key":85,"vector":[0.7948503430666686,0.6068055142521362]}</code></pre></td>
+     <td></td>
+   </tr>
+</table>
 
 You are advised to use [the BulkWriter tool](./use-bulkwriter) to prepare your raw data into JSON files. The following figure demonstrates how your raw data can be mapped into a JSON file.
 
@@ -56,7 +78,7 @@ You are advised to use [the BulkWriter tool](./use-bulkwriter) to prepare your r
 
 ## Directory structure\{#directory-structure}
 
-If you prefer to prepare your data into JSON files, place all JSON files directly into the source data folder as shown in the tree diagram below.
+If you prefer to prepare your data into JSON or JSON Lines files, place all files directly into the source data folder as shown in the tree diagram below.
 
 ```plaintext
 ├── json-folder
@@ -108,7 +130,7 @@ curl --request POST \
 
 ### Import files from a folder\{#import-files-from-a-folder}
 
-If the source folder contains only the JSON files to import, you can simply include the source folder in the request as follows:
+If the source folder contains the files to import, you can include the source folder in the request as follows:
 
 ```bash
 curl --request POST \
@@ -127,6 +149,12 @@ curl --request POST \
         "secretKey": ""
     }'
 ```
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the folder contains multiple formats of files, the request will fail.</p>
+
+</Admonition>
 
 ### Import a single file\{#import-a-single-file}
 
@@ -206,7 +234,7 @@ There are some limits you need to observe when you import data in a local JSON f
      <td><p>1 GB</p></td>
    </tr>
    <tr>
-     <td><p>Serverless &amp; Dedicated</p></td>
+     <td><p>Serverless & Dedicated</p></td>
      <td><p>1,000 Files</p></td>
      <td><p>10 GB</p></td>
      <td><p>1 TB</p></td>

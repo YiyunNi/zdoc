@@ -20,10 +20,10 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create Cloud Storage Bucket and Service Account
 
@@ -62,6 +64,8 @@ In this step, you will create a Cloud Storage bucket on GCP for the BYOC project
 
 The steps to create a bucket are as follows:
 
+<Procedures>
+
 1. On the GCP console, find and click **Cloud Storage**.
 
 1. Click **Create bucket**.
@@ -84,6 +88,8 @@ The steps to create a bucket are as follows:
 
 1. Click **Confirm** in the prompted dialog box to confirm the prevention of public access to the bucket to create.
 
+</Procedures>
+
 ### Step 2: Create a service account to access the bucket\{#step-2-create-a-service-account-to-access-the-bucket}
 
 In this step, you will create a service account, associate several roles with the service account, and provide the service account to Zilliz Cloud so that Zilliz Cloud can access the bucket created above.
@@ -91,6 +97,8 @@ In this step, you will create a service account, associate several roles with th
 <Supademo id="cmc1mg9bvjk4bsn1r8awkyndh" title=""  />
 
 The steps to create the storage service account are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **IAM & Admin**.
 
@@ -142,3 +150,4 @@ The steps to create the storage service account are as follows:
 
 1. Click **Done**.
 
+</Procedures>

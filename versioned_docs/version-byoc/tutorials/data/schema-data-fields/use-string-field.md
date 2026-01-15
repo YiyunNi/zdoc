@@ -19,10 +19,10 @@ keywords:
   - schema
   - string field
   - varchar field
-  - vector database
-  - IVF
   - knn
   - Image Search
+  - LLMs
+  - Machine Learning
 
 ---
 
@@ -1031,3 +1031,4 @@ curl --request POST \
 
 </TabItem>
 </Tabs>
+

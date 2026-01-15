@@ -1,7 +1,7 @@
 ---
 title: "August 2025 Release Notes | Cloud"
 slug: /release-notes-2508
-sidebar_label: "August 2025 Release Notes"
+sidebar_label: "August, 2025"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "August 2025 Release Notes | Cloud"
 type: origin
 token: JNWZwEqkwiDmeSkVPBlc4hnanEe
-sidebar_position: 4
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
 
 ---
 

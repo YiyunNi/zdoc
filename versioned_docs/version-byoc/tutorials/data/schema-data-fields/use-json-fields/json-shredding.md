@@ -19,10 +19,10 @@ keywords:
   - schema
   - json field
   - json shredding
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
 
 ---
 

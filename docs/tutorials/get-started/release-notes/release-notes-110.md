@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (April 6, 2023) | Cloud"
 slug: /release-notes-110
-sidebar_label: "Release Notes (April 6, 2023)"
+sidebar_label: "April 6, 2023"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We're thrilled to unveil the newest Zilliz Cloud update, featuring a pricing calculator for cost estimation, a data backup and restore process for enhanced data security, a customizable timezone setting for global users, a collection rename tool for better organization, the removal of storage quotas for unrestricted usage, and improved credit conservation for inactive databases. | Cloud"
 type: origin
 token: ZvSOwB7zkir7PjkzrOPciC5WnTe
-sidebar_position: 26
+sidebar_position: 28
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
 
 ---
 

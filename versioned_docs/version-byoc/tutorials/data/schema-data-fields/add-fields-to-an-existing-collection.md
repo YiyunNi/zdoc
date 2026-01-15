@@ -19,10 +19,10 @@ keywords:
   - schema
   - field properties
   - add collection fields
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
 
 ---
 

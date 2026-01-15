@@ -19,10 +19,10 @@ keywords:
   - schema
   - analyzer
   - multi-language
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
 
 ---
 

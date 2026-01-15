@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - authentication
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
 
 ---
 

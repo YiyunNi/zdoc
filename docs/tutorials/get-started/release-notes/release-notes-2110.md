@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (Nov 6, 2024) | Cloud"
 slug: /release-notes-2110
-sidebar_label: "Release Notes (Nov 6, 2024)"
+sidebar_label: "November 6, 2024"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "This release includes a fresh web console user interface, support for migrating data from Qdrant, Pinecone Serverless, and Tencent VectorDB, a smoother payment process, and a revamped Invoice page with detailed payment info. | Cloud"
 type: origin
 token: HwWfwN9SViqU0Ukcv68cufBAnBe
-sidebar_position: 11
+sidebar_position: 13
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - milvus
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
 
 ---
 

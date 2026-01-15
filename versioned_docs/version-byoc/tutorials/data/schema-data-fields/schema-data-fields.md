@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - data fields
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
 
 ---
 

@@ -19,10 +19,10 @@ keywords:
   - milvus
   - format options
   - numpy
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
 
 ---
 
@@ -139,6 +139,12 @@ curl --request POST \
         "secretKey": ""
     }'
 ```
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the folder contains multiple formats of files, the request will fail.</p>
+
+</Admonition>
 
 ## Storage paths\{#storage-paths}
 

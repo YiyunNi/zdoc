@@ -20,15 +20,17 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Deploy BYOC on GCP
 
@@ -62,6 +64,8 @@ Within your BYOC organization, click the **Create Project and Deploy Data Plane*
 In this step, you need to set the Zilliz BYOC project name, determine the cloud providers and regions, and the initial project size of your deployment.
 
 ![A8VVbPbJgobXzzxEdumcpxJ4nMg](https://zdoc-images.s3.us-west-2.amazonaws.com/a8vvbpbjgobxzzxedumcpxj4nmg.png "A8VVbPbJgobXzzxEdumcpxJ4nMg")
+
+<Procedures>
 
 1. Set **Zilliz BYOC Project Name**.
 
@@ -133,11 +137,15 @@ In this step, you need to set the Zilliz BYOC project name, determine the cloud 
 
 1. Click **Next** to set up credentials.
 
+</Procedures>
+
 ### Step 2: Set up credentials\{#step-2-set-up-credentials}
 
 In **Credential Settings**, you must set up the storage and several service accounts for storage access, GKE cluster management, and data-plane deployment.
 
 ![BbOOboWZAo5eu2xplJWcXyLonph](https://zdoc-images.s3.us-west-2.amazonaws.com/bboobowzao5eu2xpljwcxylonph.png "BbOOboWZAo5eu2xplJWcXyLonph")
+
+<Procedures>
 
 1. In **Google Cloud Platform Project ID**, enter the ID of your GCP project.
 
@@ -161,11 +169,15 @@ In **Credential Settings**, you must set up the storage and several service acco
 
 1. Click **Next** to configure network settings.
 
+</Procedures>
+
 ### Step 3: Configure network settings\{#step-3-configure-network-settings}
 
 In **Network Settings**, create a VPC and several types of resources, such as subnet names and an optional Private Service Connect Endpoint in the VPC.
 
 ![YVPNbLCjOoCkDTx9TEMcbV9LnPd](https://zdoc-images.s3.us-west-2.amazonaws.com/yvpnblcjoockdtx9temcbv9lnpd.png "YVPNbLCjOoCkDTx9TEMcbV9LnPd")
+
+<Procedures>
 
 1. In **Network Settings**, set the **VPC Name**, **Subnet Names**, and the optional **Private Service Connect Endpoint**.
 
@@ -184,6 +196,8 @@ In **Network Settings**, create a VPC and several types of resources, such as su
 1. In **Deployment Summary**, review the configuration settings.
 
 1. Click **Create** if everything is as expected.
+
+</Procedures>
 
 ## View deployment details\{#view-deployment-details}
 
@@ -204,6 +218,18 @@ You can only suspend a running project if there are no clusters in the project o
 Once the status tag on a project card reads **Suspended**, you cannot manipulate clusters in the project. In such a case, you can click **Resume** to resume the project. Once the status tag turns to **Running** again, you can continue manipulating clusters in the project.
 
 ![EQKqbumOxoT1tVxw1ZRcZahXnDd](https://zdoc-images.s3.us-west-2.amazonaws.com/eqkqbumoxot1tvxw1zrczahxndd.png "EQKqbumOxoT1tVxw1ZRcZahXnDd")
+
+## Technical support access\{#technical-support-access}
+
+To assist you with troubleshooting and maintenance operations, Zilliz Cloud enables technical support to access your project's data plane by default. 
+
+![LxiUbIQCqoJf2Zx7pincPOCnnyf](https://zdoc-images.s3.us-west-2.amazonaws.com/lxiubiqcqojf2zx7pincpocnnyf.png "LxiUbIQCqoJf2Zx7pincPOCnnyf")
+
+When you click **Technical Support Access** from the target project's drop-down menu to view the current settings.
+
+![WbyNbPrfioPvmpxTe9ocowainnh](https://zdoc-images.s3.us-west-2.amazonaws.com/wbynbprfiopvmpxte9ocowainnh.png "WbyNbPrfioPvmpxTe9ocowainnh")
+
+You can disable it to meet data governance and security requirements.
 
 ## Procedures\{#procedures}
 

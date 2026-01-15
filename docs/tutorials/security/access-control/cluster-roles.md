@@ -19,15 +19,17 @@ keywords:
   - access control
   - rbac
   - roles
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Manage Cluster Roles (Console)
 
@@ -101,6 +103,8 @@ For collection-level access control, it is recommended to create custom roles.
 
 ## Create a custom cluster role\{#create-a-custom-cluster-role}
 
+<Procedures>
+
 1. Navigate to the **Roles** tab of the target cluster. Click **+ Cluster Role**.
 
     ![add-cluster-role](https://zdoc-images.s3.us-west-2.amazonaws.com/add-cluster-role.png "add-cluster-role")
@@ -128,6 +132,8 @@ For collection-level access control, it is recommended to create custom roles.
     ![add-cluster-role-form](https://zdoc-images.s3.us-west-2.amazonaws.com/add-cluster-role-form.png "add-cluster-role-form")
 
 1. Click **Create**. Each cluster can have up to 20 custom cluster roles.
+
+</Procedures>
 
 ## Grant a role to a user\{#grant-a-role-to-a-user}
 

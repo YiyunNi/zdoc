@@ -18,10 +18,10 @@ keywords:
   - sso
   - microsoft
   - entra
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
 
 ---
 
@@ -29,6 +29,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Microsoft Entra (SAML 2.0)
 
@@ -54,6 +56,8 @@ As the SP, Zilliz Cloud provides the **Identifier (Entity ID)** and **Reply URL 
 
  <Supademo id="cme7yk5zy38k0h3pyor6ovyvh" title="Step 1: Access service provider details in Zilliz Cloud console" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login) and go to the organization for which you want to configure SSO.
 
 1. In the left-side navigation pane, click **Settings**.
@@ -66,11 +70,15 @@ As the SP, Zilliz Cloud provides the **Identifier (Entity ID)** and **Reply URL 
 
 1. Once that's done, proceed to [Step 2](./single-sign-on-with-microsoft-entra#step-2-set-up-an-application-in-microsoft-entra-admin-center).
 
+</Procedures>
+
 ### Step 2: Set up an application in Microsoft Entra admin center\{#step-2-set-up-an-application-in-microsoft-entra-admin-center}
 
 In this step, you configure Microsoft Entra (the IdP) with the SP details obtained from Zilliz Cloud.
 
 <Supademo id="cme7ynp8r38ksh3pyaghg664m" title="Set up an application in Microsoft Entra admin center" />
+
+\<Procedures>
 
 1. Log in to the [Microsoft Entra admin center](https://aad.portal.azure.com/?ad=in-text-link).
 
@@ -104,11 +112,15 @@ In this step, you configure Microsoft Entra (the IdP) with the SP details obtain
 
     </Admonition>
 
+\<Procedures>
+
 ### Step 3: Configure IdP settings in Zilliz Cloud console\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
 
 In this step, you provide Microsoft Entra’s IdP details back to Zilliz Cloud to complete the SAML trust relationship.
 
  <Supademo id="cme7yxwoh38qih3pycwf88tzi" title="Configure IdP settings in Zilliz Cloud console" />
+
+<Procedures>
 
 1. Go back to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -126,6 +138,8 @@ In this step, you provide Microsoft Entra’s IdP details back to Zilliz Cloud t
 
 1. Once that's done, click **Save**.
 
+</Procedures>
+
 ## Post-configuration tasks\{#post-configuration-tasks}
 
 ### Task 1: Assign Microsoft Entra application to users\{#task-1-assign-microsoft-entra-application-to-users}
@@ -134,9 +148,13 @@ In this step, you provide Microsoft Entra’s IdP details back to Zilliz Cloud t
 
 Before users can access Zilliz Cloud through SSO, you need to assign the Microsoft Entra application to them:
 
+<Procedures>
+
 1. On the application page of the [Microsoft Entra admin center](https://aad.portal.azure.com/?ad=in-text-link), choose **Users and groups** > **+ Add user/group**.
 
 1. Select users or groups to grant them access to the application.
+
+</Procedures>
 
 For details, refer to [Microsoft Entra documentation](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/assign-user-or-group-access-portal?pivots=portal).
 

@@ -1,0 +1,38 @@
+---
+title: "Global Cluster | Cloud"
+slug: /global-cluster
+sidebar_label: "Global Cluster"
+beta: FALSE
+added_since: FALSE
+last_modified: FALSE
+deprecate_since: FALSE
+notebook: FALSE
+description: "A global cluster is cluster deployed across multiple regions for improved resilience and lower read latency. | Cloud"
+type: origin
+token: VKMNwpMl0idY2nkEntncL9hTncb
+sidebar_position: 6
+keywords: 
+  - zilliz
+  - vector database
+  - cloud
+  - milvus
+  - global cluster
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# Global Cluster
+
+A global cluster is cluster deployed across multiple regions for improved resilience and lower read latency.
+
+
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />

@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (Feb 13, 2023) | Cloud"
 slug: /release-notes-011
-sidebar_label: "Release Notes (Feb 13, 2023)"
+sidebar_label: "Febuary 13, 2023"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are pleased to announce the general availability of a significant update to Zilliz Cloud. This release adds email notifications and inline guidance for beginners. | Cloud"
 type: origin
 token: E76ywex6GiUKUKkgbFAc95Q0nxe
-sidebar_position: 28
+sidebar_position: 30
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
 
 ---
 

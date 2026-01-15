@@ -18,15 +18,17 @@ keywords:
   - third-party
   - services
   - prometheus
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Integrate with Prometheus
 
@@ -43,6 +45,8 @@ By integrating Zilliz Cloud with Prometheus, you can collect and monitor metrics
 ## Configure Prometheus to scrape Zilliz Cloud metrics\{#configure-prometheus-to-scrape-zilliz-cloud-metrics}
 
 To monitor Zilliz Cloud clusters with Prometheus, follow these steps:
+
+<Procedures>
 
 1. Access the `Prometheus.yml` configuration file on your Prometheus server. For more information, refer to [Configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#configuration).
 
@@ -97,6 +101,8 @@ To monitor Zilliz Cloud clusters with Prometheus, follow these steps:
     </table>
 
 1. Save the changes to the `Prometheus.yml` file.
+
+</Procedures>
 
 For more details, refer to [Prometheus official documentation](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config).
 

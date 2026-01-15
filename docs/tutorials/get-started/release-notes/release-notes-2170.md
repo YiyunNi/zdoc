@@ -1,7 +1,7 @@
 ---
-title: "Release Notes (Jun 9, 2025) | Cloud"
+title: "Release Notes (June 9, 2025) | Cloud"
 slug: /release-notes-2170
-sidebar_label: "Release Notes (Jun 9, 2025)"
+sidebar_label: "June 9, 2025"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,23 +10,23 @@ notebook: FALSE
 description: "This release delivers a more refined and intuitive user experience across multiple features of Zilliz Cloud. From a redesigned migration console to policy-based alerting and improved mmap controls, we've focused on making your workflows faster, more flexible, and easier to manage. New AI assistant capabilities and support for BYOC on GCP further extend the platform's power and usability, whether you're managing infrastructure, monitoring environments, or seeking support. | Cloud"
 type: origin
 token: DF8HwUTD6iScNQkVzs8cZTr8n8b
-sidebar_position: 6
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Release Notes (Jun 9, 2025)
+# Release Notes (June 9, 2025)
 
 This release delivers a more refined and intuitive user experience across multiple features of Zilliz Cloud. From a redesigned migration console to policy-based alerting and improved mmap controls, we've focused on making your workflows faster, more flexible, and easier to manage. New AI assistant capabilities and support for BYOC on GCP further extend the platform's power and usability, whether you're managing infrastructure, monitoring environments, or seeking support.
 

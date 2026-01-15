@@ -10,16 +10,16 @@ notebook: FALSE
 description: "Zilliz Cloud introduces a database layer in between the clusters and collections, providing a more efficient way to manage and organize your data while supporting multi-tenancy. | BYOC"
 type: origin
 token: Z0oiwVpsliiW1zksnlFc3ZsVnxf
-sidebar_position: 6
+sidebar_position: 5
 keywords: 
   - zilliz
   - vector database
   - cloud
   - milvus
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
 
 ---
 

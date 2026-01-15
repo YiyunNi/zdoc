@@ -19,10 +19,10 @@ keywords:
   - data
   - grouping search
   - group
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
 
 ---
 

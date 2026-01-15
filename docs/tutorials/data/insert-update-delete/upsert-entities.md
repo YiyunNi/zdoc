@@ -20,10 +20,10 @@ keywords:
   - upsert
   - update
   - insert
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
 
 ---
 
@@ -81,7 +81,7 @@ There are several special notes you should consider before using the merge featu
 
     - If you upsert with `partial_update` enabled, the default behavior is to **merge**. It means that the value of the dynamic field will merge with all non-schema-defined fields included in the request and their values.
 
-        For example, if the data included in the request is `{"author": "John", "year": 2020, "tags": ["fiction"]}`, the key-value pairs in the dynamic field of the target entity will become `{"author": "Jane", "year": 2020, "tags": ["fiction"], "genre": "fantasy"}` after the upsert.
+        For example, if the data included in the request is `{"author": "John", "year": 2020, "tags": ["fiction"]}`, the key-value pairs in the dynamic field of the target entity will become `{"author": "John", "year": 2020, "tags": ["fiction"], "genre": "fantasy"}` after the upsert.
 
 - **Upsert a JSON field.**
 

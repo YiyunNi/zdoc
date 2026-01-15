@@ -19,10 +19,10 @@ keywords:
   - access control
   - rbac
   - roles
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
 
 ---
 
@@ -46,9 +46,7 @@ This guide walks you through how to create a role, grant built-in privilege grou
 
 The following example demonstrates how to create a role named `role_a`. 
 
-The role name must follow the following rule:
-
-- Must start with a letter and can only include uppercase or lowercase letters, numbers, and underscores.
+The role name must start with a letter and can only include uppercase or lowercase letters, numbers, and underscores.
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - network
   - security
+  - what is vector db
+  - what are vector databases
   - vector databases comparison
   - Faiss
-  - Video search
-  - AI Hallucination
 
 ---
 

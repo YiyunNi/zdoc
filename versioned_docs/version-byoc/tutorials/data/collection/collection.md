@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - collection
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
 
 ---
 

@@ -17,15 +17,17 @@ keywords:
   - cloud
   - notification
   - channels
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Manage Notification Channels
 
@@ -45,6 +47,8 @@ You can access the management page of notification channels in the **Edit Alert*
 
 To set up email notifications,
 
+<Procedures>
+
 1. In the [Zilliz Cloud console](https://cloud.zilliz.com/signup), navigate to the **Alert Settings** tab on the organization or project alert page.
 
 1. To modify an existing alert, select **Edit** from the **Actions** column next to the desired alert target. To create a new alert, click **+ Alert** in the upper-right corner.
@@ -59,11 +63,15 @@ To set up email notifications,
 
 1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 For more information, refer to [Manage Organization Alerts](./manage-organization-alerts) or [Manage Project Alerts](./manage-project-alerts).
 
 ### PagerDuty\{#pagerduty}
 
 To integrate with a PagerDuty service,
+
+<Procedures>
 
 1. [Create a service](https://support.pagerduty.com/docs/services-and-integrations#create-a-service) in the PagerDuty UI.
 
@@ -87,9 +95,13 @@ To integrate with a PagerDuty service,
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 ### Slack\{#slack}
 
 To set up Slack integration,
+
+<Procedures>
 
 1. [Create a webhook](https://api.slack.com/messaging/webhooks#getting_started) in the Slack UI.
 
@@ -113,9 +125,13 @@ To set up Slack integration,
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 ### Opsgenie\{#opsgenie}
 
 To set up Opsgenie integration,
+
+<Procedures>
 
 1. Obtain your API key in Opsgenie. For details, refer to [Create an API integration](https://support.atlassian.com/opsgenie/docs/create-a-default-api-integration/).
 
@@ -145,9 +161,13 @@ To set up Opsgenie integration,
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 ### Lark\{#lark}
 
 To set up Lark integration,
+
+<Procedures>
 
 1. Enter the target Lark group, invite your custom bot to the group, and then obtain the webhook URL corresponding to the robot. For detailed steps, refer to [Custom bot usage guide](https://open.larksuite.com/document/client-docs/bot-v3/add-custom-bot).
 
@@ -169,9 +189,13 @@ To set up Lark integration,
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 ### Webhook\{#webhook}
 
 The **Webhook** option offered by Zilliz Cloud allows you to set up a custom notification channel.
+
+<Procedures>
 
 1. Obtain the webhook URL of your service.
 
@@ -193,6 +217,8 @@ The **Webhook** option offered by Zilliz Cloud allows you to set up a custom not
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 Example webhook notification:
 
 ```python
@@ -208,6 +234,8 @@ Example webhook notification:
 ### WeCom\{#wecom}
 
 To set up WeCom alert notifications, follow these steps:
+
+<Procedures>
 
 1. Create a group bot in your WeCom group. For detailed instructions, refer to [Group bot creation](https://open.work.weixin.qq.com/help2/pc/14931?person_id=1&searchData=#%E4%BA%8C%E3%80%81%E7%BE%A4%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%B7%BB%E5%8A%A0%E5%85%A5%E5%8F%A3). 
 
@@ -237,9 +265,13 @@ To set up WeCom alert notifications, follow these steps:
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
 
+</Procedures>
+
 ### DingTalk\{#dingtalk}
 
 To set up DingTalk alert notifications, follow these steps:
+
+<Procedures>
 
 1. Create a custom bot in your DingTalk group. For detailed instructions, refer to [Custom bot integration](https://open.dingtalk.com/document/robots/custom-robot-access).
 
@@ -272,6 +304,8 @@ To set up DingTalk alert notifications, follow these steps:
     1. Enter the webhook URL obtained.
 
     1. In **Alert Resolution Notification** and **Enable Alert**, configure the appropriate actions to be taken when an alert is resolved or triggered.
+
+</Procedures>
 
 ## Test connectivity\{#test-connectivity}
 

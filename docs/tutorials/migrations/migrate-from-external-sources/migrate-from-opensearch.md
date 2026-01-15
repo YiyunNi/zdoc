@@ -18,10 +18,10 @@ keywords:
   - migrations
   - amazon
   - opensearch
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - modify collections
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
 
 ---
 
@@ -181,6 +181,10 @@ You can modify collection-level properties after a collection is created.
      <td><p><code>dynamicfield.enabled</code></p></td>
      <td><p>Enables the dynamic field for collections that were created without enabling it. Once enabled, you can insert entities with fields not defined in the original schema. For details, refer to <a href="./enable-dynamic-field">Dynamic Field</a>.</p></td>
    </tr>
+   <tr>
+     <td><p><code>allow_insert_auto_id</code></p></td>
+     <td><p>Whether to allow a collection to accept user-provided primary key values when AutoID has been enabled for the collection.</p><ul><li><p>When set to <strong>"true"</strong>: Inserts, upserts, and bulk imports use the user-provided primary key if present; otherwise, primary key values are auto-generated.</p></li><li><p>When set to <strong>"false"</strong>: User-provided primary key values are rejected or ignored and primary key values are always auto-generated. The default is <strong>"false"</strong>.</p></li></ul></td>
+   </tr>
 </table>
 
 ### Example 1: Set collection TTL\{#example-1-set-collection-ttl}
@@ -204,19 +208,15 @@ client.alter_collection_properties(
 <TabItem value='java'>
 
 ```java
-import io.milvus.v2.service.collection.request.AlterCollectionReq;
-import java.util.HashMap;
-import java.util.Map;
+import io.milvus.param.Constant;
+import io.milvus.v2.service.collection.request.AlterCollectionPropertiesReq;
 
-Map<String, String> properties = new HashMap<>();
-properties.put("collection.ttl.seconds", "60");
-
-AlterCollectionReq alterCollectionReq = AlterCollectionReq.builder()
+AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.builder()
         .collectionName("my_collection")
-        .properties(properties)
+        .property(Constant.TTL_SECONDS, "60")
         .build();
 
-client.alterCollection(alterCollectionReq);
+client.alterCollectionProperties(alterCollectionReq);
 ```
 
 </TabItem>
@@ -257,7 +257,7 @@ curl --request POST \
 --header "Authorization: Bearer ${TOKEN}" \
 --header "Content-Type: application/json" \
 -d '{
-    "collectionName": "test_collection",
+    "collectionName": "my_collection",
     "properties": {
         "collection.ttl.seconds": 60
     }
@@ -288,15 +288,12 @@ client.alter_collection_properties(
 <TabItem value='java'>
 
 ```java
-Map<String, String> properties = new HashMap<>();
-properties.put("mmap.enabled", "True");
-
-AlterCollectionReq alterCollectionReq = AlterCollectionReq.builder()
+AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.builder()
         .collectionName("my_collection")
-        .properties(properties)
+        .property(Constant.MMAP_ENABLED, "True")
         .build();
 
-client.alterCollection(alterCollectionReq);
+client.alterCollectionProperties(alterCollectionReq);
 ```
 
 </TabItem>
@@ -364,15 +361,12 @@ client.alter_collection_properties(
 <TabItem value='java'>
 
 ```java
-Map<String, String> properties = new HashMap<>();
-properties.put("partitionkey.isolation", "True");
-
-AlterCollectionReq alterCollectionReq = AlterCollectionReq.builder()
+AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.builder()
         .collectionName("my_collection")
-        .properties(properties)
+        .property("partitionkey.isolation", "True")
         .build();
 
-client.alterCollection(alterCollectionReq);
+client.alterCollectionProperties(alterCollectionReq);
 ```
 
 </TabItem>
@@ -441,15 +435,12 @@ client.alter_collection_properties(
 <TabItem value='java'>
 
 ```java
-Map<String, String> properties = new HashMap<>();
-properties.put("dynamicfield.enabled", "True");
-
-AlterCollectionReq alterCollectionReq = AlterCollectionReq.builder()
+AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.builder()
         .collectionName("my_collection")
-        .properties(properties)
+        .property("dynamicfield.enabled", "True")
         .build();
 
-client.alterCollection(alterCollectionReq);
+client.alterCollectionProperties(alterCollectionReq);
 ```
 
 </TabItem>
@@ -490,6 +481,82 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/alter_properties" \
     "collectionName": "my_collection",
     "properties": {
       "dynamicfield.enabled": "true"
+    }
+  }'
+```
+
+</TabItem>
+</Tabs>
+
+### Example 5: Enable allow_insert_auto_id\{#example-5-enable-allowinsertautoid}
+
+The `allow_insert_auto_id` property allows a collection with AutoID enabled to accept user-provided primary key values during insert, upsert, and bulk import. When set to **"true"**, Zilliz Cloud uses the user-provided primary key value if present; otherwise it auto-generates. Default is **"false"**.
+
+The example below shows how to enable `allow_insert_auto_id`:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+client.alter_collection_properties(
+    collection_name="my_collection",
+    # highlight-next-line
+    properties={"allow_insert_auto_id": "true"}
+)
+# After enabling, inserts with a PK column will use that PK; otherwise Zilliz Cloud auto-generates.
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.builder()
+        .collectionName("my_collection")
+        .property("allow_insert_auto_id", "True")
+        .build();
+
+client.alterCollectionProperties(alterCollectionReq);
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+await client.alterCollectionProperties({
+    collection_name: "my_collection",
+    properties: {
+        "allow_insert_auto_id": true
+    }
+});
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+err = client.AlterCollectionProperties(ctx, milvusclient.NewAlterCollectionPropertiesOption("my_collection").WithProperty(common.AllowInsertAutoIDKey, true))
+if err != nil {
+    fmt.Println(err.Error())
+    // handle error
+}
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/alter_properties" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token>" \
+  -d '{
+    "collectionName": "my_collection",
+    "properties": {
+      "allow_insert_auto_id": "true"
     }
   }'
 ```

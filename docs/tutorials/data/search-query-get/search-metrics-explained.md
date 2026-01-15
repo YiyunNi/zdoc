@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Similarity metrics are used to measure similarities among vectors. Choosing an appropriate distance metric helps improve classification and clustering performance significantly. | Cloud"
 type: origin
 token: EOxmwUDxMiy2cpkOfIsc1dYzn4c
-sidebar_position: 20
+sidebar_position: 21
 keywords: 
   - zilliz
   - vector database
@@ -23,10 +23,10 @@ keywords:
   - IP
   - COSINE
   - Jaccard
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
 
 ---
 
@@ -80,7 +80,7 @@ The table below summarizes the mapping between different field types and their c
    </tr>
    <tr>
      <td><p><code>BINARY_VECTOR</code></p></td>
-     <td><p>8-32,768*8</p></td>
+     <td><p>8-32,768&ast;8</p></td>
      <td><p><code>HAMMING</code>, <code>JACCARD</code>, <code>MHJACCARD</code></p></td>
      <td><p><code>HAMMING</code></p></td>
    </tr>

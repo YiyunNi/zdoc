@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Memory mapping (Mmap) enables direct memory access to large files on disk, allowing Zilliz Cloud to store indexes and data in both memory and hard drives. This approach helps optimize data placement policy based on access frequency, expanding storage capacity for collections without impacting search performance. This page helps you understand how Zilliz Cloud uses mmap to enable fast and efficient data storage and retrieval. | Cloud"
 type: origin
 token: P3wrwSMNNihy8Vkf9p6cTsWYnTb
-sidebar_position: 17
+sidebar_position: 18
 keywords: 
   - zilliz
   - vector database
   - cloud
   - mmap
   - search optimization
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
 
 ---
 
@@ -65,64 +65,31 @@ The following table lists the global mmap strategy for clusters from different t
    <tr>
      <td><p>Performance-optimized</p></td>
      <td><p>Capacity-optimized</p></td>
-     <td><p>Extended-capacity</p></td>
+     <td><p>Tiered-storage</p></td>
    </tr>
    <tr>
      <td><p>Scalar field raw data</p></td>
-     <td><p>Disabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td colspan="2"><p>Enabled &amp; Unchangeable</p></td>
+     <td><p>Disabled & Changeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td colspan="2"><p>Enabled & Unchangeable</p></td>
    </tr>
    <tr>
      <td><p>Scalar field index</p></td>
-     <td><p>Disabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td colspan="2"><p>Enabled &amp; Unchangeable</p></td>
+     <td><p>Disabled & Changeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td colspan="2"><p>Enabled & Unchangeable</p></td>
    </tr>
    <tr>
      <td><p>Vector field raw data</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td colspan="2"><p>Enabled &amp; Unchangeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td colspan="2"><p>Enabled & Unchangeable</p></td>
    </tr>
    <tr>
      <td><p>Vector field index</p></td>
-     <td><p>Disabled &amp; Unchangeable</p></td>
-     <td><p>Disabled &amp; Unchangeable</p></td>
-     <td colspan="2"><p>Enabled &amp; Unchangeable</p></td>
-   </tr>
-</table>
-
-<table>
-   <tr>
-     <th></th>
-     <th><p>Performance-optimized</p></th>
-     <th><p>Capacity-optimized</p></th>
-     <th><p>Extended-capacity</p></th>
-   </tr>
-   <tr>
-     <td><p>Scalar field raw data</p></td>
-     <td><p>Disabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Unchangeable</p></td>
-   </tr>
-   <tr>
-     <td><p>Scalar field index</p></td>
-     <td><p>Disabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Unchangeable</p></td>
-   </tr>
-   <tr>
-     <td><p>Vector field raw data</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Changeable</p></td>
-     <td><p>Enabled &amp; Unchangeable</p></td>
-   </tr>
-   <tr>
-     <td><p>Vector field index</p></td>
-     <td><p>Disabled &amp; Unchangeable</p></td>
-     <td><p>Disabled &amp; Unchangeable</p></td>
-     <td><p>Enabled &amp; Unchangeable</p></td>
+     <td><p>Disabled & Unchangeable</p></td>
+     <td><p>Disabled & Unchangeable</p></td>
+     <td colspan="2"><p>Enabled & Unchangeable</p></td>
    </tr>
 </table>
 
@@ -358,9 +325,6 @@ export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
 export idField='{
     "fieldName": "id",
     "dataType": "Int64",
-    "elementTypeParams": {
-        "max_length": 512
-    },
     "isPrimary": true,
     "auto_id": false
 }'
@@ -375,7 +339,7 @@ export vectorField='{
 
 export docChunkField='{
     "fieldName": "doc_chunk",
-    "dataType": "Int64",
+    "dataType": "Varchar",
     "elementTypeParams": {
         "max_length": 512,
         "mmap.enabled": false

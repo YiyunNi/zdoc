@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Zilliz Cloud provides handy metric charts and alerts for you to know what is happening in your organization and clusters. | BYOC"
 type: origin
 token: Xma9w6Ne9ihcsZkFkSmcHidEnZg
-sidebar_position: 7
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
   - cloud
   - metrics
   - alerts
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
 
 ---
 

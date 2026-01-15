@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - binary vector
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
 
 ---
 

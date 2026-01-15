@@ -17,10 +17,10 @@ keywords:
   - cloud
   - network
   - security
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
 
 ---
 

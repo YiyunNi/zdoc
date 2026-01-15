@@ -17,15 +17,17 @@ keywords:
   - cloud
   - organizations
   - settings
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Manage Organization Settings
 
@@ -89,6 +91,8 @@ Before you start, make sure the following conditions are met:
 
 To delete an organization: 
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. Enter the organization that you want to delete.
@@ -98,6 +102,8 @@ To delete an organization:
 1. On the **System Settings** page, find the **Delete Organization** area and click the button.
 
 1. Follow the instructions in the pop-up window and click the button to complete deleting the organization.
+
+</Procedures>
 
 <Admonition type="caution" icon="🚧" title="Warning">
 

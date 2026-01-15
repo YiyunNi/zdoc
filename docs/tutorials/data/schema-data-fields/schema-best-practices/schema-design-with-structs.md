@@ -21,10 +21,10 @@ keywords:
   - hands-on
   - structs
   - array of structs
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
 
 ---
 

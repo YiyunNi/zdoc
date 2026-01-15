@@ -19,10 +19,10 @@ keywords:
   - external
   - data source
   - basics
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
 
 ---
 
@@ -30,6 +30,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # External Migration Basics
 
@@ -224,11 +226,15 @@ Ready to migrate your data to Zilliz Cloud?
 
 ### Access migration portal\{#access-migration-portal}
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login)
 
 1. Navigate to **Migrations** and choose your source platform
 
 1. Follow the guided workflow to complete your migration
+
+</Procedures>
 
 <Supademo id="cmb7mg34n4sqrppkp8pnm8dub" title="Zilliz Cloud - Access Migration Portal Demo" />
 

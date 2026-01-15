@@ -17,10 +17,10 @@ keywords:
   - cloud
   - sso
   - okta
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
 
 ---
 
@@ -28,6 +28,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Okta (SAML 2.0)
 
@@ -53,6 +55,8 @@ As the SP, Zilliz Cloud provides the **Audience URL (SP Entity ID)** and **Singl
 
 <Supademo id="cme6l0vit2298h3pyu26whujs" title="Step 1: Access service provider details in Zilliz Cloud console" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login) and go to the organization for which you want to configure SSO.
 
 1. In the left-side navigation pane, click **Settings**.
@@ -65,11 +69,15 @@ As the SP, Zilliz Cloud provides the **Audience URL (SP Entity ID)** and **Singl
 
 1. Once that's done, proceed to [Step 2](./single-sign-on-with-okta#step-2-create-a-saml-app-in-okta-admin-console).
 
+</Procedures>
+
 ### Step 2: Create a SAML app in Okta Admin Console\{#step-2-create-a-saml-app-in-okta-admin-console}
 
 In this step, you configure Okta (the IdP) with the SP details obtained from Zilliz Cloud.
 
 <Supademo id="cmdh3bndv2ym06n9n9gx8epyd" title="Step 1: Create SAML App in Okta Admin Console" />
+
+<Procedures>
 
 1. Log in to the [Okta Admin console](https://login.okta.com/).
 
@@ -111,11 +119,15 @@ In this step, you configure Okta (the IdP) with the SP details obtained from Zil
 
     </Admonition>
 
+</Procedures>
+
 ### Step 3: Configure IdP settings in Zilliz Cloud console\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
 
 In this step, you provide Okta’s IdP details back to Zilliz Cloud to complete the SAML trust relationship.
 
 <Supademo id="cmdh2wk6b2y8q6n9nilbi2d19" title="Step 2: Configure Okta Settings in Zilliz Cloud Console" />
+
+<Procedures>
 
 1. Go back to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -133,6 +145,8 @@ In this step, you provide Okta’s IdP details back to Zilliz Cloud to complete 
 
 1. Once that's done, click **Save**.
 
+</Procedures>
+
 ## Post-configuration tasks\{#post-configuration-tasks}
 
 ### Task 1: Assign SAML app to users\{#task-1-assign-saml-app-to-users}
@@ -141,6 +155,8 @@ In this step, you provide Okta’s IdP details back to Zilliz Cloud to complete 
 
 Before users can access Zilliz Cloud through SSO, you need to assign the Okta application to them:
 
+<Procedures>
+
 1. On the app details page of the [Okta Admin console](https://login.okta.com/), click **Assignments**.
 
 1. Choose **Assign** > **Assign to People**.
@@ -148,6 +164,8 @@ Before users can access Zilliz Cloud through SSO, you need to assign the Okta ap
 1. Assign the SAML app to the user and save the changes.
 
 1. Click **Save** **and** **Go Back**.
+
+</Procedures>
 
 Repeat for all users as needed. See [Okta documentation](https://help.okta.com/oie/en-us/content/topics/provisioning/lcm/lcm-assign-app-groups.htm) for more.
 

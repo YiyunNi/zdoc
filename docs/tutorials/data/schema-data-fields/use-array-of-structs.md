@@ -20,10 +20,10 @@ keywords:
   - array field
   - array of structs
   - structs
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 
@@ -585,7 +585,7 @@ client.createCollection(requestCreate);
 
 ```javascript
 await milvusClient.createCollection({
-  collection_name: "books",
+  collection_name: "my_collection",
   fields: schema,
   indexes: indexParams,
 });

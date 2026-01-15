@@ -18,10 +18,10 @@ keywords:
   - collection
   - load
   - release
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - vector database
+  - IVF
+  - knn
+  - Image Search
 
 ---
 
@@ -269,6 +269,7 @@ print(res)
 LoadCollectionReq loadCollectionReq = LoadCollectionReq.builder()
         .collectionName("my_collection")
         .loadFields(Arrays.asList("my_id", "my_vector"))
+        .skipLoadDynamicField(true)
         .build();
 
 client.loadCollection(loadCollectionReq);

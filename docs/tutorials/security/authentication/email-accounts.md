@@ -16,21 +16,27 @@ keywords:
   - vector database
   - cloud
   - email accounts
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
+import Procedures from '@site/src/components/Procedures';
+
 # Email Accounts
 
 Once you have [registered an account](./register-with-zilliz-cloud) with Zilliz Cloud, you can manage your account information, switch your login method, and unlink from your Google or GitHub account.
 
 ## Modify your profile information\{#modify-your-profile-information}
+
+![modify_account_info](https://zdoc-images.s3.us-west-2.amazonaws.com/modify_account_info.png "modify_account_info")
+
+<Procedures>
 
 1. Go to your **Profile** and click **Account Settings**.
 
@@ -42,7 +48,7 @@ Once you have [registered an account](./register-with-zilliz-cloud) with Zilliz 
 
     - Country
 
-![modify_account_info](https://zdoc-images.s3.us-west-2.amazonaws.com/modify_account_info.png "modify_account_info")
+</Procedures>
 
 ## Update account email address\{#update-account-email-address}
 
@@ -94,13 +100,21 @@ To revert to using an email and password for login after linking your Zilliz Clo
 
 If you have already linked your Zilliz Cloud account with a third-party account and wish to switch to another third-party login, you can follow the following instructions.
 
+<Procedures>
+
 1. [Unlink from the current third-party account](./email-accounts#unlink-from-third-party-authentication).
 
 1. [Link your Zilliz Cloud account to the new desired third-party account](./register-with-zilliz-cloud).
 
+</Procedures>
+
 ## Unlink from third-party authentication\{#unlink-from-third-party-authentication}
 
 ### Unlink from your Google account\{#unlink-from-your-google-account}
+
+![unlink_from_google](https://zdoc-images.s3.us-west-2.amazonaws.com/unlink_from_google.png "unlink_from_google")
+
+<Procedures>
 
 1. Go to your **Profile** and click **Account Settings**.
 
@@ -112,9 +126,13 @@ If you have already linked your Zilliz Cloud account with a third-party account 
 
     - If you have not set a password yet, set a new password via the link sent to your email. Once the password is set, your login method is changed to your work email and the new password.
 
-![unlink_from_google](https://zdoc-images.s3.us-west-2.amazonaws.com/unlink_from_google.png "unlink_from_google")
+</Procedures>
 
 ### Unlink from your GitHub account\{#unlink-from-your-github-account}
+
+![unlink_from_github](https://zdoc-images.s3.us-west-2.amazonaws.com/unlink_from_github.png "unlink_from_github")
+
+<Procedures>
 
 1. Go to your **Profile** and click **Account Settings**.
 
@@ -126,7 +144,7 @@ If you have already linked your Zilliz Cloud account with a third-party account 
 
     - If you have not set a password yet, set a new password via the link sent to your email. Once the password is set, your login method is changed to your work email and the new password.
 
-![unlink_from_github](https://zdoc-images.s3.us-west-2.amazonaws.com/unlink_from_github.png "unlink_from_github")
+</Procedures>
 
 ## Close your account\{#close-your-account}
 
@@ -146,6 +164,10 @@ Ensure you meet the following criteria before proceeding:
 
 ### Procedures\{#procedures}
 
+![delete-account-en](https://zdoc-images.s3.us-west-2.amazonaws.com/delete-account-en.png "delete-account-en")
+
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. Click the profile icon in the upper right corner. Click **Account Settings**.
@@ -158,4 +180,4 @@ Ensure you meet the following criteria before proceeding:
 
 1. You will receive an email notification when your account is successfully deleted.
 
-![delete-account-en](https://zdoc-images.s3.us-west-2.amazonaws.com/delete-account-en.png "delete-account-en")
+</Procedures>

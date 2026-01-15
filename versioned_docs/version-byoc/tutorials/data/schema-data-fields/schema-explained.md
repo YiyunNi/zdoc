@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - schema explained
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
 
 ---
 
@@ -193,6 +193,12 @@ When adding a field, you can explicitly clarify the field as the primary field b
 
 You can also set the `autoId` properties to `True` to make Zilliz Cloud automatically allocate primary field values upon data insertions.
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>You are advised to rely on <code>autoId</code> in all cases unless manually setting primary keys is beneficial.</p>
+
+</Admonition>
+
 For details, refer to [Primary Field & AutoId](./primary-field-auto-id).
 
 ## Add Vector Fields\{#add-vector-fields}
@@ -283,6 +289,10 @@ The `dim` paramter in the above code snippets indicates the dimensionality of th
 - `BFLOAT16_VECTOR`
 
     A vector field of this type holds a list of 16-bit floating-point numbers that have reduced precision but the same exponent range as Float32. This type of data is commonly used in deep learning scenarios, as it reduces memory usage without significantly impacting accuracy.
+
+- `INT8_VECTOR`
+
+    A vector field of this type stores vectors composed of 8-bit signed integers (int8), with each component ranging from –128 to 127. Tailored for quantized deep learning architectures—such as ResNet and EfficientNet—it substantially shrinks model size and boosts inference speed, all while incurring only minimal precision loss. **Note**: This vector type is supported only for HNSW indexes.
 
 - `BINARY_VECTOR`
 

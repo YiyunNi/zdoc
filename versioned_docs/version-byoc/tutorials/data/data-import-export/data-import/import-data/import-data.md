@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - data import
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
 
 ---
 

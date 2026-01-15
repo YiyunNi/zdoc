@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - volume
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
 
 ---
 
@@ -85,7 +85,7 @@ When you create a volume, you can choose either a **free trial volume** or a **p
      <td><p>Unlimited</p></td>
    </tr>
    <tr>
-     <td><p>File size &amp; amount per upload</p></td>
+     <td><p>File size & amount per upload</p></td>
      <td><p>Up to 1 GB of data and no more than 1,000 files in each upload</p></td>
      <td><p>Up to 100 GB of data and unlimited number of files in each upload</p></td>
    </tr>

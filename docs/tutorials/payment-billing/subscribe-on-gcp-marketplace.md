@@ -17,15 +17,17 @@ keywords:
   - cloud
   - marketplace
   - gcp
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Subscribe on Google Cloud Marketplace
 
@@ -48,6 +50,8 @@ This guide provides a step-by-step walkthrough of the subscription process and o
 ## Subscribe on GCP Marketplace\{#subscribe-on-gcp-marketplace}
 
 Visit [GCP](https://console.cloud.google.com/marketplace)[ Marketplace](https://console.cloud.google.com/marketplace) and start subscribing to Zilliz Cloud as follows:
+
+<Procedures>
 
 1. Search for **Zilliz Cloud** in the search box, or [go to the GCP Marketplace](https://console.cloud.google.com/marketplace/product/zilliz-public/zilliz-cloud?project=zilliz-public&pli=1) to view the Zilliz Cloud portal page.
 
@@ -95,11 +99,15 @@ Visit [GCP](https://console.cloud.google.com/marketplace)[ Marketplace](https://
 
     ![gcp-marketplace-success](https://zdoc-images.s3.us-west-2.amazonaws.com/gcp-marketplace-success.png "gcp-marketplace-success")
 
+</Procedures>
+
 ## Update GCP Marketplace subscription\{#update-gcp-marketplace-subscription}
 
 After successfully subscribing from GCP Marketplace, you can always update your subscription at any time that you see fit. More specifically, you can either change the GCP Marketplace account used for the subscription to another one or switch your payment method from a GCP Marketplace subscription to a credit card. 
 
 ### Change GCP Marketplace subscription account\{#change-gcp-marketplace-subscription-account}
+
+<Procedures>
 
 1. Sign in to GCP Marketplace with the original GCP account you used for the subscription.
 
@@ -129,6 +137,8 @@ After successfully subscribing from GCP Marketplace, you can always update your 
 
     ![view-gcp-subscription-id](https://zdoc-images.s3.us-west-2.amazonaws.com/view-gcp-subscription-id.png "view-gcp-subscription-id")
 
+</Procedures>
+
 <Admonition type="info" icon="📘" title="Note">
 
 <p>We recommend completing the operations within 1 hour to avoid service interruption.</p>
@@ -136,6 +146,8 @@ After successfully subscribing from GCP Marketplace, you can always update your 
 </Admonition>
 
 ### Switch to payment credit card\{#switch-to-payment-credit-card}
+
+<Procedures>
 
 1. Sign in to GCP Marketplace with the original GCP account you used for the subscription.
 
@@ -153,6 +165,8 @@ After successfully subscribing from GCP Marketplace, you can always update your 
 
 1. Verify the update in the **Payment Method** section on the **Billing Overview** page.
 
+</Procedures>
+
 ## Cancel GCP Marketplace subscription\{#cancel-gcp-marketplace-subscription}
 
 To cancel your GCP Marketplace subscription, you need to open the GCP Marketplace console and follow the instructions [here](https://cloud.google.com/marketplace/docs/manage-billing#cancel).
@@ -167,7 +181,7 @@ Please refer to [Payment & Billing](./payment-billing#marketplace-pricing-terms)
 
 There could be several reasons.
 
-1. **Insufficient permissions** 
+- **Insufficient permissions** 
 
     This can happen when you do not have sufficient privileges. You will see an **"Insufficient Permissions"** tag next to the unavailable organization.
 
@@ -175,7 +189,7 @@ There could be several reasons.
 
     To link an organization with a marketplace subscription, you must be an **Organization Owner** or an **Organization Billing Admin**. But if you are only an Organization Member, you do not have the required permissions. Please contact the organization owner for assistance.
 
-1. **All organizations have already been successfully linked to a Marketplace subscription**
+- **All organizations have already been successfully linked to a Marketplace subscription**
 
     This can happen when all your organizations are already linked to Marketplace subscriptions. You will see a **"Marketplace Linked"** tag next to the unavailable organization.
 
@@ -183,17 +197,17 @@ There could be several reasons.
 
     In this case,
 
-    1. If you need to update an existing marketplace subscription, please [unlink](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) the current subscription of the organization first and then set up a new subscription.
+    - If you need to update an existing marketplace subscription, please [unlink](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) the current subscription of the organization first and then set up a new subscription.
 
-    1. If you need multiple organizations for different Marketplace subscription, you can:
+    - If you need multiple organizations for different Marketplace subscription, you can:
 
-        1. [Register](./register-with-zilliz-cloud) a new Zilliz Cloud account to create a new organization. Then, [invite](./organization-users#invite-a-user-to-your-organization) the organization owner to the new organization. This organization owner will then belong to multiple organizations and can setup different marketplace subscriptions for each organization.
+        - [Register](./register-with-zilliz-cloud) a new Zilliz Cloud account to create a new organization. Then, [invite](./organization-users#invite-a-user-to-your-organization) the organization owner to the new organization. This organization owner will then belong to multiple organizations and can setup different marketplace subscriptions for each organization.
 
-        1. [Create a support ticket](http://support.zilliz.com) so that we will create new organizations for you. Currently, Zilliz Cloud does not support manually creating organizations by users.
+        - [Create a support ticket](http://support.zilliz.com) so that we will create new organizations for you. Currently, Zilliz Cloud does not support manually creating organizations by users.
 
-1. **No organizations in the list**
+- **No organizations in the list**
 
-    This can happen if your account has been closed or if you have left all organizations. Your UI will be similar to the following.
+    - This can happen if your account has been closed or if you have left all organizations. Your UI will be similar to the following.
 
     ![no-organization-during-subcription](https://zdoc-images.s3.us-west-2.amazonaws.com/no-organization-during-subcription.png "no-organization-during-subcription")
 

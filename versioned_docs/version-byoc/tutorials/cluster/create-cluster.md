@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - create
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
 
 ---
 
@@ -149,3 +149,4 @@ For further details, see [Create Dedicated Cluster](/reference/restful/create-de
 </TabItem>
 
 </Tabs>
+

@@ -17,10 +17,10 @@ keywords:
   - milvus
   - vector database
   - shared responsibilities
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
 
 ---
 
@@ -110,7 +110,7 @@ This page outlines the responsibilities of Zilliz Cloud and BYOC users to clarif
      <td><p>✔</p></td>
    </tr>
    <tr>
-     <td><p>Implement access control &amp; auditing</p></td>
+     <td><p>Implement access control & auditing</p></td>
      <td><p>✔</p></td>
      <td><p>✔</p></td>
    </tr>

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - clusters
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
 
 ---
 

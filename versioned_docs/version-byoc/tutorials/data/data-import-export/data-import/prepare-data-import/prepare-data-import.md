@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - prepare
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
 
 ---
 

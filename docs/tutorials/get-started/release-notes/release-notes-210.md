@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (Aug 16, 2023) | Cloud"
 slug: /release-notes-210
-sidebar_label: "Release Notes (Aug 16, 2023)"
+sidebar_label: "August 16, 2023"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are excited to announce the launch of Zilliz Cloud. This release includes a variety of enhancements and features, including expanded region support and enhanced usability features, such as migration and serverless instance management. In addition, we have enhanced the RESTful API with Bulk-insert and Dedicated Cluster support. | Cloud"
 type: origin
 token: Ti5uwysf0iZhuyk4xvjcFmsSnhG
-sidebar_position: 24
+sidebar_position: 26
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
 
 ---
 

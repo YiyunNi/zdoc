@@ -23,10 +23,10 @@ keywords:
   - go
   - node
   - nodejs
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
 
 ---
 

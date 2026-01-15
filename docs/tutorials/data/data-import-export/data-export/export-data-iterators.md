@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data export
   - iterator
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 

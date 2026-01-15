@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This chapter covers the common procedures for you to import data into and export data from Zilliz Cloud clusters. | Cloud"
 type: origin
 token: Oh3VwT15Yi03bRkOtoXcZpurnWe
-sidebar_position: 7
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,10 @@ keywords:
   - data import
   - export
   - milvus
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
 
 ---
 

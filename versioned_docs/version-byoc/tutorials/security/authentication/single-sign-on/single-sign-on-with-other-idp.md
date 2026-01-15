@@ -18,10 +18,10 @@ keywords:
   - sso
   - other
   - idp
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 
@@ -29,6 +29,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Other IdP (SAML 2.0)
 
@@ -56,6 +58,8 @@ This topic describes how to configure single sign-on (SSO) in Zilliz Cloud with 
 
 <Supademo id="cme6sledl274yh3py7hf96vo1" title="Step 1: Access service provider details in Zilliz Cloud" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login) and go to the organization for which you want to configure SSO.
 
 1. In the left-side navigation pane, click **Settings**.
@@ -70,11 +74,15 @@ This topic describes how to configure single sign-on (SSO) in Zilliz Cloud with 
 
     - **ACS URL**
 
+</Procedures>
+
 These values will be required in [Step 2](./single-sign-on-with-other-idp#step-2-create-a-saml-app-in-your-idp-console) when creating a SAML application in your IdP.
 
 ### Step 2: Create a SAML app in your IdP console\{#step-2-create-a-saml-app-in-your-idp-console}
 
 The exact process varies depending on your IdP. In general:
+
+<Procedures>
 
 1. Sign in to your IdP’s administrator console.
 
@@ -96,9 +104,13 @@ The exact process varies depending on your IdP. In general:
 
         - **x.509 Certificate** (including the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines)
 
-You will use this information in [Step 3](./single-sign-on-with-other-idp#step-3-configure-idp-settings-in-zilliz-cloud-console).
+    You will use this information in [Step 3](./single-sign-on-with-other-idp#step-3-configure-idp-settings-in-zilliz-cloud-console).
+
+</Procedures>
 
 ### Step 3: Configure IdP settings in Zilliz Cloud console\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
+
+<Procedures>
 
 1. Return to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -117,6 +129,8 @@ You will use this information in [Step 3](./single-sign-on-with-other-idp#step-3
     - Upload or paste the IdP signing certificate in X.509 format. Ensure it includes the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines.
 
 1. Click **Save**.
+
+</Procedures>
 
 ## Post-configuration tasks\{#post-configuration-tasks}
 

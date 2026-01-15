@@ -18,10 +18,10 @@ keywords:
   - data import
   - milvus
   - storage options
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
 
 ---
 

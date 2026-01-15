@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in analyzer
   - standard-analyzer
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
 
 ---
 
@@ -221,6 +221,12 @@ analyzerParams = map[string]any{"type": "standard", "stop_words": []string{"of"}
 
 ```bash
 # restful
+analyzerParams='{
+  "type": "standard",
+  "stop_words": [
+    "of"
+  ]
+}'
 ```
 
 </TabItem>
@@ -260,6 +266,10 @@ analyzerParams.put("stop_words", Collections.singletonList("for"));
 
 ```javascript
 // javascript
+analyzer_params = {
+    "type": "standard", // Specifies the standard analyzer type
+    "stop_words", ["for"] // Optional: List of words to exclude from tokenization
+}
 ```
 
 </TabItem>
@@ -279,7 +289,7 @@ analyzerParams = map[string]any{"type": "standard", "stop_words": []string{"for"
 analyzerParams='{
   "type": "standard",
   "stop_words": [
-    "of"
+    "for"
   ]
 }'
 ```

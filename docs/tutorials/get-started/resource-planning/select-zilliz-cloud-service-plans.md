@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - cluster plan
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
 
 ---
 
@@ -80,19 +80,19 @@ The following section compares the plans and deployment options, detailing the s
      <td><p>Query CU number </p></td>
      <td><p>Single query CU</p></td>
      <td><p>Auto-scale. No configuration required</p></td>
-     <td><ul><li><p>Up to 32 query CUs. (You can directly create cluster of 32 query CUs or less on the web UI. For larger query CUs, please <a href="https://zilliz.com/contact-sales">contact sales</a>.</p></li><li><p>Increments: 1, 2, 4, 6, 8, 12, 16, 20, 24, 28, 32.</p></li></ul></td>
-     <td><ul><li><p>Up to 256 query CUs.(You can directly create cluster of 256 query CUs or less on the web UI. For larger query CUs, please <a href="https://zilliz.com/contact-sales">contact sales</a>.</p></li><li><p>Increments: 1, 2, 4, 6, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256 <em>(Notes: When query CU is greater than 8, the increment increase becomes 4 CUs. When query CU is greater than 64, the increment increase becomes 8 CUs)</em></p></li></ul></td>
-     <td><ul><li><p>Up to 256 query CUs.(You can directly create cluster of 256 query CUs or less on the web UI. For larger query CUs, please <a href="https://zilliz.com/contact-sales">contact sales</a>.</p></li><li><p>Increments: 1, 2, 4, 6, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256 <em>(Notes: When query CU is greater than 8, the increment increase becomes 4 CUs. When query CU is greater than 64, the increment increase becomes 8 CUs</em></p></li></ul></td>
+     <td><ul><li><p>Up to 32 query CUs. (You can directly create cluster of 32 query CUs or less on the web UI. For larger query CUs, please <a href="https://zilliz.com/contact-sales">contact sales</a>.</p></li><li><p>Increments: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32.</p></li></ul></td>
+     <td><ul><li><p>Up to 1,024 query CUs. For larger query CUs, please <a href="https://zilliz.com/contact-sales">contact sales</a>.</p></li><li><p>Increments: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(Notes: When query CU is greater than 8, the increment increase becomes 4 CUs. When query CU is greater than 64, the increment increase becomes 8 CUs. When the query CU is greater than 256, the increment increase becomes 16 CUs. )</em></p></li></ul></td>
+     <td><ul><li><p>Up to 256 query CUs. For larger query CUs, please <a href="https://zilliz.com/contact-sales">contact sales</a>.</p></li><li><p>Increments: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(Notes: When query CU is greater than 8, the increment increase becomes 4 CUs. When query CU is greater than 64, the increment increase becomes 8 CUs. When the query CU is greater than 256, the increment increase becomes 16 CUs. )</em></p></li></ul></td>
      <td><p>Customizable</p></td>
    </tr>
    <tr>
-     <td><p><a href="./scale-cluster">Compute Scaling</a></p></td>
+     <td><p><a href="./scale-query-cu">Compute Scaling</a></p></td>
      <td></td>
      <td><p>System-managed auto-scaling</p><p>(No configuration required)</p></td>
      <td><p>Manual scaling to</p><p>32 CUs</p></td>
-     <td><p>Configurable auto-scaling</p><p>Manual scaling to 256 CUs or more</p></td>
-     <td><p>Configurable auto-scaling</p><p>Manual scaling to 256 CUs or more</p></td>
-     <td><p>Configurable auto-scaling</p><p>Manual scaling to 256 CUs or more</p></td>
+     <td><p>Configurable auto-scaling</p><p>Manual scaling to 1,024 CUs or more</p></td>
+     <td><p>Configurable auto-scaling</p><p>Manual scaling to 1,024 CUs or more</p></td>
+     <td><p>Configurable auto-scaling</p><p>Manual scaling to 1,024 CUs or more</p></td>
    </tr>
    <tr>
      <td><p><a href="./cu-types-explained">Cluster type</a> options</p></td>

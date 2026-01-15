@@ -16,15 +16,17 @@ keywords:
   - vector database
   - cloud
   - recycle bin
+  - RAG
   - NLP
   - Neural Network
   - Deep Learning
-  - Knowledge base
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Use Recycle Bin
 
@@ -33,6 +35,10 @@ Zilliz Cloud's Recycle Bin feature safeguards your data by keeping a record of a
 To use recycle bin, you must be an **Organization Owner**.
 
 ## Restore a dropped cluster in the recycle bin\{#restore-a-dropped-cluster-in-the-recycle-bin}
+
+![byoc-use-recycle-bin](https://zdoc-images.s3.us-west-2.amazonaws.com/byoc-use-recycle-bin.png "byoc-use-recycle-bin")
+
+<Procedures>
 
 1. Navigate to the organization the dropped cluster belongs to.
 
@@ -56,5 +62,4 @@ To use recycle bin, you must be an **Organization Owner**.
 
 1. A new restoration job will be generated. You can check the cluster restoration progress on the [Jobs](./job-center) page. When the job status switches from **IN PROGRESS** to **SUCCESSFUL**, the restoration is complete.
 
-![byoc-use-recycle-bin](https://zdoc-images.s3.us-west-2.amazonaws.com/byoc-use-recycle-bin.png "byoc-use-recycle-bin")
-
+</Procedures>

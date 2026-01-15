@@ -17,10 +17,10 @@ keywords:
   - quickstart
   - cloud
   - milvus
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
 
 ---
 
@@ -354,7 +354,7 @@ curl --request POST \
     --header "Authorization: Bearer ${TOKEN}" \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
-    --d '{
+    -d '{
         "collectionName": "custom_setup",
         "schema": {
             "autoId": false,
@@ -575,7 +575,7 @@ curl -s --request POST \
     --header "Authorization: Bearer ${TOKEN}" \
     --header "Accept: application/json" \
     --header "Content-Type: application/json" \
-    --d '{
+    -d '{
         "collectionName": "custom_setup",
         "data": [
           {"vector": [0.3847391566891949, -0.5163308707041789, -0.5295937262122905, -0.3592193314357348, 0.9108593166893231], "color": "grey_4070"},

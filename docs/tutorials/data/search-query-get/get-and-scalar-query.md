@@ -10,7 +10,7 @@ notebook: FALSE
 description: "In addition to ANN searches, Zilliz Cloud also supports metadata filtering through queries. This page introduces how to use Query, Get, and QueryIterators to perform metadata filtering. | Cloud"
 type: origin
 token: R7F7wY8pCiJ5Q4kbntxcMsE6nLf
-sidebar_position: 7
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
@@ -20,10 +20,10 @@ keywords:
   - get by id
   - query with filters
   - filtering
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
 
 ---
 
@@ -361,18 +361,17 @@ When you need to find entities by custom filtering conditions through paginated 
 <TabItem value='python'>
 
 ```python
-from pymilvus import connections, Collection
+from pymilvus import MilvusClient
 
-connections.connect(
+client = MilvusClient(
     uri="YOUR_CLUSTER_ENDPOINT",
     token="YOUR_CLUSTER_TOKEN"
 )
 
-collection = Collection("my_collection")
-
-iterator = collection.query_iterator(
+iterator = client.query_iterator(
+    "my_collection",
     batch_size=10,
-    expr="color like \"red%\"",
+    filter="color like \"red%\"",
     output_fields=["color"]
 )
 
@@ -401,9 +400,8 @@ import io.milvus.v2.service.vector.request.QueryIteratorReq;
 QueryIteratorReq req = QueryIteratorReq.builder()
         .collectionName("my_collection")
         .expr("color like \"red%\"")
-        .batchSize(50L)
+        .batchSize(10L)
         .outputFields(Collections.singletonList("color"))
-        .consistencyLevel(ConsistencyLevel.BOUNDED)
         .build();
 QueryIterator queryIterator = client.queryIterator(req);
 
@@ -487,13 +485,6 @@ res = client.get(
     output_fields=["vector", "color"]
 )
 
-from pymilvus import MilvusClient
-
-client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
 res = client.query(
     collection_name="my_collection",
     # highlight-next-line
@@ -511,18 +502,15 @@ connections.connect(
     token="YOUR_CLUSTER_TOKEN"
 )
 
-collection = Collection("my_collection")
-
-iterator = collection.query_iterator(
-    # highlight-next-line
+iterator = client.query_iterator(
+    "my_collection",
     partition_names=["partitionA"],
     batch_size=10,
-    expr="color like \"red%\"",
+    filter="color like \"red%\"",
     output_fields=["color"]
 )
 
 results = []
-
 while True:
     result = iterator.next()
     if not result:
@@ -531,6 +519,7 @@ while True:
 
     print(result)
     results += result
+
 ```
 
 </TabItem>
@@ -612,13 +601,12 @@ const token = "YOUR_CLUSTER_TOKEN";
 const client = new MilvusClient({address, token});
 
 // Use get
-var res = client.query({
+var res = client.get({
     collection_name="my_collection",
     // highlight-next-line
     partition_names=["partitionA"],
-    filter='color like "red%"',
-    output_fields=["vector", "color"],
-    limit(3)
+    ids=[10,11,12],
+    output_fields=["vector", "color"]
 })
 
 // Use query
@@ -663,7 +651,7 @@ curl --request POST \
 -d '{
     "collectionName": "my_collection",
     "partitionNames": ["partitionA"],
-    "id": [0, 1, 2],
+    "id": [10, 11, 12],
     "outputFields": ["vector", "color"]
 }'
 

@@ -1,7 +1,7 @@
 ---
-title: "Release Notes (Mar. 27, 2025) | Cloud"
+title: "Release Notes (March 27, 2025) | Cloud"
 slug: /release-notes-2140
-sidebar_label: "Release Notes (Mar. 27, 2025)"
+sidebar_label: "March 27, 2025"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,23 +10,23 @@ notebook: FALSE
 description: "This release introduces two new features in PRIVATE PREVIEW a new BYOC deployment option called BYOC-I and a data plane audit logging feature. The former is designed to ensure complete data sovereignty without any cross-account IAM authorization, while the latter aims to enhance data security by providing detailed logs of actions performed on the data plane. In addition to launching these features, Zilliz Cloud has also revised its credit strategies. | Cloud"
 type: origin
 token: FSUqwEEIii9k2sklkcLcIFJJnbf
-sidebar_position: 8
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Release Notes (Mar. 27, 2025)
+# Release Notes (March 27, 2025)
 
 This release introduces two new features in **PRIVATE PREVIEW**: a new BYOC deployment option called BYOC-I and a data plane audit logging feature. The former is designed to ensure complete data sovereignty without any cross-account IAM authorization, while the latter aims to enhance data security by providing detailed logs of actions performed on the data plane. In addition to launching these features, Zilliz Cloud has also revised its credit strategies.
 

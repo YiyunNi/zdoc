@@ -18,10 +18,10 @@ keywords:
   - serverless
   - cost
   - billing
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
 
 ---
 
@@ -68,7 +68,7 @@ For larger datasets, simply scale the vCU usage and cost proportionately. For ex
 
 <table>
    <tr>
-     <th><p><strong>Data Size (*)</strong></p></th>
+     <th><p><strong>Data Size (&ast;)</strong></p></th>
      <th><p><strong>Write vCU usage (million)</strong></p></th>
      <th><p><strong>Write Cost</strong></p></th>
    </tr>
@@ -94,9 +94,9 @@ For larger datasets, simply scale the vCU usage and cost proportionately. For ex
    </tr>
 </table>
 
-**The data size in the table above excludes scalars.*
+*&ast;The data size in the table above excludes scalars.*
 
-**If your schema contains multiple vector fields, the write cost increases linearly. For example, if your schema has two 128-dimensional vector fields, the vCU usage for writing 1 million entities is 0.125 × 2 = 0.25, and the write cost is approximately &#36;0.5 × 2 = &#36;1.*
+*&ast;If your schema contains multiple vector fields, the write cost increases linearly. For example, if your schema has two 128-dimensional vector fields, the vCU usage for writing 1 million entities is 0.125 × 2 = 0.25, and the write cost is approximately &#36;0.5 × 2 = &#36;1.*
 
 For a precise calculation of the write vCU usage and cost, please refer to the following metrics:
 
@@ -163,7 +163,7 @@ The table below provides examples of vCU usage and costs for 1 million read requ
 
 <table>
    <tr>
-     <th><p><strong>Scan Data Size (*)</strong></p></th>
+     <th><p><strong>Scan Data Size (&ast;)</strong></p></th>
      <th><p><strong>Read vCU Usage (million)</strong></p></th>
      <th><p><strong>Read Cost</strong></p></th>
    </tr>
@@ -214,7 +214,7 @@ The table below provides examples of vCU usage and costs for 1 million read requ
    </tr>
 </table>
 
-**The data size in the table above excludes scalars.* 
+*&ast;The data size in the table above excludes scalars.* 
 
 In the table above, it can be noted that when the data size grow from 1 million to 10 million and even to 100 million, the vCU usage does not increase proportionately. 
 

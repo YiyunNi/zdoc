@@ -18,10 +18,10 @@ keywords:
   - migrations
   - clusters
   - zero downtime
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
 
 ---
 
@@ -44,7 +44,7 @@ Zero Downtime Migration allows database services to remain operational throughou
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zero Downtime Migration is in <strong>Private Preview</strong>. If you encounter any issues or want to learn about associated costs, contact <a href="https://support.zilliz.com/hc/en-us/requests/new">Zilliz Cloud support</a>.</p>
+<p>Zero Downtime Migration is available only for Zilliz Cloud clusters running on Milvus 2.5.x. To enable this feature or discuss pricing, contact <a href="https://support.zilliz.com/hc/en-us/requests/new">Zilliz Cloud support</a>.</p>
 
 </Admonition>
 

@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - random sampling
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
 
 ---
 
@@ -85,7 +85,7 @@ filter := "RANDOM_SAMPLE(sampling_factor)"
 
 ```bash
 # restful
-export filterRandomSample='RANDOM_SAMPLE(0.5)'
+export filterRandomSample='RANDOM_SAMPLE(sampling_factor)'
 ```
 
 </TabItem>

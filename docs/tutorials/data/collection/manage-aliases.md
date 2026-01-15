@@ -18,10 +18,10 @@ keywords:
   - collection
   - alias
   - aliases
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 
@@ -385,7 +385,7 @@ DescribeAliasResp describeAliasRes = client.describeAlias(describeAliasReq);
 System.out.println(describeAliasRes);
 
 // Output:
-// DescribeAliasResp(collectionName=my_collection_1, alias=bob)
+// DescribeAliasResp(databaseName=default, collectionName=my_collection_1, alias=bob)
 ```
 
 </TabItem>

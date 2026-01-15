@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Discover how to seamlessly install Milvus SDKs, allowing efficient connections to Zilliz Cloud clusters. | Cloud"
+description: "Zilliz Cloud offers a managed Milvus vector database as a service. Four SDK options exist to facilitate cluster connections Python](./install-sdks#install-pymilvus-python-sdk), [Java](./install-sdks#install-java-sdk), [Go](./install-sdks#install-go-sdk), or [Node.js. | Cloud"
 type: origin
 token: J274wT61xiEM4fkYeL8cMb4Pnbd
 sidebar_position: 1
@@ -17,10 +17,10 @@ keywords:
   - cloud
   - sdk
   - milvus
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
 
 ---
 
@@ -28,10 +28,6 @@ import Admonition from '@theme/Admonition';
 
 
 # Install SDKs
-
-Discover how to seamlessly install Milvus SDKs, allowing efficient connections to Zilliz Cloud clusters.
-
-## Overview\{#overview}
 
 Zilliz Cloud offers a managed Milvus vector database as a service. Four SDK options exist to facilitate cluster connections: [Python](./install-sdks#install-pymilvus-python-sdk), [Java](./install-sdks#install-java-sdk), [Go](./install-sdks#install-go-sdk), or [Node.js](./install-sdks#install-nodejs-sdk).
 

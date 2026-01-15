@@ -17,15 +17,17 @@ keywords:
   - cloud
   - credit card
   - subscribe
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Subscribe by Adding Credit Card
 
@@ -41,41 +43,45 @@ This guide provides comprehensive instructions on how to add a payment credit ca
 
 ## Add a credit card\{#add-a-credit-card}
 
+<Procedures>
+
 1. After registering an account and logging in, navigate to **Billing** from the left-side menu to access your billing overview.
 
 1. In the **Payment** **Method** section found at the lower-right corner of your screen, click on **Add Payment Method**. In the dialog box that opens, choose **Credit Card**.
 
- A dialog box will appear prompting you to enter:
+    A dialog box will appear prompting you to enter:
 
-- Credit Card Information:
+    - Credit Card Information:
 
-    - **Card number**
+        - **Card number**
 
-    - **Expiration**
+        - **Expiration**
 
-    - **CVC**
+        - **CVC**
 
-- Billing Information:
+    - Billing Information:
 
-    - **First Name**
+        - **First Name**
 
-    - **Last Name**
+        - **Last Name**
 
-    - **Company Name**
+        - **Company Name**
 
-    - **Email**
+        - **Email**
 
-    - **Street Address**
+        - **Street Address**
 
-        - We recommend using your company address. This address will be used to calculate tax and will appear on all issued invoices.
+            - We recommend using your company address. This address will be used to calculate tax and will appear on all issued invoices.
 
-    - **Country / Region**
+        - **Country / Region**
 
-    - **State / Province**
+        - **State / Province**
 
-    - **City**
+        - **City**
 
-    - **ZIP/Postal Code**
+        - **ZIP/Postal Code**
+
+</Procedures>
 
 All fields above are mandatory. Upon completion, the **Add** button will be activated, allowing you to save your credit card information and billing information.
 

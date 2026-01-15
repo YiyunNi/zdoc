@@ -18,10 +18,10 @@ keywords:
   - auditing
   - log
   - configure
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
 
 ---
 
@@ -29,6 +29,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # VectorDB Audit Logs
 
@@ -148,6 +150,8 @@ Audit logging on Zilliz Cloud forwards audit logs directly to your storage bucke
 
 <Supademo id="cmei9fcd99br6h3pydbp52sv8" title="Zilliz Cloud - Enable audit log" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. In the left-side navigation pane, choose **Clusters**.
@@ -169,6 +173,8 @@ Audit logging on Zilliz Cloud forwards audit logs directly to your storage bucke
     - **Forward Directory**: Specify a directory within the bucket to store audit logs.
 
 1. Click **Enable**. Once the **Audit Log** status is **Active**, it has been enabled successfully. If the status is **Abnormal**, go to [FAQ](./audit-logs#faq) for troubleshooting.
+
+</Procedures>
 
 Once configured, audit logs will be forwarded to your bucket at an interval of about 5 minutes. You can access your bucket to view or manage the logs as needed.
 

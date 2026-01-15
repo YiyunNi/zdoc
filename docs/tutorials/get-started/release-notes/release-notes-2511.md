@@ -1,7 +1,7 @@
 ---
 title: " November 2025 Release Notes  | Cloud"
 slug: /release-notes-2511
-sidebar_label: " November 2025 Release Notes "
+sidebar_label: "November, 2025"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: " November 2025 Release Notes  | Cloud"
 type: origin
 token: CK0ewQWC2iz6lakP0kscqogbnGh
-sidebar_position: 2
+sidebar_position: 4
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
 
 ---
 

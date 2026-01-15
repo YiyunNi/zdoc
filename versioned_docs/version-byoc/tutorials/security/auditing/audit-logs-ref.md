@@ -17,10 +17,10 @@ keywords:
   - cloud
   - auditing
   - log
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
 
 ---
 

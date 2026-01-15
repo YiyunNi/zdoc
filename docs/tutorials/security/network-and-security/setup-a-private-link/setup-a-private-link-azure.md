@@ -22,15 +22,17 @@ keywords:
   - aws
   - gcp
   - azure
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Set up a Private Link (Azure)
 
@@ -82,6 +84,8 @@ Enter the subscription ID copied from the [Microsoft Azure Subscription page](ht
 
 You need to complete this step on your cloud provider console.
 
+<Procedures>
+
 1. Go to [Private Link Center](https://portal.azure.com/#view/Microsoft_Azure_Network/PrivateLinkCenterBlade/~/privateendpoints), and click **+ Create**.
 
     ![TQB9bT5KKojscoxcOZbcZ4Q6nNf](https://zdoc-images.s3.us-west-2.amazonaws.com/tqb9bt5kkojscoxcozbcz4q6nnf.png "TQB9bT5KKojscoxcOZbcZ4Q6nNf")
@@ -118,6 +122,8 @@ You need to complete this step on your cloud provider console.
 
     For example, the value of the key `name` is `zilliz`, and the value of the key `properties.resourceGuid` is `d73e9b55-7b9c-4f8d-8f0a-40e737f1ccbf`. Your Private Endpoint ID should be `zilliz.d73e9b55-7b9c-4f8d-8f0a-40e737f1ccbf`.
 
+</Procedures>
+
 ### Step 4: Authorize your endpoint\{#step-4-authorize-your-endpoint}
 
 Paste the endpoint ID you obtained from the Azure console into the **Endpoint ID** box on Zilliz Cloud. Click **Create**.
@@ -133,6 +139,8 @@ When the private link is ready, you can view it on the **Private Link** page on 
 Before you can access your cluster via the private link allocated by Zilliz Cloud, it is necessary to set up DNS.
 
 ### Step 1: Create a Private DNS Zone on the Azure portal\{#step-1-create-a-private-dns-zone-on-the-azure-portal}
+
+<Procedures>
 
 1. On the **Overview** page of the created Private Endpoint, choose **Settings** > **DNS configuration**, and copy the **IP address** of the network interface created along with the Private Endpoint.
 
@@ -158,7 +166,11 @@ Before you can access your cluster via the private link allocated by Zilliz Clou
 
     ![M401b0RiNoauaHxbBH6crLXlnXc](https://zdoc-images.s3.us-west-2.amazonaws.com/m401b0rinoauahxbbh6crlxlnxc.png "M401b0RiNoauaHxbBH6crLXlnXc")
 
+</Procedures>
+
 ### Step 2: Link the Private DNS Zone to your virtual network.\{#step-2-link-the-private-dns-zone-to-your-virtual-network}
+
+<Procedures>
 
 1. On the Overview page of the created Private DNS Zone, choose **Settings** > **DNS Management** in the left navigation pane.
 
@@ -188,11 +200,15 @@ Before you can access your cluster via the private link allocated by Zilliz Clou
 
     Now the resources in your Azure virtual network can access the Zilliz Cloud cluster privately.
 
+</Procedures>
+
 ## Manage internet access to your clusters\{#manage-internet-access-to-your-clusters}
 
 After configuring your private endpoint, you can choose to disable the cluster public endpoints to restrict internet access to your project. Once you have disabled the public endpoint, users can only connect to the cluster using the private link.
 
 To disable public endpoints:
+
+<Procedures>
 
 1. Go to the **Cluster Details** page of your target cluster.
 
@@ -201,6 +217,8 @@ To disable public endpoints:
 1. Click on the configurations icon next to the cluster public endpoint.
 
 1. Read the information and click **Disable** in the **Disable Public Endpoint** dialog box.
+
+</Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 

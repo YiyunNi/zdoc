@@ -18,10 +18,10 @@ keywords:
   - metrics
   - alerts
   - view
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
 
 ---
 

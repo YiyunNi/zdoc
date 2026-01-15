@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - collection explained
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
 
 ---
 

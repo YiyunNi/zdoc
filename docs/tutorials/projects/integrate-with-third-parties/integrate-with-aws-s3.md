@@ -2,7 +2,7 @@
 title: "Integrate with AWS S3 | Cloud"
 slug: /integrate-with-aws-s3
 sidebar_label: "AWS S3"
-beta: PRIVATE
+beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
@@ -20,10 +20,10 @@ keywords:
   - integrate
   - object
   - storage
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Integrate with AWS S3
 
@@ -54,6 +56,8 @@ Zilliz Cloud allows you to integrate with Amazon Simple Storage Service (Amazon 
 
 <Supademo id="cmeibltu49co2h3pytvtdthb2" title="Step 1: Start integration in Zilliz Cloud console" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. On your project page, navigate to **Integrations** from the left-side navigation pane.
@@ -72,9 +76,13 @@ Zilliz Cloud allows you to integrate with Amazon Simple Storage Service (Amazon 
 
     1. Open the [S3 console](https://us-west-2.console.aws.amazon.com/s3/buckets) and proceed to [step 2](./integrate-with-aws-s3).
 
+</Procedures>
+
 ## Step 2: Create S3 bucket in AWS console\{#step-2-create-s3-bucket-in-aws-console}
 
 <Supademo id="cmeibt2wt9cx1h3pyrojdocrn" title="Step 2: Create S3 bucket (1)" />
+
+<Procedures>
 
 1. In the upper-right corner of the [Amazon S3 console](https://console.aws.amazon.com/s3/), choose the AWS region that matches your Zilliz Cloud cluster’s region.
 
@@ -99,15 +107,21 @@ Zilliz Cloud allows you to integrate with Amazon Simple Storage Service (Amazon 
 
     For more information, refer to [Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html).
 
+</Procedures>
+
 Once the bucket is created, go back to the [Zilliz Cloud console](https://cloud.zilliz.com/login), and do the following:
 
 <Supademo id="cmeibwrd19d3xh3pyx4h7r3d4" title="Step 2: Create S3 bucket (2)" />
+
+<Procedures>
 
 1. In the **Bucket Name** field, enter the name of the bucket you just created (in this example, `zilliz-bucket-for-integration-0819`). Then, click **Next**.
 
 1. In the **Create IAM Policy** step, copy the JSON policy. It will be required in [step 3](./integrate-with-aws-s3).
 
 1. Once completed, open the [IAM console](https://console.aws.amazon.com/iam/) and proceed to [step 3](./integrate-with-aws-s3).
+
+</Procedures>
 
 ## Step 3: Create IAM policy in AWS console\{#step-3-create-iam-policy-in-aws-console}
 
@@ -116,6 +130,8 @@ To give Zilliz Cloud access to AWS S3, create an IAM policy. This policy should 
 <Supademo id="cmeibzhk09d4rh3pyaipwhqi7" title="Step 3: Create IAM policy (1)" />
 
 For simplicity, create a policy using the JSON editor.
+
+<Procedures>
 
 1. In the [IAM console](https://console.aws.amazon.com/iam/), choose **Policies** > **Create policy**.
 
@@ -192,19 +208,27 @@ For simplicity, create a policy using the JSON editor.
 
 1. Choose **Create policy** to save your new policy. Once completed, proceed to [step 4](./integrate-with-aws-s3).
 
+</Procedures>
+
 ## Step 4: Create IAM role\{#step-4-create-iam-role}
 
 Before creating an IAM role in AWS console, do the following in the Zilliz Cloud console:
 
 <Supademo id="cmeic3fab9dajh3pyzp50jnck" title="Step 4: Create IAM role (1)" />
 
+<Procedures>
+
 1. In the Zilliz Cloud console, click **Next** to proceed to the **Create IAM Role** step.
 
 1. In **Select trusted entity**, copy the JSON content, then go to the [IAM console](https://console.aws.amazon.com/iam/).
 
+</Procedures>
+
 Once that's done, do the following to create an IAM role:
 
 <Supademo id="cmeic6bis9dgth3pybfmk8143" title="Step 4: Create IAM role (2)" />
+
+<Procedures>
 
 1. In the [IAM console](https://console.aws.amazon.com/iam/), choose **Roles** > **Create role**.
 
@@ -246,15 +270,21 @@ Once that's done, do the following to create an IAM role:
 
 1. Go to the details page of the created role, copy the **ARN** corresponding to the role. This will be required in Zilliz Cloud console in [step 5](./integrate-with-aws-s3#step-5-validate-and-add-integration).
 
+</Procedures>
+
 ## Step 5: Validate and add integration\{#step-5-validate-and-add-integration}
 
 <Supademo id="cmeicbdyz9dprh3py2wwbguvn" title="Step 5: Validate and add integration" />
+
+<Procedures>
 
 1. In the **Create IAM Role** step of the [Zilliz Cloud console](https://cloud.zilliz.com/login), paste the **ARN** you copied from the IAM console in the previous step.
 
 1. Then, click **Validate Integration** to confirm the S3 bucket and IAM role settings.
 
 1. Once the status changes to **Successful**, the integration works. Then, click **Add**.
+
+</Procedures>
 
 You can now use this integration to export backup files or forward audit logs to your Amazon S3 bucket. For more information, refer to  [Export Backup Files](./export-backup-files) or [Audit Logging](./audit-logs).
 

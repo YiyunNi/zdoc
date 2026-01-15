@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (Jan 27, 2025) | Cloud"
 slug: /release-notes-2130
-sidebar_label: "Release Notes (Jan 27, 2025)"
+sidebar_label: "January 27, 2025"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "Zilliz Cloud now supports Milvus 2.5 in Public Preview, introducing full-text search to complement its semantic search. Using the BM25 metric and sparse vectors for efficient storage and retrieval, this feature allows users to query text directly without conversion. The update also enhances BYOC deployments with Private Link for improved security, easier compliance, and simplified network configuration. Additionally, auto-deployment via AWS CloudFormation is now supported, and the handling of large-scale small-file imports is optimized for faster data ingestion. | Cloud"
 type: origin
 token: LRRVwYzxKioMiMk7cf6czQuhn7d
-sidebar_position: 9
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
 
 ---
 

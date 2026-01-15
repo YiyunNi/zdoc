@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - api availability
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 
@@ -398,7 +398,7 @@ The table below provides a comparison of API availability across various service
      <td><p>✔︎</p></td>
    </tr>
    <tr>
-     <td rowspan="2"><p>Search &amp; Query</p></td>
+     <td rowspan="2"><p>Search & Query</p></td>
      <td><p>search()</p></td>
      <td><p>✔︎</p></td>
      <td><p>✔︎</p></td>

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - backup
   - automatic
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
 
 ---
 
@@ -90,6 +90,9 @@ The following demo shows how to enable and configure automatic backups:
 The following example enables automatic backup for a cluster. For details about the RESTful API, see [Set Backup Policy](/reference/restful/set-backup-policy-v2).
 
 ```bash
+export TOKEN="YOUR_API_KEY"
+export CLUSTER_ID="inxx-xxxxxxxxxxxxxxx"
+
 curl --request POST \
 --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
 --header "Authorization: Bearer ${TOKEN}" \
@@ -99,6 +102,33 @@ curl --request POST \
     "startTime": "02:00-04:00",
     "retentionDays": 7,
     "enabled": true
+}'
+```
+
+To also create cross-region copies for any backups created using the above policy, do as follows:
+
+```bash
+curl --request POST \
+--url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "frequency": "1,2,3,5",
+    "startTime": "02:00-04:00",
+    "retentionDays": 7,
+    "enabled": true,
+    "crossRegionPolicies": [
+        {
+            "regionId": "aws-us-west-2",
+            "retentionDays": 7,
+            "region": "us-west-2"
+        },
+        {
+            "regionId": "aws-us-east-1",
+            "retentionDays": 7,
+            "region": "us-east-1"
+        }
+    ]
 }'
 ```
 
@@ -145,7 +175,19 @@ The following is an example output.
         "status": "ENABLED",
         "startTime": "02:00-04:00",
         "frequency": "1,2,3,5",
-        "retentionDays": 7
+        "retentionDays": 7,
+        "crossRegionPolicies": [
+            {
+                "regionId": "aws-us-west-2",
+                "retentionDays": 7,
+                "region": "us-west-2"
+            },
+            {
+                "regionId": "aws-us-east-1",
+                "retentionDays": 7,
+                "region": "us-east-1"
+            }
+        ]
     }
 }
 ```

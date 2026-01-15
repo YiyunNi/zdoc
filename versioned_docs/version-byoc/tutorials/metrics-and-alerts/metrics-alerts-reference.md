@@ -17,10 +17,10 @@ keywords:
   - cloud
   - metrics
   - alerts
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
 
 ---
 
@@ -144,14 +144,14 @@ These metrics describe resource usage and performance within a project’s clust
      <td><p>Query CU Computation</p></td>
      <td><p>%</p></td>
      <td><p>A measure of the utilized computational power relative to the total computational capacity of the CU.</p></td>
-     <td><ul><li><p>70–80%: check service status &amp; prep <a href="./scale-cluster">scale-up</a>.</p></li><li><p>&gt;90%: <a href="./scale-cluster">scale up</a> to avoid interruption.</p></li></ul></td>
+     <td><blockquote>  <p>60%: Recommended to <a href="./manage-replica">scale out replica </a></p></blockquote></td>
      <td><p>Dedicated / BYOC</p></td>
    </tr>
    <tr>
      <td><p>Query CU Capacity</p></td>
      <td><p>%</p></td>
      <td><p>A measure of the used capacity relative to the total capacity of the CU.</p></td>
-     <td><ul><li><p>70–80%: prep <a href="./scale-cluster">scale up</a>.</p></li><li><blockquote>  <p>90%: <a href="./scale-cluster">scale up</a>.</p></blockquote></li><li><p><strong>100%:</strong> writes are blocked—<a href="./scale-cluster">scale up</a> immediately.</p></li></ul></td>
+     <td><blockquote>  <p>80%:  Recommended to <a href="./scale-query-cu">scale up query CU</a></p></blockquote></td>
      <td><p>Dedicated / BYOC</p></td>
    </tr>
    <tr>
@@ -269,7 +269,7 @@ These metrics describe resource usage and performance within a project’s clust
      <td><p>%</p></td>
      <td><p>The average cache hit rate of all queries in the cluster, calculated as: Cache hit rate per query = (Total scanned data − Cold data scanned) / Total scanned data.</p></td>
      <td><p>Track to identify cluster query performance.</p></td>
-     <td><p>Dedicated (Tiered-storage) / BYOC</p><p>*<em>This metric is only available to tiered-storage clusters compatible with Milvus 2.6.x. To access this metric, <a href="http://support.zilliz.com">contact us</a> to upgrade your cluster Milvus version.</em></p></td>
+     <td><p>Dedicated (Tiered-storage) / BYOC</p><p><em>&ast;This metric is only available to tiered-storage clusters compatible with Milvus 2.6.x. To access this metric, <a href="http://support.zilliz.com">contact us</a> to upgrade your cluster Milvus version.</em></p></td>
    </tr>
 </table>
 
@@ -301,7 +301,7 @@ These metrics describe resource usage and performance within a project’s clust
      <td><p>Loaded Entities (Approx.)</p></td>
      <td><p>count</p></td>
      <td><p>The approximate number of entities loaded (actively served).</p></td>
-     <td><p>For a more accurate and real-time value, please refer to the 'Loaded Entities' value on the collection overview page or use <a href="./single-vector-search">count(*)</a>.</p></td>
+     <td><p>For a more accurate and real-time value, please refer to the 'Loaded Entities' value on the collection overview page or use <a href="./single-vector-search">count(&ast;)</a>.</p></td>
      <td><p>Dedicated / BYOC</p></td>
    </tr>
    <tr>

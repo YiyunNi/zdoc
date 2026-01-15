@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data
   - security
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - manage
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
 
 ---
 
@@ -105,7 +105,7 @@ Enable dynamic scaling for **unpredictable workloads**. Zilliz Cloud automatical
 
     The following is a quick tip to help you choose the right scaling method for your needs:
 
-![ZsKhw59w5hZv4RbjorlclAaEn4e](/img/ZsKhw59w5hZv4RbjorlclAaEn4e.png)
+![ZsKhw59w5hZv4RbjorlclAaEn4e](https://zdoc-images.s3.us-west-2.amazonaws.com/ZsKhw59w5hZv4RbjorlclAaEn4e.png)
 
     - If you have a very clear understanding of your workload patterns—such as consistent daily peaks or planned batch import jobs—**manual** scaling and **scheduled** scaling is right option for you. If you need to adjust the query CU immediately, choose manual scaling. If you want the adjustment to occur recurringly at a specific future time, choose scheduled scaling.
 
@@ -137,7 +137,7 @@ Enable dynamic scaling for **unpredictable workloads**. Zilliz Cloud automatical
 
     The following diagram shows the workflow of a scaling operation in Zilliz Cloud.
 
-![ORwIwl2z2h0XxLbFNLBcdFOlneh](/img/ORwIwl2z2h0XxLbFNLBcdFOlneh.png)
+![ORwIwl2z2h0XxLbFNLBcdFOlneh](https://zdoc-images.s3.us-west-2.amazonaws.com/ORwIwl2z2h0XxLbFNLBcdFOlneh.png)
 
     - **Initiate scaling**: You can submit a scaling request via the web console or through the RESTful API.
 

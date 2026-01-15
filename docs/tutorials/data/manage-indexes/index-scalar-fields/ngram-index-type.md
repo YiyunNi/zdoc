@@ -18,10 +18,10 @@ keywords:
   - scalar field
   - varchar
   - ngram
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
 
 ---
 

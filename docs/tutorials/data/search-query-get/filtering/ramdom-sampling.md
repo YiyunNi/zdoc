@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - random sampling
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 
@@ -85,7 +85,7 @@ filter := "RANDOM_SAMPLE(sampling_factor)"
 
 ```bash
 # restful
-export filterRandomSample='RANDOM_SAMPLE(0.5)'
+export filterRandomSample='RANDOM_SAMPLE(sampling_factor)'
 ```
 
 </TabItem>

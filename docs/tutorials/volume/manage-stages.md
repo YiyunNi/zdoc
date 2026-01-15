@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - volume
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
 
 ---
 

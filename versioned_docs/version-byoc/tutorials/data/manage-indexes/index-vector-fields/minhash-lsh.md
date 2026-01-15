@@ -18,10 +18,10 @@ keywords:
   - vector field
   - index
   - minhash
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
 
 ---
 
@@ -734,7 +734,7 @@ The following table lists the parameters that can be configured in `search_param
    <tr>
      <td><p><code>refine_k</code></p></td>
      <td><p>Number of candidates to retrieve before Jaccard refinement. Only effective when <code>mh_search_with_jaccard</code> is <code>true</code>.</p></td>
-     <td><p>[<em>top_k</em>, *top_k * 10*]</p></td>
+     <td><p>[<em>top_k</em>, <em>top_k &ast; 10</em>]</p></td>
      <td><p>Set to 2-5x the desired <em>top_k</em> for good recall-performance balance. Higher values improve recall but increase computation cost.</p></td>
    </tr>
    <tr>

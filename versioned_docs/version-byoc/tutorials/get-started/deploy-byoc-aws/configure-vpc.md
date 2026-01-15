@@ -21,15 +21,17 @@ keywords:
   - subnet
   - milvus
   - vector database
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Configure a Customer-Managed VPC on AWS
 
@@ -124,6 +126,8 @@ You can create the VPC and related resources using the AWS console. As an altern
 
 On the AWS console, you can create the VPC and related resources enumerated in [VPC requirements](./configure-vpc#vpc-requirements).
 
+<Procedures>
+
 1. Go to the VPC dashboard on AWS.
 
 1. Check the cloud region in the region drop-down in the upper-right corner. Change it to the one as that of your Zilliz Cloud project.
@@ -132,7 +136,25 @@ On the AWS console, you can create the VPC and related resources enumerated in [
 
 1. In **VPC settings**, set as depicted in the following snapshot.
 
-![create-aws-vpc-byoc](https://zdoc-images.s3.us-west-2.amazonaws.com/create-aws-vpc-byoc.png "create-aws-vpc-byoc")
+    ![create-aws-vpc-byoc](https://zdoc-images.s3.us-west-2.amazonaws.com/create-aws-vpc-byoc.png "create-aws-vpc-byoc")
+
+    1. Click **VPC and more**. In **Name tag auto-generation**, enter a name for your project.
+
+    1. In **IPv4 CIDR block**, ensure that the netmask is **/16**.
+
+    1. In **Number of Availability Zones (AZ)**, click **3**. You can expand **Customize AZs** to check the availability zones available.
+
+    1. In **Number of public subnets**, click **3**. These subnets are required to enable NAT gateways in this editor.
+
+    1. In **Number of private subnets**, click **3**. These subnets are required for your Zilliz Cloud BYOC project.
+
+    1. Expand **Customize subnets CIDR blocks**, ensure that the network mask of each public subnet is **/24**, such as **10.0.0.0/24**, **10.0.16.0/24**, and **10.0.32.0/24**, and that of each private subnet is **/18**, such as **10.0.64.0/18**, **10.0.128。0/18**, and **10.0.192.0/18**.
+
+    1. In **NAT gateways**, click **In 1 AZ**.
+
+    1. In **DNS options**, ensure that both options are selected.
+
+    1. In **Additional tags**, click **Add new tag**. Set **Key** to `Vendor` and **Value** to `zilliz-byoc`.
 
 1. Click **Create VPC**.
 
@@ -154,9 +176,13 @@ On the AWS console, you can create the VPC and related resources enumerated in [
 
     ![HZdBb4d4QoLEUzxrkxpcqro4nTe](https://zdoc-images.s3.us-west-2.amazonaws.com/hzdbb4d4qoleuzxrkxpcqro4nte.png "HZdBb4d4QoLEUzxrkxpcqro4nTe")
 
+</Procedures>
+
 ### Step 2: Create a security group\{#step-2-create-a-security-group}
 
 Security groups in a VPC protect your AWS resources by controlling inbound and outbound traffic, acting as a virtual firewall for your EC2 instances. You can create security groups as follows:
+
+<Procedures>
 
 1. Go to the VPC dashboard on AWS.
 
@@ -186,6 +212,8 @@ Security groups in a VPC protect your AWS resources by controlling inbound and o
 
     ![KMuWbhLTVoiyCjx1HXjcGERunZd](https://zdoc-images.s3.us-west-2.amazonaws.com/kmuwbhltvoiycjx1hxjcgerunzd.png "KMuWbhLTVoiyCjx1HXjcGERunZd")
 
+</Procedures>
+
 ### Step 3: (Optional) Create a VPC endpoint\{#step-3-optional-create-a-vpc-endpoint}
 
 VPC endpoint ensures secure cluster connectivity relay and enables private calls to Zilliz Cloud REST APIs. For guidance on managing VPC endpoints with the AWS Management Console, see the [AWS article Create VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/create-interface-endpoint.html) in the AWS Management Console, or use the following procedure:
@@ -195,6 +223,8 @@ VPC endpoint ensures secure cluster connectivity relay and enables private calls
 <p>The VPC endpoint created in this section is used to set up an AWS PrivateLink. Once the VPC endpoint is ready, you must create a hosted zone and add some DNS records. For details, refer to <a href="./setup-a-private-link-aws">Set up a PrivateLink (AWS)</a>.</p>
 
 </Admonition>
+
+<Procedures>
 
 1. Go to the **VPC dashboard** on AWS.
 
@@ -251,6 +281,8 @@ VPC endpoint ensures secure cluster connectivity relay and enables private calls
         ![BUejbgXWJoXi5jxDmZnc7Ogdnah](https://zdoc-images.s3.us-west-2.amazonaws.com/buejbgxwjoxi5jxdmznc7ogdnah.png "BUejbgXWJoXi5jxDmZnc7Ogdnah")
 
     1. If not, check your settings and make necessary changes.
+
+</Procedures>
 
 ### Step 4: Submit VPC information to Zilliz Cloud\{#step-4-submit-vpc-information-to-zilliz-cloud}
 

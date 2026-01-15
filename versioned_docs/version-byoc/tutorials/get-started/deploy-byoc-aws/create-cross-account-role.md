@@ -19,10 +19,10 @@ keywords:
   - IAM role
   - milvus
   - vector database
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
 
 ---
 
@@ -30,6 +30,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create Cross-Account IAM Role
 
@@ -50,6 +52,8 @@ You can use the AWS console to create the bootstrap role. As an alternative, you
 In this step, you will create a cross-account IAM role for the communications between Zilliz Cloud and your VPC.
 
 <Supademo id="cmb913tte0m0usn1rnm0ft6bp" title=""  />
+
+<Procedures>
 
 1. On the Zilliz Cloud console, copy **External ID** displayed in the setup guide.
 
@@ -79,11 +83,15 @@ In this step, you will create a cross-account IAM role for the communications be
 
 1. Go back to the Zilliz Cloud console, paste the role ARN in **IAM Role ARN** under **EKS settings**.
 
+</Procedures>
+
 ### Step 2: Add permissions\{#step-2-add-permissions}
 
 This step is solely on the AWS console. In this step, you will create an inline policy for the role created above.
 
 <Supademo id="cmb92f3910mpwsn1rtrjo3szx" title=""  />
+
+<Procedures>
 
 1. Go to the details page of the created role. In the **Permissions policies** section, click **Add permissions**, and choose **Create inline policy**.
 
@@ -391,4 +399,4 @@ This step is solely on the AWS console. In this step, you will create an inline 
 
 1. In **Review and create**, enter a policy name, review the permissions, and click **Create policy**.
 
-    
+</Procedures>

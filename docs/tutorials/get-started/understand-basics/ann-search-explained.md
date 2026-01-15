@@ -17,10 +17,10 @@ keywords:
   - cloud
   - ann search
   - milvus
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
 
 ---
 

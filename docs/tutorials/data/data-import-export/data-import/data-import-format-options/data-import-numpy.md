@@ -140,6 +140,12 @@ curl --request POST \
     }'
 ```
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the folder contains multiple formats of files, the request will fail.</p>
+
+</Admonition>
+
 ## Storage paths\{#storage-paths}
 
 Zilliz Cloud supports data import from your cloud storage. The table below lists the possible storage paths for your data files.
@@ -193,7 +199,7 @@ There are some limits you need to observe when you import data in NumPy files fr
      <td><p>1 GB</p></td>
    </tr>
    <tr>
-     <td><p>Serverless &amp; Dedicated</p></td>
+     <td><p>Serverless & Dedicated</p></td>
      <td><p>1,000 subdirectories</p></td>
      <td><p>10 GB</p></td>
      <td><p>1 TB</p></td>

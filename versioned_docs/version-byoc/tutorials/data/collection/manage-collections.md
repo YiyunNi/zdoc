@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - collection explained
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
 
 ---
 

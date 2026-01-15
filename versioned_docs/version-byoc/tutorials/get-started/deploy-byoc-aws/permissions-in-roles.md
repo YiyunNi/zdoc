@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "This page lists all IAM permissions that Zilliz Cloud requires to perform operations on your behalf. | BYOC"
+description: "This page lists all IAM permissions that Zilliz Cloud requires to perform operations during the setup of the control plan on your behalf. | BYOC"
 type: origin
 token: IOPFwYrC2iJDw3k2iElcBrkMnef
 sidebar_position: 5
@@ -19,10 +19,10 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # Permissions in Roles
 
-This page lists all IAM permissions that Zilliz Cloud requires to perform operations on your behalf. 
+This page lists all IAM permissions that Zilliz Cloud requires to perform operations during the setup of the control plan on your behalf. 
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -41,7 +41,7 @@ This page lists all IAM permissions that Zilliz Cloud requires to perform operat
 
 ## Storage role permissions\{#storage-role-permissions}
 
-You have created an S3 bucket and a storage role. Zilliz Cloud assumes this role with the following permissions.
+You have created an S3 bucket and a storage role. Zilliz Cloud assumes this role with the following permissions during control plane setup.
 
 <table>
    <tr>
@@ -73,7 +73,7 @@ You have created an S3 bucket and a storage role. Zilliz Cloud assumes this role
 
 ## EKS role permissions\{#eks-role-permissions}
 
-You have created an EKS role with the following permissions for Zilliz Cloud to manage the EKS cluster.
+You have created an EKS role with the following permissions for Zilliz Cloud to manage the EKS cluster during control plane setup.
 
 ### AWS-managed permissions\{#aws-managed-permissions}
 
@@ -143,7 +143,7 @@ The following tables list the specific sets of permissions. For details on each 
 
 ## Cross-account role permissions\{#cross-account-role-permissions}
 
-You have created a cross-account role with the following permissions for Zilliz Cloud to deploy the BYOC solution in your EKS cluster.
+You have created a cross-account role with the following permissions for Zilliz Cloud to set up the BYOC control plane in your EKS cluster.
 
 <table>
    <tr>

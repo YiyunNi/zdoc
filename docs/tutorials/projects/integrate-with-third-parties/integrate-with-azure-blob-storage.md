@@ -2,7 +2,7 @@
 title: "Integrate with Azure Blob Storage | Cloud"
 slug: /integrate-with-azure-blob-storage
 sidebar_label: "Azure Blob Storage"
-beta: PRIVATE
+beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
@@ -20,15 +20,17 @@ keywords:
   - azure
   - blob
   - storage
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Integrate with Azure Blob Storage
 
@@ -52,6 +54,8 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Azure P
 
 ## Step 1: Start integration on Zilliz Cloud\{#step-1-start-integration-on-zilliz-cloud}
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. On your project page, navigate to **Integrations** from the left-side navigation pane.
@@ -68,7 +72,11 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Azure P
 
     Then, click **Next** to proceed.
 
+</Procedures>
+
 ## Step 2: Create a container on Azure Portal\{#step-2-create-a-container-on-azure-portal}
+
+<Procedures>
 
 1. Log in to [Azure Portal](https://portal.azure.com/#home).
 
@@ -98,7 +106,11 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Azure P
 
     ![integrate-with-azure-blob-3](https://zdoc-images.s3.us-west-2.amazonaws.com/integrate-with-azure-blob-3.png "integrate-with-azure-blob-3")
 
+</Procedures>
+
 ## Step 3: Register an application and add credential\{#step-3-register-an-application-and-add-credential}
+
+<Procedures>
 
 1. Return to [Azure Portal](https://portal.azure.com/#home), search for **App registrations**, and select it.
 
@@ -144,7 +156,11 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Azure P
 
 1. Return to the [Zilliz Cloud console](https://cloud.zilliz.com/login), then click **Next** to proceed.
 
+</Procedures>
+
 ## Step 4: Add role assignment\{#step-4-add-role-assignment}
+
+<Procedures>
 
 1. In the [Azure Portal](https://portal.azure.com/#home),  go to **Access Control (IAM)** > **+ Add** > **Add role assignment**.
 
@@ -160,11 +176,17 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Azure P
 
 1. On the **Review + assign** tab, click **Review + assign** to confirm.
 
+</Procedures>
+
 ## Step 5: Validate and create integration\{#step-5-validate-and-create-integration}
+
+<Procedures>
 
 1. In the [Zilliz Cloud console](https://cloud.zilliz.com/login), click **Validate Integration** to verify that the container and role assignment settings are valid.
 
 1. Once validation is successful, click **Create** to finalize the integration.
+
+</Procedures>
 
 Your Azure Blob Storage is now integrated with Zilliz Cloud for exporting backup files. For more information, refer to  [Export Backup Files](./export-backup-files).
 

@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Data backup and restore for your data stored in Zilliz Cloud clusters. | BYOC"
 type: origin
 token: VvikwOKc9iZ5vBkgMnycrXKmnId
-sidebar_position: 8
+sidebar_position: 9
 keywords: 
   - zilliz
   - vector database
   - cloud
   - backup
   - restore
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
 
 ---
 

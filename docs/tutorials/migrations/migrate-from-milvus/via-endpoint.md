@@ -18,10 +18,10 @@ keywords:
   - migrations
   - milvus
   - endpoint
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
 
 ---
 
@@ -29,6 +29,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Migrate from Milvus to Zilliz Cloud Via Endpoint
 
@@ -119,7 +121,10 @@ After the migration job is completed, note the following:
 
 If the migration process encounters any issues, you can take the following steps to troubleshoot and resume the migration:
 
+<Procedures>
+
 1. On the [Jobs](./job-center) page, identify the failed migration job and cancel it.
 
 1. Click **View Details** in the **Actions** column to access the error log.
 
+</Procedures>

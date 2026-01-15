@@ -17,10 +17,10 @@ keywords:
   - cloud
   - autoindex
   - milvus
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
 
 ---
 

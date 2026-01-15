@@ -17,10 +17,10 @@ keywords:
   - cloud
   - marketplace
   - aws
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - open source vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
 
 ---
 
@@ -28,6 +28,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Subscribe on AWS Marketplace
 
@@ -54,6 +56,8 @@ This guide provides a step-by-step walkthrough of the subscription process and o
 <Supademo id="cm9hwfyvq1zgoljv5tu13vdk6" title="Zilliz Cloud - AWS Marketplace Subscription Demo" />
 
 Visit [AWS Marketplace](https://aws.amazon.com/marketplace) and start subscribing to Zilliz Cloud as follows:
+
+<Procedures>
 
 1. Search for **Zilliz Cloud** in the search box, or [go to AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-iqbidum7feuio?trk=8d276e92-b310-40ce-908f-23a198ca7ffc&sc_channel=el&source=zilliz) to view the Zilliz Cloud portal page.
 
@@ -97,6 +101,8 @@ Visit [AWS Marketplace](https://aws.amazon.com/marketplace) and start subscribin
 
     ![aws-marketplace-success](https://zdoc-images.s3.us-west-2.amazonaws.com/aws-marketplace-success.png "aws-marketplace-success")
 
+</Procedures>
+
 ## Upgrade to paid subscription from free trial\{#upgrade-to-paid-subscription-from-free-trial}
 
 When you start a free trial of Zilliz Cloud on AWS Marketplace, you get the same features as the regular Zilliz Cloud free trial. For details, see [Try Zilliz Cloud For Free](./free-trials#free-trial). 
@@ -104,6 +110,8 @@ When you start a free trial of Zilliz Cloud on AWS Marketplace, you get the same
 During the free trial, a `Free Trial` tag will appear next to AWS Marketplace Subscription on the **Billing Overview** page.
 
 For more advanced features, you can upgrade to a paid AWS subscription anytime. To upgrade, simply follow the normal subscription process explained in the previous section. You can click here for a [demo](./subscribe-on-aws-marketplace#subscribe-on-aws-marketplace).
+
+<Procedures>
 
 1. Navigate to the [Zilliz Cloud page](https://aws.amazon.com/marketplace/pp/prodview-iqbidum7feuio?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) on AWS Marketplace.
 
@@ -115,6 +123,8 @@ For more advanced features, you can upgrade to a paid AWS subscription anytime. 
 
 1. Log into your Zilliz Cloud account and link the AWS Marketplace subscription to a Zilliz Cloud organization.
 
+</Procedures>
+
 You can check if the upgrade is successful by navigating to the **Payment Method** card on the **Billing Overview** page. If the `Free Trial` tag next to AWS Marketplace Subscription disappears, the upgrade is successful. 
 
 ## Update AWS Marketplace subscription\{#update-aws-marketplace-subscription}
@@ -122,6 +132,8 @@ You can check if the upgrade is successful by navigating to the **Payment Method
 After successfully subscribing from AWS Marketplace, you can always update your subscription at any time that you see fit. More specifically, you can either change the AWS Marketplace account used for the subscription to another one or switch your payment method from an AWS Marketplace subscription to a credit card.
 
 ### Change AWS Marketplace subscription account\{#change-aws-marketplace-subscription-account}
+
+<Procedures>
 
 1. Sign in to AWS Marketplace with the original AWS account you used for the subscription.
 
@@ -151,6 +163,8 @@ After successfully subscribing from AWS Marketplace, you can always update your 
 
     ![view-aws-subscription-id](https://zdoc-images.s3.us-west-2.amazonaws.com/view-aws-subscription-id.png "view-aws-subscription-id")
 
+</Procedures>
+
 <Admonition type="info" icon="📘" title="Note">
 
 <p>We recommend completing the operations within 1 hour to avoid service interruption.</p>
@@ -160,6 +174,8 @@ After successfully subscribing from AWS Marketplace, you can always update your 
 ### Switch to payment credit card\{#switch-to-payment-credit-card}
 
 <Supademo id="cm9i80zwc26e2ljv56y6iydeu" title="Zilliz Cloud - Change Payment Method Demo" />
+
+<Procedures>
 
 1. Sign in to AWS Marketplace with the original AWS account you used for the subscription.
 
@@ -177,6 +193,8 @@ After successfully subscribing from AWS Marketplace, you can always update your 
 
 1. Verify the update in the **Payment Method** section on the **Billing Overview** page.
 
+</Procedures>
+
 ## Cancel AWS Marketplace subscription\{#cancel-aws-marketplace-subscription}
 
 To cancel your AWS Marketplace subscription, you need to open the AWS Marketplace console and follow the instructions [in the AWS guides](https://docs.aws.amazon.com/marketplace/latest/buyerguide/cancel-subscription.html).
@@ -191,33 +209,33 @@ Please refer to [Payment & Billing](./payment-billing#marketplace-pricing-terms)
 
 There could be several reasons.
 
-1. **Insufficient permissions** 
+- **Insufficient permissions** 
 
-    This can happen when you do not have sufficient privileges. You will see an **"Insufficient Permissions"** tag next to the unavailable organization.
+    - This can happen when you do not have sufficient privileges. You will see an **"Insufficient Permissions"** tag next to the unavailable organization.
 
     ![insufficient-permission-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/insufficient-permission-subscription.png "insufficient-permission-subscription")
 
-    To link an organization with a marketplace subscription, you must be an **Organization Owner** or an **Organization Billing Admin**. But if you are only an Organization Member, you do not have the required permissions. Please contact the organization owner for assistance.
+    - To link an organization with a marketplace subscription, you must be an **Organization Owner** or an **Organization Billing Admin**. But if you are only an Organization Member, you do not have the required permissions. Please contact the organization owner for assistance.
 
-1. **All organizations have already been successfully linked to a Marketplace subscription**
+- **All organizations have already been successfully linked to a Marketplace subscription**
 
-    This can happen when all your organizations are already linked to Marketplace subscriptions. You will see a **"Marketplace Linked"** tag next to the unavailable organization.
+    - This can happen when all your organizations are already linked to Marketplace subscriptions. You will see a **"Marketplace Linked"** tag next to the unavailable organization.
 
     ![marketplace-already-linked-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/marketplace-already-linked-subscription.png "marketplace-already-linked-subscription")
 
     In this case,
 
-    1. If you need to update an existing marketplace subscription, please [unlink](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) the current subscription of the organization first and then set up a new subscription.
+    - If you need to update an existing marketplace subscription, please [unlink](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) the current subscription of the organization first and then set up a new subscription.
 
-    1. If you need multiple organizations for different Marketplace subscription, you can:
+    - If you need multiple organizations for different Marketplace subscription, you can:
 
-        1. [Register](./register-with-zilliz-cloud) a new Zilliz Cloud account to create a new organization. Then, [invite](./organization-users#invite-a-user-to-your-organization) the organization owner to the new organization. This organization owner will then belong to multiple organizations and can setup different marketplace subscriptions for each organization.
+        - [Register](./register-with-zilliz-cloud) a new Zilliz Cloud account to create a new organization. Then, [invite](./organization-users#invite-a-user-to-your-organization) the organization owner to the new organization. This organization owner will then belong to multiple organizations and can setup different marketplace subscriptions for each organization.
 
-        1. [Create a support ticket](http://support.zilliz.com) so that we will create new organizations for you. Currently, Zilliz Cloud does not support manually creating organizations by users.
+        - [Create a support ticket](http://support.zilliz.com) so that we will create new organizations for you. Currently, Zilliz Cloud does not support manually creating organizations by users.
 
-1. **No organizations in the list**
+- **No organizations in the list**
 
-    This can happen if your account has been closed or if you have left all organizations. Your UI will be similar to the following.
+    - This can happen if your account has been closed or if you have left all organizations. Your UI will be similar to the following.
 
     ![no-organization-during-subcription](https://zdoc-images.s3.us-west-2.amazonaws.com/no-organization-during-subcription.png "no-organization-during-subcription")
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - limits
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
 
 ---
 

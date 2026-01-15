@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - backup
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
 
 ---
 

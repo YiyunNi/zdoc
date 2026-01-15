@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - feature availability
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
 
 ---
 
@@ -86,6 +86,10 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 - [Export backup files](./export-backup-files)
 
+- [Hosted models](./hosted-models)
+
+- [Global cluster](./global-cluster)
+
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>Contact <a href="http://support.zilliz.com">Zilliz Support</a> to request access to these features. </p>
@@ -94,7 +98,13 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 ### Public preview\{#public-preview}
 
-N/A
+- [Embedding](./model-based-functions) and [Rerank](./reranking) Functions
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Upgrade your cluster Milvus version to access these features.</p>
+
+</Admonition>
 
 ### Deprecation notice\{#deprecation-notice}
 

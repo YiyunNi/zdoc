@@ -19,10 +19,10 @@ keywords:
   - milvus
   - format options
   - parquet
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
 
 ---
 
@@ -127,6 +127,12 @@ curl --request POST \
         "secretKey": ""
     }'
 ```
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the folder contains multiple formats of files, the request will fail.</p>
+
+</Admonition>
 
 ### Import a single file\{#import-a-single-file}
 

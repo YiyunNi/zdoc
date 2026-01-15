@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - bulk writer
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
 
 ---
 
@@ -868,7 +868,7 @@ Possible folder structures are as follows:
        </tr>
        <tr>
          <td><p><strong>NumPy</strong></p></td>
-         <td><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/</em></p><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/</em>.npy*</p></td>
+         <td><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/</em></p><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/&ast;.npy</em></p></td>
        </tr>
     </table>
 
@@ -921,7 +921,7 @@ Possible folder structures are as follows:
        </tr>
        <tr>
          <td><p><strong>NumPy</strong></p></td>
-         <td><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/</em></p><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/</em>.npy*</p></td>
+         <td><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/</em></p><p><em>s3://remote_bucket/folder/45ae1139-1d87-4aff-85f5-0039111f9e6b/&ast;.npy</em></p></td>
        </tr>
     </table>
 

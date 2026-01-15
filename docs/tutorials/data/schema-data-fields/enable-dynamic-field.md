@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - dynamic field
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
 
 ---
 
@@ -723,7 +723,7 @@ export nestedIndex='{
 
 If a dynamic field key contains values in an incorrect format, (e.g. numbers stored as strings), you can use a cast function to convert it:
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"},{"label":"Java","value":"java"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -804,18 +804,6 @@ export stringPriceIndex='{
     "json_cast_function": "STRING_TO_DOUBLE"
   }
 }'
-
-```
-
-</TabItem>
-
-<TabItem value='java'>
-
-```java
-milvus::IndexDesc string_price_index("dynamic_json", "json_string_price_index", milvus::IndexType::AUTOINDEX);
-string_price_index.AddExtraParam("json_cast_type", "double");
-string_price_index.AddExtraParam("json_path", "dynamic_json['string_price']");
-string_price_index.AddExtraParam("json_cast_function", "STRING_TO_DOUBLE");
 
 ```
 

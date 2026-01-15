@@ -20,10 +20,10 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - cosine distance
-  - what is a vector database
-  - vectordb
   - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create GKE Service Account
 
@@ -49,6 +51,8 @@ You can use the Google Cloud Platform (GCP) dashboard to create the EKS role. Al
 <Supademo id="cmc1oadayjm7fsn1rqyu2h33u" title=""  />
 
 The steps for creating a service account are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **IAM & Admin**.
 
@@ -92,3 +96,4 @@ The steps for creating a service account are as follows:
 
 1. Cilck **Save** again to grant the configured permissions.
 
+</Procedures>

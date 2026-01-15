@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - manage
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
 
 ---
 

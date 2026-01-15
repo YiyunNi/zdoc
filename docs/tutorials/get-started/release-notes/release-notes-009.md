@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (Dec 5, 2022) | Cloud"
 slug: /release-notes-009
-sidebar_label: "Release Notes (Dec 5, 2022)"
+sidebar_label: "December 5, 2022"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are pleased to announce the general availability of a significant update to Zilliz Cloud. This release introduces a new console for Zilliz Cloud services, supports new cloud regions, and allows secure cluster access through private links. | Cloud"
 type: origin
 token: QZXVwFVH3i1p08kal8vcAmmxnie
-sidebar_position: 30
+sidebar_position: 32
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
 
 ---
 

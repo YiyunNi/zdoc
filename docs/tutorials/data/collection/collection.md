@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - collection
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 
 ---
 

@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - data export
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
 
 ---
 

@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "The BM25 function enables full-text search by transforming raw text into sparse vectors and scoring documents based on lexical relevance. It applies term-based matching and frequency-aware weighting to support efficient retrieval of text documents that closely match query terms. | Cloud"
+description: "The BM25 function enables full text search by transforming raw text into sparse vectors and scoring documents based on lexical relevance. It applies term-based matching and frequency-aware weighting to support efficient retrieval of text documents that closely match query terms. | Cloud"
 type: origin
 token: YbChwcPMBim5ryk1EQocEbDenDd
 sidebar_position: 2
@@ -19,10 +19,10 @@ keywords:
   - model
   - inference
   - bm25
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
 
 ---
 
@@ -34,19 +34,19 @@ import Supademo from '@site/src/components/Supademo';
 
 # BM25 Function
 
-The **BM25 function** enables full-text search by transforming raw text into **sparse vectors** and scoring documents based on lexical relevance. It applies term-based matching and frequency-aware weighting to support efficient retrieval of text documents that closely match query terms.
+The **BM25 function** enables [full text search](./full-text-search) by transforming raw text into **sparse vectors** and scoring documents based on lexical relevance. It applies term-based matching and frequency-aware weighting to support efficient retrieval of text documents that closely match query terms.
 
-As a local text function, BM25 runs entirely within Zilliz Cloud and does not require model inference or external integrations. It provides a deterministic and transparent retrieval mechanism for text-based search scenarios.
+As a local text function, the BM25 function runs within Zilliz Cloud and does not require model inference or external integrations. It provides a deterministic and transparent retrieval mechanism for text-based search scenarios.
 
 ## How BM25 works\{#how-bm25-works}
 
-BM25 is a term-based relevance scoring algorithm widely used in full-text retrieval. In MilvusZilliz Cloud, BM25 is implemented as a sparse retrieval pipeline that converts text into term-weight representations and retrieves top-K documents using distributed sparse indexes.
+The [BM25](https://en.wikipedia.org/wiki/Okapi_BM25) algorithm is a term-based relevance scoring algorithm widely used in full text retrieval. In Zilliz Cloud, BM25 is implemented as a sparse retrieval pipeline that converts text into term-weight representations and retrieves top *K* documents using distributed sparse indexes.
 
-The overall workflow consists of two symmetric paths: **document ingestion** and **query processing**, which share the same text analysis logic.
+The overall workflow consists of two symmetric paths: **document ingestion** and **query text processing**, which share the same text analysis logic.
 
-### Document ingestion: from text to sparse representation\{#document-ingestion-from-text-to-sparse-representation}
+### Document ingestion: From text to sparse representation\{#document-ingestion-from-text-to-sparse-representation}
 
-When a document is inserted, its raw text is first processed by an **analyzer**, which tokenizes the text into individual terms.
+When a document is inserted, its raw text is first processed by an **[analyzer](./analyzer-overview)**, which tokenizes the text into individual terms.
 
 For example, the document:
 
@@ -54,13 +54,13 @@ For example, the document:
 "We are loving Milvus!"
 ```
 
-is analyzed into the following terms:
+can be analyzed into the following terms:
 
 ```plaintext
 ["we", "love", "milvus"]
 ```
 
-Each document is then represented as a term frequency (TF) representation, which records how many times each term appears in the document:
+Each document is then represented as a term frequency (TF) representation, which records how many times each term appears in the document. For example:
 
 ```plaintext
 {
@@ -70,7 +70,7 @@ Each document is then represented as a term frequency (TF) representation, which
 }
 ```
 
-At the same time, the system updates corpus-level statistics, including:
+At the same time, Zilliz Cloud updates corpus-level statistics, including:
 
 - the document frequency (DF) of each term
 
@@ -78,11 +78,11 @@ At the same time, the system updates corpus-level statistics, including:
 
 - posting lists that map each term to the documents containing it
 
-The document’s TF representation is inserted into **sparse embeddings**, where term postings are partitioned across nodes for scalable retrieval.
+The document's TF representation is inserted into **sparse embeddings**, where term postings are partitioned across nodes for scalable retrieval.
 
-### Query process: applying IDF weighting\{#query-process-applying-idf-weighting}
+### Query text process: Apply IDF weighting\{#query-text-process-apply-idf-weighting}
 
-When a query is issued, it is processed by the **same analyzer** used during document ingestion, ensuring consistent term segmentation.
+When a text-based query is issued, it is processed by the **same analyzer** used during [document ingestion](./bm25-function#document-ingestion-from-text-to-sparse-representation), ensuring consistent term segmentation.
 
 For example, the query:
 
@@ -90,13 +90,13 @@ For example, the query:
 "who loves Milvus?"
 ```
 
-is analyzed into:
+can be analyzed into:
 
 ```plaintext
 ["who", "love", "milvus"]
 ```
 
-For each query term, the system looks up its inverse document frequency (IDF) from corpus statistics. IDF reflects how informative a term is across the entire dataset: rarer terms receive higher weights, while common terms receive lower weights.
+For each query term, Zilliz Cloud looks up its [inverse document frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) (IDF) from corpus statistics. IDF reflects how informative a term is across the entire dataset: rarer terms receive higher weights, while common terms receive lower weights.
 
 Conceptually, this produces a set of IDF-weighted query terms, such as:
 
@@ -110,36 +110,41 @@ Conceptually, this produces a set of IDF-weighted query terms, such as:
 
 ### BM25 scoring and top K retrieval\{#bm25-scoring-and-top-k-retrieval}
 
-BM25 scores a document by combining:
+BM25 ranks documents by computing a relevance score based on matched query terms. Scoring is performed at the **term level** and aggregated at the **document level**.
 
-- the term frequency of each query term in the document
+**Term-level scoring**
 
-- the inverse document frequency of the term
+For each query term that appears in a document, BM25 computes a term-level score:
 
-- document length normalization parameters
+```plaintext
+term_score =
+  IDF(term) ×
+  TF_boost(term, document, k1) ×
+  length_normalization(document, b)
+```
 
-For a single term, the BM25 score is computed as:
+Where:
 
-$$
-\mathrm{score}(q, d)
-=
-\sum_\{t \in q}
-\mathrm{IDF}(t)
-\cdot
-\frac\{
-f(t, d) \cdot (k_1 + 1)
-}\{
-f(t, d) + k_1 \left( 1 - b + b \cdot \frac\{|d|}\{\mathrm{avgdl}} \right)
-}
-$$
+- **IDF(term)** reflects how rare the term is in the collection
 
-The final document score is the sum of BM25 scores over all matched query terms.
+- **TF_boost(…, k1)** increases with term frequency but saturates as frequency grows
 
-## Preparation\{#preparation}
+- **length_normalization(…, b)** adjusts the score based on document length
 
-Before using the BM25 function, plan your collection schema to ensure it supports lexical full text search.
+**Document-level scoring and Top-K retrieval**
 
-In particular, consider the following requirements when designing your collection:
+The final document score is the sum of term-level scores for all matched query terms:
+
+```plaintext
+document_score =
+  sum of term_score over all matched query terms
+```
+
+Documents are ranked by their final scores, and the top-K highest-scoring documents are returned.
+
+## Before you start\{#before-you-start}
+
+Before using the BM25 function, plan your collection schema to ensure it supports lexical full text search:
 
 - **A text field for raw content**
 
@@ -153,9 +158,9 @@ In particular, consider the following requirements when designing your collectio
 
 - **A sparse vector for BM25 output**
 
-    Your collection must include a `SPARSE_FLOAT_VECTOR` field to store the sparse representations generated by the BM25 function. This field is used for indexing and retrieval during search.
+    Your collection must include a `SPARSE_FLOAT_VECTOR` field to store the sparse representations generated by the BM25 function. This field is used for indexing and retrieval during full text search.
 
-After these schema-level considerations are addressed, proceed to create the collection and use the BM25 function.
+After these schema-level considerations are figured out, proceed to create the collection and use the BM25 function.
 
 ## Step 1: Create a collection with a BM25 function\{#step-1-create-a-collection-with-a-bm25-function}
 
@@ -538,7 +543,7 @@ export indexParams='[
 
 #### Create the collection\{#create-the-collection}
 
-Now create the collection using the schema and index parameters defined.
+Now create the collection using the schema and index parameters defined:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -625,7 +630,7 @@ Once the collection with a BM25 function is created, you can insert text and per
 
 ## Step 2: Insert text data into the collection\{#step-2-insert-text-data-into-the-collection}
 
-After setting up your collection and index, you're ready to insert text data. In this process, you need only to provide the raw text. The built-in function we defined earlier automatically generates the corresponding sparse vector for each text entry.
+After setting up your collection and index, you're ready to insert text data. In this process, you need only to provide the raw text. The BM25 function we defined earlier automatically generates the sparse vector for each text entry.
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -759,7 +764,6 @@ SearchResp searchResp = client.search(SearchReq.builder()
 
 ```go
 annSearchParams := index.NewCustomAnnParam()
-annSearchParams.WithExtraParam("drop_ratio_search", 0.2)
 resultSets, err := client.Search(ctx, milvusclient.NewSearchOption(
     "my_collection", // collectionName
     3,               // limit
@@ -815,9 +819,7 @@ curl --request POST \
         "text"
     ],
     "searchParams":{
-        "params":{
-            "level":10
-        }
+        "params":{}
     }
 }'
 ```

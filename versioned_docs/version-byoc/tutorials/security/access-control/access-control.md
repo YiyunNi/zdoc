@@ -18,10 +18,10 @@ keywords:
   - cluster
   - access control
   - rbac
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
 
 ---
 

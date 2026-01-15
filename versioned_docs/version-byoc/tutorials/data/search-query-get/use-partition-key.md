@@ -10,7 +10,7 @@ notebook: FALSE
 description: "The Partition Key is a search optimization solution based on partitions. By designating a specific scalar field as the Partition Key and specifying filtering conditions based on the Partition Key during the search, the search scope can be narrowed down to several partitions, thereby improving search efficiency. This article will introduce how to use the Partition Key and related considerations. | BYOC"
 type: origin
 token: QWqiwrgJViA5AJkv64VcgQX2nKd
-sidebar_position: 16
+sidebar_position: 17
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - data
   - search optimization
   - partition key
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
 
 ---
 
@@ -203,14 +203,24 @@ const client = new MilvusClient({address, token});
 // 3. Create a collection in customized setup mode
 // 3.1 Define fields
 const fields = [
-    {
-        name: "my_varchar",
-        data_type: DataType.VarChar,
-        max_length: 512,
-        // highlight-next-line
-        is_partition_key: true
-    }
-]
+  {
+    name: 'id',
+    data_type: DataType.Int64,
+    is_primary_key: true,
+  },
+  {
+    name: 'vector',
+    data_type: DataType.FloatVector,
+    dim: 5,
+  },
+  {
+    name: 'my_varchar',
+    data_type: DataType.VarChar,
+    max_length: 512,
+    // highlight-next-line
+    is_partition_key: true,
+  },
+];
 ```
 
 </TabItem>

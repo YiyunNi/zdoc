@@ -19,10 +19,10 @@ keywords:
   - data
   - vector search
   - ann
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
 
 ---
 

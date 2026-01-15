@@ -19,10 +19,10 @@ keywords:
   - schema
   - schema design
   - hands-on
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
 
 ---
 

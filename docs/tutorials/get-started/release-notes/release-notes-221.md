@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (Sept 27, 2023) | Cloud"
 slug: /release-notes-221
-sidebar_label: "Release Notes (Sept 27, 2023)"
+sidebar_label: "September 27, 2023"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are excited to announce the launch of Zilliz Cloud. With this release, we are introducing a range of enhancements and features, including increased flexibility with a New CU Size Option, the support for advance pay, and more AWS regions. | Cloud"
 type: origin
 token: YtxBwrPfBiuFDdk10GVcYY1DnGg
-sidebar_position: 22
+sidebar_position: 24
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
 
 ---
 

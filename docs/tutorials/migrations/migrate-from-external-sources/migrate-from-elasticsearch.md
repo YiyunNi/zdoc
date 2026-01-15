@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - elasticsearch
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cu
   - select
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
 
 ---
 
@@ -85,12 +85,6 @@ The following table offers a quick comparison of the three cluster types in diff
 - Best for ultra-large-scale, cost-sensitive workloads with clear hot and cold data patterns.
 
 - Ideal for applications that need to store massive volumes of data at a low cost. The capacity of a Tiered-storage cluster is 4 times that of a Capacity-optimized cluster.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>To select a Tiered-storage cluster, your cluster must have at least 8 query CUs.</p>
-
-</Admonition>
 
 ## Select an optimal cluster type\{#select-an-optimal-cluster-type}
 

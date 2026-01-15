@@ -2,7 +2,7 @@
 title: "Integrate with Google Cloud Storage | Cloud"
 slug: /integrate-with-gcp
 sidebar_label: "Google Cloud Storage"
-beta: PRIVATE
+beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
@@ -20,10 +20,10 @@ keywords:
   - google
   - cloud
   - storage
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Integrate with Google Cloud Storage
 
@@ -56,6 +58,8 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Google 
 
 <Supademo id="cmdzpf4ze0t2bh5wkphtbn39l" title="Step 1: Start integration in Zilliz Cloud console" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. On your project page, navigate to **Integrations** from the left-side navigation pane.
@@ -70,9 +74,13 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Google 
 
     Then, click **Next** to proceed to [Step 2](./integrate-with-gcp#step-2-create-a-role-in-google-admin-console).
 
+</Procedures>
+
 ## Step 2: Create a role in Google Admin console\{#step-2-create-a-role-in-google-admin-console}
 
 <Supademo id="cmdzqastn0uw1h5wklj65425w" title="Step 2: Create role in Google Admin console" />
+
+<Procedures>
 
 1. Log in to the [Google Admin console](https://admin.google.com/).
 
@@ -94,9 +102,13 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Google 
 
 1. Click **Create**.
 
+</Procedures>
+
 ## Step 3: Create a bucket in Google Admin console\{#step-3-create-a-bucket-in-google-admin-console}
 
 <Supademo id="cme0qzcy102dbg56jx7ucft1c" title="Step 3: Create a bucket in Google Admin console (1)" />
+
+<Procedures>
 
 1. Go to the Google Cloud Storage **[Buckets](https://console.cloud.google.com/storage/browser)** page.
 
@@ -114,9 +126,13 @@ The following digram illustrates the necessary steps on Zilliz Cloud and Google 
 
 1. Click **Create**.
 
+</Procedures>
+
 Once the bucket is created, go back to the [Zilliz Cloud console](https://cloud.zilliz.com/login), and do the following:
 
 <Supademo id="cme0rnexv02mng56joiwb4wrg" title="Step 3: Create a bucket in Google Admin console (2)" />
+
+<Procedures>
 
 1. In the **Add Google Cloud Storage Integration** dialog box, proceed to **Step 3 - Create Google Cloud Storage Bucket**
 
@@ -128,9 +144,13 @@ Once the bucket is created, go back to the [Zilliz Cloud console](https://cloud.
 
 1. After, copy the Google Cloud Service Account from Zilliz Cloud console. It will be required when granting access to the bucket in [Step 4](./integrate-with-gcp#step-4-grant-access-to-bucket-in-google-admin-console).
 
+</Procedures>
+
 ## Step 4: Grant access to bucket in Google Admin console\{#step-4-grant-access-to-bucket-in-google-admin-console}
 
 <Supademo id="cme0s7wmr02phg56jw9hix3q1" title="Step 4: Grant access to bucket in Google Admin console" />
+
+<Procedures>
 
 1. In the [Google Admin console](https://console.cloud.google.com/storage/), go to the details page of the bucket you created in [Step 3](./integrate-with-gcp#step-3-create-a-bucket-in-google-admin-console).
 
@@ -142,15 +162,21 @@ Once the bucket is created, go back to the [Zilliz Cloud console](https://cloud.
 
 1. Click **Save**.
 
+</Procedures>
+
 ## Step 5: Validate and add integration\{#step-5-validate-and-add-integration}
 
 <Supademo id="cme0siceh02thg56jeh3wlbgw" title="Step 5: Validate and add integration" />
 
 Once you grant access to the bucket, go back to the Zilliz Cloud console and do the following:
 
+<Procedures>
+
 1. Click **Validate Integration** to verify that the container and role assignment settings are valid.
 
 1. Once validation is successful, click **Add** to finalize the integration.
+
+</Procedures>
 
 Your Google Cloud Storage is now integrated with Zilliz Cloud for exporting audit logs or backup files. For more information, refer to [Audit Logging](./audit-logs) or [Export Backup Files](./export-backup-files).
 

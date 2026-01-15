@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - project jobs
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
 
 ---
 
@@ -89,7 +89,7 @@ The following job information is displayed:
          <td><p>Manually resume a cluster</p></td>
        </tr>
        <tr>
-         <td><p><a href="./scale-cluster">Scale Query CU</a></p></td>
+         <td><p><a href="./scale-query-cu">Scale Query CU</a></p></td>
          <td><p>Increase or decrease the number of query CUs of a cluster.</p></td>
        </tr>
        <tr>

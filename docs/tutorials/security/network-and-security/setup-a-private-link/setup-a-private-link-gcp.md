@@ -22,15 +22,17 @@ keywords:
   - aws
   - gcp
   - azure
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Set up a Private Service Connect (GCP)
 
@@ -80,6 +82,8 @@ You can create an endpoint either via the Google Cloud Dashboard (**via UI Conso
 
 Click **Copy and Go** on the Zilliz Cloud console to open the Private Service Connect list on GCP and follow the steps below to create an endpoint:
 
+<Procedures>
+
 1. On the [Private Service Connect](https://console.cloud.google.com/net-services/psc) page that opens, click **+ Connect endpoint**.
 
 1. For **Target**, select **Published service**.
@@ -102,9 +106,13 @@ Click **Copy and Go** on the Zilliz Cloud console to open the Private Service Co
 
 1. Copy the endpoint name and go back to the Zilliz Cloud console.
 
+</Procedures>
+
 #### Via CLI\{#via-cli}
 
 ![OurbbN4HdodjSNx9ph2cWTwWnIc](https://zdoc-images.s3.us-west-2.amazonaws.com/ourbbn4hdodjsnx9ph2cwtwwnic.png "OurbbN4HdodjSNx9ph2cWTwWnIc")
+
+<Procedures>
 
 1. Switch to the **Via CLI** tab.
 
@@ -158,6 +166,8 @@ Click **Copy and Go** on the Zilliz Cloud console to open the Private Service Co
 
     When the endpoint is created, navigate to the [Google Cloud Private Service Connect page](https://console.cloud.google.com/net-services/psc/list/consumers) and copy the name of the endpoint you just created. 
 
+</Procedures>
+
 ### Authorize your endpoint\{#authorize-your-endpoint}
 
 Paste the endpoint ID and project ID you obtained from the Google Cloud console into the **Endpoint ID** and **Project ID** box respectively on Zilliz Cloud. Click **Create**.
@@ -190,6 +200,8 @@ Go to [Cloud DNS](https://console.cloud.google.com/net-services/dns/zones) in yo
 
 ![V0XRbvlgLoHRPexZSzEcFB5rn17](https://zdoc-images.s3.us-west-2.amazonaws.com/v0xrbvlglohrpexzszecfb5rn17.png "V0XRbvlgLoHRPexZSzEcFB5rn17")
 
+<Procedures>
+
 1. Select **Private** in **Zone type**.
 
 1. Set **Zone name** to `zilliz-privatelink-zone` or other values that you see fit.
@@ -202,7 +214,11 @@ Go to [Cloud DNS](https://console.cloud.google.com/net-services/dns/zones) in yo
 
 1. Click **CREATE**.
 
+</Procedures>
+
 ### Create a record in the hosted zone\{#create-a-record-in-the-hosted-zone}
+
+<Procedures>
 
 1. In the zone created above, click **ADD STANDARD** in the **RECORD SETS** tab.
 
@@ -216,11 +232,15 @@ Go to [Cloud DNS](https://console.cloud.google.com/net-services/dns/zones) in yo
 
 1. Click **CREATE**.
 
+</Procedures>
+
 ## Manage internet access to your clusters\{#manage-internet-access-to-your-clusters}
 
 After configuring your private endpoint, you can choose to disable the cluster public endpoints to restrict internet access to your project. Once you have disabled the public endpoint, users can only connect to the cluster using the private link.
 
 To disable public endpoints:
+
+<Procedures>
 
 1. Go to the **Cluster Details** page of your target cluster.
 
@@ -229,6 +249,8 @@ To disable public endpoints:
 1. Click on the configurations icon next to the cluster public endpoint.
 
 1. Read the information and click **Disable** in the **Disable Public Endpoint** dialog box.
+
+</Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 

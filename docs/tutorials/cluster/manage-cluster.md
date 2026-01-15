@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - manage
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - api availability
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
 
 ---
 
@@ -398,7 +398,7 @@ The table below provides a comparison of API availability across various service
      <td><p>✔︎</p></td>
    </tr>
    <tr>
-     <td rowspan="2"><p>Search &amp; Query</p></td>
+     <td rowspan="2"><p>Search & Query</p></td>
      <td><p>search()</p></td>
      <td><p>✔︎</p></td>
      <td><p>✔︎</p></td>

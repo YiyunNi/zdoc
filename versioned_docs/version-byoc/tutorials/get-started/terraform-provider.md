@@ -17,15 +17,17 @@ keywords:
   - cloud
   - terraform provider
   - terraform
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Terraform Provider
 
@@ -37,6 +39,8 @@ The [Zilliz Cloud Terraform Provider](https://registry.terraform.io/providers/zi
 
 Before you begin a resource deployment using Terraform, you must authenticate Terraform with the Zilliz Cloud platform. You must use a Zilliz Cloud API key with the appropriate permissions to complete authentication before any operations with this Terraform provider. To create a Zilliz Cloud API key, follow these steps:
 
+<Procedures>
+
 1. Sign in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
 1. On the right of the top navigation bar, click **API Keys**.
@@ -44,6 +48,8 @@ Before you begin a resource deployment using Terraform, you must authenticate Te
 1. Click **+ API Key** in the top right corner on the API Keys page.
 
 1. In the **Create API Key** dialog box that appears, enter an API key name and configure its access privileges, and click **Create** to generate an API key.
+
+</Procedures>
 
 For more information about managing API keys, refer to [API Keys](/docs/byoc/manage-api-keys).
 

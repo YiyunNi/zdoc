@@ -17,10 +17,10 @@ keywords:
   - cloud
   - auditing
   - log
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
 
 ---
 

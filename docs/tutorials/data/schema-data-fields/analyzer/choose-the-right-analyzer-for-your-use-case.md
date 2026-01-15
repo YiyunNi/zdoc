@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - best
   - practice
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 
@@ -66,7 +66,7 @@ An inappropriate analyzer can cause either under- or over-tokenization, missing 
    <tr>
      <th><p>Problem</p></th>
      <th><p>Symptom</p></th>
-     <th><p>Example (Input &amp; Output)</p></th>
+     <th><p>Example (Input & Output)</p></th>
      <th><p>Cause (Bad Analyzer)</p></th>
      <th><p>Solution (Good Analyzer)</p></th>
    </tr>

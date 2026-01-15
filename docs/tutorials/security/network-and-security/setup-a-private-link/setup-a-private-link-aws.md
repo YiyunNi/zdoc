@@ -22,15 +22,17 @@ keywords:
   - aws
   - gcp
   - azure
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Set up a PrivateLink (AWS)
 
@@ -78,6 +80,8 @@ You need to complete this step on your cloud provider console using either the U
 
     ![AJlTbcoxNoXKBIxAxz6cYrkBnrc](https://zdoc-images.s3.us-west-2.amazonaws.com/ajltbcoxnoxkbixaxz6cyrkbnrc.png "AJlTbcoxNoXKBIxAxz6cYrkBnrc")
 
+    <Procedures>
+
     1. Switch to the **Via UI Console** tab, and copy the **Service Name**.
 
     1. Navigate to the AWS console and select the region where your service runs in the upper-right corner. Then, click **Endpoints** in the left navigation. Click **Create Endpoint**.
@@ -114,9 +118,13 @@ You need to complete this step on your cloud provider console using either the U
 
     1. When the endpoint is successfully created, copy the Endpoint ID (starting with "vpce-").
 
+    </Procedures>
+
 - **Via CLI**
 
     ![TzQdb9ReToZlkTxGRVZcCdUbnOe](https://zdoc-images.s3.us-west-2.amazonaws.com/tzqdb9retozlktxgrvzccdubnoe.png "TzQdb9ReToZlkTxGRVZcCdUbnOe")
+
+    <Procedures>
 
     1. Switch to the **Via CLI** tab.
 
@@ -163,6 +171,8 @@ You need to complete this step on your cloud provider console using either the U
 
         In the returned message, copy the VpcEndpointId (starting with "vpce-") of the created VPC endpoint.
 
+    </Procedures>
+
 ### Step 3: Authorize your endpoint\{#step-3-authorize-your-endpoint}
 
 Paste the endpoint ID you obtained from the AWS console into the **Endpoint ID** box on Zilliz Cloud. Click **Create**.
@@ -184,6 +194,8 @@ Before you can access your cluster via the private link allocated by Zilliz Clou
     Amazon Route 53 is a web-based DNS service. Create a hosted DNS zone so that you can add DNS records to it.
 
     ![A1zxblLRPo96Kvx0zzccZ485nGb](https://zdoc-images.s3.us-west-2.amazonaws.com/a1zxbllrpo96kvx0zzccz485ngb.png "A1zxblLRPo96Kvx0zzccZ485nGb")
+
+    <Procedures>
 
     1. Log into your AWS account and go to [Hosted zones](https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones#).
 
@@ -212,11 +224,15 @@ Before you can access your cluster via the private link allocated by Zilliz Clou
 
     1. In the VPCs to associate with the hosted zone section, add your VPC ID to associate it with the hosted zone.
 
+    </Procedures>
+
 - **Create an alias record in the hosted zone**
 
     An alias record is a type of DNS record that maps an alias name to a true or canonical domain name. Create an alias record to map the private link allocated by Zilliz Cloud to the DNS name of your VPC endpoint. Then, you can use the private link to access your cluster privately.
 
     ![VoCsbJtTDo1glVx0vtGcqWPRnEd](https://zdoc-images.s3.us-west-2.amazonaws.com/vocsbjttdo1glvx0vtgcqwprned.png "VoCsbJtTDo1glVx0vtGcqWPRnEd")
+
+    <Procedures>
 
     1. In the created hosted zone, click **Create record**.
 
@@ -230,11 +246,15 @@ Before you can access your cluster via the private link allocated by Zilliz Clou
 
     1. Click **Create records**.
 
+    </Procedures>
+
 ## Manage internet access to your clusters\{#manage-internet-access-to-your-clusters}
 
 After configuring your private endpoint, you can choose to disable the cluster public endpoints to restrict internet access to your project. Once you have disabled the public endpoint, users can only connect to the cluster using the private link.
 
 To disable public endpoints:
+
+<Procedures>
 
 1. Go to the **Cluster Details** page of your target cluster.
 
@@ -243,6 +263,8 @@ To disable public endpoints:
 1. Click on the configurations icon next to the cluster public endpoint.
 
 1. Read the information and click **Disable** in the **Disable Public Endpoint** dialog box.
+
+</Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 

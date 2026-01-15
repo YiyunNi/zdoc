@@ -18,10 +18,10 @@ keywords:
   - migrations
   - milvus
   - backup files
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 
@@ -29,6 +29,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Migrate from Milvus to Zilliz Cloud Via Backup Files
 
@@ -53,6 +55,8 @@ Make sure the following prerequisites are met:
 ## Prepare backup files for migration\{#prepare-backup-files-for-migration}
 
 To prepare migration data for Milvus 2.x,
+
+<Procedures>
 
 1. Download **[milvus-backup](https://github.com/zilliztech/milvus-backup/releases)**. Always use the latest release.
 
@@ -138,6 +142,8 @@ To prepare migration data for Milvus 2.x,
 
 1. Decompress the downloaded archive and upload only the content of the **backup** folder to Zilliz Cloud.
 
+</Procedures>
+
 ## Migrate data to Zilliz Cloud\{#migrate-data-to-zilliz-cloud}
 
 With backup files ready, you can migrate the data from local files, an object storage, or a volume.
@@ -174,9 +180,13 @@ After the migration job is completed, note the following:
 
 If the migration process encounters any issues, you can take the following steps to troubleshoot and resume the migration:
 
+<Procedures>
+
 1. On the [Jobs](./job-center) page, identify the failed migration job and cancel it.
 
 1. Click **View Details** in the **Actions** column to access the error log.
+
+</Procedures>
 
 ## FAQ\{#faq}
 

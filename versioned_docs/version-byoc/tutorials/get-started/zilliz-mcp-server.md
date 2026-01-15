@@ -18,15 +18,17 @@ keywords:
   - mcp
   - milvus
   - mcp server
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # MCP Server
 
@@ -92,6 +94,8 @@ Once you have installed Python and uv on the machine where your AI agent runs, y
 
 If you prefer to share Zilliz MCP Server among multiple AI agents running on different machines, run Zilliz MCP Server in server mode. This requires you to clone the Zilliz MCP Server repository and start the server on a separate machines before preparing the configurations.
 
+<Procedures>
+
 1. Clone the Zilliz MCP Server repository.
 
     ```bash
@@ -151,9 +155,13 @@ If you prefer to share Zilliz MCP Server among multiple AI agents running on dif
     }
     ```
 
+</Procedures>
+
 ### Step 2: Add the configuration to your preferred AI agent\{#step-2-add-the-configuration-to-your-preferred-ai-agent}
 
 MCP is an open protocol that standardizes how applications provide context to LLMs. Lots of AI-driven applications support it. In this step, you will learn how to add the configuration to Cursor, an AI code editor.
+
+<Procedures>
 
 1. Start Cursor and choose **Cursor** > **Settings** > **Cursor Settings** in the top menu bar.
 
@@ -166,6 +174,8 @@ MCP is an open protocol that standardizes how applications provide context to LL
 1. Save the file and go back to **Tools & Integrations**. You will find Zilliz MCP Server is listed in **MCP Tools** with available tools for AI agents to call.
 
     ![D8YHbAKHQoEskbx23bNcj3jCnDg](https://zdoc-images.s3.us-west-2.amazonaws.com/d8yhbakhqoeskbx23bncj3jcndg.png "D8YHbAKHQoEskbx23bNcj3jCnDg")
+
+</Procedures>
 
 The procedures for adding Zilliz MCP Server to your preferred AI applications are very similar. You can follow the instructions specific to your AI applications to add the configuration.
 

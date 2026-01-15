@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Memory mapping (Mmap) enables direct memory access to large files on disk, allowing Zilliz Cloud to store indexes and data in both memory and hard drives. This approach helps optimize data placement policy based on access frequency, expanding storage capacity for collections without impacting search performance. This page helps you understand how Zilliz Cloud uses mmap to enable fast and efficient data storage and retrieval. | BYOC"
 type: origin
 token: P3wrwSMNNihy8Vkf9p6cTsWYnTb
-sidebar_position: 17
+sidebar_position: 18
 keywords: 
   - zilliz
   - vector database
   - cloud
   - mmap
   - search optimization
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
 
 ---
 
@@ -55,6 +55,39 @@ By comparing the data placement procedures in the left and right figures, you ca
 ## Global mmap strategy\{#global-mmap-strategy}
 
 The following table lists the global mmap strategy for clusters from different tiers.
+
+<table>
+   <tr>
+     <th></th>
+     <th><p>Performance-optimized</p></th>
+     <th><p>Capacity-optimized</p></th>
+     <th><p>Tiered-storage</p></th>
+   </tr>
+   <tr>
+     <td><p>Scalar field raw data</p></td>
+     <td><p>Disabled & Changeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td><p>Enabled & Unchangeable</p></td>
+   </tr>
+   <tr>
+     <td><p>Scalar field index</p></td>
+     <td><p>Disabled & Changeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td><p>Enabled & Unchangeable</p></td>
+   </tr>
+   <tr>
+     <td><p>Vector field raw data</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td><p>Enabled & Changeable</p></td>
+     <td><p>Enabled & Unchangeable</p></td>
+   </tr>
+   <tr>
+     <td><p>Vector field index</p></td>
+     <td><p>Disabled & Unchangeable</p></td>
+     <td><p>Disabled & Unchangeable</p></td>
+     <td><p>Enabled & Unchangeable</p></td>
+   </tr>
+</table>
 
 In clusters using the **Performance-optimized** CUs, Zilliz Cloud enables mmap only for the raw data in vector fields and loads the raw data in scalar fields and all field indexes into memory. You are advised to keep the global settings to ensure the performance of metadata filtering and retrieval during searches and queries. However, you can still enable mmap for those fields that are not involved in metadata filtering or used as output fields.
 
@@ -288,9 +321,6 @@ export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
 export idField='{
     "fieldName": "id",
     "dataType": "Int64",
-    "elementTypeParams": {
-        "max_length": 512
-    },
     "isPrimary": true,
     "auto_id": false
 }'
@@ -305,7 +335,7 @@ export vectorField='{
 
 export docChunkField='{
     "fieldName": "doc_chunk",
-    "dataType": "Int64",
+    "dataType": "Varchar",
     "elementTypeParams": {
         "max_length": 512,
         "mmap.enabled": false

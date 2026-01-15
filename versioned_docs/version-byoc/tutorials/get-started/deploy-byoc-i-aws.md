@@ -20,15 +20,17 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Deploy BYOC-I on AWS
 
@@ -48,6 +50,8 @@ This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a
 Ensure that 
 
 - You are the owner of a BYOC-I organization.
+
+- You have been granted the permissions listed in [Required permissions](./deploy-byoc-i-aws#required-permissions).
 
 ## Procedures\{#procedures}
 
@@ -74,6 +78,8 @@ Within your BYOC-I organization, click the **Create Project and Deploy Data Plan
 In **General Settings**, you need to set the project name and determine the cloud providers and regions where Zilliz Cloud deploys the data plane for the project.
 
 ![Xejfbdz6PockHsxn5uacw3OTnVc](https://zdoc-images.s3.us-west-2.amazonaws.com/xejfbdz6pockhsxn5uacw3otnvc.png "Xejfbdz6PockHsxn5uacw3OTnVc")
+
+<Procedures>
 
 1. Set **Project Name**.
 
@@ -145,6 +151,8 @@ In **General Settings**, you need to set the project name and determine the clou
 
 1. Click **Next**.
 
+</Procedures>
+
 ### Step 4: Deploy the data plane\{#step-4-deploy-the-data-plane}
 
 Follow the steps displayed in the dialog to deploy the data plane for the currently created project.
@@ -168,3 +176,80 @@ Once you have prepared the deployment environment and executed the displayed com
 ### Projects with a Running tag\{#projects-with-a-running-tag}
 
 Once the status tag on a project card reads **Running**, you can start creating clusters in the project. To rename or delete a running project, ensure that there are no clusters in the project.
+
+## Technical support access\{#technical-support-access}
+
+To assist you with troubleshooting and maintenance operations, Zilliz Cloud enables technical support to access your project's data plane by default. 
+
+![XThkbwy5hoho7Ixpgg5ctUp1nRe](https://zdoc-images.s3.us-west-2.amazonaws.com/xthkbwy5hoho7ixpgg5ctup1nre.png "XThkbwy5hoho7Ixpgg5ctUp1nRe")
+
+When you click **Technical Support Access** from the target project's drop-down menu to view the current settings.
+
+![Z4L2bIrA0onlxPxFNUNcYv78nIe](https://zdoc-images.s3.us-west-2.amazonaws.com/z4l2bira0onlxpxfnuncyv78nie.png "Z4L2bIrA0onlxPxFNUNcYv78nIe")
+
+You can disable it to meet data governance and security requirements.
+
+## Required permissions\{#required-permissions}
+
+In this section, you will find all the key permissions required to deploy BYOC-I on AWS.
+
+### VPC and networking resource permissions\{#vpc-and-networking-resource-permissions}
+
+- **VPC Management**: Create, modify, describe, and delete VPCs
+
+- **Subnet Operations**: Create and delete subnets
+
+- **Security Groups**: Create, modify, and delete security groups and their rules
+
+- **Route Tables**: Create, associate, and manage route tables
+
+- **Internet Gateways**: Create, attach, and detach internet gateways
+
+- **NAT Gateways**: Create and delete NAT gateways with Elastic IPs
+
+- **VPC Endpoints**: Create and delete VPC endpoints for AWS services
+
+- **Launch Templates**: Create and delete EC2 launch templates
+
+- **Route53**: Associate VPCs with hosted zones
+
+- **Tagging**: Create and delete tags on VPC resources
+
+### IAM roles and BYOC-I deployment permissions\{#iam-roles-and-byoc-i-deployment-permissions}
+
+- **Role Management**: Create, get, list, attach/detach policies, and delete IAM roles
+
+- **Policy Management**: Create, get, list versions, and delete IAM policies
+
+- **Tagging**: Tag and untag roles and policies
+
+- **Identity Verification**: Get caller identity (STS)
+
+### S3 bucket permissions\{#s3-bucket-permissions}
+
+- **Bucket Operations**: Create, list, get configuration, and delete S3 buckets
+
+- **Bucket Configuration**: Manage bucket tagging, policies, ACLs, CORS, versioning, encryption, and public access settings
+
+- **Object Tagging**: Put, get, and delete object tags
+
+- **Bucket Listing**: List all buckets in the account
+
+### EKS cluster and related resource permissions\{#eks-cluster-and-related-resource-permissions}
+
+- **Service-Linked Roles**: Create EKS service-linked roles for cluster and node group management
+
+- **OIDC Provider**: Create, tag, get, and delete OpenID Connect providers (with `Vendor=zilliz-byoc` tag requirement)
+
+- **IAM Role Management**: Read EKS roles and pass roles to EKS service
+
+- **EC2 Resources**: Create launch templates, run instances, and manage tags (with `Vendor=zilliz-byoc` tag requirement)
+
+- **EKS Cluster Operations**: Create, update, describe, tag, and delete EKS clusters
+
+- **Node Group Operations**: Create, update, describe, and delete EKS node groups
+
+- **Addon Management**: Create, update, describe, and delete EKS addons
+
+- **Access Entry Management**: Create, update, describe, and delete EKS access entries and pod identity associations
+

@@ -18,10 +18,10 @@ keywords:
   - collection
   - collection ttl
   - time-to-live
-  - lexical search
   - nearest neighbor search
   - Agentic RAG
   - rag llm architecture
+  - private llms
 
 ---
 
@@ -48,6 +48,42 @@ For instance, if you ingest data daily but only need to retain records for 14 da
 The TTL property in a Zilliz Cloud collection is specified as an integer in seconds. Once set, any data that surpasses its TTL will be automatically deleted from the collection.
 
 Because the deletion process is asynchronous, data might not be removed from search results exactly once the specified TTL has elapsed. Instead, there may be a delay, as the removal depends on the garbage collection (GC) and compaction processes, which occur at non-deterministic intervals.
+
+## Examples\{#examples}
+
+Generally, Collection TTL is closely related to when TTL settings are enforced and when entities are inserted or updated. To better understand the TTL mechanism, consider the following examples.
+
+### Example 1: Set TTL upon collection creation\{#example-1-set-ttl-upon-collection-creation}
+
+You set the **TTL** to **2592000 (30 days)** when you create a collection.
+
+At **00:00** on **January 1st**, you inserted **10 billion entities**, and no other write operations followed.
+
+After **00:00** on **January 31st**, the **10 billion entities** will become unsearchable, and the result of a query with the output fields set to `count(*)` will be **0**.
+
+### Example 2: Set TTL for an existing collection\{#example-2-set-ttl-for-an-existing-collection}
+
+You have created a collection without TTL.
+
+At **00:00** on **January 1st**, you insert **10 billion entities**.
+
+At **00:00** on **January 31st**, you insert another **20 billion entities**, and no other write operations follow.
+
+At **10:00** on **Feburary 28th**, you set TTL to **2592000 (30 days)** for the collection.
+
+The **10 billion entities** inserted on January 1st become unsearchable immediately after the TTL has been set, and the result of a query with the output fields set to `count(*)` will be **20 billion**.
+
+### Example 3: Upsert entities\{#example-3-upsert-entities}
+
+You set the **TTL** to **2592000 (30 days)** when you create a collection.
+
+At **00:00** on **January 1st**, you inserted **20 billion entities**, and no other write operations followed.
+
+From **00:00** to **23:59:59** on **January 15th**, you upsert all the 20 billion entities in merge mode, and no other write operations follow.
+
+During the period from **January 31st** to **February 13th**, the 20 billion entities remain searchable, and the query count remains 20 billion. 
+
+Since **00:00** on **February 14th**, the query count has been decreasing and reached **0** at **00:00** on **February 15th**.
 
 ## Set TTL\{#set-ttl}
 
@@ -174,15 +210,12 @@ client.alter_collection_properties(
 <TabItem value='java'>
 
 ```java
-Map<String, String> properties = new HashMap<>();
-properties.put("collection.ttl.seconds", "1209600");
-
-AlterCollectionReq alterCollectionReq = AlterCollectionReq.builder()
+AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.builder()
         .collectionName("my_collection")
-        .properties(properties)
+        .property(Constant.TTL_SECONDS, "1209600")
         .build();
 
-client.alterCollection(alterCollectionReq);
+client.alterCollectionProperties(alterCollectionReq);
 ```
 
 </TabItem>
@@ -250,15 +283,10 @@ client.drop_collection_properties(
 <TabItem value='java'>
 
 ```java
-propertyKeys = new String[1]
-propertyKeys[0] = "collection.ttl.second"
-
-DropCollectionReq dropCollectionReq = DropCollectionReq.builder()
+client.dropCollectionProperties(DropCollectionPropertiesReq.builder()
         .collectionName("my_collection")
-        .propertyKeys(propertyKeys)
-        .build();
-
-client.dropCollection(dropCollectionReq);
+        .propertyKeys(Collections.singletonList(Constant.TTL_SECONDS))
+        .build());
 ```
 
 </TabItem>
@@ -290,17 +318,33 @@ if err != nil {
 
 ```bash
 curl --request POST \
---url "${CLUSTER_ENDPOINT}/v2/vectordb/collections/alter_properties" \
+--url "${CLUSTER_ENDPOINT}/v2/vectordb/collections/drop_properties" \
 --header "Authorization: Bearer ${TOKEN}" \
 --header "Content-Type: application/json" \
 -d "{
-    \"collectionName\": \""my_collection"\",
-    \"properties\": {
-        \"collection.ttl.seconds\": 60
-    }
+    \"collectionName\": \"my_collection\",
+    \"propertyKeys\": [
+        \"collection.ttl.seconds\"
+    ]
 }"
 ```
 
 </TabItem>
 </Tabs>
+
+## FAQs\{#faqs}
+
+### When does data expire due to TTL settings?\{#when-does-data-expire-due-to-ttl-settings}
+
+Currently, the data expires based on the time point at which it was inserted or upserted. Expired data will not be displayed in search results. For details, refer to [Examples](./set-collection-ttl#examples).
+
+### When will the expired data be physically deleted?\{#when-will-the-expired-data-be-physically-deleted}
+
+Once the data expires, it will not be included in any search results. However, it will be physically deleted only after the subsequent system compaction, according to your cluster's compaction policies.
+
+If you need to delete the data shortly after it expires, [contact us](https://support.zilliz.com/hc/en-us/requests/new).
+
+### When will the CU capacity decrease?\{#when-will-the-cu-capacity-decrease}
+
+The CU capacity of a cluster is whichever is higher between memory usage and storage usage. If storage usage applies, you can view the decrease in the CU capacity on the Zilliz Cloud console after the expired data is physically deleted.
 

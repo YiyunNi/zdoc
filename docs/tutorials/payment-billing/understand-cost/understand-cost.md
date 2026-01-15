@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cost
   - billing
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
 
 ---
 

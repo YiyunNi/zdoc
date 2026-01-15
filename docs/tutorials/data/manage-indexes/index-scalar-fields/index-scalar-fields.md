@@ -17,10 +17,10 @@ keywords:
   - cloud
   - scalar field
   - index
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
 
 ---
 
@@ -69,7 +69,7 @@ Zilliz Cloud supports `AUTOINDEX` for the following field types:
    </tr>
    <tr>
      <td><p><code>TIMESTAMPTZ</code></p></td>
-     <td><p>time zone-aware ISO 8601 inputs, stored as UTC for consistent filtering and ordering across time zones. For details, refer to <a href="./undefined">TIMESTAMPTZ Field</a>.</p></td>
+     <td><p>time zone-aware ISO 8601 inputs, stored as UTC for consistent filtering and ordering across time zones. For details, refer to <a href="./use-timestamptz-field">TIMESTAMPTZ Field</a>.</p></td>
    </tr>
 </table>
 

@@ -10,16 +10,16 @@ notebook: FALSE
 description: "Everything you need to know about managing clusters on Zilliz Cloud. | Cloud"
 type: origin
 token: BIy4we6qXiq8NpkHfXgcxuONngb
-sidebar_position: 4
+sidebar_position: 5
 keywords: 
   - zilliz
   - vector database
   - cloud
   - cluster
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 

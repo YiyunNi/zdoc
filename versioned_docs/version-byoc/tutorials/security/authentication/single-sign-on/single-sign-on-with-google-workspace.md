@@ -18,10 +18,10 @@ keywords:
   - sso
   - google
   - workspace
-  - what are vector databases
-  - vector databases comparison
   - Faiss
   - Video search
+  - AI Hallucination
+  - AI Agent
 
 ---
 
@@ -29,6 +29,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Google Workspace (SAML 2.0)
 
@@ -54,6 +56,8 @@ As the SP, Zilliz Cloud provides the **Entity ID** and **ACS URL** required when
 
 <Supademo id="cme6flmz31zk2h3py5y8zv82m" title="Step 1: Access service provider details in Zilliz Cloud" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login) and go to the organization for which you want to configure SSO.
 
 1. In the left-side navigation pane, click **Settings**.
@@ -72,11 +76,15 @@ As the SP, Zilliz Cloud provides the **Entity ID** and **ACS URL** required when
 
 1. Once that's done, proceed to [Step 2](./single-sign-on-with-google-workspace#step-2-create-a-custom-saml-app-in-google-admin-console).
 
+</Procedures>
+
 ### Step 2: Create a custom SAML app in Google Admin console\{#step-2-create-a-custom-saml-app-in-google-admin-console}
 
 In this step, you configure Google Workspace (the IdP) with the SP details obtained from Zilliz Cloud.
 
 <Supademo id="cmdwjibf16qq99f96c9uz5n8i" title="Step 2: Create SAML app in Google Admin" />
+
+<Procedures>
 
 1. Log in to the [Google Admin console](https://admin.google.com/).
 
@@ -108,11 +116,15 @@ In this step, you configure Google Workspace (the IdP) with the SP details obtai
 
 1. Click **Finish**.
 
+</Procedures>
+
 ### Step 3: Configure IdP settings in Zilliz Cloud console\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
 
 In this step, you provide Google Workspace’s IdP details back to Zilliz Cloud to complete the SAML trust relationship.
 
 <Supademo id="cme6g56mb1zs2h3pyn5cynqgb" title="Step 3: Configure IdP settings in Zilliz Cloud" />
+
+<Procedures>
 
 1. Go back to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -130,6 +142,8 @@ In this step, you provide Google Workspace’s IdP details back to Zilliz Cloud 
 
 1. Once that's done, click **Save**.
 
+</Procedures>
+
 ## Post-configuration tasks\{#post-configuration-tasks}
 
 ### Task 1: Assign SAML app to users (Google Admin console)\{#task-1-assign-saml-app-to-users-google-admin-console}
@@ -137,6 +151,8 @@ In this step, you provide Google Workspace’s IdP details back to Zilliz Cloud 
 <Supademo id="cmdwrmzn36umt9f96nzntwaxq" title="Task 1: Assign SAML app to users" />
 
 Before users can access Zilliz Cloud through SSO, turn on your SAML app:
+
+<Procedures>
 
 1. On the details page of the newly created app, locate the **User access** area and click to edit the service status.
 
@@ -158,6 +174,8 @@ Note: Learn more about [organizational structure](https://support.google.com/a/a
 1. (Optional) To turn on a service for a set of users across or within organizational units, select an access group. For details, go to [Use groups to customize service access](https://support.google.com/a/answer/9050643).
 
 1. Ensure that the email addresses your users use to sign in to the SAML app match the email addresses they use to sign in to your Google domain.
+
+</Procedures>
 
 ### Task 2: Invite users to your project\{#task-2-invite-users-to-your-project}
 

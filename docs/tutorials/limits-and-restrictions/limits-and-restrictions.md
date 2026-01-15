@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Learn about the limits and restrictions you should know about your operations on Zilliz Cloud. | Cloud"
 type: origin
 token: Tve5wxmTHio0LPk50jgcKHe1nWg
-sidebar_position: 14
+sidebar_position: 15
 keywords: 
   - zilliz
   - vector database
   - cloud
   - milvus
   - limits
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
 
 ---
 

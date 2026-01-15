@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - dynamic field
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
 
 ---
 
@@ -964,9 +964,9 @@ filter := 'dynamic_json["nested"]["value"] < 50'
 
 ```bash
 # restful
-export filterOverview='overview == "Great product"'
-export filterWords='words >= 100'
-export filterNestedValue='dynamic_json["nested"]["value"] < 50'
+export filter='overview == "Great product"'
+export filter='words >= 100'
+export filter='dynamic_json["nested"]["value"] < 50'
 ```
 
 </TabItem>
@@ -987,7 +987,7 @@ results = client.search(
     # highlight-start
     output_fields=[
         "overview",                        # Simple dynamic field key
-        'dynamic_json["varchar"]'          # Nested JSON key
+        "dynamic_json"          # Nested JSON key
     ]
     # highlight-end
 )
@@ -1015,7 +1015,7 @@ SearchReq searchReq = SearchReq.builder()
         .data(Collections.singletonList(queryVector))
         .topK(5)
         .filter(filter)
-        .outputFields(Arrays.asList("overview", "dynamic_json['varchar']"))
+        .outputFields(Arrays.asList("overview", "dynamic_json"))
         .build();
 
 SearchResp searchResp = client.search(searchReq);
@@ -1039,7 +1039,7 @@ const res = await client.search({
     data: [query_vector],
     limit: 5,
     filters: filter,
-    output_fields: ["overview", "dynamic_json['varchar']"]
+    output_fields: ["overview", "dynamic_json"]
 })
 ```
 
@@ -1081,7 +1081,7 @@ resultSets, err := client.Search(ctx, milvusclient.NewSearchOption(
 ).WithConsistencyLevel(entity.ClStrong).
     WithANNSField("my_vector").
     WithFilter(filter).
-    WithOutputFields("overview", "dynamic_json['varchar']"))
+    WithOutputFields("overview", "dynamic_json"))
 if err != nil {
     fmt.Println(err.Error())
     // handle error
@@ -1109,7 +1109,7 @@ curl --request POST \
   \"annsField\": \"my_vector\",
   \"filter\": \"${FILTER}\",
   \"limit\": 5,
-  \"outputFields\": [\"overview\", \"dynamic_json.varchar\"]
+  \"outputFields\": [\"overview\", \"dynamic_json\"]
 }"
 ```
 

@@ -18,10 +18,10 @@ keywords:
   - backup
   - files
   - view
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
 
 ---
 
@@ -77,6 +77,51 @@ You can enable cross-region backup either when [creating a backup manually](./cr
 The following demo shows how to use cross-region backup when manually creating a backup. For details about how to use cross-region backup while scheduling automatic backups, refer to [Schedule Automatic Backups](./schedule-automatic-backups).
 
 <Supademo id="cmgkg6um62deokrn973s89qfx?utm_source=link" title=""  />
+
+You can also use the Zilliz Cloud RESTful API to create cross-region copies of the backup created in the same region as the target cluster manually as follows:
+
+```bash
+export TOKEN="YOUR_API_KEY"
+export CLUSTER_ID="inxx-xxxxxxxxxxxxxxx"
+
+curl --request POST \
+--url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/create" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "backupType": "COLLECTION",
+    "dbCollections": [
+        {
+            "dbName": "my_database",
+            "collectionNames": [
+                "collection_1",
+                "collection_2"
+            ]
+        }
+    ],
+    "crossRegionCopies": [
+        {
+            "regionId": "aws-us-west-2"
+        },
+        {
+            "regionId": "aws-us-east-1"
+        }
+    ]
+}'
+```
+
+The output will be similar to the following:
+
+```json
+{
+    "code": 0,
+    "data": {
+        "backupId": "backupx_xxxxxxxxxxxxxxx",
+        "backupName": "Dedicated_01",
+        "jobId": "job-xxxxxxxxxxxxxxxxxxxxxx"
+    }
+}
+```
 
 In the [Jobs](./job-center) list, you will first see the original backup job. Once it completes, additional jobs appear for copying the backup file to each selected region, with one record per region.
 

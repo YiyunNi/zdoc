@@ -1,7 +1,7 @@
 ---
 title: " October 2025 Release Notes | Cloud"
 slug: /release-notes-2510
-sidebar_label: " October 2025 Release Notes"
+sidebar_label: "October, 2025"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: " October 2025 Release Notes | Cloud"
 type: origin
 token: PmaowiSUaiTa8ckPMYJcqdRYnQg
-sidebar_position: 3
+sidebar_position: 5
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
 
 ---
 
@@ -30,7 +30,7 @@ import Grid from '@site/src/components/Grid';
 
 #  October 2025 Release Notes
 
-<Grid columnSize="2" widthRatios="24,75">
+<Grid columnSize="2" widthRatios="15,84">
 
     <div>
 

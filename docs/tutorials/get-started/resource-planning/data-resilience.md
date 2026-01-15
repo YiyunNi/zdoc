@@ -21,10 +21,10 @@ keywords:
   - rto
   - rpo
   - cost optimzation
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
 
 ---
 

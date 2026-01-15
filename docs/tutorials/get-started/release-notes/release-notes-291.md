@@ -1,7 +1,7 @@
 ---
 title: "Release Notes (July 23, 2024) | Cloud"
 slug: /release-notes-291
-sidebar_label: "Release Notes (July 23, 2024)"
+sidebar_label: "July 23, 2024"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -10,16 +10,16 @@ notebook: FALSE
 description: "In this update, Zilliz Cloud now supports Milvus' new RESTful API v2, providing a consistent interface and expanded functionalities. A new documentation chatbot enhances user support. The Job Center introduces an intuitive interface for managing and tracking tasks such as backup, restore, migration, import, and clone collection. Auto-scaling for dedicated clusters, available in private preview, dynamically adjusts capacity based on demand, triggered by the Compute Unit (CU) Capacity Threshold. Other enhancements include more cluster monitoring metrics, a revamped cluster management interface, and improved user email templates. | Cloud"
 type: origin
 token: RlhDw3Fr9iCpWSkylfAcyes1nLh
-sidebar_position: 14
+sidebar_position: 16
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
 
 ---
 

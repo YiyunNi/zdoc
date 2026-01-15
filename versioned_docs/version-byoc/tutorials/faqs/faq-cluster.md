@@ -36,7 +36,7 @@ When inserting or upserting data, you will receive this error because your data 
 
 To address this issue, you can follow the instructions below.
 
-In such a case, you are advised to  [scale up your cluster](./scale-cluster) by increasing the CU size.
+In such a case, you are advised to  [scale up your cluster](./scale-query-cu) by increasing the CU size.
 
 ### How can I scale down my cluster CU size?{#how-can-i-scale-down-my-cluster-cu-size}
 

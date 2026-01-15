@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - sparse vector
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - project
   - alerts
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
 
 ---
 
@@ -78,7 +78,7 @@ When viewing alerts, you'll encounter the following configuration items:
      <td><p>Monitored clusters - specific clusters (e.g., "Dedicated-02, Dedicated-01") or all Dedicated clusters (including those to be created later)</p></td>
    </tr>
    <tr>
-     <td><p>Metric &amp; Condition</p></td>
+     <td><p>Metric & Condition</p></td>
      <td><p>Combined display of monitored parameter and trigger settings (e.g., "CU Capacity &gt; 80%, Duration &gt;= 10 min", "Query Latency (P99) &gt; 1000 ms, Duration &gt;= 10 min")</p></td>
    </tr>
    <tr>

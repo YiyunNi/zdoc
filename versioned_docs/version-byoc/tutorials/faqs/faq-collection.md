@@ -27,6 +27,7 @@ This topic lists the possible issues that you may encounter while you use Zilliz
 - [What's the difference between partitions and partition keys?](#whats-the-difference-between-partitions-and-partition-keys)
 - [Can I modify the number of shards in a collection?](#can-i-modify-the-number-of-shards-in-a-collection)
 - [Is there any rules for partition names?](#is-there-any-rules-for-partition-names)
+- [Can I configure custom parameters for different model providers?](#can-i-configure-custom-parameters-for-different-model-providers)
 
 ## FAQs
 
@@ -79,7 +80,7 @@ Currently, the rate limit for loading collection requests on Zilliz Cloud is 1 p
 
 ### Why do I fail to load collections? What can I do?{#why-do-i-fail-to-load-collections-what-can-i-do}
 
-The failure is caused due to insufficient memory in your cluster. Please try [scaling up](./scale-cluster) your cluster to larger CU sizes.
+The failure is caused due to insufficient memory in your cluster. Please try [scaling up](./scale-query-cu) your cluster to larger CU sizes.
 
 ### Is there any limit to the number of fields I can add in a collection?{#is-there-any-limit-to-the-number-of-fields-i-can-add-in-a-collection}
 
@@ -118,3 +119,13 @@ Yes. To change the number of shards, use the "[clone collection](./manage-collec
 ### Is there any rules for partition names?{#is-there-any-rules-for-partition-names}
 
 Yes. Partition name can contain only letters, numbers, underscores (“_”), and hyphens(“-”), and cannot start with a number or a hyphen.
+
+### Can I configure custom parameters for different model providers?{#can-i-configure-custom-parameters-for-different-model-providers}
+
+Yes, custom parameters are supported for different model providers. Please refer to the official documentation of each provider for the full list of supported parameters:
+
+- [OpenAI](https://platform.openai.com/docs/api-reference/embeddings)
+
+- [Cohere](https://docs.cohere.com/reference/embed)
+
+- [Voyage AI](https://docs.voyageai.com/docs/embeddings)

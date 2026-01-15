@@ -17,10 +17,10 @@ keywords:
   - cloud
   - marketplace
   - azure
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
 
 ---
 
@@ -30,6 +30,8 @@ import Admonition from '@theme/Admonition';
 import Supademo from '@site/src/components/Supademo';
 
 import Grid from '@site/src/components/Grid';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Subscribe on Azure Marketplace
 
@@ -225,6 +227,8 @@ Visit [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us) and star
 
 <Supademo id="cm9jmpiac3eq2ljv5itt1tn7s" title="Zilliz Cloud - Azure Marketplace Subscription Demo" />
 
+<Procedures>
+
 1. Search for **Zilliz Cloud** in the search box, or [go to the Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=Overview) to view the Zilliz Cloud portal page.
 
     ![search_for_zilliz_on_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/search_for_zilliz_on_azure.png "search_for_zilliz_on_azure")
@@ -281,6 +285,8 @@ Visit [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us) and star
 
     ![azure-marketplace-success](https://zdoc-images.s3.us-west-2.amazonaws.com/azure-marketplace-success.png "azure-marketplace-success")
 
+</Procedures>
+
 ## Update Azure Marketplace subscription\{#update-azure-marketplace-subscription}
 
 After successfully subscribing from Azure Marketplace, you can always update your subscription at any time that you see fit. More specifically, you can either change the Azure Marketplace account used for the subscription to another one or switch your payment method from an Azure Marketplace subscription to a credit card. 
@@ -294,6 +300,8 @@ You can verify the update in the **Payment Method** section on the **Billing Ove
 ![view-azure-subscription-id](https://zdoc-images.s3.us-west-2.amazonaws.com/view-azure-subscription-id.png "view-azure-subscription-id")
 
 ### Switch to payment credit card\{#switch-to-payment-credit-card}
+
+<Procedures>
 
 1. Sign in to Azure Marketplace with the Azure account you used for the subscription.
 
@@ -309,7 +317,11 @@ You can verify the update in the **Payment Method** section on the **Billing Ove
 
 1. Verify the update in the **Payment Method** section on the **Billing Overview** page.
 
+</Procedures>
+
 ## Cancel Azure Marketplace subscription\{#cancel-azure-marketplace-subscription}
+
+<Procedures>
 
 1. Open the Azure Marketplace homepage.
 
@@ -320,6 +332,8 @@ You can verify the update in the **Payment Method** section on the **Billing Ove
 1. Navigate to the subscription you want to cancel. Click **Cancel subscription**. Wait for a few minutes for Azure Marketplace to complete the process.
 
     ![cancel_azure_subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/cancel_azure_subscription.png "cancel_azure_subscription")
+
+</Procedures>
 
 For more information about how to cancel subscription on Azure Marketplace, see [here](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#cancel-subscription).
 
@@ -337,7 +351,7 @@ Please refer to [Payment & Billing](./payment-billing#marketplace-pricing-terms)
 
     There could be several reasons.
 
-    1. **Insufficient permissions** 
+    - **Insufficient permissions** 
 
         This can happen when you do not have sufficient privileges. You will see an **"Insufficient Permissions"** tag next to the unavailable organization.
 
@@ -345,7 +359,7 @@ Please refer to [Payment & Billing](./payment-billing#marketplace-pricing-terms)
 
         To link an organization with a marketplace subscription, you must be an **Organization Owner** or an **Organization Billing Admin**. But if you are only an Organization Member, you do not have the required permissions. Please contact the organization owner for assistance.
 
-    1. **All organizations have already been successfully linked to a Marketplace subscription**
+    - **All organizations have already been successfully linked to a Marketplace subscription**
 
         This can happen when all your organizations are already linked to Marketplace subscriptions. You will see a **"Marketplace Linked"** tag next to the unavailable organization.
 
@@ -353,15 +367,15 @@ Please refer to [Payment & Billing](./payment-billing#marketplace-pricing-terms)
 
         In this case,
 
-        1. If you need to update an existing marketplace subscription, please [unlink](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) the current subscription of the organization first and then set up a new subscription.
+        - If you need to update an existing marketplace subscription, please [unlink](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) the current subscription of the organization first and then set up a new subscription.
 
-        1. If you need multiple organizations for different Marketplace subscription, you can:
+        - If you need multiple organizations for different Marketplace subscription, you can:
 
-            1. [Register](./register-with-zilliz-cloud) a new Zilliz Cloud account to create a new organization. Then, [invite](./organization-users#invite-a-user-to-your-organization) the organization owner to the new organization. This organization owner will then belong to multiple organizations and can setup different marketplace subscriptions for each organization.
+            - [Register](./register-with-zilliz-cloud) a new Zilliz Cloud account to create a new organization. Then, [invite](./organization-users#invite-a-user-to-your-organization) the organization owner to the new organization. This organization owner will then belong to multiple organizations and can setup different marketplace subscriptions for each organization.
 
-            1. [Create a support ticket](http://support.zilliz.com) so that we will create new organizations for you. Currently, Zilliz Cloud does not support manually creating organizations by users.
+            - [Create a support ticket](http://support.zilliz.com) so that we will create new organizations for you. Currently, Zilliz Cloud does not support manually creating organizations by users.
 
-    1. **No organizations in the list**
+    - **No organizations in the list**
 
         This can happen if your account has been closed or if you have left all organizations. Your UI will be similar to the following.
 

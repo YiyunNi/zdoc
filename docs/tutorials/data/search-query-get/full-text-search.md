@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Full text search is a feature that retrieves documents containing specific terms or phrases in text datasets, then ranking the results based on relevance. This feature overcomes semantic search limitations, which might overlook precise terms, ensuring you receive the most accurate and contextually relevant results. Additionally, it simplifies vector searches by accepting raw text input, automatically converting your text data into sparse embeddings without the need to manually generate vector embeddings. | Cloud"
 type: origin
 token: RQTRwhOVPiwnwokqr4scAtyfnBf
-sidebar_position: 9
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database
@@ -22,10 +22,10 @@ keywords:
   - filtering
   - full-text search
   - data in data out
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
 
 ---
 
@@ -696,7 +696,7 @@ search_params = {
     'params': {'level': 10},
 }
 
-client.search(
+res = client.search(
     collection_name='my_collection', 
     # highlight-start
     data=['whats the focus of information retrieval?'],
@@ -706,6 +706,8 @@ client.search(
     limit=3,
     search_params=search_params
 )
+
+print(res)
 ```
 
 </TabItem>
@@ -735,7 +737,6 @@ SearchResp searchResp = client.search(SearchReq.builder()
 
 ```go
 annSearchParams := index.NewCustomAnnParam()
-annSearchParams.WithExtraParam("drop_ratio_search", 0.2)
 resultSets, err := client.Search(ctx, milvusclient.NewSearchOption(
     "my_collection", // collectionName
     3,               // limit
@@ -791,9 +792,7 @@ curl --request POST \
         "text"
     ],
     "searchParams":{
-        "params":{
-            "level":10
-        }
+        "params":{}
     }
 }'
 ```

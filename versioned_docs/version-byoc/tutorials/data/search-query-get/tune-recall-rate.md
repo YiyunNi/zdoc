@@ -21,10 +21,10 @@ keywords:
   - ann
   - recall rate
   - tune recall rate
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
 
 ---
 
@@ -34,6 +34,12 @@ import Admonition from '@theme/Admonition';
 # Tune Recall Rate
 
 Zilliz Cloud introduces a search parameter `level` to allow users to balance search recall and performance. It also provides another search parameter, `enable_recall_calculation`, to give users the estimated recall rate of the current search. You can combine these two parameters to tune the recall rate of vector searches.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This applies to all searches, including basic vector searches, filtered searches, range searches, grouping searches, hybrid searches, and search iterators.</p>
+
+</Admonition>
 
 ## Overview\{#overview}
 
@@ -77,7 +83,7 @@ For scenarios that require a high recall rate (**99%** or above), try setting th
 
 ## Tune recall rate\{#tune-recall-rate}
 
-Zilliz Cloud also introduces another search parameter named `enable_recall_calculation` to facilitate the tuning process. Setting this parameter to `True` indicates that Zilliz Cloud will estimate the recall rate of the current search and includes the estimated recall rate along with the search results.
+Zilliz Cloud also introduces another search parameter named `enable_recall_calculation` to facilitate the tuning process. Setting this parameter to `True` indicates that Zilliz Cloud will estimate the recall rate for the current search and include that estimate along with the search results.
 
 ```python
 query_vector = [0.3580376395471989, ..., 0.9029438446296592],

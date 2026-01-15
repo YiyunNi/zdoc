@@ -19,10 +19,10 @@ keywords:
   - milvus
   - format options
   - parquet
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
 
 ---
 
@@ -128,6 +128,12 @@ curl --request POST \
     }'
 ```
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the folder contains multiple formats of files, the request will fail.</p>
+
+</Admonition>
+
 ### Import a single file\{#import-a-single-file}
 
 If your prepared data file is a single Parquet file, import it as demonstrated in the following code example.
@@ -200,7 +206,7 @@ There are some limits you need to observe when you import data in a local Parque
      <td><p>1 GB</p></td>
    </tr>
    <tr>
-     <td><p>Serverless &amp; Dedicated</p></td>
+     <td><p>Serverless & Dedicated</p></td>
      <td><p>1,000 Files</p></td>
      <td><p>10 GB</p></td>
      <td><p>1 TB</p></td>

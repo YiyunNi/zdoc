@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - sso
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
 
 ---
 

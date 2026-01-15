@@ -18,10 +18,10 @@ keywords:
   - collection
   - alias
   - aliases
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
 
 ---
 
@@ -385,7 +385,7 @@ DescribeAliasResp describeAliasRes = client.describeAlias(describeAliasReq);
 System.out.println(describeAliasRes);
 
 // Output:
-// DescribeAliasResp(collectionName=my_collection_1, alias=bob)
+// DescribeAliasResp(databaseName=default, collectionName=my_collection_1, alias=bob)
 ```
 
 </TabItem>

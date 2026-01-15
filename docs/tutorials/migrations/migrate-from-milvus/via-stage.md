@@ -19,15 +19,17 @@ keywords:
   - milvus
   - backup files
   - volume
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Migrate from Milvus to Zilliz Cloud Via Backup Tool
 
@@ -50,6 +52,8 @@ This feature eliminates the operational complexity across various migration scen
 ## Procedure\{#procedure}
 
 In this procedure, you will use Milvus Backup to prepare the backup files, upload them to Zilliz Cloud, and migrate them to the specified target Zilliz Cloud cluster.
+
+<Procedures>
 
 1. Download **[milvus-backup](https://github.com/zilliztech/milvus-backup/releases)**. Always use the latest release.
 
@@ -148,6 +152,8 @@ In this procedure, you will use Milvus Backup to prepare the backup files, uploa
 
     </Admonition>
 
+</Procedures>
+
 ## Monitor the migration process\{#monitor-the-migration-process}
 
 Once you click **Migrate**, a migration job will be generated. You can check the migration progress on the [Jobs](./job-center) page. When the job status switches from **In Progress** to **Successful**, the migration is complete.
@@ -172,7 +178,10 @@ After the migration job is completed, note the following:
 
 If the migration process encounters any issues, you can take the following steps to troubleshoot and resume the migration:
 
+<Procedures>
+
 1. On the [Jobs](./job-center) page, identify the failed migration job and cancel it.
 
 1. Click **View Details** in the **Actions** column to access the error log.
 
+</Procedures>

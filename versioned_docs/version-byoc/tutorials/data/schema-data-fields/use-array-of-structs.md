@@ -20,10 +20,10 @@ keywords:
   - array field
   - array of structs
   - structs
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - open source vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
 
 ---
 
@@ -585,7 +585,7 @@ client.createCollection(requestCreate);
 
 ```javascript
 await milvusClient.createCollection({
-  collection_name: "books",
+  collection_name: "my_collection",
   fields: schema,
   indexes: indexParams,
 });

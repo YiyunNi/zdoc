@@ -18,10 +18,10 @@ keywords:
   - collection
   - create collection
   - custom setup
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
 
 ---
 

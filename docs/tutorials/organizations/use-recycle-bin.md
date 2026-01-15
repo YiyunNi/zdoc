@@ -16,15 +16,17 @@ keywords:
   - vector database
   - cloud
   - recycle bin
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Use Recycle Bin
 
@@ -37,6 +39,10 @@ To use recycle bin, you must be an **Organization Owner**.
 To restore a cluster in the recycle bin, you need to [add a payment method](/docs/payment-billing).
 
 ## Restore a dropped cluster in the recycle bin\{#restore-a-dropped-cluster-in-the-recycle-bin}
+
+![use-recycle-bin](https://zdoc-images.s3.us-west-2.amazonaws.com/use-recycle-bin.png "use-recycle-bin")
+
+<Procedures>
 
 1. Navigate to the organization the dropped cluster belongs to.
 
@@ -60,5 +66,4 @@ To restore a cluster in the recycle bin, you need to [add a payment method](/doc
 
 1. A new restoration job will be generated. You can check the cluster restoration progress on the [Jobs](./job-center) page. When the job status switches from **IN PROGRESS** to **SUCCESSFUL**, the restoration is complete.
 
-![use-recycle-bin](https://zdoc-images.s3.us-west-2.amazonaws.com/use-recycle-bin.png "use-recycle-bin")
-
+</Procedures>

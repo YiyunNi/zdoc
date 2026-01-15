@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - limits
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
 
 ---
 
@@ -193,8 +193,8 @@ A CU is the basic unit of compute resources used for parallel processing of data
    </tr>
    <tr>
      <td><p>Dedicated cluster in an Enterprise project</p></td>
-     <td><p>CU size x Replica Count &lt;=256</p></td>
-     <td><p>On the console, you can create up to 256 CUs for a single cluster.</p><p>However, the limit is CU size x Replica Count &lt;=256 if replicas are added.</p></td>
+     <td><p>CU size x Replica Count &lt;=1,024</p></td>
+     <td><p>On the console, you can create up to 1,024 CUs for a single cluster.</p><p>However, the limit is CU size x Replica Count &lt;=1,024 if replicas are added.</p></td>
    </tr>
 </table>
 
@@ -202,7 +202,7 @@ You are welcome to [contact us](https://support.zilliz.com/hc/en-us)
 
 - If your Dedicated clusters in a Standard project require more than 32 CUs
 
-- If your Dedicated clusters in an Enterprise project require more than 256 CUs
+- If your Dedicated clusters in an Enterprise project require more than 1,024 CUs
 
 ### vCUs\{#vcus}
 
@@ -248,7 +248,7 @@ The following table lists the limits on the capacity of each type of cluster pla
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>The upper limits for dedicated cluster capacity depend on the CU type and size used. If your cluster's capacity is not enough, consider adjusting the CU type and size. For details, see <a href="./scale-cluster">Scale Cluster</a>.</p>
+<p>The upper limits for dedicated cluster capacity depend on the CU type and size used. If your cluster's capacity is not enough, consider adjusting the CU type and size. For details, see <a href="./scale-query-cu">Scale Cluster</a>.</p>
 
 </Admonition>
 
@@ -309,7 +309,7 @@ You can create a maximum of **1,024** collections or **4,096** partitions per CU
    </tr>
    <tr>
      <td><p>Vector fields per collection</p></td>
-     <td><ul><li><p>Free &amp; Serverless: 4</p></li><li><p>Dedicated: 10</p></li></ul></td>
+     <td><ul><li><p>Free & Serverless: 4</p></li><li><p>Dedicated: 10</p></li></ul></td>
    </tr>
 </table>
 

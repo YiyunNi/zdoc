@@ -20,10 +20,10 @@ keywords:
   - primary field
   - autoId
   - autoid
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
+  - Embedding model
 
 ---
 
@@ -92,7 +92,10 @@ Zilliz Cloud supports two modes for assigning primary key values.
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>If you are unsure which mode to choose, <a href="./primary-field-auto-id#quickstart-use-autoid">start with AutoID</a> for simpler ingestion and guaranteed uniqueness.</p>
+<ul>
+<li><p>If you are unsure which mode to choose, <a href="./primary-field-auto-id#quickstart-use-autoid">start with AutoID</a> for simpler ingestion and guaranteed uniqueness.</p></li>
+<li><p>You are advised to rely on <code>autoId</code> in all cases unless manually setting primary keys is beneficial.</p></li>
+</ul>
 
 </Admonition>
 

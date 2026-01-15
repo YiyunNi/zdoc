@@ -17,10 +17,10 @@ keywords:
   - cloud
   - network
   - security
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - register
   - cloud
   - milvus
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
 
 ---
 
@@ -37,7 +37,7 @@ This guide provides comprehensive instructions on how to create an account for a
 
 You are welcome to visit Zilliz Cloud to [sign up](https://cloud.zilliz.com/signup).
 
-![sign_up](/img/sign_up.png "sign_up")
+![sign_up](https://zdoc-images.s3.us-west-2.amazonaws.com/sign_up.png "sign_up")
 
 ## Registration options\{#registration-options}
 

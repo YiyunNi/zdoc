@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - pinecone
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
 
 ---
 

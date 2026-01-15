@@ -16,10 +16,10 @@ keywords:
   - vector database
   - get started
   - milvus
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
 
 ---
 

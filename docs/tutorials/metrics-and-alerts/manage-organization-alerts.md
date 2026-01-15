@@ -17,10 +17,10 @@ keywords:
   - cloud
   - organization
   - alerts
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
 
 ---
 
@@ -73,7 +73,7 @@ When viewing alerts, you'll encounter the following configuration items:
      <td><p>Monitored scope - Organization-wide</p></td>
    </tr>
    <tr>
-     <td><p>Metric &amp; Condition</p></td>
+     <td><p>Metric & Condition</p></td>
      <td><p>Trigger parameters including credit thresholds, payment status, and usage limits</p></td>
    </tr>
    <tr>

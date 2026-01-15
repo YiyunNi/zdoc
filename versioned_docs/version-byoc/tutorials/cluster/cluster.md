@@ -10,16 +10,16 @@ notebook: FALSE
 description: "Everything you need to know about managing clusters on Zilliz Cloud. | BYOC"
 type: origin
 token: BIy4we6qXiq8NpkHfXgcxuONngb
-sidebar_position: 4
+sidebar_position: 5
 keywords: 
   - zilliz
   - vector database
   - cloud
   - cluster
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
 
 ---
 

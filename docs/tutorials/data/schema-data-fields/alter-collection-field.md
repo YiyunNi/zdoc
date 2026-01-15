@@ -19,10 +19,10 @@ keywords:
   - schema
   - field properties
   - alter collection field
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
 
 ---
 

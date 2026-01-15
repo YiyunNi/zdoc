@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - analyzer explained
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
 
 ---
 
@@ -561,6 +561,13 @@ Filters in a custom analyzer can be either **built-in** or **custom**, depending
     </TabItem>
     </Tabs>
 
+```java
+nlohmann::json analyzer_params = {
+    {"type", "standard"},
+    {"filter", {{{"type", "stop"}, {"stop_words", {"a", "an", "for"}}}}},
+};
+```
+
 ## Example use\{#example-use}
 
 In this example, you will create a collection schema that includes:
@@ -723,13 +730,11 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     analyzerParamsBuiltin.put("type", "english");
     
     List<String> texts = new ArrayList<>();
-    texts.add("Milvus simplifies text ana
-    
-    lysis for search.");
+    texts.add("Milvus simplifies text analysis for search.");
     
     RunAnalyzerResp resp = client.runAnalyzer(RunAnalyzerReq.builder()
             .texts(texts)
-            .analyzerParams(analyzerParams)
+            .analyzerParams(analyzerParamsBuiltin)
             .build());
     List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
     ```
@@ -740,7 +745,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
 
     ```javascript
     // Use a built-in analyzer for VARCHAR field `title_en`
-    const analyzerParamsBuiltIn = {
+    const analyzer_params_built_in = {
       type: "english",
     };
     
@@ -756,9 +761,9 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='go'>
 
     ```go
-    analyzerParams := map[string]any{"type": "english"}
+    analyzerParamsBuiltin := map[string]any{"type": "english"}
     
-    bs, _ := json.Marshal(analyzerParams)
+    bs, _ := json.Marshal(analyzerParamsBuiltin)
     texts := []string{"Milvus simplifies text analysis for search."}
     option := milvusclient.NewRunAnalyzerOption(texts).
         WithAnalyzerParams(string(bs))
@@ -830,9 +835,9 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
 
     ```java
     // Configure a custom analyzer
-    Map<String, Object> analyzerParams = new HashMap<>();
-    analyzerParams.put("tokenizer", "standard");
-    analyzerParams.put("filter",
+    Map<String, Object> analyzerParamsCustom = new HashMap<>();
+    analyzerParamsCustom.put("tokenizer", "standard");
+    analyzerParamsCustom.put("filter",
             Arrays.asList("lowercase",
                     new HashMap<String, Object>() {{
                         put("type", "length");
@@ -850,7 +855,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     
     RunAnalyzerResp resp = client.runAnalyzer(RunAnalyzerReq.builder()
             .texts(texts)
-            .analyzerParams(analyzerParams)
+            .analyzerParams(analyzerParamsCustom)
             .build());
     List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
     ```
@@ -861,7 +866,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
 
     ```javascript
     // Configure a custom analyzer for VARCHAR field `title`
-    const analyzerParamsCustom = {
+    const analyzer_params_custom = {
       tokenizer: "standard",
       filter: [
         "lowercase",
@@ -878,7 +883,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     const sample_text = "Milvus provides flexible, customizable analyzers for robust text processing.";
     const result = await client.run_analyzer({
         text: sample_text, 
-        analyzer_params: analyzer_params_built_in
+        analyzer_params: analyzer_params_custom
     });
     ```
 
@@ -887,7 +892,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='go'>
 
     ```go
-    analyzerParams = map[string]any{"tokenizer": "standard",
+    analyzerParamsCustom = map[string]any{"tokenizer": "standard",
         "filter": []any{"lowercase", 
         map[string]any{
             "type": "length",
@@ -897,7 +902,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
             "stop_words": []string{"of", "to"},
         }}}
         
-    bs, _ := json.Marshal(analyzerParams)
+    bs, _ := json.Marshal(analyzerParamsCustom)
     texts := []string{"Milvus provides flexible, customizable analyzers for robust text processing."}
     option := milvusclient.NewRunAnalyzerOption(texts).
         WithAnalyzerParams(string(bs))
@@ -971,14 +976,23 @@ schema.add_field(field_name="id", datatype=DataType.INT64, is_primary=True)
 
 ```java
 schema.addField(AddFieldReq.builder()
+        .fieldName("title_en")
+        .dataType(DataType.VarChar)
+        .maxLength(1000)
+        .enableAnalyzer(true)
+        .analyzerParams(analyzerParamsBuiltin)
+        .enableMatch(true) // must enable this if you use TextMatch
+        .build());
+
+schema.addField(AddFieldReq.builder()
         .fieldName("title")
         .dataType(DataType.VarChar)
         .maxLength(1000)
         .enableAnalyzer(true)
-        .analyzerParams(analyzerParams)
+        .analyzerParams(analyzerParamsCustom)
         .enableMatch(true) // must enable this if you use TextMatch
         .build());
-
+        
 // Add vector field
 schema.addField(AddFieldReq.builder()
         .fieldName("embedding")
@@ -1048,11 +1062,18 @@ schema.WithField(entity.NewField().
     WithDataType(entity.FieldTypeFloatVector).
     WithDim(3),
 ).WithField(entity.NewField().
+    WithName("title_en").
+    WithDataType(entity.FieldTypeVarChar).
+    WithMaxLength(1000).
+    WithEnableAnalyzer(true).
+    WithAnalyzerParams(analyzerParamsBuiltin).
+    WithEnableMatch(true),
+).WithField(entity.NewField().
     WithName("title").
     WithDataType(entity.FieldTypeVarChar).
     WithMaxLength(1000).
     WithEnableAnalyzer(true).
-    WithAnalyzerParams(analyzerParams).
+    WithAnalyzerParams(analyzerParamsCustom).
     WithEnableMatch(true),
 )
 ```

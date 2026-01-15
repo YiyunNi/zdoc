@@ -10,16 +10,16 @@ notebook: FALSE
 description: "You can find the history of Zilliz Cloud releases in these docs. | Cloud"
 type: origin
 token: NOYvw884PigqIhk1gwLcw1OYnfe
-sidebar_position: 17
+sidebar_position: 16
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
 
 ---
 

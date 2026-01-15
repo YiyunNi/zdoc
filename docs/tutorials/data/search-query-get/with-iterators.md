@@ -10,7 +10,7 @@ notebook: FALSE
 description: "The ANN Search has a maximum limit on the number of entities that can be recalled in a single query, and simply using basic ANN Search may not meet the demands of large-scale retrieval. For ANN Search requests where topK exceeds 16,384, it is advisable to consider using the SearchIterator. This section will introduce how to use the SearchIterator and related considerations. | Cloud"
 type: origin
 token: QVTnwVz2aifvSAkgomAc9KWRnHb
-sidebar_position: 15
+sidebar_position: 16
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,10 @@ keywords:
   - collection
   - data
   - search iterators
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 
@@ -103,7 +103,7 @@ SearchIterator searchIterator = client.searchIterator(SearchIteratorReq.builder(
         .batchSize(500L)
         .outputFields(Lists.newArrayList("color"))
         .topK(20000)
-        .metricType(IndexParam.MetricType.COSINE)
+        .metricType(IndexParam.MetricType.L2)
         .build());
 ```
 
@@ -134,7 +134,7 @@ c, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
 })
 
 vec := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
-iter, err := c.SearchIterator(ctx, milvusclient.NewSearchIteratorOption(collectionName, entity.FloatVector(vec)).
+iter, err := c.SearchIterator(ctx, milvusclient.NewSearchIteratorOption("iterator_collection", entity.FloatVector(vec)).
     WithANNSField("vector").
     WithAnnParam(index.NewIvfAnnParam(16)).
     WithBatchSize(50).

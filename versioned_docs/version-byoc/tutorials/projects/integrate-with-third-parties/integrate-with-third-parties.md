@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - project third-party
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
 
 ---
 

@@ -19,10 +19,10 @@ keywords:
   - IAM role
   - milvus
   - vector database
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
 
 ---
 
@@ -30,6 +30,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create EKS IAM Role
 
@@ -50,6 +52,8 @@ You can use the AWS console to create the EKS role. As an alternative, you can u
 In this step, you will create an IAM role on AWS for Zilliz Cloud to manage EKS clusters on your behalf and paste the ARN of the role back to Zilliz Cloud console.
 
 <Supademo id="cmb7llk244s2yppkpeo4oz85z" title=""  />
+
+<Procedures>
 
 1. Log into your AWS Console as a user with administrator privileges and go to the IAM dashboard.
 
@@ -138,6 +142,8 @@ In this step, you will create an IAM role on AWS for Zilliz Cloud to manage EKS 
 1. Click the copy icon in front of the role's **ARN**.
 
 1. Go back to the Zilliz Cloud console, paste the role ARN in **IAM Role ARN** under **EKS settings**.
+
+</Procedures>
 
 ### Step 2: Add permissions\{#step-2-add-permissions}
 

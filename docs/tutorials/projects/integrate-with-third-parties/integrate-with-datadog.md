@@ -18,15 +18,17 @@ keywords:
   - third-party
   - services
   - datadog
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Integrate with Datadog
 
@@ -45,6 +47,10 @@ import Admonition from '@theme/Admonition';
 - You must have a Datadog account and a Datadog API key. For information on how to access your API key, refer to [API and Application Keys](https://docs.datadoghq.com/account_management/api-app-keys/#application-keys).
 
 ## Procedure\{#procedure}
+
+![integrate-with-datadog-1](https://zdoc-images.s3.us-west-2.amazonaws.com/integrate-with-datadog-1.png "integrate-with-datadog-1")
+
+<Procedures>
 
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -115,7 +121,7 @@ import Admonition from '@theme/Admonition';
 
     1. Click **Create**.
 
-![integrate-with-datadog-1](https://zdoc-images.s3.us-west-2.amazonaws.com/integrate-with-datadog-1.png "integrate-with-datadog-1")
+</Procedures>
 
 ## Monitor integration progress\{#monitor-integration-progress}
 

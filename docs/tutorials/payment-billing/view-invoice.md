@@ -17,16 +17,18 @@ keywords:
   - cloud
   - invoice
   - view
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
 
 ---
 
 import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Invoices
 
@@ -157,11 +159,15 @@ If you are an Organization Owner or a Billing Admin, you can view, pay, and down
 
 <TabItem value="Cloud Console">
 
+![view-invoices](https://zdoc-images.s3.us-west-2.amazonaws.com/view-invoices.png "view-invoices")
+
+<Procedures>
+
 1. Click **Billing** on the left navigation.
 
 1. Switch to the **Invoices** tab. You can see all current and past invoices.
 
-![view-invoices](https://zdoc-images.s3.us-west-2.amazonaws.com/view-invoices.png "view-invoices")
+</Procedures>
 
 </TabItem>
 
@@ -227,13 +233,17 @@ curl --request GET \
 
 <TabItem value="Cloud Console">
 
+![view-invoice-detail](https://zdoc-images.s3.us-west-2.amazonaws.com/view-invoice-detail.png "view-invoice-detail")
+
+<Procedures>
+
 1. Click **Billing** on the left navigation.
 
 1. Switch to the **Invoices** tab.
 
 1. Click on the billing period of a target invoice to view its details.
 
-![view-invoice-detail](https://zdoc-images.s3.us-west-2.amazonaws.com/view-invoice-detail.png "view-invoice-detail")
+</Procedures>
 
 </TabItem>
 

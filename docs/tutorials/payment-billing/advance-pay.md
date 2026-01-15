@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - advance pay
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
 
 ---
 

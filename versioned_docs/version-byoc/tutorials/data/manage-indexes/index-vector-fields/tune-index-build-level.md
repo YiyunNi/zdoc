@@ -18,10 +18,10 @@ keywords:
   - vector field
   - index
   - index build level
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
 
 ---
 
@@ -77,28 +77,22 @@ The following table compares the capacity, QPS, and recall rate of a performance
      <th><p>Recall</p></th>
    </tr>
    <tr>
-     <td><p>Before <code>build_level</code> (Baseline)</p></td>
-     <td><p>1.5 million 768-dim vectors</p></td>
-     <td><p>~ 3,000</p></td>
-     <td><p>91% - 97%</p></td>
-   </tr>
-   <tr>
      <td><p>Capacity-first (0)</p></td>
-     <td><p><strong>5.25 million 768-dim vectors (↑ 250%)</strong></p></td>
-     <td><p>~ 2,850 (↓ ~5%)</p></td>
+     <td><p>2.1 million 768-dim vectors</p></td>
+     <td><p>~ 2,850</p></td>
      <td><p>90% - 95%</p></td>
    </tr>
    <tr>
-     <td><p><strong>Balanced (1)</strong></p></td>
-     <td><p><strong>2.4 million 768-dim vectors (↑ 60%)</strong></p></td>
-     <td><p><strong>~ 3,500 (↑ 17%)</strong></p></td>
+     <td><p>Balanced (1)</p></td>
+     <td><p>1.5 million 768-dim vectors</p></td>
+     <td><p>~ 3,500</p></td>
      <td><p>91% - 97%</p></td>
    </tr>
    <tr>
      <td><p>Precison-first (2)</p></td>
-     <td><p>1.5 million 768-dim vectors</p></td>
+     <td><p>1 million 768-dim vectors</p></td>
      <td><p>~ 3,000</p></td>
-     <td><p><strong>92% - 98% (↑)</strong></p></td>
+     <td><p>92% - 98% (↑)</p></td>
    </tr>
 </table>
 
@@ -114,28 +108,22 @@ The following table compares the capacity, QPS, and recall rate of a capacity-op
      <th><p>Recall</p></th>
    </tr>
    <tr>
-     <td><p>Before <code>build_level</code> (Baseline)</p></td>
-     <td><p>5 million 768-dim vectors</p></td>
-     <td><p>~ 340</p></td>
-     <td><p>93% - 98%</p></td>
-   </tr>
-   <tr>
      <td><p>Capacity-first (0)</p></td>
-     <td><p><strong>10 million 768-dim vectors (↑ 100%)</strong></p></td>
+     <td><p>7 million 768-dim vectors</p></td>
      <td><p>~ 300</p></td>
      <td><p>89% - 97%</p></td>
    </tr>
    <tr>
-     <td><p><strong>Balanced (1)</strong></p></td>
-     <td><p><strong>7.5 million 768-dim vectors (↑ 50%)</strong></p></td>
-     <td><p><strong>~ 350 (↑ 3%)</strong></p></td>
-     <td><p>92% - 97%</p></td>
+     <td><p>Balanced (1)</p></td>
+     <td><p>5 million 768-dim vectors</p></td>
+     <td><p>~ 350</p></td>
+     <td><p>93% - 98%</p></td>
    </tr>
    <tr>
      <td><p>Precision-first (2)</p></td>
-     <td><p>5 million 768-dim vectors</p></td>
+     <td><p>3 million 768-dim vectors</p></td>
      <td><p>~ 345</p></td>
-     <td><p><strong>94% - 98% (↑)</strong></p></td>
+     <td><p>94% - 98%</p></td>
    </tr>
 </table>
 

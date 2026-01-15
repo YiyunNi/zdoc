@@ -19,10 +19,10 @@ keywords:
   - schema
   - json field
   - json shredding
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 
 ---
 

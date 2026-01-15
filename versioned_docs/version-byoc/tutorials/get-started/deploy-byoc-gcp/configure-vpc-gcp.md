@@ -20,10 +20,10 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Configure a Customer-Managed VPC on GCP
 
@@ -115,6 +117,8 @@ You will create a VPC network and add the primary subnet in this step. The prima
 
 The steps to create a VPC network and add the primary subnet are as follows:
 
+<Procedures>
+
 1. On the GCP console, find and click **VPC network**.
 
 1. Click **Create VPC network**.
@@ -141,6 +145,8 @@ The steps to create a VPC network and add the primary subnet are as follows:
 
 1. Leave the rest in default settings and click **Create**.
 
+</Procedures>
+
 ### Step 2: Add the load-balancing subnet\{#step-2-add-the-load-balancing-subnet}
 
 You will add a proxy-only subnet reserved for the regional Application Load Balancer in this step.
@@ -148,6 +154,8 @@ You will add a proxy-only subnet reserved for the regional Application Load Bala
 <Supademo id="cmbhmkul05p81sn1r161bhqiy" title=""  />
 
 The steps for adding this subnet are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **VPC network**.
 
@@ -175,6 +183,8 @@ The steps for adding this subnet are as follows:
 
 1. Click **Add**.
 
+</Procedures>
+
 ### Step 3: Set up the Cloud Router and NAT gateway\{#step-3-set-up-the-cloud-router-and-nat-gateway}
 
 You will configure a Cloud Router and a NAT gateway to enable network address translation for the traffic between your VPC and that of Zilliz Cloud.
@@ -182,6 +192,8 @@ You will configure a Cloud Router and a NAT gateway to enable network address tr
 <Supademo id="cmbhobhu95slrsn1r9uig4txt" title=""  />
 
 The steps to set up the Cloud Router and NAT gateway are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **Network Connectivity**.
 
@@ -223,6 +235,8 @@ The steps to set up the Cloud Router and NAT gateway are as follows:
 
 1. Once the new IP address has been reserved for the NAT gateway, click **Create**.
 
+</Procedures>
+
 ### Step 4: Add firewall rules\{#step-4-add-firewall-rules}
 
 You will add two firewall rules in this step. The first rule is to enable health checks against BYOC clusters deployed on your VPC network, and the second is to enable communications between all VMs with the target tag `zilliz-byoc`.
@@ -230,6 +244,8 @@ You will add two firewall rules in this step. The first rule is to enable health
 <Supademo id="cmbj0hb9p7c84sn1r5q4o16k0" title=""  />
 
 The steps to add these firewall rules are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **VPC network**.
 
@@ -291,6 +307,8 @@ The steps to add these firewall rules are as follows:
            </tr>
         </table>
 
+</Procedures>
+
 ### Step 5: (Optional) Create a PSC endpoint\{#step-5-optional-create-a-psc-endpoint}
 
 You will add a PSC endpoint to ensure that communications between your VPC and Zilliz Cloud are off the Internet.
@@ -298,6 +316,8 @@ You will add a PSC endpoint to ensure that communications between your VPC and Z
 <Supademo id="cmbj22gip7cyqsn1r4kes9547" title=""  />
 
 The steps for creating the PSC endpoint are as follows:
+
+<Procedures>
 
 1. On the GCP console, find and click **Network Services**.
 
@@ -340,3 +360,4 @@ The steps for creating the PSC endpoint are as follows:
 
 1. Click **Add endpoint**.
 
+</Procedures>

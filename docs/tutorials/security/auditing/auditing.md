@@ -17,10 +17,10 @@ keywords:
   - cloud
   - auditing
   - log
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
 
 ---
 

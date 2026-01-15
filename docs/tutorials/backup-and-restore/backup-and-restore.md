@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Data backup and restore for your data stored in Zilliz Cloud clusters. | Cloud"
 type: origin
 token: VvikwOKc9iZ5vBkgMnycrXKmnId
-sidebar_position: 8
+sidebar_position: 9
 keywords: 
   - zilliz
   - vector database
   - cloud
   - backup
   - restore
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
 
 ---
 

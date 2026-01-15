@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - volume
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
 
 ---
 
@@ -60,7 +60,7 @@ The following table describes each parameter used when creating a volume.
      <td><p>This parameter is optional.</p></td>
    </tr>
    <tr>
-     <td><p>Cloud Provider &amp; Region</p></td>
+     <td><p>Cloud Provider & Region</p></td>
      <td><p>The volume cloud provider and region must match the cloud provider and region of the target cluster you plan to import or migrate data into.</p></td>
    </tr>
 </table>

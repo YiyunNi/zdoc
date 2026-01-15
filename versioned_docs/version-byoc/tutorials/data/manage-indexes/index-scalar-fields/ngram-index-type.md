@@ -18,10 +18,10 @@ keywords:
   - scalar field
   - varchar
   - ngram
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
 
 ---
 

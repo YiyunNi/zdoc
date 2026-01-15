@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - sso
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
 
 ---
 
@@ -27,6 +27,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Okta (OIDC)
 
@@ -52,6 +54,8 @@ As the SP, Zilliz Cloud provides the **Single sign-on URL** required when settin
 
 <Supademo id="cme89wf1w3eaoh3pytd3723ao" title="Step 1: Access service provider details in Zilliz Cloud console" />
 
+<Procedures>
+
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login) and go to the organization for which you want to configure SSO.
 
 1. In the left-side navigation pane, click **Settings**.
@@ -64,11 +68,15 @@ As the SP, Zilliz Cloud provides the **Single sign-on URL** required when settin
 
 1. Once that's done, proceed to [Step 2](./openid-connect#step-2-set-up-an-oidc-app-in-okta-console).
 
+</Procedures>
+
 ### Step 2: Set up an OIDC app in Okta console\{#step-2-set-up-an-oidc-app-in-okta-console}
 
 In this step, you configure Okta (the IdP) with the SP details obtained from Zilliz Cloud.
 
 <Supademo id="cme8abl5c3ei3h3pywbc9z740" title="Step 1: Create SAML App in Okta Console" />
+
+<Procedures>
 
 1. Log in to the [Okta Admin console](https://login.okta.com/).
 
@@ -98,11 +106,15 @@ In this step, you configure Okta (the IdP) with the SP details obtained from Zil
 
     These values will be required in Zilliz Cloud console in [Step 3](./openid-connect#step-3-configure-idp-settings-in-zilliz-cloud-console).
 
+</Procedures>
+
 ### Step 3: Configure IdP settings in Zilliz Cloud console\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
 
 In this step, you provide Okta’s IdP details back to Zilliz Cloud to complete the OIDC trust relationship.
 
 <Supademo id="cme8af32q3elth3pyaygkdnmo" title="Step 3: Configure Okta settings in Zilliz Cloud console" />
+
+<Procedures>
 
 1. Go back to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -116,6 +128,8 @@ In this step, you provide Okta’s IdP details back to Zilliz Cloud to complete 
 
 1. Once that's done, click **Save**. Then, click **OK**.
 
+</Procedures>
+
 ## Post-configuration tasks\{#post-configuration-tasks}
 
 ### Task 1: Assign OIDC app to users\{#task-1-assign-oidc-app-to-users}
@@ -124,6 +138,8 @@ In this step, you provide Okta’s IdP details back to Zilliz Cloud to complete 
 
 Before users can access Zilliz Cloud through SSO, you need to assign the OIDC app to them:
 
+<Procedures>
+
 1. On the app details page of the [Okta Admin console](https://login.okta.com/), click **Assignments**.
 
 1. Choose **Assign** > **Assign to People**.
@@ -131,6 +147,8 @@ Before users can access Zilliz Cloud through SSO, you need to assign the OIDC ap
 1. Assign the OIDC app to the user and save the changes.
 
 1. Click **Save** **and** **Go Back**. Then, click **Done**.
+
+</Procedures>
 
 Repeat for all users as needed. See [Okta documentation](https://help.okta.com/oie/en-us/content/topics/provisioning/lcm/lcm-assign-app-groups.htm) for more.
 

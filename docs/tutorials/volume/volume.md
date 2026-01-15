@@ -10,16 +10,16 @@ notebook: FALSE
 description: "A volume is an object store that holds either structured data or collections of unstructured data files. It provides a unified place to access, store, govern, and organize these data assets. This chapter explains what a volume is, its use cases, and demonstrates how to manage volumes on Zilliz Cloud. | Cloud"
 type: origin
 token: Fe9vwGQQKiaqurkTuz1cSAaUn2d
-sidebar_position: 5
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
   - cloud
   - volume
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
 
 ---
 

@@ -10,7 +10,7 @@ notebook: FALSE
 description: "In many applications, an object can be searched by a rich set of information such as title and description, or with multiple modalities such as text, images, and audio. For example, a tweet with a piece of text and an image shall be searched if either the text or the image matches the semantic of the search query. Hybrid search enhances search experience by combining searches across these diverse fields. Zilliz Cloud supports this by allowing search on multiple vector fields, conducting several Approximate Nearest Neighbor (ANN) searches simultaneously. Multi-vector hybrid search is particularly useful if you want to search both text and images, multiple text fields that describe the same object, or dense and sparse vectors to improve search quality. | Cloud"
 type: origin
 token: WTsmwWdgOiKnwpkdZdScp093njh
-sidebar_position: 6
+sidebar_position: 7
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - data
   - hybrid search
   - combine sparse and dense vectors
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 
@@ -761,7 +761,6 @@ query_multimodal_vector = generate_dense_vector(512)
 search_param_1 = {
     "data": [query_dense_vector],
     "anns_field": "text_dense",
-    "param": {"nprobe": 10},
     "limit": 2
 }
 request_1 = AnnSearchRequest(**search_param_1)
@@ -770,7 +769,6 @@ request_1 = AnnSearchRequest(**search_param_1)
 search_param_2 = {
     "data": [query_text],
     "anns_field": "text_sparse",
-    "param": {"drop_ratio_search": 0.2},
     "limit": 2
 }
 request_2 = AnnSearchRequest(**search_param_2)
@@ -779,7 +777,6 @@ request_2 = AnnSearchRequest(**search_param_2)
 search_param_3 = {
     "data": [query_multimodal_vector],
     "anns_field": "image_dense",
-    "param": {"nprobe": 10},
     "limit": 2
 }
 request_3 = AnnSearchRequest(**search_param_3)
@@ -810,19 +807,16 @@ List<AnnSearchReq> searchRequests = new ArrayList<>();
 searchRequests.add(AnnSearchReq.builder()
         .vectorFieldName("text_dense")
         .vectors(queryDenseVectors)
-        .params("{\"nprobe\": 10}")
         .topK(2)
         .build());
 searchRequests.add(AnnSearchReq.builder()
         .vectorFieldName("text_sparse")
         .vectors(queryTexts)
-        .params("{\"drop_ratio_search\": 0.2}")
         .topK(2)
         .build());
 searchRequests.add(AnnSearchReq.builder()
         .vectorFieldName("image_dense")
         .vectors(queryMultimodalVectors)
-        .params("{\"nprobe\": 10}")
         .topK(2)
         .build());
 ```
@@ -860,21 +854,18 @@ const query_multimodal_vector = [0.015829865178701663, 0.5264158340734488, ...]
 const search_param_1 = {
     "data": query_vector, 
     "anns_field": "text_dense", 
-    "param": {"nprobe": 10},
     "limit": 2
 }
 
 const search_param_2 = {
     "data": query_text, 
     "anns_field": "text_sparse", 
-    "param": {"drop_ratio_search": 0.2},
     "limit": 2
 }
 
 const search_param_3 = {
     "data": query_multimodal_vector, 
     "anns_field": "image_dense", 
-    "param": {"nprobe": 10},
     "limit": 2
 }
 ```
@@ -888,19 +879,16 @@ export req='[
     {
         "data": [[0.3580376395471989, -0.6023495712049978, 0.18414012509913835, ...]],
         "annsField": "text_dense",
-        "params": {"nprobe": 10},
         "limit": 2
     },
     {
         "data": ["white headphones, quiet and comfortable"],
         "annsField": "text_sparse",
-        "params": {"drop_ratio_search": 0.2},
         "limit": 2
     },
     {
         "data": [[0.015829865178701663, 0.5264158340734488, ...]],
         "annsField": "image_dense",
-        "params": {"nprobe": 10},
         "limit": 2
     }
  ]'
@@ -953,7 +941,7 @@ Function ranker = Function.builder()
 <TabItem value='javascript'>
 
 ```javascript
-const rerank = {
+const ranker = {
   name: 'rrf',
   description: 'bm25 function',
   type: FunctionType.RERANK,
@@ -987,7 +975,7 @@ ranker := entity.NewFunction().
 
 ```bash
 # Restful
-export functionScore='{
+export ranker='{
     "functions": [
         {
             "name": "rrf",
@@ -1038,7 +1026,7 @@ import io.milvus.v2.service.vector.response.SearchResp;
 HybridSearchReq hybridSearchReq = HybridSearchReq.builder()
         .collectionName("my_collection")
         .searchRequests(searchRequests)
-        .ranker(reranker)
+        .ranker(ranker)
         .topK(2)
         .build();
 
@@ -1056,7 +1044,7 @@ resultSets, err := client.HybridSearch(ctx, milvusclient.NewHybridSearchOption(
     request1,
     request2,
     request3,
-).WithReranker(reranker))
+).WithReranker(ranker))
 if err != nil {
     fmt.Println(err.Error())
     // handle error
@@ -1085,7 +1073,7 @@ const search = await client.search({
   collection_name: "my_collection",
   data: [search_param_1, search_param_2, search_param_3],
   limit: 2,
-  rerank: rerank
+  rerank: ranker
 });
 ```
 
@@ -1103,7 +1091,7 @@ curl --request POST \
     \"search\": ${req},
     \"rerank\": {
         \"strategy\":\"rrf\",
-        \"params\": ${rerank}
+        \"params\": ${ranker}
     },
     \"limit\": 2
 }"

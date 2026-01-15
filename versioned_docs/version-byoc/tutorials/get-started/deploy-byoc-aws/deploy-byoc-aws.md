@@ -17,15 +17,17 @@ keywords:
   - aws
   - milvus
   - vector database
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Deploy BYOC on AWS
 
@@ -57,6 +59,8 @@ Within your BYOC organization, click the **Create Project and Deploy Data Plane*
 In this step, you need to set the project name, determine the cloud providers and regions as well as the initial project size, and choose the way for Zilliz Cloud to create the project and deploy the data plane.
 
 ![ObsWbiWhxo4IQHx7pPacHUl2nuh](https://zdoc-images.s3.us-west-2.amazonaws.com/obswbiwhxo4iqhx7ppachul2nuh.png "ObsWbiWhxo4IQHx7pPacHUl2nuh")
+
+<Procedures>
 
 1. Set **Project Name**.
 
@@ -154,11 +158,15 @@ In this step, you need to set the project name, determine the cloud providers an
 
 1. Click **Next** to set up credentials.
 
+</Procedures>
+
 ### Step 2: Set up credentials\{#step-2-set-up-credentials}
 
 In **Credential Settings**, you must set up the storage and several IAM roles for storage access, EKS cluster management, and data-plane deployment.
 
 ![LEGhbUbZwoPdwSx1PjxcHBjQnab](https://zdoc-images.s3.us-west-2.amazonaws.com/leghbubzwopdwsx1pjxchbjqnab.png "LEGhbUbZwoPdwSx1PjxcHBjQnab")
+
+<Procedures>
 
 1. In **Storage settings**, set **Bucket Name** and **IAM Role ARN** obtained from AWS. 
 
@@ -180,11 +188,15 @@ In **Credential Settings**, you must set up the storage and several IAM roles fo
 
 1. Click **Next** to configure network settings.
 
+</Procedures>
+
 ### Step 3: Configure network settings\{#step-3-configure-network-settings}
 
 In **Network Settings**, create a VPC and several types of resources, such as subnets, security groups, and optional VPC endpoint in the VPC.
 
 ![NeKmbmKVhoNWcOx18IjcC1eLnDb](https://zdoc-images.s3.us-west-2.amazonaws.com/nekmbmkvhonwcox18ijcc1elndb.png "NeKmbmKVhoNWcOx18IjcC1eLnDb")
+
+<Procedures>
 
 1. In **Network Settings**, set the **VPC ID**, **Subnet IDs**, the **Security Group ID**, and the optional **VPC endpoint ID**.
 
@@ -204,6 +216,8 @@ In **Network Settings**, create a VPC and several types of resources, such as su
 
 1. Click **Create** if everything is as expected.
 
+</Procedures>
+
 ## View deployment details\{#view-deployment-details}
 
 After you create a project, you can view its status on the project page.
@@ -222,7 +236,21 @@ You can only suspend a running project if there are no clusters in the project o
 
 Once the status tag on a project card reads **Suspended**, you cannot manipulate clusters in the project. In such a case, you can click **Resume** to resume the project. Once the status tag turns to **Running** again, you can continue manipulating clusters in the project.
 
+## Technical support access\{#technical-support-access}
+
+To assist you with troubleshooting and maintenance operations, Zilliz Cloud enables technical support to access your project's data plane by default. 
+
+![K1qzbwdxXoge0exlN6NcClN7nfh](https://zdoc-images.s3.us-west-2.amazonaws.com/k1qzbwdxxoge0exln6nccln7nfh.png "K1qzbwdxXoge0exlN6NcClN7nfh")
+
+When you click **Technical Support Access** from the target project's drop-down menu to view the current settings.
+
+![YYOabQl2ioTl6AxIVLwcwjWqnBc](https://zdoc-images.s3.us-west-2.amazonaws.com/yyoabql2iotl6axivlwcwjwqnbc.png "YYOabQl2ioTl6AxIVLwcwjWqnBc")
+
+You can disable it to meet data governance and security requirements.
+
 ## Procedures\{#procedures}
+
+
 
 import DocCardList from '@theme/DocCardList';
 

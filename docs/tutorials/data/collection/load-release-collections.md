@@ -18,10 +18,10 @@ keywords:
   - collection
   - load
   - release
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
 
 ---
 
@@ -269,6 +269,7 @@ print(res)
 LoadCollectionReq loadCollectionReq = LoadCollectionReq.builder()
         .collectionName("my_collection")
         .loadFields(Arrays.asList("my_id", "my_vector"))
+        .skipLoadDynamicField(true)
         .build();
 
 client.loadCollection(loadCollectionReq);

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - create
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
 
 ---
 
@@ -259,3 +259,4 @@ For further details, see [Create Dedicated Cluster](/reference/restful/create-de
 </TabItem>
 
 </Tabs>
+

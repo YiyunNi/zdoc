@@ -17,15 +17,17 @@ keywords:
   - cloud
   - whitelist
   - setup
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 
 import Admonition from '@theme/Admonition';
 
+
+import Procedures from '@site/src/components/Procedures';
 
 # Set up Cluster IP Allowlist
 
@@ -40,6 +42,8 @@ Ensure the following prerequisites are met before proceeding:
 - You are the owner of the organization or project in which you want to set up a cluster IP allowlist. For information on roles and permissions, see [Manage Organization Users](./organization-users) and [Manage Project Users](./project-users).
 
 ## Procedure\{#procedure}
+
+<Procedures>
 
 1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
 
@@ -69,6 +73,8 @@ Ensure the following prerequisites are met before proceeding:
     </table>
 
 1. Click **Add**.
+
+</Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 

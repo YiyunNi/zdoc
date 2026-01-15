@@ -19,10 +19,10 @@ keywords:
   - IAM role
   - milvus
   - vector database
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
 
 ---
 
@@ -30,6 +30,8 @@ import Admonition from '@theme/Admonition';
 
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create S3 Bucket and IAM Role
 
@@ -59,6 +61,8 @@ In this step, you will create an S3 bucket on AWS for the BYOC project deploymen
 
 <Supademo id="cmb5xlhej39irppkpeihkx9eg" title=""  />
 
+<Procedures>
+
 1. Log in to your AWS console as a user with administrator privileges and go to the S3 service.
 
 1. On the **General purpose bucket** tab, click **Create bucket**.
@@ -69,11 +73,15 @@ In this step, you will create an S3 bucket on AWS for the BYOC project deploymen
 
 1. Return to the **Zilliz Cloud console** and paste the bucket name in **Bucket** under **Storage settings**.
 
+</Procedures>
+
 ### Step 2: Create an IAM role to access the S3 bucket\{#step-2-create-an-iam-role-to-access-the-s3-bucket}
 
 In this step, you will create an IAM role on AWS for Zilliz Cloud to access the S3 bucket that you created in the previous step on your behalf.
 
 <Supademo id="cmb5y39ss39r5ppkplsrz1nqd" title=""  />
+
+<Procedures>
 
 1. Log into your **AWS Console** as a user with administrator privileges and go to the **IAM** dashboard.
 
@@ -118,11 +126,15 @@ In this step, you will create an IAM role on AWS for Zilliz Cloud to access the 
 
 1. Go back to the Zilliz Cloud console, paste the role ARN in **IAM Role ARN** under **Storage settings**.
 
+</Procedures>
+
 ### Step 3: Add permissions\{#step-3-add-permissions}
 
 This step is solely on the AWS console. In this step, you will create an inline policy for the role created in [Step 2](./create-bucket-and-role#step-2-create-an-iam-role-to-access-the-s3-bucket).
 
 <Supademo id="cmb65arpv3e11ppkpgy2d4q1v" title=""  />
+
+<Procedures>
 
 1. Go to the details page of the created role. In the **Permissions policies** section, click **Add permissions**, and choose **Create inline policy**.
 
@@ -159,4 +171,4 @@ This step is solely on the AWS console. In this step, you will create an inline 
 
 1. In **Review and create**, enter a policy name, review the permissions, and click **Create policy**.
 
-    
+</Procedures>

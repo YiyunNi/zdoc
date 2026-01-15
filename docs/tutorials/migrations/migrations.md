@@ -10,16 +10,16 @@ notebook: FALSE
 description: "Zilliz Cloud provides migration options from external sources such as Milvus, Elasticsearch, and PostgreSQL, as well as cross-cluster migrations within the same or different organizations, enabling efficient data integration and management. | Cloud"
 type: origin
 token: IeNswy8ySiutKAkdphRc4lfynsf
-sidebar_position: 6
+sidebar_position: 7
 keywords: 
   - zilliz
   - vector database
   - cloud
   - migrations
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
 
 ---
 

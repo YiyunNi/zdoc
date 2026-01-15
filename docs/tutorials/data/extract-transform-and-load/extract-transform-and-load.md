@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This chapter covers the common procedures for you to extract, transform, and load data from external data sources and use it with Zilliz Cloud. | Cloud"
 type: origin
 token: MC6xw7oHkimmnQkigODc5wjynwf
-sidebar_position: 8
+sidebar_position: 7
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - extract
   - transform
   - load
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
 
 ---
 

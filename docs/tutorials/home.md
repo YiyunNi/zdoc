@@ -18,10 +18,10 @@ keywords:
   - developer hub
   - home page
   - home
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
 
 hide_title: true
 hide_table_of_contents: true

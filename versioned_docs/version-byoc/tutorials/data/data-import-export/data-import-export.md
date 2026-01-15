@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This chapter covers the common procedures for you to import data into and export data from Zilliz Cloud clusters. | BYOC"
 type: origin
 token: Oh3VwT15Yi03bRkOtoXcZpurnWe
-sidebar_position: 7
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,10 @@ keywords:
   - data import
   - export
   - milvus
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
 
 ---
 
