@@ -20,10 +20,10 @@ keywords:
   - upsert
   - update
   - insert
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
 
 ---
 
@@ -47,7 +47,7 @@ If the target collection has `autoid` enabled on its primary field, Zilliz Cloud
 
 For fields with `nullable` enabled, you can omit them in the `upsert` request if they do not require any updates.
 
-### Upsert in merge mode | PUBLIC\{#upsert-in-merge-mode}
+### Upsert in merge mode\{#upsert-in-merge-mode}
 
 You can also use the `partial_update` flag to make an upsert request work in merge mode. This allows you to include only the fields that need updating in the request payload.
 
@@ -471,7 +471,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## Upsert entities in merge mode | PUBLIC\{#upsert-entities-in-merge-mode}
+## Upsert entities in merge mode\{#upsert-entities-in-merge-mode}
 
 The following code example demonstrates how to upsert entities with partial updates. Provide only the fields needing updates and their new values, along with the explicit partial update flag.
 

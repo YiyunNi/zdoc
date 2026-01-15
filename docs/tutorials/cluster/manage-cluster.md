@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - manage
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 
@@ -184,6 +184,12 @@ The following demo illustrates how to upgrade the deployment option of a cluster
 To try the latest preview features, you need to upgrade the compatible Milvus version of your dedicated cluster.
 
 ![upgrade-to-preview-version](https://zdoc-images.s3.us-west-2.amazonaws.com/upgrade-to-preview-version.png "upgrade-to-preview-version")
+
+## Add secondary clusters\{#add-secondary-clusters}
+
+If you need to enable the global feature for an existing cluster, switch to the **Global Topology** tab and click **Create Secondary Cluster**.
+
+![YMEAbQPNuo74Dpxg9mQch89wnAg](https://zdoc-images.s3.us-west-2.amazonaws.com/ymeabqpnuo74dpxg9mqch89wnag.png "YMEAbQPNuo74Dpxg9mQch89wnAg")
 
 ## Drop cluster\{#drop-cluster}
 

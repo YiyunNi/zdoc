@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - changelogs
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
 
 ---
 
@@ -67,10 +67,6 @@ import Grid from '@site/src/components/Grid';
             - [TIMESTAMPTZ Field](./use-timestamptz-field)
 
             - [Text Highlighter](./text-highlighter)
-
-        - 🤖 [Model-based embedding](./undefined) and [reranking functions](./model-ranker) for public preview.
-
-        - 🤖 [Hosted models](./hosted-models) for private preview.
 
         - 🛠️ [Dynamic replica autoscaling](./manage-replica#dynamic-scaling) with intelligence.
 
@@ -868,7 +864,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[September 15, 2022](./undefined)**
+        **September 15, 2022**
 
     </div>
 
@@ -890,7 +886,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[August 30, 2022](./undefined)**
+        **August 30, 2022**
 
     </div>
 
@@ -920,7 +916,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[August 1, 2022](./undefined)**
+        **August 1, 2022**
 
     </div>
 
@@ -946,7 +942,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[July 22, 2022](./undefined)**
+        **July 22, 2022**
 
     </div>
 

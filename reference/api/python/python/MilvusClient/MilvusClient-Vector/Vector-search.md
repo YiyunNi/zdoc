@@ -226,7 +226,7 @@ search(
 
         Temporarily override the collection or database default time zone for a single query by setting an [IANA identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (for example, **Asia/Shanghai**, **America/Chicago**, or **UTC**). This controls how `TIMESTAMPTZ` values are interpreted, displayed, and compared during that operation only; it does not modify stored data or collection settings.
 
-        For more information, refer to [TIMESTAMPZ Field](/docs/timestamptz-field).
+        For more information, refer to [TIMESTAMPZ Field](/docs/use-timestamptz-field).
 
     - **time_fields** (*str*)
 
