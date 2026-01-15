@@ -39358,7 +39358,7 @@
 																}
 															}
 														},
-														"crossRegionPolicies": {
+														"crossRegionCopies": {
 															"type": "array",
 															"description": "The list of cross-region backup policies. Each entry in the list results in one copy of the permanent backup being created in the specified region.",
 															"x-i18n": {
@@ -39464,7 +39464,7 @@
 											  "startTime": "02:00-04:00", 
 											  "frequency": "1,2,3,5",     
 											  "retentionDays": 7,
-											  "crossRegionPolicies": [
+											  "crossRegionCopies": [
 												{
 												  "regionId": "aws-us-west-2",
 												  "retentionDays": 7,
@@ -39492,7 +39492,7 @@
 											  "startTime": "02:00-04:00", 
 											  "frequency": "1,2,3,5",     
 											  "retentionDays": 7,
-											  "crossRegionPolicies": [
+											  "crossRegionCopies": [
 												{
 												  "regionId": "ali-cn-hangzhou",
 												  "retentionDays": 7,
@@ -39618,7 +39618,7 @@
 										},
 										"example": true
 									},
-									"crossRegionPolicies": {
+									"crossRegionCopies": {
 										"type": "array",
 										"description": "The list of cross-region backup policies.",
 										"x-i18n": {
@@ -39690,7 +39690,7 @@
 										"startTime": "02:00-04:00",
 										"retentionDays": 7,
 										"enabled": true,
-										"crossRegionPolicies": [
+										"crossRegionCopies": [
 											{
 												"regionId": "aws-us-west-2",
 												"retentionDays": 7
@@ -39710,7 +39710,7 @@
 										"startTime": "02:00-04:00",
 										"retentionDays": 7,
 										"enabled": true,
-										"crossRegionPolicies": [
+										"crossRegionCopies": [
 											{
 												"regionId": "ali-cn-hangzhou",
 												"retentionDays": 7
