@@ -39657,17 +39657,6 @@
 															"description": "跨区域备份保留的天数。"
 														}
 													}
-												},
-												"region": {
-													"type": "string",
-													"description": "The region code.",
-													"x-i18n": {
-														"zh-CN": {
-															"description": "区域代码。",
-															"example": "cn-hangzhou"
-														}
-													},
-													"example": "us-west-2"
 												}
 											}
 										}
@@ -39704,13 +39693,11 @@
 										"crossRegionPolicies": [
 											{
 												"regionId": "aws-us-west-2",
-												"retentionDays": 7,
-												"region": "us-west-2"
+												"retentionDays": 7
 											},
 											{
 												"regionId": "aws-us-east-1",
-												"retentionDays": 7,
-												"region": "us-east-1"
+												"retentionDays": 7
 											}
 										]
 									}
@@ -39726,13 +39713,11 @@
 										"crossRegionPolicies": [
 											{
 												"regionId": "ali-cn-hangzhou",
-												"retentionDays": 7,
-												"region": "cn-hangzhou"
+												"retentionDays": 7
 											},
 											{
 												"regionId": "ali-cn-shanghai",
-												"retentionDays": 7,
-												"region": "cn-shanghai"
+												"retentionDays": 7
 											}
 										]
 									}
