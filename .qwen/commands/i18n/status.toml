@@ -1,7 +1,0 @@
-description = "Check the translation status of documents"
-prompt = """
-Compare the files in {source_dir} with {target_dir} and report:
-1. Files that exist in source but not in target (need translation)
-2. Files that exist in both locations (potentially need updating)
-3. Files that exist in target but not in source (possibly obsolete)
-"""

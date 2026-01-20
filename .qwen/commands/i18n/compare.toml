@@ -1,5 +1,0 @@
-description = "Compare English documents with translated documents to identify differences"
-prompt = """
-Compare the English document at {source_path} with the translated document at {target_path}.
-Identify any differences in content, and highlight sections that need translation or updating.
-"""
