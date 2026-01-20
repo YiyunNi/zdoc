@@ -1,0 +1,7 @@
+description = "Look up established translations for technical terms"
+prompt = """
+Based on the translation database, provide the approved translations for these technical terms in {target_language}:
+{terms_list}
+
+If any terms don't have established translations, suggest appropriate translations and note them as new suggestions.
+"""

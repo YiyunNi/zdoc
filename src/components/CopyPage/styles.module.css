@@ -34,6 +34,16 @@
   outline-offset: 2px;
 }
 
+.dropdownTrigger.copySuccess {
+  background-color: #dafbe1;
+  border-color: #2da44e;
+  color: #2da44e;
+}
+
+.dropdownTrigger.copySuccess .checkIcon {
+  color: #2da44e;
+}
+
 .checkIcon {
   flex-shrink: 0;
   color: #6e7781;
@@ -64,7 +74,7 @@
 
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: calc(60% + 8px);
   right: 0;
   min-width: 280px;
   background-color: #ffffff;

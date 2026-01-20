@@ -1,9 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
+import { usePluginData } from '@docusaurus/useGlobalData';
 import styles from './styles.module.css';
 
 const CopyPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
   const dropdownRef = useRef(null);
+
+  // Access global data containing all markdown files
+  const { markdownFiles = {} } = usePluginData('embed-markdown');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -16,9 +21,70 @@ const CopyPage = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Reset copy success state after 2 seconds
+  useEffect(() => {
+    if (copySuccess) {
+      const timer = setTimeout(() => setCopySuccess(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [copySuccess]);
+
+  const getMarkdownSource = async () => {
+    const currentPath = window.location.pathname;
+
+    // Try to get from global data first (instant, no network request)
+    const markdownFromData = markdownFiles[currentPath];
+    if (markdownFromData) {
+      console.log('[CopyPage] Got markdown from global data, length:', markdownFromData.length);
+      return markdownFromData;
+    }
+
+    // Fall back to fetching from .md route (for dev mode or direct access)
+    const markdownUrl = `${currentPath}.md`;
+    console.log('[CopyPage] Global data not found, fetching from:', markdownUrl);
+
+    try {
+      const response = await fetch(markdownUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      const markdown = await response.text();
+      console.log('[CopyPage] Successfully fetched markdown, length:', markdown.length);
+      return markdown;
+    } catch (error) {
+      console.error('[CopyPage] Failed to fetch markdown:', error);
+      return null;
+    }
+  };
+
+  const copyMarkdownToClipboard = async () => {
+    const markdown = await getMarkdownSource();
+
+    if (!markdown) {
+      console.error('Failed to get markdown source');
+      alert('Failed to copy markdown: Source not found');
+      setIsOpen(false);
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(markdown);
+      setCopySuccess(true);
+      setIsOpen(false);
+    } catch (error) {
+      console.error('Failed to copy to clipboard:', error);
+      alert('Failed to copy to clipboard. Please try again.');
+      setIsOpen(false);
+    }
+  };
+
   const handleMenuItemClick = (action) => {
-    console.log(`${action} clicked`);
-    setIsOpen(false);
+    if (action === 'copy-markdown') {
+      copyMarkdownToClipboard();
+    } else {
+      console.log(`${action} clicked`);
+      setIsOpen(false);
+    }
   };
 
   const openInChatGPT = () => {
@@ -44,15 +110,15 @@ const CopyPage = () => {
   return (
     <div className={styles.dropdownContainer} ref={dropdownRef}>
       <button
-        className={styles.dropdownTrigger}
+        className={`${styles.dropdownTrigger} ${copySuccess ? styles.copySuccess : ''}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Copy page options"
         aria-expanded={isOpen}
       >
         <i className={styles.checkIcon}>
-          <span className="material-symbols-outlined">file_copy</span>
+          <span className="material-symbols-outlined">{copySuccess ? 'check_circle' : 'file_copy'}</span>
         </i>
-        <span>Copy page</span>
+        <span>{copySuccess ? 'Copied!' : 'Copy page'}</span>
         <svg
           className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}
           width="12"

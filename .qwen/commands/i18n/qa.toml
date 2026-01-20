@@ -1,0 +1,11 @@
+description = "Perform quality assurance on translated documents"
+prompt = """
+Review the following translated content for quality:
+- Accuracy of technical terms
+- Consistency with established terminology
+- Cultural appropriateness
+- Grammar and spelling in target language
+- Preservation of original meaning
+Translated content:
+{content}
+"""

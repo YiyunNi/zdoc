@@ -140,6 +140,7 @@ const config = {
       }
     ],
     './plugins/mdx-parse',
+    './plugins/embed-markdown',
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

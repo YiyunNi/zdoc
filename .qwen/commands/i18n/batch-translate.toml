@@ -1,0 +1,13 @@
+description = "Translate multiple documents in a directory"
+prompt = """
+You are a document internationalization specialist. Follow these steps:
+1. List all documents in the source directory: {source_dir}
+2. For each document, translate it to {target_language}
+3. Save the translated documents to the target directory: {target_dir}
+4. Maintain the same file structure
+5. Use consistent terminology across all documents
+6. Preserve all formatting and code blocks
+Source directory: {source_dir}
+Target directory: {target_dir}
+Target language: {target_language}
+"""
