@@ -72,7 +72,7 @@ import Grid from '@site/src/components/Grid';
 
         - 📅 Advanced [scheduled scaling](./scale-query-cu#scheduled-scaling) with familiar cron settings.
 
-        - 🌎 [Global cluster](./global-cluster-explained) becomes alive in private preview.
+        - 🌎 [Global cluster](./global-cluster-explained) becomes alive. [Contact us](https://support.zilliz.com/hc/en-us) to access.
 
         - ☁️ BYOC becomes more user friendly with the following enhancements:
 

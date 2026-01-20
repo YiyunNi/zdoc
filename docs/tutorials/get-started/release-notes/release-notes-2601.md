@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 
@@ -60,15 +60,15 @@ import Grid from '@site/src/components/Grid';
 
         We have upgraded our scheduling engine to orchestrate complex, predictable business cycles. You can now automate precise scaling strategies for both CUs and Replicas using industry-standard Cron expressions.
 
-        - **Flexible Scheduling Strategies:** Move beyond basic daily schedules. Utilize standard Cron syntax (e.g., `0 9 * * *`1-5) to define intricate rules, such as "scale up exclusively for month-end."
+        - **Flexible Scheduling Strategies:** Move beyond basic daily schedules. Utilize standard Cron syntax (e.g., `0 9 * * * 1-5`) to define intricate rules, such as "scale up exclusively for month-end."
 
         - **Multi-Schedule Logic:** Configure independent, layered schedules for the same cluster, enabling you to adjust resource profiles for peak weekdays and off-peak weekends, optimizing efficiency in line with your business realities.
 
         For details, refer to [Scale Query CU](./scale-query-cu#scheduled-scaling) and [Scale Replica](./manage-replica#scheduled-scaling).
 
-        ## Global Cluster Private Preview\{#global-cluster-private-preview}
+        ## Global Cluster\{#global-cluster}
 
-        We are excited to announce the Private Preview of the Global Cluster for the Zilliz Cloud Business Critical Plan.
+        We are excited to announce the Global Cluster for the Zilliz Cloud Business Critical Plan.
 
         The Global Cluster creates a unified database architecture across multiple geographic regions by linking a primary cluster with cross-region secondary clusters for automated replication. This solution provides robust Disaster Recovery (DR), ensuring your mission-critical applications remain resilient and your data durable, even in the event of a regional outage.
 
@@ -115,7 +115,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Job Details View**: The side drawer UI has been refreshed for improved navigation and better user experience.
 
-        - **BYOC - S3 Bucket Support**: You can now deploy clusters with dedicated S3 buckets, providing granular data isolation and independent lifecycle management.
+        - **BYOC - Custom S3 Bucket Support**: You can now deploy BYOC clusters with custom, dedicated S3 buckets, providing granular data isolation and independent lifecycle management.
 
         - **BYOC - AWS KMS Integration**: AWS KMS (CMEK) integration for S3 bucket encryption has been added, satisfying strict security compliance standards.
 
