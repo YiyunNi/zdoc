@@ -17,10 +17,10 @@ keywords:
   - cloud
   - providers
   - regions
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
 
 ---
 
@@ -76,7 +76,7 @@ Zilliz Cloud supports deploying free, serverless, and dedicated clusters on AWS.
      <td><p>Yes</p></td>
    </tr>
    <tr>
-     <td rowspan="2"><p>Europe</p></td>
+     <td><p>Europe</p></td>
      <td><p>eu-central-1</p></td>
      <td><p>Frankfurt, Germany</p></td>
      <td><p>Yes</p></td>
