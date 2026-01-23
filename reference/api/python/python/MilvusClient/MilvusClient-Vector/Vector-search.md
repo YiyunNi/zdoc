@@ -12,19 +12,19 @@ type: docx
 token: N6afdOON2o3U0YxMAt7cMiBqnXg
 sidebar_position: 6
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - search()
   - pymilvus26
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -204,7 +204,7 @@ search(
 
 - **highlighter** (*Highlighter*) -
 
-    The highlighter to highlight matched terms in search operations. For details, refer to [Text Highlighter](https://milvus.io/docs/text-highlighter.md).
+    The highlighter to highlight matched terms in search operations. For details, refer to [Lexical Highlighter](/docs/text-highlighter) and [Semantic Highlighter](/docs/semantic-highlighter).
 
 - **kwargs** -
 

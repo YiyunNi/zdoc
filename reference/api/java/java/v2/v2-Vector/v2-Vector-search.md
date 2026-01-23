@@ -12,19 +12,19 @@ type: docx
 token: Rz5rdpGzGoNlByxy8cVcbUy9nhd
 sidebar_position: 7
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud
   - search()
   - javaV226
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -66,6 +66,7 @@ search(SearchReq.builder()
     .strictGroupSize(Boolean strictGroupSize)
     .ranker(CreateCollectionReq.Function ranker)
     .functionScore(FunctionScore functionScore)
+    .highlighter(Highlighter highlighter)
     .build()
 )
 ```
@@ -257,6 +258,10 @@ search(SearchReq.builder()
 - `functionScore(FunctionScore functionScore)`
 
     A **FunctionScore** instance that comprises one or multiple **Function** instances. The design purpose is to allow multiple rankers in a search, such as in the [Boost ranker](https://milvus.io/docs/boost-ranker.md).
+
+- `highlighter(Highlighter highlighter)`
+
+    The highlighter to highlight matched terms in search operations. For details, refer to [Lexical Highlighter](/docs/text-highlighter) and [Semantic Highlighter](/docs/semantic-highlighter).
 
 **RETURN TYPE:**
 

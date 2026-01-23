@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Last updated January 15, 2026 | Cloud"
+description: "Last updated January 23, 2026 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - changelogs
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
 
 ---
 
@@ -30,7 +30,7 @@ import Grid from '@site/src/components/Grid';
 
 # Changelogs
 
-**Last updated:** January 15, 2026
+**Last updated:** January 23, 2026
 
 <Grid columnSize="2" widthRatios="25,74">
 
@@ -56,6 +56,24 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
+        **[January 23, 2026](./release-notes-2601)**
+
+    </div>
+
+    <div>
+
+        - 🚀   New Milvus v2.6.x features become available on Zilliz Cloud
+
+            - [Semantic Highlighter](./semantic-highlighter)
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
         **[January 15, 2026](./release-notes-2601)**
 
     </div>
@@ -68,13 +86,17 @@ import Grid from '@site/src/components/Grid';
 
             - [Text Highlighter](./text-highlighter)
 
+        - 🤖 [Model-based embedding](./model-based-functions) and [reranking functions](./model-ranker) for public preview.
+
+        - 🤖 [Hosted models](./hosted-models) for private preview.
+
         - 🛠️ [Dynamic replica autoscaling](./manage-replica#dynamic-scaling) with intelligence.
 
         - 📅 Advanced [scheduled scaling](./scale-query-cu#scheduled-scaling) with familiar cron settings.
 
         - 🌎 [Global cluster](./global-cluster-explained) becomes alive. [Contact us](https://support.zilliz.com/hc/en-us) to access.
 
-        - ☁️ BYOC becomes more user friendly with the following enhancements:
+        - ☁️ BYOC becomes more user-friendly with the following enhancements:
 
             - [Full autoscaling capabilities](/docs/byoc/scale-cluster)
 

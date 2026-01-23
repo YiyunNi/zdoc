@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
 
 ---
 
@@ -29,6 +29,28 @@ import Admonition from '@theme/Admonition';
 import Grid from '@site/src/components/Grid';
 
 # January 2026 Release Notes
+
+<Grid columnSize="2" widthRatios="20,80">
+
+    <div>
+
+        **2026-01-23**
+
+    </div>
+
+    <div>
+
+        ## Milvus v2.6.x new feature\{#milvus-v26x-new-feature}
+
+        - **Semantic Highlighter**: Identifies and highlights the most relevant text segments in search results based on query intent rather than exact keyword matches, improving result explainability.
+
+        - This feature is powered by the semantic highlighting model recently open-sourced by Zilliz ([zilliz/semantic-highlight-bilingual-v1](https://huggingface.co/zilliz/semantic-highlight-bilingual-v1)) and provides out-of-the-box inference support through the Zilliz hosted model service (refer to [Hosted Models](./hosted-models)).
+
+         For more details, refer to [Semantic Highlighter](./semantic-highlighter).
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="20,80">
 
@@ -45,6 +67,20 @@ import Grid from '@site/src/components/Grid';
         - **Time-zone-aware timestamp support** — Supports the `TIMESTAMPTZ` data type for storing, comparing, and filtering globally consistent timestamps—without manual time-zone handling. For details, refer to [TIMESTAMPTZ Field](./use-timestamptz-field).
 
         - **Highlighter** — Annotates matched terms with customizable tags and fragment-level context, making full-text search results easier to interpret and debug. For details, refer to [Text Highlighter](./text-highlighter).
+
+        ## Function and Model Inference\{#function-and-model-inference}
+
+        We are excited to announce the Public Preview of Model-Based Embedding and Reranking Functions and the Private Preview of Zilliz Hosted Models on Zilliz Cloud. This update streamlines the AI development process by allowing users to insert raw text directly into Zilliz Cloud, with the system automatically handling embedding and reranking to ensure the most relevant search results.
+
+        You can now choose models from top-tier third-party providers like OpenAI, Cohere, and VoyageAI, or host your models directly on Zilliz Cloud.
+
+        - **Model-Based Embedding**: Define a text embedding function during collection creation. After configuration, simply ingest raw text via Insert, Upsert, or Import, and Zilliz automatically handles embedding generation and storage. During search, the system converts text into a dense vector for efficient ANN search. For details, refer to [Model-based Functions](./model-based-functions).
+
+        - **Model-Based Reranking**: Choose the reranking model that best fits your needs, ensuring the most relevant search results are prioritized for your specific use case. For details, refer to [Model-based Rankers](./model-ranker).
+
+        - **Zilliz Hosted Models (Private Preview)**: Deploy fully managed model instances directly on Zilliz infrastructure to ensure stable, high-performance inference with zero data transfer fees. With models running in the Zilliz Cloud environment, your data stays within a private network, ensuring enhanced privacy and ultra-low latency. For details, refer to [Hosted Models](./hosted-models).
+
+        Additionally, to streamline integration with third-party models, we’ve introduced **Third-Party Model Provider Integration**. This feature allows you to manage AI model credentials within Zilliz Cloud and rotate API keys at any time without modifying application code, ensuring flexible and secure integration. For details, refer to [Integrate with Model Providers](./integrate-with-model-providers).
 
         ## Dynamic Replica Autoscaling\{#dynamic-replica-autoscaling}
 
