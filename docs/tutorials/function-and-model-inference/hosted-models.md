@@ -2,7 +2,7 @@
 title: "Hosted Models | Cloud"
 slug: /hosted-models
 sidebar_label: "Hosted Models"
-beta: FALSE
+beta: PRIVATE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
@@ -18,10 +18,10 @@ keywords:
   - model
   - inference
   - hosted models
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
 
 ---
 
@@ -58,32 +58,8 @@ The model deployment region should be consistent with your cluster region. Avail
      <th><p><strong>Location</strong></p></th>
    </tr>
    <tr>
-     <td><p>aws-us-east-1</p></td>
-     <td><p>N. Virginia, USA</p></td>
-   </tr>
-   <tr>
-     <td><p>aws-us-east-2</p></td>
-     <td><p>Ohio, USA</p></td>
-   </tr>
-   <tr>
      <td><p>aws-us-west-2</p></td>
      <td><p>Oregon, USA</p></td>
-   </tr>
-   <tr>
-     <td><p>aws-ca-central-1</p></td>
-     <td><p>Canada (Central)</p></td>
-   </tr>
-   <tr>
-     <td><p>aws-eu-central-1</p></td>
-     <td><p>Frankfurt, Germany</p></td>
-   </tr>
-   <tr>
-     <td><p>aws-ap-northeast-1</p></td>
-     <td><p>Tokyo, Japan</p></td>
-   </tr>
-   <tr>
-     <td><p>aws-ap-southeast-2</p></td>
-     <td><p>Sydney, Australia</p></td>
    </tr>
 </table>
 
@@ -98,7 +74,7 @@ The instance type determines the available compute resources. Available options 
    </tr>
    <tr>
      <td><p>g6.xlarge </p></td>
-     <td><ul><li><p>1 Nvidia L4 GPU</p></li><li><p>8 vCPU</p></li><li><p>32GB RAM</p></li></ul></td>
+     <td><ul><li><p>1 Nvidia L4 GPU</p></li><li><p>8 vCPU</p></li><li><p>32 GB RAM</p></li></ul></td>
    </tr>
 </table>
 
@@ -154,6 +130,10 @@ Available options include:
    </tr>
    <tr>
      <td><p>Qwen/Qwen3-Reranker-8B</p></td>
+   </tr>
+   <tr>
+     <td><p>Semantic Highlighter</p></td>
+     <td><p>zilliz/semantic-highlight-bilingual-v1</p></td>
    </tr>
 </table>
 
@@ -267,6 +247,49 @@ ranker = Function(
 
 # Use it during search
 result = milvus_client.search(collection_name, vectors_to_search, limit=3, output_fields=["*"], ranker=ranker)
+```
+
+### Use a semantic highlighter function\{#use-a-semantic-highlighter-function}
+
+During search, you can use a hosted highlighter model to post-process your search results by highlighting text segments that are semantically related to the user's query.  
+
+```python
+from pymilvus import SemanticHighlighter
+
+# Define the search query
+queries = ["When was artificial intelligence founded"]
+
+# Configure semantic highlighter
+# highlight-start
+highlighter = SemanticHighlighter(
+    queries,
+    ["document"],                           # Fields to highlight
+    pre_tags=["<mark>"],                    # Tag before highlighted text
+    post_tags=["</mark>"],                  # Tag after highlighted text
+    model_deployment_id="YOUR_MODEL_ID",    # Deployed highlight model ID
+)
+# highlight-end
+
+# Perform search with highlighting
+results = milvus_client.search(
+    collection_name,
+    data=queries,
+    anns_field="dense",
+    search_params={"params": {"nprobe": 10}},
+    limit=3,
+    output_fields=["document"],
+    highlighter=highlighter
+)
+
+# Process results
+for hits in results:
+    for hit in hits:
+        highlight = hit.get("highlight", {}).get("document", {})
+        print(f"ID: {hit['id']}")
+        print(f"Search Score: {hit['distance']:.4f}")      # Vector similarity score
+        print(f"Fragments: {highlight.get('fragments', [])}")
+        print(f"Highlight Confidence: {highlight.get('scores', [])}")  # Semantic relevance score
+        print()
 ```
 
 ## Billing\{#billing}

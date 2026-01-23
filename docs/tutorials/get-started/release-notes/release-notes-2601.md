@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
 
 ---
 
@@ -66,7 +66,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Time-zone-aware timestamp support** — Supports the `TIMESTAMPTZ` data type for storing, comparing, and filtering globally consistent timestamps—without manual time-zone handling. For details, refer to [TIMESTAMPTZ Field](./use-timestamptz-field).
 
-        - **Highlighter** — Annotates matched terms with customizable tags and fragment-level context, making full-text search results easier to interpret and debug. For details, refer to [Text Highlighter](./text-highlighter).
+        - **Highlighter** — Annotates matched terms with customizable tags and fragment-level context, making full-text search results easier to interpret and debug. For details, refer to [Lexical Highlighter](./text-highlighter).
 
         ## Function and Model Inference\{#function-and-model-inference}
 
