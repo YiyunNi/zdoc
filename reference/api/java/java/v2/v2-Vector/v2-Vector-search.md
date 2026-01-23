@@ -269,7 +269,7 @@ search(SearchReq.builder()
 
 **RETURNS:**
 
-A **SearchResp object representing specific search results with the specified output fields and relevance score.
+A **SearchResp** object representing specific search results with the specified output fields and relevance score.
 
 **PARAMETERS:**
 
