@@ -7,10 +7,10 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Semantic Highlighter identifies and highlights the most semantically relevant portions of your search results, helping you extract only what matters from retrieved top K documents. | Cloud"
+description: "Semantic Highlighter identifies and highlights the most semantically relevant portions of your search results at the sentence level, helping you extract only what matters from retrieved top K documents. | Cloud"
 type: origin
 token: GLG4wi6zhisaxYkBkmacXqItnbJ
-sidebar_position: 13
+sidebar_position: 0
 keywords: 
   - zilliz
   - vector database
@@ -21,10 +21,10 @@ keywords:
   - model
   - highlight
   - semantic
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
 
 ---
 
@@ -34,7 +34,28 @@ import TabItem from '@theme/TabItem';
 
 # Semantic Highlighter
 
-Semantic Highlighter identifies and highlights the most semantically relevant portions of your search results, helping you extract only what matters from retrieved top K documents.
+Semantic Highlighter identifies and highlights the most semantically relevant portions of your search results **at the sentence level**, helping you extract only what matters from retrieved top K documents.
+
+Assume you have a long document with hundreds of words about AI history (about 75 words):
+
+```plaintext
+Artificial intelligence was founded as an academic discipline in 1956 at the Dartmouth Conference. The field experienced several cycles of optimism and disappointment throughout its history. AI research started after World War II with the development of electronic computers. Early researchers explored symbolic methods and problem-solving approaches. The term 'artificial intelligence' was coined by John McCarthy, one of the founders of the discipline. Modern AI has achieved remarkable success in areas such as computer vision, natural language processing, and game playing.
+```
+
+When you search for **"When was artificial intelligence founded?"**, Semantic Highlighter identifies and returns only the semantically relevant sentence:
+
+```plaintext
+<mark>Artificial intelligence was founded as an academic discipline in 1956 at the Dartmouth Conference.</mark>
+Confidence score: 0.999
+```
+
+Instead of sending the entire 75-word document to your LLM, you get just the 16-word answer, with a confidence score showing how relevant it is to your query.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This feature relies on a hosted highlight model on Zilliz Cloud. For more information, see <a href="./hosted-models#supported-models">Hosted Models</a>.</p>
+
+</Admonition>
 
 ## Why semantic highlighting?\{#why-semantic-highlighting}
 
@@ -54,7 +75,7 @@ Semantic Highlighter helps you:
 
 ## How it works\{#how-it-works}
 
-Semantic Highlighter runs after semantic search and only operates on the top K results. The entire workflow is powered by a Zilliz Cloud [model-based embedding function](./model-based-functions) and a hosted [highlight model](./hosted-models#supported-models), allowing you to work directly with text without manually handling embeddings.
+Semantic Highlighter runs after semantic search and only operates on the top K results. The entire workflow combines semantic search for document retrieval and a hosted highlight model for identifying relevant text segments.
 
 The diagram below shows the workflow of Semantic Highlighter:
 
@@ -62,13 +83,21 @@ The diagram below shows the workflow of Semantic Highlighter:
 
 ### Stage 1: Semantic search\{#stage-1-semantic-search}
 
-Semantic search is powered by a Zilliz Cloud [model-based embedding function](./model-based-functions). You simply insert raw documents and provide query text—the configured embedding function automatically handles the vector conversion:
+Semantic search retrieves the top K most relevant documents based on vector similarity. You have two options for generating embeddings:
+
+**Option 1: Model-based embedding function (Recommended)**
+
+Use a Zilliz Cloud model-based embedding function that automatically handles vector conversion. You simply insert raw documents and provide query text—no need to manually manage embeddings:
 
 - **During insertion**: The embedding function converts your document text into dense vectors and stores them in the vector field
 
 - **During search**: The same embedding function converts your query text into a vector and searches against the vector index to return top K documents based on vector similarity
 
-This means you never need to manually generate or manage embeddings yourself.
+This approach is used in all examples throughout this document. For more information, see [Model-based Embedding Functions](./model-based-functions).
+
+**Option 2: External embedding model**
+
+You can also use your own external embedding service to generate embeddings, then insert the vectors directly into your collection and perform semantic search. This gives you full control over the embedding model but requires managing the embedding pipeline yourself.
 
 ### Stage 2: Semantic highlighting\{#stage-2-semantic-highlighting}
 
@@ -255,7 +284,8 @@ When a fragment's score falls below the threshold, both fragments and scores wil
     },
     "highlight": {
         "document": {
-            "fragments": [],    // Empty because score (0.7206) < threshold (0.8)"scores": []
+            "fragments": [],    // Empty because score (0.7206) < threshold (0.8)
+            "scores": []
         }
     }
 }
@@ -286,27 +316,13 @@ Threshold guidelines:
    </tr>
 </table>
 
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>For a complete list of configuration options, see the <a href="null">SemanticHighlighter</a> API reference.</p>
-
-</Admonition>
-
 ## Before you start\{#before-you-start}
 
 Before using Semantic Highlighter, ensure you have the following configured:
 
-- **Embedding model for semantic search**
-
-    Set up one of the following for your collection's semantic search:
-
-    - **Third-party model provider**: Integrate with a third-party model service provider such as OpenAI, VoyageAI, or Cohere and obtain its `integration_id` from the Zilliz Cloud console. See [Integrate with Model Providers](./integrate-with-model-providers) for setup instructions.
-
-    - **Hosted embedding model**: Deploy a hosted embedding model via Zilliz Cloud and obtain its `model_deployment_id`. See [Hosted Models](./hosted-models) for available models and deployment instructions.
-
 - **Highlight model deployment**
 
-    Deploy a hosted highlight model for semantic highlighting:
+    Deploy a hosted highlight model on Zilliz Cloud for semantic highlighting:
 
     - Deploy a highlight model (e.g., `zilliz/semantic-highlight-bilingual-v1`) via Zilliz Cloud.
 
@@ -314,17 +330,39 @@ Before using Semantic Highlighter, ensure you have the following configured:
 
     See [Hosted Models](./hosted-models) for available highlight models and deployment instructions.
 
+- **Embedding model for semantic search**
+
+    Semantic Highlighter works with any semantic search setup. Choose one of the following:
+
+    **Option 1: Model-based embedding function (Recommended)**
+
+    Integrate with a model-based embedding function that handles embeddings automatically:
+
+    - **Third-party model provider**: Integrate with a third-party model service provider such as OpenAI, VoyageAI, or Cohere and obtain its `integration_id` from the Zilliz Cloud console. See [Integrate with Model Providers](./integrate-with-model-providers) for setup instructions.
+
+    - **Hosted embedding model**: Deploy a hosted embedding model via Zilliz Cloud and obtain its `model_deployment_id`. See [Hosted Models](./hosted-models) for available models and deployment instructions.
+
+    **Option 2: External embedding model**
+
+    Use your own external embedding service to generate embeddings and insert vectors into your collection. Ensure your collection has:
+
+    - A vector field with appropriate dimensions
+
+    - A vector index configured for search
+
+    - Embeddings generated and inserted for all documents
+
+    <Admonition type="info" icon="📘" title="Notes">
+
+    <p>All code examples in this document use the model-based embedding function approach (<strong>Option 1</strong>) for simplicity.</p>
+
+    </Admonition>
+
 ## Get started\{#get-started}
 
 ### Preparation\{#preparation}
 
 Before running the examples, set up a collection with semantic search capability.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This feature is available only for <code>search</code> operations powered by model-based embedding functions. For more information on model-based functions, see <a href="./function-and-model-inference-overview#pre-search-functions-convert-text-to-vector-embeddings">Function & Model Inference Overview</a> and <a href="./model-based-functions">Model-based Functions</a>.</p>
-
-</Admonition>
 
 <details>
 
