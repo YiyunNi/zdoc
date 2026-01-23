@@ -15052,7 +15052,11 @@
 													"enum": [
 														"L2",
 														"IP",
-														"COSINE"
+														"COSINE",
+														"HAMMING",
+														"JACCADR",
+														"MHJACCARD",
+														"BM25"
 													],
 													"default": "COSINE"
 												},
@@ -15062,6 +15066,15 @@
 													"x-i18n": {
 														"zh-CN": {
 															"description": "要创建索引的目标字段名称。"
+														}
+													}
+												},
+												"indexType": {
+													"type": "string",
+													"description": "The type of the index to create.<include target=\"milvus\"> For more information, refer to [Index Explained](https://milvus.io/docs/index-explained.md).</include><include target=\"zilliz\">You can use `AUTOINDEX` in the most scenarios.</include>",
+													"x-i18n": {
+														"zh-CN": {
+															"description": "要创建的索引的类型。<include target=\"milvus\"> 更多内容可参考 [Index Explained](https://milvus.io/docs/index-explained.md).</include><include target=\"zilliz\">您可以在大多数场景下使用 `AUTOINDEX` 类型。</include>"
 														}
 													}
 												},
@@ -15083,15 +15096,6 @@
 													},
 													"type": "object",
 													"properties": {
-														"index_type": {
-															"type": "string",
-															"description": "The type of the index to create",
-															"x-i18n": {
-																"zh-CN": {
-																	"description": "要创建的索引类型。"
-																}
-															}
-														},
 														"M": {
 															"type": "integer",
 															"description": "The maximum degree of the node. This applies only when **index_type** is set to **HNSW**.",
@@ -15153,18 +15157,57 @@
 									"zh-CN"
 								]
 							},
-							"example": {
-								"collectionName": "custom_setup_not_indexed",
-								"indexParams": [
-									{
-										"metricType": "L2",
-										"fieldName": "my_vector",
-										"indexName": "my_vector",
-										"indexConfig": {
-											"index_type": "AUTOINDEX"
-										}
+							"examples": {
+								"1": {
+									"summary": "Create Indexes",
+									"x-target-response": "OPTION 1",
+									"x-include-target": [
+										"zilliz"
+									],
+									"value": {
+										"collectionName": "custom_quick_setup",
+										"indexParams": [
+											{
+												"metricType": "L2",
+												"fieldName": "my_vector",
+												"indexName": "my_vector",
+												"indexType": "AUTOINDEX"
+											},
+											{
+												"fieldName": "new_field",
+												"indexName": "new_field",
+												"indexType": "STL_SORT"
+											}
+										]
 									}
-								]
+								},
+								"2": {
+									"summary": "Create Indexes",
+									"x-target-response": "OPTION 1",
+									"x-include-target": [
+										"milvus"
+									],
+									"value": {
+										"dbName": "custom_quick_setup",
+										"collectionName": "custom_quick_setup",
+										"indexParams": [
+											{
+												"metricType": "IP",
+												"fieldName": "my_vector",
+												"indexName": "my_vector",
+												"indexType": "IVF_FLAT",
+												"params": {
+													"nlist": 1024
+												}
+											},
+											{
+												"fieldName": "new_field",
+												"indexName": "new_field",
+												"indexType": "STL_SORT"
+											}
+										]
+									}
+								}
 							}
 						}
 					}
@@ -35497,7 +35540,7 @@
 								"collectionName": "test_collection",
 								"schema": {
 									"fieldName": "new_field",
-									"dataType": "DataType.VARCHAR",
+									"dataType": "VarChar",
 									"nullable": true,
 									"defaultValue": "default_value",
 									"elementTypeParams": {
@@ -42115,10 +42158,10 @@
 					},
 					"dimension": {
 						"type": "integer",
-						"description": "The number of dimensions a vector value should have.\nThis is required if **dtype** of this field is set to **DataType.FLOAT\\_VECTOR** or **DataType.Binary\\_VECTOR**.",
+						"description": "The number of dimensions a vector value should have.\nThis is required if **dtype** of this field is set to **FloatVector** or **BinaryVector**.",
 						"x-i18n": {
 							"zh-CN": {
-								"description": "向量值的维度数。\n若该字段的 **dtype** 为 **DataType.FLOAT\\_VECTOR** 或 **DataType.Binary\\_VECTOR**，则该字段为必填项。"
+								"description": "向量值的维度数。\n若该字段的 **dtype** 为 **FloatVector** 或 **BinaryVector**，则该字段为必填项。"
 							}
 						}
 					},
