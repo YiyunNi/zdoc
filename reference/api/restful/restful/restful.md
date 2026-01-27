@@ -30,7 +30,6 @@ Zilliz Cloud uses the control plane to centralize the management of clusters and
     The following is an example of listing all the available cloud providers.
 
     ```shell
-    export CLOUD_REGION="gcp-us-west1"
     export API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
     curl --request GET \
@@ -45,7 +44,7 @@ Zilliz Cloud uses the control plane to centralize the management of clusters and
     The following is an example of listing all the available collections in the specified cluster.
 
     ```shell
-    export CLUSTER_ENDPOINT="https://${CLUSTER_ID}.api.${CLOUD_REGION}.zillizcloud.com"
+    export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
     export TOKEN="db_admin:xxxxxxxxxxxx"
 
     curl --request GET \
