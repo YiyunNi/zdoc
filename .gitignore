@@ -32,3 +32,6 @@ plugins/lark-docs/**/*.json
 # Qwen
 .qwen
 QWEN.md
+.opencode/
+AGENTS.md
+opencode.jsonc
