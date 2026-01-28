@@ -19,12 +19,12 @@
   white-space: nowrap;
 }
 
-.dropdownTrigger:hover {
+.dropdownTrigger:hover:not(:disabled) {
   background-color: #f6f8fa;
   border-color: #d0d7de;
 }
 
-.dropdownTrigger:active {
+.dropdownTrigger:active:not(:disabled) {
   background-color: #f3f4f6;
   transform: translateY(1px);
 }
@@ -32,6 +32,11 @@
 .dropdownTrigger:focus {
   outline: 2px solid #0969da;
   outline-offset: 2px;
+}
+
+.dropdownTrigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .dropdownTrigger.copySuccess {
@@ -42,6 +47,20 @@
 
 .dropdownTrigger.copySuccess .checkIcon {
   color: #2da44e;
+}
+
+.dropdownTrigger.error {
+  background-color: #ffebe9;
+  border-color: #cf222e;
+  color: #cf222e;
+}
+
+.dropdownTrigger.error .checkIcon {
+  color: #cf222e;
+}
+
+.dropdownTrigger.loading {
+  opacity: 0.8;
 }
 
 .checkIcon {
@@ -72,9 +91,37 @@
   transform: rotate(180deg);
 }
 
+.errorMessage {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 8px 12px;
+  background-color: #ffebe9;
+  border: 1px solid #cf222e;
+  border-radius: 6px;
+  color: #cf222e;
+  font-size: 13px;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .dropdownMenu {
   position: absolute;
-  top: calc(60% + 8px);
+  top: calc(90% + 8px);
   right: 0;
   min-width: 280px;
   background-color: #ffffff;
@@ -106,7 +153,6 @@
   transition: background-color 0.15s ease;
   color: #24292f;
   font-size: 14px;
-  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -133,20 +179,20 @@
   line-height: 1;
 }
 
-.menuItem :global(.menuItemCaption) {
+.menuItemCaption {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.menuItem :global(.menuItemTitle) {
+.menuItemTitle {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4;
   color: #24292f;
 }
 
-.menuItem :global(.menuItemDesc) {
+.menuItemDesc {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.3;

@@ -7,10 +7,18 @@ export default function DocSidebarWrapper(props) {
   const sidebarRef = useRef(null);
   const timeoutRef = useRef(null);
   const scrollOpIdRef = useRef(0);
+  const lastScrollTopRef = useRef(null);
+  const isAutoScrollingRef = useRef(false);
 
   useEffect(() => {
     const currentScrollOpId = ++scrollOpIdRef.current;
-    const scrollActiveItemIntoView = () => {
+
+    // Find the scroll container once
+    const scrollContainer = document.querySelector('.theme-doc-sidebar-container') ||
+                           document.querySelector('.menu__list');
+
+    // Function to reset the timer (called on both route changes and manual scrolls)
+    const scheduleScrollCenter = () => {
       // Clear any existing timeout
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
@@ -26,6 +34,9 @@ export default function DocSidebarWrapper(props) {
           console.log('Scroll operation cancelled - newer one in progress');
           return;
         }
+
+        // Mark that we're auto-scrolling (to distinguish from manual scroll)
+        isAutoScrollingRef.current = true;
 
         // Find all links with active class
         const allActiveLinks = document.querySelectorAll('.menu__link--active');
@@ -178,17 +189,54 @@ export default function DocSidebarWrapper(props) {
             console.log('Forcing direct scrollTop assignment');
             scrollContainer.scrollTop = Math.max(0, targetScrollTop);
           }
+
+          // Reset auto-scrolling flag after a short delay
+          setTimeout(() => {
+            isAutoScrollingRef.current = false;
+          }, 100);
         }, 500);
 
       }, delay);
     };
 
-    // Scroll when component mounts or route changes
-    scrollActiveItemIntoView();
+    // Set up scroll event listener to detect manual scrolling
+    const handleScroll = () => {
+      // Ignore scroll events that we triggered ourselves
+      if (isAutoScrollingRef.current) {
+        return;
+      }
+
+      if (!scrollContainer) return;
+
+      const currentScrollTop = scrollContainer.scrollTop;
+
+      // Check if this is a meaningful scroll (not just a minor adjustment)
+      if (lastScrollTopRef.current !== null &&
+          Math.abs(currentScrollTop - lastScrollTopRef.current) > 2) {
+        console.log('Manual scroll detected, rescheduling center operation');
+        // Reset the timer when user manually scrolls
+        scheduleScrollCenter();
+      }
+
+      lastScrollTopRef.current = currentScrollTop;
+    };
+
+    // Add scroll listener
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    // Initial scroll when component mounts or route changes
+    scheduleScrollCenter();
 
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
+      }
+
+      // Remove scroll listener
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', handleScroll);
       }
     };
   }, [location.pathname]); // Only depend on pathname for clean re-runs

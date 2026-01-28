@@ -140,7 +140,20 @@ const config = {
       }
     ],
     './plugins/mdx-parse',
-    './plugins/embed-markdown',
+    [
+      './plugins/embed-markdown',
+      {
+        cursorMcpCommand: 'npx @zilliz/claude-context-mcp@latest',
+        enableSourceView: true,
+        sources: [
+          { folder: 'docs/tutorials', route: '/docs' },
+          { folder: 'versioned_docs/version-byoc/tutorials', route: '/docs/byoc' },
+          { folder: 'reference/api', route: '/reference' },
+          { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/current', route: '/ja-JP/docs' },
+          { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc', route: '/ja-JP/docs/byoc' }
+        ]
+      }
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */

@@ -1,80 +1,101 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
+// Helper function to extract slug from markdown frontmatter
+function getSlugFromMarkdown(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf-8');
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    if (frontmatterMatch) {
+      const frontmatter = frontmatterMatch[1];
+      const slugMatch = frontmatter.match(/^slug:\s*(.+)$/m);
+      if (slugMatch) {
+        return slugMatch[1].trim();
+      }
+    }
+  } catch (e) {
+    // Ignore errors reading frontmatter
+  }
+  return null;
+}
+
 module.exports = function (context, options) {
+  // Extract configurable options
+  const {
+    cursorMcpCommand = 'npx @zilliz/claude-context-mcp@latest',
+    enableSourceView = true,
+    sources: customSources,
+  } = options || {};
+
+  // Default sources if not provided
+  const defaultSources = [
+    { folder: 'docs', route: '/docs' },
+    { folder: 'reference', route: '/reference' },
+  ];
+
+  const sources = customSources || defaultSources;
+
+  // Helper function to scan a directory and build path map
+  function scanDirectory(siteDir, folderPath) {
+    const fullPath = path.join(siteDir, folderPath);
+    const pathMap = {};
+
+    if (!fs.existsSync(fullPath)) {
+      return pathMap;
+    }
+
+    const readFiles = (dir, relativePath = '') => {
+      const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+      for (const entry of entries) {
+        const entryFullPath = path.join(dir, entry.name);
+        const entryRelPath = path.join(relativePath, entry.name);
+
+        if (entry.isDirectory()) {
+          readFiles(entryFullPath, entryRelPath);
+        } else if (entry.isFile() && entry.name.endsWith('.md')) {
+          const key = path.join(folderPath, entryRelPath);
+          pathMap[key] = entryFullPath;
+        }
+      }
+    };
+
+    readFiles(fullPath);
+    return pathMap;
+  }
+
   return {
     name: 'embed-markdown',
 
     async contentLoaded({ actions }) {
-      const { addRoute, setGlobalData } = actions;
+      const { setGlobalData } = actions;
       const { siteDir = process.cwd() } = context;
-      const sources = ['docs', 'reference', 'versioned_docs'];
+
       const markdownPathMap = {};
 
-      for (const sourceDir of sources) {
-        const srcPath = path.join(siteDir, sourceDir);
+      // Build the path map for each source
+      for (const source of sources) {
+        const { folder } = source;
+        const folderPathMap = scanDirectory(siteDir, folder);
 
-        if (!fs.existsSync(srcPath)) {
-          console.log(`[embed-markdown] Source directory not found: ${srcPath}`);
-          continue;
+        // Merge into the main path map
+        Object.assign(markdownPathMap, folderPathMap);
+
+        if (Object.keys(folderPathMap).length > 0) {
+          console.log(`[embed-markdown] Processed ${folder}: ${Object.keys(folderPathMap).length} files`);
+        } else {
+          console.log(`[embed-markdown] Source directory not found or empty: ${folder}`);
         }
-
-        console.log(`[embed-markdown] Processing: ${srcPath}`);
-
-        const readFiles = (dir, relativePath = '') => {
-          const entries = fs.readdirSync(dir, { withFileTypes: true });
-
-          for (const entry of entries) {
-            const fullPath = path.join(dir, entry.name);
-            const relPath = path.join(relativePath, entry.name);
-
-            if (entry.isDirectory()) {
-              readFiles(fullPath, relPath);
-            } else if (entry.isFile() && entry.name.endsWith('.md')) {
-              // Build URL path based on file path (actual URL users visit)
-              let pagePath;
-              
-              if (sourceDir === 'docs') {
-                pagePath = `/docs/${relativePath ? relativePath + '/' : ''}${entry.name.replace('.md', '')}`;
-              } else if (sourceDir === 'reference') {
-                pagePath = `/reference/${relativePath ? relativePath + '/' : ''}${entry.name.replace('.md', '')}`;
-              } else if (sourceDir === 'versioned_docs') {
-                const versionMatch = relativePath.match(/^version-([^/]+)(?:\/(.*))?$/);
-                if (versionMatch) {
-                  const version = versionMatch[1];
-                  const restPath = versionMatch[2] || '';
-                  const fileName = entry.name.replace('.md', '');
-                  pagePath = version === 'current'
-                    ? `/docs/${restPath ? restPath + '/' : ''}${fileName}`
-                    : `/docs/${version}/${restPath ? restPath + '/' : ''}${fileName}`;
-                }
-              }
-
-              if (pagePath) {
-                const routePath = pagePath + '.md';
-                
-                addRoute({
-                  path: routePath,
-                  component: '@site/src/components/CopyPage/MarkdownRaw',
-                  exact: true,
-                  modules: {
-                    markdownContent: fs.readFileSync(fullPath, 'utf-8'),
-                  },
-                  priority: 100,
-                });
-                
-                markdownPathMap[routePath] = fullPath;
-                console.log(`[embed-markdown] ${routePath} -> ${fullPath}`);
-              }
-            }
-          }
-        };
-
-        readFiles(srcPath);
       }
 
-      setGlobalData({ markdownPathMap });
-      console.log(`[embed-markdown] Set global data with ${Object.keys(markdownPathMap).length} routes`);
+      // Set global data with the path map and sources for CopyPage component
+      setGlobalData({
+        markdownPathMap,
+        cursorMcpCommand,
+        enableSourceView,
+        sources,
+      });
+      console.log(`[embed-markdown] Set global data with ${Object.keys(markdownPathMap).length} files`);
     },
 
     configureWebpack(_config, isServer) {
@@ -84,41 +105,45 @@ module.exports = function (context, options) {
           devServer: {
             setupMiddlewares: (middlewares, devServer) => {
               const { siteDir = process.cwd() } = context;
-              const sources = ['docs', 'reference', 'versioned_docs'];
-              const markdownPathMap = {};
+              const pathMap = {};
 
-              // Build path map (faster than reading files each time)
-              for (const sourceDir of sources) {
-                const srcPath = path.join(siteDir, sourceDir);
-                if (!fs.existsSync(srcPath)) continue;
+              // Build path map for dev server
+              for (const source of sources) {
+                const { folder, route } = source;
+                const srcPath = path.join(siteDir, folder);
+
+                if (!fs.existsSync(srcPath)) {
+                  continue;
+                }
 
                 const readFiles = (dir, relativePath = '') => {
                   const entries = fs.readdirSync(dir, { withFileTypes: true });
                   for (const entry of entries) {
                     const fullPath = path.join(dir, entry.name);
                     const relPath = path.join(relativePath, entry.name);
-                    
+
                     if (entry.isDirectory()) {
                       readFiles(fullPath, relPath);
                     } else if (entry.isFile() && entry.name.endsWith('.md')) {
-                      let pagePath;
-                      if (sourceDir === 'docs') {
-                        pagePath = `/docs/${relativePath ? relativePath + '/' : ''}${entry.name.replace('.md', '')}`;
-                      } else if (sourceDir === 'reference') {
-                        pagePath = `/reference/${relativePath ? relativePath + '/' : ''}${entry.name.replace('.md', '')}`;
-                      } else if (sourceDir === 'versioned_docs') {
-                        const versionMatch = relativePath.match(/^version-([^/]+)(?:\/(.*))?$/);
-                        if (versionMatch) {
-                          const version = versionMatch[1];
-                          const restPath = versionMatch[2] || '';
-                          const fileName = entry.name.replace('.md', '');
-                          pagePath = version === 'current'
-                            ? `/docs/${restPath ? restPath + '/' : ''}${fileName}`
-                            : `/docs/${version}/${restPath ? restPath + '/' : ''}${fileName}`;
-                        }
+                      // Try to get slug from frontmatter first
+                      const slug = getSlugFromMarkdown(fullPath);
+                      let fullUrlPath;
+
+                      if (slug) {
+                        // Use the slug from frontmatter
+                        fullUrlPath = `${route}/${slug.replace(/^\//, '')}.md`;
+                      } else {
+                        // Fall back to file-based path
+                        const relativeToFile = path.relative(srcPath, fullPath);
+                        const urlPath = relativeToFile.replace(/\.md$/, '');
+                        fullUrlPath = `${route}/${urlPath}.md`;
                       }
-                      if (pagePath) {
-                        markdownPathMap[pagePath + '.md'] = fullPath;
+
+                      // Normalize URL path (remove double slashes)
+                      fullUrlPath = fullUrlPath.replace(/\/+/g, '/');
+
+                      if (fullUrlPath) {
+                        pathMap[fullUrlPath] = fullPath;
                       }
                     }
                   }
@@ -126,20 +151,28 @@ module.exports = function (context, options) {
                 readFiles(srcPath);
               }
 
-              console.log(`[embed-markdown] Dev server path map built: ${Object.keys(markdownPathMap).length} entries`);
+              console.log(`[embed-markdown] Dev server path map built: ${Object.keys(pathMap).length} entries`);
 
-              devServer.app.get(/\.md$/, (req, res, next) => {
-                const urlPath = req.path;
-                const fsPath = markdownPathMap[urlPath];
-                
+              // Serve .md files as raw markdown
+              const markdownMiddleware = (req, res, next) => {
+                if (!req.path.endsWith('.md')) {
+                  return next();
+                }
+
+                const fsPath = pathMap[req.path];
+
                 if (fsPath && fs.existsSync(fsPath)) {
                   const content = fs.readFileSync(fsPath, 'utf-8');
                   res.set('Content-Type', 'text/markdown; charset=utf-8');
+                  res.setHeader('Content-Disposition', 'inline');
                   res.send(content);
                 } else {
                   next();
                 }
-              });
+              };
+
+              devServer.app.use(markdownMiddleware);
+              middlewares.unshift(markdownMiddleware);
 
               return middlewares;
             },
@@ -148,50 +181,102 @@ module.exports = function (context, options) {
       }
     },
 
-    async postBuild({ outDir }) {
+    async postBuild({ outDir, routesPaths, siteConfig }) {
       console.log('\n[embed-markdown] Copying markdown files to build directory...');
 
-      const sources = ['docs', 'reference', 'versioned_docs'];
-      const markdownDestDir = path.join(outDir, '_markdown');
-
-      if (!fs.existsSync(markdownDestDir)) {
-        fs.mkdirSync(markdownDestDir, { recursive: true });
-      }
-
+      const baseUrl = siteConfig.baseUrl || '/';
+      const siteDir = context.siteDir || process.cwd();
       let totalCopied = 0;
 
-      for (const sourceDir of sources) {
-        const srcPath = path.join(context.siteDir || process.cwd(), sourceDir);
+      // Build slug-based lookup: slug -> filesystem path
+      const slugToFileMap = {};
+
+      for (const source of sources) {
+        const { folder, route } = source;
+        const srcPath = path.join(siteDir, folder);
 
         if (!fs.existsSync(srcPath)) {
-          console.log(`[embed-markdown] Source directory not found: ${srcPath}`);
           continue;
         }
 
-        const copyMarkdownFiles = (dir, relativePath = '') => {
+        const readFiles = (dir, relativePath = '') => {
           const entries = fs.readdirSync(dir, { withFileTypes: true });
-
           for (const entry of entries) {
             const fullPath = path.join(dir, entry.name);
-            const destPath = path.join(markdownDestDir, sourceDir, relativePath, entry.name);
+            const relPath = path.join(relativePath, entry.name);
 
             if (entry.isDirectory()) {
-              if (!fs.existsSync(destPath)) {
-                fs.mkdirSync(destPath, { recursive: true });
-              }
-              copyMarkdownFiles(fullPath, path.join(relativePath, entry.name));
+              readFiles(fullPath, relPath);
             } else if (entry.isFile() && entry.name.endsWith('.md')) {
-              fs.copyFileSync(fullPath, destPath);
-              totalCopied++;
-              console.log(`[embed-markdown] Copied: ${path.join(sourceDir, relativePath, entry.name)}`);
+              const slug = getSlugFromMarkdown(fullPath);
+
+              if (slug) {
+                // Use the slug from frontmatter
+                // Map: slug -> file
+                slugToFileMap[slug] = fullPath;
+
+                // Also map with route prefix for lookup
+                const routeSlug = `${route}${slug}`.replace(/\/+/g, '/');
+                slugToFileMap[routeSlug] = fullPath;
+              } else {
+                // Fall back to file-based path
+                const relativeToFile = path.relative(srcPath, fullPath);
+                const urlPath = relativeToFile.replace(/\.md$/, '');
+                const fullUrlPath = `${route}/${urlPath}`.replace(/\/+/g, '/');
+
+                slugToFileMap[fullUrlPath] = fullPath;
+              }
             }
           }
         };
-
-        copyMarkdownFiles(srcPath);
+        readFiles(srcPath);
       }
 
-      console.log(`[embed-markdown] Copied ${totalCopied} markdown files to _markdown/ directory.\n`);
+      // Debug: log sample slug map
+      const sampleSlugs = Object.keys(slugToFileMap).slice(0, 10);
+      console.log('[embed-markdown] Sample slugs:', sampleSlugs);
+
+      // Build a reverse map from filesystem paths to URL paths
+      const sourceToUrlMap = {};
+
+      for (const routePath of routesPaths) {
+        // Remove trailing slash
+        let cleanPath = routePath.replace(/\/$/, '');
+
+        // Try to find the file using the slug map
+        let fullPath = slugToFileMap[cleanPath];
+
+        if (fullPath) {
+          sourceToUrlMap[fullPath] = cleanPath + '.md';
+        }
+      }
+
+      // Copy files using the URL map
+      for (const [sourcePath, urlPath] of Object.entries(sourceToUrlMap)) {
+        if (!fs.existsSync(sourcePath)) {
+          continue;
+        }
+
+        // Remove baseUrl prefix if present
+        let destPath = urlPath;
+        if (baseUrl !== '/' && destPath.startsWith(baseUrl)) {
+          destPath = destPath.substring(baseUrl.length);
+        }
+
+        const fullDestPath = path.join(outDir, destPath);
+
+        // Ensure destination directory exists
+        const destDir = path.dirname(fullDestPath);
+        if (!fs.existsSync(destDir)) {
+          fs.mkdirSync(destDir, { recursive: true });
+        }
+
+        fs.copyFileSync(sourcePath, fullDestPath);
+        totalCopied++;
+        console.log(`[embed-markdown] Copied: ${path.relative(siteDir, sourcePath)} -> ${destPath}`);
+      }
+
+      console.log(`[embed-markdown] Copied ${totalCopied} markdown files to build directory.\n`);
     },
   };
 };

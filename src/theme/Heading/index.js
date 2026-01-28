@@ -240,7 +240,7 @@ export default function HeadingWrapper(props) {
         }
 
         { tags?.length > 0 && <span style={{ fontWeight: '400', color: 'rgb(18, 17, 66)'  }}>{tags[0]}</span> }
-        <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem' }}>
+        <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '0.5rem' }}>
           <Heading {...props} />
           { props.as === 'h1' && <CopyPage /> }
         </div>
