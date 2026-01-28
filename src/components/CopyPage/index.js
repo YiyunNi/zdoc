@@ -1,14 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
-import { usePluginData } from '@docusaurus/useGlobalData';
 import styles from './styles.module.css';
 
 const CopyPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const dropdownRef = useRef(null);
-
-  // Access global data containing all markdown files
-  const { markdownFiles = {} } = usePluginData('embed-markdown');
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -31,17 +27,9 @@ const CopyPage = () => {
 
   const getMarkdownSource = async () => {
     const currentPath = window.location.pathname;
-
-    // Try to get from global data first (instant, no network request)
-    const markdownFromData = markdownFiles[currentPath];
-    if (markdownFromData) {
-      console.log('[CopyPage] Got markdown from global data, length:', markdownFromData.length);
-      return markdownFromData;
-    }
-
-    // Fall back to fetching from .md route (for dev mode or direct access)
     const markdownUrl = `${currentPath}.md`;
-    console.log('[CopyPage] Global data not found, fetching from:', markdownUrl);
+    
+    console.log('[CopyPage] Fetching markdown from:', markdownUrl);
 
     try {
       const response = await fetch(markdownUrl);

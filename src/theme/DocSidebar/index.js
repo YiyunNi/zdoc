@@ -6,8 +6,10 @@ export default function DocSidebarWrapper(props) {
   const location = useLocation();
   const sidebarRef = useRef(null);
   const timeoutRef = useRef(null);
+  const scrollOpIdRef = useRef(0);
 
   useEffect(() => {
+    const currentScrollOpId = ++scrollOpIdRef.current;
     const scrollActiveItemIntoView = () => {
       // Clear any existing timeout
       if (timeoutRef.current) {
@@ -19,6 +21,12 @@ export default function DocSidebarWrapper(props) {
       const delay = isReferenceDoc ? 1500 : 800;
 
       timeoutRef.current = setTimeout(() => {
+        // Check if this is still the latest scroll operation
+        if (scrollOpIdRef.current !== currentScrollOpId) {
+          console.log('Scroll operation cancelled - newer one in progress');
+          return;
+        }
+
         // Find all links with active class
         const allActiveLinks = document.querySelectorAll('.menu__link--active');
         console.log(`Found ${allActiveLinks.length} active links total`);
@@ -140,6 +148,11 @@ export default function DocSidebarWrapper(props) {
 
         // Method 2: Manual scroll calculation (backup)
         setTimeout(() => {
+          if (scrollOpIdRef.current !== currentScrollOpId) {
+            console.log('Backup scroll cancelled - newer one in progress');
+            return;
+          }
+
           const finalScrollTop = Math.max(0, targetScrollTop);
           console.log('Applying manual scroll to:', finalScrollTop);
 
@@ -156,6 +169,11 @@ export default function DocSidebarWrapper(props) {
 
         // Method 3: Force direct assignment (last resort)
         setTimeout(() => {
+          if (scrollOpIdRef.current !== currentScrollOpId) {
+            console.log('Force scroll cancelled - newer one in progress');
+            return;
+          }
+
           if (scrollContainer.scrollTop !== Math.max(0, targetScrollTop)) {
             console.log('Forcing direct scrollTop assignment');
             scrollContainer.scrollTop = Math.max(0, targetScrollTop);
