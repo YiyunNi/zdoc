@@ -53,7 +53,7 @@ module.exports = function (context, options) {
 
         if (entry.isDirectory()) {
           readFiles(entryFullPath, entryRelPath);
-        } else if (entry.isFile() && entry.name.endsWith('.md')) {
+        } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
           const key = path.join(folderPath, entryRelPath);
           pathMap[key] = entryFullPath;
         }
@@ -124,7 +124,7 @@ module.exports = function (context, options) {
 
                     if (entry.isDirectory()) {
                       readFiles(fullPath, relPath);
-                    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+                    } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
                       // Try to get slug from frontmatter first
                       const slug = getSlugFromMarkdown(fullPath);
                       let fullUrlPath;
@@ -207,7 +207,7 @@ module.exports = function (context, options) {
 
             if (entry.isDirectory()) {
               readFiles(fullPath, relPath);
-            } else if (entry.isFile() && entry.name.endsWith('.md')) {
+            } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.mdx'))) {
               const slug = getSlugFromMarkdown(fullPath);
 
               if (slug) {

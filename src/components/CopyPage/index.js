@@ -146,7 +146,7 @@ const CopyPage = () => {
   };
 
   return (
-    <div className={styles.dropdownContainer} ref={dropdownRef}>
+    <div id="copy-page-btn" className={styles.dropdownContainer} ref={dropdownRef}>
       <button
         className={`${styles.dropdownTrigger} ${copySuccess ? styles.copySuccess : ''} ${isLoading ? styles.loading : ''} ${error ? styles.error : ''}`}
         onClick={() => !isLoading && setIsOpen(!isOpen)}

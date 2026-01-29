@@ -148,9 +148,9 @@ const config = {
         sources: [
           { folder: 'docs/tutorials', route: '/docs' },
           { folder: 'versioned_docs/version-byoc/tutorials', route: '/docs/byoc' },
-          { folder: 'reference/api', route: '/reference' },
-          { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/current', route: '/ja-JP/docs' },
-          { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc', route: '/ja-JP/docs/byoc' }
+          { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials', route: '/ja-JP/docs' },
+          { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials', route: '/ja-JP/docs/byoc' },
+          { folder: 'reference/api', route: '/reference' }
         ]
       }
     ],
