@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
 
 ---
 
@@ -54,6 +54,8 @@ import Grid from '@site/src/components/Grid';
 
         - **Lifecycle Governance:** Supports automated zero-downtime rotation, instant data lockdown via key revocation, and immutable configurations to prevent security drift.
 
+        For details, refer to [Customer-Managed Encryption Keys](./cmek) and [AWS KMS](./aws-kms).
+
         ## BYOC now available on Azure\{#byoc-now-available-on-azure}
 
         Zilliz Cloud extends **Bring Your Own Cloud (BYOC)** to Microsoft Azure, combining managed service simplicity with **absolute data sovereignty**.
@@ -61,6 +63,8 @@ import Grid from '@site/src/components/Grid';
         - **BYOC-I Deployment for Maximum Control:** Hosts the Data Plane entirely within your Azure subscription. Ensures you maintain absolute control over your data sovereignty and security policies.
 
         - **Terraform Automation:** Accelerates deployment via the official Terraform Provider, fully automating complex networking and authentication for reproducible Infrastructure-as-Code (IaC).
+
+        For details, refer to [Deploy BYOC-I on Microsoft Azure](/docs/byoc/deploy-byoc-i-azure).
 
     </div>
 
