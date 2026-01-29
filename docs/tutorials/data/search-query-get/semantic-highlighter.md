@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Semantic Highlighter identifies and highlights the most semantically relevant portions of your search results at the sentence level, helping you extract only what matters from retrieved top K documents. | Cloud"
 type: origin
 token: GLG4wi6zhisaxYkBkmacXqItnbJ
-sidebar_position: 12
+sidebar_position: 0
 keywords: 
   - zilliz
   - vector database
@@ -21,10 +21,10 @@ keywords:
   - model
   - highlight
   - semantic
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
 
 ---
 
@@ -209,7 +209,7 @@ You can use the `threshold` parameter to control when a text span is considered 
 
 - **If** `threshold` **is not set**
 
-    All semantic matches returned by the highlight model are included in the result. The client SDK does not apply any additional score-based filtering. Whether a field's `fragments` and `scores` are empty in this case depends entirely on the highlight model and server-side logic.
+    The default threshold of 0.5 is used. Semantic matches returned by the highlighting model with scores below 0.5 will be filtered out. In this case, the `fragments` and `scores` fields will only contain matching results with scores ≥ 0.5.
 
 - **If** `threshold` **is set**
 Only spans whose semantic score is **greater than or equal to** the configured `threshold` are returned. Spans below this score are discarded, which may result in an empty `fragments` / `scores` array for some entities.
@@ -301,17 +301,12 @@ Threshold guidelines:
    </tr>
    <tr>
      <td><p>Not set</p></td>
-     <td><p>Returns all semantic matches</p></td>
-     <td><p>Exploratory analysis, understanding score distribution</p></td>
-   </tr>
-   <tr>
-     <td><p>0.5</p></td>
-     <td><p>Medium and high confidence</p></td>
+     <td><p>Default threshold of 0.5 is used. Medium and high confidence.</p></td>
      <td><p>Broader coverage with moderate precision</p></td>
    </tr>
    <tr>
      <td><p>0.8</p></td>
-     <td><p>High confidence only</p></td>
+     <td><p>High confidence</p></td>
      <td><p>Precision-focused applications</p></td>
    </tr>
 </table>

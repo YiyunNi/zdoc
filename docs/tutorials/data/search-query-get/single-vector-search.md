@@ -19,10 +19,10 @@ keywords:
   - data
   - vector search
   - ann
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
 
 ---
 
@@ -547,6 +547,76 @@ curl --request POST \
 #     ],
 #     "topks":[3]
 # }
+```
+
+</TabItem>
+</Tabs>
+
+## Primary-Key Search\{#primary-key-search}
+
+Instead of setting query vectors, you can use primary keys if the query vectors already exist in the target collection.
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+res = client.search(
+    collection_name="quick_setup",
+    anns_field="vector",
+    # highlight-start
+    ids=[551, 296, 43],
+    # highlight-end
+    limit=3,
+    search_params={"metric_type": "IP"}
+)
+
+for hits in res:
+    for hit in hits:
+        print(hit)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// node.js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_CLUSTER_TOKEN" \
+  -d '{
+    "collectionName": "quick_setup",
+    "annsField": "vector",
+    "ids": [551, 296, 43],
+    "limit": 3,
+    "searchParams": {
+      "metric_type": "IP"
+    }
+  }'
 ```
 
 </TabItem>
@@ -1413,6 +1483,20 @@ res = client.search(
 
 ```bash
 # restful
+export QUERY_VECTOR='[0.1, 0.2, 0.3, 0.4]'                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                          
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \                                                                                                                                                                                     
+-H "Content-Type: application/json" \                                                                                                                                                                                                                 
+-d '{                                                                                                                                                                                                                                                 
+  "collectionName": "quick_setup",                                                                                                                                                                                                                    
+  "annsField": "vector",                                                                                                                                                                                                                              
+  "data": ['"$QUERY_VECTOR"'],                                                                                                                                                                                                                        
+  "limit": 3,                                                                                                                                                                                                                                         
+  "searchParams": {                                                                                                                                                                                                                                   
+    "metric_type": "IP",                                                                                                                                                                                                                              
+    "timezone": "America/Havana"                                                                                                                                                                                                                      
+  }                                                                                                                                                                                                                                                   
+}'
 ```
 
 </TabItem>

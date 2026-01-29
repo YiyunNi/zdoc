@@ -12,19 +12,19 @@ type: docx
 token: Rz5rdpGzGoNlByxy8cVcbUy9nhd
 sidebar_position: 7
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
   - search()
   - javaV226
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -53,6 +53,7 @@ search(SearchReq.builder()
     .filter(String filter)
     .outputFields(List<String> outputFields)
     .data(List<BaseVector> data)
+    .ids(List<Object>)
     .offset(long offset)
     .limit(long limit)
     .roundDecimal(int roundDecimal)
@@ -142,6 +143,16 @@ search(SearchReq.builder()
          <td><p>For DataType.BinaryVector type field.</p></td>
        </tr>
     </table>
+
+    This method is mutually exclusive with `ids(List<Object>)`.
+
+- `ids(List<Object>)`
+
+    A list of primary keys.
+
+    Zilliz Cloud searches for the most similar vector embeddings to those in the specified entities.
+
+    This method is mutually exclusive with `data(List<BaseVector> data)`.
 
 - `offset(long offset)`
 

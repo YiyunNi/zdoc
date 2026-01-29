@@ -12,19 +12,19 @@ type: docx
 token: N6afdOON2o3U0YxMAt7cMiBqnXg
 sidebar_position: 6
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud
   - search()
   - pymilvus26
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
+  - vector database
+  - IVF
+  - knn
+  - Image Search
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -44,7 +44,7 @@ search(
     self,
     collection_name: str,
     data: Union[List[list], list],
-    
+    ids: Union[List[str], List[int]],
     filter: str = "",
     limit: int = 10,
     output_fields: Optional[List[str]] = None,
@@ -73,6 +73,16 @@ search(
     A list of vector embeddings.
 
     Zilliz Cloud searches for the most similar vector embeddings to the specified ones.
+
+    This parameter is mutually exclusive with **ids**.
+
+- **ids** (*Union[List[str], List[int]]*) -
+
+    A list of primary keys.
+
+    Zilliz Cloud searches for the most similar vector embeddings to those in the specified entities.
+
+    This parameter is mutually exclusive with **data**.
 
 - **anns_field** (*str*) -
 

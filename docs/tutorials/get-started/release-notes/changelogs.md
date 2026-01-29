@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - changelogs
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
 
 ---
 
@@ -56,13 +56,35 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
+        **[January 29, 2026](./release-notes-2601)**
+
+    </div>
+
+    <div>
+
+        - 🚀   Another new Milvus v2.6.x features become available on Zilliz Cloud
+
+            - [Primary-Key Search](./primary-key-search)
+
+        - 🔒 BYOC-I becomes available on [Microsoft Azure](/docs/byoc/deploy-byoc-i-azure).
+
+        - 🔐 [Customer-managed encryption keys](./cmek) are available for the encryption of data at rest in your Zilliz Cloud clusters.
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
         **[January 23, 2026](./release-notes-2601)**
 
     </div>
 
     <div>
 
-        - 🚀   New Milvus v2.6.x features become available on Zilliz Cloud
+        - 🚀   A new Milvus v2.6.x features become available on Zilliz Cloud
 
             - [Semantic Highlighter](./semantic-highlighter)
 

@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - release notes
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
 
 ---
 
@@ -29,6 +29,42 @@ import Admonition from '@theme/Admonition';
 import Grid from '@site/src/components/Grid';
 
 # January 2026 Release Notes
+
+<Grid columnSize="2" widthRatios="20,80">
+
+    <div>
+
+        **2026-01-29**
+
+    </div>
+
+    <div>
+
+        ## Another Milvus v2.6.x new feature\{#another-milvus-v26x-new-feature}
+
+        - **Search using primary keys**: You can now perform ANN searches using a **primary key** instead of a raw vector. This eliminates the need to manually retrieve vectors from the target collection before searching. For more details, refer to [Primary-Key Search](./primary-key-search)
+
+        ## CMEK\{#cmek}
+
+        Zilliz supports elevating your security posture with AWS KMS integration now. Essential for strict compliance (GDPR, HIPAA), this feature secures your sensitive assets using keys exclusively managed and governed by you.
+
+        - **Comprehensive Data Protection:** Rigorously encrypts assets across all storage tiers and processing states, eliminating security gaps throughout the entire data lifecycle.
+
+        - **Secure Isolation & Architecture:** Granular security boundaries isolation via Encryption Zones, backed by a 3-Tier Envelope Hierarchy (Root Key → Encryption Zone Key → Data Key). This strictly isolates databases to prevent cross-tenant access while optimizing performance.
+
+        - **Lifecycle Governance:** Supports automated zero-downtime rotation, instant data lockdown via key revocation, and immutable configurations to prevent security drift.
+
+        ## BYOC now available on Azure\{#byoc-now-available-on-azure}
+
+        Zilliz Cloud extends **Bring Your Own Cloud (BYOC)** to Microsoft Azure, combining managed service simplicity with **absolute data sovereignty**.
+
+        - **BYOC-I Deployment for Maximum Control:** Hosts the Data Plane entirely within your Azure subscription. Ensures you maintain absolute control over your data sovereignty and security policies.
+
+        - **Terraform Automation:** Accelerates deployment via the official Terraform Provider, fully automating complex networking and authentication for reproducible Infrastructure-as-Code (IaC).
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="20,80">
 
