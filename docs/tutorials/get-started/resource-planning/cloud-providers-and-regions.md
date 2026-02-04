@@ -17,10 +17,10 @@ keywords:
   - cloud
   - providers
   - regions
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
 
 ---
 
@@ -76,9 +76,16 @@ Zilliz Cloud supports deploying free, serverless, and dedicated clusters on AWS.
      <td><p>Yes</p></td>
    </tr>
    <tr>
-     <td><p>Europe</p></td>
+     <td rowspan="2"><p>Europe</p></td>
      <td><p>eu-central-1</p></td>
      <td><p>Frankfurt, Germany</p></td>
+     <td><p>Yes</p></td>
+     <td><p>Yes</p></td>
+     <td><p>Yes</p></td>
+   </tr>
+   <tr>
+     <td><p>eu-west-1</p></td>
+     <td><p>Ireland</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>

@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Last updated January 23, 2026 | Cloud"
+description: "Last updated Feb 4, 2026 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - changelogs
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
 
 ---
 
@@ -30,7 +30,7 @@ import Grid from '@site/src/components/Grid';
 
 # Changelogs
 
-**Last updated:** January 23, 2026
+**Last updated:** Feb 4, 2026
 
 <Grid columnSize="2" widthRatios="25,74">
 
@@ -56,7 +56,23 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[January 29, 2026](./release-notes-2601)**
+        **February 4, 2026**
+
+    </div>
+
+    <div>
+
+        - **New Region**: 🇮🇪 AWS Ireland (eu-west-1)
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[January 29, 2026](./release-notes-2601#another-milvus-v26x-new-feature)**
 
     </div>
 
@@ -78,7 +94,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[January 23, 2026](./release-notes-2601)**
+        **[January 23, 2026](./release-notes-2601#milvus-v26x-new-feature)**
 
     </div>
 
