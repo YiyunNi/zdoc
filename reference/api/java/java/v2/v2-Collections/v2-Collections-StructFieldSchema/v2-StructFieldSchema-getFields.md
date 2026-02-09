@@ -10,21 +10,21 @@ notebook: false
 description: "This operation returns the fields of the Struct elements in an Array of Structs. | Java | v2"
 type: docx
 token: FIzIdKrRNooFttxaf3Pc1vOlnnc
-sidebar_position: 4
+sidebar_position: 5
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
   - getFields()
   - javaV226
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

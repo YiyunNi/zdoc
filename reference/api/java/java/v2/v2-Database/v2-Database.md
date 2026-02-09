@@ -8,14 +8,14 @@ last_modified: false
 deprecate_since: false
 description: "Methods related to database operations. | Java | v2"
 type: folder
-token: TOZmfXZa3luWIMdjXUycMbaanCd
+token: GKUCfGIFEluyMgdvioDc9sH7nzh
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud

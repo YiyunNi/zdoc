@@ -4,27 +4,27 @@ slug: /java/java/v2-Management-describeIndex
 sidebar_label: "describeIndex()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation describes a specific index. | Java | v2"
 type: docx
-token: Lp8AdBebwoF7bLx7Q8Jc3Qz0nF9
+token: SgJ7dKfisomLkqx1E3BccMO7nqf
 sidebar_position: 4
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud
   - describeIndex()
   - javaV226
-  - AI Hallucination
   - AI Agent
   - semantic search
   - Anomaly Detection
+  - sentence transformers
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -45,69 +45,46 @@ public DescribeIndexResp describeIndex(DescribeIndexReq request)
 
 ```java
 describeIndex(DescribeIndexReq.builder()
+    .databaseName(String databaseName)
     .collectionName(String collectionName)
     .fieldName(String fieldName)
     .indexName(String indexName)
     .timestamp(Long timestamp)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `collectionName(String collectionName)`
+- `databaseName(String databaseName)` -
 
-    The name of an existing collection.
+    The name of the database. Defaults to the current database if not specified.
 
-    Setting this to a non-existing collection results in **MilvusException**.
+- `collectionName(String collectionName)` -
 
-- `fieldName(String fieldName)`
+    The name of the target collection.
 
-    The name of the field on which the index is created.
+- `fieldName(String fieldName)` -
 
-- `indexName(String indexName)`
+    The name of the target field.
 
-    The name of the index to describe.
+- `indexName(String indexName)` -
 
-    Setting this to a non-existing collection results in **MilvusException**.
+    The name of the target index.
 
-- `timestamp(Long timestamp)`
+- `timestamp(Long timestamp)` -
 
-    A timestamp, the segments generated before which will be checked before this operation returns. The value defaults to `0L`, indicating that all segments generated till now will be checked.
-
-**RETURN TYPE:** 
-
-*DescribeIndexResp*
+    A timestamp for time-travel queries. Defaults to `0L`.
 
 **RETURNS:**
 
+*DescribeIndexResp*
+
 A **DescribeIndexResp** object that contains the details of the specified index.
-
-**PARAMETERS:**
-
-- **indexName** (*String*)
-
-    The name of the created index.
-
-- **indexType** (*String*)
-
-    The algorithm that is used to build the index. 
-
-    On Zilliz Cloud, the value is always **AUTOINDEX**. For details, refer to [AUTOINDEX Explained](/docs/autoindex-explained).
-
-- **metricType** (*String*)
-
-    The algorithm that is used to measure similarity between vectors. Possible values are **IP**, **L2**, and **COSINE**.
-
-    This is available only when the specified field is a vector field.
-
-- **fieldName** (*String*)
-
-    The name of the field on which the index has been created.
 
 **EXCEPTIONS:**
 
-- **MilvusClientExceptions**
+- **MilvusClientException**
 
     This exception will be raised when any error occurs during this operation.
 
@@ -134,4 +111,3 @@ DescribeIndexReq describeIndexReq = DescribeIndexReq.builder()
         .build();
 DescribeIndexResp describeIndexResp = client.describeIndex(describeIndexReq);
 ```
-

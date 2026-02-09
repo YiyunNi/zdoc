@@ -12,19 +12,19 @@ type: docx
 token: Da9KdvvWroKX9cxOwsmcLRBxnVb
 sidebar_position: 10
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
   - zilliz
   - zilliz cloud
   - cloud
   - describeUser()
   - nodejs26
+  - vector search algorithms
+  - Question answering system
   - llm-as-a-judge
   - hybrid vector search
-  - Video deduplication
-  - Video similarity search
 displayed_sidebar: nodeSidebar
 
 displayed_sidbar: nodeSidebar

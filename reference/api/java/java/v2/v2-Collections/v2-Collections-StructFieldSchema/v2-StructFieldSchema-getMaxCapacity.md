@@ -10,21 +10,21 @@ notebook: false
 description: "This operation returns the maximum capacity of an Array of Structs field. | Java | v2"
 type: docx
 token: PSdEdxU7ZoTxelx7sLzcAAXsnQH
-sidebar_position: 5
+sidebar_position: 6
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - getMaxCapacity()
   - javaV226
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

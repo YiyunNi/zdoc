@@ -12,19 +12,19 @@ type: docx
 token: RZ8idPxaho5yMoxJzGdc7QAcnNf
 sidebar_position: 10
 keywords: 
+  - Pinecone vector database
+  - Audio search
   - what is semantic search
   - Embedding model
-  - image similarity search
-  - Context Window
   - zilliz
   - zilliz cloud
   - cloud
   - DataType
   - javaV226
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

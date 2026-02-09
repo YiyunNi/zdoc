@@ -8,14 +8,14 @@ last_modified: false
 deprecate_since: false
 description: "Classes and methods related to Zilliz Cloud's Volume service. | Java | v2"
 type: folder
-token: O6ngfC8y5lIhIWdEGDAcXHzcntl
+token: OOcKfRAVdlXgf4dqW0sc9Zl2nyg
 sidebar_position: 10
 sidebar_label: "Volume"
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud

@@ -4,27 +4,27 @@ slug: /java/java/v2-Management-IndexParam
 sidebar_label: "IndexParam"
 beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
-description: "This operation prepares index parameters to build indexes for a specific collection. | Java | v2"
+description: "IndexParam defines the parameters for configuring an index on a collection field. It includes MetricType and IndexType enums. | Java | v2"
 type: docx
-token: FUNwdQQqAon41YxMWiIcHIBmned
+token: K8hddB9vRotonhx7yVIcdCIEnhh
 sidebar_position: 10
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud
   - IndexParam
   - javaV226
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -35,71 +35,110 @@ import Admonition from '@theme/Admonition';
 
 # IndexParam
 
-This operation prepares index parameters to build indexes for a specific collection.
-
-```java
-io.milvus.v2.common.IndexParam
-```
-
-## Request Syntax\{#request-syntax}
+IndexParam defines the parameters for configuring an index on a collection field. It includes MetricType and IndexType enums.
 
 ```java
 IndexParam.builder()
     .fieldName(String fieldName)
-    .indexName(String indexName)
-    .indexType(IndexParam.IndexType indexType)
-    .metricType(IndexParam.MetricType metricType)
+    .indexType(IndexType indexType)
+    .metricType(MetricType metricType)
     .extraParams(Map<String, Object> extraParams)
-    .build();
+    .build()
 ```
 
-**BUILDER METHODS:**
+## MetricType\{#metrictype}
 
-- `fieldName(String fieldName)`
+- `INVALID` - Invalid metric type (default).
 
-    The name of the target field to apply this **IndexParam** object applies.
+- `L2` - Euclidean distance.
 
-- `indexName(String indexName)`
+- `IP` - Inner product.
 
-    The name of the index field generated after this **IndexParam** object has been applied.
+- `COSINE` - Cosine similarity.
 
-- `indexType(IndexParam.[IndexType](./v2-Management-IndexType) indexType)`
+- `HAMMING` - Hamming distance (for binary vectors).
 
-    The name of the algorithm used to arrange data in the specific field. On Zilliz Cloud, the index type is always **AUTOINDEX**. For details, refer to [AUTOINDEX Explained](/docs/autoindex-explained).
+- `JACCARD` - Jaccard distance (for binary vectors).
 
-- `metricType(IndexParam.[MetricType](./v2-Management-MetricType) metricType)`
+- `BM25` - BM25 scoring for full-text search.
 
-    The algorithm that is used to measure similarity between vectors. Possible values: `IP`, `L2`, `COSINE`, `HAMMING`, `JACCARD`, `BM25` (used only for full text search). For more information, refer to [Metric Types](https://milvus.io/docs/metric.md).
+- `MAX_SIM` - Maximum similarity for multi-vector search.
 
-    This is available only when the specified field is a vector field.
+- `MAX_SIM_COSINE` - Maximum similarity using cosine distance.
 
-- `extraParams(Map<String, Object> extraParams)`
+- `MAX_SIM_IP` - Maximum similarity using inner product.
 
-    Extra index parameters. For details, refer to [In-memory Index](https://milvus.io/docs/index.md), [On-disk Index](https://milvus.io/docs/disk_index.md), and [GPU index](https://milvus.io/docs/gpu_index.md).
+- `MAX_SIM_L2` - Maximum similarity using Euclidean distance.
 
-**RETURN TYPE:**
+- `MAX_SIM_JACCARD` - Maximum similarity using Jaccard distance.
 
-*IndexParam*
+- `MAX_SIM_HAMMING` - Maximum similarity using Hamming distance.
 
-**RETURNS:**
+## IndexType\{#indextype}
 
-An **IndexParam** object.
+- `FLAT` - Brute-force search (no index).
 
-**EXCEPTIONS:**
+- `IVF_FLAT` - Inverted file index with flat storage.
 
-- **MilvusClientExceptions**
+- `IVF_SQ8` - Inverted file index with scalar quantization.
 
-    This exception will be raised when any error occurs during this operation.
+- `IVF_PQ` - Inverted file index with product quantization.
+
+- `HNSW` - Hierarchical Navigable Small World graph.
+
+- `HNSW_SQ` - HNSW with scalar quantization.
+
+- `HNSW_PQ` - HNSW with product quantization.
+
+- `HNSW_PRQ` - HNSW with product residual quantization.
+
+- `DISKANN` - Disk-based approximate nearest neighbor.
+
+- `AUTOINDEX` - Automatic index type selection.
+
+- `SCANN` - ScaNN index.
+
+- `IVF_RABITQ` - IVF with RaBitQ quantization.
+
+- `GPU_IVF_FLAT` - GPU-accelerated IVF flat.
+
+- `GPU_IVF_PQ` - GPU-accelerated IVF with product quantization.
+
+- `GPU_BRUTE_FORCE` - GPU-accelerated brute-force search.
+
+- `GPU_CAGRA` - GPU-accelerated CAGRA index.
+
+- `BIN_FLAT` - Binary flat index.
+
+- `BIN_IVF_FLAT` - Binary IVF flat index.
+
+- `MINHASH_LSH` - MinHash LSH index for set similarity.
+
+- `TRIE` - Trie index for string fields.
+
+- `NGRAM` - N-gram index for text fields.
+
+- `RTREE` - R-tree index for spatial data.
+
+- `STL_SORT` - STL sort index for scalar fields.
+
+- `INVERTED` - Inverted index for scalar fields.
+
+- `BITMAP` - Bitmap index for low-cardinality fields.
+
+- `SPARSE_INVERTED_INDEX` - Inverted index for sparse vectors.
+
+- `SPARSE_WAND` - WAND index for sparse vectors.
 
 ## Example\{#example}
 
 ```java
-// define index param for field "vector"
-IndexParam indexParam = IndexParam.builder()
-        .metricType(IndexParam.MetricType.L2)
-        .indexType(IndexParam.IndexType.AUTOINDEX)
-        .fieldName("vector")
-        .indexName("idx")
-        .build();
-```
+import io.milvus.v2.common.IndexParam;
 
+IndexParam indexParam = IndexParam.builder()
+    .fieldName("vector")
+    .indexType(IndexParam.IndexType.HNSW)
+    .metricType(IndexParam.MetricType.COSINE)
+    .extraParams(Map.of("M", 16, "efConstruction", 256))
+    .build();
+```

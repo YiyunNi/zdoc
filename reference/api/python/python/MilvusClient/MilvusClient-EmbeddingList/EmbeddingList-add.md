@@ -12,19 +12,19 @@ type: docx
 token: R0E9dLzIAoYGCcxRVj6cjJmWnPe
 sidebar_position: 1
 keywords: 
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
   - add()
   - pymilvus26
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

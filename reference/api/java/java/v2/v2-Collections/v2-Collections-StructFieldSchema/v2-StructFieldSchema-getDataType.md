@@ -10,21 +10,21 @@ notebook: false
 description: "This operation returns the data type of an Array of Structs field. | Java | v2"
 type: docx
 token: MPJ0dxzDIoNKYPxGA5PcD2F8nRb
-sidebar_position: 1
+sidebar_position: 2
 keywords: 
+  - Video deduplication
+  - Video similarity search
   - Vector retrieval
   - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
   - zilliz
   - zilliz cloud
   - cloud
   - getDataType()
   - javaV226
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

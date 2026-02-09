@@ -12,19 +12,19 @@ type: docx
 token: QIpldgpB1oP5IYxNSSdcyRNcn1c
 sidebar_position: 2
 keywords: 
+  - milvus
   - Zilliz
   - milvus vector database
   - milvus db
-  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud
   - DecayRanker
   - javaV226
+  - Vector store
+  - open source vector database
   - Vector index
   - vector database open source
-  - open source vector db
-  - vector database example
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

@@ -10,21 +10,21 @@ notebook: false
 description: "This operation returns the data type of the Struct elements within an Array of Structs field. | Java | v2"
 type: docx
 token: PvRGdribPou7PHxcoSWcRK3unUc
-sidebar_position: 3
+sidebar_position: 4
 keywords: 
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud
   - getElementType()
   - javaV226
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

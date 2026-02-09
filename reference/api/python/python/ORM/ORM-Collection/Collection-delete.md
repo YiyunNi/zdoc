@@ -12,19 +12,19 @@ type: docx
 token: TJMVdi4U2oBFnAxO95jctzVAnzg
 sidebar_position: 6
 keywords: 
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud
   - delete()
   - pymilvus26
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

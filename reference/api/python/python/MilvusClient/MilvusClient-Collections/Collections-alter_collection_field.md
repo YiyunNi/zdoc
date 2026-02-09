@@ -9,22 +9,22 @@ deprecate_since: false
 notebook: false
 description: "This operation changes the specified collection field parameters. | Python | MilvusClient"
 type: docx
-token: G2jjdHvbBoko6BxBZj7csemWnFc
+token: JdR3dVpCaoq6s2xSFmsc0e13nnh
 sidebar_position: 2
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud
   - alter_collection_field()
   - pymilvus26
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -73,6 +73,12 @@ alter_collection_field(
     The timeout duration for this operation.
 
     Setting this to None indicates that this operation timeouts when any response arrives or any error occurs.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>You must alter field settings before loading the collection. Altering a field on a loaded collection returns an error. To change settings on a loaded collection, release the collection first, alter the field, then reload.</p>
+
+</Admonition>
 
 **RETURN TYPE:**
 

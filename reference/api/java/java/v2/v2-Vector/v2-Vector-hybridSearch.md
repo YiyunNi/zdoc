@@ -9,22 +9,22 @@ deprecate_since: false
 notebook: false
 description: "This operation performs multi-vector search on a collection and returns search results after reranking. | Java | v2"
 type: docx
-token: EOsTdGbQxouZjpxP4Wbc5MXkneh
+token: FwKNdsH8To0y6sx7gjqchTCMnHc
 sidebar_position: 3
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud
   - hybridSearch()
   - javaV226
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -45,172 +45,91 @@ public SearchResp hybridSearch(HybridSearchReq request)
 
 ```java
 hybridSearch(HybridSearchReq.builder()
+    .databaseName(String databaseName)
     .collectionName(String collectionName)
-    .databasename(String databaseName)
     .partitionNames(List<String> partitionNames)
     .searchRequests(List<AnnSearchReq> searchRequests)
-    .ranker(CreateCollectionReq.Function ranker)
+    .topK(int topK)
     .limit(long limit)
     .outFields(List<String> outFields)
     .offset(long offset)
     .roundDecimal(int roundDecimal)
     .consistencyLevel(ConsistencyLevel consistencyLevel)
-    .groupByFieldName(String fieldName)
+    .groupByFieldName(String groupByFieldName)
     .groupSize(Integer groupSize)
     .strictGroupSize(Boolean strictGroupSize)
     .functionScore(FunctionScore functionScore)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `collectionName(String collectionName)`
+- `databaseName(String databaseName)` -
 
-    The name of an existing collection.
+    The name of the database. Defaults to the current database if not specified.
 
-- `databasename(String databaseName)`
+- `collectionName(String collectionName)` -
 
-      Target database name(optional).
+    The name of the target collection.
 
-- `partitionNames(List<String> partitionNames)`
+- `partitionNames(List<String> partitionNames)` -
 
-    A list of partition names.
+    A list of partition names to target.
 
-- `searchRequests(List<AnnSearchReq> searchRequests)`
+- `searchRequests(List<AnnSearchReq> searchRequests)` -
 
-    A list of search requests, where each request is an **AnnSearchReq** object. Each request corresponds to a different vector field and a different set of search parameters.
+    A list of AnnSearchReq objects for hybrid search.
 
-    - `AnnSearchReq`
+- `topK(int topK)` -
 
-         A class representing an ANN search request. Its builder methods are as follows:
+    The number of top results to return.
 
-        - `vectorFieldName(String)`: The vector field to use in the request.
+- `limit(long limit)` -
 
-        - `topK(int)`: The maximum number of results to return in the request. When performing a hybrid search with multiple ANN search requests, the top results defined by **topK** from each request will be combined and re-ranked before returning the final search results.
+    The maximum number of results to return.
 
-        - `expr(String)`:  The expression to filter the results(Optional).
+- `outFields(List<String> outFields)` -
 
-        - `vectors(List<BaseVec>)`: The query vector to search in the request. **BaseVector** is a base class for abstract vector classes. The following classes are derived from BaseVector. Choose the correct class as input according to DataType of the vector field.
+    A list of field names to include in the output.
 
-            <table>
-               <tr>
-                 <th><p><strong>Class Name</strong></p></th>
-                 <th><p><strong>Constructors</strong></p></th>
-                 <th><p><strong>Description</strong></p></th>
-               </tr>
-               <tr>
-                 <td><p><code>FloatVec</code></p></td>
-                 <td><p><code>FloatVec(List&lt;Float&gt; data)</code></p><p><code>FloatVec(float[] data)</code></p></td>
-                 <td><p>For <code>DataType.FloatVector</code> type field.</p></td>
-               </tr>
-               <tr>
-                 <td><p><code>BinaryVec</code></p></td>
-                 <td><p><code>BinaryVec(ByteBuffer data)</code></p><p><code>BinaryVec(byte[] data)</code></p></td>
-                 <td><p>For <code>DataType.BinaryVector</code> type field.</p></td>
-               </tr>
-               <tr>
-                 <td><p><code>Float16Vec</code></p></td>
-                 <td><p><code>Float16Vec(ByteBuffer data)</code></p><p><code>Float16Vec(byte[] data)</code></p></td>
-                 <td><p>For <code>DataType.Float16Vector</code> type field.</p></td>
-               </tr>
-               <tr>
-                 <td><p><code>BFloat16Vec</code></p></td>
-                 <td><p><code>BFloat16Vec(ByteBuffer data)</code></p><p><code>BFloat16Vec(byte[] data)</code></p></td>
-                 <td><p>For <code>DataType.BFloat16Vector</code> type field.</p></td>
-               </tr>
-               <tr>
-                 <td><p><code>SparseFloatVec</code></p></td>
-                 <td><p><code>SparseFloatVec(SortedMap&lt;Long, Float&gt; data)</code></p></td>
-                 <td><p>For <code>DataType.SparseFloatVector</code> type field.</p></td>
-               </tr>
-            </table>
+- `offset(long offset)` -
 
-    - `params(String)`
+    The number of results to skip before returning.
 
-        A JSON dictionary format string of search parameters for the request. Possible values are:
+- `roundDecimal(int roundDecimal)` -
 
-        - **metric_type** (String)
+    The number of decimal places for distance/score rounding.
 
-            The metric type applied to this operation. This should be the same as the one used when you index the vector field specified above. 
+- `consistencyLevel(ConsistencyLevel consistencyLevel)` -
 
-        - **radius** (float)
+    The consistency level for the operation.
 
-            Determines the threshold of least similarity. When setting `metric_type` to `L2`, ensure that this value is greater than that of **range_filter**. Otherwise, this value should be lower than that of **range_filter**. 
+- `groupByFieldName(String groupByFieldName)` -
 
-        - **range_filter** (float)
+    The field name to group search results by.
 
-            Refines the search to vectors within a specific similarity range. When setting `metric_type` to `IP` or `COSINE`, ensure that this value is greater than that of **radius**. Otherwise, this value should be lower than that of **radius**. 
+- `groupSize(Integer groupSize)` -
 
-        - **timezone** (String)
+    The number of results to return per group.
 
-            The timezone  of this operation.
+- `strictGroupSize(Boolean strictGroupSize)` -
 
-        - **time_fields** (String)
+    Whether to strictly enforce the group size.
 
-            The time format that is concatenated with the information extracted from the Timestamptz field in the output fields, such as `year, month, day`.
+- `functionScore(FunctionScore functionScore)` -
 
-- `ranker(CreateCollectionReq.Function ranker)`
-
-    The reranking strategy to use for hybrid search.
-
-    This parameter will be deprecated, and you are advised to use a **FunctionScore** instead.
-
-- `limit(long limit)`
-
-     The total number of entities to return.
-
-- `outFields(List<String> outFields)`
-
-    A list of field names to include in each entity in return. The value defaults to null. If left unspecified, only the primary field is included.
-
-- `offset(long offset)`
-
-    The number of entities to skip before the search results returns. The sum of `offset` and `limit` should be less than 16,384.
-
-- `roundDecimal(int roundDecimal)`
-
-    The number of decimal places to which Milvus rounds the calculated distances. The value defaults to **-1**, indicating that Milvus skips rounding the calculated distances and returns the raw value.
-
-- `consistencyLevel(ConsistencyLevel consistencyLevel)`
-
-    The consistency level of the target collection. The value defaults to the one specified when you create the current collection.
-
-- `groupByFieldName(String groupByFieldName)`
-
-    Groups search results by a specified field to ensure diversity and avoid returning multiple results from the same group. For details, refer to [Grouping Search](https://milvus.io/docs/grouping-search.md#Grouping-Search).
-
-- `groupSize(Integer groupSize)`
-
-    The target number of entities to return within each group in a grouping search. For details, refer to [Grouping Search](https://milvus.io/docs/grouping-search.md#Grouping-Search).
-
-- `strictGroupSize(Boolean strictGroupSize)`
-
-    Controls whether group_size should be strictly enforced. For details, refer to [Grouping Search](https://milvus.io/docs/grouping-search.md#Grouping-Search).
-
-- `functionScore(FunctionScore functionScore)`
-
-    A **FunctionScore** instance that comprises one or multiple **Function** instances. The design purpose is to allow multiple rankers in a search, such as in the [Boost ranker](https://milvus.io/docs/boost-ranker.md).
-
-**RETURN TYPE:**
-
-*SearchResp*
+    A FunctionScore object for custom scoring.
 
 **RETURNS:**
 
+*SearchResp*
+
 A **SearchResp** object representing specific search results with the specified output fields and relevance score.
-
-**PARAMETERS:**
-
-- **searchResults** (*List\<List\<SearchResult\>\>*)
-
-    A list of SearchResp.SearchResult, the size of searchResults equals the number of query vectors of the search. Each `List<SearchResult>` is a top-K result of a query vector. Each SearchResult represents an entity hit by the search.
-
-      Member of SearchResult:
 
 **EXCEPTIONS:**
 
-- **MilvusClientExceptions**
+- **MilvusClientException**
 
     This exception will be raised when any error occurs during this operation.
 

@@ -8,14 +8,14 @@ last_modified: false
 deprecate_since: false
 description: "Methods related to implement role-based access control to your resources. | Python | MilvusClient"
 type: folder
-token: W9SBfQfXUlZAXDdK6nTcop4rnFd
+token: Tjnufe7LvlX9wtddOfEctVJ6nKB
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

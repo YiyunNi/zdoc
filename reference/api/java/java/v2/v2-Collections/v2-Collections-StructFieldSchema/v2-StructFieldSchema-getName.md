@@ -10,21 +10,21 @@ notebook: false
 description: "This operation returns the name of an Array of Structs field. | Java | v2"
 type: docx
 token: DZcddGCD3oh29txhnB5cuxzzn4d
-sidebar_position: 6
+sidebar_position: 7
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud
   - getName()
   - javaV226
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
