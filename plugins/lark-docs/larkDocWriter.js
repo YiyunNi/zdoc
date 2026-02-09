@@ -1199,7 +1199,7 @@ class larkDocWriter {
         const root = this.upload_to_s3 ? IMAGE_BED_URL : `/${ this.imageDir.replace(/^static\//g, '')}`
 
         if (this.skip_image_download) {
-            return `![${board.token}](${root}/${board["token"]}.png)`;
+            return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;
         }
 
         const result = await this.downloader.__downloadBoardPreview(board.token)
@@ -1217,7 +1217,7 @@ class larkDocWriter {
             }
         });           
 
-        return `![${board.token}](${root}/${board["token"]}.png)`;
+        return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;
     }
 
     async __trim_white_borders(image) {
