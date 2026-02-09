@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - backup
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
 
 ---
 
@@ -152,14 +152,4 @@ It is recommended to avoid major DDL (Data Definition Language) operations—suc
 ### Will backup files be deleted if the original cluster is dropped?\{#will-backup-files-be-deleted-if-the-original-cluster-is-dropped}
 
 This depends on the creation method of the backup file. All [automatic backups](./schedule-automatic-backups) are deleted along with the original cluster. But manual cluster backups are retained permanently and will not be deleted when the cluster is deleted. You must delete them manually if no longer needed.
-
-### What will happen if I back up an encrypted cluster?\{#what-will-happen-if-i-back-up-an-encrypted-cluster}
-
-When you back up an encrypted cluster, all data within the encryption scope remains encrypted, and a key icon appears next to the name in the **Backup File** column.
-
-![TiPxbigzIo8wUQxsJ9wcOP3pnAb](https://zdoc-images.s3.us-west-2.amazonaws.com/tipxbigzio8wuqxsj9wcop3pnab.png "TiPxbigzIo8wUQxsJ9wcOP3pnAb")
-
-When you restore an encrypted backup to a new cluster, Zilliz Cloud will use the KMS key associated with the backup file to decrypt the data before restoration. Therefore, you can restore the backup to a new cluster with or without encryption. 
-
-For details, refer to [Restore from an encrypted backup](./restore-from-snapshot#restore-from-an-encrypted-backup-file).
 
