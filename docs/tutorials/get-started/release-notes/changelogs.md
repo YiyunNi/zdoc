@@ -56,7 +56,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **February 9, 2026**
+        **[February 9, 2026](./release-notes-2602#sso-enforcement)**
 
     </div>
 
@@ -74,7 +74,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **February 4, 2026**
+        **[February 4, 2026](./release-notes-2602#new-region-aws-ireland)**
 
     </div>
 

@@ -62,3 +62,19 @@ import Grid from '@site/src/components/Grid';
 
 </Grid>
 
+<Grid columnSize="2" widthRatios="20,80">
+
+    <div>
+
+        **2026-02-04**
+
+    </div>
+
+    <div>
+
+        ## New Region: 🇮🇪 AWS Ireland\{#new-region-aws-ireland}
+
+    </div>
+
+</Grid>
+
