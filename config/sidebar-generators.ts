@@ -88,13 +88,13 @@ export async function tutorialsItemsGenerator({
                         type: 'link',
                         label: 'Manage Organization Roles',
                         description: "Manage organization roles and permissions.",
-                        href: '/docs/organization-users#organization-roles'
+                        href: '/docs/organization-users#invite-a-user-to-your-organization'
                     },
                     {
                         type: 'link',
                         label: 'Manage Project Roles',
                         description: "Manage project roles and permissions.",
-                        href: '/docs/project-users#project-roles'
+                        href: '/docs/project-users#invite-a-user-to-a-project'
                     },
                 ])
 
