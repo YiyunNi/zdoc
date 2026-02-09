@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - ascii folding
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

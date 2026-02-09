@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - best
   - practice
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
 
 ---
 

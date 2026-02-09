@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - regex
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
 
 ---
 

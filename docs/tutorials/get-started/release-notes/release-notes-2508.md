@@ -10,16 +10,16 @@ notebook: FALSE
 description: "August 2025 Release Notes | Cloud"
 type: origin
 token: JNWZwEqkwiDmeSkVPBlc4hnanEe
-sidebar_position: 6
+sidebar_position: 7
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
 
 ---
 

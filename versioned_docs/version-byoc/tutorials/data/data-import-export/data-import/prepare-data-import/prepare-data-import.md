@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - prepare
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
 
 ---
 

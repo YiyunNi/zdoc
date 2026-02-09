@@ -22,10 +22,10 @@ keywords:
   - aws
   - gcp
   - azure
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

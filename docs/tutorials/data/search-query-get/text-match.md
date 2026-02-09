@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - text-match
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
 
 ---
 

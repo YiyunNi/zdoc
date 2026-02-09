@@ -10,7 +10,7 @@ notebook: FALSE
 description: "The Partition Key is a search optimization solution based on partitions. By designating a specific scalar field as the Partition Key and specifying filtering conditions based on the Partition Key during the search, the search scope can be narrowed down to several partitions, thereby improving search efficiency. This article will introduce how to use the Partition Key and related considerations. | BYOC"
 type: origin
 token: QWqiwrgJViA5AJkv64VcgQX2nKd
-sidebar_position: 17
+sidebar_position: 18
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - data
   - search optimization
   - partition key
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
 
 ---
 

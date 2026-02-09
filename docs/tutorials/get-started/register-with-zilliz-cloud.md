@@ -17,10 +17,10 @@ keywords:
   - register
   - cloud
   - milvus
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
   - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
 
 ---
 

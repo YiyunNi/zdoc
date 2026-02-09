@@ -18,10 +18,10 @@ keywords:
   - data import
   - export
   - milvus
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
 
 ---
 

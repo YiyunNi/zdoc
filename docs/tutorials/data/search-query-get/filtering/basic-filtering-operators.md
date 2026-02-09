@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - basic operators
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
 
 ---
 

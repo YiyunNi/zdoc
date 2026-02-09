@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are pleased to announce the general availability of a significant update to Zilliz Cloud. This release introduces a new console for Zilliz Cloud services, supports new cloud regions, and allows secure cluster access through private links. | Cloud"
 type: origin
 token: QZXVwFVH3i1p08kal8vcAmmxnie
-sidebar_position: 32
+sidebar_position: 33
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
 
 ---
 

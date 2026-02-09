@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - recycle bin
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data
   - security
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
 
 ---
 

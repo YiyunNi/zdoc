@@ -18,10 +18,10 @@ keywords:
   - collection
   - load
   - release
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
 
 ---
 

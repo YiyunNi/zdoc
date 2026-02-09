@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - dense vector
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
 
 ---
 
@@ -357,12 +357,7 @@ client.create_collection(
 <TabItem value='java'>
 
 ```java
-import io.milvus.v2.client.ConnectConfig;
-import io.milvus.v2.client.MilvusClientV2;
-
-MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
-        .uri("YOUR_CLUSTER_ENDPOINT")
-        .build());
+import io.milvus.v2.service.collection.request.CreateCollectionReq;
 
 CreateCollectionReq requestCreate = CreateCollectionReq.builder()
         .collectionName("my_collection")
@@ -378,10 +373,6 @@ client.createCollection(requestCreate);
 
 ```javascript
 import { MilvusClient } from "@zilliz/milvus2-sdk-node";
-
-const client = new MilvusClient({
-    address: 'YOUR_CLUSTER_ENDPOINT'
-});
 
 await client.createCollection({
     collection_name: 'my_collection',

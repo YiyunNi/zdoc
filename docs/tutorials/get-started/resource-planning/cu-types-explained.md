@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cu
   - select
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - AI Hallucination
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
 
 ---
 

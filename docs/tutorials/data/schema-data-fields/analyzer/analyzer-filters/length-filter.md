@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - length
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
 
 ---
 

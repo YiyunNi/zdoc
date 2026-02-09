@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cu
   - select
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 

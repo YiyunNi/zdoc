@@ -23,10 +23,10 @@ keywords:
   - decay ranker
   - exponential decay
   - exp
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
 
 ---
 

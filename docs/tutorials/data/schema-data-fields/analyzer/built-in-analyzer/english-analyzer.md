@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in analyzer
   - english analyzer
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
+  - vector database
+  - IVF
+  - knn
+  - Image Search
 
 ---
 

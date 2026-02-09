@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in analyzer
   - standard-analyzer
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
 
 ---
 

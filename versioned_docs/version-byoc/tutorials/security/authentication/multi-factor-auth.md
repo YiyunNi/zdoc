@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - mfa
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
 
 ---
 

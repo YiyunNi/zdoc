@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Last updated January 15, 2026 | Cloud"
+description: "Last updated Feb 9, 2026 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - changelogs
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 
@@ -30,7 +30,7 @@ import Grid from '@site/src/components/Grid';
 
 # Changelogs
 
-**Last updated:** January 15, 2026
+**Last updated:** Feb 9, 2026
 
 <Grid columnSize="2" widthRatios="25,74">
 
@@ -56,7 +56,81 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[January 15, 2025](./release-notes-2601)**
+        **February 9, 2026**
+
+    </div>
+
+    <div>
+
+        - 🔐 [SSO enforcement](./enforce-sso-in-your-organization) to restrict access from non-SSO authentication.
+
+        - 👥 Cluster-level access control configured at the [organization-](./organization-users#organization-role) and [project-level](./project-users#project-access) for fine-grained data access.
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **February 4, 2026**
+
+    </div>
+
+    <div>
+
+        - **New Region**: 🇮🇪 AWS Ireland (eu-west-1)
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[January 29, 2026](./release-notes-2601#another-milvus-v26x-new-feature)**
+
+    </div>
+
+    <div>
+
+        - 🚀   Another new Milvus v2.6.x features become available on Zilliz Cloud
+
+            - [Primary-Key Search](./primary-key-search)
+
+        - 🔒 BYOC-I becomes available on [Microsoft Azure](/docs/byoc/deploy-byoc-i-azure).
+
+        - 🔐 [Customer-managed encryption keys](./cmek) are available for the encryption of data at rest in your Zilliz Cloud clusters.
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[January 23, 2026](./release-notes-2601#milvus-v26x-new-feature)**
+
+    </div>
+
+    <div>
+
+        - 🚀   A new Milvus v2.6.x features become available on Zilliz Cloud
+
+            - [Semantic Highlighter](./semantic-highlighter)
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[January 15, 2026](./release-notes-2601)**
 
     </div>
 
@@ -68,7 +142,7 @@ import Grid from '@site/src/components/Grid';
 
             - [Text Highlighter](./text-highlighter)
 
-        - 🤖 [Model-based embedding](./undefined) and [reranking functions](./model-ranker) for public preview.
+        - 🤖 [Model-based embedding](./model-based-functions) and [reranking functions](./model-ranker) for public preview.
 
         - 🤖 [Hosted models](./hosted-models) for private preview.
 
@@ -76,9 +150,9 @@ import Grid from '@site/src/components/Grid';
 
         - 📅 Advanced [scheduled scaling](./scale-query-cu#scheduled-scaling) with familiar cron settings.
 
-        - 🌎 [Global cluster](./global-cluster-explained) becomes alive in private preview.
+        - 🌎 [Global cluster](./global-cluster-explained) becomes alive. [Contact us](https://support.zilliz.com/hc/en-us) to access.
 
-        - ☁️ BYOC becomes more user friendly with the following enhancements:
+        - ☁️ BYOC becomes more user-friendly with the following enhancements:
 
             - [Full autoscaling capabilities](/docs/byoc/scale-cluster)
 
@@ -868,7 +942,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[September 15, 2022](./undefined)**
+        **September 15, 2022**
 
     </div>
 
@@ -890,7 +964,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[August 30, 2022](./undefined)**
+        **August 30, 2022**
 
     </div>
 
@@ -920,7 +994,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[August 1, 2022](./undefined)**
+        **August 1, 2022**
 
     </div>
 
@@ -946,7 +1020,7 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        **[July 22, 2022](./undefined)**
+        **July 22, 2022**
 
     </div>
 

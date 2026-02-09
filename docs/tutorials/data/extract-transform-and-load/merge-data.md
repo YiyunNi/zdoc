@@ -21,10 +21,10 @@ keywords:
   - load
   - data merging
   - merge data
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
 
 ---
 

@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in tokenizer
   - jieba-tokenizer
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
 
 ---
 

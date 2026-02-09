@@ -19,10 +19,10 @@ keywords:
   - services
   - model
   - providers
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
 
 ---
 

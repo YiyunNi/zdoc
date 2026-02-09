@@ -19,10 +19,10 @@ keywords:
   - schema
   - analyzer
   - built-in filters
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
 
 ---
 

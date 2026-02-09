@@ -18,10 +18,10 @@ keywords:
   - data transfer
   - cost
   - billing
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 
@@ -76,6 +76,8 @@ You will be billed for data transfer in the following scenarios:
 - [Offline migration](./offline-migration)
 
 - [Cross-region backup](/docs/backup-to-other-regions)
+
+- Use third-party [model](./model-based-functions) providers for data ingestion, search, query, and reranking.
 
 <Admonition type="info" icon="📘" title="Note">
 

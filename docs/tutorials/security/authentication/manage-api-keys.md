@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster credentials
   - api key
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
 
 ---
 
@@ -37,7 +37,7 @@ API keys are used to authenticate users or applications making API or SDK calls 
 
 Zilliz Cloud offers two types of API keys to meet diverse user requirements:
 
-- **Personal API keys**: Automatically generated upon user registration, each key is linked to the user’s account and inherits the privileges of the user’s role within the organization and project that the user belongs to. If the account user leaves the organization, the associated personal key is automatically deleted. As an [Organization Owner](./organization-users#organization-roles) or a [Project Admin](./project-users#project-roles), you can see two types of personal API keys on the Zilliz Cloud web console:
+- **Personal API keys**: Automatically generated upon user registration, each key is linked to the user’s account and inherits the privileges of the user’s role within the organization and project that the user belongs to. If the account user leaves the organization, the associated personal key is automatically deleted. As an [Organization Owner](./organization-users#organization-owner) or a [Project Admin](./project-users#project-admin), you can see two types of personal API keys on the Zilliz Cloud web console:
 
     - **Your own personal API key**: A personal key that belongs exclusively to you. You can view and copy this API key.
 

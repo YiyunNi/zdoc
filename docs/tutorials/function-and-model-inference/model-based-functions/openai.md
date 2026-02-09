@@ -21,10 +21,10 @@ keywords:
   - text
   - embedding
   - openai
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
+  - Elastic vector database
 
 ---
 

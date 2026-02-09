@@ -18,10 +18,10 @@ keywords:
   - cluster
   - access control
   - rbac
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
 
 ---
 
@@ -56,7 +56,7 @@ Account users are granted organization roles and project roles while cluster use
 
     - The Organization Owner role encompasses comprehensive privileges across all projects and clusters.
 
-    For details about all organization roles, refer to [Organization roles](./organization-users#organization-roles).
+    For details about all organization roles, refer to [Organization roles](./organization-users).
 
 - **On the project level**
 
@@ -66,7 +66,7 @@ Account users are granted organization roles and project roles while cluster use
 
     - The Project Read-Only role has the privileges to view a project and its resources.
 
-    For details about project roles, refer to [Project roles](./project-users#project-roles).
+    For details about project roles, refer to [Project roles](./project-users).
 
 - **On the cluster level**
 

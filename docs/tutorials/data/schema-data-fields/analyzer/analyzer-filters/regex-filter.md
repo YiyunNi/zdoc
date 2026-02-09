@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - regex
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
 
 ---
 

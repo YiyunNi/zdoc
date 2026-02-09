@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - migrations
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
 
 ---
 

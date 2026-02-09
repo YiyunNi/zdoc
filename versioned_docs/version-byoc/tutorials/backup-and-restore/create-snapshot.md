@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - backup
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
 
 ---
 
@@ -141,15 +141,25 @@ The following is an example output. A backup job is generated and you can check 
 
 ## FAQs\{#faqs}
 
-**How long does a backup job take?**
+### How long does a backup job take?\{#how-long-does-a-backup-job-take}
 
 Backup duration depends on the size of your data. As a reference, backing up 700 MB typically takes about 1 second. If your cluster contains more than 1,000 collections, the process may take slightly longer.
 
-**Can I perform DDL (Data Definition Language) operations during a backup?**
+### Can I perform DDL (Data Definition Language) operations during a backup?\{#can-i-perform-ddl-data-definition-language-operations-during-a-backup}
 
 It is recommended to avoid major DDL (Data Definition Language) operations—such as creating or dropping collections—while a backup is in progress, as they may interfere with the process or lead to inconsistent results.
 
-**Will backup files be deleted if the original cluster is dropped?**
+### Will backup files be deleted if the original cluster is dropped?\{#will-backup-files-be-deleted-if-the-original-cluster-is-dropped}
 
 This depends on the creation method of the backup file. All [automatic backups](./schedule-automatic-backups) are deleted along with the original cluster. But manual cluster backups are retained permanently and will not be deleted when the cluster is deleted. You must delete them manually if no longer needed.
+
+### What will happen if I back up an encrypted cluster?\{#what-will-happen-if-i-back-up-an-encrypted-cluster}
+
+When you back up an encrypted cluster, all data within the encryption scope remains encrypted, and a key icon appears next to the name in the **Backup File** column.
+
+![TiPxbigzIo8wUQxsJ9wcOP3pnAb](https://zdoc-images.s3.us-west-2.amazonaws.com/tipxbigzio8wuqxsj9wcop3pnab.png "TiPxbigzIo8wUQxsJ9wcOP3pnAb")
+
+When you restore an encrypted backup to a new cluster, Zilliz Cloud will use the KMS key associated with the backup file to decrypt the data before restoration. Therefore, you can restore the backup to a new cluster with or without encryption. 
+
+For details, refer to [Restore from an encrypted backup](./restore-from-snapshot#restore-from-an-encrypted-backup-file).
 

@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - geometry field
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
 
 ---
 
@@ -232,7 +232,7 @@ curl --request POST \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>In this example, the <code>GEOMETRY</code> field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-and-default">Nullable & Default</a>.</p>
+<p>In this example, the <code>GEOMETRY</code> field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 
@@ -882,4 +882,4 @@ Yes, the `GEOMETRY` field supports mmap. For more information, refer to [Use mma
 
 ### Can I define the GEOMETRY field as nullable or set a default value?\{#can-i-define-the-geometry-field-as-nullable-or-set-a-default-value}
 
-Yes, the GEOMETRY field supports the `nullable` attribute and a default value in WKT format. For more information, refer to [Nullable & Default](./nullable-and-default).
+Yes, the GEOMETRY field supports the `nullable` attribute and a default value in WKT format. For more information, refer to [Nullable & Default](./nullable-fields).

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - console
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
 
 ---
 

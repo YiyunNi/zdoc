@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - data export
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
 
 ---
 

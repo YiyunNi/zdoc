@@ -19,10 +19,10 @@ keywords:
   - scale
   - manage
   - query cu
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
 
 ---
 

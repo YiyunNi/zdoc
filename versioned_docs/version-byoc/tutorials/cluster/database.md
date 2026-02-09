@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - milvus
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 

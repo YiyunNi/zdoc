@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - lowercase
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
 
 ---
 

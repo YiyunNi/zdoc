@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - recycle bin
+  - Retrieval Augmented Generation
+  - Large language model
   - Vectorization
   - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
 
 ---
 

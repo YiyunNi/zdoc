@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are excited to announce the launch of Zilliz Cloud. This release includes a variety of enhancements and features, including expanded region support and enhanced usability features, such as migration and serverless instance management. In addition, we have enhanced the RESTful API with Bulk-insert and Dedicated Cluster support. | Cloud"
 type: origin
 token: Ti5uwysf0iZhuyk4xvjcFmsSnhG
-sidebar_position: 26
+sidebar_position: 27
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 

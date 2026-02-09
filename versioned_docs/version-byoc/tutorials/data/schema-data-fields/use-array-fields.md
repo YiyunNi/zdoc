@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - array field
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
 
 ---
 
@@ -44,7 +44,7 @@ Here's an example of how ARRAY fields store data:
 
 ## Limits\{#limits}
 
-- **Default Values**: ARRAY fields do not support default values. However, you can set the `nullable` attribute to `True` to allow null values. For details, refer to [Nullable & Default](./nullable-and-default).
+- **Default Values**: ARRAY fields do not support default values. However, you can set the `nullable` attribute to `True` to allow null values. For details, refer to [Nullable & Default](./nullable-fields).
 
 - **Data Type:** All elements in an ARRAY field must share the same data type, which is defined by the `element_type` parameter. When `element_type` is set to `VARCHAR`, you must also specify the `max_length` for array elements. The `element_type` accepts any scalar data type, `JSON`, and `STRUCT`.
 

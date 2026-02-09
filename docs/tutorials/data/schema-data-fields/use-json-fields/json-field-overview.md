@@ -19,15 +19,16 @@ keywords:
   - schema
   - json field
   - overview
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 
 ---
 
 import Admonition from '@theme/Admonition';
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # JSON Field Overview
 
@@ -110,6 +111,9 @@ The fundamental workflow for using a JSON field involves defining it in your sch
 
 To use a JSON field, explicitly define it in your collection schema when creating the collection. The following example demonstrates how to create a collection with a `metadata` field of type `DataType.JSON`:
 
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
 ```python
 from pymilvus import MilvusClient, DataType
 
@@ -137,15 +141,53 @@ client.create_collection(
 )
 ```
 
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>In this example, the JSON field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-and-default">Nullable & Default</a>.</p>
+<p>In this example, the JSON field defined in the collection schema allows null values with <code>nullable=True</code>. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 
 ### Insert data\{#insert-data}
 
 Once the collection is created, insert entities that contain structured JSON objects in your designated JSON field. Your data should be formatted as a list of dictionaries.
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
 
 ```python
 entities = [
@@ -176,6 +218,41 @@ entities = [
 client.insert(collection_name="product_catalog", data=entities)
 ```
 
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
 ### Filtering operations\{#filtering-operations}
 
 Before you can perform filtering operations on JSON fields, make sure:
@@ -187,6 +264,9 @@ Before you can perform filtering operations on JSON fields, make sure:
 <details>
 
 <summary>Show example code</summary>
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
 
 ```python
 index_params = client.prepare_index_params()
@@ -202,6 +282,41 @@ client.create_index(collection_name="product_catalog", index_params=index_params
 client.load_collection(collection_name="product_catalog")
 ```
 
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
 </details>
 
 Once these requirements are met, you can use the expressions below to filter on your collection based on the values within the JSON field. These filter expressions leverage specific JSON path syntax and dedicated operators.
@@ -211,6 +326,9 @@ Once these requirements are met, you can use the expressions below to filter on 
 To query a specific key, use bracket notation to access JSON keys: `json_field_name["key"]`. For nested keys, chain them together: `json_field_name["key1"]["key2"]`.
 
 To filter for entities where the `category` is `"electronics"`:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
 
 ```python
 # Define filter expression
@@ -226,7 +344,45 @@ client.search(
 )
 ```
 
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
 To filter for entities where the nested key `supplier["country"]` is `"USA"`:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
 
 ```python
 # Define filter expression
@@ -244,6 +400,41 @@ res = client.search(
 print(res)
 ```
 
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
 #### Filtering with JSON-specific operators\{#filtering-with-json-specific-operators}
 
 Zilliz Cloud also provides special operators for querying array values on specific JSON field keys. For example:
@@ -255,6 +446,9 @@ Zilliz Cloud also provides special operators for querying array values on specif
 - `json_contains_any(identifier, expr)`: Filters entities where at least one member of the JSON expression exists within the field
 
 To find a product that has the `"summer_sale"` value under the `tags` key:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
 
 ```python
 # Define filter expression
@@ -272,7 +466,45 @@ res = client.search(
 print(res)
 ```
 
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
 To find a product that has at least one of the `"electronics"`, `"new"`, or `"clearance"` values under the `tags` key:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
 
 ```python
 # Define filter expression
@@ -289,6 +521,41 @@ res = client.search(
 
 print(res)
 ```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
 
 For more information about JSON-specific operators, refer to [JSON Operators](./json-filtering-operators).
 
@@ -345,7 +612,7 @@ Yes. Each JSON field is limited to 65,536 bytes.
 
 No, JSON fields do not support default values. However, you can set `nullable=True` when defining the field to allow empty entries.
 
-Refer to [Nullable & Default](./nullable-and-default) for details.
+Refer to [Nullable & Default](./nullable-fields) for details.
 
 ### Are there any naming conventions for JSON field keys?\{#are-there-any-naming-conventions-for-json-field-keys}
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - invoice
   - view
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
 
 ---
 
@@ -179,7 +179,7 @@ If you are an Organization Owner or a Billing Admin, you can view, pay, and down
 
 </Admonition>
 
-Your request should resemble the following example, where `{TOKEN}` is your authentication API key with an [Organization Owner or Billing Admin role](./organization-users#organization-roles). The following `GET` request lists all invoices for your organization.
+Your request should resemble the following example, where `{TOKEN}` is your authentication API key with an [Organization Owner or Billing Admin role](./organization-users#invite-a-user-to-your-organization). The following `GET` request lists all invoices for your organization.
 
 ```bash
 curl --request GET \
@@ -255,7 +255,7 @@ curl --request GET \
 
 </Admonition>
 
-Your request should resemble the following example, where `{TOKEN}` is your authentication API key with an [Organization Owner or Billing Admin role](./organization-users#organization-roles). The following `GET` request describes the specified invoice.
+Your request should resemble the following example, where `{TOKEN}` is your authentication API key with an [Organization Owner or Billing Admin role](./organization-users#invite-a-user-to-your-organization). The following `GET` request describes the specified invoice.
 
 ```bash
 curl --request GET \

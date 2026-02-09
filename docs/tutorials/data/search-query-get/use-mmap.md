@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Memory mapping (Mmap) enables direct memory access to large files on disk, allowing Zilliz Cloud to store indexes and data in both memory and hard drives. This approach helps optimize data placement policy based on access frequency, expanding storage capacity for collections without impacting search performance. This page helps you understand how Zilliz Cloud uses mmap to enable fast and efficient data storage and retrieval. | Cloud"
 type: origin
 token: P3wrwSMNNihy8Vkf9p6cTsWYnTb
-sidebar_position: 18
+sidebar_position: 19
 keywords: 
   - zilliz
   - vector database
   - cloud
   - mmap
   - search optimization
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
 
 ---
 

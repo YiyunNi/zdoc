@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - bulk writer
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
 
 ---
 

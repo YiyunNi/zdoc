@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This guide details the available ways for you to subscribe to our services on Zilliz Cloud with relevant notes on invoice management | Cloud"
 type: origin
 token: FmkCwm1QHitB7uk9U9ncLnHrnse
-sidebar_position: 14
+sidebar_position: 15
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,10 @@ keywords:
   - private link
   - payment
   - billing
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
 
 ---
 

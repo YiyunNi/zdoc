@@ -18,10 +18,10 @@ keywords:
   - auditing
   - log
   - configure
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
 
 ---
 

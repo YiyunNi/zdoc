@@ -22,10 +22,10 @@ keywords:
   - reranking model
   - model ranker
   - voyage ai
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
 
 ---
 

@@ -20,10 +20,10 @@ keywords:
   - filter
   - filtering expressions
   - filtering
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
 
 ---
 

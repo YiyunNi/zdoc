@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - bulk writer
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
 
 ---
 

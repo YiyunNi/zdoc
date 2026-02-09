@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - cluster plan
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - vector databases comparison
+  - Faiss
+  - Video search
+  - AI Hallucination
 
 ---
 

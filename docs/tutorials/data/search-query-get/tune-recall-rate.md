@@ -21,10 +21,10 @@ keywords:
   - ann
   - recall rate
   - tune recall rate
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
 
 ---
 

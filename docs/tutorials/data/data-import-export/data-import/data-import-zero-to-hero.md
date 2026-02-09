@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - milvus
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
 
 ---
 

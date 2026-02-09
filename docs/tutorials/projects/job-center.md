@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - project jobs
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
 
 ---
 

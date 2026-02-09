@@ -18,10 +18,10 @@ keywords:
   - migrations
   - milvus
   - backup files
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
 
 ---
 

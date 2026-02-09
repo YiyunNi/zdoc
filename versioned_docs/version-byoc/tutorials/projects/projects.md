@@ -10,16 +10,16 @@ notebook: FALSE
 description: "The chapter focuses on project operations and related settings. | BYOC"
 type: origin
 token: QHzrwVlEOipspAkPiyucWezqneC
-sidebar_position: 11
+sidebar_position: 12
 keywords: 
   - zilliz
   - vector database
   - cloud
   - projects
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
 
 ---
 

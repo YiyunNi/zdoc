@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - cncharonly
+  - image similarity search
+  - Context Window
   - Natural language search
   - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
 
 ---
 

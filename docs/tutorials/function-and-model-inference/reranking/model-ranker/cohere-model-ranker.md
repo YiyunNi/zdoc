@@ -22,10 +22,10 @@ keywords:
   - reranking model
   - model ranker
   - cohere
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
 
 ---
 

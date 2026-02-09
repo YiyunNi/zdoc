@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - schema explained
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
 
 ---
 

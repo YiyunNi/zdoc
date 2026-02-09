@@ -10,16 +10,16 @@ notebook: FALSE
 description: "January 2026 Release Notes | Cloud"
 type: origin
 token: ZBEiwpvlbijhYDkmnNScc7zyn5d
-sidebar_position: 2
+sidebar_position: 3
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
 
 ---
 
@@ -29,6 +29,68 @@ import Admonition from '@theme/Admonition';
 import Grid from '@site/src/components/Grid';
 
 # January 2026 Release Notes
+
+<Grid columnSize="2" widthRatios="20,80">
+
+    <div>
+
+        **2026-01-29**
+
+    </div>
+
+    <div>
+
+        ## Another Milvus v2.6.x new feature\{#another-milvus-v26x-new-feature}
+
+        - **Search using primary keys**: You can now perform ANN searches using a **primary key** instead of a raw vector. This eliminates the need to manually retrieve vectors from the target collection before searching. For more details, refer to [Primary-Key Search](./primary-key-search)
+
+        ## CMEK\{#cmek}
+
+        Zilliz supports elevating your security posture with AWS KMS integration now. Essential for strict compliance (GDPR, HIPAA), this feature secures your sensitive assets using keys exclusively managed and governed by you.
+
+        - **Comprehensive Data Protection:** Rigorously encrypts assets across all storage tiers and processing states, eliminating security gaps throughout the entire data lifecycle.
+
+        - **Secure Isolation & Architecture:** Granular security boundaries isolation via Encryption Zones, backed by a 3-Tier Envelope Hierarchy (Root Key → Encryption Zone Key → Data Key). This strictly isolates databases to prevent cross-tenant access while optimizing performance.
+
+        - **Lifecycle Governance:** Supports automated zero-downtime rotation, instant data lockdown via key revocation, and immutable configurations to prevent security drift.
+
+        For details, refer to [Customer-Managed Encryption Keys](./cmek) and [AWS KMS](./aws-kms).
+
+        ## BYOC now available on Azure\{#byoc-now-available-on-azure}
+
+        Zilliz Cloud extends **Bring Your Own Cloud (BYOC)** to Microsoft Azure, combining managed service simplicity with **absolute data sovereignty**.
+
+        - **BYOC-I Deployment for Maximum Control:** Hosts the Data Plane entirely within your Azure subscription. Ensures you maintain absolute control over your data sovereignty and security policies.
+
+        - **Terraform Automation:** Accelerates deployment via the official Terraform Provider, fully automating complex networking and authentication for reproducible Infrastructure-as-Code (IaC).
+
+        For details, refer to [Deploy BYOC-I on Microsoft Azure](/docs/byoc/deploy-byoc-i-azure).
+
+    </div>
+
+</Grid>
+
+<Grid columnSize="2" widthRatios="20,80">
+
+    <div>
+
+        **2026-01-23**
+
+    </div>
+
+    <div>
+
+        ## Milvus v2.6.x new feature\{#milvus-v26x-new-feature}
+
+        - **Semantic Highlighter**: Identifies and highlights the most relevant text segments in search results based on query intent rather than exact keyword matches, improving result explainability.
+
+        - This feature is powered by the semantic highlighting model recently open-sourced by Zilliz ([zilliz/semantic-highlight-bilingual-v1](https://huggingface.co/zilliz/semantic-highlight-bilingual-v1)) and provides out-of-the-box inference support through the Zilliz hosted model service (refer to [Hosted Models](./hosted-models)).
+
+         For more details, refer to [Semantic Highlighter](./semantic-highlighter).
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="20,80">
 
@@ -44,7 +106,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Time-zone-aware timestamp support** — Supports the `TIMESTAMPTZ` data type for storing, comparing, and filtering globally consistent timestamps—without manual time-zone handling. For details, refer to [TIMESTAMPTZ Field](./use-timestamptz-field).
 
-        - **Highlighter** — Annotates matched terms with customizable tags and fragment-level context, making full-text search results easier to interpret and debug. For details, refer to [Text Highlighter](./text-highlighter).
+        - **Highlighter** — Annotates matched terms with customizable tags and fragment-level context, making full-text search results easier to interpret and debug. For details, refer to [Lexical Highlighter](./text-highlighter).
 
         ## Function and Model Inference\{#function-and-model-inference}
 
@@ -52,7 +114,7 @@ import Grid from '@site/src/components/Grid';
 
         You can now choose models from top-tier third-party providers like OpenAI, Cohere, and VoyageAI, or host your models directly on Zilliz Cloud.
 
-        - **Model-Based Embedding**: Define a text embedding function during collection creation. After configuration, simply ingest raw text via Insert, Upsert, or Import, and Zilliz automatically handles embedding generation and storage. During search, the system converts text into a dense vector for efficient ANN search. For details, refer to [Text Embedding Function Overview](./undefined).
+        - **Model-Based Embedding**: Define a text embedding function during collection creation. After configuration, simply ingest raw text via Insert, Upsert, or Import, and Zilliz automatically handles embedding generation and storage. During search, the system converts text into a dense vector for efficient ANN search. For details, refer to [Model-based Functions](./model-based-functions).
 
         - **Model-Based Reranking**: Choose the reranking model that best fits your needs, ensuring the most relevant search results are prioritized for your specific use case. For details, refer to [Model-based Rankers](./model-ranker).
 
@@ -74,15 +136,15 @@ import Grid from '@site/src/components/Grid';
 
         We have upgraded our scheduling engine to orchestrate complex, predictable business cycles. You can now automate precise scaling strategies for both CUs and Replicas using industry-standard Cron expressions.
 
-        - **Flexible Scheduling Strategies:** Move beyond basic daily schedules. Utilize standard Cron syntax (e.g., `0 9 * * *`1-5) to define intricate rules, such as "scale up exclusively for month-end."
+        - **Flexible Scheduling Strategies:** Move beyond basic daily schedules. Utilize standard Cron syntax (e.g., `0 9 * * * 1-5`) to define intricate rules, such as "scale up exclusively for month-end."
 
         - **Multi-Schedule Logic:** Configure independent, layered schedules for the same cluster, enabling you to adjust resource profiles for peak weekdays and off-peak weekends, optimizing efficiency in line with your business realities.
 
         For details, refer to [Scale Query CU](./scale-query-cu#scheduled-scaling) and [Scale Replica](./manage-replica#scheduled-scaling).
 
-        ## Global Cluster Private Preview\{#global-cluster-private-preview}
+        ## Global Cluster\{#global-cluster}
 
-        We are excited to announce the Private Preview of the Global Cluster for the Zilliz Cloud Business Critical Plan.
+        We are excited to announce the Global Cluster for the Zilliz Cloud Business Critical Plan.
 
         The Global Cluster creates a unified database architecture across multiple geographic regions by linking a primary cluster with cross-region secondary clusters for automated replication. This solution provides robust Disaster Recovery (DR), ensuring your mission-critical applications remain resilient and your data durable, even in the event of a regional outage.
 
@@ -129,7 +191,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Job Details View**: The side drawer UI has been refreshed for improved navigation and better user experience.
 
-        - **BYOC - S3 Bucket Support**: You can now deploy clusters with dedicated S3 buckets, providing granular data isolation and independent lifecycle management.
+        - **BYOC - Custom S3 Bucket Support**: You can now deploy BYOC clusters with custom, dedicated S3 buckets, providing granular data isolation and independent lifecycle management.
 
         - **BYOC - AWS KMS Integration**: AWS KMS (CMEK) integration for S3 bucket encryption has been added, satisfying strict security compliance standards.
 

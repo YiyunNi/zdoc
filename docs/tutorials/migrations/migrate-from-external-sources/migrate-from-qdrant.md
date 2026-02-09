@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - qdrant
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
 
 ---
 
@@ -219,9 +219,9 @@ Array types are not detected in existing payload data and cannot be converted fr
 
 For payload fields converted to fixed fields, you can configure additional attributes:
 
-- **Nullable**: Decide whether a field can accept null values. This feature is enabled by default. For details, refer to [Nullable attribute](./nullable-and-default#nullable-attribute).
+- **Nullable**: Decide whether a field can accept null values. This feature is enabled by default. For details, refer to [Nullable attribute](./nullable-fields).
 
-- **Default Value**: Set fallback values when data is missing. For details, refer to [Default values](./nullable-and-default#default-values).
+- **Default Value**: Set fallback values when data is missing. For details, refer to [Default values](./nullable-fields).
 
 - **Partition Key**: Optionally designate an INT64 or VARCHAR field as the partition key. Note that each collection supports only one partition key, and the selected field cannot be nullable. For details, refer to  [Use Partition Key](./use-partition-key).
 

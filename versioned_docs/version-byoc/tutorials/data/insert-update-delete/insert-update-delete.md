@@ -18,10 +18,10 @@ keywords:
   - collection
   - data insertions
   - DDL
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

@@ -20,10 +20,10 @@ keywords:
   - filter
   - filtering expressions
   - filtering
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
 
 ---
 

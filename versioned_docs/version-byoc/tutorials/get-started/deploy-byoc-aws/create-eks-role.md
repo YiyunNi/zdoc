@@ -19,10 +19,10 @@ keywords:
   - IAM role
   - milvus
   - vector database
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 

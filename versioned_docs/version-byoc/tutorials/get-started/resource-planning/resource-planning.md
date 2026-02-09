@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Topics related to resource planning before you move your data to Zilliz Cloud. | BYOC"
 type: origin
 token: NM2OwCcfVijX8DkNsIxcdajEnr7
-sidebar_position: 9
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database
   - cloud
   - resource
   - planning
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
 
 ---
 

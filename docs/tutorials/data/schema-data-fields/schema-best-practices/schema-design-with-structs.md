@@ -21,10 +21,10 @@ keywords:
   - hands-on
   - structs
   - array of structs
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 

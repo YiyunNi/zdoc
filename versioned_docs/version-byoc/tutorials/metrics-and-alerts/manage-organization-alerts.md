@@ -17,10 +17,10 @@ keywords:
   - cloud
   - organization
   - alerts
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - RAG
+  - NLP
+  - Neural Network
+  - Deep Learning
 
 ---
 

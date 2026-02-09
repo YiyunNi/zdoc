@@ -18,10 +18,10 @@ keywords:
   - migrations
   - external
   - data source
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

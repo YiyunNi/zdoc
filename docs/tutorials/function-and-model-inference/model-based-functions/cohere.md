@@ -21,10 +21,10 @@ keywords:
   - text
   - embedding
   - cohere
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
 
 ---
 

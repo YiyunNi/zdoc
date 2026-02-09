@@ -19,10 +19,10 @@ keywords:
   - data
   - grouping search
   - group
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
 
 ---
 
@@ -428,4 +428,6 @@ For additional parameter details, refer to [search](/reference/python/python/Vec
 - **Entities per group**: The `group_size` parameter controls the number of entities returned per group. Adjusting `group_size` based on your use case can increase the richness of search results. However, if data is unevenly distributed, some groups may return fewer entities than specified by `group_size`, particularly in limited data scenarios.
 
 - **Strict group size**: When `strict_group_size=True`, the system will attempt to return the specified number of entities (`group_size`) for each group, unless there isn’t enough data in that group. This setting ensures consistent entity counts per group but may lead to performance degradation with uneven data distribution or limited resources. If strict entity counts aren’t required, setting `strict_group_size=False` can improve query speed.
+
+- If the query vectors already exist in the target collection, consider using `ids` instead of retrieving them before searches. For details, refer to [Primary-Key Search](./primary-key-search).
 

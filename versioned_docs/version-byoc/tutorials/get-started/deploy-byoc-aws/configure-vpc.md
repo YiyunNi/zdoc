@@ -21,10 +21,10 @@ keywords:
   - subnet
   - milvus
   - vector database
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
 
 ---
 

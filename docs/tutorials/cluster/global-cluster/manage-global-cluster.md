@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
 
 ---
 
@@ -104,7 +104,19 @@ The following demo shows how to add secondary clusters.
 
 <Supademo id="cmkat4dkp1h55ke4xyc8i7c9y" title=""  />
 
+## Scale primary cluster\{#scale-primary-cluster}
+
+To increase the capacity of a global cluster, you can scale the query CU of its primary cluster. Changes to the query CU of the primary cluster will be automatically synchronized to all secondary clusters.
+
+For details about how to scale the query CU of a primary cluster, see [Scale Query CU](./scale-query-cu).
+
+Currently, replica scaling is not supported for a global cluster.
+
 ## Drop secondary cluster\{#drop-secondary-cluster}
 
-Once you drop all secondary clusters in a global cluster, it reverts to a regular non-global cluster. For details about how to drop clusters, see [Manage Cluster](./manage-cluster#drop-cluster).
+For details about how to drop clusters, see [Manage Cluster](./manage-cluster#drop-cluster).
+
+## Drop global cluster\{#drop-global-cluster}
+
+To drop a global cluster, first delete all secondary clusters, then the primary cluster. The global cluster is automatically deleted with the primary.
 

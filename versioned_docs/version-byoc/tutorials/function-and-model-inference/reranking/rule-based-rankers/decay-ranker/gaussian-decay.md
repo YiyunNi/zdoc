@@ -23,10 +23,10 @@ keywords:
   - decay ranker
   - gaussian decay
   - gauss
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
   - vector database
+  - IVF
+  - knn
+  - Image Search
 
 ---
 

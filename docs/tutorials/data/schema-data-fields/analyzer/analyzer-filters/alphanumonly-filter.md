@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - alphanumonly
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
 
 ---
 

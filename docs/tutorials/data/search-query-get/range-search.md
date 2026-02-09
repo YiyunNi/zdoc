@@ -18,10 +18,10 @@ keywords:
   - collection
   - data
   - range search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
 
 ---
 
@@ -272,3 +272,8 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the query vectors already exist in the target collection, consider using <code>ids</code> instead of retrieving them before searches. For details, refer to <a href="./primary-key-search">Primary-Key Search</a>.</p>
+
+</Admonition>

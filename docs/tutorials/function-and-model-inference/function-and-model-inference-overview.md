@@ -19,10 +19,10 @@ keywords:
   - model
   - inference
   - overview
-  - Audio search
-  - what is semantic search
-  - Embedding model
-  - image similarity search
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
 
 ---
 
@@ -93,7 +93,7 @@ The table below summarizes the available Pre-search Functions:
      <td><p>Keyword-driven full text search, documentation and code search, and workloads where term matching, low latency, and deterministic behavior are critical.</p></td>
    </tr>
    <tr>
-     <td><p>Model-based Functions</p></td>
+     <td><p>Model-based Embedding Functions</p></td>
      <td><p>Dense embeddings</p></td>
      <td><p>Encodes the semantic meaning of text using machine learning models, enabling similarity-based retrieval beyond exact keywords.</p><p><strong>Requires <a href="./function-and-model-inference-overview#understand-model-inference">model inference</a></strong> via hosted models or third-party model services.</p></td>
      <td><p>Semantic search, natural-language queries, Q&A and RAG pipelines, and use cases where conceptual similarity matters more than literal term overlap.</p></td>
@@ -151,7 +151,7 @@ Model inference refers to the runtime execution of machine learning models to ge
 
 - Relevance scores used to rerank search results
 
-Within Zilliz Cloud, model inference is used only by **model-based Functions**, including:
+Within Zilliz Cloud, model inference is used only by **model-based functions**, including:
 
 - [Model-based Pre-search Functions](./function-and-model-inference-overview#pre-search-functions-convert-text-to-vector-embeddings), which convert raw text into dense vector embeddings
 

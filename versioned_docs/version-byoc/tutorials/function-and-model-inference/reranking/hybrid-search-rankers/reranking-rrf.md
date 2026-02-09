@@ -20,10 +20,10 @@ keywords:
   - search result reranking
   - result reranking
   - rrf
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
 
 ---
 

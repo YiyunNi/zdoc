@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in tokenizer
   - language identifier
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
 
 ---
 

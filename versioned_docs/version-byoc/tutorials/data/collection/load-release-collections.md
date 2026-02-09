@@ -18,10 +18,10 @@ keywords:
   - collection
   - load
   - release
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
 
 ---
 

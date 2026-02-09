@@ -19,10 +19,10 @@ keywords:
   - milvus
   - format options
   - numpy
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
 
 ---
 

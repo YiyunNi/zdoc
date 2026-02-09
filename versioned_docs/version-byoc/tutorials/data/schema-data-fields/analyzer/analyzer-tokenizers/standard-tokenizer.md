@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in tokenizer
   - standard-tokenizer
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
 
 ---
 

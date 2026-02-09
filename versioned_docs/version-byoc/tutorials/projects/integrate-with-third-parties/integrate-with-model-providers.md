@@ -19,10 +19,10 @@ keywords:
   - services
   - model
   - providers
+  - Vector index
+  - vector database open source
+  - open source vector db
   - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
 
 ---
 
@@ -52,16 +52,6 @@ You need to create a model provider integration **only when you want to use mode
 - **Model-based Rankers**: Re-rank search results using external reranking models. For details, refer to [Model-based Rankers](./model-ranker).
 
 Local features such as BM25, hybrid rankers, and rule-based rankers do **not** require a model provider integration.
-
-## Billing considerations\{#billing-considerations}
-
-Creating a model provider integration itself does not incur charges. However, using external model providers may result in additional costs, including:
-
-- Charges from the model provider.
-
-- Data transfer costs when data is sent for embedding or reranking. For details, refer to [Data Transfer Cost](./data-transfer-cost).
-
-Billing applies only when model-based functions or rankers are executed.
 
 ## Before you start\{#before-you-start}
 

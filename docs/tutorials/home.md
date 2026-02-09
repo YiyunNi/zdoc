@@ -18,10 +18,10 @@ keywords:
   - developer hub
   - home page
   - home
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
 
 hide_title: true
 hide_table_of_contents: true
@@ -95,6 +95,28 @@ Select a project [plan](./select-zilliz-cloud-service-plans) and create clusters
 1. Conduct a vector similarity search.
 
     A [basic vector similarity search](./single-vector-search) helps you find the most similar results.
+
+## Integrated Embedding\{#integrated-embedding}
+
+1. Create and connect to your cluster.
+
+    [Create a cluster](./create-cluster) with your desired compute and storage resources and then [connect](./connect-to-cluster) to it.
+
+1. Set up a model provider integration or deploy a hosted model.
+
+    [Create an integration](./integrate-with-model-providers) to stores credentials for your third-party model provider. Or you can [deploy](./hosted-models) a hosted model.
+
+1. Create a collection and configure embedding function.
+
+    [Create a collection](./manage-collections-sdks) with at least one vector field and one VARCHAR field, and define a text embedding [function](./model-based-functions).
+
+1. Insert raw text data.
+
+    [Insert](./insert-entities) raw data. Zilliz Cloud automatically generates vector embeddings during ingestion.
+
+1. Use raw text to conduct a search.
+
+    Provide a raw query text. Zilliz Cloud embeds the query, compares it to stored vectors, and [returns](./single-vector-search) the most relevant results.
 
 ## Migrate From Other Data Infra\{#migrate-from-other-data-infra}
 

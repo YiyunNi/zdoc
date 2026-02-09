@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Topics related to resource planning before you move your data to Zilliz Cloud. | Cloud"
 type: origin
 token: NM2OwCcfVijX8DkNsIxcdajEnr7
-sidebar_position: 9
+sidebar_position: 10
 keywords: 
   - zilliz
   - vector database
   - cloud
   - resource
   - planning
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
 
 ---
 

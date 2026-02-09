@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - project jobs
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
 
 ---
 

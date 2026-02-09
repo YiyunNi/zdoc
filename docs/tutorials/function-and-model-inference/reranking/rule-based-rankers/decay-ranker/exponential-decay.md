@@ -23,10 +23,10 @@ keywords:
   - decay ranker
   - exponential decay
   - exp
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
 
 ---
 

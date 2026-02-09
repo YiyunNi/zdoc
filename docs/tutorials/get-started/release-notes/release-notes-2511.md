@@ -10,16 +10,16 @@ notebook: FALSE
 description: " November 2025 Release Notes  | Cloud"
 type: origin
 token: CK0ewQWC2iz6lakP0kscqogbnGh
-sidebar_position: 4
+sidebar_position: 5
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
 
 ---
 

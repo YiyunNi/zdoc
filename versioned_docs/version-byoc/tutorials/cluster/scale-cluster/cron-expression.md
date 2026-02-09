@@ -18,10 +18,10 @@ keywords:
   - cluster
   - manage
   - cron expression
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
 
 ---
 

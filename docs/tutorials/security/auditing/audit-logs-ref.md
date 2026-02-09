@@ -17,10 +17,10 @@ keywords:
   - cloud
   - auditing
   - log
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
 
 ---
 

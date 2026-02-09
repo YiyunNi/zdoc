@@ -19,10 +19,10 @@ keywords:
   - scale
   - manage
   - query cu
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
 
 ---
 

@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - geometry
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 

@@ -10,16 +10,16 @@ notebook: FALSE
 description: "The chapter focuses on project operations and related settings. | Cloud"
 type: origin
 token: QHzrwVlEOipspAkPiyucWezqneC
-sidebar_position: 11
+sidebar_position: 12
 keywords: 
   - zilliz
   - vector database
   - cloud
   - projects
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
 
 ---
 

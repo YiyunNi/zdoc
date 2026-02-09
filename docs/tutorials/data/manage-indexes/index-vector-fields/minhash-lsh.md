@@ -18,10 +18,10 @@ keywords:
   - vector field
   - index
   - minhash
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
 
 ---
 

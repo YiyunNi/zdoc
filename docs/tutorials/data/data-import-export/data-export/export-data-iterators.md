@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data export
   - iterator
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 

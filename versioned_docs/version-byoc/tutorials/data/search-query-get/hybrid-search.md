@@ -19,10 +19,10 @@ keywords:
   - data
   - hybrid search
   - combine sparse and dense vectors
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
 
 ---
 

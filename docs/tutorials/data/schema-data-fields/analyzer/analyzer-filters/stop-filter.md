@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - stop
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
 
 ---
 

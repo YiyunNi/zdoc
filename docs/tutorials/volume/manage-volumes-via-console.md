@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - volume
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
 
 ---
 

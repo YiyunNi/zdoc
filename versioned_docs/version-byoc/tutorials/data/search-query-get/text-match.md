@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - text-match
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
 
 ---
 

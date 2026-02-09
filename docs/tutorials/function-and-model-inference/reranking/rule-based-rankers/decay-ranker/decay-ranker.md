@@ -22,10 +22,10 @@ keywords:
   - decay
   - decay ranker
   - decay rankers
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
 
 ---
 

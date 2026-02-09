@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - dynamic field
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
 
 ---
 

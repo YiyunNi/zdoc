@@ -10,16 +10,16 @@ notebook: FALSE
 description: "December 2025 Release Notes | Cloud"
 type: origin
 token: LX0RwtoEEihhNukmt1DcSQGfnjb
-sidebar_position: 3
+sidebar_position: 4
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
 
 ---
 

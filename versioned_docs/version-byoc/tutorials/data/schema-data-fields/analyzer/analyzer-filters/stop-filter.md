@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - stop
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - vector databases comparison
+  - Faiss
+  - Video search
+  - AI Hallucination
 
 ---
 

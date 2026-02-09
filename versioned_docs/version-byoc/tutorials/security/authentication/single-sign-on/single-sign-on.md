@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - sso
+  - llm hallucinations
+  - hybrid search
   - lexical search
   - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
 
 ---
 

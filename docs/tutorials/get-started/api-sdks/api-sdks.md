@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This chapter provides access to the procedure for using or installing RESTful API and SDKs and their reference docs. | Cloud"
 type: origin
 token: Ecwpw6cImiFV0gkkusgcQhvBnLe
-sidebar_position: 12
+sidebar_position: 13
 keywords: 
   - zilliz
   - milvus
@@ -23,10 +23,10 @@ keywords:
   - go
   - node
   - nodejs
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
 
 ---
 

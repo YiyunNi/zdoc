@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - project third-party
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 

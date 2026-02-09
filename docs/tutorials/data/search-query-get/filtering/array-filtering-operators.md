@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - array operators
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 

@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - random sampling
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
 
 ---
 

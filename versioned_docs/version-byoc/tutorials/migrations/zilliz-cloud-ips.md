@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - ips
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
 
 ---
 
@@ -93,6 +93,11 @@ Safelist the IP addresses corresponding to the cloud service provider and region
      <td><p>eu-central-1</p></td>
      <td><p>Frankfurt, Germany</p></td>
      <td><p><code>18.158.52.65</code>, <code>3.121.11.160</code></p></td>
+   </tr>
+   <tr>
+     <td><p>eu-west-1</p></td>
+     <td><p>Ireland</p></td>
+     <td><p><code>54.76.194.38</code>, <code>99.81.179.135</code>, <code>3.248.62.149</code>, <code>52.16.225.156</code></p></td>
    </tr>
    <tr>
      <td><p>ca-central-1</p></td>

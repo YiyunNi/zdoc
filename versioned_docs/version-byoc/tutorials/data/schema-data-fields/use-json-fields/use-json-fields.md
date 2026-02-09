@@ -18,10 +18,10 @@ keywords:
   - collection
   - schema
   - json field
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
 
 ---
 
@@ -31,6 +31,8 @@ import Admonition from '@theme/Admonition';
 # JSON Field
 
 This chapter introduces the JSON field type, and provides guides on how to index a JSON field. 
+
+
 
 import DocCardList from '@theme/DocCardList';
 

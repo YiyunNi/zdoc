@@ -19,10 +19,10 @@ keywords:
   - access control
   - rbac
   - roles
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
 
 ---
 

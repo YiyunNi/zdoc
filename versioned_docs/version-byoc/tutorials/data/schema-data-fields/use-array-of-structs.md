@@ -20,10 +20,10 @@ keywords:
   - array field
   - array of structs
   - structs
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 
@@ -554,14 +554,7 @@ client.create_collection(
 <TabItem value='java'>
 
 ```java
-import io.milvus.v2.client.ConnectConfig;
-import io.milvus.v2.client.MilvusClientV2;
 import io.milvus.v2.service.collection.request.CreateCollectionReq;
-
-MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
-        .uri("YOUR_CLUSTER_ENDPOINT")
-        .token("YOUR_CLUSTER_TOKEN")
-        .build());
 
 CreateCollectionReq requestCreate = CreateCollectionReq.builder()
         .collectionName("my_collection")

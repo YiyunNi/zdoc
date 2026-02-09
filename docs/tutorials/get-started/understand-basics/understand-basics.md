@@ -10,17 +10,17 @@ notebook: FALSE
 description: "Explanations about the common terms we use when discussing how to use Zilliz Cloud. | Cloud"
 type: origin
 token: L4qDwChWLi1Vy6kbt30cd7W4ntC
-sidebar_position: 7
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
   - cloud
   - basics
   - milvus
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
 
 ---
 

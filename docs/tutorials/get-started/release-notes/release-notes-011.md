@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are pleased to announce the general availability of a significant update to Zilliz Cloud. This release adds email notifications and inline guidance for beginners. | Cloud"
 type: origin
 token: E76ywex6GiUKUKkgbFAc95Q0nxe
-sidebar_position: 30
+sidebar_position: 31
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

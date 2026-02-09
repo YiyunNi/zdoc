@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - view collections
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
 
 ---
 

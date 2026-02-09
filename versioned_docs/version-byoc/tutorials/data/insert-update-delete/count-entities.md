@@ -20,10 +20,10 @@ keywords:
   - upsert
   - update
   - count
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
 
 ---
 

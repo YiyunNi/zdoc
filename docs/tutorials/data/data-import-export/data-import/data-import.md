@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - milvus
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
 
 ---
 

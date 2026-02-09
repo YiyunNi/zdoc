@@ -18,10 +18,10 @@ keywords:
   - collection
   - alias
   - aliases
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
 
 ---
 

@@ -19,10 +19,10 @@ keywords:
   - access control
   - rbac
   - privileges
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
 
 ---
 

@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - cluster credentials
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
 
 ---
 

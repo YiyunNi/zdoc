@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - random sampling
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
 
 ---
 

@@ -18,10 +18,10 @@ keywords:
   - collection
   - collection ttl
   - time-to-live
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
 
 ---
 

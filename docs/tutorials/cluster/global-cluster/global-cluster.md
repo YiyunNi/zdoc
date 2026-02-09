@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
 
 ---
 

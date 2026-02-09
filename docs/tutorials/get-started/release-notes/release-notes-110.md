@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We're thrilled to unveil the newest Zilliz Cloud update, featuring a pricing calculator for cost estimation, a data backup and restore process for enhanced data security, a customizable timezone setting for global users, a collection rename tool for better organization, the removal of storage quotas for unrestricted usage, and improved credit conservation for inactive databases. | Cloud"
 type: origin
 token: ZvSOwB7zkir7PjkzrOPciC5WnTe
-sidebar_position: 28
+sidebar_position: 29
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
 
 ---
 

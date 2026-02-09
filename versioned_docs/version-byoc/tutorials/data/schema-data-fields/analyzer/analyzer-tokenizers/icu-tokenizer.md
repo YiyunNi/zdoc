@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in tokenizer
   - icu-tokenizer
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
 
 ---
 

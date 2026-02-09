@@ -19,10 +19,10 @@ keywords:
   - milvus
   - backup files
   - volume
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
 
 ---
 

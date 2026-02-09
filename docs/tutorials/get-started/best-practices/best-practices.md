@@ -10,17 +10,17 @@ notebook: FALSE
 description: "You can find articles on the best practices when using Zilliz Cloud. | Cloud"
 type: origin
 token: HWzCwbjfci51HHk4BvTcfbiHn1d
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
   - cloud
   - milvus
   - best practices
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
 
 ---
 

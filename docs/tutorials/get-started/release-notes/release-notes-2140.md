@@ -10,16 +10,16 @@ notebook: FALSE
 description: "This release introduces two new features in PRIVATE PREVIEW a new BYOC deployment option called BYOC-I and a data plane audit logging feature. The former is designed to ensure complete data sovereignty without any cross-account IAM authorization, while the latter aims to enhance data security by providing detailed logs of actions performed on the data plane. In addition to launching these features, Zilliz Cloud has also revised its credit strategies. | Cloud"
 type: origin
 token: FSUqwEEIii9k2sklkcLcIFJJnbf
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 

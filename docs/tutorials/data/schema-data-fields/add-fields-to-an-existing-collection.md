@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Milvus allows you to dynamically add new fields to existing collections, making it easy to evolve your data schema as your application needs change. This guide shows you how to add fields in different scenarios using practical examples. | Cloud"
 type: origin
 token: UR9SwucAIiQ2TYkc9EucsgvSnng
-sidebar_position: 17
+sidebar_position: 18
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - schema
   - field properties
   - add collection fields
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
 
 ---
 

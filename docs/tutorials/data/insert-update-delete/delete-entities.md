@@ -19,10 +19,10 @@ keywords:
   - data
   - delete
   - delete entities
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
 
 ---
 

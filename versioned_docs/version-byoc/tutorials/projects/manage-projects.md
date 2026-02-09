@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - projects
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
 
 ---
 

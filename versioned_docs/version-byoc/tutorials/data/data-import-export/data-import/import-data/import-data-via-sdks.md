@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - sdk
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
 
 ---
 

@@ -17,10 +17,10 @@ keywords:
   - cloud
   - collection
   - schema explained
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
 
 ---
 

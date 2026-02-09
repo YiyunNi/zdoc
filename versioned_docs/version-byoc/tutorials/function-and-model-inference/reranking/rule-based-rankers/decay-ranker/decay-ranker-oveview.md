@@ -22,10 +22,10 @@ keywords:
   - decay
   - decay ranker
   - decay ranker overview
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
 
 ---
 

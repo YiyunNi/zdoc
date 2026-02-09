@@ -18,10 +18,10 @@ keywords:
   - vector field
   - index
   - index build level
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
 
 ---
 

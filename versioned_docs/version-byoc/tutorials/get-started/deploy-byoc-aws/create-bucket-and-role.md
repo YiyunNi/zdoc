@@ -19,10 +19,10 @@ keywords:
   - IAM role
   - milvus
   - vector database
+  - vector databases comparison
+  - Faiss
   - Video search
   - AI Hallucination
-  - AI Agent
-  - semantic search
 
 ---
 

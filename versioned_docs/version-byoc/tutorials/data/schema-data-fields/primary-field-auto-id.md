@@ -20,10 +20,10 @@ keywords:
   - primary field
   - autoId
   - autoid
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
 
 ---
 

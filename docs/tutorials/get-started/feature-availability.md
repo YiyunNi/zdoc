@@ -10,16 +10,16 @@ notebook: FALSE
 description: "Last updated Oct 13, 2025 | Cloud"
 type: origin
 token: HpbSwzS6kiW9gikHpQ0cUZLWnlc
-sidebar_position: 15
+sidebar_position: 16
 keywords: 
   - zilliz
   - vector database
   - cloud
   - feature availability
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - AI Agent
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
 
 ---
 
@@ -87,8 +87,6 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 - [Export backup files](./export-backup-files)
 
 - [Hosted models](./hosted-models)
-
-- [Global cluster](./global-cluster)
 
 <Admonition type="info" icon="📘" title="Notes">
 

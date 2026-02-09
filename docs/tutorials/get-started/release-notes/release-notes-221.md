@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are excited to announce the launch of Zilliz Cloud. With this release, we are introducing a range of enhancements and features, including increased flexibility with a New CU Size Option, the support for advance pay, and more AWS regions. | Cloud"
 type: origin
 token: YtxBwrPfBiuFDdk10GVcYY1DnGg
-sidebar_position: 24
+sidebar_position: 25
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
 
 ---
 

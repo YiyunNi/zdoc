@@ -21,10 +21,10 @@ keywords:
   - filtering expressions
   - filtering
   - json operators
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
+  - IVF
+  - knn
+  - Image Search
+  - LLMs
 
 ---
 

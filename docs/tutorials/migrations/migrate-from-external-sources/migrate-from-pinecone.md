@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - pinecone
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
 
 ---
 
@@ -166,9 +166,9 @@ When converting metadata to fixed fields:
 
 For metadata fields converted to fixed fields, you can configure additional attributes:
 
-- **Nullable**: Decide whether a field can accept null values. This feature is enabled by default. For details, refer to [Nullable attribute](./nullable-and-default#nullable-attribute).
+- **Nullable**: Decide whether a field can accept null values. This feature is enabled by default. For details, refer to [Nullable attribute](./nullable-fields).
 
-- **Default Value**: Set fallback values when data is missing. For details, refer to [Default values](./nullable-and-default#default-values).
+- **Default Value**: Set fallback values when data is missing. For details, refer to [Default values](./nullable-fields).
 
 ## Pinecone-specific handling rules\{#pinecone-specific-handling-rules}
 

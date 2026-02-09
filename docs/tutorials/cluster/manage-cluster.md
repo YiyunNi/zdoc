@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - manage
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
 
 ---
 
@@ -29,6 +29,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Manage Cluster
 
@@ -184,6 +186,24 @@ The following demo illustrates how to upgrade the deployment option of a cluster
 To try the latest preview features, you need to upgrade the compatible Milvus version of your dedicated cluster.
 
 ![upgrade-to-preview-version](https://zdoc-images.s3.us-west-2.amazonaws.com/upgrade-to-preview-version.png "upgrade-to-preview-version")
+
+## Add secondary clusters\{#add-secondary-clusters}
+
+If you need to enable the global cluster feature for an existing Dedicated cluster, follow the steps below.
+
+<Supademo id="undefined" title=""  />
+
+<Procedures>
+
+1. Navigate to the cluster overview page and click on **Convert to Global Cluster** in the **Actions** list.
+
+1. Provide a name for the global cluster. Your original dedicated cluster will become the primary cluster.
+
+1. Add secondary clusters.
+
+1. Click on **Create**.
+
+</Procedures>
 
 ## Drop cluster\{#drop-cluster}
 

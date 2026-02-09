@@ -21,10 +21,10 @@ keywords:
   - result reranking
   - reranking model
   - model ranker
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
 
 ---
 

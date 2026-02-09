@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - limits
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
 
 ---
 
@@ -295,6 +295,16 @@ You can create a maximum of **1,024** collections or **4,096** partitions per CU
 - The total number of partitions across all collections in a cluster should be less than 4,096 times the number of CUs allocated to the cluster or 65,536, whichever is lower.
 
 - Both conditions must be met.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>For <strong>Free</strong> and <strong>Serverless</strong> clusters, the following limits apply instead:</p>
+<ul>
+<li><p>A <strong>Free</strong> cluster allows a maximum of <strong>5</strong> collections, while</p></li>
+<li><p>A <strong>Serverless</strong> cluster supports up to <strong>100</strong> collections.</p></li>
+</ul>
+
+</Admonition>
 
 ### Fields\{#fields}
 

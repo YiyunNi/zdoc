@@ -17,10 +17,10 @@ keywords:
   - cloud
   - ann search
   - milvus
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
 
 ---
 

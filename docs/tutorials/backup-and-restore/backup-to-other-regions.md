@@ -18,10 +18,10 @@ keywords:
   - backup
   - files
   - view
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Audio search
+  - what is semantic search
+  - Embedding model
+  - image similarity search
 
 ---
 
@@ -70,7 +70,10 @@ You can enable cross-region backup either when [creating a backup manually](./cr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You can select regions only for the same cloud provider as the original region.</p>
+<ul>
+<li>You can select regions only for the same cloud provider as the original region.</li>
+</ul>
+<p></p>
 
 </Admonition>
 

@@ -22,10 +22,10 @@ keywords:
   - filtering
   - full-text search
   - data in data out
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
 
 ---
 

@@ -10,17 +10,17 @@ notebook: FALSE
 description: "You can find articles on the best practices when using Zilliz Cloud. | BYOC"
 type: origin
 token: HWzCwbjfci51HHk4BvTcfbiHn1d
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
   - cloud
   - milvus
   - best practices
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - Faiss
+  - Video search
+  - AI Hallucination
+  - AI Agent
 
 ---
 

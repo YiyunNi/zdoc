@@ -19,10 +19,10 @@ keywords:
   - data
   - insert
   - insert entities
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - rag llm architecture
+  - private llms
+  - nn search
+  - llm eval
 
 ---
 

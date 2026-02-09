@@ -19,10 +19,10 @@ keywords:
   - data
   - search result reranking
   - result reranking
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
 
 ---
 

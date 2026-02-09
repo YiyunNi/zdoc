@@ -18,10 +18,10 @@ keywords:
   - collection
   - data insertions
   - DDL
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
 
 ---
 

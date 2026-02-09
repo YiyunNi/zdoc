@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - email accounts
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 

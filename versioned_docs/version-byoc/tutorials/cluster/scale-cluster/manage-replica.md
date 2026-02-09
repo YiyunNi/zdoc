@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - manage
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

@@ -23,10 +23,10 @@ keywords:
   - decay ranker
   - gaussian decay
   - gauss
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
 
 ---
 

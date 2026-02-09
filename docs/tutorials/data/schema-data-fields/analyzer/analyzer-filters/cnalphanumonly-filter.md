@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - cnalphanumonly
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
 
 ---
 

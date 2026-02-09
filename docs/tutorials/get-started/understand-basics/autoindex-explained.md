@@ -17,10 +17,10 @@ keywords:
   - cloud
   - autoindex
   - milvus
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
 
 ---
 

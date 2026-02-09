@@ -18,10 +18,10 @@ keywords:
   - cluster
   - access control
   - rbac
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
 
 ---
 

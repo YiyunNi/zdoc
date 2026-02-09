@@ -18,10 +18,10 @@ keywords:
   - data import
   - milvus
   - storage options
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
 
 ---
 

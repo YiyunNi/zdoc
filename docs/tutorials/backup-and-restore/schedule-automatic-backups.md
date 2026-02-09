@@ -17,10 +17,10 @@ keywords:
   - cloud
   - backup
   - automatic
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
 
 ---
 

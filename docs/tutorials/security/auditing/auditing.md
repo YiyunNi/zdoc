@@ -17,10 +17,10 @@ keywords:
   - cloud
   - auditing
   - log
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
 
 ---
 

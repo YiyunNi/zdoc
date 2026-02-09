@@ -19,10 +19,10 @@ keywords:
   - milvus
   - format options
   - numpy
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
 
 ---
 

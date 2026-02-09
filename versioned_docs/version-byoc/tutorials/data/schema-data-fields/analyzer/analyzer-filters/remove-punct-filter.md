@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - remove punct
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
 
 ---
 

@@ -19,10 +19,10 @@ keywords:
   - schema
   - timestamp field
   - time zone
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 
@@ -68,7 +68,7 @@ A `TIMESTAMPTZ` field is a schema-defined data type (`DataType.TIMESTAMPTZ`) in 
 <li><p>You can set <code>nullable=True</code> for <code>TIMESTAMPTZ</code> fields to allow missing values.</p></li>
 <li><p>You can specify a default timestamp value using the <code>default_value</code> attribute in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.</p></li>
 </ul>
-<p>See <a href="./nullable-and-default">Nullable & Default</a> for details.</p>
+<p>See <a href="./nullable-fields">Nullable & Default</a> for details.</p>
 
 </Admonition>
 

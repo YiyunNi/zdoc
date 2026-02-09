@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are pleased to announce the general availability of a significant update to Zilliz Cloud. This release raises the standard of vector database services for usability, security, performance, and capability to a new stage, bringing you a state-of-the-art vector database experience built for everyone. | Cloud"
 type: origin
 token: XmUYwRgNDitesQkl9QDc3IslnOh
-sidebar_position: 29
+sidebar_position: 30
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 

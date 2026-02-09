@@ -22,10 +22,10 @@ keywords:
   - aws
   - gcp
   - azure
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
 
 ---
 

@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - sso
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
 
 ---
 

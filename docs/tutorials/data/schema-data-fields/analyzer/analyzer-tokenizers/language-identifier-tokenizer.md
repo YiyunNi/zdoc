@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in tokenizer
   - language identifier
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
 
 ---
 

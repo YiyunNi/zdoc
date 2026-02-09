@@ -19,10 +19,10 @@ keywords:
   - data
   - filtered search
   - filtering
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 
@@ -82,6 +82,12 @@ This section demonstrates how to conduct a filtered search. Code snippets in thi
     {"id": 9, "vector": [0.5718280481994695, 0.24070317428066512, -0.3737913482606834, -0.06726932177492717, -0.6980531615588608], "color": "purple_4976", "likes": 765}
 ]
 ```
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the query vectors already exist in the target collection, consider using <code>ids</code> instead of retrieving them before searches. For details, refer to <a href="./primary-key-search">Primary-Key Search</a>.</p>
+
+</Admonition>
 
 ### Search with standard filtering\{#search-with-standard-filtering}
 

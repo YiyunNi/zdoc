@@ -19,10 +19,10 @@ keywords:
   - access control
   - rbac
   - users
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 
 ---
 

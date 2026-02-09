@@ -17,10 +17,10 @@ keywords:
   - cloud
   - auditing
   - log
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
 
 ---
 

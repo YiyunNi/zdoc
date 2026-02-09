@@ -17,10 +17,10 @@ keywords:
   - cloud
   - metrics
   - alerts
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
 
 ---
 

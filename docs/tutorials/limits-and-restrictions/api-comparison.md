@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - api availability
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
 
 ---
 

@@ -20,10 +20,10 @@ keywords:
   - rbac
   - users
   - overview
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
 
 ---
 

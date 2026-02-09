@@ -19,10 +19,10 @@ keywords:
   - schema
   - schema design
   - hands-on
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
 
 ---
 

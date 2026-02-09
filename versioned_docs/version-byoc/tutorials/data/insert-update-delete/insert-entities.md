@@ -19,10 +19,10 @@ keywords:
   - data
   - insert
   - insert entities
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
 
 ---
 

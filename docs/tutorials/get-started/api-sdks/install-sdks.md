@@ -17,10 +17,10 @@ keywords:
   - cloud
   - sdk
   - milvus
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
 
 ---
 

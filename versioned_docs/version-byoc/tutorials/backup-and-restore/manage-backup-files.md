@@ -17,10 +17,10 @@ keywords:
   - cloud
   - backup
   - manage
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
 
 ---
 

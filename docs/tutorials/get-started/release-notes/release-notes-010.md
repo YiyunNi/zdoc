@@ -10,16 +10,16 @@ notebook: FALSE
 description: "We are pleased to announce the general availability of a significant update to Zilliz Cloud. This release adds the data preview feature and a demo dataset that can be easily imported into your collection on the console. | Cloud"
 type: origin
 token: UIaAwGay9iJHhlkxx8VcxfZ3nvb
-sidebar_position: 31
+sidebar_position: 32
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
 
 ---
 

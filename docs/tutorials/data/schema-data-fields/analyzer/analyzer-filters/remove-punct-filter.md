@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - remove punct
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
 
 ---
 

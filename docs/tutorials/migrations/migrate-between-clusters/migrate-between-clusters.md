@@ -17,10 +17,10 @@ keywords:
   - cloud
   - migrations
   - clusters
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
 
 ---
 

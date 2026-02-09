@@ -22,10 +22,10 @@ keywords:
   - decay
   - decay ranker
   - decay rankers
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
+  - open source vector database
 
 ---
 

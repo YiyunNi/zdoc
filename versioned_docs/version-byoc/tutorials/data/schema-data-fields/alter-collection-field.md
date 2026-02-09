@@ -10,7 +10,7 @@ notebook: FALSE
 description: "You can alter the properties of a collection field to change column constraints or enforce stricter data integrity rules. | BYOC"
 type: origin
 token: PLjFwlcT8ilFBakYXyfcg6S2n7d
-sidebar_position: 16
+sidebar_position: 17
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - schema
   - field properties
   - alter collection field
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
 
 ---
 

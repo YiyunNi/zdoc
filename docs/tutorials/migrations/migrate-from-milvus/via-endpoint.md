@@ -18,10 +18,10 @@ keywords:
   - migrations
   - milvus
   - endpoint
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
 
 ---
 

@@ -10,7 +10,7 @@ notebook: FALSE
 description: "You can drop a collection if it is no longer needed. | Cloud"
 type: origin
 token: DEUuwEwM4iMLOikU7XpcpNnKnGd
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,10 @@ keywords:
   - drop
   - drop by filter
   - drop by id
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
 
 ---
 

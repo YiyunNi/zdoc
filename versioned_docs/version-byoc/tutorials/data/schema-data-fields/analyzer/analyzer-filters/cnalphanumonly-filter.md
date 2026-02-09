@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - cnalphanumonly
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
 
 ---
 

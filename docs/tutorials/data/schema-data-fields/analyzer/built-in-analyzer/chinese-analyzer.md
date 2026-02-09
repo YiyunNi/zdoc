@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in analyzer
   - chinese analyzer
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
 
 ---
 

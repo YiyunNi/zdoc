@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - restful
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
 
 ---
 

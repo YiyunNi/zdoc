@@ -10,17 +10,17 @@ notebook: FALSE
 description: "This guide demonstrates how to use Zilliz Cloud clusters to perform operations related to high-performance semantic search. | BYOC"
 type: origin
 token: GQN0wDCrni4n36kyeVQcF41Lned
-sidebar_position: 6
+sidebar_position: 7
 keywords: 
   - zilliz
   - vector database
   - quickstart
   - cloud
   - milvus
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Context Window
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
 
 ---
 

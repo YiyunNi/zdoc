@@ -17,10 +17,10 @@ keywords:
   - cloud
   - notification
   - channels
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
 
 ---
 

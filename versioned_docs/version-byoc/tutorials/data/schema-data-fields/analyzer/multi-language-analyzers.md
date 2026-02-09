@@ -19,10 +19,10 @@ keywords:
   - schema
   - analyzer
   - multi-language
+  - rag llm architecture
+  - private llms
   - nn search
   - llm eval
-  - Sparse vs Dense
-  - Dense vector
 
 ---
 

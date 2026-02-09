@@ -22,10 +22,10 @@ keywords:
   - aws
   - gcp
   - azure
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
 
 ---
 

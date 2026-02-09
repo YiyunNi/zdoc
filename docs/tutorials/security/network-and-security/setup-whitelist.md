@@ -17,10 +17,10 @@ keywords:
   - cloud
   - whitelist
   - setup
+  - vector database open source
+  - open source vector db
+  - vector database example
   - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
 
 ---
 

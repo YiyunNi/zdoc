@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - built-in filters
   - alphanumonly
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
+  - Video search
 
 ---
 

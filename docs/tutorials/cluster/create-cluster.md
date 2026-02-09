@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cluster
   - create
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
 
 ---
 
@@ -29,6 +29,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 import Supademo from '@site/src/components/Supademo';
+
+import Procedures from '@site/src/components/Procedures';
 
 # Create Cluster
 
@@ -259,4 +261,34 @@ For further details, see [Create Dedicated Cluster](/reference/restful/create-de
 </TabItem>
 
 </Tabs>
+
+## Create an encrypted cluster\{#create-an-encrypted-cluster}
+
+To create an encrypted cluster, you need to add at least a customer-managed encryption key (CMEK) to Zilliz Cloud. For details, refer to [Customer-managed Keys for Data Encryption](./cmek).
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
+
+</Admonition>
+
+![RGUrbElsSoc61JxikfWcoTCrnHe](https://zdoc-images.s3.us-west-2.amazonaws.com/rgurbelssoc61jxikfwcotcrnhe.png "RGUrbElsSoc61JxikfWcoTCrnHe")
+
+Once you have added a KMS key, you can create an encrypted cluster as follows:
+
+<Procedures>
+
+1. Click **Dedicated** in the **Choose Deployment Option** section.
+
+1. Choose the cloud provider and region for the cluster.
+
+1. Enable **Encryption at Rest with CMEK** and select an existing KMS key. Only a KMS key in the same region as the cluster to create can be selected.
+
+1. Review the summary, then click **Create Cluster**.
+
+    ![Iy8JbR19eoBQ4YxV1PjcLfUinl7](https://zdoc-images.s3.us-west-2.amazonaws.com/iy8jbr19eobq4yxv1pjclfuinl7.png "Iy8JbR19eoBQ4YxV1PjcLfUinl7")
+
+    On the **Overview** page of an encrypted cluster, there is a key icon to the right of the cluster name, as shown in the above figure. All collections created in an encrypted cluster are encrypted by default.
+
+</Procedures>
 

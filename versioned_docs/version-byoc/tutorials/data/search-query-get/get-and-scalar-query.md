@@ -20,10 +20,10 @@ keywords:
   - get by id
   - query with filters
   - filtering
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 
 ---
 
@@ -361,13 +361,6 @@ When you need to find entities by custom filtering conditions through paginated 
 <TabItem value='python'>
 
 ```python
-from pymilvus import MilvusClient
-
-client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
 iterator = client.query_iterator(
     "my_collection",
     batch_size=10,
@@ -471,12 +464,6 @@ You can also perform queries within one or multiple partitions by including the 
 <TabItem value='python'>
 
 ```python
-from pymilvus import MilvusClient
-client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
 res = client.get(
     collection_name="my_collection",
     # highlight-next-line
@@ -495,13 +482,6 @@ res = client.query(
 )
 
 # Use QueryIterator
-from pymilvus import connections, Collection
-
-connections.connect(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
 iterator = client.query_iterator(
     "my_collection",
     partition_names=["partitionA"],
@@ -594,12 +574,6 @@ fmt.Println("color: ", resultSet.GetColumn("color").FieldData().GetScalars())
 <TabItem value='javascript'>
 
 ```javascript
-import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
-
-const address = "YOUR_CLUSTER_ENDPOINT";
-const token = "YOUR_CLUSTER_TOKEN";
-const client = new MilvusClient({address, token});
-
 // Use get
 var res = client.get({
     collection_name="my_collection",
@@ -687,13 +661,6 @@ To extract a representative subset of data from your collection for data explora
 <TabItem value='python'>
 
 ```python
-from pymilvus import MilvusClient
-
-client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
 # Sample 1% of the entire collection
 res = client.query(
     collection_name="my_collection",
@@ -721,18 +688,11 @@ print(f"Found {len(res)} red items in sample")
 <TabItem value='java'>
 
 ```java
-import io.milvus.v2.client.ConnectConfig;
-import io.milvus.v2.client.MilvusClientV2;
 import io.milvus.v2.service.vector.request.GetReq
 import io.milvus.v2.service.vector.request.GetResp
 import io.milvus.v2.service.vector.request.QueryReq
 import io.milvus.v2.service.vector.request.QueryResp
 import java.util.*;
-
-MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
-        .uri("YOUR_CLUSTER_ENDPOINT")
-        .token("YOUR_CLUSTER_TOKEN")
-        .build());
 
 QueryReq queryReq = QueryReq.builder()
         .collectionName("my_collection")
@@ -772,17 +732,6 @@ import (
     "github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
-ctx, cancel := context.WithCancel(context.Background())
-defer cancel()
-
-milvusAddr := "YOUR_CLUSTER_ENDPOINT"
-client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
-    Address: milvusAddr,
-})
-if err != nil {
-    return err
-}
-
 resultSet, err := client.Query(ctx, milvusclient.NewQueryOption("my_collection").
     WithFilter("RANDOM_SAMPLE(0.01)").
     WithOutputFields("vector", "color"))
@@ -805,6 +754,64 @@ if err != nil {
 
 ```javascript
 // node
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
+## Temporarily set a timezone for a query\{#temporarily-set-a-timezone-for-a-query}
+
+If your collection has a `TIMESTAMPTZ` field, you can temporarily override the database or collection default timezone for a single operation by setting the `timezone` parameter in the query call. This controls how `TIMESTAMPTZ` values are displayed and compared during the operation.
+
+The value of `timezone` must be a valid [IANA time zone identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) (for example, **Asia/Shanghai**, **America/Chicago**, or **UTC**). For details on how to use a `TIMESTAMPTZ` field, refer to [TIMESTAMPTZ Field](./use-timestamptz-field).
+
+The example below shows how to temporarily set a timezone for a query operation:
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# Query data and display the tsz field converted to "America/Havana"
+results = client.query(
+    "my_collection",
+    filter="id <= 10",
+    output_fields=["id", "tsz", "vec"],
+    limit=2,
+    # highlight-next-line
+    timezone="America/Havana",
+)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
 ```
 
 </TabItem>

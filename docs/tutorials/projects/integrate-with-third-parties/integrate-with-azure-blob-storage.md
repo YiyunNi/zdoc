@@ -20,10 +20,10 @@ keywords:
   - azure
   - blob
   - storage
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
 
 ---
 

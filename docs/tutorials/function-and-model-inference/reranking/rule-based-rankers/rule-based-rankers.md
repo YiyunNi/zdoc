@@ -22,10 +22,10 @@ keywords:
   - rule-based
   - boost ranker
   - decay rankers
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
 
 ---
 

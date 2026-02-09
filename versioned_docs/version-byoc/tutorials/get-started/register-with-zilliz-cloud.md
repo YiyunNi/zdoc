@@ -17,10 +17,10 @@ keywords:
   - register
   - cloud
   - milvus
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
 
 ---
 
