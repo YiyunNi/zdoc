@@ -1,4 +1,92 @@
 .feedbackBox {
-    padding: '1rem 0';
-    font-size: '0.8rem';
+    padding: 1rem 0;
+    font-size: 0.8rem;
+}
+
+.feedbackPrompt {
+    margin-bottom: 1rem;
+}
+
+.feedbackButtons {
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.thumbButton {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding: 0.5rem 1rem;
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+    border-radius: 10px;
+    max-height: 2rem;
+    border: 1px solid rgb(107, 114, 128);
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.thumbButton:hover {
+    background-color: rgba(107, 114, 128, 0.08);
+    border-color: rgb(75, 80, 90);
+}
+
+.thumbButton:focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+}
+
+.thumbButton.selected {
+    background-color: rgba(23, 95, 255, 0.08);
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-color-primary);
+}
+
+.thumbIcon {
+    display: inline-block;
+}
+
+.thumbIcon span {
+    font-size: 1rem;
+}
+
+.fadeThumb {
+    position: absolute;
+    top: calc(50% - 0.5rem);
+    left: calc(50% - 0.5rem);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.fadeThumb span {
+    font-size: 1rem;
+}
+
+.confirmation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2da44e;
+    font-size: 0.85rem;
+    font-weight: 500;
+    animation: confirmFadeIn 0.3s ease;
+}
+
+.confirmation span {
+    font-size: 1.1rem;
+}
+
+@keyframes confirmFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

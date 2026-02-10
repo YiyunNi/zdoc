@@ -1,45 +1,71 @@
-import React from'react'
+import React, {useState} from 'react'
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import styles from './index.module.css'
-
 import Translate, {translate} from '@docusaurus/Translate';
 
 export default function FeedbackBox() {
+    const [voted, setVoted] = useState(null);
+
+    const handleVote = (type) => {
+      setVoted(type);
+    };
+
     return (
       <BrowserOnly>
       {() => {
         const hostname = window.location.hostname;
         if (hostname.includes('cloud-uat') || hostname.includes('localhost')) {
-          return (<div id="feedback-box" style={{padding: '1rem 0', fontSize: '0.8rem'}}>
-            <div style={{ marginBottom: '1rem' }}>
-            <Translate id="feedbackBox.feedback"
-              description="Feedback box text">
-                Was this page helpful?
-            </Translate>
-          </div>
-            <div style={{ display: "flex", justifyContent: "start", gap: "1rem" }}>
-              <div id="thumbsUp" style={{ position: 'relative', display: 'inline-block', verticalAlign: 'middle', fontWeight: 'bold', padding: '0.5rem 1rem', color: 'rgb(107, 114, 128)', fontWeight: 400, borderRadius: '10px', maxHeight: '2rem' }}>
-                <i style={{ display: 'inline-block' }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>thumb_up</span>
-                </i>
-                <i className="fadeThumbs" style={{ position: 'absolute', top: 'calc(50% - 0.5rem)', left: 'calc(50% - 0.5rem)', transition: '.5s', opacity: '0' }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>thumb_up</span>
-                </i>
-              </div>           
-              <div id="thumbsDown" style={{ position: 'relative', display: 'inline-block', verticalAlign: 'middle', fontWeight: 'bold', padding: '0.5rem 1rem', color: 'rgb(107, 114, 128)', fontWeight: 400, borderRadius: '10px', maxHeight: '2rem' }}>
-                <i style={{ display: 'inline-block' }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>thumb_down</span>
-                </i>
-                <i className="fadeThumbs" style={{ position: 'absolute', top: 'calc(50% - 0.5rem)', left: 'calc(50% - 0.5rem)', transition: '.5s', opacity: '0' }}>
-                  <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>thumb_down</span>
-                </i>
+          if (voted) {
+            return (
+              <div id="feedback-box" className={styles.feedbackBox} role="status" aria-live="polite">
+                <div className={styles.confirmation}>
+                  <span className="material-symbols-outlined">check_circle</span>
+                  <Translate id="feedbackBox.thanks" description="Feedback confirmation message">
+                    Thanks for your feedback!
+                  </Translate>
+                </div>
               </div>
-            </div>  
-          </div>)
+            );
+          }
+
+          return (
+            <div
+              id="feedback-box"
+              className={styles.feedbackBox}
+              role="group"
+              aria-label={translate({id: 'feedbackBox.ariaLabel', message: 'Page feedback'})}
+            >
+              <div className={styles.feedbackPrompt}>
+                <Translate id="feedbackBox.feedback" description="Feedback box text">
+                  Was this page helpful?
+                </Translate>
+              </div>
+              <div className={styles.feedbackButtons}>
+                <button
+                  className={styles.thumbButton}
+                  onClick={() => handleVote('up')}
+                  aria-label={translate({id: 'feedbackBox.thumbsUp', message: 'Yes, this page was helpful'})}
+                >
+                  <i className={styles.thumbIcon}>
+                    <span className="material-symbols-outlined">thumb_up</span>
+                  </i>
+                </button>
+                <button
+                  className={styles.thumbButton}
+                  onClick={() => handleVote('down')}
+                  aria-label={translate({id: 'feedbackBox.thumbsDown', message: 'No, this page was not helpful'})}
+                >
+                  <i className={styles.thumbIcon}>
+                    <span className="material-symbols-outlined">thumb_down</span>
+                  </i>
+                </button>
+              </div>
+            </div>
+          );
         } else {
           return <></>
-        }}}
+        }
+      }}
       </BrowserOnly>
     )
   }
-
