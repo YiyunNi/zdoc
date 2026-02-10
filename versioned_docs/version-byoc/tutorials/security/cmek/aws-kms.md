@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cmek
   - aws kms
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
 
 ---
 
@@ -67,7 +67,7 @@ If the drop-down list in the **Select AWS IAM Role** step is empty, you need to 
 
     1. Select the target region in step 1.
 
-    1. **(Optional)** Copy the command in step 2 and execute it in your AWS CloudShell.
+    1. (Optional) Copy the command in step 2 and execute it in your AWS CloudShell.
 
         This step is optional. If you already have a KMS key created with the specified IAM role, you can skip this step and proceed to the next. This is useful for adding multi-region replica keys.
 
@@ -98,7 +98,7 @@ If the drop-down list in the **Select AWS IAM Role** step is empty, you need to 
                                     ],
                                     "Resource": [
                                             // highlight-start
-                                            "arn:aws:kms:us-west-2:084375552346:key/mrk-1585e20e9e244e8ebcb8b9b9316e9e01",
+                                            "arn:aws:kms:us-west-2:xxxx:key/mrk-...",
                                             "PASTE-THE-COPIED-KEY-ARN-HERE"
                                             // highlight-end
                                     ]
