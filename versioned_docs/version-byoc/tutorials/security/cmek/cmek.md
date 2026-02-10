@@ -1,5 +1,5 @@
 ---
-title: "Customer-Managed Encryption Keys | Cloud"
+title: "Customer-Managed Encryption Keys | BYOC"
 slug: /cmek
 sidebar_label: "CMEK"
 beta: FALSE
@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Zilliz Cloud encrypts data at rest on disk/object storage using the 256-bit Advanced Encryption Standard (AES-256) algorithm by default. For customers with the highest security requirements, Zilliz Cloud adds an additional layer of security by leveraging the customer's cloud provider's Key Management Service (KMS) in combination with Zilliz Cloud's Customer-Managed Encryption Key (CMEK) feature. | Cloud"
+description: "Zilliz Cloud encrypts data at rest on disk/object storage using the 256-bit Advanced Encryption Standard (AES-256) algorithm by default. For customers with the highest security requirements, Zilliz Cloud adds an additional layer of security by leveraging the customer's cloud provider's Key Management Service (KMS) in combination with Zilliz Cloud's Customer-Managed Encryption Key (CMEK) feature. | BYOC"
 type: origin
 token: GLxhwO5vWiWkTBkoNCPcg4ahnbe
 sidebar_position: 5
@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cmek
   - customer-managed keys
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
 
 ---
 
@@ -30,12 +30,6 @@ import Admonition from '@theme/Admonition';
 # Customer-Managed Encryption Keys
 
 Zilliz Cloud encrypts data at rest on disk/object storage using the 256-bit Advanced Encryption Standard (AES-256) algorithm by default. For customers with the highest security requirements, Zilliz Cloud adds an additional layer of security by leveraging the customer's cloud provider's Key Management Service (KMS) in combination with Zilliz Cloud's Customer-Managed Encryption Key (CMEK) feature.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
-
-</Admonition>
 
 ## How encryption works\{#how-encryption-works}
 
@@ -72,12 +66,6 @@ All data-related files stored in the following locations are encrypted:
 - Always ensure that the cloud provider and region of a KMS key match those of the Zilliz Cloud cluster using that key.
 
 - To enable CMEK on existing clusters compatible with Milvus v2.5.x, back up the data and restore it to a new cluster compatible with Milvus v2.6.x.  Upgrading clusters does not encrypt data prior to the upgrade.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>Currently, CMEK is available only in AWS regions. For other regions, please <a href="https://support.zilliz.com/hc/en-us">contact us</a>.</p>
-
-</Admonition>
 
 ## Supported KMS providers\{#supported-kms-providers}
 

@@ -1,5 +1,5 @@
 ---
-title: "AWS KMS | Cloud"
+title: "AWS KMS | BYOC"
 slug: /aws-kms
 sidebar_label: "AWS KMS"
 beta: FALSE
@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "AWS Key Management Service (KMS) is an AWS-managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. | Cloud"
+description: "AWS Key Management Service (KMS) is an AWS-managed service that makes it easy for you to create and control the keys used to encrypt and sign your data. | BYOC"
 type: origin
 token: FOamwIi07ia7kpkBPW8cEuIpniu
 sidebar_position: 1
@@ -17,29 +17,21 @@ keywords:
   - cloud
   - cmek
   - aws kms
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-import Supademo from '@site/src/components/Supademo';
-
 import Procedures from '@site/src/components/Procedures';
 
 # AWS KMS
 
 AWS Key Management Service (KMS) is an AWS-managed service that makes it easy for you to create and control the keys used to encrypt and sign your data.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This feature is available only to <strong>Dedicated</strong> clusters in a <strong>Business Critical</strong> project.</p>
-
-</Admonition>
 
 ## Overview\{#overview}
 
@@ -61,29 +53,17 @@ For details on how encryption works and its scope, refer to [this section](./cme
 
 Each project allows up to **20** keys, regardless of the KMS providers. You can either add an existing KMS key or follow the instructions in the Zilliz Cloud console to create a KMS key and add it to Zilliz Cloud.
 
-## Procedures\{#procedures}
-
-Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login), go into one of your **Business Critical** projects, choose **Network** > **CMEK** from the left navigation pane, click **+ CMEK**, and follow the steps in the **Add CMEK (AWS KMS)** dialog box to complete the process. 
-
-Before you start, you need to determine the IAM role to use during the procedure. An IAM role will be listed in Zilliz Cloud once you use it to add KMS keys. Check the drop-down list in the **Select AWS IAM Role** step in the **Existing IAM Role** tab and determine whether the IAM role you need is listed.
-
-- If yes, go to [Add a KMS key using an existing role](./aws-kms#add-a-kms-key-using-an-existing-role).
-
-- Otherwise, go to [Add a KMS key using a new role](./aws-kms#add-a-kms-key-using-a-new-role).
-
-### Add a KMS key using an existing role\{#add-a-kms-key-using-an-existing-role}
-
-If the drop-down list in **Select AWS IAM Role** on the **Existing IAM Role** tab contains the IAM role you need, follow the steps in this section.
+If the drop-down list in the **Select AWS IAM Role** step is empty, you need to add a CMEK role using [Zilliz Cloud Terraform provider](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs) in advance.
 
 <Procedures>
 
 1. Click the drop-down in the **Select AWS IAM Role** step, select an IAM role, and click **Next**.
 
-    ![O6IxwU89jhUTHDbShkfcHzZFn00](https://zdoc-images.s3.us-west-2.amazonaws.com/O6IxwU89jhUTHDbShkfcHzZFn00.png)
+    ![FbqvwpUuahSvMyb02IUcT1iNn6f](https://zdoc-images.s3.us-west-2.amazonaws.com/FbqvwpUuahSvMyb02IUcT1iNn6f.png)
 
 1. Add the KMS key.
 
-    ![ENW6wuQVlhaRntbKYDDcrdegnNL](https://zdoc-images.s3.us-west-2.amazonaws.com/ENW6wuQVlhaRntbKYDDcrdegnNL.png)
+    ![OVdjw9ZFghQKnsbaX67cAPkWn2b](https://zdoc-images.s3.us-west-2.amazonaws.com/OVdjw9ZFghQKnsbaX67cAPkWn2b.png)
 
     1. Select the target region in step 1.
 
@@ -111,72 +91,6 @@ If the drop-down list in **Select AWS IAM Role** on the **Existing IAM Role** ta
 
 </Procedures>
 
-### Add a KMS key using a new role\{#add-a-kms-key-using-a-new-role}
-
-If the drop-down list in **Select AWS IAM Role** on the **Existing IAM Role** tab does not contain the IAM role you need, follow the steps in this section.
-
-<Procedures>
-
-1. Click **New IAM Role**.
-
-1. Create an IAM role and add Zilliz Cloud to its trust policy.
-
-    Create an IAM role if you do not already have one listed on Zilliz Cloud. This requires executing commands in your AWS CloudShell.
-
-    <Supademo id="cmkxdx3yy00txru0hopj1eiwg" title=""  />
-
-    1. Copy the file name of the trust policy from the Zilliz Cloud console, and run the `vi` command in your AWS CloudShell to create the trust policy file.
-
-        ```bash
-        vi role-trust-policy.json
-        ```
-
-    1. Press **I** to enter insert mode.
-
-    1. Copy the trust policy JSON in **Step 1**, and paste it into the terminal.
-
-    1. Press **ESC** and enter `:wq` to save the JSON file.
-
-    1. Enter the name of the role to create in **Step 2**.
-
-    1. Copy the command in **Step 3**, and paste it into the terminal.
-
-    1. Press **Enter** to run the command.
-
-    1. In the command output, copy the role's ARN and paste it into the text box in **Step 4**.
-
-    1. Click **Next**.
-
-1. Create a KMS key
-
-    <Supademo id="cmkxdwufl000isl0i5nfkxzvy" title=""  />
-
-    1. Select a cloud region in **Step 1**.
-
-    1. Copy the command in **Step 2**, and paste it into the terminal.
-
-    1. Press **Enter** to run the command.
-
-    1. In the command output, copy the key's ARN and paste it into the text box in **Step 3**.
-
-    1. Click **Next**.
-
-1. Associate the KMS key with the IAM role.
-
-    <Supademo id="cmkxdx8eu00szs50igvo0f2ti" title=""  />
-
-    1. Run the `vi` command to create the required role policy JSON file in **Step 1**.
-
-    1. Copy the command in Step 2, and paste it into the terminal.
-
-    1. Press **Enter** to run the command.
-
-    1. Once the command is executed, click **Validate KMS Key** at the bottom of the dialog box.
-
-    1. Once the validation succeeds, click **Add**.
-
-</Procedures>
-
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>When you use a KMS key to encrypt a Zilliz Cloud cluster, the cluster checks the key's availability every 10 minutes and becomes available only after it detects that the key is available.</p>
@@ -187,9 +101,7 @@ If the drop-down list in **Select AWS IAM Role** on the **Existing IAM Role** ta
 
 You can view the added AWS KMS keys on the Zilliz Cloud console.
 
-![S3NKwZYR7hj6ocbkpIQcB66Unyg](https://zdoc-images.s3.us-west-2.amazonaws.com/S3NKwZYR7hj6ocbkpIQcB66Unyg.png)
-
-Zilliz Cloud will scan the availability of the listed keys every 10 minutes. You can also create project alerts regarding the status of the listed KMS keys. For details, refer to [Manage Project Alerts](./manage-project-alerts#create-a-project-alert).
+![OyNQwDHFhhUIXDbRMjac08Xdn1g](https://zdoc-images.s3.us-west-2.amazonaws.com/OyNQwDHFhhUIXDbRMjac08Xdn1g.png)
 
 When a KMS key is no longer needed, you can delete it if any clusters do not use it.
 
