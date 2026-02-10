@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
 import {useDoc} from '@docusaurus/plugin-content-docs/client';
@@ -32,7 +32,7 @@ function EditThisPage() {
     }
   }
 
-  return ( 
+  return (
     <BrowserOnly>
     {() => {
       const hostname = window.location.hostname;
@@ -45,7 +45,7 @@ function EditThisPage() {
             <span style={{ display: 'inline-block', minHeight: '2rem', verticalAlign: 'top', fontWeight: 'bold' }}>
               <a href={editUrl} target="_blank" rel="noopener noreferrer">EDIT THIS PAGE</a>
             </span>
-          </div> 
+          </div>
           <div style={{ marginBottom: '0.25rem' }}>
             <i style={{ display: 'inline-block', minHeight: '2rem', marginRight: '0.5rem' }}>
               <span className="material-symbols-outlined">bug_report</span>
@@ -53,7 +53,7 @@ function EditThisPage() {
             <span style={{ display: 'inline-block', minHeight: '2rem', verticalAlign: 'top', fontWeight: 'bold' }}>
               <a href="https://zilliz.atlassian.net/jira/software/projects/CD/boards/59" target="_blank" rel="noopener noreferrer">REPORT A BUG</a>
             </span>
-          </div>   
+          </div>
           <div style={{ marginBottom: '0.25rem' }}>
             <i style={{ display: 'inline-block', minHeight: '2rem', marginRight: '0.5rem' }}>
               <span className="material-symbols-outlined">lightbulb</span>
@@ -61,7 +61,7 @@ function EditThisPage() {
             <span style={{ display: 'inline-block', minHeight: '2rem', verticalAlign: 'top', fontWeight: 'bold' }}>
               <a href="https://zilliz.atlassian.net/jira/software/projects/CD/boards/59" target="_blank" rel="noopener noreferrer">REQUEST A CHANGE</a>
             </span>
-          </div>   
+          </div>
         </div>)
       } else {
         return <></>
@@ -71,16 +71,46 @@ function EditThisPage() {
   )
 }
 
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll, {passive: true});
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
+  return (
+    <button
+      className={`back-to-top ${visible ? 'visible' : ''}`}
+      onClick={scrollToTop}
+      aria-label="Back to top"
+      title="Back to top"
+    >
+      <span className="material-symbols-outlined">arrow_upward</span>
+    </button>
+  );
+}
+
 export default function TOC({className, ...props}) {
   return (
-    <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
-      <EditThisPage />
-      <TOCItems
-        {...props}
-        linkClassName={LINK_CLASS_NAME}
-        linkActiveClassName={LINK_ACTIVE_CLASS_NAME}
-      />
-      <FeedbackBox />
-    </div>
+    <>
+      <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
+        <EditThisPage />
+        <TOCItems
+          {...props}
+          linkClassName={LINK_CLASS_NAME}
+          linkActiveClassName={LINK_ACTIVE_CLASS_NAME}
+        />
+        <FeedbackBox />
+      </div>
+      <BackToTop />
+    </>
   );
 }

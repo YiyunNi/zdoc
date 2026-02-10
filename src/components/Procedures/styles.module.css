@@ -8,6 +8,25 @@
     display: flex;
     justify-content: flex-start;
     gap: 0 20px;
+    animation: stepFadeIn 0.4s ease both;
+}
+
+.step:nth-child(1) { animation-delay: 0s; }
+.step:nth-child(2) { animation-delay: 0.05s; }
+.step:nth-child(3) { animation-delay: 0.1s; }
+.step:nth-child(4) { animation-delay: 0.15s; }
+.step:nth-child(5) { animation-delay: 0.2s; }
+.step:nth-child(6) { animation-delay: 0.25s; }
+
+@keyframes stepFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .stepNumber {
@@ -69,12 +88,12 @@
 }
 
 .stepContent strong::before, .stepContent b::before {
-    content: '"';
+    content: '\201C';
     margin-right: 2px;
 }
 
 .stepContent strong::after, .stepContent b::after {
-    content: '"';
+    content: '\201D';
     margin-left: 2px;
 }
 

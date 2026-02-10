@@ -90,8 +90,8 @@ h3 {
 }
 
 pre {
-  max-height: 24rem;
-  overflow-y: scroll;
+  max-height: 36rem;
+  overflow-y: auto;
 }
 
 .navbar__item > svg {
@@ -389,4 +389,230 @@ div[class*="DocSidebarWrapper"] {
   height: 20px;
   background-color: var(--ifm-color-primary);
   border-radius: 2px;
+}
+
+/* ============================================
+   GLOBAL HOVER TRANSITIONS
+   ============================================ */
+
+/* Base transitions for interactive elements */
+a,
+button,
+.menu__link,
+.navbar__link,
+.dropdown__link,
+.footer__link-item,
+.button,
+.tabs__item {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Sidebar menu links: smooth color transition */
+.menu__link:hover {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Code block copy button: fade-in on hover */
+.theme-code-block:hover .clean-btn {
+  opacity: 1;
+}
+
+.theme-code-block .clean-btn {
+  opacity: 0.4;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+/* Navbar link hover effect */
+.navbar__link:hover {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Header button smooth transition */
+.header-btn {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.header-btn:active {
+  transform: translateY(1px);
+}
+
+/* ============================================
+   SIDEBAR ACTIVE STATE IMPROVEMENTS
+   ============================================ */
+
+/* Enhanced active sidebar item with background highlight */
+.menu__link--active {
+  background-color: rgba(23, 95, 255, 0.06) !important;
+  border-radius: 6px;
+}
+
+/* ============================================
+   CODE BLOCK ENHANCEMENTS
+   ============================================ */
+
+/* Increase max-height and add scroll indicator */
+pre {
+  position: relative;
+}
+
+/* Scroll indicator gradient for truncated code blocks */
+.theme-code-block pre::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 24px;
+  background: linear-gradient(transparent, rgba(246, 248, 250, 0.8));
+  pointer-events: none;
+  border-radius: 0 0 var(--ifm-code-border-radius, 4px) var(--ifm-code-border-radius, 4px);
+}
+
+/* ============================================
+   FOOTER LINK HOVER STATES
+   ============================================ */
+
+.footer__link-item:hover {
+  text-decoration: underline;
+  color: var(--ifm-color-primary);
+}
+
+/* ============================================
+   SKIP TO CONTENT LINK
+   ============================================ */
+
+.skipToContent_fXgn,
+[class*="skipToContent"] {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  z-index: 1000;
+  padding: 8px 16px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-radius: 0 0 8px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skipToContent_fXgn:focus,
+[class*="skipToContent"]:focus {
+  top: 0;
+  outline: 2px solid var(--ifm-color-primary-dark);
+  outline-offset: 2px;
+}
+
+/* Hide native Docusaurus back-to-top button (we use our own) */
+[class*="backToTopButton"] {
+  display: none !important;
+}
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  z-index: 99;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+.back-to-top span {
+  font-size: 20px;
+  color: #6e7781;
+  transition: color 0.2s ease;
+}
+
+.back-to-top:hover span {
+  color: var(--ifm-color-primary);
+}
+
+/* ============================================
+   MOBILE IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 996px) {
+  /* Minimum 44px touch targets for interactive elements */
+  .menu__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .tabs__item {
+    min-height: 44px;
+  }
+
+  button,
+  .button {
+    min-height: 44px;
+  }
+
+  /* Improve code block horizontal scrolling on mobile */
+  .theme-code-block {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .theme-code-block pre {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Ensure heading + badge/tag combinations wrap gracefully */
+  h1, h2, h3, h4 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Fix CopyPage dropdown overflow on narrow screens */
+  #copy-page-btn .dropdownMenu,
+  #copy-page-btn [class*="dropdownMenu"] {
+    right: auto;
+    left: 0;
+    min-width: auto;
+    max-width: calc(100vw - 40px);
+  }
+
+  /* Back to top button positioning on mobile */
+  .back-to-top {
+    bottom: 80px;
+    right: 16px;
+  }
 }

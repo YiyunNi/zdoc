@@ -33,7 +33,7 @@ export default function Procedures({ children, active = true }) {
                 <div key={index} className={styles.step}>
                     <div className={styles.stepNumber}>
                         <span>{index + 1}</span>
-                        {index < steps.length - 1 && <div className={styles.connector}></div>}
+                        {(index < steps.length - 1 || step.description.length > 0) && <div className={styles.connector}></div>}
                     </div>
                     <div className={styles.stepContent}>
                         <h3>{step.title}</h3>
