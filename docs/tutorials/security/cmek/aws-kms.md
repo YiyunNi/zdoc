@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cmek
   - aws kms
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
+  - Zilliz vector database
 
 ---
 

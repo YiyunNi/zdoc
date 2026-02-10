@@ -17,10 +17,10 @@ keywords:
   - cloud
   - metrics
   - alerts
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
 
 ---
 
@@ -309,6 +309,39 @@ These metrics describe resource usage and performance within a project’s clust
      <td><p>count</p></td>
      <td><p>The number of unloaded collections in a cluster.</p></td>
      <td><p>Load critical collections; review memory headroom.</p></td>
+     <td><p>Dedicated (Enterprise or  Business Critical) / BYOC</p></td>
+   </tr>
+</table>
+
+### Others\{#others}
+
+<table>
+   <tr>
+     <th><p>Metric</p></th>
+     <th><p>Unit</p></th>
+     <th><p>Description</p></th>
+     <th><p>Recommended action</p></th>
+     <th><p>Availability</p></th>
+   </tr>
+   <tr>
+     <td><p>Cluster is Abnormal</p></td>
+     <td><p>N/A</p></td>
+     <td><p>When the target cluster's status is abnormal.</p></td>
+     <td><p>Investigate the cluster status and take measures accordingly.</p></td>
+     <td><p>Dedicated (Enterprise or  Business Critical) / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>CMEK is Unavailable</p></td>
+     <td><p>N/A</p></td>
+     <td><p>When one of your KMS keys added to Zilliz Cloud becomes unavailable.</p></td>
+     <td><p>Check your KMS keys to determine whether the reported key is still available.</p></td>
+     <td><p>Dedicated (Enterprise or  Business Critical) / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>Writes to Cluster Are Disabled</p></td>
+     <td><p>N/A</p></td>
+     <td><p>When writes to the target cluster are disabled due to an error or protection mechanism.</p></td>
+     <td><p>Check the cluster status, recent configuration or maintenance operations, and any related alerts, then resolve the root cause and restore write capability.</p></td>
      <td><p>Dedicated (Enterprise or  Business Critical) / BYOC</p></td>
    </tr>
 </table>

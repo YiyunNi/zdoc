@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cmek
   - aws kms
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
 
 ---
 
