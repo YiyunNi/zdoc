@@ -2,244 +2,103 @@ import React, { useEffect, useRef } from 'react';
 import { useLocation } from '@docusaurus/router';
 import DocSidebar from '@theme-original/DocSidebar';
 
+/**
+ * Finds the deepest active link in the sidebar (leaf node preferred).
+ */
+function findActiveLink(container) {
+  const activeLinks = container.querySelectorAll('.menu__link--active');
+  if (activeLinks.length === 0) return null;
+
+  let target = activeLinks[0];
+  activeLinks.forEach((link) => {
+    // Prefer leaf nodes — links whose parent <li> has no nested submenu
+    if (!link.closest('li')?.querySelector(':scope > .menu__list')) {
+      target = link;
+    }
+  });
+  return target;
+}
+
+/**
+ * Scrolls the sidebar container so the active link is vertically centered.
+ * Only scrolls the sidebar's own scroll container — never the page.
+ */
+function scrollToActiveLink(scrollContainer) {
+  const target = findActiveLink(scrollContainer);
+  if (!target) return;
+
+  const containerRect = scrollContainer.getBoundingClientRect();
+  const linkRect = target.getBoundingClientRect();
+
+  // How far the link is from the top of the scrollable content
+  const offsetInContainer =
+    linkRect.top - containerRect.top + scrollContainer.scrollTop;
+
+  // Target scrollTop to center the link vertically
+  const centeredScrollTop =
+    offsetInContainer - containerRect.height / 2 + linkRect.height / 2;
+
+  scrollContainer.scrollTo({
+    top: Math.max(0, centeredScrollTop),
+    behavior: 'smooth',
+  });
+}
+
 export default function DocSidebarWrapper(props) {
   const location = useLocation();
   const sidebarRef = useRef(null);
-  const timeoutRef = useRef(null);
-  const scrollOpIdRef = useRef(0);
-  const lastScrollTopRef = useRef(null);
-  const isAutoScrollingRef = useRef(false);
 
   useEffect(() => {
-    const currentScrollOpId = ++scrollOpIdRef.current;
+    let cancelled = false;
+    let scrolled = false;
+    let observer = null;
+    const timers = [];
 
-    // Find the scroll container once
-    const scrollContainer = document.querySelector('.theme-doc-sidebar-container') ||
-                           document.querySelector('.menu__list');
+    const attemptScroll = () => {
+      if (cancelled || scrolled) return;
 
-    // Function to reset the timer (called on both route changes and manual scrolls)
-    const scheduleScrollCenter = () => {
-      // Clear any existing timeout
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-
-      // Wait for DOM to be ready, with optimized delays
-      const isReferenceDoc = location.pathname.startsWith('/reference');
-      const delay = isReferenceDoc ? 1500 : 800;
-
-      timeoutRef.current = setTimeout(() => {
-        // Check if this is still the latest scroll operation
-        if (scrollOpIdRef.current !== currentScrollOpId) {
-          console.log('Scroll operation cancelled - newer one in progress');
-          return;
-        }
-
-        // Mark that we're auto-scrolling (to distinguish from manual scroll)
-        isAutoScrollingRef.current = true;
-
-        // Find all links with active class
-        const allActiveLinks = document.querySelectorAll('.menu__link--active');
-        console.log(`Found ${allActiveLinks.length} active links total`);
-
-        // For reference docs, we want the deepest active link (the actual page)
-        // For tutorial docs, we also want the deepest active link
-        let actualActiveLink = null;
-
-        if (allActiveLinks.length > 0) {
-          // Find the deepest nested active link
-          allActiveLinks.forEach(link => {
-            // Check if this link has a more specific href or is deeper in the DOM
-            if (!actualActiveLink ||
-                (link.href && link.href.length > actualActiveLink.href?.length) ||
-                link.closest('li')?.querySelector('.menu__list') === null) { // It's a leaf node
-              actualActiveLink = link;
-            }
-          });
-
-          // If still multiple, prefer the one that matches current pathname more closely
-          if (allActiveLinks.length > 1) {
-            allActiveLinks.forEach(link => {
-              if (link.href && link.href.includes(location.pathname)) {
-                actualActiveLink = link;
-              }
-            });
-          }
-        }
-
-        const activeLink = actualActiveLink || allActiveLinks[0];
-
-        if (!activeLink) {
-          console.log(`Active link not found for ${location.pathname}`);
-          console.log('Available menu links:', document.querySelectorAll('.menu__link').length);
-          return;
-        }
-
-        console.log(`Found actual active link (${isReferenceDoc ? 'reference' : 'tutorial'}):`, {
-          text: activeLink.textContent.trim(),
-          href: activeLink.href,
-          tagName: activeLink.tagName,
-          className: activeLink.className,
-          parentClass: activeLink.parentElement?.className
-        });
-
-        // Navigate the sidebar hierarchy based on sidebar type
-        let scrollContainer;
-        let startElement;
-
-        if (isReferenceDoc) {
-          // Reference sidebar: Start from category-level-2 items and navigate down
-          startElement = activeLink.closest('li.theme-doc-sidebar-item-category-level-2') ||
-                        activeLink.closest('.theme-doc-sidebar-item-category-level-2') ||
-                        activeLink.closest('li').parentElement;
-
-          scrollContainer = startElement?.closest('ul.menu__list') ||
-                           activeLink.closest('ul.menu__list') ||
-                           document.querySelector('ul.menu__list');
-
-          console.log('Reference doc - starting from category-level-2');
-        } else {
-          // Tutorial sidebar: Start from the top menu and navigate down
-          startElement = document.querySelector('.theme-doc-sidebar-container') ||
-                        document.querySelector('.menu__list') ||
-                        activeLink.closest('.theme-doc-sidebar-container');
-
-          scrollContainer = startElement?.closest('.menu__list') ||
-                           activeLink.closest('.menu__list') ||
-                           document.querySelector('.menu__list');
-
-          console.log('Tutorial doc - starting from top menu');
-        }
-
-        if (!scrollContainer) {
-          console.log('No scroll container found, trying fallback');
-          scrollContainer = activeLink.closest('div') || document.body;
-        }
-
-        console.log('Using scroll container:', {
-          startElement: startElement ? {
-            tagName: startElement.tagName,
-            className: startElement.className
-          } : 'Not found',
-          scrollContainer: {
-            tagName: scrollContainer.tagName,
-            className: scrollContainer.className,
-            scrollTop: scrollContainer.scrollTop,
-            scrollHeight: scrollContainer.scrollHeight,
-            clientHeight: scrollContainer.clientHeight,
-            isScrollable: scrollContainer.scrollHeight > scrollContainer.clientHeight
-          }
-        });
-
-        // Calculate position relative to container
-        const containerRect = scrollContainer.getBoundingClientRect();
-        const linkRect = activeLink.getBoundingClientRect();
-        const relativeTop = linkRect.top - containerRect.top;
-        const targetScrollTop = scrollContainer.scrollTop + relativeTop - (containerRect.height / 2) + (linkRect.height / 2);
-
-        console.log('Scroll calculation:', {
-          relativeTop,
-          targetScrollTop,
-          currentScrollTop: scrollContainer.scrollTop,
-          containerHeight: containerRect.height,
-          linkHeight: linkRect.height
-        });
-
-        // Apply scroll with multiple methods
-        try {
-          // Method 1: Direct scrollIntoView
-          activeLink.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center'
-          });
-          console.log('Applied scrollIntoView');
-        } catch (e) {
-          console.log('scrollIntoView failed:', e);
-        }
-
-        // Method 2: Manual scroll calculation (backup)
-        setTimeout(() => {
-          if (scrollOpIdRef.current !== currentScrollOpId) {
-            console.log('Backup scroll cancelled - newer one in progress');
-            return;
-          }
-
-          const finalScrollTop = Math.max(0, targetScrollTop);
-          console.log('Applying manual scroll to:', finalScrollTop);
-
-          try {
-            scrollContainer.scrollTo({
-              top: finalScrollTop,
-              behavior: 'smooth'
-            });
-          } catch (e) {
-            console.log('scrollTo failed, using scrollTop assignment');
-            scrollContainer.scrollTop = finalScrollTop;
-          }
-        }, 100);
-
-        // Method 3: Force direct assignment (last resort)
-        setTimeout(() => {
-          if (scrollOpIdRef.current !== currentScrollOpId) {
-            console.log('Force scroll cancelled - newer one in progress');
-            return;
-          }
-
-          if (scrollContainer.scrollTop !== Math.max(0, targetScrollTop)) {
-            console.log('Forcing direct scrollTop assignment');
-            scrollContainer.scrollTop = Math.max(0, targetScrollTop);
-          }
-
-          // Reset auto-scrolling flag after a short delay
-          setTimeout(() => {
-            isAutoScrollingRef.current = false;
-          }, 100);
-        }, 500);
-
-      }, delay);
-    };
-
-    // Set up scroll event listener to detect manual scrolling
-    const handleScroll = () => {
-      // Ignore scroll events that we triggered ourselves
-      if (isAutoScrollingRef.current) {
-        return;
-      }
-
+      // The sidebar's actual scroll container is the <nav class="menu"> element
+      const scrollContainer = document.querySelector(
+        '.theme-doc-sidebar-container nav.menu'
+      );
       if (!scrollContainer) return;
+      if (!findActiveLink(scrollContainer)) return;
 
-      const currentScrollTop = scrollContainer.scrollTop;
-
-      // Check if this is a meaningful scroll (not just a minor adjustment)
-      if (lastScrollTopRef.current !== null &&
-          Math.abs(currentScrollTop - lastScrollTopRef.current) > 2) {
-        console.log('Manual scroll detected, rescheduling center operation');
-        // Reset the timer when user manually scrolls
-        scheduleScrollCenter();
-      }
-
-      lastScrollTopRef.current = currentScrollTop;
+      scrolled = true;
+      observer?.disconnect();
+      scrollToActiveLink(scrollContainer);
     };
 
-    // Add scroll listener
-    if (scrollContainer) {
-      scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+    // Strategy 1: Try after next paint + small delay (covers fast renders)
+    const raf = requestAnimationFrame(() => {
+      const t = setTimeout(attemptScroll, 60);
+      timers.push(t);
+    });
+
+    // Strategy 2: Watch for class changes in case Docusaurus applies
+    // active classes asynchronously (e.g. lazy-loaded sidebar items)
+    const container = document.querySelector(
+      '.theme-doc-sidebar-container nav.menu'
+    );
+    if (container) {
+      observer = new MutationObserver(attemptScroll);
+      observer.observe(container, {
+        attributes: true,
+        attributeFilter: ['class'],
+        subtree: true,
+      });
+      // Safety: stop observing after 3s regardless
+      const t = setTimeout(() => observer?.disconnect(), 3000);
+      timers.push(t);
     }
 
-    // Initial scroll when component mounts or route changes
-    scheduleScrollCenter();
-
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-
-      // Remove scroll listener
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('scroll', handleScroll);
-      }
+      cancelled = true;
+      cancelAnimationFrame(raf);
+      timers.forEach(clearTimeout);
+      observer?.disconnect();
     };
-  }, [location.pathname]); // Only depend on pathname for clean re-runs
+  }, [location.pathname]);
 
   return <DocSidebar {...props} ref={sidebarRef} />;
 }

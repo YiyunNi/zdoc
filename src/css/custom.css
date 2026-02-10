@@ -356,21 +356,6 @@ html.docs-doc-id-tutorials\/home #copy-page-btn {
   width: 100% !important ;
 }
 
-/* Smooth scrolling for sidebar */
-.theme-doc-sidebar-container {
-  scroll-behavior: smooth !important;
-}
-
-/* Ensure the sidebar menu list allows proper scrolling */
-.theme-doc-sidebar-container .menu__list {
-  scroll-behavior: smooth !important;
-}
-
-/* Ensure the sidebar wrapper allows proper scrolling */
-div[class*="DocSidebarWrapper"] {
-  height: 100% !important;
-  overflow-y: auto !important;
-}
 
 /* Add some padding to ensure the active item isn't at the very edge */
 .menu__link--active {
