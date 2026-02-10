@@ -17,10 +17,10 @@ keywords:
   - cloud
   - cmek
   - aws kms
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
 
 ---
 
@@ -101,7 +101,31 @@ If the drop-down list in **Select AWS IAM Role** on the **Existing IAM Role** ta
 
     1. Copy and paste the KMS key ARN in the following locations:
 
-        - Your IAM role's policy on the AWS console, and
+        - Your IAM role's policy [on the AWS console](https://console.aws.amazon.com/iam/home#/roles).
+
+            Click the name of the role in the role list, find the role policy in the **Permissions** tab, and append the copied KMS key to the `Resource` node.
+
+            ```json
+            {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                            {
+                                    "Effect": "Allow",
+                                    "Action": [
+                                            "kms:Decrypt",
+                                            "kms:Encrypt",
+                                            "kms:DescribeKey"
+                                    ],
+                                    "Resource": [
+                                            // highlight-start
+                                            "arn:aws:kms:us-west-2:084375552346:key/mrk-1585e20e9e244e8ebcb8b9b9316e9e01",
+                                            "PASTE-THE-COPIED-KEY-ARN-HERE"
+                                            // highlight-end
+                                    ]
+                            }
+                    ]
+            }
+            ```
 
         - Step 3 in the above dialog box on Zilliz Cloud.
 
