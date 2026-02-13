@@ -12,19 +12,19 @@ type: docx
 token: DK7ZdxRCyoepyxx0odzcH66xnu3
 sidebar_position: 2
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud
   - VolumeFileManager
   - javaV226
+  - vector database tutorial
+  - how do vector databases work
   - vector db comparison
   - openai vector db
-  - natural language processing database
-  - cheap vector database
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -67,7 +67,7 @@ VolumeFileManager(
 
     **[REQUIRED]**
 
-    The Zilliz Cloud endpoint, which is `https://api.cloud.zilliz.com` (Global) or `https://api.cloud.zilliz.com.cn` (China), depending on the platform you have registered with.
+    The Zilliz Cloud endpoint, which is `https://api.cloud.zilliz.com`.
 
 - **apiKey** (*str*) -
 

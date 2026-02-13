@@ -12,19 +12,19 @@ type: docx
 token: QHyGdm4FyoFwCzxDgUUc9yQrnPf
 sidebar_position: 4
 keywords: 
-  - what is a vector database
   - vectordb
   - multimodal vector database retrieval
   - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
   - VolumeManager
   - javaV226
-  - vectordb
   - multimodal vector database retrieval
   - Retrieval Augmented Generation
   - Large language model
+  - Vectorization
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -66,7 +66,7 @@ VolumeManager(
 
     **[REQUIRED]**
 
-    The Zilliz Cloud endpoint, which is `https:*//*api.cloud.zilliz.com` (Global) or `https://api.cloud.zilliz.com.cn` (China), depending on the platform you have registered with.
+    The Zilliz Cloud endpoint, which is `https:*//*api.cloud.zilliz.com`.
 
 - **apiKey** (*str*) -
 

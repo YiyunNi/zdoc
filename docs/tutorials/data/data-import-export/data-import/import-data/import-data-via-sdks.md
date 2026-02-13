@@ -17,10 +17,10 @@ keywords:
   - cloud
   - data import
   - sdk
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
 
 ---
 
@@ -179,8 +179,6 @@ from pymilvus.bulk_writer import bulk_import
 
 def cloud_bulkinsert():
     # The value of the URL is fixed.
-    # For overseas regions, it is: https://api.cloud.zilliz.com
-    # For regions in China, it is: https://api.cloud.zilliz.com.cn
     url = "https://api.cloud.zilliz.com"
     api_key = ""
     cluster_id = "inxx-xxxxxxxxxxxxxxx"
