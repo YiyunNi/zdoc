@@ -586,7 +586,7 @@ writer = RemoteBulkWriter(
 )
 
 # Possible file types:
-# - BulkFileType.JSON_RB, 
+# - BulkFileType.JSON, 
 # - BulkFileType.NPY, and 
 # - BulkFileType.PARQUET
 ```
@@ -603,7 +603,7 @@ The above writer generates files in JSON format and uploads them to the root fol
 
     This determines the type of generated files. Possible values are as follows:
 
-    - **BulkFileType.JSON_RB**
+    - **BulkFileType.JSON**
 
     - **BulkFileType.PARQUET**
 
