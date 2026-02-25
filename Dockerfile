@@ -38,12 +38,20 @@ RUN npm run build
 
 ## deploy
 FROM nginx:stable-alpine as deploy
+RUN apk add --no-cache fluent-bit
 ENV INSTALL_PATH /usr/share/nginx/html
 WORKDIR $INSTALL_PATH
 COPY ./default.conf /etc/nginx/conf.d
+COPY ./logging.conf /etc/nginx/logging.conf.available
+COPY ./fluent-bit.conf /etc/fluent-bit/fluent-bit.conf
+COPY ./fluent-bit-parsers.conf /etc/fluent-bit/parsers.conf
+COPY ./docker-entrypoint-logging.sh /docker-entrypoint-logging.sh
+RUN chmod +x /docker-entrypoint-logging.sh
 COPY --from=production /home/node/app/build /usr/share/nginx/html
 RUN set -x ; \
   addgroup -g 82 -S www-data ; \
   adduser -u 82 -D -S -G www-data www-data && exit 0 ; exit 1
 RUN chown -R www-data:www-data $INSTALL_PATH/*
 RUN chmod -R 0755 $INSTALL_PATH/*
+ENTRYPOINT ["/docker-entrypoint-logging.sh"]
+CMD ["nginx", "-g", "daemon off;"]
