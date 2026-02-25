@@ -22,7 +22,7 @@ pipeline {
         TEST_ENVIRONMENT="vdc-global"
         GITHUB_TOKEN_ID="github-token"
         ARGOCD_TOKEN_ID="argocd-prod-token"
-        ZDOCS_NAMESPACE="zilliz-docs"
+        ZDOCS_NAMESPACE="zdocs"
     }
 
     stages {
