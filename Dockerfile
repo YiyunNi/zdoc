@@ -38,7 +38,7 @@ RUN npm run build
 
 ## deploy
 FROM nginx:stable-alpine as deploy
-RUN apk add --no-cache fluent-bit
+RUN apk add --no-cache fluent-bit --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
 ENV INSTALL_PATH /usr/share/nginx/html
 WORKDIR $INSTALL_PATH
 COPY ./default.conf /etc/nginx/conf.d
