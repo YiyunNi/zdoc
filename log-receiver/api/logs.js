@@ -1,6 +1,10 @@
 import { neon } from '@neondatabase/serverless';
 
-const sql = neon(process.env.DATABASE_URL);
+let sql;
+function getDb() {
+  if (!sql) sql = neon(process.env.DATABASE_URL);
+  return sql;
+}
 
 function unauthorized(res) {
   res.status(401).json({ error: 'Unauthorized' });
@@ -30,6 +34,7 @@ export default async function handler(req, res) {
       bytes: r.bytes != null ? Number(r.bytes) : null,
     }));
 
+    const sql = getDb();
     for (const v of values) {
       await sql`
         INSERT INTO page_views (host, path, ua, referer, ip, status, bytes)
@@ -52,7 +57,8 @@ export default async function handler(req, res) {
     const daysNum = Math.min(Math.max(parseInt(days, 10) || 7, 1), 90);
     const limitNum = Math.min(Math.max(parseInt(limit, 10) || 100, 1), 1000);
 
-    rows = await sql`
+    const sql = getDb();
+    const rows = await sql`
       SELECT ts, host, path, ua, referer, ip, status, bytes FROM page_views
       WHERE ts >= NOW() - make_interval(days => ${daysNum})
         ${ua_filter ? sql`AND ua ILIKE ${'%' + ua_filter + '%'}` : sql``}
