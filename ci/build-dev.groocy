@@ -17,7 +17,7 @@ pipeline {
         GITHUB_TOKEN_ID="github-token"
         TEST_ENVIRONMENT="uat3"
         ARGOCD_TOKEN_ID="argocd-token"
-        ZDOCS_NAMESPACE="uat3"
+        ZDOCS_NAMESPACE="zilliz-docs"
     }
     parameters {
         gitParameter branchFilter: 'origin/(.*)', defaultValue: 'dev', name: 'BRANCH', type: 'PT_BRANCH'
