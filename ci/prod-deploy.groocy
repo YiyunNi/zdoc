@@ -22,7 +22,6 @@ pipeline {
         TEST_ENVIRONMENT="vdc-global"
         GITHUB_TOKEN_ID="github-token"
         ARGOCD_TOKEN_ID="argocd-prod-token"
-        ZDOCS_NAMESPACE="zdocs"
     }
 
     stages {
@@ -64,16 +63,6 @@ pipeline {
                             git commit -am "[automated]Update zdocs Docker image for prod vdc-global environment" --allow-empty
                             git push origin master
                         """
-                        }
-
-                        withCredentials([string(credentialsId: 'LOG_HOST_ZDOCS', variable: 'LOG_HOST'), string(credentialsId: 'LOG_SECRET_ZDOCS', variable: 'LOG_SECRET')]) {
-                            sh """
-                            kubectl create secret generic zdocs-log-secret \
-                              --from-literal=LOG_HOST='${LOG_HOST}' \
-                              --from-literal=LOG_SECRET='${LOG_SECRET}' \
-                              --namespace=${env.ZDOCS_NAMESPACE} \
-                              --dry-run=client -o yaml | kubectl apply -f -
-                            """
                         }
 
                         withCredentials([usernamePassword(credentialsId: "${env.ARGOCD_TOKEN_ID}", usernameVariable: 'ARGOCD_SERVER', passwordVariable: 'ARGOCD_AUTH_TOKEN')]){
