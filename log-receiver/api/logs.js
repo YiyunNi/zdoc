@@ -57,15 +57,30 @@ export default async function handler(req, res) {
     const daysNum = Math.min(Math.max(parseInt(days, 10) || 7, 1), 90);
     const limitNum = Math.min(Math.max(parseInt(limit, 10) || 100, 1), 1000);
 
-    const sql = getDb();
-    const rows = await sql`
-      SELECT ts, host, path, ua, referer, ip, status, bytes FROM page_views
-      WHERE ts >= NOW() - make_interval(days => ${daysNum})
-        ${ua_filter ? sql`AND ua ILIKE ${'%' + ua_filter + '%'}` : sql``}
-        ${pathFilter ? sql`AND path ILIKE ${'%' + pathFilter + '%'}` : sql``}
-        ${hostFilter ? sql`AND host = ${hostFilter}` : sql``}
-      ORDER BY ts DESC LIMIT ${limitNum}
-    `;
+    const db = getDb();
+    const params = [];
+    const conditions = [];
+
+    if (ua_filter) {
+      params.push('%' + ua_filter + '%');
+      conditions.push(`ua ILIKE $${params.length}`);
+    }
+    if (pathFilter) {
+      params.push('%' + pathFilter + '%');
+      conditions.push(`path ILIKE $${params.length}`);
+    }
+    if (hostFilter) {
+      params.push(hostFilter);
+      conditions.push(`host = $${params.length}`);
+    }
+
+    const where = conditions.length > 0 ? `AND ${conditions.join(' AND ')}` : '';
+    const rows = await db(
+      `SELECT ts, host, path, ua, referer, ip, status, bytes FROM page_views
+       WHERE ts >= NOW() - INTERVAL '${daysNum} days' ${where}
+       ORDER BY ts DESC LIMIT ${limitNum}`,
+      params
+    );
 
     return res.status(200).json({ count: rows.length, rows });
   }
