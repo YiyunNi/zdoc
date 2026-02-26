@@ -1,0 +1,60 @@
+---
+title: AI Tools
+description: Ready-made context prompts for AI coding assistants (Cursor, GitHub Copilot, JetBrains, and more).
+---
+
+import Cards from '@site/src/components/Cards';
+
+# AI Tools
+
+Ready-made context prompts for AI coding assistants. Drop them into Cursor, GitHub Copilot,
+JetBrains AI, or any tool that supports custom instructions to get accurate Zilliz Cloud guidance.
+
+<Cards>
+
+# Zilliz Cloud AI Prompts
+
+- [Python SDK](/ai-tools/python-sdk)
+
+    Context prompt for the Zilliz Cloud Python SDK — MilvusClient, schema design, search patterns.
+
+- [Vector Search](/ai-tools/vector-search)
+
+    ANN search, hybrid search, reranking, and filtering best practices.
+
+- [Collection Management](/ai-tools/collections)
+
+    Creating collections, configuring indexes, and managing partitions.
+
+- [BYOC](/ai-tools/byoc)
+
+    BYOC cluster setup, maintenance windows, and migration patterns.
+
+- [RESTful API](/ai-tools/restful-api)
+
+    RESTful API v2 usage, authentication, and rate limit handling.
+
+</Cards>
+
+## Where to put these prompts
+
+| Tool | File path |
+|------|-----------|
+| Cursor | `.cursor/rules/<name>.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| JetBrains AI | `.jb/ai-context.md` |
+| VS Code (Copilot) | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+
+## Direct import (Cursor, Windsurf)
+
+Each prompt is also accessible as raw Markdown by appending `.md` to the URL.
+Use the `@URL` syntax to import directly:
+
+```
+@https://docs.zilliz.com/ai-tools/python-sdk.md
+@https://docs.zilliz.com/ai-tools/vector-search.md
+@https://docs.zilliz.com/ai-tools/collections.md
+@https://docs.zilliz.com/ai-tools/byoc.md
+@https://docs.zilliz.com/ai-tools/restful-api.md
+```
