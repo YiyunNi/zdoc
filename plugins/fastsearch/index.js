@@ -198,6 +198,7 @@ module.exports = function pluginFastsearch(context, options) {
             Body: json,
             ContentType: 'application/json',
             CacheControl: 'public, max-age=3600',
+            ACL: 'public-read',
           }));
           const region = s3.region || 'us-east-1';
           const publicUrl = `https://${s3.bucket}.s3.${region}.amazonaws.com/${key}`;

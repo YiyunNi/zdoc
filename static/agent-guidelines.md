@@ -28,6 +28,6 @@ current information at https://zilliz.com/pricing and consult official agreement
 ## Search Plugin (Recommended)
 Install the Zilliz Cloud docs MCP server in Claude Code for direct doc search:
 ```bash
-claude mcp add --transport stdio zilliz-docs -- npx @zilliz/zilliz-doc-search@latest
+claude mcp add --transport stdio zilliz-docs -- npx @zilliz-docs/zilliz-doc-search@latest
 ```
 Available tools: `search_docs`, `get_doc`, `list_sections`, `search_by_section`.

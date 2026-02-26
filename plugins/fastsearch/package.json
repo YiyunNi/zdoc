@@ -1,5 +1,5 @@
 {
-  "name": "@zilliz/zilliz-doc-search",
+  "name": "@zilliz-docs/zilliz-doc-search",
   "version": "1.0.0",
   "description": "MCP server: full-text search across Zilliz Cloud docs from Claude Code",
   "bin": { "zilliz-doc-search": "./server.cjs" },

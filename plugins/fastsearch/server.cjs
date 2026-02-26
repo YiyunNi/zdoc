@@ -31,7 +31,7 @@ const { Document } = require('flexsearch');
 // Index is served from S3 — not from the docs site — to avoid affecting user page loads.
 // This URL must match the S3 bucket configured in docusaurus.config.js.
 // Override with FASTSEARCH_INDEX_URL env var or --index <url> for local testing.
-const DEFAULT_INDEX_URL = 'https://<AWS_BUCKET>.s3.<AWS_REGION>.amazonaws.com/fastsearch-index.json';
+const DEFAULT_INDEX_URL = 'https://zdoc-images.s3.us-west-2.amazonaws.com/fastsearch-index.json';
 const DEFAULT_SITE_URL = 'https://docs.zilliz.com';
 const CACHE_TTL_MS = (parseInt(process.env.FASTSEARCH_CACHE_TTL_MINUTES || '60', 10)) * 60 * 1000;
 
