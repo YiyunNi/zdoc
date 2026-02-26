@@ -156,6 +156,20 @@ const config = {
       },
     ],
     [
+      './plugins/fastsearch',
+      {
+        sources: [
+          { folder: 'docs/tutorials',                           route: '/docs',      sectionLabel: 'Tutorials' },
+          { folder: 'versioned_docs/version-byoc/tutorials',    route: '/docs/byoc', sectionLabel: 'BYOC' },
+          { folder: 'reference/api',                            route: '/reference', sectionLabel: 'API Reference' },
+        ],
+        outputPath: 'fastsearch-index.json',
+        s3: process.env.AWS_BUCKET
+          ? { bucket: process.env.AWS_BUCKET, key: 'fastsearch-index.json', region: process.env.AWS_REGION || 'us-west-2' }
+          : undefined,
+      },
+    ],
+    [
       './plugins/embed-markdown',
       {
         cursorMcpCommand: 'npx @zilliz/claude-context-mcp@latest',
