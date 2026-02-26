@@ -85,17 +85,6 @@ pipeline {
                             """
                         }
 
-                        sh """
-                            echo "=== Pod status ==="
-                            kubectl get pods -n zdocs
-                            echo "=== Entrypoint logs ==="
-                            POD=\$(kubectl get pods -n zdocs --no-headers -o custom-columns=':metadata.name' | grep zdocs | head -1)
-                            if [ -n "\$POD" ]; then
-                                kubectl logs -n zdocs \$POD --tail=20
-                            else
-                                echo "No zdocs pod found"
-                            fi
-                        """
                     }
                 }
             }
