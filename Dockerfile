@@ -43,6 +43,9 @@ ARG LOG_HOST
 ARG LOG_SECRET
 ENV LOG_HOST=${LOG_HOST}
 ENV LOG_SECRET=${LOG_SECRET}
+RUN echo "=== Log forwarding config ===" && \
+    echo "LOG_HOST: ${LOG_HOST}" && \
+    if [ -n "${LOG_SECRET}" ]; then echo "LOG_SECRET: set (${#LOG_SECRET} chars)"; else echo "LOG_SECRET: NOT SET"; fi
 ENV INSTALL_PATH /usr/share/nginx/html
 WORKDIR $INSTALL_PATH
 COPY ./default.conf /etc/nginx/conf.d
