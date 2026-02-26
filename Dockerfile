@@ -39,6 +39,10 @@ RUN npm run build
 ## deploy
 FROM nginx:stable-alpine as deploy
 RUN apk add --no-cache fluent-bit --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+ARG LOG_HOST
+ARG LOG_SECRET
+ENV LOG_HOST=${LOG_HOST}
+ENV LOG_SECRET=${LOG_SECRET}
 ENV INSTALL_PATH /usr/share/nginx/html
 WORKDIR $INSTALL_PATH
 COPY ./default.conf /etc/nginx/conf.d
