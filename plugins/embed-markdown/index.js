@@ -81,10 +81,8 @@ module.exports = function (context, options) {
         // Merge into the main path map
         Object.assign(markdownPathMap, folderPathMap);
 
-        if (Object.keys(folderPathMap).length > 0) {
-          console.log(`[embed-markdown] Processed ${folder}: ${Object.keys(folderPathMap).length} files`);
-        } else {
-          console.log(`[embed-markdown] Source directory not found or empty: ${folder}`);
+        if (Object.keys(folderPathMap).length === 0) {
+          console.warn(`[embed-markdown] Source directory not found or empty: ${folder}`);
         }
       }
 
@@ -95,7 +93,6 @@ module.exports = function (context, options) {
         enableSourceView,
         sources,
       });
-      console.log(`[embed-markdown] Set global data with ${Object.keys(markdownPathMap).length} files`);
     },
 
     configureWebpack(_config, isServer) {
@@ -151,7 +148,6 @@ module.exports = function (context, options) {
                 readFiles(srcPath);
               }
 
-              console.log(`[embed-markdown] Dev server path map built: ${Object.keys(pathMap).length} entries`);
 
               // Serve .md files as raw markdown
               const markdownMiddleware = (req, res, next) => {
@@ -182,7 +178,6 @@ module.exports = function (context, options) {
     },
 
     async postBuild({ outDir, routesPaths, siteConfig }) {
-      console.log('\n[embed-markdown] Copying markdown files to build directory...');
 
       const baseUrl = siteConfig.baseUrl || '/';
       const siteDir = context.siteDir || process.cwd();
@@ -232,10 +227,6 @@ module.exports = function (context, options) {
         readFiles(srcPath);
       }
 
-      // Debug: log sample slug map
-      const sampleSlugs = Object.keys(slugToFileMap).slice(0, 10);
-      console.log('[embed-markdown] Sample slugs:', sampleSlugs);
-
       // Build a reverse map from filesystem paths to URL paths
       const sourceToUrlMap = {};
 
@@ -273,7 +264,6 @@ module.exports = function (context, options) {
 
         fs.copyFileSync(sourcePath, fullDestPath);
         totalCopied++;
-        console.log(`[embed-markdown] Copied: ${path.relative(siteDir, sourcePath)} -> ${destPath}`);
       }
 
       console.log(`[embed-markdown] Copied ${totalCopied} markdown files to build directory.\n`);
