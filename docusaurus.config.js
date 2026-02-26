@@ -141,6 +141,21 @@ const config = {
     ],
     './plugins/mdx-parse',
     [
+      './plugins/llms-txt',
+      {
+        sources: [
+          { folder: 'docs/tutorials',                           route: '/docs' },
+          { folder: 'versioned_docs/version-byoc/tutorials',    route: '/docs/byoc',        sectionPrefix: 'BYOC' },
+          { folder: 'reference/api/python/python',              route: '/reference/python',  sectionPrefix: 'Python SDK',  optional: true },
+          { folder: 'reference/api/go/go',                      route: '/reference/go',      sectionPrefix: 'Go SDK',      optional: true },
+          { folder: 'reference/api/java/java',                  route: '/reference/java',    sectionPrefix: 'Java SDK',    optional: true },
+          { folder: 'reference/api/nodejs/nodejs',              route: '/reference/nodejs',  sectionPrefix: 'Node.js SDK', optional: true },
+          { folder: 'reference/api/restful/restful',            route: '/reference/restful', sectionPrefix: 'RESTful API', optional: true },
+        ],
+        outputPaths: ['llms.txt', 'docs/llms.txt'],
+      },
+    ],
+    [
       './plugins/embed-markdown',
       {
         cursorMcpCommand: 'npx @zilliz/claude-context-mcp@latest',
