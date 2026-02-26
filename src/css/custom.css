@@ -435,23 +435,8 @@ button,
    CODE BLOCK ENHANCEMENTS
    ============================================ */
 
-/* Increase max-height and add scroll indicator */
 pre {
   position: relative;
-}
-
-/* Scroll indicator gradient for truncated code blocks */
-.theme-code-block pre::after {
-  content: '';
-  position: sticky;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 24px;
-  background: linear-gradient(transparent, rgba(246, 248, 250, 0.8));
-  pointer-events: none;
-  border-radius: 0 0 var(--ifm-code-border-radius, 4px) var(--ifm-code-border-radius, 4px);
 }
 
 /* ============================================
