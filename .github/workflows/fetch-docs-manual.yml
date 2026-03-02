@@ -16,8 +16,8 @@ jobs:
       id: fetch_en_docs
       run: |
         yarn
-        npx docusaurus report-to-lark -m "🔥 Start building global docs..."
-        npx docusaurus report-to-lark -m "🔥 Fetching English docs..."
+        npx docusaurus report-to-lark -type text -m "🔥 Start building global docs..."
+        npx docusaurus report-to-lark -type text -m "🔥 Fetching English docs..."
         npx docusaurus fetch-lark-docs -man guides -tar zilliz.saas -s3
         npx docusaurus fetch-lark-docs -man guides -tar zilliz.saas -post
         npx docusaurus fetch-lark-docs -man guides -tar zilliz.paas -s3 -skipS
@@ -43,8 +43,10 @@ jobs:
         git checkout origin/master -- translation.db 2>/dev/null || true
     - name: translate to Japanese
       run: |
-        npx docusaurus report-to-lark -m "🔥 Translating docs to Japanese..."
+        npx docusaurus report-to-lark -type text -m "🔥 Translating docs to Japanese..."
         npx docusaurus translate-i18n --locale ja-JP
+        npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials
+        npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -54,7 +56,7 @@ jobs:
         MODEL_ID: ${{ vars.MODEL_ID }}
     - name: build docsite
       run: |
-        npx docusaurus report-to-lark -m "🔥 English docs fetched! Building docs..."
+        npx docusaurus report-to-lark -type text -m "🔥 English docs fetched! Building docs..."
         npm run build
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -73,7 +75,7 @@ jobs:
         MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
         MODEL_ID: ${{ vars.MODEL_ID }}
       run: |
-        npx docusaurus report-to-lark -m "🔥 Docs built! Checking links..."
+        npx docusaurus report-to-lark -type text -m "🔥 Docs built! Checking links..."
         npx docusaurus link-checks
     - name: commit to dev
       uses: stefanzweifel/git-auto-commit-action@v5
@@ -84,7 +86,7 @@ jobs:
     - name: fetch sdk references
       id: fetch_sdk_refs
       run: |
-        npx docusaurus report-to-lark -m "🔥 Fetching SDK references..."
+        npx docusaurus report-to-lark -type text -m "🔥 Fetching SDK references..."
         npx docusaurus fetch-lark-docs -man python -src-only
         npx docusaurus fetch-lark-docs -man pymilvus25 -src-only
         npx docusaurus fetch-lark-docs -man pymilvus26 -tar zilliz -s3
@@ -117,7 +119,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: build docsite
       run: |
-        npx docusaurus report-to-lark -m "🔥 SDK references fetched! Building docs..."
+        npx docusaurus report-to-lark -type text -m "🔥 SDK references fetched! Building docs..."
         npm run build
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -136,7 +138,7 @@ jobs:
         MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
         MODEL_ID: ${{ vars.MODEL_ID }}
       run: |
-        npx docusaurus report-to-lark -m "🔥 Docs built! Checking links..."
+        npx docusaurus report-to-lark -type text -m "🔥 Docs built! Checking links..."
         npx docusaurus link-checks
     - name: commit to dev
       uses: stefanzweifel/git-auto-commit-action@v5
@@ -156,7 +158,7 @@ jobs:
     - name: report failure
       run : |
         yarn
-        npx docusaurus report-to-lark -m "🔥 Build failed! Please check the logs."
+        npx docusaurus report-to-lark -type text -m "🔥 Build failed! Please check the logs."
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -176,7 +178,7 @@ jobs:
     - name: report success
       run : |
         yarn
-        npx docusaurus report-to-lark -m "🔥 Build succeeded! You can build docs on Jenkins now."  
+        npx docusaurus report-to-lark -type text -m "🔥 Build succeeded! You can build docs on Jenkins now."
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}

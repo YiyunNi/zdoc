@@ -136,7 +136,9 @@ const config = {
     [
       './plugins/report-to-lark',
       {
-        receiveId: 'oc_0e36909edb9247c7b6ecb437e99f1d68'
+        receiveId: 'oc_0e36909edb9247c7b6ecb437e99f1d68',
+        cardId: 'AAq3EflkoHcaq',
+        cardVersion: '0.0.4'
       }
     ],
     './plugins/mdx-parse',
