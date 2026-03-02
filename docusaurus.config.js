@@ -140,6 +140,7 @@ const config = {
       }
     ],
     './plugins/mdx-parse',
+    './plugins/i18n-translator',
     [
       './plugins/llms-txt',
       {

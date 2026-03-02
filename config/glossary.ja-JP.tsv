@@ -1,0 +1,896 @@
+Organization Owner	組織オーナー
+Project Admin	プロジェクト管理者
+Cluster Details	クラスターの詳細
+Bucket Name	バケット名
+Auto-scaling	オートスケーリング
+Cloud Provider	クラウドプロバイダー
+Data Plane	データプレーン
+Business Critical	ビジネスクリティカル
+Organization Billing Admin	組織の請求管理者
+Resource Settings	リソース設定
+Initial Project Size	初期プロジェクトサイズ
+General Settings	一般設定
+Technical Support Access	テクニカルサポートアクセス
+Unit Price	単価
+Cluster Settings	クラスター設定
+Cluster Type	クラスタータイプ
+API Key	APIキー
+inverted index	転置インデックス
+Cosine Similarity	コサイン類似度
+Euclidean Distance	ユークリッド距離
+Inner Product	内積
+MinHash signatures	MinHashシグネチャ
+Tokenizer	トークナイザー
+Filters	フィルター
+JSON path	JSONパス
+JSON indexing	JSONインデックス
+full-text search	全文検索
+Improved Query Performance	クエリパフォーマンスの向上
+Primary field	プライマリフィールド
+Text field	テキストフィールド
+Sparse vector field	スパースベクトルフィールド
+sparse vectors	疎ベクトル
+Projects	プロジェクト
+Partition Key	パーティションキー
+Billing Overview	請求概要
+API Keys	APIキー
+not supported	サポートされていません
+In Progress	進行中
+Successful	成功
+Organization Member	組織メンバー
+Account ID	アカウントID
+Organization Owners	組織オーナー
+Bucket name	バケット名
+Policy editor	ポリシーエディター
+Custom trust policy	カスタム信頼ポリシー
+Permissions policies	権限ポリシー
+Name, review, and create	名前を付けて確認し、作成
+Service Name	サービス名
+Service Account Name	サービスアカウント名
+Location type	ロケーションタイプ
+Project Read-Write	プロジェクト読み書き
+Project Read-Only	プロジェクト読み取り専用
+Control Plane	コントロールプレーン
+Subnet IDs	サブネットID
+Subnets	サブネット
+Endpoint ID	エンドポイントID
+Subnet	サブネット
+Published service	公開済みサービス
+VPC Name	VPC名
+Storage settings	ストレージ設定
+Project Name	プロジェクト名
+Credential Settings	認証情報設定
+Cross-Account Settings	クロスアカウント設定
+Network Settings	ネットワーク設定
+Deployment Summary	デプロイ概要
+project admin	プロジェクト管理者
+organization owner	組織オーナー
+custom role	カスタムロール
+Excluded from backup	バックアップから除外
+Cluster shard settings	クラスターシャード設定
+Original Backup File Size	元のバックアップファイルサイズ
+manually create backups	手動でバックアップを作成する
+automatic backups	自動バックアップ
+Integration Configuration	統合設定
+Manual backups	手動バックアップ
+Automatic backups	自動バックアップ
+new cluster	新しいクラスター
+entire cluster	クラスター全体
+disabled by default	デフォルトで無効
+Cluster Name	クラスター名
+Global Cluster	グローバルクラスター
+Global Topology	グローバルトポロジー
+global endpoint	グローバルエンドポイント
+public endpoint	パブリックエンドポイント
+authentication token	認証トークン
+global cluster	グローバルクラスター
+primary cluster	プライマリークラスター
+secondary clusters	セカンダリークラスター
+write requests	書き込みリクエスト
+read requests	読み取りリクエスト
+Switchover	スイッチオーバー
+Failover	フェイルオーバー
+Storage costs	ストレージ費用
+Data transfer costs	データ転送費用
+Plan availability	プランの可用性
+all fields match	すべてのフィールドが一致
+CU Computation	CU計算
+replica count	レプリカ数
+CU computation	CU計算
+Minimum Replica	最小レプリカ
+Maximum Replica	最大レプリカ
+Current Replica Count: 1	現在のレプリカ数：1
+recurring patterns	繰り返しパターン
+Basic mode	基本モード
+Advanced mode	詳細モード
+unpredictable workloads	予測不可能なワークロード
+min–max range	最小-最大範囲
+CU Capacity	CU容量
+dynamic scaling	動的スケーリング
+Suggestion	提案
+Resource check	リソースチェック
+Modifying	変更中
+Job completed	ジョブが完了しました
+Resource Limitations	リソースの制限
+Number of Query CU	クエリCU数
+Replica count	レプリカ数
+During Scaling	スケーリング中
+Performance Impact	パフォーマンスへの影響
+CU capacity	CU容量
+Minimum Query CU	最小クエリCU
+Maximum Query CU	最大クエリCU
+Vector index	ベクトルインデックス
+Scalar index	スカラーインデックス
+Text functions	テキスト関数
+Rerank functions	Rerank関数
+at query time	クエリ時
+partition key	パーティションキー
+Enabling dynamic field	動的フィールドの有効化
+January 1st	1月1日
+January 31st	1月31日
+Feburary 28th	2月28日
+January 15th	1月15日
+February 13th	2月13日
+February 14th	2月14日
+Simplicity	シンプルさ
+Efficiency	効率性
+Consistency	一貫性
+Object access URIs	オブジェクトアクセスURI
+Required permissions	必要な権限
+Credential acquisition	認証情報の取得
+Cluster Endpoint	クラスターエンドポイント
+Cluster ID	クラスターID
+Secret Key	シークレットキー
+Entity Count	エンティティ数
+Partitions	パーティション
+Loaded Entities	ロードされたエンティティ
+Build index	インデックスの構築
+Accelerate queries	クエリの高速化
+Decompose text into n-grams	テキストをn-gramに分解する
+Build an inverted index	転置インデックスを構築する
+Prefix match	前方一致
+Suffix match	後方一致
+Infix match	中間一致
+Wildcard match	ワイルドカード一致
+JSON path queries	JSONパス クエリ
+Field types	フィールド型
+Space–time trade-off	空間的・時間的トレードオフ
+Immutability	不変性
+Avoid low-selectivity grams	選択性の低いグラムを避ける
+Normalize consistently	一貫して正規化する
+signature vector	シグネチャベクトル
+approximate the Jaccard similarity	Jaccard類似度を近似する
+Shingling	シャイングリング
+Hashing	ハッシュ化
+Min Selection	最小選択
+Chunk & preprocess	チャンク化と前処理
+Feature construction	特徴量構築
+MinHash signature generation	MinHashシグネチャ生成
+Binary vector conversion	バイナリベクトル変換
+accurate Jaccard similarity	正確なJaccard類似度
+Token set extraction example	トークンセット抽出の例
+Approximate search	近似検索
+Refined search	絞り込み検索
+Precision-first	精度優先
+Balanced	バランス
+Capacity-first	容量優先
+Metric Type	メトリックタイプ
+Existing entities	既存のエンティティ
+New entities	新しいエンティティ
+Field availability	フィールドの可用性
+Queryable immediately	即時クエリ可能
+New collection	新しいコレクション
+Existing collection	既存のコレクション
+zero or more	ゼロ個以上
+Built-in analyzer	組み込みアナライザー
+Custom analyzer	カスタムアナライザー
+Built-in filters	組み込みフィルター
+Custom filters	カスタムフィルター
+default analyzer	デフォルトアナライザー
+Language-specific analyzers	言語固有のアナライザー
+Language	言語
+practical decision-making	実用的な意思決定
+phrase match	フレーズ一致
+text match	テキスト一致
+Standard analyzer behavior	標準アナライザーの動作
+Example transformation	変換例
+When to use icu	icuを使用する場合
+Alternative approaches	代替アプローチ
+Over-tokenization	過剰なトークン化
+Under-tokenization	不十分なトークン化
+Missing tokens	欠落しているトークン
+Advanced multilingual processing	高度な多言語処理
+multi-language analyzer	多言語アナライザー
+language identifier	言語識別子
+Primary Key Field	主キーフィールド
+Language Indicator Field	言語インジケーターフィールド
+Text Content Field	テキストコンテンツフィールド
+Vector Field	ベクトルフィールド
+not explicitly defined	明示的に定義されていない
+JSON path indexing	JSONパスインデックス
+JSON cast type	JSONキャストタイプ
+Retrieving dynamic field keys	動的フィールドキーの取得
+different data type	異なるデータ型
+not use the index	インデックスを使用しない
+JSON and ARRAY fields	JSONおよびARRAYフィールド
+exactly one	ちょうど1つ
+Semantic search	セマンティック検索
+Full-text search	全文検索
+Metadata filtering	メタデータフィルタリング
+vector fields	ベクトルフィールド
+scalar fields	スカラーフィールド
+Hierarchical data	階層データ
+Multimodal embeddings	マルチモーダル埋め込み
+Temporal or sequential data	時系列データまたはシーケンシャルデータ
+ego vehicle's behaviors	自車両の挙動
+detected objects	検出されたオブジェクト
+Default Values	デフォルト値
+Array Capacity	配列容量
+String Handling	文字列処理
+Data types	データ型
+Nullable & default values	NULL許容とデフォルト値
+Scalar filtering	スカラーフィルタリング
+Text 1	テキスト1
+Text 2	テキスト2
+vector database	ベクトルデータベース
+retrieval system	検索システム
+within 1km	1km以内
+Examples of valid strings	有効な文字列の例
+Examples of invalid strings	無効な文字列の例
+Data cast type	データキャストタイプ
+Optional type conversion	オプションの型変換
+Flattens the JSON structure	JSON構造をフラット化する
+Infers data types	データ型を推論する
+Creates comprehensive coverage	包括的なカバレッジを作成する
+partial indexing	部分インデックス
+Read-heavy workloads	読み込み集中型ワークロード
+Mixed query patterns	混合クエリパターン
+Typed keys	型付きキー
+Dynamic keys	動的キー
+Shared keys	共有キー
+Shredded columns	シャーデッドカラム
+Shared column	共有カラム
+shared keys	共有キー
+Fast path	高速パス
+Optimized path	最適化されたパス
+Hardware	ハードウェア
+Dataset	データセット
+Average document size	平均ドキュメントサイズ
+Test duration	テスト期間
+Shared key queries	共有キー検索
+Typed key queries	型付きキー検索
+All query types	すべてのクエリタイプ
+JSON shredding	JSONシュレッディング
+floating-point numbers	浮動小数点数
+Traditional statistical techniques	従来の統計手法
+Neural sparse embedding models	ニューラル疎埋め込みモデル
+Accepted input format	許容される入力形式
+Timestamp parsing rules	タイムスタンプのパースルール
+Internal storage	内部ストレージ
+Comparison and filtering	比較とフィルタリング
+not equal	等しくない
+batch data	バッチデータ
+streaming data	ストリーミングデータ
+Array	配列
+Dense vector search	密ベクトル検索
+Sparse vector search	疎ベクトル検索
+standard filtering	標準フィルタリング
+iterative filtering	反復フィルタリング
+Comparison Operators	比較演算子
+Range Filters	範囲フィルター
+Arithmetic Operators	算術演算子
+Logical Operators	論理演算子
+Indexing	インデックス作成
+Reduced Parsing Time	パース時間の短縮
+Data exploration	データ探索
+Development testing	開発テスト
+Resource optimization	リソース最適化
+Development workflow	開発ワークフロー
+Statistical validity	統計的妥当性
+Performance testing	パフォーマンステスト
+Raw text input	生テキスト入力
+Text analysis	テキスト分析
+BM25 function processing	BM25関数処理
+Collection store	コレクションストア
+BM25 relevance scoring	BM25関連性スコアリング
+Design Rationale	設計思想
+Number of groups	グループ数
+Entities per group	グループあたりのエンティティ数
+Strict group size	厳密なグループサイズ
+Sparse-Dense Vector Search	疎密ベクトル検索
+Multimodal Vector Search	マルチモーダルベクトル検索
+Full-Text Search	全文検索
+Document Tokenization	ドキュメントのトークン化
+Inverted Index Creation	転置インデックスの作成
+Phrase Matching	フレーズマッチング
+Applicable vector type	適用可能なベクトル型
+Distance definition	距離の定義
+maximum similarity	最大類似度
+metric type	メトリックタイプ
+Limit	制限
+Offset	オフセット
+Which terms are highlighted	強調表示される用語
+BM25 full text search	BM25全文検索
+text-based filtering expressions	テキストベースのフィルタリング式
+Highlighter configuration	ハイライター設定
+Highlighting output	ハイライト出力
+Performance-optimized	パフォーマンス最適化済み
+Capacity-optimized	容量最適化済み
+Extended-capacity CUs	拡張容量CU
+Cosine	コサイン
+Hamming	ハミング
+Clone	クローン
+Clone scope	クローンスコープ
+Collection schema and data	コレクションのスキーマとデータ
+For inserts	挿入の場合
+For deletes	削除の場合
+Organization Information	組織情報
+BM25 function	BM25関数
+document ingestion	ドキュメントの取り込み
+sparse embeddings	スパース埋め込み
+same analyzer	同じアナライザー
+term level	タームレベル
+document level	ドキュメントレベル
+Term-level scoring	タームレベルスコアリング
+Pre-search	検索前
+Post-search	検索後
+Pre-search Function	検索前関数
+Post-search Function	検索後関数
+what role they play	それらが果たす役割
+Pre-search Functions	検索前関数
+Post-search Functions	検索後関数
+after candidate retrieval	候補取得後
+do not	～しない
+model-based Functions	モデルベース関数
+deployment ID	デプロイメントID
+Model Unit Price	モデル単価
+Usage Time	使用時間
+Choose an embedding model	埋め込みモデルを選択
+Collect Search Rankings	検索ランキングを収集
+Aggregate Rankings	ランキングを集計
+Collect Search Scores	検索スコアを収集
+Score Normalization	スコアの正規化
+post-retrieval step	取得後ステップ
+Choose a rerank model	リランクモデルを選択
+at search time	検索時
+integration ID	統合ID
+Time unit consistency	時間単位の一貫性
+"AI research papers"	「AI研究論文」
+Gaussian	ガウス
+Exponential	指数
+Linear	線形
+Organizations	組織
+Organization-level isolation	組織レベルの分離
+Project-level isolation	プロジェクトレベルの分離
+Cluster-level isolation	クラスターレベルの分離
+Database	データベース
+Data isolation	データ分離
+Flexibility	柔軟性
+Others	その他
+Strong data isolation requirements	厳格なデータ分離要件
+Cross-tenant searches	テナント間検索
+Run Your Test >	テストを実行 >
+Results	結果
+DB Filter	DBフィルター
+Case Filter	ケースフィルター
+availability phase	利用可能フェーズ
+free cluster	フリークラスター
+free trial	無料トライアル
+Credits	クレジット
+Auto ID	自動ID
+metric types	メトリックタイプ
+Work Email	仕事用メール
+Password	パスワード
+Resend Code	コードを再送信
+and click	をクリック
+Emails	メール
+Public Profile	公開プロフィール
+Public email	公開メール
+Next releases	次期リリース
+New Region	新しいリージョン
+Data Preview	データプレビュー
+Milvus 2.4 features	Milvus 2.4の機能
+multi-replica functionality	マルチレプリカ機能
+Migration Service	移行サービス
+RESTful APIs	RESTful API
+Average Weighted Scoring	平均加重スコアリング
+Enhanced Availability	可用性の向上
+Notebook Gallery	ノートブックギャラリー
+Multi-replica Availability	マルチレプリカ可用性
+Prometheus Integration	Prometheus連携
+Secure Communication	セキュアな通信
+Optimized Permissions	最適化された権限
+Public Preview	パブリックプレビュー
+Try Preview Features	プレビュー機能を試す
+semantic search	セマンティック検索
+industry-standard BM25	業界標準のBM25
+Stronger Security	より強力なセキュリティ
+within a private network	プライベートネットワーク内
+Easier Compliance	容易なコンプライアンス
+Simplified Network Configuration	簡素化されたネットワーク構成
+more straightforward and manageable	より分かりやすく管理しやすい
+Suspend	一時停止
+Private Preview	プライベートプレビュー
+Other Database Components	その他のデータベースコンポーネント
+Core Support Services	コアサポートサービス
+Small	小
+Medium	中
+Large	大
+X-Large	特大
+Generally Available	一般提供
+Alert Policies	アラートポリシー
+mmap settings	mmap設定
+invitation registration	招待登録
+password recovery	パスワード回復
+batch ETL capability	バッチETL機能
+hours instead of days	日単位ではなく時間単位
+Stage	ステージ
+Request Body	リクエストボディ
+scheduled scaling	スケジュールされたスケーリング
+cluster level	クラスターレベル
+cluster-level backup	クラスターレベルのバックアップ
+Ingestion pipeline	取り込みパイプライン
+Deletion Pipeline	削除パイプライン
+Audit Logs	監査ログ
+all three cloud providers	3つのクラウドプロバイダーすべて
+paid feature	有料機能
+dedicated cluster	専用クラスター
+IdP-specific flow	IdP固有のフロー
+Better UX	UXの向上
+visual, IdP-specific examples	視覚的なIdP固有の例
+databases and collections	データベースとコレクション
+Field addition without downtime	ダウンタイムなしのフィールド追加
+Enhanced full-text search	強化された全文検索
+Accelerated JSON filtering	高速化されたJSONフィルタリング
+New reranking functions	新しい再ランキング関数
+INT8 vector support	INT8ベクトルサポート
+Partial upserts	部分的なアップサート
+Cluster Overview	クラスター概要
+Smart Data Management	スマートデータ管理
+Higher Cache Hit Rates	キャッシュヒット率の向上
+Cost Reduction	コスト削減
+Key Capabilities	主要機能
+language-specific templates	言語固有のテンプレート
+diagnose connection issues	接続の問題を診断する
+Geometry data type support	Geometryデータ型サポート
+Struct data type support	Structデータ型サポート
+new projects	新規プロジェクト
+Stage has reached GA	ステージがGAに到達しました
+Volume	ボリューム
+Volume-level RBAC	ボリュームレベルRBAC
+Console support	コンソールサポート
+Granular Access Control	きめ細かなアクセス制御
+Comprehensive Auditing	包括的な監査
+TOTP-based MFA	TOTPベースのMFA
+Organization-Level Enforcement	組織レベルでの適用
+Legacy Migration	レガシー移行
+Time-zone-aware timestamp support	タイムゾーンを考慮したタイムスタンプのサポート
+Highlighter	ハイライター
+Model-Based Embedding	モデルベースの埋め込み
+Model-Based Reranking	モデルベースの再ランキング
+Third-Party Model Provider Integration	サードパーティモデルプロバイダーとの統合
+Intelligent Replica Autoscaling	インテリジェントなレプリカの自動スケーリング
+Zero-Touch Reliability	ゼロタッチの信頼性
+latest capabilities	最新機能
+Data Import	データインポート
+Milvus Endpoint Migration	Milvusエンドポイントの移行
+Geometry	ジオメトリ
+Struct	構造体
+Job Details View	ジョブ詳細ビュー
+Enhanced Metrics Dashboards	強化されたメトリクスダッシュボード
+Job Center	ジョブセンター
+Performance-optimized, Capacity-optimized	パフォーマンス最適化、容量最適化
+Evaluate Latency	レイテンシーの評価
+Assess Capacity	容量の評価
+Check Throughput	スループットの確認
+Architecture Design	アーキテクチャ設計
+Compute Node HA	計算ノードのHA
+Cost Optimization	コスト最適化
+multiple persistent replicas	複数の永続レプリカ
+dynamic in-memory loading	動的なインメモリ読み込み
+Core Mechanism	コアメカニズム
+Read/Write Separation	読み書き分離
+Key Benefits	主な利点
+CDC Synchronization	CDC同期
+Data Write Strategy	データ書き込み戦略
+Failover Modes	フェイルオーバーモード
+Cursor	カーソル
+Cursor Settings	カーソル設定
+Tools & Integrations	ツールと統合
+Alert Settings	アラート設定
+Send to	送信先
+Alert Resolution Notification	アラート解決通知
+Incoming Rules	受信ルール
+Turn on integration	統合を有効にする
+Organization Alerts	組織アラート
+History	履歴
+First notification	最初の通知
+Second notification	2番目の通知
+Subsequent notifications	以降の通知
+Project Alerts	プロジェクトアラート
+Organization-level metrics	組織レベルのメトリクス
+Project-level metrics	プロジェクトレベルのメトリクス
+Relative Range	相対範囲
+Absolute Range	絶対範囲
+Resources	リソース
+Performance	パフォーマンス
+Data	データ
+Schema preservation	スキーマの保持
+No field modifications	フィールドの変更なし
+Automatic indexing	自動インデックス作成
+Initialization	初期化
+Finalization	最終処理
+Locked	ロック済み
+Syncing	同期中
+Lag Behind Source	ソースからの遅延
+Establish connection	接続を確立する
+Automatic detection	自動検出
+Field customization	フィールドのカスタマイズ
+Type conversion	型変換
+Advanced options	詳細オプション
+Small datasets	小規模データセット
+Large datasets	大規模データセット
+Real-time monitoring	リアルタイム監視
+Progress indicators	進捗インジケーター
+Error handling	エラー処理
+Validation	検証
+Migrations	移行
+Nullable	NULL許容
+Default Value	デフォルト値
+Naming conflicts	名前の競合
+From Local File	ローカルファイルから
+From Object Storage	オブジェクトストレージから
+From Volume	ボリュームから
+into the	に
+Download	ダウンロード
+Manual Loading Required	手動ロードが必要です
+All Organizations	すべての組織
+System Settings	システム設定
+Time Zone Settings	タイムゾーン設定
+System Maintenance Window	システムメンテナンス期間
+Organization Members	組織メンバー
+Recycle Bin	ごみ箱
+Bank Transfer History	銀行振込履歴
+Billing Admin	請求管理者
+Billing	請求
+By Project	プロジェクト別
+By Cluster	クラスター別
+By Time Period	期間別
+By Cost Type	コストタイプ別
+By Cloud Region	クラウドリージョン別
+Web Console UI	WebコンソールUI
+Standard Plan	スタンダードプラン
+Payment	支払い
+Method	方法
+Credit Card	クレジットカード
+Card number	カード番号
+Expiration	有効期限
+First Name	名
+Last Name	姓
+Company Name	会社名
+Email	Eメール
+Street Address	番地
+Country / Region	国/地域
+State / Province	都道府県
+City	市区町村
+ZIP/Postal Code	郵便番号
+Payment Method	支払い方法
+Billing Profile	請求プロファイル
+Try for free	無料で試す
+Subscribe	購読
+Insufficient permissions	権限が不十分です
+"Insufficient Permissions"	"権限が不十分です"
+"Marketplace Linked"	"マーケットプレイスにリンク済み"
+Plans + Pricing	プランと料金
+Subscribe to Zilliz Cloud	Zilliz Cloudを購読する
+Project Details	プロジェクトの詳細
+Resource group	リソースグループ
+SaaS Details	SaaSの詳細
+Auto-renew	自動更新
+Purchaser PUID	購入者PUID
+All resources	すべてのリソース
+Resources/Recent	リソース/最近
+Cancel subscription	サブスクリプションをキャンセル
+New Zilliz Cloud subscription	新しいZilliz Cloudサブスクリプション
+Purchase details	購入の詳細
+Terms	規約
+Account Id	アカウントID
+Audit Logs Runtime	監査ログ実行時間
+Cluster Deployment Option	クラスターデプロイオプション
+Data Transfer Unit Price	データ転送単価
+Transferred Data Size	転送データサイズ
+Transfer Type	転送タイプ
+Source Continent	送信元大陸
+Destination Continent	送信先大陸
+Cluster Runtime	クラスター実行時間
+Cold Data Access	コールドデータアクセス
+Cloud Provider & Region	クラウドプロバイダーとリージョン
+Data Size	データサイズ
+Storage Duration	ストレージ期間
+Cold Data Size	コールドデータサイズ
+Grace Period	猶予期間
+Invoices	請求書
+Billing Admins	請求管理者
+Grace	猶予
+Period	期間
+Overdue Date	延滞期日
+Basic Settings	基本設定
+Integration Name	統合名
+Integration Description	統合の説明
+General purpose buckets	汎用バケット
+Bucket type	バケットタイプ
+General purpose	汎用
+Policies	ポリシー
+Policy Name	ポリシー名
+Validate Integration	統合の検証
+Solution	ソリューション
+Storage accounts	ストレージアカウント
+Data Storage	データストレージ
+Containers	コンテナ
+Storage Account Name	ストレージアカウント名
+Container Name	コンテナ名
+App registrations	アプリ登録
+Application registrations	アプリケーション登録
+Register an application	アプリケーションの登録
+Register	登録
+Register a New Application	新しいアプリケーションの登録
+Cluster Issuer URL	クラスター発行者URL
+Certificates & secrets	証明書とシークレット
+Federated credentials	フェデレーション資格情報
+Federated credential scenario	フェデレーション資格情報シナリオ
+Kubernetes accessing Azure resources	KubernetesによるAzureリソースへのアクセス
+Cluster issuer URL	クラスター発行者URL
+Service account name	サービスアカウント名
+Audience	対象ユーザー
+Job function roles	職務ロール
+Members	メンバー
+Configuration Name	構成名
+Test Integration	統合テスト
+Title	タイトル
+Multi-region	マルチリージョン
+Dual-region	デュアルリージョン
+model provider integration	モデルプロバイダー連携
+Text Embedding Functions	テキスト埋め込み関数
+Model-based Rankers	モデルベースのランカー
+Model Providers	モデルプロバイダー
+Model Provider	モデルプロバイダー
+Credential Information	認証情報
+Text Embedding Function	テキスト埋め込み関数
+Jobs	ジョブ
+Via web console	ウェブコンソール経由
+Via RESTful API	RESTful API経由
+On the organization level	組織レベルで
+On the project level	プロジェクトレベルで
+On the cluster level	クラスターレベルで
+privilege group	特権グループ
+Read-Write	読み書き
+Read-Only	読み取り専用
+Data Management	データ管理
+System Events	システムイベント
+File Path	ファイルパス
+File Naming Convention	ファイル命名規則
+Auditing	監査
+Storage Integration	ストレージ統合
+Forward Directory	転送ディレクトリ
+Audit Log	監査ログ
+Abnormal	異常
+Platform Audit Logs	プラットフォーム監査ログ
+Profile	プロファイル
+Account Settings	アカウント設定
+Unlink from Google	Googleとのリンクを解除
+Unlink	リンクを解除
+Unlink from GitHub	GitHubとのリンクを解除
+Account	アカウント
+Close Account	アカウントを閉鎖
+Send Verification Code	認証コードを送信
+Personal API keys	個人APIキー
+Member's personal API key	メンバーの個人APIキー
+Customized API keys	カスタマイズされたAPIキー
+Project Admins	プロジェクト管理者
+API Key Name	APIキー名
+API Key Access	APIキーアクセス
+SSO compatibility	SSO互換性
+Login method compatibility	ログイン方法の互換性
+Single sign-on URL	シングルサインオンURL
+Service Provider Details	サービスプロバイダーの詳細
+Applications	アプリケーション
+Web Application	Webアプリケーション
+App integration name	アプリ連携名
+Sign-in redirect URIs	サインインリダイレクトURI
+Controlled access	制御されたアクセス
+Client ID	クライアントID
+Client Secret	クライアントシークレット
+Okta domain	Oktaドメイン
+Identity Provider Details	IDプロバイダーの詳細
+Assignments	割り当て
+Go Back	戻る
+Owner	オーナー
+Entity ID	エンティティID
+Apps	アプリ
+Web and mobile apps	Webおよびモバイルアプリ
+Service provider details	サービスプロバイダーの詳細
+Attributes	属性
+Google Directory attributes	Googleディレクトリ属性
+Primary email	プライマリメール
+App attributes	アプリ属性
+Finish	完了
+User access	ユーザーアクセス
+Service status	サービスステータス
+Inherited	継承済み
+Override	上書き
+Overridden	上書き済み
+Inherit	継承する
+Enterprise apps	エンタープライズアプリ
+New application	新しいアプリケーション
+Single sign-on	シングルサインオン
+Basic SAML Configuration	基本SAML構成
+Users and groups	ユーザーとグループ
+App name	アプリ名
+General	一般
+check the box	チェックボックスをオンにする
+Sign On	サインオン
+Metadata URL	メタデータURL
+SP Entity ID	SPエンティティID
+Option 2 – Manual	オプション2 – 手動
+x.509 Certificate	x.509証明書
+Multiple data residency options	複数のデータレジデンシーオプション
+Network > Private Endpoint	ネットワーク > プライベートエンドポイント
+Via UI console	UIコンソール経由
+Via UI Console	UIコンソール経由
+Service Settings	サービス設定
+Via CLI	CLI経由
+Your VPCs	お客様のVPC
+Hosted zone configuration	ホストゾーン設定
+Alias	エイリアス
+Alias to VPC endpoint	VPCエンドポイントへのエイリアス
+Next: Resource >	次へ: リソース >
+Resource ID or alias	リソースIDまたはエイリアス
+Virtual network	仮想ネットワーク
+Go to resource	リソースに移動
+JSON View	JSONビュー
+Connection Status	接続ステータス
+Resource JSON	リソースJSON
+DNS configuration	DNS設定
+IP address	IPアドレス
+Basics	基本
+Instance details	インスタンスの詳細
+DNS Management	DNS管理
+Link name	リンク名
+Configuration	設定
+Completed	完了
+Approved	承認済み
+Connection	接続
+via UI Console	UIコンソール経由
+via CLI	CLI経由
+Target Service	ターゲットサービス
+Endpoint name	エンドポイント名
+Network	ネットワーク
+Subnetwork	サブネットワーク
+Project ID	プロジェクトID
+VPC networks	VPCネットワーク
+Subnet Name	サブネット名
+Private	プライベート
+Zone type	ゾーンタイプ
+Zone name	ゾーン名
+DNS name	DNS名
+Networks	ネットワーク
+IPv4 Address	IPv4アドレス
+running Dedicated	Dedicatedの実行
+free trial volume	無料トライアルボリューム
+once per organization	組織ごとに1回
+pay-as-you-go volume	従量課金ボリューム
+Data import	データインポート
+Data migration	データ移行
+Data merging	データマージ
+Topology	トポロジー
+Proxy	プロキシ
+Coordinator	コーディネーター
+Data Node	データノード
+Back to Last Step	前のステップに戻る
+Operations	運用
+Data management & security	データ管理とセキュリティ
+Internal Traffic	内部トラフィック
+External Traffic	外部トラフィック
+Same Security Group	同じセキュリティグループ
+VPC settings	VPC設定
+VPC and more	VPCなど
+Name tag auto-generation	名前タグの自動生成
+IPv4 CIDR block	IPv4 CIDRブロック
+Number of public subnets	パブリックサブネット数
+Number of private subnets	プライベートサブネット数
+Customize subnets CIDR blocks	サブネットCIDRブロックのカスタマイズ
+NAT gateways	NATゲートウェイ
+In 1 AZ	1つのAZ内
+DNS options	DNSオプション
+Additional tags	追加タグ
+Key	キー
+Resource map	リソースマップ
+Subnet Details	サブネットの詳細
+Security groups	セキュリティグループ
+Security group name	セキュリティグループ名
+Inbound rules	インバウンドルール
+Anywhere-IPv4	任意の場所-IPv4
+Destination	送信先
+Tags	タグ
+VPC dashboard	VPCダッシュボード
+Name tag	名前タグ
+Service settings	サービス設定
+Service name	サービス名
+Network settings	ネットワーク設定
+Private DNS names	プライベートDNS名
+General purpose bucket	汎用バケット
+Bucket	バケット
+Common trust policy	共通信頼ポリシー
+Specify permissions	権限の指定
+External ID	外部ID
+AWS account	AWSアカウント
+Another AWS account	別のAWSアカウント
+Require external ID	外部IDを必須にする
+EKS settings	EKS設定
+Attach policies	ポリシーのアタッチ
+Other permissions policies	その他の権限ポリシー
+Policy name	ポリシー名
+Policy details	ポリシーの詳細
+Quickstart	クイックスタート
+Manually	手動で
+EKS Settings	EKS設定
+Security Group ID	セキュリティグループID
+VPC endpoint ID	VPCエンドポイントID
+VPC Endpoint ID	VPCエンドポイントID
+VPC network	VPCネットワーク
+Purpose	目的
+Network Connectivity	ネットワーク接続
+Routers	ルーター
+Cloud NAT IP address	Cloud NAT IPアドレス
+IP address 1	IPアドレス1
+Reserve	予約
+Firewalls	ファイアウォール
+Network Services	ネットワークサービス
+Target details	ターゲットの詳細
+Static IP address	静的IPアドレス
+Fine-grained	きめ細かい
+IAM & Admin	IAMと管理
+Service Accounts	サービスアカウント
+Condition editor	条件エディタ
+Role launch stage	ロールの起動段階
+Alpha	アルファ
+General Availability	一般提供
+IAM custom role	IAMカスタムロール
+Service Account	サービスアカウント
+Principals with access	アクセス権を持つプリンシパル
+New principals	新しいプリンシパル
+Service Account User	サービスアカウントユーザー
+Role	ロール
+Service Account Token Creator	サービスアカウントトークン作成者
+Cloud Region	クラウドリージョン
+Service Account Email	サービスアカウントメール
+GKE Settings	GKE設定
+GKE Cluster Name	GKEクラスター名
+Subnet Names	サブネット名
+Private Service Connect Endpoint	Private Service Connect エンドポイント
+Undeploy	デプロイ解除
+Deploying	デプロイ中
+VPC Management	VPC管理
+Subnet Operations	サブネット操作
+Security Groups	セキュリティグループ
+Route Tables	ルートテーブル
+Internet Gateways	インターネットゲートウェイ
+NAT Gateways	NATゲートウェイ
+VPC Endpoints	VPCエンドポイント
+Launch Templates	起動テンプレート
+Tagging	タグ付け
+Role Management	ロール管理
+Policy Management	ポリシー管理
+Identity Verification	ID検証
+Bucket Operations	バケット操作
+Bucket Configuration	バケット設定
+Object Tagging	オブジェクトタグ付け
+Bucket Listing	バケットリスト
+Service-Linked Roles	サービスにリンクされたロール
+OIDC Provider	OIDCプロバイダー
+IAM Role Management	IAMロール管理
+EC2 Resources	EC2リソース
+EKS Cluster Operations	EKSクラスター操作
+Node Group Operations	ノードグループ操作
+Addon Management	アドオン管理
+Pod Resources	Podリソース

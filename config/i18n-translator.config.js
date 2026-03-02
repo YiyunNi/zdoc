@@ -1,70 +1,40 @@
-/** @type {import('./plugins/i18n-translator').PluginOptions} */
-export default {
-  glossaries: {
-    'ja-JP': [
-      { source: 'Organization Owner', target: '組織オーナー' },
-      { source: 'API keys', target: 'APIキー' }
-    ]
-  },
+/** @type {import('../plugins/i18n-translator/translator').Config} */
+module.exports = {
+  // Terms that must never be translated — kept verbatim in output.
+  // The confirmed EN→JA glossary lives in config/glossary.ja-JP.tsv.
   untranslatables: [
     'Zilliz Cloud',
     'RESTful API',
     'V2',
     ' | Cloud',
-    'collection',
-    'schema',
-    'partition',
-    'replica',
-    'shard',
     'mmap',
-    'analyzer',
-    'full text search',
-    'funciton',
-    'entity',
-    'dynamic field',
-    'load',
-    'release',
   ],
 
-  // Example configurations for different providers:
-
-  // OpenRouter (default)
+  // LLM configuration — falls back to environment variables if not set here.
+  // Supported providers: OpenRouter, OpenAI, Ollama (any OpenAI-compatible endpoint).
+  //
+  // OpenRouter example:
   // modelConfig: {
   //   baseUrl: 'https://openrouter.ai/api/v1',
   //   apiKey: process.env.MODEL_API_KEY,
-  //   modelId: 'google/gemma-3-27b-it:free'
+  //   modelId: 'google/gemma-3-27b-it:free',
   // },
-
-  // Ollama (local)
+  //
+  // Ollama (local) example:
   // modelConfig: {
   //   baseUrl: 'http://localhost:11434/v1/',
-  //   apiKey: 'ollama', // ignored but required
+  //   apiKey: 'ollama',
   //   modelId: 'llama3.2:latest',
-  //   provider: 'ollama'
   // },
-  // throttleConfig: {
-  //   minTime: 1000, // Faster for local models
-  //   maxConcurrent: 2
-  // },
-
-  // OpenAI
-  // modelConfig: {
-  //   baseUrl: 'https://api.openai.com/v1',
-  //   apiKey: process.env.OPENAI_API_KEY,
-  //   modelId: 'gpt-4'
-  // },
-
-  // Model configuration (will fallback to environment variables if not specified)
   modelConfig: {
     baseUrl: process.env.MODEL_API_BASE_URL,
-    apiKey: process.env.MODEL_API_KEY,
+    apiKey:  process.env.MODEL_API_KEY,
     modelId: process.env.MODEL_ID,
-    provider: process.env.MODEL_PROVIDER
   },
 
-  // Throttle configuration (will fallback to environment variables if not specified)
+  // Throttle settings — tune for your provider's rate limits.
   throttleConfig: {
-    minTime: parseInt(process.env.THROTTLE_MIN_TIME) || 1000,
-    maxConcurrent: parseInt(process.env.THROTTLE_MAX_CONCURRENT) || 1
-  }
-};
+    minTime:       parseInt(process.env.THROTTLE_MIN_TIME)       || 1000, // ms between requests
+    maxConcurrent: parseInt(process.env.THROTTLE_MAX_CONCURRENT) || 1,
+  },
+}
