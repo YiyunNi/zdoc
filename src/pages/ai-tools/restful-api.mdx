@@ -1,0 +1,92 @@
+---
+title: RESTful API — AI Context Prompt
+description: AI context prompt for Zilliz Cloud RESTful API v2 — auth, search, CRUD, and rate limits.
+---
+
+# RESTful API Context Prompt
+
+Copy this prompt into your AI coding assistant to get accurate Zilliz Cloud RESTful API v2 guidance.
+
+**Direct import (Cursor / Windsurf):**
+```
+@https://docs.zilliz.com/ai-tools/restful-api.md
+```
+
+---
+
+```text
+# Zilliz Cloud RESTful API v2 — AI Assistant Context
+
+Base URL: https://<cluster-endpoint>.zillizcloud.com
+All endpoints: /v2/vectordb/
+
+## Auth
+Authorization: Bearer <api-key>
+Content-Type: application/json
+
+## Search
+POST /v2/vectordb/entities/search
+{
+  "collectionName": "my_collection",
+  "data": [[0.3, -0.6, 0.18]],
+  "annsField": "vector",
+  "filter": "category == \"tech\"",
+  "limit": 10,
+  "outputFields": ["id", "title"],
+  "searchParams": {"metricType": "COSINE"}
+}
+
+## Hybrid Search
+POST /v2/vectordb/entities/hybrid_search
+{
+  "collectionName": "my_collection",
+  "search": [
+    {"data": [[...dense...]], "annsField": "dense", "limit": 20, "metricType": "COSINE"},
+    {"data": [[...sparse...]], "annsField": "sparse", "limit": 20, "metricType": "IP"}
+  ],
+  "rerank": {"strategy": "rrf", "params": {"k": 60}},
+  "limit": 5
+}
+
+## Insert / Upsert / Delete
+POST /v2/vectordb/entities/insert   → {"collectionName": "...", "data": [...]}
+POST /v2/vectordb/entities/upsert   → same body
+POST /v2/vectordb/entities/delete   → {"collectionName": "...", "filter": "id in [1,2]"}
+
+## Query (filter only)
+POST /v2/vectordb/entities/query
+{"collectionName": "...", "filter": "score > 0.8", "outputFields": ["id"], "limit": 20}
+
+## Collection CRUD
+POST /v2/vectordb/collections/create  → {"collectionName": "...", "dimension": 768, "metricType": "COSINE"}
+GET  /v2/vectordb/collections/list    → ?dbName=default
+POST /v2/vectordb/collections/load    → {"collectionName": "..."}
+POST /v2/vectordb/collections/drop    → {"collectionName": "..."}
+
+## Response Format
+{"code": 0, "data": [...]}   // code 0 = success
+{"code": 1800, "message": "rate limit exceeded"}  // 1800 = rate limit
+
+## Error Codes
+0: success | 800: not loaded | 1100: invalid param | 1800: rate limit | 65535: internal error
+
+## Rules
+- Load collection before searching (POST /collections/load)
+- Check code == 0 before reading data
+- limit + offset < 16,384
+- Always send Content-Type: application/json
+- Retry only on 429 and 5xx (not 4xx)
+- Use exponential backoff on 429
+```
+
+---
+
+## Where to add this prompt
+
+| Tool | Location |
+|------|----------|
+| Cursor | `.cursor/rules/zilliz-rest.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+
+Full reference: [RESTful API docs](/reference/restful)

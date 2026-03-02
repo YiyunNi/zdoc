@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Link from '@docusaurus/Link'
 import Heading from '@theme-original/Heading';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
+import { useLocation } from '@docusaurus/router';
 import styles from './styles.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
@@ -196,168 +197,172 @@ const Banner = ({ message, backgroundColor = '#f0f0f0', textColor = '#333', onCl
   );
 }
 
-export default function HeadingWrapper(props) {
-  try {
-    const { frontMatter, metadata } = useDoc();
-    const { beta, notebook, tags, slug, added_since, last_modified, deprecate_since } = frontMatter;
-    var tag = metadata.title.endsWith('BYOC') ? 'BYOC' : beta;
-    const { siteConfig } = useDocusaurusContext();
+function HeadingWithDocContext(props) {
+  const { frontMatter, metadata } = useDoc();
+  const { beta, notebook, tags, slug, added_since, last_modified, deprecate_since } = frontMatter;
+  var tag = metadata.title.endsWith('BYOC') ? 'BYOC' : beta;
+  const { siteConfig } = useDocusaurusContext();
 
-    if (props.as === 'h1' && tag) {
-      const linkable = tag === 'CONTACT SALES' || tag === 'BYOC'
-      const destination_url = 'https://zilliz.com/contact-sales'
+  if (props.as === 'h1' && tag) {
+    const linkable = tag === 'CONTACT SALES' || tag === 'BYOC'
+    const destination_url = 'https://zilliz.com/contact-sales'
 
-      props = {
-        as: "h1",
-        id: props.id,
-        children: tag ? BetaTagComponent(props.children, tag, linkable, destination_url) : props.children
-      }
+    props = {
+      as: "h1",
+      id: props.id,
+      children: tag ? BetaTagComponent(props.children, tag, linkable, destination_url) : props.children
     }
+  }
 
-    if (props.as.match(/h[2-6]/) && props.children.includes('|')) {
-      const [title, tag] = props.children.split('|')
-      const linkable = tag?.trim() === 'CONTACT SALES'
-      const destination_url = 'https://zilliz.com/contact-sales'
+  if (props.as.match(/h[2-6]/) && typeof props.children === 'string' && props.children.includes('|')) {
+    const [title, tag] = props.children.split('|')
+    const linkable = tag?.trim() === 'CONTACT SALES'
+    const destination_url = 'https://zilliz.com/contact-sales'
 
-      props = {
-        as: props.as,
-        id: props.id,
-        children: tag ? BetaTagComponent(title.trim(), tag?.trim(), linkable, destination_url) : title.trim()
-      }
+    props = {
+      as: props.as,
+      id: props.id,
+      children: tag ? BetaTagComponent(title.trim(), tag?.trim(), linkable, destination_url) : title.trim()
     }
+  }
 
-    const Colab = require('@site/static/icons/colab-icon.svg').default;
-    const Github = require('@site/static/icons/github-icon.svg').default;
+  const Colab = require('@site/static/icons/colab-icon.svg').default;
+  const Github = require('@site/static/icons/github-icon.svg').default;
 
-    return (
-      <>
-        {
-          props.as === 'h1' && siteConfig.baseUrl === '/ja-JP/' && slug !== '/home' && (
-            <Banner
-              message="[説明] このページは機械翻訳された日本語版です。内容に誤りがございましたら、報告していただけると助かります。"
-              backgroundColor="rgb(255, 248, 230)"/>
-          )
-        }
+  return (
+    <>
+      {
+        props.as === 'h1' && siteConfig.baseUrl === '/ja-JP/' && slug !== '/home' && (
+          <Banner
+            message="[説明] このページは機械翻訳された日本語版です。内容に誤りがございましたら、報告していただけると助かります。"
+            backgroundColor="rgb(255, 248, 230)"/>
+        )
+      }
 
-        { tags?.length > 0 && <span style={{ fontWeight: '400', color: 'rgb(18, 17, 66)'  }}>{tags[0]}</span> }
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
-          <Heading {...props} />
-          { props.as === 'h1' && <CopyPage /> }
-        </div>
+      { tags?.length > 0 && <span style={{ fontWeight: '400', color: 'rgb(18, 17, 66)'  }}>{tags[0]}</span> }
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+        <Heading {...props} />
+        { props.as === 'h1' && <CopyPage /> }
+      </div>
 
-        {
-          props.as === 'h1' && (added_since || last_modified || deprecate_since) && (
-            <div style={{
-              display: 'flex',
-              gap: '1rem',
-              marginBottom: '1.5rem',
-              padding: '0.75rem 0',
-              borderTop: '1px solid #e9ecef',
-              borderBottom: '1px solid #e9ecef'
-            }}>
-              { added_since && (
+      {
+        props.as === 'h1' && (added_since || last_modified || deprecate_since) && (
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            marginBottom: '1.5rem',
+            padding: '0.75rem 0',
+            borderTop: '1px solid #e9ecef',
+            borderBottom: '1px solid #e9ecef'
+          }}>
+            { added_since && (
+              <span style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.875rem',
+                color: '#495057'
+              }}>
                 <span style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.875rem',
-                  color: '#495057'
+                  gap: '0.25rem',
+                  padding: '0.25rem 0.5rem',
+                  backgroundColor: '#e7f3ff',
+                  borderRadius: '12px',
+                  fontSize: '0.75rem',
+                  color: '#0066cc'
                 }}>
-                  <span style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.25rem',
-                    padding: '0.25rem 0.5rem',
-                    backgroundColor: '#e7f3ff',
-                    borderRadius: '12px',
-                    fontSize: '0.75rem',
-                    color: '#0066cc'
-                  }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="12" y1="8" x2="12" y2="16"></line>
-                      <line x1="8" y1="12" x2="16" y2="12"></line>
-                    </svg>
-                    Added
-                  </span>
-                  <b>{added_since}</b>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                  Added
                 </span>
-              ) }
-              { last_modified && (
+                <b>{added_since}</b>
+              </span>
+            ) }
+            { last_modified && (
+              <span style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.875rem',
+                color: '#495057'
+              }}>
                 <span style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.875rem',
-                  color: '#495057'
+                  gap: '0.25rem',
+                  padding: '0.25rem 0.5rem',
+                  backgroundColor: '#f0f0f0',
+                  borderRadius: '12px',
+                  fontSize: '0.75rem',
+                  color: '#666666'
                 }}>
-                  <span style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.25rem',
-                    padding: '0.25rem 0.5rem',
-                    backgroundColor: '#f0f0f0',
-                    borderRadius: '12px',
-                    fontSize: '0.75rem',
-                    color: '#666666'
-                  }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12,6 12,12 16,14"></polyline>
-                    </svg>
-                    Modified
-                  </span>
-                  <b>{last_modified}</b>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12,6 12,12 16,14"></polyline>
+                  </svg>
+                  Modified
                 </span>
-              ) }
-              { deprecate_since && (
+                <b>{last_modified}</b>
+              </span>
+            ) }
+            { deprecate_since && (
+              <span style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.875rem',
+                color: '#dc3545'
+              }}>
                 <span style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.5rem',
-                  fontSize: '0.875rem',
+                  gap: '0.25rem',
+                  padding: '0.25rem 0.5rem',
+                  backgroundColor: '#ffe6e6',
+                  borderRadius: '12px',
+                  fontSize: '0.75rem',
                   color: '#dc3545'
                 }}>
-                  <span style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.25rem',
-                    padding: '0.25rem 0.5rem',
-                    backgroundColor: '#ffe6e6',
-                    borderRadius: '12px',
-                    fontSize: '0.75rem',
-                    color: '#dc3545'
-                  }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                      <line x1="12" y1="9" x2="12" y2="13"></line>
-                      <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                    Deprecated
-                  </span>
-                  <b>{deprecate_since}</b>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  Deprecated
                 </span>
-              ) }
-            </div>
-          )
-        }
+                <b>{deprecate_since}</b>
+              </span>
+            ) }
+          </div>
+        )
+      }
 
-        {
-          props.as === 'h1' && notebook && (
-            <div id="exec" style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
-              <OpenInButtonLink caption="colab" icon={<Colab />} notebook={notebook} />
-              <OpenInButtonLink caption="github codespaces" icon={<Github />} />
-            </div>
-          )
-        }
-      </>
-    );
-  } catch (error) {
-    // console.error(error);
-    return (
-      <>
-        <Heading {...props} />
-      </>
-    )
+      {
+        props.as === 'h1' && notebook && (
+          <div id="exec" style={{ marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
+            <OpenInButtonLink caption="colab" icon={<Colab />} notebook={notebook} />
+            <OpenInButtonLink caption="github codespaces" icon={<Github />} />
+          </div>
+        )
+      }
+    </>
+  );
+}
+
+export default function HeadingWrapper(props) {
+  const { pathname } = useLocation();
+  // useDoc() only works inside <DocProvider>, which only exists on /docs and /reference pages.
+  // For 404, src/pages/ markdown files, and any other standalone pages we skip doc-specific
+  // rendering entirely. renderToString (used by Docusaurus SSG) does not support Error Boundary
+  // recovery or try/catch around hook context errors, so a URL guard is the only safe approach.
+  const isDocPage = /^\/(docs|reference|ja-JP\/(docs|reference))\b/.test(pathname);
+  if (!isDocPage) {
+    return <Heading {...props} />;
   }
+  return <HeadingWithDocContext {...props} />;
 }

@@ -1,0 +1,73 @@
+---
+title: Collection Management — AI Context Prompt
+description: AI context prompt for Zilliz Cloud collection management — schemas, indexes, partitions.
+---
+
+# Collection Management Context Prompt
+
+Copy this prompt into your AI coding assistant to get accurate Zilliz Cloud collection management guidance.
+
+**Direct import (Cursor / Windsurf):**
+```
+@https://docs.zilliz.com/ai-tools/collections.md
+```
+
+---
+
+```text
+# Zilliz Cloud Collection Management — AI Assistant Context
+
+You help developers manage collections, indexes, and partitions on Zilliz Cloud.
+Always use MilvusClient (new unified API).
+
+## Quick Setup
+client.create_collection(collection_name="my_col", dimension=768, metric_type="COSINE")
+
+## Custom Schema
+from pymilvus import MilvusClient, DataType
+
+schema = MilvusClient.create_schema(auto_id=False, enable_dynamic_field=True)
+schema.add_field("id",     DataType.INT64,        is_primary=True)
+schema.add_field("vector", DataType.FLOAT_VECTOR, dim=768)
+schema.add_field("text",   DataType.VARCHAR,       max_length=512)
+
+index_params = client.prepare_index_params()
+index_params.add_index("id",     index_type="STL_SORT")
+index_params.add_index("vector", index_type="AUTOINDEX", metric_type="COSINE")
+
+client.create_collection("my_col", schema=schema, index_params=index_params)
+
+## Load / Release
+client.load_collection("my_col")    # required before search
+client.release_collection("my_col") # free memory
+
+## Partitions
+client.create_partition("my_col", partition_name="region_us")
+client.load_partitions("my_col", partition_names=["region_us"])
+client.list_partitions("my_col")
+
+## Index Types
+- AUTOINDEX (level 1–5): recommended, auto-tuned
+- HNSW (M, efConstruction): high recall, more RAM
+- IVF_FLAT (nlist): lower RAM
+- FLAT: brute-force exact, slow at scale
+
+## Rules
+- Always create an index before loading
+- Max 1,024 partitions per collection
+- Max 16,384 collections per cluster
+- Don't load without an index (will error)
+- Use enable_dynamic_field=True for flexible schemas
+```
+
+---
+
+## Where to add this prompt
+
+| Tool | Location |
+|------|----------|
+| Cursor | `.cursor/rules/zilliz-collections.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+
+Full reference: [Collection docs](/docs/manage-collections) · [Index docs](/docs/manage-indexes)

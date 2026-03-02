@@ -1,0 +1,80 @@
+---
+title: BYOC — AI Context Prompt
+description: AI context prompt for Zilliz Cloud BYOC — cluster setup, security, and migration patterns.
+---
+
+# BYOC Context Prompt
+
+Copy this prompt into your AI coding assistant to get accurate Zilliz Cloud BYOC guidance.
+
+**Direct import (Cursor / Windsurf):**
+```
+@https://docs.zilliz.com/ai-tools/byoc.md
+```
+
+---
+
+```text
+# Zilliz Cloud BYOC — AI Assistant Context
+
+You help developers work with Zilliz Cloud BYOC (Bring Your Own Cloud).
+BYOC runs the data plane inside the customer's cloud (AWS/GCP/Azure).
+The control plane is managed by Zilliz. The API is identical to SaaS.
+
+## What BYOC Is
+- Control plane: managed by Zilliz (upgrades, monitoring)
+- Data plane: runs in customer's VPC (compute, object storage)
+- Data stays in customer's cloud — vectors never leave the VPC
+- Same SDK and endpoints as SaaS
+
+## Setup Flow
+1. Create Zilliz Cloud account at cloud.zilliz.com
+2. Projects → Create Project → BYOC
+3. Select cloud provider and region
+4. Deploy Zilliz-provided CloudFormation (AWS) or Terraform (GCP/Azure) template
+5. Return to console — project auto-connects
+6. Create a cluster inside the project
+
+## Connection (same as SaaS)
+from pymilvus import MilvusClient
+client = MilvusClient(
+    uri="https://<byoc-endpoint>.zillizcloud.com",
+    token="<api-key>",
+)
+
+## Security
+- IP Allowlist: Console → Cluster → Security → IP Allowlist
+- API keys scoped to project: Project Settings → API Keys
+- RBAC roles: Org Admin, Project Admin, Project Member, Billing Admin
+- Database-level users: client.create_user() / client.grant_role()
+- Audit logging: Project Settings → Audit Logs → stored in your cloud storage
+
+## Scaling
+- Scale query nodes in Console → Cluster Settings
+- Rolling restart, no downtime
+- Choose CU type: Performance (RAM) or Capacity (storage)
+
+## Backup & Restore
+- Enable automatic backups in Cluster Settings
+- Backup files stored in your S3/GCS bucket
+- Restore: Cluster → Backups → Restore (creates new cluster)
+
+## Rules
+- Complete cloud infra setup (IAM, VPC, storage) before creating BYOC project
+- Don't delete BYOC agent resources in your cloud account
+- Use dedicated CU types for production
+- Store API keys in environment variables
+- Configure maintenance windows to control upgrade timing
+```
+
+---
+
+## Where to add this prompt
+
+| Tool | Location |
+|------|----------|
+| Cursor | `.cursor/rules/zilliz-byoc.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+
+Full reference: [BYOC docs](/docs/byoc/byoc-intro)

@@ -1,0 +1,83 @@
+---
+title: Python SDK — AI Context Prompt
+description: AI context prompt for Zilliz Cloud Python SDK (MilvusClient). Use in Cursor, Copilot, or any AI coding assistant.
+---
+
+# Python SDK Context Prompt
+
+Copy this prompt into your AI coding assistant to get accurate Zilliz Cloud Python SDK guidance.
+
+**Direct import (Cursor / Windsurf):**
+```
+@https://docs.zilliz.com/ai-tools/python-sdk.md
+```
+
+---
+
+```text
+# Zilliz Cloud Python SDK — AI Assistant Context
+
+You are helping a developer use the Zilliz Cloud Python SDK (pymilvus). Always use
+MilvusClient (the new unified API) unless the user explicitly asks for ORM-style code.
+
+## Connection
+
+from pymilvus import MilvusClient
+
+client = MilvusClient(
+    uri="https://<cluster-endpoint>.zillizcloud.com",
+    token="<api-key>",
+)
+
+## Quick Collection Setup
+
+client.create_collection(
+    collection_name="my_collection",
+    dimension=768,
+    metric_type="COSINE",  # L2 | IP | COSINE
+)
+
+## Search
+
+results = client.search(
+    collection_name="my_collection",
+    data=[[0.1, 0.2, ...]],
+    limit=10,
+    filter='category == "tech"',
+    output_fields=["id", "text"],
+    search_params={"metric_type": "COSINE"},
+)
+
+## Hybrid Search
+
+from pymilvus import AnnSearchRequest, RRFRanker
+
+results = client.hybrid_search(
+    collection_name="my_collection",
+    reqs=[
+        AnnSearchRequest([[...dense...]], "dense", {"metric_type": "COSINE"}, limit=20),
+        AnnSearchRequest([[...sparse...]], "sparse", {"metric_type": "IP"}, limit=20),
+    ],
+    ranker=RRFRanker(k=60),
+    limit=5,
+)
+
+## Key Rules
+- Load collection before searching: client.load_collection("my_collection")
+- Always match metric_type between index and search
+- limit + offset must be < 16,384
+- Max 1,024 partitions per collection; max 16,384 collections per cluster
+```
+
+---
+
+## Where to add this prompt
+
+| Tool | Location |
+|------|----------|
+| Cursor | `.cursor/rules/zilliz-python.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+| JetBrains AI | `.jb/ai-context.md` |
+
+Full reference: [Python SDK docs](/reference/python)

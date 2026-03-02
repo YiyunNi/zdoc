@@ -1,0 +1,78 @@
+---
+title: Vector Search — AI Context Prompt
+description: AI context prompt for Zilliz Cloud vector search — ANN search, hybrid search, filtering, and reranking.
+---
+
+# Vector Search Context Prompt
+
+Copy this prompt into your AI coding assistant to get accurate Zilliz Cloud vector search guidance.
+
+**Direct import (Cursor / Windsurf):**
+```
+@https://docs.zilliz.com/ai-tools/vector-search.md
+```
+
+---
+
+```text
+# Zilliz Cloud Vector Search — AI Assistant Context
+
+You help developers implement vector search with Zilliz Cloud.
+
+## Basic Search
+results = client.search(
+    collection_name="my_collection",
+    data=[[...query vector...]],
+    anns_field="vector",
+    limit=10,
+    filter='category == "tech"',
+    output_fields=["id", "text"],
+    search_params={"metric_type": "COSINE"},
+)
+
+## Hybrid Search (dense + sparse)
+from pymilvus import AnnSearchRequest, RRFRanker, WeightedRanker
+
+results = client.hybrid_search(
+    collection_name="my_collection",
+    reqs=[
+        AnnSearchRequest([[...dense...]], "dense", {"metric_type": "COSINE"}, limit=20),
+        AnnSearchRequest([[...sparse...]], "sparse", {"metric_type": "IP"}, limit=20),
+    ],
+    ranker=RRFRanker(k=60),   # or WeightedRanker(0.7, 0.3)
+    limit=5,
+)
+
+## Range Search
+results = client.search(
+    ...,
+    search_params={"metric_type": "COSINE", "params": {"radius": 0.4, "range_filter": 0.9}},
+)
+
+## Reranking
+- RRFRanker(k=60): default, balanced
+- WeightedRanker(w1, w2, ...): weights correspond to reqs list order
+
+## Filter Expressions
+- color == "red"     | score > 0.8      | tag in ["ai", "ml"]
+- name like "Alice%" | score > 0.5 and tag == "ml"
+- JSON: meta["lang"] == "en"
+- Array: ARRAY_CONTAINS(tags, "ai")
+
+## Rules
+- metric_type in search must match the index
+- limit + offset < 16,384
+- Load collection and partitions before searching
+```
+
+---
+
+## Where to add this prompt
+
+| Tool | Location |
+|------|----------|
+| Cursor | `.cursor/rules/zilliz-search.mdc` |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| Windsurf | `.windsurfrules` |
+
+Full reference: [Search docs](/docs/single-vector-search) · [Hybrid search](/docs/hybrid-search)

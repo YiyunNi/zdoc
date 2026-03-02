@@ -102,6 +102,51 @@
     background-repeat: no-repeat;
 }
 
+.iconPython {
+    display: inline-block;
+    background-image: url('/icons/lang-python.svg');
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iconVector {
+    display: inline-block;
+    background-image: url('/icons/search.svg');
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iconCollection {
+    display: inline-block;
+    background-image: url('/icons/collection.svg');
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iconBYOC {
+    display: inline-block;
+    background-image: url('/icons/plan-byoc.svg');
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.iconRESTful {
+    display: inline-block;
+    background-image: url('/icons/lang-restful.svg');
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .break {
     flex-basis: 100%;
     height: 0;
