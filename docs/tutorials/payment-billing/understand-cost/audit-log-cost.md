@@ -111,7 +111,7 @@ No. Audit logs CU charges only apply while the feature is enabled and the cluste
 Intra-region forwarding is free. Cross-region transfer (not currently supported) may incur additional charges.
 
 1. **If audit logs are enabled but no logs are actually generated, will I still be charged?**
-Yes. Audit logs CU charges are based on the cluster query CU size and runtime while the feature is enabled, regardless of whether logs are generated. If no logs are generated, data transfer costs may be $0.
+Yes. Audit logs CU charges are based on the cluster query CU size and runtime while the feature is enabled, regardless of whether logs are generated. If no logs are generated, data transfer costs may be &#36;0.
 
 1. **Does the billing vary depending on the actual volume of logs generated (e.g., high QPS vs. low QPS workloads)?**
  No. Audit logs CU costs depend only on your cluster’s query CU size and runtime, not on the volume of logs generated.

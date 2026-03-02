@@ -50,21 +50,21 @@ The following table offers a quick comparison of the three cluster types in diff
      <td><p>500~1500</p></td>
      <td><p>sub-10 ms</p></td>
      <td><p>1.5 million 768-dim vectors</p></td>
-     <td><p>from $65/mo.</p></td>
+     <td><p>from &#36;65/mo.</p></td>
    </tr>
    <tr>
      <td><p><strong>Capacity-optimized</strong></p></td>
      <td><p>100~300</p></td>
      <td><p>tens-ms</p></td>
      <td><p>5 million 768-dim vectors</p></td>
-     <td><p>from $20/mo.</p></td>
+     <td><p>from &#36;20/mo.</p></td>
    </tr>
    <tr>
      <td><p><strong>Tiered-storage</strong></p></td>
      <td><p>5~20</p></td>
      <td><p>hundreds-ms</p></td>
      <td><p>20 million 768-dim vectors</p></td>
-     <td><p>from $7/mo.</p></td>
+     <td><p>from &#36;7/mo.</p></td>
    </tr>
 </table>
 

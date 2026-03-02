@@ -34,7 +34,7 @@ Data transfer can be traffic coming into Zilliz Cloud, leaving Zilliz Cloud out 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Each organization receives a $10 monthly data transfer discount, covering the first 100 GB.</p>
+<p>Each organization receives a &#36;10 monthly data transfer discount, covering the first 100 GB.</p>
 
 </Admonition>
 
@@ -79,7 +79,7 @@ You will be billed for data transfer in the following scenarios:
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>If the data transfer occurs within the same cloud region, the cost may be $0.</p>
+<p>If the data transfer occurs within the same cloud region, the cost may be &#36;0.</p>
 <p>If you use a private endpoint to conduct operations like search or query, no data transfer cost will incur.</p>
 
 </Admonition>
@@ -108,7 +108,7 @@ Suppose your cluster is deployed in AWS us-east-1 (Virginia) and you return sear
 
 - **Source Continent**: North America
 
-- **Unit Price**: $0.09/GB (based on public internet egress rate from North America)
+- **Unit Price**: &#36;0.09/GB (based on public internet egress rate from North America)
 
 The data transfer cost is `$0.09 × 500 = $45.00`.
 

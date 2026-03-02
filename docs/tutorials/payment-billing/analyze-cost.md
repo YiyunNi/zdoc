@@ -101,7 +101,7 @@ You can combine multiple filters based on your analysis needs to view visualized
 
 </Admonition>
 
-You can also use the [Query Daily Usage](/reference/restful/query-daily-usage-v2) API to query the daily usage of an organization. Usage details you get from this RESTful API are precise to 8 decimal places. If you need to understand how daily costs are accumulated and rounded to 2 decimal places, we recommend using the RESTful API. By adding up the daily usage, you will obtain a total usage amount that is precise to 8 decimal places. Then round this total usage amount to 2 decimal places (eg. $60.56724390 is rounded to $60.57). The final total usage amount should be consistent with the figured displayed on your invoice.
+You can also use the [Query Daily Usage](/reference/restful/query-daily-usage-v2) API to query the daily usage of an organization. Usage details you get from this RESTful API are precise to 8 decimal places. If you need to understand how daily costs are accumulated and rounded to 2 decimal places, we recommend using the RESTful API. By adding up the daily usage, you will obtain a total usage amount that is precise to 8 decimal places. Then round this total usage amount to 2 decimal places (eg. &#36;60.56724390 is rounded to &#36;60.57). The final total usage amount should be consistent with the figured displayed on your invoice.
 
 The following example demonstrates how to query the daily usage of an organization.
 

@@ -56,7 +56,7 @@ Import and bulk insert operations do **not** incur costs.
 Vector Database Cost (Write) = vCU Unit Price x Write vCU Usage 
 ```
 
-- **vCU Unit Price:** $4 per million vCUs.
+- **vCU Unit Price:** &#36;4 per million vCUs.
 
 - **Write vCU Usage:** Calculated based on the data size involved in write operations.
 
@@ -64,7 +64,7 @@ Vector Database Cost (Write) = vCU Unit Price x Write vCU Usage
 
 The table below provides a quick reference chart of vCU usage and costs for writing specific amounts of data into a Serverless cluster. 
 
-For larger datasets, simply scale the vCU usage and cost proportionately. For example, writing 10 million 768-dimensional vectors would use approximately 7.5 million vCUs and cost around $30.
+For larger datasets, simply scale the vCU usage and cost proportionately. For example, writing 10 million 768-dimensional vectors would use approximately 7.5 million vCUs and cost around &#36;30.
 
 <table>
    <tr>
@@ -75,22 +75,22 @@ For larger datasets, simply scale the vCU usage and cost proportionately. For ex
    <tr>
      <td><p>1 million 128-dim vectors</p></td>
      <td><p>0.125</p></td>
-     <td><p>$0.5</p></td>
+     <td><p>&#36;0.5</p></td>
    </tr>
    <tr>
      <td><p>1 million 768-dim vectors</p></td>
      <td><p>0.75</p></td>
-     <td><p>$3</p></td>
+     <td><p>&#36;3</p></td>
    </tr>
    <tr>
      <td><p>1 million 1536-dim vectors</p></td>
      <td><p>1.5</p></td>
-     <td><p>$6</p></td>
+     <td><p>&#36;6</p></td>
    </tr>
    <tr>
      <td><p>1 million 2560-dim vectors</p></td>
      <td><p>2.5</p></td>
-     <td><p>$10</p></td>
+     <td><p>&#36;10</p></td>
    </tr>
 </table>
 
@@ -139,7 +139,7 @@ This cost item measures the resources consumed by [search, hybrid search, and qu
 Vector Database Cost (Read) = vCU Unit Price x Read vCU Usage 
 ```
 
-- **vCU Unit Price:** $4 per million vCUs
+- **vCU Unit Price:** &#36;4 per million vCUs
 
 - **Read vCU Usage:** Depends on the following 3 factors.
 
@@ -170,47 +170,47 @@ The table below provides examples of vCU usage and costs for 1 million read requ
    <tr>
      <td><p>1 million 128-dim vectors</p></td>
      <td><p>5</p></td>
-     <td><p>$20</p></td>
+     <td><p>&#36;20</p></td>
    </tr>
    <tr>
      <td><p>1 million 768-dim vectors</p></td>
      <td><p>15</p></td>
-     <td><p>$60</p></td>
+     <td><p>&#36;60</p></td>
    </tr>
    <tr>
      <td><p>5 million 768-dim vectors</p></td>
      <td><p>35</p></td>
-     <td><p>$140</p></td>
+     <td><p>&#36;140</p></td>
    </tr>
    <tr>
      <td><p>10 million 768-dim vectors</p></td>
      <td><p>55</p></td>
-     <td><p>$220</p></td>
+     <td><p>&#36;220</p></td>
    </tr>
    <tr>
      <td><p>1 million 1536-dim vectors</p></td>
      <td><p>25</p></td>
-     <td><p>$100</p></td>
+     <td><p>&#36;100</p></td>
    </tr>
    <tr>
      <td><p>10 million 1536-dim vectors</p></td>
      <td><p>75</p></td>
-     <td><p>$300</p></td>
+     <td><p>&#36;300</p></td>
    </tr>
    <tr>
      <td><p>100 million 1536-dim vectors</p></td>
      <td><p>290</p></td>
-     <td><p>$1160</p></td>
+     <td><p>&#36;1160</p></td>
    </tr>
    <tr>
      <td><p>10 billion 1536-dim vectors</p></td>
      <td><p>1,495</p></td>
-     <td><p>$5980</p></td>
+     <td><p>&#36;5980</p></td>
    </tr>
    <tr>
      <td><p>1 million 2560-dim vectors</p></td>
      <td><p>30</p></td>
-     <td><p>$120</p></td>
+     <td><p>&#36;120</p></td>
    </tr>
 </table>
 
