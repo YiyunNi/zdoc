@@ -1,420 +1,320 @@
 ---
-title: "メトリクスとアラートのリファレンス | BYOC"
+title: "メトリクスリファレンス | BYOC"
 slug: /metrics-alerts-reference
-sidebar_label: "メトリクスとアラートのリファレンス"
+sidebar_label: "メトリクスリファレンス"
 beta: FALSE
 notebook: FALSE
-description: "このリファレンスでは、Zilliz Cloudクラスターの監視メトリクスの説明、および組織およびプロジェクトレベルで設定できるアラートターゲットについて説明しています。 | BYOC"
+description: "Zilliz Cloud は、メトリクスを組織とプロジェクトの2つのレベルに分類します | BYOC"
 type: origin
-token: Nn8fwYNLmiBZLBkeJIycUARFnfd
+token: KnnBwce9JifxvXkd070cvgUPnag
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - metrics
-  - alerts
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - ベクトルデータベース
+  - クラウド
+  - メトリクス
+  - アラート
+  - 次元削減
+  - HNSWアルゴリズム
+  - ベクトル類似性検索
+  - 近似最近傍探索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# メトリクスとアラートのリファレンス
+# メトリクスリファレンス
 
-このリファレンスでは、Zilliz Cloudクラスターの監視メトリクスの説明、および組織およびプロジェクトレベルで設定できるアラートターゲットについて説明しています。
+Zilliz Cloudは、メトリクスを**組織**と**プロジェクト**の2つのレベルに分類します。
 
-## クラスタメトリクス{#cluster-metrics}
+- **組織レベルのメトリクス**: すべてのプロジェクトにわたるアカウント全体のステータス（例：ライセンスクレジット、使用状況）を反映します。
 
-Zilliz Cloudコンソールの**メトリクス**タブには、さまざまなグラフィカルな表現が表示されます。
+- **プロジェクトレベルのメトリクス**: 単一プロジェクト内のクラスターリソース、容量、パフォーマンス、およびデータを反映します。
 
-表には、各メトリックの説明と、クラスターリソースの使用量がしきい値を超えた場合に実行することをお勧めするアクションが示されています。
+<Admonition type="info" icon="📘" title="Notes">
 
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>現在、無料クラスタではCU容量という1つのメトリックしか提供されていません。高度なメトリックの範囲を解除するには、<a href="./manage-cluster">プランレベルをアップグレード</a>してください。</p>
+<p>ほとんどのメトリクスはアラートをサポートしています。アラートは、一定期間にわたってメトリクスを条件（演算子 + しきい値）と比較し、条件が満たされたときに通知します。設定については、<a href="./manage-organization-alerts">組織アラートの管理</a>および<a href="./manage-project-alerts">プロジェクトアラートの管理</a>を参照してください。</p>
 
 </Admonition>
 
+## 組織レベルのメトリクス{#organization-level-metrics}
+
+組織レベルのメトリクスは、組織内のすべてのプロジェクトにわたるライセンス関連の問題を追跡するのに役立ちます。
+
 <table>
    <tr>
-     <th><p>メトリック名</p></th>
-     <th><p>ユニット</p></th>
-     <th><p>説明する</p></th>
-     <th><p>推奨アクション</p></th>
+     <th><p>メトリクス</p></th>
+     <th><p>単位</p></th>
+     <th><p>説明</p></th>
+     <th><p>推奨されるアクション</p></th>
    </tr>
    <tr>
-     <td colspan="4"><p><strong>ポッドリソース</strong></p></td>
+     <td><p>ライセンス有効期限</p></td>
+     <td><p>日</p></td>
+     <td><p>組織ライセンスの有効期限が切れるまでの残り日数。</p></td>
+     <td><ul><li><p><strong>60日未満</strong>: 更新プロセスを開始します。</p></li><li><p><strong>期限切れ</strong>: すぐに更新/アップグレードして、完全な機能（例：クラスターの作成/スケールアップ）を復元します。</p></li></ul></td>
    </tr>
    <tr>
-     <td><p>CPU使用率を含める</p></td>
-     <td><p>コア</p></td>
-     <td><p>ポッドが使用するCPUコアの数。</p></td>
-     <td><p>リソースの使用状況を定期的に監視して記録し、トレンドや潜在的なボトルネックを特定します。</p></td>
-   </tr>
-   <tr>
-     <td><p>リミットのCPU使用率</p></td>
+     <td><p>ライセンスコア使用率</p></td>
      <td><p>%</p></td>
-     <td><p>limitの値におけるポッドのCPU使用率の割合。</p></td>
-     <td><p>ワークロードを監視し、使用傾向が上昇し続ける場合は、リソース使用量を最適化するか、CPU制限を増やすことを検討してください。</p></td>
+     <td><p>使用済みCPUコアの総ライセンスコアに対する割合。</p></td>
+     <td><ul><li><p><strong>></strong> <strong>70%</strong>: 将来のニーズを評価し、更新/アップグレードを計画します。</p></li><li><p><strong>100%</strong>: 中断を避けるため、すぐに更新/アップグレードします。</p></li></ul></td>
+   </tr>
+</table>
+
+## プロジェクトレベルのメトリクス（クラスターメトリクス）{#project-level-metrics-cluster-metrics}
+
+これらのメトリクスは、プロジェクトのクラスター内のリソース使用量とパフォーマンスを記述します。
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>このセクションでは、<strong>可用性</strong>はプロジェクトプランとデプロイオプションを指します。詳細なプラン比較については、<a href="./select-zilliz-cloud-service-plans">詳細なプラン比較</a>を参照してください。</p>
+
+</Admonition>
+
+### Podとコンテナのリソース{#pod-and-container-resources}
+
+<table>
+   <tr>
+     <th><p>メトリクス</p></th>
+     <th><p>単位</p></th>
+     <th><p>説明</p></th>
+     <th><p>推奨されるアクション</p></th>
+     <th><p>可用性</p></th>
+   </tr>
+   <tr>
+     <td><p>CPU使用率</p></td>
+     <td><p>コア</p></td>
+     <td><p>Podが使用するCPUコアの数。</p></td>
+     <td><p>トレンドを追跡し、持続的な増加やスパイクを調査します。</p></td>
+     <td><p>BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>CPU使用率（制限値に対する）</p></td>
+     <td><p>%</p></td>
+     <td><p>PodのCPU使用率が制限値に対して占める割合。</p></td>
+     <td><p>上昇傾向にある場合は、ワークロードを最適化するか、制限値を増やします。</p></td>
+     <td><p>BYOC</p></td>
    </tr>
    <tr>
      <td><p>メモリ使用量</p></td>
      <td><p>MB</p></td>
-     <td><p>ポッド内のコンテナのメモリ使用量(キャッシュを除く)。</p></td>
-     <td><p>リソースの使用状況を定期的に監視して記録し、トレンドや潜在的なボトルネックを特定します。</p></td>
+     <td><p>Pod内のコンテナのメモリ使用量（キャッシュを除く）。</p></td>
+     <td><p>安定した増加や疑わしいメモリリークを調査します。</p></td>
+     <td><p>BYOC</p></td>
    </tr>
    <tr>
-     <td><p>リミットのメモリ使用率</p></td>
+     <td><p>メモリ使用率（制限値に対する）</p></td>
      <td><p>%</p></td>
-     <td><p>limitの値におけるポッドメモリ使用量の割合。</p></td>
-     <td><p>メモリ使用量を監視し、潜在的なメモリリークやアプリケーションでの非効率なメモリ使用量を特定します。</p></td>
+     <td><p>Podのメモリ使用率が制限値に対して占める割合。</p></td>
+     <td><p>常に高い場合は、メモリを最適化するか、制限値を上げます。</p></td>
+     <td><p>BYOC</p></td>
    </tr>
    <tr>
      <td><p>ネットワークインバウンドフロー</p></td>
-     <td><p>Mbpsの</p></td>
-     <td><p>ポッドのネットワークインバウンドフロー。</p></td>
-     <td><p>外部ソースから受信したデータ量を追跡して分析し、ネットワークのパフォーマンスを監視し、潜在的なネットワークの混雑や帯域幅の問題を特定するのに役立ちます。</p></td>
+     <td><p>Mbps</p></td>
+     <td><p>Podのネットワークインバウンドフロー。</p></td>
+     <td><p>輻輳に注意し、帯域幅のサイジングを検証します。</p></td>
+     <td><p>BYOC</p></td>
    </tr>
    <tr>
      <td><p>ネットワークアウトバウンドフロー</p></td>
-     <td><p>Mbpsの</p></td>
-     <td><p>ポッドのネットワークアウトバウンドフロー。</p></td>
-     <td><p>外部ソースに送信されるデータ量を追跡して分析し、ネットワークパフォーマンスを監視し、潜在的なネットワークの混雑や帯域幅の問題を特定するのに役立ちます。</p></td>
+     <td><p>Mbps</p></td>
+     <td><p>Podのネットワークアウトバウンドフロー。</p></td>
+     <td><p>輻輳に注意し、帯域幅のサイジングを検証します。</p></td>
+     <td><p>BYOC</p></td>
+   </tr>
+</table>
+
+### リソース{#resources}
+
+<table>
+   <tr>
+     <th><p>メトリクス</p></th>
+     <th><p>単位</p></th>
+     <th><p>説明</p></th>
+     <th><p>推奨されるアクション</p></th>
+     <th><p>可用性</p></th>
    </tr>
    <tr>
-     <td colspan="4"><p><strong>リソース</strong></p></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td><p>&gt;</p></td>
-     <td><p>&gt;</p></td>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td><p>&gt;</p></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td><p>CUコンピュテーション</p></td>
+     <td><p>クエリCU計算</p></td>
      <td><p>%</p></td>
-     <td><p>CUの総計算能力に対する利用された計算能力の尺度。</p><p>このメトリックは、<strong>専用</strong>クラスターまたは<strong>BYOC</strong>クラスターでのみ使用できます。</p></td>
-     <td><p><strong>70%-80%</strong>:サービスの状態を確認し、<a href="./manage-cluster">スケールアップ</a>の準備をしてください。</p><p><strong>>90%</strong>:サービスの中断を避けるためにすぐに<a href="./manage-cluster">スケールアップ</a>してください。</p></td>
+     <td><p>CUの総計算能力に対する利用された計算能力の尺度。</p></td>
+     <td><blockquote>  <p>60%: replicaの<a href="./manage-replica">スケールアウト</a>を推奨</p></blockquote></td>
+     <td><p>Dedicated / BYOC</p></td>
    </tr>
    <tr>
-     <td><p>CUの容量</p></td>
+     <td><p>クエリCU容量</p></td>
      <td><p>%</p></td>
-     <td><p>CUの総容量に対する使用済み容量の尺度。</p><p>このメトリックは、<strong>Free</strong>、<strong>Dedicated</strong>、または<strong>BYOC</strong>クラスターで使用できます。クラスタープランの階層の詳細については、「<a href="./select-zilliz-cloud-service-plans">詳細なプラン比較</a>」を参照してください。</p></td>
-     <td><p><strong>70%-80%</strong>:サービスの状態を確認し、スケールアップの準備をしてください。</p><p><strong>>90%</strong>:サービスの中断を避けるためにすぐに<a href="./manage-cluster">スケールアップ</a>してください。</p><p><strong>100%</strong>: CU容量が100%になると、クラスタにデータを書き込むことができなくなります。サービスの中断を避けるために、すぐに<a href="./manage-cluster">スケールアップ</a>してください。</p></td>
+     <td><p>CUの総容量に対する使用済み容量の尺度。</p></td>
+     <td><blockquote>  <p>80%: クエリCUの<a href="./scale-query-cu">スケールアップ</a>を推奨</p></blockquote></td>
+     <td><p>Dedicated / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>総クエリCU</p></td>
+     <td><p>カウント</p></td>
+     <td><p>現在のクラスター内の総クエリCU。クラスタークエリCUの数とreplicaの数の積として計算されます。（例：クラスターに2つのクエリCUと2つのreplicaがある場合、ここに表示される総クエリCUは4です。）</p></td>
+     <td><p>クエリCUのスケーリングイベントを特定するために追跡します。</p></td>
+     <td><p>Dedicated / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>Replica</p></td>
+     <td><p>カウント</p></td>
+     <td><p>クラスターreplicaの数。</p></td>
+     <td><p>replicaのスケーリングイベントを特定するために追跡します。</p></td>
+     <td><p>Dedicated / BYOC</p></td>
    </tr>
    <tr>
      <td><p>ストレージ</p></td>
      <td><p>GB</p></td>
-     <td><p>データとインデックスによって消費される永続ストレージの合計金額。</p></td>
-     <td><p><a href="./manage-project-alerts">アラートを構成</a>してストレージの使用状況を監視します。</p></td>
-   </tr>
-   <tr>
-     <td colspan="4"><p><strong>パフォーマンス</strong></p></td>
-   </tr>
-   <tr>
-     <td><p>QPS/VPS（読み取り）</p></td>
-     <td><p>QPS/VPSの</p></td>
-     <td><p><strong>QPS</strong>: 1秒あたりの読み取りリクエスト(検索とクエリ)の数。</p><p><strong>VPS</strong>:ベクトルに対する1秒あたりの読み取りリクエスト(検索)の数。クエリ操作にベクトルが含まれないため、VPSはクエリリクエストには使用できません。</p></td>
-     <td><p>システムパフォーマンスの監視については、<a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a>を参照してください。</p></td>
-   </tr>
-   <tr>
-     <td><p>QPS/VPS（書き込み）</p></td>
-     <td><p>QPS/VPSの</p></td>
-     <td><p><strong>QPS</strong>: 1秒あたりの書き込み要求(挿入、一括挿入、アップロード、削除)の数。</p><p><strong>VPS</strong>:ベクトルに対する1秒あたりの書き込み要求(挿入、一括挿入、挿入、削除)の数。</p></td>
-     <td><p>システムパフォーマンスの監視については、<a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a>を参照してください。</p></td>
-   </tr>
-   <tr>
-     <td><p>レイテンシ（読み取り）</p></td>
-     <td><p>ms</p></td>
-     <td><p>クライアントがサーバーに読み取り要求（検索とクエリ）を送信し、クライアントが応答を受信するまでの経過時間。</p><p>右側の拡張ドロップダウンメニューから<strong>平均</strong>または<strong>P 99</strong>を選択すると、平均またはP 99レイテンシーが表示されます。</p></td>
-     <td><p>-</p></td>
-   </tr>
-   <tr>
-     <td><p>レイテンシー（書き込み）</p></td>
-     <td><p>ms</p></td>
-     <td><p>クライアントがサーバーに書き込み要求(挿入、挿入、削除)を送信してから、クライアントが応答を受信するまでの経過時間。</p><p>右側の拡張ドロップダウンメニューから<strong>平均</strong>または<strong>P 99</strong>を選択すると、平均またはP 99レイテンシーが表示されます。</p></td>
-     <td><p>-</p></td>
-   </tr>
-   <tr>
-     <td><p>リクエストの失敗率（読み取り）</p></td>
-     <td><p>%</p></td>
-     <td><p>1秒あたりのすべての読み取り要求における失敗した読み取り要求(検索およびクエリ)の割合。</p></td>
-     <td><p><a href="./manage-project-alerts">アラートを設定</a>して、読み取り要求の失敗率を監視します。</p></td>
-   </tr>
-   <tr>
-     <td><p>リクエストの失敗率（書き込み）</p></td>
-     <td><p>%</p></td>
-     <td><p>1秒あたりのすべての書き込み要求における失敗した書き込み要求(挿入、一括挿入、upsert、削除)の割合。</p></td>
-     <td><p><a href="./manage-project-alerts">アラートを設定</a>して、書き込み要求の失敗率を監視します。</p></td>
-   </tr>
-   <tr>
-     <td><p>クエリー数が遅い</p></td>
-     <td><p>カウント/分</p></td>
-     <td><p>すべての検索およびクエリリクエストを含む遅いクエリ操作の数。デフォルトでは、レイテンシが5秒のすべてのリクエストは遅いクエリと見なされます。</p><p>このメトリックタイプは、<strong>Dedicated</strong>Clusters of the<strong>Enterprise</strong>Editionまたは<strong>BYOC</strong>Clustersでのみ使用できます。</p></td>
-     <td><p>必要に応じてクラスター構成を調整して、問題のあるクエリを特定し、パフォーマンスを調整します。</p></td>
-   </tr>
-   <tr>
-     <td><p>クラスタ書き込み性能Capacity</p></td>
-     <td><p>%</p></td>
-     <td><p>書き込み操作の現在のレート/書き込みレートの制限。</p><p>このメトリックタイプは、<strong>Dedicated</strong>Clusters of the<strong>Enterprise</strong>Editionまたは<strong>BYOC</strong>Clustersでのみ使用できます。</p></td>
-     <td><p>現在のレートが高すぎる場合（80%を超えることが推奨されます）、書き込みレートを下げることをお勧めします。</p></td>
-   </tr>
-   <tr>
-     <td><p>フラッシュ操作の回数</p></td>
-     <td><p>カウント/分</p></td>
-     <td><p>クラスターに対するフラッシュ操作の数。</p><p>このメトリックタイプは、<strong>Dedicated</strong>Clusters of the<strong>Enterprise</strong>Editionまたは<strong>BYOC</strong>Clustersでのみ使用できます。</p></td>
-     <td><p>フラッシュ操作を頻繁に実行すると、クラスタの全体的なパフォーマンスに悪影響を及ぼす可能性があります。詳細については、<a href="./limits">Zillizクラウドの制限</a>を参照してください。</p></td>
-   </tr>
-   <tr>
-     <td colspan="4"><p><strong>データ</strong></p></td>
-   </tr>
-   <tr>
-     <td><p>コレクション数</p></td>
-     <td><p>数える</p></td>
-     <td><p>クラスター内に作成されたコレクションの数。</p></td>
-     <td><p>-</p></td>
-   </tr>
-   <tr>
-     <td><p>エンティティカウント</p></td>
-     <td><p>数える</p></td>
-     <td><p>クラスタに挿入されるエンティティの数。</p><p>右側の拡張ドロップダウンメニューから特定のコレクションを選択すると、コレクションレベルのエンティティの数が表示されます。</p></td>
-     <td><p>-</p></td>
-   </tr>
-   <tr>
-     <td><p>ロードされたエンティティ</p></td>
-     <td><p>数える</p></td>
-     <td><p>クラスタによってロードされた(アクティブにサービスされている)エンティティの数。</p><p>右側の拡張ドロップダウンメニューから特定のコレクションを選択すると、コレクションレベルでロードされたエンティティの数が表示されます。</p><p>このメトリックは、<strong>専用</strong>クラスターまたは<strong>BYOC</strong>クラスターでのみ使用できます。</p></td>
-     <td><p>-</p></td>
-   </tr>
-   <tr>
-     <td><p>アンロードされたコレクション数</p></td>
-     <td><p>数える</p></td>
-     <td><p>クラスター内のアンロードされたコレクションの数。</p><p>このメトリックタイプは、<strong>Dedicated</strong>Clusters of the<strong>Enterprise</strong>Editionまたは<strong>BYOC</strong>Clustersでのみ使用できます。</p></td>
-     <td></td>
+     <td><p>データとインデックスによって消費される永続ストレージの総量。</p></td>
+     <td><p>ストレージ使用量を監視するために<a href="./manage-project-alerts">アラートを設定</a>します。</p></td>
+     <td><p>すべて</p></td>
    </tr>
 </table>
 
-## 組織のアラート{#organization-alerts}
-
-組織のアラートによって、請求に関連する\</include>ライセンスに関連する問題、例えば期限切れのクレジットカード、無料クレジットのステータス、前払いの残高アラート、使用コストに関する通知ライセンスコアと有効期間などが通知されます。
-
-## プロジェクトのアラート{#project-alerts}
-
-プロジェクトアラートは、CUの使用状況、QPSのしきい値、レイテンシの問題、リクエストの異常など、クラスターの運用面に焦点を当て、最適なクラスターパフォーマンスを維持します。
-
-各プロジェクトのアラートターゲットについて、トリガー条件には、アラートがトリガーされるために満たす必要がある閾値と期間値が含まれます。条件は、次の演算子のいずれかに設定できます:>、>=、\<、\<=、=。閾値は、クエリレイテンシ、クエリQPS、検索QPS、CU容量、CU計算などのメトリックの数値などの数値である場合があります。期間は、閾値を超える必要がある期間を指定し、最小1分、最大30分に設定されます。
-
-### デフォルトのアラートターゲット{#default-alert-targets}
-
-Zilliz Cloudは、重要な問題が適切なアクションで迅速に特定され、対処されるように、共通のアラートターゲットを事前に定義しています。
-
-推奨アクションの詳細については、[クラスターメトリクス](./metrics-alerts-reference#cluster-metrics)を参照してください。
+### パフォーマンス{#performance}
 
 <table>
    <tr>
-     <th><p>アラートターゲット</p></th>
-     <th><p>ユニット</p></th>
-     <th><p>デフォルトのトリガー条件</p></th>
+     <th><p>メトリクス</p></th>
+     <th><p>単位</p></th>
+     <th><p>説明</p></th>
+     <th><p>推奨されるアクション</p></th>
+     <th><p>可用性</p></th>
    </tr>
    <tr>
-     <td><p>CUコンピュテーション</p></td>
-     <td><p>%</p></td>
-     <td><p><strong>警告</strong>: 70%以上のトリガーアラートは、10分以上にわたって計算能力を利用しました。</p><p><strong>クリティカル</strong>: 90%以上のトリガーアラートは、10分以上にわたって計算能力を利用しました。</p></td>
+     <td><p>QPS (読み取り)</p></td>
+     <td><p>-</p></td>
+     <td><p>1秒あたりの読み取りリクエスト（検索とクエリ）の数。</p></td>
+     <td><p>システムパフォーマンス監視については、<a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a>を参照してください。</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p>CUの容量</p></td>
-     <td><p>%</p></td>
-     <td><p><strong>警告</strong>:&gt;70%のトリガーアラートは、10+分のCU容量を利用しました。</p><p><strong>クリティカル</strong>: CU容量が10分以上使用され、90%以上のトリガーアラートが発生しました。</p></td>
+     <td><p>QPS (書き込み)</p></td>
+     <td><p>-</p></td>
+     <td><p>1秒あたりの書き込みリクエスト（insert、bulk insert、upsert、delete）の数。</p></td>
+     <td><p>システムパフォーマンス監視については、<a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a>を参照してください。</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p>検索する(QPS)</p></td>
-     <td><p>QPS</p></td>
-     <td><p>10分以上、秒間50回以上の検索操作で<strong>警告</strong>アラートをトリガーしてください。</p></td>
+     <td><p>1秒あたりの検索NQ</p></td>
+     <td><p>-</p></td>
+     <td><p>各検索リクエストが1秒あたりに運ぶクエリベクトルの数。</p></td>
+     <td><p>システムパフォーマンス監視については、<a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a>を参照してください。</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p>クエリー(QPS)</p></td>
-     <td><p>QPS</p></td>
-     <td><p>10分以上毎秒50回以上のクエリ操作で<strong>警告</strong>アラートをトリガーします。</p></td>
+     <td><p>書き込みスループット (Entities/秒)</p></td>
+     <td><p>-</p></td>
+     <td><p>すべての書き込み操作（insert、upsert、bulk insert、delete）で1秒あたりに書き込まれるentityの数を測定します。</p></td>
+     <td><p>システムパフォーマンス監視については、<a href="https://zilliz.com/vector-database-benchmark-tool">ベンチマーク</a>を参照してください。</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p>検索レイテンシ(P 99)</p></td>
+     <td><p>レイテンシ (読み取り)</p></td>
      <td><p>ms</p></td>
-     <td><p>10分以上のP 99レイテンシ&gt;1,000 msで<strong>警告</strong>アラートをトリガーします。</p></td>
+     <td><p>クライアントが読み取りリクエスト（検索およびクエリリクエスト）をサーバーに送信してから、クライアントが応答を受信するまでの経過時間。平均レイテンシとP99レイテンシが含まれます。</p></td>
+     <td><p>-</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p>クエリーの遅延（P 99）</p></td>
+     <td><p>レイテンシ (書き込み)</p></td>
      <td><p>ms</p></td>
-     <td><p>10分以上のP 99レイテンシ&gt;1,000 msで<strong>警告</strong>アラートをトリガーします。</p></td>
+     <td><p>クライアントが書き込みリクエスト（insertおよびupsertリクエスト）をサーバーに送信してから、クライアントが応答を受信するまでの経過時間。平均レイテンシとP99レイテンシが含まれます。</p></td>
+     <td><p>-</p></td>
+     <td><p>すべて</p></td>
+   </tr>
+   <tr>
+     <td><p>リクエスト失敗率 (読み取り)</p></td>
+     <td><p>%</p></td>
+     <td><p>1秒あたりのすべてのリクエストにおける、失敗した読み取りリクエストの総数の割合。</p></td>
+     <td><p>読み取りリクエストの失敗率を監視するために<a href="./manage-project-alerts">アラートを設定</a>します。</p></td>
+     <td><p>すべて</p></td>
+   </tr>
+   <tr>
+     <td><p>リクエスト失敗率 (書き込み)</p></td>
+     <td><p>%</p></td>
+     <td><p>1秒あたりのすべてのリクエストにおける、失敗した書き込みリクエストの総数の割合。</p></td>
+     <td><p>書き込みリクエストの失敗率を監視するために<a href="./manage-project-alerts">アラートを設定</a>します。</p></td>
+     <td><p>すべて</p></td>
+   </tr>
+   <tr>
+     <td><p>低速クエリ数</p></td>
+     <td><p>カウント/分</p></td>
+     <td><p>実行に異常に時間がかかるクエリの数。</p></td>
+     <td><p>問題のあるクエリを特定し、必要に応じてクラスター構成を調整してパフォーマンスをチューニングします。</p></td>
+     <td><p>Dedicated (Enterprise または Business Critical) / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>クラスター書き込みパフォーマンス容量</p></td>
+     <td><p>%</p></td>
+     <td><p>クラスター書き込みパフォーマンス容量 = 現在の書き込み操作レート / 書き込みレート制限。80%を超えた場合、書き込み操作（insertおよびupsert）のレートを減らすことを推奨します。</p></td>
+     <td><p>現在のレートが高すぎる場合（80%を超えることが推奨されます）、書き込みレートを下げることを推奨します。</p></td>
+     <td><p>Dedicated (Enterprise または Business Critical) / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>Flush操作の数</p></td>
+     <td><p>カウント/分</p></td>
+     <td><p>クラスターでのflush操作の数。</p></td>
+     <td><p>flush操作を頻繁に実行しすぎると、クラスター全体のパフォーマンスに悪影響を与える可能性があります。詳細については、<a href="https://docs.cloud-uat3.zilliz.com/docs/limits#flush">Zilliz Cloudの制限</a>を参照してください。</p></td>
+     <td><p>Dedicated (Enterprise または Business Critical) / BYOC</p></td>
+   </tr>
+   <tr>
+     <td><p>キャッシュヒット率</p></td>
+     <td><p>%</p></td>
+     <td><p>クラスター内のすべてのクエリの平均キャッシュヒット率。次のように計算されます：クエリあたりのキャッシュヒット率 = (スキャンされた総データ − スキャンされたコールドデータ) / スキャンされた総データ。</p></td>
+     <td><p>クラスタークエリのパフォーマンスを特定するために追跡します。</p></td>
+     <td><p>Dedicated (Tiered-storage) / BYOC</p><p><em>&ast;このメトリクスは、Milvus 2.6.xと互換性のある階層型ストレージクラスターでのみ利用可能です。このメトリクスにアクセスするには、<a href="http://support.zilliz.com">お問い合わせ</a>いただき、クラスターのMilvusバージョンをアップグレードしてください。</em></p></td>
    </tr>
 </table>
 
-### カスタムアラートターゲット{#custom-alert-targets}
-
-定義済みの既定のプロジェクトアラートに加えて、必要に応じてカスタムアラートターゲットを構成することもできます。
+### データ{#data}
 
 <table>
    <tr>
-     <th><p>アラートターゲット</p></th>
-     <th><p>説明する</p></th>
+     <th><p>メトリクス</p></th>
+     <th><p>単位</p></th>
+     <th><p>説明</p></th>
+     <th><p>推奨されるアクション</p></th>
+     <th><p>可用性</p></th>
    </tr>
    <tr>
-     <td><p><strong>リソース</strong></p></td>
-     <td></td>
+     <td><p>Collection数</p></td>
+     <td><p>カウント</p></td>
+     <td><p>クラスター内に作成されたcollectionの数。</p></td>
+     <td><p>増加を監視し、必要に応じてプロジェクトごとの制限を適用します。</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p>ストレージ</p></td>
-     <td><p>ストレージの使用状況を監視し、使用状況が一定期間閾値を超えた場合に通知を送信します。</p></td>
+     <td><p>Entity数</p></td>
+     <td><p>カウント</p></td>
+     <td><p>単一insertとbulk insertの両方を含む、クラスターにinsertされたentityの総数。</p></td>
+     <td><p>予期しない増加を調査し、ストレージとインデックス作成を計画します。</p></td>
+     <td><p>すべて</p></td>
    </tr>
    <tr>
-     <td><p><strong>パフォーマンス（読み取り/書き込み）</strong></p></td>
-     <td></td>
+     <td><p>ロードされたEntity (概算)</p></td>
+     <td><p>カウント</p></td>
+     <td><p>ロードされた（アクティブにサービスされている）entityの概算数。</p></td>
+     <td><p>より正確でリアルタイムな値については、collection概要ページの「ロードされたEntity」の値を参照するか、<a href="./single-vector-search">count(&ast;)</a>を使用してください。</p></td>
+     <td><p>Dedicated / BYOC</p></td>
    </tr>
    <tr>
-     <td><p>バルクインサート（QPS）</p></td>
-     <td><p>一括挿入操作のレートを監視し、一定期間、レートがしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>削除する(QPS)</p></td>
-     <td><p>削除操作のレートを監視し、レートが一定期間しきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>インサート(QPS)</p></td>
-     <td><p>挿入操作のレートを監視し、レートが一定期間しきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>インサート(VPS)</p></td>
-     <td><p>ベクトル挿入操作のレートを監視し、一定期間、レートがしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>検索する(VPS)</p></td>
-     <td><p>ベクトル検索操作のレートを監視し、レートが一定期間閾値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>アップサート(QPS)</p></td>
-     <td><p>upsert操作のレートを監視し、レートが一定期間しきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>アップサート(VPS)</p></td>
-     <td><p>ベクトルupsert操作のレートを監視し、レートが一定期間しきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>クラスタへの書き込みは無効です</p></td>
-     <td><p>クラスタへの書き込み操作が禁止されていないかを監視します。書き込み禁止がトリガーされた場合は、すぐにスケールアウトしてください。</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>パフォーマンス（レイテンシ）</strong></p></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td><p>レイテンシーを削除(平均)</p></td>
-     <td><p>削除要求の平均遅延を監視し、遅延が一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>遅延を削除(P 99)</p></td>
-     <td><p>削除要求のP 99遅延を監視し、遅延が一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>挿入レイテンシー(平均)</p></td>
-     <td><p>挿入リクエストの平均遅延を監視し、遅延が一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>レイテンシを挿入(P 99)</p></td>
-     <td><p>挿入リクエストのP 99レイテンシを監視し、レイテンシが一定期間閾値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>クエリーレイテンシー（平均）</p></td>
-     <td><p>クエリリクエストの平均遅延を監視し、遅延が一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>検索リクエストの遅延（平均）</p></td>
-     <td><p>検索リクエストの平均遅延を監視し、遅延が一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>Upsertレイテンシー（平均）</p></td>
-     <td><p>upsertリクエストの平均レイテンシを監視し、レイテンシが一定期間閾値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>Upsertレイテンシ（P 99）</p></td>
-     <td><p>upsertリクエストのP 99レイテンシを監視し、レイテンシが一定期間閾値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>パフォーマンス（リクエスト失敗率）</strong></p></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td><p>バルクインサートの故障率</p></td>
-     <td><p>一括挿入要求の失敗率を監視し、一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>削除の失敗率</p></td>
-     <td><p>削除要求の失敗率を監視し、一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>挿入の失敗率</p></td>
-     <td><p>挿入要求の失敗率を監視し、一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>クエリ失敗率</p></td>
-     <td><p>クエリリクエストの失敗率を監視し、一定期間閾値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>検索の失敗率</p></td>
-     <td><p>検索リクエストの失敗率を監視し、一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>クエリー数が遅い</p></td>
-     <td><p>遅いクエリの数を監視し、値が一定期間しきい値を超えた場合に通知を送信します。</p><p>デフォルトでは、レイテンシが5秒のすべてのリクエストは遅いクエリと見なされます。</p></td>
-   </tr>
-   <tr>
-     <td><p>Upsertの失敗率</p></td>
-     <td><p>upsertリクエストの失敗率を監視し、一定期間閾値を超えた場合は通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>データ</strong></p></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td><p>ロードされたエンティティ</p></td>
-     <td><p>ロードされたエンティティの数を監視し、カウントが一定期間しきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>トータルコレクション</p></td>
-     <td><p>合計コレクション数を監視し、カウントが一定期間のしきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p>エンティティの合計</p></td>
-     <td><p>合計エンティティ数を監視し、カウントが一定期間しきい値を超えた場合に通知を送信します。</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>その他</strong></p></td>
-     <td></td>
-   </tr>
-   <tr>
-     <td><p>クラスターは異常です</p></td>
-     <td><p>クラスターの状態を監視して、クラスターが正常に機能していることを確認します。これには、クラスターの負荷と使用状況の確認が含まれます。</p></td>
-   </tr>
-   <tr>
-     <td><p>監査ログのストリーミングステータスが異常です</p></td>
-     <td><p>監査ログストリーミングの状態を監視します。これは通常、クラスターが停止、再開、凍結などの移行状態にあるときに発生します。これらの期間中、監査ログストリーミングは正常に機能しません。</p></td>
+     <td><p>アンロードされたCollectionの数</p></td>
+     <td><p>カウント</p></td>
+     <td><p>クラスター内のアンロードされたcollectionの数。</p></td>
+     <td><p>重要なcollectionをロードし、メモリのヘッドルームを確認します。</p></td>
+     <td><p>Dedicated (Enterprise または Business Critical) / BYOC</p></td>
    </tr>
 </table>
 
-## 関連するトピック{#related-topics}
+## 関連トピック{#related-topics}
 
-- [クラスタのメトリックチャートを表示する](./view-cluster-metric-charts)
+- [クラスターメトリクスチャートの表示](./view-cluster-metric-charts)
 
-- [組織のアラートを管理する](./manage-organization-alerts)
+- [組織アラートの管理](./manage-organization-alerts)
 
-- [プロジェクトのアラートを管理する](./manage-project-alerts)
+- [プロジェクトアラートの管理](./manage-project-alerts)
 

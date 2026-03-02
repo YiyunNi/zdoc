@@ -1,23 +1,23 @@
 ---
-title: "データインポートハンズオン | Cloud"
+title: "データインポート実践 | Cloud"
 slug: /data-import-zero-to-hero
-sidebar_label: "データインポートハンズオン"
+sidebar_label: "Zero to Hero"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudへのデータのインポートを、データの準備や収集の設定から実際のデータインポートの過程まで、迅速に開始するためのファストトラックコースです。このチュートリアルでは、以下のことを学びます | Cloud"
+description: "これは、データ準備とコレクション設定から実際のデータインポートプロセスまで、Zilliz Cloud でのデータインポートを迅速に開始するのに役立つファストトラックコースです。このチュートリアルを通して、あなたは以下を学びます。"
 type: origin
-token: VY2Iw7ZFLihNwekvTL0c2VNhnRh
+token: BjHZwBkk0iFScik49QMc1Wwjndb
 sidebar_position: 5
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - data import
+  - データインポート
   - milvus
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - 画像類似性検索
+  - Context Window
+  - 自然言語検索
+  - 類似性検索
 
 ---
 
@@ -27,33 +27,33 @@ import TabItem from '@theme/TabItem';
 
 # データインポートハンズオン
 
-Zilliz Cloudへのデータのインポートを、データの準備や収集の設定から実際のデータインポートの過程まで、迅速に開始するためのファストトラックコースです。このチュートリアルでは、以下のことを学びます:
+これは、Zilliz Cloud でデータインポートを迅速に開始するための高速コースです。データ準備とコレクション設定から実際のデータインポートプロセスまでをカバーします。このチュートリアルを通して、以下のことを学びます。
 
 - スキーマを定義し、ターゲットコレクションを設定する方法
 
-- BulkWriterを使用してソースデータ**を**準備し、リモートストレージバケットに書き込む方法
+- **BulkWriter** を使用してソースデータを準備し、リモートストレージバケットに書き込む方法
 
-- バルクインポートAPIを呼び出してデータをインポートする方法
+- バルクインポート API を呼び出してデータをインポートする方法
 
-## 始める前に{#before-you-start}
+## 開始する前に{#before-you-start}
 
-スムーズな体験を確保するために、以下の設定を完了していることを確認してください。
+スムーズな体験のために、以下のセットアップが完了していることを確認してください。
 
-### Zilliz Cloudクラスタのセットアップ{#set-up-your-zilliz-cloud-cluster}
+### Zilliz Cloud クラスターをセットアップする{#set-up-your-zilliz-cloud-cluster}
 
-- まだ作成していない場合は、[クラスタを作成し](./create-cluster)ます。
+- まだ作成していない場合は、[クラスターを作成](./create-cluster)します。
 
-- これらの詳細を収集してください:**クラスターエンドポイント**、**APIキー**、**クラスターID**。
+- 以下の詳細を収集します: **クラスターエンドポイント**、**API キー**、**クラスター ID**。
 
-### 依存関係のインストール{#install-dependencies}
+### 依存関係をインストールする{#install-dependencies}
 
-現在、PythonまたはJavaでデータインポート関連APIを使用できます。
+現在、データインポート関連の API は Python または Java で使用できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 
 <TabItem value='python'>
 
-Python APIを使用するには、ターミナルで次のコマンドを実行して、**pymilvus**と**minio**をインストールするか、最新バージョンにアップグレードしてください。
+Python API を使用するには、ターミナルで以下のコマンドを実行して **pymilvus** と **minio** をインストールするか、最新バージョンにアップグレードします。
 
 ```shell
 python3 -m pip install --upgrade pymilvus minio
@@ -63,7 +63,7 @@ python3 -m pip install --upgrade pymilvus minio
 
 <TabItem value='java'>
 
-- Apache Mavenの場合、**pom. xml**の依存関係に以下を追加してください:
+- Apache Maven の場合、**pom.xml** の依存関係に以下を追加します。
 
 ```java
 <dependency>
@@ -73,7 +73,7 @@ python3 -m pip install --upgrade pymilvus minio
 </dependency>
 ```
 
-- Gradle/Grailsの場合、以下を実行してください。
+- Gradle/Grails の場合、以下を実行します。
 
 ```shell
 compile 'io.milvus:milvus-sdk-java:2.4.8'
@@ -85,17 +85,17 @@ compile 'io.milvus:milvus-sdk-java:2.4.8'
 
 ### リモートストレージバケットの設定{#configure-your-remote-storage-bucket}
 
-- リモートバケットを設定するには、AWSS 3、Google GCS、またはAzureBlobを使用します。
+- AWS S3、Google GCS、またはAzure Blobを使用してリモートバケットを設定します。
 
-- メモしてください
+- 以下をメモしてください。
 
-    - **S 3互換ブロックストレージサービスのアクセスキー**、**シークレットキー**、および**バケット名**。
+    - S3互換ブロックストレージサービスの場合：**Access Key**、**Secret Key**、および**Bucket Name**。
 
-    - **AccountName**、**AccountKey**、および**ContainerName**Microsoft Azure BLOBストレージサービス。
+    - Microsoft Azure blobストレージサービスの場合：**AccountName**、**AccountKey**、および**ContainerName**。
 
-    これらの詳細は、バケットがホストされているクラウドプロバイダのコンソールで確認できます。
+    これらの詳細は、バケットがホストされているクラウドプロバイダーのコンソールで確認できます。
 
-サンプルコードの使用を強化するために、構成の詳細を格納するために変数を使用することをお勧めします
+サンプルコードの利用を促進するため、設定の詳細を変数に格納することをお勧めします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -141,11 +141,11 @@ String SECRET_KEY = "";
 </TabItem>
 </Tabs>
 
-## ターゲットコレクションスキーマを設定する{#set-up-target-collection-schema}
+## ターゲットコレクションのスキーマを設定する{#set-up-target-collection-schema}
 
 上記の出力に基づいて、ターゲットコレクションのスキーマを作成できます。
 
-次のデモでは、事前に定義されたスキーマに最初の4つのフィールドを含め、他の4つを動的フィールドとして使用します。
+以下のデモでは、最初の4つのフィールドを事前定義されたスキーマに含め、残りの4つを動的フィールドとして使用します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 
@@ -185,29 +185,29 @@ schema.verify()
 print(schema)
 ```
 
-上記のコードのパラメータは次のように説明されています
+上記のコードのパラメータは、次のように記述されています。
 
-- フィールド:
+- fields:
 
-    - `id`はプライマリフィールドです。
+    - `id` はプライマリフィールドです。
 
-    - `float_vector`は浮動小数点ベクトル場です。
+    - `float_vector` は浮動小数点ベクトルフィールドです。
 
-    - `binary_vector`はバイナリベクトル場です。
+    - `binary_vector` はバイナリベクトルフィールドです。
 
-    - `float 16_vector`は、半精度の浮動小数点ベクトルフィールドです。
+    - `float16_vector` は半精度浮動小数点ベクトルフィールドです。
 
-    - `sparse_vector`は疎ベクトル場です。
+    - `sparse_vector` はスパースベクトルフィールドです。
 
     - 残りのフィールドはスカラーフィールドです。
 
-- `auto_id=Falseの場合`
+- `auto_id=False`
 
-    これがデフォルト値です。**True**に設定すると、**BulkWriter**はプライマリフィールドを生成ファイルに含めません。
+    これはデフォルト値です。これを **True** に設定すると、**BulkWriter** は生成されたファイルにプライマリフィールドを含めなくなります。
 
-- `Enable_Dynamicフィールドを有効にする`
+- `enable_dynamic_field=True`
 
-    値のデフォルトは**False**です。これを**True**に設定すると、**BulkWriter**は未定義のフィールドと生成されたファイルの値をキーと値のペアとして含め、予約済みのJSONフィールド**$meta**に配置します。
+    この値のデフォルトは **False** です。これを **True** に設定すると、**BulkWriter** は未定義のフィールドとその値を生成されたファイルからキーと値のペアとして含め、**$meta** という名前の予約済み JSON フィールドに配置できるようになります。
 
 </TabItem>
 
@@ -331,11 +331,11 @@ private static CreateCollectionReq.CollectionSchema createSchema() {
 
 上記のコードブロックでは、
 
-- [`id`]項目はプライマリ項目で、`with AutoID`が`false`に設定されているため、インポートするデータに`id`項目を含める必要があります。
+- `id`フィールドは、`withAutoID`が`false`に設定されたプライマリフィールドであり、インポートするデータに`id`フィールドを含める必要があることを示しています。
 
-- float`_vector`、`binary_vector`、float`16_vector`、`sparse_vector`フィールドはベクトルフィールドです。
+- `float_vector`、`binary_vector`、`float16_vector`、および`sparse_vector`フィールドはベクトルフィールドです。
 
-- スキーマが`withEnableDynamicField`に`true`に設定されているため、スキーマ定義以外のフィールドをインポートするデータに含めることができます。
+- スキーマは`withEnableDynamicField`が`true`に設定されており、スキーマで定義されていないフィールドをインポートするデータに含めることができることを示しています。
 
 </TabItem>
 
@@ -453,13 +453,13 @@ milvusClient.createCollection(request);
 </TabItem>
 </Tabs>
 
-## ソースデータを準備する{#prepare-source-data}
+## ソースデータの準備{#prepare-source-data}
 
-**BulkWriter**は、データセットをJSON、Parquet、またはNumPyファイルに書き換えることができます。RemoteBulkWriterを作成し**、**これらの形式にデータを書き換えます。
+**BulkWriter**は、データセットをJSON、Parquet、またはNumPyファイルに書き換えることができます。**RemoteBulkWriter**を作成し、それを使用してデータをこれらの形式に書き換えます。
 
 ### RemoteBulkWriterの作成{#create-remotebulkwriter}
 
-スキーマが準備できたら、スキーマを使用してRemoteBulkWriterを作成できます。**RemoteBulkWriter**は、**リモート**バケットにアクセスする権限を要求します。リモートバケットにアクセスするための接続パラメータを**ConnectParam**オブジェクトで設定し、RemoteBulkWriterで参照する必要がありま**す**。
+スキーマの準備ができたら、そのスキーマを使用して**RemoteBulkWriter**を作成できます。**RemoteBulkWriter**は、リモートバケットへのアクセス許可を要求します。**ConnectParam**オブジェクトでリモートバケットにアクセスするための接続パラメータを設定し、それを**RemoteBulkWriter**で参照する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -554,20 +554,20 @@ StorageConnectParam storageConnectParam = AzureConnectParam.newBuilder()
 </TabItem>
 </Tabs>
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>エンドポイント<strong>パラメーター</strong>は、クラウドプロバイダーのストレージサービスURIを参照します。</p>
-<p>S 3互換ストレージサービスの場合、使用可能なURIは次のとおりです。</p>
+<p><strong>endpoint</strong> パラメータは、クラウドプロバイダーのストレージサービスURIを指します。</p>
+<p>S3互換ストレージサービスの場合、可能なURIは以下の通りです。</p>
 <ul>
-<li><p><code>s3.amazonaws.com</code>AWSの場合</p></li>
-<li><p><code>storage.googleapis.com</code>（GCSの）</p></li>
+<li><p><code>s3.amazonaws.com</code> (AWS S3)</p></li>
+<li><p><code>storage.googleapis.com</code> (GCS)</p></li>
 </ul>
-<p>Azure BLOBストレージコンテナーの場合は、次のよう<a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage#view-account-access-keys">な有効な接続文字列</a>を使用する必要があります。</p>
-<p><code>DefaultEndpointsProtocol=https;アカウント名=&lt;アカウント名&gt;;アカウントキー=&lt;アカウントキー&gt;;エンドポイントサフィックス=core.windows.net</code></p>
+<p>Azure Blob Storageコンテナの場合、以下のような<a href="https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage#view-account-access-keys">有効な接続文字列</a>を使用する必要があります。</p>
+<p><code>DefaultEndpointsProtocol=https;AccountName=&lt;accountName&gt;;AccountKey=&lt;accountKey&gt;;EndpointSuffix=core.windows.net</code></p>
 
 </Admonition>
 
-次に、**RemoteBulkWriter**の接続パラメーターを次のように参照できます。
+次に、**RemoteBulkWriter** で接続パラメータを次のように参照できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 
@@ -588,27 +588,27 @@ writer = RemoteBulkWriter(
 # - BulkFileType.PARQUET
 ```
 
-上記のライターはJSON形式のファイルを生成し、指定されたバケットのルートフォルダにアップロードします。
+上記のライターはJSON形式でファイルを生成し、指定されたバケットのルートフォルダにアップロードします。
 
-- `リモートパスの設定`
+- `remote_path="/"`
 
-    これにより、リモートバケット内の生成されたファイルの出力パスが決定されます。
+    これは、リモートバケット内の生成されたファイルの出力パスを決定します。
 
-    リモートバケットのルートフォルダに生成されたファイルを`"/"`に設定すると、**RemoteBulkWriter**がリモートバケットのルートフォルダに配置します。他のパスを使用する場合は、リモートバケットのルートからの相対パスに設定してください。
+    これを`"/"`に設定すると、**RemoteBulkWriter**は生成されたファイルをリモートバケットのルートフォルダに配置します。他のパスを使用するには、リモートバケットのルートからの相対パスに設定します。
 
-- `file_type=ファイルタイプ`
+- `file_type=BulkFileType.PARQUET`
 
-    生成されるファイルの種類を決定します。可能な値は以下の通りです:
+    これは、生成されるファイルのタイプを決定します。可能な値は次のとおりです。
 
-    - **BulkFileType. JSON_RBファイル**
+    - **BulkFileType.JSON_RB**
 
-    - **バルクファイルタイプ. PARQUET**
+    - **BulkFileType.PARQUET**
 
-    - **一括ファイルタイプ. NPY**
+    - **BulkFileType.NPY**
 
-- `セグメントサイズ=1024*1024*102 4`
+- `segment_size=1024*1024*1024`
 
-    これにより、**BulkWriter**が生成されたファイルをセグメント化するかどうかが決まります。デフォルト値は1024 MB（1024*1024*1024）です。データセットに多数のレコードが含まれている場合は、**sement_size**を適切な値に設定してデータをセグメント化することをお勧めします。
+    これは、**BulkWriter**が生成されたファイルをセグメント化するかどうかを決定します。デフォルト値は1024 MB (1024 * 1024 * 1024) です。データセットに多数のレコードが含まれている場合は、**segment_size**を適切な値に設定してデータをセグメント化することをお勧めします。
 
 </TabItem>
 
@@ -634,21 +634,21 @@ RemoteBulkWriter remoteBulkWriter = new RemoteBulkWriter(remoteBulkWriterParam);
 // - BulkFileType.PARQUET
 ```
 
-上記のライターは、Parquet形式のファイルを生成し、指定されたバケットのルートフォルダにアップロードします。
+上記のライターはParquet形式でファイルを生成し、指定されたバケットのルートフォルダにアップロードします。
 
-- `withRemotePath("/")を使用してください。`
+- `withRemotePath("/")`
 
-    これにより、リモートバケット内の生成されたファイルの出力パスが決定されます。
+    これは、リモートバケット内の生成されたファイルの出力パスを決定します。
 
-    リモートバケットのルートフォルダに生成されたファイルを`"/"`に設定すると、**RemoteBulkWriter**がリモートバケットのルートフォルダに配置します。他のパスを使用する場合は、リモートバケットのルートからの相対パスに設定してください。
+    これを`"/"`に設定すると、**RemoteBulkWriter**は生成されたファイルをリモートバケットのルートフォルダに配置します。他のパスを使用するには、リモートバケットのルートからの相対パスに設定します。
 
-- `パーケット(BulkFileType. PARQUET)`
+- `withFileType(BulkFileType.PARQUET)`
 
-    生成されるファイルの種類を決定します。現在、**PARQUET**のみが利用可能です。
+    これは、生成されるファイルのタイプを決定します。現在、**PARQUET**のみが利用可能です。
 
-- `with ChunkSize(1024*1024*102 4)のサイズです。`
+- `withChunkSize(1024*1024*1024)`
 
-    これにより、**BulkWriter**が生成されたファイルをセグメント化するかどうかが決まります。値のデフォルトは1024 MB(1024*1024*1024)です。データセットに多数のレコードが含まれている場合は、withChunkSizeを適切な値に設定してデータをセグメント**化**することをお勧めします。
+    これは、**BulkWriter**が生成されたファイルをセグメント化するかどうかを決定します。デフォルト値は1024 MB (1024 * 1024 * 1024)です。データセットに多数のレコードが含まれている場合は、**withChunkSize**を適切な値に設定してデータをセグメント化することをお勧めします。
 
 </TabItem>
 
@@ -656,9 +656,9 @@ RemoteBulkWriter remoteBulkWriter = new RemoteBulkWriter(remoteBulkWriterParam);
 
 ### ライターを使用する{#use-the-writer}
 
-ライターには2つの方法があります。1つはソースデータセットから行を追加するためのもので、もう1つはデータをリモートファイルにコミットするためのものです。
+ライターには2つのメソッドがあります。1つはソースデータセットから行を追加するためのもので、もう1つはリモートファイルにデータをコミットするためのものです。
 
-次のようにソースデータセットから行を追加できます:
+ソースデータセットから行を追加するには、次のようにします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -888,11 +888,11 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-ライターの**append_row()**メソッドは、行の辞書を受け取ります。
+writerの**append_row()** メソッドは行辞書を受け入れます。
 
-行ディクショナリには、すべてのスキーマ定義フィールドをキーとして含める必要があります。動的フィールドが許可されている場合は、未定義フィールドも含めることができます。詳細は、「[BulkWriterを使う](./use-bulkwriter)」を参照してください。
+行辞書には、スキーマで定義されたすべてのフィールドがキーとして含まれている必要があります。動的フィールドが許可されている場合、未定義のフィールドを含めることもできます。詳細については、[BulkWriterを使用する](./use-bulkwriter#dynamic-schema-support)を参照してください。
 
-**BulkWriter**は、**commit()**メソッドを呼び出した後にのみファイルを生成します。
+**BulkWriter**は、**commit()** メソッドを呼び出した後にのみファイルを生成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -912,9 +912,9 @@ remoteBulkWriter.commit(false);
 </TabItem>
 </Tabs>
 
-今まで、**BulkWriter**は指定されたリモートバケットにソースデータを準備しています。
+これまで、**BulkWriter** は指定されたリモートバケットにソースデータを準備してきました。
 
-生成されたファイルを確認するには、ライターの**data_path**プロパティを印刷して実際の出力パスを取得できます。
+生成されたファイルを確認するには、ライターの **data_path** プロパティを出力することで実際の出力パスを取得できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -941,21 +941,21 @@ System.out.println(batchFiles);
 </TabItem>
 </Tabs>
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>BulkWriter</strong>はUUIDを生成し、指定された出力ディレクトリにUUIDを使用してサブフォルダを作成し、生成されたすべてのファイルをサブフォルダに配置します。</p>
+<p><strong>BulkWriter</strong> は UUID を生成し、指定された出力ディレクトリに UUID を使用してサブフォルダを作成し、生成されたすべてのファイルをそのサブフォルダに配置します。</p>
 
 </Admonition>
 
-詳細は、「[BulkWriterを使う](./use-bulkwriter)」を参照してください。
+詳細については、[BulkWriter の使用](./use-bulkwriter#verify-the-result)を参照してください。
 
-## 準備されたデータをインポートする{#import-prepared-data}
+## 準備されたデータのインポート{#import-prepared-data}
 
-このステップの前に、準備したデータが目的のバケットにすでにアップロードされていることを確認してください。
+このステップの前に、準備されたデータが目的のバケットにすでにアップロードされていることを確認してください。
 
-### インポートを開始{#start-importing}
+### インポートの開始{#start-importing}
 
-準備したソースデータをインポートするには、次のように**bulk_import()**関数を呼び出す必要があります。
+準備されたソースデータをインポートするには、次のように **bulk_import()** 関数を呼び出す必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -1014,16 +1014,16 @@ System.out.println(jobId);
 </TabItem>
 </Tabs>
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>object<strong>_urlは</strong>、リモートバケット内のファイルまたはフォルダへの有効なURLである必要があります。提供されたコードでは、<strong>format()</strong>メソッドを使用して、バケット名とライターによって返されたデータパスを組み合わせて、有効なオブジェクトURLを作成します。</p>
-<p>データとターゲットコレクションがAWSによってホストされている場合、オブジェクトURLは<strong>s 3://remote-bucket/file-path</strong>に似ている必要があります。ライターによって返されたデータパスのプレフィックスに適用可能なURIについては、「<a href="./data-import-storage-options">ストレージオプション</a>」を参照してください。</p>
+<p><strong>object_url</strong> は、リモートバケット内のファイルまたはフォルダーへの有効な URL である必要があります。提供されたコードでは、<strong>format()</strong> メソッドを使用して、バケット名とライターが返すデータパスを組み合わせて、有効なオブジェクト URL を作成します。</p>
+<p>データとターゲット collection が AWS によってホストされている場合、オブジェクト URL は <strong>s3://remote-bucket/file-path</strong> のようになります。ライターが返すデータパスのプレフィックスとして適用可能な URI については、<a href="./data-import-storage-options">ストレージオプション</a>を参照してください。</p>
 
 </Admonition>
 
-### タスクの進捗を確認する{#check-task-progress}
+### タスクの進捗状況を確認する{#check-task-progress}
 
-次のコードは、5秒ごとに一括インポートの進行状況をチェックし、進行状況をパーセンテージで出力します。
+以下のコードは、バルクインポートの進捗状況を5秒ごとに確認し、進捗状況をパーセンテージで出力します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -1101,13 +1101,13 @@ while (true) {
 </TabItem>
 </Tabs>
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>get<em>i mport</em>gress<strong>(</strong>)内の<strong>urlを</strong>、ターゲットコレクションのクラウドリージョンに対応するものに置き換えてください。</p>
+<p><strong>get_import_progress()</strong> の <strong>url</strong> を、ターゲット collection のクラウドリージョンに対応するものに置き換えてください。</p>
 
 </Admonition>
 
-すべての一括インポートジョブを次のように一覧表示できます。
+すべてのバルクインポートジョブを以下のようにリストできます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -1159,15 +1159,15 @@ System.out.println(listImportJobsResult);
 
 ## まとめ{#recaps}
 
-このコースでは、データのインポートの全過程をカバーしました。以下にまとめるアイデアをいくつか紹介します。
+このコースでは、データのインポートプロセス全体を網羅しました。以下にまとめるためのいくつかのポイントを示します。
 
-- ターゲットコレクションのスキーマを計算するためにデータを調べてください。
+- ターゲットcollectionのschemaを決定するために、データを検査します。
 
-- BulkWriterを使用する場合**は**、以下の点に注意してください。
+- **BulkWriter**を使用する場合、以下に注意してください。
 
-    - 各行に追加するキーとして、スキーマ定義フィールドをすべて含めます。動的フィールドが許可されている場合は、適用可能な未定義フィールドも含めます。
+    - 追加する各行に、schemaで定義されたすべてのフィールドをキーとして含めます。dynamic fieldが許可されている場合は、適用可能な未定義のフィールドも含まれます。
 
-    - すべての行を追加した後に**commit()**を呼び出すことを忘れないでください。
+    - すべての行を追加した後、**commit()**を呼び出すことを忘れないでください。
 
-- bulk_import**()**を使用する場合、準備したデータをホストするクラウドプロバイダのエンドポイントと、ライターが返すデータパスを連結してオブジェクトURLを構築します。
+- **bulk_import()**を使用する場合、準備されたデータをホストするクラウドプロバイダーのエンドポイントと、writerによって返されるデータパスを連結してオブジェクトURLを構築します。
 

@@ -4,20 +4,20 @@ slug: /best-practices
 sidebar_label: "ベストプラクティス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudを使用する際のベストプラクティスに関する記事を見つけることができます。 | Cloud"
+description: "Zilliz Cloud を使用する際のベストプラクティスに関する記事をご覧いただけます。"
 type: origin
-token: HBtcws2w1iKqApkhziCcAyXknQb
-sidebar_position: 9
+token: HWzCwbjfci51HHk4BvTcfbiHn1d
+sidebar_position: 10
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - milvus
-  - best practices
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - ベストプラクティス
+  - プライベートLLM
+  - NN検索
+  - LLM評価
+  - 疎 vs 密
 
 ---
 
@@ -26,7 +26,7 @@ import Admonition from '@theme/Admonition';
 
 # ベストプラクティス
 
-Zilliz Cloudを使用する際のベストプラクティスに関する記事を見つけることができます。
+Zilliz Cloudを使用する際のベストプラクティスに関する記事をご覧いただけます。
 
 import DocCardList from '@theme/DocCardList';
 

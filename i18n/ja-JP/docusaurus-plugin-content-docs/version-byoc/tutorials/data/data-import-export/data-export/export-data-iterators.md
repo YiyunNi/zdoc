@@ -1,23 +1,23 @@
 ---
 title: "イテレータを使用したデータのエクスポート | BYOC"
 slug: /export-data-iterators
-sidebar_label: "イテレータを使用したデータのエクスポート"
+sidebar_label: "イテレータの使用"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloudコレクションからデータをエクスポートする方法の例を提供します。 | BYOC"
+description: "このガイドでは、Zilliz Cloud collection からデータをエクスポートする方法の例を説明します。 | BYOC"
 type: origin
-token: YehKwci6ViokYUkkz5rcIwP5nzg
+token: N6fZwCUXqiqoJEkFiVNcvDJEnnc
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - data export
-  - iterator
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - ベクターデータベース
+  - クラウド
+  - データエクスポート
+  - イテレータ
+  - 語彙検索
+  - 近傍探索
+  - Agentic RAG
+  - rag llm architecture
 
 ---
 
@@ -27,33 +27,33 @@ import TabItem from '@theme/TabItem';
 
 # イテレータを使用したデータのエクスポート
 
-このガイドでは、Zilliz Cloudコレクションからデータをエクスポートする方法の例を提供します。
+このガイドでは、Zilliz Cloud collection からデータをエクスポートする方法の例を示します。
 
-## 概要について{#overview}
+## 概要{#overview}
 
-MilvusのPythonおよびJava SDKは、コレクション内のエンティティをメモリ効率的に反復処理するための一連のイテレータAPIを提供しています。詳細については、「[検索イテレータ](./with-iterators)」を参照してください。
+Milvus の Python および Java SDK はどちらも、collection 内の entity をメモリ効率の良い方法で反復処理するための一連のイテレータ API を提供しています。詳細については、[Search Iterator](./with-iterators) を参照してください。
 
 イテレータを使用すると、次の利点があります。
 
-- **シンプルさ**:複雑な**オフセット**と**リミット**設定を排除します。
+- **シンプルさ**: 複雑な **offset** および **limit** 設定が不要になります。
 
-- **効率性**:必要なデータのみを取得してスケーラブルなデータ取得を提供します。
+- **効率性**: 必要なデータのみをフェッチすることで、スケーラブルなデータ取得を提供します。
 
-- **Consistency**:ブールフィルタを使用して一貫したデータセット体格を確保します。
+- **一貫性**: ブールフィルタを使用して一貫したデータセットサイズを保証します。
 
-これらのAPIを使用して、Zilliz Cloudコレクションから特定またはすべてのエンティティをエクスポートできます。
+これらの API を使用して、Zilliz Cloud collection から特定のまたはすべての entity をエクスポートできます。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は、Milvus 2.3. x以上と互換性のあるZilliz Cloudクラスターで利用できます。</p>
+<p>この機能は、Milvus 2.3.x 以降と互換性のある Zilliz Cloud クラスターで利用できます。</p>
 
 </Admonition>
 
-## 準備する{#preparations}
+## 準備{#preparations}
 
-次の手順では、コードを再利用してZilliz Cloudクラスターに接続し、コレクションをすばやく設定し、10,000以上のランダムに生成されたエンティティをコレクションに挿入します。
+以下の手順では、Zilliz Cloud クラスターに接続し、collection を迅速にセットアップし、10,000 を超えるランダムに生成された entity を collection に挿入するためのコードを再利用します。
 
-### ステップ1:コレクションを作成する{#step-1-create-a-collection}
+### ステップ 1: collection を作成する{#step-1-create-a-collection}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -109,7 +109,7 @@ client.createCollection(createCollectionParam);
 </TabItem>
 </Tabs>
 
-### ステップ2:ランダムに生成されたエンティティを挿入する{#step-2-insert-randomly-generated-entities}
+### ステップ2：ランダムに生成されたエンティティを挿入する{#step-2-insert-randomly-generated-entities}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -226,19 +226,19 @@ System.out.println(wrapper.getInsertCount());
 
 ## イテレータを使用したデータのエクスポート{#export-data-using-iterators}
 
-イテレータを使用してデータをエクスポートするには、次のようにします:
+イテレータを使用してデータをエクスポートするには、次のようにします。
 
-1. 検索イテレータを初期化して、検索パラメータと出力フィールドを定義します。`batch_size`パラメータを設定することで、反復ごとにエクスポートするエンティティの数を制限できます。
+1. 検索イテレータを初期化して、検索パラメータと出力フィールドを定義します。`batch_size` パラメータを設定することで、イテレーションごとにエクスポートするエンティティの数を制限できます。
 
-1. ループ内で`next()`メソッドを使用して、検索結果をページ分割します。
+1. ループ内で `next()` メソッドを使用して、検索結果をページ分割します。
 
-    - メソッドが空の配列を返す場合、ループは終了します。
+    - メソッドが空の配列を返した場合、ループは終了します。
 
-    - それ以外の場合は、適切な方法でリターンを保存してください。例えば、リターンをファイルに追加したり、データベースに保存したり、他の消費者向けプログラムにフィードしたりすることができます。
+    - それ以外の場合は、返されたデータを任意の形式で保存します。たとえば、返されたデータをファイルに追加したり、データベースに保存したり、他のコンシューマプログラムに供給したりできます。
 
-1. すべてのデータが取得されたら、`close()`メソッドを呼び出してイテレータを閉じます。
+1. すべてのデータが取得されたら、`close()` メソッドを呼び出してイテレータを閉じます。
 
-次のコードスニペットは、**QueryIterator**APIを使用してエクスポートされたデータをファイルに追加する方法を示しています。
+以下のコードスニペットは、**QueryIterator** API を使用してエクスポートされたデータをファイルに追加する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>

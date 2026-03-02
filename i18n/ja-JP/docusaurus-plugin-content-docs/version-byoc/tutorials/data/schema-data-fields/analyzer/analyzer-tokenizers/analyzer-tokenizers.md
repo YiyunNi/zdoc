@@ -1,25 +1,25 @@
 ---
 title: "トークナイザーリファレンス | BYOC"
 slug: /analyzer-tokenizers
-sidebar_label: "トークナイザーリファレンス"
+sidebar_label: "トークナイザー"
 beta: FALSE
 notebook: FALSE
 description: "このセクションでは、トークナイザーの詳細なリファレンスを提供します。 | BYOC"
 type: origin
-token: SZT7wSD7FiTKmPk8NWbccHT8npc
+token: Zu6vw6Aifi1gvNkqqO5cDjmtngh
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - collection
   - schema
   - analyzer
-  - built-in tokenizer
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
+  - 組み込みトークナイザー
+  - ベクトルインデックス
+  - オープンソースベクトルデータベース
+  - オープンソースベクトルDB
+  - ベクトルデータベースの例
 
 ---
 

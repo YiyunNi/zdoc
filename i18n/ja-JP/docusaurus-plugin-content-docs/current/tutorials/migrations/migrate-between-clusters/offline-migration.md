@@ -4,34 +4,40 @@ slug: /offline-migration
 sidebar_label: "オフライン移行"
 beta: FALSE
 notebook: FALSE
-description: "オフライン移行は、ソースクラスタからターゲットクラスタにすべての既存データを転送します。この方法は、同じ組織内および異なる組織間の移行をサポートします。計画されたメンテナンス中や小規模なデータベース移行中など、一時的な書き込み中断が許容されるシナリオに最適です。中断のない書き込み操作が必要な移行については、「ゼロダウンタイム移行」を参照してください。 | Cloud"
+description: "オフライン移行は、ソースのZilliz CloudクラスターからターゲットのZilliz Cloudクラスターへ、既存のすべてのデータを転送します。この方法は、同じ組織内および異なる組織間での移行をサポートします。計画的なメンテナンスや小規模なデータベース移行など、一時的な書き込み中断が許容されるシナリオに最適です。 | Cloud"
 type: origin
-token: NR7FwgMcyiRS9Vk7ZVCc9Q5Sn7c
+token: MTqjwwUKhiyns4kGV7Lc7PRlnwb
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - migrations
-  - clusters
-  - offline
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - 移行
+  - クラスター
+  - オフライン
+  - 非構造化データとは
+  - ベクトル埋め込み
+  - ベクトルストア
+  - オープンソースベクトルデータベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
+import Supademo from '@site/src/components/Supademo';
+
 # オフライン移行
 
-オフライン移行は、ソースクラスタからターゲットクラスタにすべての既存データを転送します。この方法は、同じ組織内および異なる組織間の移行をサポートします。計画されたメンテナンス中や小規模なデータベース移行中など、一時的な書き込み中断が許容されるシナリオに最適です。中断のない書き込み操作が必要な移行については、「[ゼロダウンタイム移行](./zero-downtime-migration)」を参照してください。
+オフライン移行は、既存のすべてのデータをソース Zilliz Cloud クラスターからターゲット Zilliz Cloud クラスターに転送します。この方法は、同じ組織内および異なる組織間の両方の移行をサポートします。計画的なメンテナンスや小規模なデータベース移行など、一時的な書き込み中断が許容されるシナリオに最適です。
 
-## 考慮事項{#considerations}
+中断のない書き込み操作が必要な移行については、[ゼロダウンタイム移行](./zero-downtime-migration)を参照してください。
 
-表は、異なるプランのクラスター間の移行機能と制約を概説しています。
+## 移行機能{#migration-capabilities}
+
+### クラスターの互換性{#cluster-compatibility}
+
+次の表は、異なるデプロイメントオプションのクラスター間の移行機能と制約を示しています。
 
 <table>
    <tr>
@@ -39,105 +45,111 @@ import Admonition from '@theme/Admonition';
      <th colspan="3"><p><strong>ターゲット</strong></p></th>
    </tr>
    <tr>
-     <td><p>フリークラスタ</p></td>
-     <td><p>サーバーレスクラスタ</p></td>
-     <td><p>専用クラスタ</p></td>
+     <td><p>Free クラスター</p></td>
+     <td><p>Serverless クラスター</p></td>
+     <td><p>Dedicated クラスター</p></td>
    </tr>
    <tr>
-     <td><p>フリークラスタ</p></td>
-     <td><p>サポートされていない</p></td>
-     <td><p><a href="./manage-cluster">クラスタの管理</a>を参照してください</p></td>
-     <td><p><a href="./manage-cluster">クラスタの管理</a>を参照してください</p></td>
+     <td><p>Free クラスター</p></td>
+     <td><p>サポートされていません</p></td>
+     <td><p>サポートされていません</p><p>(Free クラスターは Serverless クラスターにのみアップグレードできます。<a href="./manage-cluster#upgrade-deployment-option">クラスターの管理</a>を参照してください。)</p></td>
+     <td><p>サポートされています</p><p>(Free クラスターは Dedicated クラスターにもアップグレードできます。<a href="./manage-cluster#upgrade-deployment-option">クラスターの管理</a>を参照してください。)</p></td>
    </tr>
    <tr>
-     <td><p>サーバーレスクラスタ</p></td>
-     <td><p>サポートされていない</p></td>
-     <td><p>サポートされてい</p></td>
-     <td><p>サポートされてい</p></td>
+     <td><p>Serverless クラスター</p></td>
+     <td><p>サポートされていません</p></td>
+     <td><p>サポートされています</p></td>
+     <td><p>サポートされています</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ</p></td>
-     <td><p>サポートされていない</p></td>
-     <td><p>サポートされていない</p></td>
-     <td><p>サポートされてい</p></td>
+     <td><p>Dedicated クラスター</p></td>
+     <td><p>サポートされていません</p></td>
+     <td><p>サポートされていません</p></td>
+     <td><p>サポートされています</p></td>
    </tr>
 </table>
 
-## 始める前に{#before-you-start}
+### 移行範囲オプション{#migration-scope-options}
 
-- ソースのZilliz Cloudクラスターは、パブリックインターネットからアクセスできます。
+<table>
+   <tr>
+     <th><p>移行タイプ</p></th>
+     <th><p>説明</p></th>
+     <th><p>ユースケース</p></th>
+   </tr>
+   <tr>
+     <td><p>同じプロジェクト内</p></td>
+     <td><p>同じ Zilliz Cloud プロジェクト内の既存のクラスター間で移行します</p></td>
+     <td><p>クラスターのアップグレード、パフォーマンスの最適化、データの統合</p></td>
+   </tr>
+   <tr>
+     <td><p>プロジェクト間または組織間</p></td>
+     <td><p>異なる Zilliz Cloud プロジェクトまたは組織内の既存のクラスター間で移行します</p></td>
+     <td><p>企業の合併、部門間の異動、マルチテナントシナリオ</p></td>
+   </tr>
+</table>
 
-- 組織[間移行](./offline-migration#migrate-data-across-organizations)の場合は、パブリックエンドポイント、APIキー、クラスターのユーザー名とパスワードなど、ターゲットのZilliz Cloudクラスターに必要な接続情報があることを確認してください。
+### 直接データ転送{#direct-data-transfer}
 
-- 組織オーナーまたはプロジェクト管理者の役割が付与されています。必要な権限がない場合は、Zilliz Cloudの管理者にお問い合わせください。
+オフライン移行は、Zilliz Cloud クラスター間で直接データレプリケーションを実行し、以下の特性を持ちます。
 
-<Admonition type="info" icon="📘" title="ノート">
+- **スキーマの保持**: ソーススキーマは変更されずにターゲットクラスターに転送されます。
 
-<p>Zilliz Cloudは、プログラムによってクラスタ間でデータを移行するためのRESTful APIエンドポイントも提供しています。詳細については、「<a href="/reference/restful/migrate-to-existing-cluster-v2">既存クラスタへの移行</a>」と「<a href="/reference/restful/migrate-to-new-dedicated-cluster-v2">新しい専用クラスタへ</a>の移行」を参照してください。</p>
+- **フィールドの変更なし**: 移行中にフィールド名の変更、データ型の変更、フィールド属性の変更はできません。
+
+- **自動インデックス作成**: ターゲットクラスターのベクトルフィールドにはAUTOINDEXが自動的に作成されます。
+
+## 前提条件{#prerequisites}
+
+オフライン移行を開始する前に、以下の要件を満たしていることを確認してください。
+
+### 一般的な要件{#general-requirements}
+
+<table>
+   <tr>
+     <th><p>要件</p></th>
+     <th><p>詳細</p></th>
+   </tr>
+   <tr>
+     <td><p>ユーザー権限</p></td>
+     <td><p>Organization Owner または Project Admin ロール</p></td>
+   </tr>
+   <tr>
+     <td><p>ソースクラスターへのアクセス</p></td>
+     <td><p>ソースクラスターはパブリックインターネットからアクセス可能である必要があります</p></td>
+   </tr>
+   <tr>
+     <td><p>ターゲットクラスターの容量</p></td>
+     <td><p>ソースデータを収容するのに十分な CU サイズ (<a href="https://zilliz.com/pricing#calculator">CU 計算ツール</a>を使用)</p></td>
+   </tr>
+</table>
+
+### プロジェクト間または組織間の移行要件{#cross-project-or-organization-migration-requirements}
+
+<table>
+   <tr>
+     <th><p>要件</p></th>
+     <th><p>詳細</p></th>
+   </tr>
+   <tr>
+     <td><p>接続資格情報</p></td>
+     <td><p>ソースクラスターのパブリックエンドポイント、API キー、またはクラスターのユーザー名とパスワード</p></td>
+   </tr>
+   <tr>
+     <td><p>ネットワークアクセス</p></td>
+     <td><p>ターゲット組織からソースクラスターに接続できること</p></td>
+   </tr>
+</table>
+
+## はじめに{#getting-started}
+
+以下のデモでは、オフライン移行の全プロセスを説明します。
+
+<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title="Zilliz Cloud - Offline Migration Demo" />
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>移行されたコレクションは、検索またはクエリ操作にすぐに利用できるわけではありません。検索およびクエリ機能を有効にするには、Zilliz Cloud でコレクションを手動でロードする必要があります。詳細については、<a href="./load-release-collections">ロードとリリース</a>を参照してください。</p>
 
 </Admonition>
-
-## 同じ組織内でデータを移行する{#migrate-data-within-the-same-organization}
-
-同じ組織内の新しいクラスターまたは既存のクラスターにデータを移行できます。
-
-1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)にログインします。
-
-1. ターゲットプロジェクトに移動し、**移行**>**現在の組織内**を選択してください。
-
-1. [**移行設定**]ダイアログボックスで、ソースクラスターとデータベース、およびターゲットクラスターを構成し、[**確認**]をクリックします。ターゲットクラスターのプランレベルがソースクラスターのプランレベルよりも低くないことを確認します(例:**専用**クラスターから**Free**または**Serverless**クラスターへの移行はサポートされていません)。クラスタープランの詳細については、「[詳細なプラン比較](./select-zilliz-cloud-service-plans)」を参照してください。
-
-    <Admonition type="info" icon="📘" title="ノート">
-
-    <p>データを移行する際には、新しいターゲットクラスタを作成するか、同じ組織内の既存のクラスタを使用するオプションがあります。ソースクラスタは、現在のプロジェクトで利用可能なクラスタから選択する必要があります。</p>
-
-    </Admonition>
-
-1. [**移行**]をクリックします。
-
-![cross_cluster_migration_1](/img/cross_cluster_migration_1.png)
-
-## 組織間でデータを移行する{#migrate-data-across-organizations}
-
-組織間でデータを移行するには、別の組織のソースクラスターにアクセスするために必要な接続資格情報(ソースクラスターエンドポイント、APIキー、またはユーザー名とパスワード)を提供する必要があります。
-
-1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)にログインします。
-
-1. ターゲットプロジェクトに移動し、**移行**>**他の組織で**選択してください。
-
-1. 「**データソースに接続**」ステップで、ソースクラスタの接続情報を構成します。次に、「**次**へ」をクリックします。
-
-1. 「**ソースとターゲットを選択**」ステップで、ソースデータベースとクラスター、およびターゲットクラスターの設定を構成します。次に、「**次**へ」をクリックします。
-
-1. 「**スキーマ構成**」ステップでは、
-
-    1. スキーマプレビューでターゲットコレクションとそのフィールド設定を確認します。
-
-    1. （オプション）**詳細設定**で、**ダイナミックフィールド**と**パーティションキー**を設定します。詳細については、「[ダイナミックフィールド](./enable-dynamic-field)と[パーティションキーを使う](./use-partition-key)」を参照してください。
-
-    1. （オプション）「**一般情報**」で、ターゲットコレクションの名前と説明をカスタマイズします。コレクション名は各クラスターで一意である必要があります。名前が既存の名前と重複している場合は、コレクション名を変更します。
-
-1. [**移行**]をクリックします。
-
-![cross_cluster_migration_2](/img/cross_cluster_migration_2.png)
-
-## 移行過程を監視する{#monitor-the-migration-process}
-
-「**移行**」をクリックすると、移行ジョブが生成されます。[ジョブ](./job-center)ページで移行の進捗状況を確認できます。ジョブのステータスが「**IN PROGRESS**」から「**SUCCESS FUL**」に切り替わると、移行が完了します。
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>移行後、ターゲットクラスタ内のコレクションとエンティティの数がデータソースと一致していることを確認してください。不一致が見つかった場合は、エンティティが欠落しているコレクションを削除して再移行してください。</p>
-
-</Admonition>
-
-![verify_collection](/img/verify_collection.png)
-
-## 移行ジョブをキャンセル{#cancel-migration-job}
-
-移行過程で問題が発生した場合は、次の手順に従ってトラブルシューティングを行い、移行を再開できます。
-
-1. [[ジョブ](./job-center)]ページで、失敗した移行ジョブを特定してキャンセルします。
-
-1. [アクション]列の[**詳細**を**表示**]をクリックして、エラーログにアクセスします。
 

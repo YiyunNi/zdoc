@@ -1,78 +1,78 @@
 ---
-title: "リリースノート（2024年10月14日） | Cloud"
+title: "リリースノート (2024年10月14日) | Cloud"
 slug: /release-notes-2102
-sidebar_label: "リリースノート（2024年10月14日）"
+sidebar_label: "2024年10月14日"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudのこのリリースでは、いくつかの主要なアップデートが導入されています。Notebook Galleryでは、RAG、埋め込み、マルチモーダル検索などの高度な機能の例が提供されます。Improved Capacity ofPerformance-optimizedCUは50%増加し、CUあたり最大150万個の768-dimベクトルを収容し、大量のデータに対してコストを30%削減する可能性があります。そして、マルチレプリカアベイラビリティは、ワークロードとレプリカをアベイラビリティゾーン(AZ)全体に分散することで、クエリのパフォーマンスと信頼性を向上させます。さらに、Zilliz Cloudは現在、アジア太平洋地域でのパフォーマンス向上のためのAWS Tokyo Region、リアルタイムモニタリングとトラブルシューティングのためのPrometheus Integration、およびSSOを含む複数のログイン方法を提供する改良されたAuthentication and Login System with Auth 0をサポートしています。最後に、ユーザーはAWS Marketplace Free Trialを通じてZilliz製品を評価でき、パフォーマンスとスケーラビリティのテストのためのコア機能へのリスクフリーアクセスを提供します。 | Cloud"
+description: "Zilliz Cloudのこのリリースでは、Notebook Galleryにいくつかの重要なアップデートが導入されました。Notebook Galleryでは、RAG、埋め込み、マルチモーダル検索などの高度な機能の例が提供されます。また、パフォーマンス最適化されたCUの容量が50%増加し、1CUあたり最大150万個の768次元ベクトルを収容できるようになり、大量のデータの場合、コストを30%削減できる可能性があります。さらに、マルチレプリカ可用性により、ワークロードとレプリカをアベイラビリティゾーン (AZ) に分散することで、クエリのパフォーマンスと信頼性が向上します。Zilliz Cloudは、アジア太平洋地域でのパフォーマンス向上のためAWS東京リージョンをサポートし、リアルタイム監視とトラブルシューティングのためにPrometheusとの統合をサポートし、Auth0による認証およびログインシステムを刷新し、SSOを含む複数のログイン方法を提供します。最後に、ユーザーはAWS Marketplaceの無料トライアルを通じてZilliz製品を評価でき、パフォーマンスとスケーラビリティのテストのためにコア機能にリスクなしでアクセスできます。 | Cloud"
 type: origin
-token: Anm3wgkIeibZapkuZr7cb5lqn9B
-sidebar_position: 6
+token: PyrrwqrGbirtGTkh4oacaov7nHh
+sidebar_position: 14
 keywords: 
-  - zilliz
-  - vector database
-  - cloud
-  - release notes
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
   - Zilliz
+  - ベクトルデータベース
+  - クラウド
+  - リリースノート
+  - サーバーレスベクトルデータベース
+  - Milvusオープンソース
+  - Milvusの仕組み
+  - Zillizベクトルデータベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# リリースノート（2024年10月14日）
+# リリースノート (2024年10月14日)
 
-Zilliz Cloudのこのリリースでは、いくつかの主要なアップデートが導入されています。**Notebook Gallery**では、RAG、埋め込み、マルチモーダル検索などの高度な機能の例が提供されます。**Improved Capacity ofPerformance-optimizedCU**は50%増加し、CUあたり最大150万個の768-dimベクトルを収容し、大量のデータに対してコストを30%削減する可能性があります。そして、**マルチレプリカアベイラビリティ**は、ワークロードとレプリカをアベイラビリティゾーン(AZ)全体に分散することで、クエリのパフォーマンスと信頼性を向上させます。さらに、Zilliz Cloudは現在、アジア太平洋地域でのパフォーマンス向上のための**AWS Tokyo Region**、リアルタイムモニタリングとトラブルシューティングのための**Prometheus Integration**、およびSSOを含む複数のログイン方法を提供する改良された**Authentication and Login System with Auth 0**をサポートしています。最後に、ユーザーは**AWS Marketplace Free Trial**を通じてZilliz製品を評価でき、パフォーマンスとスケーラビリティのテストのためのコア機能へのリスクフリーアクセスを提供します。
+Zilliz Cloudの今回のリリースでは、いくつかの重要なアップデートが導入されました。RAG、埋め込み、マルチモーダル検索などの高度な機能の例を提供する**Notebook Gallery**。**パフォーマンス最適化されたCUの容量が50%向上**し、CUあたり最大150万の768次元ベクトルに対応できるようになり、大量のデータの場合、コストを30%削減できる可能性があります。**マルチレプリカの一般提供**により、ワークロードとレプリカをアベイラビリティゾーン（AZ）に分散することで、クエリのパフォーマンスと信頼性が向上します。さらに、Zilliz Cloudは、アジア太平洋地域でのパフォーマンスを向上させるために**AWS東京リージョン**をサポートし、リアルタイムの監視とトラブルシューティングのための**Prometheus統合**、そしてSSOを含む複数のログイン方法を提供する**Auth0による認証およびログインシステムの刷新**を行いました。最後に、ユーザーは**AWS Marketplace無料トライアル**を通じてZilliz製品を評価でき、パフォーマンスとスケーラビリティのテストのためにコア機能にリスクなしでアクセスできます。
 
-### Milvusの互換性{#milvus-compatibility}
+### Milvus互換性{#milvus-compatibility}
 
-このリリースは**Milvus 2.4. x**と互換性があります。
+このリリースは**Milvus 2.4.x**と互換性があります。
 
-### ノートブックギャラリー{#notebook-gallery}
+### Notebook Gallery{#notebook-gallery}
 
-このリリースでは、Zilliz CloudはNotebook Galleryを紹介しています。このギャラリーでは、Zilliz Cloudの高度な機能を紹介する詳細な例が提供されています。Notebookは、RAG(Retrieval-Augmented Generation)、エージェント、埋め込み、テキスト検索、マルチモーダル検索、データ取り込み、移行、パフォーマンス最適化など、幅広いユースケースをカバーしています。
+今回のリリースで、Zilliz CloudはNotebook Galleryを導入しました。このギャラリーでは、Zilliz Cloudの高度な機能を紹介する詳細な例が提供されています。ノートブックは、RAG（Retrieval-Augmented Generation）、エージェント、埋め込み、テキスト検索、マルチモーダル検索、データ取り込み、移行、パフォーマンス最適化など、幅広いユースケースをカバーしています。
 
-今すぐ[ノートブック](https://zilliz.com/learn/milvus-notebooks)を探検しよう!
+今すぐ[ノートブック](https://zilliz.com/learn/milvus-notebooks)をご覧ください！
 
-### CUのPerformance-optimized能力の向上{#improved-capacity-of-performance-optimized-cu}
+### パフォーマンス最適化されたCUの容量向上{#improved-capacity-of-performance-optimized-cu}
 
-このリリースにより、performance-optimizedCU(Compute Unit)の容量が50%増加しました。以前は、各performance-optimizedCUには768次元ベクトルで推定される約100万個のベクトルを保持できました。現在、容量はCUあたり150万個のベクトルに強化されています。この改善により、大量のデータに対してCUコストを約30%削減できます。
+今回のリリースにより、パフォーマンス最適化されたCU（Compute Unit）の容量が50%増加しました。以前は、各パフォーマンス最適化されたCUは、768次元ベクトルで推定した場合、約100万ベクトルを保持できました。現在、容量はCUあたり150万ベクトルに強化されています。大量のデータの場合、この改善によりCUコストを約30%削減できます。
 
-### 一般的にマルチレプリカが利用可能です{#multi-replica-generally-available}
+### マルチレプリカの一般提供{#multi-replica-generally-available}
 
-Zilliz Cloudでは、マルチレプリカが一般的に利用可能になりました。これにより、クラスターレベルのレプリケーションが可能になり、クエリのスループットと可用性の両方が向上します。
+マルチレプリカがZilliz Cloudで一般提供されるようになり、クラスターレベルのレプリケーションによりクエリのスループットと可用性の両方を向上させることができます。
 
-- **改善されたクエリパフォーマンス**:高いクエリ毎秒(QPS)を必要とするユーザーにとって、マルチレプリカはクエリワークロードをレプリカ全体に分散させることができます。この並列処理により、全体的なスループットが向上し、レイテンシが減少し、クエリ集中型アプリケーションの効率が向上します。ほとんどの場合、レプリカが追加されるにつれて、全体的なQPSは線形に改善されます。
+- **クエリパフォーマンスの向上**: 高いクエリ/秒（QPS）を必要とするユーザーの場合、マルチレプリカによりクエリワークロードをレプリカ間で分散できます。この並列処理により、全体的なスループットが向上し、レイテンシーが短縮され、クエリ集中型アプリケーションの効率が向上します。ほとんどの場合、レプリカを追加するにつれて、全体的なQPSは線形に向上します。
 
-- **拡張可用性**:マルチレプリカは、複数の可用性ゾーン(AZ)にレプリカを配布することで可用性を強化します。この設定により、AZの障害が発生してもデータへの継続的なアクセスが確保され、ミッションクリティカルなアプリケーションの信頼性が向上します。
+- **可用性の強化**: マルチレプリカは、複数のアベイラビリティゾーン（AZ）にレプリカを分散することで可用性を強化します。この設定により、AZの障害が発生した場合でもデータへの継続的なアクセスが保証され、ミッションクリティカルなアプリケーションの信頼性が向上します。
 
-- マルチレプリカの設定の詳細については、「[レプリカの管理](./manage-replica)」を参照してください。
+- マルチレプリカの設定の詳細については、[レプリカの管理](./manage-replica)を参照してください。
 
-### 新しいリージョンが利用可能になりました: AWS東京{#new-region-available-aws-tokyo}
+### 新しいリージョンが利用可能: AWS東京{#new-region-available-aws-tokyo}
 
-Zilliz Cloudは現在、AWS東京リージョン（ap-北東-1）で利用可能であり、アジア太平洋リージョンのユーザーに改善されたレイテンシーとパフォーマンスを提供しています。
+Zilliz CloudはAWS東京リージョン（ap-northeast-1）で利用可能になり、アジア太平洋地域のユーザーに改善されたレイテンシーとパフォーマンスを提供します。
 
-AWS東京リージョンの価格の詳細については、[価格ページ](https://zilliz.com/pricing)をご覧ください。
+AWS東京リージョンの料金詳細については、[料金ページ](https://zilliz.com/pricing)をご覧ください。
 
-### Prometheusの統合サポート{#prometheus-integration-support}
+### Prometheus統合のサポート{#prometheus-integration-support}
 
-Zilliz Cloudは現在、Prometheusとの統合をサポートしており、ユーザーはシステムメトリクスを実際立って監視および可視化できます。この統合により、ユーザーはパフォーマンス、リソース使用状況、およびシステムの健康状態を追跡し、プロアクティブな監視と効率的なトラブルシューティングを確保できます。セットアップと構成の詳細については、[Prometheusと統合する](./prometheus-monitoring)するを参照してください。
+Zilliz CloudはPrometheusとの統合をサポートするようになり、ユーザーはシステムメトリクスをリアルタイムで監視および視覚化できます。この統合により、ユーザーはパフォーマンス、リソース使用量、システムヘルスを追跡でき、プロアクティブな監視と効率的なトラブルシューティングを保証します。セットアップと設定の詳細については、[Prometheusとの統合](./prometheus-monitoring)を参照してください。
 
-### Auth 0による認証とログインシステムのリファクタリング{#authentication-and-login-system-refactoring-with-auth0}
+### Auth0による認証およびログインシステムの刷新{#authentication-and-login-system-refactoring-with-auth0}
 
-このリリースでは、Zilliz CloudはAuth 0を使用した認証とログインシステムを改良しました。Zilliz Cloudは現在、3つのログイン方法をサポートしています。
+今回のリリースで、Zilliz CloudはAuth0を使用して認証およびログインシステムを刷新しました。Zilliz Cloudは現在、3つのログイン方法をサポートしています。
 
-- メール登録とログイン
+- メール登録とログイン。
 
 - GitHubまたはGoogle認証によるクイックログイン。
 
-- 企業のお客様向けのSSOログイン。詳細については、[Oktaによるシングルサインオン](./single-sign-on-with-okta)をご覧ください。
+- エンタープライズ顧客向けのSSOログイン。詳細については、[Oktaによるシングルサインオン](./single-sign-on)をご覧ください。
 
 ### AWS Marketplace無料トライアル{#aws-marketplace-free-trial}
 
-このリリースにより、Zilliz CloudのユーザーはAWS Marketplaceの無料トライアルオプションを利用することができ、大きな購入決定をする前にリスクのない環境でZilliz製品を探索し評価する機会を提供します。このトライアルでは、プラットフォームのコア機能にすべりの権限が付与され、ユーザーはアプリケーションとのパフォーマンス、スケーラビリティ、互換性を徹底的にテストすることができます。
+今回のリリースにより、Zilliz CloudユーザーはAWS Marketplace無料トライアルオプションを利用できるようになり、大規模な購入を決定する前に、リスクのない環境でZilliz製品を探索および評価する機会が提供されます。このトライアルでは、プラットフォームのコア機能に完全にアクセスでき、ユーザーはパフォーマンス、スケーラビリティ、およびアプリケーションとの互換性を徹底的にテストできます。
 
-Zillizのサービスは[AWS Marketplace: Zilliz](https://aws.amazon.com/marketplace/seller-profile?id=4922a541-e428-480d-8e32-db4ee9a7f46e)から入手できます。
+[AWS Marketplace: Zilliz](https://aws.amazon.com/marketplace/seller-profile?id=4922a541-e428-480d-8e32-db4ee9a7f46e)からZillizサービスを入手してください。

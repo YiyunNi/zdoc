@@ -4,20 +4,20 @@ slug: /metrics-and-alerts
 sidebar_label: "メトリクスとアラート"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、組織やクラスターで何が起こっているかを知るための便利なメトリックチャートとアラートを提供します。 | BYOC"
+description: "Zilliz Cloudは、組織とクラスターで何が起こっているかを把握するための便利なメトリクスチャートとアラートを提供します。 | BYOC"
 type: origin
-token: ZrlmwoHRUiZCLGkng9wc6nlzn0g
-sidebar_position: 6
+token: Xma9w6Ne9ihcsZkFkSmcHidEnZg
+sidebar_position: 8
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - metrics
-  - alerts
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - ベクトルデータベース
+  - クラウド
+  - メトリクス
+  - アラート
+  - AIチャットボット
+  - コサイン距離
+  - ベクトルデータベースとは
+  - vectordb
 
 ---
 
@@ -26,7 +26,7 @@ import Admonition from '@theme/Admonition';
 
 # メトリクスとアラート
 
-Zilliz Cloudは、組織やクラスターで何が起こっているかを知るための便利なメトリックチャートとアラートを提供します。
+Zilliz Cloudは、組織とクラスターで何が起こっているかを把握するための便利なメトリクスチャートとアラートを提供します。
 
 import DocCardList from '@theme/DocCardList';
 

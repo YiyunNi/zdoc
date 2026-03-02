@@ -1,27 +1,27 @@
 ---
-title: "数字フィールド | Cloud"
+title: "Boolean & Number | Cloud"
 slug: /use-number-field
-sidebar_label: "数字フィールド"
+sidebar_label: "Boolean & Number"
 beta: FALSE
 notebook: FALSE
-description: "数値フィールドは、数値を格納するスカラーフィールドです。これらの値は、整数(整数)または10進数(浮動小数点数)である場合があります。通常、量、測定値、または数学的に処理する必要があるデータを表すために使用されます。 | Cloud"
+description: "ブール型または数値型フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（整数）および小数（浮動小数点数）のいずれかになります。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。 | Cloud"
 type: origin
-token: EJdCwl6J1iOTdIkC3G9cIMRjnjb
+token: EwArwXCOPip15hkSvvpciAMJnSe
 sidebar_position: 7
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - collection
   - schema
-  - number field
+  - 数値フィールド
   - int
-  - integer
+  - 整数
   - float
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - 近似最近傍探索
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
 
 ---
 
@@ -29,66 +29,68 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 数字フィールド
+# Boolean & Number
 
-数値フィールドは、数値を格納するスカラーフィールドです。これらの値は、整数(**整数**)または10進数(**浮動小数点数**)である場合があります。通常、量、測定値、または数学的に処理する必要があるデータを表すために使用されます。
+ブール型または数値型フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（**integers**）および小数（**floating-point numbers**）のいずれかになります。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。
 
-以下の表は、Zilliz Cloudクラスターで利用可能な数値フィールドのデータ型を説明しています。
+以下の表は、Zilliz Cloudクラスターで利用可能な数値フィールドのデータ型について説明しています。
 
 <table>
    <tr>
      <th><p>フィールドタイプ</p></th>
-     <th><p>説明する</p></th>
+     <th><p>説明</p></th>
    </tr>
    <tr>
      <td><p><code>BOOL</code></p></td>
-     <td><p>バイナリ状態を記述するために適した、<code>true</code>または<code>false</code>を格納するためのブール型。</p></td>
+     <td><p><code>true</code>または<code>false</code>を格納するためのブール型で、バイナリ状態の記述に適しています。</p></td>
    </tr>
    <tr>
-     <td><p><code>INT 8</code></p></td>
-     <td><p>小さな範囲の整数データを格納するのに適した8ビット整数。</p></td>
+     <td><p><code>INT8</code></p></td>
+     <td><p>8ビット整数で、小範囲の整数データの格納に適しています。</p></td>
    </tr>
    <tr>
-     <td><p><code>INT 16</code></p></td>
-     <td><p>中程度の整数データ用の16ビット整数。</p></td>
+     <td><p><code>INT16</code></p></td>
+     <td><p>16ビット整数で、中範囲の整数データに適しています。</p></td>
    </tr>
    <tr>
-     <td><p><code>INT 32</code></p></td>
-     <td><p>32ビット整数は、製品数量やユーザーIDなどの一般的な整数データストレージに最適です。</p></td>
+     <td><p><code>INT32</code></p></td>
+     <td><p>32ビット整数で、製品数量やユーザーIDなどの一般的な整数データストレージに最適です。</p></td>
    </tr>
    <tr>
-     <td><p><code>INT 64</code></p></td>
-     <td><p>タイムスタンプや識別子のような大規模なデータを格納するのに適した64ビット整数。</p></td>
+     <td><p><code>INT64</code></p></td>
+     <td><p>64ビット整数で、タイムスタンプや識別子などの大範囲のデータの格納に適しています。</p></td>
    </tr>
    <tr>
-     <td><p><code>フロート</code></p></td>
-     <td><p>定格や温度などの一般的な精度が必要なデータ用の32ビット浮動小数点数。</p></td>
+     <td><p><code>FLOAT</code></p></td>
+     <td><p>32ビット浮動小数点数で、評価や温度など、一般的な精度を必要とするデータに適しています。</p></td>
    </tr>
    <tr>
-     <td><p><code>ダブル</code></p></td>
-     <td><p>財務情報や科学計算などの高精度データ用の64ビット倍精度浮動小数点数。</p></td>
+     <td><p><code>DOUBLE</code></p></td>
+     <td><p>64ビット倍精度浮動小数点数で、金融情報や科学計算などの高精度データに適しています。</p></td>
    </tr>
 </table>
 
-数値フィールドを宣言するには、利用可能な数値`datatype`のいずれかにデータ型を設定するだけです。例えば、整数フィールドの場合は`DataType. INT64`、浮動小数点フィールドの場合は`DataType.FLOAT`となります。
+ブール型フィールドを宣言するには、`datatype`を`BOOL`に設定します。数値型フィールドを宣言するには、利用可能な数値データ型のいずれかに設定します。例えば、整数フィールドの場合は`DataType.INT64`、浮動小数点フィールドの場合は`DataType.FLOAT`です。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloudは、数値フィールドのnull値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code>を<code>True</code>に設定し、<code>default_value</code>を数値に設定します。詳細については、<a href="./nullable-and-default">Nullableデフォルト</a>を参照してください。</p>
+<p>Zilliz Cloudは、ブール型および数値型フィールドのnull値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code>を<code>True</code>に、<code>default_value</code>を数値に設定します。詳細については、<a href="./nullable-and-default">Nullable & Default</a>を参照してください。</p>
 
 </Admonition>
 
-## 数値フィールドを追加{#add-number-field}
+## ブール型および数値型フィールドの追加{#add-boolean-and-number-fields}
 
-数値データを保存するには、コレクションスキーマに数値フィールドを定義します。以下は、2つの数値フィールドを持つコレクションスキーマの例です。
+ブール型または数値データを格納するには、コレクションスキーマに対応する型のフィールドを定義します。以下は、2つの数値フィールドを持つコレクションスキーマの例です。
 
-- `age`:整数データを格納し、null値を許可し、デフォルト値は`18`です。
+- `age`: 整数データを格納し、null値を許可し、デフォルト値は`18`です。
 
-- `price`:浮動小数点データを格納し、null値を許可しますが、デフォルト値はありません。
+- `broken`: ブールデータを格納し、null値を許可しますが、デフォルト値はありません。
 
-<Admonition type="info" icon="📘" title="ノート">
+- `price`: 浮動小数点データを格納し、null値を許可しますが、デフォルト値はありません。
 
-<p>スキーマを定義する際に<code>enable_dynamic_fields=True</code>を設定した場合、Zilliz Cloudでは、事前に定義されていないスカラーフィールドを挿入することができます。ただし、これによりクエリや管理が複雑になり、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">ダイナミックフィールド</a>を参照してください。</p>
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>スキーマ定義時に<code>enable_dynamic_fields=True</code>を設定すると、Zilliz Cloudは事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリと管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">Dynamic Field</a>を参照してください。</p>
 
 </Admonition>
 
@@ -113,6 +115,7 @@ schema = client.create_schema(
 
 # Add an INT64 field `age` that supports null values with default value 18
 schema.add_field(field_name="age", datatype=DataType.INT64, nullable=True, default_value=18)
+schema.add_field(field_name="broken", datatype=DataType.BOOL, nullable=True)
 # Add a FLOAT field `price` that supports null values without default value
 schema.add_field(field_name="price", datatype=DataType.FLOAT, nullable=True)
 schema.add_field(field_name="pk", datatype=DataType.INT64, is_primary=True)
@@ -144,6 +147,12 @@ schema.addField(AddFieldReq.builder()
         .isNullable(true)
         .defaultValue(18)
         .build());
+        
+schema.addField(AddFieldReq.builder()
+        .fieldName("broken")
+        .dataType(DataType.BOOL)
+        .isNullable(true)
+        .build());
 
 schema.addField(AddFieldReq.builder()
         .fieldName("price")
@@ -174,6 +183,10 @@ const schema = [
   {
     name: "age",
     data_type: DataType.Int64,
+  },
+  {
+    name: "broken",
+    data_type: DataType.Bool,
   },
   {
     name: "price",
@@ -240,7 +253,10 @@ schema.WithField(entity.NewField().
     WithDataType(entity.FieldTypeInt64).
     WithNullable(true).
     WithDefaultValueLong(18),
-)
+).WithField(entity.NewField().
+    WithName("broken").
+    WithDataType(entity.FieldTypeBool).
+    WithNullable(true),
 ```
 
 </TabItem>
@@ -251,6 +267,11 @@ schema.WithField(entity.NewField().
 export int64Field='{
     "fieldName": "age",
     "dataType": "Int64"
+}'
+
+export boolField='{
+    "fieldName": "broken",
+    "dataType": "Bool"
 }'
 
 export floatField='{
@@ -276,6 +297,7 @@ export schema="{
     \"autoID\": false,
     \"fields\": [
         $int64Field,
+        $boolField,
         $floatField,
         $pkField,
         $vectorField
@@ -288,9 +310,9 @@ export schema="{
 
 ## インデックスパラメータの設定{#set-index-params}
 
-インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスタでは、ベクトルフィールドではインデックス作成が必須ですが、スカラーフィールドではオプションです。
+インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスターでは、ベクトルフィールドのインデックス作成は必須ですが、スカラーフィールドのインデックス作成はオプションです。
 
-以下の例では、ベクトルフィールドの`embedding`とスカラーフィールドの`age`に関するインデックスを、`AUTOINDEX`インデックスタイプを使用して作成します。このタイプを使用すると、Milvusはデータ型に基づいて最適なインデックスを自動的に選択します。
+以下の例では、ベクトルフィールド`embedding`とスカラーフィールド`age`の両方に`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプでは、Milvusがデータ型に基づいて最適なインデックスを自動的に選択します。詳細については、[AUTOINDEX Explained](./autoindex-explained)を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -389,9 +411,9 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-## コレクションを作成{#create-collection}
+## コレクションの作成{#create-collection}
 
-スキーマとインデックスが定義されたら、数値フィールドを含むコレクションを作成してください。
+スキーマとインデックスが定義されたら、数値フィールドを含むコレクションを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -465,7 +487,7 @@ curl --request POST \
 
 ## データの挿入{#insert-data}
 
-コレクションを作成した後、スキーマに一致するエンティティを挿入してください。
+コレクションを作成したら、スキーマに一致するエンティティを挿入します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -583,11 +605,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルタ式を使用したクエリ{#query-with-filter-expressions}
+## フィルター式によるクエリ{#query-with-filter-expressions}
 
-エンティティを挿入した後、`query`メソッドを使用して、指定したフィルター式に一致するエンティティを取得します。
+エンティティを挿入した後、`query` メソッドを使用して、指定されたフィルター式に一致するエンティティを取得します。
 
-大なり30の`age`のエンティティを取得するには:
+`age` が 30 より大きいエンティティを取得するには：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -686,7 +708,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-価格がnullのエンティティを`取得`するには:
+`price`がnullのエンティティを取得するには：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -795,7 +817,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-`age`の値が18のエンティティを取得するには、以下の式を使用します。`age`のデフォルト値が`18`であるため、期待される結果には、`age`が明示的に`18`に設定されているか、`age`がnullに設定されているエンティティが含まれる必要があります。
+`age` が `18` の値を持つエンティティを取得するには、以下の式を使用します。`age` のデフォルト値は `18` であるため、期待される結果には、`age` が明示的に `18` に設定されているエンティティ、または `age` が null に設定されているエンティティが含まれるはずです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -900,9 +922,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルタ式を用いたベクトル検索{#vector-search-with-filter-expressions}
+## フィルター式を使用したベクトル検索 {#vector-search-with-filter-expressions}
 
-基本的な数値フィールドフィルタリングに加えて、ベクトル類似検索と数値フィールドフィルタを組み合わせることができます。例えば、次のコードはベクトル検索に数値フィールドフィルタを追加する方法を示しています。
+基本的な数値フィールドフィルタリングに加えて、ベクトル類似性検索と数値フィールドフィルタを組み合わせることができます。例えば、以下のコードは、ベクトル検索に数値フィールドフィルタを追加する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -1029,4 +1051,4 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-この例では、まずクエリベクトルを定義し、検索中に`25<=age<=35`というフィルタ条件を追加します。これにより、検索結果がクエリベクトルに似ているだけでなく、指定された年齢範囲を満たすことが保証されます。詳細については、[フィルタリング](./filtering)を参照してください。
+この例では、まずクエリベクトルを定義し、検索中にフィルタ条件 `25 <= age <= 35` を追加します。これにより、検索結果がクエリベクトルに類似しているだけでなく、指定された年齢範囲も満たしていることが保証されます。詳細については、[フィルタリング](./filtering)を参照してください。

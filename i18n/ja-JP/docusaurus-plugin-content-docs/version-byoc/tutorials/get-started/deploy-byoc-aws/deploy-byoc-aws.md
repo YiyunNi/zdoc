@@ -1,210 +1,253 @@
 ---
-title: "AWSでBYOCをデプロイする | BYOC"
+title: "AWS に BYOC をデプロイ | BYOC"
 slug: /deploy-byoc-aws
-sidebar_label: "AWSでBYOCをデプロイする"
+sidebar_label: "AWS に BYOC をデプロイ"
 beta: CONTACT SALES
 notebook: FALSE
-description: "このページでは、Zilliz CloudコンソールとカスタムAWS設定を使用して、Zilliz Cloud Bring-Your-Own-Cloud (BYOC)組織内でプロジェクトを手動で作成する方法について説明します。 | BYOC"
+description: "このページでは、Zilliz Cloud コンソールとカスタム AWS 設定を使用して、AWS Virtual Private Cloud (VPC) にフルマネージドの Bring-Your-Own-Cloud (BYOC) データプレーンを手動で作成する方法について説明します。 | BYOC"
 type: origin
-token: Etl1wNppoi5f7BkA0cKcULxvnGg
+token: DsqzwjegpiYSdtk1k75c1zXsnZc
 sidebar_position: 3
 keywords: 
   - zilliz
   - byoc
   - aws
   - milvus
-  - vector database
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
+  - ベクトルデータベース
+  - 動画の重複排除
+  - 動画の類似性検索
+  - ベクトル検索
+  - 音声の類似性検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# AWSでBYOCをデプロイする
+import Procedures from '@site/src/components/Procedures';
 
-このページでは、Zilliz CloudコンソールとカスタムAWS設定を使用して、Zilliz Cloud Bring-Your-Own-Cloud (BYOC)組織内でプロジェクトを手動で作成する方法について説明します。
+# AWS上でのBYOCのデプロイ
 
-<Admonition type="info" icon="📘" title="ノート">
+このページでは、Zilliz CloudコンソールとカスタムAWS設定を使用して、AWS Virtual Private Cloud (VPC)内に完全に管理されたBring-Your-Own-Cloud (BYOC)データプレーンを手動で作成する方法について説明します。
 
-<p>Zilliz BYOCは現在<strong>一般提供</strong>中です。アクセスと実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloudサポート</a>にお問い合わせください。</p>
+<Admonition type="info" icon="📘" title="Notes">
+
+<ul>
+<li><p>Zilliz BYOCは現在、**一般提供**されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloudの営業担当者</a>にお問い合わせください。</p></li>
+<li><p>このガイドでは、AWSコンソールで必要なリソースを段階的に作成する方法を説明します。Terraformスクリプトを使用してインフラストラクチャをプロビジョニングする場合は、<a href="./terraform-provider">Terraform Provider</a>を参照してください。</p></li>
+</ul>
 
 </Admonition>
 
 ## 前提条件{#prerequisites}
 
-- あなたはBYOC組織のオーナーでなければなりません。
+- BYOC組織の所有者である必要があります。
 
-## 手続き{#procedure}
+## 手順{#procedure}
 
-AWSにBYOCを展開するには、Zilliz Cloudは、お客様が管理するVPC内のS 3バケットとEKSクラスターにアクセスするための特定の役割を担う必要があります。そのため、Zilliz Cloudは、S 3バケット、EKSクラスター、VPCに関する情報と、これらのインフラストラクチャリソースにアクセスするために必要な役割を収集する必要があります。
+AWSにBYOCをデプロイするために、Zilliz Cloudは、お客様が管理するVPC内のS3バケットとEKSクラスターにアクセスするために特定のロールを引き受ける必要があります。したがって、Zilliz Cloudは、S3バケット、EKSクラスター、VPCに関する情報、およびこれらのインフラストラクチャリソースにアクセスするために必要なロールを収集する必要があります。
 
-BYOC組織内で、[**プロジェクトの作成とデータプレーンのデプロイ**]ボタンをクリックしてデプロイを開始します。
+BYOC組織内で、**Create Project and Deploy Data Plane**ボタンをクリックしてデプロイを開始します。
 
-![YSBFbBGscoLGykx4dx1cMs4LnTd](/img/YSBFbBGscoLGykx4dx1cMs4LnTd.png)
+![XtlJbBTIboHNbixzfqpc7H3nnvb](https://zdoc-images.s3.us-west-2.amazonaws.com/xtljbbtibohnbixzfqpc7h3nnvb.png "XtlJbBTIboHNbixzfqpc7H3nnvb")
 
-### 一般の設定{#general-settings}
+### ステップ1：プロジェクトの作成{#step-1-create-a-project}
 
-「**一般設定**」では、プロジェクト名を設定し、クラウドプロバイダーとリージョンを決定し、Zilliz Cloudがプロジェクトを作成し、データプレーンを展開する方法を選択する必要があります。
+このステップでは、プロジェクト名を設定し、クラウドプロバイダーとリージョン、初期プロジェクトサイズを決定し、Zilliz Cloudがプロジェクトを作成してデータプレーンをデプロイする方法を選択する必要があります。
 
-![UxkPbaWqpoE67Tx8yL2cE9EVnUe](/img/UxkPbaWqpoE67Tx8yL2cE9EVnUe.png)
+![ObsWbiWhxo4IQHx7pPacHUl2nuh](https://zdoc-images.s3.us-west-2.amazonaws.com/obswbiwhxo4iqhx7ppachul2nuh.png "ObsWbiWhxo4IQHx7pPacHUl2nuh")
 
-1. [**プロジェクト名**]を設定します。
+<Procedures>
 
-1. [**クラウドプロバイダー**]と[**リージョン**]を選択します。
+1. **Project Name**を設定します。
 
-1. (オプション)**インスタンス設定**を構成します。
-
-    BYOCプロジェクトでは、検索サービス、基本的なデータベースコンポーネント、およびコアサポートサービスが異なるインスタンスを使用します。これらのサービスとコンポーネントのインスタンスタイプを設定できます。
-
-    詳細は、[インスタンス設定](./deploy-byoc-aws#instance-settings)を参照してください。
+1. **Cloud Provider**と**Region**を選択します。
 
 1. **AWS PrivateLink**を有効にするかどうかを決定します。
 
-    このオプションを有効にすると、現在のプロジェクト内のクラスターへのプライベート接続が可能になります。このオプションを有効にする場合は、プライベート接続用のVPCエンドポイントを作成する必要があります。
+    このオプションは、現在のプロジェクト内のクラスターへのプライベート接続を可能にします。このオプションを有効にする場合は、プライベート接続のためにVPCエンドポイントを作成する必要があります。
 
-1. Zilliz Cloudが**デプロイ方法**でタスクを実行する方法を選択してください。
+1. **Architecture**で、アプリケーションに合ったアーキテクチャタイプを選択します。
 
-    AWS上でBYOCプロジェクトのインフラストラクチャをプロビジョニングするには、3つのオプションがあります。
+    これは、使用するZilliz BYOCイメージのアーキテクチャタイプを決定します。利用可能なオプションは**X86**と**ARM**です。
+
+1. **Resource Settings**で、次の操作を行う必要があります。
+
+    1. **Auto-scaling**を有効または無効にして、Zilliz Cloudがプロジェクトのワークロードに基づいて定義された範囲内でEC2インスタンスの数を自動的に調整し、効率的なリソース使用を確保できるようにします。
+
+    1. **Initial Project Size**を設定します。
+
+        BYOCプロジェクトでは、クエリノード、インデックスサービス、Milvusコンポーネント、および依存関係は異なる種類のEC2インスタンスを使用します。これらのサービスとコンポーネントのインスタンスタイプと数を個別に設定できます。
+
+        **Auto-scaling**が無効になっている場合は、対応する**Count**フィールドに各プロジェクトコンポーネントに必要なEC2インスタンスの数を指定するだけです。
+
+        ![V1r0b6PDzokWRqxaA4ccrTs2nEd](https://zdoc-images.s3.us-west-2.amazonaws.com/v1r0b6pdzokwrqxaa4ccrts2ned.png "V1r0b6PDzokWRqxaA4ccrTs2nEd")
+
+        **Auto-scaling**が有効になっている場合は、対応する**Min**および**Max**フィールドを設定して、Zilliz Cloudが実際のプロジェクトワークロードに基づいてEC2インスタンスの数を自動的にスケーリングする範囲を指定する必要があります。
+
+        ![XYW9bj1qfoKEXMx9L4DchlE7nHh](https://zdoc-images.s3.us-west-2.amazonaws.com/xyw9bj1qfokexmx9l4dchle7nhh.png "XYW9bj1qfoKEXMx9L4DchlE7nHh")
+
+        リソース設定を容易にするために、4つの事前定義されたプロジェクトサイズオプションがあります。次の表は、これらのプロジェクトサイズオプションと、プロジェクトで作成できるクラスターの数、およびこれらのクラスターが含むことができるエンティティの数のマッピングを示しています。
+
+        <table>
+           <tr>
+             <th rowspan="2"><p>サイズ</p></th>
+             <th rowspan="2"><p>最大クラスター数</p></th>
+             <th colspan="2"><p>最大エンティティ数（百万）</p></th>
+           </tr>
+           <tr>
+             <td><p>パフォーマンス最適化CU</p></td>
+             <td><p>容量最適化CU</p></td>
+           </tr>
+           <tr>
+             <td><p>小</p></td>
+             <td><p>8〜16 CUの3クラスター</p></td>
+             <td><p>1000万〜2500万</p></td>
+             <td><p>4000万〜8000万</p></td>
+           </tr>
+           <tr>
+             <td><p>中</p></td>
+             <td><p>16〜64 CUの7クラスター</p></td>
+             <td><p>2500万〜1億</p></td>
+             <td><p>8000万〜3億5000万</p></td>
+           </tr>
+           <tr>
+             <td><p>大</p></td>
+             <td><p>64〜192 CUの12クラスター</p></td>
+             <td><p>1億〜3億</p></td>
+             <td><p>3億5000万〜10億</p></td>
+           </tr>
+           <tr>
+             <td><p>特大</p></td>
+             <td><p>192〜576 CUの17クラスター</p></td>
+             <td><p>3億〜9億</p></td>
+             <td><p>10億〜30億</p></td>
+           </tr>
+        </table>
+
+        **Initial Project Size**で**Custom**を選択し、すべてのデータプレーンコンポーネントのEC2インスタンスタイプと数を調整することで、設定をカスタマイズすることもできます。ご希望のEC2インスタンスタイプがリストにない場合は、[Zillizサポートにお問い合わせください](https://zilliz.com/contact)。
+
+1. **Deploy Method**で、Zilliz Cloudがタスクを実行する方法を選択します。
+
+    AWSでBYOCプロジェクトのインフラストラクチャをプロビジョニングするには、3つのオプションがあります。次のいずれかを選択できます。
 
     - **AWS CloudFormationを使用してインフラストラクチャをプロビジョニングします。**
 
-        AWS CloudFormationを使用してプロジェクトのデータプレーンインフラストラクチャをプロビジョニングする場合は、[**クイックスタート**]タイルを[**デプロイ方法**]セクションで選択します。これは、BYOCプロジェクトを開始するためにも推奨される方法です。
+        AWS CloudFormationを使用してプロジェクトのデータプレーンインフラストラクチャをプロビジョニングする場合は、**Deploy Method**セクションで**Quickstart**タイルを選択します。これは、BYOCプロジェクトを開始するための推奨される方法でもあります。
+
+        AWS CloudFormationを使用することを決定した場合は、**Next**をクリックすると、プロジェクトを新しいVPCにデプロイするか、既存のVPCにデプロイするかを選択する次のダイアログボックスが表示されます。
+
+        ![EWCsb9An2oM6dkxjCuOcM5hRnCe](https://zdoc-images.s3.us-west-2.amazonaws.com/ewcsb9an2om6dkxjcuocm5hrnce.png "EWCsb9An2oM6dkxjCuOcM5hRnCe")
+
+        次に、**Create Stack with CloudFormation**をクリックしてプロジェクトのデプロイを開始できます。
 
     - **Terraformスクリプトを使用してインフラストラクチャをプロビジョニングします。**
 
-        インフラストラクチャのプロビジョニングにTerraformスクリプトを使用する場合は、スクリプトの出力をZilliz Cloudにコピー&ペーストする必要があります。詳細については、[Bootstrapインフラストラクチャ（Terraform）](./terraform-provider)を参照してください。
+        Terraformスクリプトを使用してインフラストラクチャをプロビジョニングする場合は、スクリプトの出力をZilliz Cloudにコピーして貼り付ける必要があります。詳細については、[Terraform Provider](./terraform-provider)を参照してください。
 
-    - **AWSコンソールを使用して、必要なリソースとロールを作成します。**
+        Terraformスクリプトによって返された情報を、[Credential Settings](./deploy-byoc-aws#step-2-set-up-credentials)および[Network Settings](./deploy-byoc-aws#step-3-configure-network-settings)で指定されているように、Zilliz Cloudコンソールに入力する必要があることに注意してください。
 
-        必要なリソース(ストレージバケットや複数のIAMロールなど)をAWSコンソールで作成する必要があります。その後、名前とIDをコピーしてZilliz Cloudコンソールに貼り付けます。この方法でプロジェクトを作成する場合は、**手動**タイルを**デプロイ方法**セクションで選択してください。
+    - **AWSコンソールを使用して必要なリソースとロールを作成します。**
 
-        設定を容易にするために、Zilliz Cloudは以下の過程に分けています:
+        ストレージバケットやいくつかのIAMロールなどの必要なリソースをAWSコンソールで作成する必要があります。次に、それらの名前とIDをZilliz Cloudコンソールにコピーして貼り付けます。この方法でプロジェクトを作成する場合は、**Deploy Method**セクションで**Manually**タイルを選択し、**Next**をクリックします。
 
-        - [クレデンシャル設定](./deploy-byoc-aws#credential-settings)、および
+        Zilliz Cloudは、設定を容易にするためにプロセスを[Credential Settings](./deploy-byoc-aws#step-2-set-up-credentials)と[Network Settings](./deploy-byoc-aws#step-3-configure-network-settings)に分割します。
 
-        - [ネットワーク設定](./deploy-byoc-aws#credential-settings)。
+1. **Next**をクリックして認証情報を設定します。
 
-### クレデンシャル設定{#credential-settings}
+</Procedures>
 
-[**資格情報設定**]では、ストレージアクセス、EKSクラスター管理、およびデータプレーンデプロイのために、ストレージと複数のIAMロールを設定する必要があります。
+### ステップ2：認証情報の設定{#step-2-set-up-credentials}
 
-![SqYDbdYcropfGnxMsOhcSeACnag](/img/SqYDbdYcropfGnxMsOhcSeACnag.png)
+**Credential Settings**では、ストレージアクセス、EKSクラスター管理、データプレーンデプロイのためのストレージといくつかのIAMロールを設定する必要があります。
 
-1. 以下の手順に従って、ストレージ、EKS、およびクロスアカウント設定を構成します。
+![LEGhbUbZwoPdwSx1PjxcHBjQnab](https://zdoc-images.s3.us-west-2.amazonaws.com/leghbubzwopdwsx1pjxchbjqnab.png "LEGhbUbZwoPdwSx1PjxcHBjQnab")
 
-    1. [**ストレージ設定**]で、AWSから取得した**バケット名**と**IAMロールARN**を設定します。
+<Procedures>
 
-        Zilliz Cloudは、指定されたバケットをデータプレーンストレージとして使用し、指定されたIAMロールを使用してあなたの代わりにアクセスします。
+1. **Storage settings**で、AWSから取得した**Bucket Name**と**IAM Role ARN**を設定します。
 
-        S 3バケットを作成する手順の詳細については、[S3バケットとIAMロールの作成](./create-bucket-and-role)するを参照してください。
+    Zilliz Cloudは、指定されたバケットをデータプレーンストレージとして使用し、指定されたIAMロールを使用してアクセスします。
 
-    1. [**EKS設定**]で、EKS管理の**IAMロールARN**を設定します。
+    S3バケットの作成手順の詳細については、[S3バケットとIAMロールの作成](./create-bucket-and-role)を参照してください。
 
-        Zilliz Cloudは、指定されたロールを使用してEKSクラスターをデプロイし、EKSクラスターにデータプレーンをデプロイします。
+1. **EKS Settings**で、EKS管理用の**IAM Role ARN**を設定します。
 
-        EKSロールを作成する手順の詳細については、「[EKS IAMロールの作成](./create-eks-role)」を参照してください。
+    Zilliz Cloudは、指定されたロールを使用してEKSクラスターをデプロイし、EKSクラスターにデータプレーンをデプロイします。
 
-    1. [**クロスアカウント設定**]で、データプレーンデプロイの**IAMロールARN**を設定します。
+    EKSロールの作成手順の詳細については、[EKS IAMロールの作成](./create-eks-role)を参照してください。
 
-        Zilliz Cloudは、指定された役割を使用して、Zilliz Cloud BYOCプロジェクトのデータプレーンを展開します。
+1. **Cross-Account Settings**で、データプレーンデプロイ用の**IAM Role ARN**を設定します。
 
-        クロス勘定ロールを作成する手順の詳細については、「[クロスアカウントIAMロールの作成](./create-cross-account-role)」を参照してください。
+    ダイアログボックスに表示される**External ID**をコピーする必要があります。Zilliz Cloudは、指定されたロールを使用してZilliz Cloud BYOCプロジェクトのデータプレーンをデプロイします。
 
-1. [**次**へ]をクリックしてネットワーク設定を構成します。
+    クロスアカウントロールの作成手順の詳細については、[クロスアカウントIAMロールの作成](./create-cross-account-role)を参照してください。
 
-### ネットワーク設定{#network-settings}
+1. **Next**をクリックしてネットワーク設定を構成します。
 
-ネットワーク設定では、VPCと、サブネット、セキュリティグループ、VPC内のオプションのVPCエンドポイントなど、複数の種類のリソースを作成する必要があります。
+</Procedures>
 
-![G9iEbGNd2oMhbSxWmAccCAnkn0g](/img/G9iEbGNd2oMhbSxWmAccCAnkn0g.png)
+### ステップ3：ネットワーク設定の構成{#step-3-configure-network-settings}
 
-1. [**ネットワーク設定**]で、**VPC ID**、**サブネットID**、**セキュリティグループID**、およびオプションの**VPCエンドポイントID**を設定します。
+**Network Settings**では、VPC内にVPCと、サブネット、セキュリティグループ、オプションのVPCエンドポイントなどのいくつかの種類のリソースを作成します。
 
-    指定されたVPCでは、Zilliz Cloudが必要です。
+![NeKmbmKVhoNWcOx18IjcC1eLnDb](https://zdoc-images.s3.us-west-2.amazonaws.com/nekmbmkvhonwcox18ijcc1elndb.png "NeKmbmKVhoNWcOx18IjcC1eLnDb")
+
+<Procedures>
+
+1. **Network Settings**で、**VPC ID**、**Subnet IDs**、**Security Group ID**、およびオプションの**VPC endpoint ID**を設定します。
+
+    指定されたVPCでは、Zilliz Cloudは次のものを必要とします。
 
     - パブリックサブネットと3つのプライベートサブネット。
 
-    - セキュリティグループ、そして
+    - セキュリティグループ、および
 
     - オプションのVPCエンドポイント。
 
-    VPCの作成手順とリソースの詳細については、「[顧客管理型VPCの設定](./configure-vpc)」を参照してください。
+    **VPC Endpoint ID**は、上記の**General Settings**で**AWS PrivateLink**をオンにした場合にのみ利用可能であることに注意してください。VPCとその関連リソースの作成手順の詳細については、[顧客管理VPCの構成](./configure-vpc)を参照してください。
 
-1. [**次**へ]をクリックして概要を表示します。
+1. **Next**をクリックして概要を表示します。
 
-1. [**Deployment Summary**]で構成を確認します。
+1. **Deployment Summary**で、構成設定を確認します。
 
-1. すべてが期待どおりであれば、[**作成**]をクリックします。
+1. すべてが期待どおりであれば、**Create**をクリックします。
 
-## インスタンス設定{#instance-settings}
+</Procedures>
 
-Zilliz BYOCプロジェクトのデータプレーンには、**Search Services**、**Fundamental Database Components**、**Core Support Services**の3種類のコンポーネントがあり、それぞれ異なるEC 2インスタンスを使用しています。 
+## デプロイの詳細を表示{#view-deployment-details}
 
-![C7RmbHtWjoFrczxFOAnctnNYnDc](/img/C7RmbHtWjoFrczxFOAnctnNYnDc.png)
+プロジェクトを作成した後、プロジェクトページでそのステータスを表示できます。
 
-**一般設定**では、上記の3つのデータプレーンコンポーネントのEC 2インスタンスタイプを決定する必要があります。さらに、Core Support ServicesのEC 2インスタンス数を指定する必要があります。これにより、プロジェクト内で作成できるクラスターの最大数が決定されます。
+![Bw2Xb6wIKoXWAuxU4jOcDdAnn2e](https://zdoc-images.s3.us-west-2.amazonaws.com/bw2xb6wikoxwauxu4jocddann2e.png "Bw2Xb6wIKoXWAuxU4jOcDdAnn2e")
 
-定義済みのプロジェクト体格オプションは4つあります。
+## 一時停止と再開{#suspend-and-resume}
 
-<table>
-   <tr>
-     <th rowspan="2"><p>サイズ</p></th>
-     <th rowspan="2"><p>最大クラスタ数</p></th>
-     <th colspan="2"><p>エンティティの最大数（百万）</p></th>
-   </tr>
-   <tr>
-     <td><p>Performance-optimized CU</p></td>
-     <td><p>Capacity-optimized CU</p></td>
-   </tr>
-   <tr>
-     <td><p>Small</p></td>
-     <td><p>8～16個のCUを持つ3つのクラスタ</p></td>
-     <td><p>10百万-25百万の</p></td>
-     <td><p>40百万-80百万の</p></td>
-   </tr>
-   <tr>
-     <td><p>Medium</p></td>
-     <td><p>16～64個のCUを持つ7つのクラスタ</p></td>
-     <td><p>25百万-100百万の</p></td>
-     <td><p>80百万-350百万の</p></td>
-   </tr>
-   <tr>
-     <td><p>Large</p></td>
-     <td><p>64～192個のCUを持つ12つのクラスタ</p></td>
-     <td><p>100百万-300百万の</p></td>
-     <td><p>350百万-10億</p></td>
-   </tr>
-   <tr>
-     <td><p>X-Large</p></td>
-     <td><p>192～576個のCUを持つ17つのクラスタ</p></td>
-     <td><p>300百万-900百万の</p></td>
-     <td><p>10億-30億</p></td>
-   </tr>
-</table>
+プロジェクトを一時停止すると、データプレーンが停止し、プロジェクトをサポートするEKSクラスターに関連付けられたすべてのEC2インスタンスが終了します。このアクションは、プロジェクト内の一時停止されたZilliz Cloudクラスターには影響しません。データプレーンが復元されると、これらのクラスターは再開できます。
 
-## デプロイの詳細を表示する{#view-deployment-details}
+![BN8KbqawgoErlZxtNYFcEvrjne4](https://zdoc-images.s3.us-west-2.amazonaws.com/bn8kbqawgoerlzxtnyfcevrjne4.png "BN8KbqawgoErlZxtNYFcEvrjne4")
 
-プロジェクトを作成したら、プロジェクトページでステータスを閲覧可能です。
+プロジェクト内にクラスターがない場合、またはすべてのクラスターがすでに一時停止されている場合にのみ、実行中のプロジェクトを一時停止できます。
 
-![QJ57bgqmjoIP0Qx5niSc4SJHnab](/img/QJ57bgqmjoIP0Qx5niSc4SJHnab.png)
+![QXK1bRewYoasCzx1AHNcpbSBnhe](https://zdoc-images.s3.us-west-2.amazonaws.com/qxk1brewyoasczx1ahncpbsbnhe.png "QXK1bRewYoasCzx1AHNcpbSBnhe")
 
-## 一時停止と再開 {#suspend-and-resume}
+プロジェクトカードのステータスタグが**Suspended**と表示されている場合、プロジェクト内のクラスターを操作することはできません。そのような場合は、**Resume**をクリックしてプロジェクトを再開できます。ステータスタグが再び**Running**に変わると、プロジェクト内のクラスターの操作を続行できます。
 
-プロジェクトを一時停止すると、データプレーンが停止し、プロジェクトをサポートするEKSクラスターに関連するすべてのEC 2インスタンスが終了します。このアクションは、プロジェクト内の一時停止されたZilliz Cloudクラスターには影響しません。データプレーンが復元されたら再開できます。
+## テクニカルサポートアクセス{#technical-support-access}
 
-![KgmubOHigoPnlHx7ID9cJmeWn8b](/img/KgmubOHigoPnlHx7ID9cJmeWn8b.png)
+トラブルシューティングとメンテナンス操作を支援するために、Zilliz Cloudはデフォルトでテクニカルサポートがプロジェクトのデータプレーンにアクセスできるようにします。
 
-実行中のプロジェクトを一時停止できるのは、プロジェクトにクラスターがない場合、またはすべてのクラスターがすでに一時停止されている場合のみです。
+![K1qzbwdxXoge0exlN6NcClN7nfh](https://zdoc-images.s3.us-west-2.amazonaws.com/k1qzbwdxxoge0exln6nccln7nfh.png "K1qzbwdxXoge0exlN6NcClN7nfh")
 
-![JEMybaDxEoIAS6xT0vdc2vm2nzb](/img/JEMybaDxEoIAS6xT0vdc2vm2nzb.png)
+対象プロジェクトのドロップダウンメニューから**Technical Support Access**をクリックすると、現在の設定が表示されます。
 
-プロジェクトカードのステータスタグが**Suspended**になると、プロジェクト内のクラスタを操作できなくなります。その場合は、**Resume**をクリックしてプロジェクトを再開できます。ステータスタグが再び**Running**に変わると、プロジェクト内のクラスタの操作を続けることができます。
+![YYOabQl2ioTl6AxIVLwcwjWqnBc](https://zdoc-images.s3.us-west-2.amazonaws.com/yyoabql2iotl6axivlwcwjwqnbc.png "YYOabQl2ioTl6AxIVLwcwjWqnBc")
 
-## 手続き{#procedures}
+データガバナンスとセキュリティ要件を満たすために無効にすることができます。
+
+## 手順{#procedures}
+
+
 
 import DocCardList from '@theme/DocCardList';
 

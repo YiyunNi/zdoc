@@ -1,29 +1,26 @@
 ---
-title: "FAQ:バックアップと復元 | BYOC"
+title: "FAQ: バックアップと復元 | BYOC"
 slug: /faq-backup-and-restore
-sidebar_label: "FAQ:バックアップと復元"
+sidebar_label: "FAQ: バックアップと復元"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloudでデータをバックアップおよび復元する際に発生する可能性のある問題と、それに対応する解決策について説明します。 | BYOC"
+description: "このトピックでは、Zilliz Cloud でデータをバックアップおよび復元する際に発生する可能性のある問題と、それに対応する解決策をリストアップします。 | BYOC"
 type: origin
-token: LKxiwykkhi5VyLkTfAGcE3LinBe
+token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 7
 
 ---
 
-# FAQ:バックアップと復元
+# FAQ: バックアップと復元
 
-このトピックでは、Zilliz Cloudでデータをバックアップおよび復元する際に発生する可能性のある問題と、それに対応する解決策について説明します。
+このトピックでは、Zilliz Cloud でデータのバックアップと復元を行う際に発生する可能性のある問題と、それに対応する解決策をリストアップします。
 
-## Contents
+## 目次
 
-- [専用（スタンダード）プランでバックアップ機能は利用できますか?](#is-the-backup-feature-available-in-the-dedicated-standard-plan)
+- [Standardプランでバックアップ機能は利用できますか？](#is-the-backup-feature-available-in-the-standard-plan)
 
-## FAQs
+## よくある質問
 
+### Standardプランでバックアップ機能は利用できますか？{#is-the-backup-feature-available-in-the-standard-plan}
 
-
-
-### 専用（スタンダード）プランでバックアップ機能は利用できますか?{#is-the-backup-feature-available-in-the-dedicated-standard-plan}
-
-はい。バクカップの作成は、専用（スタンダード）プランと専用（エンタープライズ）プランの両方で利用できます。
+はい。バックアップの作成は、**Standard**プロジェクトの**Dedicated**クラスターで利用できます。

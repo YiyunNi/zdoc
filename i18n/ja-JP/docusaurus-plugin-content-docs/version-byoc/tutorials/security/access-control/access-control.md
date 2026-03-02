@@ -4,21 +4,21 @@ slug: /access-control
 sidebar_label: "アクセス制御"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudがより効率的なアクセス制御のためにRBACを実装する方法や、クラスターのユーザーやロール、特権を管理する方法について詳しく学びましょう。 | BYOC"
+description: "Zilliz Cloudがより効率的なアクセス制御のためにRBACをどのように実装しているか、またクラスターユーザー、ロール、権限を管理する方法について詳しく説明します。 | BYOC"
 type: origin
-token: KVrtwkOo8i9B0wk50UUcno8vnjc
+token: UEFXwAUL4icMjMkUej9cqncJncd
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - access control
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - アクセス制御
   - rbac
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - NLP
+  - ニューラルネットワーク
+  - ディープラーニング
+  - ナレッジベース
 
 ---
 
@@ -27,7 +27,7 @@ import Admonition from '@theme/Admonition';
 
 # アクセス制御
 
-Zilliz Cloudがより効率的なアクセス制御のためにRBACを実装する方法や、クラスターのユーザーやロール、特権を管理する方法について詳しく学びましょう。
+Zilliz Cloud がより効率的なアクセス制御のために RBAC をどのように実装しているか、およびクラスターユーザーとロール、特権を管理する方法について説明します。
 
 
 

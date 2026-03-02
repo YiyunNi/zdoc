@@ -1,24 +1,24 @@
 ---
-title: "コレクションを作成 | BYOC"
+title: "コレクションの作成 | BYOC"
 slug: /manage-collections-sdks
-sidebar_label: "コレクションを作成"
+sidebar_label: "コレクションの作成"
 beta: FALSE
 notebook: FALSE
-description: "スキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで、コレクションを作成できます。このページでは、コレクションをゼロから作成する方法を紹介します。 | BYOC"
+description: "コレクションは、スキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで作成できます。このページでは、コレクションをゼロから作成する方法について説明します。 | BYOC"
 type: origin
-token: GnYTwgZkwiXreLkEX7LcmUsrn8d
+token: EmcowmwYpiFbWgkmnqfcMf3knVc
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクターデータベース
   - cloud
   - collection
-  - create collection
-  - custom setup
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - コレクション作成
+  - カスタム設定
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
 
 ---
 
@@ -26,33 +26,40 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# コレクションを作成
+# コレクションの作成
 
-スキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで、コレクションを作成できます。このページでは、コレクションをゼロから作成する方法を紹介します。
+コレクションは、そのスキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで作成できます。このページでは、コレクションをゼロから作成する方法を紹介します。
 
-## 概要について{#overview}
+<Admonition type="info" icon="📘" title="Notes">
 
-コレクションは、固定列とバリアント行を持つ2次元テーブルです。各列はフィールドを表し、各行はエンティティを表します。このような構造データ管理を実装するにはスキーマが必要です。挿入するすべてのエンティティは、スキーマで定義された制約を満たす必要があります。
+<p>強力なデータ分離が必要で、少数のテナントのみを管理する場合は、テナントごとに個別のコレクションを作成できます。</p>
+<p>ただし、<a href="./limits">クラスタープラン</a>に応じて、最大16,384個のコレクションしか作成できません。したがって、大規模なマルチテナンシーの場合、ユースケースに応じて、パーティションベースまたはパーティションキーベースのマルチテナンシーなどの代替戦略を検討してください。詳細については、<a href="./multi-tenancy">マルチテナンシーの実装</a>を参照してください。</p>
 
-スキーマ、インデックスパラメーター、メトリックタイプ、作成時にロードするかどうかなど、コレクションのあらゆる側面を決定して、コレクションが要件を完全に満たしていることを確認できます。
+</Admonition>
 
-コレクションを作成するには、
+## 概要{#overview}
+
+コレクションは、固定された列と可変の行を持つ二次元テーブルです。各列はフィールドを表し、各行はentityを表します。このような構造化データ管理を実装するには、スキーマが必要です。挿入するすべてのentityは、スキーマで定義された制約を満たす必要があります。
+
+コレクションのスキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを含む、コレクションのあらゆる側面を決定して、コレクションが要件を完全に満たすようにすることができます。
+
+コレクションを作成するには、次の手順が必要です。
 
 - [スキーマの作成](./manage-collections-sdks#create-schema)
 
-- [インデックスパラメータの設定](./manage-collections-sdks#set-index-parameters)（任意）
+- [インデックスパラメータの設定](./manage-collections-sdks#optional-set-index-parameters) (オプション)
 
-- [コレクションを作成](./manage-collections-sdks#create-collection)
+- [コレクションの作成](./manage-collections-sdks#create-a-collection)
 
 ## スキーマの作成{#create-schema}
 
-スキーマは、コレクションのデータ構造を定義します。コレクションを作成する際には、要件に基づいてスキーマを設計する必要があります。詳細については、「[スキーマの説明](./schema-explained)」を参照してください。
+スキーマはコレクションのデータ構造を定義します。コレクションを作成する際には、要件に基づいてスキーマを設計する必要があります。詳細については、[スキーマの説明](./schema-explained)を参照してください。
 
-次のコードスニペットは、有効になっている動的フィールドと名前が必須の3つのフィールド`my_id`、`my_vector`、および`my_varchar`でスキーマを作成します。
+以下のコードスニペットは、dynamic fieldが有効で、`my_id`、`my_vector`、`my_varchar`という3つの必須フィールドを持つスキーマを作成します。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>任意のスカラーフィールドに対してデフォルト値を設定し、nullを許容することができます。詳細については、<a href="./nullable-and-default">Nullableデフォルト</a>を参照してください。</p>
+<p>任意のスカラーフィールドにデフォルト値を設定し、nullableにすることができます。詳細については、<a href="./nullable-and-default">Nullable & Default</a>を参照してください。</p>
 
 </Admonition>
 
@@ -166,10 +173,30 @@ const fields = [
 <TabItem value='go'>
 
 ```go
-import "github.com/milvus-io/milvus/client/v2/entity"
+import (
+    "context"
+    "fmt"
+    
+    "github.com/milvus-io/milvus/client/v2/entity"
+    "github.com/milvus-io/milvus/client/v2/index"
+    "github.com/milvus-io/milvus/client/v2/milvusclient"
+    "github.com/milvus-io/milvus/pkg/v2/common"
+)
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: milvusAddr,
+})
+if err != nil {
+    fmt.Println(err.Error())
+    // handle error
+}
+defer client.Close(ctx)
 
 schema := entity.NewSchema().WithDynamicFieldEnabled(true).
-        WithField(entity.NewField().WithName("my_id").WithIsAutoID(true).WithDataType(entity.FieldTypeInt64).WithIsPrimaryKey(true)).
+        WithField(entity.NewField().WithName("my_id").WithIsAutoID(false).WithDataType(entity.FieldTypeInt64).WithIsPrimaryKey(true)).
         WithField(entity.NewField().WithName("my_vector").WithDataType(entity.FieldTypeFloatVector).WithDim(5)).
         WithField(entity.NewField().WithName("my_varchar").WithDataType(entity.FieldTypeVarChar).WithMaxLength(512))
 ```
@@ -209,15 +236,15 @@ export schema='{
 </TabItem>
 </Tabs>
 
-## (オプション)インデックスパラメータの設定{#set-index-parameters}
+## (オプション) インデックスパラメータの設定{#optional-set-index-parameters}
 
-特定のフィールドにインデックスを作成すると、このフィールドに対する検索が高速化されます。インデックスは、コレクション内のエンティティの順序を記録します。次のコードスニペットに示すように、`metric_type`と`index_type`を使用して、Zilliz Cloudを使用してフィールドをインデックス化し、ベクトル埋め込みの類似性を測定するための適切な方法を選択できます。
+特定のフィールドにインデックスを作成すると、そのフィールドに対する検索が高速化されます。インデックスは、コレクション内のエンティティの順序を記録します。以下のコードスニペットに示すように、`metric_type`と`index_type`を使用して、Zilliz Cloudがフィールドをインデックス化し、ベクトル埋め込み間の類似性を測定するための適切な方法を選択できます。
 
-Zilliz Cloudでは、すべてのベクトルフィールドのインデックスタイプとして`AUTOINDEX`を使用し、必要に応じてメトリックタイプとして`COSINE`、`L 2`、`IP`のいずれかを使用できます。
+Zilliz Cloudでは、すべてのベクトルフィールドのインデックスタイプとして`AUTOINDEX`を使用でき、必要に応じてメトリックタイプとして`COSINE`、`L2`、`IP`のいずれかを使用できます。
 
-上記のコードスニペットで示されているように、ベクトルフィールドにはインデックスタイプとメトリックタイプの両方を設定し、スカラーフィールドにはインデックスタイプのみを設定する必要があります。ベクトルフィールドにはインデックスが必須であり、フィルタリング条件で頻繁に使用されるスカラーフィールドにインデックスを作成することをお勧めします。
+上記のコードスニペットで示されているように、ベクトルフィールドにはインデックスタイプとメトリックタイプを設定する必要があり、スカラーフィールドにはインデックスタイプのみを設定します。インデックスはベクトルフィールドには必須であり、フィルタリング条件で頻繁に使用されるスカラーフィールドにはインデックスを作成することをお勧めします。
 
-詳しくはManage Indexesするを参照してください。
+詳細については、[インデックスの管理](./manage-indexes)を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -229,7 +256,7 @@ index_params = client.prepare_index_params()
 # 3.4. Add indexes
 index_params.add_index(
     field_name="my_id",
-    index_type="STL_SORT"
+    index_type="AUTOINDEX"
 )
 
 index_params.add_index(
@@ -250,7 +277,7 @@ import java.util.*;
 // 3.3 Prepare index parameters
 IndexParam indexParamForIdField = IndexParam.builder()
         .fieldName("my_id")
-        .indexType(IndexParam.IndexType.STL_SORT)
+        .indexType(IndexParam.IndexType.AUTOINDEX)
         .build();
 
 IndexParam indexParamForVectorField = IndexParam.builder()
@@ -272,7 +299,7 @@ indexParams.add(indexParamForVectorField);
 // 3.2 Prepare index parameters
 const index_params = [{
     field_name: "my_id",
-    index_type: "STL_SORT"
+    index_type: "AUTOINDEX"
 },{
     field_name: "my_vector",
     index_type: "AUTOINDEX",
@@ -291,9 +318,10 @@ import (
     "github.com/milvus-io/milvus/client/v2/milvusclient"
 )
 
+collectionName := "customized_setup_1"
 indexOptions := []milvusclient.CreateIndexOption{
-    client.NewCreateIndexOption(collectionName, "my_vector", index.NewAutoIndex(entity.COSINE)).WithIndexName("my_vector"),
-    client.NewCreateIndexOption(collectionName, "my_id", index.NewSortedIndex()).WithIndexName("my_id"),
+    milvusclient.NewCreateIndexOption(collectionName, "my_vector", index.NewAutoIndex(entity.COSINE)),
+    milvusclient.NewCreateIndexOption(collectionName, "my_id", index.NewAutoIndex(entity.COSINE)),
 }
 ```
 
@@ -312,7 +340,7 @@ export indexParams='[
         {
             "fieldName": "my_id",
             "indexName": "my_id",
-            "indexType": "STL_SORT"
+            "indexType": "AUTOINDEX"
         }
     ]'
 ```
@@ -320,11 +348,11 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-## コレクションを作成{#create-collection}
+## コレクションの作成{#create-a-collection}
 
-インデックスパラメータを持つコレクションを作成した場合、Zilliz Cloudは作成時にコレクションを自動的にロードします。この場合、インデックスパラメータに記載されているすべてのフィールドがインデックス化されます。
+インデックスパラメータを指定してコレクションを作成した場合、Zilliz Cloud は作成時に自動的にコレクションをロードします。この場合、インデックスパラメータで指定されたすべてのフィールドがインデックス化されます。
 
-次のコードスニペットは、インデックスパラメーターを使用してコレクションを作成し、その読み込み状態を確認する方法を示しています。
+以下のコードスニペットは、インデックスパラメータを指定してコレクションを作成し、そのロードステータスを確認する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -415,12 +443,10 @@ console.log(res.state)
 <TabItem value='go'>
 
 ```go
-import "github.com/milvus-io/milvus/client/v2/milvusclient"
-
-err := milvusclient.CreateCollection(ctx, client.NewCreateCollectionOption("customized_setup_1", schema).
-    WithIndexOptions(indexOptions...),
-)
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_1", schema).
+    WithIndexOptions(indexOptions...))
 if err != nil {
+    fmt.Println(err.Error())
     // handle error
 }
 fmt.Println("collection created")
@@ -448,9 +474,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-インデックスパラメータなしでコレクションを作成し、後から追加することもできます。この場合、Zilliz Cloudは作成時にコレクションをロードしません。既存のコレクションのインデックスを作成する方法の詳細については、[AUTOINDEXの説明](./autoindex-explained)を参照してください。
+インデックスパラメータなしでコレクションを作成し、後で追加することもできます。この場合、Zilliz Cloud は作成時にコレクションをロードしません。既存のコレクションにインデックスを作成する方法の詳細については、[AUTOINDEX の説明](./autoindex-explained)を参照してください。
 
-次のコードスニペットは、コレクションなしでコレクションを作成する方法を示しており、コレクションのロード状態は作成時にアンロードされたままになります。
+次のコードスニペットは、インデックスなしでコレクションを作成する方法を示しており、作成後もコレクションのロードステータスはアンロードされたままです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -534,13 +560,19 @@ console.log(res.state)
 <TabItem value='go'>
 
 ```go
-import "github.com/milvus-io/milvus/client/v2/milvusclient"
-
-err := milvusclient.CreateCollection(ctx, client.NewCreateCollectionOption("customized_setup_2", schema))
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_2", schema))
 if err != nil {
+    fmt.Println(err.Error())
     // handle error
 }
 fmt.Println("collection created")
+
+state, err := client.GetLoadState(ctx, milvusclient.NewGetLoadStateOption("customized_setup_2"))
+if err != nil {
+    fmt.Println(err.Error())
+    // handle error
+}
+fmt.Println(state.State)
 ```
 
 </TabItem>
@@ -572,19 +604,19 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-Zilliz Cloudでは、コレクションを即座に作成する方法も提供されています。
+## コレクションプロパティの設定{#set-collection-properties}
 
-## コレクションのプロパティを設定{#set-collection-properties}
+作成するコレクションのプロパティを設定して、サービスに適合させることができます。適用可能なプロパティは以下の通りです。
 
-サービスに合わせてコレクションを作成するためのプロパティを設定することができます。適用可能なプロパティは以下の通りです。
+### シャード数の設定{#set-shard-number}
 
-### シャード番号の設定{#set-shard-number}
+シャードはコレクションの水平スライスであり、各シャードはデータ入力チャネルに対応します。デフォルトでは、すべてのコレクションに1つのシャードがあります。コレクション作成時にシャード数を指定することで、データ量とワークロードに合わせて調整できます。
 
-シャードはコレクションの水平スライスです。各シャードはデータ入力チャネルに対応します。すべてのコレクションにはデフォルトでシャードがあります。コレクションを作成する際に、期待されるスループットとコレクションに挿入するデータの量に基づいて、適切なシャード数を設定できます。
+一般的なガイドラインとして、シャード数を設定する際には以下を考慮してください。
 
-一般的な場合には、期待されるスループットが500 MB/s増加するたびに、または挿入するデータ量が100 GB増加するたびに、シャード数を1つ増やすことを検討してください。この提案は私たち自身の経験に基づいており、アプリケーションシナリオに完全に適合しない場合があります。この数を自分自身のニーズに合わせて調整するか、デフォルト値を使用することができます。
+- **データサイズ:** 一般的な慣行として、2億エンティティごとに1つのシャードを設定します。また、総データサイズに基づいて見積もることもできます。例えば、挿入予定のデータ100GBごとに1つのシャードを追加します。
 
-次のコードスニペットは、コレクションを作成するときにシャード番号を設定する方法を示しています。
+以下のコードスニペットは、コレクション作成時にシャード数を設定する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -632,10 +664,9 @@ const createCollectionReq = {
 <TabItem value='go'>
 
 ```go
-import "github.com/milvus-io/milvus/client/v2/milvusclient"
-
-err := cli.CreateCollection(ctx, client.NewCreateCollectionOption("customized_setup_3", schema).WithShardNum(1))
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_3", schema).WithShardNum(1))
 if err != nil {
+    fmt.Println(err.Error())
     // handle error
 }
 fmt.Println("collection created")
@@ -669,9 +700,9 @@ curl --request POST \
 
 ### mmapを有効にする{#enable-mmap}
 
-Zilliz Cloudはデフォルトですべてのコレクションでmmapを有効にします。これにより、Zilliz Cloudは、生のフィールドデータを完全にロードする代わりにメモリにマップできます。これにより、メモリフットプリントが減少し、コレクション容量が増加します。mmapの詳細については、「Use mmap」を参照してください。
+Zilliz Cloudは、すべてのコレクションでデフォルトでmmapを有効にしており、Zilliz Cloudが生のフィールドデータを完全にロードする代わりにメモリにマッピングできるようにします。これにより、メモリフットプリントが削減され、コレクション容量が増加します。mmapの詳細については、[mmapを使用する](./use-mmap)を参照してください。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"}]}>
 <TabItem value='python'>
 
 ```python
@@ -720,34 +751,42 @@ client.create_collection({
 <TabItem value='go'>
 
 ```go
-import (
-    "github.com/milvus-io/milvus/client/v2/milvusclient"
-    "github.com/milvus-io/milvus/pkg/common"
-)
-
-err := cli.CreateCollection(ctx, client.NewCreateCollectionOption("customized_setup_4", schema).WithProperty(common.MmapEnabledKey, true))
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_4", schema).
+    WithProperty(common.MmapEnabledKey, true))
 if err != nil {
+    fmt.Println(err.Error())
     // handle error
 }
 fmt.Println("collection created")
 ```
 
 </TabItem>
-
-<TabItem value='bash'>
-
-```bash
-# REST 暂无此功能。
-```
-
-</TabItem>
 </Tabs>
 
-### セットコレクションTTL{#set-collection-ttl}
+```plaintext
+export params='{
+    "mmap.enabled": True
+}'
 
- コレクション内のデータを特定の期間削除する必要がある場合は、Time-To-Live(TTL)を秒単位で設定することを検討してください。TTLがタイムアウトすると、Zilliz Cloudはコレクション内のエンティティを削除します。削除は非同期であり、削除が完了する前に検索やクエリが可能であることを示しています。
+export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
+export TOKEN="YOUR_CLUSTER_TOKEN"
 
-以下のコードスニペットでは、TTLを1日（86400秒）に設定しています。TTLは最低でも数日に設定することをお勧めします。
+curl --request POST \
+--url "${CLUSTER_ENDPOINT}/v2/vectordb/collections/create" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d "{
+    \"collectionName\": \"customized_setup_5\",
+    \"schema\": $schema,
+    \"params\": $params
+}"
+```
+
+### コレクションTTLの設定{#set-collection-ttl}
+
+コレクション内のデータを特定の期間で削除する必要がある場合は、そのTime-To-Live (TTL) を秒単位で設定することを検討してください。TTLがタイムアウトすると、Zilliz Cloudはコレクション内のエンティティを削除します。削除は非同期であり、削除が完了する前でも検索やクエリは可能です。
+
+以下のコードスニペットは、TTLを1日（86400秒）に設定します。TTLは最低でも数日に設定することをお勧めします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -803,15 +842,11 @@ const createCollectionReq = {
 <TabItem value='go'>
 
 ```go
-import (
-    "github.com/milvus-io/milvus/client/v2/milvusclient"
-    "github.com/milvus-io/milvus/pkg/common"
-)
-
-err = cli.CreateCollection(ctx, client.NewCreateCollectionOption("customized_setup_5", schema).
-        WithProperty(common.CollectionTTLConfigKey, 86400)) //  TTL in seconds
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_5", schema).
+    WithProperty(common.CollectionTTLConfigKey, true))
 if err != nil {
-        // handle error
+    fmt.Println(err.Error())
+    // handle error
 }
 fmt.Println("collection created")
 ```
@@ -842,9 +877,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 一貫性レベルを設定{#set-consistency-level}
+### 一貫性レベルの設定{#set-consistency-level}
 
-コレクションを作成する際に、コレクション内の検索やクエリの一貫性レベルを設定できます。また、特定の検索やクエリ中にコレクションの一貫性レベルを変更することもできます。
+コレクションを作成する際に、コレクション内の検索およびクエリの一貫性レベルを設定できます。また、特定の検索またはクエリ中にコレクションの一貫性レベルを変更することもできます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -897,14 +932,10 @@ client.createCollection(createCollectionReq);
 <TabItem value='go'>
 
 ```go
-import (
-    "github.com/milvus-io/milvus/client/v2/milvusclient"
-    "github.com/milvus-io/milvus/client/v2/entity"
-)
-
-err := cli.CreateCollection(ctx, client.NewCreateCollectionOption("customized_setup_6", schema).
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_6", schema).
     WithConsistencyLevel(entity.ClBounded))
 if err != nil {
+    fmt.Println(err.Error())
     // handle error
 }
 fmt.Println("collection created")
@@ -936,10 +967,10 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-一貫性レベルの詳細については、[一貫性レベル](./consistency-level)を参照してください。
+整合性レベルの詳細については、[整合性レベル](./consistency-level)を参照してください。
 
-### ダイナミックフィールドを有効にする{#enable-dynamic-field}
+### 動的フィールドを有効にする{#enable-dynamic-field}
 
-コレクション内の動的フィールドは、**$meta**という名前の予約済みJava Script Object Notation(JSON)フィールドです。このフィールドを有効にすると、Zilliz Cloudは、各エンティティに含まれるスキーマ定義されていないフィールドとその値を、予約済みフィールドのキーと値のペアとして保存します。
+collection内の動的フィールドは、**$meta**という名前の予約済みJavaScript Object Notation (JSON)フィールドです。このフィールドを有効にすると、Zilliz Cloudは、各entityに含まれるスキーマで定義されていないすべてのフィールドとその値を、予約済みフィールドにキーと値のペアとして保存します。
 
-ダイナミックフィールドの使用方法については、[ダイナミックフィールド](./enable-dynamic-field)を参照してください。
+動的フィールドの使用方法の詳細については、[動的フィールド](./enable-dynamic-field)を参照してください。

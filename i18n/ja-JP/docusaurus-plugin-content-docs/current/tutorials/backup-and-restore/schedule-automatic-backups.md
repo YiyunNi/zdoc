@@ -1,129 +1,243 @@
 ---
-title: "自動バックアップをスケジュールする | Cloud"
+title: "自動バックアップのスケジュール | Cloud"
 slug: /schedule-automatic-backups
-sidebar_label: "自動バックアップをスケジュールする"
+sidebar_label: "自動バックアップのスケジュール"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudを使用すると、クラスターの自動バックアップを有効にして、予期せぬ事故が発生した場合にデータを確実に復元できます。定期的なバックアップにより、データの損失を防止し、特定の時点まで簡単に復元できるため、データをより細かく制御できます。 | Cloud"
+description: "Zilliz Cloudでは、クラスターの自動バックアップを有効にすることで、予期せぬ問題が発生した場合のデータ復旧を確実にします。自動バックアップはクラスター全体に適用され、個々のコレクションの自動バックアップはサポートされていません。 | Cloud"
 type: origin
-token: NrdTw2pL0iwCcokgJ2Cc6cFunhc
+token: HDmKwGeGLi2P67kGdNXcigXDn3e
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - backup
-  - automatic
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - バックアップ
+  - 自動
+  - マネージドベクトルデータベース
+  - Pinecone ベクトルデータベース
+  - 音声検索
+  - セマンティック検索とは
 
 ---
 
 import Admonition from '@theme/Admonition';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-# 自動バックアップをスケジュールする
 
-Zilliz Cloudを使用すると、クラスターの自動バックアップを有効にして、予期せぬ事故が発生した場合にデータを確実に復元できます。定期的なバックアップにより、データの損失を防止し、特定の時点まで簡単に復元できるため、データをより細かく制御できます。
+import Supademo from '@site/src/components/Supademo';
 
-## 始める前に{#before-you-start}
+# 自動バックアップのスケジュール設定
 
-以下の条件が満たされていることを確認してください。
+Zilliz Cloudでは、クラスターの**自動バックアップ**を有効にすることで、予期せぬ問題が発生した場合のデータ復旧を確実にすることができます。自動バックアップは**クラスター全体**に適用され、個々のコレクションの自動バックアップはサポートされていません。
 
-- ターゲット組織で[組織所有者](./organization-users)または[プロジェクト管理者](./project-users)の役割が付与されていること。
+バックアップの作成には追加の[料金](./storage-cost)が発生し、料金はバックアップが保存されるクラウドリージョンに基づいて計算されます。すべてのバックアップファイルは、ソースクラスターと同じクラウドリージョンに保存されます。例えば、`AWS us-west-2`のクラスターのバックアップは、`AWS us-west-2`に保存されます。
 
-- クラスターは**専用**レベルで実行されます。
+このガイドでは、Zilliz Cloudで自動バックアップをスケジュールする方法を説明します。オンデマンドバックアップを作成するには、[バックアップの作成](./create-snapshot)を参照してください。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>自動バックアップは<strong>専用</strong>クラスターでのみ利用可能です。クラスターが<strong>Free</strong>レベルで実行されている場合は、まず<a href="./manage-cluster">アップグレード</a>してください。クラスターが<strong>Serverless</strong>レベルで実行されている場合は、まず専用クラスターに<a href="./offline-migration">移行</a>してください。バックアップの作成には料金がかかる場合があります。バックアップコストの詳細については、「<a href="./understand-cost">コストの理解</a>」を参照してください。</p>
+<p>この機能は、<strong>Dedicated</strong>クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## バックアップスケジュールを作成する{#create-backup-schedule}
+## 制限事項{#limits}
 
-<Tabs groupId="cluster"defaultValue="Cloud Console"value={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"Bash","value":"Bash"}]}>
+- **アクセス制御**: **プロジェクト管理者**、**組織所有者**、またはバックアップ権限を持つ**カスタムロール**である必要があります。
 
-<TabItem value="Cloud Console">
+- **バックアップから除外されるもの**:
 
-バックアップスケジュールを作成するには、次の手順に従います。
+    - コレクションのTTL設定
 
-1. クラスタの[**バックアップ**]タブに移動し、[**自動** **バックアップ**]をクリックします。
+    - デフォルトユーザー`db_admin`のパスワード（[復元](./restore-from-snapshot)時に新しいパスワードが生成されます）
 
-1. 表示される**自動バックアップ設定**ダイアログボックスで、**自動バックアップを有効**にします。
+    - クラスターの動的およびスケジュールされたスケーリング設定
 
-1. 自動バックアップの**頻度**、**バックアップ保持期間**、および時間枠を設定します。
+- **クラスターシャード設定**: バックアップされますが、クラスターのCUサイズが削減された場合、CUあたりのシャード制限により、復元時に調整されることがあります。[Zilliz Cloudの制限](./limits#shards)を参照してください。
 
-![create-snapshot-schedule](/img/create-snapshot-schedule.png)
+- **バックアップジョブの制限**:
 
-<Admonition type="info" icon="📘" title="ノート">
+    - 自動バックアップの実行中は、手動バックアップを開始できません。
 
-<p>バックアップコストの詳細については、<a href="./understand-cost">コストの理解</a>するを参照してください。</p>
+    - 手動バックアップがすでに実行中の場合でも、自動バックアップは実行されます。
 
-</Admonition>
+## 自動バックアップを有効にする{#enable-automatic-backup}
 
-</TabItem>
-<TabItem value="Bash">
+自動バックアップ設定はクラスター固有であり、**デフォルトでは無効**です。バックアップにはストレージコストがかかるため、Zilliz Cloudがバックアップを作成するタイミングと方法を制御できます。自動バックアップを有効にすると、Zilliz Cloudはすぐに最初のバックアップを生成し、その後、指定されたスケジュールに基づいて定期的なバックアップを生成します。
 
-定期的に自動バックアップを有効にするバックアップポリシーを設定できます。
+災害復旧のためにバックアップファイルを他のクラウドリージョンにコピーする必要がある場合は、自動バックアップを有効にする際にコピーポリシーを設定できます。詳細については、[他のリージョンへのコピー](./backup-to-other-regions)を参照してください。
 
-以下のコードは、4つの特定の平日（月曜日、火曜日、水曜日、金曜日）にバックアップを実行するバックアップポリシーを作成します。パラメータの詳細については、「[バックアップポリシーの設定](/reference/restful/set-backup-policy-v2)」を参照してください。
+### ウェブコンソール経由{#via-web-console}
+
+ウェブコンソールで自動バックアップを有効にすると、Zilliz Cloudはデフォルトで以下の設定になります。
+
+- **頻度:** 毎日バックアップを作成
+
+- **バックアップ時間:** 午前8時から午前10時（UTC +08:00）の間
+
+- **保持期間:** 各バックアップを7日間保持
+
+これらの設定は、ニーズに合わせて調整できます。
+
+以下のデモは、自動バックアップを有効にして設定する方法を示しています。
+
+<Supademo id="cmcsqvpfk0gns9st8bd3faaje?utm_source=link" title=""  />
+
+### RESTful API経由{#via-restful-api}
+
+以下の例は、クラスターの自動バックアップを有効にします。RESTful APIの詳細については、[バックアップポリシーの設定](/reference/restful/set-backup-policy-v2)を参照してください。
+
+```bash
+export TOKEN="YOUR_API_KEY"
+export CLUSTER_ID="inxx-xxxxxxxxxxxxxxx"
+
+curl --request POST \
+--url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "frequency": "1,2,3,5",
+    "startTime": "02:00-04:00",
+    "retentionDays": 7,
+    "enabled": true
+}'
+```
+
+上記ポリシーを使用して作成されたバックアップのクロスリージョンコピーも作成するには、次のようにします。
 
 ```bash
 curl --request POST \
-     --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
-     --header "Authorization: Bearer ${TOKEN}" \
-     --header "Accept: application/json" \
-     --header "Content-type: application/json" \
-     --data-raw '{
-        "frequency": "1,2,3,5",
-        "startTime": "02:00-04:00",
-        "retentionDays": 7,
-        "enabled": true
-      }'
+--url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "frequency": "1,2,3,5",
+    "startTime": "02:00-04:00",
+    "retentionDays": 7,
+    "enabled": true,
+    "crossRegionPolicies": [
+        {
+            "regionId": "aws-us-west-2",
+            "retentionDays": 7,
+            "region": "us-west-2"
+        },
+        {
+            "regionId": "aws-us-east-1",
+            "retentionDays": 7,
+            "region": "us-east-1"
+        }
+    ]
+}'
 ```
 
-予想される出力:
+以下は出力例です。自動バックアップが有効になると、すぐにバックアップジョブが生成されます。[プロジェクトジョブセンター](/docs/job-center)で進捗状況を確認できます。
 
 ```bash
 {
-  "code": 0,
-  "data": {
-    "clusterId": "in01-3e5ad8adc38xxxx",
-    "status": "ENABLED"
-  }
+    "code": 0,
+    "data": {
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
+        "status": "ENABLED"
+    }
 }
 ```
 
-</TabItem>
-</Tabs>
+## バックアップスケジュールの確認{#check-backup-schedule}
 
-## 自動バックアップスケジュールを調整する{#adjust-automated-backup-schedule}
+自動バックアップが有効になっている場合、そのスケジュールを確認できます。
 
-バックアップの作成には[コスト](./understand-cost)がかかりますので、Zilliz Cloudがバックアップファイルを作成するタイミングや方法を決定することができます。
+### ウェブコンソール経由{#via-web-console}
 
-デフォルト設定では、Zilliz Cloudは毎日8時から10時の間（**頻度**）にクラスタのバックアップファイルを自動的に作成し、7日間（**保存期間）バックアップファイルを保持するように設定されています。必要に応じて設定を変更してください。**
+以下のデモは、Zilliz Cloud ウェブコンソールで自動バックアップスケジュールを確認する方法を示しています。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Supademo id="cmcsr43kx02umxk0ih3i31jaq?utm_source=link" title=""  />
 
-<p>自動的に作成されたバックアップの最大保存期間は30日間です。</p>
+### RESTful API経由{#via-restful-api}
 
-</Admonition>
+以下の例は、クラスターの自動バックアップポリシーを確認します。RESTful APIの詳細については、[バックアップポリシーの取得](/reference/restful/get-backup-policy-v2)を参照してください。
 
-## 自動的に作成されたバックアップファイルを削除する{#delete-automatically-created-backup-file}
+```bash
+curl --request GET \
+--url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json"
+```
 
-クラスタを削除すると、そのクラスタの自動作成されたバックアップファイルがすべて削除されます。また、自動作成されたバックアップファイルは、保存期間が終了すると削除されます。自動作成されたバックアップファイルを手動で削除する必要がある場合は、「[バックアップファイルを削除](./manage-backup-files)」を参照してください。
+以下は出力例です。 
 
-## 関連するトピック{#related-topics}
+```bash
+{
+    "code": 0,
+    "data": {
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
+        "status": "ENABLED",
+        "startTime": "02:00-04:00",
+        "frequency": "1,2,3,5",
+        "retentionDays": 7,
+        "crossRegionPolicies": [
+            {
+                "regionId": "aws-us-west-2",
+                "retentionDays": 7,
+                "region": "us-west-2"
+            },
+            {
+                "regionId": "aws-us-east-1",
+                "retentionDays": 7,
+                "region": "us-east-1"
+            }
+        ]
+    }
+}
+```
 
-- [バックアップを作成](./create-snapshot)
+## 自動バックアップを無効にする{#disable-automatic-backup}
 
-- [バックアップファイルを表示する](./manage-backup-files)
+クラスターの自動バックアップを無効にすることもできます。
 
-- [バックアップファイルからの復元](./restore-from-snapshot)
+### ウェブコンソール経由{#via-web-console}
 
-- [バックアップファイルを削除](./manage-backup-files)
+以下のデモは、Zilliz Cloud ウェブコンソールで自動バックアップスケジュールを確認する方法を示しています。
+
+<Supademo id="cmcsr7chx0gu29st8s0obm37l?utm_source=link" title=""  />
+
+### RESTful API 経由{#via-restful-api}
+
+以下の例は、クラスターの自動バックアップを無効にします。RESTful API の詳細については、「[Set Backup Policy](/reference/restful/set-backup-policy-v2)」を参照してください。
+
+```bash
+curl --request POST \
+--url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "enabled": false
+}'
+```
+
+以下は出力例です。 
+
+```bash
+{
+    "code": 0,
+    "data": {
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
+        "status": "DISABLED"
+    }
+}
+```
+
+## よくある質問{#faqs}
+
+**バックアップジョブにはどのくらいの時間がかかりますか？**
+バックアップにかかる時間は、データのサイズによって異なります。参考として、700MBのバックアップには通常約1秒かかります。クラスターに1,000を超えるcollectionが含まれている場合、プロセスにはもう少し時間がかかる場合があります。
+
+**バックアップ中にDDL（データ定義言語）操作を実行できますか？**
+バックアップの進行中は、collectionの作成や削除などの主要なDDL（データ定義言語）操作を避けることをお勧めします。これらの操作は、プロセスを妨げたり、一貫性のない結果につながる可能性があります。
+
+**自動バックアップファイルの保持期間はどのくらいですか？**
+
+自動バックアップのデフォルトの保持期間は7日間で、最大30日まで調整できます。
+
+**元のクラスターが削除された場合、バックアップファイルも削除されますか？**
+
+これは、バックアップファイルの作成方法によって異なります。すべての自動バックアップは、元のクラスターとともに削除されます。しかし、[手動クラスターバックアップ](./create-snapshot)は永続的に保持され、クラスターが削除されても削除されません。不要になった場合は、手動で削除する必要があります。
 

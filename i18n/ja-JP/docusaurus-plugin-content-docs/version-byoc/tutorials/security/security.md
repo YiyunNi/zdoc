@@ -4,19 +4,19 @@ slug: /security
 sidebar_label: "セキュリティ"
 beta: FALSE
 notebook: FALSE
-description: "この章では、認証、役割ベースのアクセス制御（RBAC）、プライベートエンドポイント、ホワイトリストなどのセキュリティ関連の対策に焦点を当てています。 | BYOC"
+description: "この章では、認証、ロールベースのアクセス制御 (RBAC)、プライベートエンドポイント、ホワイトリストなど、セキュリティ関連の対策に焦点を当てています。 | BYOC"
 type: origin
-token: HQimwM1w9isGimkbHaWcqotan1f
-sidebar_position: 10
+token: HAF7wZny2ip5BRky4zmcK446nOe
+sidebar_position: 12
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - security
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - ベクトルデータベース
+  - クラウド
+  - セキュリティ
+  - 安価なベクトルデータベース
+  - マネージドベクトルデータベース
+  - Pinecone ベクトルデータベース
+  - 音声検索
 
 ---
 
@@ -25,9 +25,7 @@ import Admonition from '@theme/Admonition';
 
 # セキュリティ
 
-この章では、認証、役割ベースのアクセス制御（RBAC）、プライベートエンドポイント、ホワイトリストなどのセキュリティ関連の対策に焦点を当てています。
-
-
+この章では、認証、ロールベースアクセス制御 (RBAC)、プライベートエンドポイント、およびホワイトリストを含むセキュリティ関連の対策について説明します。
 
 import DocCardList from '@theme/DocCardList';
 

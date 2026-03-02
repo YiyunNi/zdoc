@@ -1,99 +1,99 @@
 ---
-title: "クラスタのメトリックチャートを表示する | BYOC"
+title: "クラスターメトリックチャートの表示 | BYOC"
 slug: /view-cluster-metric-charts
-sidebar_label: "クラスタのメトリックチャートを表示する"
+sidebar_label: "クラスターメトリックチャートの表示"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、クラスタ固有のメトリクスを観察するためのダッシュボードを提供しています。この機能にアクセスするには、クラスタ内のメトリクスタブに移動してください。 | BYOC"
+description: "Zilliz Cloudは、クラスター固有のメトリックを監視するためのダッシュボードを提供します。この機能にアクセスするには、いずれかのクラスター内の「Metrics」タブに移動します。 | BYOC"
 type: origin
-token: QvFswrMqhiWBwjkI58NcY5X1nTd
+token: DbPIw4jLOiEabCk5uptc6EZ1nbf
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - metrics
-  - alerts
-  - view
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - ベクトルデータベース
+  - クラウド
+  - メトリック
+  - アラート
+  - 表示
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# クラスタのメトリックチャートを表示する
+# クラスターメトリックチャートの表示
 
-Zilliz Cloudは、クラスタ固有のメトリクスを観察するためのダッシュボードを提供しています。この機能にアクセスするには、クラスタ内の**メトリクス**タブに移動してください。
+Zilliz Cloudは、クラスター固有のメトリックを監視するためのダッシュボードを提供します。この機能にアクセスするには、クラスターのいずれかにある**Metrics**タブに移動します。
 
-![view_metric_charts](/img/view_metric_charts.png)
+![view_metric_charts](https://zdoc-images.s3.us-west-2.amazonaws.com/view_metric_charts.png "view_metric_charts")
 
-## クラスタメトリックチャートへのアクセス{#access-cluster-metric-charts}
+## クラスターメトリックチャートへのアクセス{#access-cluster-metric-charts}
 
-Zilliz[Cloudコンソール](https://cloud.zilliz.com/login)でターゲットクラスタを探し、**メトリクス**タブを選択します。
+[Zilliz Cloudコンソール](https://cloud.zilliz.com/login)で、ターゲットクラスターを見つけて**Metrics**タブを選択します。
 
-Zilliz Cloudのメトリックチャートは、リソース使用量、1秒あたりのクエリ数(QPS)、リクエスト結果、データ操作に関するパフォーマンスデータを提供し、特定の時間範囲内で詳細な分析を提供します。
+Zilliz Cloudのメトリックチャートは、リソース使用量、1秒あたりのクエリ数（QPS）、リクエスト結果、データ操作に関するパフォーマンスデータを提供し、特定の時間範囲内で詳細な分析を可能にします。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>右側の[<strong>アラート設定</strong>の表示]をクリックすると、<strong>アラート設定</strong>ページにリダイレクトされ、アラートを管理するためのショートカットが表示されます。</p>
+<p>右側の<strong>View Alerts Settings</strong>をクリックすると、<strong>Alert Settings</strong>ページにリダイレクトされ、アラートを管理するためのショートカットが提供されます。</p>
 
 </Admonition>
 
-各メトリックチャートの詳細については、「[メトリックチャートの表示](./view-cluster-metric-charts#view-metric-charts)」を参照してください。
+各メトリックチャートの詳細については、[メトリックチャートの表示](./view-cluster-metric-charts#view-metric-charts)を参照してください。
 
-## カーブウィンドウの体格を変更{#modify-curve-window-size}
+## カーブウィンドウサイズの変更{#modify-curve-window-size}
 
-[**メトリック**]タブでは、2種類のウィンドウサイズを使用できます。
+**Metrics**タブでは、2種類のウィンドウサイズを設定できます。
 
-- **相対範囲**:現在時刻に対して事前に定義された時間帯のセットから選択してください。相対時間範囲を使用すると、特定の開始時間と終了時間を入力する必要なく、定期的かつ便利な方法でメトリックをチェックできます。選択肢には以下が含まれます:
+- **相対範囲**: 現在時刻を基準とした、事前に定義された期間のセットから選択します。相対時間範囲を使用すると、特定の開始時刻と終了時刻を入力することなく、定期的かつ便利な方法でメトリックを確認できます。選択肢は次のとおりです。
 
-    - ラスト10分
+    - 過去10分
 
-    - 最後の1時間
+    - 過去1時間
 
-    - 最後の6時間
+    - 過去6時間
 
-    - 最後の12時間
+    - 過去12時間
 
-    - 最後の日
+    - 過去1日
 
-    - 先週
+    - 過去1週間
 
-    - 先月
+    - 過去1ヶ月
 
-- **絶対範囲**:正確な開始時刻と終了時刻を入力します。絶対範囲を使用すると、表示されるメトリックをより細かく制御できます。
+- **絶対範囲**: 正確な開始時刻と終了時刻を入力します。絶対範囲を使用すると、表示されるメトリックをより細かく制御できます。
 
-    - 開始時間と終了時間の時間差は大なり10分です。
+    - 開始時刻と終了時刻の差は10分以上である必要があります。
 
-## メトリックチャートを表示する{#view-metric-charts}
+## メトリックチャートの表示{#view-metric-charts}
 
-Zilliz Cloudは、さまざまな側面からクラスターのパフォーマンスを監視するためのメトリックチャートを提供しています。
+Zilliz Cloudは、さまざまな側面からクラスターのパフォーマンスを監視するためのメトリックチャートを提供します。
 
-### ポッドのリソース{#pod-resources}
+### Podリソース{#pod-resources}
 
-ポッドリソースの消費を効果的に追跡するには、**メトリクス**タブを選択し、**ポッドリソース**エリアを参照してください。ここでは、各ポッドのCPU、ストレージ、およびネットワーク使用状況を示す簡潔なグラフが表示されます。利用可能なメトリクスの概要については、[メトリクスとアラートのリファレンス](./metrics-alerts-reference)を参照してください。
+Podリソースの消費量を効果的に追跡するには、**Metrics**タブを選択し、**Pod Resources**領域を参照してください。ここでは、各PodのCPU、ストレージ、ネットワーク使用量を表示する簡潔なグラフが見つかります。利用可能なメトリックの概要については、[Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics)を参照してください。
 
 ### リソース{#resources}
 
-リソース使用量のメトリックチャートを表示するには、「**メトリック**」タブを選択し、「**リソース**」エリアを参照してください。これらのチャートは、計算、容量、ストレージを含むクラスタのリソース使用量のスナップショットを提供します。利用可能なメトリックの概要については、「[メトリクスとアラートのリファレンス](./metrics-alerts-reference)」を参照してください。
+リソース使用量のメトリックチャートを表示するには、**Metrics**タブを選択し、**Resources**領域を参照してください。これらのチャートは、計算、容量、ストレージを含むクラスターのリソース使用量のスナップショットを提供します。利用可能なメトリックの概要については、[Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics)を参照してください。
 
 ### パフォーマンス{#performance}
 
-パフォーマンスのメトリックチャートを表示するには、[**メトリック**]タブを選択し、[**パフォーマンス**]領域を参照してください。これらのチャートには、QPS、VPS、レイテンシ、リクエストなどのクラスターパフォーマンスのスナップショットが表示されます。利用可能なメトリックの概要については、「[メトリクスとアラートのリファレンス](./metrics-alerts-reference)」を参照してください。
+パフォーマンスのメトリックチャートを表示するには、**Metrics**タブを選択し、**Performance**領域を参照してください。これらのチャートは、QPS、VPS、レイテンシ、リクエストを含むクラスターパフォーマンスのスナップショットを提供します。利用可能なメトリックの概要については、[Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics)を参照してください。
 
 ### データ{#data}
 
-ビジネスデータのメトリックチャートを表示するには、「**メトリック**」タブを選択し、「**データ**」エリアを参照してください。これらのチャートは、クラスタ内のコレクション、エンティティ、ロードされたエンティティの数を示すことで、クラスタのエンティティデータのスナップショットを提供します。利用可能なメトリックの概要については、「[メトリクスとアラートのリファレンス](./metrics-alerts-reference)」を参照してください。
+ビジネスデータのメトリックチャートを表示するには、**Metrics**タブを選択し、**Data**領域を参照してください。これらのチャートは、クラスター内のcollection、entity、およびロードされたentityの数を示すことで、クラスターのentityデータのスナップショットを提供します。利用可能なメトリックの概要については、[Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics)を参照してください。
 
-## 関連するトピック{#related-topics}
+## 関連トピック{#related-topics}
 
-- [組織のアラートを管理する](./manage-organization-alerts)
+- [組織アラートの管理](./manage-organization-alerts)
 
-- [プロジェクトのアラートを管理する](./manage-project-alerts)
+- [プロジェクトアラートの管理](./manage-project-alerts)
 
-- [メトリクスとアラートのリファレンス](./metrics-alerts-reference)
+- [メトリックとアラートのリファレンス](./metrics-alerts-reference)
 

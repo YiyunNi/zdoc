@@ -1,131 +1,135 @@
 ---
-title: "BYOCの概要 | BYOC"
+title: "BYOC の概要 | BYOC"
 slug: /byoc-intro
-sidebar_label: "BYOCの概要"
+sidebar_label: "BYOC の概要"
 beta: CONTACT SALES
 notebook: FALSE
-description: "Bring Your Own Cloud (BYOC) は、Zilliz Cloud のインフラストラクチャを使用する代わりに、組織が独自のクラウドアカウントでアプリケーションやデータをホストするための展開オプションです。このソリューションは、特定のセキュリティ要件や規制遵守ニーズを持つ組織に最適であり、完全なデータ制御主権を維持する必要があります。 | BYOC"
+description: "Bring Your Own Cloud (BYOC) は、組織が Zilliz Cloud のインフラストラクチャを使用する代わりに、自身のクラウドアカウントでアプリケーションとデータをホストするためのデプロイオプションです。このソリューションは、完全なデータ制御主権の維持を必要とする特定のセキュリティ要件や規制コンプライアンスのニーズを持つ組織に最適です。 | BYOC"
 type: origin
-token: BnNUwg9akiPBRhkTaTmcrT2vnfb
+token: RZqzw4UPkiikHOkdoa4chGDgnWX
 sidebar_position: 1
 keywords: 
   - zilliz
   - byoc
   - milvus
-  - vector database
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - ベクトルデータベース
+  - HNSW
+  - 非構造化データとは
+  - ベクトル埋め込み
+  - ベクトルストア
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# BYOCの概要
+# BYOC の概要
 
-Bring Your Own Cloud (BYOC) は、Zilliz Cloud のインフラストラクチャを使用する代わりに、組織が独自のクラウドアカウントでアプリケーションやデータをホストするための展開オプションです。このソリューションは、特定のセキュリティ要件や規制遵守ニーズを持つ組織に最適であり、完全なデータ制御主権を維持する必要があります。
+Bring Your Own Cloud (BYOC) は、Zilliz Cloud のインフラストラクチャを使用する代わりに、組織が独自のクラウドアカウントでアプリケーションとデータをホストするためのデプロイオプションです。このソリューションは、完全なデータ制御主権を維持する必要がある特定のセキュリティ要件または規制コンプライアンス要件を持つ組織に最適です。
 
-## Zilliz BYOCのメリット{#why-use-zilliz-byoc}
+<Admonition type="info" icon="📘" title="Notes">
 
-Zilliz BYOCは、以下の利点により、運用オーバーヘッドを排除しながらデータを完全に制御できる独自の完全管理型デプロイオプションを提供します。
+<p>Zilliz BYOC は現在、**一般提供**されています。アクセスおよび実装の詳細については、<a href="https://zilliz.com/contact-sales">Zilliz Cloud サポート</a>にお問い合わせください。</p>
 
-- **オペレーション**
+</Admonition>
 
-    - BYOC プロジェクトを作成し、インフラストラクチャを [Zilliz Cloud コンソール](https://cloud.zilliz.com)にデプロイできます。
+## Zilliz BYOC を使用する理由{#why-use-zilliz-byoc}
 
-    - プロジェクト内のBYOCクラスターを監視するために、適切に調整されたメトリックとアラート設定を使用できます。
+Zilliz BYOC は、運用上のオーバーヘッドを排除しながら、データを完全に制御できる独自のデプロイオプションを提供します。その利点は次のとおりです。
+
+- **運用**
+
+    - BYOC プロジェクトを作成し、[Zilliz Cloud コンソール](https://cloud.zilliz.com)にインフラストラクチャをデプロイできます。
+
+    - プロジェクト内の BYOC クラスターを監視するために、適切に調整されたメトリクスとアラート設定を使用できます。
 
 - **スケーラビリティ**
 
-    - ライセンスを追加購入することで、いつでも BYOC プロジェクトを拡大できます。
+    - より多くのライセンスを購入することで、BYOC プロジェクトを常にスケールできます。
 
-    - BYOC プロジェクトのクラスターは、手動および自動スケーリングメカニズムでもスケーラブルです。
+    - BYOC プロジェクト内のクラスターは、手動および自動スケーリングメカニズムでもスケーラブルです。
 
 - **データ管理とセキュリティ**
 
     - 組織、プロジェクト、クラスターレベルでのロールベースのアクセス制御 (RBAC)。
 
-    - すべてのデータは、クラウドアカウント内で安全に保存および処理されます。
+    - すべてのデータは、クラウドアカウント内に安全に保存および処理されます。
 
-## どのように動作するか{#how-it-works}
+## 仕組み{#how-it-works}
 
-BYOC は、アップグレードワークフロー、リソーススケジューラー、オープンAPIサービス、Webコンソールなど、Zillizが管理するバックエンドサービスと一緒にMilvusをクラウド環境内に展開することを含みます。通常、あなた自身の Virtual Private Cloud (VPC) 内にあります。このセットアップにより、あなたのデータがあなた自身のインフラストラクチャ内で保存および処理されることが保証されます。
+BYOC は、Milvus を Zilliz が管理するバックエンドサービス (アップグレードワークフロー、リソーススケジューラ、Open API サービス、Web コンソールなど) とともに、クラウド環境 (通常は独自の Virtual Private Cloud (VPC) 内) にデプロイすることを伴います。この設定により、データが独自のインフラストラクチャ内に保存および処理されることが保証されます。
 
-Zilliz BYOCは、多様な企業ガバナンス要件に適応するために2つの展開モードを実装しています。
+Zilliz BYOC は、多様な企業ガバナンス要件に適応するために、2 つのデプロイモードを実装しています。
 
-- BYOC
+- [BYOC](./byoc-intro#byoc)
 
-- BYOC-I
+- [BYOC-I](./byoc-intro#byoc-i)
 
 ### BYOC{#byoc}
 
-Zilliz BYOCのこのフルマネージドモードでは、クラウドプロバイダーが提供するクロスアカウントの役割仮定メカニズムを使用して、Zilliz CloudがEKSクラスターとEC 2インスタンスを管理する権限を取得できます。
+Zilliz BYOC のこの完全に管理されたモードでは、クラウドプロバイダーが提供するクロスアカウントロール引き受けメカニズムを利用し、Zilliz Cloud が EKS クラスターと EC2 インスタンスを管理する権限を引き受けることを許可します。
 
-![PbtCwAj3Th0zDpbkNMfcw9L2npp](/img/PbtCwAj3Th0zDpbkNMfcw9L2npp.png)
+![PCAOw33vKhCLHubzOiCciDDMnGg](https://zdoc-images.s3.us-west-2.amazonaws.com/PCAOw33vKhCLHubzOiCciDDMnGg.png)
 
-上記のアーキテクチャに従うと、Zilliz Cloud がEKSクラスターを開始し、必要なコンポーネント(Milvus Operator、Import/Backup ツール、Grafana およびPrometheusを含む監視スタック、およびMilvusインスタンスなど)を展開するために、VPC、S3バケット、および最小限の権限を提供する必要があります。
+上記のアーキテクチャに従って、VPC、S3 バケット、および Zilliz Cloud が EKS クラスターを起動し、Milvus Operator、Import/Backup ツール、Grafana と Prometheus を含む監視スタック、および Milvus インスタンスなどの必要なコンポーネントをデプロイするための最小限の権限を提供する必要があります。
 
-さらに、Zilliz Cloudは、VPCにデプロイされたコンポーネントとの通信のために2つの別々のプレーンを確立します。
+さらに、Zilliz Cloud は、VPC にデプロイされたコンポーネントとの通信のために 2 つの個別のプレーンを確立します。
 
 - **コントロールプレーン**
 
-    コントロールプレーンは、リソースのスケジューリング、Milvusインスタンスのアップグレード、Zilliz CloudコンソールとコントロールプレーンのオープンAPIサービスへのアクセスを提供するために、Zilliz CloudとVPCにデプロイされたコンポーネント間の通信を容易にします。
+    コントロールプレーンは、Zilliz Cloud と VPC にデプロイされたコンポーネント間の通信を促進し、リソースのスケジューリング、Milvus インスタンスのアップグレード、Zilliz Cloud コンソールとコントロールプレーン Open API サービスへのアクセスを提供します。
 
 - **データプレーン**
 
-    データプレーンは、VPCにデプロイされたMilvusインスタンスとアプリケーション/サービス間の通信を可能にし、データの保存と取得に特化しています。
+    データプレーンは、アプリケーション/サービスと VPC にデプロイされた Milvus インスタンス間の通信を可能にし、特にデータストレージと取得のために使用されます。
 
 ### BYOC-I{#byoc-i}
 
-このモードでは、完全に管理されたZilliz BYOC展開でクロスアカウントの役割仮定方法を使用する代わりに、包括的な運用およびメンテナンス機能のためにBYOCエージェントを環境に展開します。クラウドプレーンとBYOCエージェントの間に暗号化されたポイントツーポイント(P 2 P)逆トンネルが作成され、通信セキュリティが向上します。
+このモードでは、完全に管理された Zilliz BYOC デプロイでクロスアカウントロール引き受け方法を使用する代わりに、包括的な運用および保守機能のために BYOC エージェントを環境にデプロイします。Cloud Plane と BYOC エージェントの間には、通信セキュリティを向上させるために暗号化されたポイントツーポイント (P2P) リバーストンネルが作成されます。
 
-![PjFDwKRK8hoewbbg71kcRixvnFc](/img/PjFDwKRK8hoewbbg71kcRixvnFc.png)
+![UyVBwtva2hZaAMbP1zicQeRHnah](https://zdoc-images.s3.us-west-2.amazonaws.com/UyVBwtva2hZaAMbP1zicQeRHnah.png)
 
-BYOC-Iモードでは、インフラストラクチャリソースを管理するためにクロスアカウント権限を要求する代わりに、Zillizはインフラストラクチャ管理を完全にあなたの手に委ねることで、データ制御主権を強化します。
+BYOC-I モードでは、Zilliz は、インフラストラクチャリソースを管理するためのクロスアカウント権限を要求する代わりに、インフラストラクチャ管理を完全にユーザーに任せることで、データ制御の主権を強化します。
 
-ただし、必要に応じてZillizがインフラストラクチャ管理を支援できるように、エージェントに必要な権限を付与することもできます。
+ただし、必要に応じて Zilliz がインフラストラクチャ管理を支援できるように、エージェントに必要な権限を付与することもできます。
 
 ## セキュリティ保証{#security-assurance}
 
-Zilliz Cloudは、包括的な暗号化と厳格なアクセス制御により、ネットワーク境界を越えた安全な通信を保証します。
+Zilliz Cloud は、包括的な暗号化と厳格なアクセス制御を通じて、ネットワーク境界を越えた安全な通信を保証します。
 
 ### ネットワークセキュリティ{#network-security}
 
-- **内部トラフィック**:クラスターセキュリティグループ内の完全なTCP/UDP通信。
+- **内部トラフィック**: クラスターセキュリティグループ内の完全な TCP/UDP 通信。
 
-- **外部トラフィック**:ポート443での暗号化された送信専用TCP接続を有効にします:
+- **外部トラフィック**: ポート 443 での暗号化されたアウトバウンドのみの TCP 接続により、以下が可能になります。
 
-    - Zillizコントロールプレーンへの接続。
+    - Zilliz コントロールプレーンへの接続。
 
-    - データソースと画像リポジトリへのアクセス。
+    - データソースとイメージリポジトリへのアクセス。
 
-- **同じセキュリティグループ**:クラスタ内通信にはTCP/UDP接続が許可されています。
+- **同じセキュリティグループ**: クラスター内通信のために TCP/UDP 接続が許可されます。
 
 ### アクセス制御{#access-control}
 
-- Zillizエンジニアのための安全なVPNと、ジャストインタイムの証明書ベースの認証。
+- Zilliz エンジニア向けの安全な VPN と、ジャストインタイムの証明書ベースの認証。
 
-- すべてのアクセスには承認が必要であり、監査のために記録されます。
+- すべてのアクセスには承認が必要であり、監査のためにログに記録されます。
 
-- コントロールプレーンは、アウトバウンド専用のTCP接続を介してメトリックを監視および収集します。
+- コントロールプレーンは、アウトバウンドのみの TCP 接続を通じてメトリクスを監視および収集します。
 
-これらの堅牢な対策により、データの整合性と機密性が保護され、クラウドでの安全で信頼性の高い操作が確保されます。
+これらの堅牢な対策は、データの整合性と機密性を保護し、クラウドでの安全で信頼性の高い運用を保証します。
 
-### 輸送中の暗号化{#encryption-in-transit}
+### 転送中の暗号化{#encryption-in-transit}
 
-クライアントは、ZillizクラスターへのHTTPSまたはgRPC接続を確立します。HTTPS/gRPC接続では、TLS 1.2（またはそれ以上）プロトコルとAES-256（256ビット高度暗号化標準）を使用して、転送中のユーザーデータを暗号化します。
+クライアントは、Zilliz クラスターへの HTTPS または gRPC 接続を確立します。HTTPS/gRPC 接続は、TLS 1.2 (またはそれ以上) プロトコルと AES-256 (256 ビット Advanced Encryption Standard) を使用して、転送中のユーザーデータを暗号化します。
 
 ### 保存時の暗号化{#encryption-at-rest}
 
-Zilliz Cloudのデータプレーンは、AES-256(256ビット高度暗号化標準)暗号化アルゴリズムを使用して、AWS S 3に保存されたデータを暗号化します。
+Zilliz Cloud のデータプレーンは、AWS S3 に保存されたデータを AES-256 (256 ビット Advanced Encryption Standard) 暗号化アルゴリズムを使用して暗号化します。
 
 ## コスト管理{#cost-management}
 
-Zilliz BYOCは、消費するサービスに料金を置くためにライセンスを使用します。クラウドサービスプロバイダからのインフラストラクチャ費用や、プライベートネットワーキングなどの追加の責任は引き続き負担します。
+Zilliz BYOC は、リソース管理を通じて BYOC プロジェクトで使用するサービスに対して課金します。ただし、次の図に示すように、クラウドサービスプロバイダーからのインフラストラクチャ費用は引き続き発生します。
 
-以下の図は、Zilliz BYOCとSaaSサブスクリプションのコストを比較したものです。
-
-![UFUhwt8q8hBvWUb44rJcts2inYg](/img/UFUhwt8q8hBvWUb44rJcts2inYg.png)
+![TudFwgMGthlQmvbeH9qcXx0jnzn](https://zdoc-images.s3.us-west-2.amazonaws.com/TudFwgMGthlQmvbeH9qcXx0jnzn.png)
 

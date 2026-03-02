@@ -1,23 +1,23 @@
 ---
-title: "データのインポート(SDK) | BYOC"
+title: "データのインポート (SDK) | BYOC"
 slug: /import-data-via-sdks
-sidebar_label: "データのインポート(SDK)"
+sidebar_label: "SDKs"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、バルクライターおよびバルクインポートAPIを使用して、S DKを使用してデータをコレクションにインポートする方法について説明します。 | BYOC"
+description: "このガイドでは、SDK を使用して bulk-writer および bulk-import API でコレクションにデータをインポートする方法を説明します。 | BYOC"
 type: origin
-token: AIsmwf4qIiGUUckvWLNcbfn0nac
+token: MvgAwL4HIiuRRJkH0FwcJhxSnld
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - data import
+  - ベクトルデータベース
+  - クラウド
+  - データインポート
   - sdk
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - コサイン距離
+  - ベクトルデータベースとは
+  - vectordb
+  - マルチモーダルベクトルデータベース検索
 
 ---
 
@@ -25,19 +25,19 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# データのインポート(SDK)
+# データのインポート (SDK)
 
-このガイドでは、バルクライターおよびバルクインポートAPIを使用して、S DKを使用してデータをコレクションにインポートする方法について説明します。
+このガイドでは、SDK を使用して bulk-writer および bulk-import API でデータをコレクションにインポートする方法を説明します。
 
-また、データの準備とZilliz Cloudコレクションへのデータインポートの両方をカバーする[ファストトラックのエンドツーエンドコース](./data-import-zero-to-hero)を参照することもできます。
+または、データ準備と Zilliz Cloud コレクションへのデータインポートの両方をカバーする[当社のファストトラックエンドツーエンドコース](./data-import-zero-to-hero)も参照できます。
 
 ## 依存関係のインストール{#install-dependencies}
 
-<Tabs groupId="code"defaultValue='python'value={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 
 <TabItem value='python'>
 
-端末で以下のコマンドを実行して、**pymilvus**と**minio**をインストールするか、最新バージョンにアップグレードしてください。
+ターミナルで次のコマンドを実行して、**pymilvus** と **minio** をインストールするか、最新バージョンにアップグレードします。
 
 ```shell
 python3 -m pip install --upgrade pymilvus minio
@@ -47,7 +47,7 @@ python3 -m pip install --upgrade pymilvus minio
 
 <TabItem value='java'>
 
-- Apache Mavenの場合、**pom. xml**の依存関係に以下を追加してください:
+- Apache Mavenの場合、**pom.xml**の依存関係に以下を追加します。
 
 ```java
 <dependency>
@@ -63,7 +63,7 @@ python3 -m pip install --upgrade pymilvus minio
 </dependency>
 ```
 
-- Gradle/Grailsの場合、以下を実行してください。
+- Gradle/Grails の場合、以下を実行します。
 
 ```shell
 compile 'io.milvus:milvus-sdk-java:2.4.8'
@@ -74,9 +74,9 @@ compile 'io.minio:minio:8.5.9'
 
 </Tabs>
 
-## 準備したデータを確認する{#check-prepared-data}
+## 準備されたデータの確認{#check-prepared-data}
 
-[BulkWriterツール](./use-bulkwriter)を使用してデータを準備し、準備したファイルのパスを取得したら、Zilliz Cloudコレクションにインポートする準備ができました。準備ができているかどうかを確認するには、次の手順を実行します。
+[BulkWriter ツール](./use-bulkwriter)を使用してデータを準備し、準備されたファイルへのパスを取得したら、それらを Zilliz Cloud collection にインポートする準備が整います。準備が整っているかどうかを確認するには、次のようにします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -160,7 +160,11 @@ while (results.hasNext()) {
 
 ## データのインポート{#import-data}
 
-データとコレクションの準備ができたら、次のようにインポート過程を開始できます。
+データとコレクションの準備ができたら、オブジェクトストレージバケットやブロックストレージブロブコンテナなどの外部ストレージを介して、特定のコレクションにデータをインポートできます。
+
+### データのインポート{#import-data}
+
+外部ストレージを介してデータをインポートする場合は、次のようにします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -241,15 +245,15 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>データのインポートを成功させるには、ターゲットコレクションに10,000件小なりの実行中または保留中のインポートジョブがあることを確認します。</p>
+<p>データインポートを成功させるには、ターゲットコレクションの実行中または保留中のインポートジョブが10,000未満であることを確認してください。</p>
 
 </Admonition>
 
-### インポートの進捗を確認する{#check-import-progress}
+### インポートの進捗状況を確認する{#check-import-progress}
 
-指定した一括インポートジョブの進捗状況を確認できます。
+指定された一括インポートジョブの進捗状況を確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -304,9 +308,9 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-### インポートジョブの一覧{#list-all-import-jobs}
+### すべてのインポートジョブをリストする{#list-all-import-jobs}
 
-一括インポートタスクについても知りたい場合は、以下のようにlist-import-jobsAPIを呼び出すことができます。
+すべてのバルクインポートタスクについて知りたい場合は、次のようにlist-import-jobs APIを呼び出すことができます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -358,13 +362,13 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-## 関連するトピック{#list-all-import-jobs}
+## 関連トピック{#related-topics}
 
 - [ストレージオプション](./data-import-storage-options)
 
-- [書式オプション](./data-import-format-options)
+- [フォーマットオプション](./data-import-format-options)
 
-- [データのインポート(RESTful API)](./import-data-via-restful-api)
+- [RESTful API を介したデータインポート](./import-data-via-restful-api)
 
-- [データインポートハンズオン](./data-import-zero-to-hero)
+- [ゼロからヒーローへ：データインポート](./data-import-zero-to-hero) 
 

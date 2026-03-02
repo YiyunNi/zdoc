@@ -1,22 +1,22 @@
 ---
-title: "クラスタの認証情報 | Cloud"
+title: "クラスター認証情報 | Cloud"
 slug: /cluster-credentials
-sidebar_label: "クラスタの認証情報"
+sidebar_label: "クラスター認証情報"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、クラスター資格情報またはAPIキーを使用してあなたのアイデンティティを認証します。このガイドでは、クラスター資格情報を使用した認証について説明します。 | Cloud"
+description: "Zilliz Cloudは、トークンを使用してユーザーの身元を認証します。トークンは、クラスター認証情報またはAPIキーのいずれかです。このガイドでは、クラスター認証情報による認証について説明します。"
 type: origin
-token: EEZPwviJYiSOCukPZI6cvQiRnkA
+token: YmsVwIzOBinv4OklCfmc2nyznAe
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster credentials
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - ベクトルデータベース
+  - クラウド
+  - クラスター認証情報
+  - オープンソース ベクトルDB
+  - ベクトルデータベースの例
+  - RAG ベクトルデータベース
+  - ベクトルDBとは
 
 ---
 
@@ -24,23 +24,23 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# クラスタの認証情報
+# クラスター認証情報
 
-Zilliz Cloudは、クラスター資格情報またはAPIキーを使用してあなたのアイデンティティを認証します。このガイドでは、クラスター資格情報を使用した認証について説明します。
+Zilliz Cloudは、トークンを使用してユーザーの身元を認証します。トークンは、クラスター認証情報またはAPIキーのいずれかです。このガイドでは、クラスター認証情報による認証について説明します。
 
-クラスターの資格情報は、ユーザー名とパスワードのペア(`ユーザー:パスワード`)で構成されており、クラスターとのやり取りの要求の認証と承認に使用されます。
+クラスター認証情報は、ユーザー名とパスワードのペア（`user:password`）で構成され、クラスターとの対話要求を認証および承認するために使用されます。
 
-クラスタを設定する際、Zilliz Cloudはデフォルトのクラスタユーザー`db_admin`を`Admin`ロールで作成し、完全なクラスタアクセスを許可します。デフォルトユーザーのパスワードはクラスタ作成時に一度だけ表示されるため、メモして適切な場所に安全に保存することが重要です。
+クラスターをセットアップする際、Zilliz Cloudは`Admin`ロールを持つデフォルトのクラスターユーザー`db_admin`を作成し、クラスターへの完全なアクセスを許可します。デフォルトユーザーのパスワードは、クラスター作成時に一度だけ表示されるため、必ずメモを取り、適切な場所に安全に保管することが重要です。
 
-デフォルトの`db_admin`ユーザ以外にも、認証用の対応するパスワードを持つクラスタユーザ[を作成](./cluster-users#create-a-cluster-user)することもできます。
+デフォルトの`db_admin`ユーザー以外にも、認証用のパスワードを持つクラスターユーザーを[作成](./cluster-users#create-a-cluster-user)できます。
 
 ## パスワードのリセット{#reset-password}
 
-ユーザーのパスワードを忘れた場合や漏洩の疑いがある場合は、パスワードをリセットできます。
+ユーザーのパスワードを忘れた場合や、漏洩の疑いがある場合は、パスワードをリセットできます。
 
 - **コンソールでユーザーパスワードをリセットする**
 
-    ![reset-cluster-user-password](/img/reset-cluster-user-password.png)
+    ![reset-cluster-user-password](https://zdoc-images.s3.us-west-2.amazonaws.com/reset-cluster-user-password.png "reset-cluster-user-password")
 
 - **プログラムでユーザーパスワードをリセットする**
 

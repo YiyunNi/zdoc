@@ -1,33 +1,31 @@
 ---
-title: "コレクション | BYOC"
+title: "Collection | BYOC"
 slug: /collection
-sidebar_label: "コレクション"
+sidebar_label: "Collection"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでは、コレクションとはベクトルの埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、関連するデモンストレーションとともに、コレクションの定義と関連する概念を学びます。 | BYOC"
+description: "Zilliz Cloud において、collection はベクトル埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、関連するデモンストレーションとともに、collection の定義と関連する概念を学びます。 | BYOC"
 type: origin
-token: HIHlwyXbFi9SVhkFrq1cYMEHnqc
+token: XpEzwyxaJi181OkIKwqcQDWrnIh
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - collection
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - ベクトルデータベースの例
+  - RAG ベクトルデータベース
+  - ベクトルDBとは
+  - ベクトルデータベースとは
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# コレクション
+# Collection
 
-Zilliz Cloudでは、コレクションとはベクトルの埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、関連するデモンストレーションとともに、コレクションの定義と関連する概念を学びます。
-
-
+Zilliz Cloud において、コレクションはベクトル埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、コレクションの定義と関連する概念を、関連するデモンストレーションとともに学びます。
 
 import DocCardList from '@theme/DocCardList';
 

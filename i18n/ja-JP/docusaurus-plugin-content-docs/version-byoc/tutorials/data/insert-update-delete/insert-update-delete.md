@@ -4,30 +4,30 @@ slug: /insert-update-delete
 sidebar_label: "挿入と削除"
 beta: FALSE
 notebook: FALSE
-description: "この章では、挿入、挿入、削除の操作に焦点を当てています。 | BYOC"
+description: "この章では、挿入、アップサート、削除操作について説明します。 | BYOC"
 type: origin
-token: FxwxwixRtiW3v7kkT8Ycr8adngR
+token: DCZNwZdcfivVfIkAZ6qcaK5wnHd
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - collection
-  - data insertions
+  - データ挿入
   - DDL
-  - Machine Learning
-  - RAG
   - NLP
-  - Neural Network
+  - ニューラルネットワーク
+  - ディープラーニング
+  - ナレッジベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# 挿入と削除
+# データの挿入と削除
 
-この章では、挿入、挿入、削除の操作に焦点を当てています。
+この章では、挿入、更新挿入（upsert）、および削除の操作について説明します。
 
 import DocCardList from '@theme/DocCardList';
 

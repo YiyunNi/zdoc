@@ -1,68 +1,111 @@
 ---
-title: "データのインポート(RESTful API) | Cloud"
+title: "データのインポート (RESTful API) | Cloud"
 slug: /import-data-via-restful-api
-sidebar_label: "データのインポート(RESTful API)"
+sidebar_label: "RESTful API"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、Zilliz Cloud RESTfulAPIを使用して、準備したデータをインポートする方法を紹介します。 | Cloud"
+description: "このページでは、Zilliz Cloud RESTful API を介して準備されたデータをインポートする方法について説明します。 | Cloud"
 type: origin
-token: ZavUwSvj4iFsREkJGFAcOBdbn5d
+token: ZOikw2pIUiAZj9kuLYRcdhLnnoc
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクターデータベース
   - cloud
-  - data import
+  - データインポート
   - restful
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
+  - Elastic ベクターデータベース
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy ベクター検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# データのインポート(RESTful API)
+# データのインポート (RESTful API)
 
-このページでは、Zilliz Cloud RESTfulAPIを使用して、準備したデータをインポートする方法を紹介します。
+このページでは、Zilliz Cloud RESTful API を介して準備されたデータをインポートする方法について説明します。
 
 ## 始める前に{#before-you-start}
 
 以下の条件が満たされていることを確認してください。
 
-- クラスターのAPIキーを取得しました。詳細については、「[APIキー](./manage-api-keys)」を参照してください。
+- クラスターの API キーを取得していること。詳細については、「[API キーの管理](./manage-api-keys)」を参照してください。
 
-- サポートされている形式のいずれかでデータを準備していること。
+- サポートされているいずれかの形式でデータを準備していること。
 
-    データの準備方法の詳細については、「[ストレージオプション](./data-import-storage-options)」と「[書式オプション](./data-import-format-options)」を参照してください。詳細については、エンドツーエンドのノートブック「[データインポートハンズオン](./data-import-zero-to-hero)」を参照することもできます。
+    データの準備方法の詳細については、「[ストレージオプション](./data-import-storage-options)」および「[フォーマットオプション](./data-import-format-options)」を参照してください。また、エンドツーエンドのノートブック「[データインポートハンズオン](./data-import-zero-to-hero)」も参照してください。
 
-- サンプルデータセットに一致するスキーマを持つコレクションを作成して読み込んでいます。コレクションの作成の詳細については、「[コレクションの管理(コンソール)](./manage-collections-console)」を参照してください。
+- 例のデータセットと一致するスキーマを持つコレクションを作成していること。
 
-## RESTful APIを使用したデータのインポート{#import-data-using-the-restful-api}
+     コレクションの作成の詳細については、「[コレクションの管理 (コンソール)](./manage-collections-console)」を参照してください。
 
-RESTfulAPIを使用してファイルからデータをインポートするには、まずファイルをオブジェクトストレージバケット(paas)にアップロードする必要があります。例えば、AWS S 3やGoogle Cloud Storage(GCS)などです。アップロードが完了したら、リモートバケット内のファイルへのパスと、Zilliz Cloudがバケットからデータを取得するためのバケットの認証情報を取得してください。サポートされているオブジェクトパスの詳細については、「[ストレージオプション](./data-import-storage-options)」を参照してください。
+## ボリュームを介したデータのインポート{#import-data-via-volume}
 
-データのセキュリティ要件に基づいて、データのインポート中に長期または短期の資格情報を使用できます。 
+ボリュームを介してファイルからデータをインポートするには、まずボリュームを作成し、そこにファイルをアップロードする必要があります。それが完了したら、ボリューム内のファイルへのパスを取得します。詳細については、「[ボリュームの管理 (SDK)](./manage-stages)」を参照してください。
 
-資格情報の取得に関する詳細については、次を参照してください:
+その後、アップロードされたデータを次のように特定のコレクションにインポートできます。
 
-- Amazon S3:[長期認証情報を使用した認証](https://docs.aws.amazon.com/sdkref/latest/guide/access-iam-users.html)
+```bash
+curl --request POST \
+--url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/create" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "clusterId": "inxx-xxxxxxxxxxxxxxx",
+    "dbName": "default",
+    "collectionName": "medium_articles",
+    "partitionName": "",
+    "volumeName": "my_volume",
+    "dataPaths": [
+        [
+            "json-folder/1.json"
+        ]
+    ]
+}'
+```
 
-- Google Cloud Storage:[サービスアカウントのHMACキーを管理する](https://cloud.google.com/storage/docs/authentication/managing-hmackeys)
+特定のパーティションにデータをインポートするには、リクエストに`partitionName`を含める必要があります。
 
-- Azure Blob Storage:[アカウントアクセスキーの表示](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)
+Zilliz Cloudが上記のリクエストを処理した後、ジョブIDを受け取ります。このジョブIDを使用して、以下のコマンドでインポートの進捗を監視します。
 
-セッショントークンの使用方法については、[FAQ](/docs/faq-data-import#can-i-use-session-tokens-when-importing-data-from-an-object-storage-service)を参照してください。
+```bash
+curl --request POST \
+     --url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/getProgress" \
+     --header "Authorization: Bearer ${TOKEN}" \
+     --header "Accept: application/json" \
+     --header "Content-Type: application/json" \
+     -d '{
+        "clusterId": "inxx-xxxxxxxxxxxxxxx",
+        "jobId": "job-xxxxxxxxxxxxxxxxxxxxx"
+    }'
+```
 
-<Admonition type="info" icon="📘" title="ノート">
+## 外部ストレージ経由でデータをインポートする{#import-data-via-external-storage}
 
-<p>データのインポートを成功させるには、ターゲットコレクションに10,000件小なりの実行中または保留中のインポートジョブがあることを確認します。</p>
+外部ストレージ経由でファイルからデータをインポートするには、まずファイルをAWS S3やGoogle Cloud Storage (GCS)などのオブジェクトストレージバケットにアップロードする必要があります。アップロード後、リモートバケット内のファイルへのパスと、Zilliz Cloudがバケットからデータをプルするためのバケット認証情報を取得します。サポートされているオブジェクトパスの詳細については、[ストレージオプション](./data-import-storage-options)を参照してください。
+
+データのセキュリティ要件に基づいて、データインポート中に長期または短期の認証情報のいずれかを使用できます。
+
+認証情報の取得に関する詳細については、以下を参照してください。
+
+- Amazon S3: [長期認証情報を使用した認証](https://docs.aws.amazon.com/sdkref/latest/guide/access-iam-users.html)
+
+- Google Cloud Storage: [サービスアカウントのHMACキーの管理](https://cloud.google.com/storage/docs/authentication/managing-hmackeys)
+
+- Azure Blob Storage: [アカウントアクセスキーの表示](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)
+
+セッショントークンの使用に関する詳細については、[このFAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service)を参照してください。
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>データインポートを成功させるには、ターゲットコレクションの実行中または保留中のインポートジョブが10,000未満であることを確認してください。</p>
 
 </Admonition>
 
-オブジェクトパスとバケットの認証情報を取得したら、次のようにAPIを呼び出します。
+オブジェクトパスとバケット認証情報が取得されたら、次のようにAPIを呼び出します。
 
 ```bash
 # replace url and token with your own
@@ -75,18 +118,18 @@ curl --request POST \
         "clusterId": "inxx-xxxxxxxxxxxxxxx",
         "collectionName": "medium_articles",
         "partitionName": "",
-        "objectUrl": "https://s3.us-west-2.amazonaws.com/publicdataset.zillizcloud.com/medium_articles_2020_dpr/medium_articles_2020_dpr.json",
+        "objectUrl": "https://assets.zilliz.com/docs/example-data-import.json",
         "accessKey": "",
         "secretKey": ""
     }'
 ```
 
-特定のパーティションにデータをインポートするには、リクエストにpartitionNameを含め`る`必要があります。
+特定のパーティションにデータをインポートするには、リクエストに`partitionName`を含める必要があります。
 
-Zilliz Cloudが上記のリクエストを処理した後、ジョブIDを受け取ります。このジョブIDを使用して、次のコマンドでインポートの進捗状況を監視します。
+Zilliz Cloudが上記のリクエストを処理した後、ジョブIDを受け取ります。このジョブIDを使用して、以下のコマンドでインポートの進捗を監視します。
 
 ```bash
-curl --request GET \
+curl --request POST \
      --url "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/getProgress" \
      --header "Authorization: Bearer ${TOKEN}" \
      --header "Accept: application/json" \
@@ -97,11 +140,11 @@ curl --request GET \
     }'
 ```
 
-詳細については、「[インポート](/reference/restful/create-import-jobs-v2)」と「[インポート進捗の取得](/reference/restful/get-import-job-progress-v2)」を参照してください。
+詳細については、[インポート](/reference/restful/create-import-jobs-v2)と[インポートの進捗状況の取得](/reference/restful/get-import-job-progress-v2)を参照してください。
 
-## 結果を確認する{#verify-the-result}
+## 結果の検証{#verify-the-result}
 
-コマンドの出力が次のようになる場合、インポートジョブは正常に送信されます。
+コマンド出力が以下のようであれば、インポートジョブは正常に送信されています。
 
 ```bash
 {
@@ -112,5 +155,5 @@ curl --request GET \
 }
 ```
 
-RESTful APIを呼び出して、[現在のインポートジョブの進行状況を取得](/reference/restful/get-import-job-progress-v2)し、[すべてのインポートジョブ](/reference/restful/list-import-jobs-v2)を一覧表示してさらに取得することもできます。代わりに、Zilliz Cloudコンソールの[ジョブセンター](./job-center)にアクセスして、結果とジョブの詳細を表示することもできます。
+現在のインポートジョブの進捗状況を取得したり、すべてのインポートジョブを一覧表示したりするには、RESTful API を呼び出すこともできます。詳細については、[現在のインポートジョブの進捗状況を取得する](/reference/restful/get-import-job-progress-v2) および [すべてのインポートジョブを一覧表示する](/reference/restful/list-import-jobs-v2) を参照してください。または、Zilliz Cloud コンソールの [ジョブセンター](./job-center) にアクセスして、結果とジョブの詳細を表示することもできます。
 

@@ -4,21 +4,21 @@ slug: /use-array-fields
 sidebar_label: "配列フィールド"
 beta: FALSE
 notebook: FALSE
-description: "ARRAYフィールドは、同じデータ型の要素の順序付きセットを格納します。以下は、ARRAYフィールドがデータを格納する方法の例です。 | BYOC"
+description: "ARRAYフィールドは、同じデータ型の要素の順序付けられたセットを格納します。 | BYOC"
 type: origin
-token: H0cIwNvgTiIIYykQqRycBbNSnEU
+token: N0RmwUtmqinQvokWdYLc3yV5nJh
 sidebar_position: 9
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - collection
-  - schema
-  - array field
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - ベクトルデータベース
+  - クラウド
+  - コレクション
+  - スキーマ
+  - 配列フィールド
+  - vectordb
+  - マルチモーダルベクトルデータベース検索
+  - Retrieval Augmented Generation
+  - 大規模言語モデル
 
 ---
 
@@ -28,7 +28,9 @@ import TabItem from '@theme/TabItem';
 
 # 配列フィールド
 
-ARRAYフィールドは、同じデータ型の要素の順序付きセットを格納します。以下は、ARRAYフィールドがデータを格納する方法の例です。
+ARRAYフィールドは、同じデータ型の要素の順序付けられたセットを格納します。
+
+ARRAYフィールドがデータを格納する方法の例を次に示します。
 
 ```json
 {
@@ -37,35 +39,35 @@ ARRAYフィールドは、同じデータ型の要素の順序付きセットを
 }
 ```
 
-## 限界{#}
+## 制限事項{#limits}
 
-- **デフォルト値**: ARRAYフィールドはデフォルト値をサポートしていません。ただし、`nullable`属性を`True`に設定することで、null値を許可することができます。詳細については、[Nullableデフォルト](./nullable-and-default)を参照してください。
+- **デフォルト値**: ARRAYフィールドはデフォルト値をサポートしていません。ただし、`nullable`属性を`True`に設定することで、null値を許可できます。詳細については、[Nullable & Default](./nullable-and-default)を参照してください。
 
-- **データ型**: Arrayフィールドのすべての要素は、`element_type`で指定された同じデータ型でなければなりません。`element_type`を`VARCHAR`に設定した場合、配列要素の`max_length`も設定する必要があります。
+- **データ型**: ARRAYフィールド内のすべての要素は、`element_type`パラメータで定義された同じデータ型を共有する必要があります。`element_type`が`VARCHAR`に設定されている場合、配列要素の`max_length`も指定する必要があります。`element_type`は、任意のスカラーデータ型、`JSON`、および`STRUCT`を受け入れます。
 
-- **Array Capacity**: Arrayフィールドの要素数は、Arrayが作成されたときに定義された最大容量に小なりまたは等しくなければなりません。`max_Capacity`で指定されます。値は**1**から**4096**までの整数である必要があります。
+- **配列容量**: ARRAYフィールド内の要素の数は、配列作成時に`max_capacity`で指定された最大容量以下である必要があります。値は**1**から**4096**までの整数である必要があります。
 
-- **文字列処理**:配列フィールド内の文字列値は、意味的なエスケープや変換なしにそのまま保存されます。例えば、`'a"b'`、`"a'b"`、`'a\'b'`、および`"a\"b"`は入力されたまま保存されますが、`'a'b'`と`"a"b"`は無効な値と見なされます。
+- **文字列の処理**: 配列フィールドの文字列値は、セマンティックなエスケープや変換なしでそのまま保存されます。たとえば、`'a"b'`、`"a'b"`、`'a\'b'`、および`"a\"b"`は入力されたとおりに保存されますが、`'a'b'`および`"a"b"`は無効な値と見なされます。
 
-## ARRAYフィールドを追加{#add-array-field}
+## ARRAYフィールドの追加{#add-array-field}
 
-ARRAYフィールドを使用するにはZilliz Cloudクラスター、コレクションスキーマを作成する際に関連するフィールドタイプを定義します。この過程には以下が含まれます:
+Zilliz CloudクラスターでARRAYフィールドを使用するには、コレクションschemaの作成時に関連するフィールドタイプを定義します。このプロセスには以下が含まれます。
 
-1. サポートされるArray `datatype`である`ARRAY`にデータ型を設定します。
+1. `datatype`をサポートされている配列データ型`ARRAY`に設定します。
 
-1. 配列内の要素のデータ型を指定するには、`element_type`パラメータを使用します。これは、Zilliz Cloudクラスターでサポートされている任意のスカラーデータ型である必要があります。例えば、`VARCHAR`や`INT64`などです。同じ配列内のすべての要素は同じデータ型でなければなりません。
+1. `element_type`パラメータを使用して、配列内の要素のデータ型を指定します。同じ配列内のすべての要素は、同じデータ型である必要があります。
 
-1. 配列の最大容量、つまり含むことができる要素の最大数を定義するために、`max_capacity`パラメータを使用します。
+1. `max_capacity`パラメータを使用して、配列の最大容量、つまり格納できる要素の最大数を定義します。
 
-ARRAYフィールドを含むコレクションスキーマを定義する方法は次のとおりです:
+ARRAYフィールドを含むコレクションschemaを定義する方法を次に示します。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>スキーマを定義する際に<code>enable_dynamic_fields=True</code>を設定した場合、Zilliz Cloudでは、事前に定義されていないスカラーフィールドを挿入することができます。ただし、これによりクエリや管理が複雑になり、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">ダイナミックフィールド</a>を参照してください。</p>
+<p>schema定義時に<code>enable_dynamic_fields=True</code>を設定すると、Zilliz Cloudは事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリと管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">Dynamic Field</a>を参照してください。</p>
 
 </Admonition>
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"HTTP","value":"http"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -227,9 +229,10 @@ const schema = [
 ```
 
 </TabItem>
-</Tabs>
 
-```http
+<TabItem value='bash'>
+
+```bash
 export arrayField1='{
     "fieldName": "tags",
     "dataType": "Array",
@@ -274,11 +277,14 @@ export schema="{
 }"
 ```
 
+</TabItem>
+</Tabs>
+
 ## インデックスパラメータの設定{#set-index-params}
 
-インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスタでは、ベクトルフィールドではインデックス作成が必須ですが、スカラーフィールドではオプションです。
+インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスターでは、ベクトルフィールドのインデックス作成は必須ですが、スカラーフィールドのインデックス作成はオプションです。
 
-以下の例では、ベクトルフィールドの`embedding`とARRAYフィールド`tags`の両方に`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプを使用すると、Milvusはデータ型に基づいて最適なインデックスを自動的に選択します。
+以下の例では、ベクトルフィールド`embedding`とARRAYフィールド`tags`の両方に`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプを使用すると、Milvusはデータ型に基づいて最適なインデックスを自動的に選択します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -374,9 +380,9 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-## コレクションを作成{#create-collection}
+## コレクションの作成{#create-collection}
 
-スキーマとインデックスが定義されたら、ARRAYフィールドを含むコレクションを作成してください。
+スキーマとインデックスを定義したら、ARRAYフィールドを含むコレクションを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -450,7 +456,7 @@ curl --request POST \
 
 コレクションを作成した後、ARRAYフィールドを含むデータを挿入できます。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"value":"go","label":"Go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -598,11 +604,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルタ式を使用したクエリ{#query-with-filter-expressions}
+## フィルター式によるクエリ{#query-with-filter-expressions}
 
-エンティティを挿入した後、`query`メソッドを使用して、指定したフィルター式に一致するエンティティを取得します。
+エンティティを挿入した後、`query` メソッドを使用して、指定されたフィルター式に一致するエンティティを取得します。
 
-`tags`がnullでないエンティティを取得するには:
+`tags` が null でないエンティティを取得するには：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -699,7 +705,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-`ratings`の最初の要素の値が大なり4であるエンティティを取得するには:
+`ratings`の最初の要素の値が4より大きいエンティティを取得するには：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -806,9 +812,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルタ式を用いたベクトル検索{#vector-search-with-filter-expressions}
+## フィルター式によるベクトル検索{#vector-search-with-filter-expressions}
 
-基本的なスカラー場フィルタリングに加えて、ベクトル類似検索とスカラー場フィルターを組み合わせることができます。例えば、次のコードはベクトル検索にスカラー場フィルターを追加する方法を示しています。
+基本的なスカラーフィールドフィルタリングに加えて、ベクトル類似性検索とスカラーフィールドフィルタを組み合わせることができます。例えば、以下のコードは、ベクトル検索にスカラーフィールドフィルタを追加する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -930,4 +936,4 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-さらに、Zilliz Cloudは、`ARRAY_CONTAINS`、`ARRAY_CONTAINS_ALL`、`ARRAY_CONTAINS_ANY`、`ARRAY_LENGTH`などの高度な配列フィルタリング演算子をサポートしています。詳細については、[アレイ演算子](./array-filtering-operators)を参照してください。
+さらに、Zilliz Cloudは、クエリ機能をさらに強化するために、`ARRAY_CONTAINS`、`ARRAY_CONTAINS_ALL`、`ARRAY_CONTAINS_ANY`、`ARRAY_LENGTH`などの高度な配列フィルタリング演算子をサポートしています。詳細については、[ARRAY演算子](./array-filtering-operators)を参照してください。

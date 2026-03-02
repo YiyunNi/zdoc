@@ -1,89 +1,95 @@
 ---
-title: "ホワイトリストの設定 | Cloud"
+title: "クラスターIP許可リストの設定 | Cloud"
 slug: /setup-whitelist
-sidebar_label: "ホワイトリストの設定"
+sidebar_label: "クラスターIP許可リストの設定"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudのホワイトリストは、プロジェクトレベルで堅牢なセキュリティレイヤーとして機能し、指定されたプロジェクト内のすべてのクラスターにその利点を拡張します。ホワイトリストを実装することで、プロジェクトのクラスターへのアクセスを特定のIPアドレスグループに効果的に絞り込み、悪意のある攻撃のリスクを大幅に軽減できます。 | Cloud"
+description: "Zilliz CloudのクラスターIP許可リストは、プロジェクトレベルで堅牢なセキュリティレイヤーとして機能し、指定されたプロジェクト内のすべてのクラスターにその利点を拡張します。IP許可リストを実装することで、プロジェクトのクラスターへのアクセスを特定のIPアドレスグループに効果的に絞り込み、悪意のある攻撃のリスクを大幅に軽減します。 | Cloud"
 type: origin
-token: D1TiwX8o1iIBL3kMyCacjFwMnEf
-sidebar_position: 1
+token: FnS1wY0iuia4qgkMycVclZyHnOf
+sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - whitelist
-  - setup
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - ベクトルデータベース
+  - クラウド
+  - ホワイトリスト
+  - セットアップ
+  - RAGベクトルデータベース
+  - ベクトルDBとは
+  - ベクトルデータベースとは
+  - ベクトルデータベース比較
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# ホワイトリストの設定
+import Procedures from '@site/src/components/Procedures';
 
-Zilliz Cloudのホワイトリストは、プロジェクトレベルで堅牢なセキュリティレイヤーとして機能し、指定されたプロジェクト内のすべてのクラスターにその利点を拡張します。ホワイトリストを実装することで、プロジェクトのクラスターへのアクセスを特定のIPアドレスグループに効果的に絞り込み、悪意のある攻撃のリスクを大幅に軽減できます。
+# クラスター IP 許可リストの設定
 
-## 始める前に{#before-you-start}
+Zilliz Cloud のクラスター IP 許可リストは、プロジェクトレベルで堅牢なセキュリティレイヤーとして機能し、指定されたプロジェクト内のすべてのクラスターにその利点をもたらします。IP 許可リストを実装することで、プロジェクトのクラスターへのアクセスを特定の IP アドレスのグループに効果的に絞り込み、悪意のある攻撃のリスクを大幅に軽減します。
 
-次に進む前に、次の前提条件が満たされていることを確認してください:
+## 開始する前に{#before-you-start}
 
-- Zilliz Cloudにサインアップしました。アカウントの登録方法については、「[Zilliz Cloudに登録する](./register-with-zilliz-cloud)」を参照してください。
+続行する前に、以下の前提条件が満たされていることを確認してください。
 
-- ホワイトリストを設定する組織またはプロジェクトの所有者です。役割と権限については、「[組織のユーザーを管理する](./organization-users)」および「[プロジェクトのユーザーを管理する](./project-users)」を参照してください。
+- Zilliz Cloud にサインアップしていること。アカウントの登録方法については、「[Zilliz Cloud への登録](./register-with-zilliz-cloud)」を参照してください。
 
-## 手続き{#procedure}
+- クラスター IP 許可リストを設定する組織またはプロジェクトの所有者であること。ロールと権限については、「[組織ユーザーの管理](./organization-users)」および「[プロジェクトユーザーの管理](./project-users)」を参照してください。
 
-1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)にログインします。
+## 手順{#procedure}
 
-1. ホワイトリストを構成する特定の組織とプロジェクトに移動してください。
+<Procedures>
 
-1. 左側のナビゲーションウィンドウで、[**ネットワーク**]>[**IPアドレス**]を選択します。
+1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login)にログインします。
 
-1. [**IPアドレスを追加**]をクリックします。
+1. 許可リストを設定する特定の組織とプロジェクトに移動します。
 
-1. 表示されるダイアログボックスで、**IPアドレス(CIDR)**と**説明**を指定してください。
+1. 左側のナビゲーションペインで、**Security** > **Cluster IP Allowlist** を選択します。
 
-    フィールドの説明を次の表に示します。
+1. **Add IP Address** をクリックします。
+
+1. 表示されるダイアログボックスで、**IP Address (CIDR)** と **Description** を指定します。
+
+    以下の表にフィールドの説明を示します。
 
     <table>
        <tr>
          <th><p><strong>フィールド</strong></p></th>
-         <th><p><strong>説明する</strong></p></th>
+         <th><p><strong>説明</strong></p></th>
        </tr>
        <tr>
-         <td><p>IPアドレス(CIDR)</p></td>
-         <td><p>ホワイトリストに追加するIPアドレスまたはCIDRブロック。最大20個のCIDRブロックを許可します。例:192.168.1.1/20。</p></td>
+         <td><p>IP Address (CIDR)</p></td>
+         <td><p>許可リストに追加する IP アドレスまたは CIDR ブロック。最大 100 個の CIDR ブロックが許可されます。例: 192.168.1.1/20。</p></td>
        </tr>
        <tr>
-         <td><p>説明する</p></td>
-         <td><p>ホワイトリストに登録されたIPアドレスまたはCIDRブロックの説明。</p></td>
+         <td><p>Description</p></td>
+         <td><p>許可リストに追加する IP アドレスまたは CIDR ブロックの説明。</p></td>
        </tr>
     </table>
 
-1. [**追加**]をクリックします。
+1. **Add** をクリックします。
 
-<Admonition type="info" icon="📘" title="ノート">
+</Procedures>
+
+<Admonition type="info" icon="📘" title="Notes">
 
 <ul>
-<li><p>ホワイトリストにエントリがない場合、Zilliz Cloudは任意のIPアドレスからアクセスを許可します。</p></li>
-<li><p>CIDRブロックを追加すると、クラスターアクセスはそのブロック内のIPアドレスに限定されます。</p></li>
-<li><p>「0.0.0.0/0」を追加すると、ホワイトリストが空になります。</p></li>
+<li><p>許可リストにエントリがない場合、Zilliz Cloud は任意の IP アドレスからのアクセスを許可します。</p></li>
+<li><p>CIDR ブロックを追加すると、クラスターへのアクセスはそのブロック内の IP アドレスに限定されます。</p></li>
+<li><p>0.0.0.0/0 を追加することは、空の許可リストを持つことと同じです。</p></li>
 </ul>
 
 </Admonition>
 
-![whitelist-ip-access](/img/whitelist-ip-access.png)
+![whitelist-ip-access](https://zdoc-images.s3.us-west-2.amazonaws.com/whitelist-ip-access.png "whitelist-ip-access")
 
-## 関連するトピック{#related-topics}
+## 関連トピック{#related-topics}
 
-- [APIキー](./manage-api-keys)
+- [API キー](./manage-api-keys)
 
-- [クラスタの認証情報(コンソール)](./cluster-credentials)
+- [クラスター認証情報 (コンソール)](./cluster-credentials)
 
-- [プライベートエンドポイントを設定する](./setup-a-private-link)
+- [プライベートリンクの設定](./setup-a-private-link)
 

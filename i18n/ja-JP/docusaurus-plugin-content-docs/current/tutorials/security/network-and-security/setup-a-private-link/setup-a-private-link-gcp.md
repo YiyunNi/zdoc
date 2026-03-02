@@ -1,151 +1,189 @@
 ---
-title: "Private Service Connect (GCP) の設定 | Cloud"
+title: "Private Service Connect (GCP) のセットアップ | Cloud"
 slug: /setup-a-private-link-gcp
-sidebar_label: "Private Service Connect (GCP) の設定"
+sidebar_label: "Private Service Connect (GCP) のセットアップ"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloudクラスタから異なるGCP VPCでホストされているサービスへのプライベートリンクを設定する手順を示します。 | Cloud"
+description: "このガイドでは、Zilliz Cloud クラスターから異なる GCP VPC でホストされているサービスへのプライベートリンクをセットアップする手順を説明します。"
 type: origin
-token: MU3TwStv0iruQLkhRq8cSXhhnmd
+token: IojuwADAwiRK0hkl4pgcvC2QnQd
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - private link
+  - プライベートリンク
   - privatelink
-  - private endpoint
+  - プライベートエンドポイント
   - private service connect
   - aws
   - gcp
   - azure
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - nlp検索
+  - hallucinations llm
+  - マルチモーダル検索
+  - ベクトル検索アルゴリズム
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Private Service Connect (GCP) の設定
+import Procedures from '@site/src/components/Procedures';
 
-このガイドでは、Zilliz Cloudクラスタから異なるGCP VPCでホストされているサービスへのプライベートリンクを設定する手順を示します。
+# Private Service Connect (GCP) をセットアップする
 
-この機能は、専用(エンタープライズ)クラスターでのみ利用可能です。
+このガイドでは、Zilliz Cloud クラスターから異なる GCP VPC でホストされているサービスへのプライベートリンクをセットアップする手順を説明します。
 
-プライベートリンクはプロジェクトレベルで設定され、このプロジェクトの下で同じクラウドプロバイダーとリージョンにデプロイされたすべてのクラスターに対して有効です。
+<Admonition type="info" icon="📘" title="Notes">
 
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>Zilliz Cloudはプライベートリンクに対して料金を請求しません。ただし、Zilliz Cloudにアクセスするために作成した<a href="https://cloud.google.com/vpc/pricing?hl=ja#psc-forwarding-rule-service">エンドポイントごと</a>に、クラウドプロバイダーから料金が請求される場合があります。</p>
+<p>この機能は、<strong>Dedicated</strong> クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## 始める前に{#before-you-start}
+プライベートリンクはプロジェクトレベルで設定され、同じクラウドプロバイダーとリージョンにデプロイされたすべてのクラスターに有効です。
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Zilliz Cloud はプライベートリンクに対して課金しません。ただし、クラウドプロバイダーは、Zilliz Cloud にアクセスするために作成する<a href="https://cloud.google.com/vpc/pricing#psc-forwarding-rule-service">各エンドポイントに対して課金する</a>場合があります。</p>
+
+</Admonition>
+
+## 開始する前に{#before-you-start}
 
 以下の条件が満たされていることを確認してください。
 
-- 専用(Enterprise)クラスタが作成されました。クラスタの作成方法については、「[クラスタ作成](./create-cluster)する」を参照してください。
+- サービスと Zilliz Cloud クラスターが異なるリージョンにあり、サービスが Private Service Connect エンドポイントを介してクラスターにアクセスしたい場合、エンドポイント作成時にグローバルアクセスを有効にする必要があります。
 
-## プライベートエンドポイントの作成する{#create-private-endpoint}
+## プライベートエンドポイントを作成する{#create-private-endpoint}
 
-Zilliz Cloudは、プライベートエンドポイントを追加するための直感的なWebコンソールを提供しています。ターゲットプロジェクトに移動し、左側のナビゲーションで**ネットワーク>プライベートエンドポイント**をクリックします。**+プライベートエンドポイント**をクリックします。
+Zilliz Cloud は、プライベートエンドポイントを追加するための直感的なウェブコンソールを提供します。ターゲットプロジェクトに移動し、左側のナビゲーションで **Network > Private Endpoint** をクリックします。**+ Private Endpoint** をクリックします。
 
-![setup_private_link_aws_01](/img/setup_private_link_aws_01.png)
+![Yz5Cb5PMooxAIExRkEvcoBr9noc](https://zdoc-images.s3.us-west-2.amazonaws.com/yz5cb5pmooxaiexrkevcobr9noc.png "Yz5Cb5PMooxAIExRkEvcoBr9noc")
 
-### クラウドプロバイダーと地域を選択する{#select-a-cloud-provider-and-region}
+### クラウドプロバイダーとリージョンを選択する{#select-a-cloud-provider-and-region}
 
-GCPリージョンにデプロイされたクラスターのプライベートエンドポイントを作成するには、[**GCP**]ドロップダウンリストから[**Cloud Provider**]を選択します。[**リージョン**]で、プライベートにアクセスするクラスターを収容するリージョンを選択します。[**次**へ]をクリックします。
+GCP リージョンにデプロイされたクラスターのプライベートエンドポイントを作成するには、**Cloud Provider** ドロップダウンリストから **GCP** を選択します。**Region** で、プライベートにアクセスしたいクラスターを収容するリージョンを選択します。**Next** をクリックします。
 
-利用可能なクラウドプロバイダーとリージョンの詳細については、「[クラウドプロバイダー&地域](./cloud-providers-and-regions)」を参照してください。
+利用可能なクラウドプロバイダーとリージョンの詳細については、[Cloud Providers & Regions](./cloud-providers-and-regions) を参照してください。
 
-![setup_private_link_window_gcp](/img/setup_private_link_window_gcp.png)
+![F8jBbJcdnoqMBBxMQZZcJfvKnny](https://zdoc-images.s3.us-west-2.amazonaws.com/f8jbbjcdnoqmbbxmqzzcjfvknny.png "F8jBbJcdnoqMBBxMQZZcJfvKnny")
 
 ### エンドポイントを作成する{#create-an-endpoint}
 
-UIコンソールまたはCLIを使用して、クラウドプロバイダコンソールでこの手順を完了する必要があります。
+エンドポイントは、Google Cloud ダッシュボード（**UI コンソール経由**）または gCloud CLI（**CLI 経由**）のいずれかで作成できます。以下の手順に従う前に、VPC を作成し、その VPC 内で Zilliz Cloud に接続する必要があるサービスを実行していることを確認してください。
 
-- **UIコンソールから**
+#### UI コンソール経由{#via-ui-console}
 
-    Google Cloud UIコンソールでエンドポイントを作成する手順については、[このドキュメント](https://cloud.google.com/vpc/docs/configure-private-service-connect-services?hl=ja#create-endpoint)を参照してください。
+![CicmbETm0oALKkxGh3Xc2wz0nVa](https://zdoc-images.s3.us-west-2.amazonaws.com/cicmbetm0oalkkxgh3xc2wz0nva.png "CicmbETm0oALKkxGh3Xc2wz0nVa")
 
-    上記の文書のステップ5では、Zilliz Cloudコンソールからコピーしたサービス添付URIを使用してください。
+Zilliz Cloud コンソールで **Copy and Go** をクリックして GCP の Private Service Connect リストを開き、以下の手順に従ってエンドポイントを作成します。
 
-    ![service_uri_gpc](/img/service_uri_gpc.png)
+<Procedures>
 
-- **CLIより**
+1. 開いた [Private Service Connect](https://console.cloud.google.com/net-services/psc) ページで、**+ Connect endpoint** をクリックします。
 
-    1. [**Via CLI**]タブに切り替えます。
+1. **Target** で、**Published service** を選択します。
 
-    1. [**プロジェクトID**]を入力します。
+1. **Target Service** に、Zilliz Cloud コンソールからコピーしたものを貼り付けます。
 
-        Google CloudプロジェクトIDを取得するには、
+1. **Endpoint name** に、エンドポイントに使用する名前を入力します。
 
-        1. [[Google Cloudダッシュボード](https://console.cloud.google.com/home/dashboard)]を開きます。
+1. エンドポイントの **Network** を選択します。Zilliz Cloud クラスターに接続する必要があるサービスは、指定された VPC 内で実行されている必要があります。
 
-        1. ご希望のプロジェクトIDを見つけ、そのIDをコピーしてください。
+1. エンドポイントの **Subnetwork** を選択します。
 
-        1. Zilliz CloudのGoogle CloudプロジェクトIDにこのIDを入力してください。
+1. エンドポイントの **IP address** を選択するか、新しいものを作成します。
 
-    1. [**VPC名**]を入力します。
+1. サービスとターゲットの Zilliz Cloud クラスターが異なるリージョンにあり、サービスが Private Service Connect エンドポイントを介してクラスターにアクセスしたい場合、エンドポイントの **Enable global access** を選択します。
 
-        VPCエンドポイントを作成する前に、GCPコンソールにVPCが必要です。VPCを表示するには、以下の手順を実行してください。
+1. ドロップダウンリストから **Namespace** を選択するか、新しい名前空間を作成します。
 
-        1. [[Google Cloud VPCダッシュボード](https://console.cloud.google.com/networking/networks/list)]を開きます。
+1. **Add endpoint** をクリックします。
 
-        1. ナビゲーションウィンドウで、[**VPCネットワーク**]を選択します。
+1. エンドポイント名をコピーし、Zilliz Cloud コンソールに戻ります。
 
-        1. あなたの希望のVPCを見つけて、その名前をコピーしてください。
+</Procedures>
 
-        1. Zilliz Cloudの**VPC名**にこの名前を入力してください。
+#### CLI 経由{#via-cli}
 
-        VPCネットワークを作成するには、「[VPCネットワークの作成と管理](https://cloud.google.com/vpc/docs/create-modify-vpc-networks?hl=ja)」を参照してください。
+![OurbbN4HdodjSNx9ph2cWTwWnIc](https://zdoc-images.s3.us-west-2.amazonaws.com/ourbbn4hdodjsnx9ph2cwtwwnic.png "OurbbN4HdodjSNx9ph2cWTwWnIc")
 
-    1. [**サブネット名**]を入力します。
+<Procedures>
 
-        サブネットはVPCのサブディビジョンです。作成するプライベートリンクと同じリージョンに存在するサブネットが必要です。サブネットを表示するには、次の手順を実行します。
+1. **Via CLI** タブに切り替えます。
 
-        1. あなたの[VPCネットワークリスト](https://console.cloud.google.com/networking/networks/list)を開きます。
+1. **Project ID** を入力します。
 
-        1. ナビゲーションウィンドウで、[**VPCネットワーク**]を選択します。
+    Google Cloud プロジェクト ID を取得するには、
 
-        1. ご希望のVPCの名前をクリックしてください。
+    1. [Google Cloud ダッシュボード](https://console.cloud.google.com/home/dashboard) を開きます。
 
-        1. あなたの欲望のサブネットを見つけて、その名前をコピーしてください。
+    1. 目的のプロジェクト ID を見つけて、その ID をコピーします。
 
-        1. Zilliz Cloudの**サブネット名**にこの名前を入力してください。
+    1. この ID を Zilliz Cloud の Google Cloud Project ID に入力します。
 
-    1. [**Private Service Connect Endpoint Prefix**]を入力します。
+1. **VPC Name** を入力します。
 
-        便宜上、**Private Service Connectエンドポイントプレフィックス**にエンドポイントプレフィックスを設定して、作成した転送ルールにこのプレフィックスを設定する必要があります。
+    VPC エンドポイントを作成する前に、GCP コンソールに VPC が必要です。VPC を表示するには、次のようにします。
 
-    1. [**コピーして移動]を**クリックします。
+    1. [Google Cloud VPC ダッシュボード](https://console.cloud.google.com/networking/networks/list) を開きます。
 
-        クラウドプロバイダーコンソールにリダイレクトされます。上部のナビゲーションで、Google Cloud Shellを有効にします。Zilliz CloudからコピーしたCLIコマンドをCloud Shellで実行してください。
+    1. ナビゲーションペインで、**VPC networks** を選択します。
 
-        ![setup_private_link_window_gcp](/img/setup_private_link_window_gcp.png)
+    1. 目的の VPC を見つけて、その名前をコピーします。
 
-        エンドポイントが作成されたら、[Google Cloud Private Service Connectページ](https://console.cloud.google.com/net-services/psc/list/consumers)に移動し、作成したエンドポイントの名前をコピーします。
+    1. この名前を Zilliz Cloud の **VPC Name** に入力します。
+
+    VPC ネットワークを作成するには、[VPC ネットワークの作成と管理](https://cloud.google.com/vpc/docs/create-modify-vpc-networks) を参照してください。
+
+1. **Subnet Name** を入力します。
+
+    サブネットは VPC のサブディビジョンです。作成するプライベートリンクと同じリージョンに存在するサブネットが必要です。サブネットを表示するには、次のようにします。
+
+    1. [VPC ネットワークリスト](https://console.cloud.google.com/networking/networks/list) を開きます。
+
+    1. ナビゲーションペインで、**VPC networks** を選択します。
+
+    1. 目的の VPC の名前をクリックします。
+
+    1. 目的のサブネットを見つけて、その名前をコピーします。
+
+    1. この名前を Zilliz Cloud の **Subnet Name** に入力します。
+
+1. **Private Service Connect Endpoint Prefix** を入力します。
+
+    便宜上、**Private Service Connect Endpoint prefix** にエンドポイントプレフィックスを設定する必要があります。これにより、作成するすべての転送ルールにこのプレフィックスが適用されます。
+
+1. コードブロックのコピーアイコンをクリックし、Google Cloud Console に移動します。
+
+    上部のナビゲーションで Google Cloud Cloud Shell を起動します。Zilliz Cloud からコピーした CLI コマンドを Cloud Shell で実行します。
+
+    ![vpc_networks_gcp](https://zdoc-images.s3.us-west-2.amazonaws.com/vpc_networks_gcp.png "vpc_networks_gcp")
+
+    エンドポイントが作成されたら、[Google Cloud Private Service Connect ページ](https://console.cloud.google.com/net-services/psc/list/consumers) に移動し、作成したエンドポイントの名前をコピーします。
+
+</Procedures>
 
 ### エンドポイントを承認する{#authorize-your-endpoint}
 
-Google Cloudコンソールから取得したエンドポイントIDとプロジェクトIDを、Zilliz Cloud上の**Endpoint ID**と**Project ID**ボックスにそれぞれ貼り付けてください。**作成**をクリックしてください。
+Google Cloud コンソールから取得したエンドポイント ID とプロジェクト ID を、Zilliz Cloud の **Endpoint ID** と **Project ID** ボックスにそれぞれ貼り付けます。**Create** をクリックします。
+
+![VOy4blyfmoi7RLxO0GWcXmzDnFe](https://zdoc-images.s3.us-west-2.amazonaws.com/voy4blyfmoi7rlxo0gwcxmzdnfe.png "VOy4blyfmoi7RLxO0GWcXmzDnFe")
 
 ## プライベートリンクを取得する{#obtain-a-private-link}
 
-送信した属性を確認して承認した後、Zilliz Cloudはこのエンドポイントにプライベートリンクを割り当てます。この過程には約5分かかります。
+送信した上記の属性を検証して承認した後、Zilliz Cloud はこのエンドポイントにプライベートリンクを割り当てます。このプロセスには約5分かかります。
 
-プライベートリンクが準備できたら、Zilliz Cloudの**プライベートリンク**ページで閲覧可能です。
+プライベートリンクの準備が整うと、Zilliz Cloud の **Private Link** ページで表示できます。
 
-## ファイアウォールルールとDNSレコードを設定する{#set-up-firewall-rules-and-a-dns-record}
+## ファイアウォールルールと DNS レコードを設定する{#set-up-firewall-rules-and-a-dns-record}
 
-Zilliz Cloudが割り当てたプライベートリンクを使用してクラスタをアクセス可能にする前に、プライベートリンクをVPCエンドポイントのDNS名に解決するために、DNSゾーンにCNAMEレコードを作成する必要があります。
+Zilliz Cloud によって割り当てられたプライベートリンクを介してクラスターにアクセスする前に、DNS ゾーンに CNAME レコードを作成して、プライベートリンクを VPC エンドポイントの DNS 名に解決する必要があります。
 
-### ファイアウォールルールの作成{#create-firewall-rules}
+### ファイアウォールルールを作成する{#create-firewall-rules}
 
-マネージドクラスタへのプライベートアクセスを許可するには、適切なファイアウォールルールを追加します。次のスニペットは、TCPポート22を介してトラフィックを許可する方法を示しています。VPCの名前に`VPC_NAME`を設定する必要があることに注意してください。
+マネージドクラスターへのプライベートアクセスを許可するには、適切なファイアウォールルールを追加します。次のスニペットは、TCP ポート 22 を介したトラフィックを許可する方法を示しています。**VPC_NAME** を VPC の名前に設定する必要があることに注意してください。
 
 ```bash
 VPC_NAME={{vpc-name}};
@@ -153,75 +191,89 @@ VPC_NAME={{vpc-name}};
 gcloud compute firewall-rules create psclab-iap-consumer --network $VPC_NAME --allow tcp:22 --source-ranges=35.235.240.0/20 --enable-logging
 ```
 
-### Cloud DNSを使用してホストゾーンを作成する{#create-a-hosted-zone-using-cloud-dns}
+### Cloud DNS を使用してホストゾーンを作成する{#create-a-hosted-zone-using-cloud-dns}
 
-GCPコンソールで[Cloud DNS](https://console.cloud.google.com/net-services/dns/zones)に移動し、DNSゾーンを作成してください。
+GCP コンソールで [Cloud DNS](https://console.cloud.google.com/net-services/dns/zones) に移動し、DNS ゾーンを作成します。
 
-![A5OubUFAUoUmA6xZSxuc1BR5nSf](/img/A5OubUFAUoUmA6xZSxuc1BR5nSf.png)
+![V0XRbvlgLoHRPexZSzEcFB5rn17](https://zdoc-images.s3.us-west-2.amazonaws.com/v0xrbvlglohrpexzszecfb5rn17.png "V0XRbvlgLoHRPexZSzEcFB5rn17")
 
-1. ゾーンタイプで**プライベート**を**選択します**。
+<Procedures>
 
-1. [**ゾーン名**]を`zilliz-privatelink-zone`またはその他の適切な値に設定します。
+1. **ゾーンタイプ**で**プライベート**を選択します。
 
-1. ステップ7で取得したプライベートリンクに**DNS名**を設定してください。
+1. **ゾーン名**を `zilliz-privatelink-zone` または適切な値に設定します。
 
-    有効なDNS名は`in01-xxxxxxxxxxxxxxx.gcp-us-west1.vectordb.zillizcloud.com`に似ています。
+1. **DNS 名**をステップ 7 で取得したプライベートリンクに設定します。
 
-1. ネットワークで適切なVPCネットワークを選択しま**す**。
+    有効な DNS 名は `in01-xxxxxxxxxxxxxxx.gcp-us-west1.vectordb.zillizcloud.com` のようになります。
 
-1. [**作成**]をクリックします。
+1. **ネットワーク**で適切な VPC ネットワークを選択します。
+
+1. **作成**をクリックします。
+
+</Procedures>
 
 ### ホストゾーンにレコードを作成する{#create-a-record-in-the-hosted-zone}
 
-1. 上で作成したゾーンで、「RECORD SETS」タブの「**ADD STANDARD**」をクリック**しま**す。
+<Procedures>
 
-1. [**レコードセットの作成**]ページで、既定の設定で**A**レコードを作成します。
+1. 上記で作成したゾーンで、**レコードセット**タブの**標準を追加**をクリックします。
 
-    ![Wne6bTTreoB95Nxl7fgcynBBnkb](/img/Wne6bTTreoB95Nxl7fgcynBBnkb.png)
+1. **レコードセットの作成**ページで、デフォルト設定の**A**レコードを作成します。
 
-1. IPv 4アドレスの**SELECT IP ADDRESS**をクリックし、**エンドポイント**のIPアドレスを選択してください。
+    ![Zys4bZxploNNTex5h2OcGGwnnYd](https://zdoc-images.s3.us-west-2.amazonaws.com/zys4bzxplonntex5h2ocggwnnYd.png "Zys4bZxploNNTex5h2OcGGwnnYd")
 
-    ![PRdFbEHHzomrexx1Z1uchKz0ncg](/img/PRdFbEHHzomrexx1Z1uchKz0ncg.png)
+1. **IPv4 アドレス**の**IP アドレスを選択**をクリックし、エンドポイントの IP アドレスを選択します。
 
-1. [**作成**]をクリックします。
+    ![Uh1sbVdLSok8N6xyRMhcildDn7f](https://zdoc-images.s3.us-west-2.amazonaws.com/uh1sbvdlsok8n6xyrmhcilddn7f.png "Uh1sbVdLSok8N6xyRMhcilddn7f")
 
-## クラスタへのインターネットアクセスを管理する{#manage-internet-access-to-your-clusters}
+1. **作成**をクリックします。
 
-プライベートエンドポイントを設定した後、クラスターのパブリックエンドポイントを無効にして、プロジェクトへのインターネットアクセスを制限することができます。パブリックエンドポイントを無効にすると、ユーザーはプライベートリンクを使用してクラスターにのみ接続できます。
+</Procedures>
 
-パブリックエンドポイントを無効にするには:
+## クラスターへのインターネットアクセスを管理する{#manage-internet-access-to-your-clusters}
 
-1. ターゲットクラスタの**クラスタ詳細**ページに移動します。
+プライベートエンドポイントを設定した後、クラスターのパブリックエンドポイントを無効にして、プロジェクトへのインターネットアクセスを制限することを選択できます。パブリックエンドポイントを無効にすると、ユーザーはプライベートリンクを使用してのみクラスターに接続できます。
 
-1. [**接続**]セクションに移動します。
+パブリックエンドポイントを無効にするには：
 
-1. クラスターパブリックエンドポイントの横にある構成アイコンをクリックしてください。
+<Procedures>
 
-1. 情報を読んで、**無効**にするをクリックして、**パブリックエンドポイントを無効**にするダイアログボックス。
+1. ターゲットクラスターの**クラスター詳細**ページに移動します。
 
-<Admonition type="info" icon="📘" title="ノート">
+1. **接続**セクションに移動します。
+
+1. クラスターのパブリックエンドポイントの横にある設定アイコンをクリックします。
+
+1. 情報を読み、**パブリックエンドポイントを無効にする**ダイアログボックスで**無効にする**をクリックします。
+
+</Procedures>
+
+<Admonition type="info" icon="📘" title="Notes">
 
 <ul>
-<li><p>プライベートエンドポイントは<a href="/ja-JP/reference/restful/data-plane-v2">データプレーン</a>へのアクセスにのみ影響します。<a href="/ja-JP/reference/restful/control-plane-v2">コントロールプレーン</a>は引き続きパブリックインターネットからアクセスできます。</p></li>
-<li><p>パブリックエンドポイントを再度有効にした後、ローカルDNSキャッシュの有効期限が切れるまで、パブリックエンドポイントにアクセス可能にする必要がある場合があります。</p></li>
+<li><p>プライベートエンドポイントは、<a href="/reference/restful/data-plane-v2">データプレーン</a>アクセスにのみ影響します。<a href="/reference/restful/control-plane-v2">コントロールプレーン</a>は引き続きパブリックインターネット経由でアクセスできます。</p></li>
+<li><p>パブリックエンドポイントを再度有効にした後、パブリックエンドポイントにアクセスできるようになるまで、ローカル DNS キャッシュが期限切れになるまで待つ必要がある場合があります。</p></li>
 </ul>
 
 </Admonition>
 
-![disable_public_endpoint](/img/disable_public_endpoint.png)
+![disable_public_endpoint](https://zdoc-images.s3.us-west-2.amazonaws.com/disable_public_endpoint.png "disable_public_endpoint")
 
-## トラブルシューティング{#troubleshooting}
+## FAQ{#faq}
 
-### GCPでプライベートリンクをpingすると、常に`Name or service not known`が報告されるのはなぜですか?{#why-does-it-always-report-name-or-service-not-known-when-i-ping-the-private-link-on-gcp}
+### GCP でプライベートリンクを ping すると、常に `Name or service not known` と報告されるのはなぜですか？{#why-does-it-always-report-name-or-service-not-known-when-i-ping-the-private-link-on-gcp}
 
-DNS設定を確認するには、「[ファイアウォールルールとDNSレコードの設定](./setup-a-private-link-gcp#set-up-firewall-rules-and-a-dns-record)」を参照してください。
+[ファイアウォールルールと DNS レコードを設定する](./setup-a-private-link-gcp#set-up-firewall-rules-and-a-dns-record)を参照して、DNS 設定を確認してください。
 
-- 設定が正しい場合、プライベートリンクをpingすると、表示されるはずです
+- 設定が正しい場合、プライベートリンクを ping すると、次のように表示されます。
 
-    ![private_link_gcp_ts_01](/img/private_link_gcp_ts_01.png)
+    ![private_link_gcp_ts_01](https://zdoc-images.s3.us-west-2.amazonaws.com/private_link_gcp_ts_01.png "private_link_gcp_ts_01")
 
-- 設定が正しくない場合、プライベートリンクをpingすると、表示される場合があります
+- 設定が正しくない場合、プライベートリンクを ping すると、次のように表示されることがあります。
 
-    ![private_link_gcp_ts_02](/img/private_link_gcp_ts_02.png)
+    ![private_link_gcp_ts_02](https://zdoc-images.s3.us-west-2.amazonaws.com/private_link_gcp_ts_02.png "private_link_gcp_ts_02")
 
-    
+### 既存のクラスターにプライベートエンドポイントを作成できますか？{#can-i-create-a-private-endpoint-for-an-existing-cluster}
+
+はい。プライベートエンドポイントを作成すると、同じリージョンとプロジェクトに存在する既存および将来のすべての Dedicated (Enterprise) クラスターに適用されます。異なるクラスターに対して異なる DNS レコードを追加するだけで済みます。

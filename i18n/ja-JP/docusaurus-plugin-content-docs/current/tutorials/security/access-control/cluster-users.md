@@ -1,75 +1,75 @@
 ---
-title: "クラスタユーザの管理(コンソール) | Cloud"
+title: "クラスターユーザーの管理 (コンソール) | Cloud"
 slug: /cluster-users
-sidebar_label: "クラスタユーザの管理(コンソール)"
+sidebar_label: "クラスターユーザーの管理 (コンソール)"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てて特権を定義し、データセキュリティを実現できます。 | Cloud"
+description: "Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てることで権限を定義し、データセキュリティを実現できます。"
 type: origin
-token: OEtOwsYVRiYpp5kWiUuc3voEnxe
+token: CWT2wh5YriZfPZkGlgCcWxVnnAf
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - cluster
-  - access control
+  - クラスター
+  - アクセス制御
   - rbac
-  - users
-  - overview
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - ユーザー
+  - 概要
+  - セマンティック検索
+  - Anomaly Detection
+  - sentence transformers
+  - レコメンダーシステム
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# クラスタユーザの管理(コンソール)
+# クラスターユーザーの管理 (コンソール)
 
-Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てて特権を定義し、データセキュリティを実現できます。
+Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てることで、権限を定義し、データセキュリティを実現できます。
 
-クラスタを作成すると、`db_admin`という名前のデフォルトユーザが自動的に生成されます。このユーザは削除できません。このデフォルトユーザに加えて、より細かいアクセス制御のためのクラスタユーザを作成することができます。
+クラスターの作成時に、`db_admin`という名前のデフォルトユーザーが自動的に生成されます。このユーザーは削除できません。このデフォルトユーザーに加えて、きめ細かなアクセス制御のために、さらにクラスターユーザーを作成できます。
 
-クラスターユーザーを管理するには、**組織オーナー**または**プロジェクト管理者**であるか、**Cluster_Admin**権限を持つロールが必要です。
+クラスターユーザーを管理するには、**Organization Owner**または**Project Admin**であるか、**Cluster_Admin**権限を持つロールが必要です。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は専用クラスターでのみ利用可能です。</p>
-
-</Admonition>
-
-## クラスタユーザの作成{#create-a-cluster-user}
-
-クラスターユーザーを作成する場合、次のことが必要です:
-
-- ユーザーの名前を入力します。
-
-- このユーザーに、組み込みのクラスターロールまたは[カスタムクラスターロールを](./cluster-roles)付与します。
-
-- クラスターユーザーのパスワードを設定します。このパスワードは[認証](./cluster-credentials)に使用されます。
-
-![add-cluster-user](/img/add-cluster-user.png)
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>各クラスターには最大100人のクラスターユーザーを持つことができます。</p>
+<p>この機能は、<strong>Dedicated</strong>クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## クラスターユーザーの役割を編集する{#edit-the-role-of-a-cluster-user}
+## クラスターユーザーの作成{#create-a-cluster-user}
 
-![edit-cluster-user-role](/img/edit-cluster-user-role.png)
+クラスターユーザーを作成する際には、以下を行う必要があります。
 
-## クラスタユーザを削除する{#drop-a-cluster-user}
+- ユーザー名を入力します。
 
-<Admonition type="info" icon="📘" title="ノート">
+- このユーザーに、組み込みのクラスターロールまたは[カスタムクラスターロール](./cluster-roles)のいずれかを付与します。
 
-<p>デフォルトのユーザ<strong>db_admin</strong>は削除できません。</p>
+- このクラスターユーザーのパスワードを設定します。このパスワードは[認証](./cluster-credentials)に使用されます。
+
+![add-cluster-user](https://zdoc-images.s3.us-west-2.amazonaws.com/add-cluster-user.png "add-cluster-user")
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>各クラスターには最大100人のクラスターユーザーを設定できます。</p>
 
 </Admonition>
 
-![drop-cluster-user](/img/drop-cluster-user.png)
+## クラスターユーザーのロールを編集する{#edit-the-role-of-a-cluster-user}
+
+![edit-cluster-user-role](https://zdoc-images.s3.us-west-2.amazonaws.com/edit-cluster-user-role.png "edit-cluster-user-role")
+
+## クラスターユーザーを削除する{#drop-a-cluster-user}
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>デフォルトユーザーの<strong>db_admin</strong>は削除できません。</p>
+
+</Admonition>
+
+![drop-cluster-user](https://zdoc-images.s3.us-west-2.amazonaws.com/drop-cluster-user.png "drop-cluster-user")
 

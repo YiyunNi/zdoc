@@ -1,201 +1,399 @@
 ---
-title: "Azure Marketplaceで購読する | Cloud"
+title: "Azure Marketplace でサブスクライブ | Cloud"
 slug: /subscribe-on-azure-marketplace
 sidebar_label: "Azure Marketplace"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、サブスクリプションの過程を順を追って説明し、Azure Marketplace上のZilliz Cloudの価格条件について概説します。 | Cloud"
+description: "このガイドでは、Azure Marketplace での Zilliz Cloud のサブスクリプションプロセスと価格条件について、ステップバイステップで説明します。"
 type: origin
-token: ETyHwKLQwiHeJmk25vUcSKUQnk7
-sidebar_position: 4
+token: LbFXwpruviFWWokwtkhcVmnhnFh
+sidebar_position: 5
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - marketplace
+  - ベクトルデータベース
+  - クラウド
+  - マーケットプレイス
   - azure
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - ハイブリッド検索
+  - レキシカル検索
+  - 近傍検索
+  - Agentic RAG
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Azure Marketplaceで購読する
+import Supademo from '@site/src/components/Supademo';
 
-このガイドでは、サブスクリプションの過程を順を追って説明し、Azure Marketplace上のZilliz Cloudの価格条件について概説します。
+import Grid from '@site/src/components/Grid';
 
-<Admonition type="info" icon="📘" title="ノート">
+import Procedures from '@site/src/components/Procedures';
 
-<p>一度購読すると、Azure Marketplaceを介してAzureクラスターの使用料を支払うことができます。他のクラウドプロバイダーにクラスターをデプロイしている場合は、Azure Marketplaceを使用して支払うこともできます。</p>
+# Azure Marketplace で購読する
+
+このガイドでは、Azure Marketplace での Zilliz Cloud の購読プロセスと料金体系について、ステップバイステップで説明します。
+
+<Admonition type="info" icon="📘" title="Note">
+
+<p>購読すると、Azure Marketplace を通じて Azure クラスターの使用料金を支払うことができます。他のクラウドプロバイダーにデプロイされたクラスターがある場合でも、Azure Marketplace を使用して支払うことができます。</p>
 
 </Admonition>
 
-## 始める前に{#before-you-start}
+## 開始する前に{#before-you-start}
 
-- 必ず[Azure Marketplace](https://learn.microsoft.com/ja-jp/marketplace/azure-marketplace-overview)アカウントがあることを確認してください。
+Azure Marketplace で購読するには、[Azure Marketplace](https://learn.microsoft.com/en-us/marketplace/azure-marketplace-overview) アカウントと Azure [課金アカウント](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts)があることを確認してください。
 
-- Azure Marketplaceでサブスクリプションの[請求アカウント](https://learn.microsoft.com/ja-jp/azure/cost-management-billing/manage/view-all-accounts)を設定していることを確認してください。
+また、請求先の国または地域がサポートされている市場のリストにあることを確認してください。Zilliz Cloud は、税金およびコンプライアンス上の理由により、Azure Marketplace の特定の市場をサポートしていません。サポートされていない市場から購読しようとすると、「`"No plans are available for market '<market_code>'."`」というエラーメッセージが表示される場合があります。この場合、[サポートに連絡](http://support.zilliz.com/)し、エラーメッセージのスクリーンショットと市場コードを提供してください。可能な解決策についてご相談させていただきます。
 
-## Azure Marketplaceで購読する{#subscribe-on-azure-marketplace}
+![YaPcbHnQXovDLIxks0xcItOJnpf](https://zdoc-images.s3.us-west-2.amazonaws.com/yapcbhnqxovdlixks0xcitojnpf.png "YaPcbHnQXovDLIxks0xcItOJnpf")
 
-以下の手順で[Azure Marketplace](https://azuremarketplace.microsoft.com/ja-JP)にアクセスし、Zilliz Cloudの購読を開始してください:
+<details>
 
-1. 検索ボックスで**Zilliz Cloud**を検索するか、 [Azure Marketplaceに移動](https://azuremarketplace.microsoft.com/ja-jp/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=Overview)してZilliz Cloudポータルページを表示します。
+<summary>サポートされている市場</summary>
 
-    ![search_for_zilliz_on_azure](/img/search_for_zilliz_on_azure.png)
+<Grid columnSize="4" widthRatios="25,25,25,25">
 
-1. [**Zilliz Cloud**]をクリックします。
+    <div>
 
-    サービスと価格について理解してください。
+        - アルメニア
 
-1. [**プラン+価格**]タブに切り替えます。[**今すぐ入手**]をクリックします。
+        - オーストラリア
 
-    ![get_it_now_on_azure](/img/get_it_now_on_azure.png)
+        - オーストリア
 
-1. ポップアップウィンドウで、Zilliz Cloudが必要とする基本情報を入力してください。
+        - バーレーン
 
-    ![enter_basic_information_azure](/img/enter_basic_information_azure.png)
+        - バルバドス
 
-1. 「**Zilliz Cloudの購読**」ページで、以下の手順を実行してください:
+        - ベラルーシ
 
-    1. 適切なサブスクリ**プションとリソースグループ**を選択して、プロジェクトの詳細を設定します。リソースグループがない場合は、作成してください。**サブスクリプション**と**リソースグループ**の詳細については、Azuresの[SaaS購入体験](https://learn.microsoft.com/en-us/marketplace/purchase-saas-offer-in-azure-portal#the-saas-purchase-experience)を参照してください。
+        - ベルギー
 
-    1. [**SaaS詳細**]を設定します。
+        - ブルガリア
 
-        1. 後で簡単に識別できるように、サブスクリプションに名前を付けてください。
+        - カナダ
 
-        1. 契約期間を選択してください: 1ヶ月または1年。
+        - チリ
 
-        1. **自動更新**の設定を行います。
+        - コロンビア
 
-        <Admonition type="info" icon="📘" title="ノート">
+        - クロアチア
 
-        <p>自動更新がオンになっている場合、契約期間の終了時にAzure上のZilliz Cloudに自動的にサブスクリプションされます。自動更新がオフになっている場合、契約期間の終了時にサブスクリプションが終了し、Zilliz Cloudの組織とアカウントはこのAzure Marketplaceサブスクリプションから自動的に解除されます。</p>
+        - キプロス
 
-        </Admonition>
+        - チェコ
 
-    1. サブスクリプションの詳細を確認し、[**レビュー+購読**]をクリックします。
+        - デンマーク
 
-    ![configure_subscription_on_azure](/img/configure_subscription_on_azure.png)
+        - エジプト
 
-1. 次のページで、[**今すぐアカウント**を構成]をクリックして、Azure MarketplaceサブスクリプションをZilliz Cloudにリンクします。
+        - エストニア
 
-    ![configure_account_azure](/img/configure_account_azure.png)
+        - フィンランド
 
-1. 新しいしいタブで、以下の手順に従ってサブスクリプションを完了します。
+    </div>
 
-    1. Zilliz Cloudアカウントをお持ちの場合は、ログインしてください。お持ちでない場合は、[サインアップオプション](./register-with-zilliz-cloud)を選択して、手順に従ってください。
+    <div>
 
-    1. 既存のZilliz Cloud組織にサブスクリプションをリンクしてください。
+        - フランス
 
-    1. 完全な承認。
+        - ジョージア
 
-        ![aws-marketplace-dialog](/img/aws-marketplace-dialog.png)
+        - ドイツ
 
-1. Zilliz Cloudの**請求**に移動して、Azure Marketplaceサブスクリプションが支払い方法として設定されていることを確認してください。
+        - ギリシャ
 
-    ![azure-marketplace-success](/img/azure-marketplace-success.png)
+        - 香港特別行政区
 
-## Update Azure Marketplaceサブスクリプション{#update-azure-marketplace-subscription}
+        - ハンガリー
 
-Azure Marketplaceから正常にサブスクライブした後は、必要に応じていつでもサブスクリプションを更新できます。具体的には、サブスクリプションに使用されるAzure Marketplaceアカウントを別のアカウントに変更するか、Azure Marketplaceサブスクリプションからクレジットカードに支払い方法を切り替えることができます。
+        - アイスランド
 
-### Azure Marketplaceのサブスクリプションを変更する{#change-azure-marketplace-subscription}
+        - インド
 
-詳細については、「[Azureサブスクリプションおよび/またはリソースグループの変更](https://learn.microsoft.com/ja-jp/marketplace/saas-subscription-lifecycle-management#change-azure-subscription-andor-resource-group)」を参照してください。
+        - インドネシア
 
-更新内容は、[**支払方法**]セクションの[**請求概要**]ページで確認できます。[サブスクリプションID]をクリックし、サブスクリプション**購入者PUID**が新しいMarketplaceアカウントに更新されているかどうかを確認します。
+        - アイルランド
 
-![view-azure-subscription-id](/img/view-azure-subscription-id.png)
+        - イタリア
 
-### クレジットカード決済に切り替える{#switch-to-payment-credit-card}
+        - 日本
 
-1. サブスクリプションに使用したAzureアカウントでAzure Marketplaceにサインインしてください。
+        - ケニア
 
-1. Zilliz Cloudのサブスクリプションをキャンセルまたは削除します。詳細については、[サブスクリプションキャンセル](https://learn.microsoft.com/ja-jp/marketplace/saas-subscription-lifecycle-management#cancel-subscription)および[サブスクリプション削除](https://learn.microsoft.com/ja-jp/marketplace/saas-subscription-lifecycle-management#delete-subscription)を参照してください。
+        - ラトビア
 
-    <Admonition type="info" icon="📘" title="ノート">
+        - リヒテンシュタイン
 
-    <p>Azure Marketplaceでキャンセルの過程が完了するまで数分かかります。</p>
+        - リトアニア
+
+        - ルクセンブルク
+
+        - マレーシア
+
+    </div>
+
+    <div>
+
+        - マルタ
+
+        - モルドバ
+
+        - モナコ
+
+        - オランダ
+
+        - ニュージーランド
+
+        - ナイジェリア
+
+        - ノルウェー
+
+        - オマーン
+
+        - フィリピン
+
+        - ポーランド
+
+        - ポルトガル
+
+        - プエルトリコ
+
+        - カタール
+
+        - ルーマニア
+
+        - ロシア
+
+        - サウジアラビア
+
+        - セルビア
+
+        - シンガポール
+
+    </div>
+
+    <div>
+
+        - スロバキア
+
+        - スロベニア
+
+        - 南アフリカ
+
+        - 韓国
+
+        - スペイン
+
+        - スウェーデン
+
+        - スイス
+
+        - 台湾
+
+        - タジキスタン
+
+        - タイ
+
+        - トルコ
+
+        - ウガンダ
+
+        - ウクライナ
+
+        - アラブ首長国連邦
+
+        - イギリス
+
+        - アメリカ合衆国
+
+        - ウズベキスタン
+
+        - ベトナム
+
+    </div>
+
+</Grid>
+
+</details>
+
+## Azure Marketplace で購読する{#subscribe-on-azure-marketplace}
+
+[Azure Marketplace](https://azuremarketplace.microsoft.com/en-us) にアクセスし、以下の手順で Zilliz Cloud の購読を開始します。
+
+<Supademo id="cm9jmpiac3eq2ljv5itt1tn7s" title="Zilliz Cloud - Azure Marketplace Subscription Demo" />
+
+<Procedures>
+
+1. 検索ボックスで **Zilliz Cloud** を検索するか、[Azure Marketplace にアクセス](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/zillizinc1703056661329.zilliz_cloud?tab=Overview)して Zilliz Cloud ポータルページを表示します。
+
+    ![search_for_zilliz_on_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/search_for_zilliz_on_azure.png "search_for_zilliz_on_azure")
+
+1. **Zilliz Cloud** をクリックします。
+
+    サービスと料金を確認してください。
+
+1. **プラン + 料金**タブに切り替えます。**今すぐ入手**をクリックします。
+
+    ![get_it_now_on_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/get_it_now_on_azure.png "get_it_now_on_azure")
+
+1. ポップアップウィンドウで、Zilliz Cloud が要求する基本情報を入力します。
+
+    ![enter_basic_information_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/enter_basic_information_azure.png "enter_basic_information_azure")
+
+1. **Zilliz Cloud を購読する**ページで、以下の手順を完了します。
+
+    1. 適切な**サブスクリプション**と**リソースグループ**を選択して、**プロジェクトの詳細**を設定します。リソースグループがない場合は、作成してください。サブスクリプションとリソースグループの詳細については、Azure の[SaaS 購入体験](https://learn.microsoft.com/en-us/marketplace/purchase-saas-offer-in-azure-portal#the-saas-purchase-experience)を参照してください。
+
+    1. **SaaS の詳細**を設定します。
+
+        1. 後で簡単に識別できるように、サブスクリプションに名前を付けます。
+
+        1. 契約期間を選択します: 1ヶ月または1年。
+
+        1. **自動更新**設定を設定します。
+
+            <Admonition type="info" icon="📘" title="Note">
+
+            <p>自動更新がオンの場合、契約期間の終了時に Azure の Zilliz Cloud に自動的に購読されます。自動更新がオフの場合、契約期間の終了時にサブスクリプションが終了し、Zilliz Cloud の組織とアカウントは、この Azure Marketplace サブスクリプションから自動的にリンク解除されます。</p>
+
+            </Admonition>
+
+    1. サブスクリプションの詳細を確認し、**確認 + 購読**をクリックします。
+
+    ![configure_subscription_on_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/configure_subscription_on_azure.png "configure_subscription_on_azure")
+
+1. 次のページで、**今すぐアカウントを設定**をクリックして、Azure Marketplace サブスクリプションを Zilliz Cloud にリンクします。
+
+    ![configure_account_azure](https://zdoc-images.s3.us-west-2.amazonaws.com/configure_account_azure.png "configure_account_azure")
+
+1. 新しいタブで、以下の手順に従って購読を完了します。
+
+    1. 既に Zilliz Cloud アカウントをお持ちの場合は、ログインするだけです。お持ちでない場合は、[サインアップオプション](./register-with-zilliz-cloud)を選択し、プロセスに従ってください。
+
+    1. 既存の Zilliz Cloud 組織にサブスクリプションをリンクします。
+
+    1. 認証を完了します。
+
+        ![aws-marketplace-dialog](https://zdoc-images.s3.us-west-2.amazonaws.com/aws-marketplace-dialog.png "aws-marketplace-dialog")
+
+1. Zilliz Cloud の**請求**に移動し、Azure Marketplace サブスクリプションが支払い方法として設定されていることを確認します。
+
+    ![azure-marketplace-success](https://zdoc-images.s3.us-west-2.amazonaws.com/azure-marketplace-success.png "azure-marketplace-success")
+
+</Procedures>
+
+## Azure Marketplace サブスクリプションを更新する{#update-azure-marketplace-subscription}
+
+Azure Marketplace からの購読が成功した後、いつでもサブスクリプションを更新できます。具体的には、サブスクリプションに使用する Azure Marketplace アカウントを別のアカウントに変更したり、支払い方法を Azure Marketplace サブスクリプションからクレジットカードに切り替えたりすることができます。
+
+### Azure Marketplace サブスクリプションを変更する{#change-azure-marketplace-subscription}
+
+詳細については、[Azure サブスクリプションおよび/またはリソースグループの変更](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#change-azure-subscription-andor-resource-group)を参照してください。
+
+**請求概要**ページの**支払い方法**セクションで更新を確認できます。サブスクリプション ID をクリックし、サブスクリプションの**購入者 PUID** が新しい Marketplace アカウントに更新されているかどうかを確認します。
+
+![view-azure-subscription-id](https://zdoc-images.s3.us-west-2.amazonaws.com/view-azure-subscription-id.png "view-azure-subscription-id")
+
+### クレジットカード払いに切り替える{#switch-to-payment-credit-card}
+
+<Procedures>
+
+1. サブスクリプションに使用した Azure アカウントで Azure Marketplace にサインインします。
+
+1. Zilliz Cloud サブスクリプションをキャンセルまたは削除します。詳細については、[サブスクリプションのキャンセル](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#cancel-subscription)および[サブスクリプションの削除](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#delete-subscription)を参照してください。
+
+    <Admonition type="info" icon="📘" title="Note">
+
+    <p>Azure Marketplace がキャンセルプロセスを完了するまでに数分かかります。</p>
 
     </Admonition>
 
-1. 「[クレジットカードを追加して購読する](./subscribe-by-adding-credit-card)」の手順に従って、支払いクレジットカードを追加します。
+1. [クレジットカードを追加して購読する](./subscribe-by-adding-credit-card#add-a-credit-card)の手順に従って、支払い用クレジットカードを追加します。
 
-1. [**支払方法**]セクションの[**請求概要**]ページで更新を確認します。
+1. **請求概要**ページの**支払い方法**セクションで更新を確認します。
 
-## Azure Marketplaceのサブスクリプションをキャンセルする{#cancel-azure-marketplace-subscription}
+</Procedures>
 
-1. Azure Marketplaceのホームページを開きます。
+## Azure Marketplace サブスクリプションをキャンセルする{#cancel-azure-marketplace-subscription}
 
-1. [**すべてのリソース**]をクリックするか、[**リソース/最近**]タブでサブスクリプションを見つけます。
+<Procedures>
 
-    ![azure_all_resources](/img/azure_all_resources.png)
+1. Azure Marketplace のホームページを開きます。
 
-1. キャンセルしたいサブスクリプションに移動します。[**サブスクリプションのキャンセル**]をクリックします。Azure Marketplaceが処理を完了するまで数分間お待ちください。
+1. **すべてのリソース**をクリックするか、**リソース/最近**タブでサブスクリプションを見つけます。
 
-    ![cancel_azure_subscription](/img/cancel_azure_subscription.png)
+    ![azure_all_resources](https://zdoc-images.s3.us-west-2.amazonaws.com/azure_all_resources.png "azure_all_resources")
 
-Azure Marketplaceでサブスクリプションをキャンセルする方法の詳細については、[こちら](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#cancel-subscription)を参照してください。
+1. キャンセルしたいサブスクリプションに移動します。**サブスクリプションのキャンセル**をクリックします。Azure Marketplace がプロセスを完了するまで数分待ちます。
 
-## Azure Marketplaceの価格条件{#azure-marketplace-pricing-terms}
+    ![cancel_azure_subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/cancel_azure_subscription.png "cancel_azure_subscription")
 
-詳細については、[支払いと請求](./payment-billing)を参照してください。
+</Procedures>
+
+Azure Marketplace でのサブスクリプションのキャンセル方法の詳細については、[こちら](https://learn.microsoft.com/en-us/marketplace/saas-subscription-lifecycle-management#cancel-subscription)を参照してください。
+
+## Azure Marketplace の料金体系{#azure-marketplace-pricing-terms}
+
+詳細については、[支払いと請求](./payment-billing#marketplace-pricing-terms)を参照してください。
 
 ## トラブルシューティング{#troubleshooting}
 
-**Zilliz Cloudにマーケットプレイスのサブスクリプションをリンクする際に利用可能な組織がない場合、私は何ができますか?**
+- **Azure Marketplace 経由で購読する際に「No plans are available for market '&lt;country_code&gt;'」と表示されるのはなぜですか？**
 
-いくつかの理由が考えられます:
+    このメッセージは、Zilliz Cloud がお客様の請求先の国または地域の Azure Marketplace でまだ利用できないために表示されます。詳細については、[サポートされている市場](./subscribe-on-azure-marketplace#before-you-start)を参照してください。エラーメッセージのスクリーンショットと市場コードを添えて[サポートに連絡](http://support.zilliz.com)してください。代替ソリューションを提供したり、利用可能性を更新したりできる場合があります。
 
-1. **不十分な権限**
+- **マーケットプレイスのサブスクリプションを Zilliz Cloud にリンクする際に、利用可能な組織がない場合はどうすればよいですか？**
 
-    これは、十分な権限がない場合に発生する可能性があります。利用できない組織の横に「権限不足」タグが表示されます。
+    いくつかの理由が考えられます。
 
-    ![insufficient-permission-subscription](/img/insufficient-permission-subscription.png)
+    - **権限不足**
 
-1. **すべての組織はすでにMarketplaceサブスクリプションに正常にリンクされています**(UIプロンプト: Marketplace Linked)
+        これは、十分な権限がない場合に発生する可能性があります。利用できない組織の横に**「権限不足」**タグが表示されます。
 
-    1. 既存のMarketplaceサブスクリプションを更新する必要がある場合は、まず組織の現在のサブスクリプションの[リンク](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription)を解除してから、新しいサブスクリプションを設定してください。
+        ![insufficient-permission-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/insufficient-permission-subscription.png "insufficient-permission-subscription")
 
-    1. 異なるマーケットプレイスのサブスクリプションに複数の組織が必要な場合は、次のことができます:
+        マーケットプレイスのサブスクリプションと組織をリンクするには、**組織の所有者**または**組織の請求管理者**である必要があります。組織のメンバーであるだけでは、必要な権限がありません。組織の所有者に連絡して支援を求めてください。
 
-        1. [新し](./register-with-zilliz-cloud)いZilliz Cloudアカウントを登録して、新しい組織を作成します。その後、組織のオーナーを新しい組織に[招待](./organization-users#invite-a-user-to-your-organization)します。この組織のオーナーは複数の組織に所属し、組織ごとに異なるマーケットプレイスのサブスクリプションを設定できます。
+    - **すべての組織が既にマーケットプレイスのサブスクリプションに正常にリンクされている**
 
-        1. [サポートチケットを作成](http://support.zilliz.com)すると、新しい組織が作成されます。現在、Zilliz Cloudでは、ユーザーが手動で組織を作成することはサポートされていません。
+        これは、すべての組織が既にマーケットプレイスのサブスクリプションにリンクされている場合に発生する可能性があります。利用できない組織の横に**「マーケットプレイスにリンク済み」**タグが表示されます。
 
-1. **リストに組織がありません**
+        ![marketplace-already-linked-subscription](https://zdoc-images.s3.us-west-2.amazonaws.com/marketplace-already-linked-subscription.png "marketplace-already-linked-subscription")
 
-    アカウントが閉鎖された場合や、すべての組織から離脱した場合に発生する可能性があります。UIは以下のようになります。
+        この場合、
 
-    ![no-organization-during-subcription](/img/no-organization-during-subcription.png)
+        - 既存のマーケットプレイスのサブスクリプションを更新する必要がある場合は、まず組織の現在のサブスクリプションを[リンク解除](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription)してから、新しいサブスクリプションを設定してください。
 
-    この場合、次のことができます:
+        - 異なるマーケットプレイスのサブスクリプションに複数の組織が必要な場合は、次のことができます。
 
-    1. 新しい組織を作る。
+            - 新しい Zilliz Cloud アカウントを[登録](./register-with-zilliz-cloud)して新しい組織を作成します。次に、組織の所有者を新しい組織に[招待](./organization-users#invite-a-user-to-your-organization)します。この組織の所有者は複数の組織に属し、各組織に異なるマーケットプレイスのサブスクリプションを設定できます。
 
-    1. 他のユーザに自分をOrganizationの所有者としてOrganizationに[招待](./organization-users#invite-a-user-to-your-organization)するように依頼します。
+            - [サポートチケットを作成](http://support.zilliz.com)して、新しい組織を作成してもらいます。現在、Zilliz Cloud はユーザーによる組織の手動作成をサポートしていません。
 
-    1. [サポートチケットを送信](https://support.zilliz.com/hc/en-us)すると、新しい組織が作成されます。
+    - **リストに組織がない**
 
-1. **Zilliz Cloud BYOCを使用しています。**
+        これは、アカウントが閉鎖されたか、すべての組織を離れた場合に発生する可能性があります。UI は次のようになります。
 
-    あなたの組織が実際にZilliz Cloud BYOC組織である場合、これが起こる可能性があります。利用できない組織の横に「署名済み契約」タグが表示されます。BYOC組織には支払い方法は必要ありません。ご質問がある場合は、[営業にお問い合わせ](https://zilliz.com/contact-sales)ください。 
+        ![no-organization-during-subcription](https://zdoc-images.s3.us-west-2.amazonaws.com/no-organization-during-subcription.png "no-organization-during-subcription")
 
-    ![signed-contract-subscription](/img/signed-contract-subscription.png)
+        この場合、次のことができます。
 
-## 関連するトピック{#related-topics}
+        - 新しい組織を作成します。
+
+        - 他のユーザーに、自分の組織に[招待](./organization-users#invite-a-user-to-your-organization)してもらい、組織の所有者の役割を付与してもらいます。
+
+        - [サポートチケットを作成](https://support.zilliz.com/hc/en-us)して、新しい組織を作成してもらいます。
+
+## 関連トピック{#related-topics}
 
 - [クレジットカードを追加して購読する](./subscribe-by-adding-credit-card)
 
-- [AWS Marketplaceで購読する](./subscribe-on-aws-marketplace)
+- [AWS Marketplace で購読する](./subscribe-on-aws-marketplace)
 
-- [Google Cloud Marketplaceに登録する](./subscribe-on-gcp-marketplace)
+- [GCP Marketplace で購読する](./subscribe-on-gcp-marketplace)
 
-- [インボイス](./view-invoice)
+- [請求書を表示する](./view-invoice)
 
  

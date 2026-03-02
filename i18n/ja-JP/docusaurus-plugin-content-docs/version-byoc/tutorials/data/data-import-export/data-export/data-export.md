@@ -1,29 +1,29 @@
 ---
-title: "データエクスポート | BYOC"
+title: "データのエクスポート | BYOC"
 slug: /data-export
-sidebar_label: "データエクスポート"
+sidebar_label: "データのエクスポート"
 beta: FALSE
 notebook: FALSE
 description: "このガイドでは、さまざまな方法を使用してZilliz Cloudからデータをエクスポートする方法の例を紹介します。 | BYOC"
 type: origin
-token: OyMpwQi09iopGikeSojcMGTDnsh
+token: CeH9wPtUfiOdDckoPszcAuLonce
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - data export
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - ベクターデータベース
+  - クラウド
+  - データエクスポート
+  - マルチモーダルRAG
+  - LLMの幻覚
+  - ハイブリッド検索
+  - 語彙検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# データエクスポート
+# データのエクスポート
 
 このガイドでは、さまざまな方法を使用してZilliz Cloudからデータをエクスポートする方法の例を紹介します。
 

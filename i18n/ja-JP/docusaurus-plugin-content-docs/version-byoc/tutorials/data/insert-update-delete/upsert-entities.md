@@ -1,26 +1,26 @@
 ---
-title: "エンティティの更新と挿入 | BYOC"
+title: "エンティティのアップサート | BYOC"
 slug: /upsert-entities
-sidebar_label: "エンティティの更新と挿入"
+sidebar_label: "エンティティのアップサート"
 beta: FALSE
 notebook: FALSE
-description: "Upsert操作は、データの更新と挿入のアクションを組み合わせたものです。Milvusは、主キーが存在するかどうかを確認することで、更新または挿入操作を実行するかどうかを決定します。このセクションでは、エンティティをUpsertする方法と、さまざまなシナリオでのUpsert操作の具体的な動作について紹介します。 | BYOC"
+description: "`upsert` 操作は、collection 内のエンティティを挿入または更新する便利な方法を提供します。 | BYOC"
 type: origin
-token: PHmAwiBrDiBYpSkkuOKcO56onNg
+token: YtJPwEVETiTaPMkWSfAccjXTnge
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - collection
-  - data
-  - upsert
-  - update
-  - insert
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - データ
+  - アップサート
+  - 更新
+  - 挿入
+  - 次元削減
+  - HNSWアルゴリズム
+  - ベクトル類似性検索
+  - 近似最近傍探索
 
 ---
 
@@ -28,29 +28,85 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# エンティティの更新と挿入
+# エンティティのアップサート
 
-Upsert操作は、データの更新と挿入のアクションを組み合わせたものです。Milvusは、主キーが存在するかどうかを確認することで、更新または挿入操作を実行するかどうかを決定します。このセクションでは、エンティティをUpsertする方法と、さまざまなシナリオでのUpsert操作の具体的な動作について紹介します。
+`upsert` 操作は、コレクション内のエンティティを挿入または更新する便利な方法を提供します。
 
-## 概要について{#overview}
+## 概要{#overview}
 
-コレクション内のエンティティを更新する必要がある場合、または更新するか挿入するかわからない場合は、Upsert操作を使用してみてください。この操作を使用する場合、Upsertリクエストに含まれるエンティティに主キーが含まれていることを確認することが重要です。そうでない場合、エラーが発生します。Upsertリクエストを受信すると、Zilliz Cloudは次の過程を実行します
+`upsert` を使用すると、アップサートリクエストで提供されたプライマリキーがコレクションに存在するかどうかに応じて、新しいエンティティを挿入するか、既存のエンティティを更新することができます。プライマリキーが見つからない場合は、挿入操作が行われます。それ以外の場合は、更新操作が実行されます。
 
-1. コレクションのプライマリフィールドでAutoIdが有効になっているかどうかを確認します。
+アップサートリクエストは、挿入と削除を組み合わせたものです。既存のエンティティに対する `upsert` リクエストが受信されると、Zilliz Cloud はリクエストペイロードに含まれるデータを挿入し、同時にデータで指定された元のプライマリキーを持つ既存のエンティティを削除します。
 
-    1. その場合、Zilliz CloudはEntity内の主キーを自動生成された主キーに置き換え、データを挿入します。
+![Q3LawAQIKht1FKbsM3EcoQAHnvc](https://zdoc-images.s3.us-west-2.amazonaws.com/Q3LawAQIKht1FKbsM3EcoQAHnvc.png)
 
-    1. そうでない場合、Zilliz Cloudはエンティティが持つ主キーを使用してデータを挿入します。
+ターゲットコレクションのプライマリフィールドで `autoid` が有効になっている場合、Zilliz Cloud は、リクエストペイロードに含まれるデータを挿入する前に、新しいプライマリキーを生成します。
 
-1. Upsert要求に含まれるエンティティの主キー値に基づいて削除操作を実行します。
+`nullable` が有効になっているフィールドの場合、更新が不要であれば、`upsert` リクエストでそれらを省略できます。
 
-![PbhlwMPYehvqZjboBUucBm0tniL](/img/PbhlwMPYehvqZjboBUucBm0tniL.png)
+### マージモードでのアップサート | PUBLIC{#upsert-in-merge-mode}
 
-## コレクション内のエンティティの更新と挿入{#upsert-entity-in-a-collection}
+`partial_update` フラグを使用して、アップサートリクエストをマージモードで動作させることもできます。これにより、更新が必要なフィールドのみをリクエストペイロードに含めることができます。
 
-このセクションでは、クイックセットアップの方法で作成されたコレクションにエンティティを挿入します。この方法で作成されたコレクションには、**id**と**vector**という2つのフィールドしかありません。さらに、このコレクションには動的フィールドが有効になっているため、サンプルコードのエンティティには、スキーマで定義されていない**color**というフィールドが含まれています。
+![NZNKwxm9ahmi87b487TcuCrNn4c](https://zdoc-images.s3.us-west-2.amazonaws.com/NZNKwxm9ahmi87b487TcuCrNn4c.png)
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+マージを実行するには、`upsert` リクエストで `partial_update` を `True` に設定し、プライマリキーと、新しい値で更新するフィールドを含めます。
+
+このようなリクエストを受信すると、Zilliz Cloud は厳密な整合性でクエリを実行してエンティティを取得し、リクエストのデータに基づいてフィールド値を更新し、変更されたデータを挿入し、その後、リクエストに含まれる元のプライマリキーを持つ既存のエンティティを削除します。
+
+### アップサートの動作: 特記事項{#upsert-behaviors-special-notes}
+
+マージ機能を使用する前に考慮すべきいくつかの特記事項があります。以下のケースでは、`title` と `issue` という2つのスカラーフィールド、プライマリキー `id`、および `vector` と呼ばれるベクトルフィールドを持つコレクションがあることを前提としています。
+
+- **`nullable` が有効なフィールドのアップサート。**
+
+    `issue` フィールドが null にできると仮定します。これらのフィールドをアップサートする場合、次の点に注意してください。
+
+    - `upsert` リクエストで `issue` フィールドを省略し、`partial_update` を無効にすると、`issue` フィールドは元の値を保持する代わりに `null` に更新されます。
+
+    - `issue` フィールドの元の値を保持するには、`partial_update` を有効にして `issue` フィールドを省略するか、`upsert` リクエストに `issue` フィールドとその元の値を含める必要があります。
+
+- **動的フィールドのキーのアップサート。**
+
+    例のコレクションで動的キーを有効にしており、エンティティの動的フィールドのキーと値のペアが `{"author": "John", "year": 2020, "tags": ["fiction"]}` のようになっていると仮定します。
+
+    `author`、`year`、`tags` などのキーでエンティティをアップサートしたり、他のキーを追加したりする場合、次の点に注意してください。
+
+    - `partial_update` を無効にしてアップサートすると、デフォルトの動作は**上書き**です。これは、動的フィールドの値が、リクエストに含まれるスキーマで定義されていないすべてのフィールドとその値によって上書きされることを意味します。
+
+        たとえば、リクエストに含まれるデータが `{"author": "Jane", "genre": "fantasy"}` の場合、ターゲットエンティティの動的フィールドのキーと値のペアはそれに更新されます。
+
+    - `partial_update` を有効にしてアップサートすると、デフォルトの動作は**マージ**です。これは、動的フィールドの値が、リクエストに含まれるスキーマで定義されていないすべてのフィールドとその値とマージされることを意味します。
+
+        たとえば、リクエストに含まれるデータが `{"author": "John", "year": 2020, "tags": ["fiction"]}` の場合、アップサート後、ターゲットエンティティの動的フィールドのキーと値のペアは `{"author": "John", "year": 2020, "tags": ["fiction"], "genre": "fantasy"}` になります。
+
+- **JSON フィールドのアップサート。**
+
+    例のコレクションに `extras` というスキーマ定義の JSON フィールドがあり、このエンティティの JSON フィールドのキーと値のペアが `{"author": "John", "year": 2020, "tags": ["fiction"]}` のようになっていると仮定します。
+
+    変更された JSON データでエンティティの `extras` フィールドをアップサートする場合、JSON フィールドは全体として扱われ、個々のキーを選択的に更新することはできません。言い換えれば、JSON フィールドは**マージ**モードでのアップサートを**サポートしていません**。
+
+### 制限事項{#limits-and-restrictions}
+
+上記のコンテンツに基づいて、従うべきいくつかの制限事項があります。
+
+- `upsert` リクエストには、常にターゲットエンティティのプライマリキーを含める必要があります。
+
+- ターゲットコレクションはロードされ、クエリ可能である必要があります。
+
+- リクエストで指定されたすべてのフィールドは、ターゲットコレクションのスキーマに存在する必要があります。
+
+- リクエストで指定されたすべてのフィールドの値は、スキーマで定義されたデータ型と一致する必要があります。
+
+- 関数を使用して別のフィールドから派生したフィールドの場合、Zilliz Cloud は再計算を可能にするために、アップサート中に派生フィールドを削除します。
+
+## コレクション内のエンティティのアップサート{#upsert-entities-in-a-collection}
+
+このセクションでは、`my_collection` という名前のコレクションにエンティティをアップサートします。このコレクションには、`id`、`vector`、`title`、`issue` という4つのフィールドしかありません。`id` フィールドはプライマリフィールドであり、`title` と `issue` フィールドはスカラーフィールドです。
+
+コレクションに存在する場合、3つのエンティティはアップサートリクエストに含まれるエンティティによって上書きされます。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -62,27 +118,33 @@ client = MilvusClient(
 )
 
 data=[
-    {"id": 0, "vector": [-0.619954382375778, 0.4479436794798608, -0.17493894838751745, -0.4248030059917294, -0.8648452746018911], "color": "black_9898"},
-    {"id": 1, "vector": [0.4762662251462588, -0.6942502138717026, -0.4490002642657902, -0.628696575798281, 0.9660395877041965], "color": "red_7319"},
-    {"id": 2, "vector": [-0.8864122635045097, 0.9260170474445351, 0.801326976181461, 0.6383943392381306, 0.7563037341572827], "color": "white_6465"},
-    {"id": 3, "vector": [0.14594326235891586, -0.3775407299900644, -0.3765479013078812, 0.20612075380355122, 0.4902678929632145], "color": "orange_7580"},
-    {"id": 4, "vector": [0.4548498669607359, -0.887610217681605, 0.5655081329910452, 0.19220509387904117, 0.016513983433433577], "color": "red_3314"},
-    {"id": 5, "vector": [0.11755001847051827, -0.7295149788999611, 0.2608115847524266, -0.1719167007897875, 0.7417611743754855], "color": "black_9955"},
-    {"id": 6, "vector": [0.9363032158314308, 0.030699901477745373, 0.8365910312319647, 0.7823840208444011, 0.2625222076909237], "color": "yellow_2461"},
-    {"id": 7, "vector": [0.0754823906014721, -0.6390658668265143, 0.5610517334334937, -0.8986261118798251, 0.9372056764266794], "color": "white_5015"},
-    {"id": 8, "vector": [-0.3038434006935904, 0.1279149203380523, 0.503958664270957, -0.2622661156746988, 0.7407627307791929], "color": "purple_6414"},
-    {"id": 9, "vector": [-0.7125086947677588, -0.8050968321012257, -0.32608864121785786, 0.3255654958645424, 0.26227968923834233], "color": "brown_7231"}
+    {
+        "id": 0, 
+        "vector": [-0.619954382375778, 0.4479436794798608, -0.17493894838751745, -0.4248030059917294, -0.8648452746018911],
+        "title": "Artificial Intelligence in Real Life", 
+        "issue": "vol.12"
+    }, {
+        "id": 1, 
+        "vector": [0.4762662251462588, -0.6942502138717026, -0.4490002642657902, -0.628696575798281, 0.9660395877041965], 
+        "title": "Hollow Man", 
+        "issue": "vol.19"
+    }, {
+        "id": 2, 
+        "vector": [-0.8864122635045097, 0.9260170474445351, 0.801326976181461, 0.6383943392381306, 0.7563037341572827], 
+        "title": "Treasure Hunt in Missouri", 
+        "issue": "vol.12"
+    }
 ]
 
 res = client.upsert(
-    collection_name='quick_setup',
+    collection_name='my_collection',
     data=data
 )
 
 print(res)
 
 # Output
-# {'upsert_count': 10}
+# {'upsert_count': 3}
 ```
 
 </TabItem>
@@ -106,20 +168,13 @@ MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
 
 Gson gson = new Gson();
 List<JsonObject> data = Arrays.asList(
-        gson.fromJson("{\"id\": 0, \"vector\": [-0.619954382375778, 0.4479436794798608, -0.17493894838751745, -0.4248030059917294, -0.8648452746018911], \"color\": \"black_9898\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 1, \"vector\": [0.4762662251462588, -0.6942502138717026, -0.4490002642657902, -0.628696575798281, 0.9660395877041965], \"color\": \"red_7319\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 2, \"vector\": [-0.8864122635045097, 0.9260170474445351, 0.801326976181461, 0.6383943392381306, 0.7563037341572827], \"color\": \"white_6465\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 3, \"vector\": [0.14594326235891586, -0.3775407299900644, -0.3765479013078812, 0.20612075380355122, 0.4902678929632145], \"color\": \"orange_7580\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 4, \"vector\": [0.4548498669607359, -0.887610217681605, 0.5655081329910452, 0.19220509387904117, 0.016513983433433577], \"color\": \"red_3314\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 5, \"vector\": [0.11755001847051827, -0.7295149788999611, 0.2608115847524266, -0.1719167007897875, 0.7417611743754855], \"color\": \"black_9955\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 6, \"vector\": [0.9363032158314308, 0.030699901477745373, 0.8365910312319647, 0.7823840208444011, 0.2625222076909237], \"color\": \"yellow_2461\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 7, \"vector\": [0.0754823906014721, -0.6390658668265143, 0.5610517334334937, -0.8986261118798251, 0.9372056764266794], \"color\": \"white_5015\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 8, \"vector\": [-0.3038434006935904, 0.1279149203380523, 0.503958664270957, -0.2622661156746988, 0.7407627307791929], \"color\": \"purple_6414\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 9, \"vector\": [-0.7125086947677588, -0.8050968321012257, -0.32608864121785786, 0.3255654958645424, 0.26227968923834233], \"color\": \"brown_7231\"}", JsonObject.class)
+        gson.fromJson("{\"id\": 0, \"vector\": [-0.619954382375778, 0.4479436794798608, -0.17493894838751745, -0.4248030059917294, -0.8648452746018911], \"title\": \"Artificial Intelligence in Real Life\", \"issue\": \"\vol.12\"}", JsonObject.class),
+        gson.fromJson("{\"id\": 1, \"vector\": [0.4762662251462588, -0.6942502138717026, -0.4490002642657902, -0.628696575798281, 0.9660395877041965], \"title\": \"Hollow Man\", \"issue\": \"vol.19\"}", JsonObject.class),
+        gson.fromJson("{\"id\": 2, \"vector\": [-0.8864122635045097, 0.9260170474445351, 0.801326976181461, 0.6383943392381306, 0.7563037341572827], \"title\": \"Treasure Hunt in Missouri\", \"issue\": \"vol.12\"}", JsonObject.class),
 );
 
 UpsertReq upsertReq = UpsertReq.builder()
-        .collectionName("quick_setup")
+        .collectionName("my_collection")
         .data(data)
         .build();
 
@@ -128,7 +183,7 @@ System.out.println(upsertResp);
 
 // Output:
 //
-// UpsertResp(upsertCnt=10)
+// UpsertResp(upsertCnt=3)
 ```
 
 </TabItem>
@@ -143,20 +198,13 @@ const token = "YOUR_CLUSTER_TOKEN";
 const client = new MilvusClient({address, token});
 
 data = [
-    {id: 0, vector: [-0.619954382375778, 0.4479436794798608, -0.17493894838751745, -0.4248030059917294, -0.8648452746018911], color: "black_9898"},
-    {id: 1, vector: [0.4762662251462588, -0.6942502138717026, -0.4490002642657902, -0.628696575798281, 0.9660395877041965], color: "red_7319"},
-    {id: 2, vector: [-0.8864122635045097, 0.9260170474445351, 0.801326976181461, 0.6383943392381306, 0.7563037341572827], color: "white_6465"},
-    {id: 3, vector: [0.14594326235891586, -0.3775407299900644, -0.3765479013078812, 0.20612075380355122, 0.4902678929632145], color: "orange_7580"},
-    {id: 4, vector: [0.4548498669607359, -0.887610217681605, 0.5655081329910452, 0.19220509387904117, 0.016513983433433577], color: "red_3314"},
-    {id: 5, vector: [0.11755001847051827, -0.7295149788999611, 0.2608115847524266, -0.1719167007897875, 0.7417611743754855], color: "black_9955"},
-    {id: 6, vector: [0.9363032158314308, 0.030699901477745373, 0.8365910312319647, 0.7823840208444011, 0.2625222076909237], color: "yellow_2461"},
-    {id: 7, vector: [0.0754823906014721, -0.6390658668265143, 0.5610517334334937, -0.8986261118798251, 0.9372056764266794], color: "white_5015"},
-    {id: 8, vector: [-0.3038434006935904, 0.1279149203380523, 0.503958664270957, -0.2622661156746988, 0.7407627307791929], color: "purple_6414"},
-    {id: 9, vector: [-0.7125086947677588, -0.8050968321012257, -0.32608864121785786, 0.3255654958645424, 0.26227968923834233], color: "brown_7231"}
+    {id: 0, vector: [-0.619954382375778, 0.4479436794798608, -0.17493894838751745, -0.4248030059917294, -0.8648452746018911], title: "Artificial Intelligence in Real Life", issue: "vol.12"},
+    {id: 1, vector: [0.4762662251462588, -0.6942502138717026, -0.4490002642657902, -0.628696575798281, 0.9660395877041965], title: "Hollow Man", issue: "vol.19"},
+    {id: 2, vector: [-0.8864122635045097, 0.9260170474445351, 0.801326976181461, 0.6383943392381306, 0.7563037341572827], title: "Treasure Hunt in Missouri", issue: "vol.12"},
 ]
 
 res = await client.upsert({
-    collection_name: "quick_setup",
+    collection_name: "my_collection",
     data: data,
 })
 
@@ -164,8 +212,57 @@ console.log(res.upsert_cnt)
 
 // Output
 // 
-// 10
+// 3
 // 
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+import (
+    "context"
+    "fmt"
+
+    "github.com/milvus-io/milvus/client/v2/column"
+    "github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+
+milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: milvusAddr,
+})
+if err != nil {
+    fmt.Println(err.Error())
+    // handle error
+}
+defer client.Close(ctx)
+
+titleColumn := column.NewColumnString("title", []string{
+    "Artificial Intelligence in Real Life", "Hollow Man", "Treasure Hunt in Missouri", 
+})
+
+issueColumn := column.NewColumnString("issue", []string{
+    "vol.12", "vol.19", "vol.12"
+})
+
+_, err = client.Upsert(ctx, milvusclient.NewColumnBasedInsertOption("my_collection").
+    WithInt64Column("id", []int64{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}).
+    WithFloatVectorColumn("vector", 5, [][]float32{
+        {0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592},
+        {0.19886812562848388, 0.06023560599112088, 0.6976963061752597, 0.2614474506242501, 0.838729485096104},
+        {0.43742130801983836, -0.5597502546264526, 0.6457887650909682, 0.7894058910881185, 0.20785793220625592},
+    }).
+    WithColumns(titleColumn, issueColumn),
+)
+if err != nil {
+    fmt.Println(err.Error())
+    // handle err
+}
 ```
 
 </TabItem>
@@ -182,35 +279,21 @@ curl --request POST \
 --header "Content-Type: application/json" \
 -d '{
     "data": [
-        {"id": 0, "vector": [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592], "color": "pink_8682"},
-        {"id": 1, "vector": [0.19886812562848388, 0.06023560599112088, 0.6976963061752597, 0.2614474506242501, 0.838729485096104], "color": "red_7025"},
-        {"id": 2, "vector": [0.43742130801983836, -0.5597502546264526, 0.6457887650909682, 0.7894058910881185, 0.20785793220625592], "color": "orange_6781"},
-        {"id": 3, "vector": [0.3172005263489739, 0.9719044792798428, -0.36981146090600725, -0.4860894583077995, 0.95791889146345], "color": "pink_9298"},
-        {"id": 4, "vector": [0.4452349528804562, -0.8757026943054742, 0.8220779437047674, 0.46406290649483184, 0.30337481143159106], "color": "red_4794"},
-        {"id": 5, "vector": [0.985825131989184, -0.8144651566660419, 0.6299267002202009, 0.1206906911183383, -0.1446277761879955], "color": "yellow_4222"},
-        {"id": 6, "vector": [0.8371977790571115, -0.015764369584852833, -0.31062937026679327, -0.562666951622192, -0.8984947637863987], "color": "red_9392"},
-        {"id": 7, "vector": [-0.33445148015177995, -0.2567135004164067, 0.8987539745369246, 0.9402995886420709, 0.5378064918413052], "color": "grey_8510"},
-        {"id": 8, "vector": [0.39524717779832685, 0.4000257286739164, -0.5890507376891594, -0.8650502298996872, -0.6140360785406336], "color": "white_9381"},
-        {"id": 9, "vector": [0.5718280481994695, 0.24070317428066512, -0.3737913482606834, -0.06726932177492717, -0.6980531615588608], "color": "purple_4976"}        
-    ],
-    "collectionName": "quick_setup"
+        {"id": 0, "vector": [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592], "title": "Artificial Intelligence in Real Life", "issue": "vol.12"},
+        {"id": 1, "vector": [0.19886812562848388, 0.06023560599112088, 0.6976963061752597, 0.2614474506242501, 0.838729485096104], "title": "Hollow Man", "issue": "vol.19"},
+        {"id": 2, "vector": [0.43742130801983836, -0.5597502546264526, 0.6457887650909682, 0.7894058910881185, 0.20785793220625592], "title": "Treasure Hunt in Missouri", "issue": "vol.12"},
+],
+    "collectionName": "my_collection"
 }'
 
 # {
 #     "code": 0,
 #     "data": {
-#         "upsertCount": 10,
+#         "upsertCount": 3,
 #         "upsertIds": [
 #             0,
 #             1,
 #             2,
-#             3,
-#             4,
-#             5,
-#             6,
-#             7,
-#             8,
-#             9
 #         ]
 #     }
 # }
@@ -219,29 +302,39 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## パーティション内のエンティティを消去する{#upsert-entities-in-a-partition}
+## パーティション内のエンティティをアップサートする{#upsert-entities-in-a-partition}
 
-指定したパーティションにエンティティを挿入することもできます。次のコードスニペットは、コレクションにPartitionAという名前のパーティションがあること**を**前提としています。
+指定したパーティションにエンティティをアップサートすることもできます。以下のコードスニペットは、コレクションに **PartitionA** という名前のパーティションがあることを前提としています。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+3つのエンティティは、パーティション内に存在する場合、リクエストに含まれるエンティティによって上書きされます。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
 data=[
-    {"id": 10, "vector": [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], "color": "black_3651"},
-    {"id": 11, "vector": [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], "color": "grey_2049"},
-    {"id": 12, "vector": [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], "color": "blue_6168"},
-    {"id": 13, "vector": [0.3202914977909075, -0.7279137773695252, -0.04747830871620273, 0.8266053056909548, 0.8277957187455489], "color": "blue_1672"},
-    {"id": 14, "vector": [0.2975811497890859, 0.2946936202691086, 0.5399463833894609, 0.8385334966677529, -0.4450543984655133], "color": "pink_1601"},
-    {"id": 15, "vector": [-0.04697464305600074, -0.08509022265734134, 0.9067184632552001, -0.2281912685064822, -0.9747503428652762], "color": "yellow_9925"},
-    {"id": 16, "vector": [-0.9363075919673911, -0.8153981031085669, 0.7943039120490902, -0.2093886809842529, 0.0771191335807897], "color": "orange_9872"},
-    {"id": 17, "vector": [-0.050451522820639916, 0.18931572752321935, 0.7522886192190488, -0.9071793089474034, 0.6032647330692296], "color": "red_6450"},
-    {"id": 18, "vector": [-0.9181544231141592, 0.6700755998126806, -0.014174674636136642, 0.6325780463623432, -0.49662222164032976], "color": "purple_7392"},
-    {"id": 19, "vector": [0.11426945899602536, 0.6089190684002581, -0.5842735738352236, 0.057050610092692855, -0.035163433018196244], "color": "pink_4996"}
+    {
+        "id": 10, 
+        "vector": [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], 
+        "title": "Layour Design Reference", 
+        "issue": "vol.34"
+    },
+    {
+        "id": 11, 
+        "vector": [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], 
+        "title": "Doraemon and His Friends", 
+        "issue": "vol.2"
+    },
+    {
+        "id": 12, 
+        "vector": [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], 
+        "title": "Pikkachu and Pokemon", 
+        "issue": "vol.12"
+    },
 ]
 
 res = client.upsert(
-    collection_name="quick_setup",
+    collection_name="my_collection",
     data=data,
     partition_name="partitionA"
 )
@@ -249,7 +342,7 @@ res = client.upsert(
 print(res)
 
 # Output
-# {'upsert_count': 10}
+# {'upsert_count': 3}
 ```
 
 </TabItem>
@@ -262,20 +355,13 @@ import io.milvus.v2.service.vector.response.UpsertResp;
 
 Gson gson = new Gson();
 List<JsonObject> data = Arrays.asList(
-        gson.fromJson("{\"id\": 10, \"vector\": [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], \"color\": \"black_3651\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 11, \"vector\": [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], \"color\": \"grey_2049\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 12, \"vector\": [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], \"color\": \"blue_6168\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 13, \"vector\": [0.3202914977909075, -0.7279137773695252, -0.04747830871620273, 0.8266053056909548, 0.8277957187455489], \"color\": \"blue_1672\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 14, \"vector\": [0.2975811497890859, 0.2946936202691086, 0.5399463833894609, 0.8385334966677529, -0.4450543984655133], \"color\": \"pink_1601\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 15, \"vector\": [-0.04697464305600074, -0.08509022265734134, 0.9067184632552001, -0.2281912685064822, -0.9747503428652762], \"color\": \"yellow_9925\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 16, \"vector\": [-0.9363075919673911, -0.8153981031085669, 0.7943039120490902, -0.2093886809842529, 0.0771191335807897], \"color\": \"orange_9872\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 17, \"vector\": [-0.050451522820639916, 0.18931572752321935, 0.7522886192190488, -0.9071793089474034, 0.6032647330692296], \"color\": \"red_6450\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 18, \"vector\": [-0.9181544231141592, 0.6700755998126806, -0.014174674636136642, 0.6325780463623432, -0.49662222164032976], \"color\": \"purple_7392\"}", JsonObject.class),
-        gson.fromJson("{\"id\": 19, \"vector\": [0.11426945899602536, 0.6089190684002581, -0.5842735738352236, 0.057050610092692855, -0.035163433018196244], \"color\": \"pink_4996\"}", JsonObject.class)
+        gson.fromJson("{\"id\": 10, \"vector\": [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], \"title\": \"Layour Design Reference\", \"issue\": \"vol.34\"}", JsonObject.class),
+        gson.fromJson("{\"id\": 11, \"vector\": [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], \"title\": \"Doraemon and His Friends\", \"issue\": \"vol.2\"}", JsonObject.class),
+        gson.fromJson("{\"id\": 12, \"vector\": [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], \"title\": \"Pikkachu and Pokemon\", \"issue\": \"vol.12\"}", JsonObject.class),
 );
 
 UpsertReq upsertReq = UpsertReq.builder()
-        .collectionName("quick_setup")
+        .collectionName("my_collection")
         .partitionName("partitionA")
         .data(data)
         .build();
@@ -285,7 +371,7 @@ System.out.println(upsertResp);
 
 // Output:
 //
-// UpsertResp(upsertCnt=10)
+// UpsertResp(upsertCnt=3)
 ```
 
 </TabItem>
@@ -297,20 +383,13 @@ const { MilvusClient, DataType } = require("@zilliz/milvus2-sdk-node")
 
 // 6. Upsert data in partitions
 data = [
-    {id: 10, vector: [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], color: "black_3651"},
-    {id: 11, vector: [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], color: "grey_2049"},
-    {id: 12, vector: [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], color: "blue_6168"},
-    {id: 13, vector: [0.3202914977909075, -0.7279137773695252, -0.04747830871620273, 0.8266053056909548, 0.8277957187455489], color: "blue_1672"},
-    {id: 14, vector: [0.2975811497890859, 0.2946936202691086, 0.5399463833894609, 0.8385334966677529, -0.4450543984655133], color: "pink_1601"},
-    {id: 15, vector: [-0.04697464305600074, -0.08509022265734134, 0.9067184632552001, -0.2281912685064822, -0.9747503428652762], color: "yellow_9925"},
-    {id: 16, vector: [-0.9363075919673911, -0.8153981031085669, 0.7943039120490902, -0.2093886809842529, 0.0771191335807897], color: "orange_9872"},
-    {id: 17, vector: [-0.050451522820639916, 0.18931572752321935, 0.7522886192190488, -0.9071793089474034, 0.6032647330692296], color: "red_6450"},
-    {id: 18, vector: [-0.9181544231141592, 0.6700755998126806, -0.014174674636136642, 0.6325780463623432, -0.49662222164032976], color: "purple_7392"},
-    {id: 19, vector: [0.11426945899602536, 0.6089190684002581, -0.5842735738352236, 0.057050610092692855, -0.035163433018196244], color: "pink_4996"}
+    {id: 10, vector: [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], title: "Layour Design Reference", issue: "vol.34"},
+    {id: 11, vector: [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], title: "Doraemon and His Friends", issue: "vol.2"},
+    {id: 12, vector: [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], title: "Pikkachu and Pokemon", issue: "vol.12"},
 ]
 
 res = await client.upsert({
-    collection_name: "quick_setup",
+    collection_name: "my_collection",
     data: data,
     partition_name: "partitionA"
 })
@@ -319,8 +398,36 @@ console.log(res.upsert_cnt)
 
 // Output
 // 
-// 10
+// 3
 // 
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+titleColumn = column.NewColumnString("title", []string{
+    "Layour Design Reference", "Doraemon and His Friends", "Pikkachu and Pokemon", 
+})
+issueColumn = column.NewColumnString("issue", []string{
+    "vol.34", "vol.2", "vol.12", 
+})
+
+_, err = client.Upsert(ctx, milvusclient.NewColumnBasedInsertOption("my_collection").
+    WithPartition("partitionA").
+    WithInt64Column("id", []int64{10, 11, 12, 13, 14, 15, 16, 17, 18, 19}).
+    WithFloatVectorColumn("vector", 5, [][]float32{
+        {0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592},
+        {0.19886812562848388, 0.06023560599112088, 0.6976963061752597, 0.2614474506242501, 0.838729485096104},
+        {0.43742130801983836, -0.5597502546264526, 0.6457887650909682, 0.7894058910881185, 0.20785793220625592},
+    }).
+    WithColumns(titleColumn, issueColumn),
+)
+if err != nil {
+    fmt.Println(err.Error())
+    // handle err
+}
 ```
 
 </TabItem>
@@ -337,35 +444,182 @@ curl --request POST \
 --header "Content-Type: application/json" \
 -d '{
     "data": [
-        {"id": 10, "vector": [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], "color": "black_3651"},
-        {"id": 11, "vector": [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], "color": "grey_2049"},
-        {"id": 12, "vector": [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], "color": "blue_6168"},
-        {"id": 13, "vector": [0.3202914977909075, -0.7279137773695252, -0.04747830871620273, 0.8266053056909548, 0.8277957187455489], "color": "blue_1672"},
-        {"id": 14, "vector": [0.2975811497890859, 0.2946936202691086, 0.5399463833894609, 0.8385334966677529, -0.4450543984655133], "color": "pink_1601"},
-        {"id": 15, "vector": [-0.04697464305600074, -0.08509022265734134, 0.9067184632552001, -0.2281912685064822, -0.9747503428652762], "color": "yellow_9925"},
-        {"id": 16, "vector": [-0.9363075919673911, -0.8153981031085669, 0.7943039120490902, -0.2093886809842529, 0.0771191335807897], "color": "orange_9872"},
-        {"id": 17, "vector": [-0.050451522820639916, 0.18931572752321935, 0.7522886192190488, -0.9071793089474034, 0.6032647330692296], "color": "red_6450"},
-        {"id": 18, "vector": [-0.9181544231141592, 0.6700755998126806, -0.014174674636136642, 0.6325780463623432, -0.49662222164032976], "color": "purple_7392"},
-        {"id": 19, "vector": [0.11426945899602536, 0.6089190684002581, -0.5842735738352236, 0.057050610092692855, -0.035163433018196244], "color": "pink_4996"}
+        {"id": 10, "vector": [0.06998888224297328, 0.8582816610326578, -0.9657938677934292, 0.6527905683627726, -0.8668460657158576], "title": "Layour Design Reference", "issue": "vol.34"},
+        {"id": 11, "vector": [0.6060703043917468, -0.3765080534566074, -0.7710758854987239, 0.36993888322346136, 0.5507513364206531], "title": "Doraemon and His Friends", "issue": "vol.2"},
+        {"id": 12, "vector": [-0.9041813104515337, -0.9610546012461163, 0.20033003106083358, 0.11842506351635174, 0.8327356724591011], "title": "Pikkachu and Pokemon", "issue": "vol.12"},
     ],
-    "collectionName": "quick_setup"
+    "collectionName": "my_collection",
+    "partitionName": "partitionA"
 }'
 
 # {
 #     "code": 0,
 #     "data": {
-#         "upsertCount": 10,
+#         "upsertCount": 3,
 #         "upsertIds": [
-#             0,
-#             1,
-#             2,
-#             3,
-#             4,
-#             5,
-#             6,
-#             7,
-#             8,
-#             9
+#             10,
+#             11,
+#             12,
+#         ]
+#     }
+# }
+```
+
+</TabItem>
+</Tabs>
+
+## マージモードでエンティティをアップサートする | PUBLIC{#upsert-entities-in-merge-mode}
+
+以下のコード例は、部分的な更新でエンティティをアップサートする方法を示しています。更新が必要なフィールドとその新しい値、および明示的な部分更新フラグのみを指定します。
+
+以下の例では、アップサートリクエストで指定されたエンティティの `issue` フィールドが、リクエストに含まれる値に更新されます。
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>マージモードでアップサートを実行する場合、リクエストに含まれるエンティティが同じフィールドセットを持つことを確認してください。以下のコードスニペットに示すように、2つ以上のエンティティをアップサートする場合、エラーを防ぎ、データ整合性を維持するために、それらが同一のフィールドを含むことが重要です。</p>
+
+</Admonition>
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+data=[
+    {
+        "id": 1,
+        "issue": "vol.14"
+    },
+    {
+        "id": 2, 
+        "issue": "vol.7"
+    }
+]
+
+res = client.upsert(
+    collection_name="my_collection",
+    data=data,
+    partial_update=True
+)
+
+print(res)
+
+# Output
+# {'upsert_count': 2}
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+JsonObject row1 = new JsonObject();
+row1.addProperty("id", 1);
+row1.addProperty("issue", "vol.14");
+
+JsonObject row2 = new JsonObject();
+row2.addProperty("id", 2);
+row2.addProperty("issue", "vol.7");
+
+UpsertReq upsertReq = UpsertReq.builder()
+        .collectionName("my_collection")
+        .data(Arrays.asList(row1, row2))
+        .partialUpdate(true)
+        .build();
+
+UpsertResp upsertResp = client.upsert(upsertReq);
+System.out.println(upsertResp);
+
+// Output:
+//
+// UpsertResp(upsertCnt=2)
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+pkColumn := column.NewColumnInt64("id", []int64{1, 2})
+issueColumn = column.NewColumnString("issue", []string{
+    "vol.17", "vol.7",
+})
+
+_, err = client.Upsert(ctx, milvusclient.NewColumnBasedInsertOption("my_collection").
+    WithColumns(pkColumn, issueColumn).
+    WithPartialUpdate(true),
+)
+if err != nil {
+    fmt.Println(err.Error())
+    // handle err
+}
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+const data=[
+    {
+        "id": 1,
+        "issue": "vol.14"
+    },
+    {
+        "id": 2, 
+        "issue": "vol.7"
+    }
+];
+
+const res = await client.upsert({
+    collection_name: "my_collection",
+    data,
+    partial_update: true
+});
+
+console.log(res)
+
+// Output
+// 
+// 2
+// 
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
+export TOKEN="YOUR_CLUSTER_TOKEN"
+
+export COLLECTION_NAME="my_collection"
+export UPSERT_DATA='[
+  {
+    "id": 1,
+    "issue": "vol.14"
+  },
+  {
+    "id": 2,
+    "issue": "vol.7"
+  }
+]'
+
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/upsert" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"data\": ${UPSERT_DATA},
+    \"partialUpdate\": true
+  }"
+
+# {
+#     "code": 0,
+#     "data": {
+#         "upsertCount": 2,
+#         "upsertIds": [
+#              3,
+#             12,
 #         ]
 #     }
 # }

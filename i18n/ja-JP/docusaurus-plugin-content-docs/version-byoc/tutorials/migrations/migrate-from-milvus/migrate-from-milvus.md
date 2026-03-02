@@ -1,38 +1,36 @@
 ---
-title: "MilvusからZilliz Cloudへの移行 | BYOC"
+title: "Milvus から Zilliz Cloud への移行 | BYOC"
 slug: /migrate-from-milvus
-sidebar_label: "MilvusからZilliz Cloudへの移行"
+sidebar_label: "Milvus からの移行"
 beta: FALSE
 notebook: FALSE
-description: "Milvusは、スケーラブルな類似検索やAIアプリケーションに最適化されたオープンソースのベクトルデータベースです。高いパフォーマンスと使いやすさで知られており、大規模なベクトルデータの管理に広く使用されています。 | BYOC"
+description: "Milvus は、スケーラブルな類似性検索と AI アプリケーション向けに最適化されたオープンソースのベクトルデータベースです。その高いパフォーマンスと使いやすさで知られ、大規模なベクトルデータの管理に広く使用されています。 | BYOC"
 type: origin
-token: InQ3w8128iPyOikHjXacMF0unAd
-sidebar_position: 3
+token: TDkbwhwMyi7bPykZAoUc5PFfnIb
+sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - migrations
+  - ベクトルデータベース
+  - クラウド
+  - 移行
   - milvus
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - Milvus
+  - Zilliz
+  - milvus ベクトルデータベース
+  - milvus db
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# MilvusからZilliz Cloudへの移行
+# Milvus から Zilliz Cloud への移行
 
-[Milvus](https://milvus.io/docs)は、スケーラブルな類似検索やAIアプリケーションに最適化されたオープンソースのベクトルデータベースです。高いパフォーマンスと使いやすさで知られており、大規模なベクトルデータの管理に広く使用されています。
+[Milvus](https://milvus.io/docs) は、スケーラブルな類似性検索と AI アプリケーション向けに最適化されたオープンソースのベクトルデータベースです。その高いパフォーマンスと使いやすさで知られ、大規模なベクトルデータの管理に広く使用されています。
 
-Zilliz Cloudは、Milvusのマネージドサービスを提供することで、デプロイとメンテナンスを簡素化し、既存のMilvusデプロイをクラウドに簡単に移行できます。Milvusインスタンスに接続するか、バックアップをアップロードすることで、ベクトルデータをZilliz Cloudに転送できます。
+Zilliz Cloud は、マネージド Milvus サービスを提供することでデプロイとメンテナンスを簡素化し、既存の Milvus デプロイメントをクラウドに簡単に移行できるようにします。Milvus インスタンスに接続するか、バックアップをアップロードすることで、ベクトルデータを Zilliz Cloud に転送できます。
 
-Zilliz Cloudは、Milvusからデータを移行するための2つの主要な方法を提供しています
-
-- [エンドポイント経由](./via-endpoint): MilvusからZilliz Cloudへ一度に1つのデータベースを移行できます。各データベースは順番に個別に移行されるため、各データベースの移行過程を慎重に管理する必要があるシナリオに最適です。
+Zilliz Cloud は、Milvus からデータを移行するために以下の方法を提供します。
 
 
 

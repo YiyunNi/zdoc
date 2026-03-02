@@ -1,33 +1,31 @@
 ---
-title: "コレクション | Cloud"
+title: "Collection | Cloud"
 slug: /collection
-sidebar_label: "コレクション"
+sidebar_label: "Collection"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでは、コレクションとはベクトルの埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、関連するデモンストレーションとともに、コレクションの定義と関連する概念を学びます。 | Cloud"
+description: "Zilliz Cloudでは、コレクションはベクトル埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、コレクションの定義と関連する概念を、関連するデモンストレーションとともに学習します。"
 type: origin
-token: HIHlwyXbFi9SVhkFrq1cYMEHnqc
+token: XpEzwyxaJi181OkIKwqcQDWrnIh
 sidebar_position: 1
 keywords: 
-  - zilliz
-  - vector database
-  - cloud
-  - collection
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - Zilliz
+  - ベクトルデータベース
+  - クラウド
+  - コレクション
+  - ベクトル検索アルゴリズム
+  - 質問応答システム
+  - llm-as-a-judge
+  - ハイブリッドベクトル検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# コレクション
+# Collection
 
-Zilliz Cloudでは、コレクションとはベクトルの埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、関連するデモンストレーションとともに、コレクションの定義と関連する概念を学びます。
-
-
+Zilliz Cloud において、コレクションはベクトル埋め込みとそのメタデータを保持するために使用されるテーブルです。この章では、コレクションの定義と関連する概念を、関連するデモンストレーションとともに学習します。
 
 import DocCardList from '@theme/DocCardList';
 

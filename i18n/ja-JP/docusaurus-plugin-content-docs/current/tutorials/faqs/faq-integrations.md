@@ -1,30 +1,29 @@
 ---
-title: "FAQ:インテグレーション | CLOUD"
+title: "FAQ: 連携 | Cloud"
 slug: /faq-integrations
-sidebar_label: "FAQ:インテグレーション"
+sidebar_label: "FAQ: 連携"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloudおよび対応するソリューションで遭遇する可能性のある他のソフトウェア、ツール、AIモデルなどとの統合に関する問題をリストアップしています。 | CLOUD"
+description: "このトピックでは、Zilliz Cloud で他のソフトウェア、ツール、AI モデルなどとの連携に関して発生する可能性のある問題と、それに対応する解決策をリストアップしています。"
 type: origin
-token: LKxiwykkhi5VyLkTfAGcE3LinBe
-sidebar_position: 14
+token: EV41wG08BiOWW8kbo9xcTGoPnKd
+sidebar_position: 13
 
 ---
 
-# FAQ:インテグレーション
+# FAQ: 連携
 
-このトピックでは、Zilliz Cloudおよび対応するソリューションで遭遇する可能性のある他のソフトウェア、ツール、AIモデルなどとの統合に関する問題をリストアップしています。
+このトピックでは、Zilliz Cloud で発生する可能性のある、他のソフトウェア、ツール、AI モデルなどとの連携に関する問題と、それに対応する解決策をリストアップしています。
 
-## Contents
+## 目次
 
-- [Zilliz CloudはLangChainをサポートしていますか?](#does-zilliz-cloud-support-langchain)
+- [Zilliz Cloud は LangChain をサポートしていますか？](#does-zilliz-cloud-support-langchain)
 
-## FAQs
-
-
+## FAQ
 
 
-### Zilliz CloudはLangChainをサポートしていますか?{#does-zilliz-cloud-support-langchain}
 
-はい。Zilliz CloudはLangChainとの連携をサポートしています。詳細については、Zilliz Cloud [Notebook Gallery](https://zilliz.com/jp/learn/milvus-notebooks)を参照してください。
 
+### Zilliz Cloud は LangChain をサポートしていますか？{#does-zilliz-cloud-support-langchain}
+
+はい。Zilliz Cloud は LangChain との連携をサポートしています。詳細については、Zilliz Cloud の [Notebook Gallery](https://zilliz.com/learn/milvus-notebooks) を参照してください。

@@ -1,142 +1,199 @@
 ---
-title: "監査ロギング | BYOC"
+title: "VectorDB 監査ログ | BYOC"
 slug: /audit-logs
-sidebar_label: "監査ロギング"
-beta: PRIVATE
+sidebar_label: "VectorDB 監査ログ"
+beta: FALSE
 notebook: FALSE
-description: "監査ログにより、管理者はZilliz Cloudクラスター上のユーザー主導の操作やAPI呼び出しを追跡および監視できます。この機能により、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作を含むデータプレーンアクティビティの詳細な記録が提供されます。セキュリティレビュー、コンプライアンス監査、問題解決のためにデータがどのようにアクセスおよび管理されているかを可視化します。 | BYOC"
+description: "監査ロギングにより、管理者はZilliz Cloudクラスター上でのユーザー主導の操作とAPI呼び出しを追跡および監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作を含む、ベクトルDBアクティビティの詳細な記録を提供します。 | BYOC"
 type: origin
-token: GqSCwvPmIi6Ulwk4nJAcJJSonJd
+token: M5dXwsGOOiPdAjkWLZUc2Pxonuh
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - auditing
-  - log
-  - configure
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - ベクトルデータベース
+  - クラウド
+  - 監査
+  - ログ
+  - 設定
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# 監査ロギング
+import Supademo from '@site/src/components/Supademo';
 
-監査ログにより、管理者はZilliz Cloudクラスター上のユーザー主導の操作やAPI呼び出しを追跡および監視できます。この機能により、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作を含むデータプレーンアクティビティの詳細な記録が提供されます。セキュリティレビュー、コンプライアンス監査、問題解決のためにデータがどのようにアクセスおよび管理されているかを可視化します。
+import Procedures from '@site/src/components/Procedures';
 
-## 概要について{#overview}
+# VectorDB 監査ログ
 
-監査ログは、データプレーン上のさまざまな操作を追跡します。
+監査ログを使用すると、管理者はZilliz Cloudクラスター上でのユーザー主導の操作とAPI呼び出しを追跡および監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作を含む、VectorDBアクティビティの詳細な記録を提供します。
 
-検索およびクエリ操作:ベクトル検索、ハイブリッド検索、およびクエリ操作。
+<Admonition type="info" icon="📘" title="Notes">
 
-データ管理:インデックスの作成、コレクションの作成、パーティションの管理、挿入、削除、upsertなどのエンティティ操作。
-
-システムイベント:ユーザーのアクセス試行、承認チェック、およびその他の定義済みアクション。
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>コントロールプレーン上のクラスターレベルの操作（移行、バックアップ、復元など）は監査ログを生成しません。これらのアクティビティレコードを表示するには、「<a href="./view-activities">アクティビティを見る</a>」を参照してください。</p>
+<ul>
+<li><p>監査ログは、<strong>Enterprise</strong>プロジェクトまたはそれ以上のプランティアの<strong>Dedicated</strong>クラスターでのみ利用可能です。</p></li>
+<li><p>監査ログは、Milvus 2.5.xを実行しているZilliz Cloudクラスターでのみサポートされています。</p></li>
+<li><p>監査ログは、<a href="./integrate-with-aws-s3">AWS S3</a>、<a href="./integrate-with-azure-blob-storage">Azure Blob Storage</a>、または<a href="./integrate-with-gcp">Google Cloud Storage</a>に転送できます。</p></li>
+<li><p>監査ログを有効にすると料金が発生します。詳細については、<a href="./audit-log-cost">監査ログ</a>を参照してください。</p></li>
+</ul>
 
 </Admonition>
 
-監査ログは、定期的にユーザーが指定したオブジェクトストレージバケットに直接ストリーミングされます。ログは、構造化されたファイルパスと命名形式で保存され、簡単にアクセスして管理できます。
+## 概要{#overview}
 
-- **ファイルパス**:`/<Cluster ID>/<Log type>/<Date>`
+監査ログは、データプレーン上の幅広い操作を追跡します。これには以下が含まれます。
 
-- **ファイルの命名規則**:`\<File name><File name suffix>`を*HH: MM:SS-UUID*の形式で指定します。ここで、*HH:MM:SS*はUTCで時刻を表し、*UUID*は一意のランダム文字列です。例:`09:16:53-jz5l7D8Q`。
+- **検索およびクエリ操作**: ベクトル検索、ハイブリッド検索、およびクエリ操作。
 
-以下は、バケットにストリーミングされた監査ログエントリの例です。
+- **データ管理**: インデックス作成、collection作成、partition管理、およびinsert、delete、upsertなどのentity操作。
 
-```json
-{
-    "date": "2025-01-21T08:45:56.556286Z",
-    "action": "CreateAlias",
-    "cluster_id": "in01-b5a7e190615ef9f",
-    "database": "database2",
-    "interface": "Restful",
-    "log_type": "AUDIT",
-    "params": {
-        "collection": "collection1"
-    },
-    "status": "Receive",
-    "time": 1737449156556,
-    "trace_id": "b599063b9d0cfcf9d756ddbbef56ab5b",
-    "user": "zcloud_apikey_admin"
-}
-```
+- **システムイベント**: ユーザーアクセス試行、認証チェック、およびその他の事前定義されたアクション。
 
-サポートされているアクションと対応するログフィールドの詳細なリストについては、「[監査ログの参照](./audit-logs-ref)」を参照してください。
+<Admonition type="info" icon="📘" title="Notes">
 
-## 監査ログのストリーミングを有効にする{#enable-audit-log-streaming}
+<p>移行、バックアップ、復元などのクラスターレベルのデータジョブは監査ログを生成しません。これらのアクティビティ記録を表示するには、<a href="./view-activities">アクティビティの表示</a>を参照してください。</p>
 
-Zilliz Cloudの監査ログは、監査ログを直接ストレージバケットにストリーミングします。
+</Admonition>
 
-### 始める前に{#enable-audit-log-streaming}
+監査ログは、定期的にユーザーが指定したオブジェクトストレージバケットに直接転送されます。ログは、アクセスと管理を容易にするために、構造化されたファイルパスと命名形式で保存されます。
 
-- **組織のオーナー**または**プロジェクト管理者**がプロジェクトにアクセスできます。必要な権限がない場合は、Zilliz Cloudの管理者にお問い合わせください。
+- **ファイルパス**: `/<Cluster ID>/<Log type>/<Date>`
 
-### 手続き{#procedure}
+- **ファイル命名規則**: *HH:MM:SS-&#36;UUID* の形式で`<File name><File name suffix>`。ここで、*HH:MM:SS* はUTCでの時刻を表し、*&#36;UUID* は一意のランダムな文字列です。例: `09:16:53-jz5l7D8Q`。
 
-![configure-auditing-1](/img/configure-auditing-1.png)
+以下は、バケットに転送された監査ログエントリの例です。
+
+- **Collectionの作成**
+
+    ```json
+    {
+      "action": "CreateCollection",
+      "cluster_id": "in01-0045a626277eafb",
+      "connection_uid": 456912553983082500,
+      "database": "default",
+      "interface": "Grpc",
+      "log_type": "AUDIT",
+      "params": {
+        "collection": "test_audit",
+        "consistency_level": 2
+      },
+      "status": "Receive",
+      "timestamp": 1742983070463,
+      "trace_id": "216a8129c06fd3d93a47bd69fa0a65ad",
+      "user": "key-hwjsxhwppegkatwjaivsgf"
+    }
+    ```
+
+- **インデックスの作成**
+
+    ```json
+    {
+      "action": "CreateIndex",
+      "cluster_id": "in01-0045a626277eafb",
+      "connection_uid": 456912553983082500,
+      "database": "default",
+      "interface": "Grpc",
+      "log_type": "AUDIT",
+      "params": {
+        "collection": "test_audit"
+      },
+      "status": "Receive",
+      "timestamp": 1742983070645,
+      "trace_id": "4402e7bfc498dd06be1408c7e6a7954d",
+      "user": "key-hwjsxhwppegkatwjaivsgf"
+    }
+    ```
+
+- **インデックスの削除**
+
+    ```json
+    {
+      "action": "DropIndex",
+      "cluster_id": "in01-0045a626277eafb",
+      "connection_uid": 456912553983082500,
+      "database": "default",
+      "interface": "Grpc",
+      "log_type": "AUDIT",
+      "params": {
+        "collection": "test_audit"
+      },
+      "status": "Receive",
+      "timestamp": 1742983073378,
+      "trace_id": "066ec33c3f55d3edbf7d01c6270024e2",
+      "user": "key-hwjsxhwppegkatwjaivsgf"
+    }
+    ```
+
+サポートされているアクションと対応するログフィールドの詳細なリストについては、[監査ログリファレンス](./audit-logs-ref)を参照してください。
+
+## 監査ログを有効にする{#enable-audit-log}
+
+Zilliz Cloudでの監査ロギングは、監査ログをストレージバケットに直接転送します。
+
+### 開始する前に{#before-you-start}
+
+- プロジェクトに対する**Organization Owner**または**Project Admin**アクセス権を持っていること。必要な権限がない場合は、Zilliz Cloud管理者にお問い合わせください。
+
+### 手順{#procedure}
+
+<Supademo id="cmei9fcd99br6h3pydbp52sv8" title="Zilliz Cloud - 監査ログを有効にする" />
+
+<Procedures>
 
 1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)にログインします。
 
-1. 左側のナビゲーションウィンドウで、[**Clusters**]を選択します。
+1. 左側のナビゲーションペインで、**Clusters**を選択します。
 
-1. ターゲットクラスタの詳細ページに移動し、[**Auditing**]タブを選択します。クラスタが**CREATING**、**DELETING**、または**DELETED**ステータスの場合、このタブは利用できません。
+1. ターゲットクラスターの詳細ページに移動し、**Auditing**タブを選択します。このタブは、クラスターが**CREATING**、**DELETING**、または**DELETED**ステータスの場合、利用できません。
 
-1. [**Enable Audit Log Streaming**]をクリックします。
+1. **Enable Audit Log**をクリックします。
 
-1. [**Enable Audit Log Streaming**]ダイアログボックスで、オブジェクトストレージの統合設定を指定します。
+1. **Enable Audit Logs**ダイアログボックスで、オブジェクトストレージ統合設定を指定します。
 
-    - **Integrations**:オブジェクトストレージをホストするクラウドプロバイダを表示します。
+    - **Storage Integration**: 監査ログを保存するバケットを選択します。
 
-    - **Integration Configuration**:監査ログを保存するバケットを選択します。
+        <Admonition type="info" icon="📘" title="Notes">
 
-        <Admonition type="info" icon="📘" title="ノート">
-
-        <p>ドロップダウンリストには、クラスターと同じリージョンのバケットのみが表示されます。</p>
+        <p>クラスターと同じリージョンにあるバケットのみがドロップダウンリストに表示されます。</p>
 
         </Admonition>
 
-    - **Export Directory**:監査ログを保存するバケット内のディレクトリを指定してください。
+    - **Forward Directory**: 監査ログを保存するバケット内のディレクトリを指定します。
 
-1. [**Enable**]をクリックします。[**Audit Log Streaming**]ステータスが[**Active**]になると、正常に有効になります。ステータスが異常の場合は、トラブルシューティングのために[FAQ](./audit-logs#faq)にアクセスしてください。
+1. **Enable**をクリックします。**Audit Log**ステータスが**Active**になると、正常に有効化されています。ステータスが**Abnormal**の場合は、トラブルシューティングのために[FAQ](./audit-logs#faq)を参照してください。
 
-設定が完了すると、監査ログは約5分ごとにバケットにストリーミングされます。必要に応じてバケットにアクセスしてログを表示または管理できます。
+</Procedures>
 
-ログエントリのパラメータを理解するには、「[監査ログの参照](./audit-logs-ref)」を参照してください。
+設定が完了すると、監査ログは約5分間隔でバケットに転送されます。必要に応じてバケットにアクセスしてログを表示または管理できます。
 
-## 監査ログのストリーミングを管理する{#manage-audit-log-streaming}
+監査ログがS3バケットに転送されたら、S3ストレージを視覚化プラットフォームと統合して、監視と分析を強化できます。たとえば、Snowflakeを使用してより深い洞察を得たい場合は、[Automating Snowpipe for Amazon S3](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-auto-s3)を参照してください。
 
-監査ログストリーミングが有効になると、その構成を編集したり、必要に応じて無効にしたりできます。
+ログエントリのパラメータを理解するには、[監査ログ](./audit-logs-ref)を参照してください。
 
-![configure-auditing-2](/img/configure-auditing-2.png)
+## 監査ログを管理する{#manage-audit-logs}
+
+監査ログが有効になったら、必要に応じて設定を編集したり、無効にしたりできます。
+
+![XyvNb9sf1oGSKox0XxWc2BFAnrg](https://zdoc-images.s3.us-west-2.amazonaws.com/xyvnb9sf1ogskox0xxwc2bfanrg.png "XyvNb9sf1oGSKox0XxWc2BFAnrg")
 
 ## FAQ{#faq}
 
-このFAQでは、Zilliz Cloudの監査ログに関する一般的な問題や質問について説明しています。詳細については、[Zilliz Cloudサポート](https://zilliz.com/contact-sales)にお問い合わせください。
+このFAQでは、Zilliz Cloudでの監査ロギングに関する一般的な問題と質問について説明します。さらにサポートが必要な場合は、[Zilliz Cloudサポート](https://support.zilliz.com/hc/en-us)にお問い合わせください。
 
-- **クラスタの詳細ページに[Auditing]タブが見つからないのはなぜですか?**
+- **監査ログのステータスがAbnormalの場合、どうすればよいですか？**
 
-    監査タブは現在、**プライベートプレビュー**の一環としてホワイトリストに追加されたユーザーのみが利用できます。この機能にアクセスしたい場合は、[Zilliz Cloudサポート](https://zilliz.com/contact-sales)にお問い合わせください。
+    **Abnormal**ステータスは、監査ログに問題が発生していることを意味します。トラブルシューティングのために、次の手順に従ってください。
 
-- **監査ログのストリーミングステータスが異常な場合はどうすればよいですか?**
+    1. **バケットを確認する:** 設定されたストレージバケットが正しく設定されており、必要な権限があることを確認します。
 
-    異常なステータスは、監査ログストリーミングに問題が発生していることを意味します。以下の手順に従ってトラブルシューティングを行ってください。
+    1. **サポートに連絡する:** 問題が解決しない場合は、[Zilliz Cloudサポート](https://support.zilliz.com/hc/en-us)に連絡して、さらにサポートを受けてください。
 
-    - **接続を確認してください**:ネットワーク接続が安定しており、ファイアウォールやVPN設定がZilliz Cloudへのアクセスをブロックしていないことを確認してください。
+- **クラスターのAbnormalステータスは監査ログサービスに影響しますか？**
 
-    - **バケットの確認**:構成されたストレージバケットが正しく設定されていること、および必要なアクセス許可があることを確認します。
+    クラスターの異常なステータスは、クラスターがネットワーク接続の問題やZilliz Cloudサービスの障害などの問題を経験している可能性があることを示します。ただし、これらの問題は監査ログサービスには影響せず、監査ログサービスは通常どおり機能し、期待どおりにログを転送します。永続的な問題が発生した場合は、[Zilliz Cloudサポート](https://support.zilliz.com/hc/en-us)にお問い合わせください。
 
-    - **サポートへのお問い合わせ**:問題が解決しない場合は、[Zilliz Cloudサポート](https://zilliz.com/contact-sales)にお問い合わせください。
-
-- **異常なクラスターの状態は、監査ログストリーミングサービスに影響しますか?**
-
-    異常なクラスター状態は、ネットワーク接続の問題やZilliz Cloudサービスの中断などの問題が発生している可能性があることを示しています。ただし、これらの問題はAudit Log Streamingサービスには影響しません。Audit Log Streamingサービスは正常に機能し、ログを期待どおりにストリーミングします。持続的な問題が発生した場合は、[Zilliz Cloudサポート](https://zilliz.com/contact-sales)にお問い合わせください。

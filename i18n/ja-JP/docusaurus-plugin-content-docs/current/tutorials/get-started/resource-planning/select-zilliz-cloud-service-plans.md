@@ -1,22 +1,22 @@
 ---
 title: "詳細なプラン比較 | Cloud"
 slug: /select-zilliz-cloud-service-plans
-sidebar_label: "詳細なプラン比較"
+sidebar_label: "プラン比較"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、多様な要件に合わせたクラスタープランを提供しています。ベクトルデータベースが初めての方でも、エンタープライズレベルのタスクに堅牢なソリューションが必要な方でも、適切な選択をすることで最適なパフォーマンス、スケーラビリティ、コスト効率が確保されます。このガイドは、情報に基づいた決定をするのに役立ちます。 | Cloud"
+description: "Zilliz Cloudは、多様な要件に対応するさまざまなプロジェクトプランを提供しています。ベクトルデータベースを初めて利用する方でも、エンタープライズレベルのタスクに堅牢なソリューションを必要とする方でも、適切な選択をすることで最適なパフォーマンス、スケーラビリティ、コスト効率を確保できます。このガイドは、情報に基づいた意思決定を行うのに役立ちます。 | Cloud"
 type: origin
-token: F4eXw620aina68kLKrXceKv5nkc
+token: Ghq9wEiOOivgeIkmj2HcHC9onXe
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - cluster plan
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
+  - クラスタープラン
+  - RAG
+  - NLP
+  - ニューラルネットワーク
+  - ディープラーニング
 
 ---
 
@@ -25,254 +25,631 @@ import Admonition from '@theme/Admonition';
 
 # 詳細なプラン比較
 
-Zilliz Cloudは、多様な要件に合わせたクラスタープランを提供しています。ベクトルデータベースが初めての方でも、エンタープライズレベルのタスクに堅牢なソリューションが必要な方でも、適切な選択をすることで最適なパフォーマンス、スケーラビリティ、コスト効率が確保されます。このガイドは、情報に基づいた決定をするのに役立ちます。
+Zilliz Cloud は、多様な要件に対応するさまざまなプロジェクトプランを提供しています。ベクトルデータベースの初心者であろうと、エンタープライズレベルのタスクに堅牢なソリューションを必要としようと、適切な選択をすることで、最適なパフォーマンス、スケーラビリティ、およびコスト効率が保証されます。このガイドは、情報に基づいた意思決定を行うのに役立ちます。
 
-## クラスタプランを選択する{#select-a-cluster-plan}
+## プラン概要{#plan-overview}
 
-Zilliz Cloudは、**Free**、**Serverless**、**Dedicated-Standard**、**Dedicated-Enterprise**、**Bring Your Own Cloud(BYOC)**の5つの異なるプランにオファリングを分類しています。
+Zilliz Cloud は、その提供物を5つの異なるプランに分類しています。
+
+- **Standard:** Standard プランは、重要度の低いワークロード向けに調整されています。プロトタイプやテスト環境に最適です。[Zilliz Cloud Pricing](https://zilliz.com/pricing) で詳細をご覧ください。
+
+- **Enterprise:** Enterprise プランは、エンタープライズグレードの信頼性と制御を提供します。本番アプリケーションに最適です。[Zilliz Cloud Pricing](https://zilliz.com/pricing) で詳細をご覧ください。
+
+- **Business Critical**: Business Critical プランは、最高の回復力を備えた規制対応型です。ヘルスケア、金融、ミッションクリティカルなシステムに最適です。Business Critical プランを選択するには、[営業担当者にお問い合わせください](http://zilliz.com/contact-sales)。
+
+- **Bring Your Own Cloud (BYOC):** BYOC プランは、カスタムインフラストラクチャ、強化されたデータ保護、およびコンプライアンスを優先する組織向けに設計されています。SaaS Dedicated クラスターと同じ機能とエクスペリエンスを提供します。BYOC プランを選択するには、[営業担当者にお問い合わせください](http://zilliz.com/contact-sales)。
+
+## プラン比較{#plan-comparison}
+
+以下のセクションでは、プランとデプロイオプションを比較し、各プランで利用可能な特定の機能を詳述します。
+
+### デプロイメント{#deployment}
 
 <table>
    <tr>
-     <th><p><strong>フィーチャー</strong></p></th>
-     <th><p>フリー</p></th>
-     <th><p>サーバーレス</p></th>
-     <th><p>専用（スタンダード）</p></th>
-     <th><p>専用(エンタープライズ)</p></th>
-     <th><p>Bring Your Own Cloud（BYOC）について</p></th>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
    </tr>
    <tr>
-     <td><p><strong>プランの説明</strong></p></td>
-     <td><p>学習、実験、プロトタイピングの出発点であり、有料プランへの簡単な移行が可能です。</p></td>
-     <td><p>可変またはまれなトラフィックを持つアプリケーションに対して。最小限の構成が必要です。</p></td>
-     <td><p>高い制御と一貫したパフォーマンスを提供し、開発およびテスト環境においてコスト効率が高いです。</p></td>
-     <td><p>企業レベルの機能とミッションクリティカルなワークロードのためのカスタム構成。本番環境に合わせてカスタマイズされています。</p></td>
-     <td><p>カスタムインフラストラクチャ、強化されたデータ保護、コンプライアンスを優先する組織向けに設計されています。</p></td>
+     <td><p>環境</p></td>
+     <td><p>共有</p></td>
+     <td><p>共有</p></td>
+     <td><p>専用</p></td>
+     <td><p>専用</p></td>
+     <td><p>専用</p></td>
+     <td><p>専用</p></td>
    </tr>
    <tr>
-     <td><p><strong>価格設定</strong></p></td>
-     <td><p>フリー</p></td>
-     <td><p><a href="https://zilliz.com/pricing">価格を見る</a></p></td>
-     <td><p><a href="https://zilliz.com/pricing">価格を見る</a></p></td>
-     <td><p><a href="https://zilliz.com/pricing">価格を見る</a></p></td>
-     <td><p><a href="https://zilliz.com/contact-sales">コンタクトセールス</a></p></td>
-   </tr>
-   <tr>
-     <td><p><strong>クラウドプロバイダーと地域</strong></p></td>
-     <td><p>GCPエクスクルーシブ</p></td>
-     <td><p>GCPエクスクルーシブ</p></td>
-     <td><p>カテゴリー: AWS,GCP,Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダー&地域</a>を参照してください。</p></td>
-     <td><p>AWS,GCP,アズール</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダー&地域</a>を参照してください。</p></td>
+     <td><p><a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a></p></td>
+     <td><p>AWS, GCP</p></td>
+     <td><p>AWS, GCP</p></td>
+     <td><p>AWS, GCP, Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a>を参照してください。</p></td>
+     <td><p>AWS, GCP, Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a>を参照してください。</p></td>
+     <td><p>AWS, GCP, Azure</p><p>詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダーとリージョン</a>を参照してください。</p></td>
      <td><p>ユーザーのVPC</p></td>
    </tr>
    <tr>
-     <td><p><strong>CU体格オプション</strong></p></td>
-     <td><p>シングルCU</p></td>
-     <td><p>オートスケール</p></td>
-     <td><ul><li><p>32 CUまで。（Web UI上で32 CU以下のクラスタを直接作成できます。より大きなCUサイズの場合は、<a href="https://zilliz.com/contact-sales">営業担当</a>にお問い合わせください。）</p></li><li><p>インクリメント: 1、2、4、6、8、12、16、20、24、28、3 2。</p></li></ul></td>
-     <td><ul><li><p>256 CUまで。（Web UI上で256 CU以下のクラスタを直接作成できます。より大きなCUサイズの場合は、<a href="https://zilliz.com/contact-sales">営業担当</a>にお問い合わせください。）</p></li><li><p>インクリメント: 1、2、4、6、8、12、16、20、24、28、32、。。。64、72、80、88、。。。,256<em>(注: CU体格が大なり8の場合、増分は4 CUになります。CU体格が大なり64の場合、増分は8 CUになります)</em></p></li></ul></td>
+     <td><p>クエリCU数 </p></td>
+     <td><p>シングルクエリCU</p></td>
+     <td><p>自動スケール。設定不要</p></td>
+     <td><ul><li><p>最大32クエリCU。(Web UIで32クエリCU以下のクラスターを直接作成できます。より大きなクエリCUについては、<a href="https://zilliz.com/contact-sales">営業担当者にお問い合わせください</a>。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32。</p></li></ul></td>
+     <td><ul><li><p>最大1,024クエリCU。より大きなクエリCUについては、<a href="https://zilliz.com/contact-sales">営業担当者にお問い合わせください</a>。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(注: クエリCUが8より大きい場合、増分は4CUになります。クエリCUが64より大きい場合、増分は8CUになります。クエリCUが256より大きい場合、増分は16CUになります。)</em></p></li></ul></td>
+     <td><ul><li><p>最大256クエリCU。より大きなクエリCUについては、<a href="https://zilliz.com/contact-sales">営業担当者にお問い合わせください</a>。</p></li><li><p>増分: 1, 2, 4, 8, 12, 16, 20, 24, 28, 32,…,64, 72, 80, 88,…,256, 272, 288, …,1024 <em>(注: クエリCUが8より大きい場合、増分は4CUになります。クエリCUが64より大きい場合、増分は8CUになります。クエリCUが256より大きい場合、増分は16CUになります。)</em></p></li></ul></td>
      <td><p>カスタマイズ可能</p></td>
    </tr>
    <tr>
-     <td><p><strong>CUタイプのオプション</strong></p></td>
-     <td><p>N/A</p></td>
-     <td><p>N/A</p></td>
-     <td><p>3つのオプション:</p><ul><li><p>Performance-optimizedCU、または</p></li><li><p>容量最適化されたCU</p></li><li><p>拡張キャパシティCU</p></li></ul></td>
-     <td><p>3つのオプション:</p><ul><li><p>Performance-optimizedCU、または</p></li><li><p>容量最適化されたCU</p></li><li><p>拡張キャパシティCU</p></li></ul></td>
-     <td><p>2オプション</p><ul><li><p>Performance-optimizedCU、または</p></li><li><p>容量最適化されたCU</p></li></ul></td>
+     <td><p><a href="./scale-query-cu">コンピューティングスケーリング</a></p></td>
+     <td></td>
+     <td><p>システム管理の自動スケーリング</p><p>(設定不要)</p></td>
+     <td><p>32 CUへの手動スケーリング</p></td>
+     <td><p>設定可能な自動スケーリング</p><p>1,024 CU以上への手動スケーリング</p></td>
+     <td><p>設定可能な自動スケーリング</p><p>1,024 CU以上への手動スケーリング</p></td>
+     <td><p>設定可能な自動スケーリング</p><p>1,024 CU以上への手動スケーリング</p></td>
    </tr>
    <tr>
-     <td><p><strong>最大プロジェクト数</strong></p></td>
-     <td><p>1プロジェクト</p></td>
-     <td><p>カスタマイズ可能</p></td>
-     <td><p>カスタマイズ可能</p></td>
-     <td><p>カスタマイズ可能</p></td>
-     <td><p>カスタマイズ可能</p></td>
+     <td><p><a href="./cu-types-explained">クラスタータイプ</a>オプション</p></td>
+     <td></td>
+     <td></td>
+     <td><p>3つのオプション:</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li><li><p>階層型ストレージCU</p></li></ul></td>
+     <td><p>3つのオプション:</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li><li><p>階層型ストレージCU</p></li></ul></td>
+     <td><p>3つのオプション:</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li><li><p>階層型ストレージCU</p></li></ul></td>
+     <td><p>2つのオプション</p><ul><li><p>パフォーマンス最適化CU</p></li><li><p>容量最適化CU</p></li></ul></td>
    </tr>
    <tr>
-     <td><p><strong>最大クラスタ数</strong></p></td>
-     <td><p>1クラスタ</p></td>
-     <td><p>カスタマイズ可能</p></td>
-     <td><p>カスタマイズ可能</p></td>
-     <td><p>カスタマイズ可能</p></td>
-     <td><p>カスタマイズ可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>最大コレクション数</strong></p></td>
+     <td><p>最大コレクション数</p></td>
      <td><p>5コレクション</p></td>
-     <td><p>クラスタあたり10コレクション。</p></td>
-     <td><p>CUあたり64、および&lt;=409 6</p></td>
-     <td><p>CUあたり64、および&lt;=409 6</p></td>
+     <td><p>クラスターあたり10コレクション</p></td>
+     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud Limits</a>を参照してください。</p></td>
+     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud Limits</a>を参照してください。</p></td>
+     <td><p>詳細については、<a href="./limits#collections">Zilliz Cloud Limits</a>を参照してください。</p></td>
      <td><p>カスタマイズ可能</p></td>
    </tr>
    <tr>
-     <td><p><strong>アップタイムSLA</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
+     <td><p>稼働時間SLA</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
      <td><p>99.95%</p></td>
+     <td><p>99.99% (マルチレプリカが有効な場合)</p></td>
      <td><p>99.95%</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>技術サポート</strong></p></td>
-     <td><p>コミュニティサポート</p></td>
-     <td><p>レスポンスタイムのSLAによるメールサポート:</p><ul><li><p>緊急: 4時間</p></li><li><p>高い: 1営業日</p></li><li><p>ミディアム: 2営業日</p></li></ul></td>
-     <td><p>レスポンスタイムのSLAによるメールサポート:</p><ul><li><p>緊急: 4時間</p></li><li><p>高い: 1営業日</p></li><li><p>ミディアム: 2営業日</p></li></ul></td>
-     <td><p>レスポンスタイムのSLAによるメールサポート:</p><ul><li><p>緊急: 1時間</p></li><li><p>ハイ: 4時間</p></li><li><p>ミディアム: 1営業日</p></li></ul></td>
-     <td><p>レスポンスタイムのSLAによるメールサポート:</p><ul><li><p>緊急: 1時間</p></li><li><p>ハイ: 4時間</p></li><li><p>ミディアム: 1営業日</p></li></ul></td>
-   </tr>
-   <tr>
-     <td><p><strong>バックアップと復元</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>マイグレーション</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>高速データインポート</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>OAuthの2.0</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>シングルサインオン（SSO）</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用可能(パブリックプレビュー中)</p></td>
-     <td><p>利用可能(パブリックプレビュー中)</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>マルチファクタ認証(MFA)</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>監査する</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>APIキーの管理</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>転送中および保存中のデータの暗号化</strong></p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>IPアドレスのアクセス制御</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>プライベートリンク</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>SOC 2タイプIIおよびISO/ICE 2700 1に準拠し、GDPRおよびHIPPAに対応しています。</strong></p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>モニタリングダッシュボードを使用した基本的な指標</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>アラート</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>組織とプロジェクトRBAC</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>データプレーンRBAC</strong></p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>利用できません</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>リサイクルビン</strong></p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>パイプライン</strong></p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
-     <td><p>ご利用可能</p></td>
    </tr>
 </table>
 
-## 関連するトピック{#related-topics}
+### 高可用性{#high-availability}
 
-- [適切なCUを選択](./cu-types-explained)
+<table>
+   <tr>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>アベイラビリティゾーン</p></td>
+     <td></td>
+     <td><p>シングル</p></td>
+     <td><p>シングル</p></td>
+     <td><p>複数</p></td>
+     <td><p>複数</p></td>
+     <td><p>複数</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./manage-replica">レプリカ</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>スナップショット</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>グローバルクラスター</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td></td>
+   </tr>
+</table>
 
-- [クレジットカードを追加して購読する](./subscribe-by-adding-credit-card)
+### データ管理{#data-managment}
 
-- [AWS Marketplaceで購読する](./subscribe-on-aws-marketplace)
+<table>
+   <tr>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td><p><a href="./offline-migration">クロス・クラスター・マイグレーション</a></p></td>
+     <td></td>
+     <td><p>Freeクラスターから</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./zero-downtime-migration">ゼロダウンタイムマイグレーション</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./migrate-from-external-sources">外部ソースからのマイグレーション</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./manage-stages">ステージ</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./import-data">高速データインポート</a></p></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./use-recycle-bin">ごみ箱</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+</table>
 
-- [Zilliz Cloudに登録する](./register-with-zilliz-cloud)
+### データセキュリティとコンプライアンス{#data-security-and-compliance}
+
+<table>
+   <tr>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>OAuth 2.0</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./single-sign-on">エンタープライズSSO</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>顧客管理暗号化キー (CMEK)</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td><p><a href="./multi-factor-auth">MFA</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./auditing">監査</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./manage-api-keys">APIキー管理</a></p></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./data-security#data-encryption">転送中および保存中のデータ暗号化</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./backup-and-restore">バックアップと復元</a></p></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./backup-to-other-regions">クロスリージョンバックアップ</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./setup-whitelist">IPアドレスアクセス制御</a></p></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./setup-a-private-link">プライベートネットワーキング</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="https://zilliz.com/trust-center">SOC 2 Type II および ISO/ICE 27001 準拠、GDPR 対応</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="https://zilliz.com/trust-center">HIPPA 対応</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+</table>
+
+### 可観測性{#observability}
+
+<table>
+   <tr>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td><p><a href="./view-cluster-metric-charts">リアルタイム監視ダッシュボードによる詳細なメトリクス</a></p></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./manage-project-alerts">アラート</a></p></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./integrate-with-third-parties">アラートと監視の統合</a></p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./job-center">ジョブセンター</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+</table>
+
+### ロールベースのアクセス制御{#role-based-access-control}
+
+<table>
+   <tr>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td><p><a href="./access-control-overview">組織およびプロジェクトのRBAC</a></p></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="./access-control">データプレーンRBAC</a></p></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+</table>
+
+### 統合とツール{#integrations-and-tools}
+
+<table>
+   <tr>
+     <th></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td><p><a href="/reference/restful">制御およびデータプレーン操作のための直感的なRESTful API</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="/reference/python">複数のプログラミング言語で利用可能な使いやすいSDK</a> (Python, Java, Go, および Node.js SDK)</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="https://zilliz.com/vector-transport-service">VTS (Vector Transport Service)</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p><a href="https://zilliz.com/vdbbench-leaderboard">VectorDBBench</a></p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+</table>
+
+### テクニカルサポート{#technical-support}
+
+<table>
+   <tr>
+     <th colspan="2"></th>
+     <th><p><strong>Free</strong></p></th>
+     <th><p><strong>Serverless</strong></p></th>
+     <th><p><strong>Dedicated (Standard)</strong></p></th>
+     <th><p><strong>Dedicated (Enterprise)</strong></p></th>
+     <th><p><strong>Dedicated (Business Critical)</strong></p></th>
+     <th><p><strong>Bring Your Own Cloud (BYOC)</strong></p></th>
+   </tr>
+   <tr>
+     <td colspan="2"><p>オンコール対応</p></td>
+     <td></td>
+     <td><p>営業時間内</p></td>
+     <td><p>営業時間内</p></td>
+     <td><p>24時間365日</p></td>
+     <td><p>24時間365日</p></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td rowspan="4"><p>初回応答SLA</p></td>
+     <td><p>緊急</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>30分オンコール</p></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td><p>緊急</p></td>
+     <td></td>
+     <td><p>4時間</p></td>
+     <td><p>4時間</p></td>
+     <td><p>1時間</p></td>
+     <td><p>1時間</p></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td><p>高</p></td>
+     <td></td>
+     <td><p>1営業日</p></td>
+     <td><p>1営業日</p></td>
+     <td><p>4時間</p></td>
+     <td><p>4時間</p></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td><p>中/通常</p></td>
+     <td></td>
+     <td><p>2営業日</p></td>
+     <td><p>2営業日</p></td>
+     <td><p>1営業日</p></td>
+     <td><p>1営業日</p></td>
+     <td></td>
+   </tr>
+   <tr>
+     <td rowspan="6"><p>サポートオプション</p></td>
+     <td><p>コミュニティ</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>サポートボット</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>メール/チケットポータル</p></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>Slackチャンネル</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>Zoom/Meet/Teams</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>担当サポートエンジニア</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td rowspan="4"><p>アーキテクチャガイダンス</p></td>
+     <td><p>一般</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>ユースケース固有</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>コードレビュー</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+   <tr>
+     <td><p>ライブコンサルテーション</p></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td></td>
+     <td><p>✔</p></td>
+     <td><p>✔</p></td>
+   </tr>
+</table>
 

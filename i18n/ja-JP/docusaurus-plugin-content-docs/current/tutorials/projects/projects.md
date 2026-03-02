@@ -4,19 +4,19 @@ slug: /projects
 sidebar_label: "プロジェクト"
 beta: FALSE
 notebook: FALSE
-description: "この章では、プロジェクトの操作と関連する設定に焦点を当てています。 | Cloud"
+description: "この章では、プロジェクトの操作と関連設定について説明します。"
 type: origin
-token: AfluwWdKUiSnIgkaR4LcW5XUn1b
-sidebar_position: 9
+token: QHzrwVlEOipspAkPiyucWezqneC
+sidebar_position: 11
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - projects
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - プロジェクト
+  - ベクトルデータベースチュートリアル
+  - ベクトルデータベースの仕組み
+  - ベクトルDB比較
+  - openai ベクトルDB
 
 ---
 
@@ -25,7 +25,7 @@ import Admonition from '@theme/Admonition';
 
 # プロジェクト
 
-この章では、プロジェクトの操作と関連する設定に焦点を当てています。
+この章では、プロジェクトの操作と関連設定について説明します。
 
 import DocCardList from '@theme/DocCardList';
 

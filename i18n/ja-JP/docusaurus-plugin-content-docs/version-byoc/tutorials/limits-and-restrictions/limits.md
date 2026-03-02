@@ -1,47 +1,42 @@
 ---
-title: "Zillizクラウドの制限 | BYOC"
+title: "Zilliz Cloud の制限事項 | BYOC"
 slug: /limits
-sidebar_label: "Zillizクラウドの制限"
+sidebar_label: "Zilliz Cloud の制限事項"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、Zilliz Cloudプラットフォームの制限に関する情報を提供します。Zillizが提供するOPSシステムを使用して、このページに記載されているほとんどの設定を調整できます。さらにヘルプが必要な場合は、引き続きお問い合わせください。 | BYOC"
+description: "このページでは、Zilliz Cloud プラットフォームの制限事項について説明します。Zilliz が提供する OPS システムを使用して、このページに記載されているほとんどの設定を調整できます。さらにサポートが必要な場合は、お問い合わせください。 | BYOC"
 type: origin
-token: WOB5ww3CziJbjGkZLVuc2tEXnTf
+token: PuxkwMWvbiHxvTkHsVkcMZP9n5f
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - milvus
-  - limits
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - 制限事項
+  - オープンソース ベクトルデータベース
+  - オープンソース ベクトル DB
+  - ベクトルデータベースの例
+  - RAG ベクトルデータベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Zillizクラウドの制限
+# Zilliz Cloudの制限
 
-このページでは、Zilliz Cloudプラットフォームの制限に関する情報を提供します。Zillizが提供するOPSシステムを使用して、このページに記載されているほとんどの設定を調整できます。さらにヘルプが必要な場合は、引き続き[お問い合わせ](https://support.zilliz.com/hc/en-us)ください。
+このページでは、Zilliz Cloudプラットフォームの制限について説明します。Zillizが提供するOPSシステムを使用して、このページに記載されているほとんどの設定を調整できます。さらにサポートが必要な場合は、[お問い合わせ](https://support.zilliz.com/hc/en-us)ください。
 
 ## 組織とプロジェクト{#organizations-and-projects}
 
-次の表に、1人のユーザーに許可される組織とプロジェクトの最大数の制限を示します。
+次の表は、単一ユーザーに許可される組織とプロジェクトの最大数に関する制限を示しています。
 
 <table>
    <tr>
-     <th><p><strong>アイテム</strong></p></th>
-     <th><p><strong>マックス数</strong></p></th>
+     <th><p><strong>項目</strong></p></th>
+     <th><p><strong>最大数</strong></p></th>
      <th><p><strong>備考</strong></p></th>
-   </tr>
-   <tr>
-     <td></td>
-     <td></td>
-     <td><p>アカウント登録が完了すると、Zilliz Cloudは自動的に1つの組織を作成します。それ以上の組織が必要な場合は、<a href="http://support.zilliz.com">サポートチケットを作成</a>してください。ユーザーは複数の組織に参加できます。</p></td>
    </tr>
    <tr>
      <td><p>プロジェクト</p></td>
@@ -52,27 +47,29 @@ import Admonition from '@theme/Admonition';
 
 ## コレクション{#collections}
 
-### Milvus v 2.4. xに対応したクラスタ{#clusters-compatible-with-milvus-v24x}
+Zilliz Cloudクラスター内のコレクションとパーティションの最大数は、割り当てられたCUの数と互換性のあるMilvusのバージョンによって異なります。以下の説明を参照して、クラスター内のコレクションとパーティションの最大数を計算できます。
 
-CUごとに最大256個のコレクションまたは1,024個のパーティションを作成でき、コレクションごとに最大1,024個のパーティションが許可されます。次の式を使用して、クラスター内のコレクションとパーティションの数の上限を計算できます。
+### Milvus v2.4.xと互換性のあるクラスター{#clusters-compatible-with-milvus-v24x}
 
-![GaPtwwjdXhgqnwb7dTEcBZKUnWf](/img/GaPtwwjdXhgqnwb7dTEcBZKUnWf.png)
+CUあたり最大**256**のコレクションまたは**1,024**のパーティションを作成でき、1つのコレクションあたり最大**1,024**のパーティションが許可されます。クラスター内のコレクションとパーティションの数の上限を計算するには、次の式を使用できます。
 
-- クラスター内のコレクションの合計数は、クラスター内のCU数の256倍または16,384の小なりの数にする必要があります。
+![MhA4wDlMwhhXrvbFio6cS3LNnNe](https://zdoc-images.s3.us-west-2.amazonaws.com/MhA4wDlMwhhXrvbFio6cS3LNnNe.png)
 
-- クラスタ内のすべてのコレクションのパーティションの合計数は、クラスタに割り当てられたCUの数の1,024倍または65,536のいずれか小さい方の小なりにする必要があります。
+- クラスター内のコレクションの総数は、クラスター内のCU数の256倍または16,384のいずれか低い方よりも少なくなければなりません。
+
+- クラスター内のすべてのコレクションにわたるパーティションの総数は、クラスターに割り当てられたCU数の1,024倍または65,536のいずれか低い方よりも少なくなければなりません。
 
 - 両方の条件を満たす必要があります。
 
-### Milvus v 2.5. xと互換性のあるクラスタ{#clusters-compatible-with-milvus-v25x}
+### Milvus v2.5.xと互換性のあるクラスター{#cluster-compatible-with-milvus-v25x}
 
-CUごとに最大1,024個のコレクションまたは4,096個のパーティションを作成できます。コレクションごとに最大1,024個のパーティションが許可されます。次の式を使用して、クラスター内のコレクションとパーティションの数の上限を計算できます。
+CUあたり最大**1,024**のコレクションまたは**4,096**のパーティションを作成でき、1つのコレクションあたり最大**1,024**のパーティションが許可されます。クラスター内のコレクションとパーティションの数の上限を計算するには、次の式を使用できます。
 
-![Yn0Bws7QGhDdAsbkQKhcx2AYnHc](/img/Yn0Bws7QGhDdAsbkQKhcx2AYnHc.png)
+![I1aJwA2LShihxQbyG30cFm14ngf](https://zdoc-images.s3.us-west-2.amazonaws.com/I1aJwA2LShihxQbyG30cFm14ngf.png)
 
-- クラスタ内のすべてのコレクションのパーティションの合計数は、クラスタに割り当てられたCUの数の4,096倍または65,536の小なり倍または65,536の小なりになる必要があります。以下のレシピを参照してください。
+- クラスター内のコレクションの総数は、クラスター内のCU数の1,024倍または16,384のいずれか低い方よりも少なくなければなりません。
 
-- クラスター内のコレクションの合計数は、クラスター内のCU数の1,024倍または16,384倍の小なりにする必要があります。
+- クラスター内のすべてのコレクションにわたるパーティションの総数は、クラスターに割り当てられたCU数の4,096倍または65,536のいずれか低い方よりも少なくなければなりません。
 
 - 両方の条件を満たす必要があります。
 
@@ -80,32 +77,57 @@ CUごとに最大1,024個のコレクションまたは4,096個のパーティ�
 
 <table>
    <tr>
-     <th><p><strong>アイテム</strong></p></th>
-     <th><p><strong>マックス数</strong></p></th>
+     <th><p><strong>項目</strong></p></th>
+     <th><p><strong>最大数</strong></p></th>
    </tr>
    <tr>
-     <td><p>コレクションごとのフィールド</p></td>
+     <td><p>コレクションあたりのフィールド数</p></td>
      <td><p>64</p></td>
    </tr>
    <tr>
-     <td><p>コレクションごとのベクトルフィールド</p></td>
-     <td><p>4</p></td>
+     <td><p>コレクションあたりのベクトルフィールド数</p></td>
+     <td><p>10</p></td>
    </tr>
 </table>
 
-他のフィールドの制限:
+フィールドに関するその他の制限：
 
-- Null値はどのフィールドタイプでもサポートされていません。
+- VarCharやJSONなどの一部のフィールドは、予想よりも多くのメモリを使用し、クラスターが満杯になる可能性があります。
 
-- VarCharやJSONなどの一部のフィールドは、予想よりも多くのメモリを使用し、クラスターがいっぱいになる可能性があります。
+### 次元{#dimensions}
 
-### ディメンション{#dimensions}
+ベクトルフィールドの最大次元数は**32,768**です。
 
-ベクトル場の最大次元数は32,768であ**る**。
+### シャード{#shards}
 
-### **レート制限**{#rate-limit}
+許可されるシャードの最大数は、クラスターのCUサイズによって異なります。
 
-Zilliz Cloudは、コレクションの作成、読み込み、リリース、削除を含むコレクション操作に対してレート制限を課しました。以下のレート制限は、サーバーレスおよび専用クラスターのコレクションに適用されます。
+<table>
+   <tr>
+     <th><p>CUサイズ</p></th>
+     <th><p>最大数</p></th>
+   </tr>
+   <tr>
+     <td><p>1 - 2 CU</p></td>
+     <td><p>2</p></td>
+   </tr>
+   <tr>
+     <td><p>4 - 8 CU</p></td>
+     <td><p>4</p></td>
+   </tr>
+   <tr>
+     <td><p>12 - 64 CU</p></td>
+     <td><p>8</p></td>
+   </tr>
+   <tr>
+     <td><p>> 64 CU</p></td>
+     <td><p>16</p></td>
+   </tr>
+</table>
+
+### レート制限{#rate-limit}
+
+Zilliz Cloudは、コレクションとパーティションのデータ定義言語（DDL）操作（コレクションの作成、ロード、リリース、ドロップを含む）にもレート制限を課しています。以下のレート制限は、ServerlessおよびDedicatedクラスターの両方のコレクションに適用されます。
 
 <table>
    <tr>
@@ -113,20 +135,24 @@ Zilliz Cloudは、コレクションの作成、読み込み、リリース、�
      <th><p><strong>レート制限</strong></p></th>
    </tr>
    <tr>
-     <td><p>コレクションオペレーション</p><p>(作成、ロード、リリース、ドロップ)</p></td>
-     <td><p>クラスタあたり5 req/s</p></td>
+     <td><p>コレクションDDL操作</p><p>(作成、ロード、リリース、ドロップ)</p></td>
+     <td><p>クラスターあたり20 req/s</p></td>
+   </tr>
+   <tr>
+     <td><p>パーティションDDL操作</p><p>(作成、ロード、リリース、ドロップ)</p></td>
+     <td><p>クラスターあたり20 req/s</p></td>
    </tr>
 </table>
 
-## オペレーション{#operations}
+## 操作{#operations}
 
-このセクションでは、Zilliz Cloudクラスターでの一般的なデータ操作のレート制限に焦点を当てています。
+このセクションでは、Zilliz Cloudクラスターにおける一般的なデータ操作のレート制限に焦点を当てます。
 
-### 挿入する{#insert}
+### 挿入{#insert}
 
-各挿入要求/応答は大なり**64**MBでなければなりません。
+各挿入リクエスト/レスポンスは**64** MB以下である必要があります。
 
-適用されるレート制限は、クラスターの種類と使用中のCUの数によって異なります。次の表に、挿入操作のレート制限を示します。
+適用されるレート制限は、クラスターの種類と使用中のCUの数によって異なります。次の表は、挿入操作のレート制限を示しています。
 
 <table>
    <tr>
@@ -134,44 +160,44 @@ Zilliz Cloudは、コレクションの作成、読み込み、リリース、�
      <th><p>最大挿入レート制限</p></th>
    </tr>
    <tr>
-     <td><p>専用クラスタ1-2 CU</p></td>
-     <td><p>8メガバイト/秒</p></td>
+     <td><p>[1 CU, 2 CUs]</p></td>
+     <td><p>8 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ4-8 CU</p></td>
-     <td><p>12メガバイト/秒</p></td>
+     <td><p>[4 CUs,  8 CUs]</p></td>
+     <td><p>12 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ12-20 CU</p></td>
-     <td><p>16メガバイト/秒</p></td>
+     <td><p>[12 CUs, 20 CUs]</p></td>
+     <td><p>16 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ[24 CU、64 CU]</p></td>
-     <td><p>24メガバイト/秒</p></td>
+     <td><p>[24 CUs, 64 CUs)</p></td>
+     <td><p>24 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ[64 CUs,128 CUs)</p></td>
-     <td><p>36メガバイト/秒</p></td>
+     <td><p>[64 CUs, 128CUs)</p></td>
+     <td><p>36 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ[128 CUs,256 CUs)</p></td>
-     <td><p>48メガバイト/秒</p></td>
+     <td><p>[128 CUs, 256CUs)</p></td>
+     <td><p>48 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>256 CU以上の専用クラスタ</p></td>
-     <td><p>64メガバイト/秒</p></td>
+     <td><blockquote>  <p>= 256 CUs</p></blockquote></td>
+     <td><p>64 MB/s</p></td>
    </tr>
 </table>
 
-データを挿入するときは、すべてのスキーマ定義フィールドを含めます。コレクションでAutoIDが有効になっている場合は、主キーを除外します。
+データを挿入する際は、スキーマで定義されたすべてのフィールドを含めます。コレクションでAutoIDが有効になっている場合は、主キーを除外します。
 
-挿入されたエンティティを検索やクエリですぐに取得できるようにするには、検索またはクエリリクエストの一貫性レベルを**強く**することを検討してください。詳細については、[一貫性レベル](./consistency-level)を参照してください。
+挿入されたエンティティを検索やクエリですぐに取得できるようにするには、検索またはクエリリクエストの整合性レベルを**Strong**に変更することを検討してください。[整合性レベル](./consistency-level)の詳細を参照してください。
 
-### アップサート{#upsert}
+### Upsert{#upsert}
 
-各upsertリクエスト/レスポンスは**64**MB以上である必要があります。
+各upsertリクエスト/レスポンスは**64** MB以下である必要があります。
 
-適用されるレート制限は、クラスターの種類と使用中のCUの数によって異なります。次の表に、upsert操作のレート制限を示します。
+適用されるレート制限は、クラスターの種類と使用中のCUの数によって異なります。次の表は、upsert操作のレート制限を示しています。
 
 <table>
    <tr>
@@ -179,53 +205,53 @@ Zilliz Cloudは、コレクションの作成、読み込み、リリース、�
      <th><p>最大Upsertレート制限</p></th>
    </tr>
    <tr>
-     <td><p>専用クラスタ1-2 CU</p></td>
-     <td><p>8メガバイト/秒</p></td>
+     <td><p>[1 CU, 2 CUs]</p></td>
+     <td><p>8 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ4-8 CU</p></td>
-     <td><p>12メガバイト/秒</p></td>
+     <td><p>[4 CUs,  8 CUs]</p></td>
+     <td><p>12 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ12-20 CU</p></td>
-     <td><p>16メガバイト/秒</p></td>
+     <td><p>[12 CUs, 20 CUs]</p></td>
+     <td><p>16 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ[24 CU、64 CU]</p></td>
-     <td><p>24メガバイト/秒</p></td>
+     <td><p>[24 CUs, 64 CUs)</p></td>
+     <td><p>24 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ[64 CUs,128 CUs)</p></td>
-     <td><p>36メガバイト/秒</p></td>
+     <td><p>[64 CUs, 128CUs)</p></td>
+     <td><p>36 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>専用クラスタ[128 CUs,256 CUs)</p></td>
-     <td><p>48メガバイト/秒</p></td>
+     <td><p>[128 CUs, 256CUs)</p></td>
+     <td><p>48 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>256 CU以上の専用クラスタ</p></td>
-     <td><p>64メガバイト/秒</p></td>
+     <td><blockquote>  <p>= 256 CUs</p></blockquote></td>
+     <td><p>64 MB/s</p></td>
    </tr>
 </table>
 
-データを更新する際には、スキーマで定義されたすべてのフィールドを含めてください。
+データをupsertする際は、スキーマで定義されたすべてのフィールドを含めます。
 
-挿入されたエンティティを検索やクエリですぐに取得できるようにするには、検索またはクエリ要求の一貫性レベルを**強く**することを検討してください。詳細については、[一貫性レベル](./consistency-level)を参照してください。
+upsertされたエンティティを検索やクエリですぐに取得できるようにするには、検索またはクエリリクエストの整合性レベルを**Strong**に変更することを検討してください。[整合性レベル](./consistency-level)の詳細を参照してください。
 
 ### インデックス{#index}
 
-インデックスの種類はフィールドの種類によって異なります。次の表に、インデックス可能なフィールドの種類と対応するインデックスの種類を示します。
+インデックスの種類はフィールドの種類によって異なります。次の表は、インデックス可能なフィールドの種類と対応するインデックスの種類を示しています。
 
 <table>
    <tr>
-     <th><p><strong>フィールドタイプ</strong></p></th>
-     <th><p><strong>インデックスタイプ</strong></p></th>
-     <th><p><strong>メートルタイプ</strong></p></th>
+     <th><p><strong>フィールドの種類</strong></p></th>
+     <th><p><strong>インデックスの種類</strong></p></th>
+     <th><p><strong>メトリックの種類</strong></p></th>
    </tr>
    <tr>
-     <td><p>ベクトル場</p></td>
+     <td><p>ベクトルフィールド</p></td>
      <td><p>AUTOINDEX</p></td>
-     <td><p>L 2、IP、およびCOSINE</p></td>
+     <td><p>L2, IP, およびCOSINE</p></td>
    </tr>
    <tr>
      <td><p>VarCharフィールド</p></td>
@@ -233,298 +259,116 @@ Zilliz Cloudは、コレクションの作成、読み込み、リリース、�
      <td><p>N/A</p></td>
    </tr>
    <tr>
-     <td><p>Int 8/16/32/64</p></td>
-     <td><p>STLソート</p></td>
+     <td><p>Int8/16/32/64</p></td>
+     <td><p>STL_SORT</p></td>
      <td><p>N/A</p></td>
    </tr>
    <tr>
-     <td><p>フロート32/64</p></td>
-     <td><p>STLソート</p></td>
+     <td><p>Float32/64</p></td>
+     <td><p>STL_SORT</p></td>
      <td><p>N/A</p></td>
    </tr>
 </table>
 
 ### フラッシュ{#flush}
 
-フラッシュ要求のレート制限は、特定のクラスタータイプのコレクションレベルで課せられる1秒あたり0.1要求です。このレート制限は、以下に適用されます。
+フラッシュリクエストのレート制限は、特定のクラスタータイプに対してコレクションレベルで秒間0.1リクエストです。このレート制限は、Milvus v2.4.x以降と互換性のあるクラスターに適用されます。
 
-- Milvus 2.4. x以降に対応したサーバーレスクラスター。
+<Admonition type="info" icon="📘" title="Notes">
 
-- Milvus 2.4. x以降に対応したベータ版にアップグレードされた専用クラスタ。
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>手動でフラッシュ操作を実行することはお勧めできません。Zilliz Cloudクラスターが優雅に処理します。</p>
+<p>手動でフラッシュ操作を実行することはお勧めしません。Zilliz Cloudクラスターが適切に処理します。</p>
 
 </Admonition>
 
-### ロードする{#load}
+### ロード{#load}
 
-ロード要求のレート制限は、クラスターあたり**5**req/sです。
+ロードリクエストのレート制限は、クラスターあたり**20** req/sです。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>新しいデータがこれらのコレクションに入ってくる場合でも、すでにロードされているコレクションのロードコレクションを実行する必要はありません。</p>
+<p>新しいデータがこれらのコレクションに入ってきても、すでにロードされているコレクションに対してロード操作を実行する必要はありません。</p>
 
 </Admonition>
 
-### 検索する{#search}
+### 検索{#search}
 
-各検索リクエスト/レスポンスは**64**MB以上である必要があります。
+各検索リクエスト/レスポンスは**64** MB以下である必要があります。
 
-各検索要求に含まれるクエリベクトルの数(通常は**nq**と呼ばれます)は、サブスクリプションプランによって異なります。
-
-- FreeおよびServerlessクラスタの場合、**nq**は大なり**10**ではありません。
-
-- Dedicatedクラスタの場合、**nq**は16,384ではな**い**。
-
-各検索応答に含まれる番号（通常は**topK**と呼ばれます）は、サブスクリプションプランによって異なります。
-
-- FreeクラスタとServerlessクラスタの場合、**topK**は**1,024**個のエンティティとは異なります。
-
-- Dedicatedクラスタの場合、**topK**は16,**384**個のエンティティを返しません。
+各検索リクエストが運ぶクエリベクトルの数（通常**nq**として知られる）は**16,384**以下であり、各検索レスポンスが運ぶ数（通常**topK**として知られる）は**16,384**エンティティ以下です。
 
 ### クエリ{#query}
 
-各クエリリクエスト/レスポンスは**64**MB以上である必要があります。
+各クエリリクエスト/レスポンスは**64** MB以下である必要があります。
 
-各クエリ応答には、通常**topK**として知られる16,384個を超えるエンティティは含まれません。
+各クエリレスポンスは、**16,384**エンティティ以下を返します（通常**topK**として知られる）。
 
-### 削除する{#delete}
+### 削除{#delete}
 
-各削除要求/応答は、大なり**64**MBであってはならない。
+各削除リクエスト/レスポンスは**64** MB以下である必要があります。
 
-削除要求のレート制限は、クラスターあたり**0.5**MB/sです。
+削除リクエストのレート制限は、クラスターあたり**0.5** MB/sです。
 
-### ドロップとす{#drop}
+### ドロップ{#drop}
 
-ドロップ要求のレート制限は、クラスターあたり**5**req/sです。
+ドロップリクエストのレート制限は、クラスターあたり**20** req/sです。
 
-### データのインポート{#data-import}
+### データインポート{#data-import}
 
-1つのコレクションには、実行中または保留中のインポートジョブを最大**10**件まで含めることができます。
+コレクションには、実行中または保留中のインポートジョブが最大**10,000**件存在できます。
 
-Zilliz Cloudは、Webコンソールにインポートするファイルに制限を課しています。
+Zilliz Cloudは、Webコンソールでインポートするファイルにも制限を課しています。
 
 <table>
    <tr>
-     <th><p>ファイルタイプ</p></th>
+     <th><p>ファイルの種類</p></th>
      <th><p>ローカルアップロード</p></th>
-     <th><p>S 3/GCS/その他のOSSからの同期</p></th>
+     <th><p>オブジェクトストレージから</p></th>
    </tr>
    <tr>
      <td><p>JSON</p></td>
      <td><p>1 GB</p></td>
+     <td><p>最大合計インポートサイズは1 TBで、各ファイルの最大サイズは10 GBで、最大1,000ファイルです。</p></td>
+   </tr>
+   <tr>
+     <td><p>Parquet</p></td>
      <td><p>1 GB</p></td>
+     <td><p>最大合計インポートサイズは1 TBで、各ファイルの最大サイズは10 GBで、最大1,000ファイルです。</p></td>
    </tr>
    <tr>
      <td><p>Numpy</p></td>
-     <td><p>サポートしない</p></td>
-     <td><p>フォルダの最大体格は100 GBで、各サブディレクトリの最大体格は15 GBです。</p></td>
-   </tr>
-   <tr>
-     <td><p>パーケット</p></td>
-     <td><p>サポートしない</p></td>
-     <td><p>10ギガバイト</p></td>
+     <td><p>サポートされていません</p></td>
+     <td><p>最大合計インポートサイズは1 TBで、各サブディレクトリの最大サイズは10 GBで、最大1,000サブディレクトリです。</p></td>
    </tr>
 </table>
 
-詳細については、[ストレージオプション](./data-import-storage-options)と[書式オプション](./data-import-format-options)を参照してください。
+詳細については、[ストレージオプション](./data-import-storage-options)と[フォーマットオプション](./data-import-format-options)を参照してください。
 
 ## コンソールでのバックアップ{#backup-on-console}
 
-手動で作成したバックアップは永久に保持されます。
+手動で作成されたバックアップは永続的に保持されます。
 
-自動的に作成されたバックアップの最大保存期間は30日間です。
+自動的に作成されたバックアップの最大保持期間は30日です。
 
 ## コンソールでの復元{#restore-on-console}
 
-スナップショットの元のクラスタと同じリージョンのスナップショットを復元することができます。復元の対象クラスタは、元のクラスタと同じCUタイプを使用する必要があります。
+スナップショットの元のクラスターと同じリージョンでスナップショットを復元できます。復元先のクラスターは、元のクラスターと同じCUタイプを使用する必要があります。
 
 ## IPアクセスリスト{#ip-access-list}
 
 <table>
    <tr>
-     <th><p><strong>アイテム</strong></p></th>
-     <th><p><strong>マックス数</strong></p></th>
+     <th><p><strong>項目</strong></p></th>
+     <th><p><strong>最大数</strong></p></th>
      <th><p><strong>備考</strong></p></th>
    </tr>
    <tr>
-     <td><p>IPアドレス(CIDR)</p></td>
-     <td><p>20</p></td>
-     <td><p>許可リストには最大20個のIPアドレスを追加できます。</p></td>
-   </tr>
-</table>
-
-## パイプライン | NEAR DEPRECATE{#pipelines}
-
-### パイプラインの数{#number-of-pipelines}
-
-次の表に、プロジェクトで作成できるさまざまな種類のパイプラインの制限を示します。
-
-<table>
-   <tr>
-     <th><p><strong>パイプラインタイプ</strong></p></th>
-     <th><p><strong>プロジェクトごとの最大数</strong></p></th>
-   </tr>
-   <tr>
-     <td><p>摂取パイプライン</p></td>
+     <td><p>IPアドレス (CIDR)</p></td>
      <td><p>100</p></td>
-   </tr>
-   <tr>
-     <td><p>削除パイプライン</p></td>
-     <td><p>100</p></td>
-   </tr>
-   <tr>
-     <td><p>検索パイプライン</p></td>
-     <td><p>100</p></td>
+     <td><p>許可リストに最大100個のIPアドレスを追加できます。</p></td>
    </tr>
 </table>
 
-### 摂取する{#ingestion}
+## 移行{#migration}
 
-次の表は、各埋め込みモデルでサポートされるカスタマイズされたチャンク体格の制限を示しています。
-
-<table>
-   <tr>
-     <th><p><strong>埋め込みモデル</strong></p></th>
-     <th><p><strong>チャンクサイズの範囲（トークン）</strong></p></th>
-   </tr>
-   <tr>
-     <td><p>zilliz/bge-based-en-v 1.5-ダウンロード</p></td>
-     <td><p>20-500</p></td>
-   </tr>
-   <tr>
-     <td><p>zilliz/bge-base-zh-v 1.5-ダウンロード</p></td>
-     <td><p>20-500</p></td>
-   </tr>
-   <tr>
-     <td><p>タイトル: voyageai/voyage-2</p></td>
-     <td><p>20-3,000</p></td>
-   </tr>
-   <tr>
-     <td><p>voyageai/航海コード-2</p></td>
-     <td><p>20-12,000</p></td>
-   </tr>
-   <tr>
-     <td><p>voyageai/ヴォヤージュラージ2</p></td>
-     <td><p>20-12,000</p></td>
-   </tr>
-   <tr>
-     <td><p>OPENAI/text-embedding-3-small</p></td>
-     <td><p>250-8,191</p></td>
-   </tr>
-   <tr>
-     <td><p>OPENAI/text-embedding-3-large</p></td>
-     <td><p>250-8,191</p></td>
-   </tr>
-</table>
-
-次の表に、取り込みパイプラインでPRESERVE関数によって生成されるメタデータフィールドの制限を示します。
-
-<table>
-   <tr>
-     <th></th>
-     <th><p><strong>マックス数</strong></p></th>
-   </tr>
-   <tr>
-     <td><p>メタデータフィールドの数</p></td>
-     <td><p>50</p></td>
-   </tr>
-   <tr>
-     <td><p>VARCHARフィールドのmax_length</p></td>
-     <td><p>4,000</p></td>
-   </tr>
-</table>
-
-次の表は、毎回摂取できるチャンクの数の制限を示しています。
-
-<table>
-   <tr>
-     <th><p><strong>埋め込みモデル</strong></p></th>
-     <th><p><strong>マックス。チャンク/摂取</strong></p></th>
-   </tr>
-   <tr>
-     <td><p>zilliz/bge-based-en-v 1.5-ダウンロード</p></td>
-     <td><p>3,500</p></td>
-   </tr>
-   <tr>
-     <td><p>タイトル: voyageai/voyage-2</p></td>
-     <td><p>6,000</p></td>
-   </tr>
-   <tr>
-     <td><p>voyageai/航海コード-2</p></td>
-     <td><p>6,000</p></td>
-   </tr>
-   <tr>
-     <td><p>OPENAI/text-embedding-3-small</p></td>
-     <td><p>6,000</p></td>
-   </tr>
-   <tr>
-     <td><p>OPENAI/text-embedding-large</p></td>
-     <td><p>6,000</p></td>
-   </tr>
-   <tr>
-     <td><p>zilliz/bge-base-zh-v 1.5-ダウンロード</p></td>
-     <td><p>3,500</p></td>
-   </tr>
-</table>
-
-### パイプラインの使用{#pipeline-usage}
-
-<table>
-   <tr>
-     <th></th>
-     <th><p><strong>マックス。使用法</strong></p></th>
-   </tr>
-   <tr>
-     <td><p>それぞれの組織</p></td>
-     <td><p>20ドル/月</p></td>
-   </tr>
-</table>
-
-### トークンの使用{#pipeline-usage}
-
-次の表に、トークンの使用制限を示します。
-
-<table>
-   <tr>
-     <th><p><strong>パイプラインタイプ</strong></p></th>
-     <th><p><strong>埋め込みモデル</strong></p></th>
-     <th><p><strong>最大トークン使用量</strong></p></th>
-   </tr>
-   <tr>
-     <td rowspan="2"><p>摂取パイプライン</p></td>
-     <td><p>Openai/text-embedding-3-small&amp;Openai/text-embedding-3-large</p></td>
-     <td><p>80,000,000</p></td>
-   </tr>
-   <tr>
-     <td><p>その他</p></td>
-     <td><p>100,000,000</p></td>
-   </tr>
-   <tr>
-     <td rowspan="2"><p>検索パイプライン</p></td>
-     <td><p>Openai/text-embedding-3-small&amp;Openai/text-embedding-3-large</p></td>
-     <td><p>30,000,000</p></td>
-   </tr>
-   <tr>
-     <td><p>その他</p></td>
-     <td><p>20,000,000</p></td>
-   </tr>
-   <tr>
-     <td rowspan="2"><p>組織内のすべてのパイプライン</p></td>
-     <td><p>Openai/text-embedding-3-small&amp;Openai/text-embedding-3-large</p></td>
-     <td><p>150,000,000</p></td>
-   </tr>
-   <tr>
-     <td><p>その他</p></td>
-     <td><p>200,000,000</p></td>
-   </tr>
-</table>
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>組織内のすべてのパイプラインの最大トークン使用量については、削除されたパイプラインのトークン使用量も全体のカウントに含まれます。</p>
-
-</Admonition>
+他のベンダーからZilliz Cloudクラスターにデータを移行できます。移行あたりのコレクションの最大数は、Zilliz Cloudクラスターによって異なります。移行中に一度に最大**10**個のコレクションを移行できます。
 

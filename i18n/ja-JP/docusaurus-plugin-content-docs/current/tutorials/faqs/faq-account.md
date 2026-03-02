@@ -1,66 +1,63 @@
 ---
-title: "FAQ:アカウント | CLOUD"
+title: "FAQ: アカウント | CLOUD"
 slug: /faq-account
-sidebar_label: "FAQ:アカウント"
+sidebar_label: "FAQ: アカウント"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloudで遭遇する可能性のあるアカウントに関する問題と対応する解決策をリストアップしています。 | CLOUD"
+description: "このトピックでは、Zilliz Cloud で発生する可能性のあるアカウントに関する問題と、それに対応する解決策をリストアップします。 | CLOUD"
 type: origin
-token: LKxiwykkhi5VyLkTfAGcE3LinBe
-sidebar_position: 11
+token: EV41wG08BiOWW8kbo9xcTGoPnKd
+sidebar_position: 10
 
 ---
 
-# FAQ:アカウント
+# FAQ: アカウント
 
-このトピックでは、Zilliz Cloudで遭遇する可能性のあるアカウントに関する問題と対応する解決策をリストアップしています。
+このトピックでは、Zilliz Cloud で発生する可能性のあるアカウントに関する問題と、それに対応する解決策をリストアップします。
 
-## Contents
+## 目次
 
-- [アカウントのメールアドレスを変更するには?](#how-can-i-change-my-account-email-address)
-- [アカウントがロックされているのはなぜですか?](#why-is-my-account-locked-and-how-to-unlock-it)
-- [Googleからアカウントのリンクを解除する方法は?](#how-to-unlink-my-account-from-google)
-- [アカウントを削除する方法は?](#how-to-delete-my-account)
-- [なぜ私の組織は凍結されていますか?](#why-is-my-organization-frozen)
-- [組織のフリーズを解除するにはどうすればよいですか?](#how-can-i-unfreeze-my-organization)
+- [アカウントのメールアドレスを変更するにはどうすればよいですか？](#how-can-i-change-my-account-email-address)
+- [アカウントがロックされるのはなぜですか？また、ロックを解除するにはどうすればよいですか？](#why-is-my-account-locked-and-how-to-unlock-it)
+- [Google からアカウントのリンクを解除するにはどうすればよいですか？](#how-to-unlink-my-account-from-google)
+- [アカウントを削除するにはどうすればよいですか？](#how-to-delete-my-account)
+- [組織が凍結されるのはなぜですか？](#why-is-my-organization-frozen)
+- [組織の凍結を解除するにはどうすればよいですか？](#how-can-i-unfreeze-my-organization)
 
-## FAQs
+## よくある質問
 
+### アカウントのメールアドレスを変更するにはどうすればよいですか？{#how-can-i-change-my-account-email-address}
 
+詳細については、[メールアカウント](./email-accounts#update-account-email-address)を参照してください。
 
+### アカウントがロックされるのはなぜですか？また、ロックを解除するにはどうすればよいですか？{#why-is-my-account-locked-and-how-to-unlock-it}
 
-### アカウントのメールアドレスを変更するには?{#how-can-i-change-my-account-email-address}
+ログイン試行に5回失敗すると、アカウントはロックされます。
 
-詳細については、[メールアカウント](./email-accounts)を参照してください。
+アカウントのロックを解除するには、次のいずれかの方法を選択できます。
 
-### アカウントがロックされているのはなぜですか?{#why-is-my-account-locked-and-how-to-unlock-it}
+1. アカウントのロックが解除されるまで15分間待ちます。
 
-ログインに5回失敗すると、アカウントがロックされます。
+1. パスワードを忘れた場合は、パスワードをリセットします。
 
-アカウントのロックを解除するには、以下のいずれかの方法を選択できます。
+### Google からアカウントのリンクを解除するにはどうすればよいですか？{#how-to-unlink-my-account-from-google}
 
-1. アカウントのロックが解除されるまで15分待ちます。
+詳細な手順については、[メールアカウント](./email-accounts#unlink-from-your-google-account)を参照してください。
 
-1. パスワードを忘れた場合はリセットしてください。
+### アカウントを削除するにはどうすればよいですか？{#how-to-delete-my-account}
 
-### Googleからアカウントのリンクを解除する方法は?{#how-to-unlink-my-account-from-google}
+Zilliz Cloud は、ウェブコンソールでのアカウント削除をサポートしています。詳細については、[アカウントの管理](./email-accounts#close-your-account)を参照してください。
 
-詳しい手順については、[メールアカウント](./email-accounts#unlink-from-your-google-account)を参照してください。
+### 組織が凍結されるのはなぜですか？{#why-is-my-organization-frozen}
 
-### アカウントを削除する方法は?{#how-to-delete-my-account}
+- 無料トライアルユーザーの場合、無料クレジットの不足または期限切れにより、組織が凍結されることがあります。
 
-Zilliz CloudはWebコンソールでアカウントの削除をサポートしています。詳細については、「[メールアカウント](./email-accounts#close-your-account)」を参照してください。
+- 支払い方法をすでに登録している場合、支払い期限の超過により、組織が凍結されることがあります。
 
-### なぜ私の組織は凍結されていますか?{#why-is-my-organization-frozen}
+### 組織の凍結を解除するにはどうすればよいですか？{#how-can-i-unfreeze-my-organization}
 
-無料トライアルユーザーの場合、無料クレジットが不足しているか期限切れになっているため、組織が凍結される可能性があります。
+組織のメンバーである場合、組織の所有者に連絡して操作を実行し、組織の凍結を解除してもらうことしかできません。
 
-すでに支払い方法を追加している場合、支払い期限が過ぎているために組織が凍結される可能性があります。
+組織の所有者である場合、期限切れの請求書を支払うか、支払い方法を追加することで組織の凍結を解除できます。解決策は、無料トライアルユーザーか有料ユーザーかによって異なります。
 
-### 組織のフリーズを解除するにはどうすればよいですか?{#how-can-i-unfreeze-my-organization}
-
-組織のメンバーである場合は、組織の所有者に連絡して操作を実行し、組織のフリーズを解除することしかできません。
-
-組織の所有者の場合、延滞した請求書を支払うか、支払い方法を追加することで、組織の凍結を解除することができます。解決策は、無料トライアルユーザーか有料ユーザーかによって異なります。
-
-上記の操作を試しても組織のフリーズを解除できない場合は、[リクエストを送信](https://support.zilliz.com/hc/en-us)してください。
+上記の手順を試しても組織の凍結を解除できない場合は、[リクエストを送信してください](https://support.zilliz.com/hc/en-us)。

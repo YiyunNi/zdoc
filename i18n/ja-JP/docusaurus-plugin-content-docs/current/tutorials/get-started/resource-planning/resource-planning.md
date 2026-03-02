@@ -1,32 +1,32 @@
 ---
-title: "リソースプランニング | Cloud"
+title: "リソース計画 | Cloud"
 slug: /resource-planning
-sidebar_label: "リソースプランニング"
+sidebar_label: "リソース計画"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudにデータを移動する前のリソースプランニングに関するトピック。 | Cloud"
+description: "Zilliz Cloud にデータを移行する前のリソース計画に関するトピック。 | Cloud"
 type: origin
-token: QShBwEVusiPyWDkfnjfc8yxFnHe
-sidebar_position: 8
+token: NM2OwCcfVijX8DkNsIxcdajEnr7
+sidebar_position: 9
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - resource
-  - planning
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - ベクトルデータベース
+  - クラウド
+  - リソース
+  - 計画
+  - ベクトル検索
+  - knn アルゴリズム
+  - HNSW
+  - 非構造化データとは
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# リソースプランニング
+# リソース計画
 
-Zilliz Cloudにデータを移動する前のリソースプランニングに関するトピック。
+Zilliz Cloud にデータを移行する前に、リソース計画に関連するトピックについて説明します。
 
 import DocCardList from '@theme/DocCardList';
 

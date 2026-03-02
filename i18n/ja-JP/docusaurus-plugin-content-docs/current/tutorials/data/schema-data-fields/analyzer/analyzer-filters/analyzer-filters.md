@@ -1,34 +1,34 @@
 ---
-title: "フィルタリファレンス | Cloud"
+title: "フィルターリファレンス | Cloud"
 slug: /analyzer-filters
-sidebar_label: "フィルタリファレンス"
+sidebar_label: "フィルター"
 beta: FALSE
 notebook: FALSE
-description: "このセクションでは、アナライザのフィルタの詳細なリファレンスを提供します。 | Cloud"
+description: "このセクションでは、アナライザーにおけるフィルターの詳細なリファレンスを提供します。"
 type: origin
-token: J221wV4l2i1lYykdMYwcVJkXnmp
+token: ZIakwn5V8i1msRk7EDscPNqsnUf
 sidebar_position: 4
 keywords: 
-  - zilliz
-  - vector database
+  - Zilliz
+  - ベクトルデータベース
   - cloud
   - collection
   - schema
   - analyzer
-  - built-in filters
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
+  - 組み込みフィルター
+  - Zilliz database
+  - 非構造化データ
+  - vector database
+  - IVF
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# フィルタリファレンス
+# フィルターリファレンス
 
-このセクションでは、アナライザのフィルタの詳細なリファレンスを提供します。
+このセクションでは、アナライザーにおけるフィルターの詳細なリファレンスを提供します。
 
 import DocCardList from '@theme/DocCardList';
 

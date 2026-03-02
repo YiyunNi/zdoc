@@ -4,20 +4,20 @@ slug: /backup-and-restore
 sidebar_label: "バックアップと復元"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudクラスターに保存されたデータのバックアップと復元。 | BYOC"
+description: "Zilliz Cloud クラスターに保存されているデータのバックアップと復元。| BYOC"
 type: origin
-token: AXmzw3QBKixR0skM8LWc39jwnAe
-sidebar_position: 7
+token: VvikwOKc9iZ5vBkgMnycrXKmnId
+sidebar_position: 9
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - backup
-  - restore
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - ベクトルデータベース
+  - クラウド
+  - バックアップ
+  - 復元
+  - 階層型ナビゲーション可能スモールワールド
+  - 密な埋め込み
+  - Faiss ベクトルデータベース
+  - Chroma ベクトルデータベース
 
 ---
 
@@ -26,7 +26,7 @@ import Admonition from '@theme/Admonition';
 
 # バックアップと復元
 
-Zilliz Cloudクラスターに保存されたデータのバックアップと復元。
+Zilliz Cloudクラスターに保存されているデータのバックアップと復元。
 
 
 

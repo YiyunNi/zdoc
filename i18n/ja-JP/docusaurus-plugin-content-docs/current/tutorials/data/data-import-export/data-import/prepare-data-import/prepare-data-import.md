@@ -1,32 +1,32 @@
 ---
-title: "データを変換する | Cloud"
+title: "データの変換 | Cloud"
 slug: /prepare-data-import
-sidebar_label: "データを変換する"
+sidebar_label: "データの変換"
 beta: FALSE
 notebook: FALSE
-description: "インポートする前にデータを準備し、ソースデータの要件を満たしていることを確認する必要があります。この章では、ソースデータの要件と、データの準備を支援する使いやすいツールについて説明します。 | Cloud"
+description: "データをインポートする前に準備し、ソースデータの要件を満たしていることを確認する必要があります。この章では、ソースデータの要件と、データ準備に役立つ使いやすいツールについて説明します。 | Cloud"
 type: origin
-token: KyR6wBH1ZiIuEgk7zktc4zK7nDf
+token: YNbGwiEjAinaQfkSdNlcTehwn8I
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - data import
-  - prepare
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
+  - データインポート
+  - 準備
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# データを変換する
+# データの変換
 
-インポートする前にデータを準備し、ソースデータの要件を満たしていることを確認する必要があります。この章では、ソースデータの要件と、データの準備を支援する使いやすいツールについて説明します。
+データをインポートする前に、データを準備し、ソースデータの要件を満たしていることを確認する必要があります。この章では、ソースデータの要件と、データ準備に役立つ使いやすいツールについて説明します。
 
 import DocCardList from '@theme/DocCardList';
 

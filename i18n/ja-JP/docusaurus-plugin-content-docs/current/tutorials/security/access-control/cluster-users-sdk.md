@@ -1,25 +1,25 @@
 ---
-title: "クラスタユーザーの管理(SDK) | Cloud"
+title: "クラスターユーザーの管理 (SDK) | Cloud"
 slug: /cluster-users-sdk
-sidebar_label: "クラスタユーザーの管理(SDK)"
+sidebar_label: "クラスターユーザーの管理 (SDK)"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てて特権を定義し、データセキュリティを実現できます。 | Cloud"
+description: "Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てることで、権限を定義し、データセキュリティを実現できます。| Cloud"
 type: origin
-token: Dy4Kw9d7piYQh0kS1sHcImejnNc
+token: I2CHwfDHKilTMukoZ13cR2M4nzb
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - access control
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - アクセス制御
   - rbac
-  - users
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
+  - ユーザー
+  - ベクトルデータベースとは
+  - vectordb
+  - マルチモーダルベクトルデータベース検索
+  - Retrieval Augmented Generation
 
 ---
 
@@ -27,19 +27,19 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# クラスタユーザーの管理(SDK)
+# クラスターユーザーの管理 (SDK)
 
-Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てて特権を定義し、データセキュリティを実現できます。
+Zilliz Cloudでは、クラスターユーザーを作成し、クラスターロールを割り当てることで、権限を定義し、データセキュリティを実現できます。
 
-このガイドでは、クラスターユーザーの作成方法、ユーザーにロールを付与する方法、ユーザーからロールを取り消す方法、そして最後にユーザーを削除する方法について説明します。クラスターロールの詳細については、「[クラスタロールの管理(コンソール)](./cluster-roles)」を参照してください。
+このガイドでは、クラスターユーザーの作成方法、ユーザーへのロールの付与、ユーザーからのロールの取り消し、そしてユーザーの削除方法について説明します。クラスターロールの詳細については、[クラスターロールの管理 (コンソール)](./cluster-roles)を参照してください。
 
-## ユーザーを作成する{#create-a-user}
+## ユーザーの作成 {#create-a-user}
 
-以下の例は、ユーザー名`user_1`とパスワード`P@ssw0rd`でユーザーを作成する方法を示しています。ユーザーのユーザー名とパスワードは以下のルールに従う必要があります。
+以下の例は、ユーザー名 `user_1` とパスワード `P@ssw0rd` を持つユーザーを作成する方法を示しています。ユーザーのユーザー名とパスワードは、以下のルールに従う必要があります。
 
-- ユーザー名:文字で始まり、大文字または小文字、数字、アンダースコアのみを含める必要があります。
+- ユーザー名: 文字で始まり、大文字または小文字、数字、アンダースコアのみを含めることができます。
 
-- パスワード: 8～64文字で、大文字、小文字、数字、特殊文字のうち3つを含める必要があります。
+- パスワード: 8～64文字の長さで、大文字、小文字、数字、特殊文字のうち3つを含める必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -117,9 +117,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ユーザー一覧{#list-users}
+## ユーザーのリスト表示{#list-users}
 
-複数のユーザーを作成した後、既存のすべてのユーザーをリストアップして表示できます。
+複数のユーザーを作成した後、既存のすべてのユーザーをリスト表示して確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -163,15 +163,15 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-以下は出力例です。`root`は自動生成されたデフォルトのユーザーです。`user_1`は新しく作成されたユーザーです。
+以下は出力例です。`root` は自動的に生成されるデフォルトユーザーです。`user_1` は作成されたばかりの新しいユーザーです。
 
 ```bash
 ['root', 'user_1']
 ```
 
-## ユーザーに役割を付与する{#grant-a-role-to-a-user}
+## ユーザーにロールを付与する{#grant-a-role-to-a-user}
 
-次の例は、ユーザーuser_1にロール`role_a`を付与する方法を示してい`ます`。
+以下の例は、ユーザー `user_1` にロール `role_a` を付与する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -251,11 +251,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ユーザーの説明{#describe-user}
+## ユーザーを記述する {#describe-user}
 
-ユーザーにロールを付与したら、`description_user()`メソッドを使用して、付与操作が成功したかどうかを確認できます。
+ユーザーにロールを付与した後、`describe_user()` メソッドを使用して、付与操作が成功したかどうかを確認できます。
 
-次の例は、ユーザー`user_1`のロールを確認する方法を示しています。
+以下の例は、ユーザー `user_1` のロールを確認する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -313,11 +313,11 @@ curl --request POST \
 {'user_name': 'user_1', 'roles': 'role_a'}
 ```
 
-## 役割を取り消す{#revoke-a-role}
+## ロールの取り消し{#revoke-a-role}
 
 ユーザーに割り当てられたロールを取り消すこともできます。
 
-次の例は、ユーザーuser_1に割り当てられた`役割role_a`を取り消す方法を示してい`ます`。
+次の例は、ユーザー `user_1` に割り当てられたロール `role_a` を取り消す方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -373,13 +373,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ドロップユーザー{#drop-user}
+## ユーザーの削除{#drop-user}
 
-次の例は、ユーザー`user_1`を削除する方法を示しています。
+以下の例は、ユーザー `user_1` を削除する方法を示しています。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>ルートユーザーは<code>削除</code>できません。</p>
+<p><code>root</code> ユーザーは削除できません。</p>
 
 </Admonition>
 
@@ -456,7 +456,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-ユーザーが削除されたら、既存のすべてのユーザーを一覧表示して、削除操作が成功したかどうかを確認できます。
+ユーザーが削除されたら、既存のすべてのユーザーをリストして、削除操作が成功したかどうかを確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -502,7 +502,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-以下は出力例です。リストに`user_1`はありません。ドロップ操作が成功しました。
+以下は出力例です。リストに `user_1` はありません。ドロップ操作は成功しました。
 
 ```bash
 ['root']

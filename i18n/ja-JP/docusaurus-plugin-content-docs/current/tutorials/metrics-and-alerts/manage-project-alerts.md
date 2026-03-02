@@ -1,174 +1,265 @@
 ---
-title: "プロジェクトのアラートを管理する | Cloud"
+title: "プロジェクトアラートの管理 | Cloud"
 slug: /manage-project-alerts
-sidebar_label: "プロジェクトのアラートを管理する"
+sidebar_label: "プロジェクトアラートの管理"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、リソースモニタリングのための2種類のアラートを提供しています。組織アラートは、の問題に対応し、プロジェクトアラートは特定のプロジェクトのクラスターの運用パフォーマンスに対応しています。クイックリファレンスについては、メトリクスとアラートのリファレンスを参照してください。 | Cloud"
+description: "プロジェクトアラートは、指定された条件が満たされたときに通知を送信することで、Zilliz Cloud クラスターのプロアクティブな監視を可能にします。CU 容量、クエリパフォーマンスなどのクラスターメトリクスを監視するようにプロジェクトアラートを設定でき、注意が必要な潜在的な問題がすぐに通知されるようにします。 | Cloud"
 type: origin
-token: OVeIw4EASiL5EgkJjLlcPbFon4c
+token: NvDLw4kFji0xeWkc4Hpc9wUfnRh
 sidebar_position: 4
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - project
-  - alerts
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - ベクトルデータベース
+  - クラウド
+  - プロジェクト
+  - アラート
+  - LLM評価
+  - スパース vs デンス
+  - デンスベクトル
+  - 階層型ナビゲーション可能なスモールワールド
 
 ---
 
 import Admonition from '@theme/Admonition';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+import Supademo from '@site/src/components/Supademo';
 
-# プロジェクトのアラートを管理する
+# プロジェクトアラートの管理
 
-Zilliz Cloudは、リソースモニタリングのための2種類のアラートを提供しています。**組織アラート**は、の問題に対応し、**プロジェクトアラート**は特定のプロジェクトのクラスターの運用パフォーマンスに対応しています。クイックリファレンスについては、[メトリクスとアラートのリファレンス](./metrics-alerts-reference)を参照してください。
+プロジェクトアラートは、指定された条件が満たされたときに通知を送信することで、Zilliz Cloudクラスターのプロアクティブな監視を可能にします。CU容量、クエリパフォーマンスなどのクラスターメトリクスを監視するようにプロジェクトアラートを設定でき、注意が必要な潜在的な問題がすぐに通知されるようにします。
 
-このトピックでは、プロジェクトのアラートを表示および管理する方法について説明します。
+<Admonition type="info" icon="📘" title="Notes">
 
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>この機能は、StandardおよびEnterpriseプランのクラスターでのみ利用できます。詳細については、「<a href="./select-zilliz-cloud-service-plans">詳細なプラン比較</a>」を参照してください。</p>
+<p>この機能は、<strong>Dedicated</strong>クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## 概要について{#overview}
+## 開始する前に{#before-you-start}
 
-以下は、事前に定義されたプロジェクトアラートターゲットのデフォルトトリガー条件を概説した表です。
+プロジェクトアラートを作成または管理する前に、以下を確認してください。
 
-アラートが**ON**状態の場合、条件が満たされると指定された受信者に通知が届きます。[アラートを編集](./manage-project-alerts#edit-a-project-alert)してステータスを変更できます。
+- **Organization Owner**または**Project Admin**のロールアクセス
 
-推奨アクションの詳細については、[メトリクスとアラートのリファレンス](./metrics-alerts-reference)を参照してください。
+## プロジェクトアラートの表示{#view-project-alerts}
+
+左側のサイドバーの**Project Alerts**に移動して、プロジェクトアラートダッシュボードにアクセスします。
+
+<Supademo id="cmb5xa9pg39f6ppkpjwalrmro" title="Zilliz Cloud - View Project Alerts Demo" />
+
+### アラート履歴{#alert-history}
+
+過去のイベントを調査したり、アラートパターンを理解したり、システムの信頼性を実証したりする必要がある場合は、**History**タブを使用します。
+
+### アラート設定{#alert-settings}
+
+<Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"Bash","value":"Bash"}]}>
+
+<TabItem value="Cloud Console">
+
+**Settings**タブを使用して、設定されているすべてのアラートとその現在のステータスを確認します。これにより、監視範囲の一元的なビューが提供されます。
+
+アラートを表示すると、次の設定項目が表示されます。
 
 <table>
    <tr>
-     <th><p>アラートターゲット</p></th>
-     <th><p>ユニット</p></th>
-     <th><p>デフォルトのトリガー条件</p></th>
+     <th><p>フィールド</p></th>
+     <th><p>説明</p></th>
    </tr>
    <tr>
-     <td><p>CUコンピュテーション</p></td>
-     <td><p>%</p></td>
-     <td><p><strong>警告</strong>: 70%以上のトリガーアラートは、10分以上にわたって計算能力を利用しました。</p><p><strong>クリティカル</strong>: 90%以上のトリガーアラートは、10分以上にわたって計算能力を利用しました。</p></td>
+     <td><p>名前</p></td>
+     <td><p>アラートの記述的な識別子（例：「高CU使用率 - Dedicated Clusters」、「P99クエリレイテンシー」）</p></td>
    </tr>
    <tr>
-     <td><p>CUの容量</p></td>
-     <td><p>%</p></td>
-     <td><p><strong>警告</strong>:&gt;70%のトリガーアラートは、10+分のCU容量を利用しました。</p><p><strong>クリティカル</strong>: CU容量が10分以上使用され、90%以上のトリガーアラートが発生しました。</p></td>
+     <td><p>ステータス</p></td>
+     <td><p>現在のアラート状態を示すトグルスイッチ：Enabled（アクティブな監視）またはDisabled（通知なし）</p></td>
    </tr>
    <tr>
-     <td><p>検索する(QPS)</p></td>
-     <td><p>QPS</p></td>
-     <td><p>10分以上、秒間50回以上の検索操作で<strong>警告</strong>アラートをトリガーしてください。</p></td>
+     <td><p>ターゲットクラスター</p></td>
+     <td><p>監視対象クラスター - 特定のクラスター（例：「Dedicated-02、Dedicated-01」）またはすべてのDedicatedクラスター（後で作成されるクラスターを含む）</p></td>
    </tr>
    <tr>
-     <td><p>クエリー(QPS)</p></td>
-     <td><p>QPS</p></td>
-     <td><p>10分以上毎秒50回以上のクエリ操作で<strong>警告</strong>アラートをトリガーします。</p></td>
+     <td><p>メトリクスと条件</p></td>
+     <td><p>監視対象パラメーターとトリガー設定の組み合わせ表示（例：「CU容量 > 80%、期間 >= 10分」、「クエリレイテンシー (P99) > 1000ミリ秒、期間 >= 10分」）</p></td>
    </tr>
    <tr>
-     <td><p>検索レイテンシ(P 99)</p></td>
-     <td><p>ms</p></td>
-     <td><p>10分以上のP 99レイテンシ&gt;1,000 msで<strong>警告</strong>アラートをトリガーします。</p></td>
+     <td><p>重大度レベル</p></td>
+     <td><p>影響の分類</p><ul><li><p><strong>Warning:</strong> 制限に近づいている</p></li><li><p><strong>Critical:</strong> 直ちに対応が必要</p></li></ul></td>
    </tr>
    <tr>
-     <td><p>クエリーレイテンシ(P 99)</p></td>
-     <td><p>ms</p></td>
-     <td><p>10分以上のP 99レイテンシ&gt;1,000 msで<strong>警告</strong>アラートをトリガーします。</p></td>
+     <td><p>受信者</p></td>
+     <td><p>設定されたメールアドレスと通知チャネルを含む通知受信者。</p><p>利用可能な通知チャネルのリストについては、<a href="./manage-notification-channels">通知チャネルの管理</a>を参照してください。</p></td>
+   </tr>
+   <tr>
+     <td><p>アラート間隔</p></td>
+     <td><p>各アラートが送信された後、一定期間繰り返しの通知を抑制します。</p><ul><li><p>アラートが継続する場合、その間隔中は通知は再送信されません。次の間隔に入る前に通知が再送信されます。</p></li><li><p>アラートが解決された場合、アラート間隔はリセットされ、アラート評価が再開されます。</p></li></ul></td>
+   </tr>
+   <tr>
+     <td><p>アクション</p></td>
+     <td><p>利用可能な管理オプション：編集、複製、削除</p></td>
    </tr>
 </table>
 
-**パーミッション**:
+</TabItem>
+<TabItem value="Bash">
 
-- **閲覧**:対象のオーガニゼーションの全メンバーが閲覧可能なプロジェクトアラート。
+特定のプロジェクト用に作成されたアラートリストを表示できます。パラメーターの詳細については、[アラートルールのリスト](/reference/restful/list-alert-rules-v2)を参照してください。
 
-- **構成**:クラスターアラートを構成できるのは、組織の所有者またはプロジェクト管理者のみです。
+```bash
+export BASE_URL=https://api.cloud.zilliz.com
+export PROJECT_ID=proj-bf71ce2fd4f3785d*****
+export API_KEY=c84c9a9515**********81319c2f147ffdd47ad6c36b31c126d1b790f457619c23237eba9287de73575943d2bfebcecd728bd07e
 
-- **通知の受信**:所有者によって指定された場合、すべてのOrganizationメンバーが利用できます。
+curl --request GET \
+     --url "${BASE_URL}/v2/alertRules?projectId=${PROJECT_ID}" \
+     --header "Authorization: Bearer ${API_KEY}" \
+     --header "Accept: application/json" \
+     --header "Content-type: application/json"
+```
 
-ユーザーロールの詳細については、「[プロジェクトのユーザーを管理する](./project-users)」を参照してください。
+</TabItem>
+</Tabs>
 
-## プロジェクトのアラートを表示する{#view-project-alerts}
+## プロジェクトアラートの作成{#create-a-project-alert}
 
-[**プロジェクトアラート**]ページに移動して、プロジェクトアラートを表示します。
+<Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"Bash","value":"Bash"}]}>
 
-**アラートの構成要素**:
+<TabItem value="Cloud Console">
 
-- **アラートターゲット**: Zilliz Cloudによって事前にトリガー条件と重大度が設定されています。
+クラスターのパフォーマンスと健全性をさまざまな側面から監視するために、新しいアラートを設定します。
 
-- **ステータス**:アラートがアクティブ（**ON**）かどうかを示します。アラートが**ON**の場合、条件が満たされると指定された受信者に通知が届きます。
+<Supademo id="cmb5w29ip399appkp45y9k3u2" title="Zilliz Cloud - Create Project Alerts Demo" />
 
-- **条件**:アラートのトリガー条件。各プロジェクトのアラートターゲットに対して、トリガー条件には、アラートがトリガーされるために満たす必要がある閾値と期間値が含まれます。条件は、次の演算子のいずれかに設定できます:>、>=、\<、\<=、=。閾値は、クエリレイテンシ、クエリQPS、検索QPS、CU Capacity、CU Computationなどのメトリックの数値などの数値になります。期間は、閾値を超える必要がある時間を指定し、最小1分、最大30分に設定されます。
+</TabItem>
+<TabItem value="Bash">
 
-- **深刻度レベル**:**WARNING**または**CRITICAL**に分類されます。
+特定のDedicatedクラスターまたはすべてのDedicatedクラスターに対してアラートを作成できます。パラメータの詳細については、[アラートルールの作成](/reference/restful/create-alert-rule-v2)を参照してください。
 
-- **受信者**:通知を受け取るための役割またはメールアドレスを指定します。Webhookを使用してカスタム通知チャンネルを設定することもできます。詳細については、「[通知チャンネルの管理](./manage-notification-channels)」を参照してください。
+```bash
+export BASE_URL=https://api.cloud.zilliz.com
+export PROJECT_ID=proj-bf71ce2fd4f3785d*****
+export API_KEY=c84c9a9515**********81319c2f147ffdd47ad6c36b31c126d1b790f457619c23237eba9287de73575943d2bfebcecd728bd07e
 
-![view-project-alert](/img/view-project-alert.png)
+curl --request POST \
+     --url "${BASE_URL}/v2/alertRules" \
+     --header "Authorization: Bearer ${API_KEY}" \
+     --header "Accept: application/json" \
+     --header "Content-type: application/json" \
+     --data-raw '{
+       "projectId": "'"${PROJECT_ID}"'",
+       "ruleName": "High CU Computation",
+       "level": "CRITICAL",
+       "metricName": "CU_COMPUTATION",
+       "metricUnit": "percent",
+       "threshold": 80,
+       "windowSize": 10,
+       "comparisonMethod": "GREATER_THAN",
+       "targetClusterIds": ["in01-fbc09dde0a4bfc5"],
+       "enabled": true,
+       "sendResolved": true,
+       "actions": [
+         {
+           "type": "EMAIL",
+           "config": {
+             "recipients": {
+               "members": ["leryn.li@zilliz.com"],
+               "orgRoles": ["OWNER"],
+               "projectRoles": ["OWNER"]
+             }
+           }
+         }
+       ]
+     }'
+```
 
-## プロジェクトのアラートを作成する{#create-a-project-alert}
+</TabItem>
+</Tabs>
 
-デフォルトのプロジェクトアラートに加えて、[**+アラート**]をクリックして、アラートの種類、重要度レベル、アラート条件、および通知受信者をカスタマイズしてアラートを作成できます。
+## プロジェクトアラートの管理{#manage-project-alerts}
 
-サポートされているカスタムアラートターゲットについては、[メトリクスとアラートのリファレンス](./metrics-alerts-reference)を参照してください。
+既存のアラートを変更、整理、維持して、監視を関連性のある効果的なものに保ちます。
 
-![create-alert](/img/create-alert.png)
+<Supademo id="cmb5ywkim01nozo0iqfsmhy3q" title="Manage Project Alerts" isShowcase="true" />
 
-## プロジェクトのアラートを編集する{#edit-a-project-alert}
+<Admonition type="info" icon="📘" title="Notes">
 
-- **カスタマイズ**:アラート条件の変更、通知受信者の更新、アクティブステータスの変更を行います。
-
-- **制限事項**:アラートの対象タイプと重大度レベルは固定されており、変更できません。
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>アラートをすばやく有効または無効にするには、[アクション]列から[<strong>有効</strong>]または[<strong>無効</strong>]を選択し<strong>ま</strong>す。</p>
+<p>プロジェクトアラートはRESTful API経由でも管理できます。詳細については、<a href="/reference/restful/update-alert-rule-v2">アラートルールの更新</a>および<a href="/reference/restful/delete-alert-rule-v2">アラートルールの削除</a>を参照してください。</p>
 
 </Admonition>
 
-## プロジェクトのアラートを有効または無効にする{#enable-or-disable-a-project-alert}
+### アラートの無効化または有効化{#disable-or-enable-an-alert}
 
-プロジェクトのアラートをすばやく有効または無効にするには、[アクション]列から[**有効**]または[**無効**]を選択し**ま**す。
+設定を失うことなくアクティブな監視を制御します。
 
-<Admonition type="info" icon="📘" title="ノート">
+- **無効化されたアラート:** 通知の送信を停止しますが、すべての設定を保持します。
 
-<p>アラートを無効にすると、アラート条件が満たされた場合にアラート通知を受け取ることができなくなります。</p>
+- **有効化されたアラート:** クラスターを積極的に監視し、しきい値を超えた場合に通知を送信します。
+
+### アラートの編集{#edit-an-alert}
+
+監視要件が変更されたときにアラート設定を更新します。
+
+次のアラートパラメーターをすべて変更します。
+
+- しきい値と比較演算子
+
+- ターゲットクラスターとメトリックタイプ
+
+- 通知チャネル、受信者、アラート間隔
+
+- 重大度レベルと期間設定
+
+### アラートのクローン作成{#clone-an-alert}
+
+最小限のセットアップで同様のアラートを作成します。クローン作成は既存のすべての設定をコピーするため、次のことが可能になります。
+
+- さまざまなクラスター環境のバリアントを作成する
+
+- 他のパラメーターを保持しながらしきい値を調整する
+
+- 複数のプロジェクトで監視を拡張する
+
+### アラートの削除{#delete-an-alert}
+
+古くなった監視ルールや冗長な監視ルールを削除します。
+
+<Admonition type="danger" icon="🚧" title="Warning">
+
+<p>アラートの削除は永続的であり、元に戻すことはできません。続行する前に、アラートが不要であることを確認してください。</p>
 
 </Admonition>
 
-## プロジェクトのアラートを削除する{#delete-a-project-alert}
+## アラート受信者設定の構成{#configure-alert-receiver-settings}
 
-プロジェクトアラートが不要になったら、削除できます。
+プロジェクト全体のデフォルトの通知設定を設定し、チーム全体で一貫した監視プラクティスを確保します。
 
-<Admonition type="caution" icon="🚧" title="警告">
+<Supademo id="cmb5zptc03acdppkpy0vk18f9" title="Zilliz Cloud - Configure Alert Receiver Settings Demo" />
 
-<p>アラートが削除されると、アラートターゲットの通知は受け取れなくなります。</p>
+設定を構成する際には、次の概念に遭遇します。
 
-</Admonition>
+- **送信先**: 新しいアラートに対して自動的に選択されるデフォルトの通知チャネル (メール、Slack、Webhooks)。最もよく使用するチャネルを構成して、アラート作成を効率化します。
 
-## アラート履歴を表示する{#view-alert-history}
+- **アラート解決通知**: 有効にすると、アラートが解決されたときに通知が届きます。
 
-[**Alert History**]タブでトリガーされたアラートを表示します。アラートの対象、重要度レベル、時間範囲のフィルターがあります。
+- **既存のアラートに設定を適用**: 新しいデフォルト設定で既存のすべてのアラートを更新するかどうかを選択します。
 
-![view-project-alert-history](/img/view-project-alert-history.png)
+## FAQ{#faq}
 
-## アラート受信の設定を行う{#configure-alert-receiver-settings}
+### アラートがトリガーされた場合、アラート通知はどのくらいの頻度で届きますか？{#how-often-will-i-receive-alert-notifications-when-an-alert-is-triggered}
 
-[Alert Receiver Settings(アラート受信者設定)]機能を使用すると、[プロジェクト管理者](./project-users)はアラートテンプレートを作成して管理できます。
+アラート通知は、自動的な頻度パターンに従います。
 
-プロジェクトアラートの[**アラート設定**]ページで、アラート受信者の設定を構成します。
+- **最初の通知**: アラートのしきい値を超えるとすぐに送信されます。
 
-![alert-receiver-settings](/img/alert-receiver-settings.png)
+- **2番目の通知**: 状態が継続する場合、1時間後に送信されます。
 
-## 関連するトピック{#related-topics}
+- **その後の通知**: アラート状態がアクティブな間、毎日1回送信されます。
 
-- [メトリクスとアラートのリファレンス](./metrics-alerts-reference)
+通知が頻繁すぎる場合は、次のことができます。
 
-- [組織のアラートを管理する](./manage-organization-alerts)
+- [アラートを編集](./manage-project-alerts#edit-an-alert)して、条件のしきい値または期間要件を調整します。
 
-- [メトリクスとアラートのリファレンス](./metrics-alerts-reference)
+- [アラートを無効化](./manage-project-alerts#disable-or-enable-an-alert)して、設定を保持しながらすべての通知を一時的に停止します。
 

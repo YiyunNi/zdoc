@@ -1,50 +1,50 @@
 ---
-title: "リリースノート（2023年2月13日） | Cloud"
+title: "リリースノート (2023年2月13日) | Cloud"
 slug: /release-notes-011
-sidebar_label: "リリースノート（2023年2月13日）"
+sidebar_label: "2023年2月13日"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudの重要なアップデートの一般提供を発表できることを嬉しく思います。このリリースでは、メール通知と初心者向けのインラインガイダンスが追加されます。 | Cloud"
+description: "Zilliz Cloud の重要なアップデートが一般公開されたことをお知らせします。このリリースでは、メール通知と初心者向けのインラインガイダンスが追加されました。"
 type: origin
-token: CrKDw4WQAiFaEFkfcCwc6t5ynoh
-sidebar_position: 22
+token: E76ywex6GiUKUKkgbFAc95Q0nxe
+sidebar_position: 30
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
-  - release notes
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - リリースノート
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# リリースノート（2023年2月13日）
+# リリースノート (2023年2月13日)
 
-Zilliz Cloudの重要なアップデートの一般提供を発表できることを嬉しく思います。このリリースでは、メール通知と初心者向けのインラインガイダンスが追加されます。
+Zilliz Cloud の重要なアップデートが一般公開されたことをお知らせします。このリリースでは、メール通知と初心者向けのインラインガイダンスが追加されました。
 
 - メール通知
 
-    今回のリリースでは、メール通知機能が強化されました。以下のイベントでメール通知を受け取ることができます。
+    今回のリリースでは、メール通知機能が強化されました。以下のイベントでメール通知が届きます。
 
-    - アカウントの確認、停止、再開など
+    - アカウントの認証、停止、再開など
 
     - クレジット残高と有効期限
 
     - 請求と支払い
 
-    - データベースの非アクティブ
+    - データベースの非アクティブ状態
 
     - 今後のシステムメンテナンス
 
-    - リソースアラートを購読しました
+    - 購読しているリソースのアラート
 
-    - ユーザーからのフィードバックを確認しました
+    - ユーザーフィードバックの受領確認
 
-- 初心者向けのインラインガイダンス
+- 初心者向けインラインガイダンス
 
-    このリリースでは、初心者向けのインラインガイダンスが大幅に改善され、オンボーディングが迅速に行えるようになりました。これで、オンラインチュートリアルを5分以内で完了できます。背景知識は必要ありません。[お楽しみください!](https://cloud.zilliz.com/signup)
+    今回のリリースでは、初心者向けのインラインガイダンスが大幅に改善され、迅速なオンボーディングが可能になりました。背景知識がなくても、5分以内にオンラインチュートリアルを完了できます。[ぜひお試しください！](https://cloud.zilliz.com/signup)

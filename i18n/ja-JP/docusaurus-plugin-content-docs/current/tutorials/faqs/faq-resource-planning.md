@@ -1,95 +1,90 @@
 ---
-title: "FAQ:リソースプランニング | CLOUD"
+title: "FAQ: リソース計画 | CLOUD"
 slug: /faq-resource-planning
-sidebar_label: "FAQ:リソースプランニング"
+sidebar_label: "FAQ: リソース計画"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloudでリソースを計画する際に発生する可能性のある問題とそれに対応する解決策をリストアップしています。 | CLOUD"
+description: "このトピックでは、Zilliz Cloud でリソースを計画する際に発生する可能性のある問題と、それに対応する解決策をリストアップします。 | CLOUD"
 type: origin
-token: LKxiwykkhi5VyLkTfAGcE3LinBe
-sidebar_position: 7
+token: EV41wG08BiOWW8kbo9xcTGoPnKd
+sidebar_position: 6
 
 ---
 
-# FAQ:リソースプランニング
+# FAQ: リソース計画
 
-このトピックでは、Zilliz Cloudでリソースを計画する際に発生する可能性のある問題とそれに対応する解決策をリストアップしています。
+このトピックでは、Zilliz Cloud でリソースを計画する際に発生する可能性のある問題と、それに対応する解決策をリストアップします。
 
-## Contents
+## 目次
 
-- [コンピューティングユニット（CU）とは何ですか?](#what-is-a-compute-unit-cu)
-- [vCUとは何ですか?どのように計算されますか?](#what-is-a-vcu-how-does-it-get-calculated)
-- [使用されていないクラスタの費用を回避するにはどうすればよいですか?](#how-can-i-avoid-expenses-on-unused-clusters)
-- [Zilliz Cloudの利用料金はどのように見積もることができますか?](#how-can-i-estimate-the-cost-of-using-zilliz-cloud)
-- [Zilliz CloudはAzureでの展開をサポートしていますか?](#does-zilliz-cloud-support-deployment-on-azure)
-- [新しいクラウドリージョンをリクエストするにはどうすればよいですか?](#how-can-i-request-a-new-cloud-region)
-- [どのプランに参加しているかを知るにはどうすればよいですか?](#how-can-i-know-which-plan-i-am-on)
-- [与えられたコレクションには何個のCUが必要ですか?](#how-many-cus-do-i-need-for-a-given-collection)
-- [どのタイプのCUを選べばいいですか?](#which-type-of-cu-should-i-pick)
-- [「Performance-optimizedCU」と「容量最適化CU」の違いは何ですか?](#whats-the-difference-between-performance-optimized-cu-and-capacity-optimized-cu)
-- [専用（エンタープライズ）プランから専用（スタンダード）プランにダウングレードするにはどうすればよいですか?](#how-can-i-downgrade-from-dedicated-enterprise-plan-to-dedicated-standard-plan)
+- [Compute Unit (CU) とは何ですか？](#what-is-a-compute-unit-cu)
+- [vCU とは何ですか？どのように計算されますか？](#what-is-a-vcu-how-does-it-get-calculated)
+- [未使用のクラスターにかかる費用を避けるにはどうすればよいですか？](#how-can-i-avoid-expenses-on-unused-clusters)
+- [Zilliz Cloud の利用コストを見積もるにはどうすればよいですか？](#how-can-i-estimate-the-cost-of-using-zilliz-cloud)
+- [Zilliz Cloud は Azure へのデプロイをサポートしていますか？](#does-zilliz-cloud-support-deployment-on-azure)
+- [新しいクラウドリージョンをリクエストするにはどうすればよいですか？](#how-can-i-request-a-new-cloud-region)
+- [現在どのプランを利用しているかを知るにはどうすればよいですか？](#how-can-i-know-which-plan-i-am-on)
+- [特定のコレクションに必要なクエリ CU はいくつですか？](#how-many-query-cus-do-i-need-for-a-given-collection)
+- [どのタイプのクラスターを選択すべきですか？](#which-type-of-cluster-should-i-pick)
+- [パフォーマンス最適化 CU と容量最適化 CU の違いは何ですか？](#whats-the-difference-between-performance-optimized-cu-and-capacity-optimized-cu)
 
-## FAQs
-
+## FAQ
 
 
 
-### コンピューティングユニット（CU）とは何ですか?{#what-is-a-compute-unit-cu}
 
-コンピューティングユニット（CU）は、インデックスや検索リクエストを処理するためのハードウェアリソースのグループです。CUは、検索サービスをデプロイするための完全に管理された物理ノードとして考えることができます。
+### Compute Unit (CU) とは何ですか？{#what-is-a-compute-unit-cu}
 
-詳細については、「[適切なCUを選択](./cu-types-explained)」を参照してください。
+Compute Unit (CU) は、インデックスと検索リクエストを処理するためのハードウェアリソースのグループです。CU は、検索サービスをデプロイするための完全に管理された物理ノードと考えることができます。
 
-### vCUとは何ですか?どのように計算されますか?{#what-is-a-vcu-how-does-it-get-calculated}
+詳細については、[適切な CU の選択](./cu-types-explained)を参照してください。
 
-vCUは、読み取り操作(検索やクエリなど)および書き込み操作(挿入、アップロード、一括挿入、削除など)によって消費されるリソースを測定するために使用される仮想コンピュートユニットです。書き込まれたまたは読み取られたデータ量は、GBからvCUに変換されます。
+### vCU とは何ですか？どのように計算されますか？{#what-is-a-vcu-how-does-it-get-calculated}
 
-### 使用されていないクラスタの費用を回避するにはどうすればよいですか?{#how-can-i-avoid-expenses-on-unused-clusters}
+vCU は、読み取り操作（検索やクエリなど）と書き込み操作（挿入、更新、一括挿入、削除など）によって消費されるリソースを測定するために使用される仮想計算単位です。書き込まれたり読み取られたりするデータ量は、GB から vCU に変換されます。詳細については、[Serverless Cluster Cost](./serverless-cluster-cost) を参照してください。
 
-コンピューティングコストを節約するために、未使用のクラスタを一時停止することをお勧めします。必要に応じて後で再開できます。
+### 未使用のクラスターにかかる費用を避けるにはどうすればよいですか？{#how-can-i-avoid-expenses-on-unused-clusters}
 
-### Zilliz Cloudの利用料金はどのように見積もることができますか?{#how-can-i-estimate-the-cost-of-using-zilliz-cloud}
+コンピューティングコストを節約するために、未使用のクラスターを一時停止することをお勧めします。必要に応じて後で再開できます。
 
-あなたは私たちの[計算機](https://zilliz.com/pricing)を使ってコスト見積もりを得ることができます。
+### Zilliz Cloud の利用コストを見積もるにはどうすればよいですか？{#how-can-i-estimate-the-cost-of-using-zilliz-cloud}
 
-### Zilliz CloudはAzureでの展開をサポートしていますか?{#does-zilliz-cloud-support-deployment-on-azure}
+コストの見積もりには、[計算ツール](https://zilliz.com/pricing)を使用するか、詳細については[コストの理解](./understand-cost)を参照してください。
 
-はい。Zilliz Cloudは現在、Azure上での展開をサポートしています。「[クラウドプロバイダー&地域](./cloud-providers-and-regions)」を参照してください。
+### Zilliz Cloud は Azure へのデプロイをサポートしていますか？{#does-zilliz-cloud-support-deployment-on-azure}
 
-### 新しいクラウドリージョンをリクエストするにはどうすればよいですか?{#how-can-i-request-a-new-cloud-region}
+はい。Zilliz Cloud は現在 Azure へのデプロイをサポートしています。[クラウドプロバイダーとリージョン](./cloud-providers-and-regions)を参照してください。
 
-Zilliz Cloudの新しいクラウドサービスプロバイダーリージョンをリクエストするには、[フォームに記入し](https://zilliz.com/cloud-region-request)てください。
+### 新しいクラウドリージョンをリクエストするにはどうすればよいですか？{#how-can-i-request-a-new-cloud-region}
 
-### どのプランに参加しているかを知るにはどうすればよいですか?{#how-can-i-know-which-plan-i-am-on}
+Zilliz Cloud の新しいクラウドサービスプロバイダーリージョンをリクエストするには、[フォームにご記入ください](https://zilliz.com/cloud-region-request)。
 
-プランを表示するには、プロジェクトの下で特定のクラスタを選択します。[**クラスタ詳細**]タブに移動し、[**概要**]セクションでプランの詳細を確認できます。
+### 現在どのプランを利用しているかを知るにはどうすればよいですか？{#how-can-i-know-which-plan-i-am-on}
 
-![cluster_plan](/img/cluster_plan.png)
+プランを表示するには、プロジェクトリストに移動します。各プロジェクトのプランが表示されます。
 
-### 与えられたコレクションには何個のCUが必要ですか?{#how-many-cus-do-i-need-for-a-given-collection}
+![XMRtb3eYsoWUnsxQM0ecyjj2nqf](https://zdoc-images.s3.us-west-2.amazonaws.com/xmrtb3eysowunsxqm0ecyjj2nqf.png "XMRtb3eYsoWUnsxQM0ecyjj2nqf")
 
-1つのPerformance-optimizedCUは、750万個の128次元ベクトルまたは150万個の768次元ベクトルを処理できます。
+### 特定のコレクションに必要なクエリ CU はいくつですか？{#how-can-i-know-which-plan-i-am-on}
 
-容量最適化されたCUは、2,500万個の128次元ベクトルまたは5,000,000個の768次元ベクトルを処理できます。
+- パフォーマンス最適化: 150万個の768次元ベクトルをサポートします。
 
-あなたのコレクションのスキーマは上記の簡単なガイドと異なる場合があるため、実際の要件を異なるCUタイプに対してテストすることを強くお勧めします。
+- 容量最適化: 500万個の768次元ベクトルをサポートします。
 
-### どのタイプのCUを選べばいいですか?{#which-type-of-cu-should-i-pick}
+- 階層型ストレージ: 2000万個の768次元ベクトルをサポートします。
 
-要求の厳しいユースケースに対して高スループットと低レイテンシーが必要な場合は、Performance-optimizedCUを選択してください。また、スループットとレイテンシーに対する懸念が少なく、大量のデータをホストすることが優先事項である場合は、パフォーマンスとコストのバランスがより良いキャパシティ最適化CUを選択してください。
+これらの見積もりは、プライマリキーのみを持つベクトルに基づいています。IDやラベルなどの追加のスカラーフィールドは容量を減らす可能性があります。正確な評価のために、ご自身でテストを実施することをお勧めします。
 
-詳細については、「[適切なCUを選択](./cu-types-explained)」を参照してください。
+### どのタイプのクラスターを選択すべきですか？{#which-type-of-cluster-should-i-pick}
 
-### 「Performance-optimizedCU」と「容量最適化CU」の違いは何ですか?{#whats-the-difference-between-performance-optimized-cu-and-capacity-optimized-cu}
+リアルタイムアプリケーションで即座の検索結果と高い同時トラフィックが必要な場合は、パフォーマンス最適化を選択してください。
+大規模なベクトルデータセットを処理し、信頼性の高い検索速度を維持する必要がある場合は、容量最適化を選択してください。
+明確なホットデータとコールドデータのパターンを持つ超大規模でコストに敏感なワークロードを処理する必要がある場合は、階層型ストレージクラスターを選択してください。階層型ストレージクラスターを選択するには、クラスターに少なくとも8つのクエリCUが必要です。
 
-「Performance-optimizedCompute Unit」は、低レイテンシーまたは高スループットの類似検索に適しています。このオプションは、高い検索パフォーマンスのシナリオに最適です。
+### パフォーマンス最適化 CU と容量最適化 CU の違いは何ですか？{#whats-the-difference-between-performance-optimized-cu-and-capacity-optimized-cu}
 
-「容量最適化コンピューティングユニット」は、performance-optimizedCUオプションの5倍のデータボリュームに適しています。このオプションは、ストレージ容量の増加シナリオに最適です。
+「パフォーマンス最適化 CU」は、低レイテンシまたは高スループットの類似性検索に適しています。このオプションは、高い検索パフォーマンスが求められるシナリオに最適です。
 
-詳細については、「[適切なCUを選択](./cu-types-explained)」を参照してください。
+「容量最適化 CU」は、パフォーマンス最適化 CU オプションの5倍のデータ量に適しています。このオプションは、ストレージ容量の増加が求められるシナリオに最適です。
 
-### 専用（エンタープライズ）プランから専用（スタンダード）プランにダウングレードするにはどうすればよいですか?{#how-can-i-downgrade-from-dedicated-enterprise-plan-to-dedicated-standard-plan}
-
-Dedicated(Standard)プランで新しいクラスターを作成し、Enterpriseクラスターから新しいStandardクラスターにデータを移行することで、プランをダウングレードできます。
-
-プラン間のスムーズな移行を確保したい場合は、[リクエストを提出](https://support.zilliz.com/hc/en-us)してください。プランのダウングレードも可能です。
+詳細については、[適切な CU の選択](./cu-types-explained)を参照してください。

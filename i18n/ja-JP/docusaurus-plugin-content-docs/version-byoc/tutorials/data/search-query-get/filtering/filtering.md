@@ -4,23 +4,23 @@ slug: /filtering
 sidebar_label: "フィルタリング"
 beta: FALSE
 notebook: FALSE
-description: "この章では、スカラーフィールドと適用可能なフィルタリング演算子でフィルタリングを実行する方法について説明します。 | BYOC"
+description: "この章では、スカラーフィールドでのフィルタリングの実行方法、および適用可能なフィルタリング演算子とテンプレートについて説明します。 | BYOC"
 type: origin
-token: VbVFwA9LUiqwN2kBGyPc7XUWnPc
-sidebar_position: 8
+token: ObdvwrXi9ia9i0kTLKUcCaYtnhd
+sidebar_position: 9
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - collection
-  - data
-  - filter
-  - filtering expressions
-  - filtering
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - データ
+  - フィルター
+  - フィルタリング式
+  - フィルタリング
+  - 情報検索
+  - 次元削減
+  - hnsw アルゴリズム
+  - ベクトル類似性検索
 
 ---
 
@@ -29,7 +29,7 @@ import Admonition from '@theme/Admonition';
 
 # フィルタリング
 
-この章では、スカラーフィールドと適用可能なフィルタリング演算子でフィルタリングを実行する方法について説明します。
+この章では、スカラーフィールドに対するフィルタリングの実行方法、および適用可能なフィルタリング演算子とテンプレートについて説明します。
 
 
 

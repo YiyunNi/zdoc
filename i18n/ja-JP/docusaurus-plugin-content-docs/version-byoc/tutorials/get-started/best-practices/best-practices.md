@@ -4,20 +4,20 @@ slug: /best-practices
 sidebar_label: "ベストプラクティス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudを使用する際のベストプラクティスに関する記事を見つけることができます。 | BYOC"
+description: "Zilliz Cloud を使用する際のベストプラクティスに関する記事をご覧いただけます。 | BYOC"
 type: origin
-token: HBtcws2w1iKqApkhziCcAyXknQb
-sidebar_position: 9
+token: HWzCwbjfci51HHk4BvTcfbiHn1d
+sidebar_position: 10
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - milvus
-  - best practices
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - ベストプラクティス
+  - サーバーレスベクトルデータベース
+  - milvus オープンソース
+  - milvus の仕組み
+  - Zilliz ベクトルデータベース
 
 ---
 
@@ -26,7 +26,7 @@ import Admonition from '@theme/Admonition';
 
 # ベストプラクティス
 
-Zilliz Cloudを使用する際のベストプラクティスに関する記事を見つけることができます。
+Zilliz Cloud を使用する際のベストプラクティスに関する記事をご覧いただけます。
 
 import DocCardList from '@theme/DocCardList';
 

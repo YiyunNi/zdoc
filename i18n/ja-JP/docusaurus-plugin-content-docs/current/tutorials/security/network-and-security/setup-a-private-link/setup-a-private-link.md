@@ -1,44 +1,43 @@
 ---
-title: "プライベートエンドポイントを設定する | Cloud"
+title: "プライベートエンドポイントをセットアップする | Cloud"
 slug: /setup-a-private-link
-sidebar_label: "プライベートエンドポイントを設定する"
+sidebar_label: "プライベートエンドポイントをセットアップする"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、プライベートリンクを介してクラスタへのプライベートアクセスを提供します。これは、クラスタのトラフィックがインターネットを経由しないようにする場合に便利です。 | Cloud"
+description: "Zilliz Cloudは、プライベートリンクを介してクラスターへのプライベートアクセスを提供します。これは、クラスターのトラフィックをインターネット経由で送信したくない場合に便利です。"
 type: origin
-token: LIehwcqZFiGZitkmzdrckoP0n8d
-sidebar_position: 2
+token: O5W3wHvmbiVSoLkzKgHcvB9XnUb
+sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - private link
-  - privatelink
-  - private endpoint
+  - ベクターデータベース
+  - クラウド
+  - プライベートリンク
+  - プライベートエンドポイント
   - aws
   - gcp
   - azure
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - 動画類似性検索
+  - ベクター検索
+  - 音声類似性検索
+  - エラスティックベクターデータベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# プライベートエンドポイントを設定する
+# プライベートエンドポイントのセットアップ
 
-Zilliz Cloudは、プライベートリンクを介してクラスタへのプライベートアクセスを提供します。これは、クラスタのトラフィックがインターネットを経由しないようにする場合に便利です。
+Zilliz Cloudは、プライベートリンクを介してクラスターへのプライベートアクセスを提供します。これは、クラスターのトラフィックをインターネット経由で送信したくない場合に役立ちます。
 
-Zilliz Cloud上のクラスタへのプライベートクライアントアクセスを有効にするには、アプリケーションのVPC内の各サブネットにエンドポイントを作成する必要があります。その後、VPC、サブネット、エンドポイントをZilliz Cloudに登録して、プライベートリンクを割り当て、プライベートリンクをエンドポイントにマッピングするDNSレコードを設定できるようにします。
+Zilliz Cloud上のクラスターへのプライベートクライアントアクセスを有効にするには、アプリケーションのVPC内の各サブネットにエンドポイントを作成する必要があります。次に、VPC、サブネット、およびエンドポイントをZilliz Cloudに登録して、プライベートリンクを割り当て、プライベートリンクをエンドポイントにマッピングするDNSレコードを設定できるようにします。
 
-次の図は、その動作を示しています。
+次の図は、その仕組みを示しています。
 
-![XUG2wLW0vhuX4kbAggzctrnknie](/img/XUG2wLW0vhuX4kbAggzctrnknie.png)
+![BkbRwb8YhhqePCpZn2Kc8lWknNc](https://zdoc-images.s3.us-west-2.amazonaws.com/BkbRwb8YhhqePCZZn2Kc8lWknNc.png)
 
-このガイドでは、クラスターのプライベートエンドポイントの設定方法について説明します。
+このガイドでは、クラスターのプライベートエンドポイントを設定する手順を説明します。
 
 import DocCardList from '@theme/DocCardList';
 

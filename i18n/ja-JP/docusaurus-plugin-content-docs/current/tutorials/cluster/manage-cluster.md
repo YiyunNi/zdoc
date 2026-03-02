@@ -1,23 +1,23 @@
 ---
-title: "クラスタ管理 | Cloud"
+title: "クラスターの管理 | Cloud"
 slug: /manage-cluster
-sidebar_label: "クラスタ管理"
+sidebar_label: "クラスターの管理"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloudコンソールを最大限に活用して目標を達成するためのクラスタのライフサイクルについて説明します。 | Cloud"
+description: "このガイドでは、クラスターのライフサイクルについて説明し、Zilliz Cloud コンソールを最大限に活用して目標を達成できるようにします。"
 type: origin
-token: Py5VwaHKnirdQQkJBxXcmfrunfg
+token: PharwAysCiBzvgkuqqecmNzunQf
 sidebar_position: 3
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - manage
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - 管理
+  - 近傍探索
+  - Agentic RAG
+  - rag llm アーキテクチャ
+  - プライベート LLM
 
 ---
 
@@ -27,39 +27,39 @@ import TabItem from '@theme/TabItem';
 
 import Supademo from '@site/src/components/Supademo';
 
-# クラスタ管理
+# クラスターの管理
 
-このガイドでは、Zilliz Cloudコンソールを最大限に活用して目標を達成するためのクラスタのライフサイクルについて説明します。
+このガイドでは、クラスターのライフサイクルについて説明し、Zilliz Cloud コンソールを最大限に活用して目標を達成できるようにします。
 
-## クラスタ名の変更{#rename-cluster}
+## クラスター名の変更{#rename-cluster}
 
-ターゲットクラスタの[**クラスタの詳細**]ページに移動し、以下の手順に従ってクラスタ名を変更します。
+ターゲットクラスターの**クラスター詳細**ページに移動し、以下の手順に従ってクラスターの名前を変更します。
 
-<Supademo id="cm9tp57ye0ri911m7ljrn1yg6" title="Zilliz Cloud - Rename Cluster Demo" />
+<Supademo id="cm9tp57ye0ri911m7ljrn1yg6" title=""  />
 
-## クラスタを一時停止する{#suspend-cluster}
+## クラスターの一時停止{#suspend-cluster}
 
-実行中の専用クラスターについては、CUとストレージの両方に対して請求されます。コストを削減するには、クラスターを一時停止することを検討してください。専用クラスターが一時停止された場合は、ストレージ料金のみが適用されます。
+実行中のDedicatedクラスターの場合、CUとストレージの両方に課金されます。コストを削減するには、クラスターの一時停止を検討してください。Dedicatedクラスターが一時停止されている場合、ストレージ料金のみが適用されます。
 
-一時停止中は、クラスターに対して他のアクションを実行できないことに注意してください。
+一時停止中は、クラスターに対して他の操作を実行できないことに注意してください。
 
-専用クラスタは、Webコンソールまたはプログラムから一時停止できます。
+クラスターは、Webコンソールまたはプログラムで一時停止できます。
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
 <TabItem value="Cloud Console">
 
-ターゲットクラスタの[**クラスタの詳細**]ページに移動し、以下の手順に従って専用クラスタをサスペンドします。
+ターゲットクラスターの**クラスター詳細**ページに移動し、以下の手順に従ってDedicatedクラスターを一時停止します。
 
-<Supademo id="cm9tqgxt30snl11m7twwj7xia" title="Zilliz Cloud - Suspend Cluster Demo" />
+<Supademo id="cm9tqgxt30snl11m7twwj7xia" title=""  />
 
 </TabItem>
 
 <TabItem value="Bash">
 
-リクエストは次の例のようになります。`{API_KEY}`は認証に使用するAPIキーです。
+リクエストは次の例のようになります。ここで、`{API_KEY}`は認証に使用されるAPIキーです。
 
-次の`POST`要求はリクエストボディを受け取り、専用クラスターを一時停止します。
+次の`POST`リクエストは、リクエストボディを受け取り、Dedicatedクラスターを一時停止します。
 
 ```bash
 curl --request POST \
@@ -77,43 +77,47 @@ curl --request POST \
 # }     
 ```
 
-上記のコマンドで、
+上記のコマンドでは、
 
-- `{API_KEY}`: APIリクエストを認証するために使用される資格情報。値を自分のものに置き換えてください。
+- `{API_KEY}`: APIリクエストの認証に使用される認証情報。値を自分のものに置き換えてください。
 
-- `{CLUSTER_ID}`:サスペンドする専用クラスタのID。
+- `{CLUSTER_ID}`: サスペンドするDedicatedクラスターのID。
 
-詳細は、クラスタの一時停止を参照してください。
+詳細については、[クラスターのサスペンド](/reference/restful/suspend-cluster-v2)を参照してください。
 
 </TabItem>
 
 </Tabs>
 
-## クラスタを再開{#resume-cluster}
+サスペンド操作が成功すると、ジョブレコードが生成されます。[ジョブ](./job-center)ページで進行状況を確認できます。
 
-無料およびサーバーレスクラスターは、非アクティブ状態が7日間続くと自動的に一時停止され、いつでも再開できます。
+## クラスターの再開{#resume-cluster}
 
-一時停止された専用クラスタは、必要に応じて手動で再開することもできます。
+Freeクラスターは7日間アクティビティがないと自動的にサスペンドされ、いつでも再開できます。
 
-再開中は、クラスターに対して他のアクションを実行できないことに注意してください。
+Serverlessクラスターはサスペンドおよび再開操作をサポートしていません。
 
-Webコンソールまたはプログラムからクラスタを再開できます。
+サスペンドされたDedicatedクラスターも、必要に応じて手動で再開できます。
+
+再開中は、クラスターに対して他の操作を実行できないことに注意してください。
+
+クラスターは、Webコンソールまたはプログラムで再開できます。
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
 <TabItem value="Cloud Console">
 
-ターゲットクラスタの[**クラスタの詳細**]ページに移動し、以下の手順に従ってクラスタを再開します。
+ターゲットクラスターの**クラスター詳細**ページに移動し、以下の指示に従ってクラスターを再開します。
 
-<Supademo id="cm9tr2hze0t1j11m7ijth1pr5" title="Zilliz Cloud - Resume Cluster Demo" />
+<Supademo id="cm9tr2hze0t1j11m7ijth1pr5" title=""  />
 
 </TabItem>
 
 <TabItem value="Bash">
 
-リクエストは次の例のようになります。`{API_KEY}`は認証に使用するAPIキーです。
+リクエストは以下の例のようになります。ここで`{API_KEY}`は認証に使用されるAPIキーです。
 
-次の`POST`要求はリクエストボディを受け取り、専用クラスターを一時停止します。
+以下の`POST`リクエストはリクエストボディを受け取り、クラスターを再開します。
 
 ```bash
 curl --request POST \
@@ -131,88 +135,72 @@ curl --request POST \
 # }     
 ```
 
-上記のコマンドで、
+上記のコマンドでは、
 
-- `{API_KEY}`: APIリクエストを認証するために使用される資格情報。値を自分のものに置き換えてください。
+- `{API_KEY}`: APIリクエストの認証に使用される認証情報。値を自分のものに置き換えてください。
 
-- `{CLUSTER_ID}`:再開するクラスタのID。
+- `{CLUSTER_ID}`: 再開するクラスターのID。
 
-詳細については、クラスタの再開を参照してください。
+詳細については、[クラスターの再開](/reference/restful/resume-cluster-v2)を参照してください。
 
 </TabItem>
 
 </Tabs>
 
-## アップグレードプラン {#upgrade-plan}
+再開操作が成功すると、ジョブレコードが生成されます。[ジョブ](./job-center)ページで進行状況を確認できます。
 
-より高度な機能を使用するには、クラスタープランをアップグレードすることをお勧めします。 
+## デプロイオプションのアップグレード{#upgrade-deployment-option}
+
+一部の機能はDedicatedクラスターに限定されており、これらの機能を使用するには、クラスターのデプロイオプションをアップグレードすることをお勧めします。
 
 <table>
    <tr>
-     <th><p><strong>アップグレードを計画する</strong></p></th>
-     <th><p><strong>ノート</strong></p></th>
+     <th><p><strong>デプロイオプションのアップグレード</strong></p></th>
+     <th><p><strong>注記</strong></p></th>
    </tr>
    <tr>
-     <td><p>無料からサーバーレスへ</p></td>
-     <td><p>無料クラスタはサーバーレスプランにアップグレードされます。クラスタがアップグレードされると、プランをダウングレードすることはできません。</p></td>
+     <td><p>FreeからServerlessへ</p></td>
+     <td><p>FreeクラスターはServerlessデプロイオプションにアップグレードされます。一度アップグレードすると、ダウングレードすることはできません。</p></td>
    </tr>
    <tr>
-     <td><p>無料から専用まで</p></td>
-     <td><p>新しい専用クラスタが作成され、既存の無料クラスタからのデータが自動的に移行されます。無料クラスタはそのまま残ります。</p><p>アプリケーションコードでクラスターエンドポイントを更新することを忘れないでください。</p></td>
+     <td><p>FreeからDedicatedへ</p></td>
+     <td><p>新しいDedicatedクラスターが作成され、既存のFreeクラスターのデータは自動的に移行されます。Freeクラスターはそのまま残ります。</p><p>アプリケーションコード内のクラスターエンドポイントを更新することを忘れないでください。</p></td>
    </tr>
    <tr>
-     <td><p>サーバーレスから専用へ</p></td>
-     <td><p>新しい専用クラスタが作成され、既存のServerlessクラスタからのデータが自動的に移行されます。Serverlessクラスタはそのまま残ります。</p><p>アプリケーションコードでクラスターエンドポイントを更新することを忘れないでください。</p></td>
-   </tr>
-   <tr>
-     <td><p>専用(Standard)から専用(Enterprise)へ</p></td>
-     <td><p>Dedicated(Standard)クラスタがDedicated(Enterprise)プランにアップグレードされます。クラスタがアップグレードされると、プランをダウングレードすることはできません。</p></td>
+     <td><p>ServerlessからDedicatedへ</p></td>
+     <td><p>新しいDedicatedクラスターが作成され、既存のServerlessクラスターのデータは自動的に移行されます。Serverlessクラスターはそのまま残ります。</p><p>アプリケーションコード内のクラスターエンドポイントを更新することを忘れないでください。</p></td>
    </tr>
 </table>
 
- 次のデモは、クラスタープランをアップグレードする方法を示しています。
+以下のデモは、FreeからDedicatedへのアップグレードを例に、クラスターのデプロイオプションをアップグレードする方法を示しています。
 
-- **無料からサーバーレスへ**
+<Supademo id="cmfnfgviq0il71d3n2up3lci1?utm_source=link" title=""  />
 
-    <Supademo id="cm9tscqvw0urd11m76ey8cx2p" title="Zilliz Cloud - Upgrade Plan Demo (Free to Serverless)" />
+## プレビュー機能のためのクラスターアップグレード{#upgrade-cluster-for-preview-features}
 
-- **無料から専用まで**
+最新のプレビュー機能を試すには、Dedicatedクラスターの互換性のあるMilvusバージョンをアップグレードする必要があります。
 
-    <Supademo id="cm9tspd6404f4yt0ijb1o996m" title="Zilliz Cloud - Upgrade Plan Demo (Free to Dedicated)" />
+![upgrade-to-preview-version](https://zdoc-images.s3.us-west-2.amazonaws.com/upgrade-to-preview-version.png "upgrade-to-preview-version")
 
-- **サーバーレスから専用へ**
+## クラスターの削除{#drop-cluster}
 
-    <Supademo id="cm9tsxwt20vd511m7gtiihsbr" title="Zilliz Cloud - Upgrade Plan Demo (Serverless to Dedicated)" />
-
-- **専用(Standard)から専用(Enterprise)へ**
-
-    <Supademo id="cm9tt5t6l0vqd11m7m6a3du14" title="Zilliz Cloud - Upgrade Plan Demo (Dedicated Standard to Enterprise)" />
-
-## クラスタをアップグレードしてプレビュー機能を利用する | Dedicated{#upgrade-cluster-for-preview-feature}
-
-最新のプレビュー機能を試すには、専用クラスターの互換性のあるMilvusバージョンをアップグレードする必要があります。
-
-![upgrade-to-preview-version](/img/upgrade-to-preview-version.png)
-
-## クラスタを削除{#drop-cluster}
-
-クラスタが不要になったら、削除できます。Webコンソールまたはプログラムからクラスタを削除できます。
+クラスターが不要になった場合は、削除できます。クラスターはウェブコンソールまたはプログラムで削除できます。
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
 <TabItem value="Cloud Console">
 
-ターゲットクラスタの[**クラスタの詳細**]ページに移動し、以下の手順に従ってクラスタを削除します。
+ターゲットクラスターの**クラスター詳細**ページに移動し、以下の指示に従ってクラスターを削除します。
 
-<Supademo id="cm9trwi5n0txr11m7otr902sk" title="Zilliz Cloud - Drop Cluster Demo" />
+<Supademo id="cm9trwi5n0txr11m7otr902sk" title=""  />
 
 </TabItem>
 
 <TabItem value="Bash">
 
-リクエストは次の例のようになります。`{API_KEY}`は認証に使用するAPIキーです。
+リクエストは以下の例のようになります。ここで`{API_KEY}`は認証に使用するAPIキーです。
 
-次の`POST`要求はリクエストボディを受け取り、クラスタを削除します。
+以下の`DELETE`リクエストはリクエストボディを受け取り、クラスターを削除します。
 
 ```bash
 curl --request POST \
@@ -230,14 +218,15 @@ curl --request POST \
 # }     
 ```
 
-上記のコマンドで、
+上記のコマンドでは、
 
-- `{API_KEY}`: APIリクエストを認証するために使用される資格情報。値を自分のものに置き換えてください。
+- `{API_KEY}`: APIリクエストの認証に使用される認証情報。値を自分のものに置き換えてください。
 
-- `{CLUSTER_ID}`:削除する専用クラスタのID。
+- `{CLUSTER_ID}`: 削除するDedicatedクラスターのID。
 
-詳細は、ドロップクラスタを参照してください。
+詳細については、[クラスターの削除](/reference/restful/drop-cluster-v2)を参照してください。
 
 </TabItem>
 
 </Tabs>
+

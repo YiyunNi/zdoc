@@ -1,34 +1,34 @@
 ---
-title: "組み込みアナライザのリファレンス | BYOC"
+title: "組み込みアナライザーリファレンス | BYOC"
 slug: /built-in-analyzer
-sidebar_label: "組み込みアナライザのリファレンス"
+sidebar_label: "組み込みアナライザー"
 beta: FALSE
 notebook: FALSE
-description: "このセクションでは、組み込みアナライザに関する詳細情報を提供します。 | BYOC"
+description: "このセクションでは、組み込みアナライザーに関する詳細情報を提供します。 | BYOC"
 type: origin
-token: RWl2wA3omiCIo2ksxxTcN6oYnrf
+token: VvJowcWXeiFPlDkYU7ScezGznIb
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - collection
   - schema
   - analyzer
-  - built-in analyzer
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - 組み込みアナライザー
+  - オープンソース ベクトルDB
+  - ベクトルデータベースの例
+  - rag ベクトルデータベース
+  - ベクトルDBとは
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# 組み込みアナライザのリファレンス
+# 組み込みアナライザーリファレンス
 
-このセクションでは、組み込みアナライザに関する詳細情報を提供します。
+このセクションでは、組み込みアナライザーに関する詳細情報を提供します。
 
 import DocCardList from '@theme/DocCardList';
 

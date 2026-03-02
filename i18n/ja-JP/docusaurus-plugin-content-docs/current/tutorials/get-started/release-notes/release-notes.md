@@ -4,19 +4,19 @@ slug: /release-notes
 sidebar_label: "リリースノート"
 beta: FALSE
 notebook: FALSE
-description: "これらのドキュメントでZilliz Cloudのリリース履歴を見つけることができます。 | Cloud"
+description: "Zilliz Cloud のリリース履歴をこのドキュメントで確認できます。"
 type: origin
-token: V1CQww1RWig3Xwk6OjccPs7anMb
-sidebar_position: 12
+token: NOYvw884PigqIhk1gwLcw1OYnfe
+sidebar_position: 16
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - release notes
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - ベクトルデータベース
+  - クラウド
+  - リリースノート
+  - AI Agent
+  - セマンティック検索
+  - 異常検知
+  - sentence transformers
 
 ---
 
@@ -25,7 +25,7 @@ import Admonition from '@theme/Admonition';
 
 # リリースノート
 
-これらのドキュメントでZilliz Cloudのリリース履歴を見つけることができます。
+Zilliz Cloudのリリース履歴は、こちらのドキュメントで確認できます。
 
 import DocCardList from '@theme/DocCardList';
 

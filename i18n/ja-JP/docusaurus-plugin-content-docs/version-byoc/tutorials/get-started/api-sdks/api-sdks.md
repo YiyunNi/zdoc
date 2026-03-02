@@ -1,17 +1,17 @@
 ---
-title: "APIとSDK | BYOC"
+title: "API と SDK | BYOC"
 slug: /api-sdks
-sidebar_label: "APIとSDK"
+sidebar_label: "API と SDK"
 beta: FALSE
 notebook: FALSE
-description: "この章では、RESTful APIとSDKを使用またはインストールする手順と、それらのリファレンスドキュメントにアクセスできます。 | BYOC"
+description: "この章では、RESTful API と SDK の使用またはインストール手順、およびそれらのリファレンスドキュメントへのアクセスを提供します。 | BYOC"
 type: origin
-token: AiLpwtyT3ieHFikJsUDc9kgunUb
-sidebar_position: 11
+token: Ecwpw6cImiFV0gkkusgcQhvBnLe
+sidebar_position: 12
 keywords: 
   - zilliz
   - milvus
-  - vector database
+  - ベクトルデータベース
   - api
   - restful
   - sdk
@@ -20,19 +20,19 @@ keywords:
   - go
   - node
   - nodejs
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
+  - 次元削減
+  - hnsw アルゴリズム
+  - ベクトル類似性検索
+  - 近似最近傍探索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# APIとSDK
+# API と SDK
 
-この章では、RESTful APIとSDKを使用またはインストールする手順と、それらのリファレンスドキュメントにアクセスできます。
+この章では、RESTful API と SDK の使用またはインストール手順、およびそれらのリファレンスドキュメントへのアクセス方法について説明します。 
 
 import DocCardList from '@theme/DocCardList';
 

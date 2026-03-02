@@ -1,0 +1,836 @@
+---
+title: "既存のコレクションにフィールドを追加する | Cloud"
+slug: /add-fields-to-an-existing-collection
+sidebar_label: "既存のコレクションにフィールドを追加する"
+beta: FALSE
+notebook: FALSE
+description: "Milvusでは、既存のコレクションに新しいフィールドを動的に追加できるため、アプリケーションのニーズの変化に合わせてデータスキーマを簡単に進化させることができます。このガイドでは、実用的な例を使用して、さまざまなシナリオでフィールドを追加する方法を示します。 | Cloud"
+type: origin
+token: UR9SwucAIiQ2TYkc9EucsgvSnng
+sidebar_position: 17
+keywords: 
+  - Zilliz
+  - ベクトルデータベース
+  - cloud
+  - collection
+  - schema
+  - フィールドプロパティ
+  - コレクションフィールドの追加
+  - 密なベクトル
+  - 階層的ナビゲーション可能な小世界
+  - 密な埋め込み
+  - Faiss ベクトルデータベース
+
+---
+
+import Admonition from '@theme/Admonition';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# 既存のコレクションにフィールドを追加する
+
+Milvusでは、既存のコレクションに新しいフィールドを動的に追加できるため、アプリケーションのニーズの変化に合わせてデータスキーマを簡単に進化させることができます。このガイドでは、実際の例を使用して、さまざまなシナリオでフィールドを追加する方法を示します。
+
+## 考慮事項{#considerations}
+
+コレクションにフィールドを追加する前に、以下の重要な点を考慮してください。
+
+- スカラーフィールド（`INT64`、`VARCHAR`、`FLOAT`、`DOUBLE`など）を追加できます。ベクトルフィールドは既存のコレクションに追加できません。
+
+- 新しいフィールドは、新しいフィールドの値を持たない既存のエンティティに対応するために、null許容（nullable=True）である必要があります。
+
+- ロードされたコレクションにフィールドを追加すると、メモリ使用量が増加します。
+
+- コレクションあたりの合計フィールド数には最大制限があります。詳細については、[Milvusの制限](https://milvus.io/docs/limitations.md#Number-of-resources-in-a-collection)を参照してください。
+
+- フィールド名は静的フィールド間で一意である必要があります。
+
+- `enable_dynamic_field=True`で作成されていないコレクションに対して、動的フィールド機能を有効にするために`$meta`フィールドを追加することはできません。
+
+## 前提条件{#prerequisites}
+
+このガイドは、以下のものがあることを前提としています。
+
+- 実行中のMilvusインスタンス
+
+- Milvus SDKがインストールされていること
+
+- 既存のコレクション
+
+<Admonition type="info" icon="📘" title="**セットアップでお困りですか？**">
+
+<p>コレクションの作成と基本的な操作については、<a href="./manage-collections-sdks">コレクションの作成</a>を参照してください。</p>
+
+</Admonition>
+
+## 基本的な使用方法{#basic-usage}
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+from pymilvus import MilvusClient, DataType
+
+# Connect to your Milvus server
+client = MilvusClient(
+    uri="YOUR_CLUSTER_ENDPOINT"  # Replace with your Milvus server URI
+)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+import io.milvus.v2.client.MilvusClientV2;
+import io.milvus.v2.client.ConnectConfig;
+
+ConnectConfig config = ConnectConfig.builder()
+        .uri("YOUR_CLUSTER_ENDPOINT")
+        .build();
+MilvusClientV2 client = new MilvusClientV2(config);
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+import { MilvusClient } from '@zilliz/milvus2-sdk-node';
+
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT'
+});
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
+```
+
+</TabItem>
+</Tabs>
+
+## シナリオ 1: Nullable フィールドを素早く追加する{#scenario-1-quickly-add-nullable-fields}
+
+collection を拡張する最も簡単な方法は、nullable フィールドを追加することです。これは、データに新しい属性を素早く追加する必要がある場合に最適です。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# Add a nullable field to an existing collection
+# This operation:
+# - Returns almost immediately (non-blocking)
+# - Makes the field available for use with minimal delay
+# - Sets NULL for all existing entities
+client.add_collection_field(
+    collection_name="product_catalog",
+    field_name="created_timestamp",  # Name of the new field to add
+    data_type=DataType.INT64,        # Data type must be a scalar type
+    nullable=True                    # Must be True for added fields
+    # Allows NULL values for existing entities
+)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+import io.milvus.v2.service.collection.request.AddCollectionFieldReq;
+
+client.addCollectionField(AddCollectionFieldReq.builder()
+        .collectionName("product_catalog")
+        .fieldName("created_timestamp")
+        .dataType(DataType.Int64)
+        .isNullable(true)
+        .build());
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+await client.addCollectionField({
+    collection_name: 'product_catalog',
+    field: {
+        name: 'created_timestamp',
+        dataType: 'Int64',
+        nullable: true
+     }
+});
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/fields/add" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token>" \
+  -d '{
+    "collectionName": "product_catalog",
+    "schema": {
+      "fieldName": "created_timestamp",
+      "dataType": "Int64",
+      "nullable": true
+    }
+  }'
+```
+
+</TabItem>
+</Tabs>
+
+期待される動作：
+
+- **既存のエンティティ**は、新しいフィールドに対してNULLを持ちます。
+
+- **新しいエンティティ**は、NULLまたは実際の値を持つことができます。
+
+- **フィールドの可用性**は、内部スキーマ同期による最小限の遅延で、ほぼ即座に発生します。
+
+- 短い同期期間の後、**すぐにクエリ可能**になります。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# Example query result
+{
+    'id': 1, 
+    'created_timestamp': None  # New field shows NULL for existing entities
+}
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// nodejs
+{
+    'id': 1, 
+    'created_timestamp': None  # New field shows NULL for existing entities
+}
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+{
+  "code": 0,
+  "data": {},
+  "cost": 0
+}
+```
+
+</TabItem>
+</Tabs>
+
+## シナリオ2：デフォルト値を持つフィールドを追加する{#scenario-2-add-fields-with-default-values}
+
+既存のエンティティにNULLではなく意味のある初期値を持たせたい場合は、デフォルト値を指定します。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# Add a field with default value
+# This operation:
+# - Sets the default value for all existing entities
+# - Makes the field available with minimal delay
+# - Maintains data consistency with the default value
+client.add_collection_field(
+    collection_name="product_catalog",
+    field_name="priority_level",     # Name of the new field
+    data_type=DataType.VARCHAR,      # String type field
+    max_length=20,                   # Maximum string length
+    nullable=True,                   # Required for added fields
+    default_value="standard"         # Value assigned to existing entities
+    # Also used for new entities if no value provided
+)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+client.addCollectionField(AddCollectionFieldReq.builder()
+        .collectionName("product_catalog")
+        .fieldName("priority_level")
+        .dataType(DataType.VarChar)
+        .maxLength(20)
+        .isNullable(true)
+        .build());
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+await client.addCollectionField({
+    collection_name: 'product_catalog',
+    field: {
+        name: 'priority_level',
+        dataType: 'VarChar',
+        nullable: true,
+        default_value: 'standard',
+     }
+});
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/fields/add" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token>" \
+  -d '{
+    "collectionName": "product_catalog",
+    "schema": {
+      "fieldName": "priority_level",
+      "dataType": "VarChar",
+      "nullable": true,
+      "defaultValue": "standard",
+      "elementTypeParams": {
+        "max_length": "20"
+      }
+    }
+  }'
+```
+
+</TabItem>
+</Tabs>
+
+期待される動作：
+
+- **既存のエンティティ**は、新しく追加されたフィールドのデフォルト値（`"standard"`）を持ちます。
+
+- **新しいエンティティ**は、デフォルト値を上書きするか、値が指定されていない場合はデフォルト値を使用できます。
+
+- **フィールドの可用性**は、最小限の遅延でほぼ即座に発生します。
+
+- 短い同期期間の後、**すぐにクエリ可能**になります。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# Example query result
+{
+    'id': 1,
+    'priority_level': 'standard'  # Shows default value for existing entities
+}
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+{
+    'id': 1,
+    'priority_level': 'standard'  # Shows default value for existing entities
+}
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+{
+    'id': 1,
+    'priority_level': 'standard'  # Shows default value for existing entities
+}
+```
+
+</TabItem>
+</Tabs>
+
+## FAQ\{#faq}
+
+### `$meta`フィールドを追加して動的スキーマ機能を有効にできますか？\{#can-i-enable-dynamic-schema-functionality-by-adding-a-dollarmeta-field}
+
+いいえ、`add_collection_field`を使用して`$meta`フィールドを追加し、動的フィールド機能を有効にすることはできません。例えば、以下のコードは機能しません。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# ❌ This is NOT supported
+client.add_collection_field(
+    collection_name="existing_collection",
+    field_name="$meta",
+    data_type=DataType.JSON  # This operation will fail
+)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// ❌ This is NOT supported
+client.addCollectionField(AddCollectionFieldReq.builder()
+        .collectionName("existing_collection")
+        .fieldName("$meta")
+        .dataType(DataType.JSON)
+        .build());
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// ❌ This is NOT supported
+await client.addCollectionField({
+    collection_name: 'product_catalog',
+    field: {
+        name: '$meta',
+        dataType: 'JSON',
+     }
+});
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+# ❌ This is NOT supported
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/fields/add" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <token>" \
+  -d '{
+    "collectionName": "existing_collection",
+    "schema": {
+      "fieldName": "$meta",
+      "dataType": "JSON",
+      "nullable": true
+    }
+  }'
+```
+
+</TabItem>
+</Tabs>
+
+動的スキーマ機能を有効にするには：
+
+- **新規コレクション**: コレクション作成時に`enable_dynamic_field`をTrueに設定します。詳細については、[コレクションの作成](./manage-collections-sdks#create-schema)を参照してください。
+
+- **既存コレクション**: コレクションレベルのプロパティ`dynamicfield.enabled`をTrueに設定します。詳細については、[コレクションの変更](./modify-collections#example-4-enable-dynamic-field)を参照してください。
+
+### 動的フィールドキーと同じ名前のフィールドを追加するとどうなりますか？{#what-happens-when-i-add-a-field-with-the-same-name-as-a-dynamic-field-key}
+
+コレクションで動的フィールドが有効になっている場合（`$meta`が存在する場合）、既存の動的フィールドキーと同じ名前の静的フィールドを追加できます。新しい静的フィールドは動的フィールドキーをマスクしますが、元の動的データは保持されます。
+
+フィールド名の衝突を避けるため、フィールドを追加する前に、既存のフィールドと動的フィールドキーを参照して、追加するフィールドの名前を検討してください。
+
+**シナリオ例:**
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# Original collection with dynamic field enabled
+# Insert data with dynamic field keys
+data = [{
+    "id": 1,
+    "my_vector": [0.1, 0.2, ...],
+    "extra_info": "this is a dynamic field key",  # Dynamic field key as string
+    "score": 99.5                                 # Another dynamic field key
+}]
+client.insert(collection_name="product_catalog", data=data)
+
+# Add static field with same name as existing dynamic field key
+client.add_collection_field(
+    collection_name="product_catalog",
+    field_name="extra_info",         # Same name as dynamic field key
+    data_type=DataType.INT64,        # Data type can differ from dynamic field key
+    nullable=True                    # Must be True for added fields
+)
+
+# Insert new data after adding static field
+new_data = [{
+    "id": 2,
+    "my_vector": [0.3, 0.4, ...],
+    "extra_info": 100,               # Now must use INT64 type (static field)
+    "score": 88.0                    # Still a dynamic field key
+}]
+client.insert(collection_name="product_catalog", data=new_data)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+import com.google.gson.*;
+import io.milvus.v2.service.vector.request.InsertReq;
+import io.milvus.v2.service.vector.response.InsertResp;
+
+Gson gson = new Gson();
+JsonObject row = new JsonObject();
+row.addProperty("id", 1);
+row.add("my_vector", gson.toJsonTree(new float[]{0.1f, 0.2f, ...}));
+row.addProperty("extra_info", "this is a dynamic field key");
+row.addProperty("score", 99.5);
+
+InsertResp insertR = client.insert(InsertReq.builder()
+        .collectionName("product_catalog")
+        .data(Collections.singletonList(row))
+        .build());
+        
+client.addCollectionField(AddCollectionFieldReq.builder()
+        .collectionName("product_catalog")
+        .fieldName("extra_info")
+        .dataType(DataType.Int64)
+        .isNullable(true)
+        .build());
+        
+JsonObject newRow = new JsonObject();
+newRow.addProperty("id", 2);
+newRow.add("my_vector", gson.toJsonTree(new float[]{0.3f, 0.4f, ...}));
+newRow.addProperty("extra_info", 100);
+newRow.addProperty("score", 88.0);
+
+insertR = client.insert(InsertReq.builder()
+        .collectionName("product_catalog")
+        .data(Collections.singletonList(newRow))
+        .build());
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// Original collection with dynamic field enabled
+// Insert data with dynamic field keys
+const data = [{
+    "id": 1,
+    "my_vector": [0.1, 0.2, ...],
+    "extra_info": "this is a dynamic field key",  // Dynamic field key as string
+    "score": 99.5                                 // Another dynamic field key
+}]
+await client.insert({
+    collection_name: "product_catalog", 
+    data: data
+});
+
+// Add static field with same name as existing dynamic field key
+await client.add_collection_field({
+    collection_name: "product_catalog",
+    field_name: "extra_info",         // Same name as dynamic field key
+    data_type: DataType.INT64,        // Data type can differ from dynamic field key
+    nullable: true                   // Must be True for added fields
+});
+
+// Insert new data after adding static field
+const new_data = [{
+    "id": 2,
+    "my_vector": [0.3, 0.4, ...],
+    "extra_info": 100,               # Now must use INT64 type (static field)
+    "score": 88.0                    # Still a dynamic field key
+}];
+
+await client.insert({
+    collection_name:"product_catalog", 
+    data: new_data
+});
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+#!/bin/bash
+
+export MILVUS_HOST="YOUR_CLUSTER_ENDPOINT"
+export AUTH_TOKEN="your_token_here"
+export COLLECTION_NAME="product_catalog"
+
+echo "Step 1: Insert initial data with dynamic fields..."
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/entities/insert" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"data\": [{
+      \"id\": 1,
+      \"my_vector\": [0.1, 0.2, 0.3, 0.4, 0.5],
+      \"extra_info\": \"this is a dynamic field key\",
+      \"score\": 99.5
+    }]
+  }"
+
+echo -e "\n\nStep 2: Add static field with same name as dynamic field..."
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/fields/add" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"schema\": {
+      \"fieldName\": \"extra_info\",
+      \"dataType\": \"Int64\",
+      \"nullable\": true
+    }
+  }"
+
+echo -e "\n\nStep 3: Insert new data after adding static field..."
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/entities/insert" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"data\": [{
+      \"id\": 2,
+      \"my_vector\": [0.3, 0.4, 0.5, 0.6, 0.7],
+      \"extra_info\": 100,
+      \"score\": 88.0
+    }]
+  }"
+```
+
+</TabItem>
+</Tabs>
+
+期待される動作:
+
+- **既存のエンティティ**は、新しい静的フィールド`extra_info`に対してNULLを持ちます。
+
+- **新しいエンティティ**は、静的フィールドのデータ型（`INT64`）を使用する必要があります。
+
+- **元の動的フィールドのキー値**は保持され、`$meta`構文を介してアクセスできます。
+
+- **静的フィールドは、通常のクエリで動的フィールドのキーをマスクします**。
+
+**静的値と動的値の両方にアクセスする:**
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+# 1. Query static field only (dynamic field key is masked)
+results = client.query(
+    collection_name="product_catalog",
+    filter="id == 1",
+    output_fields=["extra_info"]
+)
+# Returns: {"id": 1, "extra_info": None}  # NULL for existing entity
+
+# 2. Query both static and original dynamic values
+results = client.query(
+    collection_name="product_catalog", 
+    filter="id == 1",
+    output_fields=["extra_info", "$meta['extra_info']"]
+)
+# Returns: {
+#     "id": 1,
+#     "extra_info": None,                           # Static field value (NULL)
+#     "$meta['extra_info']": "this is a dynamic field key"  # Original dynamic value
+# }
+
+# 3. Query new entity with static field value
+results = client.query(
+    collection_name="product_catalog",
+    filter="id == 2", 
+    output_fields=["extra_info"]
+)
+# Returns: {"id": 2, "extra_info": 100}  # Static field value
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+// 1. Query static field only (dynamic field key is masked)
+let results = client.query({
+    collection_name: "product_catalog",
+    filter: "id == 1",
+    output_fields: ["extra_info"]
+})
+// Returns: {"id": 1, "extra_info": None}  # NULL for existing entity
+
+// 2. Query both static and original dynamic values
+results = client.query({
+    collection_name:"product_catalog", 
+    filter: "id == 1",
+    output_fields: ["extra_info", "$meta['extra_info']"]
+});
+// Returns: {
+//     "id": 1,
+//     "extra_info": None,                           # Static field value (NULL)
+//     "$meta['extra_info']": "this is a dynamic field key"  # Original dynamic value
+// }
+
+// 3. Query new entity with static field value
+results = client.query({
+    collection_name: "product_catalog",
+    filter: "id == 2", 
+    output_fields: ["extra_info"]
+})
+// Returns: {"id": 2, "extra_info": 100}  # Static field value
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+#!/bin/bash
+
+export MILVUS_HOST="YOUR_CLUSTER_ENDPOINT"
+export AUTH_TOKEN="your_token_here"
+export COLLECTION_NAME="product_catalog"
+
+echo "Query 1: Static field only (dynamic field masked)..."
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/entities/query" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"filter\": \"id == 1\",
+    \"outputFields\": [\"extra_info\"]
+  }"
+
+echo -e "\n\nQuery 2: Both static and original dynamic values..."
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/entities/query" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"filter\": \"id == 1\",
+    \"outputFields\": [\"extra_info\", \"\$meta['extra_info']\"]
+  }"
+
+echo -e "\n\nQuery 3: New entity with static field value..."
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/entities/query" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${AUTH_TOKEN}" \
+  -d "{
+    \"collectionName\": \"${COLLECTION_NAME}\",
+    \"filter\": \"id == 2\",
+    \"outputFields\": [\"extra_info\"]
+  }"
+```
+
+</TabItem>
+</Tabs>
+
+### 新しいフィールドが利用可能になるまでどのくらい時間がかかりますか？{#how-long-does-it-take-for-a-new-field-to-become-available}
+
+追加されたフィールドはほぼ即座に利用可能になりますが、Milvus クラスター全体での内部スキーマ変更のブロードキャストにより、わずかな遅延が発生する場合があります。この同期により、すべてのノードが新しいフィールドを含むクエリを処理する前にスキーマの更新を認識していることが保証されます。
+

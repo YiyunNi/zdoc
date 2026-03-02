@@ -4,19 +4,19 @@ slug: /organizations
 sidebar_label: "組織"
 beta: FALSE
 notebook: FALSE
-description: "この章では、組織の運営と関連する設定に焦点を当てています。 | BYOC"
+description: "この章では、組織の操作と関連設定について説明します。 | BYOC"
 type: origin
-token: TPElwgyTyi3QgWkGsQncXqaonKf
-sidebar_position: 8
+token: Dh6vwCrzYimC7skvDRUcvPi4n2c
+sidebar_position: 10
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - organizations
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - ベクトルデータベース
+  - クラウド
+  - 組織
+  - セマンティック検索
+  - 異常検出
+  - sentence transformers
+  - レコメンダーシステム
 
 ---
 
@@ -25,9 +25,7 @@ import Admonition from '@theme/Admonition';
 
 # 組織
 
-この章では、組織の運営と関連する設定に焦点を当てています。
-
-
+この章では、組織の操作と関連設定について説明します。
 
 import DocCardList from '@theme/DocCardList';
 

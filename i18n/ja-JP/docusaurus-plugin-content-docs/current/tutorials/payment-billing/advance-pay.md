@@ -1,66 +1,64 @@
 ---
-title: "事前支払いを利用する | Cloud"
+title: "前払いを利用する | Cloud"
 slug: /advance-pay
-sidebar_label: "Advance Pay"
+sidebar_label: "前払い"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、クレジットカードの追加やAWSMarketplaceでのサブスクリプションの代わりに、前払い(銀行振込)を支払い方法として受け付けています。 | Cloud"
+description: "Zilliz Cloudでは、クレジットカードの追加やAWS Marketplaceでの購読に代わる支払い方法として、前払い（銀行振込）も受け付けています。"
 type: origin
-token: H3mBwoua5idJsokeRfGcii8tnHe
-sidebar_position: 5
+token: K8hFwmeBQiCSO4ktT9ScD9zMnua
+sidebar_position: 6
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - advance pay
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
+  - ベクトルデータベース
+  - クラウド
+  - 前払い
+  - オーディオ検索
+  - セマンティック検索とは
+  - Embedding model
+  - 画像類似性検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# 事前支払いを利用する
+# 前払いを利用する
 
-Zilliz Cloudは、クレジットカードの追加やAWSMarketplaceでのサブスクリプションの代わりに、前払い(銀行振込)を支払い方法として受け付けています。
+Zilliz Cloudでは、クレジットカードの追加やAWS Marketplaceでの購読に代わる支払い方法として、前払い（銀行振込）も受け付けています。
 
-## Advance Payに資金を追加する{#add-funds-to-advance-pay}
+## 前払いに資金を追加する{#add-funds-to-advance-pay}
 
-現在、Advance Payの残高に資金を追加するには、[当社までご連絡](https://zilliz.com/jp/contact-sales)ください。
+現在、前払い残高に資金を追加するには、[お問い合わせ](https://zilliz.com/contact-sales)いただく必要があります。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Note">
 
-<p>支払い方法の優先順位は、クレジット&gt;Advance Pay&gt;クレジットカード/AWSマーケットプレイスサブスクリプションです。</p>
-<p>これは、まだクレジットが残っていて、資金を追加し、クレジットカードを追加した場合、またはAWSMarketplaceで購読した場合、使用料をカバーするために最初にクレジットが差し引かれることを意味します。クレジットが十分でない場合は、Advance Payの資金を差し引きます。資金とクレジットがまだ料金をカバーするのに十分でない場合は、クレジットカードまたはAWS Marketplaceアカウントに請求することになります。</p>
+<p>支払い方法の優先順位は、クレジット > 前払い > クレジットカード/AWS Marketplaceの購読です。</p>
+<p>これは、クレジットが残っており、資金を追加し、クレジットカードを追加したかAWS Marketplaceで購読している場合、まずクレジットが使用料の支払いに充当されることを意味します。クレジットが不足している場合は、前払い資金が使用されます。資金とクレジットが使用料を賄うのにまだ不十分な場合は、クレジットカードまたはAWS Marketplaceアカウントに請求されます。</p>
 
 </Admonition>
 
-## アドバンスペイの履歴を見る{#view-advance-pay-history}
+## 前払い履歴を表示する{#view-advance-pay-history}
 
-銀行振込履歴を表示するには、上部ナビゲーションバーまたは左ナビゲーションペインの「請求」をクリックします。次に、「前払い」セクションの「履歴」をクリックします。**銀行振込履歴**ページでは、過去のすべての振込の詳細、振込を行った時間、追加した資金の金額などを閲覧できます。
+銀行振込履歴を表示するには、上部のナビゲーションバーまたは左側のナビゲーションペインで「Billing」をクリックします。次に、「Advance Pay」セクションの下にある「History」をクリックします。「**Bank Transfer History**」ページでは、振込を行った日時、追加した資金の金額など、過去のすべての振込の詳細を確認できます。
 
-![add-fund-en](/img/add-fund-en.png)
+![add-fund-en](https://zdoc-images.s3.us-west-2.amazonaws.com/add-fund-en.png "add-fund-en")
 
-## Advance Payの残高をモニターに設定する{#set-monitor-for-advance-pay-balance}
+## 前払い残高の監視を設定する{#set-monitor-for-advance-pay-balance}
 
-既定では、事前支払い残高の監視は無効になっています。ただし、事前支払い残高が監視条件で指定した金額よりも少ない場合に通知を受け取るように有効にすることができます。詳細については、「[組織のアラートを管理する](./manage-organization-alerts)」を参照してください。
+デフォルトでは、前払い残高の監視は無効になっています。ただし、監視条件で指定した金額よりも前払い残高が少なくなったときに通知を受け取るように有効にすることができます。詳細については、[組織アラートの管理](./manage-organization-alerts)を参照してください。
 
-## Advance Payの資金を返金する{#refund-advance-pay-funds}
+## 前払い資金の払い戻し{#refund-advance-pay-funds}
 
-現在、Zilliz Cloudはウェブコンソールでの返金をサポートしていません。返金を受けるには、Zilliz Cloud[サポートポータル](https://support.zilliz.com/hc/en-us)にお問い合わせいただき、リクエストを送信してください。
+現在、Zilliz Cloudはウェブコンソールでの払い戻しをサポートしていません。払い戻しを受けるには、Zilliz Cloudの[サポートポータル](https://support.zilliz.com/hc/en-us)からお問い合わせいただき、リクエストを送信してください。
 
-## 関連するトピック{#}
+## 関連トピック{#related-topics}
 
 - [クレジットカードを追加して購読する](./subscribe-by-adding-credit-card)
 
 - [AWS Marketplaceで購読する](./subscribe-on-aws-marketplace)
 
-- [Google Cloud Marketplaceに登録する](./subscribe-on-gcp-marketplace)
+- [GCP Marketplaceで購読する](./subscribe-on-gcp-marketplace)
 
-- [Azure Marketplaceで購読する](./subscribe-on-azure-marketplace)
-
-- [インボイス](./view-invoice)
+- [請求書を表示する](./view-invoice) 
 

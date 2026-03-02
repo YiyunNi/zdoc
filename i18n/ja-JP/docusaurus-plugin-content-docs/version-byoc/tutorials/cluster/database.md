@@ -4,19 +4,19 @@ slug: /database
 sidebar_label: "データベース"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、クラスタとコレクションの間にデータベースレイヤーを導入し、マルチテナントをサポートしながら、データをより効率的に管理および整理する方法を提供します。 | BYOC"
+description: "Zilliz Cloudは、クラスターとコレクションの間にデータベース層を導入し、マルチテナンシーをサポートしながら、データをより効率的に管理・整理する方法を提供します。"
 type: origin
-token: Pj1dwyk1SibbFPkknVUcFtK3nKe
-sidebar_position: 6
+token: Z0oiwVpsliiW1zksnlFc3ZsVnxf
+sidebar_position: 5
 keywords: 
   - zilliz
-  - vector database
-  - cloud
+  - ベクトルデータベース
+  - クラウド
   - milvus
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - milvus vector db
+  - Zilliz Cloud
+  - milvusとは
+  - milvusデータベース
 
 ---
 
@@ -26,39 +26,37 @@ import TabItem from '@theme/TabItem';
 
 # データベース
 
-Zilliz Cloudは、クラスタとコレクションの間に**データベース**レイヤーを導入し、マルチテナントをサポートしながら、データをより効率的に管理および整理する方法を提供します。
+Zilliz Cloud は、クラスターとコレクションの間に**データベース**層を導入し、マルチテナンシーをサポートしながらデータを管理および整理するより効率的な方法を提供します。
 
-## データベースとは何ですか{#what-is-a-database}
+## データベースとは{#what-is-a-database}
 
-Zilliz Cloudでは、データベースがデータの整理と管理のための論理ユニットとして機能します。データセキュリティを強化し、マルチテナントを実現するために、複数のデータベースを作成して、異なるアプリケーションやテナントのデータを論理的に分離することができます。例えば、ユーザーAのデータを保存するデータベースと、ユーザーBのデータを保存する別のデータベースを作成します。
+Zilliz Cloud では、データベースはデータを整理および管理するための論理ユニットとして機能します。データセキュリティを強化し、マルチテナンシーを実現するために、複数のデータベースを作成して、異なるアプリケーションまたはテナントのデータを論理的に分離できます。たとえば、ユーザー A のデータを保存するデータベースと、ユーザー B のデータを保存する別のデータベースを作成します。
 
-Zilliz Cloudでは、リソースは以下の階層順序で構成されています。
+Zilliz Cloud のリソースは、次の階層順序で構成されています。
 
-![Ucc1wbR4Eh3vLbbGE5PcutU8nzf](/img/Ucc1wbR4Eh3vLbbGE5PcutU8nzf.png)
-
-データベースの概念は専用クラスタにのみ利用可能であることに注意することができます。サーバーレスおよびフリークラスタにはデータベースがありません。
+![Oe7EwkvLDhT9p6b1o3tcFYMlnI9](https://zdoc-images.s3.us-west-2.amazonaws.com/Oe7EwkvLDhT9p6b1o3tcFYMlnI9.png)
 
 ## 前提条件{#prerequisites}
 
-データベースを管理するには、**組織オーナー**または**プロジェクト管理者**のアクセスが必要です。
+データベースを管理するには、**Organization Owner** または **Project Admin** のアクセス権が必要です。
 
 ## データベースの作成{#create-database}
 
-データベースは専用クラスタでのみ作成できます。クラスタを作成すると、デフォルトのデータベースが作成されます。
+データベースは、Dedicated クラスターでのみ作成できます。クラスターの作成時に、デフォルトのデータベースが作成されます。
 
-コンソールで手動またはプログラムで、専用クラスタに最大1,024個のデータベースを作成できます。
+Dedicated クラスターでは、コンソールで手動で、またはプログラムで、最大 1,024 個のデータベースを作成できます。
 
-### コンソールでデータベースを作成する{#create-a-database-on-the-console}
+### コンソールでのデータベースの作成{#create-a-database-on-the-console}
 
 次の図に示すように、コンソールでデータベースを作成できます。
 
-![create-database](/img/create-database.png)
+![create-database](https://zdoc-images.s3.us-west-2.amazonaws.com/create-database.png "create-database")
 
-作成したコレクションを別のデータベースに移動することもできます。詳細については、「[コレクションの管理(コンソール)](./manage-collections-console)」を参照してください。
+作成したコレクションをあるデータベースから別のデータベースに移動することもできます。詳細については、[コレクションの管理 (コンソール)](./manage-collections-console#manage-collection) を参照してください。
 
-### プログラムでデータベースを作成する{#create-a-database-programmatically}
+### プログラムによるデータベースの作成{#create-a-database-programmatically}
 
-Milvus RESTful APIまたはSDKを使用して、プログラムでデータを作成できます。
+Milvus RESTful API または SDK を使用して、プログラムでデータを作成できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -118,7 +116,19 @@ await client.createDatabase({
 <TabItem value='go'>
 
 ```go
-// TODO
+cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: "YOUR_CLUSTER_ENDPOINT",
+    Username: "Milvus",
+    Password: "root",
+})
+if err != nil {
+    // handle err
+}
+
+err = cli.CreateDatabase(ctx, milvusclient.NewCreateDatabaseOption("my_database_1"))
+if err != nil {
+    // handle err
+}
 ```
 
 </TabItem>
@@ -141,7 +151,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-作成時にデータベースのプロパティを設定することもできます。次の例では、データベースのレプリカの数を設定します。
+データベースを作成する際に、データベースのプロパティを設定することもできます。次の例では、データベースのレプリカ数を設定します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -174,7 +184,12 @@ client.createDatabase(createDatabaseReq);
 <TabItem value='javascript'>
 
 ```javascript
-// TODO
+await client.createDatabase({
+    db_name: "my_database_2",
+    properties: {
+        "database.replica.number": 3
+    }
+});
 ```
 
 </TabItem>
@@ -182,7 +197,10 @@ client.createDatabase(createDatabaseReq);
 <TabItem value='go'>
 
 ```go
-// TODO
+err := cli.CreateDatabase(ctx, milvusclient.NewCreateDatabaseOption("my_database_2").WithProperty("database.replica.number", 3))
+if err != nil {
+    // handle err
+}
 ```
 
 </TabItem>
@@ -210,7 +228,7 @@ curl --request POST \
 
 ## データベースの表示{#view-databases}
 
-Milvus RESTful APIまたはSDKを使用して、既存のすべてのデータベースをリストし、詳細を表示できます。
+Milvus RESTful APIまたはSDKを使用して、既存のすべてのデータベースをリストし、その詳細を表示できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -260,7 +278,18 @@ await client.describeDatabase({
 <TabItem value='go'>
 
 ```go
-// TODO
+// List all existing databases
+databases, err := cli.ListDatabase(ctx, milvusclient.NewListDatabaseOption())
+if err != nil {
+    // handle err
+}
+log.Println(databases)
+
+db, err := cli.DescribeDatabase(ctx, milvusclient.NewDescribeDatabaseOption("default"))
+if err != nil {
+    // handle err
+}
+log.Println(db)
 ```
 
 </TabItem>
@@ -283,22 +312,22 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## データベースのプロパティを管理する{#manage-database-properties}
+## データベースプロパティの管理{#manage-database-properties}
 
-各データベースには独自のプロパティがあります。[プログラムでデータベース](./database#create-a-database-programmatically)を作成するで説明されているように、データベースを作成するときにデータベースのプロパティを設定することができます。また、既存のデータベースのプロパティを変更して削除することもできます。
+各データベースには独自のプロパティがあり、[プログラムでデータベースを作成する](./database#create-a-database-programmatically)で説明されているように、データベースを作成する際にデータベースのプロパティを設定したり、既存のデータベースのプロパティを変更したり削除したりできます。
 
-次の表に、使用可能なデータベースプロパティを示します。
+次の表に、可能なデータベースプロパティを示します。
 
 <table>
    <tr>
      <th><p>プロパティ名</p></th>
-     <th><p>タイプ</p></th>
+     <th><p>型</p></th>
      <th><p>プロパティの説明</p></th>
    </tr>
    <tr>
      <td><p><code>database.replica.number</code></p></td>
      <td><p>integer</p></td>
-     <td><p>指定したデータベースのレプリカ数。</p></td>
+     <td><p>指定されたデータベースのレプリカ数。</p></td>
    </tr>
    <tr>
      <td><p><code>database.max.collections</code></p></td>
@@ -308,26 +337,26 @@ curl --request POST \
    <tr>
      <td><p><code>database.force.deny.writing</code></p></td>
      <td><p>boolean</p></td>
-     <td><p>指定されたデータベースに書き込み操作を拒否するかどうか。</p></td>
+     <td><p>指定されたデータベースに書き込み操作を強制的に拒否させるかどうか。</p></td>
    </tr>
    <tr>
      <td><p><code>database.force.deny.reading</code></p></td>
      <td><p>boolean</p></td>
-     <td><p>指定されたデータベースに対して読み取り操作を拒否するかどうか。</p></td>
+     <td><p>指定されたデータベースに読み取り操作を強制的に拒否させるかどうか。</p></td>
    </tr>
 </table>
 
-### データベースのプロパティを変更する{#alter-database-properties}
+### データベースプロパティの変更{#alter-database-properties}
 
-以下のように既存のデータベースのプロパティを変更することができます。以下の例では、データベースに作成できるコレクションの数を制限しています。
+既存のデータベースのプロパティは次のように変更できます。次の例では、データベースに作成できるコレクションの数を制限しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
 client.alter_database_properties(
-    db_name: "my_database_1",
-    properties: {
+    db_name="my_database_1",
+    properties={
         "database.max.collections": 10
     }
 )
@@ -360,7 +389,11 @@ await milvusClient.alterDatabaseProperties({
 <TabItem value='go'>
 
 ```go
-// TODO
+err := cli.AlterDatabaseProperties(ctx, milvusclient.NewAlterDatabasePropertiesOption("my_database_1").
+    WithProperty("database.max.collections", 1))
+if err != nil {
+    // handle err
+}
 ```
 
 </TabItem>
@@ -386,17 +419,17 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### データベースのプロパティを削除{#drop-database-properties}
+### データベースプロパティを削除する{#drop-database-properties}
 
-以下のように、データベースのプロパティを削除することでリセットすることもできます。次の例では、データベースに作成できるコレクションの数の制限を解除しています。
+データベースプロパティを削除してリセットすることもできます。以下の例では、データベースで作成できるコレクション数の制限を削除します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
 client.drop_database_properties(
-    db_name: "my_database_1",
-    property_keys: [
+    db_name="my_database_1",
+    property_keys=[
         "database.max.collections"
     ]
 )
@@ -429,7 +462,10 @@ await milvusClient.dropDatabaseProperties({
 <TabItem value='go'>
 
 ```go
-// TODO
+err := cli.DropDatabaseProperties(ctx, milvusclient.NewDropDatabasePropertiesOption("my_database_1", "database.max.collections"))
+if err != nil {
+    // handle err
+}
 ```
 
 </TabItem>
@@ -455,11 +491,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## データベースを使用{#use-database}
+## データベースの使用方法{#use-database}
 
-Zilliz Cloudから切断することなく、データベースを切り替えることができます。
+Zilliz Cloudから切断することなく、あるデータベースから別のデータベースに切り替えることができます。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
 <p>RESTful APIはこの操作をサポートしていません。</p>
 
@@ -508,30 +544,30 @@ if err != nil {
 <TabItem value='bash'>
 
 ```bash
-#RESTfulは永続的な接続を提供しないため、この操作はサポートされていません。
-#回避策として、ターゲットデータベースで必要なリクエストを再度開始してください。
+# This operation is unsupported because RESTful does not provide a persistent connection.
+# As a workaround, initiate the required request again with the target database.
 ```
 
 </TabItem>
 </Tabs>
 
-## データベースを削除{#drop-database}
+## データベースの削除{#drop-database}
 
-データベースが不要になったら、データベースを削除できます。注意:
+データベースが不要になったら、データベースを削除できます。次の点に注意してください。
 
 - デフォルトのデータベースは削除できません。
 
 - データベースを削除する前に、まずデータベース内のすべてのコレクションを削除する必要があります。
 
-### コンソールにデータベースをドロップする{#drop-a-database-on-the-console}
+### コンソールでデータベースを削除する{#drop-a-database-on-the-console}
 
-次の図の手順に従って、コンソールにデータベースをドロップできます。
+以下の図の手順に従って、コンソールでデータベースを削除できます。
 
-![drop-database](/img/drop-database.png)
+![drop-database](https://zdoc-images.s3.us-west-2.amazonaws.com/drop-database.png "drop-database")
 
 ### プログラムでデータベースを削除する{#drop-a-database-programmatically}
 
-Milvus RESTful APIまたはSDKを使用して、プログラムでデータを作成できます。
+Milvus RESTful API または SDK を使用して、プログラムでデータを作成できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -567,7 +603,10 @@ await milvusClient.dropDatabase({
 <TabItem value='go'>
 
 ```go
-// TODO
+err = cli.DropDatabase(ctx, milvusclient.NewDropDatabaseOption("my_database_2"))
+if err != nil {
+    // handle err
+}
 ```
 
 </TabItem>

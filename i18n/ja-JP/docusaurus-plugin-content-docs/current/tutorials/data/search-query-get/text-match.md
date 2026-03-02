@@ -1,27 +1,27 @@
 ---
-title: "テキスト一致 | Cloud"
+title: "テキストマッチ | Cloud"
 slug: /text-match
-sidebar_label: "テキスト一致"
+sidebar_label: "テキストマッチ"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz CloudのText Matchは、特定の用語に基づく正確なドキュメント検索を可能にします。この機能は、特定の条件を満たすために主にフィルタリングされた検索に使用され、スカラーフィルタリングを組み込んでクエリ結果を絞り込むことができ、スカラー基準を満たすベクトル内の類似検索を可能にします。 | Cloud"
+description: "Zilliz Cloud のテキストマッチは、特定の用語に基づいて正確なドキュメント検索を可能にします。この機能は主に、特定の条件を満たすためのフィルタリング検索に使用され、スカラーフィルタリングを組み合わせてクエリ結果を絞り込み、スカラー条件を満たすベクトル内で類似性検索を行うことができます。 | Cloud"
 type: origin
-token: Wf3IwGzjsi02c2kGaJlcTePAnfe
-sidebar_position: 10
+token: RQQKwqhZUiubFzkHo4WcR62Gnvh
+sidebar_position: 11
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - collection
-  - data
-  - filter
-  - filtering expressions
-  - filtering
-  - text-match
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - データ
+  - フィルター
+  - フィルタリング式
+  - フィルタリング
+  - テキストマッチ
+  - 自然言語処理データベース
+  - 安価なベクトルデータベース
+  - マネージドベクトルデータベース
+  - Pinecone vector database
 
 ---
 
@@ -29,50 +29,62 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# テキスト一致
+# テキストマッチ
 
-Zilliz CloudのText Matchは、特定の用語に基づく正確なドキュメント検索を可能にします。この機能は、特定の条件を満たすために主にフィルタリングされた検索に使用され、スカラーフィルタリングを組み込んでクエリ結果を絞り込むことができ、スカラー基準を満たすベクトル内の類似検索を可能にします。
+Zilliz Cloudのテキストマッチは、特定の用語に基づいて正確なドキュメント検索を可能にします。この機能は主に、特定の条件を満たすためのフィルタリング検索に使用され、スカラーフィルタリングを組み合わせてクエリ結果を絞り込み、スカラー基準を満たすベクトル内で類似性検索を行うことができます。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>テキスト一致は、一致したドキュメントの関連性をスコアリングせずに、クエリ用語の正確な出現を見つけることに焦点を当てています。クエリ用語の意味と重要性に基づいて最も関連性の高いドキュメントを取得する場合は、「<a href="./full-text-search">フルテキスト検索</a>」を使用することをお勧めします。</p>
+<p>テキストマッチは、クエリ用語の正確な出現箇所を見つけることに焦点を当てており、一致したドキュメントの関連性をスコアリングしません。クエリ用語のセマンティックな意味と重要性に基づいて最も関連性の高いドキュメントを取得したい場合は、<a href="./full-text-search">Full Text Search</a>の使用をお勧めします。</p>
 
 </Admonition>
 
-## 概要について{#overview}
+Zilliz Cloudは、プログラムまたはウェブコンソールを介してテキストマッチを有効にすることをサポートしています。このページでは、プログラムでテキストマッチを有効にする方法に焦点を当てています。ウェブコンソールでの操作の詳細については、[コレクションの管理 (コンソール)](./manage-collections-console#text-match)を参照してください。
 
-Zilliz Cloudは、[Tantivy](https://github.com/quickwit-oss/tantivy)を統合して、基礎となる転置インデックスと用語ベースのテキスト検索を強化しています。各テキストエントリについて、Zilliz Cloudは手順に従ってインデックス化します
+## 概要{#overview}
 
-1. [アナライザ](./analyzer):アナライザは、入力テキストを個々の単語またはトークンにトークン化し、必要に応じてフィルタを適用することで処理します。これにより、Zilliz Cloudは、これらのトークンに基づいてインデックスを構築できます。
+Zilliz Cloudは、基盤となる転置インデックスと用語ベースのテキスト検索を強化するために[Tantivy](https://github.com/quickwit-oss/tantivy)を統合しています。各テキストエントリについて、Zilliz Cloudは次の手順に従ってインデックスを作成します。
 
-1. [インデックス作成](./manage-indexes):テキスト解析後、Zilliz Cloudは、各一意のトークンを含むドキュメントにマップする反転インデックスを作成します。
+1. [アナライザー](./analyzer-overview): アナライザーは、入力テキストを個々の単語（トークン）にトークン化し、必要に応じてフィルターを適用して処理します。これにより、Zilliz Cloudはこれらのトークンに基づいてインデックスを構築できます。
+
+1. [インデックスの管理](./manage-indexes): テキスト分析後、Zilliz Cloudは各一意のトークンをそれを含むドキュメントにマッピングする転置インデックスを作成します。
 
 ユーザーがテキストマッチを実行すると、転置インデックスが使用され、用語を含むすべてのドキュメントが迅速に取得されます。これは、各ドキュメントを個別にスキャンするよりもはるかに高速です。
 
-![Hj7ZwCqNnhHOktbDnstcOeYXn3s](/img/Hj7ZwCqNnhHOktbDnstcOeYXn3s.png)
+![N43zw7HuGhmCHRbYDDmctO1bnkd](https://zdoc-images.s3.us-west-2.amazonaws.com/N43zw7HuGhmCHRbYDDmctO1bnkd.png)
 
 ## テキストマッチを有効にする{#enable-text-match}
 
-テキストマッチは、`VARCHAR`フィールドタイプで動作します。これは、Zilliz Cloudの文字列データ型です。テキストマッチを有効にするには、`enable_analysis`と`enable_match`の両方を`True`に設定し、コレクションスキーマを定義する際にテキスト分析用の[アナライザ](./analyzer)をオプションで設定します。
+テキストマッチは、Zilliz Cloudの文字列データ型である[`VARCHAR`](./use-string-field)フィールドタイプで機能します。テキストマッチを有効にするには、`enable_analyzer`と`enable_match`の両方を`True`に設定し、必要に応じてコレクションschemaを定義する際にテキスト分析用のアナライザーを設定します。
 
-### Enable_Analyzer`とEnable_Match`を`設定`{#set-enableanalyzer-and-enablematch}
+### `enable_analyzer`と`enable_match`を設定する{#set-enableanalyzer-and-enablematch}
 
-特定の`VARCHAR`フィールドに対してテキストマッチを有効にするには、フィールドスキーマを定義する際に`enable_analysis`と`enable_match`パラメータの両方を`True`に設定します。これにより、Zilliz Cloudにテキストをトークン化し、指定されたフィールドに対して反転インデックスを作成するよう指示し、高速かつ効率的なテキストマッチを可能にします。
+特定の`VARCHAR`フィールドでテキストマッチを有効にするには、フィールドschemaを定義する際に`enable_analyzer`と`enable_match`の両方のパラメーターを`True`に設定します。これにより、Zilliz Cloudはテキストをトークン化し、指定されたフィールドの転置インデックスを作成して、高速で効率的なテキストマッチを可能にします。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
 from pymilvus import MilvusClient, DataType
 
-schema = MilvusClient.create_schema(auto_id=True, enable_dynamic_field=False)
-
+schema = MilvusClient.create_schema(enable_dynamic_field=False)
+schema.add_field(
+    field_name="id",
+    datatype=DataType.INT64,
+    is_primary=True,
+    auto_id=True
+)
 schema.add_field(
     field_name='text', 
     datatype=DataType.VARCHAR, 
     max_length=1000, 
     enable_analyzer=True, # Whether to enable text analysis for this field
     enable_match=True # Whether to enable text match
+)
+schema.add_field(
+    field_name="embeddings",
+    datatype=DataType.FLOAT_VECTOR,
+    dim=5
 )
 ```
 
@@ -88,7 +100,12 @@ import io.milvus.v2.service.collection.request.CreateCollectionReq;
 CreateCollectionReq.CollectionSchema schema = CreateCollectionReq.CollectionSchema.builder()
         .enableDynamicField(false)
         .build();
-
+schema.addField(AddFieldReq.builder()
+        .fieldName("id")
+        .dataType(DataType.Int64)
+        .isPrimaryKey(true)
+        .autoID(true)
+        .build());
 schema.addField(AddFieldReq.builder()
         .fieldName("text")
         .dataType(DataType.VarChar)
@@ -96,6 +113,37 @@ schema.addField(AddFieldReq.builder()
         .enableAnalyzer(true)
         .enableMatch(true)
         .build());
+schema.addField(AddFieldReq.builder()
+        .fieldName("embeddings")
+        .dataType(DataType.FloatVector)
+        .dimension(5)
+        .build());
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+import "github.com/milvus-io/milvus/client/v2/entity"
+
+schema := entity.NewSchema().WithDynamicFieldEnabled(false)
+schema.WithField(entity.NewField().
+    WithName("id").
+    WithDataType(entity.FieldTypeInt64).
+    WithIsPrimaryKey(true).
+    WithIsAutoID(true),
+).WithField(entity.NewField().
+    WithName("text").
+    WithDataType(entity.FieldTypeVarChar).
+    WithEnableAnalyzer(true).
+    WithEnableMatch(true).
+    WithMaxLength(1000),
+).WithField(entity.NewField().
+    WithName("embeddings").
+    WithDataType(entity.FieldTypeFloatVector).
+    WithDim(5),
+)
 ```
 
 </TabItem>
@@ -117,8 +165,9 @@ const schema = [
     max_length: 1000,
   },
   {
-    name: "sparse",
-    data_type: DataType.SparseFloatVector,
+    name: "embeddings",
+    data_type: DataType.FloatVector,
+    dim: 5,
   },
 ];
 ```
@@ -147,8 +196,11 @@ export schema='{
                 }
             },
             {
-                "fieldName": "sparse",
-                "dataType": "SparseFloatVector"
+                "fieldName": "embeddings",
+                "dataType": "FloatVector",
+                "elementTypeParams": {
+                    "dim": "5"
+                }
             }
         ]
     }'
@@ -157,15 +209,15 @@ export schema='{
 </TabItem>
 </Tabs>
 
-### 任意:アナライザを設定する{#optional-configure-an-analyzer}
+### オプション：アナライザーの設定 {#optional-configure-an-analyzer}
 
-キーワードマッチングのパフォーマンスと精度は、選択したアナライザに依存します。異なるアナライザは、さまざまな言語やテキスト構造に合わせて調整されているため、適切なアナライザを選択すると、特定のユースケースの検索結果に大きな影響を与える可能性があります。
+キーワードマッチングのパフォーマンスと精度は、選択されたアナライザーに依存します。異なるアナライザーは様々な言語やテキスト構造に合わせて調整されているため、適切なアナライザーを選択することで、特定のユースケースにおける検索結果に大きな影響を与える可能性があります。
 
-デフォルトでは、Zilliz Cloudは`標準`アナライザを使用します。このアナライザは、空白と句読点に基づいてテキストをトークン化し、40文字以上のトークンを削除し、テキストを小文字に変換します。このデフォルト設定を適用するために、追加のパラメータは必要ありません。詳細については、「[標準アナライザ](./standard-analyzer)」を参照してください。
+デフォルトでは、Zilliz Cloudは`standard`アナライザーを使用します。これは、空白と句読点に基づいてテキストをトークン化し、40文字を超えるトークンを削除し、テキストを小文字に変換します。このデフォルト設定を適用するために追加のパラメータは必要ありません。詳細については、[Standard](./standard-analyzer)を参照してください。
 
-別のアナライザが必要な場合は、`analyzer_params`パラメータを使用して設定できます。例えば、`english`のテキストを処理するために英語のアナライザを適用するには:
+異なるアナライザーが必要な場合は、`analyzer_params`パラメータを使用して設定できます。例えば、英語のテキストを処理するために`english`アナライザーを適用するには、次のようにします。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -201,6 +253,22 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
+<TabItem value='go'>
+
+```go
+analyzerParams := map[string]any{"type": "english"}
+schema.WithField(entity.NewField().
+    WithName("text").
+    WithDataType(entity.FieldTypeVarChar).
+    WithEnableAnalyzer(true).
+    WithEnableMatch(true).
+    WithAnalyzerParams(analyzerParams).
+    WithMaxLength(200),
+)
+```
+
+</TabItem>
+
 <TabItem value='javascript'>
 
 ```javascript
@@ -219,8 +287,9 @@ const schema = [
     analyzer_params: { type: 'english' },
   },
   {
-    name: "sparse",
-    data_type: DataType.SparseFloatVector,
+    name: "embeddings",
+    data_type: DataType.FloatVector,
+    dim: 5,
   },
 ];
 ```
@@ -250,7 +319,7 @@ export schema='{
                 }
             },
             {
-                "fieldName": "my_vector",
+                "fieldName": "embeddings",
                 "dataType": "FloatVector",
                 "elementTypeParams": {
                     "dim": "5"
@@ -263,27 +332,27 @@ export schema='{
 </TabItem>
 </Tabs>
 
-Zilliz Cloudには、さまざまな言語やシナリオに適したさまざまなアナライザも用意されています。詳細については、「[アナライザの概要](./analyzer-overview)」を参照してください。
+Zilliz Cloud は、さまざまな言語やシナリオに適した他のアナライザーも提供しています。詳細については、[アナライザーの概要](./analyzer-overview)を参照してください。
 
-## テキストマッチを使用{#use-text-match}
+## テキストマッチの使用方法{#use-text-match}
 
-コレクションスキーマのVARCHARフィールドのテキスト一致を有効にしたら、`TEXT_MATCH`式を使用してテキスト一致を実行できます。
+コレクションスキーマで VARCHAR フィールドのテキストマッチを有効にすると、`TEXT_MATCH` 式を使用してテキストマッチを実行できます。
 
-### TEXT_MATCH式の構文{#textmatch-expression-syntax}
+### TEXT_MATCH 式の構文{#textmatch-expression-syntax}
 
-検索するフィールドと用語を指定するために、`TEXT_MATCH`式が使用されます。その構文は以下の通りです:
+`TEXT_MATCH` 式は、検索するフィールドと用語を指定するために使用されます。その構文は次のとおりです。
 
 ```python
 TEXT_MATCH(field_name, text)
 ```
 
-- `field_name`:検索するVARCHARフィールドの名前。
+- `field_name`: 検索対象のVARCHARフィールドの名前。
 
-- `text`:検索する用語。複数の用語は、言語と設定されたアナライザに基づいて、スペースまたはその他の適切な区切り文字で区切ることができます。
+- `text`: 検索する用語。複数の用語は、言語と設定されたアナライザーに基づいて、スペースまたはその他の適切な区切り文字で区切ることができます。
 
-デフォルトでは、`TEXT_MATCH`は**OR**マッチングロジックを使用します。つまり、指定された用語のいずれかを含むドキュメントを返します。たとえば、用語`machine`または`deep`い`text`フィールドを含むドキュメントを検索するには、次の式を使用します。
+デフォルトでは、`TEXT_MATCH`は**OR**マッチングロジックを使用します。つまり、指定された用語のいずれかを含むドキュメントを返します。たとえば、`text`フィールドに`machine`または`deep`という用語を含むドキュメントを検索するには、次の式を使用します。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -296,6 +365,14 @@ filter = "TEXT_MATCH(text, 'machine deep')"
 
 ```java
 String filter = "TEXT_MATCH(text, 'machine deep')";
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+filter := "TEXT_MATCH(text, 'machine deep')"
 ```
 
 </TabItem>
@@ -317,11 +394,11 @@ export filter="\"TEXT_MATCH(text, 'machine deep')\""
 </TabItem>
 </Tabs>
 
-論理演算子を使用して複数の`TEXT_MATCH`式を組み合わせて、**AND**マッチングを実行することもできます。
+論理演算子を使用して複数の `TEXT_MATCH` 式を組み合わせることで、**AND** マッチングを実行することもできます。
 
-- テキストフィールドに`machine`と`deep`の両方を含むドキュメントを検索するには、次の式を使用します。
+- `text` フィールドに `machine` と `deep` の両方を含むドキュメントを検索するには、次の式を使用します。
 
-    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>
 
     ```python
@@ -334,6 +411,14 @@ export filter="\"TEXT_MATCH(text, 'machine deep')\""
 
     ```java
     String filter = "TEXT_MATCH(text, 'machine') and TEXT_MATCH(text, 'deep')";
+    ```
+
+    </TabItem>
+
+    <TabItem value='go'>
+
+    ```go
+    filter := "TEXT_MATCH(text, 'machine') and TEXT_MATCH(text, 'deep')"
     ```
 
     </TabItem>
@@ -355,9 +440,9 @@ export filter="\"TEXT_MATCH(text, 'machine deep')\""
     </TabItem>
     </Tabs>
 
-- ドキュメントに`machine`とlearningの両方が含まれているが、`deep`い`text`フィールドは含まれていない場合は、次の式を使用します。
+- `text`フィールドに`machine`と`learning`の両方を含み、`deep`を含まないドキュメントを検索するには、以下の式を使用します。
 
-    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>
 
     ```python
@@ -370,6 +455,14 @@ export filter="\"TEXT_MATCH(text, 'machine deep')\""
 
     ```java
     String filter = "not TEXT_MATCH(text, 'deep') and TEXT_MATCH(text, 'machine') and TEXT_MATCH(text, 'learning')";
+    ```
+
+    </TabItem>
+
+    <TabItem value='go'>
+
+    ```go
+    filter := "not TEXT_MATCH(text, 'deep') and TEXT_MATCH(text, 'machine') and TEXT_MATCH(text, 'learning')"
     ```
 
     </TabItem>
@@ -391,13 +484,13 @@ export filter="\"TEXT_MATCH(text, 'machine deep')\""
     </TabItem>
     </Tabs>
 
-### テキスト一致で検索{#search-with-text-match}
+### テキストマッチによる検索{#search-with-text-match}
 
-テキスト一致は、ベクトル類似検索と組み合わせて使用することで、検索範囲を狭め、検索パフォーマンスを向上させることができます。ベクトル類似検索の前にテキスト一致を使用してコレクションをフィルタリングすることで、検索する必要があるドキュメントの数を減らし、クエリ時間を短縮することができます。
+テキストマッチは、ベクトル類似度検索と組み合わせて検索範囲を絞り込み、検索パフォーマンスを向上させることができます。ベクトル類似度検索の前にテキストマッチを使用してコレクションをフィルタリングすることで、検索する必要のあるドキュメントの数を減らし、クエリ時間を短縮できます。
 
-この例では、`filter`式は、指定された用語`keyword1`または`keyword2`に一致するドキュメントのみを含むように検索結果をフィルタリングします。その後、このフィルタリングされたドキュメントのサブセットに対してベクトル類似検索が実行されます。
+この例では、`filter` 式は、指定された用語 `keyword1` または `keyword2` に一致するドキュメントのみを含むように検索結果をフィルタリングします。その後、このフィルタリングされたドキュメントのサブセットに対してベクトル類似度検索が実行されます。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -406,9 +499,10 @@ filter = "TEXT_MATCH(text, 'keyword1 keyword2')"
 
 # Assuming 'embeddings' is the vector field and 'text' is the VARCHAR field
 result = client.search(
-    collection_name="YOUR_COLLECTION_NAME", # Your collection name
+    collection_name="my_collection", # Your collection name
     anns_field="embeddings", # Vector field name
     data=[query_vector], # Query vector
+    # highlight-next-line
     filter=filter,
     search_params={"params": {"nprobe": 10}},
     limit=10, # Max. number of results to return
@@ -424,13 +518,34 @@ result = client.search(
 String filter = "TEXT_MATCH(text, 'keyword1 keyword2')";
 
 SearchResp searchResp = client.search(SearchReq.builder()
-        .collectionName("YOUR_COLLECTION_NAME")
+        .collectionName("my_collection")
         .annsField("embeddings")
         .data(Collections.singletonList(queryVector)))
+        // highlight-next-line
         .filter(filter)
         .topK(10)
         .outputFields(Arrays.asList("id", "text"))
         .build());
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+filter := "TEXT_MATCH(text, 'keyword1 keyword2')"
+
+resultSets, err := client.Search(ctx, milvusclient.NewSearchOption(
+    "my_collection", // collectionName
+    10,               // limit
+    []entity.Vector{entity.FloatVector(queryVector)},
+).WithANNSField("embeddings").
+    WithFilter(filter).
+    WithOutputFields("id", "text"))
+if err != nil {
+    fmt.Println(err.Error())
+    // handle error
+}
 ```
 
 </TabItem>
@@ -443,9 +558,10 @@ const filter = "TEXT_MATCH(text, 'keyword1 keyword2')";
 
 // Assuming 'embeddings' is the vector field and 'text' is the VARCHAR field
 const result = await client.search(
-    collection_name: "YOUR_COLLECTION_NAME", // Your collection name
+    collection_name: "my_collection", // Your collection name
     anns_field: "embeddings", // Vector field name
     data: [query_vector], // Query vector
+    // highlight-next-line
     filter: filter,
     params: {"nprobe": 10},
     limit: 10, // Max. number of results to return
@@ -468,8 +584,8 @@ curl --request POST \
 --header "Authorization: Bearer ${TOKEN}" \
 --header "Content-Type: application/json" \
 -d '{
-    "collectionName": "demo2",
-    "annsField": "my_vector",
+    "collectionName": "my_collection",
+    "annsField": "embeddings",
     "data": [[0.19886812562848388, 0.06023560599112088, 0.6976963061752597, 0.2614474506242501, 0.838729485096104]],
     "filter": '"$filter"',
     "searchParams": {
@@ -477,7 +593,7 @@ curl --request POST \
             "nprobe": 10
         }
     },
-    "limit": 3,
+    "limit": 10,
     "outputFields": ["text","id"]
 }'
 ```
@@ -485,13 +601,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### テキストが一致するクエリ{#query-with-text-match}
+### テキストマッチによるクエリ{#query-with-text-match}
 
-テキストの一致は、クエリ操作のスカラーフィルタリングにも使用できます。`TEXT_MATCH`式を`expr`パラメーターに指定することで、`query()`メソッドで指定された用語に一致するドキュメントを取得できます。
+テキストマッチは、クエリ操作におけるスカラーフィルタリングにも使用できます。`query()` メソッドの `expr` パラメータに `TEXT_MATCH` 式を指定することで、指定された用語に一致するドキュメントを取得できます。
 
-以下の例は、`テキスト`フィールドにキーワード1とキーワード2の両方が含まれているドキュメント`を`取得し`ま`す。
+以下の例では、`text` フィールドに `keyword1` と `keyword2` の両方の用語が含まれるドキュメントを取得します。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -499,7 +615,8 @@ curl --request POST \
 filter = "TEXT_MATCH(text, 'keyword1') and TEXT_MATCH(text, 'keyword2')"
 
 result = client.query(
-    collection_name="YOUR_COLLECTION_NAME",
+    collection_name="my_collection",
+    # highlight-next-line
     filter=filter, 
     output_fields=["id", "text"]
 )
@@ -513,11 +630,28 @@ result = client.query(
 String filter = "TEXT_MATCH(text, 'keyword1') and TEXT_MATCH(text, 'keyword2')";
 
 QueryResp queryResp = client.query(QueryReq.builder()
-        .collectionName("YOUR_COLLECTION_NAME")
+        .collectionName("my_collection")
+        // highlight-next-line
         .filter(filter)
         .outputFields(Arrays.asList("id", "text"))
         .build()
 );
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+filter = "TEXT_MATCH(text, 'keyword1') and TEXT_MATCH(text, 'keyword2')"
+resultSet, err := client.Query(ctx, milvusclient.NewQueryOption("my_collection").
+    WithFilter(filter).
+    WithOutputFields("id", "text"))
+if err != nil {
+    fmt.Println(err.Error())
+    // handle error
+}
+
 ```
 
 </TabItem>
@@ -529,7 +663,8 @@ QueryResp queryResp = client.query(QueryReq.builder()
 const filter = "TEXT_MATCH(text, 'keyword1') and TEXT_MATCH(text, 'keyword2')";
 
 const result = await client.query(
-    collection_name: "YOUR_COLLECTION_NAME",
+    collection_name: "my_collection",
+    // highlight-next-line
     filter: filter, 
     output_fields: ["id", "text"]
 )
@@ -550,7 +685,7 @@ curl --request POST \
 --header "Authorization: Bearer ${TOKEN}" \
 --header "Content-Type: application/json" \
 -d '{
-    "collectionName": "demo2",
+    "collectionName": "my_collection",
     "filter": '"$filter"',
     "outputFields": ["id", "text"]
 }'
@@ -561,15 +696,15 @@ curl --request POST \
 
 ## 考慮事項{#considerations}
 
-- フィールドの用語マッチングを有効にすると、ストレージリソースを消費する反転インデックスが作成されます。この機能を有効にする場合は、テキストの体格、一意のトークン、使用するアナライザによって異なるため、ストレージへの影響を考慮してください。
+- フィールドの用語マッチングを有効にすると、転置インデックスが作成され、ストレージリソースを消費します。この機能を有効にするかどうかを決定する際には、テキストサイズ、一意のトークン、および使用されるアナライザーによって異なるため、ストレージへの影響を考慮してください。
 
-- スキーマにアナライザを定義すると、その設定はそのコレクションに対して永続的になります。別のアナライザが必要に応じて適していると判断した場合は、既存のコレクションを削除して、希望のアナライザ構成で新しいコレクションを作成することを検討してください。
+- スキーマでアナライザーを定義すると、その設定はそのコレクションに対して永続的になります。異なるアナライザーがニーズにより適していると判断した場合は、既存のコレクションを削除し、目的のアナライザー構成で新しいコレクションを作成することを検討してください。
 
-- フィルタ式のエスケープ`ルール`:
+- `filter` 式におけるエスケープルール：
 
-    - 式内で二重引用符または一重引用符で囲まれた文字は、文字列定数として解釈されます。文字列定数にエスケープ文字が含まれる場合、エスケープ文字はエスケープシーケンスで表現する必要があります。例えば、`\`を使用して`\`を表し、`\t`を使用してタブ`\t`を表し、`\n`を使用して改行を表します。
+    - 式内で二重引用符または単一引用符で囲まれた文字は、文字列定数として解釈されます。文字列定数にエスケープ文字が含まれる場合、エスケープ文字はエスケープシーケンスで表現する必要があります。例えば、`\` を表すには `\\` を、タブ `\t` を表すには `\\t` を、改行 `\n` を表すには `\\n` を使用します。
 
-    - 文字列定数がシングルクォートで囲まれている場合、定数内のシングルクォートは`\'`として表され、ダブルクォートは`"`または`\"`として表すことができます。例:`'It\'s milvus'`。
+    - 文字列定数が単一引用符で囲まれている場合、定数内の単一引用符は `\\'` として表現する必要がありますが、二重引用符は `"` または `\\"` のいずれかで表現できます。例：`'It\\'s milvus'`。
 
-    - 文字列定数が二重引用符で囲まれている場合、定数内の二重引用符は`\"`として表され、単一引用符は`'`または`\'`として表すことができます。例:`"He said\"Hi\""`。
+    - 文字列定数が二重引用符で囲まれている場合、定数内の二重引用符は `\\"` として表現する必要がありますが、単一引用符は `'` または `\\'` のいずれかで表現できます。例：`"He said \\"Hi\\""`。
 

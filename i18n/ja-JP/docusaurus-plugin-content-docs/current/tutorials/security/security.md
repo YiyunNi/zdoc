@@ -4,19 +4,19 @@ slug: /security
 sidebar_label: "セキュリティ"
 beta: FALSE
 notebook: FALSE
-description: "この章では、認証、役割ベースのアクセス制御（RBAC）、プライベートエンドポイント、ホワイトリストなどのセキュリティ関連の対策に焦点を当てています。 | Cloud"
+description: "この章では、認証、ロールベースのアクセス制御 (RBAC)、プライベートエンドポイント、ホワイトリストなど、セキュリティ関連の対策に焦点を当てています。"
 type: origin
-token: HQimwM1w9isGimkbHaWcqotan1f
-sidebar_position: 10
+token: HAF7wZny2ip5BRky4zmcK446nOe
+sidebar_position: 12
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - security
-  - how does milvus work
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
+  - ベクトルデータベース
+  - クラウド
+  - セキュリティ
+  - 動画類似性検索
+  - ベクトル検索
+  - 音声類似性検索
+  - エラスティックベクトルデータベース
 
 ---
 
@@ -25,9 +25,7 @@ import Admonition from '@theme/Admonition';
 
 # セキュリティ
 
-この章では、認証、役割ベースのアクセス制御（RBAC）、プライベートエンドポイント、ホワイトリストなどのセキュリティ関連の対策に焦点を当てています。
-
-
+この章では、認証、ロールベースアクセス制御 (RBAC)、プライベートエンドポイント、ホワイトリストなど、セキュリティ関連の対策について説明します。
 
 import DocCardList from '@theme/DocCardList';
 

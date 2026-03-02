@@ -1,31 +1,31 @@
 ---
-title: "サードパーティーとの統合 | BYOC"
+title: "サードパーティとの統合 | BYOC"
 slug: /integrate-with-third-parties
-sidebar_label: "サードパーティーとの統合"
+sidebar_label: "サードパーティとの統合"
 beta: FALSE
 notebook: FALSE
-description: "(placeholder) | BYOC"
+description: "Zilliz Cloud プロジェクトをサードパーティサービスと統合する方法を学びます。 | BYOC"
 type: origin
-token: ED3jwUknjiLx4bkn3CrcvWD3nWh
+token: LykvwFyJCiloeQk2WmGce2s8nZg
 sidebar_position: 4
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - project third-party
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - ベクトルデータベース
+  - クラウド
+  - プロジェクト サードパーティ
+  - マネージド ベクトルデータベース
+  - Pinecone ベクトルデータベース
+  - 音声検索
+  - セマンティック検索とは
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# サードパーティーとの統合
+# サードパーティとの統合
 
-
+Zilliz Cloud プロジェクトをサードパーティサービスと統合する方法を学びます。
 
 import DocCardList from '@theme/DocCardList';
 

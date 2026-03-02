@@ -1,31 +1,31 @@
 ---
-title: "始める | BYOC"
+title: "Zilliz Cloud を始める | BYOC"
 slug: /get-started
 sidebar_label: "始める"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud上でアプリを構築するための包括的なクイックスタートガイドと関連トピック。 | BYOC"
+description: "この章では、Zilliz Cloud を始めるための資料を提供します。 | BYOC"
 type: origin
-token: FDtOwKSriiayeQkFsPAcOMmQnNc
+token: BDOHwqlMDiei78kdUefcjSQUnEg
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - get started
+  - ベクトルデータベース
+  - 始める
   - milvus
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
+  - milvus lite
+  - milvus benchmark
+  - マネージド Milvus
+  - サーバーレスベクトルデータベース
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# 始める
+# Zilliz Cloud を始める
 
-Zilliz Cloud上でアプリを構築するための包括的なクイックスタートガイドと関連トピック。
+この章では、Zilliz Cloud を始めるための資料を提供します。
 
 
 

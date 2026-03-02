@@ -1,38 +1,36 @@
 ---
-title: "クラスタ間の移行 | BYOC"
+title: "Zilliz から Zilliz への移行 | BYOC"
 slug: /migrate-between-clusters
-sidebar_label: "クラスタ間の移行"
+sidebar_label: "Zilliz から Zilliz への移行"
 beta: FALSE
 notebook: FALSE
-description: "クロスクラスターマイグレーションを使用すると、同じ組織内にあるか、異なる組織間にあるかにかかわらず、Zilliz Cloudクラスター間でデータを転送できます。主なユースケースは次のとおりです。 | BYOC"
+description: "Zilliz から Zilliz への移行により、同じ組織内または異なる組織間で Zilliz Cloud クラスター間でデータを転送できます。主なユースケースは次のとおりです | BYOC"
 type: origin
-token: JYUuwla8ZilIEJkREs3cPYcQnIh
-sidebar_position: 2
+token: CEJrwt9sYizQgtkPlBBcJXvRnff
+sidebar_position: 1
 keywords: 
-  - zilliz
-  - vector database
-  - cloud
-  - migrations
-  - clusters
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
+  - Zilliz
+  - ベクトルデータベース
+  - クラウド
+  - 移行
+  - クラスター
+  - Pinecone ベクトルデータベース
+  - 音声検索
+  - セマンティック検索とは
+  - 埋め込みモデル
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# クラスタ間の移行
+# Zilliz to Zilliz 移行
 
-クロスクラスターマイグレーションを使用すると、同じ組織内にあるか、異なる組織間にあるかにかかわらず、Zilliz Cloudクラスター間でデータを転送できます。主なユースケースは次のとおりです。
-
-- 無料レベルのクラスターから有料プランへの移行。
+Zilliz to Zilliz 移行では、同じ組織内または異なる組織間で、Zilliz Cloud クラスター間でデータを転送できます。主なユースケースは次のとおりです。
 
 - 組織間でデータを安全に共有する。
 
-- パフォーマンス最適化のためのインフラストラクチャの再編成。
+- パフォーマンス最適化のためにインフラストラクチャを再編成する。
 
 
 

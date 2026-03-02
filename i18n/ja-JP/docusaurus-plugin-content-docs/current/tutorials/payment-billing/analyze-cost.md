@@ -4,20 +4,20 @@ slug: /analyze-cost
 sidebar_label: "コスト分析"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudの使用状況ページでは、可視化されたコスト分析ツールが提供されており、Zilliz Cloudの使用状況と経費を複数の次元から表示および追跡できます。 | Cloud"
+description: "Zilliz Cloudの「使用状況」ページでは、視覚化されたコスト分析ツールが提供されており、Zilliz Cloudの使用状況と費用を複数の側面から確認・追跡できます。"
 type: origin
-token: PSzRweRpci2IRIkVcULcHcYznxX
-sidebar_position: 7
+token: LJplw7Q9Gi09GMkiy8PcbYp6nrg
+sidebar_position: 8
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - invoice
-  - view
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - ベクトルデータベース
+  - クラウド
+  - 請求書
+  - 表示
+  - ベクトルデータベースの仕組み
+  - ベクトルDB比較
+  - openai ベクトルDB
+  - 自然言語処理データベース
 
 ---
 
@@ -26,143 +26,106 @@ import Admonition from '@theme/Admonition';
 
 # コスト分析
 
-Zilliz Cloudの**使用状況**ページでは、可視化されたコスト分析ツールが提供されており、Zilliz Cloudの使用状況と経費を複数の次元から表示および追跡できます。
+Zilliz Cloudの**Usage**ページは、Zilliz Cloudの使用状況と費用を多角的に表示および追跡できる視覚化されたコスト分析ツールを提供します。
 
 ## 前提条件{#prerequisites}
 
-Zilliz Cloudの利用ページからコストを分析するには、**Organization Owner**または**Billing Admin**の権限が必要です。
+Zilliz CloudのUsageページからコストにアクセスして分析するには、**Organization Owner**または**Billing Admin**の権限が必要です。
 
-## 手続き{#procedures}
+## 手順{#procedures}
 
 Zilliz Cloudでコストを分析する方法は2つあります。
 
-- [Web UI経由](./analyze-cost#via-web-ui):コストの傾向を視覚化する必要がある場合は、Web UIを使用することをお勧めします。Web UIの使用状況の詳細は、**小数点以下2桁**まで丸められています（例:&#36;60.0 0）。
+- [Web UI経由](./analyze-cost#via-web-ui): コストの傾向を視覚化する必要がある場合は、Web UIを使用することをお勧めします。Web UIの使用状況の詳細は、**小数点以下10桁**に丸められます。
 
-- [RESTful API経由](./analyze-cost#via-restful-api):毎日の使用状況についてより詳細な情報が必要な場合は、RESTful APIを使用することをお勧めします。RESTful APIから得られる使用状況の詳細は、**小数点以下8桁**まで正確です（例:&#36;60.0 0 257846）。
+- [RESTful API経由](./analyze-cost#via-restful-api): 日々の使用状況についてより詳細な洞察が必要な場合は、RESTful APIを使用することをお勧めします。RESTful APIから取得される使用状況の詳細は、**小数点以下10桁**まで正確です。
 
-### Web UIから{#via-web-ui}
+### Web UI経由{#via-web-ui}
 
-[**請求**]ページで、[**使用状況**]タブに切り替えます。さまざまな次元で使用状況とコストの傾向を監視できます。
+**Billing**ページで、**Usage**タブに切り替えます。さまざまな側面から使用状況とコストの傾向を監視できます。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>使用データは1時間ごとに更新されます。</p>
+<p>使用状況データは1時間ごとに更新されます。</p>
 
 </Admonition>
 
-![analyze_cost](/img/analyze_cost.png)
+![analyze_cost](https://zdoc-images.s3.us-west-2.amazonaws.com/analyze_cost.png "analyze_cost")
 
 - **プロジェクト別**
 
-    異なるビジネスまたは部門向けに複数のプロジェクトを作成した場合、特定のプロジェクトの使用状況とコストをフィルタリングして表示できます。
+    異なるビジネスや部門向けに複数のプロジェクトを作成している場合、特定のプロジェクトの使用状況とコストをフィルタリングして表示できます。
 
-    例えば、R&D部門用の「Default Project」とマーケティング部門用の「Project_01」の2つのプロジェクトを作成した場合、プロジェクトフィルターで「Default Project」を選択して、過去1か月間のR&D部門の使用状況とコストを分析できます。
+    たとえば、Default Project（R&D部門向け）とProject_01（マーケティング部門向け）の2つのプロジェクトを作成している場合、プロジェクトフィルターでDefault Projectを選択して、過去1か月間のR&D部門の使用状況とコストを分析できます。
 
-    使用量の棒グラフは毎日の使用量の変化を視覚的に表し、使用量の詳細表は表形式でデータを提供します。
+    Usage Amount棒グラフは日々の使用状況の変化を視覚的に表し、Usage Amount Detailsテーブルはデータを表形式で提供します。
 
-- **クラスタ別**
+- **クラスター別**
 
-    ビジネスに基づいて複数の異なるクラスターを作成した場合、クラスターに応じて特定のクラスターの特定の使用状況とコストをフィルタリングして表示できます。
+    ビジネスに基づいて複数の異なるクラスターを作成している場合、クラスターに応じて特定のクラスターの使用状況とコストをフィルタリングして表示できます。
 
-    たとえば、ユーザ情報と注文情報のためにそれぞれ2つの異なるクラスタを作成した場合、注文情報を格納するクラスタの使用状況とコストを確認する必要がある場合は、フィルタで対応するクラスタを選択できます。
+    たとえば、ユーザー情報と注文情報用に2つの異なるクラスターを作成している場合、注文情報を保存しているクラスターの使用状況とコストを確認する必要があるときは、フィルターで対応するクラスターを選択できます。
 
-- **期間によって**
+- **期間別**
 
-    特定の期間にわたる使用状況とコストの傾向を確認するには、フィルターで期間を選択できます。
+    特定の期間の使用状況とコストの傾向を確認するには、フィルターで期間を選択します。
 
-    既定の期間は1か月で、最大期間は2か月です。
+    デフォルトの期間は1か月で、最大2か月間です。
 
-    例えば、2024年8月の毎日の使用量と支出を分析するには、日付フィルターで2024年8月1日から2024年8月31日を選択します。使用量の棒グラフには、選択した期間の毎日のコストの傾向が表示されます。
+    たとえば、2024年8月の日々の使用状況と費用を分析するには、日付フィルターで2024年8月1日から2024年8月31日までを選択します。Usage Amount棒グラフは、選択した期間の日々のコスト傾向を表示します。
 
 - **コストタイプ別**
 
-    特定のコストタイプの使用状況とコストの傾向を調べるには、フィルターで必要な請求項目を選択します。
+    特定のコストタイプについて使用状況とコストの傾向を調べるには、フィルターで目的の請求項目を選択します。
 
-    利用可能なコストタイプには、CUコスト、書き込みコスト、読み取りコスト、ストレージコスト（サーバーレス）、ストレージコスト（専用）、バックアップコスト、パイプラインコストが含まれます。
+    利用可能なコストタイプには、CU Costs、Write Costs、Read Costs、Storage Costs (Serverless)、Storage Costs (Dedicated)、Backup Costs、およびPipelines Costsが含まれます。
 
-    例えば、過去1ヶ月間のすべてのプロジェクトのバックアップコストの合計を分析するには、コストタイプフィルターで「バックアップコスト」を選択します。使用量の棒グラフには、選択した時間範囲の1日あたりのバックアップコストの合計が表示されます。
+    たとえば、過去1か月間のすべてのプロジェクトにおける合計バックアップコストを分析するには、コストタイプフィルターでBackup Costsを選択します。Usage Amount棒グラフは、選択した期間の合計日次バックアップコストを表示します。
 
-- **クラウド地域別**
+- **クラウドリージョン別**
 
-    複数のクラウドリージョンにサービスをデプロイしている場合は、クラウドリージョンでフィルタリングして、リージョン固有の使用状況とコストを表示できます。
+    複数のクラウドリージョンにサービスをデプロイしている場合、クラウドリージョンでフィルタリングして、リージョン固有の使用状況とコストを表示できます。
 
-    たとえば、AWS us-east-1(Virginia)とGCP rope-west 3(Frankfurt)の両方にクラスターをデプロイした場合、AWS us-east-1(Virginia)リージョンの使用状況とコストをフィルタリングして表示できます。
+    たとえば、AWS us-east-1 (Virginia)とGCP europe-west3 (Frankfurt)の両方にクラスターをデプロイしている場合、AWS us-east-1 (Virginia)リージョンの使用状況とコストをフィルタリングして表示できます。
 
-分析ニーズに基づいて複数のフィルターを組み合わせて、使用状況とコストのデータを視覚化することができます。例えば、プロジェクト、期間、コストタイプ、地域別にフィルターをかけることで、使用傾向とコストを包括的に把握することができます。
+分析のニーズに基づいて複数のフィルターを組み合わせて、視覚化された使用状況とコストデータを表示できます。たとえば、プロジェクト、期間、コストタイプ、およびリージョンでフィルタリングして、使用状況の傾向とコストを包括的に理解できます。
 
-### RESTful APIを使用する{#via-restful-api}
+### RESTful API経由{#via-restful-api}
 
-[毎日の使用を見るRESTful API](/reference/restful/query-daily-usage-v2)から得られる使用状況の詳細は、小数点以下8桁まで正確です。1日のコストがどのように蓄積され、小数点以下2桁に丸められるかを理解する必要がある場合は、RESTful APIを使用することをお勧めします。1日の使用量を合計すると、小数点以下8桁まで正確な総使用量が得られます。次に、この総使用量を小数点以下2桁に丸めます(例:&#36;60.5 6 724390は&#36;60.57に丸められます)。最終的な総使用量は、請求書に表示されている数字と一致する必要があります。
+<Admonition type="info" icon="📘" title="Notes">
 
-## よくある質問(FAQ){#faq}
+<p>Query Daily Usage RESTful APIは現在パブリックプレビュー中です。このAPIを使用するには、<a href="http://support.zilliz.com">お問い合わせください</a>。</p>
 
-- **Zilliz Cloudの利用詳細に表示される金額はどの程度正確ですか?**
+</Admonition>
 
-    Zilliz Cloudは小数点以下8桁の精度で製品の価格を設定します。その結果、料金は小数点以下8桁で計算されます。請求過程で、これらの詳細な日次料金は合計され、小数点以下2桁に丸められます。
+[Query Daily Usage](/reference/restful/query-daily-usage-v2) APIを使用して、組織の日々の使用状況を照会することもできます。このRESTful APIから取得する使用状況の詳細は、小数点以下8桁まで正確です。日々のコストがどのように累積され、小数点以下2桁に丸められるかを理解する必要がある場合は、RESTful APIを使用することをお勧めします。日々の使用状況を合計することで、小数点以下8桁まで正確な合計使用量が得られます。次に、この合計使用量を小数点以下2桁に丸めます（例：&#36;60.56724390は&#36;60.57に丸められます）。最終的な合計使用量は、請求書に表示される数値と一致する必要があります。
 
-    ウェブUIでは、表示される金額は小数点以下2桁に丸められます（例:&#36;60.0 0）。
+次の例は、組織の日々の使用状況を照会する方法を示しています。
 
-    ![precision_usage](/img/precision_usage.png)
+```bash
+curl --request POST \
+--url "https://api.cloud.zilliz.com/v2/usage/query" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "start": "2024-01-01",
+    "end": "2024-02-01"
+}'
+```
 
-    Query Org Daily U sage APIから取得した使用状況の詳細には、小数点以下8桁の精度で金額が表示されます。以下は出力の例です。
+上記のコマンドでは、
 
-    ```bash
-    {
-        "code": 0,
-        "data": {
-            "list": [
-                {
-                    "intervalStart": "2024-01-01T00:00:00Z",
-                    "intervalEnd": "2024-01-02T00:00:00Z",
-                    "total": 69.59794400,
-                    "currency": "RMB"
-                    "results": [
-                        {
-                            "costType": "compute",
-                            "properties": {
-                                "projectId": "prj-xxxxx",
-                                "regionId": "ali-cn-hangzhou",
-                                "cuType": "Performance-optimized",
-                                "plan": "Enterprise",
-                                "clusterId": "in01-xxxxx"
-                            },
-                            "quantity": 55.6778,
-                            "unit": "CU-hours",
-                            "listPrice": {
-                                "unitPrice": 1.25000000
-                            },
-                            "price": {
-                                "unitPrice": 1.25000000
-                            },
-                            "amount": 69.59725000 
-                        },
-                        {
-                            "costType": "storage",
-                            "properties": {
-                                "projectId": "prj-xxxxx",
-                                "regionId": "ali-cn-hangzhou",
-                                "cuType": "Performance-optimized",
-                                "plan": "Enterprise",
-                                "clusterId": "in01-xxxxx",
-                            },
-                            "quantity": 323,
-                            "unit": "GB-hours",
-                            "listPrice": {
-                                "unitPrice": 0.000694
-                            },
-                            "price": {
-                                "unitPrice": 0.000694
-                            },
-                            "amount": 0.00069400
-                        }
-                    ]
-                }
-            ],
-            "currentPage": 1,
-            "pageSize": 100,
-            "total": 10000
-        }
-    }
-    ```
+- `start`: クエリ期間の開始時刻を`YYYY-MM-DD`形式で指定します。
 
-    
+- `end`: クエリ期間の終了時刻を`YYYY-MM-DD`形式で指定します。
+
+## FAQ{#faq}
+
+**Zilliz Cloudの利用状況詳細に表示される金額の精度はどのくらいですか？**
+
+Zilliz Cloudは、**小数点以下10桁**の精度で料金を計算し、すべての請求はこの精度で計算されます。日次料金はまず小数点以下10桁で計算され、その後、請求処理中に合計され、小数点以下10桁に丸められます。
+
+- **RESTful API**: すべての数値（例：単価、使用量、使用金額）は常に小数点以下10桁で返されます。値が小数点以下10桁未満の場合、10桁になるように末尾にゼロが埋められます。RESTful APIの使用方法の詳細については、[Query Daily Usage](/reference/restful/query-daily-usage-v2)を参照してください。
+
+- **Web Console UI**: 表示される金額はAPIの値と一致しますが、読みやすさのために末尾のゼロは省略されます。たとえば、`0.1234000000`はUIでは`0.1234`と表示されます。
+

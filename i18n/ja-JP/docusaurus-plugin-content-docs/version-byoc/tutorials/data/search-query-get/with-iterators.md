@@ -4,21 +4,21 @@ slug: /with-iterators
 sidebar_label: "検索イテレータ"
 beta: FALSE
 notebook: FALSE
-description: "ANN検索には、1つのクエリで呼び出すことができるエンティティの最大数に制限があり、基本的なANN検索だけでは大規模な検索の要求を満たすことができない場合があります。topKが16,384を超えるANN検索リクエストの場合は、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項を紹介します。 | BYOC"
+description: "ANN検索には、単一のクエリで呼び出せるエンティティの最大数に制限があり、基本的なANN検索を単に利用するだけでは、大規模な検索の要求を満たせない場合があります。topKが16,384を超えるANN検索リクエストの場合、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項について説明します。 | BYOC"
 type: origin
-token: RDm8w6cS4ixDOzkP9V8cgIeNnwb
-sidebar_position: 12
+token: QVTnwVz2aifvSAkgomAc9KWRnHb
+sidebar_position: 16
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - collection
-  - data
-  - search iterators
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - ベクトルデータベース
+  - クラウド
+  - コレクション
+  - データ
+  - 検索イテレータ
+  - AIチャットボット
+  - コサイン距離
+  - ベクトルデータベースとは
+  - vectordb
 
 ---
 
@@ -28,31 +28,31 @@ import TabItem from '@theme/TabItem';
 
 # 検索イテレータ
 
-ANN検索には、1つのクエリで呼び出すことができるエンティティの最大数に制限があり、基本的なANN検索だけでは大規模な検索の要求を満たすことができない場合があります。topKが16,384を超えるANN検索リクエストの場合は、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項を紹介します。
+ANN検索には、単一のクエリで呼び出せるエンティティの最大数に制限があり、単純に基本的なANN検索を使用するだけでは、大規模な検索の要求を満たせない場合があります。topKが16,384を超えるANN検索リクエストの場合、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項について説明します。
 
-## 概要について{#overview}
+## 概要{#overview}
 
-Searchリクエストは検索結果を返し、SearchIteratorはイテレータを返します。このイテレータの**next()**メソッドを呼び出すことで、検索結果を取得できます。
+検索リクエストは検索結果を返しますが、SearchIteratorはイテレータを返します。このイテレータの**next()**メソッドを呼び出すことで、検索結果を取得できます。
 
-具体的には、以下のようにSearchIteratorsを使用できます。
+具体的には、SearchIteratorを次のように使用できます。
 
-1. SearchIteratorを作成し、**検索要求ごとに返すエンティティの数**と**返すエンティティの総数を**設定します。
+1. SearchIteratorを作成し、**検索リクエストごとに返すエンティティの数**と**返すエンティティの総数**を設定します。
 
-1. SearchIteratorの**next()**メソッドをループで呼び出して、ページ分割された検索結果を取得します。
+1. SearchIteratorの**next()**メソッドをループで呼び出し、ページネーションされた形式で検索結果を取得します。
 
-1. イテレータの**close()**メソッドが空の結果を返した場合、**next()**メソッドを呼び出してループを終了します。
+1. **next()**メソッドが空の結果を返した場合、イテレータの**close()**メソッドを呼び出してループを終了します。
 
 ## SearchIteratorの作成{#create-searchiterator}
 
-次のコードスニペットは、SearchIteratorを作成する方法を示しています。
+次のコードスニペットは、SearchIteratorの作成方法を示しています。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-from pymilvus import connections, Collection
+from pymilvus import MilvusClient
 
-connections.connect(
+client = MilvusClient(
     uri="YOUR_CLUSTER_ENDPOINT",
     token="YOUR_CLUSTER_TOKEN"
 )
@@ -61,12 +61,11 @@ connections.connect(
 query_vectors = [
     [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592]]
 
-collection = Collection("iterator_collection")
-
-iterator = collection.search_iterator(
+iterator = client.search_iterator(
+    collection_name="iterator_collection"
     data=query_vectors,
     anns_field="vector",
-    param={"metric_type": "L2", "params": {"nprobe": 16}},
+    search_param={"metric_type": "L2", "params": {"nprobe": 16}},
     # highlight-next-line
     batch_size=50,
     output_fields=["color"],
@@ -101,25 +100,99 @@ SearchIterator searchIterator = client.searchIterator(SearchIteratorReq.builder(
         .batchSize(500L)
         .outputFields(Lists.newArrayList("color"))
         .topK(20000)
-        .metricType(IndexParam.MetricType.COSINE)
+        .metricType(IndexParam.MetricType.L2)
         .build());
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+import (
+    "context"
+    "errors"
+    "fmt"
+    "io"
+    "log"
+    "strings"
+    "time"
+
+    "golang.org/x/exp/rand"
+
+    "github.com/milvus-io/milvus/client/v2/entity"
+    "github.com/milvus-io/milvus/client/v2/index"
+    "github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+c, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: milvusAddr,
+    APIKey:  "YOUR_CLUSTER_TOKEN",
+})
+
+vec := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
+iter, err := c.SearchIterator(ctx, milvusclient.NewSearchIteratorOption("iterator_collection", entity.FloatVector(vec)).
+    WithANNSField("vector").
+    WithAnnParam(index.NewIvfAnnParam(16)).
+    WithBatchSize(50).
+    WithOutputFields("color").
+    WithIteratorLimit(20000))
+if err != nil {
+    // handle error
+}
+
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+import { MilvusClient } from '@zilliz/milvus2-sdk-node';
+
+const milvusClient = new MilvusClient({
+  address: 'YOUR_CLUSTER_ENDPOINT',
+  token: 'YOUR_CLUSTER_TOKEN',
+});
+
+const queryVectors = [
+[0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592],
+];
+const collectionName = 'iterator_collection';
+
+const iterator = milvusClient.searchIterator({
+    collection_name: collectionName,
+    vectors: queryVectors,
+    anns_field: 'vector',
+    params: { metric_type: 'L2', params: { nprobe: 16 } },
+    batch_size: 50,
+    output_fields: ['color'],
+    limit: 20000,
+});
+
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
 ```
 
 </TabItem>
 </Tabs>
 
-上記の例では、検索ごとに返すエンティティの数(**batch_size/batchSize**)**を**50に設定し、返すエンティティの総数(**topK**)を20,000に設定しています。
+上記の例では、検索ごとに返されるエンティティの数（**batch_size**/**batchSize**）を50に、返されるエンティティの総数（**topK**）を20,000に設定しています。
 
-## SearchIteratorを使う{#use-searchiterator}
+## SearchIteratorを使用する{#use-searchiterator}
 
-SearchIteratorの準備ができたら、そのnext()メソッドを呼び出して、ページ分割された検索結果を取得できます。
+SearchIteratorの準備ができたら、そのnext()メソッドを呼び出して、検索結果をページネーションされた形式で取得できます。
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-results = []
-
 while True:
     # highlight-next-line
     result = iterator.next()
@@ -128,8 +201,8 @@ while True:
         iterator.close()
         break
     
-    for hit in result:
-        results.append(hit.to_dict())
+    for res in result:
+        print(res)
 ```
 
 </TabItem>
@@ -153,6 +226,42 @@ while (true) {
 ```
 
 </TabItem>
+
+<TabItem value='go'>
+
+```go
+for {
+    rs, err := iter.Next(ctx)
+    // end of iterator
+    if errors.Is(err, io.EOF) {
+        break
+    }
+    if err != nil {
+        // handler error
+    }
+    fmt.Println(rs)
+}
+```
+
+</TabItem>
+
+<TabItem value='javascript'>
+
+```javascript
+for await (const result of iterator) {
+    console.log(result);
+}
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+# restful
+```
+
+</TabItem>
 </Tabs>
 
-上記のコード例では、無限ループを作成し、ループ内で**next()**メソッドを呼び出して検索結果を変数に格納し、**next()**が何も返さない場合にイテレータを閉じました。
+上記のコード例では、無限ループを作成し、ループ内で **next()** メソッドを呼び出して検索結果を変数に格納し、**next()** が何も返さなくなったときにイテレータを閉じました。

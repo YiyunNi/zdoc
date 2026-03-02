@@ -4,9 +4,9 @@ slug: /use-string-field
 sidebar_label: "文字列フィールド"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudクラスターでは、文字列データを格納するために使用されるデータ型は`VARCHAR`です。`VARCHAR`フィールドを定義する場合、2つのパラメータが必須です | BYOC"
+description: "Zilliz Cloud クラスターでは、`VARCHAR` は文字列データを保存するために使用されるデータ型です。 | BYOC"
 type: origin
-token: KIOaw0B1ziqB43kJgafcYQRWnyh
+token: QBXVwP7oiiuEovkprDnckJlEnoK
 sidebar_position: 6
 keywords: 
   - zilliz
@@ -14,12 +14,12 @@ keywords:
   - cloud
   - collection
   - schema
-  - string field
-  - varchar field
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
+  - 文字列フィールド
+  - varchar フィールド
+  - knn
+  - 画像検索
+  - LLMs
+  - 機械学習
 
 ---
 
@@ -29,29 +29,31 @@ import TabItem from '@theme/TabItem';
 
 # 文字列フィールド
 
-Zilliz Cloudクラスターでは、文字列データを格納するために使用されるデータ型は`VARCHAR`です。`VARCHAR`フィールドを定義する場合、2つのパラメータが必須です
+Zilliz Cloudクラスターでは、`VARCHAR`は文字列データを保存するために使用されるデータ型です。
+
+`VARCHAR`フィールドを定義する際には、2つのパラメーターが必須です。
 
 - `datatype`を`DataType.VARCHAR`に設定します。
 
-- `VARCHAR`フィールドに格納できる最大文字数を定義する`max_length`を指定します。`max_length`の有効な範囲は1から65,535までです。
+- `max_length`を指定します。これは`VARCHAR`フィールドが保存できる最大バイト数を定義します。`max_length`の有効な範囲は1から65,535です。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloudは、<code>VARCHAR</code>フィールドのnull値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code>を<code>True</code>に、<code>default_value</code>を文字列値に設定します。詳細については、<a href="./nullable-and-default">Nullableデフォルト</a>を参照してください。</p>
+<p>Zilliz Cloudは、<code>VARCHAR</code>フィールドのnull値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code>を<code>True</code>に、<code>default_value</code>を文字列値に設定します。詳細については、<a href="./nullable-and-default">Nullable & Default</a>を参照してください。</p>
 
 </Admonition>
 
-## VARCHARフィールドを追加{#add-varchar-field}
+## VARCHARフィールドの追加{#add-varchar-field}
 
-文字列データをZilliz Cloudクラスターに格納するには、コレクションスキーマに`VARCHAR`フィールドを定義します。以下は、2つの`VARCHAR`フィールドを持つコレクションスキーマを定義する例です
+Zilliz Cloudクラスターに文字列データを保存するには、コレクションスキーマで`VARCHAR`フィールドを定義します。以下は、2つの`VARCHAR`フィールドを持つコレクションスキーマを定義する例です。
 
-- `varchar_field 1`:最大100文字を格納し、null値を許可し、既定値は`"Unknown"`です。
+- `varchar_field1`: 最大100バイトを保存し、null値を許可し、デフォルト値は`"Unknown"`です。
 
-- `varchar_field 2`:最大200文字を格納し、null値を許可しますが、デフォルト値はありません。
+- `varchar_field2`: 最大200バイトを保存し、null値を許可しますが、デフォルト値はありません。
 
-<Admonition type="info" icon="📘" title="ノート">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>スキーマを定義する際に<code>enable_dynamic_fields=True</code>を設定した場合、Zilliz Cloudでは、事前に定義されていないスカラーフィールドを挿入することができます。ただし、これによりクエリや管理が複雑になり、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">ダイナミックフィールド</a>を参照してください。</p>
+<p>スキーマを定義する際に<code>enable_dynamic_fields=True</code>を設定すると、Zilliz Cloudは事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリと管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">Dynamic Field</a>を参照してください。</p>
 
 </Admonition>
 
@@ -268,9 +270,9 @@ export schema="{
 
 ## インデックスパラメータの設定{#set-index-params}
 
-インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスタでは、ベクトルフィールドではインデックス作成が必須ですが、スカラーフィールドではオプションです。
+インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスターでは、ベクトルフィールドのインデックス作成は必須ですが、スカラーフィールドのインデックス作成はオプションです。
 
-以下の例では、ベクトルフィールドの`embedding`とスカラーフィールドの`varchar_field 1`に対して、`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプを使用すると、Milvusはデータ型に基づいて最適なインデックスを自動的に選択します。
+以下の例では、ベクトルフィールド`embedding`とスカラーフィールド`varchar_field1`の両方に`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプでは、Milvusがデータ型に基づいて最適なインデックスを自動的に選択します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -377,9 +379,9 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-## コレクションを作成{#create-collection}
+## コレクションの作成{#create-collection}
 
-スキーマとインデックスが定義されたら、文字列フィールドを含むコレクションを作成してください。
+スキーマとインデックスが定義されたら、文字列フィールドを含むコレクションを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -454,7 +456,7 @@ curl --request POST \
 
 ## データの挿入{#insert-data}
 
-コレクションを作成した後、スキーマに一致するエンティティを挿入してください。
+コレクションを作成したら、スキーマに一致するエンティティを挿入します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -596,11 +598,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルタ式を使用したクエリ{#query-with-filter-expressions}
+## フィルター式によるクエリ{#query-with-filter-expressions}
 
-エンティティを挿入した後、`query`メソッドを使用して、指定したフィルター式に一致するエンティティを取得します。
+エンティティを挿入した後、`query` メソッドを使用して、指定されたフィルター式に一致するエンティティを取得します。
 
-`varchar_field1`が文字列`"Product A"`に一致するエンティティを取得するには:
+`varchar_field1` が文字列 `"Product A"` に一致するエンティティを取得するには：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -699,7 +701,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-`varchar_field2`がnullのエンティティを取得するには:
+`varchar_field2` が null のエンティティを取得するには：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -798,7 +800,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-`varchar_field1`の値が`"Unknown"`であるエンティティを取得するには、以下の式を使用します。`varchar_field1`のデフォルト値は`"Unknown"`であるため、期待される結果には、`varchar_field1`が明示的に`"Unknown"`に設定されているか、`varchar_field1`がnullに設定されているエンティティが含まれます。
+`varchar_field1` が `"Unknown"` のエンティティを取得するには、以下の式を使用します。`varchar_field1` のデフォルト値は `"Unknown"` であるため、期待される結果には、`varchar_field1` が明示的に `"Unknown"` に設定されているか、`varchar_field1` が null に設定されているエンティティが含まれるはずです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -896,9 +898,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルタ式を用いたベクトル検索{#vector-search-with-filter-expressions}
+## フィルター式によるベクトル検索{#vector-search-with-filter-expressions}
 
-基本的なスカラー場フィルタリングに加えて、ベクトル類似検索とスカラー場フィルターを組み合わせることができます。例えば、次のコードはベクトル検索にスカラー場フィルターを追加する方法を示しています。
+基本的なスカラーフィールドフィルタリングに加えて、ベクトル類似性検索とスカラーフィールドフィルタを組み合わせることができます。例えば、以下のコードは、ベクトル検索にスカラーフィールドフィルタを追加する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

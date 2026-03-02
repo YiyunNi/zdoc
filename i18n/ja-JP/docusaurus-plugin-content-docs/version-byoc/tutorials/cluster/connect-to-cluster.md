@@ -1,23 +1,23 @@
 ---
-title: "クラスタに接続 | BYOC"
+title: "クラスターへの接続 | BYOC"
 slug: /connect-to-cluster
-sidebar_label: "クラスタに接続"
+sidebar_label: "クラスターへの接続"
 beta: FALSE
 notebook: FALSE
-description: "この記事では、クラスターへの接続に関する体系的なガイドを提供しています。 | BYOC"
+description: "この記事では、クラスターへの接続に関する体系的なガイドを提供します。 | BYOC"
 type: origin
-token: BSk2wF8rpifuDkk4iYMcqyR0nwg
+token: IVFfws0lJi8gIVkRvrvc9aXvnNe
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - connect
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - 接続
+  - サーバーレスベクトルデータベース
+  - milvus open source
+  - milvusの仕組み
+  - Zilliz ベクトルデータベース
 
 ---
 
@@ -25,27 +25,37 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# クラスタに接続
+# クラスターへの接続
 
-この記事では、クラスターへの接続に関する体系的なガイドを提供しています。
+この記事では、クラスターへの接続に関する体系的なガイドを提供します。
 
-## 始める前に{#before-you-start}
+## 開始する前に{#before-you-start}
 
-次に進む前に、次の前提条件が満たされていることを確認してください:
+続行する前に、以下の前提条件が満たされていることを確認してください。
 
-- クラスタが作成されました。詳細については、[クラスタ作成](./create-cluster)を参照してください。
+- BYOC プロジェクトをデプロイしていること。詳細については、「[AWS に BYOC をデプロイする](./deploy-byoc-aws)」を参照してください。
 
-- ユースケースに適したMilvusSDKがインストールされています。詳細については、[SDKのインストール](./install-sdks)を参照してください。
+- クラスターを作成していること。詳細については、「[クラスターを作成する](./create-cluster)」を参照してください。
 
-<Admonition type="info" icon="📘" title="ノート">
+- ユースケースに適用可能な Milvus SDK をインストールしていること。詳細については、「[SDK をインストールする](./install-sdks)」を参照してください。
 
-<p>SDKよりもRESTful APIを利用する傾向にある人にとって、継続的な接続は確立できないことを理解することが重要です。これは、HTTPプロトコルの単方向通信モードに起因しています。</p>
+<Admonition type="info" icon="📘" title="Note">
+
+<p>SDK ではなく RESTful API の利用を検討している場合、継続的な接続を確立できないことを理解しておくことが重要です。これは、HTTP プロトコルの単方向通信モードに起因します。</p>
 
 </Admonition>
 
-## クラスタに接続する{#connect-to-a-cluster}
+## クラスターに接続する{#connect-to-a-cluster}
 
-クラスターが稼働したら、そのパブリックエンドポイントと認証トークンを使用して接続します。このトークンは、ユーザー名とパスワードのペアで構成される[クラスター資格情報](./cluster-credentials)のいずれかです。
+クラスターが稼働したら、そのパブリックエンドポイントと認証トークンを使用して接続します。
+
+- **クラスターのパブリックエンドポイント:** Zilliz Cloud ウェブコンソールで取得できます。ターゲットクラスターの**クラスター詳細**ページに移動します。**接続**カードで、クラスターのパブリックエンドポイントをコピーできます。
+
+    ![connection-info](https://zdoc-images.s3.us-west-2.amazonaws.com/connection-info.png "connection-info")
+
+- **トークン:** このトークンは、ユーザー名とパスワードのペアで構成される[クラスター認証情報](./cluster-credentials)です。
+
+次の例は、クラスターに接続する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
 <TabItem value='python'>

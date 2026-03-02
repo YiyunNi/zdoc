@@ -1,57 +1,67 @@
 ---
-title: "バックアップファイルを使用してMilvusからZilliz Cloudに移行する | Cloud"
+title: "バックアップファイルによるMilvusからZilliz Cloudへの移行 | Cloud"
 slug: /via-backup-files
-sidebar_label: "バックアップファイルへ"
+sidebar_label: "バックアップファイルによる移行"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、インフラストラクチャを自分で管理する必要がなく、Milvusベクトルデータベースを使用したいユーザー向けに、Milvusを完全に管理されたクラウドホストソリューションとして提供しています。スムーズな移行を可能にするために、データベースエンドポイントを介してソースMilvusに接続するか、バックアップファイルを直接アップロードすることができます。 | Cloud"
+description: "Zilliz Cloudは、Milvusをフルマネージドのクラウドホスト型ソリューションとして提供しており、インフラストラクチャを自分で管理することなくMilvusベクトルデータベースを使用したいユーザー向けです。このトピックでは、バックアップファイルを直接アップロードしてMilvusから移行する方法について説明します。 | Cloud"
 type: origin
-token: Pg4pwmKpzibwjhkCwRCcj1QJnHd
+token: IO4fwm5fJiroaoktKeIcbdkDnRb
 sidebar_position: 2
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - migrations
+  - ベクトルデータベース
+  - クラウド
+  - 移行
   - milvus
-  - backup files
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - バックアップファイル
+  - ハイブリッド検索
+  - 語彙検索
+  - 近傍検索
+  - Agentic RAG
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# バックアップファイルを使用してMilvusからZilliz Cloudに移行する
+import Supademo from '@site/src/components/Supademo';
 
-Zilliz Cloudは、インフラストラクチャを自分で管理する必要がなく、Milvusベクトルデータベースを使用したいユーザー向けに、Milvusを完全に管理されたクラウドホストソリューションとして提供しています。スムーズな移行を可能にするために、データベースエンドポイントを介してソースMilvusに接続するか、バックアップファイルを直接アップロードすることができます。
+import Procedures from '@site/src/components/Procedures';
 
-このトピックでは、バックアップファイルを直接アップロードしてMilvusから移行する方法について説明します。データベースエンドポイントを介してデータを移行する方法については、「[エンドポイントへ](./via-endpoint)」を参照してください。
+# バックアップファイルによるMilvusからZilliz Cloudへの移行
 
-## 始める前に{#before-you-start}
+Zilliz Cloudは、Milvusをフルマネージドのクラウドホスト型ソリューションとして提供しており、インフラストラクチャを自分で管理することなくMilvusベクトルデータベースを使用したいユーザー向けです。このトピックでは、バックアップファイルを直接アップロードしてMilvusから移行する方法について説明します。
 
-次の前提条件が満たされていることを確認してください。
+## 開始する前に{#before-you-start}
 
-- 移行方法に基づいて、移行に必要な準備を行いました。
+以下の前提条件が満たされていることを確認してください。
 
-    - **ローカルファイルから**:事前にローカルバックアップファイルを準備してください。バックアップファイルの準備方法については、「[移行用バックアップファイルを準備](./via-backup-files#prepare-backup-files-for-migration)[する](./via-backup-files#prepare-backup-files-for-migration)」を参照してください。
+- 移行方法に基づいて、移行に必要な準備が整っていること。
 
-    - **オブジェクトストレージから**: Milvusオブジェクトストレージの公開URLとアクセス資格情報。長期または一時的な資格情報を選択できます。
+    - **ローカルファイルから**: ローカルのバックアップファイルを事前に準備します。バックアップファイルの準備方法については、「[移行のためのバックアップファイルの準備](./via-backup-files#prepare-backup-files-for-migration)」を参照してください。
 
-- 組織オーナーまたはプロジェクト管理者の役割が付与されています。必要な権限がない場合は、Zilliz Cloudの管理者にお問い合わせください。
+    - **オブジェクトストレージから**: Milvusオブジェクトストレージの公開URLとアクセス認証情報。長期または一時的な認証情報を選択できます。オブジェクトストレージURLの詳細な例については、「[FAQ](./via-backup-files#faq)」を参照してください。
 
-## 移行のためのバックアップファイルを準備する{#prepare-backup-files-for-migration}
+    - **ボリュームから**: 非常に大きなローカルバックアップファイルの場合、まずファイルをZilliz Cloudボリュームにアップロードし、そのボリューム内のファイルパスを指定します。
 
-Milvus 2. xの移行データを準備するには、
+- **Organization Owner**または**Project Admin**ロールが付与されていること。必要な権限がない場合は、Zilliz Cloud Organization Ownerに連絡してください。
 
-1. [milvus](https://github.com/zilliztech/milvus-backup/releases)[-backup](https://github.com/zilliztech/milvus-backup/releases)をダウンロードしてください。常に最新リリースを使用してください。
+- ターゲットクラスターのCUサイズがソースデータを収容できることを確認してください。必要なCUサイズを見積もるには、[計算ツール](https://zilliz.com/pricing?_gl=1*qro801*_ga*MzkzNTY1NDM0LjE3Mjk1MDExNzQ.*_ga_Q1F8R2NWDP*MTc0NTQ4MzY1Ni4zMDEuMS4xNzQ1NDg0MTEzLjAuMC4w*_ga_KKMVYG8YF2*MTc0NTQ4MzY1Ni4yNTIuMS4xNzQ1NDg0MTEzLjAuMC4w#calculator)を使用してください。
 
-1. ダウンロードしたバイナリと**configs**フォルダを並べて作成し、**[backup. yaml](https://raw.githubusercontent.com/zilliztech/milvus-backup/master/configs/backup.yaml)**を**configs**フォルダにダウンロードします。
+## 移行のためのバックアップファイルの準備{#prepare-backup-files-for-migration}
 
-    ステップが完了すると、ワークスペースフォルダの構造は次のようになります:
+Milvus 2.xの移行データを準備するには、
+
+<Procedures>
+
+1. **[milvus-backup](https://github.com/zilliztech/milvus-backup/releases)**をダウンロードします。常に最新リリースを使用してください。
+
+    現在、Milvus 2.2以降のバージョンからZilliz Cloudクラスターにデータを移行できます。互換性のあるソースおよびターゲットMilvusバージョンの詳細については、「[Milvus Backup Overview](https://milvus.io/docs/milvus_backup_overview.md)」を参照してください。
+
+1. ダウンロードしたバイナリと同じ階層に**configs**フォルダを作成し、**[backup.yaml](https://raw.githubusercontent.com/zilliztech/milvus-backup/master/configs/backup.yaml)**を**configs**フォルダにダウンロードします。
+
+    このステップが完了すると、ワークスペースフォルダの構造は次のようになります。
 
     ```plaintext
     workspace
@@ -60,34 +70,41 @@ Milvus 2. xの移行データを準備するには、
          └── backup.yaml
     ```
 
-1. **backup. yaml**をカスタマイズする。
+1. **backup.yaml** をカスタマイズします。
 
-    通常の場合、このファイルをカスタマイズする必要はありません。しかし、先に進む前に、以下の設定項目が正しいかどうかを確認してください。
+    通常、このファイルをカスタマイズする必要はありません。しかし、先に進む前に、以下の設定項目が正しいことを確認してください。
 
-    - `アドレス`
+    ```yaml
+    ...
+    # milvus proxy address, compatible to milvus.yaml
+    milvus:
+      address: localhost
+      port: 19530
+      ...
+      
+    # Related configuration of minio, which is responsible for data persistence for Milvus.
+    minio:
+      # Milvus storage configs, make them the same with milvus config
+      storageType: "minio" # support storage type: local, minio, s3, aws, gcp, ali(aliyun), azure, tc(tencent), gcpnative
+      # You can use "gcpnative" for the Google Cloud Platform provider. Uses service account credentials for authentication.
+      address: localhost # Address of MinIO/S3
+      port: 9000   # Port of MinIO/S3
+      bucketName: "a-bucket" # Milvus Bucket name in MinIO/S3, make it the same as your milvus instance
+      backupBucketName: "a-bucket" # Bucket name to store backup data. Backup data will store to backupBucketName/backupRootPath
+      rootPath: "files" # Milvus storage root path in MinIO/S3, make it the same as your milvus instance
+      ...
+    ```
 
-    - `ダウンロードmivlus. port`
-
-    - `minioのアドレス`
-
-    - `minioのポート`
-
-    - `minio. bucketName`
-
-    - `minio. backupBucketName`
-
-    - `ルートパス`
-
-    <Admonition type="info" icon="📘" title="ノート">
+    <Admonition type="info" icon="📘" title="Notes">
 
     <ul>
-    <li><p>Docker Composeを使用してインストールされたMilvusインスタンスの場合、minio<code>.</code>bucketNameはデフォルトで<code>a-bucket</code>、<code>rootPath</code>はデフォルトで<code>ファイル</code>になります。</p></li>
-    <li><p>KubernetesにインストールされたMilvusインスタンスの場合、minio<code>.</code>bucketNameのデフォルトは<code>milvus-bucket</code>で、<code>rootPath</code>のデフォルトは<code>file</code>です。</p></li>
+    <li><p>Docker Compose を使用してインストールされた Milvus インスタンスの場合、<code>minio.bucketName</code> はデフォルトで <code>a-bucket</code> に、<code>rootPath</code> はデフォルトで <code>files</code> になります。</p></li>
+    <li><p>Kubernetes にインストールされた Milvus インスタンスの場合、<code>minio.bucketName</code> はデフォルトで <code>milvus-bucket</code> に、<code>rootPath</code> はデフォルトで <code>file</code> になります。</p></li>
     </ul>
 
     </Admonition>
 
-1. Milvusインストールのバックアップを作成します。
+1. Milvus インストールのバックアップを作成します。
 
     ```plaintext
     ./milvus-backup --config backup.yaml create -n my_backup
@@ -99,15 +116,15 @@ Milvus 2. xの移行データを準備するには、
     ./milvus-backup --config backup.yaml get -n my_backup
     ```
 
-1. バックアップファイルを確認してください。
+1. バックアップファイルを確認します。
 
-    - S 3バケットにminio`. address`と`minio.port`を設定した場合、バックアップファイルはすでにS 3バケットにあります。
+    - `minio.address` と `minio.port` を S3 バケットに設定した場合、バックアップファイルはすでに S3 バケットにあります。
 
-    - Minioバケットにminio`.`addressと`minio`. portを設定した場合、Minioコンソールまたは**mc**クライアントを使用してダウンロードできます。
+    - `minio.address` と `minio.port` を Minio バケットに設定した場合、Minio Console または **mc** クライアントを使用してダウンロードできます。
 
-        - Minio Consoleからダウンロードするには、[Minio Console](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html)にログインし、minio. addressで指定されたBucketを探し、`Bucket`内のファイルを選択し、「**ダウンロード**」をクリックしてダウンロードします。
+        - [Minio Console](https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html) からダウンロードするには、Minio Console にログインし、`minio.address` で指定されたバケットを見つけ、バケット内のファイルを選択し、**Download** をクリックしてダウンロードします。
 
-        - もし[、](https://min.io/docs/minio/linux/reference/minio-mc.html#mc-install)**[mc](https://min.io/docs/minio/linux/reference/minio-mc.html#mc-install)**[クライアント](https://min.io/docs/minio/linux/reference/minio-mc.html#mc-install)を使いたい場合は、以下のようにしてください:
+        - [**mc** クライアント](https://min.io/docs/minio/linux/reference/minio-mc.html#mc-install) を使用する場合は、次のようにします。
 
             ```plaintext
             # configure a Minio host
@@ -120,57 +137,89 @@ Milvus 2. xの移行データを準備するには、
             mc cp --recursive my_minio/<your-bucket-path> <local_dir_path>
             ```
 
-1. ダウンロードしたアーカイブを解凍し、**バックアップ**フォルダの内容のみをZilliz Cloudにアップロードします。
+1. ダウンロードしたアーカイブを解凍し、**backup** フォルダの内容のみを Zilliz Cloud にアップロードします。
 
-## Zilliz Cloudへのデータ移行{#migrate-data-to-zilliz-cloud}
+</Procedures>
 
-バックアップファイルが準備できたら、ローカルファイルから直接またはオブジェクトストレージからデータを移行できます。
+## Zilliz Cloud へのデータ移行{#migrate-data-to-zilliz-cloud}
 
-1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login)にログインします。
+バックアップファイルが準備できたら、ローカルファイル、オブジェクトストレージ、またはボリュームからデータを移行できます。
 
-1. ターゲットプロジェクトに移動し、**移行**>**Milvus**>**バックアップファイル経由**を選択してください。
+<Supademo id="cmbhd2wj85jktsn1rnjmi4t5o" title="Zilliz Cloud - Migrate from Milvus via Backup File Demo" />
 
-1. Milvus**からの移行**ページでは、
+<Admonition type="info" icon="📘" title="Notes">
 
-    - データがローカルファイルにある場合:
-
-        - [**ローカルファイルから**]を選択し、データを含むフォルダをアップロードし、ターゲットクラスタを選択します。
-
-    - データがオブジェクトストレージにある場合:
-
-        - [**オブジェクトストレージから**]を選択し、サービス(S 3、Azure Blob、GCPなど)を選択し、データのオブジェクトURLまたはS 3 URIを入力し、必要な資格情報を入力して、ターゲットクラスターを選択します。
-
-        - 適切な**資格情報タイプ**を指定して、必要な資格情報を提供します。
-
-            - **長期**:頻繁な再認証なしでリソースに永続的にアクセスする場合は、このオプションを使用します。
-
-            - **セッション**:限られた期間有効な一時的な資格情報の場合、特定のユーザーセッション中の短期間のアクセスに最適です。
-
-1. [**移行**]をクリックします。
-
-![migrate_from_milvus_via_backup_file](/img/migrate_from_milvus_via_backup_file.png)
-
-## 移行過程を監視する{#monitor-the-migration-process}
-
-「**移行**」をクリックすると、移行ジョブが生成されます。[ジョブ](./job-center)ページで移行の進捗状況を確認できます。ジョブのステータスが「**IN PROGRESS**」から「**SUCCESS FUL**」に切り替わると、移行が完了します。
-
-<Admonition type="info" icon="📘" title="ノート">
-
-<p>移行後、ターゲットクラスタ内のコレクションとエンティティの数がデータソースと一致していることを確認してください。不一致が見つかった場合は、エンティティが欠落しているコレクションを削除して再移行してください。</p>
+<p>ソースコレクションでフルテキスト検索がすでに有効になっている場合、Zilliz Cloud は移行後もターゲットコレクションの関数設定を保持します。これらの継承された設定は変更できません。</p>
 
 </Admonition>
 
-![verify_collection](/img/verify_collection.png)
+## 移行プロセスの監視{#monitor-the-migration-process}
 
-Zilliz Cloudは、最適化されたインデックス作成のために[AUTOINDEX](./autoindex-explained)のみをサポートしており、このアルゴリズムを使用して移行されたコレクションを自動的にインデックス化します。
+**Migrate** をクリックすると、移行ジョブが生成されます。移行の進行状況は、[Jobs](./job-center) ページで確認できます。ジョブのステータスが **In Progress** から **Successful** に切り替わると、移行は完了です。
 
-コレクションがロードされたら、お好みの方法で自由に操作できます。
+<Supademo id="cme9my2nn4b64h3pyiyvsakqb" title="Zilliz Cloud - Monitor the Migration Process" />
 
-## 移行ジョブをキャンセル{#cancel-migration-job}
+<Admonition type="info" icon="📘" title="Notes">
 
-移行過程で問題が発生した場合は、次の手順に従ってトラブルシューティングを行い、移行を再開できます。
+<p>移行後、ターゲットクラスター内のコレクションとエンティティの数がデータソースと一致することを確認してください。不一致が見つかった場合は、エンティティが不足しているコレクションを削除し、再移行してください。</p>
 
-1. [[ジョブ](./job-center)]ページで、失敗した移行ジョブを特定してキャンセルします。
+</Admonition>
 
-1. [アクション]列の[**詳細**を**表示**]をクリックして、エラーログにアクセスします。
+## 移行後{#post-migration}
 
+移行ジョブが完了したら、次の点に注意してください。
+
+- **インデックス作成**: 移行プロセスは、移行されたコレクションに対して [AUTOINDEX](./autoindex-explained) を自動的に作成します。
+
+- **手動ロードが必要**: 自動インデックス作成にもかかわらず、移行されたコレクションは検索またはクエリ操作にすぐに利用できるわけではありません。検索およびクエリ機能を有効にするには、Zilliz Cloud でコレクションを手動でロードする必要があります。詳細については、[Load & Release](./load-release-collections) を参照してください。
+
+## 移行ジョブのキャンセル{#cancel-migration-job}
+
+移行プロセスで問題が発生した場合は、次の手順でトラブルシューティングを行い、移行を再開できます。
+
+<Procedures>
+
+1. [Jobs](./job-center) ページで、失敗した移行ジョブを特定し、キャンセルします。
+
+1. **Actions** 列の **View Details** をクリックして、エラーログにアクセスします。
+
+</Procedures>
+
+## FAQ{#faq}
+
+1. **オブジェクトストレージバケットに保存されているバックアップファイルから移行する場合、どのような形式のURLに従うべきですか？**
+
+    次の表は、さまざまなオブジェクトストレージサービスのURLの例を示しています。バックアップファイルから移行する場合、バックアップフォルダのみを選択できることに注意してください。
+
+    <table>
+       <tr>
+         <th colspan="2"><p><strong>クラウドオブジェクトストレージ</strong></p></th>
+         <th><p><strong>URL形式</strong></p></th>
+       </tr>
+       <tr>
+         <td rowspan="3"><p><strong>Amazon S3</strong></p></td>
+         <td><p>AWS オブジェクトURL、仮想ホストスタイル</p></td>
+         <td><p><i>http</i>s://\<bucket_name>.s3.\<region-code>.amazonaws.com/\<folder_name>/</p></td>
+       </tr>
+       <tr>
+         <td><p>AWS オブジェクトURL、パススタイル</p></td>
+         <td><p><i>http</i>s://s3.\<region-code>.amazonaws.com/\<bucket_name>/\<folder_name>/</p></td>
+       </tr>
+       <tr>
+         <td><p>Amazon S3 URI</p></td>
+         <td><p>s3://\<bucket_name>/\<folder_name>/</p></td>
+       </tr>
+       <tr>
+         <td rowspan="2"><p><strong>Google Cloud Storage</strong></p></td>
+         <td><p>GSC パブリックURL</p></td>
+         <td><p><i>http</i>s://storage.cloud.google.com/\<bucket_name>/\<folder_name>/</p></td>
+       </tr>
+       <tr>
+         <td><p>GSC gsutil URI</p></td>
+         <td><p>gs://\<bucket_name>/\<folder_name>/</p></td>
+       </tr>
+       <tr>
+         <td colspan="2"><p><strong>Azure Blob Storage</strong></p></td>
+         <td><p><i>http</i>s://\<storage_account>.blob.core.windows.net/\<container>/\<folder>/</p></td>
+       </tr>
+    </table>

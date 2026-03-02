@@ -1,23 +1,23 @@
 ---
-title: "クラスタ作成 | Cloud"
+title: "クラスターの作成 | Cloud"
 slug: /create-cluster
-sidebar_label: "クラスタ作成"
+sidebar_label: "クラスターの作成"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、ユーザーのビジネスニーズに対応するために、さまざまなクラスタープランレベルを提供しています。適切なクラスタータイプの選択に関するガイダンスについては、クイックスタート](./quick-start)と[詳細なプラン比較を参照してください。 | Cloud"
+description: "Zilliz Cloudは、お客様のビジネスニーズに合わせて様々なクラスターデプロイオプションを提供します。"
 type: origin
-token: AmPbw2DdSig3YPkCKDucnG3Rn7g
+token: KrbjwFhy3iojF3k97XmcvvXMnW7
 sidebar_position: 1
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - create
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - 作成
+  - 画像検索
+  - LLMs
+  - 機械学習
+  - RAG
 
 ---
 
@@ -25,68 +25,57 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# クラスタ作成
+import Supademo from '@site/src/components/Supademo';
 
-Zilliz Cloudは、ユーザーのビジネスニーズに対応するために、さまざまなクラスタープランレベルを提供しています。適切なクラスタータイプの選択に関するガイダンスについては、[クイックスタート](./quick-start)と[詳細なプラン比較](./select-zilliz-cloud-service-plans)を参照してください。
+# クラスターの作成
 
-このトピックでは、クラスターを作成する方法について説明します。
+Zilliz Cloudは、さまざまなビジネスニーズに対応するために、多様なクラスターデプロイメントオプションを提供しています。
+
+- **Free**: ストレージ、vCU消費、コレクション数に制限がありますが、学習や個人プロジェクトの出発点として利用できます。
+
+- **Serverless**: ワークロードに合わせて自動的にスケーリングする共有環境を提供します。リソースをプロビジョニングする必要はありません。このオプションは、予測不能なトラフィックや急増するトラフィックに対して優れたコスト効率と弾力性を提供します。
+
+- **Dedicated**: 一貫した予測可能なパフォーマンスを必要とする本番ワークロード向けに、分離された予約済み環境を提供します。このオプションは、持続的な高スループットと低レイテンシーのアプリケーションに最適です。
+
+各デプロイメントオプションの詳細については、[Zilliz Cloud Pricing](https://zilliz.com/pricing)を参照してください。
+
+このトピックでは、クラスターの作成方法について説明します。
 
 ## 前提条件{#prerequisites}
 
-確認する:
+以下を確認してください。
 
-- Zilliz Cloudへの登録手順については、[Zilliz Cloudに登録する](./register-with-zilliz-cloud)を参照してください。
+- Zilliz Cloudへの登録。手順については、[Zilliz Cloudへの登録](./register-with-zilliz-cloud)を参照してください。
 
-- クラスターを設立する組織またはプロジェクトの所有権。役割と権限の詳細については、「[アクセス制御](./access-control)」を参照してください。
+- クラスターを確立する組織またはプロジェクトの所有権。ロールと権限の詳細については、[アクセス制御](./access-control)を参照してください。
 
-## 無料クラスタを設定する{#set-up-a-free-cluster}
+## Freeクラスターの作成{#create-a-free-cluster}
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>各組織は1つのFreeクラスターのみを持つことができます。追加のクラスターが必要な場合は、ServerlessまたはDedicatedを選択してください。</p>
+
+</Admonition>
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
 <TabItem value="Cloud Console">
 
-1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)に移動してログインします。
+以下のデモは、**Free**クラスターの作成方法を示しています。
 
-1. 適切な組織とプロジェクトを選択します。
+<Supademo id="cmhixdror61dofati1xmaai6j?utm_source=link" title=""  />
 
-1. [**無料クラスタを作成**]をクリックします。
+クラスターの作成中に、一度だけ表示されるクラスターの認証情報（ユーザー名とパスワード）を保存する必要があります。
 
-    ![create_cluster_01](/img/create_cluster_01.png)
-
-1. [**新しいクラスタを作成**]セクションで、[**無料**プラン]を選択し、必要なパラメータを入力します。
-
-    <Admonition type="info" icon="📘" title="ノート">
-
-    <p>各ユーザーには1つの無料クラスターが許可されています。追加のクラスターについては、サーバーレスまたは専用プランを選択してください。</p>
-
-    </Admonition>
-
-    <table>
-       <tr>
-         <th><p><strong>パラメータ</strong></p></th>
-         <th><p><strong>説明する</strong></p></th>
-       </tr>
-       <tr>
-         <td><p><strong>クラスタ名</strong></p></td>
-         <td><p>クラスターの名前。</p></td>
-       </tr>
-       <tr>
-         <td><p><strong>クラウドプロバイダーと地域</strong></p></td>
-         <td><p>クラスターの場所とホストされているクラウドプロバイダー。現在、無料のクラスターはGoogle Cloud Platform（GCP）で利用可能です。詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダー&地域</a>を参照してください。</p></td>
-       </tr>
-    </table>
-
-    ![create_cluster_02](/img/create_cluster_02.png)
-
-1. [**作成**]をクリックします。**クラスター詳細**ページにリダイレクトされ、クラスターのパブリックエンドポイントとAPIキーが表示されます。これらの詳細を記録して、今後のアクセスに備えます。
+クラスターのステータスが「Running」に変わると、クラスターは正常に作成されます。その後、クラスターのエンドポイントとトークンをコピーして、クラスターに[接続](./connect-to-cluster)できます。
 
 </TabItem>
 
 <TabItem value="Bash">
 
-リクエストは次の例のようになります。`{API_KEY}`は認証に使用するAPIキーです。
+リクエストは以下の例のようになります。ここで`{API_KEY}`は認証に使用するAPIキーです。
 
-次の`POST`要求は、リクエストボディを受け取り、IDが`cluster-free`のプロジェクトに空きクラスタを作成しま`proj-xxxxxxxxxxxxxxxxxxxxx`。
+以下の`POST`リクエストは、リクエストボディを受け取り、IDが`proj-xxxxxxxxxxxxxxxxxxxxx`のプロジェクトに`cluster-free`という名前のFreeクラスターを作成します。
 
 ```bash
 curl --request POST \
@@ -111,62 +100,43 @@ curl --request POST \
 # }
 ```
 
-上記のコマンドで、
+上記のコマンドでは、
 
-- `{API_KEY}`: APIリクエストを認証するために使用される資格情報。値を自分のものに置き換えてください。
+- `{API_KEY}`: APIリクエストの認証に使用される認証情報。値を自分のものに置き換えてください。
 
-- `cluster terName`:作成するクラスタの名前。
+- `clusterName`: 作成するクラスターの名前。
 
-- `projectId`:クラスタを作成するプロジェクトのID。プロジェクトIDを一覧表示するには、[List Projects](/reference/restful/list-projects-v2)操作を呼び出します。
+- `projectId`: クラスターを作成するプロジェクトのID。プロジェクトIDをリストするには、[List Projects](/reference/restful/list-projects-v2)操作を呼び出します。
 
-- `regionId`:クラスタを作成するクラウドリージョンのIDです。現在、空きクラスタはGCP上でのみ作成できます。利用可能なクラウドリージョンIDを取得するには、[List Cloud Regions](/reference/restful/list-cloud-regions-v2)操作を呼び出してください。
+- `regionId`: クラスターを作成するクラウドリージョンのID。現在、無料クラスターはGCPでのみ作成できます。利用可能なクラウドリージョンIDを取得するには、[List Cloud Regions](/reference/restful/list-cloud-regions-v2)操作を呼び出します。
+
+詳細については、[Create Free Cluster](/reference/restful/create-free-cluster-v2)を参照してください。
 
 </TabItem>
 
 </Tabs>
 
-## サーバーレスクラスタを設定する{#set-up-a-serverless-cluster}
+## Serverlessクラスターの作成{#create-a-serverless-cluster}
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
 <TabItem value="Cloud Console">
 
-1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)に移動してログインします。
+以下のデモは、**Serverless**クラスターを作成する方法を示しています。
 
-1. 適切な組織とプロジェクトを選択します。
+<Supademo id="cmhixpd150ajjvc0i1t95ihdr?utm_source=link" title=""  />
 
-1. [**+クラスタ**]をクリックします。
+クラスターの作成中に、一度だけ表示されるクラスターの認証情報（ユーザー名とパスワード）を保存する必要があります。
 
-    ![create_serverless_dedicated_cluster_01](/img/create_serverless_dedicated_cluster_01.png)
-
-1. [**新しいクラスタを作成**]セクションで、[**サーバーレス**]プランを選択し、必要なパラメータを入力します。
-
-    <table>
-       <tr>
-         <th><p><strong>パラメータ</strong></p></th>
-         <th><p><strong>説明する</strong></p></th>
-       </tr>
-       <tr>
-         <td><p><strong>クラスタ名</strong></p></td>
-         <td><p>クラスターの名前。</p></td>
-       </tr>
-       <tr>
-         <td><p><strong>クラウドプロバイダーと地域</strong></p></td>
-         <td><p>クラスタの場所とそれがホストされているクラウドプロバイダ。現在、サーバーレスクラスタはGoogle Cloud Platform（GCP）で利用可能です。詳細については、<a href="./cloud-providers-and-regions">クラウドプロバイダー&地域</a>を参照してください。</p></td>
-       </tr>
-    </table>
-
-    ![create_serverless_cluster_form](/img/create_serverless_cluster_form.png)
-
-1. [**作成**]をクリックします。**クラスター詳細**ページにリダイレクトされ、クラスターのパブリックエンドポイントとAPIキーが表示されます。これらの詳細を記録して、今後のアクセスに備えます。
+クラスターのステータスが「Running」に変わると、クラスターは正常に作成されます。その後、クラスターのエンドポイントとトークンをコピーして、クラスターに[接続](./connect-to-cluster)するために使用できます。
 
 </TabItem>
 
 <TabItem value="Bash">
 
-リクエストは次の例のようになります。`{API_KEY}`は認証に使用するAPIキーです。
+リクエストは以下の例のようになります。ここで`{API_KEY}`は認証に使用されるAPIキーです。
 
-次の`POST`要求は、リクエストボディを受け取り、ID`cluster-everless`という名前のサーバーレスクラスターをプロジェクトに作成しま`proj-xxxxxxxxxxxxxxxxxxxxx`。
+以下の`POST`リクエストは、リクエストボディを受け取り、IDが`proj-xxxxxxxxxxxxxxxxxxxxx`のプロジェクトに`cluster-severless`という名前のserverlessクラスターを作成します。
 
 ```bash
 curl --request POST \
@@ -191,59 +161,55 @@ curl --request POST \
 # }
 ```
 
-上記のコマンドで、
+上記のコマンドでは、
 
-- `{API_KEY}`: APIリクエストを認証するために使用される資格情報。値を自分のものに置き換えてください。
+- `{API_KEY}`: APIリクエストの認証に使用される認証情報。値を自分のものに置き換えてください。
 
-- `cluster terName`:作成するクラスタの名前。
+- `clusterName`: 作成するクラスターの名前。
 
-- `projectId`:クラスタを作成するプロジェクトのID。プロジェクトIDを一覧表示するには、[List Projects](/reference/restful/list-projects-v2)操作を呼び出します。
+- `projectId`: クラスターを作成するプロジェクトのID。プロジェクトIDをリストするには、[List Projects](/reference/restful/list-projects-v2)操作を呼び出します。
 
-- `regionId`:クラスタを作成するクラウドリージョンのIDです。現在、空きクラスタはGCP上でのみ作成できます。利用可能なクラウドリージョンIDを取得するには、[List Cloud Regions](/reference/restful/list-cloud-regions-v2)操作を呼び出してください。
+- `regionId`: クラスターを作成するクラウドリージョンのID。現在、無料クラスターはGCPでのみ作成できます。利用可能なクラウドリージョンIDを取得するには、[List Cloud Regions](/reference/restful/list-cloud-regions-v2)操作を呼び出します。
+
+詳細については、[Create Serverless Cluster](/reference/restful/create-serverless-cluster-v2)を参照してください。
 
 </TabItem>
 
 </Tabs>
 
-## 専用のクラスタを作成{#create-a-dedicated-cluster}
+## 専用クラスターの作成{#create-a-dedicated-cluster}
 
 <Tabs groupId="cluster" defaultValue="Cloud Console" values={[{"label":"Cloud Console","value":"Cloud Console"},{"label":"cURL","value":"Bash"}]}>
 
 <TabItem value="Cloud Console">
 
-1. [Zilliz Cloudコンソール](https://cloud.zilliz.com/login)にログインします。
+以下のデモは、**Dedicated**クラスターを作成する方法を示しています。
 
-1. 希望の組織とプロジェクトを入力します。
+<Supademo id="cmhixsdvu030hxj0imafwl2av?utm_source=link" title=""  />
 
-1. [**+クラスタ**]をクリックします。
+Dedicatedクラスターの以下の情報を設定する必要があります。
 
-    ![create_serverless_dedicated_cluster_01](/img/create_serverless_dedicated_cluster_01.png)
+- **クラスター名**: クラスターに一意の識別子を割り当てます。
 
-1. [**新しいクラスターを作成**]ページで、関連するパラメータを入力します。
+- **クラスター設定**:
 
-    ![create-dedicated_cluster](/img/create-dedicated_cluster.png)
+    - **クラスタータイプ**: クラスターのパフォーマンス要件に合ったクラスタータイプを選択します。詳細については、[適切なクラスタータイプの選択](./cu-types-explained)を参照してください。Tiered-storageクラスターを選択するには、クラスターに少なくとも8つのクエリCUが必要です。
 
-    - **クラスター名**:クラスターに一意の識別子を割り当てます。
+    - **クエリCU**: クラスターのクエリCUの数を選択します。
 
-    - **クラウドプロバイダー設定**:クラウドサービスプロバイダーと、クラスターをデプロイする特定のリージョンを選択します。詳細については、「[クラウドプロバイダー&地域](./cloud-providers-and-regions)」を参照してください。
+- (オプション) **バックアップポリシー**: 作成するクラスターのバックアップ頻度を決定します。有効にすると、Zilliz Cloudはクラスター作成後すぐにバックアップを作成します。その後のバックアップは指定されたスケジュールに従います。
 
-    - **CUの設定**:
+クラスターの作成中に、一度だけ表示されるクラスターの認証情報（ユーザー名とパスワード）を保存する必要があります。
 
-        - **CUタイプ**:クラスタのパフォーマンス要件に合わせたCUタイプを選択します。詳細については、「[適切なCUを選択](./cu-types-explained)」を参照してください。
-
-        - **CU Size**:クラスタの合計体格をCU単位で選択します。
-
-    - **クラウドバックアップ**:クラスタ内に保存されているデータを保護し、障害が発生した場合にデータの永続性と回復機能を確保するために、自動クラウドバックアップを有効にするかどうかを決定します。
-
-1. [**クラスタを作成**]をクリックします。クラスタアクセスのパブリックエンドポイントとトークンを表示するダイアログにリダイレクトされます。これらの詳細は安全に保管してください。
+クラスターのステータスが「Running」になると、クラスターは正常に作成されます。その後、クラスターのエンドポイントとトークンをコピーして、クラスターに[接続](./connect-to-cluster)するために使用できます。
 
 </TabItem>
 
 <TabItem value="Bash">
 
-リクエストは次の例のようになります。`{API_KEY}`は認証に使用するAPIキーです。
+リクエストは以下の例のようになるはずです。ここで`{API_KEY}`は認証に使用するAPIキーです。
 
-次の`POST`要求は、リクエストボディを受け取り、1つのPerformance-optimizedCUを持つ専用のクラスタ`cluster-02`を作成します。
+以下の`POST`リクエストは、リクエストボディを受け取り、1つのクエリ[CU](./cu-types-explained)を持つ`cluster-02`という名前の専用のパフォーマンス最適化クラスターを作成します。
 
 ```bash
 curl --request POST \
@@ -271,26 +237,23 @@ curl --request POST \
 # }
 ```
 
-上記のコマンドで、
+上記のコマンドでは、
 
-- `{API_KEY}`:APIリクエストを認証するために使用される資格情報。値を自分のものに置き換えてください。
+- `{API_KEY}`: API リクエストの認証に使用される認証情報。値を自分のものに置き換えてください。
 
-- `cluster terName`:作成するクラスタの名前。
+- `clusterName`: 作成するクラスターの名前。
 
-- `projectId`:クラスタを作成するプロジェクトのID。プロジェクトIDを一覧表示するには、[List Projects](/reference/restful/list-projects-v2)操作を呼び出します。
+- `projectId`: クラスターを作成するプロジェクトの ID。プロジェクト ID を一覧表示するには、[List Projects](/reference/restful/list-projects-v2) 操作を呼び出します。
 
-- `regionId`:クラスターを作成するクラウドリージョンのID。利用可能なクラウドリージョンIDを取得するには、[List Cloud Regions](/reference/restful/list-cloud-regions-v2)操作を呼び出します。
+- `regionId`: クラスターを作成するクラウドリージョンの ID。利用可能なクラウドリージョン ID を取得するには、[List Cloud Regions](/reference/restful/list-cloud-regions-v2) 操作を呼び出します。
 
-- `プラン`: Zilliz Cloudサービスのプランレベル。有効な値:**Standard**と**Enterprise**。
+- `cuType`: クラスターのタイプ。有効な値: Performance-optimized、Capacity-optimized、Tiered-storage。
 
-- `cuType`:クラスタに使用されるCUのタイプ。有効な値:**Performance-optimized**と**Capacity-Optimized**。
+- `cuSize`: クラスターに使用されるクエリ CU の数。値の範囲: 1 から 256。
 
-- `cuSize`:クラスタに使用するCUのサイズです。値の範囲は1から256までです。`Create Cluster`を呼び出すことで、最大32個のCUを持つクラスタを作成できます。32個以上のCUを持つクラスタを作成する場合は、[お問い合わせください](https://zilliz.com/contact-sales)。
+詳細については、[Create Dedicated Cluster](/reference/restful/create-dedicated-cluster-v2) を参照してください。
 
 </TabItem>
 
 </Tabs>
 
-## 検証する{#verification}
-
-クラスターを作成したら、クラスターリストページでその状態を確認できます。**実行中**の状態のクラスターは、作成に成功したことを示します。

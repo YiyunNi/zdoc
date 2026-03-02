@@ -1,31 +1,31 @@
 ---
-title: "クラスタ | BYOC"
+title: "クラスター | BYOC"
 slug: /cluster
-sidebar_label: "クラスタ"
+sidebar_label: "クラスター"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでクラスタを管理するために必要なすべての情報。 | BYOC"
+description: "Zilliz Cloudでクラスターを管理するために必要なすべての情報です。 | BYOC"
 type: origin
-token: G4YOwsWfHiWneAkyMOycLUQynsc
-sidebar_position: 4
+token: BIy4we6qXiq8NpkHfXgcxuONngb
+sidebar_position: 5
 keywords: 
   - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - 最近傍探索
+  - LLM評価
+  - 疎ベクトル vs 密ベクトル
+  - 密ベクトル
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# クラスタ
+# クラスター
 
-Zilliz Cloudでクラスタを管理するために必要なすべての情報。
+Zilliz Cloud でのクラスター管理に関するすべての情報。
 
 
 

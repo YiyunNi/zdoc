@@ -1,31 +1,31 @@
 ---
-title: "クラスタ | Cloud"
+title: "クラスター | Cloud"
 slug: /cluster
-sidebar_label: "クラスタ"
+sidebar_label: "クラスター"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでクラスタを管理するために必要なすべての情報。 | Cloud"
+description: "Zilliz Cloud でのクラスター管理について知っておくべきことすべて。 | Cloud"
 type: origin
-token: G4YOwsWfHiWneAkyMOycLUQynsc
-sidebar_position: 4
+token: BIy4we6qXiq8NpkHfXgcxuONngb
+sidebar_position: 5
 keywords: 
-  - zilliz
-  - vector database
-  - cloud
-  - cluster
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - Zilliz
+  - ベクトルデータベース
+  - クラウド
+  - クラスター
+  - 大規模言語モデル
+  - ベクトル化
+  - k近傍法
+  - ANNS
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# クラスタ
+# クラスター
 
-Zilliz Cloudでクラスタを管理するために必要なすべての情報。
+Zilliz Cloud でのクラスター管理に関するすべての情報。
 
 
 

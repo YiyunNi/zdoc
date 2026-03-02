@@ -1,49 +1,50 @@
 ---
-title: "FAQ:クラスタ | BYOC"
+title: "FAQ: クラスター | BYOC"
 slug: /faq-cluster
-sidebar_label: "FAQ:クラスタ"
+sidebar_label: "FAQ: クラスター"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloudクラスターを使用する際に発生する可能性のある問題と、それに対応する解決策について説明します。 | BYOC"
+description: "このトピックでは、Zilliz Cloud クラスターの使用中に発生する可能性のある問題と、それに対応する解決策をリストアップします。 | BYOC"
 type: origin
-token: LKxiwykkhi5VyLkTfAGcE3LinBe
+token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 2
 
 ---
 
-# FAQ:クラスタ
+# FAQ: クラスター
 
-このトピックでは、Zilliz Cloudクラスターを使用する際に発生する可能性のある問題と、それに対応する解決策について説明します。
+このトピックでは、Zilliz Cloud クラスターの使用中に発生する可能性のある問題と、それに対応する解決策をリストアップします。
 
-## Contents
+## 目次
 
-- [「クォータ超過\[理由=ディスククォータ超過、より多くのリソースを割り当ててください」というエラーが表示された場合、どうすればよいですか?](#what-can-i-do-if-i-receive-the-error-quota-exceededreasondisk-quota-exceeded-please-allocate-more-resources)
-- [クラスターCUの体格を縮小するにはどうすればよいですか?](#how-can-i-scale-down-my-cluster-cu-size)
-- [Zilliz Cloudに接続しようとすると、接続タイムアウトエラーが発生します。どうすれば対処できますか?](#how-can-i-deal-with-a-connection-timeout-error-when-i-attempt-to-connect-to-zilliz-cloud)
-- [クラスターが作成された後にクラスターに接続できないのはなぜですか?](#why-cant-i-connect-to-the-cluster-after-the-cluster-is-created)
-- [Node. js SDKでZilliz Cloudに接続できない場合、どうすればいいですか?](#what-can-i-do-if-i-cannot-connect-to-zilliz-cloud-with-nodejs-sdk)
-- [クラスタをサスペンドした場合、料金は発生しますか?](#will-i-be-charged-if-i-suspend-my-cluster)
+- [「quota exceeded[reason=disk quota exceeded, please allocate more resources」というエラーが表示された場合、どうすればよいですか？](#what-can-i-do-if-i-receive-the-error-quota-exceededreasondisk-quota-exceeded-please-allocate-more-resources)
+- [クラスターのCUサイズをスケールダウンするにはどうすればよいですか？](#how-can-i-scale-down-my-cluster-cu-size)
+- [Zilliz Cloudへの接続を試みたときに、接続タイムアウトエラーが発生した場合、どうすればよいですか？](#how-can-i-deal-with-a-connection-timeout-error-when-i-attempt-to-connect-to-zilliz-cloud)
+- [クラスター作成後にクラスターに接続できないのはなぜですか？](#why-cant-i-connect-to-the-cluster-after-the-cluster-is-created)
+- [Node.js SDKでZilliz Cloudに接続できない場合、どうすればよいですか？](#what-can-i-do-if-i-cannot-connect-to-zilliz-cloud-with-nodejs-sdk)
+- [クラスターを一時停止した場合でも課金されますか？](#will-i-be-charged-if-i-suspend-my-cluster)
+- [クラスターURIを取得するにはどうすればよいですか？](#how-to-obtain-a-cluster-uri)
 
-## FAQs
+## FAQ
 
 
 
 
-### 「クォータ超過\[理由=ディスククォータ超過、より多くのリソースを割り当ててください」というエラーが表示された場合、どうすればよいですか?{#what-can-i-do-if-i-receive-the-error-quota-exceededreasondisk-quota-exceeded-please-allocate-more-resources}
+### 「quota exceeded[reason=disk quota exceeded, please allocate more resources」というエラーが表示された場合、どうすればよいですか？{#what-can-i-do-if-i-receive-the-error-quota-exceededreasondisk-quota-exceeded-please-allocate-more-resources}
 
-データを挿入または挿入すると、データがクラスターのCU容量を超えるため、このエラーが表示されます。空きクラスターは、100万個の768次元ベクトルを処理できます。専用クラスターの容量は、[CUタイプとCU体格](./cu-types-explained#assess-capacity)によって異なります。
+データを挿入またはアップサートする際に、データがクラスターのCU容量を超えているため、このエラーが表示されます。クラスターの容量は、[CUタイプとCUサイズ](./cu-types-explained#assess-capacity)によって異なります。
 
 この問題に対処するには、以下の手順に従ってください。
 
-このような場合は、CU体格を上げて[クラスターをスケールアップ](./scale-cluster#scale-up-a-cluster)することをお勧めします。
+このような場合は、CUサイズを増やすことで[クラスターをスケールアップする](./scale-query-cu)ことをお勧めします。
 
-### クラスターCUの体格を縮小するにはどうすればよいですか?{#how-can-i-scale-down-my-cluster-cu-size}
+### クラスターのCUサイズをスケールダウンするにはどうすればよいですか？{#how-can-i-scale-down-my-cluster-cu-size}
 
-クラスターCUの体格を縮小する必要がある場合は、[リクエストを送信](https://support.zilliz.com/hc/en-us)してください。
+クラスターのCUサイズをスケールダウンする必要がある場合は、[リクエストを送信してください](https://support.zilliz.com/hc/en-us)。
 
-### Zilliz Cloudに接続しようとすると、接続タイムアウトエラーが発生します。どうすれば対処できますか?{#how-can-i-deal-with-a-connection-timeout-error-when-i-attempt-to-connect-to-zilliz-cloud}
+### Zilliz Cloudへの接続を試みたときに、接続タイムアウトエラーが発生した場合、どうすればよいですか？{#how-can-i-deal-with-a-connection-timeout-error-when-i-attempt-to-connect-to-zilliz-cloud}
 
-Zilliz Cloudクラスタへの接続を確立するには、関連するパラメータをいくつか提供する必要があります。例えば、PyMilvus SDKのconnectメソッドは以下のように使用できます。
+Zilliz Cloudクラスターへの接続を確立するには、いくつかの関連パラメーターを指定する必要があります。たとえば、PyMilvus SDKの`connect`メソッドは次のように使用できます。
 
 ```python
 from pymilvus import Connections
@@ -59,42 +60,95 @@ conn = Connections.connect(
 )
 ```
 
-接続タイムアウトエラーは、次のシナリオで発生する可能性があります。
+接続タイムアウトエラーは、以下のシナリオで発生する可能性があります。
 
-- 不良なネットワーク状態
+- ネットワークの状態が悪い
 
-    ネットワークの状態が悪い場合は、接続操作のタイムアウト時間を長くすることをお勧めします。上記のコードでは、`タイムアウト`は`30`秒に設定されているため、リクエストが送信されてから30秒以内に応答がない場合、接続操作はタイムアウトします。
+    ネットワークの状態が悪い場合、接続操作のタイムアウト時間を長くすることをお勧めします。上記のコードでは、`timeout`は`30`秒に設定されています。これは、リクエストが送信されてから30秒以内に応答がない場合、接続操作がタイムアウトすることを意味します。
 
-- 不正な接続パラメータ
+- 接続パラメータが正しくない
 
-    Zilliz CloudクラスターにはTLSが有効になっているため、クラスターに正常に接続するには、上記の例に示すように、接続パラメータに`security`を含め、`true`に設定してください。そうしないと、接続に失敗し、タイムアウトエラープロンプトが表示される可能性があります。
+    Zilliz CloudクラスターはTLSが有効になっているため、クラスターに正常に接続するには、接続パラメータに`secure`を含め、上記の例に示すように`true`に設定してください。そうしないと、接続に失敗し、タイムアウトエラーのプロンプトが表示される可能性があります。
 
 - ホワイトリストに登録されていないローカルIPアドレス
 
-    クラスターに接続しようとしている場合は、VPN/プロキシ接続をオフにし、パブリックIPアドレスを取得し(プライベートIPアドレスは機能しません)、接続したいクラスターのホワイトリストにそのIPアドレスを追加する必要があります。
+    クラスターへの接続を試みる場合、VPN/プロキシ接続をオフにし、パブリックIPアドレスを取得し（プライベートIPアドレスは機能しません）、そのIPアドレスを接続したいクラスターのホワイトリストに追加する必要があります。
 
-### クラスターが作成された後にクラスターに接続できないのはなぜですか?{#why-cant-i-connect-to-the-cluster-after-the-cluster-is-created}
+### クラスター作成後にクラスターに接続できないのはなぜですか？{#why-cant-i-connect-to-the-cluster-after-the-cluster-is-created}
 
-次の手順に従って問題を特定できます:
+以下の手順で問題を確認できます。
 
-1. クラスタのステータスがRUNNINGであるかどうかを確認します。クラスタが作成中、削除中、またはIPホワイトリストが更新中の場合は、クラスタに接続できません。
+1. クラスターのステータスがRUNNINGであることを確認します。クラスターが作成中、削除中、またはIPホワイトリストが更新中の場合、クラスターに接続することはできません。
 
-1. 接続のIPアドレスがIPホワイトリストに含まれているかどうかを確認してください。
+1. 接続元のIPアドレスがIPホワイトリストに含まれていることを確認します。
 
-1. ポートの接続をテストするには、**telnet in 01-(uuid).(region).vectordb.zillizcloud.com 19530**を実行します。上記の手順をすべて試しても問題が解決しない場合は、[リクエストを送信](https://support.zilliz.com/hc/en-us)してください。
+1. クラスターエンドポイントURIのポートが正しいことを確認します。Zilliz Cloud WebコンソールからエンドポイントURIをコピーしていることを確認してください。以下の表は、異なるクラウドプロバイダーにデプロイされたクラスターのポートを示しています。
 
-### Node. js SDKでZilliz Cloudに接続できない場合、どうすればいいですか?{#what-can-i-do-if-i-cannot-connect-to-zilliz-cloud-with-nodejs-sdk}
+    <table>
+       <tr>
+         <th><p><strong>クラウドプロバイダー</strong></p></th>
+         <th><p><strong>ポート</strong></p></th>
+       </tr>
+       <tr>
+         <td><p>AWS</p></td>
+         <td><p>19530 - 19550</p></td>
+       </tr>
+       <tr>
+         <td><p>Google Cloud</p></td>
+         <td><p>443</p></td>
+       </tr>
+       <tr>
+         <td><p>Azure</p></td>
+         <td><p>19530</p></td>
+       </tr>
+    </table>
 
-Node. js SDKを使用してZilliz Cloudに接続できない場合は、以下の手順をお試しください。
+1. `telnet in01-(uuid).(region).vectordb.zillizcloud.com port-number`を実行してポートの接続性をテストします。
 
-1. 最新バージョンの[Node. js SDK](https://github.com/milvus-io/milvus-sdk-node)をインストールしてください。
+上記の手順をすべて試しても問題が解決しない場合は、[リクエストを送信してください](https://support.zilliz.com/hc/en-us)。
 
-1. クライアントを正しく初期化してください。
+### Node.js SDKでZilliz Cloudに接続できない場合、どうすればよいですか？{#what-can-i-do-if-i-cannot-connect-to-zilliz-cloud-with-nodejs-sdk}
 
-```javascript
-const client = new MilvusClient('https://your-db-address-with-port', true, 'your-db-user', 'your-db-pasword');
-```
+Node.js SDKでZilliz Cloudに接続できない場合は、以下を試してください。
 
-### クラスタをサスペンドした場合、料金は発生しますか?{#will-i-be-charged-if-i-suspend-my-cluster}
+1. [Node.js SDK](https://github.com/milvus-io/milvus-sdk-node)の最新バージョンがインストールされていることを確認します。
 
-クラスタがサスペンドされると、コンピューティングではなくストレージに対してのみ課金されます。ストレージコストの詳細については、[価格](https://zilliz.com/pricing)を参照してください。
+1. クライアントが正しく初期化されていることを確認します。
+
+    ```bash
+    const client = new MilvusClient('https://your-db-address-with-port', true, 'your-db-user', 'your-db-pasword');
+    ```
+
+1. クラスターのエンドポイントとトークンが正しいことを確認してください。クラスターのエンドポイントにはプロトコル `https://` を含めるようにしてください。
+
+1. クラスターのエンドポイントURIのポートが正しいか確認してください。Zilliz CloudウェブコンソールからエンドポイントURIをコピーしていることを確認してください。以下の表は、異なるクラウドプロバイダーにデプロイされたクラスターのポートを示しています。
+
+    <table>
+       <tr>
+         <th><p><strong>クラウドプロバイダー</strong></p></th>
+         <th><p><strong>ポート</strong></p></th>
+       </tr>
+       <tr>
+         <td><p>AWS</p></td>
+         <td><p>19530 - 19550</p></td>
+       </tr>
+       <tr>
+         <td><p>Google Cloud</p></td>
+         <td><p>443</p></td>
+       </tr>
+       <tr>
+         <td><p>Azure</p></td>
+         <td><p>19530</p></td>
+       </tr>
+    </table>
+
+1. あなたのIPアドレスは、クラスター設定でホワイトリストに登録されている必要があります。
+
+### クラスターを一時停止した場合、料金は発生しますか？{#will-i-be-charged-if-i-suspend-my-cluster}
+
+クラスターが一時停止されている場合、コンピューティングではなくストレージに対してのみ課金されます。ストレージコストの詳細については、[料金](https://zilliz.com/pricing)を参照してください。
+
+### クラスターURIの取得方法{#how-to-obtain-a-cluster-uri}
+クラスターURIは、接続に使用できるクラスターエンドポイントを指します。
+
+URIはZilliz Cloudウェブコンソールから取得できます。詳細については、[クラスターへの接続](./connect-to-cluster#connect-to-a-cluster)を参照してください。
