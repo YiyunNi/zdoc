@@ -247,7 +247,7 @@ async function auditAllFiles({ sources, untranslatables }) {
 // Body translation
 // ---------------------------------------------------------------------------
 
-async function translateBody(body, glossary, untranslatables, llmConfig, limiter) {
+async function translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash) {
   if (!body.trim()) return body
 
   // Split into prose (translate=true) vs. code block / import (translate=false) chunks.
@@ -274,6 +274,13 @@ async function translateBody(body, glossary, untranslatables, llmConfig, limiter
     const postLen = chunk.content.length - chunk.content.trimEnd().length
     const pre  = chunk.content.slice(0, preLen)
     const post = postLen > 0 ? chunk.content.slice(-postLen) : ''
+
+    const chunkHash = hashContent(trimmed)
+    const cachedChunk = await cache.getTranslation(chunkHash, locale, glossaryHash)
+    if (cachedChunk) {
+      result.push(pre + cachedChunk.output + post)
+      continue
+    }
 
     const glossaryHint = buildGlossaryHint(glossary, trimmed)
 
@@ -313,7 +320,9 @@ Return ONLY the translated markdown, no explanation.`
       )
     }
 
-    result.push(pre + applyGlossaryPostProcess(raw, glossary) + post)
+    const translated = applyGlossaryPostProcess(raw, glossary)
+    await cache.setTranslation(chunkHash, locale, glossaryHash, { output: translated })
+    result.push(pre + translated + post)
   }
 
   return result.join('')
@@ -339,18 +348,6 @@ async function translateFile({
   const sourceContent = fs.readFileSync(sourcePath, 'utf8')
   const sourceHash = hashContent(sourceContent)
 
-  // Check translation cache first
-  const cached = await cache.getTranslation(sourceHash, locale, glossaryHash)
-  if (cached) {
-    if (!dryRun) {
-      fs.mkdirSync(path.dirname(destPath), { recursive: true })
-      fs.writeFileSync(destPath, cached.output, 'utf8')
-      await cache.setFileRecord(relPath, locale, sourceHash, glossaryHash)
-    }
-    console.log(`[i18n-translator]   ✓ (cache) ${relPath}`)
-    return
-  }
-
   const { frontmatter, body } = parseFrontmatter(sourceContent)
 
   let outputFrontmatter = frontmatter
@@ -362,7 +359,7 @@ async function translateFile({
     outputFrontmatter = stripEditorialFields(applyTranslatedFields(frontmatter, translatedFields))
   }
 
-  outputBody = await translateBody(body, glossary, untranslatables, llmConfig, limiter)
+  outputBody = await translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash)
 
   const output = frontmatter
     ? `---\n${outputFrontmatter}\n---\n${outputBody}`
@@ -387,8 +384,6 @@ async function translateFile({
   fs.mkdirSync(path.dirname(destPath), { recursive: true })
   fs.writeFileSync(destPath, output, 'utf8')
 
-  // Store in cache
-  await cache.setTranslation(sourceHash, locale, glossaryHash, { output })
   await cache.setFileRecord(relPath, locale, sourceHash, glossaryHash)
 
   console.log(`[i18n-translator]   ✓ ${relPath}${issues.length ? ' ⚠' : ''}`)

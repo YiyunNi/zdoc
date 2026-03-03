@@ -38,24 +38,10 @@ jobs:
         IMAGE_BED_URL: ${{ vars.IMAGE_BED_URL }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    - name: restore translation cache
+    - name: restore japanese translations from dev
       run: |
-        git fetch origin dev master
-        git checkout origin/dev -- translation.db 2>/dev/null || \
-        git checkout origin/master -- translation.db 2>/dev/null || true
-    - name: translate to Japanese
-      run: |
-        npx docusaurus report-to-lark -type text -m "🔥 Translating docs to Japanese..."
-        npx docusaurus translate-i18n --locale ja-JP
-        npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials
-        npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials
-      env:
-        APP_ID: ${{ secrets.APP_ID }}
-        APP_SECRET: ${{ secrets.APP_SECRET }}
-        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
-        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
-        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
-        MODEL_ID: ${{ vars.MODEL_ID }}
+        git fetch origin dev 2>/dev/null || true
+        git checkout origin/dev -- i18n/ 2>/dev/null || true
     - name: build docsite
       run: |
         npx docusaurus report-to-lark -type text -m "🔥 English docs fetched! Building docs..."

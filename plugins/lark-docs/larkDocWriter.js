@@ -788,13 +788,85 @@ class larkDocWriter {
         return result.join('\n');
     }
 
+    __escape_non_html_tags(content) {
+        // Escape any lowercase tag whose name is not a known HTML element or a content-filter
+        // tag used by this writer, outside fenced code blocks and inline code spans.
+        // Such tags are URL/API placeholder patterns (e.g. <bucket_name>, <region-code>,
+        // <container>, <blob>) that MDX would otherwise parse as JSX elements.
+        // Both opening and closing forms are escaped (e.g. </blob> → \</blob>).
+        // PascalCase JSX components (Tabs, TabItem, Admonition…) are never matched because
+        // the regex anchors on a leading lowercase letter.
+        // <include>/<exclude> filter tags are added so their orphaned closing forms are not
+        // accidentally escaped (they are removed by __filter_content before this runs anyway).
+        const KNOWN_TAGS = new Set([
+            // Standard HTML elements
+            'a', 'abbr', 'address', 'area', 'article', 'aside', 'audio',
+            'b', 'base', 'bdi', 'bdo', 'blockquote', 'br', 'button',
+            'canvas', 'caption', 'cite', 'code', 'col', 'colgroup',
+            'data', 'datalist', 'dd', 'del', 'details', 'dfn', 'dialog', 'div', 'dl', 'dt',
+            'em', 'embed',
+            'fieldset', 'figcaption', 'figure', 'footer', 'form',
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hr', 'html',
+            'i', 'iframe', 'img', 'input', 'ins',
+            'kbd',
+            'label', 'legend', 'li', 'link',
+            'main', 'map', 'mark', 'menu', 'meta', 'meter',
+            'nav', 'noscript',
+            'object', 'ol', 'optgroup', 'option', 'output',
+            'p', 'picture', 'pre', 'progress',
+            'q',
+            'rp', 'rt', 'ruby',
+            's', 'samp', 'script', 'section', 'select', 'slot', 'small', 'source', 'span',
+            'strong', 'style', 'sub', 'summary', 'sup',
+            'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead',
+            'time', 'title', 'tr', 'track',
+            'u', 'ul',
+            'var', 'video',
+            'wbr',
+            // Content-filter tags used by this writer (processed before MDX patching)
+            'include', 'exclude',
+        ]);
+
+        const lines = content.split('\n');
+        let inCodeBlock = false;
+        const result = [];
+
+        for (let line of lines) {
+            const stripped = line.trim();
+            if (stripped.startsWith('```') || stripped.startsWith('~~~')) {
+                inCodeBlock = !inCodeBlock;
+            }
+
+            if (!inCodeBlock) {
+                // Split by inline code spans; odd-indexed segments are inside backticks
+                const parts = line.split(/(`+[^`]+`+)/);
+                line = parts.map((part, i) => {
+                    if (i % 2 === 0) {
+                        // Match any lowercase tag (with optional _ or - segments); escape if not a known tag.
+                        // Tags with attributes (e.g. <include target="...">) won't match because the regex
+                        // only allows optional whitespace before the closing >.
+                        return part.replace(/(?<!\\)<\/?([a-z][a-z0-9]*(?:[_-][a-z0-9]+)*)\s*\/?>/g, (match, tagName) => {
+                            return KNOWN_TAGS.has(tagName) ? match : '\\' + match;
+                        });
+                    }
+                    return part; // Inside inline code — leave unchanged
+                }).join('');
+            }
+
+            result.push(line);
+        }
+
+        return result.join('\n');
+    }
+
     async __mdx_patches(content) {
         try {
             // Import MDX compiler dynamically as it's an ES module
             const { compile } = await import('@mdx-js/mdx');
 
-            // Pre-process: escape currency dollar signs before the compile loop
+            // Pre-process: escape currency dollar signs and non-HTML placeholder tags
             let patchedContent = this.__escape_currency_dollars(content);
+            patchedContent = this.__escape_non_html_tags(patchedContent);
             let maxIterations = 50; // Prevent infinite loops
             let iteration = 0;
 
@@ -833,11 +905,15 @@ class larkDocWriter {
                             // Error: "Unexpected closing tag `</Y>`, expected corresponding closing tag for `<X>` (line:col-line:col)"
                             // The position refers to the OPENING tag <X>.
                             // Strategy: replace the wrong closing tag </Y> with the correct </X>.
+                            // Exception: if <X> is a non-standard tag (contains _ or -) it is a URL/API
+                            // placeholder, not a real element. Replacing the closing tag causes an
+                            // oscillating loop; instead fall through to the fallback (escape opening tag).
                             const wrongClose = error.message.match(/Unexpected closing tag `<\/([^>]+)>`/)?.[1];
                             const expectedOpen = error.message.match(/closing tag for `<([A-Za-z][^>/ ]*)(?:\s[^>]*)?>?`/)?.[1];
                             const posMatch = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
+                            const isPlaceholder = expectedOpen && /[_-]/.test(expectedOpen);
 
-                            if (wrongClose && expectedOpen && wrongClose !== expectedOpen && posMatch) {
+                            if (!isPlaceholder && wrongClose && expectedOpen && wrongClose !== expectedOpen && posMatch) {
                                 const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
                                 const wrongCloseTag = `</${wrongClose}>`;
                                 const correctCloseTag = `</${expectedOpen}>`;

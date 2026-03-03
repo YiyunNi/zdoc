@@ -18,10 +18,6 @@ keywords:
   - data import
   - milvus
   - storage options
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
 
 ---
 

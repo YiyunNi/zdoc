@@ -18,10 +18,6 @@ keywords:
   - data import
   - milvus
   - storage options
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
 
 ---
 

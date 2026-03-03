@@ -1,0 +1,74 @@
+name: "translate to Japanese"
+
+on:
+  workflow_run:
+    workflows:
+      - "fetch lark docs (auto)"
+      - "fetch lark docs (manual)"
+    types: [completed]
+  workflow_dispatch:
+
+# Serialize translations so they never run in parallel.
+# If a new fetch lands while one is still running, it waits; only the latest
+# pending run is kept (GitHub drops older queued runs automatically).
+concurrency:
+  group: translate-i18n
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    # For workflow_run: only proceed if the upstream fetch succeeded.
+    # For workflow_dispatch: always run.
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    steps:
+    - name: checkout dev branch
+      uses: actions/checkout@v4
+      with:
+        ref: dev
+    - name: set up Environment
+      uses: actions/setup-node@v4.0.1
+    - name: install dependencies
+      run: yarn
+    - name: restore translation cache (fallback to master on first run)
+      run: |
+        git fetch origin master 2>/dev/null || true
+        [ -f translation.db ] || git checkout origin/master -- translation.db 2>/dev/null || true
+    - name: translate to Japanese
+      run: |
+        npx docusaurus report-to-lark -type text -m "🔥 Translating docs to Japanese..."
+        npx docusaurus translate-i18n --locale ja-JP
+        npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials
+        npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        APP_SECRET: ${{ secrets.APP_SECRET }}
+        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
+        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
+        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+        MODEL_ID: ${{ vars.MODEL_ID }}
+    - name: commit translations to dev
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        branch: dev
+        push_options: --force
+
+  failure:
+    needs: translate
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+    - name: set up Environment
+      uses: actions/setup-node@v4.0.1
+    - name: checkout repo
+      uses: actions/checkout@v4
+    - name: report failure
+      run: |
+        yarn
+        npx docusaurus report-to-lark -type text -m "🔥 Japanese translation failed! Please check the logs."
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        APP_SECRET: ${{ secrets.APP_SECRET }}
+        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
+        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
+        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+        MODEL_ID: ${{ vars.MODEL_ID }}
