@@ -12,6 +12,8 @@ const {
   applyTranslatedFields,
   stripEditorialFields,
   splitBodyIntoChunks,
+  placeholderifyTags,
+  restorePlaceholders,
 } = require('./markdownParser')
 const { TranslationCache } = require('./cache')
 const { harvestTerms, proposeTerms, approveTerms, loadGlossary, walkDir } = require('./harvest')
@@ -79,8 +81,10 @@ function applyGlossaryPostProcess(text, glossary) {
 // ---------------------------------------------------------------------------
 
 const LLM_TIMEOUT_MS = 120_000
+const LLM_MAX_RETRIES = 3
+const LLM_RETRY_DELAYS_MS = [2_000, 5_000, 10_000]
 
-async function callLLM(messages, llmConfig) {
+async function callLLM(messages, llmConfig, _retryCount = 0) {
   const { baseUrl, apiKey, modelId } = llmConfig
   const controller = new AbortController()
   const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS)
@@ -101,6 +105,14 @@ async function callLLM(messages, llmConfig) {
     throw err
   } finally {
     clearTimeout(timer)
+  }
+
+  // Retry on 5xx server errors with exponential backoff
+  if (response.status >= 500 && _retryCount < LLM_MAX_RETRIES) {
+    const delay = LLM_RETRY_DELAYS_MS[_retryCount] ?? 10_000
+    console.warn(`[i18n-translator] LLM returned HTTP ${response.status}, retrying in ${delay / 1000}s (attempt ${_retryCount + 1}/${LLM_MAX_RETRIES})`)
+    await new Promise(resolve => setTimeout(resolve, delay))
+    return callLLM(messages, llmConfig, _retryCount + 1)
   }
 
   const data = await response.json()
@@ -247,7 +259,7 @@ async function auditAllFiles({ sources, untranslatables }) {
 // Body translation
 // ---------------------------------------------------------------------------
 
-async function translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash) {
+async function translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash, force = false) {
   if (!body.trim()) return body
 
   // Split into prose (translate=true) vs. code block / import (translate=false) chunks.
@@ -275,31 +287,38 @@ async function translateBody(body, glossary, untranslatables, llmConfig, limiter
     const pre  = chunk.content.slice(0, preLen)
     const post = postLen > 0 ? chunk.content.slice(-postLen) : ''
 
-    const chunkHash = hashContent(trimmed)
-    const cachedChunk = await cache.getTranslation(chunkHash, locale, glossaryHash)
+    // Replace JSX component tags and structural HTML block tags with numbered
+    // placeholders before hashing and sending to the LLM. This prevents the
+    // model from reordering or mis-closing tags like <Tabs>, <TabItem>,
+    // <table>, <tr>, <li>, etc. which causes MDX compilation failures.
+    const { placeholderText, placeholders } = placeholderifyTags(trimmed)
+
+    const chunkHash = hashContent(placeholderText)
+    const cachedChunk = force ? null : await cache.getTranslation(chunkHash, locale, glossaryHash)
     if (cachedChunk) {
-      result.push(pre + cachedChunk.output + post)
+      result.push(pre + restorePlaceholders(cachedChunk.output, placeholders) + post)
       continue
     }
 
-    const glossaryHint = buildGlossaryHint(glossary, trimmed)
+    const glossaryHint = buildGlossaryHint(glossary, placeholderText)
 
     const systemPrompt = `You are a professional technical translator (English → Japanese) for Zilliz Cloud documentation.
 Translate the provided markdown text from English to Japanese.
 
 Rules:
 1. Preserve ALL markdown syntax exactly: ##, **, *, >, -, tables, numbered lists, etc.
-2. Preserve ALL JSX/HTML component tags exactly: <Component>, </Component>, <Component />, opening tags with attributes
+2. Preserve ALL XTAGX placeholders (e.g. XTAG0X, XTAG1X) exactly as-is — do not translate, reorder, or remove them
 3. Preserve ALL markdown link URLs — only translate the visible link text: [translate this](keep-url-unchanged)
 4. Preserve ALL heading anchor IDs exactly: \\{#heading-id} stays unchanged
 5. Preserve ALL inline code: \`code\` stays unchanged
+6. Preserve ALL leading whitespace on every line exactly — do not add or remove spaces or tabs at the start of any line
 ${untranslatableList ? `6. Do NOT translate these technical terms — output them exactly as English: ${untranslatableList}\n` : ''}${glossaryHint ? `7. Use EXACTLY these translations:\n${glossaryHint}\n` : ''}
 Return ONLY the translated markdown, no explanation.`
 
     let raw = await limiter.schedule(() =>
       callLLM([
         { role: 'system', content: systemPrompt },
-        { role: 'user', content: trimmed },
+        { role: 'user', content: placeholderText },
       ], llmConfig)
     )
 
@@ -314,11 +333,14 @@ Return ONLY the translated markdown, no explanation.`
       console.warn(`[i18n-translator] Instruction echo detected — retrying with minimal prompt`)
       raw = await limiter.schedule(() =>
         callLLM([
-          { role: 'system', content: 'Translate the following markdown text from English to Japanese. Output only the translated text.' },
-          { role: 'user', content: trimmed },
+          { role: 'system', content: 'Translate the following markdown text from English to Japanese. Preserve all XTAGX placeholders (e.g. XTAG0X, XTAG1X) exactly as-is. Output only the translated text.' },
+          { role: 'user', content: placeholderText },
         ], llmConfig)
       )
     }
+
+    // Restore structural tags from placeholders before post-processing
+    raw = restorePlaceholders(raw, placeholders)
 
     const translated = applyGlossaryPostProcess(raw, glossary)
     await cache.setTranslation(chunkHash, locale, glossaryHash, { output: translated })
@@ -344,6 +366,8 @@ async function translateFile({
   locale,
   glossaryHash,
   dryRun,
+  force = false,
+  sidebarLabelsSeen = null, // Map<label, firstRelPath> — shared across calls for dup detection
 }) {
   const sourceContent = fs.readFileSync(sourcePath, 'utf8')
   const sourceHash = hashContent(sourceContent)
@@ -359,7 +383,7 @@ async function translateFile({
     outputFrontmatter = stripEditorialFields(applyTranslatedFields(frontmatter, translatedFields))
   }
 
-  outputBody = await translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash)
+  outputBody = await translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash, force)
 
   const output = frontmatter
     ? `---\n${outputFrontmatter}\n---\n${outputBody}`
@@ -370,6 +394,25 @@ async function translateFile({
   if (issues.length) {
     console.warn(`[i18n-translator]   ⚠  ${relPath} (${issues.length} issue${issues.length > 1 ? 's' : ''})`)
     for (const issue of issues) console.warn(`[i18n-translator]        ${issue}`)
+  }
+
+  // Sidebar label duplicate detection: warn if this file's translated
+  // sidebar_label collides with another file already seen in this run.
+  // Duplicate labels cause Docusaurus to crash with "Multiple docs sidebar
+  // items produce the same translation key" when building the locale.
+  if (sidebarLabelsSeen) {
+    const labelMatch = output.match(/^sidebar_label:\s*"(.+?)"\s*$/m)
+    if (labelMatch) {
+      const label = labelMatch[1]
+      if (sidebarLabelsSeen.has(label)) {
+        console.warn(`[i18n-translator]   ⚠  sidebar_label duplicate detected: "${label}"`)
+        console.warn(`[i18n-translator]        first seen in: ${sidebarLabelsSeen.get(label)}`)
+        console.warn(`[i18n-translator]        also in:       ${relPath}`)
+        console.warn(`[i18n-translator]        This will cause a Docusaurus build failure for locale ${locale}.`)
+      } else {
+        sidebarLabelsSeen.set(label, relPath)
+      }
+    }
   }
 
   if (dryRun) {
@@ -513,7 +556,7 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
     console.log(`[i18n-translator] Translating: ${relPath}`)
     if (dryRun) console.log('[i18n-translator] (dry-run — output printed to stdout, nothing written)\n')
 
-    await translateFile({ sourcePath, destPath, relPath, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash, dryRun })
+    await translateFile({ sourcePath, destPath, relPath, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash, dryRun, force: true })
     await cache.close()
     return
   }
@@ -567,6 +610,12 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
 
     console.log(`[i18n-translator] ${folder}: ${tasks.length} file(s) to translate, ${skipped} unchanged`)
 
+    // Track sidebar_label values seen in this source folder to detect duplicates
+    // that would cause Docusaurus to crash with "Multiple docs sidebar items
+    // produce the same translation key". Each source folder is a separate
+    // Docusaurus version so keys don't collide across folders.
+    const sidebarLabelsSeen = new Map()
+
     for (const { sourcePath, destPath, relPath } of tasks) {
       try {
         await translateFile({
@@ -581,6 +630,8 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
           locale,
           glossaryHash,
           dryRun,
+          force: forceAll,
+          sidebarLabelsSeen,
         })
         translated++
       } catch (err) {

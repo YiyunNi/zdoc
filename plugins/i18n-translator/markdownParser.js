@@ -130,10 +130,62 @@ function splitBodyIntoChunks(body) {
   return chunks
 }
 
+/**
+ * Replace JSX component tags and structural HTML block tags in a prose chunk
+ * with numbered placeholders ({{TAG_0}}, {{TAG_1}}, …) before sending to the
+ * LLM. This prevents the model from reordering, duplicating, or mis-closing
+ * tags like <Tabs>, <TabItem>, <table>, <tr>, <td>, <ul>, <li>, etc.
+ *
+ * Targets:
+ *   - PascalCase JSX components: <Tabs ...>, </Tabs>, <TabItem value="x">, …
+ *   - Structural HTML block tags: table, thead, tbody, tr, td, th, ul, ol, li
+ *
+ * Inline formatting tags (b, em, strong, code, a …) are intentionally left
+ * alone so the LLM can still translate their surrounding prose naturally.
+ *
+ * Returns { placeholderText, placeholders } where `placeholders` is the
+ * ordered array of original tag strings.
+ */
+function placeholderifyTags(text) {
+  const placeholders = []
+
+  // Match opening tags (with optional attributes), closing tags, and
+  // self-closing tags for PascalCase JSX components and structural HTML tags.
+  const TAG_RE = /<\/?(?:[A-Z][A-Za-z0-9]*|table|thead|tbody|tfoot|tr|td|th|ul|ol|li)\b[^>]*\/?>/g
+
+  const placeholderText = text.replace(TAG_RE, (match) => {
+    const idx = placeholders.length
+    placeholders.push(match)
+    return `XTAG${idx}X`
+  })
+
+  return { placeholderText, placeholders }
+}
+
+/**
+ * Restore {{TAG_N}} placeholders back to their original tag strings.
+ * Any placeholder that the LLM dropped (hallucination or truncation) is
+ * re-inserted as-is so the output remains structurally valid.
+ * Any placeholder reference beyond the known range is left unchanged
+ * (safe fallback — the MDX patcher can handle stray markers).
+ *
+ * Also normalises common LLM corruption patterns before matching:
+ *   {{TAG_N}>  →  {{TAG_N}}  (dropped one closing brace; > is the tag delimiter)
+ *   {TAG_N}}   →  {{TAG_N}}  (dropped one opening brace)
+ */
+function restorePlaceholders(text, placeholders) {
+  return text.replace(/XTAG(\d+)X/g, (match, idx) => {
+    const i = parseInt(idx, 10)
+    return i < placeholders.length ? placeholders[i] : match
+  })
+}
+
 module.exports = {
   parseFrontmatter,
   extractTranslatableFields,
   applyTranslatedFields,
   stripEditorialFields,
   splitBodyIntoChunks,
+  placeholderifyTags,
+  restorePlaceholders,
 }
