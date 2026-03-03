@@ -12,8 +12,20 @@ async function applyMdxPatches(content) {
         let patchedContent = content;
         let maxIterations = 50; // Prevent infinite loops
         let iteration = 0;
+        const seenHashes = new Set();
 
         while (iteration < maxIterations) {
+            // Cycle detection: stop if we've visited this exact content state before
+            let h = 5381;
+            for (let i = 0; i < patchedContent.length; i++) {
+                h = Math.imul(h, 33) ^ patchedContent.charCodeAt(i);
+            }
+            if (seenHashes.has(h)) {
+                console.warn('Cycle detected in MDX patch loop, stopping to prevent infinite iteration');
+                break;
+            }
+            seenHashes.add(h);
+
             try {
                 // Try to compile the current content
                 await compile(patchedContent, { development: false });
