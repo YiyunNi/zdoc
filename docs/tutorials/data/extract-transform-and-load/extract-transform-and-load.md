@@ -19,10 +19,6 @@ keywords:
   - extract
   - transform
   - load
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
 
 ---
 

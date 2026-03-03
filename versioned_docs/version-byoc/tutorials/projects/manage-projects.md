@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - projects
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
 
 ---
 

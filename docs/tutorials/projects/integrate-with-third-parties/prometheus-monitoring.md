@@ -18,10 +18,6 @@ keywords:
   - third-party
   - services
   - prometheus
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
 
 ---
 

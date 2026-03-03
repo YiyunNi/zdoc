@@ -10,17 +10,13 @@ notebook: FALSE
 description: "Zilliz offers a fully managed Milvus service, streamlining the deployment and scaling of vector search applications with security in mind, and eliminating the need to build and maintain complex infrastructure, including both the cloud infrastructure Zilliz provides and your own. | BYOC"
 type: origin
 token: BX6iwjUzLi7udfksJoxc7jK1nsW
-sidebar_position: 14
+sidebar_position: 16
 keywords: 
   - zilliz
   - vector database
   - cloud
   - terraform provider
   - terraform
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
 
 ---
 

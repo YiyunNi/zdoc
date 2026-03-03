@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Phrase match lets you search for documents containing your query terms as an exact phrase. By default, the words must appear in the same order and directly adjacent to one another. For example, a query for \"robotics machine learning\" matches text like \"…typical robotics machine learning models…\", where the words \"robotics\", \"machine\", and \"learning\" appear in sequence with no other words between them. | BYOC"
 type: origin
 token: O2YiwLai5iSjT1k1WEsc06E8nEe
-sidebar_position: 13
+sidebar_position: 14
 keywords: 
   - zilliz
   - vector database
@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - phrase-match
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
 
 ---
 

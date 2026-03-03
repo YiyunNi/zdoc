@@ -21,10 +21,6 @@ keywords:
   - rto
   - rpo
   - cost optimzation
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
 
 ---
 
@@ -124,7 +120,7 @@ Zilliz Cloud, as a fully managed vector database service, delivers enterprise-gr
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Cross-region HA will be available in November 2025. Incremental backup will be available in December 2025.</p>
+<p>Cross-region HA will be available in November 2025. </p>
 
 </Admonition>
 
@@ -157,15 +153,6 @@ Zilliz Cloud, as a fully managed vector database service, delivers enterprise-gr
      <td><p>Full backups replicated across regions/clouds</p></td>
      <td><p>Regional disaster, compliance requirements</p></td>
      <td><p>Medium</p></td>
-   </tr>
-   <tr>
-     <td><p><strong>Incremental Backup</strong></p></td>
-     <td><p>Real-time incremental backups; fine-grained recovery points</p></td>
-     <td><p>≤1 minute</p></td>
-     <td><p>Minutes to hours</p></td>
-     <td><p>Continuous capture of transaction logs</p></td>
-     <td><p>Point-in-time recovery for critical workloads</p></td>
-     <td><p>Medium–High</p></td>
    </tr>
 </table>
 

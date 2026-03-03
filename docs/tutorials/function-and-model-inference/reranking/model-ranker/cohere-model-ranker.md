@@ -22,10 +22,6 @@ keywords:
   - reranking model
   - model ranker
   - cohere
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
 
 ---
 

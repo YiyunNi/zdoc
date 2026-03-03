@@ -17,10 +17,6 @@ keywords:
   - cloud
   - collection
   - schema explained
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
 
 ---
 

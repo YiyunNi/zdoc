@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - cluster
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
 
 ---
 

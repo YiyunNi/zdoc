@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - geometry
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
 
 ---
 

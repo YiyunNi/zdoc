@@ -22,10 +22,6 @@ keywords:
   - decay
   - decay ranker
   - decay rankers
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
 
 ---
 

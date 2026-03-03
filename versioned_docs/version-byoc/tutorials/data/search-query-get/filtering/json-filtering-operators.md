@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - json operators
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
 
 ---
 

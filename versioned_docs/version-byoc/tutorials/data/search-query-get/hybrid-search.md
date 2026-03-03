@@ -19,10 +19,6 @@ keywords:
   - data
   - hybrid search
   - combine sparse and dense vectors
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
 
 ---
 

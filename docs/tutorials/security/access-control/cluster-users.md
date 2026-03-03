@@ -20,10 +20,6 @@ keywords:
   - rbac
   - users
   - overview
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
 
 ---
 

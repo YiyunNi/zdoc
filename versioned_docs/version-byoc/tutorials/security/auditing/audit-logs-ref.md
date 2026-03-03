@@ -17,10 +17,6 @@ keywords:
   - cloud
   - auditing
   - log
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
 
 ---
 

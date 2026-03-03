@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - data export
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
 
 ---
 

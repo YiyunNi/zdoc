@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - lowercase
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
 
 ---
 

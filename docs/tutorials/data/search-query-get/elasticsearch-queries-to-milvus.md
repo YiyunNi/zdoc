@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Elasticsearch, built on Apache Lucene, is a leading open-source search engine. However, it faces challenges in modern AI applications, including high update costs, poor real-time performance, inefficient shard management, a non-cloud-native design, and excessive resource demands. As a cloud-native vector database, Milvus overcomes these issues with decoupled storage and computing, efficient indexing for high-dimensional data, and seamless integration with modern infrastructures. It offers superior performance and scalability for AI workloads. | Cloud"
 type: origin
 token: OFl9wHXpriM8aEkoONScpU1lnIf
-sidebar_position: 15
+sidebar_position: 16
 keywords: 
   - zilliz
   - vector database
@@ -22,10 +22,6 @@ keywords:
   - filtering
   - elasticsearch queries
   - query mapping
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
 
 ---
 

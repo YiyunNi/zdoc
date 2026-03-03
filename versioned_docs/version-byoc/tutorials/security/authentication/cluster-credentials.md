@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - cluster credentials
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
 
 ---
 

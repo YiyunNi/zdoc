@@ -17,10 +17,6 @@ keywords:
   - cloud
   - project
   - alerts
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
 
 ---
 

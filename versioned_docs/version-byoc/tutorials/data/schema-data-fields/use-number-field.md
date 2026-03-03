@@ -21,10 +21,6 @@ keywords:
   - int
   - integer
   - float
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
 
 ---
 
@@ -77,7 +73,7 @@ To declare a boolean field, simply set `datatype` to `BOOL`. To declare a number
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloud supports null values and default values for boolean and number fields. To enable these features, set <code>nullable</code> to <code>True</code> and <code>default_value</code> to a numeric value. For details, refer to <a href="./nullable-and-default">Nullable & Default</a>.</p>
+<p>Zilliz Cloud supports null values and default values for boolean and number fields. To enable these features, set <code>nullable</code> to <code>True</code> and <code>default_value</code> to a numeric value. For details, refer to <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 

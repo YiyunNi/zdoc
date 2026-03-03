@@ -4,27 +4,23 @@ slug: /java/java/v2-Collections-describeAlias
 sidebar_label: "describeAlias()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation displays the details of an alias. | Java | v2"
 type: docx
-token: RWaHdvzdvoxGdbxj44cc5SmBnzd
+token: BDqGdp4uqo3XRexslRNcts9knmd
 sidebar_position: 11
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
   - describeAlias()
   - javaV226
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -46,39 +42,30 @@ public DescribeAliasResp describeAlias(DescribeAliasReq request)
 ```java
 describeAlias(DescribeAliasReq.builder()
     .databaseName(String databaseName)
-    .collection(String collectionName)
     .alias(String alias)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `databaseName(String databaseName)`
+- `databaseName(String databaseName)` -
 
-    The name of the database to which the target collection belongs.
+    The name of the database. Defaults to the current database if not specified.
 
-- `collectionName(String collectionName)`
+- `alias(String alias)` -
 
-    The name of the target collection of this operation.
-
-- `alias(String alias)`
-
-    The alias of a collection. 
-
-    Before this operation, ensure that the alias exists. Otherwise, exceptions will occur.
-
-**RETURN TYPE:**
-
-*DescribeAliasResp*
+    The alias name.
 
 **RETURNS:**
+
+*DescribeAliasResp*
 
 A **DescribeAliasResp** object containing the alias details.
 
 **EXCEPTIONS:**
 
-- **MilvusClientExceptions**
+- **MilvusClientException**
 
     This exception will be raised when any error occurs during this operation.
 
@@ -106,4 +93,3 @@ DescribeAliasReq describeAliasReq = DescribeAliasReq.builder()
         .build();
 DescribeAliasResp describeAliasResp = client.describeAlias(describeAliasReq);
 ```
-

@@ -19,10 +19,6 @@ keywords:
   - access control
   - rbac
   - roles
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - vector field
   - index
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
 
 ---
 

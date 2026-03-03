@@ -18,10 +18,6 @@ keywords:
   - collection
   - load
   - release
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
 
 ---
 

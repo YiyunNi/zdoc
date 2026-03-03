@@ -19,10 +19,6 @@ keywords:
   - schema
   - schema design
   - hands-on
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
 
 ---
 

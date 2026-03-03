@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - icu-tokenizer
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
 
 ---
 

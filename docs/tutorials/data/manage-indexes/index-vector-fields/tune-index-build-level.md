@@ -18,10 +18,6 @@ keywords:
   - vector field
   - index
   - index build level
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
 
 ---
 

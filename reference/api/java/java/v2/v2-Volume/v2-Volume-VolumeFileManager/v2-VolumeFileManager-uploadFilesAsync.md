@@ -12,19 +12,15 @@ type: docx
 token: GE25dbBmMoU8glxCWbJckYObnN1
 sidebar_position: 1
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
   - zilliz
   - zilliz cloud
   - cloud
   - uploadFilesAsync
   - javaV226
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -67,11 +63,11 @@ uploadFileAsync(UploadFilesRequest.builder()
 
 **RETURN TYPE**
 
-*CompletableFuture\<UploadFilesResult>*
+*CompletableFuture&lt;UploadFilesResult&gt;*
 
 **RETURNS**
 
-A **CompletableFuture\<UploadFilesResult>** instance that resolves to an **UploadFilesResult** instance that has the following attributes.
+A **CompletableFuture&lt;UploadFilesResult&gt;** instance that resolves to an **UploadFilesResult** instance that has the following attributes.
 
 - **volumeName** (*str*) -
 

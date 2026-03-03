@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in analyzer
   - chinese analyzer
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
 
 ---
 

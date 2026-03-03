@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Similarity metrics are used to measure similarities among vectors. Choosing an appropriate distance metric helps improve classification and clustering performance significantly. | Cloud"
 type: origin
 token: EOxmwUDxMiy2cpkOfIsc1dYzn4c
-sidebar_position: 21
+sidebar_position: 22
 keywords: 
   - zilliz
   - vector database
@@ -23,10 +23,6 @@ keywords:
   - IP
   - COSINE
   - Jaccard
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
 
 ---
 

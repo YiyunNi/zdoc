@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - alphanumonly
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
 
 ---
 

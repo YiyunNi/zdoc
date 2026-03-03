@@ -12,19 +12,15 @@ type: docx
 token: ITkydrfmroQyLLxusZtc6t1nnjf
 sidebar_position: 1
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud
   - alterIndexProperties()
   - javaV226
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

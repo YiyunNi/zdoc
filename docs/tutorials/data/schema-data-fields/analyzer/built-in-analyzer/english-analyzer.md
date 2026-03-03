@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in analyzer
   - english analyzer
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
 
 ---
 

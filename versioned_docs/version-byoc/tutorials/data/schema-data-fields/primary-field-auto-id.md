@@ -20,10 +20,6 @@ keywords:
   - primary field
   - autoId
   - autoid
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
 
 ---
 

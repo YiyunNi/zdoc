@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - migrations
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
 
 ---
 

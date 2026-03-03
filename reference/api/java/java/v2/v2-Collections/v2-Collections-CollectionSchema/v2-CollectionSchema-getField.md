@@ -12,19 +12,15 @@ type: docx
 token: AXWod56QkoprlXxOXkwcPXfonHg
 sidebar_position: 3
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
   - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - getField()
   - javaV226
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

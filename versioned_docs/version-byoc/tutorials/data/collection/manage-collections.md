@@ -17,10 +17,6 @@ keywords:
   - cloud
   - collection
   - collection explained
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
 
 ---
 
@@ -47,7 +43,7 @@ You should include all schema-defined fields in the entities to insert. To make 
 
 - **Making them nullable or setting default values**
 
-    For details on how to make a field nullable or set the default value, refer to [Nullable & Default](./nullable-and-default).
+    For details on how to make a field nullable or set the default value, refer to [Nullable & Default](./nullable-fields).
 
 - **Enabling dynamic field**
 

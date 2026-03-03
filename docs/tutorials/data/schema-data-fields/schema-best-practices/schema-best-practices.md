@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This chapter covers best practices for schema design related to your dataset. | Cloud"
 type: origin
 token: Gi6KwjOlKiBhdOkxlL3cdobBnLe
-sidebar_position: 18
+sidebar_position: 19
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,6 @@ keywords:
   - schema
   - best practices
   - schema design
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
 
 ---
 

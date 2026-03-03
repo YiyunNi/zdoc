@@ -18,10 +18,6 @@ keywords:
   - data import
   - milvus
   - format options
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
 
 ---
 

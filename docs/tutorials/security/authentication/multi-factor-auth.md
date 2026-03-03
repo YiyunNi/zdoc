@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - mfa
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

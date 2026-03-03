@@ -18,10 +18,6 @@ keywords:
   - function
   - model
   - inference
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
 
 ---
 

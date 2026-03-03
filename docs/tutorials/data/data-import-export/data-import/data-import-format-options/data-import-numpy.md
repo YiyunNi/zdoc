@@ -19,10 +19,6 @@ keywords:
   - milvus
   - format options
   - numpy
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
 
 ---
 

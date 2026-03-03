@@ -18,10 +18,6 @@ keywords:
   - metrics
   - alerts
   - view
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
 
 ---
 

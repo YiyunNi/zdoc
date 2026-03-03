@@ -8,14 +8,14 @@ last_modified: false
 deprecate_since: false
 description: "Methods related to database operations. | Java | v2"
 type: folder
-token: TOZmfXZa3luWIMdjXUycMbaanCd
+token: GKUCfGIFEluyMgdvioDc9sH7nzh
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud

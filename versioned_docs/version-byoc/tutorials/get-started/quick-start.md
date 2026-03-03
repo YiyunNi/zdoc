@@ -10,17 +10,13 @@ notebook: FALSE
 description: "This guide demonstrates how to use Zilliz Cloud clusters to perform operations related to high-performance semantic search. | BYOC"
 type: origin
 token: GQN0wDCrni4n36kyeVQcF41Lned
-sidebar_position: 6
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
   - quickstart
   - cloud
   - milvus
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
 
 ---
 
@@ -62,7 +58,11 @@ Before going through this quick start, ensure that:
 
     - [Deploy BYOC-I on AWS](./deploy-byoc-i-aws)
 
+    - [Deploy BYOC on GCP](./deploy-byoc-gcp)
+
     If your cloud provider is not available above, contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
+
+- You have determined the way to connect to your BYOC cluster. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
 
 The following steps assume that you have already created a cluster, obtained the API key or the cluster credentials, and installed your preferred SDK.
 

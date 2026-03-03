@@ -19,10 +19,6 @@ keywords:
   - schema
   - analyzer
   - built-in tokenizer
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
 
 ---
 

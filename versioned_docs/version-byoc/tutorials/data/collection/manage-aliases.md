@@ -18,10 +18,6 @@ keywords:
   - collection
   - alias
   - aliases
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
 
 ---
 

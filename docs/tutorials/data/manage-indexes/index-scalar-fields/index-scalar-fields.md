@@ -17,10 +17,6 @@ keywords:
   - cloud
   - scalar field
   - index
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
 
 ---
 

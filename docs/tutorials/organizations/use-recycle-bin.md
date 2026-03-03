@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - recycle bin
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
 
 ---
 

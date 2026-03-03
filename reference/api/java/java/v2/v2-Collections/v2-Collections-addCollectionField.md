@@ -4,27 +4,23 @@ slug: /java/java/v2-Collections-addCollectionField
 sidebar_label: "addCollectionField()"
 beta: false
 added_since: v2.6.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
-description: "This operation adds a new scalar field to an existing collection without recreating it. The field becomes available almost immediately with minimal delay due to internal schema synchronization. | Java | v2"
+description: "This operation adds a scalar field to the schema of an existing collection. | Java | v2"
 type: docx
-token: AImudC3YNoa1PZxj4zNckcvsnXc
+token: V9rBdJEGzoCybDx9FIfcpqJbnlc
 sidebar_position: 23
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud
   - addCollectionField()
   - javaV226
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -35,17 +31,11 @@ import Admonition from '@theme/Admonition';
 
 # addCollectionField()
 
-This operation adds a new scalar field to an existing collection without recreating it. The field becomes available almost immediately with minimal delay due to internal schema synchronization.
+This operation adds a scalar field to the schema of an existing collection.
 
 ```java
 public void addCollectionField(AddCollectionFieldReq request)
 ```
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>If the collection has dynamic field enabled and you add a static field with the same name as an existing dynamic field key, the static field will mask the dynamic field key. The original dynamic values remain accessible via <code>$meta['field_name']</code> syntax.</p>
-
-</Admonition>
 
 ## Request Syntax\{#request-syntax}
 
@@ -59,19 +49,19 @@ addCollectionField(AddCollectionFieldReq.builder()
     .maxLength(Integer maxLength)
     .isPrimaryKey(Boolean isPrimaryKey)
     .isPartitionKey(Boolean isPartitionKey)
+    .isClusteringKey(Boolean isClusteringKey)
     .autoID(Boolean autoID)
-    .dimension(int dimension)
+    .dimension(Integer dimension)
     .elementType(DataType elementType)
     .maxCapacity(Integer maxCapacity)
     .isNullable(Boolean isNullable)
-    .defaultValue(DataType dataType)
+    .defaultValue(Object defaultValue)
     .enableAnalyzer(Boolean enableAnalyzer)
+    .analyzerParams(Map<String, String> analyzerParams)
     .enableMatch(Boolean enableMatch)
-    .analyzerParams(Map<String, Object> analyzerParams)
     .typeParams(Map<String, String> typeParams)
     .multiAnalyzerParams(Map<String, Object> multiAnalyzerParams)
-    .structFields(List<CreateCollectionReq.FieldSchema> structFields)
-    .build()
+    .build();
 )
 ```
 
@@ -79,11 +69,11 @@ addCollectionField(AddCollectionFieldReq.builder()
 
 - `collectionName(String collectionName)`
 
-    The name of the target collection.
+    The name of the target collection of this operation.
 
 - `databaseName(String databaseName)`
 
-    The name of an existing database that has the collection specified above.
+    The name of the database to which the target collection belongs.
 
 - `fieldName(String fieldName)`
 
@@ -175,7 +165,7 @@ addCollectionField(AddCollectionFieldReq.builder()
 
 - `analyzerParams(Map<String, Object>, analyzerParams)`
 
-    Configures the analyzer for text processing, specifically for `DataType.*VarChar* fields. This parameter configures tokenizer and filter settings, particularly for text fields used in [keyword matching](https://milvus.io/docs/keyword-match.md) or [full text search](https://milvus.io/docs/full-text-search.md). Depending on the type of analyzer, it can be configured in either of the following methods:
+    Configures the analyzer for text processing, specifically for `DataType.VarChar` fields. This parameter configures tokenizer and filter settings, particularly for text fields used in [keyword matching](https://milvus.io/docs/keyword-match.md) or [full text search](https://milvus.io/docs/full-text-search.md). Depending on the type of analyzer, it can be configured in either of the following methods:
 
     - Built-in analyzer
 
@@ -200,7 +190,7 @@ addCollectionField(AddCollectionFieldReq.builder()
 
             Defines the tokenizer type. Possible values: `standard` (default), `whitespace`, `jieba`. For more information, refer to [Standard Tokenizer](https://milvus.io/docs/standard-tokenizer.md), [Whitespace Tokenizer](https://milvus.io/docs/whitespace-tokenizer.md), and [Jieba Tokenizer](https://milvus.io/docs/jieba-tokenizer.md).
 
-        - `filter` (*List\<String>*) -
+        - `filter` (*List&lt;String&gt;*) -
 
             Lists filters to refine tokens produced by the tokenizer, with options for built-in filters and custom filters. For more information, refer to [Alphanumonly Filter](https://milvus.io/docs/alphanumonly-filer.md) and others.
 
@@ -212,15 +202,9 @@ addCollectionField(AddCollectionFieldReq.builder()
 
     A multi-language analyzer that allows you to configure multiple analyzers for a text field and store multilingual documents in this text field.
 
-- `structFields(List<CreateCollectionReq.FieldSchema> structFields)`
-
-    A list of fields in the Array of Structs field. 
-
-    This is required if **dataType** of this field is set to **DataType.Array** and **elementType** of this field is set to **DataType.Struct**.
-
 **RETURNS:**
 
-*void*
+*voidƒ*
 
 **EXCEPTIONS:**
 
@@ -228,28 +212,22 @@ addCollectionField(AddCollectionFieldReq.builder()
 
     This exception will be raised when any error occurs during this operation.
 
-## Example\{#example}
+## Examples\{#examples}
 
-```plaintext
-import io.milvus.v2.client.ConnectConfig;
+```java
 import io.milvus.v2.client.MilvusClientV2;
+import io.milvus.v2.client.ConnectConfig;
 import io.milvus.v2.service.collection.request.AddCollectionFieldReq;
 
-// 1. Set up a client
-ConnectConfig connectConfig = ConnectConfig.builder()
+ConnectConfig config = ConnectConfig.builder()
         .uri("YOUR_CLUSTER_ENDPOINT")
-        .token("YOUR_CLUSTER_TOKEN")
         .build();
-        
-MilvusClientV2 client = new MilvusClientV2(connectConfig);
+MilvusClientV2 client = new MilvusClientV2(config);
 
-// 2. Add a new field
 client.addCollectionField(AddCollectionFieldReq.builder()
-        .collectionName(collectionName)
-        .fieldName("text")
-        .dataType(DataType.VarChar)
-        .maxLength(100)
-        .isNullable(true) // must be nullable
+        .collectionName("product_catalog")
+        .fieldName("created_timestamp")
+        .dataType(DataType.Int64)
+        .isNullable(true)
         .build());
 ```
-

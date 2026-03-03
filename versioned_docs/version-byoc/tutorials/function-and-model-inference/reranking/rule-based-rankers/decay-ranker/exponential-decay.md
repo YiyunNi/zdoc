@@ -23,10 +23,6 @@ keywords:
   - decay ranker
   - exponential decay
   - exp
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
 
 ---
 

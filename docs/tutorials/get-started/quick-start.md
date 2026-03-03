@@ -10,17 +10,13 @@ notebook: FALSE
 description: "This guide demonstrates how to use Zilliz Cloud clusters to perform operations related to high-performance semantic search. | Cloud"
 type: origin
 token: GQN0wDCrni4n36kyeVQcF41Lned
-sidebar_position: 6
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
   - quickstart
   - cloud
   - milvus
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
 
 ---
 

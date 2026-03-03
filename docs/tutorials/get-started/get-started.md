@@ -16,10 +16,6 @@ keywords:
   - vector database
   - get started
   - milvus
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
 
 ---
 

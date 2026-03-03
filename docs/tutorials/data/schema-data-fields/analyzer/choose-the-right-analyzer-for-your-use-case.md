@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - best
   - practice
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
 
 ---
 

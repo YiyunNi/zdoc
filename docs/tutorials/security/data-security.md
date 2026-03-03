@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data
   - security
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
 
 ---
 

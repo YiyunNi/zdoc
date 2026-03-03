@@ -17,10 +17,6 @@ keywords:
   - cloud
   - network
   - security
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - aws
   - milvus
   - vector database
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
 
 ---
 
@@ -68,7 +64,7 @@ In this step, you need to set the project name, determine the cloud providers an
 
 1. Determine whether to enable **AWS PrivateLink**.
 
-    This option allows private connectivity to the clusters within the current project. If you enable this option, you must create a VPC Endpoint for private connectivity.
+    This option allows private connectivity to the clusters within the current project. If you enable this option, you must create a VPC Endpoint for private connectivity. For details, refer to [Prepare for Cluster Connection](./prepare-for-cluster-connection#private-endpoint-access).
 
 1. Select an architecture type that matches your application in **Architecture**. 
 
@@ -223,6 +219,8 @@ In **Network Settings**, create a VPC and several types of resources, such as su
 After you create a project, you can view its status on the project page.
 
 ![Bw2Xb6wIKoXWAuxU4jOcDdAnn2e](https://zdoc-images.s3.us-west-2.amazonaws.com/bw2xb6wikoxwauxu4jocddann2e.png "Bw2Xb6wIKoXWAuxU4jOcDdAnn2e")
+
+Once you have deployed the project's data plane and created clusters, you can connect to these clusters either through direct VPC access or via AWS PrivateLink. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
 
 ## Suspend & Resume\{#suspend-and-resume}
 

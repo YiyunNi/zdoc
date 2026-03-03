@@ -19,10 +19,6 @@ keywords:
   - external
   - data source
   - basics
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
 
 ---
 

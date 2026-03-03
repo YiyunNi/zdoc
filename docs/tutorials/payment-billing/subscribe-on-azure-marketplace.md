@@ -17,10 +17,6 @@ keywords:
   - cloud
   - marketplace
   - azure
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
 
 ---
 

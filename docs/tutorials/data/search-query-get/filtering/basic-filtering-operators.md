@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - basic operators
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
 
 ---
 

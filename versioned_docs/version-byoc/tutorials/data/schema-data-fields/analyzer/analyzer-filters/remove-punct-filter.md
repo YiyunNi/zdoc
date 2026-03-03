@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - remove punct
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data export
   - iterator
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
 
 ---
 

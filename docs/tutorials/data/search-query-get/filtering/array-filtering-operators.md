@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - array operators
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 

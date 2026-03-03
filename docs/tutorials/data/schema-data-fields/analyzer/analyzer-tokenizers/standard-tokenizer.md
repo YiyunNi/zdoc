@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - standard-tokenizer
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
 
 ---
 

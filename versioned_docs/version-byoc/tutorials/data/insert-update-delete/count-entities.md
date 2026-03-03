@@ -20,10 +20,6 @@ keywords:
   - upsert
   - update
   - count
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
 
 ---
 

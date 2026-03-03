@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cost
   - billing
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
 
 ---
 

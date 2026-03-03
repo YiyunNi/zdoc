@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - cluster plan
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

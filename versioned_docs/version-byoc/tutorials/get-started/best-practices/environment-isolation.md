@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - multi-tenancy
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
 
 ---
 
@@ -37,7 +33,7 @@ This option is recommended for most enterprise-grade production deployments wher
 
 **Best suited for:**
 
-- Managing user [roles](./project-users#project-roles) with moderate isolation
+- Managing user [roles](./project-users#invite-a-user-to-a-project) with moderate isolation
 
 **Benefits:**
 

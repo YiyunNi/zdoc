@@ -21,10 +21,6 @@ keywords:
   - ann
   - recall rate
   - tune recall rate
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
 
 ---
 

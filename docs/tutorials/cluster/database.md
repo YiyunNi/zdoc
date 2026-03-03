@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - milvus
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
 
 ---
 
@@ -123,8 +119,8 @@ await client.createDatabase({
 ```go
 cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: "YOUR_CLUSTER_ENDPOINT",
-    Username: "Milvus",
-    Password: "root",
+    Username: "root",
+    Password: "Milvus",
 })
 if err != nil {
     // handle err

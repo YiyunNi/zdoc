@@ -19,10 +19,6 @@ keywords:
   - schema
   - analyzer
   - multi-language
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
 
 ---
 

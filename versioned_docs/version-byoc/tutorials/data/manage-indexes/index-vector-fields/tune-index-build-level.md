@@ -18,10 +18,6 @@ keywords:
   - vector field
   - index
   - index build level
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
 
 ---
 

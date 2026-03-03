@@ -17,10 +17,6 @@ keywords:
   - cloud
   - vector field
   - index
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
 
 ---
 

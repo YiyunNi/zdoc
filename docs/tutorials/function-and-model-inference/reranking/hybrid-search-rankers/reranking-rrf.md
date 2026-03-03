@@ -20,10 +20,6 @@ keywords:
   - search result reranking
   - result reranking
   - rrf
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
 
 ---
 

@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - mfa
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
 
 ---
 

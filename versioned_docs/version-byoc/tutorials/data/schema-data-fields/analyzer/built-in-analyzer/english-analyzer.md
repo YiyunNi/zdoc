@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in analyzer
   - english analyzer
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
 
 ---
 

@@ -18,10 +18,6 @@ keywords:
   - collection
   - data
   - range search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
 
 ---
 
@@ -272,3 +268,8 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>If the query vectors already exist in the target collection, consider using <code>ids</code> instead of retrieving them before searches. For details, refer to <a href="./primary-key-search">Primary-Key Search</a>.</p>
+
+</Admonition>

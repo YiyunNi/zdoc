@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - standard-tokenizer
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
 
 ---
 

@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - array operators
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
 
 ---
 

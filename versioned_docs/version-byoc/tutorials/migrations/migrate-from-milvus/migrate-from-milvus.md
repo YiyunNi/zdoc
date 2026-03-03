@@ -17,10 +17,6 @@ keywords:
   - cloud
   - migrations
   - milvus
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

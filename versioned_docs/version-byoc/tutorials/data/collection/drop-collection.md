@@ -10,7 +10,7 @@ notebook: FALSE
 description: "You can drop a collection if it is no longer needed. | BYOC"
 type: origin
 token: DEUuwEwM4iMLOikU7XpcpNnKnGd
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,6 @@ keywords:
   - drop
   - drop by filter
   - drop by id
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
 
 ---
 

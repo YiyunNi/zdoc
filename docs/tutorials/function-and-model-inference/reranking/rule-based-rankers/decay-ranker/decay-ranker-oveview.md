@@ -22,10 +22,6 @@ keywords:
   - decay
   - decay ranker
   - decay ranker overview
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
 
 ---
 

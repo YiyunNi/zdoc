@@ -9,22 +9,18 @@ deprecate_since: false
 notebook: false
 description: "This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection. | Java | v2"
 type: docx
-token: Df6GdjeIXoThhVxM6dMcvDqenSe
+token: FSTVdf6Yuovg9CxQf5acldFWnsb
 sidebar_position: 2
 keywords: 
-  - Annoy vector search
   - milvus
   - Zilliz
   - milvus vector database
+  - milvus db
   - zilliz
   - zilliz cloud
   - cloud
   - compact()
   - javaV226
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -45,33 +41,38 @@ public CompactResp compact(CompactReq request)
 
 ```java
 compact(CompactReq.builder()
-    .databaseName(String database)
-    .collectionName(String collection)
+    .databaseName(String databaseName)
+    .collectionName(String collectionName)
+    .isClustering(Boolean isClustering)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `databaseName(String database)`
+- `databaseName(String databaseName)` -
 
-    The name of the database to which the target collection belongs.
+    The name of the database. Defaults to the current database if not specified.
 
-- `collectionName(String collection)`
+- `collectionName(String collectionName)` -
 
     The name of the target collection.
 
-**RETURN TYPE:**
+- `isClustering(Boolean isClustering)` -
 
-*CompactResp*
+    Whether to perform clustering compaction. Defaults to `Boolean.FALSE`.
 
 **RETURNS:**
 
+*CompactResp*
+
 A **CompactResp** object contains a compaction ID.
 
-- **compactionID** (*Long*)
+**EXCEPTIONS:**
 
-    The ID of the current compact operation.
+- **MilvusClientException**
+
+    This exception will be raised when any error occurs during this operation.
 
 ## Example\{#example}
 
@@ -95,4 +96,3 @@ client.compact(CompactReq.builder()
     .build();
 );
 ```
-

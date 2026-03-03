@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
 
 ---
 

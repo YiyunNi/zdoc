@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data export
   - iterator
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
 
 ---
 

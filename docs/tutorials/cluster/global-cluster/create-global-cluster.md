@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
 
 ---
 
@@ -34,7 +30,7 @@ import Supademo from '@site/src/components/Supademo';
 
 This guide explains how to create a global cluster. 
 
-If you need to enable the global cluster feature for an existing cluster, see [Manage Cluster](./manage-cluster#add-secondary-clusters).
+If you need to enable the global cluster feature for an existing cluster, see [Manage Cluster](./manage-cluster#convert-to-a-global-cluster).
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -48,17 +44,17 @@ If you need to enable the global cluster feature for an existing cluster, see [M
 
 ## Create a global cluster\{#create-a-global-cluster}
 
-Turn on the switch next to **Global Cluster** in **Cluster Settings**. A global cluster must have 1 primary cluster and 1 to 5 secondary cluster. The cloud provider, cluster type, number of query CU should be consistent with those of the primary cluster.
+Turn on the switch next to **Global Cluster** in **Cluster Settings** and provide a name for the global cluster. A global cluster must have 1 primary cluster and 1 to 5 secondary cluster. The cloud provider, cluster type, number of query CU should be consistent with those of the primary cluster.
 
 The following demo shows how to create a global cluster via the web console.
 
 <Supademo id="cmkasmmcr1glake4xm2kdnfbt" title=""  />
 
-Zilliz Cloud initializes both the primary and secondary clusters. After initialization completes, starts replicating data from the primary cluster to each secondary cluster.
+Zilliz Cloud starts to create the global cluster and its primary and secondary clusters. After creation completes, Zilliz Cloud starts replicating data from the primary cluster to each secondary cluster.
 
-You can monitor the sync status and replication latency between the primary and secondary clusters on the **Global Topology** tab.
+You can monitor the sync status and replication latency between the primary and secondary clusters in the **Global Topology** section on the **Global Cluster** page.
 
-![CF69bk0flo9BtoxdvJzcFWF7nxj](https://zdoc-images.s3.us-west-2.amazonaws.com/cf69bk0flo9btoxdvjzcfwf7nxj.png "CF69bk0flo9BtoxdvJzcFWF7nxj")
+![WJNNb0XQ9oG1tjxmYCSc00WJnxe](https://zdoc-images.s3.us-west-2.amazonaws.com/wjnnb0xq9og1tjxmycsc00wjnxe.png "WJNNb0XQ9oG1tjxmYCSc00WJnxe")
 
 ## Connect to a global cluster\{#connect-to-a-global-cluster}
 
@@ -72,13 +68,13 @@ After your global cluster is running, connect to it using a **global endpoint** 
 
     </Admonition>
 
-    ![DfeybVVeQoE3ksxfPPDc4V81nie](https://zdoc-images.s3.us-west-2.amazonaws.com/dfeybvveqoe3ksxfppdc4v81nie.png "DfeybVVeQoE3ksxfPPDc4V81nie")
+    ![VmvpbMxW8oXwYyxk2n0cZ2f7nsh](https://zdoc-images.s3.us-west-2.amazonaws.com/vmvpbmxw8oxwyyxk2n0cz2f7nsh.png "VmvpbMxW8oXwYyxk2n0cZ2f7nsh")
 
 - **Token:** This token can be  an [API key](./manage-api-keys) or a [cluster credential](./cluster-credentials) that consists of a username and password pair. 
 
     The following example shows how to connect to a cluster.
 
-    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
+    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>
 
     ```python
@@ -128,6 +124,31 @@ After your global cluster is running, connect to it using a **global endpoint** 
     
     // 1. Connect to the cluster
     const client = new MilvusClient({address, token})
+    ```
+
+    </TabItem>
+
+    <TabItem value='go'>
+
+    ```go
+    import "github.com/milvus-io/milvus/client/v2/milvusclient"
+    
+    client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+        Address: "YOUR_CLUSTER_ENDPOINT",
+        APIKey:  "YOUR_CLUSTER_TOKEN",
+    })
+    ```
+
+    </TabItem>
+
+    <TabItem value='bash'>
+
+    ```bash
+    curl --request POST \
+      --url "YOUR_CLUSTER_ENDPOINT" \
+      --header "Authorization: Bearer YOUR_CLUSTER_TOKEN" \
+      --header "Content-Type: application/json" \
+      --data '{"dbName": "default"}'
     ```
 
     </TabItem>

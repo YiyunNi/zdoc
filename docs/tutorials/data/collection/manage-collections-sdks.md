@@ -18,10 +18,6 @@ keywords:
   - collection
   - create collection
   - custom setup
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
 
 ---
 
@@ -62,7 +58,7 @@ The following code snippets create a schema with the enabled dynamic field and t
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>You can set default values for any scalar field and make it nullable. For details, refer to  <a href="./nullable-and-default">Nullable & Default</a>.</p>
+<p>You can set default values for any scalar field and make it nullable. For details, refer to  <a href="./nullable-fields">Nullable & Default</a>.</p>
 
 </Admonition>
 

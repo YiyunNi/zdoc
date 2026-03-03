@@ -12,19 +12,15 @@ type: docx
 token: OLVbdsTOAoQwybx7oLPcZE3wnCf
 sidebar_position: 8
 keywords: 
-  - Vector search
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
   - dropRole()
   - javaV226
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

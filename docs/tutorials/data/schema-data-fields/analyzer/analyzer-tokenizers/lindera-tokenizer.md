@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - lindera-tokenizer
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
 
 ---
 

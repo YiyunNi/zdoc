@@ -19,10 +19,6 @@ keywords:
   - data
   - search result reranking
   - result reranking
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
 
 ---
 

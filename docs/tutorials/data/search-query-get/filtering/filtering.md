@@ -20,10 +20,6 @@ keywords:
   - filter
   - filtering expressions
   - filtering
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
 
 ---
 

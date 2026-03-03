@@ -19,10 +19,6 @@ keywords:
   - model
   - inference
   - bm25
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

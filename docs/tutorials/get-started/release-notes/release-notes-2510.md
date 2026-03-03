@@ -10,16 +10,12 @@ notebook: FALSE
 description: " October 2025 Release Notes | Cloud"
 type: origin
 token: PmaowiSUaiTa8ckPMYJcqdRYnQg
-sidebar_position: 5
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database
   - cloud
   - release notes
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
 
 ---
 
@@ -56,7 +52,7 @@ import Grid from '@site/src/components/Grid';
 
         - **MINHASH_LSH index** — Perform efficient large-scale deduplication and similarity checks powered by MinHash and Locality-Sensitive Hashing. This feature is available in **Private Preview**, and you [can contact us](https://support.zilliz.com/hc/en-us) if you are interested. For details, refer to [MINHASH_LSH](./minhash-lsh).
 
-        - **Partial upserts** — Update specific fields without rewriting entire records. For details, refer to [Upsert Entities](./upsert-entities#upsert-in-merge-mode-or-public).
+        - **Partial upserts** — Update specific fields without rewriting entire records. For details, refer to [Upsert Entities](./upsert-entities#upsert-in-merge-mode).
 
         To enable **Public Preview**, you can upgrade your cluster to Milvus v2.6.x on the **Cluster Overview** page in the Zilliz Cloud console by selecting **Try Preview Features**. After upgrading, Milvus v2.5.x features remain available.
 
@@ -68,7 +64,7 @@ import Grid from '@site/src/components/Grid';
 
         - **Higher Cache Hit Rates**: Over 90% cache hit rates, with most queries served from faster tiers.
 
-        - **Cost Reduction**: Compute costs are reduced by 25%, and storage costs drop by 87%, from $0.30 to $0.04 per GB per month. For a 10TB dataset, monthly storage costs drop from $3,000 to $400, while maintaining high performance.
+        - **Cost Reduction**: Compute costs are reduced by 25%, and storage costs drop by 87%, from &#36;0.30 to &#36;0.04 per GB per month. For a 10TB dataset, monthly storage costs drop from &#36;3,000 to &#36;400, while maintaining high performance.
 
         ## Cross-Region Backup\{#cross-region-backup}
 

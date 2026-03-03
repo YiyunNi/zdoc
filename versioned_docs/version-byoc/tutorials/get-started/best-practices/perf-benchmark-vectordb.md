@@ -18,10 +18,6 @@ keywords:
   - milvus
   - performance
   - benchmark
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

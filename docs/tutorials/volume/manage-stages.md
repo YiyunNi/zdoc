@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - volume
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
 
 ---
 

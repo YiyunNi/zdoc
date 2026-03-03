@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
 
 ---
 
@@ -142,13 +138,13 @@ For detailed list prices, see [Zilliz Cloud List Price](https://zilliz.com/prici
 
     - You can only add up to 5 secondary clusters.
 
-    - You cannot suspend a primary or secondary cluster.
+    - You cannot suspend a global cluster and its primary or secondary clusters.
 
-    - The cluster type, cloud provider, query CU count, and replica count should all be consistent with those of the primary cluster.
+    - The cluster type, cloud provider, query CU count, and replica count of the primary and secondary clusters should all be consistent.
 
-    - You cannot scale the query CU or replica of a global cluster.
+    - You can scale the replica of a primary cluster but cannot scale the replica of a secondary cluster.
 
-    - To drop a global cluster, you need to drop all its secondary clusters.
+    - To drop a global cluster, you need to drop all its primary and secondary clusters.
 
-    - The backup policy is configured on the primary cluster only. After a switchover, the backup policy automatically applies to the new primary cluster.
+    - The backup policy is configured on the primary cluster only. After a switchover or failover, the backup policy automatically applies to the new primary cluster.
 

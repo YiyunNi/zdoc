@@ -18,10 +18,6 @@ keywords:
   - migrations
   - milvus
   - backup files
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
 
 ---
 

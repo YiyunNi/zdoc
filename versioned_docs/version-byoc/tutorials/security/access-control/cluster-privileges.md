@@ -19,10 +19,6 @@ keywords:
   - access control
   - rbac
   - privileges
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
 
 ---
 

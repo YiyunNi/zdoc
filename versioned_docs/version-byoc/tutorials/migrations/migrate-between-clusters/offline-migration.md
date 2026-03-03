@@ -18,10 +18,6 @@ keywords:
   - migrations
   - clusters
   - offline
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
 
 ---
 

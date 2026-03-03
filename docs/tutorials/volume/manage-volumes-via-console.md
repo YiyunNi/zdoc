@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - volume
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - api availability
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

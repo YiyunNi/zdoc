@@ -21,10 +21,6 @@ keywords:
   - cloud
   - FieldSchema
   - pymilvus26
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

@@ -1,7 +1,7 @@
 ---
-title: "Text Highlighter | Cloud"
+title: "Lexical Highlighter | Cloud"
 slug: /text-highlighter
-sidebar_label: "Text Highlighter"
+sidebar_label: "Lexical Highlighter"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -21,17 +21,14 @@ keywords:
   - filtering expressions
   - filtering
   - text-match
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - lexical
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Text Highlighter
+# Lexical Highlighter
 
 The Highlighter in Zilliz Cloud annotates matched terms in text fields by wrapping them with customizable tags. Highlighting helps explain why a document matches, improves result readability, and supports rich rendering in search and RAG applications.
 

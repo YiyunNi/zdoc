@@ -12,19 +12,15 @@ type: docx
 token: EofGdftYjoQ9E6x8mxLcpbG1nhc
 sidebar_position: 11
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud
   - drop_resource_group()
   - pymilvus26
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

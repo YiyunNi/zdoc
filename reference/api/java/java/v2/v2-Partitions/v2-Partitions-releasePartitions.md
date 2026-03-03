@@ -4,7 +4,7 @@ slug: /java/java/v2-Partitions-releasePartitions
 sidebar_label: "releasePartitions()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.6.x
+last_modified: false
 deprecate_since: false
 notebook: false
 description: "This operation releases the partitions in a specified collection from memory. | Java | v2"
@@ -12,19 +12,15 @@ type: docx
 token: VsyQdDkXnoloWYxfjXNchc0dnng
 sidebar_position: 7
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
   - zilliz
   - zilliz cloud
   - cloud
   - releasePartitions()
   - javaV226
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

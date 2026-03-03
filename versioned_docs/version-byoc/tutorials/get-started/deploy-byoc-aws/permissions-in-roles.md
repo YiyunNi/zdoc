@@ -19,10 +19,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
 
 ---
 

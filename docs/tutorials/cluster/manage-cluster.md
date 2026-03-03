@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cluster
   - manage
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
 
 ---
 
@@ -184,6 +180,12 @@ The following demo illustrates how to upgrade the deployment option of a cluster
 To try the latest preview features, you need to upgrade the compatible Milvus version of your dedicated cluster.
 
 ![upgrade-to-preview-version](https://zdoc-images.s3.us-west-2.amazonaws.com/upgrade-to-preview-version.png "upgrade-to-preview-version")
+
+## Convert to a global cluster\{#convert-to-a-global-cluster}
+
+If you need to convert an existing Dedicated cluster to a [global cluster](./global-cluster-explained), follow the steps below.
+
+<Supademo id="cmm5p53sh3hogdtfhemesjhv0" title=""  />
 
 ## Drop cluster\{#drop-cluster}
 

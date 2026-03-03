@@ -12,19 +12,15 @@ type: docx
 token: Qc72dTKgroNdHjxIG2xcwNdmnHb
 sidebar_position: 2
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
+  - vectordb
   - zilliz
   - zilliz cloud
   - cloud
   - addUserToRole()
   - nodejs26
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
 displayed_sidebar: nodeSidebar
 
 displayed_sidbar: nodeSidebar

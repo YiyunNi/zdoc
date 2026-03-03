@@ -17,10 +17,6 @@ keywords:
   - cloud
   - organizations
   - settings
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
 
 ---
 

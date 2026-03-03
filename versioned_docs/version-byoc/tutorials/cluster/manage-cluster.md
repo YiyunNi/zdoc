@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cluster
   - manage
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
 
 ---
 
@@ -152,6 +148,12 @@ For details, refer to [Resume Cluster](/reference/restful/resume-cluster-v2).
 </Tabs>
 
 Once the resume operation is successful, a job record will be generated. You can check the progress on the [Jobs](./job-center) page.
+
+## Convert to a global cluster\{#convert-to-a-global-cluster}
+
+If you need to convert an existing Dedicated cluster to a [global cluster](./global-cluster-explained), follow the steps below.
+
+<Supademo id="cmm5p53sh3hogdtfhemesjhv0" title=""  />
 
 ## Drop cluster\{#drop-cluster}
 

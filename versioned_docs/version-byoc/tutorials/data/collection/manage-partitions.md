@@ -18,10 +18,6 @@ keywords:
   - collection
   - partition
   - partitions
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
 
 ---
 

@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - cluster
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
 
 ---
 

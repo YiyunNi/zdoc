@@ -17,10 +17,6 @@ keywords:
   - register
   - cloud
   - milvus
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
 
 ---
 

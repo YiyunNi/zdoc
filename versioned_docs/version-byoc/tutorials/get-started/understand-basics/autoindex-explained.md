@@ -17,10 +17,6 @@ keywords:
   - cloud
   - autoindex
   - milvus
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
 
 ---
 

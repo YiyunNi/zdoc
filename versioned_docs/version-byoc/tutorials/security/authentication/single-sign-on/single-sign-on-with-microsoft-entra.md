@@ -18,10 +18,6 @@ keywords:
   - sso
   - microsoft
   - entra
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
 
 ---
 
@@ -170,11 +166,25 @@ After being invited to a project, the **Organization** **Owner** can share the Z
 
 If you encounter any issues during the setup or testing process, contact [Zilliz support](https://zilliz.com/contact-sales).
 
+### Task 3: (Optional) Enable SSO enforcement\{#task-3-optional-enable-sso-enforcement}
+
+After your SSO connection is fully configured and tested, you can optionally enable **SSO enforcement** to require all organization members to log in exclusively through SSO. When enabled, members can no longer sign in using email/password or third-party accounts (Google, GitHub).
+
+<Admonition type="danger" icon="🚧" title="Warning">
+
+<p>Enabling this feature will immediately log out all members who are currently signed in with a password and block non-SSO login methods.</p>
+
+</Admonition>
+
+<Supademo id="cml4tlban34cozsadvi68n666" title=""  />
+
+For more information, refer to [Enforce SSO in Your Organization](./enforce-sso-in-your-organization).
+
 ## FAQ\{#faq}
 
 ### What role is assigned to users who log in via SSO for the first time?\{#what-role-is-assigned-to-users-who-log-in-via-sso-for-the-first-time}
 
-New users who do not already have a Zilliz Cloud account will be automatically created upon their first SSO login. These users are assigned the **Organization Member** role by default. You can modify their roles later in the Zilliz Cloud console. For detailed steps, refer to [Manage Project Users](./project-users#edit-a-collaborators-role-or-remove-a-collaborator).
+New users who do not already have a Zilliz Cloud account will be automatically created upon their first SSO login. These users are assigned the **Organization Member** role by default. You can modify their roles later in the Zilliz Cloud console. For detailed steps, refer to [Manage Project Users](./project-users#edit-a-collaborators-role).
 
 ### How do users access projects after SSO login?\{#how-do-users-access-projects-after-sso-login}
 

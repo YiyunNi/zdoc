@@ -76,6 +76,29 @@ function escapeNonHtmlTags(content) {
         'include', 'exclude',
     ]);
 
+    // Structural pre-scan: build set of safe uppercase/PascalCase tag names.
+    // A tag is safe if it appears with a close tag, self-closing form, or attributes
+    // anywhere in the document. Combined with a KNOWN_JSX fallback whitelist as a
+    // safety net for legitimate components that may be orphaned in edge cases.
+    const safeUppercaseTags = new Set([
+        // Docusaurus built-in theme components
+        'Admonition', 'Tabs', 'TabItem', 'DocCard', 'DocCardList',
+        'Details', 'CodeBlock', 'ThemedImage', 'TOCInline', 'Highlight',
+        // Custom site components
+        'Banner', 'Bars', 'Blocks', 'Cards', 'Grid', 'Hero', 'Procedures', 'RestSpecs', 'Stories', 'Supademo',
+    ]);
+    const upperScanRegex = /[<]([A-Z][A-Za-z0-9]*)/g;
+    let upperMatch;
+    while ((upperMatch = upperScanRegex.exec(content)) !== null) {
+        const tn = upperMatch[1];
+        if (safeUppercaseTags.has(tn)) continue;
+        if (new RegExp(`<\\/${tn}>`).test(content) ||
+            new RegExp(`<${tn}\\s*\\/>`).test(content) ||
+            new RegExp(`<${tn}\\s+`).test(content)) {
+            safeUppercaseTags.add(tn);
+        }
+    }
+
     const lines = content.split('\n');
     let inCodeBlock = false;
     const result = [];
@@ -91,12 +114,18 @@ function escapeNonHtmlTags(content) {
             const parts = line.split(/(`+[^`]+`+)/);
             line = parts.map((part, i) => {
                 if (i % 2 === 0) {
-                    // Match any lowercase tag (with optional _ or - segments); escape if not a known tag.
-                    // Tags with attributes (e.g. <include target="...">) won't match because the regex
-                    // only allows optional whitespace before the closing >.
-                    return part.replace(/(?<!\\)<\/?([a-z][a-z0-9]*(?:[_-][a-z0-9]+)*)\s*\/?>/g, (match, tagName) => {
+                    // Escape non-HTML lowercase placeholder tags (e.g. <bucket_name>, <region-code>).
+                    // Tags with attributes won't match because the regex only allows \s*\/?>
+                    part = part.replace(/(?<!\\)<\/?([a-z][a-z0-9]*(?:[_-][a-z0-9]+)*)\s*\/?>/g, (match, tagName) => {
                         return KNOWN_TAGS.has(tagName) ? match : '\\' + match;
                     });
+                    // Escape uppercase/PascalCase tags not identified as real JSX components.
+                    // Uses HTML entities so the angle brackets render correctly in the output.
+                    part = part.replace(/(?<!\\)<\/?([A-Z][A-Za-z0-9]*)\s*\/?>/g, (match, tagName) => {
+                        if (safeUppercaseTags.has(tagName)) return match;
+                        return match.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    });
+                    return part;
                 }
                 return part; // Inside inline code — leave unchanged
             }).join('');

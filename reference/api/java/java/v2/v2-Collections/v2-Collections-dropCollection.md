@@ -4,27 +4,23 @@ slug: /java/java/v2-Collections-dropCollection
 sidebar_label: "dropCollection()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation drops a collection. | Java | v2"
 type: docx
-token: DMh5d1uiGolDtLxSNpCcWx9On7c
+token: SW6Cdt9QeoY1J1x9SYQcZrc6nbg
 sidebar_position: 14
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
   - zilliz
   - zilliz cloud
   - cloud
   - dropCollection()
   - javaV226
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -45,23 +41,31 @@ public void dropCollection(DropCollectionReq request)
 
 ```java
 dropCollection(DropCollectionReq.builder()
+    .databaseName(String databaseName)
     .collectionName(String collectionName)
+    .async(Boolean async)
     .timeout(Long timeout)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `collectionName(String collectionName)`
+- `databaseName(String databaseName)` -
 
-    The name of an existing collection.
+    The name of the database. Defaults to the current database if not specified.
 
-- `timeout(Long timeout)`
+- `collectionName(String collectionName)` -
 
-    The timeout duration of the process. The process terminates after the specified duration expires.
+    The name of the target collection.
 
-    The value defaults to `60000L`, indicating the timeout duration is **1** minute.
+- `async(Boolean async)` -
+
+    Whether to run the operation asynchronously.
+
+- `timeout(Long timeout)` -
+
+    The timeout duration in milliseconds.
 
 **RETURNS:**
 
@@ -69,7 +73,7 @@ dropCollection(DropCollectionReq.builder()
 
 **EXCEPTIONS:**
 
-- **MilvusClientExceptions**
+- **MilvusClientException**
 
     This exception will be raised when any error occurs during this operation.
 
@@ -94,4 +98,3 @@ DropCollectionReq dropCollectionReq = DropCollectionReq.builder()
         .build();
 client.dropCollection(dropCollectionReq);
 ```
-

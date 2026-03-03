@@ -12,19 +12,15 @@ type: docx
 token: Edrcdw34jofMbNxK5HncdDT5n8e
 sidebar_position: 4
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
   - query()
   - pymilvus26
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

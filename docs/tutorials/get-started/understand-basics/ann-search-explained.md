@@ -17,10 +17,6 @@ keywords:
   - cloud
   - ann search
   - milvus
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
 
 ---
 

@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - data import
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
 
 ---
 

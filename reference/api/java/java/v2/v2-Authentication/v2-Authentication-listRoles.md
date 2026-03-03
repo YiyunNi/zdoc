@@ -12,19 +12,15 @@ type: docx
 token: XIIyd3bMzoAVx3xVsoLcnQ2pnKh
 sidebar_position: 14
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud
   - listRoles()
   - javaV226
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

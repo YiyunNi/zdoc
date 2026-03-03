@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - data export
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 

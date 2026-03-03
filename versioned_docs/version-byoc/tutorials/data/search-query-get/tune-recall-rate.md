@@ -21,10 +21,6 @@ keywords:
   - ann
   - recall rate
   - tune recall rate
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
 
 ---
 

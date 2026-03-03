@@ -8,14 +8,14 @@ last_modified: false
 deprecate_since: false
 description: "Classes and methods for you to manage the MilvusClient instances. | Java | v2"
 type: folder
-token: QW8NfURhvl0NtOdmS3DcvQYCnFh
+token: LxHMfE9RNlOtvOdHs9wcrGnWnGg
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud

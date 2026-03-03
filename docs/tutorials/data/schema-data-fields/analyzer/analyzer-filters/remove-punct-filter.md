@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - remove punct
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
 
 ---
 

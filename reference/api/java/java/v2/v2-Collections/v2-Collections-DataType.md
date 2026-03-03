@@ -12,19 +12,15 @@ type: docx
 token: RZ8idPxaho5yMoxJzGdc7QAcnNf
 sidebar_position: 10
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - Vector index
+  - vector database open source
+  - open source vector db
+  - vector database example
   - zilliz
   - zilliz cloud
   - cloud
   - DataType
   - javaV226
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

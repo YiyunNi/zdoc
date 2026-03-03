@@ -1,13 +1,13 @@
 ---
-title: "Model-based Functions | Cloud"
+title: "Model-based Embedding Functions | Cloud"
 slug: /model-based-functions
-sidebar_label: "Model-based Functions"
+sidebar_label: "Model-based Embedding Functions"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Learn how to use model-based functions in Zilliz Cloud. | Cloud"
+description: "Learn how to use model-based embedding functions in Zilliz Cloud. | Cloud"
 type: origin
 token: AP0lw1SNciBJNYkJ2iDc0qnfnEg
 sidebar_position: 3
@@ -20,19 +20,16 @@ keywords:
   - inference
   - text
   - embedding
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - function
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Model-based Functions
+# Model-based Embedding Functions
 
-Learn how to use model-based functions in Zilliz Cloud.
+Learn how to use model-based embedding functions in Zilliz Cloud.
 
 
 

@@ -20,10 +20,6 @@ keywords:
   - google
   - cloud
   - storage
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
 
 ---
 

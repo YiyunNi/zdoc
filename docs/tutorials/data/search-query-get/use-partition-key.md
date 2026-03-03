@@ -10,7 +10,7 @@ notebook: FALSE
 description: "The Partition Key is a search optimization solution based on partitions. By designating a specific scalar field as the Partition Key and specifying filtering conditions based on the Partition Key during the search, the search scope can be narrowed down to several partitions, thereby improving search efficiency. This article will introduce how to use the Partition Key and related considerations. | Cloud"
 type: origin
 token: QWqiwrgJViA5AJkv64VcgQX2nKd
-sidebar_position: 17
+sidebar_position: 18
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,6 @@ keywords:
   - data
   - search optimization
   - partition key
-  - open source vector db
-  - vector database example
-  - rag vector database
-  - what is vector db
 
 ---
 
@@ -517,4 +513,4 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-Once you have enabled Partition Key Isolation, you can still set the Partition Key and number of partitions as described in [Set Partition Numbers](./use-partition-key#set-partition-numbers). Note that the Partition-Key-based filter should include only a specific Partition Key value.
+Once you have enabled Partition Key Isolation, you can still set the Partition Key and number of partitions as described in [Set Partition Numbers](./use-partition-key#set-partition-numbers). Note that the Partition-Key-based filter must include only one specific Partition Key value.

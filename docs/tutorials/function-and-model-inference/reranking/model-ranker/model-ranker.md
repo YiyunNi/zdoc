@@ -21,10 +21,6 @@ keywords:
   - result reranking
   - reranking model
   - model ranker
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - migrations
   - qdrant
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 
@@ -181,47 +177,47 @@ Array types are not detected in existing payload data and cannot be converted fr
      <th><p>Available for Manual Addition</p></th>
    </tr>
    <tr>
-     <td><p>Array\<Integer></p></td>
-     <td><p>ARRAY\<INT64></p></td>
+     <td><p>Array&lt;Integer&gt;</p></td>
+     <td><p>ARRAY&lt;INT64&gt;</p></td>
      <td><p>✅ Can be added as new field</p></td>
    </tr>
    <tr>
-     <td><p>Array\<Float></p></td>
-     <td><p>ARRAY\<DOUBLE></p></td>
+     <td><p>Array&lt;Float&gt;</p></td>
+     <td><p>ARRAY&lt;DOUBLE&gt;</p></td>
      <td><p>✅ Can be added as new field</p></td>
    </tr>
    <tr>
-     <td><p>Array\<Bool></p></td>
-     <td><p>ARRAY\<BOOL></p></td>
+     <td><p>Array&lt;Bool&gt;</p></td>
+     <td><p>ARRAY&lt;BOOL&gt;</p></td>
      <td><p>✅ Can be added as new field</p></td>
    </tr>
    <tr>
-     <td><p>Array\<Keyword></p></td>
-     <td><p>ARRAY\<VARCHAR></p></td>
+     <td><p>Array&lt;Keyword&gt;</p></td>
+     <td><p>ARRAY&lt;VARCHAR&gt;</p></td>
      <td><p>✅ Can be added as new field</p></td>
    </tr>
    <tr>
-     <td><p>Array\<Geo></p></td>
+     <td><p>Array&lt;Geo&gt;</p></td>
      <td><p>Not supported</p></td>
      <td><p>❌ Not available</p></td>
    </tr>
    <tr>
-     <td><p>Array\<Datetime></p></td>
-     <td><p>ARRAY\<VARCHAR></p></td>
+     <td><p>Array&lt;Datetime&gt;</p></td>
+     <td><p>ARRAY&lt;VARCHAR&gt;</p></td>
      <td><p>✅ Can be added as new field</p></td>
    </tr>
    <tr>
-     <td><p>Array\<UUID></p></td>
-     <td><p>ARRAY\<VARCHAR></p></td>
+     <td><p>Array&lt;UUID&gt;</p></td>
+     <td><p>ARRAY&lt;VARCHAR&gt;</p></td>
      <td><p>✅ Can be added as new field</p></td>
    </tr>
 </table>
 
 For payload fields converted to fixed fields, you can configure additional attributes:
 
-- **Nullable**: Decide whether a field can accept null values. This feature is enabled by default. For details, refer to [Nullable attribute](./nullable-and-default#nullable-attribute).
+- **Nullable**: Decide whether a field can accept null values. This feature is enabled by default. For details, refer to [Nullable attribute](./nullable-fields).
 
-- **Default Value**: Set fallback values when data is missing. For details, refer to [Default values](./nullable-and-default#default-values).
+- **Default Value**: Set fallback values when data is missing. For details, refer to [Default values](./nullable-fields).
 
 - **Partition Key**: Optionally designate an INT64 or VARCHAR field as the partition key. Note that each collection supports only one partition key, and the selected field cannot be nullable. For details, refer to  [Use Partition Key](./use-partition-key).
 

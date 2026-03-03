@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cluster
   - create
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
 
 ---
 

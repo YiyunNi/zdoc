@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - recycle bin
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

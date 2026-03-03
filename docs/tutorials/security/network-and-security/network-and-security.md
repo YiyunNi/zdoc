@@ -17,10 +17,6 @@ keywords:
   - cloud
   - network
   - security
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
 
 ---
 

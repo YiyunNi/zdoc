@@ -19,10 +19,6 @@ keywords:
   - scale
   - manage
   - query cu
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
 
 ---
 
@@ -49,9 +45,9 @@ This guide explains how to resize a cluster to suit your changing workload.
 
         - Dedicated (Standard) clusters: Up to 32 CUs
 
-            Dedicated (Enterprise) clusters: Up to 256 CUs
+            Dedicated (Enterprise) clusters: Up to 1,024 CUs
 
-        - The product of **Number of Query CU** × **Replica count** must not exceed 256
+        - The product of **Number of Query CU** × **Replica count** must not exceed 1,0240
 
         For larger query CU, [contact sales](http://zilliz.com/contact-sales).
 

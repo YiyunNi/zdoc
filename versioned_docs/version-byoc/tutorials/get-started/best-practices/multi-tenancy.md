@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - multi-tenancy
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
 
 ---
 

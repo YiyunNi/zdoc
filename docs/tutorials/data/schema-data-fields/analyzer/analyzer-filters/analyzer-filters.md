@@ -19,10 +19,6 @@ keywords:
   - schema
   - analyzer
   - built-in filters
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 
 ---
 

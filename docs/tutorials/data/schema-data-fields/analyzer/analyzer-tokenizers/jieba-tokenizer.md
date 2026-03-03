@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - jieba-tokenizer
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
 
 ---
 

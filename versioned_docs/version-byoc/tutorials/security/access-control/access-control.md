@@ -18,10 +18,6 @@ keywords:
   - cluster
   - access control
   - rbac
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

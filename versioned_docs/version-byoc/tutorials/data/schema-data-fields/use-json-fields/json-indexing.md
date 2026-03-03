@@ -21,10 +21,6 @@ keywords:
   - index
   - path index
   - flat index
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
-  - Vector retrieval
 
 ---
 

@@ -20,10 +20,6 @@ keywords:
   - search result reranking
   - result reranking
   - rrf
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
 
 ---
 

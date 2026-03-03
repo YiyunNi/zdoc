@@ -17,10 +17,6 @@ keywords:
   - cloud
   - project
   - alerts
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
 
 ---
 

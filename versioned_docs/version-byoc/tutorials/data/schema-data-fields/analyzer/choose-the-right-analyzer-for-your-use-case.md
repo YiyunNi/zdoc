@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - best
   - practice
-  - vector database
-  - IVF
-  - knn
-  - Image Search
 
 ---
 

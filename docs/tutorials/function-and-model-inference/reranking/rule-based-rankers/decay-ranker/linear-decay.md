@@ -23,10 +23,6 @@ keywords:
   - decay ranker
   - linear decay
   - linear
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 

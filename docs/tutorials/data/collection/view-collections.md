@@ -17,10 +17,6 @@ keywords:
   - cloud
   - collection
   - view collections
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
 
 ---
 

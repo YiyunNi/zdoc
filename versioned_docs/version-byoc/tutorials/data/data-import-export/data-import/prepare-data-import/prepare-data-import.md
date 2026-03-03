@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data import
   - prepare
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 
 ---
 

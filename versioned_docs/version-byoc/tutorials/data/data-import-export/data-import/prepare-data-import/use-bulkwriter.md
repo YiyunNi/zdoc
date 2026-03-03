@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data import
   - bulk writer
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
 
 ---
 

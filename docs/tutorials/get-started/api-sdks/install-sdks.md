@@ -17,10 +17,6 @@ keywords:
   - cloud
   - sdk
   - milvus
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
 
 ---
 

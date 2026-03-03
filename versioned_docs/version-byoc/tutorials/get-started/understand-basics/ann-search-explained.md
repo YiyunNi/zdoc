@@ -17,10 +17,6 @@ keywords:
   - cloud
   - ann search
   - milvus
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
 
 ---
 

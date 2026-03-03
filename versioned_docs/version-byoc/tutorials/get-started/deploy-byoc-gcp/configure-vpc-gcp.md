@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
 
 ---
 

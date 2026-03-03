@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - project jobs
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
 
 ---
 

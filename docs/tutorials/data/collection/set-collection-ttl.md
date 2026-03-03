@@ -18,10 +18,6 @@ keywords:
   - collection
   - collection ttl
   - time-to-live
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
 
 ---
 

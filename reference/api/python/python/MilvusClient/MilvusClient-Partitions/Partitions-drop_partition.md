@@ -4,27 +4,23 @@ slug: /python/python/Partitions-drop_partition
 sidebar_label: "drop_partition()"
 beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation drops a specified partition from the current collection. | Python | MilvusClient"
 type: docx
-token: EMI8dM8uooIAFPxVfffcoqRwnZf
+token: HkOFdhgbOoz1wlxJIgWcU7EonWc
 sidebar_position: 2
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud
   - drop_partition()
   - pymilvus26
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -46,10 +42,11 @@ This operation drops a specified partition from the current collection.
 ## Request syntax\{#request-syntax}
 
 ```python
-create_partition(
+drop_partition(
     collection_name: str,
     partition_name: str,
-    timeout: Optional[float] = None
+    timeout: Optional[float] = None,
+    **kwargs,
 ) -> None
 ```
 
@@ -61,17 +58,15 @@ create_partition(
 
     The name of an existing collection.
 
-- **partition_names** (*str*)
+- **partition_name** (*str*) -
 
     **[REQUIRED]**
 
     The name of the partition to drop.
 
-- **timeout** (*float* | *None*)  
+- **timeout** (*float* | *None*) -
 
-    The timeout duration for this operation. 
-
-    Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
+    The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
 **RETURN TYPE:**
 
@@ -92,45 +87,29 @@ None
 ```python
 from pymilvus import MilvusClient
 
-# 1. Create a milvus client
 client = MilvusClient(
-    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
-    token="user:password"
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
 )
 
-# 2. Create a collection
+# Create a collection
 client.create_collection(collection_name="test_collection", dimension=5)
 
-# 3. Create a partition
+# Create a partition
 client.create_partition(
-    collection_name="test_collection", 
+    collection_name="test_collection",
     partition_name="partition_A"
 )
 
-# 4. Release partition
+# Release partition before dropping
 client.release_partitions(
     collection_name="test_collection",
     partition_names=["partition_A"]
 )
 
-# 4. Drop the partition
+# Drop the partition
 client.drop_partition(
-    collection_name="test_collection", 
+    collection_name="test_collection",
     partition_name="partition_A"
 )
 ```
-
-## Related methods\{#related-methods}
-
-- [create_partition()](./Partitions-create_partition)
-
-- [get_partition_stats()](./Partitions-get_partition_stats)
-
-- [has_partition()](./Partitions-has_partition)
-
-- [list_partitions()](./Partitions-list_partitions)
-
-- [load_partitions()](./Partitions-load_partitions)
-
-- [release_partitions()](./Partitions-release_partitions)
-

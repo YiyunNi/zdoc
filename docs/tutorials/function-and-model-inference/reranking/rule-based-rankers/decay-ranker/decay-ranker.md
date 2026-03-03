@@ -22,10 +22,6 @@ keywords:
   - decay
   - decay ranker
   - decay rankers
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 
 ---
 

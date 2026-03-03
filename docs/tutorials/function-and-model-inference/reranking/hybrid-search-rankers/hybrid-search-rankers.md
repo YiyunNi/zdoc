@@ -20,10 +20,6 @@ keywords:
   - search result reranking
   - result reranking
   - hybrid search
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
 
 ---
 

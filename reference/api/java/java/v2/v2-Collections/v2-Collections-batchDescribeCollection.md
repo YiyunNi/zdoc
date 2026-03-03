@@ -10,21 +10,17 @@ notebook: false
 description: "This operation gets the descriptions of multiple collections in a batch. | Java | v2"
 type: docx
 token: SRI6dEn82oNe4Uxro8hcyFV3n1d
-sidebar_position: 30
+sidebar_position: 32
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
   - batchDescribeCollection()
   - javaV226
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -63,7 +59,7 @@ batchDescribeCollection(BatchDescribeCollectionReq.builder()
 
 **RETURN TYPE:**
 
-*List\<DescribeCollectionResp>*
+*List&lt;DescribeCollectionResp&gt;*
 
 **RETURNS:**
 

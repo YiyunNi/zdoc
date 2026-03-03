@@ -21,10 +21,6 @@ keywords:
   - hands-on
   - structs
   - array of structs
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
 
 ---
 

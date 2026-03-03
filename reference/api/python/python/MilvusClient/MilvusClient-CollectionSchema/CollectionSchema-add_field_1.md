@@ -12,19 +12,15 @@ type: docx
 token: Ehbdd1HRLoB34nxU6hQcRk2Mnug
 sidebar_position: 1
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
   - add_field()
   - pymilvus26
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

@@ -8,14 +8,14 @@ last_modified: v2.5.x
 deprecate_since: false
 description: "Classes and methods for you to manage the MilvusClient instances. | Node.js"
 type: folder
-token: ABk9fhVMTlQb0MdGuOrck8a8n7f
+token: WlKqf2dXKljRPDdiiUIcdsh5nxd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud

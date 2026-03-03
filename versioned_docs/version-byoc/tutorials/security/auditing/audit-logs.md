@@ -18,19 +18,11 @@ keywords:
   - auditing
   - log
   - configure
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
 
 ---
 
 import Admonition from '@theme/Admonition';
 
-
-import Supademo from '@site/src/components/Supademo';
-
-import Procedures from '@site/src/components/Procedures';
 
 # VectorDB Audit Logs
 
@@ -134,69 +126,10 @@ Below are examples of audit log entries forwarded to a bucket:
 
 Refer to the [Audit Log Reference](./audit-logs-ref) for a detailed list of supported actions and corresponding log fields.
 
-## Enable audit log\{#enable-audit-log}
+<Admonition type="info" icon="📘" title="Notes">
 
-Audit logging on Zilliz Cloud forwards audit logs directly to your storage bucket.
+<p>Audit logging will be directly forwarded to the object storage bucket configured during the data plane deployment.</p>
+<p>To export the logs to your logging system for further analysis, <a href="https://support.zilliz.com/hc/en-us/requests/new">contact us</a>.</p>
 
-### Before you start\{#before-you-start}
-
-- You have **Organization Owner** or **Project Admin** access to the project. If you do not have the necessary permissions, contact your Zilliz Cloud administrator.
-
-### Procedure\{#procedure}
-
-<Supademo id="cmei9fcd99br6h3pydbp52sv8" title="Zilliz Cloud - Enable audit log" />
-
-<Procedures>
-
-1. Log in to the [Zilliz Cloud console](https://cloud.zilliz.com/login).
-
-1. In the left-side navigation pane, choose **Clusters**.
-
-1. Go to the details page of the target cluster and choose the **Auditing** tab. This tab will be unavailable when your cluster is in **CREATING**,  **DELETING** or **DELETED** status.
-
-1. Click **Enable Audit Log**.
-
-1. In the **Enable Audit Logs** dialog box, specify your object storage integration settings.
-
-    - **Storage Integration**: Select your bucket to store the audit logs.
-
-        <Admonition type="info" icon="📘" title="Notes">
-
-        <p>Only the buckets in the same region as your cluster will appear in the drop-down list.</p>
-
-        </Admonition>
-
-    - **Forward Directory**: Specify a directory within the bucket to store audit logs.
-
-1. Click **Enable**. Once the **Audit Log** status is **Active**, it has been enabled successfully. If the status is **Abnormal**, go to [FAQ](./audit-logs#faq) for troubleshooting.
-
-</Procedures>
-
-Once configured, audit logs will be forwarded to your bucket at an interval of about 5 minutes. You can access your bucket to view or manage the logs as needed.
-
-Once your audit logs are forwarded to your S3 bucket, you can integrate your S3 storage to visualization platforms for enhanced monitoring and analysis. For instance, if you want to use Snowflake to gain deeper insights, refer to [Automating Snowpipe for Amazon S3](https://docs.snowflake.com/en/user-guide/data-load-snowpipe-auto-s3).
-
-To understand parameters in log entries, refer to [Audit Logs](./audit-logs-ref).
-
-## Manage audit logs\{#manage-audit-logs}
-
-Once audit log is enabled, you can edit its configuration or disable it as needed.
-
-![XyvNb9sf1oGSKox0XxWc2BFAnrg](https://zdoc-images.s3.us-west-2.amazonaws.com/xyvnb9sf1ogskox0xxwc2bfanrg.png "XyvNb9sf1oGSKox0XxWc2BFAnrg")
-
-## FAQ\{#faq}
-
-This FAQ addresses common issues and questions related to audit logging on Zilliz Cloud. For further assistance, contact [Zilliz Cloud support](https://support.zilliz.com/hc/en-us).
-
-- **What should I do if my Audit Log status is Abnormal?**
-
-    An **Abnormal** status means Audit Log is experiencing an issue. Follow these steps to troubleshoot:
-
-    1. **Verify your bucket:** Confirm that the configured storage bucket is set up correctly and that you have the necessary permissions.
-
-    1. **Contact support:** If the issue persists, contact [Zilliz Cloud support](https://support.zilliz.com/hc/en-us) for further assistance.
-
-- **Will an Abnormal cluster status affect the Audit Log service?**
-
-    An abnormal cluster status indicates that the cluster may be experiencing issues, such as network connectivity problems or disruptions in Zilliz Cloud services. However, these issues do not impact the Audit Log service, which continues to function normally and forward logs as expected. If you encounter persistent problems, contact [Zilliz Cloud support](https://support.zilliz.com/hc/en-us).
+</Admonition>
 

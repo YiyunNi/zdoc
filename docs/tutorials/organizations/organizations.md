@@ -10,16 +10,12 @@ notebook: FALSE
 description: "The chapter focuses on organization operations and related settings. | Cloud"
 type: origin
 token: Dh6vwCrzYimC7skvDRUcvPi4n2c
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
   - vector database
   - cloud
   - organizations
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
 
 ---
 

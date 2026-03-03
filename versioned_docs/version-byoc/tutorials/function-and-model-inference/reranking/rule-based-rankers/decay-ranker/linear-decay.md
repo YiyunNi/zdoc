@@ -23,10 +23,6 @@ keywords:
   - decay ranker
   - linear decay
   - linear
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
 
 ---
 

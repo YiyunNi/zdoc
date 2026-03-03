@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - ascii folding
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
 
 ---
 

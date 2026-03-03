@@ -20,10 +20,6 @@ keywords:
   - integrate
   - object
   - storage
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
 
 ---
 

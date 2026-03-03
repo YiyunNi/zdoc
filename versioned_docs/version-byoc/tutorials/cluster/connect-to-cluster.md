@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cluster
   - connect
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
 
 ---
 
@@ -36,7 +32,17 @@ This article offers a systematic guide on connecting to a cluster.
 
 Ensure the following prerequisites are met before proceeding:
 
-- You have deployed a BYOC project. For details, see [Deploy BYOC on AWS](./deploy-byoc-aws).
+- You have deployed a BYOC project. For details, see 
+
+    - [Deploy BYOC on AWS](./deploy-byoc-aws)
+
+    - [Deploy BYOC-I on AWS](./deploy-byoc-i-aws)
+
+    - [Deploy BYOC on GCP](./deploy-byoc-gcp)
+
+    - [Deploy BYOC-I on Microsoft Azure](./deploy-byoc-i-azure)
+
+- You have completed the network configurations between your application and the clusters in the BYOC project. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
 
 - You have created a cluster. For details, see [Create Cluster](./create-cluster).
 
@@ -60,7 +66,7 @@ Once your cluster is operational, connect to it utilizing its public endpoint an
 
 The following example shows how to connect to a cluster.
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -110,6 +116,31 @@ const token = "YOUR_CLUSTER_TOKEN"
 
 // 1. Connect to the cluster
 const client = new MilvusClient({address, token})
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+import "github.com/milvus-io/milvus/client/v2/milvusclient"
+
+client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: "YOUR_CLUSTER_ENDPOINT",
+    APIKey:  "YOUR_CLUSTER_TOKEN",
+})
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+curl --request POST \
+  --url "YOUR_CLUSTER_ENDPOINT" \
+  --header "Authorization: Bearer YOUR_CLUSTER_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{"dbName": "default"}'
 ```
 
 </TabItem>

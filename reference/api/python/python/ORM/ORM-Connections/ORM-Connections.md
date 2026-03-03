@@ -12,19 +12,15 @@ type: docx
 token: A96udk9seoF5x5xywQZcLasanIe
 sidebar_position: 3
 keywords: 
+  - vector similarity search
+  - approximate nearest neighbor search
   - DiskANN
   - Sparse vector
-  - Vector Dimension
-  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud
   - Connections
   - pymilvus26
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

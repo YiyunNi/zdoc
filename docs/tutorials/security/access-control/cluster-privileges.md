@@ -19,10 +19,6 @@ keywords:
   - access control
   - rbac
   - privileges
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 

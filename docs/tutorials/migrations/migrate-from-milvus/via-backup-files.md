@@ -18,10 +18,6 @@ keywords:
   - migrations
   - milvus
   - backup files
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
 
 ---
 

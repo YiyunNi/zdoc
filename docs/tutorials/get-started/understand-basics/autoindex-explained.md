@@ -17,10 +17,6 @@ keywords:
   - cloud
   - autoindex
   - milvus
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
 
 ---
 

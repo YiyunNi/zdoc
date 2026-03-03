@@ -17,10 +17,6 @@ keywords:
   - cloud
   - backup
   - automatic
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
 
 ---
 

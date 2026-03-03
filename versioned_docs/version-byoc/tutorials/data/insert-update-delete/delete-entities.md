@@ -19,10 +19,6 @@ keywords:
   - data
   - delete
   - delete entities
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
 
 ---
 
@@ -52,7 +48,7 @@ client = MilvusClient(
 res = client.delete(
     collection_name="quick_setup",
     # highlight-next-line
-    filter="color in ['red_7025', 'purple_4976]"
+    filter="color in ['red_7025', 'purple_4976']"
 )
 
 print(res)

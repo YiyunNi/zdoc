@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - sso
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

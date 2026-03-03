@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in analyzer
   - chinese analyzer
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
 
 ---
 

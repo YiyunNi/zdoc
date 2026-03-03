@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - authentication
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
 
 ---
 

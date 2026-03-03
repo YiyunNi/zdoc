@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data import
   - restful
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

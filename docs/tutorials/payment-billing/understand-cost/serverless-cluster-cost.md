@@ -18,10 +18,6 @@ keywords:
   - serverless
   - cost
   - billing
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
 
 ---
 

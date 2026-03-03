@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - lindera-tokenizer
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
 
 ---
 

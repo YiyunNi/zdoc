@@ -2,7 +2,7 @@
 title: "AsyncMilvusClient | Python | MilvusClient"
 slug: /python/python/Client-AsyncMilvusClient
 sidebar_label: "AsyncMilvusClient"
-beta: PRIVATE
+beta: false
 added_since: v2.5.x
 last_modified: false
 deprecate_since: false
@@ -12,19 +12,15 @@ type: docx
 token: MIKkdpGuuoEaGWx1m7Fcw52inKg
 sidebar_position: 3
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
+  - Faiss
   - zilliz
   - zilliz cloud
   - cloud
   - AsyncMilvusClient
   - pymilvus26
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

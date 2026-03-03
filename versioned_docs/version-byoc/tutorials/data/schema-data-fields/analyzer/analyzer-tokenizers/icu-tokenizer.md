@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in tokenizer
   - icu-tokenizer
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

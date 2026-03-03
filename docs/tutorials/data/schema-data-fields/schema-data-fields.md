@@ -18,10 +18,6 @@ keywords:
   - collection
   - schema
   - data fields
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
 
 ---
 

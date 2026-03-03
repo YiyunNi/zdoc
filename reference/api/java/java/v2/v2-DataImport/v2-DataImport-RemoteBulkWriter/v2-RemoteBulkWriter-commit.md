@@ -12,19 +12,15 @@ type: docx
 token: SJ3ndk2d7oQbAOxP5iHcGtr1nrb
 sidebar_position: 3
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud
   - commit()
   - javaV226
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

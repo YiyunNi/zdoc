@@ -19,10 +19,6 @@ keywords:
   - services
   - model
   - providers
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
 
 ---
 

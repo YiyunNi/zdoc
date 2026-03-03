@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - email accounts
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 
 ---
 

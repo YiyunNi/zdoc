@@ -18,10 +18,6 @@ keywords:
   - migrations
   - clusters
   - zero downtime
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
 
 ---
 

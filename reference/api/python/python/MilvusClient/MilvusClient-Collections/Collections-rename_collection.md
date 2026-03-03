@@ -4,27 +4,23 @@ slug: /python/python/Collections-rename_collection
 sidebar_label: "rename_collection()"
 beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation renames an existing collection. | Python | MilvusClient"
 type: docx
-token: IeiIdJ71Pox2OjxMiOzczUTenud
+token: WR4qdjFUXog2JHxuJpMcWcVlnEf
 sidebar_position: 18
 keywords: 
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
   - rename_collection()
   - pymilvus26
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -43,7 +39,9 @@ This operation renames an existing collection.
 rename_collection(
     old_name: str,
     new_name: str,
-    timeout: Optional[float] = None
+    target_db: Optional[str] = "",
+    timeout: Optional[float] = None,
+    **kwargs,
 ) -> None
 ```
 
@@ -65,11 +63,13 @@ rename_collection(
 
     Setting this to the value of **old_name** results in a **MilvusException**.
 
+- **target_db** (*Optional[str]*) -
+
+    The name of the target database to which the collection will be moved. Defaults to an empty string, which means the collection stays in the current database.
+
 - **timeout** (*float* | *None*) -
 
-    The timeout duration for this operation. 
-
-    Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
+    The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
 **RETURN TYPE:**
 
@@ -90,40 +90,27 @@ None
 ```python
 from pymilvus import MilvusClient
 
-# 1. Set up a milvus client
 client = MilvusClient(
-    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
-    token="user:password"
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
 )
 
-# 2. Create a collection
+# Create a collection
 client.create_collection(
     collection_name="test_collection",
     dimension=5
 )
 
-# 3. Rename the collection
+# Rename the collection
 client.rename_collection(
     old_name="test_collection",
     new_name="test_collection_renamed"
 )
+
+# Move collection to another database
+client.rename_collection(
+    old_name="test_collection_renamed",
+    new_name="test_collection",
+    target_db="my_database"
+)
 ```
-
-## Related methods\{#related-methods}
-
-- [create_collection()](./Collections-create_collection)
-
-- [create_schema()](./Collections-create_schema)
-
-- [describe_collection()](./Collections-describe_collection)
-
-- [drop_collection()](./Collections-drop_collection)
-
-- [get_collection_stats()](./Collections-get_collection_stats)
-
-- [has_collection()](./Collections-has_collection)
-
-- [list_collections()](./Collections-list_collections)
-
-- [DataType](./Collections-DataType)
-

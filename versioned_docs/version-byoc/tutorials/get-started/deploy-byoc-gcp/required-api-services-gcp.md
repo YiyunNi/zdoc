@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
 
 ---
 

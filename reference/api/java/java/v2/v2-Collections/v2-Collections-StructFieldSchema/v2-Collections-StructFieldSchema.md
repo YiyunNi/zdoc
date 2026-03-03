@@ -10,21 +10,17 @@ notebook: false
 description: "A StructFieldSchema instance represents the schema of the Struct elements in an Array of Structs field. A schema sketches the structure of its Struct elements. | Java | v2"
 type: docx
 token: DCszdG9rCoZxhfxfAuOcNsXRnOc
-sidebar_position: 7
+sidebar_position: 8
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - zilliz
   - zilliz cloud
   - cloud
   - StructFieldSchema
   - javaV226
-  - vector database open source
-  - open source vector db
-  - vector database example
-  - rag vector database
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

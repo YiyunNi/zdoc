@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This chapter covers best practices for schema design related to your dataset. | BYOC"
 type: origin
 token: Gi6KwjOlKiBhdOkxlL3cdobBnLe
-sidebar_position: 18
+sidebar_position: 19
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,6 @@ keywords:
   - schema
   - best practices
   - schema design
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
 
 ---
 

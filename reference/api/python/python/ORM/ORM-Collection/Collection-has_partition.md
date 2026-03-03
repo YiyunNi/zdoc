@@ -12,19 +12,15 @@ type: docx
 token: QsOsda2lRoJP32xNSLWcbgMOnKI
 sidebar_position: 16
 keywords: 
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
+  - Image Search
+  - LLMs
+  - Machine Learning
+  - RAG
   - zilliz
   - zilliz cloud
   - cloud
   - has_partition()
   - pymilvus26
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

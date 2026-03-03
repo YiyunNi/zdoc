@@ -18,10 +18,6 @@ keywords:
   - collection
   - schema
   - dynamic field
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
 
 ---
 

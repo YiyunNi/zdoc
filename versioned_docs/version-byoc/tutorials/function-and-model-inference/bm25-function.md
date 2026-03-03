@@ -19,10 +19,6 @@ keywords:
   - model
   - inference
   - bm25
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
 
 ---
 

@@ -10,7 +10,7 @@ notebook: FALSE
 description: "The ANN Search has a maximum limit on the number of entities that can be recalled in a single query, and simply using basic ANN Search may not meet the demands of large-scale retrieval. For ANN Search requests where topK exceeds 16,384, it is advisable to consider using the SearchIterator. This section will introduce how to use the SearchIterator and related considerations. | Cloud"
 type: origin
 token: QVTnwVz2aifvSAkgomAc9KWRnHb
-sidebar_position: 16
+sidebar_position: 17
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,6 @@ keywords:
   - collection
   - data
   - search iterators
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
 
 ---
 

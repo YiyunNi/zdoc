@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - milvus
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
 
 ---
 
@@ -121,8 +117,8 @@ await client.createDatabase({
 ```go
 cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: "YOUR_CLUSTER_ENDPOINT",
-    Username: "Milvus",
-    Password: "root",
+    Username: "root",
+    Password: "Milvus",
 })
 if err != nil {
     // handle err

@@ -21,10 +21,6 @@ keywords:
   - text
   - embedding
   - cohere
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
 
 ---
 

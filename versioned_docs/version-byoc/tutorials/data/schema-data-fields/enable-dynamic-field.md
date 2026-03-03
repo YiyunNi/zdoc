@@ -18,10 +18,6 @@ keywords:
   - collection
   - schema
   - dynamic field
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
 
 ---
 

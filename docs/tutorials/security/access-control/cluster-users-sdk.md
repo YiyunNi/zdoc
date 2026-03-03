@@ -19,10 +19,6 @@ keywords:
   - access control
   - rbac
   - users
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
 
 ---
 

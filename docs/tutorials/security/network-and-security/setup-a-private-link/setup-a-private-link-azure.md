@@ -22,10 +22,6 @@ keywords:
   - aws
   - gcp
   - azure
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
 
 ---
 

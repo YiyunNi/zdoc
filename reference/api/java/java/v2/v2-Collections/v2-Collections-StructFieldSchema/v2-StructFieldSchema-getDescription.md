@@ -10,21 +10,17 @@ notebook: false
 description: "This operation returns the description of an Array of Structs field. | Java | v2"
 type: docx
 token: QbfPdyw7EoXpGwxSkGgcytBBnAb
-sidebar_position: 2
+sidebar_position: 3
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud
   - getDescription()
   - javaV226
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

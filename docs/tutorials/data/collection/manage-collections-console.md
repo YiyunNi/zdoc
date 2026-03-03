@@ -10,7 +10,7 @@ notebook: FALSE
 description: "A collection is a two-dimensional table used to store vector embeddings and metadata. All entities in a collection share the same schema. You can create multiple collections for data management or multi-tenancy purposes. | Cloud"
 type: origin
 token: CmR5wFcybi3iMokOJBxcXDQcntg
-sidebar_position: 11
+sidebar_position: 12
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,6 @@ keywords:
   - collection
   - manage
   - console
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
 
 ---
 
@@ -109,25 +105,23 @@ In Zilliz Cloud, **functions** define how text-related capabilities are applied 
 
 Functions fall into two main categories based on when they are applied:
 
-- **Text functions**
+- **Pre-search Functions**
 
-    Text functions define how raw text is converted into a vector representation that can be used for retrieval. They are **configured when a collection is created** and become part of the collection's schema.
+    Pre-search Functions define how raw text is converted into a vector representation that can be used for retrieval. They are **configured when a collection is created** and become part of the collection's schema.
 
-    Examples of text functions include the BM25 function, text embedding functions.
+    Examples of Pre-search Functions include the BM25 function, model-based functions.
 
-    For a conceptual overview of how text functions work, see [Function & Model Inference Overview](./function-and-model-inference-overview).
-
-    When creating a collection in the [Zilliz Cloud console](https://cloud.zilliz.com/login), you can add one or more text functions from the collection workflow.
+    For a conceptual overview of how Pre-search Functions work, see [Function & Model Inference Overview](./function-and-model-inference-overview).
 
     <Supademo id="cmjm7ydhy01ouxy0ibvzvne7r" title="" isShowcase />
 
-- **Rerank functions**
+- **Post-search Functions**
 
-    Rerank functions refine the ordering of search results **at query time**. Unlike text functions, rerank functions are **not bound to the collection schema**. They are specified as parameters in search requests and operate on candidate results returned by search.
+    Post-search Functions refine the ordering of search results **at query time**. Unlike Pre-search Functions, Post-search Functions are **not bound to the collection schema**. They are specified as parameters in search requests and operate on candidate results returned by search.
 
-    Rerank functions do not affect indexing or candidate retrieval.
+    Post-search Functions do not affect indexing or candidate retrieval.
 
-    For a conceptual overview of how rerank functions work, see [Function & Model Inference Overview](./function-and-model-inference-overview).
+    For a conceptual overview of how Post-search Functions work, see [Function & Model Inference Overview](./function-and-model-inference-overview).
 
 ### Partition & partition key\{#partition-and-partition-key}
 

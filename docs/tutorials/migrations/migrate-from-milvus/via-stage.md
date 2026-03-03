@@ -19,10 +19,6 @@ keywords:
   - milvus
   - backup files
   - volume
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 

@@ -9,22 +9,18 @@ deprecate_since: false
 notebook: false
 description: "This operation conducts a scalar filtering with a specified boolean expression. | Java | v2"
 type: docx
-token: DI5tdxM92oBdXHxk0LFcsBSInVe
+token: VXCddqVY5oholaxUlRNcYhOjndh
 sidebar_position: 5
 keywords: 
-  - Video search
-  - AI Hallucination
-  - AI Agent
-  - semantic search
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud
   - query()
   - javaV226
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -55,118 +51,76 @@ query(QueryReq.builder()
     .offset(long offset)
     .limit(long limit)
     .ignoreGrowing(boolean ignoreGrowing)
+    .timezone(String timezone)
     .queryParams(Map<String, Object> queryParams)
+    .filterTemplateValues(Map<String, Object> filterTemplateValues)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `databaseName(String databaseName)`
+- `databaseName(String databaseName)` -
 
-    The name of an existing database.
+    The name of the database. Defaults to the current database if not specified.
 
-- `collectionName(String collectionName)`
+- `collectionName(String collectionName)` -
 
-    The name of an existing collection in the above-specified database.
+    The name of the target collection.
 
-- `partitionNames(List<String> partitionNames)`
+- `partitionNames(List<String> partitionNames)` -
 
-    A list of partition names in the above-specified collection.
+    A list of partition names to target.
 
-- `outputFields(List<String> outputFields)`
+- `outputFields(List<String> outputFields)` -
 
-    A list of field names to include in each entity in return.
+    A list of field names to include in the output.
 
-    The value defaults to **None**. If left unspecified, all fields in the collection are selected as the output fields.
+- `ids(List<Object> ids)` -
 
-- `ids(List<Object> ids)`
+    A list of primary key values to identify specific entities.
 
-    The IDs of entities to query.
+- `filter(String filter)` -
 
-- `filter(String filter)`
+    A boolean expression to filter results.
 
-    A scalar filtering condition to filter matching entities. 
+- `consistencyLevel(ConsistencyLevel consistencyLevel)` -
 
-    You can set this parameter to an empty string to skip scalar filtering. To build a scalar filtering condition, refer to [Boolean Expression Rules](https://milvus.io/docs/boolean.md). 
+    The consistency level for the operation.
 
-- `consistencyLevel([ConsistencyLevel](./v2-Collections-ConsistencyLevel) consistencyLevel)`
+- `offset(long offset)` -
 
-    The consistency level of the target collection.
+    The number of results to skip before returning.
 
-    The value defaults to the one specified when you create the current collection, with options of **Strong** (**0**), **Bounded** (**1**), **Session** (**2**), and **Eventually** (**3**).
+- `limit(long limit)` -
 
-    <Admonition type="info" icon="📘" title="What is the consistency level?">
+    The maximum number of results to return.
 
-    <p>Consistency in a distributed database specifically refers to the property that ensures every node or replica has the same view of data when writing or reading data at a given time.</p>
-    <p>Zilliz Cloud provides three consistency levels: <strong>Strong</strong>, <strong>Bounded Staleness</strong>, and <strong>Eventually</strong>, with <strong>Bounded Staleness</strong> set as the default.</p>
-    <p>You can easily tune the consistency level when conducting a vector similarity search or query to make it best suit your application.</p>
+- `ignoreGrowing(boolean ignoreGrowing)` -
 
-    </Admonition>
+    Whether to ignore growing segments during the operation.
 
-- `offset(long offset)`
+- `timezone(String timezone)` -
 
-    The number of records to skip in the query result. 
+    The timezone string for time-related filters.
 
-    You can use this parameter in combination with `limit` to enable pagination.
+- `queryParams(Map<String, Object> queryParams)` -
 
-    The sum of this value and `limit` should be less than 16,384. 
+    Additional query parameters as key-value pairs. Defaults to `new HashMap<>()`.
 
-- `limit(long limit)`
+- `filterTemplateValues(Map<String, Object> filterTemplateValues)` -
 
-    The number of records to return in the query result.
-
-    You can use this parameter in combination with `offset` to enable pagination.
-
-    The sum of this value and `offset` should be less than 16,384. 
-
-- `ignoreGrowing(boolean ignoreGrowing)`
-
-    Whether to ignore growing segments during similarity searches.
-
-- `queryParams(Map<String, Object> queryParams)`
-
-    The parameter settings specific to this operation. Possible values are:
-
-    - **timezone** (String)
-
-        The timezone  of this operation. For example, `America/Chicago`.
-
-    - **time_fields** (String)
-
-        The time format that is concatenated with the information extracted from the Timestamptz field in the output fields, such as `year, month, day`.
-
-**RETURN TYPE:**
-
-*QueryResp*
+    A map of template variable values for parameterized filters.
 
 **RETURNS:**
 
+*QueryResp*
+
 A **QueryResp object representing specific query results with the specified output fields
-
-**PARAMETERS:**
-
-- queryResults(List\<QueryResp.QueryResult\>)
-
-    A list of QueryResult objects with each QueryResult representing a queried entity. The members of QueryResult:
-
-    - **entity** (*Map\<String,Object\>*)
-
-        A map that contains key-value pairs of field names and their values.
-
-- **sessionTs** (*long*) -
-
-    Whether the **Eventually** consistency level applies.
-
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>If the number of returned entities is less than expected, duplicate entities may exist in your collection.</p>
-
-</Admonition>
 
 **EXCEPTIONS:**
 
-- **MilvusClientExceptions**
+- **MilvusClientException**
 
     This exception will be raised when any error occurs during this operation.
 

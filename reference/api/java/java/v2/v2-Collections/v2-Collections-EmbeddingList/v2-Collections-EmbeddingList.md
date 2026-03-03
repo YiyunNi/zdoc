@@ -12,19 +12,15 @@ type: docx
 token: EXcNdtZrro7Ufkxp3G6cUArOn7b
 sidebar_position: 2
 keywords: 
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
+  - vector db comparison
   - zilliz
   - zilliz cloud
   - cloud
   - EmbeddingList
   - javaV226
-  - IVF
-  - knn
-  - Image Search
-  - LLMs
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

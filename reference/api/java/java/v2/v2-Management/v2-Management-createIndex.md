@@ -4,27 +4,23 @@ slug: /java/java/v2-Management-createIndex
 sidebar_label: "createIndex()"
 beta: false
 added_since: v2.3.x
-last_modified: v2.5.x
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation creates an index for a specific collection. | Java | v2"
 type: docx
-token: YXPSdlp3JoP82qxhFMYc5GRnn4g
+token: JLCudD7MYoQdxQxLwlpcbBnpn8c
 sidebar_position: 3
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
   - createIndex()
   - javaV226
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -45,26 +41,36 @@ public void createIndex(CreateIndexReq request)
 
 ```java
 createIndex(CreateIndexReq.builder()
+    .databaseName(String databaseName)
     .collectionName(String collectionName)
     .indexParams(List<IndexParam> indexParams)
     .sync(Boolean sync)
+    .timeout(Long timeout)
     .build()
-)
+);
 ```
 
 **BUILDER METHODS:**
 
-- `collectionName(String collectionName)`
+- `databaseName(String databaseName)` -
 
-    The name of an existing collection.
+    The name of the database. Defaults to the current database if not specified.
 
-- `indexParams(List<[IndexParam](./v2-Management-IndexParam)> indexParams)`
+- `collectionName(String collectionName)` -
 
-    A list of **IndexParam** objects.
+    The name of the target collection.
 
-- `sync(Boolean sync)`
+- `indexParams(List<IndexParam> indexParams)` -
 
-    Whether the current operation is synchronous. The default value is `True`.
+    A list of IndexParam objects defining the index configuration.
+
+- `sync(Boolean sync)` -
+
+    Whether to wait synchronously until the operation completes. Defaults to `Boolean.TRUE`.
+
+- `timeout(Long timeout)` -
+
+    The timeout duration in milliseconds. Defaults to `60000L`.
 
 **RETURNS:**
 
@@ -72,7 +78,7 @@ createIndex(CreateIndexReq.builder()
 
 **EXCEPTIONS:**
 
-- **MilvusClientExceptions**
+- **MilvusClientException**
 
     This exception will be raised when any error occurs during this operation.
 
@@ -104,4 +110,3 @@ CreateIndexReq createIndexReq = CreateIndexReq.builder()
         .build();
 client.createIndex(createIndexReq);
 ```
-

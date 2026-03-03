@@ -19,10 +19,6 @@ keywords:
   - data
   - insert
   - insert entities
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

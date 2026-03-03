@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - geometry
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
 
 ---
 

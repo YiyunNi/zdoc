@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - email accounts
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
-  - Audio search
 
 ---
 

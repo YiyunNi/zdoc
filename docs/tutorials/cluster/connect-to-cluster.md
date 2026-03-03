@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cluster
   - connect
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
 
 ---
 
@@ -60,7 +56,7 @@ Once your cluster is operational, connect to it utilizing its public endpoint an
 
 The following example shows how to connect to a cluster.
 
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
@@ -110,6 +106,31 @@ const token = "YOUR_CLUSTER_TOKEN"
 
 // 1. Connect to the cluster
 const client = new MilvusClient({address, token})
+```
+
+</TabItem>
+
+<TabItem value='go'>
+
+```go
+import "github.com/milvus-io/milvus/client/v2/milvusclient"
+
+client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: "YOUR_CLUSTER_ENDPOINT",
+    APIKey:  "YOUR_CLUSTER_TOKEN",
+})
+```
+
+</TabItem>
+
+<TabItem value='bash'>
+
+```bash
+curl --request POST \
+  --url "YOUR_CLUSTER_ENDPOINT" \
+  --header "Authorization: Bearer YOUR_CLUSTER_TOKEN" \
+  --header "Content-Type: application/json" \
+  --data '{"dbName": "default"}'
 ```
 
 </TabItem>

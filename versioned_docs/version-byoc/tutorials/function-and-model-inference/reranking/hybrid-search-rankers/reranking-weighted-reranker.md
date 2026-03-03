@@ -20,10 +20,6 @@ keywords:
   - search result reranking
   - result reranking
   - weighted reranker
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - backup
   - restore
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
 
 ---
 

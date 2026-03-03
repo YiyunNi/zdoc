@@ -21,10 +21,6 @@ keywords:
   - aws
   - gcp
   - azure
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
 
 ---
 

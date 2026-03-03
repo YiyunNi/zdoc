@@ -17,10 +17,6 @@ keywords:
   - cloud
   - scalar field
   - index
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
 
 ---
 

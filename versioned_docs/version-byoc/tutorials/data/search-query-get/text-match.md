@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - text-match
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
 
 ---
 

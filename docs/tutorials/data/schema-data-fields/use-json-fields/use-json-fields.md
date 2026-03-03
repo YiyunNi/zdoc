@@ -18,10 +18,6 @@ keywords:
   - collection
   - schema
   - json field
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
 
 ---
 
@@ -31,6 +27,8 @@ import Admonition from '@theme/Admonition';
 # JSON Field
 
 This chapter introduces the JSON field type, and provides guides on how to index a JSON field. 
+
+
 
 import DocCardList from '@theme/DocCardList';
 

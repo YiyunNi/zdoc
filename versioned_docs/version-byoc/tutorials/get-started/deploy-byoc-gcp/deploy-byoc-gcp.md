@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This page describes how to manually create a fully managed Bring-Your-Own-Cloud (BYOC) data plane in your Google Cloud Platform (GCP) Virtual Private Cloud (VPC) using the Zilliz Cloud console and custom GCP configurations. | BYOC"
 type: origin
 token: KmYgwHNOFiPQ9sk4bSDcMuIHnjC
-sidebar_position: 5
+sidebar_position: 6
 keywords: 
   - zilliz
   - byoc
@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
 
 ---
 
@@ -73,7 +69,7 @@ In this step, you need to set the Zilliz BYOC project name, determine the cloud 
 
 1. Determine whether to enable **GCP Private Service Connect**.
 
-    This option allows private connectivity to the clusters within the current project. If you enable this option, you must create a Private Service Connect Endpoint for private connectivity.
+    This option allows private connectivity to the clusters within the current project. If you enable this option, you must create a Private Service Connect Endpoint for private connectivity. For details, refer to [Prepare for Cluster Connection](./prepare-for-cluster-connection#private-endpoint-access).
 
 1. Select an architecture type that matches your application in **Architecture**. 
 
@@ -204,6 +200,8 @@ In **Network Settings**, create a VPC and several types of resources, such as su
 After you create a project, you can view its status on the project page.
 
 ![BE13bnOpGo9ZAVxTx3acX2J8nEe](https://zdoc-images.s3.us-west-2.amazonaws.com/be13bnopgo9zavxtx3acx2j8nee.png "BE13bnOpGo9ZAVxTx3acX2J8nEe")
+
+Once you have deployed the project's data plane and created clusters, you can connect to these clusters either through direct VPC access or via GCP Private Service Connect. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
 
 ## Suspend & Resume\{#suspend-and-resume}
 

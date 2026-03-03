@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

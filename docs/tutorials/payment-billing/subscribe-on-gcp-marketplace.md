@@ -17,10 +17,6 @@ keywords:
   - cloud
   - marketplace
   - gcp
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - migrations
   - postgresql
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
 
 ---
 

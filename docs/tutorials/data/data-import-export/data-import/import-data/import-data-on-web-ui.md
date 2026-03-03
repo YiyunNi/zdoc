@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data import
   - console
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
 
 ---
 

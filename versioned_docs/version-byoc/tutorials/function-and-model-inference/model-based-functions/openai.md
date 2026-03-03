@@ -21,10 +21,6 @@ keywords:
   - text
   - embedding
   - openai
-  - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
 
 ---
 

@@ -20,10 +20,6 @@ keywords:
   - primary field
   - autoId
   - autoid
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
 
 ---
 

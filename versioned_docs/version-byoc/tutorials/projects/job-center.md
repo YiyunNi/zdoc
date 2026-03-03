@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - project jobs
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
 
 ---
 

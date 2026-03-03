@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
 
 ---
 
@@ -160,6 +156,8 @@ Follow the steps displayed in the dialog to deploy the data plane for the curren
 ![GHGqbw4UroKPu7xoEWmcDQaDnEd](https://zdoc-images.s3.us-west-2.amazonaws.com/ghgqbw4urokpu7xoewmcdqadned.png "GHGqbw4UroKPu7xoEWmcDQaDnEd")
 
 For details on running the above Terraform scripts, refer to the [Zilliz Cloud BYOC-I Project Setup Guide](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-byoc-i-project).
+
+Once you have deployed the project's data plane and created clusters, you can connect to these clusters either through direct VPC access or via AWS PrivateLink. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
 
 ## Manage projects\{#manage-projects}
 

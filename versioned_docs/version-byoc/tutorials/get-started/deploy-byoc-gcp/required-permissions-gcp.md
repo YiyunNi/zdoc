@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
 
 ---
 

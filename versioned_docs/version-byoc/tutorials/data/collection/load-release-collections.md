@@ -18,10 +18,6 @@ keywords:
   - collection
   - load
   - release
-  - vector database
-  - IVF
-  - knn
-  - Image Search
 
 ---
 

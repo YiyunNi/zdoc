@@ -22,10 +22,6 @@ keywords:
   - decay
   - decay ranker
   - decay ranker overview
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
 
 ---
 

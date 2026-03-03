@@ -17,10 +17,6 @@ keywords:
   - cloud
   - backup
   - manage
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

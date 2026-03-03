@@ -4,27 +4,23 @@ slug: /python/python/Collections-get_collection_stats
 sidebar_label: "get_collection_stats()"
 beta: false
 added_since: v2.3.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation lists the statistics collected on a specific collection. | Python | MilvusClient"
 type: docx
-token: VVyNdx038oECxNxMQavc9vssnoh
+token: VfaldXzLUocBrJxffw6cJHPinlh
 sidebar_position: 13
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud
   - get_collection_stats()
   - pymilvus26
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -37,12 +33,13 @@ import Admonition from '@theme/Admonition';
 
 This operation lists the statistics collected on a specific collection.
 
-## Request syntax\{#request-syntax}
+## Request Syntax\{#request-syntax}
 
 ```python
 get_collection_stats(
-    collection_name: str, 
-    timeout: Optional[float] = None
+    collection_name: str,
+    timeout: Optional[float] = None,
+    **kwargs,
 ) -> Dict
 ```
 
@@ -54,11 +51,13 @@ get_collection_stats(
 
     The name of a collection.
 
-- **timeout** (*float* | *None*) -
+- **timeout** (*Optional[float]*) -
 
-    The timeout duration for this operation. 
+    The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
 
-    Setting this to **None** indicates that this operation timeouts when any response returns or error occurs.
+- **\&ast;\&ast;kwargs** -
+
+    Additional keyword arguments for future extensibility.
 
 **RETURN TYPE:**
 
@@ -76,56 +75,22 @@ A dictionary containing collected statistics on the specified collection.
 
 <Admonition type="info" icon="📘" title="Why doesn't the row count match the number of entities inserted?">
 
-<p>The data that you insert will go through a process before it is finally saved: Initially, it will flow in as data streams. Then, it will be stored in segments as entities. Milvus will select an appropriate growing segment to store the data in streams until the segment reaches its upper limit and becomes sealed.</p>
-<p>However, it's important to note that the row count displayed may not match the number of records that were inserted because data in streams is not taken into account.</p>
+<p>The data you insert will undergo processing before it is finally saved. Initially, it will arrive as data streams. Then, it will be stored in segments as entities. Milvus will select an appropriate growing segment to store data in streams until it reaches its upper limit and becomes sealed.</p>
+<p>However, note that the displayed row count may not match the number of records inserted, as stream data is not included.</p>
 
 </Admonition>
-
-**EXCEPTIONS:**
-
-- **MilvusException**
-
-    This exception will be raised when any error occurs during this operation.
 
 ## Examples\{#examples}
 
 ```python
 from pymilvus import MilvusClient
 
-# 1. Set up a milvus client
-client = MilvusClient(
-    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
-    token="user:password"
+client = MilvusClient(uri="YOUR_CLUSTER_ENDPOINT")
+
+stats = client.get_collection_stats(
+    collection_name="my_collection"
 )
 
-# 2. Create a collection
-client.create_collection(collection_name="test_collection", dimension=5)
-
-# 3. Describe the collection
-client.get_collection_stats(collection_name="test_collection")
-
-# Output
-# 
-# {
-#     'row_count': 0
-# }
+print(stats)
+# Output: {'row_count': 100}
 ```
-
-## Related methods\{#related-methods}
-
-- [create_collection()](./Collections-create_collection)
-
-- [create_schema()](./Collections-create_schema)
-
-- [describe_collection()](./Collections-describe_collection)
-
-- [drop_collection()](./Collections-drop_collection)
-
-- [has_collection()](./Collections-has_collection)
-
-- [list_collections()](./Collections-list_collections)
-
-- [rename_collection()](./Collections-rename_collection)
-
-- [DataType](./Collections-DataType)
-

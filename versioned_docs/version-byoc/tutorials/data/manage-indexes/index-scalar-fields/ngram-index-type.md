@@ -18,10 +18,6 @@ keywords:
   - scalar field
   - varchar
   - ngram
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
 
 ---
 
@@ -66,7 +62,7 @@ During data ingestion, Zilliz Cloud builds the NGRAM index by performing two mai
 
     For example, with `min_gram=2` and `max_gram=3`, the string `"AI database"` is broken down as follows:
 
-![QZqlwniNDhE82ZbzE09cd7uHnWd](https://zdoc-images.s3.us-west-2.amazonaws.com/QZqlwniNDhE82ZbzE09cd7uHnWd.png)
+    ![QZqlwniNDhE82ZbzE09cd7uHnWd](https://zdoc-images.s3.us-west-2.amazonaws.com/QZqlwniNDhE82ZbzE09cd7uHnWd.png)
 
     - **2-grams:** `AI`, `I_`, `_d`, `da`, `at`, ...
 
@@ -90,7 +86,7 @@ During data ingestion, Zilliz Cloud builds the NGRAM index by performing two mai
 
     For instance, if the 2-gram `"AI"` appears in documents with IDs 1, 5, 6, 8, and 9, the index records `{"AI": [1, 5, 6, 8, 9]}`. This index is then used at query time to quickly narrow the search scope.
 
-![BVPlwaN7Lh7UZibGopwcAcYQn1d](https://zdoc-images.s3.us-west-2.amazonaws.com/BVPlwaN7Lh7UZibGopwcAcYQn1d.png)
+    ![BVPlwaN7Lh7UZibGopwcAcYQn1d](https://zdoc-images.s3.us-west-2.amazonaws.com/BVPlwaN7Lh7UZibGopwcAcYQn1d.png)
 
     <Admonition type="info" icon="📘" title="Notes">
 

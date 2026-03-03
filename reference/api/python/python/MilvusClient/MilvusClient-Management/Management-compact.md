@@ -4,27 +4,23 @@ slug: /python/python/Management-compact
 sidebar_label: "compact()"
 beta: false
 added_since: v2.4.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection. | Python | MilvusClient"
 type: docx
-token: BThKd2QThoQKGPx1ofKczmADnC6
+token: JRNidzqX4o6VtkxVB5RcNvmHnnb
 sidebar_position: 2
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud
   - compact()
   - pymilvus26
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -41,9 +37,9 @@ This operation compacts the collection by merging small segments into larger one
 
 ```python
 compact(
-    self,
     collection_name: str,
     is_clustering: Optional[bool] = False,
+    is_l0: Optional[bool] = False,
     timeout: Optional[float] = None,
     **kwargs,
 ) -> int
@@ -53,13 +49,21 @@ compact(
 
 - **collection_name** (*str*) -
 
+    **[REQUIRED]**
+
     The name of the target collection.
 
-- **timeout** (*Optional[float]*) - 
+- **is_clustering** (*bool*) -
 
-    The timeout duration for this operation.
+    Whether to perform a clustering compaction. Defaults to **False**.
 
-    Setting this to None indicates that this operation timeouts when any response arrives or any error occurs.
+- **is_l0** (*bool*) -
+
+    Whether to perform an L0 compaction, which specifically handles L0 segments by merging delete operations into existing data segments. Defaults to **False**.
+
+- **timeout** (*Optional[float]*) -
+
+    The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
 
 **RETURN TYPE:**
 
@@ -73,21 +77,36 @@ A compaction job ID, which can be used to get the compaction status.
 
 - **MilvusException**
 
-    This exception will be raised when any error occurs during this operation, especially when the specified alias does not exist.
+    This exception will be raised when any error occurs during this operation.
 
-## Example\{#example}
+## Examples\{#examples}
 
 ```python
 from pymilvus import MilvusClient
 
-# 1. Create a milvus client
 client = MilvusClient(
-    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
-    token="user:password"
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
 )
 
-client.compact(
-    collection_name="collection_name"
+# Standard compaction
+job_id = client.compact(
+    collection_name="my_collection"
 )
+
+# Clustering compaction
+job_id = client.compact(
+    collection_name="my_collection",
+    is_clustering=True
+)
+
+# L0 compaction
+job_id = client.compact(
+    collection_name="my_collection",
+    is_l0=True
+)
+
+# Check compaction status
+state = client.get_compaction_state(job_id)
+print(state)
 ```
-

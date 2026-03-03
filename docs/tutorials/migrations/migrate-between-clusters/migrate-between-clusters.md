@@ -17,10 +17,6 @@ keywords:
   - cloud
   - migrations
   - clusters
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
 
 ---
 

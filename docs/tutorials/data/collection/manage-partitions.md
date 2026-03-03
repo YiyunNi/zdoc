@@ -18,10 +18,6 @@ keywords:
   - collection
   - partition
   - partitions
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
 
 ---
 

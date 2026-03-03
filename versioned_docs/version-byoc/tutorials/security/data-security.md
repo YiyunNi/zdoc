@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data
   - security
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - milvus
   - api availability
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
 
 ---
 

@@ -12,19 +12,15 @@ type: docx
 token: IquldHhyGo9s4IxF3cicOXGnnNf
 sidebar_position: 20
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud
   - add_collection_field()
   - pymilvus26
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -48,9 +44,6 @@ This operation adds a new scalar field to an existing collection without recreat
 ```python
 add_collection_field(
     collection_name: str,
-    field_name: str,
-    data_type: DataType,
-    desc: str = "",
     timeout: Optional[float] = None,
     **kwargs
 )

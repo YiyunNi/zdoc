@@ -23,10 +23,6 @@ keywords:
   - decay ranker
   - tutorial
   - time-based ranking
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - collection
   - view collections
-  - Zilliz
-  - milvus vector database
-  - milvus db
-  - milvus vector db
 
 ---
 

@@ -17,10 +17,6 @@ keywords:
   - cloud
   - organization
   - alerts
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
 
 ---
 

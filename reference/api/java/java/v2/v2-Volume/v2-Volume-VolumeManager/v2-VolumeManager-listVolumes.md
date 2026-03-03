@@ -12,19 +12,15 @@ type: docx
 token: Cde1dlUbDosa86xjuShcoKgQnvg
 sidebar_position: 3
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud
   - listVolumes()
   - javaV226
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar
@@ -92,7 +88,7 @@ A **ListVolumesResponse** object that contains a list of volumes in a paginated 
 
     The maximum number of volumes per page.
 
-- **volumes** (*List\<VolumeInfo>*) -
+- **volumes** (*List&lt;VolumeInfo&gt;*) -
 
     A list of `VolumeInfo` instances.
 

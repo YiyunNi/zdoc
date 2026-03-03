@@ -12,19 +12,15 @@ type: docx
 token: DsnpdZuDGo77TYxFuYvcDpOgnIf
 sidebar_position: 12
 keywords: 
+  - what is vector db
   - what are vector databases
   - vector databases comparison
   - Faiss
-  - Video search
   - zilliz
   - zilliz cloud
   - cloud
   - grant_role()
   - pymilvus26
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

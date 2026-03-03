@@ -17,10 +17,6 @@ keywords:
   - cloud
   - cluster
   - manage
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
 
 ---
 

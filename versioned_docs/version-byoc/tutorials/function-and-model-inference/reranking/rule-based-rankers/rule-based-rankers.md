@@ -22,10 +22,6 @@ keywords:
   - rule-based
   - boost ranker
   - decay rankers
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
 
 ---
 

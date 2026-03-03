@@ -17,10 +17,6 @@ keywords:
   - cloud
   - auditing
   - log
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

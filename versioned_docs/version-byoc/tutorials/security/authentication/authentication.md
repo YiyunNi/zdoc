@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - authentication
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
 
 ---
 

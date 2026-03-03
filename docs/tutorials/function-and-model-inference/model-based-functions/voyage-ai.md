@@ -22,10 +22,6 @@ keywords:
   - embedding
   - voyage
   - ai
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
-  - DiskANN
 
 ---
 
@@ -47,6 +43,24 @@ Milvus supports embedding models provided by Voyage AI. Below are the currently 
      <th><p>Dimensions</p></th>
      <th><p>Max Tokens</p></th>
      <th><p>Description</p></th>
+   </tr>
+   <tr>
+     <td><p><code>voyage-4-large</code></p></td>
+     <td><p>1024 (default), 256, 512, 2048</p></td>
+     <td><p>32,000</p></td>
+     <td><p>The best general-purpose and multilingual retrieval quality. All embeddings created with the 4 series are compatible with each other. See <a href="https://blog.voyageai.com/2026/01/15/voyage-4/">blog post</a> for details.</p></td>
+   </tr>
+   <tr>
+     <td><p><code>voyage-4</code></p></td>
+     <td><p>1024 (default), 256, 512, 2048</p></td>
+     <td><p>32,000</p></td>
+     <td><p>Optimized for general-purpose and multilingual retrieval quality. All embeddings created with the 4 series are compatible with each other. See <a href="https://blog.voyageai.com/2026/01/15/voyage-4/">blog post</a> for details.</p></td>
+   </tr>
+   <tr>
+     <td><p><code>voyage-4-lite</code></p></td>
+     <td><p>1024 (default), 256, 512, 2048</p></td>
+     <td><p>32,000</p></td>
+     <td><p>Optimized for latency and cost. All embeddings created with the 4 series are compatible with each other. See <a href="https://blog.voyageai.com/2026/01/15/voyage-4/">blog post</a> for details.</p></td>
    </tr>
    <tr>
      <td><p>voyage-3-large</p></td>

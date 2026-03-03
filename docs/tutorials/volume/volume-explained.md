@@ -16,10 +16,6 @@ keywords:
   - vector database
   - cloud
   - volume
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
 
 ---
 
@@ -32,7 +28,7 @@ A volume is an object store that holds either structured data or collections of 
 
 ![DKAYwcIgJhudJnbw8Sbczhttntb](https://zdoc-images.s3.us-west-2.amazonaws.com/DKAYwcIgJhudJnbw8Sbczhttntb.png)
 
-A volume belongs to a project, not to a single cluster. Any cluster in the same project can read/write it, subject to [project roles](./project-users#project-roles).
+A volume belongs to a project, not to a single cluster. Any cluster in the same project can read/write it, subject to [project roles](./project-users#invite-a-user-to-a-project).
 
 ```bash
 Organization

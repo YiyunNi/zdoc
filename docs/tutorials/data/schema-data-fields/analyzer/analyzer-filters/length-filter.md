@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - length
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
 
 ---
 

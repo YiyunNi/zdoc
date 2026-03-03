@@ -18,10 +18,6 @@ keywords:
   - migrations
   - amazon
   - opensearch
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
 
 ---
 

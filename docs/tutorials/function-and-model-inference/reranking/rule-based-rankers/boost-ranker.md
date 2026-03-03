@@ -21,10 +21,6 @@ keywords:
   - result reranking
   - boost
   - boost ranker
-  - Vector Dimension
-  - ANN Search
-  - What are vector embeddings
-  - vector database tutorial
 
 ---
 

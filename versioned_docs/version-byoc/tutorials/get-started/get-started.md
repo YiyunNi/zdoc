@@ -16,10 +16,6 @@ keywords:
   - vector database
   - get started
   - milvus
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
 
 ---
 

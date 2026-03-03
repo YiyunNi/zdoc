@@ -18,10 +18,6 @@ keywords:
   - function
   - model
   - inference
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
 
 ---
 

@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - decompounder
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
 
 ---
 

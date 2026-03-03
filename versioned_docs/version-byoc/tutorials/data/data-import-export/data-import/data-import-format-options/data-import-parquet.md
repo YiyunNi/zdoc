@@ -19,10 +19,6 @@ keywords:
   - milvus
   - format options
   - parquet
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
 
 ---
 

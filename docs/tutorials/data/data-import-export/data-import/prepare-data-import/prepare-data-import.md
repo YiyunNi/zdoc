@@ -17,10 +17,6 @@ keywords:
   - cloud
   - data import
   - prepare
-  - milvus
-  - Zilliz
-  - milvus vector database
-  - milvus db
 
 ---
 

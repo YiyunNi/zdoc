@@ -12,19 +12,15 @@ type: docx
 token: VDKPdBJzdoAu7exEOE2czN2gnTd
 sidebar_position: 5
 keywords: 
-  - Audio search
-  - what is semantic search
   - Embedding model
   - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud
   - describeRole()
   - javaV226
-  - Vector embeddings
-  - Vector store
-  - open source vector database
-  - Vector index
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

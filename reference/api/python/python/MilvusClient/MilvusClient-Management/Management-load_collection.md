@@ -12,19 +12,15 @@ type: docx
 token: YtiQdxTYzoCaYDxEMZcc8TEenQb
 sidebar_position: 10
 keywords: 
+  - Dense embedding
+  - Faiss vector database
   - Chroma vector database
   - nlp search
-  - hallucinations llm
-  - Multimodal search
   - zilliz
   - zilliz cloud
   - cloud
   - load_collection()
   - pymilvus26
-  - semantic search
-  - Anomaly Detection
-  - sentence transformers
-  - Recommender systems
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

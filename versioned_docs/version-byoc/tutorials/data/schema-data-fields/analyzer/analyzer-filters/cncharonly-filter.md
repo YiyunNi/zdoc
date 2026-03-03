@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - cncharonly
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
 
 ---
 

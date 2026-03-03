@@ -12,19 +12,15 @@ type: docx
 token: JeG6d5Sg2oPmXPxEhnyciq4snNd
 sidebar_position: 28
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - Natural language search
+  - Similarity Search
+  - multimodal RAG
+  - llm hallucinations
   - zilliz
   - zilliz cloud
   - cloud
   - list_user()
   - pymilvus26
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar

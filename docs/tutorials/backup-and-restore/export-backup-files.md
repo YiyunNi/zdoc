@@ -20,10 +20,6 @@ keywords:
   - integrate
   - object
   - storage
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
 
 ---
 

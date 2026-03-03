@@ -20,10 +20,6 @@ keywords:
   - minimum permissions
   - milvus
   - vector database
-  - vector database
-  - IVF
-  - knn
-  - Image Search
 
 ---
 

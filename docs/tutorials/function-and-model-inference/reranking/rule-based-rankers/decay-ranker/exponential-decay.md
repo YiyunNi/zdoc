@@ -23,10 +23,6 @@ keywords:
   - decay ranker
   - exponential decay
   - exp
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
 
 ---
 

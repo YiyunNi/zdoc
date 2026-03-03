@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Milvus allows you to dynamically add new fields to existing collections, making it easy to evolve your data schema as your application needs change. This guide shows you how to add fields in different scenarios using practical examples. | BYOC"
 type: origin
 token: UR9SwucAIiQ2TYkc9EucsgvSnng
-sidebar_position: 17
+sidebar_position: 18
 keywords: 
   - zilliz
   - vector database
@@ -19,10 +19,6 @@ keywords:
   - schema
   - field properties
   - add collection fields
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
 
 ---
 

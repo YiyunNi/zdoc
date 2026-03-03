@@ -17,10 +17,6 @@ keywords:
   - cloud
   - credit card
   - subscribe
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
 
 ---
 

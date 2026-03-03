@@ -16,10 +16,6 @@ keywords:
   - byoc
   - milvus
   - vector database
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
 
 ---
 

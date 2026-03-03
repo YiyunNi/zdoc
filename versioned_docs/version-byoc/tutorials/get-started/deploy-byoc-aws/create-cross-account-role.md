@@ -19,10 +19,6 @@ keywords:
   - IAM role
   - milvus
   - vector database
-  - RAG
-  - NLP
-  - Neural Network
-  - Deep Learning
 
 ---
 

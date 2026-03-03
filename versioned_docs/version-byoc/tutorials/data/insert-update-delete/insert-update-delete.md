@@ -18,10 +18,6 @@ keywords:
   - collection
   - data insertions
   - DDL
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
 
 ---
 

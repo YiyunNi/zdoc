@@ -17,10 +17,6 @@ keywords:
   - cloud
   - providers
   - regions
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
 
 ---
 
@@ -76,9 +72,16 @@ Zilliz Cloud supports deploying free, serverless, and dedicated clusters on AWS.
      <td><p>Yes</p></td>
    </tr>
    <tr>
-     <td><p>Europe</p></td>
+     <td rowspan="2"><p>Europe</p></td>
      <td><p>eu-central-1</p></td>
      <td><p>Frankfurt, Germany</p></td>
+     <td><p>Yes</p></td>
+     <td><p>Yes</p></td>
+     <td><p>Yes</p></td>
+   </tr>
+   <tr>
+     <td><p>eu-west-1</p></td>
+     <td><p>Ireland</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>
      <td><p>Yes</p></td>

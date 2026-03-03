@@ -22,10 +22,6 @@ keywords:
   - aws
   - gcp
   - azure
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
 
 ---
 

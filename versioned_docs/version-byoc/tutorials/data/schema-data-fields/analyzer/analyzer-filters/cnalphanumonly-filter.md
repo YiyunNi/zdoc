@@ -20,10 +20,6 @@ keywords:
   - analyzer
   - built-in filters
   - cnalphanumonly
-  - vector database
-  - IVF
-  - knn
-  - Image Search
 
 ---
 

@@ -21,10 +21,6 @@ keywords:
   - filtering expressions
   - filtering
   - filtering templating
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
 
 ---
 

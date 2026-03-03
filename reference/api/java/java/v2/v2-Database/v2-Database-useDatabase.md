@@ -12,19 +12,15 @@ type: docx
 token: LAJHdQKQQoPjmYxcfQgcvjvLnqh
 sidebar_position: 7
 keywords: 
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
   - zilliz
   - zilliz cloud
   - cloud
   - useDatabase()
   - javaV226
-  - Zilliz database
-  - Unstructured Data
-  - vector database
-  - IVF
 displayed_sidebar: javaSidebar
 
 displayed_sidbar: javaSidebar

@@ -4,27 +4,23 @@ slug: /python/python/Database-drop_database_properties
 sidebar_label: "drop_database_properties()"
 beta: false
 added_since: v2.5.x
-last_modified: false
+last_modified: v2.6.x
 deprecate_since: false
 notebook: false
 description: "This operation drops the setting of the specified properties. | Python | MilvusClient"
 type: docx
-token: UPVjdLtz1ogFeKxP45wcqyKincc
+token: AdSXdtNDsoTMnJx1QoGcSsnZnWd
 sidebar_position: 5
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud
   - drop_database_properties()
   - pymilvus26
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
 displayed_sidebar: pythonSidebar
 
 displayed_sidbar: pythonSidebar
@@ -37,62 +33,53 @@ import Admonition from '@theme/Admonition';
 
 This operation drops the setting of the specified properties.
 
-<Admonition type="info" icon="📘" title="Notes">
-
-<p>This method applies only to dedicated clusters.</p>
-
-</Admonition>
-
 ## Request Syntax\{#request-syntax}
 
 ```python
 drop_database_properties(
-    db_name: str, 
-    property_keys: List[string],
-    timeout: Optional[float] = None,
+    db_name: str,
+    property_keys: List[str],
     **kwargs,
 )
 ```
 
 **PARAMETERS:**
 
-- **db_name** (*string*) -
+- **db_name** (*str*) -
 
     **[REQUIRED]**
 
     Name of the database whose properties are to be dropped.
 
-- **properties** (*[]string* | *None*) -
+- **property_keys** (*list[str]*) -
+
+    **[REQUIRED]**
 
     Names of the properties to drop. Possible database properties are as follows:
 
-    - **database.replica.number** (*int*) -
+      - **database.replica.number** (*int*) - Number of replicas for the database.
 
-        Number of replicas for the database.
+      - **database.resource_groups** (*list[str]*) - Resource groups dedicated to the database.
 
-    - **database.resource_groups** (*[]str*) -
+      - **database.diskQuota.mb** (*int*) - Disk quota allocated to the database in megabytes (**MB**).
 
-        Resource groups dedicated to the database.
+      - **database.max.collections** (*int*) - Maximum number of collections allowed in the database.
 
-    - **database.diskQuota.mb** (*int*) -
+      - **database.force.deny.writing** (*bool*) - Whether to deny all write operations in the database.
 
-        Disk quota allocated to the database in megabytes (**MB**).
+      - **database.force.deny.reading** (*bool*) - Whether to deny all read operations in the database.
 
-    - **database.max.collections** (*int*) -
+    - **database.replica.number** (*int*) - Number of replicas for the database.
 
-        Maximum number of collections allowed in the database.
+    - **database.resource_groups** (*list[str]*) - Resource groups dedicated to the database.
 
-    - **database.force.deny.writing** (*bool*) -
+    - **database.diskQuota.mb** (*int*) - Disk quota allocated to the database in megabytes (**MB**).
 
-        Whether to deny all write operations in the database.
+    - **database.max.collections** (*int*) - Maximum number of collections allowed in the database.
 
-    - **database.force.deny.reading** (*bool*) -
+    - **database.force.deny.writing** (*bool*) - Whether to deny all write operations in the database.
 
-        Whether to deny all read operations in the database.
-
-- **timeout** (*float* | *None*) -
-
-    The timeout duration for this operation. Setting this to *None* indicates that it timeouts when a response arrives, or an error occurs.
+    - **database.force.deny.reading** (*bool*) - Whether to deny all read operations in the database.
 
 **RETURN TYPE:**
 
@@ -104,17 +91,19 @@ drop_database_properties(
 
 **EXCEPTIONS:**
 
-- `MilvusException` - Raised if any error occurs during this operation.
+- **MilvusException**
+
+    This exception will be raised when any error occurs during this operation.
 
 ## Examples\{#examples}
 
 ```python
 from pymilvus import MilvusClient
 
-client = MilvusClient(uri, token) # db = "default" 
+client = MilvusClient(uri="YOUR_CLUSTER_ENDPOINT", token="YOUR_CLUSTER_TOKEN")
 
 client.drop_database_properties(
     db_name="my_db",
-    properties=["a", "b"]
+    property_keys=["database.replica.number", "database.diskQuota.mb"]
 )
 ```
