@@ -51,6 +51,17 @@ jobs:
       with:
         branch: dev
         push_options: --force
+    - name: build docsite
+      run: |
+        npx docusaurus report-to-lark -type text -m "🔥 Translations done! Verifying build..."
+        npm run build
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        APP_SECRET: ${{ secrets.APP_SECRET }}
+        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
+        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
+        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+        MODEL_ID: ${{ vars.MODEL_ID }}
 
   failure:
     needs: translate
@@ -64,7 +75,7 @@ jobs:
     - name: report failure
       run: |
         yarn
-        npx docusaurus report-to-lark -type text -m "🔥 Japanese translation failed! Please check the logs."
+        npx docusaurus report-to-lark -type text -m "🔥 Japanese translation or build failed! Please check the logs."
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
