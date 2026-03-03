@@ -38,7 +38,7 @@ function cleanText(str) {
  * Build a canonical URL from frontmatter slug or file path.
  * @param {Record<string, any>} fm
  * @param {string} filePath     Absolute path to the .md file
- * @param {string} sectionDir   Absolute path to the section root dir
+ * @param {string} sectionDir   Absolute path to the source root dir
  * @param {string} route        URL route prefix, e.g. "/docs"
  * @param {string} siteUrl      Base URL, e.g. "https://docs.zilliz.com"
  */
@@ -47,7 +47,6 @@ function buildUrl(fm, filePath, sectionDir, route, siteUrl) {
     const slug = String(fm.slug).replace(/^\//, '');
     return `${siteUrl}${route}/${slug}`.replace(/([^:])\/\/+/g, '$1/');
   }
-  // Derive from path relative to section dir's parent (so route aligns)
   const rel = path.relative(path.dirname(sectionDir), filePath)
     .replace(/\.mdx?$/, '')
     .replace(/\\/g, '/');
@@ -55,181 +54,216 @@ function buildUrl(fm, filePath, sectionDir, route, siteUrl) {
 }
 
 /**
- * Collect all items from a section directory.
- *
- * Rules:
- *  - The section index file itself ({dirname}/{dirname}.md) is skipped.
- *  - Direct .md/.mdx files → each becomes an item.
- *  - Sub-directories that contain a same-name .md file → collapsed to
- *    a single item using that index file.
- *  - Sub-directories without a same-name .md file → recursed for more items.
- *
- * @param {string} sectionDir  Absolute path to the section root directory
- * @param {string} indexFile   Absolute path to the section's own index file (to skip)
- * @param {string} route
- * @param {string} siteUrl
- * @returns {{ title: string, url: string, description: string, position: number }[]}
+ * Strip MDX-specific syntax from raw markdown content, leaving clean prose + code blocks.
+ * Processes line-by-line, preserving fenced code blocks as-is.
+ * @param {string} rawContent
+ * @returns {string}
  */
-function collectItems(sectionDir, indexFile, route, siteUrl) {
-  const items = [];
+function stripMdxBody(rawContent) {
+  // Remove frontmatter block
+  const noFrontmatter = rawContent.replace(/^---[\s\S]*?^---[ \t]*\n/m, '');
 
-  const walk = (dir) => {
-    let entries;
-    try {
-      entries = fs.readdirSync(dir, { withFileTypes: true });
-    } catch {
-      return;
+  const lines = noFrontmatter.split('\n');
+  const out = [];
+  let inCodeFence = false;
+
+  for (let line of lines) {
+    // Track fenced code blocks (``` or ~~~); do not process MDX inside them
+    if (/^(`{3,}|~{3,})/.test(line)) {
+      inCodeFence = !inCodeFence;
+      out.push(line);
+      continue;
+    }
+    if (inCodeFence) {
+      out.push(line);
+      continue;
     }
 
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
+    // Remove JS/TS import statements (MDX component imports)
+    if (/^import\s+.+\s+from\s+['"]/.test(line)) continue;
 
-      if (entry.isDirectory()) {
-        const subIndex = ['.md', '.mdx']
-          .map((ext) => path.join(fullPath, entry.name + ext))
-          .find(fs.existsSync);
+    // Remove <Tabs> / </Tabs> wrapper tags
+    if (/^<\/?(Tabs)[\s/>]/.test(line) || line.trim() === '</Tabs>') continue;
 
-        if (subIndex) {
-          // Collapsed entry: use the sub-directory's own index file
-          const fm = parseFrontmatter(subIndex);
-          const title = fm.sidebar_label || fm.title;
-          if (title) {
-            items.push({
-              title: cleanText(String(title)),
-              url: buildUrl(fm, subIndex, sectionDir, route, siteUrl),
-              description: fm.description ? cleanText(String(fm.description)) : '',
-              position: Number(fm.sidebar_position) || 999,
-            });
-          }
-        } else {
-          // No same-name index — recurse to pick up loose .md files inside
-          walk(fullPath);
-        }
-        continue;
-      }
-
-      if (!entry.name.endsWith('.md') && !entry.name.endsWith('.mdx')) continue;
-      if (fullPath === indexFile) continue; // skip the section index itself
-
-      const fm = parseFrontmatter(fullPath);
-      const title = fm.sidebar_label || fm.title;
-      if (!title) continue;
-
-      items.push({
-        title: cleanText(String(title)),
-        url: buildUrl(fm, fullPath, sectionDir, route, siteUrl),
-        description: fm.description ? cleanText(String(fm.description)) : '',
-        position: Number(fm.sidebar_position) || 999,
-      });
+    // <TabItem value="python"> → **Python:** label
+    const tabMatch = line.match(/^<TabItem\s[^>]*value=['"]([^'"]+)['"]/);
+    if (tabMatch) {
+      out.push(`**${tabMatch[1]}:**`);
+      continue;
     }
-  };
+    // </TabItem>
+    if (/^<\/TabItem>/.test(line)) continue;
 
-  walk(sectionDir);
-  return items.sort((a, b) => a.position - b.position);
+    // <Admonition type="..." title="Note"> → > **Note**
+    const admonMatch = line.match(/^<Admonition[^>]*title="([^"]*)"[^>]*>/);
+    if (admonMatch) {
+      out.push(`> **${admonMatch[1]}**`);
+      continue;
+    }
+    // </Admonition>
+    if (/^<\/Admonition>/.test(line)) continue;
+
+    // <Supademo .../> → [Interactive demo]
+    if (/^<Supademo[\s/]/.test(line)) {
+      out.push('[Interactive demo]');
+      continue;
+    }
+
+    // Remove <DocCardList />, <Procedures>, </Procedures>
+    if (/^<DocCardList[\s/>]/.test(line)) continue;
+    if (/^<\/?(Procedures)[\s/>]/.test(line) || line.trim() === '</Procedures>') continue;
+
+    // Remove bare <ul>, </ul>, <table>, </table> wrapper tags
+    if (/^<\/?(ul|table)>/.test(line.trim())) continue;
+
+    // Strip anchor IDs from headings: \{#id} or {#id}
+    line = line.replace(/\\?\{#[a-z0-9-]+\}/g, '').trimEnd();
+
+    // <li><p>content</p></li> → - content
+    line = line.replace(/^<li><p>(.*?)<\/p><\/li>$/, '- $1');
+    // <li>content</li> → - content
+    line = line.replace(/^<li>(.*?)<\/li>$/, '- $1');
+
+    // Strip bare <p> / </p> tags
+    line = line.replace(/^<p>/, '').replace(/<\/p>$/, '');
+
+    out.push(line);
+  }
+
+  return out.join('\n').replace(/\n{3,}/g, '\n\n').trim();
 }
 
 /**
- * Scan a source folder for sections (immediate subdirs with a same-name .md file).
- *
- * @param {string} sourceDir  Absolute path to the folder containing section subdirs
- * @param {string} route         URL route prefix
- * @param {string} siteUrl
- * @param {string} [sectionPrefix]  Optional prefix prepended to every section label, e.g. "BYOC"
- * @returns {{ label: string, description: string, position: number, items: ReturnType<typeof collectItems> }[]}
+ * Recursively walk all .md/.mdx files in a directory, sorted by sidebar_position
+ * at each level before descending into subdirectories.
+ * @param {string} dir
+ * @returns {string[]}
  */
-function collectSections(sourceDir, route, siteUrl, sectionPrefix) {
-  const sections = [];
-
+function walkAllFiles(dir) {
   let entries;
   try {
-    entries = fs.readdirSync(sourceDir, { withFileTypes: true });
+    entries = fs.readdirSync(dir, { withFileTypes: true });
   } catch {
-    console.warn(`[llms-txt] Source directory not found: ${sourceDir}`);
-    return sections;
+    return [];
   }
+
+  /** @type {{ path: string, pos: number }[]} */
+  const files = [];
+  const subdirs = [];
 
   for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-
-    const sectionDir = path.join(sourceDir, entry.name);
-    const indexFile = ['.md', '.mdx']
-      .map((ext) => path.join(sectionDir, entry.name + ext))
-      .find(fs.existsSync);
-
-    // When no same-name index file exists, still create a section using the dir name
-    const fm = indexFile ? parseFrontmatter(indexFile) : {};
-    const rawLabel = fm.sidebar_label || fm.title || entry.name;
-    let label = sectionPrefix
-      ? `${sectionPrefix}: ${cleanText(String(rawLabel))}`
-      : cleanText(String(rawLabel));
-
-    // Append beta tag if present and not falsy/FALSE
-    const betaVal = fm.beta;
-    if (betaVal && betaVal !== false) {
-      label = `${label} (${betaVal})`;
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      subdirs.push(fullPath);
+    } else if (entry.name.endsWith('.md') || entry.name.endsWith('.mdx')) {
+      const pos = Number(parseFrontmatter(fullPath).sidebar_position) || 999;
+      files.push({ path: fullPath, pos });
     }
-
-    sections.push({
-      label: cleanText(String(label)),
-      description: fm.description ? cleanText(String(fm.description)) : '',
-      position: Number(fm.sidebar_position) || 999,
-      items: collectItems(sectionDir, indexFile || '', route, siteUrl),
-    });
   }
 
-  return sections.sort((a, b) => a.position - b.position);
+  files.sort((a, b) => a.pos - b.pos);
+
+  const result = files.map((f) => f.path);
+  for (const sub of subdirs) {
+    result.push(...walkAllFiles(sub));
+  }
+  return result;
 }
 
 /**
- * Render sections to llms.txt markdown format.
- * @param {ReturnType<typeof collectSections>} regularSections
- * @param {ReturnType<typeof collectSections>} optionalSections
+ * Build full concatenated content for one source (all pages as markdown blocks).
+ * Each page block is separated by a --- divider.
+ * @param {string} sourceDir
+ * @param {string} route
+ * @param {string} siteUrl
+ * @returns {{ content: string, count: number }}
+ */
+function buildSectionContent(sourceDir, route, siteUrl) {
+  const files = walkAllFiles(sourceDir);
+  const parts = [];
+
+  for (const filePath of files) {
+    let raw;
+    try {
+      raw = fs.readFileSync(filePath, 'utf-8');
+    } catch {
+      continue;
+    }
+
+    const fm = parseFrontmatter(filePath);
+    const title = fm.sidebar_label || fm.title;
+    if (!title) continue;
+
+    const url = buildUrl(fm, filePath, sourceDir, route, siteUrl);
+    const body = stripMdxBody(raw);
+
+    // Remove the leading H1 from the stripped body to avoid duplication
+    // (the page body typically opens with # Title, which we emit ourselves)
+    const cleanedTitle = cleanText(String(title));
+    const bodyLines = body.split('\n');
+    const deduped = bodyLines[0] === `# ${cleanedTitle}`
+      ? bodyLines.slice(1).join('\n').trimStart()
+      : body;
+
+    parts.push(`# ${cleanedTitle}\n\nURL: ${url}\n\n${deduped}`);
+  }
+
+  return {
+    content: parts.join('\n\n---\n\n'),
+    count: parts.length,
+  };
+}
+
+/**
+ * Render the slim root llms.txt that links to per-section content files.
+ * @param {{ label: string, outputFile: string, optional?: boolean }[]} sources
+ * @param {string} outDirUrl  Full URL prefix for section files, e.g. "https://docs.zilliz.com/llms"
  * @param {string} header
  * @param {string} summary
  */
-function render(regularSections, optionalSections, header, summary) {
+function renderRoot(sources, outDirUrl, header, summary) {
   const lines = [`# ${header}`, ''];
 
   if (summary) {
     lines.push(`> ${summary}`, '');
   }
 
-  for (const { label, items } of regularSections) {
-    lines.push(`## ${label}`);
-    for (const { title, url, description } of items) {
-      lines.push(`- [${title}](${url})${description ? ': ' + description : ''}`);
+  const regular = sources.filter((s) => !s.optional);
+  const optional = sources.filter((s) => s.optional);
+
+  for (const { label, outputFile } of regular) {
+    lines.push(`- [${label}](${outDirUrl}/${outputFile}.txt)`);
+  }
+  if (regular.length) lines.push('');
+
+  if (optional.length > 0) {
+    lines.push('## Optional', '');
+    for (const { label, outputFile } of optional) {
+      lines.push(`- [${label}](${outDirUrl}/${outputFile}.txt)`);
     }
     lines.push('');
-  }
-
-  if (optionalSections.length > 0) {
-    lines.push('## Optional', '');
-    for (const { label, items } of optionalSections) {
-      lines.push(`## ${label}`);
-      for (const { title, url, description } of items) {
-        lines.push(`- [${title}](${url})${description ? ': ' + description : ''}`);
-      }
-      lines.push('');
-    }
   }
 
   return lines.join('\n');
 }
 
 /**
- * Docusaurus plugin: generates llms.txt at postBuild from source markdown files.
+ * Docusaurus plugin: generates a slim root llms.txt + per-section full-content files.
  *
  * Configuration:
- *   sources      — array of `{ folder, route }` where `folder` is the directory
- *                  that directly contains section sub-folders (each sub-folder
- *                  must have a same-name .md file as its index).
- *   outputPaths  — paths relative to outDir to write (default: ['llms.txt']).
- *
- * Header and summary are derived automatically from siteConfig.title / tagline.
+ *   sources     — array of source descriptors:
+ *                   folder      {string}   directory containing the docs (relative to siteDir)
+ *                   route       {string}   URL route prefix, e.g. "/docs"
+ *                   outputFile  {string}   filename (without extension) for the section file
+ *                   label       {string}   display name used in root llms.txt link
+ *                   optional    {boolean}  if true, listed under ## Optional in root file
+ *   outputDir   — subdirectory (relative to outDir) for section files (default: 'llms')
+ *   outputPaths — paths relative to outDir for the root index file (default: ['llms.txt'])
  */
 module.exports = function pluginLlmsTxt(context, options) {
   const {
-    sources = /** @type {{ folder: string, route: string, sectionPrefix?: string, optional?: boolean }[]} */ ([]),
+    sources = /** @type {{ folder: string, route: string, outputFile?: string, label?: string, sectionPrefix?: string, optional?: boolean }[]} */ ([]),
+    outputDir = 'llms',
     outputPaths = /** @type {string[]} */ (['llms.txt']),
   } = options || {};
 
@@ -240,33 +274,39 @@ module.exports = function pluginLlmsTxt(context, options) {
       const siteUrl = siteConfig.url;
       const header = siteConfig.title;
       const summary = siteConfig.tagline || '';
+      const outDirUrl = `${siteUrl}/${outputDir}`;
 
-      // Collect sections from all sources, split into regular and optional
-      const regularSections = [];
-      const optionalSections = [];
-      for (const { folder, route, sectionPrefix, optional } of sources) {
-        const sections = collectSections(path.join(siteDir, folder), route, siteUrl, sectionPrefix);
-        if (optional) {
-          optionalSections.push(...sections);
-        } else {
-          regularSections.push(...sections);
-        }
+      // Normalize sources: fill in defaults for label and outputFile
+      const normalized = sources.map((s) => ({
+        ...s,
+        outputFile: s.outputFile || path.basename(s.folder),
+        label: s.label || s.sectionPrefix || path.basename(s.folder),
+      }));
+
+      // Write per-section full content files
+      let totalPages = 0;
+      for (const { folder, route, outputFile } of normalized) {
+        const sourceDir = path.join(siteDir, folder);
+        const { content, count } = buildSectionContent(sourceDir, route, siteUrl);
+        const dest = path.join(outDir, outputDir, `${outputFile}.txt`);
+        fs.mkdirSync(path.dirname(dest), { recursive: true });
+        fs.writeFileSync(dest, content, 'utf-8');
+        totalPages += count;
+        console.log(`[llms-txt] ${dest} — ${count} pages`);
       }
 
-      const allSections = [...regularSections, ...optionalSections];
-      const content = render(regularSections, optionalSections, header, summary);
-
+      // Write root slim index
+      const rootContent = renderRoot(normalized, outDirUrl, header, summary);
       for (const rel of outputPaths) {
         const dest = path.join(outDir, rel);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
-        fs.writeFileSync(dest, content, 'utf-8');
+        fs.writeFileSync(dest, rootContent, 'utf-8');
       }
 
-      const totalItems = allSections.reduce((n, s) => n + s.items.length, 0);
       const writtenPaths = outputPaths.map((rel) => path.join(outDir, rel));
       console.log(
-        `[llms-txt] Wrote ${writtenPaths.join(', ')} — ` +
-        `${allSections.length} sections, ${totalItems} items.`
+        `[llms-txt] Root index: ${writtenPaths.join(', ')} — ` +
+        `${normalized.length} sections, ${totalPages} total pages.`
       );
     },
   };

@@ -146,16 +146,17 @@ const config = {
     [
       './plugins/llms-txt',
       {
-        sources: [
-          { folder: 'docs/tutorials',                           route: '/docs' },
-          { folder: 'versioned_docs/version-byoc/tutorials',    route: '/docs/byoc',        sectionPrefix: 'BYOC' },
-          { folder: 'reference/api/python/python',              route: '/reference/python',  sectionPrefix: 'Python SDK',  optional: true },
-          { folder: 'reference/api/go/go',                      route: '/reference/go',      sectionPrefix: 'Go SDK',      optional: true },
-          { folder: 'reference/api/java/java',                  route: '/reference/java',    sectionPrefix: 'Java SDK',    optional: true },
-          { folder: 'reference/api/nodejs/nodejs',              route: '/reference/nodejs',  sectionPrefix: 'Node.js SDK', optional: true },
-          { folder: 'reference/api/restful/restful',            route: '/reference/restful', sectionPrefix: 'RESTful API', optional: true },
-        ],
+        outputDir: 'llms',
         outputPaths: ['llms.txt', 'docs/llms.txt'],
+        sources: [
+          { folder: 'docs/tutorials',                           route: '/docs',             outputFile: 'tutorials', label: 'Tutorials' },
+          { folder: 'versioned_docs/version-byoc/tutorials',    route: '/docs/byoc',        outputFile: 'byoc',      label: 'BYOC Tutorials' },
+          { folder: 'reference/api/python/python',              route: '/reference/python',  outputFile: 'python',    label: 'Python SDK Reference',  optional: true },
+          { folder: 'reference/api/go/go',                      route: '/reference/go',      outputFile: 'go',        label: 'Go SDK Reference',      optional: true },
+          { folder: 'reference/api/java/java',                  route: '/reference/java',    outputFile: 'java',      label: 'Java SDK Reference',    optional: true },
+          { folder: 'reference/api/nodejs/nodejs',              route: '/reference/nodejs',  outputFile: 'nodejs',    label: 'Node.js SDK Reference', optional: true },
+          { folder: 'reference/api/restful/restful',            route: '/reference/restful', outputFile: 'restful',   label: 'RESTful API Reference', optional: true },
+        ],
       },
     ],
     [
