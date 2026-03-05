@@ -39,6 +39,7 @@ jobs:
         npx docusaurus translate-i18n --locale ja-JP
         npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials
         npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials
+        npx docusaurus translate-i18n --validate-and-revert --locale ja-JP
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -51,17 +52,6 @@ jobs:
       with:
         branch: dev
         push_options: --force
-    - name: build docsite
-      run: |
-        npx docusaurus report-to-lark -type text -m "🔥 Translations done! Verifying build..."
-        npm run build
-      env:
-        APP_ID: ${{ secrets.APP_ID }}
-        APP_SECRET: ${{ secrets.APP_SECRET }}
-        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
-        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
-        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
-        MODEL_ID: ${{ vars.MODEL_ID }}
 
   failure:
     needs: translate

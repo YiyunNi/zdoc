@@ -710,4 +710,80 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
   console.log(`[i18n-translator] Done. translated=${translated} skipped=${skipped} removed=${removed}`)
 }
 
-module.exports = { run }
+// ---------------------------------------------------------------------------
+// Validate translated files and revert broken ones
+// ---------------------------------------------------------------------------
+
+/**
+ * After translate-i18n + mdx-parse have run, compile every translated file
+ * with @mdx-js/mdx. Files that still fail are:
+ *   1. Reverted to their last committed state (git checkout HEAD -- <file>),
+ *      or deleted if they were never committed (new file).
+ *   2. Removed from both cache tables so the next translate-i18n run
+ *      calls the LLM fresh instead of replaying the cached bad result.
+ *
+ * @param {{ sources: Array<{folder,destFolder}>, siteDir: string, locale: string, dbPath: string }} opts
+ */
+async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
+  const { compile } = await import('@mdx-js/mdx')
+  const { spawnSync } = require('child_process')
+  const cache = await new TranslationCache(dbPath).ready()
+
+  let reverted = 0
+  let kept = 0
+
+  for (const { folder, destFolder } of sources) {
+    if (!fs.existsSync(destFolder)) continue
+    const destFiles = walkDir(destFolder)
+
+    for (const destPath of destFiles) {
+      const content = fs.readFileSync(destPath, 'utf8')
+
+      let valid = true
+      try {
+        await compile(content, { development: false })
+      } catch {
+        valid = false
+      }
+
+      if (valid) {
+        kept++
+        continue
+      }
+
+      // --- Revert the file ---
+      const relDest = path.relative(siteDir, destPath)
+      const gitShow = spawnSync('git', ['show', `HEAD:${relDest}`], { encoding: 'utf8', cwd: siteDir })
+      if (gitShow.status === 0 && gitShow.stdout) {
+        fs.writeFileSync(destPath, gitShow.stdout, 'utf8')
+        console.warn(`[i18n-translator] reverted broken translation: ${relDest}`)
+      } else {
+        // New file — not in HEAD, just delete so it won't be committed
+        fs.unlinkSync(destPath)
+        console.warn(`[i18n-translator] deleted broken new translation: ${relDest}`)
+      }
+
+      // --- Invalidate cache so next run retranslates from LLM ---
+      // Map dest path → source relPath (key used in i18n_file_manifest)
+      const relFromDest = path.relative(destFolder, destPath)
+      const sourcePath = path.join(folder, relFromDest)
+      const relPath = path.relative(siteDir, sourcePath)
+
+      const record = await cache.getFileRecord(relPath, locale)
+      if (record) {
+        await cache.deleteTranslation(record.sourceHash, locale, record.glossaryHash)
+        await cache.deleteFileRecord(relPath, locale)
+      }
+
+      reverted++
+    }
+  }
+
+  await cache.close()
+  console.log(`[i18n-translator] validate-and-revert done. kept=${kept} reverted=${reverted}`)
+  if (reverted > 0) {
+    console.log(`[i18n-translator] ${reverted} file(s) reverted — will be retried on next translation run.`)
+  }
+}
+
+module.exports = { run, validateAndRevert }

@@ -1,6 +1,6 @@
 'use strict'
 
-const { run } = require('./translator')
+const { run, validateAndRevert } = require('./translator')
 
 module.exports = function i18nTranslatorPlugin(context) {
   return {
@@ -19,7 +19,29 @@ module.exports = function i18nTranslatorPlugin(context) {
         .option('--file <path>', 'Translate a single file and print result to stdout (use with --dry-run to preview without writing)')
         .option('--clear-cache', 'Clear the translation cache for the given locale before running')
         .option('--audit', 'Check existing translated files for quality issues (no LLM calls)')
+        .option('--validate-and-revert', 'Revert any translated files that still fail MDX compilation (run after mdx-parse)')
         .action(async opts => {
+          if (opts.validateAndRevert) {
+            const path = require('path')
+            const sources = [
+              {
+                folder:     path.join(context.siteDir, 'docs/tutorials'),
+                destFolder: path.join(context.siteDir, 'i18n', opts.locale, 'docusaurus-plugin-content-docs/current/tutorials'),
+              },
+              {
+                folder:     path.join(context.siteDir, 'versioned_docs/version-byoc/tutorials'),
+                destFolder: path.join(context.siteDir, 'i18n', opts.locale, 'docusaurus-plugin-content-docs/version-byoc/tutorials'),
+              },
+            ]
+            await validateAndRevert({
+              sources,
+              siteDir:  context.siteDir,
+              locale:   opts.locale,
+              dbPath:   path.join(context.siteDir, 'translation.db'),
+            })
+            return
+          }
+
           await run({
             siteDir:      context.siteDir,
             locale:       opts.locale,

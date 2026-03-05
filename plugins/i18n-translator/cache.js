@@ -91,6 +91,14 @@ class TranslationCache {
     )
   }
 
+  async deleteTranslation(sourceHash, locale, glossaryHash) {
+    await this._ready
+    await this._run(
+      'DELETE FROM i18n_translation_cache WHERE source_hash = ? AND locale = ? AND glossary_hash = ?',
+      [sourceHash, locale, glossaryHash]
+    )
+  }
+
   async getAllTrackedFiles(locale) {
     await this._ready
     const rows = await this._all(
