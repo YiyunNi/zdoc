@@ -10,17 +10,17 @@ notebook: FALSE
 description: "This guide demonstrates how to use Zilliz Cloud clusters to perform operations related to high-performance semantic search. | BYOC"
 type: origin
 token: GQN0wDCrni4n36kyeVQcF41Lned
-sidebar_position: 7
+sidebar_position: 8
 keywords: 
   - zilliz
   - vector database
   - quickstart
   - cloud
   - milvus
-  - Context Window
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
 
 ---
 
@@ -62,13 +62,17 @@ Before going through this quick start, ensure that:
 
     - [Deploy BYOC-I on AWS](./deploy-byoc-i-aws)
 
+    - [Deploy BYOC on GCP](./deploy-byoc-gcp)
+
     If your cloud provider is not available above, contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
 
-The following steps assume that you have already created a cluster, obtained the API key or the cluster credentials, and installed your preferred SDK.
+- You have determined the way to connect to your BYOC cluster. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
+
+The following steps assume that you have already created a cluster, obtained the cluster credentials, and installed your preferred SDK.
 
 ## Set up Connection\{#set-up-connection}
 
-Once you have obtained the cluster credentials or an API key, you can use it to connect to your cluster now.
+Once you have obtained the cluster credentials, you can use it to connect to your cluster now.
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -78,8 +82,8 @@ from pymilvus import MilvusClient, DataType
 
 CLUSTER_ENDPOINT = "YOUR_CLUSTER_ENDPOINT"
 TOKEN = "YOUR_CLUSTER_TOKEN" 
-# A valid token could be either
-# - An API key, or 
+# A valid token could be 
+# 
 # - A colon-joined cluster username and password, as in `user:pass`
 
 # 1. Set up a Milvus client
@@ -99,8 +103,8 @@ import io.milvus.v2.client.ConnectConfig;
 
 String CLUSTER_ENDPOINT = "YOUR_CLUSTER_ENDPOINT";
 String TOKEN = "YOUR_CLUSTER_TOKEN";
-// A valid token could be either
-// - An API key, or 
+// A valid token could be 
+// 
 // - A colon-joined cluster username and password, as in `user:pass`
 
 // 1. Connect to Milvus server
@@ -130,10 +134,10 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
-APIKey := "YOUR_API_KEY"
-// Or you can use the cluster credentials to authenticate
-// Username := "YOUR_CLUSTER_USERNAME"
-// Password := "YOUR_CLUSTER_PASSWORD"
+APIKey := "YOUR_CLUSTER_TOKEN"
+// A valid token could be 
+// 
+// - A colon-joined cluster username and password, as in `user:pass`
 
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
@@ -155,8 +159,8 @@ const { MilvusClient, DataType, sleep } = require("@zilliz/milvus2-sdk-node")
 
 const address = "YOUR_CLUSTER_ENDPOINT"
 const token = "YOUR_CLUSTER_TOKEN"
-// A valid token could be either
-// - An API key, or 
+// A valid token could be 
+// 
 // - A colon-joined cluster username and password, as in `user:pass`
 
 // 1. Connect to the cluster
@@ -170,8 +174,8 @@ const client = new MilvusClient({address, token})
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
 export CLUSTER_TOKEN="YOUR_CLUSTER_TOKEN"
-# A valid token could be either
-# - An API key, or 
+# A valid token could be 
+# 
 # - A colon-joined cluster username and password, as in `user:pass`
 ```
 

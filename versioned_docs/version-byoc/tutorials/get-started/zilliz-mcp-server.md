@@ -10,7 +10,7 @@ notebook: FALSE
 description: "Zilliz Cloud provides an MCP server](https//github.com/zilliztech/zilliz-mcp-server/tree/master) that enables AI agents to interact with Zilliz Cloud seamlessly through the standardized [Model Context Protocol (MCP). This page guides you through setting up the Zilliz MCP Server locally and using it with your preferred AI agents. | BYOC"
 type: origin
 token: WRFqwygyNiZ0YJkmsfwcGEsSn4d
-sidebar_position: 14
+sidebar_position: 15
 keywords: 
   - zilliz
   - vector database
@@ -18,10 +18,10 @@ keywords:
   - mcp
   - milvus
   - mcp server
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
+  - semantic search
+  - Anomaly Detection
+  - sentence transformers
+  - Recommender systems
 
 ---
 
@@ -37,10 +37,6 @@ Zilliz Cloud provides an [MCP server](https://github.com/zilliztech/zilliz-mcp-s
 ## Before you start\{#before-you-start}
 
 Ensure that you have
-
-- Obtained a Zilliz Cloud API key. 
-
-    You can create a one by following the guides on [this page](./manage-api-keys#create-an-api-key).
 
 - Installed Python 3.10 or a later version.
 
@@ -74,7 +70,7 @@ You can configure Zilliz MCP Server in either of the following modes:
 
 In this mode, Zilliz MCP Server is running locally along with your preferred AI agent on the same machine, and the AI agent manages Zilliz MCP Server's lifecycle directly. 
 
-Once you have installed Python and uv on the machine where your AI agent runs, you can use the following server configuration after you replace `YOUR-API-KEY` with a valid Zilliz Cloud API key that has sufficient permissions. 
+Once you have installed Python and uv on the machine where your AI agent runs, you can use the following server configuration after you replace `YOUR-CLUSTER-TOKEN` with a colon-joined cluster user name and password, as in `user:pass`, that has sufficient permissions. 
 
 ```json
 {
@@ -83,7 +79,7 @@ Once you have installed Python and uv on the machine where your AI agent runs, y
       "command": "uvx",
       "args": ["zilliz-mcp-server"],
       "env": {
-          "ZILLIZ_CLOUD_TOKEN": "YOUR-API-KEY"
+          "ZILLIZ_CLOUD_TOKEN": "YOUR-CLUSTER-TOKEN"
       }
     }
   }
@@ -109,9 +105,9 @@ If you prefer to share Zilliz MCP Server among multiple AI agents running on dif
     cp example.env .env
     ```
 
-1. Add your Zilliz Cloud API key to the **.env** file.
+1. Add your Zilliz Cloud cluster token to the **.env** file.
 
-    The **.env** file is similar to the following. Append a valid Zilliz Cloud API key with sufficient permissions to the end of `ZILLIZ_CLOUD_TOKEN=`.
+    The **.env** file is similar to the following. Append a colon-joined cluster user name and password, as in `user:pass`, with sufficient permissions to the end of `ZILLIZ_CLOUD_TOKEN=`.
 
     ```bash
     # Zilliz MCP Server Configuration
