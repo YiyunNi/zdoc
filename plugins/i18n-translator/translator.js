@@ -385,6 +385,20 @@ async function translateFile({
 
   outputBody = await translateBody(body, glossary, untranslatables, llmConfig, limiter, cache, locale, glossaryHash, force)
 
+  // Inject sidebar_key into category index docs (filename == parent folder name).
+  // Docusaurus derives the sidebar i18n key from sidebar_label, so two categories
+  // translated to the same Japanese label (e.g. "ベストプラクティス") produce
+  // duplicate keys and crash the locale build. sidebar_key overrides the key with
+  // a path-derived value that is unique by construction.
+  if (frontmatter && !outputFrontmatter.includes('sidebar_key:')) {
+    const fileBase = path.basename(sourcePath, path.extname(sourcePath))
+    const folderName = path.basename(path.dirname(sourcePath))
+    if (fileBase === folderName) {
+      const sidebarKey = path.dirname(relPath).replace(/^.*\/tutorials\//, '')
+      outputFrontmatter += `\nsidebar_key: "${sidebarKey}"`
+    }
+  }
+
   const output = frontmatter
     ? `---\n${outputFrontmatter}\n---\n${outputBody}`
     : outputBody
@@ -430,6 +444,53 @@ async function translateFile({
   await cache.setFileRecord(relPath, locale, sourceHash, glossaryHash)
 
   console.log(`[i18n-translator]   ✓ ${relPath}${issues.length ? ' ⚠' : ''}`)
+}
+
+// ---------------------------------------------------------------------------
+// sidebar_key back-fill
+// ---------------------------------------------------------------------------
+
+/**
+ * Scan all category index docs in the translated dest folders and inject a
+ * unique sidebar_key if one is missing. This fixes existing translated files
+ * that were written before this logic was added, without requiring a full
+ * retranslation.
+ *
+ * A category index doc is any file where basename(file) == basename(dir),
+ * e.g. best-practices/best-practices.md.
+ */
+function backfillSidebarKeys(sources, siteDir, locale) {
+  let patched = 0
+  for (const { folder, destFolder } of sources) {
+    if (!fs.existsSync(destFolder)) continue
+    const destFiles = walkDir(destFolder)
+    for (const destFilePath of destFiles) {
+      const fileBase = path.basename(destFilePath, path.extname(destFilePath))
+      const folderName = path.basename(path.dirname(destFilePath))
+      if (fileBase !== folderName) continue
+
+      const content = fs.readFileSync(destFilePath, 'utf8')
+      if (content.includes('sidebar_key:')) continue
+
+      // Derive sidebar_key from the source-side relative path
+      const relDestPath = path.relative(destFolder, destFilePath)
+      const sourcePath = path.join(folder, relDestPath)
+      const relSourcePath = path.relative(siteDir, sourcePath)
+      const sidebarKey = path.dirname(relSourcePath).replace(/^.*\/tutorials\//, '')
+
+      // Insert sidebar_key after the last frontmatter field (before closing ---)
+      const patched_content = content.replace(
+        /^(---\n[\s\S]*?)(---)/m,
+        (_, fm, close) => `${fm}sidebar_key: "${sidebarKey}"\n${close}`
+      )
+      if (patched_content !== content) {
+        fs.writeFileSync(destFilePath, patched_content, 'utf8')
+        console.log(`[i18n-translator]   🔑 sidebar_key added: ${relDestPath}`)
+        patched++
+      }
+    }
+  }
+  if (patched > 0) console.log(`[i18n-translator] sidebar_key back-fill: ${patched} file(s) patched`)
 }
 
 // ---------------------------------------------------------------------------
@@ -639,6 +700,10 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
       }
     }
   }
+
+  // Back-fill sidebar_key on any existing category index docs that predate this
+  // logic — prevents "duplicate translation key" crashes on locale builds.
+  if (!dryRun) backfillSidebarKeys(sources, siteDir, locale)
 
   await cache.close()
 

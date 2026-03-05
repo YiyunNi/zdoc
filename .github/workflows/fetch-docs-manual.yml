@@ -39,6 +39,7 @@ jobs:
     - name: restore japanese translations from dev
       run: |
         git fetch origin dev 2>/dev/null || true
+        rm -rf i18n/
         git checkout origin/dev -- i18n/ 2>/dev/null || true
     - name: build docsite
       run: |
