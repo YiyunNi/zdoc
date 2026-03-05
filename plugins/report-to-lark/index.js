@@ -1,56 +1,212 @@
 const fetch = require('node-fetch')
-const { URL } = require('node:url')
-const tokenFetcher = require('../lark-docs/larkTokenFetcher')
+const path = require('node:path')
+const fs = require('node:fs')
 const { v4: uuidv4 } = require('uuid')
+const tokenFetcher = require('../lark-docs/larkTokenFetcher')
 require('dotenv/config')
 
-module.exports = function (context, options) {
-    return {
-        name: "report-to-lark",
-        extendCli(cli) {
-            cli.command('report-to-lark')
-               .description('Send messages to lark')
-               .option('-rId, --receiveId <receiveId>', 'A unique ID for the message receiver, possible types are open_id, user_id, union_id, email, chat_id', context.siteConfig.plugins.filter(plugin => plugin[0].includes('report-to-lark'))[0][1].receiveId)
-               .option('-type, --type <type>', 'message type, possible types are text or interactive', 'interactive')
-               .option('-cId, --cardId <cardId>', 'message card id', context.siteConfig.plugins.filter(plugin => plugin[0].includes('report-to-lark'))[0][1].cardId)
-               .option('-cVer, --cardVersion <cardVersion>', 'message card version', context.siteConfig.plugins.filter(plugin => plugin[0].includes('report-to-lark'))[0][1].cardVersion)
-               .option('-m, --msg <message>', 'message')
-               .action(async (options) => {
-                    const receiveId = options.receiveId
-                    const msgType = options.type
-                    const cardId = options.cardId
-                    const cardVersion = options.cardVersion
-                    const message = options.msg
-                    const FEISHU_HOST = process.env.FEISHU_HOST
+// ---------------------------------------------------------------------------
+// Build-progress card helpers
+// ---------------------------------------------------------------------------
 
-                    const fetcher = new tokenFetcher()
-                    await fetcher.fetchToken()
+const CARD_STATE_FILE = '.build-card-state.json'
+const EMOJI = { pending: '⬜', running: '⏳', done: '✅', fail: '❌' }
 
-                    const token = await fetcher.token()
+function buildCardContent(state) {
+  const lines = state.stages.map((name, i) => {
+    const s = state.statuses[i] || 'pending'
+    const e = EMOJI[s] || '⬜'
+    return s === 'running' ? `${e} **${name}**` : `${e} ${name}`
+  })
+  if (state.notes && state.notes.length) {
+    lines.push('', ...state.notes.map(n => `> ${n}`))
+  }
 
-                    const content = msgType === 'text'? {
-                        text: message
-                    }: {
-                        template_id: cardId,
-                        template_version_name: cardVersion,
-                    }
+  const hasFail = state.statuses.some(s => s === 'fail')
+  const allDone = state.stages.length > 0 && state.statuses.every(s => s === 'done')
+  const template = hasFail ? 'red' : allDone ? 'green' : 'blue'
 
-                    const res = await fetch(`${FEISHU_HOST}/open-apis/im/v1/messages?receive_id_type=chat_id`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json; charset=utf-8',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({
-                            receive_id: receiveId,
-                            msg_type: msgType,
-                            content: JSON.stringify(content),
-                            uuid: uuidv4()
-                        })
-                    })
+  const started = new Date(state.startedAt)
+  const sec = Math.round((Date.now() - started.getTime()) / 1000)
+  const elapsed = sec < 60 ? `${sec}s` : `${Math.floor(sec / 60)}m ${sec % 60}s`
 
-                    console.log((await res.json()).msg)    
-               })
-        }
-    }
+  return JSON.stringify({
+    config: { wide_screen_mode: true },
+    header: { title: { tag: 'plain_text', content: state.title }, template },
+    elements: [
+      { tag: 'div', text: { tag: 'lark_md', content: lines.join('\n') } },
+      { tag: 'note', elements: [{ tag: 'plain_text', content: `Started ${started.toUTCString()} · ${elapsed} elapsed` }] },
+    ],
+  })
+}
+
+function loadState(siteDir) {
+  const p = path.join(siteDir, CARD_STATE_FILE)
+  if (!fs.existsSync(p)) return null
+  try { return JSON.parse(fs.readFileSync(p, 'utf8')) } catch { return null }
+}
+
+function saveState(siteDir, state) {
+  fs.writeFileSync(path.join(siteDir, CARD_STATE_FILE), JSON.stringify(state, null, 2))
+}
+
+async function patchCard(token, messageId, state, feishuHost) {
+  const res = await fetch(`${feishuHost}/open-apis/im/v1/messages/${messageId}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json; charset=utf-8', Authorization: `Bearer ${token}` },
+    body: JSON.stringify({ msg_type: 'interactive', content: buildCardContent(state) }),
+  })
+  return res.json()
+}
+
+// ---------------------------------------------------------------------------
+// Plugin
+// ---------------------------------------------------------------------------
+
+module.exports = function (context) {
+  const pluginCfg = context.siteConfig.plugins
+    .find(p => p[0]?.includes('report-to-lark'))?.[1] ?? {}
+
+  return {
+    name: 'report-to-lark',
+    extendCli(cli) {
+      cli.command('report-to-lark')
+        .description('Send messages or update a build progress card in Feishu/Lark')
+        // ---- legacy options ----
+        .option('-rId, --receiveId <receiveId>', 'Chat ID for new messages', pluginCfg.receiveId)
+        .option('-type, --type <type>', 'Message type: text | interactive', 'interactive')
+        .option('-cId, --cardId <cardId>', 'Template card ID', pluginCfg.cardId)
+        .option('-cVer, --cardVersion <cardVersion>', 'Template card version', pluginCfg.cardVersion)
+        .option('-m, --msg <message>', 'Message text')
+        // ---- card commands ----
+        .option('--card-create', 'POST a new progress card; writes card_id to $GITHUB_OUTPUT and $GITHUB_ENV')
+        .option('--card-advance', 'Mark current stage done/fail and advance to next (reads state file)')
+        .option('--card-finish', 'Final card update from a cross-job context (requires --message-id)')
+        // ---- card options ----
+        .option('--title <title>', 'Card title')
+        .option('--stages <stages>', 'Comma-separated stage names (for --card-create)')
+        .option('--status <status>', 'Stage status: done (default) | fail | success')
+        .option('--note <note>', 'Optional note to append to the card')
+        .option('--message-id <id>', 'Card message ID for cross-job --card-finish')
+        .action(async (opts) => {
+          const FEISHU_HOST = process.env.FEISHU_HOST
+
+          const fetcher = new tokenFetcher()
+          await fetcher.fetchToken()
+          const token = await fetcher.token()
+
+          // ----------------------------------------------------------------
+          // --card-create  POST a new card, persist state, export card_id
+          // ----------------------------------------------------------------
+          if (opts.cardCreate) {
+            const stages = (opts.stages || '').split(',').map(s => s.trim()).filter(Boolean)
+            const state = {
+              title: opts.title || 'Build Progress',
+              stages,
+              statuses: stages.map((_, i) => i === 0 ? 'running' : 'pending'),
+              currentIndex: 0,
+              notes: [],
+              startedAt: new Date().toISOString(),
+            }
+            const res = await fetch(`${FEISHU_HOST}/open-apis/im/v1/messages?receive_id_type=chat_id`, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json; charset=utf-8', Authorization: `Bearer ${token}` },
+              body: JSON.stringify({
+                receive_id: opts.receiveId,
+                msg_type: 'interactive',
+                content: buildCardContent(state),
+                uuid: uuidv4(),
+              }),
+            })
+            const data = await res.json()
+            const messageId = data.data?.message_id
+            if (messageId) {
+              state.messageId = messageId
+              saveState(context.siteDir, state)
+              // Export to GitHub Actions so subsequent steps and jobs can use it
+              if (process.env.GITHUB_OUTPUT) {
+                fs.appendFileSync(process.env.GITHUB_OUTPUT, `card_id=${messageId}\n`)
+              }
+              if (process.env.GITHUB_ENV) {
+                fs.appendFileSync(process.env.GITHUB_ENV, `CARD_MSG_ID=${messageId}\n`)
+              }
+              process.stdout.write(messageId + '\n')
+            } else {
+              process.stderr.write(`[report-to-lark] card-create failed: ${JSON.stringify(data)}\n`)
+            }
+            return
+          }
+
+          // ----------------------------------------------------------------
+          // --card-advance  Mark current stage done/fail, advance to next
+          // ----------------------------------------------------------------
+          if (opts.cardAdvance) {
+            const state = loadState(context.siteDir)
+            if (!state) {
+              process.stderr.write('[report-to-lark] no card state — skipping update\n')
+              return
+            }
+            const status = opts.status || 'done'
+            state.statuses[state.currentIndex] = status
+            if (opts.note) state.notes.push(opts.note)
+            if (status !== 'fail' && state.currentIndex + 1 < state.stages.length) {
+              state.currentIndex++
+              state.statuses[state.currentIndex] = 'running'
+            }
+            saveState(context.siteDir, state)
+            await patchCard(token, state.messageId, state, FEISHU_HOST)
+            return
+          }
+
+          // ----------------------------------------------------------------
+          // --card-finish  Final PATCH from a cross-job (failure/success job)
+          // ----------------------------------------------------------------
+          if (opts.cardFinish) {
+            const messageId = opts.messageId
+            if (!messageId) {
+              process.stderr.write('[report-to-lark] --message-id required for --card-finish\n')
+              return
+            }
+            // State file not available across jobs — build a minimal card
+            const success = opts.status === 'success' || opts.status === 'done'
+            const state = loadState(context.siteDir) || {
+              title: opts.title || 'Build',
+              stages: [success ? 'Build succeeded' : 'Build failed'],
+              statuses: [success ? 'done' : 'fail'],
+              currentIndex: 0,
+              notes: opts.note ? [opts.note] : [],
+              startedAt: new Date().toISOString(),
+            }
+            if (loadState(context.siteDir)) {
+              // State file present (same runner reused): apply final status
+              state.statuses = success
+                ? state.stages.map(() => 'done')
+                : state.statuses.map(s => s === 'running' ? 'fail' : s)
+              if (opts.note) state.notes.push(opts.note)
+            }
+            await patchCard(token, messageId, state, FEISHU_HOST)
+            return
+          }
+
+          // ----------------------------------------------------------------
+          // Legacy: plain text or template-based interactive message
+          // ----------------------------------------------------------------
+          const content = opts.type === 'text'
+            ? { text: opts.msg }
+            : { template_id: opts.cardId, template_version_name: opts.cardVersion }
+
+          const res = await fetch(`${FEISHU_HOST}/open-apis/im/v1/messages?receive_id_type=chat_id`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json; charset=utf-8', Authorization: `Bearer ${token}` },
+            body: JSON.stringify({
+              receive_id: opts.receiveId,
+              msg_type: opts.type,
+              content: JSON.stringify(content),
+              uuid: uuidv4(),
+            }),
+          })
+          console.log((await res.json()).msg)
+        })
+    },
+  }
 }
