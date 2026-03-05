@@ -729,7 +729,7 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
   const { spawnSync } = require('child_process')
   const cache = await new TranslationCache(dbPath).ready()
 
-  let reverted = 0
+  const revertedPaths = []
   let kept = 0
 
   for (const { folder, destFolder } of sources) {
@@ -775,15 +775,16 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
         await cache.deleteFileRecord(relPath, locale)
       }
 
-      reverted++
+      revertedPaths.push(relDest)
     }
   }
 
   await cache.close()
-  console.log(`[i18n-translator] validate-and-revert done. kept=${kept} reverted=${reverted}`)
-  if (reverted > 0) {
-    console.log(`[i18n-translator] ${reverted} file(s) reverted — will be retried on next translation run.`)
+  console.log(`[i18n-translator] validate-and-revert done. kept=${kept} reverted=${revertedPaths.length}`)
+  if (revertedPaths.length > 0) {
+    console.log(`[i18n-translator] ${revertedPaths.length} file(s) reverted — will be retried on next translation run.`)
   }
+  return revertedPaths
 }
 
 module.exports = { run, validateAndRevert }

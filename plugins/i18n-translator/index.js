@@ -23,6 +23,7 @@ module.exports = function i18nTranslatorPlugin(context) {
         .action(async opts => {
           if (opts.validateAndRevert) {
             const path = require('path')
+            const { spawnSync } = require('child_process')
             const sources = [
               {
                 folder:     path.join(context.siteDir, 'docs/tutorials'),
@@ -33,12 +34,20 @@ module.exports = function i18nTranslatorPlugin(context) {
                 destFolder: path.join(context.siteDir, 'i18n', opts.locale, 'docusaurus-plugin-content-docs/version-byoc/tutorials'),
               },
             ]
-            await validateAndRevert({
+            const revertedPaths = await validateAndRevert({
               sources,
               siteDir:  context.siteDir,
               locale:   opts.locale,
               dbPath:   path.join(context.siteDir, 'translation.db'),
             })
+            if (revertedPaths.length > 0 && process.env.APP_ID) {
+              const fileList = revertedPaths.map(p => `• ${p}`).join('\n')
+              const msg = `⚠️ ${revertedPaths.length} Japanese translation(s) failed MDX validation and were reverted. They will be retried on the next run.\n\n${fileList}`
+              spawnSync(
+                'npx', ['docusaurus', 'report-to-lark', '-type', 'text', '-m', msg],
+                { cwd: context.siteDir, stdio: 'inherit', encoding: 'utf8' }
+              )
+            }
             return
           }
 
