@@ -19,10 +19,10 @@ keywords:
   - access control
   - rbac
   - roles
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - what is semantic search
+  - Embedding model
+  - image similarity search
+  - Context Window
 
 ---
 
@@ -420,7 +420,7 @@ Below is an example output.
 {
      "role": "role_a",
      "privileges": [
-         "COLL_ADMIN"
+         "Search"
      ]
 }
 ```
