@@ -17,6 +17,7 @@ const {
 } = require('./markdownParser')
 const { TranslationCache } = require('./cache')
 const { harvestTerms, proposeTerms, approveTerms, loadGlossary, walkDir } = require('./harvest')
+const { validateMdxStructure } = require('../mdx-parse/mdxPatcher')
 
 // ---------------------------------------------------------------------------
 // Config loading
@@ -740,10 +741,22 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
       const content = fs.readFileSync(destPath, 'utf8')
 
       let valid = true
+      let failReason = null
       try {
         await compile(content, { development: false })
-      } catch {
+      } catch (err) {
         valid = false
+        failReason = err.message?.split('\n')[0] ?? 'MDX compile error'
+      }
+
+      // Structural check: catches React render-time errors that compile() misses
+      // (prose between TabItems, unbalanced Tabs/TabItem tags, escaped JSX tags)
+      if (valid) {
+        const structureErrors = validateMdxStructure(content)
+        if (structureErrors.length) {
+          valid = false
+          failReason = structureErrors.join('; ')
+        }
       }
 
       if (valid) {
@@ -753,6 +766,7 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
 
       // --- Revert the file ---
       const relDest = path.relative(siteDir, destPath)
+      console.warn(`[i18n-translator] invalid translation: ${relDest} — ${failReason}`)
       const gitShow = spawnSync('git', ['show', `HEAD:${relDest}`], { encoding: 'utf8', cwd: siteDir })
       if (gitShow.status === 0 && gitShow.stdout) {
         fs.writeFileSync(destPath, gitShow.stdout, 'utf8')

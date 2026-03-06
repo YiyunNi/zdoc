@@ -209,6 +209,54 @@ function escapeNonHtmlTags(content) {
     return result.join('\n');
 }
 
+/**
+ * Structural validator for translated MDX files.
+ * Catches React render-time errors that @mdx-js/mdx compile() misses:
+ *   1. Prose inserted between </TabItem> and <TabItem>/<\/Tabs> (LLM hallucination)
+ *   2. Unbalanced <Tabs>/<\/Tabs> or <TabItem>/<\/TabItem> tags (LLM dropped closing tags)
+ *   3. Backslash-escaped known JSX tags (e.g. \<Tabs> → compile succeeds but SSG crashes)
+ *
+ * @param {string} content
+ * @returns {string[]} array of error descriptions; empty array = structurally valid
+ */
+function validateMdxStructure(content) {
+    const errors = [];
+
+    // Check 1: prose between TabItems
+    if (removeTabsHallucinations(content) !== content) {
+        errors.push('prose found between </TabItem> and next <TabItem>/<\\/Tabs> (LLM hallucination)');
+    }
+
+    // Check 2: escaped known JSX tags
+    if (unescapeKnownJsxTags(content) !== content) {
+        errors.push('backslash-escaped known JSX tags found (e.g. \\<Tabs>)');
+    }
+
+    // Check 3: tag balance for <Tabs> and <TabItem> (outside code blocks)
+    const lines = content.split('\n');
+    let inCodeBlock = false;
+    const delta = { Tabs: 0, TabItem: 0 };
+    for (const line of lines) {
+        const trimmed = line.trim();
+        if (trimmed.startsWith('```') || trimmed.startsWith('~~~')) {
+            inCodeBlock = !inCodeBlock;
+            continue;
+        }
+        if (inCodeBlock) continue;
+        for (const tag of ['Tabs', 'TabItem']) {
+            const opens = (trimmed.match(new RegExp(`<${tag}[\\s>/]`, 'g')) || []).length;
+            const closes = (trimmed.match(new RegExp(`<\\/${tag}>`, 'g')) || []).length;
+            delta[tag] += opens - closes;
+        }
+    }
+    for (const [tag, d] of Object.entries(delta)) {
+        if (d > 0) errors.push(`${d} unclosed <${tag}> tag(s)`);
+        if (d < 0) errors.push(`${Math.abs(d)} extra </${tag}> closing tag(s)`);
+    }
+
+    return errors;
+}
+
 // Function to apply MDX patches as per the larkDocWriter.js implementation
 async function applyMdxPatches(content) {
     try {
@@ -419,5 +467,6 @@ async function applyMdxPatches(content) {
 }
 
 module.exports = {
-    applyMdxPatches
+    applyMdxPatches,
+    validateMdxStructure,
 };
