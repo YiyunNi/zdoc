@@ -19,10 +19,10 @@ keywords:
   - access control
   - rbac
   - roles
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
 
 ---
 
@@ -420,7 +420,7 @@ Below is an example output.
 {
      "role": "role_a",
      "privileges": [
-         "COLL_ADMIN"
+         "Search"
      ]
 }
 ```
