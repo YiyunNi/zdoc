@@ -52,9 +52,9 @@ function saveState(siteDir, state) {
 
 async function patchCard(token, messageId, state, feishuHost) {
   const res = await fetch(`${feishuHost}/open-apis/im/v1/messages/${messageId}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json; charset=utf-8', Authorization: `Bearer ${token}` },
-    body: JSON.stringify({ msg_type: 'interactive', content: buildCardContent(state) }),
+    body: JSON.stringify({ content: buildCardContent(state) }),
   })
   return res.json()
 }

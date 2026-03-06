@@ -3,6 +3,78 @@
  * Contains the MDX patching logic extracted from larkDocWriter.js __mdx_patches method
  */
 
+// Known JSX block components that must never be backslash-escaped.
+const KNOWN_JSX_TAGS = new Set([
+    'Admonition', 'Tabs', 'TabItem', 'DocCard', 'DocCardList',
+    'Details', 'CodeBlock', 'ThemedImage', 'TOCInline', 'Highlight',
+    'Banner', 'Bars', 'Blocks', 'Cards', 'Grid', 'Hero', 'Procedures',
+    'RestSpecs', 'Stories', 'Supademo',
+]);
+
+/**
+ * Pre-processing: remove hallucinated prose inserted between </TabItem> and the
+ * next <TabItem> or </Tabs>. LLMs sometimes fabricate content in those gaps,
+ * which MDX compiles fine but Docusaurus's Tabs component rejects at SSG render
+ * time with "Bad <Tabs> child <p>".
+ */
+function removeTabsHallucinations(content) {
+    const lines = content.split('\n');
+    const result = [];
+    let tabsDepth = 0;
+    let afterTabItemClose = false;
+    let inCodeBlock = false;
+
+    for (const line of lines) {
+        const trimmed = line.trim();
+
+        if (trimmed.startsWith('```') || trimmed.startsWith('~~~')) {
+            inCodeBlock = !inCodeBlock;
+        }
+
+        if (!inCodeBlock) {
+            if (/^<Tabs[\s>]/.test(trimmed)) tabsDepth++;
+            if (/^<\/Tabs>/.test(trimmed)) tabsDepth = Math.max(0, tabsDepth - 1);
+
+            if (tabsDepth > 0) {
+                if (trimmed === '</TabItem>') {
+                    afterTabItemClose = true;
+                    result.push(line);
+                    continue;
+                }
+                if (afterTabItemClose) {
+                    if (/^<TabItem[\s>]/.test(trimmed) || /^<\/Tabs>/.test(trimmed)) {
+                        afterTabItemClose = false;
+                    } else if (trimmed !== '') {
+                        // Non-empty, non-TabItem content — hallucinated prose, discard it
+                        continue;
+                    }
+                    // Empty lines between TabItems are harmless, keep them
+                }
+            } else {
+                afterTabItemClose = false;
+            }
+        }
+
+        result.push(line);
+    }
+
+    return result.join('\n');
+}
+
+/**
+ * Pre-processing: unescape known JSX block components that were incorrectly
+ * backslash-escaped (e.g. \<Tabs> → <Tabs>, \<TabItem> → <TabItem>). This
+ * artifact occurs when the end-tag-mismatch fallback inserts a \ before the
+ * opening < of a known component at column 1. The result (\<Tabs>) is valid
+ * MDX syntax so the compile check passes, but React then tries to render the
+ * remaining values={[...]} expression as children and throws.
+ */
+function unescapeKnownJsxTags(content) {
+    const names = [...KNOWN_JSX_TAGS].join('|');
+    const pattern = new RegExp(`\\\\<(/?(?:${names})\\b)`, 'g');
+    return content.replace(pattern, '<$1');
+}
+
 /**
  * Pre-processing: replace currency $<digit> with &#36;<digit> outside fenced code
  * blocks and inline code spans, to prevent remark-math/KaTeX from treating them as
@@ -143,8 +215,10 @@ async function applyMdxPatches(content) {
         // Dynamically import the MDX compile function due to ES module restrictions
         const { compile } = await import('@mdx-js/mdx');
 
-        // Pre-process: escape currency dollar signs and non-HTML placeholder tags
-        let patchedContent = escapeCurrencyDollars(content);
+        // Pre-process: fix hallucination patterns, then escape problem characters
+        let patchedContent = removeTabsHallucinations(content);
+        patchedContent = unescapeKnownJsxTags(patchedContent);
+        patchedContent = escapeCurrencyDollars(patchedContent);
         patchedContent = escapeNonHtmlTags(patchedContent);
         let maxIterations = 50; // Prevent infinite loops
         let iteration = 0;
@@ -224,10 +298,14 @@ async function applyMdxPatches(content) {
                         }
 
                         if (!madeChanges) {
-                            // Fallback: escape the opening tag at its source position
+                            // Fallback: escape the opening tag at its source position.
+                            // Never escape known JSX components — doing so produces \<Tabs>
+                            // which MDX treats as literal text, making values={[...]} render
+                            // as React children and crash SSG.
                             const openTag = error.message.match(/<(?!\/)([A-Za-z][A-Za-z0-9:_-]*)\b[^>]*>/g)?.[0];
+                            const openTagName = openTag?.match(/^<([A-Za-z][A-Za-z0-9:_-]*)/)?.[1];
                             const fallbackPos = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
-                            if (openTag && fallbackPos) {
+                            if (openTag && openTagName && !KNOWN_JSX_TAGS.has(openTagName) && fallbackPos) {
                                 const startLine = parseInt(fallbackPos[1]);
                                 const startCol = parseInt(fallbackPos[2]);
                                 patchedContent = patchedContent.split('\n').map((l, idx) => {
