@@ -4,7 +4,7 @@ slug: /ramdom-sampling
 sidebar_label: "ランダムサンプリング"
 beta: FALSE
 notebook: FALSE
-description: "大規模なデータセットを扱う場合、インサイトを得たりフィルタリングロジックをテストしたりするために、すべてのデータを処理する必要がないことがよくあります。ランダムサンプリングは、統計的に代表的なデータのサブセットを扱うことで、クエリ時間とリソース消費を大幅に削減するソリューションを提供します。 | Cloud"
+description: "大規模なデータセットを扱う場合、インサイトを得たりフィルタリングロジックをテストしたりするために、すべてのデータを処理する必要がないことがよくあります。ランダムサンプリングは、データの統計的に代表的なサブセットを扱うことで、クエリ時間とリソース消費を大幅に削減するソリューションを提供します。 | Cloud"
 type: origin
 token: ByJbwcpoCiBkDckR3VCcC4LTneg
 sidebar_position: 6
@@ -12,16 +12,12 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - フィルター
   - フィルタリング式
   - フィルタリング
   - ランダムサンプリング
-  - オープンソース ベクトルデータベース
-  - ベクトルインデックス
-  - ベクトルデータベース オープンソース
-  - オープンソース ベクトルDB
 
 ---
 
@@ -37,13 +33,13 @@ import TabItem from '@theme/TabItem';
 
 **主なユースケース:**
 
-- **データ探索**: 最小限のリソース使用量でコレクションの構造と内容を素早くプレビュー
+- **データ探索**: 最小限のリソース使用量でコレクションの構造とコンテンツを素早くプレビュー
 
-- **開発テスト**: 複雑なフィルタリングロジックを、本番展開前に管理しやすいデータサンプルでテスト
+- **開発テスト**: 完全なデプロイメントの前に、管理しやすいデータサンプルで複雑なフィルタリングロジックをテスト
 
 - **リソース最適化**: 探索的クエリと統計分析の計算コストを削減
 
-## 構文{#syntax}
+## 構文\{#syntax}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -62,7 +58,7 @@ String filter = "RANDOM_SAMPLE(sampling_factor)"
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter := "RANDOM_SAMPLE(sampling_factor)"
@@ -70,7 +66,7 @@ filter := "RANDOM_SAMPLE(sampling_factor)"
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -78,7 +74,7 @@ filter := "RANDOM_SAMPLE(sampling_factor)"
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -96,9 +92,9 @@ export filterRandomSample='RANDOM_SAMPLE(sampling_factor)'
 
 - 式は大文字と小文字を区別しません (`RANDOM_SAMPLE` または `random_sample`)
 
-- サンプリング係数は境界を除く (0, 1) の範囲内である必要があります
+- サンプリング係数は境界を除く (0, 1) の範囲でなければなりません
 
-## 他のフィルターとの組み合わせ{#combine-with-other-filters}
+## 他のフィルターとの組み合わせ\{#combine-with-other-filters}
 
 ランダムサンプリング演算子は、論理 `AND` を使用して他のフィルタリング式と組み合わせる必要があります。フィルターを組み合わせる場合、Milvus はまず他の条件を適用し、次に結果セットに対してランダムサンプリングを実行します。
 
@@ -131,7 +127,7 @@ String filter = 'color == "red" OR RANDOM_SAMPLE(0.001)';  // ❌ Invalid logic
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // Correct: Filter first, then sample
@@ -144,7 +140,7 @@ filter := 'color == "red" OR RANDOM_SAMPLE(0.001)' // ❌ Invalid logic
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -152,7 +148,7 @@ filter := 'color == "red" OR RANDOM_SAMPLE(0.001)' // ❌ Invalid logic
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -168,9 +164,9 @@ export filterSampleIncorrect='color == "red" OR RANDOM_SAMPLE(0.001)'  # ❌ Inv
 </TabItem>
 </Tabs>
 
-## 例外\{#examples}
+## 例\{#examples}
 
-### 例1：データ探索\{#example-1-data-exploration}
+### 例 1: データ探索\{#example-1-data-exploration}
 
 コレクションの構造を素早くプレビューします。
 
@@ -225,7 +221,7 @@ for (QueryResp.QueryResult result : results) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -263,7 +259,7 @@ fmt.Println("product_name: ", resultSet.GetColumn("product_name").FieldData().Ge
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -271,7 +267,7 @@ fmt.Println("product_name: ", resultSet.GetColumn("product_name").FieldData().Ge
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -294,7 +290,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 例2：ランダムサンプリングと組み合わせたフィルタリング{#example-2-combined-filtering-with-random-sampling}
+### 例2：ランダムサンプリングと組み合わせたフィルタリング\{#example-2-combined-filtering-with-random-sampling}
 
 管理しやすいサブセットでフィルタリングロジックをテストします。
 
@@ -335,7 +331,7 @@ QueryResp queryResp = client.query(queryReq);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter := "category == \"electronics\" AND price > 100 AND RANDOM_SAMPLE(0.005)"
@@ -351,7 +347,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -359,7 +355,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -380,7 +376,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 例3：クイック分析{#example-3-quick-analytics}
+### 例 3: クイック分析\{#example-3-quick-analytics}
 
 フィルタリングされたデータに対して迅速な統計分析を実行します。
 
@@ -428,7 +424,7 @@ QueryResp queryResp = client.query(queryReq);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter := "customer_tier == \"premium\" AND region == \"North America\" AND RANDOM_SAMPLE(0.001)"
@@ -444,7 +440,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -452,7 +448,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -475,7 +471,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 例 4: ベクトル検索との組み合わせ{#example-4-combined-with-vector-search}
+### 例 4: ベクトル検索との組み合わせ\{#example-4-combined-with-vector-search}
 
 フィルタリングされた検索シナリオでランダムサンプリングを使用します。
 
@@ -497,7 +493,6 @@ search_results = client.search(
 print(f"Found {len(search_results[0])} similar books in sample")
 ```
 
-```java
 </TabItem>
 
 <TabItem value='java'>
@@ -530,7 +525,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.1, 0.2, 0.3, 0.4, 0.5}
@@ -556,7 +551,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -564,7 +559,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -576,13 +571,13 @@ export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
 </TabItem>
 </Tabs>
 
-## ベストプラクティス{#best-practices}
+## ベストプラクティス\{#best-practices}
 
 - **小さく始める**: 最初の探索では、より小さなサンプリング係数 (0.001-0.01) から始めます。
 
 - **開発ワークフロー**: 開発中はサンプリングを使用し、本番クエリでは削除します。
 
-- **統計的妥当性**: サンプルサイズが大きいほど、より正確な統計的表現が得られます。
+- **統計的妥当性**: より大きなサンプルは、より正確な統計的表現を提供します。
 
-- **パフォーマンス テスト**: クエリのパフォーマンスを監視し、必要に応じてサンプリング係数を調整します。
+- **パフォーマンステスト**: クエリのパフォーマンスを監視し、必要に応じてサンプリング係数を調整します。
 
