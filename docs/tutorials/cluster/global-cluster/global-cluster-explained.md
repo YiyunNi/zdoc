@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
 
 ---
 
@@ -144,9 +144,9 @@ For detailed list prices, see [Zilliz Cloud List Price](https://zilliz.com/prici
 
     - You cannot suspend a global cluster and its primary or secondary clusters.
 
-    - The cluster type, cloud provider, query CU count, and replica count should all be consistent with those of the primary cluster.
+    - The cluster type, cloud provider, query CU count, and replica count of the primary and secondary clusters should all be consistent.
 
-    - You cannot scale the replica of a global cluster.
+    - You can scale the replica of a primary cluster but cannot scale the replica of a secondary cluster.
 
     - To drop a global cluster, you need to drop all its primary and secondary clusters.
 

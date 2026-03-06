@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - global cluster
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
 
 ---
 
@@ -34,7 +34,7 @@ import Supademo from '@site/src/components/Supademo';
 
 This guide explains how to create a global cluster. 
 
-If you need to enable the global cluster feature for an existing cluster, see [Manage Cluster](./manage-cluster#add-secondary-clusters).
+If you need to enable the global cluster feature for an existing cluster, see [Manage Cluster](./manage-cluster#convert-to-a-global-cluster).
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -78,7 +78,7 @@ After your global cluster is running, connect to it using a **global endpoint** 
 
     The following example shows how to connect to a cluster.
 
-    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
+    <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>
 
     ```python
@@ -128,6 +128,31 @@ After your global cluster is running, connect to it using a **global endpoint** 
     
     // 1. Connect to the cluster
     const client = new MilvusClient({address, token})
+    ```
+
+    </TabItem>
+
+    <TabItem value='go'>
+
+    ```go
+    import "github.com/milvus-io/milvus/client/v2/milvusclient"
+    
+    client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
+        Address: "YOUR_CLUSTER_ENDPOINT",
+        APIKey:  "YOUR_CLUSTER_TOKEN",
+    })
+    ```
+
+    </TabItem>
+
+    <TabItem value='bash'>
+
+    ```bash
+    curl --request POST \
+      --url "YOUR_CLUSTER_ENDPOINT" \
+      --header "Authorization: Bearer YOUR_CLUSTER_TOKEN" \
+      --header "Content-Type: application/json" \
+      --data '{"dbName": "default"}'
     ```
 
     </TabItem>
