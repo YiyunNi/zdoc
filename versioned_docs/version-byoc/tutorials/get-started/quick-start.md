@@ -66,8 +66,6 @@ Before going through this quick start, ensure that:
 
     If your cloud provider is not available above, contact [Zilliz Cloud support](https://zilliz.com/contact-sales).
 
-- You have determined the way to connect to your BYOC cluster. For details, refer to [Connect to BYOC Clusters](./prepare-for-cluster-connection).
-
 The following steps assume that you have already created a cluster, obtained the cluster credentials, and installed your preferred SDK.
 
 ## Set up Connection\{#set-up-connection}

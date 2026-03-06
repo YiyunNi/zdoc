@@ -16,10 +16,10 @@ keywords:
   - vector database
   - cloud
   - project users
+  - Annoy vector search
   - milvus
   - Zilliz
   - milvus vector database
-  - milvus db
 
 ---
 
@@ -65,6 +65,12 @@ The following table lists the corresponding UI and API privileges of each projec
    </tr>
 </table>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
+
 ### Project Access\{#project-access}
 
 To minimize access permissions, you can also configure fine-grained privileges for cluster access for the invited user.
@@ -96,6 +102,12 @@ A Read-Write role has the privileges to view a project and manage its resources 
    </tr>
 </table>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
+
 #### Read-Only\{#read-only}
 
 A Read-Only role has the privileges to view a project and its resources (clusters, databases, collections). The following table lists the corresponding UI and API privileges of each project role.
@@ -112,6 +124,12 @@ A Read-Only role has the privileges to view a project and its resources (cluster
      <td><ul><li><p>Part of collection operations</p><ul><li><p><a href="/reference/restful/describe-collection-v2">Describe Collection</a></p></li><li><p><a href="/reference/restful/get-collection-load-state-v2">Get Collection Load State</a></p></li><li><p><a href="/reference/restful/get-collection-stats-v2">Get Collection Stats</a></p></li><li><p><a href="/reference/restful/has-collection-v2">Has Collection</a></p></li><li><p><a href="/reference/restful/list-collections-v2">List Collections</a></p></li></ul></li><li><p>Part of index operations</p><ul><li><p><a href="/reference/restful/describe-index-v2">Describe Index</a></p></li><li><p><a href="/reference/restful/list-indexes-v2">List Indexes</a></p></li></ul></li><li><p>Part of partition operations</p><ul><li><p><a href="/reference/restful/get-partition-statistics-v2">Get Partition Statistics</a></p></li><li><p><a href="/reference/restful/has-partition-v2">Has Partition</a></p></li><li><p><a href="/reference/restful/list-partitions-v2">List Partitions</a></p></li></ul></li><li><p>Part of alias operations</p><ul><li><p><a href="/reference/restful/describe-alias-v2">Describe Alias</a></p></li><li><p><a href="/reference/restful/list-aliases-v2">List Aliases</a></p></li></ul></li><li><p>Part of vector operations</p><ul><li><p><a href="/reference/restful/get-v2">Get</a></p></li><li><p><a href="/reference/restful/hybrid-search-v2">Hybrid Search</a></p></li><li><p><a href="/reference/restful/query-v2">Query</a></p></li><li><p><a href="/reference/restful/search-v2">Search</a></p></li></ul></li></ul></td>
    </tr>
 </table>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 Invitation recipients will receive an email invitation that must be accepted within 48 hours to join the project. Alternatively, you can also copy the invitation link from the web console and share it with the invitees.
 

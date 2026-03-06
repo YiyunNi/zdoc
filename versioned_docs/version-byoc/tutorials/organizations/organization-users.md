@@ -17,10 +17,10 @@ keywords:
   - cloud
   - organizations
   - users
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
+  - hybrid vector search
 
 ---
 
@@ -57,6 +57,12 @@ The following table lists the corresponding UI and API privileges of this organi
      <td><p><a href="/reference/restful/data-plane-v2">All data plane operations</a></p></td>
    </tr>
 </table>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 ### Organization Billing Admin\{#organization-billing-admin}
 

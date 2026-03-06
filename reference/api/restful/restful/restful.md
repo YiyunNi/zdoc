@@ -25,6 +25,20 @@ Zilliz Cloud offers RESTful APIs for you to manipulate your clusters, collection
 
 Zilliz Cloud uses the control plane to centralize the management of clusters and related resources, while the data plane is responsible for data storage and processing within a specific collection.
 
+<Admonition type="info" title="Note">
+
+When performing operations with the RESTful APIs, you can use either of the following methods to authenticate:
+
+- Using an API key
+
+    To obtain an API key, follow the instructions in the [API keys](/docs/manage-api-keys).
+
+- Using a cluster token
+
+    To obtain a cluster token, use a colon (:) to join the username and password of the target cluster, like `username:password`. Note that this is the only valid authentication method for BYOC clusters.
+
+</Admonition>
+
 - When using the Control Plane APIs, you need to use **a valid API key** to authenticate your requests.
 
     The following is an example of listing all the available cloud providers.

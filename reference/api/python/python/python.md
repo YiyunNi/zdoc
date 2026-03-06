@@ -18,7 +18,7 @@ MilvusClient provides a simple and easy-to-use alternative to the legacy ORM app
 You can run the following command in your terminal to install the latest PyMilvus or update your PyMilvus to this version.
 
 ```shell
-pip install --upgrade pymilvus==v2.3.7
+pip install --upgrade pymilvus
 ```
 
 After the installation, you can check the pymilvus version by running the following
@@ -27,8 +27,6 @@ After the installation, you can check the pymilvus version by running the follow
 from pymilvus import __version__
 
 print(__version__)
-
-# v2.3.7
 ```
 
 ## Connect to Cluster
@@ -42,6 +40,20 @@ client = MilvusClient(
     token="user:password", # replace this with your token
 )
 ```
+
+<Admonition type="info" title="Note">
+
+When performing operations with PyMilvus, you can use either of the following methods to authenticate:
+
+- Using an API key
+
+    To obtain an API key, follow the instructions in the [API keys](/docs/manage-api-keys).
+
+- Using a cluster token
+
+    To obtain a cluster token, use a colon (:) to join the username and password of the target cluster, like `username:password`. Note that this is the only valid authentication method for BYOC clusters.
+
+</Admonition>
 
 ## What's New
 
