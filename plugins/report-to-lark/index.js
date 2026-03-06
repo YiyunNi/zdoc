@@ -88,6 +88,7 @@ module.exports = function (context) {
         .option('--status <status>', 'Stage status: done (default) | fail | success')
         .option('--note <note>', 'Optional note to append to the card')
         .option('--message-id <id>', 'Card message ID for cross-job --card-finish')
+        .option('--started-at <iso>', 'startedAt ISO string passed from card-create job output')
         .action(async (opts) => {
           const FEISHU_HOST = process.env.FEISHU_HOST
 
@@ -126,6 +127,9 @@ module.exports = function (context) {
               // Export to GitHub Actions so subsequent steps and jobs can use it
               if (process.env.GITHUB_OUTPUT) {
                 fs.appendFileSync(process.env.GITHUB_OUTPUT, `card_id=${messageId}\n`)
+                fs.appendFileSync(process.env.GITHUB_OUTPUT, `card_started_at=${state.startedAt}\n`)
+                fs.appendFileSync(process.env.GITHUB_OUTPUT, `card_stages=${stages.join(',')}\n`)
+                fs.appendFileSync(process.env.GITHUB_OUTPUT, `card_title=${state.title}\n`)
               }
               if (process.env.GITHUB_ENV) {
                 fs.appendFileSync(process.env.GITHUB_ENV, `CARD_MSG_ID=${messageId}\n`)
@@ -167,15 +171,18 @@ module.exports = function (context) {
               process.stderr.write('[report-to-lark] --message-id required for --card-finish\n')
               return
             }
-            // State file not available across jobs — build a minimal card
+            // State file not available across jobs — reconstruct from job outputs
             const success = opts.status === 'success' || opts.status === 'done'
+            const passedStages = opts.stages ? opts.stages.split(',').map(s => s.trim()).filter(Boolean) : null
             const state = loadState(context.siteDir) || {
               title: opts.title || 'Build',
-              stages: [success ? 'Build succeeded' : 'Build failed'],
-              statuses: [success ? 'done' : 'fail'],
+              stages: passedStages || [success ? 'Build succeeded' : 'Build failed'],
+              statuses: passedStages
+                ? passedStages.map(() => success ? 'done' : 'fail')
+                : [success ? 'done' : 'fail'],
               currentIndex: 0,
               notes: opts.note ? [opts.note] : [],
-              startedAt: new Date().toISOString(),
+              startedAt: opts.startedAt || new Date().toISOString(),
             }
             if (loadState(context.siteDir)) {
               // State file present (same runner reused): apply final status
