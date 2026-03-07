@@ -63,11 +63,10 @@ function removeTabsHallucinations(content) {
 
 /**
  * Pre-processing: unescape known JSX block components that were incorrectly
- * backslash-escaped (e.g. \<Tabs> → <Tabs>, \<TabItem> → <TabItem>). This
- * artifact occurs when the end-tag-mismatch fallback inserts a \ before the
- * opening < of a known component at column 1. The result (\<Tabs>) is valid
- * MDX syntax so the compile check passes, but React then tries to render the
- * remaining values={[...]} expression as children and throws.
+ * backslash-escaped (e.g. \<Tabs> → <Tabs>, \<TabItem> → <TabItem>).
+ * These artifacts may exist in files translated before the end-tag-mismatch
+ * fallback was removed. \<Tabs> is valid MDX syntax but causes React to treat
+ * the remaining values={[...]} expression as children, crashing SSG.
  */
 function unescapeKnownJsxTags(content) {
     const names = [...KNOWN_JSX_TAGS].join('|');
@@ -232,7 +231,14 @@ function validateMdxStructure(content) {
         errors.push('backslash-escaped known JSX tags found (e.g. \\<Tabs>)');
     }
 
-    // Check 3: tag balance for <Tabs> and <TabItem> (outside code blocks)
+    // Check 3: unrestored translation placeholders (XTAG\d+X or LLM-mangled X\d+X)
+    // If these appear in the output the placeholder/restore cycle broke, and the
+    // rendered page will contain raw placeholder text like "XTAG39X" or "X39X".
+    if (/\bXTAG\d+X\b/.test(content)) {
+        errors.push('unrestored XTAG translation placeholders found (placeholder restore failed)');
+    }
+
+    // Check 4: tag balance for <Tabs> and <TabItem> (outside code blocks)
     const lines = content.split('\n');
     let inCodeBlock = false;
     const delta = { Tabs: 0, TabItem: 0 };
@@ -294,11 +300,9 @@ async function applyMdxPatches(content) {
 
                 // Identify problematic characters based on the error
                 let madeChanges = false;
-                let line, column, offset;
+                let offset;
                 switch (error.ruleId) {
                     case 'acorn':
-                        line = error.place.line;
-                        column = error.place.column;
                         offset = error.place.offset;
 
                         if (offset !== undefined && offset > 0 && offset < patchedContent.length) {
@@ -312,61 +316,12 @@ async function applyMdxPatches(content) {
                         }
                         break;
 
-                    case 'end-tag-mismatch': {
-                        // Error format: "Unexpected closing tag `</Y>`, expected corresponding closing tag for `<X>` (line:col-line:col)"
-                        // The position refers to the OPENING tag <X>.
-                        // Strategy: replace the wrong closing tag </Y> with the correct </X>.
-                        // Exception: if <X> is a non-standard tag (contains _ or -) it is a URL/API
-                        // placeholder, not a real element. Replacing the closing tag causes an
-                        // oscillating loop; instead fall through to the fallback (escape opening tag).
-                        const wrongClose = error.message.match(/Unexpected closing tag `<\/([^>]+)>`/)?.[1];
-                        const expectedOpen = error.message.match(/closing tag for `<([A-Za-z][^>/ ]*)(?:\s[^>]*)?>?`/)?.[1];
-                        const posMatch = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
-                        const isPlaceholder = expectedOpen && /[_-]/.test(expectedOpen);
-
-                        if (!isPlaceholder && wrongClose && expectedOpen && wrongClose !== expectedOpen && posMatch) {
-                            // Find </wrongClose> starting from the opening tag's line and replace with </expectedOpen>
-                            const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
-                            const wrongCloseTag = `</${wrongClose}>`;
-                            const correctCloseTag = `</${expectedOpen}>`;
-                            const lines = patchedContent.split('\n');
-
-                            for (let i = openLine; i < lines.length; i++) {
-                                const idx = lines[i].indexOf(wrongCloseTag);
-                                if (idx !== -1) {
-                                    lines[i] = lines[i].slice(0, idx) + correctCloseTag + lines[i].slice(idx + wrongCloseTag.length);
-                                    madeChanges = true;
-                                    break;
-                                }
-                            }
-
-                            if (madeChanges) {
-                                patchedContent = lines.join('\n');
-                            }
-                        }
-
-                        if (!madeChanges) {
-                            // Fallback: escape the opening tag at its source position.
-                            // Never escape known JSX components — doing so produces \<Tabs>
-                            // which MDX treats as literal text, making values={[...]} render
-                            // as React children and crash SSG.
-                            const openTag = error.message.match(/<(?!\/)([A-Za-z][A-Za-z0-9:_-]*)\b[^>]*>/g)?.[0];
-                            const openTagName = openTag?.match(/^<([A-Za-z][A-Za-z0-9:_-]*)/)?.[1];
-                            const fallbackPos = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
-                            if (openTag && openTagName && !KNOWN_JSX_TAGS.has(openTagName) && fallbackPos) {
-                                const startLine = parseInt(fallbackPos[1]);
-                                const startCol = parseInt(fallbackPos[2]);
-                                patchedContent = patchedContent.split('\n').map((l, idx) => {
-                                    if (idx === startLine - 1) {
-                                        madeChanges = true;
-                                        return l.slice(0, startCol - 1) + '\\' + l.slice(startCol - 1);
-                                    }
-                                    return l;
-                                }).join('\n');
-                            }
-                        }
+                    case 'end-tag-mismatch':
+                        // Tag mismatches in translated content indicate a structural LLM error
+                        // (dropped closing tags, wrong nesting) that cannot be safely auto-repaired.
+                        // Leave madeChanges = false so the loop breaks, and validate-and-revert
+                        // will revert the file for retranslation.
                         break;
-                    }
 
                     case 'unexpected-closing-slash': {
                         // "Unexpected closing slash `/` in tag, expected an open tag first"
@@ -427,10 +382,10 @@ async function applyMdxPatches(content) {
                                 }
                             }
                         } else if (
-                            (error.message.includes('U+002C') || error.message.includes('U+002A')) &&
+                            (error.message.includes('U+002C') || error.message.includes('U+002A') || error.message.includes('U+3001')) &&
                             offset !== undefined && offset > 0 && offset < patchedContent.length
                         ) {
-                            // Existing: comma or asterisk — escape the nearest preceding `<`
+                            // Comma, asterisk, or ideographic comma — escape the nearest preceding `<`
                             for (let i = offset - 1; i >= 0; i--) {
                                 if (patchedContent[i] === '<') {
                                     patchedContent = patchedContent.slice(0, i) + '\\' + patchedContent.slice(i);
@@ -469,4 +424,6 @@ async function applyMdxPatches(content) {
 module.exports = {
     applyMdxPatches,
     validateMdxStructure,
+    removeTabsHallucinations,
+    unescapeKnownJsxTags,
 };

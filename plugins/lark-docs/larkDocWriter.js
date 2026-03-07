@@ -1,4 +1,5 @@
 const larkTokenFetcher = require('./larkTokenFetcher.js')
+const { removeTabsHallucinations, unescapeKnownJsxTags } = require('../mdx-parse/mdxPatcher')
 const Downloader = require('./larkImageDownloader.js')
 const slugify = require('slugify')
 const fs = require('node:fs')
@@ -893,8 +894,10 @@ class larkDocWriter {
             // Import MDX compiler dynamically as it's an ES module
             const { compile } = await import('@mdx-js/mdx');
 
-            // Pre-process: escape currency dollar signs and non-HTML placeholder tags
-            let patchedContent = this.__escape_currency_dollars(content);
+            // Pre-process: fix translation/editor artefacts, then escape problem characters
+            let patchedContent = removeTabsHallucinations(content);
+            patchedContent = unescapeKnownJsxTags(patchedContent);
+            patchedContent = this.__escape_currency_dollars(patchedContent);
             patchedContent = this.__escape_non_html_tags(patchedContent);
             let maxIterations = 50; // Prevent infinite loops
             let iteration = 0;
@@ -971,23 +974,6 @@ class larkDocWriter {
 
                                 if (madeChanges) {
                                     patchedContent = lines.join('\n');
-                                }
-                            }
-
-                            if (!madeChanges) {
-                                // Fallback: escape the opening tag at its source position
-                                const openTag = error.message.match(/<(?!\/)([A-Za-z][A-Za-z0-9:_-]*)\b[^>]*>/g)?.[0];
-                                const fallbackPos = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
-                                if (openTag && fallbackPos) {
-                                    const startLine = parseInt(fallbackPos[1]);
-                                    const startCol = parseInt(fallbackPos[2]);
-                                    patchedContent = patchedContent.split('\n').map((l, idx) => {
-                                        if (idx === startLine - 1) {
-                                            madeChanges = true;
-                                            return l.slice(0, startCol - 1) + '\\' + l.slice(startCol - 1);
-                                        }
-                                        return l;
-                                    }).join('\n');
                                 }
                             }
 
