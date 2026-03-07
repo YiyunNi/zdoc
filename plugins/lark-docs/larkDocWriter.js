@@ -877,6 +877,13 @@ class larkDocWriter {
                             if (safeUppercaseTags.has(tagName)) return match;
                             return match.replace(/</g, '&lt;').replace(/>/g, '&gt;');
                         });
+                        // Escape dotted-name PascalCase tags (e.g. <CreateCollectionReq.FieldSchema>),
+                        // which are Java/C# type references that MDX misparses as JSX member expressions.
+                        // Backslash escaping does not suppress MDX JSX parsing for dotted names, so
+                        // always convert to HTML entities, stripping any preceding backslash first.
+                        part = part.replace(/\\?<\/?([A-Z][A-Za-z0-9]*(?:\.[A-Za-z][A-Za-z0-9]*)+)\s*\/?>/g, (match) => {
+                            return match.replace(/^\\/, '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        });
                         return part;
                     }
                     return part; // Inside inline code — leave unchanged
