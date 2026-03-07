@@ -74,7 +74,7 @@ In this step, you configure Microsoft Entra (the IdP) with the SP details obtain
 
 <Supademo id="cme7ynp8r38ksh3pyaghg664m" title="Set up an application in Microsoft Entra admin center" />
 
-\<Procedures>
+<Procedures>
 
 1. Log in to the [Microsoft Entra admin center](https://aad.portal.azure.com/?ad=in-text-link).
 
@@ -108,7 +108,7 @@ In this step, you configure Microsoft Entra (the IdP) with the SP details obtain
 
     </Admonition>
 
-\<Procedures>
+</Procedures>
 
 ### Step 3: Configure IdP settings in Zilliz Cloud console\{#step-3-configure-idp-settings-in-zilliz-cloud-console}
 
