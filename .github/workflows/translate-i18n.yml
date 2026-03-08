@@ -128,6 +128,14 @@ jobs:
 
           ## Common error patterns and fixes
 
+          - **"YAML frontmatter error"**: The `description`, `title`, or `sidebar_label` field in the
+            `---` frontmatter block contains unescaped double-quotes inside a YAML double-quoted string.
+            For example: `description: "text with "quotes" inside"` is invalid YAML.
+            Fix by rewriting the value using single-quote YAML style:
+            `description: 'text with "quotes" inside'`
+            Or if the value also contains single quotes, use double-quote style with `\"` escaping.
+            Do NOT change any other frontmatter fields.
+
           - **"Bad <Tabs> child <p>"** or **"prose between TabItems"**: The LLM inserted a paragraph
             between `</TabItem>` and `<TabItem>`. Delete the inserted prose block entirely — the Tabs
             component only accepts TabItem children, nothing else between them.

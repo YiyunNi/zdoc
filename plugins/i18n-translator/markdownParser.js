@@ -9,21 +9,61 @@ function parseFrontmatter(content) {
   return { frontmatter: match[1], body: content.slice(match[0].length) }
 }
 
+// Matches a YAML double-quoted scalar, handling \" and \\ escape sequences.
+// Group 1 captures the raw escaped content between the outer double-quotes.
+const YAML_DQ_RE = /"((?:[^"\\]|\\.)*)"/
+
+/**
+ * Unescape a raw YAML double-quoted string value (the part between the outer
+ * double-quotes) into its actual string value, handling common YAML escapes.
+ */
+function yamlDqUnescape(raw) {
+  return raw.replace(/\\(["\\\/bfnrta]|u[0-9a-fA-F]{4})/g, (_, c) => {
+    const map = { '"': '"', '\\': '\\', '/': '/', b: '\b', f: '\f', n: '\n', r: '\r', t: '\t', a: '\x07' }
+    if (c.startsWith('u')) return String.fromCharCode(parseInt(c.slice(1), 16))
+    return map[c] ?? c
+  })
+}
+
+/**
+ * Return a YAML-safe scalar representation of `str`.
+ * - No double-quotes in value → double-quoted style (simple)
+ * - Double-quotes but no single-quotes → single-quoted style
+ * - Both → double-quoted with \" and \\ escaping
+ */
+function safeYamlValue(str) {
+  if (!str.includes('"')) {
+    // Safe to double-quote; still escape any literal backslashes
+    return '"' + str.replace(/\\/g, '\\\\') + '"'
+  }
+  if (!str.includes("'")) {
+    return "'" + str + "'"
+  }
+  // Both quote types present: double-quote with full escaping
+  return '"' + str.replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"'
+}
+
 /**
  * Extract the fields we want to translate from raw frontmatter YAML text.
  * Returns { title, sidebar_label, description, keywords[] } — only present fields.
+ *
+ * Uses an escape-aware regex so values like `["High", "Low"]` (containing
+ * escaped double-quotes as \") are extracted in full, not truncated.
  */
 function extractTranslatableFields(frontmatter) {
   const fields = {}
 
-  const titleMatch = frontmatter.match(/^title:\s*"(.+?)"\s*$/m)
-  if (titleMatch) fields.title = titleMatch[1]
+  // Escape-aware pattern: "(?:[^"\\]|\\.)*"  — handles \" and \\ inside values
+  const DQ = '"((?:[^"\\\\]|\\\\.)*)"'
 
-  const labelMatch = frontmatter.match(/^sidebar_label:\s*"(.+?)"\s*$/m)
-  if (labelMatch) fields.sidebar_label = labelMatch[1]
+  const titleMatch = frontmatter.match(new RegExp(`^title:\\s*${DQ}\\s*$`, 'm'))
+  if (titleMatch) fields.title = yamlDqUnescape(titleMatch[1])
 
-  const descMatch = frontmatter.match(/^description:\s*"(.+?)"\s*$/m)
-  if (descMatch) fields.description = descMatch[1]
+  const labelMatch = frontmatter.match(new RegExp(`^sidebar_label:\\s*${DQ}\\s*$`, 'm'))
+  if (labelMatch) fields.sidebar_label = yamlDqUnescape(labelMatch[1])
+
+  const descMatch = frontmatter.match(new RegExp(`^description:\\s*${DQ}\\s*$`, 'm'))
+  if (descMatch) fields.description = yamlDqUnescape(descMatch[1])
 
   // keywords block: one or more `  - value` lines after `keywords:`
   const kwMatch = frontmatter.match(/^keywords:\s*\n((?:[ \t]+-[ \t]+.+\n?)+)/m)
@@ -41,18 +81,33 @@ function extractTranslatableFields(frontmatter) {
 /**
  * Write translated field values back into the raw frontmatter string.
  * Only replaces fields that exist in `translated`.
+ *
+ * Uses an escape-aware regex to match the full existing value and
+ * safeYamlValue() to write the translated value in YAML-safe form.
  */
 function applyTranslatedFields(frontmatter, translated) {
   let result = frontmatter
 
+  // Escape-aware pattern for the existing YAML double-quoted value
+  const DQ_MATCH = '"(?:[^"\\\\]|\\\\.)*"'
+
   if (translated.title) {
-    result = result.replace(/^(title:\s*)"(.+?)"\s*$/m, `$1"${translated.title}"`)
+    result = result.replace(
+      new RegExp(`^(title:\\s*)${DQ_MATCH}\\s*$`, 'm'),
+      (_, prefix) => prefix + safeYamlValue(translated.title)
+    )
   }
   if (translated.sidebar_label) {
-    result = result.replace(/^(sidebar_label:\s*)"(.+?)"\s*$/m, `$1"${translated.sidebar_label}"`)
+    result = result.replace(
+      new RegExp(`^(sidebar_label:\\s*)${DQ_MATCH}\\s*$`, 'm'),
+      (_, prefix) => prefix + safeYamlValue(translated.sidebar_label)
+    )
   }
   if (translated.description) {
-    result = result.replace(/^(description:\s*)"(.+?)"\s*$/m, `$1"${translated.description}"`)
+    result = result.replace(
+      new RegExp(`^(description:\\s*)${DQ_MATCH}\\s*$`, 'm'),
+      (_, prefix) => prefix + safeYamlValue(translated.description)
+    )
   }
   if (translated.keywords && translated.keywords.length) {
     result = result.replace(
@@ -188,4 +243,6 @@ module.exports = {
   splitBodyIntoChunks,
   placeholderifyTags,
   restorePlaceholders,
+  safeYamlValue,
+  yamlDqUnescape,
 }

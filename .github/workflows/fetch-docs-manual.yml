@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       card_id: ${{ steps.card.outputs.card_id }}
+      card_started_at: ${{ steps.card.outputs.card_started_at }}
+      card_stages: ${{ steps.card.outputs.card_stages }}
+      card_title: ${{ steps.card.outputs.card_title }}
     steps:
     - name: get current date
       id: date
@@ -156,7 +159,7 @@ jobs:
     - name: report failure
       run: |
         yarn
-        npx docusaurus report-to-lark --card-finish --message-id ${{ needs.fetch.outputs.card_id }} --status fail
+        npx docusaurus report-to-lark --card-finish --message-id ${{ needs.fetch.outputs.card_id }} --status fail --started-at "${{ needs.fetch.outputs.card_started_at }}" --stages "${{ needs.fetch.outputs.card_stages }}" --title "${{ needs.fetch.outputs.card_title }}"
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -173,7 +176,7 @@ jobs:
     - name: report success
       run: |
         yarn
-        npx docusaurus report-to-lark --card-finish --message-id ${{ needs.fetch.outputs.card_id }} --status success
+        npx docusaurus report-to-lark --card-finish --message-id ${{ needs.fetch.outputs.card_id }} --status success --started-at "${{ needs.fetch.outputs.card_started_at }}" --stages "${{ needs.fetch.outputs.card_stages }}" --title "${{ needs.fetch.outputs.card_title }}"
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}

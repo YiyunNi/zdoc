@@ -743,11 +743,26 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath, reportJsonP
 
       let valid = true
       let failReason = null
-      try {
-        await compile(content, { development: false })
-      } catch (err) {
-        valid = false
-        failReason = err.message?.split('\n')[0] ?? 'MDX compile error'
+
+      // YAML frontmatter check: catches invalid YAML that Docusaurus rejects at
+      // build time but @mdx-js/mdx compile() never sees (it skips --- blocks).
+      const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+      if (fmMatch) {
+        try {
+          require('js-yaml').load(fmMatch[1])
+        } catch (yamlErr) {
+          valid = false
+          failReason = `YAML frontmatter error: ${yamlErr.message.split('\n')[0]}`
+        }
+      }
+
+      if (valid) {
+        try {
+          await compile(content, { development: false })
+        } catch (err) {
+          valid = false
+          failReason = err.message?.split('\n')[0] ?? 'MDX compile error'
+        }
       }
 
       // Structural check: catches React render-time errors that compile() misses
