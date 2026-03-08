@@ -25,21 +25,32 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: dev
+
     - name: set up Environment
       uses: actions/setup-node@v4.0.1
+
     - name: install dependencies
       run: yarn
-    - name: restore translation cache (fallback to master on first run)
-      run: |
-        git fetch origin master 2>/dev/null || true
-        [ -f translation.db ] || git checkout origin/master -- translation.db 2>/dev/null || true
+
+    # Persist translation.db across runs via Actions cache.
+    # This is much more reliable than committing the binary to git, since
+    # force-pushes from fetch-lark-docs can clobber a git-committed DB.
+    - name: restore translation DB
+      uses: actions/cache/restore@v4
+      with:
+        path: translation.db
+        # Falls back to any previous save for this branch
+        key: translation-db-dev-${{ github.run_id }}
+        restore-keys: |
+          translation-db-dev-
+
     - name: translate to Japanese
       run: |
         npx docusaurus report-to-lark -type text -m "🔥 Translating docs to Japanese..."
         npx docusaurus translate-i18n --locale ja-JP
         npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials
         npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials
-        npx docusaurus translate-i18n --validate-and-revert --locale ja-JP
+        npx docusaurus translate-i18n --validate-and-revert --locale ja-JP --report-json /tmp/broken-files.json
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -47,6 +58,110 @@ jobs:
         MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
         MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
         MODEL_ID: ${{ vars.MODEL_ID }}
+
+    # Always save the DB even if later steps fail — partial progress is better than none.
+    - name: save translation DB
+      if: always()
+      uses: actions/cache/save@v4
+      with:
+        path: translation.db
+        key: translation-db-dev-${{ github.run_id }}
+
+    - name: check for broken translations
+      id: check_broken
+      run: |
+        if [ -f /tmp/broken-files.json ] && [ "$(jq length /tmp/broken-files.json)" -gt "0" ]; then
+          echo "has_broken=true" >> $GITHUB_OUTPUT
+          echo "count=$(jq length /tmp/broken-files.json)" >> $GITHUB_OUTPUT
+          echo "Broken files:"
+          jq -r '.[] | "  \(.destPath)  —  \(.error)"' /tmp/broken-files.json
+        else
+          echo "has_broken=false" >> $GITHUB_OUTPUT
+          echo "No broken translations."
+        fi
+
+    # Agent repair: for each file that failed MDX compilation, the agent reads
+    # the English source + the specific error, fixes the Japanese file, and
+    # verifies the fix by running the MDX compiler — iterating until it passes.
+    - name: agent repair of broken translations
+      if: steps.check_broken.outputs.has_broken == 'true'
+      uses: QwenLM/qwen-code-action@main
+      with:
+        openai_api_key: ${{ secrets.MODEL_API_KEY }}
+        openai_base_url: ${{ vars.MODEL_API_BASE_URL }}
+        openai_model: ${{ vars.AGENT_MODEL_ID || vars.MODEL_ID }}
+        prompt: |
+          You are a technical editor repairing broken Japanese MDX translations for Zilliz Cloud documentation.
+
+          The bulk translation pipeline has already translated these files from English to Japanese,
+          but they failed MDX compilation or structural validation. The broken files have been reverted
+          to their previous state (or deleted if new). Your job is to produce a correct Japanese
+          translation that passes validation.
+
+          ## Your task
+
+          1. Read the list of broken files from `/tmp/broken-files.json`. Each entry has:
+             - `sourcePath`: the English source file (relative to repo root)
+             - `destPath`: where the Japanese translation should be written (relative to repo root)
+             - `error`: the specific MDX compilation or structural error
+
+          2. For each broken file:
+             a. Read the English source at `sourcePath`
+             b. Read the current file at `destPath` if it exists (may be an old/reverted version)
+             c. Analyse the `error` to understand what structural problem the previous translation introduced
+             d. Write a corrected Japanese translation to `destPath`
+             e. Verify with: node -e "const {compile}=require('@mdx-js/mdx');compile(require('fs').readFileSync('<destPath>','utf8'),{development:false}).then(()=>console.log('PASS')).catch(e=>{console.error('FAIL:',e.message.split('\n')[0]);process.exit(1);})"
+             f. If that passes, also run the structural check: node -e "const {validateMdxStructure}=require('./plugins/mdx-parse/mdxPatcher');const c=require('fs').readFileSync('<destPath>','utf8');const e=validateMdxStructure(c);console.log(e.length?'FAIL: '+e.join('; '):'PASS');"
+             g. If either check fails, read the new error and fix again (up to 3 attempts per file)
+
+          ## Translation rules
+
+          - Translate prose to Japanese; keep code blocks, JSX tags, and frontmatter unchanged
+          - Preserve ALL markdown syntax: ##, **, *, >, -, tables, numbered lists
+          - Preserve ALL markdown link URLs — only translate the visible link text
+          - Preserve ALL leading whitespace exactly — indentation is structurally significant in MDX
+          - Do NOT translate inline code (`backticks`) or fenced code blocks
+          - Keep frontmatter field names (title, sidebar_label, etc.) in English; translate values
+          - Strip these frontmatter fields from the output: added_since, last_modified, deprecate_since
+
+          ## Common error patterns and fixes
+
+          - **"Bad <Tabs> child <p>"** or **"prose between TabItems"**: The LLM inserted a paragraph
+            between `</TabItem>` and `<TabItem>`. Delete the inserted prose block entirely — the Tabs
+            component only accepts TabItem children, nothing else between them.
+
+          - **"Unexpected closing tag" / unbalanced tags**: A JSX tag was opened but not closed, or
+            a closing tag appears without a matching opener. Find and balance them.
+
+          - **"ReferenceError: X is not defined"**: The LLM hallucinated a `{VARIABLE}` or
+            `{{HANDLEBARS}}` expression. Remove or escape it (use `\{` to escape a literal brace).
+
+          - **"Unterminated string"**: A stray backtick or quote was introduced. Find and remove it.
+
+          - **"stray fenced code block"**: An extra ` ``` ` fence was inserted between two code blocks.
+            Delete the stray line.
+
+          - **Indentation errors in nested structures**: Content inside a `<TabItem>` that is itself
+            inside a list item must keep 4-space indentation. Restore it.
+
+          ## Important
+
+          - Prefer surgical fixes over full re-translation — if 90% of the file is correct Japanese,
+            only fix the broken section identified by the error.
+          - If you cannot fix a file after 3 attempts, skip it and move on; report it at the end.
+          - After processing all files, print a summary: how many fixed, how many skipped.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    # Re-validate after agent repairs to catch any regressions the agent introduced.
+    - name: re-validate after agent repairs
+      if: steps.check_broken.outputs.has_broken == 'true'
+      run: npx docusaurus translate-i18n --validate-and-revert --locale ja-JP
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        APP_SECRET: ${{ secrets.APP_SECRET }}
+        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
+
     - name: commit translations to dev
       uses: stefanzweifel/git-auto-commit-action@v5
       with:

@@ -20,6 +20,7 @@ module.exports = function i18nTranslatorPlugin(context) {
         .option('--clear-cache', 'Clear the translation cache for the given locale before running')
         .option('--audit', 'Check existing translated files for quality issues (no LLM calls)')
         .option('--validate-and-revert', 'Revert any translated files that still fail MDX compilation (run after mdx-parse)')
+        .option('--report-json <path>', 'Write a JSON report of broken files to <path> (use with --validate-and-revert)')
         .action(async opts => {
           if (opts.validateAndRevert) {
             const path = require('path')
@@ -36,9 +37,10 @@ module.exports = function i18nTranslatorPlugin(context) {
             ]
             const revertedPaths = await validateAndRevert({
               sources,
-              siteDir:  context.siteDir,
-              locale:   opts.locale,
-              dbPath:   path.join(context.siteDir, 'translation.db'),
+              siteDir:        context.siteDir,
+              locale:         opts.locale,
+              dbPath:         path.join(context.siteDir, 'translation.db'),
+              reportJsonPath: opts.reportJson || null,
             })
             if (revertedPaths.length > 0 && process.env.APP_ID) {
               const fileList = revertedPaths.map(p => `• ${p}`).join('\n')

@@ -98,7 +98,7 @@ async function callLLM(messages, llmConfig, _retryCount = 0) {
         Authorization: `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ model: modelId, messages, temperature: 0.1 }),
+      body: JSON.stringify({ model: modelId, messages, temperature: 0.1, enable_thinking: false }),
       signal: controller.signal,
     })
   } catch (err) {
@@ -725,12 +725,13 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
  *
  * @param {{ sources: Array<{folder,destFolder}>, siteDir: string, locale: string, dbPath: string }} opts
  */
-async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
+async function validateAndRevert({ sources, siteDir, locale, dbPath, reportJsonPath = null }) {
   const { compile } = await import('@mdx-js/mdx')
   const { spawnSync } = require('child_process')
   const cache = await new TranslationCache(dbPath).ready()
 
   const revertedPaths = []
+  const brokenFiles = []   // collected for --report-json
   let kept = 0
 
   for (const { folder, destFolder } of sources) {
@@ -790,6 +791,11 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
       }
 
       revertedPaths.push(relDest)
+      brokenFiles.push({
+        sourcePath: relPath,                          // relative to siteDir (repo root)
+        destPath:   relDest,                          // relative to siteDir (repo root)
+        error:      failReason,
+      })
     }
   }
 
@@ -798,6 +804,12 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath }) {
   if (revertedPaths.length > 0) {
     console.log(`[i18n-translator] ${revertedPaths.length} file(s) reverted — will be retried on next translation run.`)
   }
+
+  if (reportJsonPath) {
+    fs.writeFileSync(reportJsonPath, JSON.stringify(brokenFiles, null, 2), 'utf8')
+    console.log(`[i18n-translator] broken-files report written to ${reportJsonPath}`)
+  }
+
   return revertedPaths
 }
 
