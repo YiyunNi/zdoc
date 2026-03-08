@@ -55,9 +55,11 @@ jobs:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
         FEISHU_HOST: ${{ vars.FEISHU_HOST }}
-        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
-        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
-        MODEL_ID: ${{ vars.MODEL_ID }}
+        TRANSLATION_MODEL_API_BASE_URL: ${{ vars.TRANSLATION_MODEL_API_BASE_URL }}
+        TRANSLATION_MODEL_API_KEY: ${{ secrets.TRANSLATION_MODEL_API_KEY }}
+        TRANSLATION_MODEL_ID: ${{ vars.TRANSLATION_MODEL_ID }}
+        THROTTLE_MIN_TIME: ${{ vars.THROTTLE_MIN_TIME }}
+        THROTTLE_MAX_CONCURRENT: ${{ vars.THROTTLE_MAX_CONCURRENT }}
 
     # Always save the DB even if later steps fail — partial progress is better than none.
     - name: save translation DB
@@ -87,9 +89,9 @@ jobs:
       if: steps.check_broken.outputs.has_broken == 'true'
       uses: QwenLM/qwen-code-action@main
       with:
-        openai_api_key: ${{ secrets.MODEL_API_KEY }}
-        openai_base_url: ${{ vars.MODEL_API_BASE_URL }}
-        openai_model: ${{ vars.AGENT_MODEL_ID || vars.MODEL_ID }}
+        openai_api_key: ${{ secrets.AGENT_MODEL_API_KEY }}
+        openai_base_url: ${{ vars.AGENT_MODEL_API_BASE_URL }}
+        openai_model: ${{ vars.AGENT_MODEL_ID }}
         prompt: |
           You are a technical editor repairing broken Japanese MDX translations for Zilliz Cloud documentation.
 
@@ -185,6 +187,3 @@ jobs:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
         FEISHU_HOST: ${{ vars.FEISHU_HOST }}
-        MODEL_API_BASE_URL: ${{ vars.MODEL_API_BASE_URL }}
-        MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
-        MODEL_ID: ${{ vars.MODEL_ID }}

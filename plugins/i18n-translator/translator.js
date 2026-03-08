@@ -502,9 +502,9 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
   const config = loadConfig(siteDir)
 
   const llmConfig = {
-    baseUrl: config.modelConfig?.baseUrl || process.env.MODEL_API_BASE_URL,
-    apiKey:  config.modelConfig?.apiKey  || process.env.MODEL_API_KEY,
-    modelId: config.modelConfig?.modelId || process.env.MODEL_ID,
+    baseUrl: config.modelConfig?.baseUrl || process.env.TRANSLATION_MODEL_API_BASE_URL,
+    apiKey:  config.modelConfig?.apiKey  || process.env.TRANSLATION_MODEL_API_KEY,
+    modelId: config.modelConfig?.modelId || process.env.TRANSLATION_MODEL_ID,
   }
 
   const throttle = {
@@ -579,7 +579,7 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
   }
 
   if (!llmConfig.baseUrl || !llmConfig.apiKey || !llmConfig.modelId) {
-    console.error('[i18n-translator] LLM config missing (MODEL_API_BASE_URL / MODEL_API_KEY / MODEL_ID). Aborting.')
+    console.error('[i18n-translator] LLM config missing (TRANSLATION_MODEL_API_BASE_URL / TRANSLATION_MODEL_API_KEY / TRANSLATION_MODEL_ID). Aborting.')
     process.exit(1)
   }
 
