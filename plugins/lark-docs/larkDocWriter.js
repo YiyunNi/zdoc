@@ -982,6 +982,19 @@ class larkDocWriter {
                                 if (madeChanges) {
                                     patchedContent = lines.join('\n');
                                 }
+                            } else if (!wrongClose && expectedOpen && posMatch) {
+                                // Variant: "Expected a closing tag for `<X>` (line:col-line:col) before the end of `paragraph`"
+                                // The opening tag is not closed within its paragraph. Escape it with &lt; so it
+                                // renders as literal text instead of being treated as a JSX element.
+                                const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
+                                const openCol = parseInt(posMatch[2]) - 1;  // 0-indexed
+                                const lines = patchedContent.split('\n');
+
+                                if (openLine < lines.length && lines[openLine][openCol] === '<') {
+                                    lines[openLine] = lines[openLine].slice(0, openCol) + '&lt;' + lines[openLine].slice(openCol + 1);
+                                    patchedContent = lines.join('\n');
+                                    madeChanges = true;
+                                }
                             }
 
                             break;
