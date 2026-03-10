@@ -40,7 +40,7 @@ jobs:
         yarn
         npx docusaurus report-to-lark --card-create \
           --title "Japanese Translation" \
-          --stages "Translate JA,Commit"
+          --stages "Translate JA,Agent Repair,Commit"
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
@@ -92,8 +92,27 @@ jobs:
           jq -r '.[] | "  \(.destPath)  —  \(.error)"' /tmp/broken-files.json
         else
           echo "has_broken=false" >> $GITHUB_OUTPUT
+          echo "count=0" >> $GITHUB_OUTPUT
           echo "No broken translations."
         fi
+
+    - name: advance Translate JA stage
+      run: |
+        COUNT=${{ steps.check_broken.outputs.count }}
+        if [ "${{ steps.check_broken.outputs.has_broken }}" = "true" ]; then
+          npx docusaurus report-to-lark --card-advance \
+            --note "⚠️ ${COUNT} file(s) failed MDX validation — queued for agent repair"
+        else
+          # No broken files: mark Translate JA done, then skip Agent Repair stage
+          npx docusaurus report-to-lark --card-advance \
+            --note "All translations passed MDX validation"
+          npx docusaurus report-to-lark --card-advance \
+            --note "No repairs needed"
+        fi
+      env:
+        APP_ID: ${{ secrets.APP_ID }}
+        APP_SECRET: ${{ secrets.APP_SECRET }}
+        FEISHU_HOST: ${{ vars.FEISHU_HOST }}
 
     # Agent repair: for each file that failed MDX compilation, the agent reads
     # the English source + the specific error, fixes the Japanese file, and
@@ -178,15 +197,30 @@ jobs:
 
     # Re-validate after agent repairs to catch any regressions the agent introduced.
     - name: re-validate after agent repairs
+      id: revalidate
       if: steps.check_broken.outputs.has_broken == 'true'
-      run: npx docusaurus translate-i18n --validate-and-revert --locale ja-JP
+      run: |
+        npx docusaurus translate-i18n --validate-and-revert --locale ja-JP --report-json /tmp/still-broken.json
+        STILL=$(jq length /tmp/still-broken.json 2>/dev/null || echo 0)
+        echo "still_broken=${STILL}" >> $GITHUB_OUTPUT
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
         FEISHU_HOST: ${{ vars.FEISHU_HOST }}
 
-    - name: advance Translate JA stage
-      run: npx docusaurus report-to-lark --card-advance
+    - name: advance Agent Repair stage
+      if: steps.check_broken.outputs.has_broken == 'true'
+      run: |
+        COUNT=${{ steps.check_broken.outputs.count }}
+        STILL=${{ steps.revalidate.outputs.still_broken || 0 }}
+        FIXED=$(( COUNT - STILL ))
+        if [ "$STILL" -eq 0 ]; then
+          npx docusaurus report-to-lark --card-advance \
+            --note "🔧 Agent repaired all ${COUNT} file(s)"
+        else
+          npx docusaurus report-to-lark --card-advance \
+            --note "🔧 Agent repaired ${FIXED}/${COUNT} files · ${STILL} still reverted (will retry on next run)"
+        fi
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}

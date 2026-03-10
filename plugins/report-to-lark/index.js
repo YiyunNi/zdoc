@@ -13,14 +13,11 @@ const CARD_STATE_FILE = '.build-card-state.json'
 const EMOJI = { pending: '⬜', running: '⏳', done: '✅', fail: '❌' }
 
 function buildCardContent(state) {
-  const lines = state.stages.map((name, i) => {
+  const stageLines = state.stages.map((name, i) => {
     const s = state.statuses[i] || 'pending'
     const e = EMOJI[s] || '⬜'
     return s === 'running' ? `${e} **${name}**` : `${e} ${name}`
   })
-  if (state.notes && state.notes.length) {
-    lines.push('', ...state.notes.map(n => `> ${n}`))
-  }
 
   const hasFail = state.statuses.some(s => s === 'fail')
   const allDone = state.stages.length > 0 && state.statuses.every(s => s === 'done')
@@ -30,13 +27,22 @@ function buildCardContent(state) {
   const sec = Math.round((Date.now() - started.getTime()) / 1000)
   const elapsed = sec < 60 ? `${sec}s` : `${Math.floor(sec / 60)}m ${sec % 60}s`
 
+  const elements = [
+    { tag: 'div', text: { tag: 'lark_md', content: stageLines.join('\n') } },
+  ]
+  if (state.notes && state.notes.length) {
+    elements.push({ tag: 'hr' })
+    elements.push({ tag: 'div', text: { tag: 'lark_md', content: state.notes.join('\n') } })
+  }
+  elements.push({
+    tag: 'note',
+    elements: [{ tag: 'plain_text', content: `Started ${started.toUTCString()} · ${elapsed} elapsed` }],
+  })
+
   return JSON.stringify({
     config: { wide_screen_mode: true },
     header: { title: { tag: 'plain_text', content: state.title }, template },
-    elements: [
-      { tag: 'div', text: { tag: 'lark_md', content: lines.join('\n') } },
-      { tag: 'note', elements: [{ tag: 'plain_text', content: `Started ${started.toUTCString()} · ${elapsed} elapsed` }] },
-    ],
+    elements,
   })
 }
 
