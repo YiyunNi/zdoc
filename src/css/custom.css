@@ -1,0 +1,502 @@
+/* Fonts */
+body {
+  font-family: 'Barlow', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+/* Design tokens */
+:root {
+  --ifm-color-primary: #175fff;
+  --ifm-color-primary-dark: #004efa;
+  --ifm-color-primary-darker: #0049ec;
+  --ifm-color-primary-darkest: #003cc3;
+  --ifm-color-primary-light: #3372ff;
+  --ifm-color-primary-lighter: #417cff;
+  --ifm-color-primary-lightest: #6a99ff;
+
+  --ifm-background-color: #f9fafb;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-height: 56px;
+  --ifm-navbar-shadow: 0 1px 0 0 #e5e7eb;
+
+  --ifm-font-family-base: 'Barlow', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Source Serif 4', Georgia, serif;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.7;
+  --ifm-code-font-size: 90%;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-semibold: 600;
+
+  --ifm-toc-border-color: #e5e7eb;
+  --ifm-hr-border-color: #e5e7eb;
+
+  --ifm-menu-color: #6b7280;
+  --ifm-menu-color-active: #175fff;
+  --ifm-menu-color-background-active: rgba(23, 95, 255, 0.06);
+  --ifm-menu-color-background-hover: #f3f4f6;
+
+  --ifm-breadcrumb-color-active: #175fff;
+  --ifm-breadcrumb-separator-color: #9ca3af;
+
+  --ifm-list-left-padding: 1.5rem;
+  --ifm-paragraph-margin-bottom: 0.875rem;
+}
+
+/* Navbar */
+.navbar {
+  padding: 0;
+}
+
+.navbar__inner {
+  padding: 0;
+}
+
+/* Hide external link icons on navbar items */
+.navbar__item svg,
+.navbar__link svg {
+  display: none !important;
+}
+
+/* Navbar right-side action links */
+.navbar-support-link,
+.navbar-login-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3125rem;
+  font-size: 0.875rem !important;
+  color: #4b5563 !important;
+  padding: 0.375rem 0.625rem !important;
+  border-radius: 0.375rem;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.navbar-support-link:hover,
+.navbar-login-link:hover {
+  color: #111827 !important;
+  background: #f3f4f6;
+}
+
+.navbar-signup-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3125rem;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  background: #175fff !important;
+  padding: 0.4375rem 0.875rem !important;
+  border-radius: 0.5rem !important;
+  margin-left: 0.25rem;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.navbar-signup-btn:hover {
+  background: #004efa !important;
+  color: #ffffff !important;
+}
+
+/* Sidebar */
+.theme-doc-sidebar-container {
+  font-size: 0.875rem;
+}
+
+/* Remove the 56px top padding Docusaurus adds to the sidebar div for sticky
+   navbar clearance — we handle height/scroll ourselves in our 3-pane layout. */
+.theme-doc-sidebar-container .sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module,
+[class*="sidebar_"] {
+  padding-top: 0 !important;
+}
+
+/* All menu links */
+.menu__link {
+  font-size: 0.875rem;
+  color: #4b5563;
+  border-radius: 0.375rem;
+  padding: 0.3125rem 0.75rem;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.menu__link:hover {
+  color: #111827 !important;
+  background: var(--ifm-menu-color-background-hover);
+}
+
+/* Active link — full rounded highlight, no left bar */
+.menu__link--active {
+  color: #175fff !important;
+  font-weight: 600;
+  background: rgba(23, 95, 255, 0.07) !important;
+}
+
+/* ── First-level category headers ── */
+.theme-doc-sidebar-item-category-level-1 {
+  margin-top: 1.5rem;
+}
+
+.theme-doc-sidebar-item-category-level-1:first-child {
+  margin-top: 0.25rem;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist:hover {
+  color: #111827 !important;
+}
+
+/* Caret — small and subtle */
+.menu__link--sublist-caret::after {
+  width: 1rem !important;
+  height: 1rem !important;
+  background-size: 1rem 1rem !important;
+  opacity: 0.4;
+}
+
+.menu__link--sublist-caret:hover::after {
+  opacity: 0.65;
+}
+
+/* Child links (level 2+) — align text with category label (2.5rem target − 0.75rem list indent = 1.75rem) */
+.theme-doc-sidebar-item-link-level-2 .menu__link,
+.theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link {
+  padding-left: 1.75rem;
+}
+
+/* Content */
+.markdown {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: #1f2937;
+}
+
+.markdown h1 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem !important;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.markdown h2 {
+  font-size: 1.625rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin-top: 2.75rem !important;
+  margin-bottom: 0.75rem !important;
+  color: #111827;
+}
+
+.markdown h3 {
+  font-size: 1.0625rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.375rem !important;
+  color: #111827;
+}
+
+.markdown h4 {
+  font-size: 0.9375rem !important;
+  font-weight: 600 !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.25rem !important;
+  color: #374151;
+}
+
+.markdown p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+.markdown ul,
+.markdown ol {
+  margin-bottom: 1rem;
+  padding-left: 1.375rem;
+}
+
+.markdown li {
+  margin-bottom: 0.25rem;
+  line-height: 1.7;
+}
+
+.markdown li > p {
+  margin-bottom: 0.25rem;
+}
+
+article p a {
+  color: var(--ifm-color-primary) !important;
+}
+
+/* Code blocks */
+pre {
+  max-height: 36rem;
+  overflow-y: auto;
+  border-radius: 0.5rem !important;
+}
+
+/* Pagination */
+.pagination-nav__link {
+  border-color: #e5e7eb;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: #175fff;
+  box-shadow: 0 0 0 3px rgba(23, 95, 255, 0.1);
+}
+
+/* Table of Contents */
+.table-of-contents {
+  font-size: 0.875rem;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+/* Remove left border rail */
+.table-of-contents__left-border {
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.table-of-contents li {
+  margin: 0.75rem 0;
+  list-style: none;
+}
+
+.table-of-contents__link {
+  color: #9ca3af;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0;
+  transition: color 0.12s ease;
+  display: block;
+}
+
+.table-of-contents__link:hover {
+  color: #374151;
+  text-decoration: none;
+}
+
+/* All links shifted so active border can bleed to container edge */
+.table-of-contents__link {
+  margin-left: -0.75rem;
+  padding-left: 0.75rem;
+}
+
+/* Active: dark bold text + left bar */
+.table-of-contents__link--active,
+.table-of-contents__link--active:hover {
+  color: #111827 !important;
+  font-weight: 600;
+  border-left: 2px solid #111827;
+  padding-left: calc(0.75rem - 2px);
+}
+
+/* Footer */
+.footer {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Breadcrumbs */
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: #374151;
+  background: transparent;
+}
+
+/* Match breadcrumb home icon height to TOC trigger button */
+.breadcrumbs__item--first .breadcrumbs__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.breadcrumbs__item--first .breadcrumbs__link svg {
+  width: 16px;
+  height: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code block line highlighting — use a lighter tint on dark backgrounds */
+[data-theme='dark'] {
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
+}
+
+/* Mobile secondary menu — flex column so toolbar pins to bottom */
+.mobile-secondary-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mobile-secondary-menu-content {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Make the secondary panel itself a flex container */
+@media (max-width: 996px) {
+  .navbar-sidebar__items .navbar-sidebar__item:last-child {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+/* ── Mobile sidebar pane width ── */
+.navbar-sidebar {
+  max-width: 300px !important;
+}
+
+/* Mobile sidebar action toolbar — search at top, nav-style links at bottom */
+.mobile-action-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Search row */
+.mobile-action-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  color: #9ca3af;
+  background: #f3f4f6;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.mobile-action-search:hover {
+  background: #ebebeb;
+  color: #6b7280;
+}
+
+/* Action links — styled like sidebar nav items, pinned at bottom */
+.mobile-action-links {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e5e7eb;
+}
+
+.mobile-action-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #374151;
+  text-decoration: none;
+  transition: background-color 0.12s ease, color 0.12s ease;
+  border-radius: 0;
+}
+
+.mobile-action-link:hover {
+  background: #f3f4f6;
+  color: #111827;
+  text-decoration: none;
+}
+
+.mobile-action-link--primary {
+  color: #175fff !important;
+  font-weight: 600;
+}
+
+.mobile-action-link--primary:hover {
+  background: rgba(23, 95, 255, 0.06) !important;
+  color: #175fff !important;
+}
+
+@media (max-width: 996px) {
+  .navbar-support-link,
+  .navbar-login-link,
+  .navbar-signup-btn {
+    display: none !important;
+  }
+
+  /* Smaller hamburger + close buttons, matching GitHub's compact style */
+  .navbar__toggle {
+    padding: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .navbar__toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .navbar-sidebar__close {
+    padding: 0.25rem;
+    margin-left: auto;
+  }
+
+  .navbar-sidebar__close svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .menu__link {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Active item: left border accent (GitHub-style) */
+  .menu__link--active {
+    border-left: 2px solid #175fff;
+    border-radius: 0 0.375rem 0.375rem 0;
+    padding-left: calc(0.75rem - 2px);
+  }
+
+  /* Section dividers replace large top-margin */
+  .theme-doc-sidebar-item-category-level-1 {
+    margin-top: 0;
+    padding-top: 0.25rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .theme-doc-sidebar-item-category-level-1:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  /* Sub-items don't need the full touch target height */
+  .theme-doc-sidebar-item-link-level-2 .menu__link,
+  .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link {
+    min-height: 36px;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+}

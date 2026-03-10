@@ -1,0 +1,138 @@
+/*
+ * .docsWrapper is height-constrained to viewport minus the fixed navbar.
+ * This is the key to making all three panes scroll independently.
+ * overflow: hidden prevents content from escaping the container.
+ */
+.docsWrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--ifm-navbar-height));
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+/*
+ * .docRoot is the 3-pane flex row.
+ * flex: 1 + min-height: 0 fills remaining space after SecondaryNavbar (48px).
+ * min-height: 0 overrides the default min-height: auto on flex items,
+ * which would otherwise allow this to grow beyond its container.
+ */
+.docRoot {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Chat pane — left (width set via inline style) */
+.chatPane {
+  flex-shrink: 0;
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Drag-to-resize handle — flex sibling between chat pane and sidebar */
+.chatResizeHandle {
+  flex-shrink: 0;
+  width: 8px;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.chatResizeHandle:hover {
+  background: rgba(23, 95, 255, 0.04);
+}
+
+/* Grip dots — 3 dots stacked vertically */
+.chatResizeHandle::after {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #d1d5db;
+  box-shadow:
+    0 -8px 0 2px #d1d5db,
+    0  0   0 2px #d1d5db,
+    0  8px 0 2px #d1d5db;
+  opacity: 0.5;
+  transition: opacity 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.chatResizeHandle:hover::after {
+  opacity: 1;
+  background: #175fff;
+  box-shadow:
+    0 -8px 0 2px #175fff,
+    0  0   0 2px #175fff,
+    0  8px 0 2px #175fff;
+}
+
+/* Expanded chat overlay — covers content area below navbars */
+.chatOverlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: calc(var(--ifm-navbar-height) + 48px);
+  z-index: 1001;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+}
+
+/* Mobile chat FAB — visible only on small screens */
+.mobileChatFab {
+  display: none;
+}
+
+@media (max-width: 996px) {
+  .mobileChatFab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #175fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(23, 95, 255, 0.4);
+    z-index: 200;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .mobileChatFab:hover {
+    background: #004efa;
+    box-shadow: 0 6px 16px rgba(23, 95, 255, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .mobileChatFab svg {
+    color: #ffffff;
+  }
+}
+
+@media (max-width: 996px) {
+  .docsWrapper {
+    height: auto;
+    overflow: visible;
+  }
+
+  .chatPane {
+    display: none;
+  }
+
+  .docRoot {
+    overflow: visible;
+  }
+}

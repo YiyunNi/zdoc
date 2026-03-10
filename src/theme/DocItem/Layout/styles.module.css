@@ -1,0 +1,57 @@
+.docItemContainer {
+  width: 100%;
+  padding: 0;
+}
+
+.docItemRow {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 80rem;
+}
+
+.docItemCol {
+  flex: 1;
+  min-width: 0;
+  max-width: 60rem;
+  padding: 1.75rem 2.5rem 3rem;
+}
+
+.tocCol {
+  flex-shrink: 0;
+  width: 14rem;
+  padding: 1.75rem 1.5rem 3rem 0;
+  position: sticky;
+  top: 0;
+}
+
+.docItemColWide {
+  max-width: none;
+}
+
+.tocColCollapsed {
+  width: auto;
+  padding-right: 0;
+}
+
+/* Bare toggle button — just the icon, no border or background */
+.tocToggleBtn {
+  display: block;
+  padding: 0;
+  margin: 0 0 0.375rem;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  line-height: 0;
+  transition: color 0.12s ease;
+}
+
+.tocToggleBtn:hover {
+  color: #374151;
+}
+
+.docItemContainer header + *,
+.docItemContainer article > *:first-child {
+  margin-top: 0;
+}
