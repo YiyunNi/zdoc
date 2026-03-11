@@ -1,0 +1,16 @@
+import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+
+// Generated sidebar file is produced by `docusaurus fetch-lark-docs`.
+// Run `docusaurus fetch-lark-docs --manual guides --pubTarget zilliz` to regenerate.
+// To customise without regenerating, edit config/sidebar-overrides/guides.json.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function tryRequire(path: string): any[] {
+  try { return require(path) } catch { return [] }
+}
+
+const sidebars: SidebarsConfig = {
+  // Cloud / BYOC guides — generated from Feishu wiki
+  default: tryRequire('./config/generated/guides.sidebar'),
+};
+
+export default sidebars;

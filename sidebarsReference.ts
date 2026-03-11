@@ -9,9 +9,6 @@ function tryRequire(path: string): any[] {
 }
 
 const sidebars: SidebarsConfig = {
-  // Cloud / BYOC guides — generated from Feishu wiki
-  default: tryRequire('./config/generated/guides.sidebar'),
-
   // SDK reference sidebars — generated from Feishu drive/wiki sources
   pythonSidebar: tryRequire('./config/generated/python.sidebar'),
   javaSidebar:   tryRequire('./config/generated/java.sidebar'),

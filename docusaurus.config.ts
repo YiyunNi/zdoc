@@ -28,15 +28,25 @@ const config: Config = {
   customFields: {
     inkeepApiKey: process.env.INKEEP_API_KEY || '',
     secondaryNavbar: [
-      { label: 'Cloud Guides',  href: '/',                                      prefix: null,               icon: 'cloud'     },
-      { label: 'BYOC Guides',   href: '/tutorial-basics/create-a-document',     prefix: '/tutorial-basics', icon: 'server'    },
-      { label: 'API & SDK',     href: '/tutorial-extras/manage-docs-versions',  prefix: '/tutorial-extras', icon: 'code'      },
-      { label: 'CLI',           href: '/intro',                                 prefix: null,               icon: 'terminal'  },
-      { label: 'Releases',      href: '/intro',                                 prefix: null,               icon: 'tag'       },
+      { label: 'Cloud Guides',  href: '/docs',            prefix: '/docs',            icon: 'cloud'     },
+      { label: 'BYOC Guides',   href: '/docs/byoc',       prefix: '/docs/byoc',       icon: 'server'    },
+      { label: 'API & SDK',     href: '/reference',       prefix: '/reference',       icon: 'code'      },
+      { label: 'CLI',           href: '/docs',            prefix: null,               icon: 'terminal'  },
+      { label: 'Releases',      href: '/docs',            prefix: null,               icon: 'tag'       },
     ],
   },
 
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'reference',
+        path: 'reference',
+        routeBasePath: 'reference',
+        sidebarPath: './sidebarsReference.ts',
+        breadcrumbs: true,
+      },
+    ],
     ['./plugins/lark-docs', larkDocsConfig],
     './plugins/apifox-docs',
   ],
@@ -46,9 +56,21 @@ const config: Config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/',
-          sidebarPath: './sidebars.ts',
-          breadcrumbs: true,
+          path: 'docs',
+          routeBasePath: 'docs',
+          sidebarPath: './sidebarsTutorial.ts',
+          breadcrumbs: false,
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'User Guides (Cloud)',
+            },
+            byoc: {
+              label: 'User Guides (BYOC)',
+              path: 'byoc',
+              banner: 'none',
+            },
+          },
         },
         blog: false,
         theme: {
