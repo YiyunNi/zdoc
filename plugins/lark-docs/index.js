@@ -105,9 +105,14 @@ module.exports = function (context, options) {
                             fs.mkdirSync(imageDir, { recursive: true })
                         }
 
-                        const writer = sourceType === 'wiki' || sourceType === 'onePager' ? 
-                            new docWriter(root, base, displayedSidebar, docSourceDir, imageDir, opts.pubTarget, opts.skipImageDown, opts.uploadToS3) : 
+                        const writer = sourceType === 'wiki' || sourceType === 'onePager' ?
+                            new docWriter(root, base, displayedSidebar, docSourceDir, imageDir, opts.pubTarget, opts.skipImageDown, opts.uploadToS3) :
                             new driveWriter(root, base, displayedSidebar, docSourceDir, imageDir, opts.pubTarget, opts.skipImageDown, opts.uploadToS3, opts.manual)
+
+                        // Ensure S3 connections are always closed, even on error or Ctrl+C
+                        const writerCleanup = () => { try { writer.destroy() } catch (_) {} }
+                        process.once('SIGINT', writerCleanup)
+                        process.once('SIGTERM', writerCleanup)
 
                         // Add necessary imports to category pages
                         if (opts.postProcess) {
@@ -117,33 +122,34 @@ module.exports = function (context, options) {
 
                         // Generate doc pages iteratively
                         if (opts.docTitle === undefined && !opts.faq && !opts.postProcess) {
-                            console.log('Fetching docs from Feishu...')
-                            utils.pre_process_file_paths(outputDir)
-                            
-                            if (!opts.skipSourceDown) {
-                                // const scraper = new docScraper(root, base, sourceType, docSourceDir)
-                                fs.rmSync(docSourceDir, { recursive: true })
-                                fs.mkdirSync(docSourceDir, { recursive: true })
-                                await scraper.fetch(true)
-                                if (fallbackSourceDir !== undefined) {
-                                    utils.fetch_fallback_sources(docSourceDir, fallbackSourceDir, sourceType)
+                            try {
+                                console.log('Fetching docs from Feishu...')
+                                utils.pre_process_file_paths(outputDir)
+
+                                if (!opts.skipSourceDown) {
+                                    fs.rmSync(docSourceDir, { recursive: true })
+                                    fs.mkdirSync(docSourceDir, { recursive: true })
+                                    await scraper.fetch(true)
+                                    if (fallbackSourceDir !== undefined) {
+                                        utils.fetch_fallback_sources(docSourceDir, fallbackSourceDir, sourceType)
+                                    }
                                 }
-                            }
-                            
-                            // const writer = new docWriter(root, docSourceDir, imageDir, opts.pubTarget, opts.skipImageDown)
-                            await writer.write_docs(outputDir, root)
 
-                            if (sidebarPath && !opts.skipSidebar) {
-                                console.log('Generating sidebar...')
-                                const sidebarItems = await writer.generate_sidebar(outputDir, contentRoot || outputDir.split('/')[0], overridePath || null)
-                                const sidebarDir = require('node:path').dirname(sidebarPath)
-                                if (!fs.existsSync(sidebarDir)) fs.mkdirSync(sidebarDir, { recursive: true })
-                                fs.writeFileSync(sidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
-                                console.log(`Sidebar written to ${sidebarPath}`)
-                            }
+                                await writer.write_docs(outputDir, root)
 
-                            utils.post_process_file_paths(outputDir)
-                            writer.destroy()
+                                if (sidebarPath && !opts.skipSidebar) {
+                                    console.log('Generating sidebar...')
+                                    const sidebarItems = await writer.generate_sidebar(outputDir, contentRoot || outputDir.split('/')[0], overridePath || null)
+                                    const sidebarDir = require('node:path').dirname(sidebarPath)
+                                    if (!fs.existsSync(sidebarDir)) fs.mkdirSync(sidebarDir, { recursive: true })
+                                    fs.writeFileSync(sidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
+                                    console.log(`Sidebar written to ${sidebarPath}`)
+                                }
+
+                                utils.post_process_file_paths(outputDir)
+                            } finally {
+                                writerCleanup()
+                            }
                         }
 
                         // Generate a specific doc page
@@ -280,8 +286,8 @@ module.exports = function (context, options) {
                                 await writer.write_doc(req)
                             } else {
                                 console.log('The doc is not ready to publish!')
-                                return
                             }
+                            writerCleanup()
                         }
                                     
                         if (opts.faq) {
@@ -307,6 +313,7 @@ module.exports = function (context, options) {
                             }
     
                             await writer.write_faqs(path)
+                            writerCleanup()
                         }
 
                         if (opts.pubTarget === "milvus") {
