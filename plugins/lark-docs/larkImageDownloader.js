@@ -66,39 +66,45 @@ class larkImageDownloader {
     }
 
     async __downloadImage(image_token) {
-        console.log(`ImageToken: ${image_token}`)
-        const fetcher = new tokenFetcher()
-        await fetcher.fetchToken()
-        const token = await fetcher.token() 
+        return this.limiter.schedule(async () => {
+            console.log(`ImageToken: ${image_token}`)
+            const fetcher = new tokenFetcher()
+            await fetcher.fetchToken()
+            const token = await fetcher.token()
 
-        const req = {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        }
-
-        let res = await fetch(`${process.env.FEISHU_HOST}/open-apis/drive/v1/medias/${image_token}/download`, req)
-
-        return res
+            const controller = new AbortController()
+            const timeout = setTimeout(() => controller.abort(), 30000)
+            try {
+                const res = await fetch(
+                    `${process.env.FEISHU_HOST}/open-apis/drive/v1/medias/${image_token}/download`,
+                    { method: 'GET', headers: { Authorization: `Bearer ${token}` }, signal: controller.signal }
+                )
+                return res
+            } finally {
+                clearTimeout(timeout)
+            }
+        })
     }
 
     async __downloadBoardPreview(board_token) {
-        console.log(`BoardToken: ${board_token}`)
-        const fetcher = new tokenFetcher()
-        await fetcher.fetchToken()
-        const token = await fetcher.token() 
+        return this.limiter.schedule(async () => {
+            console.log(`BoardToken: ${board_token}`)
+            const fetcher = new tokenFetcher()
+            await fetcher.fetchToken()
+            const token = await fetcher.token()
 
-        const req = {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        }
-
-        let res = await fetch(`${process.env.FEISHU_HOST}/open-apis/board/v1/whiteboards/${board_token}/download_as_image`, req)
-
-        return res
+            const controller = new AbortController()
+            const timeout = setTimeout(() => controller.abort(), 30000)
+            try {
+                const res = await fetch(
+                    `${process.env.FEISHU_HOST}/open-apis/board/v1/whiteboards/${board_token}/download_as_image`,
+                    { method: 'GET', headers: { Authorization: `Bearer ${token}` }, signal: controller.signal }
+                )
+                return res
+            } finally {
+                clearTimeout(timeout)
+            }
+        })
     }
 
     async __fetchCaption(key, node) {
