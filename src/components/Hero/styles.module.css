@@ -1,0 +1,74 @@
+.container {
+    width: 100%;
+    max-width: 996px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.subtract {
+    flex: 0 0 50%;
+    min-width: 0;
+    padding: 60px 0;
+    animation: fadeInUp 0.5s ease both;
+}
+
+.subtract p {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    font-weight: 400;
+    margin: 10px 0 0;
+}
+
+.heroImg {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    animation: fadeInUp 0.5s ease 0.15s both;
+}
+
+.heroImg p {
+    margin: 0 !important;
+}
+
+.heroImg img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .subtract {
+        flex: 1;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .heroImg {
+        justify-content: center;
+    }
+}

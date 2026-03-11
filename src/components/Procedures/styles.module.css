@@ -1,0 +1,125 @@
+.procedure {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.step {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0 20px;
+    animation: stepFadeIn 0.4s ease both;
+}
+
+.step:nth-child(1) { animation-delay: 0s; }
+.step:nth-child(2) { animation-delay: 0.05s; }
+.step:nth-child(3) { animation-delay: 0.1s; }
+.step:nth-child(4) { animation-delay: 0.15s; }
+.step:nth-child(5) { animation-delay: 0.2s; }
+.step:nth-child(6) { animation-delay: 0.25s; }
+
+@keyframes stepFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stepNumber {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30px;
+}
+
+.stepNumber span {
+    display: flex;
+    border: 1px solid #D0D6DF;
+    border-radius: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #475467;
+    justify-content: center;
+    align-items: center;
+}
+
+.connector {
+    flex: 1;
+    display: block;
+    margin: 10px 0;
+    width: 15px;
+    border-right: 1px solid #D0D6DF;
+}
+
+.stepContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex: 1;
+    min-width: 0;
+    gap: 5px;
+    padding-bottom: 32px;
+}
+
+.stepContent h3 {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    font-weight: 600 !important;
+    margin: 4px 0 !important;
+}
+
+.stepContent p {
+    font-size: 16px;
+    line-height: 22px;
+    color: #475467;
+    margin: 8px 0;
+}
+
+.stepContent strong, .stepContent b {
+    position: relative;
+}
+
+.stepContent strong::before, .stepContent b::before {
+    content: '\201C';
+    margin-right: 2px;
+}
+
+.stepContent strong::after, .stepContent b::after {
+    content: '\201D';
+    margin-left: 2px;
+}
+
+.stepContent ol {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 20px;
+    margin: 4px 0;
+}
+
+.stepContent :global(.supademo-container) {
+    padding: 0;
+    margin: 12px 0;
+    overflow: hidden;
+}
+
+.stepContent :global(.theme-code-block) {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 8px 0;
+}
+
+.stepContent :global(.theme-code-block) pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: hidden;
+    margin: 0;
+}

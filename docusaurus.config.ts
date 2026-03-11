@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import larkDocsConfig from './config/lark-docs.config';
+import 'dotenv/config';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -26,13 +28,18 @@ const config: Config = {
   customFields: {
     inkeepApiKey: process.env.INKEEP_API_KEY || '',
     secondaryNavbar: [
-      { label: 'Cloud Guides',  href: '/',                                     prefix: null,               icon: 'cloud'     },
-      { label: 'BYOC Guides',   href: '/tutorial-basics/create-a-document',    prefix: '/tutorial-basics', icon: 'server'    },
+      { label: 'Cloud Guides',  href: '/',                                      prefix: null,               icon: 'cloud'     },
+      { label: 'BYOC Guides',   href: '/tutorial-basics/create-a-document',     prefix: '/tutorial-basics', icon: 'server'    },
       { label: 'API & SDK',     href: '/tutorial-extras/manage-docs-versions',  prefix: '/tutorial-extras', icon: 'code'      },
       { label: 'CLI',           href: '/intro',                                 prefix: null,               icon: 'terminal'  },
       { label: 'Releases',      href: '/intro',                                 prefix: null,               icon: 'tag'       },
     ],
   },
+
+  plugins: [
+    ['./plugins/lark-docs', larkDocsConfig],
+    './plugins/apifox-docs',
+  ],
 
   presets: [
     [
