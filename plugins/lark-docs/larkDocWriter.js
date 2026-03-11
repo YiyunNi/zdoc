@@ -41,6 +41,10 @@ class larkDocWriter {
         this.upload_to_s3 = upload_to_s3
     }
 
+    destroy() {
+        this.downloader.destroy()
+    }
+
     categorize_node(source) {
         const RICH_TYPES = new Set([9, 11, 17, 22, 23, 27])
         const contentBlocks = (source.blocks?.items ?? []).filter(b => b.block_type !== 1)

@@ -20,8 +20,10 @@ class larkImageDownloader {
             minTime: 52,
         });
         this.s3 = new S3Client({
-            accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-            secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+            credentials: {
+                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+            },
             region: process.env.AWS_REGION,
         })
     }    
@@ -145,6 +147,10 @@ class larkImageDownloader {
         }
 
         return res
+    }
+
+    destroy() {
+        this.s3.destroy()
     }
 
     async __wait(duration) {

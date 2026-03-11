@@ -143,8 +143,9 @@ module.exports = function (context, options) {
                             }
 
                             utils.post_process_file_paths(outputDir)
+                            writer.destroy()
                         }
-        
+
                         // Generate a specific doc page
                         if (opts.docTitle !== undefined) {
                             console.log(opts.docTitle)
