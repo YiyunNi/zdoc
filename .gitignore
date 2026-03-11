@@ -40,7 +40,7 @@ node_modules/
 # Lark-docs generated doc output (populated by fetch-lark-docs at build time)
 /docs/tutorials/
 /versioned_docs/version-byoc/tutorials/
-/reference/
+/reference/api/
 
 # Generated sidebar files
 /config/generated/*.js
