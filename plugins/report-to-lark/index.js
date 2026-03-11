@@ -93,10 +93,14 @@ module.exports = function (context) {
         .option('--stages <stages>', 'Comma-separated stage names (for --card-create)')
         .option('--status <status>', 'Stage status: done (default) | fail | success')
         .option('--note <note>', 'Optional note to append to the card')
+        .option('--note-file <path>', 'Read note text from a file (supports multiline; overrides --note)')
         .option('--message-id <id>', 'Card message ID for cross-job --card-finish')
         .option('--started-at <iso>', 'startedAt ISO string passed from card-create job output')
         .action(async (opts) => {
           const FEISHU_HOST = process.env.FEISHU_HOST
+          const noteText = opts.noteFile
+            ? fs.readFileSync(opts.noteFile, 'utf8').trim()
+            : (opts.note || null)
 
           const fetcher = new tokenFetcher()
           await fetcher.fetchToken()
@@ -158,7 +162,7 @@ module.exports = function (context) {
             }
             const status = opts.status || 'done'
             state.statuses[state.currentIndex] = status
-            if (opts.note) state.notes.push(opts.note)
+            if (noteText) state.notes.push(noteText)
             if (status !== 'fail' && state.currentIndex + 1 < state.stages.length) {
               state.currentIndex++
               state.statuses[state.currentIndex] = 'running'
@@ -187,7 +191,7 @@ module.exports = function (context) {
                 ? passedStages.map(() => success ? 'done' : 'fail')
                 : [success ? 'done' : 'fail'],
               currentIndex: 0,
-              notes: opts.note ? [opts.note] : [],
+              notes: noteText ? [noteText] : [],
               startedAt: opts.startedAt || new Date().toISOString(),
             }
             if (loadState(context.siteDir)) {
@@ -195,7 +199,7 @@ module.exports = function (context) {
               state.statuses = success
                 ? state.stages.map(() => 'done')
                 : state.statuses.map(s => s === 'running' ? 'fail' : s)
-              if (opts.note) state.notes.push(opts.note)
+              if (noteText) state.notes.push(noteText)
             }
             await patchCard(token, messageId, state, FEISHU_HOST)
             return

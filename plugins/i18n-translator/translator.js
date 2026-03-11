@@ -498,7 +498,7 @@ function backfillSidebarKeys(sources, siteDir, locale) {
 // Main entry point
 // ---------------------------------------------------------------------------
 
-async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false, harvestOnly = false, proposeOnly = false, approveOnly = false, targetFile = null, clearCache = false, auditOnly = false }) {
+async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false, harvestOnly = false, proposeOnly = false, approveOnly = false, targetFile = null, clearCache = false, auditOnly = false, statsJsonPath = null }) {
   const config = loadConfig(siteDir)
 
   const llmConfig = {
@@ -709,6 +709,10 @@ async function run({ siteDir, locale = 'ja-JP', forceAll = false, dryRun = false
   await cache.close()
 
   console.log(`[i18n-translator] Done. translated=${translated} skipped=${skipped} removed=${removed}`)
+
+  if (statsJsonPath && !dryRun) {
+    fs.writeFileSync(statsJsonPath, JSON.stringify({ translated, skipped, removed, total: translated + skipped }))
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -828,4 +832,81 @@ async function validateAndRevert({ sources, siteDir, locale, dbPath, reportJsonP
   return revertedPaths
 }
 
-module.exports = { run, validateAndRevert }
+// ---------------------------------------------------------------------------
+// Mark agent-repaired files in translation cache
+// ---------------------------------------------------------------------------
+
+/**
+ * After the agent repair step, validate each previously-broken file and write
+ * an i18n_file_manifest record for any that now pass. This prevents the next
+ * translate-i18n run from calling the LLM again (which would likely reproduce
+ * the same broken output and trigger another revert loop).
+ */
+async function markRepaired({ brokenFilesJsonPath, siteDir, locale, dbPath }) {
+  if (!fs.existsSync(brokenFilesJsonPath)) {
+    console.log('[i18n-translator] mark-repaired: no broken-files JSON found, nothing to do')
+    return { marked: 0, stillBroken: 0 }
+  }
+
+  const brokenFiles = JSON.parse(fs.readFileSync(brokenFilesJsonPath, 'utf8'))
+  if (!brokenFiles.length) return { marked: 0, stillBroken: 0 }
+
+  const { compile } = await import('@mdx-js/mdx')
+
+  const config = loadConfig(siteDir)
+  const untranslatables = config.untranslatables || []
+  const glossaryPath = path.join(siteDir, `config/glossary.${locale}.tsv`)
+  const glossary = loadGlossary(glossaryPath)
+  const glossaryHash = hashGlossary(glossary, untranslatables)
+
+  const cache = await new TranslationCache(dbPath).ready()
+
+  let marked = 0
+  let stillBroken = 0
+
+  for (const { sourcePath, destPath } of brokenFiles) {
+    const absDestPath = path.join(siteDir, destPath)
+
+    if (!fs.existsSync(absDestPath)) {
+      // Agent couldn't fix it — file was left deleted
+      stillBroken++
+      continue
+    }
+
+    const content = fs.readFileSync(absDestPath, 'utf8')
+    let valid = true
+
+    const fmMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+    if (fmMatch) {
+      try { require('js-yaml').load(fmMatch[1]) } catch { valid = false }
+    }
+
+    if (valid) {
+      try { await compile(content, { development: false }) } catch { valid = false }
+    }
+
+    if (valid && validateMdxStructure(content).length) valid = false
+
+    if (!valid) {
+      stillBroken++
+      continue
+    }
+
+    const absSourcePath = path.join(siteDir, sourcePath)
+    if (!fs.existsSync(absSourcePath)) {
+      console.warn(`[i18n-translator] mark-repaired: source missing: ${sourcePath}`)
+      continue
+    }
+
+    const sourceHash = hashContent(fs.readFileSync(absSourcePath, 'utf8'))
+    await cache.setFileRecord(sourcePath, locale, sourceHash, glossaryHash)
+    console.log(`[i18n-translator] mark-repaired: ✓ ${destPath}`)
+    marked++
+  }
+
+  await cache.close()
+  console.log(`[i18n-translator] mark-repaired: ${marked} marked · ${stillBroken} still broken`)
+  return { marked, stillBroken }
+}
+
+module.exports = { run, validateAndRevert, markRepaired }

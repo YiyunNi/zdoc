@@ -1,6 +1,6 @@
 'use strict'
 
-const { run, validateAndRevert } = require('./translator')
+const { run, validateAndRevert, markRepaired } = require('./translator')
 
 module.exports = function i18nTranslatorPlugin(context) {
   return {
@@ -21,10 +21,22 @@ module.exports = function i18nTranslatorPlugin(context) {
         .option('--audit', 'Check existing translated files for quality issues (no LLM calls)')
         .option('--validate-and-revert', 'Revert any translated files that still fail MDX compilation (run after mdx-parse)')
         .option('--report-json <path>', 'Write a JSON report of broken files to <path> (use with --validate-and-revert)')
+        .option('--stats-json <path>', 'Write translation stats JSON to <path> after a translate run')
+        .option('--mark-repaired <path>', 'Mark agent-repaired files in the translation cache (pass broken-files JSON path)')
         .action(async opts => {
+          if (opts.markRepaired) {
+            const path = require('path')
+            await markRepaired({
+              brokenFilesJsonPath: opts.markRepaired,
+              siteDir: context.siteDir,
+              locale: opts.locale,
+              dbPath: path.join(context.siteDir, 'translation.db'),
+            })
+            return
+          }
+
           if (opts.validateAndRevert) {
             const path = require('path')
-            const { spawnSync } = require('child_process')
             const sources = [
               {
                 folder:     path.join(context.siteDir, 'docs/tutorials'),
@@ -35,35 +47,28 @@ module.exports = function i18nTranslatorPlugin(context) {
                 destFolder: path.join(context.siteDir, 'i18n', opts.locale, 'docusaurus-plugin-content-docs/version-byoc/tutorials'),
               },
             ]
-            const revertedPaths = await validateAndRevert({
+            await validateAndRevert({
               sources,
               siteDir:        context.siteDir,
               locale:         opts.locale,
               dbPath:         path.join(context.siteDir, 'translation.db'),
               reportJsonPath: opts.reportJson || null,
             })
-            if (revertedPaths.length > 0 && process.env.APP_ID) {
-              const fileList = revertedPaths.map(p => `• ${p}`).join('\n')
-              const msg = `⚠️ ${revertedPaths.length} Japanese translation(s) failed MDX validation and were reverted. They will be retried on the next run.\n\n${fileList}`
-              spawnSync(
-                'npx', ['docusaurus', 'report-to-lark', '-type', 'text', '-m', msg],
-                { cwd: context.siteDir, stdio: 'inherit', encoding: 'utf8' }
-              )
-            }
             return
           }
 
           await run({
-            siteDir:      context.siteDir,
-            locale:       opts.locale,
-            forceAll:     !!opts.all,
-            dryRun:       !!opts.dryRun,
-            harvestOnly:  !!opts.harvestTerms,
-            proposeOnly:  !!opts.proposeTerms,
-            approveOnly:  !!opts.approveTerms,
-            targetFile:   opts.file || null,
-            clearCache:   !!opts.clearCache,
-            auditOnly:    !!opts.audit,
+            siteDir:       context.siteDir,
+            locale:        opts.locale,
+            forceAll:      !!opts.all,
+            dryRun:        !!opts.dryRun,
+            harvestOnly:   !!opts.harvestTerms,
+            proposeOnly:   !!opts.proposeTerms,
+            approveOnly:   !!opts.approveTerms,
+            targetFile:    opts.file || null,
+            clearCache:    !!opts.clearCache,
+            auditOnly:     !!opts.audit,
+            statsJsonPath: opts.statsJson || null,
           })
         })
     },

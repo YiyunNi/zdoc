@@ -60,7 +60,7 @@ jobs:
 
     - name: translate to Japanese
       run: |
-        npx docusaurus translate-i18n --locale ja-JP
+        npx docusaurus translate-i18n --locale ja-JP --stats-json /tmp/translate-stats.json
         npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials
         npx docusaurus mdx-parse -d i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials
         npx docusaurus translate-i18n --validate-and-revert --locale ja-JP --report-json /tmp/broken-files.json
@@ -85,29 +85,33 @@ jobs:
     - name: check for broken translations
       id: check_broken
       run: |
-        if [ -f /tmp/broken-files.json ] && [ "$(jq length /tmp/broken-files.json)" -gt "0" ]; then
+        COUNT=$(jq length /tmp/broken-files.json 2>/dev/null || echo 0)
+        echo "count=${COUNT}" >> $GITHUB_OUTPUT
+        if [ "$COUNT" -gt 0 ]; then
           echo "has_broken=true" >> $GITHUB_OUTPUT
-          echo "count=$(jq length /tmp/broken-files.json)" >> $GITHUB_OUTPUT
           echo "Broken files:"
           jq -r '.[] | "  \(.destPath)  —  \(.error)"' /tmp/broken-files.json
         else
           echo "has_broken=false" >> $GITHUB_OUTPUT
-          echo "count=0" >> $GITHUB_OUTPUT
           echo "No broken translations."
         fi
 
     - name: advance Translate JA stage
       run: |
-        COUNT=${{ steps.check_broken.outputs.count }}
-        if [ "${{ steps.check_broken.outputs.has_broken }}" = "true" ]; then
-          npx docusaurus report-to-lark --card-advance \
-            --note "⚠️ ${COUNT} file(s) failed MDX validation — queued for agent repair"
-        else
-          # No broken files: mark Translate JA done, then skip Agent Repair stage
-          npx docusaurus report-to-lark --card-advance \
-            --note "All translations passed MDX validation"
-          npx docusaurus report-to-lark --card-advance \
-            --note "No repairs needed"
+        TRANSLATED=$(jq -r '.translated // 0' /tmp/translate-stats.json 2>/dev/null || echo 0)
+        TOTAL=$(jq -r '.total // 0' /tmp/translate-stats.json 2>/dev/null || echo 0)
+        COUNT="${{ steps.check_broken.outputs.count }}"
+        {
+          printf '%s translated this run / %s total' "$TRANSLATED" "$TOTAL"
+          if [ "$COUNT" -gt 0 ]; then
+            printf '\n⚠️ %s failed MDX validation:\n' "$COUNT"
+            jq -r '.[] | "• " + .destPath' /tmp/broken-files.json
+          fi
+        } > /tmp/translate-note.txt
+        npx docusaurus report-to-lark --card-advance --note-file /tmp/translate-note.txt
+        if [ "${{ steps.check_broken.outputs.has_broken }}" = "false" ]; then
+          # No broken files: skip Agent Repair stage
+          npx docusaurus report-to-lark --card-advance --note "No repairs needed"
         fi
       env:
         APP_ID: ${{ secrets.APP_ID }}
@@ -208,6 +212,11 @@ jobs:
         APP_SECRET: ${{ secrets.APP_SECRET }}
         FEISHU_HOST: ${{ vars.FEISHU_HOST }}
 
+    - name: mark repaired files in translation cache
+      if: steps.check_broken.outputs.has_broken == 'true'
+      run: |
+        npx docusaurus translate-i18n --mark-repaired /tmp/broken-files.json --locale ja-JP
+
     - name: advance Agent Repair stage
       if: steps.check_broken.outputs.has_broken == 'true'
       run: |
@@ -215,12 +224,11 @@ jobs:
         STILL=${{ steps.revalidate.outputs.still_broken || 0 }}
         FIXED=$(( COUNT - STILL ))
         if [ "$STILL" -eq 0 ]; then
-          npx docusaurus report-to-lark --card-advance \
-            --note "🔧 Agent repaired all ${COUNT} file(s)"
+          NOTE="🔧 All ${COUNT} file(s) repaired"
         else
-          npx docusaurus report-to-lark --card-advance \
-            --note "🔧 Agent repaired ${FIXED}/${COUNT} files · ${STILL} still reverted (will retry on next run)"
+          NOTE="🔧 ${FIXED}/${COUNT} repaired · ${STILL} still reverted"
         fi
+        npx docusaurus report-to-lark --card-advance --note "$NOTE"
       env:
         APP_ID: ${{ secrets.APP_ID }}
         APP_SECRET: ${{ secrets.APP_SECRET }}
