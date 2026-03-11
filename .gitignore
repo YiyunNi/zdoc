@@ -34,3 +34,14 @@ node_modules/
 .env
 .env.development
 
+# Lark-docs pre-fetched source JSON (generated build artifacts)
+/plugins/lark-docs/meta/sources/
+
+# Lark-docs generated doc output (populated by fetch-lark-docs at build time)
+/docs/tutorials/
+/versioned_docs/version-byoc/tutorials/
+/reference/
+
+# Generated sidebar files
+/config/generated/*.js
+
