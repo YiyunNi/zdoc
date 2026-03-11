@@ -456,12 +456,6 @@ class larkDocScraper {
                 if (recursive) {
                     for (const child of node.children) {
                         await this.__fetch_wiki_children(child, recursive)
-                        await this.__fetch_blocks(child)
-                        child.slug = await this.__slugify(child.node_token, child.title)
-                        this.__write_source(child, `${this.doc_source_dir}/${child.origin_node_token}.json`)
-                        console.log(`1. Fetched ${child.origin_node_token}.json`)
-                        delete child.children
-                        delete child.blocks
                     }
                 }
             } else if (jres.status == 429) {
