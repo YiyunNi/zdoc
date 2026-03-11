@@ -45,22 +45,26 @@ class larkImageDownloader {
         }
 
         try {
+            console.log(`[s3] checking if ${key} exists`)
             const getObjectCommand = new GetObjectCommand(get_params);
             const response = await this.s3.send(getObjectCommand);
+            console.log(`[s3] ${key} found in bucket, checking hash`)
             if (response.Metadata.hash === crypto.createHash('md5').update(buffer).digest('hex')) {
-                console.log(`Image already exists in S3: ${key}`);
+                console.log(`[s3] ${key} unchanged, skipping upload`);
                 return
             }
-
+            console.log(`[s3] ${key} hash changed, re-uploading`)
             const putObjectCommand = new PutObjectCommand(put_params);
             await this.s3.send(putObjectCommand);
-            console.log(`Successfully uploaded image to ${key}`);
+            console.log(`[s3] uploaded ${key}`);
         } catch (err) {
-            if (err.Code === 'NoSuchKey') {
+            if (err.Code === 'NoSuchKey' || err.name === 'NoSuchKey') {
+                console.log(`[s3] ${key} not found, uploading`)
                 const putObjectCommand = new PutObjectCommand(put_params);
                 await this.s3.send(putObjectCommand);
+                console.log(`[s3] uploaded ${key}`)
             } else {
-                console.error("Error uploading image:", err);
+                console.error(`[s3] ERROR uploading ${key}:`, err.message ?? err);
             }
         }
     }

@@ -1508,19 +1508,26 @@ class larkDocWriter {
         }
 
         try {
+            console.log(`[image] downloading ${image.token} → ${slug}.png`)
             const result = await this.downloader.__downloadImage(image.token)
+            console.log(`[image] download response status: ${result.status} for ${image.token}`)
+            console.log(`[image] reading buffer for ${image.token}`)
             const buffer = await result.buffer();
+            console.log(`[image] buffer ready (${buffer.length} bytes) for ${image.token}`)
             if (this.upload_to_s3) {
+                console.log(`[image] uploading ${slug}.png to S3`)
                 await this.downloader.__uploadToS3(buffer, `${slug}.png`);
+                console.log(`[image] S3 upload done for ${slug}.png`)
             } else {
                 result.body.pipe(fs.createWriteStream(`${this.downloader.target_path}/${slug}.png`));
+                console.log(`[image] written to disk: ${slug}.png`)
             }
         } catch (error) {
-            console.log(error)
+            console.error(`[image] ERROR for token ${image.token}:`, error.message ?? error)
             console.log("-------------- A retry is needed -----------------");
             console.log("Sleeping for 5 seconds")
             await new Promise(resolve => setTimeout(resolve, 5000));
-            this.__image(image)
+            return await this.__image(image)
         }
 
         return `![${caption}](${root}/${slug}.png "${caption}")`;
@@ -1533,20 +1540,30 @@ class larkDocWriter {
             return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;
         }
 
+        console.log(`[board] downloading preview for ${board.token}`)
         const result = await this.downloader.__downloadBoardPreview(board.token)
-        var buffers = [];
-        result.body.on('data', (chunk) => {
-            buffers.push(chunk);
+        console.log(`[board] download response status: ${result.status} for ${board.token}`)
+        await new Promise((resolve, reject) => {
+            const buffers = [];
+            result.body.on('data', (chunk) => buffers.push(chunk));
+            result.body.on('error', reject);
+            result.body.on('end', async () => {
+                try {
+                    const buffer = Buffer.concat(buffers);
+                    console.log(`[board] buffer ready (${buffer.length} bytes) for ${board.token}`)
+                    const trimmedBuffer = await this.__trim_white_borders(buffer);
+                    if (this.upload_to_s3) {
+                        console.log(`[board] uploading ${board.token}.png to S3`)
+                        await this.downloader.__uploadToS3(trimmedBuffer, `${board["token"]}.png`);
+                        console.log(`[board] S3 upload done for ${board.token}.png`)
+                    } else {
+                        fs.writeFileSync(`${this.downloader.target_path}/${board["token"]}.png`, trimmedBuffer);
+                        console.log(`[board] written to disk: ${board.token}.png`)
+                    }
+                    resolve()
+                } catch (err) { reject(err) }
+            });
         });
-        result.body.on('end', async () => {
-            const buffer = Buffer.concat(buffers);
-            const trimmedBuffer = await this.__trim_white_borders(buffer);
-            if (this.upload_to_s3) {
-                await this.downloader.__uploadToS3(trimmedBuffer, `${board["token"]}.png`);
-            } else {
-                fs.writeFileSync(`${this.downloader.target_path}/${board["token"]}.png`, trimmedBuffer);
-            }
-        });           
 
         return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;
     }
