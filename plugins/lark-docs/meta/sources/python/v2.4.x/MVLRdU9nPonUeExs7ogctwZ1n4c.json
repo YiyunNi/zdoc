@@ -1,0 +1,502 @@
+{
+  "created_time": "1716516189",
+  "modified_time": "1716535632",
+  "name": "OnnxEmbeddingFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "UQxKftQ8BleHJcdYo5NcKjNenng",
+  "token": "MVLRdU9nPonUeExs7ogctwZ1n4c",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/MVLRdU9nPonUeExs7ogctwZ1n4c",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "MVLRdU9nPonUeExs7ogctwZ1n4c",
+        "block_type": 1,
+        "children": [
+          "K3bcdyuUoo3QmCxfxbIcBypwnde",
+          "QLYUd0wlvo5sa3xlkJUcipUXnCf",
+          "DL67dc0J1opNnrxAQ7Qc4jN9nob",
+          "ZpvMdFubpoOc6pxZmZLcn07WnNb",
+          "BRS9dUorNokxL8xGX99cJiyVnQd",
+          "IfvQd2fSGoQgVPxChXFcD3Q6n4b",
+          "Y9JedA1KloiVlhxbflIcovHYnWb",
+          "VLj8dI8k9oFEzPxBvSgchktjnlf",
+          "CRFgd25a4oDxg3xbo5Ic1drlnYb",
+          "GmY4dd6dTodFplxiyKMcgmfCnyB"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "OnnxEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "K3bcdyuUoo3QmCxfxbIcBypwnde",
+        "block_type": 2,
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "OnnxEmbeddingFunction is a class in pymilvus that handles encoding text into embeddings using Open Neural Network Exchange (ONNX) embedding models to support embedding retrieval in Milvus.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QLYUd0wlvo5sa3xlkJUcipUXnCf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.dense.OnnxEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      },
+      {
+        "block_id": "DL67dc0J1opNnrxAQ7Qc4jN9nob",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      },
+      {
+        "block_id": "ZpvMdFubpoOc6pxZmZLcn07WnNb",
+        "block_type": 2,
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs an OnnxEmbeddingFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BRS9dUorNokxL8xGX99cJiyVnQd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "OnnxEmbeddingFunction(\n    model_name: str = \"GPTCache/paraphrase-albert-onnx\",\n    tokenizer_name: str = \"GPTCache/paraphrase-albert-small-v2\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      },
+      {
+        "block_id": "IfvQd2fSGoQgVPxChXFcD3Q6n4b",
+        "block_type": 2,
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y9JedA1KloiVlhxbflIcovHYnWb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TIxldj0D2oWluPxDfFAclrapnMe"
+        ],
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      },
+      {
+        "block_id": "TIxldj0D2oWluPxDfFAclrapnMe",
+        "block_type": 2,
+        "parent_id": "Y9JedA1KloiVlhxbflIcovHYnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The repository ID on the Hugging Face Hub that contains the pre-trained ONNX model file. For example, in the provided code, it is set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GPTCache/paraphrase-albert-onnx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " by default. This repository should contain a compatible ONNX model for the desired natural language processing task, such as text classification, token classification, or feature extraction.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VLj8dI8k9oFEzPxBvSgchktjnlf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "tokenizer_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NFZOdVCgOouZh4xsnfycqUkanvb"
+        ],
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      },
+      {
+        "block_id": "NFZOdVCgOouZh4xsnfycqUkanvb",
+        "block_type": 2,
+        "parent_id": "VLj8dI8k9oFEzPxBvSgchktjnlf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The repository ID on the Hugging Face Hub that contains the tokenizer configuration compatible with the specified ONNX model. In the provided code, it is set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GPTCache/paraphrase-albert-small-v2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " by default. The tokenizer handles text preprocessing, such as tokenization, padding, and encoding, ensuring compatibility with the ONNX model's input format. The tokenizer should be pre-trained and compatible with the ONNX model for the same task.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CRFgd25a4oDxg3xbo5Ic1drlnYb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      },
+      {
+        "block_id": "GmY4dd6dTodFplxiyKMcgmfCnyB",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.dense import OnnxEmbeddingFunction\n\nonnx_ef = OnnxEmbeddingFunction(\n    model_name=\"GPTCache/paraphrase-albert-onnx\", # Defaults to `GPTCache/paraphrase-albert-onnx`\n    tokenizer_name=\"GPTCache/paraphrase-albert-small-v2\" # Defaults to `GPTCache/paraphrase-albert-small-v2`\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MVLRdU9nPonUeExs7ogctwZ1n4c"
+      }
+    ],
+    "counts": 13
+  },
+  "slug": "EmbeddingModels-OnnxEmbeddingFunction"
+}

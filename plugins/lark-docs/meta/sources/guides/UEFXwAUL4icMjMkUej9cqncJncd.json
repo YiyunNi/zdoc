@@ -1,0 +1,211 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": true,
+  "node_create_time": "1733998186",
+  "node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+  "node_type": "origin",
+  "obj_create_time": "1733998186",
+  "obj_edit_time": "1734950844",
+  "obj_token": "F2hadnoauoqZxDxCELlcHW6Eni7",
+  "obj_type": "docx",
+  "origin_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+  "space_id": "7167193056431783939",
+  "title": "Access Control",
+  "slug": "access-control",
+  "children": [
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1734948831",
+      "node_token": "UDjcwWISuixYjqkQy3GcmBpsnmV",
+      "node_type": "origin",
+      "obj_create_time": "1734948831",
+      "obj_edit_time": "1760002024",
+      "obj_token": "GcQqdbC5qoZlDExDqaicpJpvny7",
+      "obj_type": "docx",
+      "origin_node_token": "UDjcwWISuixYjqkQy3GcmBpsnmV",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "space_id": "7167193056431783939",
+      "title": "Access Control Explained",
+      "slug": "access-control-overview"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1733998265",
+      "node_token": "CWT2wh5YriZfPZkGlgCcWxVnnAf",
+      "node_type": "origin",
+      "obj_create_time": "1733998265",
+      "obj_edit_time": "1762157550",
+      "obj_token": "Oip4diTSTojb5vxLMSocJj8qngg",
+      "obj_type": "docx",
+      "origin_node_token": "CWT2wh5YriZfPZkGlgCcWxVnnAf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "space_id": "7167193056431783939",
+      "title": "Manage Cluster Users (Console)",
+      "slug": "cluster-users"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1734597177",
+      "node_token": "I2CHwfDHKilTMukoZ13cR2M4nzb",
+      "node_type": "origin",
+      "obj_create_time": "1734597177",
+      "obj_edit_time": "1772797901",
+      "obj_token": "XnYWdBIqUonohaxUb2WcTe2HnQf",
+      "obj_type": "docx",
+      "origin_node_token": "I2CHwfDHKilTMukoZ13cR2M4nzb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "space_id": "7167193056431783939",
+      "title": "Manage Cluster User (SDK)",
+      "slug": "cluster-users-sdk"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1733998312",
+      "node_token": "YHG0wCYxfiZILvkZ2VLclmvsn7g",
+      "node_type": "origin",
+      "obj_create_time": "1733998312",
+      "obj_edit_time": "1767853056",
+      "obj_token": "Y3kCdxxaPovRK9xtQgWck8jDnAg",
+      "obj_type": "docx",
+      "origin_node_token": "YHG0wCYxfiZILvkZ2VLclmvsn7g",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "space_id": "7167193056431783939",
+      "title": "Manage Cluster Roles (Console)",
+      "slug": "cluster-roles"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1734597205",
+      "node_token": "PBZwwNqWjiikeYkXgHPcGhLznTh",
+      "node_type": "origin",
+      "obj_create_time": "1734597205",
+      "obj_edit_time": "1772797624",
+      "obj_token": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+      "obj_type": "docx",
+      "origin_node_token": "PBZwwNqWjiikeYkXgHPcGhLznTh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "space_id": "7167193056431783939",
+      "title": "Manage Cluster Roles (SDK)",
+      "slug": "cluster-roles-sdk"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1733998375",
+      "node_token": "NitBwKVzzi0hXBkjdDFcfwRsngb",
+      "node_type": "origin",
+      "obj_create_time": "1733998375",
+      "obj_edit_time": "1762932365",
+      "obj_token": "IXRNdN89eo2ztSxutf6ciVImnah",
+      "obj_type": "docx",
+      "origin_node_token": "NitBwKVzzi0hXBkjdDFcfwRsngb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "space_id": "7167193056431783939",
+      "title": "Privileges & Privilege Groups",
+      "slug": "cluster-privileges"
+    }
+  ],
+  "blocks": {
+    "items": [
+      {
+        "block_id": "F2hadnoauoqZxDxCELlcHW6Eni7",
+        "block_type": 1,
+        "children": [
+          "WOUldyXHDoLPKUx9QU5cdSZinUh",
+          "VLWKdOt2Co7qfZx2XI3cORbon0g"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access Control",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "WOUldyXHDoLPKUx9QU5cdSZinUh",
+        "block_type": 2,
+        "parent_id": "F2hadnoauoqZxDxCELlcHW6Eni7",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Learn more about how Zilliz Cloud implements RBAC for more efficient access control and how to manage cluster users and roles, privileges.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VLWKdOt2Co7qfZx2XI3cORbon0g",
+        "block_type": 2,
+        "parent_id": "F2hadnoauoqZxDxCELlcHW6Eni7",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 3
+  }
+}

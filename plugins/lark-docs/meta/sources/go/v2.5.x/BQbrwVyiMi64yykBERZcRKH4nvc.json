@@ -1,0 +1,185 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1740738447",
+  "node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+  "node_type": "origin",
+  "obj_create_time": "1740738447",
+  "obj_edit_time": "1741863156",
+  "obj_token": "UrrBdPJu0oZ1lGxRbLGcPnaXnRc",
+  "obj_type": "docx",
+  "origin_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "IE6JwWJPgiHaZKkHCLccwq4vngh",
+  "space_id": "7167193056431783939",
+  "title": "Resource Group",
+  "slug": "v2-ResourceGroup",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "UrrBdPJu0oZ1lGxRbLGcPnaXnRc",
+        "block_type": 1,
+        "children": [
+          "EpZ0dfqbuoTLvDxr963c4KCsnyd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Resource Group",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "EpZ0dfqbuoTLvDxr963c4KCsnyd",
+        "block_type": 2,
+        "parent_id": "UrrBdPJu0oZ1lGxRbLGcPnaXnRc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This chapter provides references for the methods to manipulate resource groups.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740738495",
+      "node_token": "LcKgwZVgLiwrv8kz1hXcCmA1nBe",
+      "node_type": "origin",
+      "obj_create_time": "1740738495",
+      "obj_edit_time": "1741319561",
+      "obj_token": "OYCddlBiWopmNwxzByzcMffOn4e",
+      "obj_type": "docx",
+      "origin_node_token": "LcKgwZVgLiwrv8kz1hXcCmA1nBe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+      "space_id": "7167193056431783939",
+      "title": "CreateResourceGroup()",
+      "slug": "v2-ResourceGroup-CreateResourceGroup"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740968998",
+      "node_token": "Ogo8wOmfei7BbmkX65IcE8Ibnib",
+      "node_type": "origin",
+      "obj_create_time": "1740968998",
+      "obj_edit_time": "1762257324",
+      "obj_token": "SFrkdMCYcoiVq1xHkU5ciAULn9g",
+      "obj_type": "docx",
+      "origin_node_token": "Ogo8wOmfei7BbmkX65IcE8Ibnib",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+      "space_id": "7167193056431783939",
+      "title": "UpdateResourceGroup()",
+      "slug": "v2-ResourceGroup-UpdateResourceGroup"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740969458",
+      "node_token": "XLnEwRL0ViXFghkZjVXcGXEUngE",
+      "node_type": "origin",
+      "obj_create_time": "1740969458",
+      "obj_edit_time": "1741320300",
+      "obj_token": "IyPld3M6So9yDmxgVNHcqkttnUg",
+      "obj_type": "docx",
+      "origin_node_token": "XLnEwRL0ViXFghkZjVXcGXEUngE",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+      "space_id": "7167193056431783939",
+      "title": "TransferReplica()",
+      "slug": "v2-ResourceGroup-TransferReplica"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740968528",
+      "node_token": "YuagwmePtipWvbkUYwicyRbNnzc",
+      "node_type": "origin",
+      "obj_create_time": "1740968528",
+      "obj_edit_time": "1741320340",
+      "obj_token": "J8KMdCuyKoQutlx32hFcq5q8nhe",
+      "obj_type": "docx",
+      "origin_node_token": "YuagwmePtipWvbkUYwicyRbNnzc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+      "space_id": "7167193056431783939",
+      "title": "DropResourceGroup()",
+      "slug": "v2-ResourceGroup-DropResourceGroup"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740968066",
+      "node_token": "X7TxwM1o6iwNDxkNZTScBZsqnbc",
+      "node_type": "origin",
+      "obj_create_time": "1740968066",
+      "obj_edit_time": "1741320387",
+      "obj_token": "IoHxdEKIkoQdgRxRf36cJ4dRnFd",
+      "obj_type": "docx",
+      "origin_node_token": "X7TxwM1o6iwNDxkNZTScBZsqnbc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+      "space_id": "7167193056431783939",
+      "title": "DescribeResourceGroup()",
+      "slug": "v2-ResourceGroup-DescribeResourceGroup"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740968803",
+      "node_token": "UnSHwmJSZii2tkkbzXQcEEJxn59",
+      "node_type": "origin",
+      "obj_create_time": "1740968803",
+      "obj_edit_time": "1741320429",
+      "obj_token": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+      "obj_type": "docx",
+      "origin_node_token": "UnSHwmJSZii2tkkbzXQcEEJxn59",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+      "space_id": "7167193056431783939",
+      "title": "ListResourceGroups()",
+      "slug": "v2-ResourceGroup-ListResourceGroups"
+    }
+  ]
+}

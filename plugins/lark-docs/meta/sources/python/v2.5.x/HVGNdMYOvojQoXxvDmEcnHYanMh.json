@@ -1,0 +1,853 @@
+{
+  "created_time": "1713253784",
+  "modified_time": "1749940317",
+  "name": "CrossEncoderRerankFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "JLCvfKlhXlYqcHdhyUwcSOWQn0f",
+  "token": "HVGNdMYOvojQoXxvDmEcnHYanMh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/HVGNdMYOvojQoXxvDmEcnHYanMh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "HVGNdMYOvojQoXxvDmEcnHYanMh",
+        "block_type": 1,
+        "children": [
+          "XtnJdnhMPofUkhxuOXfcSxrgn8b",
+          "JxrCdFyuUowxfsxsTZIc0IhOnMd",
+          "NUpWdS6aDojH36xgUxWcpQncngf",
+          "IGlYdAlOroOKWixlWUyc0djDnuh",
+          "DrU7dxMQYozk9AxUMN7cH9mrnMe",
+          "FoYsdYUXioMxC7xlIV0cI03lnBe",
+          "Wa2xdUaLXomXzDxnLnpcXAcDnjh",
+          "V7C2dbG5XoWpryx17sYcYJKKnMg",
+          "QrlJdziSPoEyzkxlVYrcf3VAnXd",
+          "SDZ9deEDsoDliFxlWSZcI9VFnle",
+          "SQMydvlF2oLAsmxeh6wcYuUvnle",
+          "JxM2dGupboe72uxJP3ucIppnnlf",
+          "XMuTd4FT0oQb3wxmiN7cSmGCncf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CrossEncoderRerankFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "XtnJdnhMPofUkhxuOXfcSxrgn8b",
+        "block_type": 2,
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CrossEncoderRerankFunction",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is a class in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus_model",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fmilvus-model"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that takes a query and document as input and directly returns a similarity score instead of embeddings. This functionality uses the underlying Cross-Encoder reranking model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JxrCdFyuUowxfsxsTZIc0IhOnMd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.reranker.CrossEncoderRerankFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "NUpWdS6aDojH36xgUxWcpQncngf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "IGlYdAlOroOKWixlWUyc0djDnuh",
+        "block_type": 2,
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a CrossEncoderRerankFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DrU7dxMQYozk9AxUMN7cH9mrnMe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CrossEncoderRerankFunction(\n    model_name: str = \"\",\n    device: str = \"\",\n    batch_size: int = 32,\n    activation_fct: Any = None,\n    **kwargs,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "FoYsdYUXioMxC7xlIV0cI03lnBe",
+        "block_type": 2,
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameters",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Wa2xdUaLXomXzDxnLnpcXAcDnjh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TkDxdgbDZoIMZ5xWTCEcf9Jynxe"
+        ],
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "TkDxdgbDZoIMZ5xWTCEcf9Jynxe",
+        "block_type": 2,
+        "parent_id": "Wa2xdUaLXomXzDxnLnpcXAcDnjh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the model to use. You can specify any of the available Cross-Encoder model names, for example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cross-encoder/ms-marco-TinyBERT-L-2-v2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cross-encoder/ms-marco-MiniLM-L-2-v2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", etc. If you leave this parameter unspecified, an empty string will be used. For a list of available models, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Pretrained Cross-Encoders",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fwww.sbert.net%2Fdocs%2Fpretrained_cross-encoders.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V7C2dbG5XoWpryx17sYcYJKKnMg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "device",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "E5JFdF9Fjob39txaU6pcYxntn8g"
+        ],
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "E5JFdF9Fjob39txaU6pcYxntn8g",
+        "block_type": 2,
+        "parent_id": "V7C2dbG5XoWpryx17sYcYJKKnMg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The device to use for running the model. You can specify ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cpu",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the CPU and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cuda:n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the nth GPU device.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QrlJdziSPoEyzkxlVYrcf3VAnXd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "batch_size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JHJldZHcwoGIRIx1iXCcQPdSnCb"
+        ],
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "JHJldZHcwoGIRIx1iXCcQPdSnCb",
+        "block_type": 2,
+        "parent_id": "QrlJdziSPoEyzkxlVYrcf3VAnXd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The batch size for the computation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SDZ9deEDsoDliFxlWSZcI9VFnle",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "activation_fct",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Trd0dVPQpomZlmx7BpQcYojnnZf"
+        ],
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "Trd0dVPQpomZlmx7BpQcYojnnZf",
+        "block_type": 2,
+        "parent_id": "SDZ9deEDsoDliFxlWSZcI9VFnle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The activation function applied on top of logits output of model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SQMydvlF2oLAsmxeh6wcYuUvnle",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "**kwargs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Blhbdlpkuo3uvMxoFYmcj299ntc"
+        ],
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "Blhbdlpkuo3uvMxoFYmcj299ntc",
+        "block_type": 2,
+        "parent_id": "SQMydvlF2oLAsmxeh6wcYuUvnle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Allows additional keyword arguments to be passed to the model initialization. For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cross_encoder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fwww.sbert.net%2Fdocs%2Fpackage_reference%2Fcross_encoder.html%23cross-encoder"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JxM2dGupboe72uxJP3ucIppnnlf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      },
+      {
+        "block_id": "XMuTd4FT0oQb3wxmiN7cSmGCncf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.reranker import CrossEncoderRerankFunction\n\n# Define the rerank function\nce_rf = CrossEncoderRerankFunction(\n    model_name=\"cross-encoder/ms-marco-MiniLM-L-6-v2\",  # Specify the model name. Defaults to an emtpy string.\n    device=\"cpu\" # Specify the device to use, e.g., 'cpu' or 'cuda:0'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "HVGNdMYOvojQoXxvDmEcnHYanMh"
+      }
+    ],
+    "counts": 19
+  },
+  "slug": "Rerankers-CrossEncoderRerankFunction"
+}

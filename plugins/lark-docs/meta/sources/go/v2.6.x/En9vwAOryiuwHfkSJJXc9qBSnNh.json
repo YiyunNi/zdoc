@@ -1,0 +1,1756 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1741057338",
+  "node_token": "En9vwAOryiuwHfkSJJXc9qBSnNh",
+  "node_type": "origin",
+  "obj_create_time": "1741057338",
+  "obj_edit_time": "1751350880",
+  "obj_token": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+  "obj_type": "docx",
+  "origin_node_token": "En9vwAOryiuwHfkSJJXc9qBSnNh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "UMgkwcXZdiLdi1kw0dQckGkHn5f",
+  "space_id": "7167193056431783939",
+  "title": "GrantPrivilegeV2()",
+  "slug": "v2-Authentication-GrantPrivilegeV2",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "block_type": 1,
+        "children": [
+          "EiSMdk14NoqYU9xDyV4cNNzHnLH",
+          "ThUUdTZo0oeTyJxTGRccVCE5nte",
+          "DRT9dtyNYo2IaTxg0SecqGuAnDc",
+          "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+          "Ly0gdT5GOoPuYvxUdf1cu4BPnFe",
+          "NXb9dzXMloDmE2xA5AMc2Uk6ntc",
+          "UKkVdBGn8oGBuex1QFUch2ClnLf",
+          "J03vds11AovXhjxgnqCcGDPwngd",
+          "Ll0ydNirIo1wqOxJet2cIOsBnqc",
+          "Y5RYdnSEioLWdLxxF4BcTl12nEf",
+          "Z3mZdSKU0orZK3xskIxcOMMwnib",
+          "UlNIdSnRjoqhK5x4u4bccgntndf",
+          "LQ9ld5YYooM97mxCbaUcsHaXnPl",
+          "GI00dS5ZKo4rRbx456cc4S2pnLe",
+          "JWVLdaddJoUwWSx7VWIckLrVnQb",
+          "R3pld6cV0oewtJxlqLtc6mUYnKf",
+          "W3PkdZiykodWevxjlHccWmMYnYg",
+          "DyvTdRPnNoCX2Jxvyp6cRshGnXf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grant",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Privilege",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "V2()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "EiSMdk14NoqYU9xDyV4cNNzHnLH",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This method grants a privilege or a privilege group to a role. In Milvus, you can allocate multiple privileges or privilege groups to a role and grant the role to a user so that the user gains the privileges allocated to the role.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ThUUdTZo0oeTyJxTGRccVCE5nte",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func (c *Client) ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GrantPrivilegeV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(ctx context.Context, option ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GrantPrivilegeV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", callOptions ...grpc.CallOption) error",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "wrap": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "DRT9dtyNYo2IaTxg0SecqGuAnDc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "block_type": 31,
+        "children": [
+          "PXz5dMiq6oTuHWxL1cScjUKUnIf",
+          "PH3QdzsA3oyApjx4qFEcScCzned",
+          "OKqpdryYFo2g0fxBSMKcvojDnkf",
+          "Sx5udlwRhoDL14x49tOcLtZ2nEe",
+          "F9VpdceNWoHvtgx0uBzces32ndd",
+          "KiJtdufOwoPhMqxSwrDciuPEnre",
+          "JK24dJkpDosWLJxul5bcgb1WnEe",
+          "D4trdKCO1o9AB4xYaVkc4mUGnOd",
+          "A3Fjdjb3zodwfnxp2Nncz5LpnHb",
+          "Rg3WdCpTwo3CHxxwInFcsjM5nBa",
+          "Yq2VdhoCHoinWDxzNjocvCgpn1c",
+          "TffPdk7hWofvU2xUFS4ccOZsnIc"
+        ],
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "table": {
+          "cells": [
+            "PXz5dMiq6oTuHWxL1cScjUKUnIf",
+            "PH3QdzsA3oyApjx4qFEcScCzned",
+            "OKqpdryYFo2g0fxBSMKcvojDnkf",
+            "Sx5udlwRhoDL14x49tOcLtZ2nEe",
+            "F9VpdceNWoHvtgx0uBzces32ndd",
+            "KiJtdufOwoPhMqxSwrDciuPEnre",
+            "JK24dJkpDosWLJxul5bcgb1WnEe",
+            "D4trdKCO1o9AB4xYaVkc4mUGnOd",
+            "A3Fjdjb3zodwfnxp2Nncz5LpnHb",
+            "Rg3WdCpTwo3CHxxwInFcsjM5nBa",
+            "Yq2VdhoCHoinWDxzNjocvCgpn1c",
+            "TffPdk7hWofvU2xUFS4ccOZsnIc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              138,
+              421,
+              298
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "PXz5dMiq6oTuHWxL1cScjUKUnIf",
+        "block_type": 32,
+        "children": [
+          "MSi3d2NrboJqRVxNelUc6zk3nJd"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MSi3d2NrboJqRVxNelUc6zk3nJd",
+        "block_type": 2,
+        "parent_id": "PXz5dMiq6oTuHWxL1cScjUKUnIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PH3QdzsA3oyApjx4qFEcScCzned",
+        "block_type": 32,
+        "children": [
+          "J5lHdOP0to58dSxkJt4cY3cdn7b"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "J5lHdOP0to58dSxkJt4cY3cdn7b",
+        "block_type": 2,
+        "parent_id": "PH3QdzsA3oyApjx4qFEcScCzned",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OKqpdryYFo2g0fxBSMKcvojDnkf",
+        "block_type": 32,
+        "children": [
+          "IS3hd1Xu7oOdbaxf9ozcV0SNnzh"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IS3hd1Xu7oOdbaxf9ozcV0SNnzh",
+        "block_type": 2,
+        "parent_id": "OKqpdryYFo2g0fxBSMKcvojDnkf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Sx5udlwRhoDL14x49tOcLtZ2nEe",
+        "block_type": 32,
+        "children": [
+          "Q2zGdNO3QoE3FtxRuNqcFEOmnRc"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Q2zGdNO3QoE3FtxRuNqcFEOmnRc",
+        "block_type": 2,
+        "parent_id": "Sx5udlwRhoDL14x49tOcLtZ2nEe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ctx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F9VpdceNWoHvtgx0uBzces32ndd",
+        "block_type": 32,
+        "children": [
+          "M2aKdTZccob1zexGfVEcYHXPnOL"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "M2aKdTZccob1zexGfVEcYHXPnOL",
+        "block_type": 2,
+        "parent_id": "F9VpdceNWoHvtgx0uBzces32ndd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Context for the current call to work.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KiJtdufOwoPhMqxSwrDciuPEnre",
+        "block_type": 32,
+        "children": [
+          "QkSrdzjpEoT4vQx875ycOCUWnYh"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QkSrdzjpEoT4vQx875ycOCUWnYh",
+        "block_type": 2,
+        "parent_id": "KiJtdufOwoPhMqxSwrDciuPEnre",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "context.Context",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JK24dJkpDosWLJxul5bcgb1WnEe",
+        "block_type": 32,
+        "children": [
+          "PdjUdDKq6olHxkx0Kp2caS3Fn0c"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PdjUdDKq6olHxkx0Kp2caS3Fn0c",
+        "block_type": 2,
+        "parent_id": "JK24dJkpDosWLJxul5bcgb1WnEe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D4trdKCO1o9AB4xYaVkc4mUGnOd",
+        "block_type": 32,
+        "children": [
+          "ZRdZd66lIoWzj6xWh0KcyeOKndg"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZRdZd66lIoWzj6xWh0KcyeOKndg",
+        "block_type": 2,
+        "parent_id": "D4trdKCO1o9AB4xYaVkc4mUGnOd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional parameters of the methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A3Fjdjb3zodwfnxp2Nncz5LpnHb",
+        "block_type": 32,
+        "children": [
+          "AGbHd0sIioZ266xAV2ac0W8GnKg"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AGbHd0sIioZ266xAV2ac0W8GnKg",
+        "block_type": 2,
+        "parent_id": "A3Fjdjb3zodwfnxp2Nncz5LpnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GrantPrivilegeV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FEn9vwAOryiuwHfkSJJXc9qBSnNh%23Ly0gdT5GOoPuYvxUdf1cu4BPnFe"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rg3WdCpTwo3CHxxwInFcsjM5nBa",
+        "block_type": 32,
+        "children": [
+          "PAuydvt1aoXJ1Rx4xYIcXopxnHf"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PAuydvt1aoXJ1Rx4xYIcXopxnHf",
+        "block_type": 2,
+        "parent_id": "Rg3WdCpTwo3CHxxwInFcsjM5nBa",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "callOptions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Yq2VdhoCHoinWDxzNjocvCgpn1c",
+        "block_type": 32,
+        "children": [
+          "WqBkd5utZoKpu8xE9H1cWIAynne"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WqBkd5utZoKpu8xE9H1cWIAynne",
+        "block_type": 2,
+        "parent_id": "Yq2VdhoCHoinWDxzNjocvCgpn1c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional parameters for calling the methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TffPdk7hWofvU2xUFS4ccOZsnIc",
+        "block_type": 32,
+        "children": [
+          "TEAtdABTqoHCQ5xLP4JcfwtTnbe"
+        ],
+        "parent_id": "YOJ6dzcAhoSt3kxIlX8cMyDcnQc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TEAtdABTqoHCQ5xLP4JcfwtTnbe",
+        "block_type": 2,
+        "parent_id": "TffPdk7hWofvU2xUFS4ccOZsnIc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "grpc.CallOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ly0gdT5GOoPuYvxUdf1cu4BPnFe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GrantPrivilegeV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "NXb9dzXMloDmE2xA5AMc2Uk6ntc",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an interface type. The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "grantPrivilegeV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " struct type implements this interface type. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UKkVdBGn8oGBuex1QFUch2ClnLf",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NewGrantPrivilegeV2Option()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function to get the concrete implementation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J03vds11AovXhjxgnqCcGDPwngd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NewGrantPrivilegeV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "Ll0ydNirIo1wqOxJet2cIOsBnqc",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The signature of the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NewGrantPrivilegeV2Option()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y5RYdnSEioLWdLxxF4BcTl12nEf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NewGrantPrivilegeV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(roleName, privilegeName, collectionName string) *grantV2Option",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "block_type": 31,
+        "children": [
+          "GQJDdsDvtoI3p9xRLNacv8xcnpg",
+          "ZAj1dpMCoov1PexdHsMcFGGrnzh",
+          "GYMPdRjjAodWhMxSH9hcUoSanve",
+          "Wba0d2A5soxaMExz0QVc7GIVnGh",
+          "OnrrdQci5ogXuRxnatwcR0iZnWb",
+          "ZhUtdY2Y4ou03axzvUjcAggAnnb",
+          "NPtSdZJmnokkHKxn2nWcFRV8nlg",
+          "H5j7d8qxMo2JcWxNuwEcQYbwnve",
+          "NonndzYxaokNSBx612EcHWahnDf",
+          "YauGdf4JaoafnOxgLWOcvZ9NnLd",
+          "P5DEd75mho4zO4xpCk0c8tkbnrd",
+          "P2kMdNUS3oOzoDxFZBhc2hohnDc"
+        ],
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "table": {
+          "cells": [
+            "GQJDdsDvtoI3p9xRLNacv8xcnpg",
+            "ZAj1dpMCoov1PexdHsMcFGGrnzh",
+            "GYMPdRjjAodWhMxSH9hcUoSanve",
+            "Wba0d2A5soxaMExz0QVc7GIVnGh",
+            "OnrrdQci5ogXuRxnatwcR0iZnWb",
+            "ZhUtdY2Y4ou03axzvUjcAggAnnb",
+            "NPtSdZJmnokkHKxn2nWcFRV8nlg",
+            "H5j7d8qxMo2JcWxNuwEcQYbwnve",
+            "NonndzYxaokNSBx612EcHWahnDf",
+            "YauGdf4JaoafnOxgLWOcvZ9NnLd",
+            "P5DEd75mho4zO4xpCk0c8tkbnrd",
+            "P2kMdNUS3oOzoDxFZBhc2hohnDc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              160,
+              421,
+              239
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "GQJDdsDvtoI3p9xRLNacv8xcnpg",
+        "block_type": 32,
+        "children": [
+          "MAcdd7Yz9oRPcPxEMSDcs4FGn8c"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MAcdd7Yz9oRPcPxEMSDcs4FGn8c",
+        "block_type": 2,
+        "parent_id": "GQJDdsDvtoI3p9xRLNacv8xcnpg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZAj1dpMCoov1PexdHsMcFGGrnzh",
+        "block_type": 32,
+        "children": [
+          "Bm3gdDAnnohgmHxz05Oc9dsincg"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Bm3gdDAnnohgmHxz05Oc9dsincg",
+        "block_type": 2,
+        "parent_id": "ZAj1dpMCoov1PexdHsMcFGGrnzh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GYMPdRjjAodWhMxSH9hcUoSanve",
+        "block_type": 32,
+        "children": [
+          "VsyudFeMQoPiI9x90dqcUHzBnQb"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VsyudFeMQoPiI9x90dqcUHzBnQb",
+        "block_type": 2,
+        "parent_id": "GYMPdRjjAodWhMxSH9hcUoSanve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Wba0d2A5soxaMExz0QVc7GIVnGh",
+        "block_type": 32,
+        "children": [
+          "Fl2ZdtLcAoumYfxBYTFcqWmQnbe"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Fl2ZdtLcAoumYfxBYTFcqWmQnbe",
+        "block_type": 2,
+        "parent_id": "Wba0d2A5soxaMExz0QVc7GIVnGh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "roleName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OnrrdQci5ogXuRxnatwcR0iZnWb",
+        "block_type": 32,
+        "children": [
+          "M6YLdozFxomPdUxIsU8c9MVCnoc"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "M6YLdozFxomPdUxIsU8c9MVCnoc",
+        "block_type": 2,
+        "parent_id": "OnrrdQci5ogXuRxnatwcR0iZnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the target role of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZhUtdY2Y4ou03axzvUjcAggAnnb",
+        "block_type": 32,
+        "children": [
+          "BstBddEAHod497xWBT5cJM3dncc"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BstBddEAHod497xWBT5cJM3dncc",
+        "block_type": 2,
+        "parent_id": "ZhUtdY2Y4ou03axzvUjcAggAnnb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NPtSdZJmnokkHKxn2nWcFRV8nlg",
+        "block_type": 32,
+        "children": [
+          "TUVvdVykQoAZk9x17Pqcvvwnntf"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TUVvdVykQoAZk9x17Pqcvvwnntf",
+        "block_type": 2,
+        "parent_id": "NPtSdZJmnokkHKxn2nWcFRV8nlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "privilegeName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H5j7d8qxMo2JcWxNuwEcQYbwnve",
+        "block_type": 32,
+        "children": [
+          "XKyYdrXococXwoxS2GEc2vSNnyb",
+          "B19KdGD9KoBYWVxt45lcvyxznIb"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XKyYdrXococXwoxS2GEc2vSNnyb",
+        "block_type": 2,
+        "parent_id": "H5j7d8qxMo2JcWxNuwEcQYbwnve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the privilege or privilege group to assign.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B19KdGD9KoBYWVxt45lcvyxznIb",
+        "block_type": 2,
+        "parent_id": "H5j7d8qxMo2JcWxNuwEcQYbwnve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Privilege name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column in the table on page ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Users and Roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": true
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NonndzYxaokNSBx612EcHWahnDf",
+        "block_type": 32,
+        "children": [
+          "FnARda6SxoSg0uxmKotc7EwrnNg"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FnARda6SxoSg0uxmKotc7EwrnNg",
+        "block_type": 2,
+        "parent_id": "NonndzYxaokNSBx612EcHWahnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YauGdf4JaoafnOxgLWOcvZ9NnLd",
+        "block_type": 32,
+        "children": [
+          "RumgdSabDoqDboxKqescwvXVn2c"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RumgdSabDoqDboxKqescwvXVn2c",
+        "block_type": 2,
+        "parent_id": "YauGdf4JaoafnOxgLWOcvZ9NnLd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P5DEd75mho4zO4xpCk0c8tkbnrd",
+        "block_type": 32,
+        "children": [
+          "TlFCdTT7Lob6afxTzkfcqQF2nmb"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TlFCdTT7Lob6afxTzkfcqQF2nmb",
+        "block_type": 2,
+        "parent_id": "P5DEd75mho4zO4xpCk0c8tkbnrd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P2kMdNUS3oOzoDxFZBhc2hohnDc",
+        "block_type": 32,
+        "children": [
+          "D5YTd3bFrojxBVx1BimcF4AdnPb"
+        ],
+        "parent_id": "Z3mZdSKU0orZK3xskIxcOMMwnib",
+        "table_cell": {}
+      },
+      {
+        "block_id": "D5YTd3bFrojxBVx1BimcF4AdnPb",
+        "block_type": 2,
+        "parent_id": "P2kMdNUS3oOzoDxFZBhc2hohnDc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UlNIdSnRjoqhK5x4u4bccgntndf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "grpc.CallOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "LQ9ld5YYooM97mxCbaUcsHaXnPl",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This interface provided by the gRPC Go library allows you to specify additional options or configurations when making requests. For possible implementations of this interface, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "this file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fgrpc%2Fgrpc-go%2Fblob%2Fv1.69.4%2Frpc_util.go%23L174"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GI00dS5ZKo4rRbx456cc4S2pnLe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Return",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "JWVLdaddJoUwWSx7VWIckLrVnQb",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Null",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R3pld6cV0oewtJxlqLtc6mUYnKf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "W3PkdZiykodWevxjlHccWmMYnYg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ctx, cancel := context.WithCancel(context.Background())\ndefer cancel()\n\ncli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: milvusAddr,\n})\nif err != nil {\n    // handle error\n}\n\ndefer cli.Close(ctx)\n\nerr = cli.GrantPrivilegeV2(ctx, milvusclient.NewGrantPrivilegeV2Option(\"my_role\", \"Search\", \"quick_setup\"))\nif err != nil {\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b"
+      },
+      {
+        "block_id": "DyvTdRPnNoCX2Jxvyp6cRshGnXf",
+        "block_type": 2,
+        "parent_id": "X5nmdW3TYoToXBx0YxZckB0fn3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 68
+  }
+}

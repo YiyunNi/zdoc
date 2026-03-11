@@ -1,0 +1,1594 @@
+{
+  "created_time": "1769046922",
+  "modified_time": "1769155772",
+  "name": "SemanticHighlighter",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "O7mqfZp5fleHncduy7HcWkdTnPb",
+  "token": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/SVoVdTdZRotav9xFjdFcZ8V2n3d",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "block_type": 1,
+        "children": [
+          "ZDIyd9M7foQmkvxSeeccfh3snpg",
+          "MvCFdkpheoo7kQxdlAqcEg4rngd",
+          "IZMHdRMEnoz7x0xHt3HcHKl7nTg",
+          "A0mcdVbDao49a4xtmKccxbEInFh",
+          "B3mZdJczpoOd1rx559cc0e09nDh",
+          "Bf38dzwcroaVpOxQ5AIcoK1NnLg",
+          "QHCJd1N93odOmExA7macuuWRnDb",
+          "MMh7dFePmobh7vxljeac8mX7nBe",
+          "X1cudkgowoeA4ixMaYpcACSGnpf",
+          "W4Cqdvs76orOXnxAS5zcEPV8nPe",
+          "NR46dDrPhoV8WTxzWg9crm7gnRb",
+          "KqHFd4cJMoa8Nwxoas0cM3eUnse",
+          "CYZ5dUi4ZoxIkOx0lyecCuvZnmh",
+          "CSz8daqLVoHtNWx0lHOcybMwnie",
+          "LBTrdjIA7ozZIQxZ9yQc0ipNnKc",
+          "P43Rd2djUoSHpNxhKIscsNf0nYe",
+          "WDsUdOOFEoqNC5xd5RHcHWTHnLb",
+          "WXqmdQ2FHo6UuJxcEvGcnPSan8b",
+          "IOyrdP6yRoELPjxmf1Cc7vidnVq",
+          "AVR5d2xfQo02llxoMnGc4A0XnEc",
+          "VxBsdJ0XGoxSZWxEbEscHpHLnue",
+          "KMF2def6Jolpi4xtbpgcqDfAn6b",
+          "DcEUdIs1co8xOWxObyAcEAVJnEh",
+          "GtCwdZmGRo6rZQxh9uzcGRaUnJF",
+          "CdiXdoaYCo1zyxxAlShc5w7Knkf"
+        ],
+        "comment_ids": [
+          "7597998752212749263"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SemanticHighlighter",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7597998752212749263"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "ZDIyd9M7foQmkvxSeeccfh3snpg",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SemanticHighlighter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " configures post-processing semantic highlighting for text fields in search results. Unlike lexical highlighting which matches exact terms, semantic highlighting identifies and marks relevant text segments based on semantic similarity to the query. Highlighting annotates matched spans using customizable tags. It does not impact retrieval, filtering, ranking, or scoring.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MvCFdkpheoo7kQxdlAqcEg4rngd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "class pymilvus.SemanticHighlighter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "IZMHdRMEnoz7x0xHt3HcHKl7nTg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "A0mcdVbDao49a4xtmKccxbEInFh",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Initializes a highlighter configuration used with semantic search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B3mZdJczpoOd1rx559cc0e09nDh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SemanticHighlighter(\n    queries: List[str],\n    input_fields: List[str],\n    pre_tags: Optional[List[str]] = None,\n    post_tags: Optional[List[str]] = None,\n    threshold: Optional[float] = None,\n    highlight_only: Optional[bool] = None,\n    model_deployment_id: Optional[str] = None,\n    max_client_batch_size: Optional[int] = None,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "Bf38dzwcroaVpOxQ5AIcoK1NnLg",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QHCJd1N93odOmExA7macuuWRnDb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "queries",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DVggdrUWGos9Jlxg97VcvQ3snNf"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "DVggdrUWGos9Jlxg97VcvQ3snNf",
+        "block_type": 2,
+        "parent_id": "QHCJd1N93odOmExA7macuuWRnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of search queries to match against the document. The highlighter uses these queries to identify semantically relevant text segments in the results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MMh7dFePmobh7vxljeac8mX7nBe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "input_fields",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MmhHdp13yoreCdxtJT3cmN3enLd"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "MmhHdp13yoreCdxtJT3cmN3enLd",
+        "block_type": 2,
+        "parent_id": "MMh7dFePmobh7vxljeac8mX7nBe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The schema fields to highlight. Specifies which text fields in the search results should be processed for semantic highlighting.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X1cudkgowoeA4ixMaYpcACSGnpf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pre_tags",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "V1gUdjfZIodZa6xOTVFcatxQntg"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "V1gUdjfZIodZa6xOTVFcatxQntg",
+        "block_type": 2,
+        "parent_id": "X1cudkgowoeA4ixMaYpcACSGnpf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tags inserted before each matched segment in the returned highlight. Supports plain strings (e.g., ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") or HTML-safe markers (e.g., ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<em>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<mark>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "). If multiple tags are provided, tags rotate by match sequence.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W4Cqdvs76orOXnxAS5zcEPV8nPe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "post_tags",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OUaZdqGYBoHpsDxYhR1cFukJnbf"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "OUaZdqGYBoHpsDxYhR1cFukJnbf",
+        "block_type": 2,
+        "parent_id": "W4Cqdvs76orOXnxAS5zcEPV8nPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tags inserted after each matched segment, paired with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pre_tags",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Rotation follows the same order as ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pre_tags",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when multiple tags are provided.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NR46dDrPhoV8WTxzWg9crm7gnRb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "threshold",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "float",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "B939dsWD1obR8BxShcocv09zn3b"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "B939dsWD1obR8BxShcocv09zn3b",
+        "block_type": 2,
+        "parent_id": "NR46dDrPhoV8WTxzWg9crm7gnRb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The minimum confidence score (0.0 to 1.0) that defines \"sufficient match\" for highlighting. Semantic highlighting is applied per item after top-k retrieval—only segments that semantically match the query above this threshold will return highlighted fragments with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pre_tags",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "post_tags",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". If unset, segments below the threshold return empty results (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fragments=[], scores=[]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KqHFd4cJMoa8Nwxoas0cM3eUnse",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "highlight_only",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RvrZdSY8oo8GXlxxcPJcClG7net"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "RvrZdSY8oo8GXlxxcPJcClG7net",
+        "block_type": 2,
+        "parent_id": "KqHFd4cJMoa8Nwxoas0cM3eUnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "True",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (default), only the sentence-level fragments that are semantically related to the query are returned, which helps focus on the most relevant context. If set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "False",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the full paragraph containing those fragments is returned instead, as long as its length does not exceed the model’s context limit. However, when full paragraphs are returned, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "scores",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field is no longer meaningful.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CYZ5dUi4ZoxIkOx0lyecCuvZnmh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_deployment_id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "P1qcdAGF7ohzYIxUwCYcLtsrnee"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "P1qcdAGF7ohzYIxUwCYcLtsrnee",
+        "block_type": 2,
+        "parent_id": "CYZ5dUi4ZoxIkOx0lyecCuvZnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the deployed highlight model used for semantic inference. This model determines how semantic similarity is computed between queries and document segments.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CSz8daqLVoHtNWx0lHOcybMwnie",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "max_client_batch_size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ScXddvTn3oDB4oxw77scszLln0d"
+        ],
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "ScXddvTn3oDB4oxw77scszLln0d",
+        "block_type": 2,
+        "parent_id": "CSz8daqLVoHtNWx0lHOcybMwnie",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limits the number of items processed in a single batch. Useful for controlling memory usage and processing throughput.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LBTrdjIA7ozZIQxZ9yQc0ipNnKc",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P43Rd2djUoSHpNxhKIscsNf0nYe",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SemanticHighlighter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WDsUdOOFEoqNC5xd5RHcHWTHnLb",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WXqmdQ2FHo6UuJxcEvGcnPSan8b",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A SemanticHighlighter object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IOyrdP6yRoELPjxmf1Cc7vidnVq",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "AVR5d2xfQo02llxoMnGc4A0XnEc",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Highlight semantically relevant text in dense vector search:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VxBsdJ0XGoxSZWxEbEscHpHLnue",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, SemanticHighlighter\n\nqueries = [\"When was artificial intelligence founded\",\n           \"Where was Alan Turing born?\"]\n\nhighlighter = SemanticHighlighter(\n    queries,\n    [\"document\"],\n    pre_tags=[\"<mark>\"],\n    post_tags=[\"</mark>\"],\n    model_deployment_id=\"your-model-deployment-id\",\n)\n\nresults = client.search(\n    collection_name=\"your_collection\",\n    data=queries,\n    anns_field=\"dense\",\n    limit=3,\n    output_fields=[\"document\"],\n    highlighter=highlighter,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "KMF2def6Jolpi4xtbpgcqDfAn6b",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The search results include a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "highlight",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field containing the highlighted fragments and their confidence scores:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DcEUdIs1co8xOWxObyAcEAVJnEh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Example output:\n# hit: {\n#     'id': 1,\n#     'distance': 0.766,\n#     'entity': {'document': 'Artificial intelligence was founded as an academic discipline in 1956.'},\n#     'highlight': {\n#         'document': {\n#             'fragments': ['<mark>Artificial intelligence was founded as an academic discipline in 1956.</mark>'],\n#             'scores': [1.0]\n#         }\n#     }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      },
+      {
+        "block_id": "GtCwdZmGRo6rZQxh9uzcGRaUnJF",
+        "block_type": 2,
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "threshold",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to filter low-confidence highlights:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CdiXdoaYCo1zyxxAlShc5w7Knkf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, SemanticHighlighter\n\nhighlighter = SemanticHighlighter(\n    queries=[\"machine learning applications\"],\n    input_fields=[\"content\"],\n    pre_tags=[\"<em>\"],\n    post_tags=[\"</em>\"],\n    threshold=0.8,\n    model_deployment_id=\"your-model-deployment-id\",\n)\n\nresults = client.search(\n    collection_name=\"your_collection\",\n    data=[\"machine learning applications\"],\n    anns_field=\"dense\",\n    limit=10,\n    output_fields=[\"content\"],\n    highlighter=highlighter,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SVoVdTdZRotav9xFjdFcZ8V2n3d"
+      }
+    ],
+    "counts": 34
+  },
+  "slug": "Highlighter-SemanticHighlighter"
+}

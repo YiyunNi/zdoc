@@ -1,0 +1,327 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": true,
+  "node_create_time": "1728355738",
+  "node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+  "node_type": "origin",
+  "obj_create_time": "1728355738",
+  "obj_edit_time": "1758175683",
+  "obj_token": "DTPDdT64ooNdG5xKe4PcBJJln6f",
+  "obj_type": "docx",
+  "origin_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "XiOsw8A3eibZInk1aJNceBqznLb",
+  "space_id": "7167193056431783939",
+  "title": "Single Sign-on (SSO)",
+  "slug": "single-sign-on",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "DTPDdT64ooNdG5xKe4PcBJJln6f",
+        "block_type": 1,
+        "children": [
+          "D4pKdYp0jorDLSxQGorcQah5nxd",
+          "LdHZdgWZ2oEv3nx1IwUcW7Ganbe",
+          "Bl1CdEjkroJLBJx29FFcGhNpnCh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Single Sign-on",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (SSO)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "D4pKdYp0jorDLSxQGorcQah5nxd",
+        "block_type": 2,
+        "parent_id": "DTPDdT64ooNdG5xKe4PcBJJln6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Single sign-on (SSO) is a feature that allows users to log in to multiple applications or services with a single set of credentials, rather than requiring separate logins for each.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LdHZdgWZ2oEv3nx1IwUcW7Ganbe",
+        "block_type": 2,
+        "parent_id": "DTPDdT64ooNdG5xKe4PcBJJln6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud allows you to enable SSO via the OpenID Connect (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "OIDC",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fhelp.okta.com%2Fen-us%2Fcontent%2Ftopics%2Fapps%2Fapps_app_integration_wizard_oidc.htm"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SAML 2.0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fhelp.okta.com%2Fen-us%2Fcontent%2Ftopics%2Fapps%2Fapps_app_integration_wizard_saml.htm"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " protocol. This feature works at the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "organizational",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " level.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Bl1CdEjkroJLBJx29FFcGhNpnCh",
+        "block_type": 2,
+        "parent_id": "DTPDdT64ooNdG5xKe4PcBJJln6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 4
+  },
+  "children": [
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1728355766",
+      "node_token": "OQ2ZwpH9ki5EZIkwK21cghexnOh",
+      "node_type": "origin",
+      "obj_create_time": "1728355766",
+      "obj_edit_time": "1770018052",
+      "obj_token": "MuWtd4KqnoOUiuxYoYjcZMQenOg",
+      "obj_type": "docx",
+      "origin_node_token": "OQ2ZwpH9ki5EZIkwK21cghexnOh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+      "space_id": "7167193056431783939",
+      "title": "Okta (OIDC)",
+      "slug": "openid-connect"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1715067900",
+      "node_token": "QUC4wfVYTi73ctkMzEec17oVnjh",
+      "node_type": "origin",
+      "obj_create_time": "1715067900",
+      "obj_edit_time": "1770018151",
+      "obj_token": "UKG4drnTbofF3axpBUDc4iwLnQh",
+      "obj_type": "docx",
+      "origin_node_token": "QUC4wfVYTi73ctkMzEec17oVnjh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+      "space_id": "7167193056431783939",
+      "title": "Okta (SAML 2.0)",
+      "slug": "single-sign-on-with-okta"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1743132911",
+      "node_token": "OLAEwETZtitiNFkkA9JcE5YZnXf",
+      "node_type": "origin",
+      "obj_create_time": "1743132911",
+      "obj_edit_time": "1770018160",
+      "obj_token": "LalFdiXmMo1FKixobJ9cQcMrnah",
+      "obj_type": "docx",
+      "origin_node_token": "OLAEwETZtitiNFkkA9JcE5YZnXf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+      "space_id": "7167193056431783939",
+      "title": "Google Workspace (SAML 2.0)",
+      "slug": "single-sign-on-with-google-workspace"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1738994869",
+      "node_token": "Qkm3wPF9Titu1MkQ0fgcENs4nZc",
+      "node_type": "origin",
+      "obj_create_time": "1738994869",
+      "obj_edit_time": "1770018169",
+      "obj_token": "KrQcduJQGoXJZexU9oLciZBcnwb",
+      "obj_type": "docx",
+      "origin_node_token": "Qkm3wPF9Titu1MkQ0fgcENs4nZc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+      "space_id": "7167193056431783939",
+      "title": "Microsoft Entra (SAML 2.0)",
+      "slug": "single-sign-on-with-microsoft-entra"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1739343218",
+      "node_token": "WDOJwtKkAijW4gkUpQhcAL0Rn1d",
+      "node_type": "origin",
+      "obj_create_time": "1739343218",
+      "obj_edit_time": "1770018176",
+      "obj_token": "Euz2dDmO2oCWsixczMic2faanJh",
+      "obj_type": "docx",
+      "origin_node_token": "WDOJwtKkAijW4gkUpQhcAL0Rn1d",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+      "space_id": "7167193056431783939",
+      "title": "Other IdP (SAML 2.0)",
+      "slug": "single-sign-on-with-other-idp"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1770014723",
+      "node_token": "MvE5wUlFli3gJOk0MkeclZCqnib",
+      "node_type": "origin",
+      "obj_create_time": "1770014723",
+      "obj_edit_time": "1770082207",
+      "obj_token": "FP1cdBCLnoh1YhxLUescsrbanBg",
+      "obj_type": "docx",
+      "origin_node_token": "MvE5wUlFli3gJOk0MkeclZCqnib",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+      "space_id": "7167193056431783939",
+      "title": "Enforce SSO in Your Organization",
+      "slug": "enforce-sso-in-your-organization"
+    }
+  ]
+}

@@ -1,0 +1,1969 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1734328865",
+  "node_token": "QUTDwkbTTiA2UlkWYDlc796ensf",
+  "node_type": "origin",
+  "obj_create_time": "1734328865",
+  "obj_edit_time": "1762156782",
+  "obj_token": "WwICdhebRoemNtxB9xzcSwhRnkd",
+  "obj_type": "docx",
+  "origin_node_token": "QUTDwkbTTiA2UlkWYDlc796ensf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "VvikwOKc9iZ5vBkgMnycrXKmnId",
+  "space_id": "7167193056431783939",
+  "title": "Export Backup Files",
+  "slug": "export-backup-files",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "block_type": 1,
+        "children": [
+          "YFRld1HmeoXvxhxuHy9c0sMPnNh",
+          "NTzxdA4gLon1UMxmSxFcqakin2d",
+          "GvNod1pKmoHxEOxt6zUcmwQ8nYg",
+          "FQUbdAPfGozZ35x9PsncIzC9nSe",
+          "TfYKdBmFToKxvHxrYzsc1cgqnZg",
+          "Dz7Zd0t47ouQ8DxGkSycpq4sn9d",
+          "W2BGdBUjfo0Q3cxysgBcFXMknlf",
+          "KS9MdI42JoM2Boxure6cLwSCnOf",
+          "HTVndSI9womHVvxSEUXcWW5Unqh",
+          "R8qqdj0O7otKlOxqhNUcyN52nqd",
+          "HInvdwnoKobrgKxiP0acS8GWnth",
+          "TRUgdFuPwo68mFxSd37c7Nurnzc",
+          "O3P7dPlSNoAQfYximz7cv1dvnvf",
+          "A6hjdQ7wro8BrExCMa1ciJlanFf",
+          "VJP0d1wJ1okSSTxWzdkcdfQHnie",
+          "XRBPd3I2hotfiQxyAozcUsf0nAc",
+          "YH4LddKeDoJyXrxqkypclaFCnGc",
+          "KVdxd92jqojNu1x65CrcY7GvnFe",
+          "LGGKd4H2ioeKyPx6PmLclj3jn6b",
+          "AVzYd1zxxo8d4MxlCkycqnG4nFh",
+          "AdvydyesnorxBgxZCqTcqkfDnMh",
+          "NsX6dxLxtoJeECxI9XHcoPxanwd",
+          "O5EaddNrMoJx3FxAPNWcp8MOn0g",
+          "FC3yd9AgzoH3C5xt4VlclnNEn0e",
+          "TXOhd1WGQo0LEdxQfzpcq0rJnmd",
+          "YCq0d9OyIolbRXxzGx3cAsZlnOe",
+          "Akbmd4HrNoa8fLxmjD1c7tcNngf",
+          "P6vqdHByzoE6RNxVwelcxnvhnGg"
+        ],
+        "comment_ids": [
+          "7449258439982661636"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Export Backup Files",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7449258439982661636"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "YFRld1HmeoXvxhxuHy9c0sMPnNh",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can export backup files to object storage using the Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NTzxdA4gLon1UMxmSxFcqakin2d",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "AuGadCreIoDlFaxQW5ecegKrnXb",
+          "XULbdJCuTo9oBJxiFyIch96unsh"
+        ],
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "AuGadCreIoDlFaxQW5ecegKrnXb",
+        "block_type": 2,
+        "parent_id": "NTzxdA4gLon1UMxmSxFcqakin2d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XULbdJCuTo9oBJxiFyIch96unsh",
+        "block_type": 2,
+        "comment_ids": [
+          "7537617477505597459"
+        ],
+        "parent_id": "NTzxdA4gLon1UMxmSxFcqakin2d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Private Preview",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " clusters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enterprise",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "projects",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " To enable this feature or learn about the associated costs, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7537617477505597459"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7537617477505597459"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7537617477505597459"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GvNod1pKmoHxEOxt6zUcmwQ8nYg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "FQUbdAPfGozZ35x9PsncIzC9nSe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have integrated Zilliz Cloud with your object storage. For detailed steps, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with AWS S3",
+                "token": "PAViwMSb3iVMzuk56z3c1zfRnwh",
+                "url": "https://zilliverse.feishu.cn/wiki/PAViwMSb3iVMzuk56z3c1zfRnwh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Azure Blob Storage",
+                "token": "IzXPwUlJ5isTa4kH9KTcC6SfnvZ",
+                "url": "https://zilliverse.feishu.cn/wiki/IzXPwUlJ5isTa4kH9KTcC6SfnvZ"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Google Cloud Storage",
+                "token": "INoRwFTjfiindPkaNlwc9XAgnkh",
+                "url": "https://zilliverse.feishu.cn/wiki/INoRwFTjfiindPkaNlwc9XAgnkh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "TfYKdBmFToKxvHxrYzsc1cgqnZg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project A",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dmin",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " access to the project. If you do not have necessary permissions, contact your Zilliz Cloud administrator.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "Dz7Zd0t47ouQ8DxGkSycpq4sn9d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Procedure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "W2BGdBUjfo0Q3cxysgBcFXMknlf",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can export backup files from Zilliz Cloud either via the Zilliz Cloud console or through the RESTful API. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KS9MdI42JoM2Boxure6cLwSCnOf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Export via Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "HTVndSI9womHVvxSEUXcWW5Unqh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Log in to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2Flogin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "R8qqdj0O7otKlOxqhNUcyN52nqd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the left-side navigation pane, choose ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Backups",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "HInvdwnoKobrgKxiP0acS8GWnth",
+        "block_type": 13,
+        "children": [
+          "D0l9dcg3IoZmphxTdxMckv72n6b"
+        ],
+        "comment_ids": [
+          "7451518769141170179"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the page that appears, find the target backup file, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "...",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Actions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column, and then select",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7451518769141170179"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Export",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7451518769141170179"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7451518769141170179"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "D0l9dcg3IoZmphxTdxMckv72n6b",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "M6AJdyXU2oaB1wxT1v8cNoycnIc",
+          "GJxGdz8GgohYNbxUDvtcYxu6nFc"
+        ],
+        "parent_id": "HInvdwnoKobrgKxiP0acS8GWnth"
+      },
+      {
+        "block_id": "M6AJdyXU2oaB1wxT1v8cNoycnIc",
+        "block_type": 2,
+        "parent_id": "D0l9dcg3IoZmphxTdxMckv72n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GJxGdz8GgohYNbxUDvtcYxu6nFc",
+        "block_type": 2,
+        "parent_id": "D0l9dcg3IoZmphxTdxMckv72n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Only backup files in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Available",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " status can be exported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TRUgdFuPwo68mFxSd37c7Nurnzc",
+        "block_type": 13,
+        "children": [
+          "Inv6d3xB5os747x7DsScgDH0nxg",
+          "USTNdTCslo81KSxvFqPcCNuSngg",
+          "Na2NdYsM6oWWP7x8VxgcWIxnnCb",
+          "WZYpdbrNSoRdyJxqgdzcoe6sn7c"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Export Backup File",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " dialog box, configure backup settings:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "Inv6d3xB5os747x7DsScgDH0nxg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cloud Region of Cluster in Backup File",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Displays the cloud region where the backup file was created.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TRUgdFuPwo68mFxSd37c7Nurnzc"
+      },
+      {
+        "block_id": "USTNdTCslo81KSxvFqPcCNuSngg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Select the object storage provider integrated with Zilliz Cloud.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TRUgdFuPwo68mFxSd37c7Nurnzc"
+      },
+      {
+        "block_id": "Na2NdYsM6oWWP7x8VxgcWIxnnCb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integration Configuration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Choose the specific bucket you configured for the backup export.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TRUgdFuPwo68mFxSd37c7Nurnzc"
+      },
+      {
+        "block_id": "WZYpdbrNSoRdyJxqgdzcoe6sn7c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Directory",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Enter the directory path in your object storage bucket where the exported backup file will be stored.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TRUgdFuPwo68mFxSd37c7Nurnzc"
+      },
+      {
+        "block_id": "O3P7dPlSNoAQfYximz7cv1dvnvf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Then, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Export",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "A6hjdQ7wro8BrExCMa1ciJlanFf",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Fdesign%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Fnode-id%3D77118-1255%26t%3DUJPi3Hm2uKMPQShq-4"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "VJP0d1wJ1okSSTxWzdkcdfQHnie",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Export through RESTful API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "XRBPd3I2hotfiQxyAozcUsf0nAc",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you can export backup files from Zilliz Cloud via the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Export Backup Files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fexport-backup-files-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " RESTful API endpoint, you have to integrate one of your AWS S3 buckets with Zilliz Cloud and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "obtain its integration ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Obtain the integration ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPAViwMSb3iVMzuk56z3c1zfRnwh%23Y82idzdnUoVgC9x4HrpcQi5DnFd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YH4LddKeDoJyXrxqkypclaFCnGc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export BASE_URL=\"https://api.cloud.zilliz.com\"\nexport TOKEN=\"YOUR_API_KEY\"\nexport CLUSTER_ID=\"inxx-xxxxxxxxxxxxxxx\"\nexport BACKUP_ID=\"backup-xxxxxxxxxxxxxxx\"\n\ncurl --request POST \\\n--url \"${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/${BACKUP_ID}/export\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"integrationId\": \"inter-xxxxxxx\",\n    \"directory\": \"destdir/\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "KVdxd92jqojNu1x65CrcY7GvnFe",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The response to the above request would be a Job ID as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LGGKd4H2ioeKyPx6PmLclj3jn6b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"jobId\": \"job-0396450098cglufig6afm9\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "AVzYd1zxxo8d4MxlCkycqnG4nFh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Monitor export progress",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "AdvydyesnorxBgxZCqTcqkfDnMh",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Export",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", an export job is generated automatically:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NsX6dxLxtoJeECxI9XHcoPxanwd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Go to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.cloud-uat3.zilliz.com%2Fdocs%2Fjob-center"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page in the left-side navigation pane.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "O5EaddNrMoJx3FxAPNWcp8MOn0g",
+        "block_type": 13,
+        "children": [
+          "WESJdECUuoDU5mxnxexcKuX1nFg",
+          "NaxodM8uboHSZrxV1MNc0kcMnpc",
+          "Gojodm9Hpofg9MxzQUScT91unmb"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Monitor the job's ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Status",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "WESJdECUuoDU5mxnxexcKuX1nFg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IN PROGRESS",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The file is being exported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "O5EaddNrMoJx3FxAPNWcp8MOn0g"
+      },
+      {
+        "block_id": "NaxodM8uboHSZrxV1MNc0kcMnpc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SUCCESSFUL",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The backup file has been successfully exported. You can access it in your specified S3 bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "O5EaddNrMoJx3FxAPNWcp8MOn0g"
+      },
+      {
+        "block_id": "Gojodm9Hpofg9MxzQUScT91unmb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ERROR",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The job failed. This can occur if a resource used by the export process, such as the Role ARN or the backup file, is deleted during the job execution.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "O5EaddNrMoJx3FxAPNWcp8MOn0g"
+      },
+      {
+        "block_id": "FC3yd9AgzoH3C5xt4VlclnNEn0e",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Fdesign%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Fnode-id%3D77141-11274%26t%3DUJPi3Hm2uKMPQShq-4"
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "TXOhd1WGQo0LEdxQfzpcq0rJnmd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cancel export job",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "YCq0d9OyIolbRXxzGx3cAsZlnOe",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your job remains in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IN PROGRESS",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " status and you decide not to proceed, you can cancel the job by clicking ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cancel",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Actions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Akbmd4HrNoa8fLxmjD1c7tcNngf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "HBQAdoDBzoc1OWxuqQQcoBKfnLh",
+          "GFKddgxGdoqY1yx7QaqcUXFuncf"
+        ],
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd"
+      },
+      {
+        "block_id": "HBQAdoDBzoc1OWxuqQQcoBKfnLh",
+        "block_type": 2,
+        "parent_id": "Akbmd4HrNoa8fLxmjD1c7tcNngf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GFKddgxGdoqY1yx7QaqcUXFuncf",
+        "block_type": 2,
+        "parent_id": "Akbmd4HrNoa8fLxmjD1c7tcNngf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Canceling midway will not remove data already uploaded to your bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P6vqdHByzoE6RNxVwelcxnvhnGg",
+        "block_type": 2,
+        "parent_id": "WwICdhebRoemNtxB9xzcSwhRnkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 43
+  }
+}

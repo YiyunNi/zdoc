@@ -1,0 +1,2054 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1730174660",
+  "node_token": "F2QrwjFSziSUkJkyXzbcwovUnCg",
+  "node_type": "origin",
+  "obj_create_time": "1730174660",
+  "obj_edit_time": "1768809567",
+  "obj_token": "XobrdPs0goDKcfxQE6scpCJtnSg",
+  "obj_type": "docx",
+  "origin_node_token": "F2QrwjFSziSUkJkyXzbcwovUnCg",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "Zu6vw6Aifi1gvNkqqO5cDjmtngh",
+  "space_id": "7167193056431783939",
+  "title": "Whitespace",
+  "slug": "whitespace-tokenizer",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "block_type": 1,
+        "children": [
+          "MWUidF4eHorODmxPw6Hcg3xfntc",
+          "UTq3dc7u0oM9HHxc8RlcSOIxnDc",
+          "XABLdOpm1o2dryxFoeNcfUZvnEf",
+          "BAXFdRxmOsrY1vbHKBacff9tngR",
+          "Rq5gdLkFwoqqh7xoHQpc0yILnCd",
+          "FArgdxtFfoAFmkxZNcsc3JWVnXp",
+          "HDS3dK4gcsAfGKbae6RcFhconIh",
+          "O9MVd4eGeocXKvxqXbKc4MG1nke",
+          "ByU3dbVIKoTsGZxWanecFtiDnee",
+          "Nl8sdx02FozRhBxldn4cbz0dnJh",
+          "QlI2duQYUo22NXxONwAcqmC9nse",
+          "Jcx1dEgiLocqO8xDFZzck86knQh",
+          "GHredlxCWsAxc2bpotbcBFHfn5c",
+          "E4RjdvMQhoGXSmxAQGhc881wnsc",
+          "FMlVdjnuroZ8p5xaYibcMUqPnJh",
+          "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H",
+          "HRHDdghr2o7cGQxu9QzcQKQOnBc",
+          "WDPYdJ0EDoDf23xNbSccq35fnph",
+          "UWS8dycIIsenkFbzm3nc0tvBn2d",
+          "Joevddm7ooFj5FxdPjEcn2ptnVh"
+        ],
+        "comment_ids": [
+          "7482989137237786628"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whitespace",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989137237786628"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "MWUidF4eHorODmxPw6Hcg3xfntc",
+        "block_type": 2,
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "whitespace",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tokenizer divides text into terms whenever there is a space between words.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UTq3dc7u0oM9HHxc8RlcSOIxnDc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "XABLdOpm1o2dryxFoeNcfUZvnEf",
+        "block_type": 2,
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To configure an analyzer using the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "whitespace",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tokenizer, set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "tokenizer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "whitespace",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzer_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BAXFdRxmOsrY1vbHKBacff9tngR",
+        "block_type": 49,
+        "children": [
+          "MLIXd9bnfoRAufxPpyqcc5Lzn8t",
+          "El1adGGc1oXGTWxMKjQcp51PnNc",
+          "O2audFKqloyxDIxZ9G5cdsRUnPc",
+          "UBRqdplswoMieRxvdX4cQds6nlb",
+          "KWEIdiWsVozqwDxA6pfcNsBpn3e"
+        ],
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "MLIXd9bnfoRAufxPpyqcc5Lzn8t",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzer_params = {\n    \"tokenizer\": \"whitespace\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "BAXFdRxmOsrY1vbHKBacff9tngR"
+      },
+      {
+        "block_id": "El1adGGc1oXGTWxMKjQcp51PnNc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzerParams.put(\"tokenizer\", \"whitespace\");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "BAXFdRxmOsrY1vbHKBacff9tngR"
+      },
+      {
+        "block_id": "O2audFKqloyxDIxZ9G5cdsRUnPc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const analyzer_params = {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"tokenizer\": \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "whitespace",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "BAXFdRxmOsrY1vbHKBacff9tngR"
+      },
+      {
+        "block_id": "UBRqdplswoMieRxvdX4cQds6nlb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams = map[",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "]any{\"tokenizer\": \"whitespace\"}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "BAXFdRxmOsrY1vbHKBacff9tngR"
+      },
+      {
+        "block_id": "KWEIdiWsVozqwDxA6pfcNsBpn3e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nanalyzerParams='{\n  \"tokenizer\": \"whitespace\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "BAXFdRxmOsrY1vbHKBacff9tngR"
+      },
+      {
+        "block_id": "Rq5gdLkFwoqqh7xoHQpc0yILnCd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzer_params = {\n    {\"tokenizer\", \"whitespace\"}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "FArgdxtFfoAFmkxZNcsc3JWVnXp",
+        "block_type": 2,
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The whitespace tokenizer can work in conjunction with one or more filters. For example, the following code defines an analyzer that uses the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "whitespace",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tokenizer and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "lowercase",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FAhAhw08MFiB9OpkDjbPcVUTVnlg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FAhAhw08MFiB9OpkDjbPcVUTVnlg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HDS3dK4gcsAfGKbae6RcFhconIh",
+        "block_type": 49,
+        "children": [
+          "YZEsdbGU3omoZixFLXscw00rnjb",
+          "ZMJPdBTFso4tJRxKmDgcIz0bnOJ",
+          "JrV4d0eI0oC9qmxRIkdcrTlQnDf",
+          "OQyudcVS5orJzSxekXxcca0jnqh",
+          "E01hd5WL9ohOa6xtZfjceWTNnMe"
+        ],
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "YZEsdbGU3omoZixFLXscw00rnjb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzer_params = {\n    \"tokenizer\": \"whitespace\",\n    \"filter\": [\"lowercase\"]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "HDS3dK4gcsAfGKbae6RcFhconIh"
+      },
+      {
+        "block_id": "ZMJPdBTFso4tJRxKmDgcIz0bnOJ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();\nanalyzerParams.put(\"tokenizer\", \"whitespace\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzerParams.put(\"filter\", Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"lowercase\"));",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "HDS3dK4gcsAfGKbae6RcFhconIh"
+      },
+      {
+        "block_id": "JrV4d0eI0oC9qmxRIkdcrTlQnDf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const analyzer_params = {\n    \"tokenizer\": \"whitespace\",\n    \"filter\": [\"lowercase\"]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "HDS3dK4gcsAfGKbae6RcFhconIh"
+      },
+      {
+        "block_id": "OQyudcVS5orJzSxekXxcca0jnqh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams = map[",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "]any{\"tokenizer\": \"whitespace\", \"filter\": []any{\"lowercase\"}}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "HDS3dK4gcsAfGKbae6RcFhconIh"
+      },
+      {
+        "block_id": "E01hd5WL9ohOa6xtZfjceWTNnMe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nanalyzerParams='{\n  \"tokenizer\": \"whitespace\",\n  \"filter\": [\n    \"lowercase\"\n  ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "HDS3dK4gcsAfGKbae6RcFhconIh"
+      },
+      {
+        "block_id": "O9MVd4eGeocXKvxqXbKc4MG1nke",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzer_params = {\n    {\"tokenizer\", \"whitespace\"},\n    {\"filter\", {\"lowercase\"}}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "ByU3dbVIKoTsGZxWanecFtiDnee",
+        "block_type": 2,
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After defining ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzer_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can apply them to a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field when defining a collection schema. This allows ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to process the text in that field using the specified analyzer for efficient tokenization and filtering. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Example use",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FH8MVwnjdgihp0hkRHHKcjBe9n5e%23F0sgd9ramomPhqx9GLmcfZQLnBh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nl8sdx02FozRhBxldn4cbz0dnJh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "QlI2duQYUo22NXxONwAcqmC9nse",
+        "block_type": 2,
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before applying the analyzer configuration to your collection schema, verify its behavior using the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "run_analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " method.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jcx1dEgiLocqO8xDFZzck86knQh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Analyzer configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "GHredlxCWsAxc2bpotbcBFHfn5c",
+        "block_type": 49,
+        "children": [
+          "MPxfdpdDYopQGKxLargcitLun6d",
+          "KRUPdFPWCoi8YQxrX16cF0STnic",
+          "IHjPdPXy4oWaeVx0Mklcmq8nndh",
+          "C8vddH82AoKDZAxAodHczxx4nQh",
+          "XHkFdChHTogzNFxr7jVcYmDPnmh"
+        ],
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "MPxfdpdDYopQGKxLargcitLun6d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzer_params = {\n    \"tokenizer\": \"whitespace\",\n    \"filter\": [\"lowercase\"]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GHredlxCWsAxc2bpotbcBFHfn5c"
+      },
+      {
+        "block_id": "KRUPdFPWCoi8YQxrX16cF0STnic",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();\nanalyzerParams.put(\"tokenizer\", \"whitespace\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzerParams.put(\"filter\", Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"lowercase\"));",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GHredlxCWsAxc2bpotbcBFHfn5c"
+      },
+      {
+        "block_id": "IHjPdPXy4oWaeVx0Mklcmq8nndh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// javascript",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "GHredlxCWsAxc2bpotbcBFHfn5c"
+      },
+      {
+        "block_id": "C8vddH82AoKDZAxAodHczxx4nQh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams = map[",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "]any{\"tokenizer\": \"whitespace\", \"filter\": []any{\"lowercase\"}}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "GHredlxCWsAxc2bpotbcBFHfn5c"
+      },
+      {
+        "block_id": "XHkFdChHTogzNFxr7jVcYmDPnmh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "GHredlxCWsAxc2bpotbcBFHfn5c"
+      },
+      {
+        "block_id": "E4RjdvMQhoGXSmxAQGhc881wnsc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzer_params = {\n    {\"tokenizer\", \"whitespace\"},\n    {\"filter\", {\"lowercase\"}}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "FMlVdjnuroZ8p5xaYibcMUqPnJh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verification using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "run_analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H",
+        "block_type": 49,
+        "children": [
+          "FptMdYfXzog5cnxHglWcpBConug",
+          "NrBKdHoR4op7ccx12y2cSEO5n0b",
+          "EbQYdPLFOoa6JgxqfcVcBAZnn5c",
+          "QRPudyX1Ho9CPOxYNH0cVq05n1b",
+          "J5VddRn0soklGoxtnRIcXzHWnSe"
+        ],
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "FptMdYfXzog5cnxHglWcpBConug",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import (\n    MilvusClient,\n)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client = MilvusClient(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "uri=\"http://localhost:19530\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n    token=\"root:Milvus\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n\n# Sample text to analyze\nsample_text = \"The Milvus vector database is built for scale!\"\n\n# Run the standard analyzer with the defined configuration\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "result = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.run_analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7506038299933999123"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(sample_text, analyzer_params)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(\"Standard analyzer output:\", result)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7506038299933999123"
+        ],
+        "parent_id": "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H"
+      },
+      {
+        "block_id": "NrBKdHoR4op7ccx12y2cSEO5n0b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.vector.request.RunAnalyzerReq;\nimport io.milvus.v2.service.vector.response.RunAnalyzerResp;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig config = ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"http://localhost:19530\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .token(\"root:Milvus\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n        .build();\nMilvusClientV2 client = new MilvusClientV2(config);\n\nList<String> texts = new ArrayList<>();\ntexts.add(\"The Milvus vector database is built for scale!\");\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RunAnalyzerResp resp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".runAnalyzer(RunAnalyzerReq.builder()\n        .texts(texts)\n        .analyzerParams(analyzerParams)\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H"
+      },
+      {
+        "block_id": "EbQYdPLFOoa6JgxqfcVcBAZnn5c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// javascript",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H"
+      },
+      {
+        "block_id": "QRPudyX1Ho9CPOxYNH0cVq05n1b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n    \"context\"\n    \"encoding/json\"\n    \"fmt\"\n\n    \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n)\n\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: \"localhost:19530\",\n    APIKey:  \"root:Milvus\",\n})\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nbs, _ := json.Marshal(analyzerParams)\ntexts := []string{\"The Milvus vector database is built for scale!\"}\noption := milvusclient.NewRunAnalyzerOption(texts).\n    WithAnalyzerParams(string(bs))\n\nresult, err := client.RunAnalyzer(ctx, option)\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H"
+      },
+      {
+        "block_id": "J5VddRn0soklGoxtnRIcXzHWnSe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Jd65dCzeYsoO9fbt7Xtc4r7Vn2H"
+      },
+      {
+        "block_id": "HRHDdghr2o7cGQxu9QzcQKQOnBc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nstd::string text = \"The Milvus vector database is built for scale!\";\nauto request = milvus::RunAnalyzerRequest()\n                       .AddText(text)\n                       .WithAnalyzerParams(analyzer_params);\n\nmilvus::RunAnalyzerResponse response;\nstatus = client->RunAnalyzer(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "WDPYdJ0EDoDf23xNbSccq35fnph",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Expected output",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg"
+      },
+      {
+        "block_id": "UWS8dycIIsenkFbzm3nc0tvBn2d",
+        "block_type": 49,
+        "children": [
+          "KK7ydTVNdokd5TxgWORc2QVyn4b"
+        ],
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "KK7ydTVNdokd5TxgWORc2QVyn4b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "['the', 'milvus', 'vector', 'database', 'is', 'built', 'for', 'scale!']",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "wrap": false
+          }
+        },
+        "parent_id": "UWS8dycIIsenkFbzm3nc0tvBn2d"
+      },
+      {
+        "block_id": "Joevddm7ooFj5FxdPjEcn2ptnVh",
+        "block_type": 2,
+        "parent_id": "XobrdPs0goDKcfxQE6scpCJtnSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 42
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "created_time": "1741677738",
+  "modified_time": "1746616189",
+  "name": "updateResourceGroups()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "RmMNfMgc3lMPTBdfs0WcK1YGn6M",
+  "token": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "block_type": 1,
+        "children": [
+          "XXhLdkhYDoD2rPxvZUocyWeznmg",
+          "YAWydTxaUoQzGpxv86ucmEYYndf",
+          "PrEwdKPTOoUeqfxyVxVcc1bunLf",
+          "ShBvdO6afo2zhoxxDrscwTzlnmd",
+          "H92PdZYXsoUJMQxknBNclY3Vn5Y",
+          "LGCLdIKclokROExNsjlcgLB5nPf",
+          "BwGndKCEKomc4MxdPVBccpmKnId",
+          "WAkRdLE2JoU2kuxN8khcV96fnBb",
+          "PLlUd1sgOoDde4x9iY7cSvkYnQg",
+          "HxyIdHKdRo0EeQxf16fc3l45nHh",
+          "KQztdpNJCoYn9GxaIooceXcNnvc",
+          "InBcdwB7dovNANx9DaEcktkNn7b",
+          "KthkdTq5zoxNo0xKSaccvTvsnXe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "updateResourceGroups()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "XXhLdkhYDoD2rPxvZUocyWeznmg",
+        "block_type": 2,
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation updates the configuration of the specified resource groups.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YAWydTxaUoQzGpxv86ucmEYYndf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void updateResourceGroups(UpdateResourceGroupsReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "PrEwdKPTOoUeqfxyVxVcc1bunLf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "ShBvdO6afo2zhoxxDrscwTzlnmd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "updateResourceGroups(UpdateResourceGroupsReq.builder()\n    .resourceGroups(Map<String, ResourceGroupConfig> resourceGroups)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "H92PdZYXsoUJMQxknBNclY3Vn5Y",
+        "block_type": 2,
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LGCLdIKclokROExNsjlcgLB5nPf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "resourceGroups(Map<String, ResourceGroupConfig> resourceGroups)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "A80Zd9tJCogEWUxMGv3c85sSnBh",
+          "FX2ndyTMnobLQ2xxUuEcwaJhnmb"
+        ],
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "A80Zd9tJCogEWUxMGv3c85sSnBh",
+        "block_type": 2,
+        "parent_id": "LGCLdIKclokROExNsjlcgLB5nPf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FX2ndyTMnobLQ2xxUuEcwaJhnmb",
+        "block_type": 2,
+        "parent_id": "LGCLdIKclokROExNsjlcgLB5nPf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The resource groups and their configurations after the operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BwGndKCEKomc4MxdPVBccpmKnId",
+        "block_type": 2,
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WAkRdLE2JoU2kuxN8khcV96fnBb",
+        "block_type": 2,
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PLlUd1sgOoDde4x9iY7cSvkYnQg",
+        "block_type": 2,
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HxyIdHKdRo0EeQxf16fc3l45nHh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "UGcvdROThoKzQhxw1axcxN8RnOg"
+        ],
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "UGcvdROThoKzQhxw1axcxN8RnOg",
+        "block_type": 2,
+        "parent_id": "HxyIdHKdRo0EeQxf16fc3l45nHh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KQztdpNJCoYn9GxaIooceXcNnvc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "InBcdwB7dovNANx9DaEcktkNn7b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.common.resourcegroup.*;\nimport io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.resourcegroup.request.UpdateResourceGroupsReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. P",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "repare resource group config\nResourceGroupLimit requests = new ResourceGroupLimit(1);\nResourceGroupLimit limits = new ResourceGroupLimit(1);\n\nResourceGroupConfig config = ResourceGroupConfig.builder()\n    .withRequests(requests)\n    .withLimits(limits)\n    .build()\n\nMap<String, ResourceGroupConfig> resourceGroups = new Map<>();\nresourceGroups.put(\"rg1\", config);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// 3. Update resource groups",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nUpdateResourceGroupsReq updateResourceGroupsReq = UpdateResourceGroupsReq.builder()\n    .resourceGroups(resourceGroups)\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.updateResourceGroups(updateResourceGroupsReq)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh"
+      },
+      {
+        "block_id": "KthkdTq5zoxNo0xKSaccvTvsnXe",
+        "block_type": 2,
+        "parent_id": "Al6Fdx294o4Yi6xtwe0cdq1cnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 17
+  },
+  "slug": "v2-ResourceGroup-updateResourceGroups"
+}

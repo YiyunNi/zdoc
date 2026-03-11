@@ -1,0 +1,193 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": true,
+  "node_create_time": "1754536941",
+  "node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+  "node_type": "origin",
+  "obj_create_time": "1754536941",
+  "obj_edit_time": "1754537654",
+  "obj_token": "ZYm5d4jvhoK6MIxeg2Vc0IyVnvg",
+  "obj_type": "docx",
+  "origin_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "FmkCwm1QHitB7uk9U9ncLnHrnse",
+  "space_id": "7167193056431783939",
+  "title": "Understand Cost",
+  "slug": "understand-cost",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "ZYm5d4jvhoK6MIxeg2Vc0IyVnvg",
+        "block_type": 1,
+        "children": [
+          "DbPzdS13zonXZIxOvfeciun2nOf",
+          "HcPMdUon5od8nfxS744c7leVn1g"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Understand Cost",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "DbPzdS13zonXZIxOvfeciun2nOf",
+        "block_type": 2,
+        "parent_id": "ZYm5d4jvhoK6MIxeg2Vc0IyVnvg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Understand how Zilliz Cloud calculates charges across compute, storage, data transfer, and additional features to help you monitor usage and manage costs effectively.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HcPMdUon5od8nfxS744c7leVn1g",
+        "block_type": 2,
+        "parent_id": "ZYm5d4jvhoK6MIxeg2Vc0IyVnvg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 3
+  },
+  "children": [
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1754537884",
+      "node_token": "J2prwh2KLis9oqkqNIAcU1d6nsd",
+      "node_type": "origin",
+      "obj_create_time": "1754537884",
+      "obj_edit_time": "1765190345",
+      "obj_token": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+      "obj_type": "docx",
+      "origin_node_token": "J2prwh2KLis9oqkqNIAcU1d6nsd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+      "space_id": "7167193056431783939",
+      "title": "Dedicated Cluster Cost",
+      "slug": "dedicated-cluster-cost"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1754537669",
+      "node_token": "Uk0Nw1ZdbiOEBtkAOKacLTf8nGe",
+      "node_type": "origin",
+      "obj_create_time": "1754537669",
+      "obj_edit_time": "1765190328",
+      "obj_token": "KN3sdIAnGoXmHHxOzakcnNUWnod",
+      "obj_type": "docx",
+      "origin_node_token": "Uk0Nw1ZdbiOEBtkAOKacLTf8nGe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+      "space_id": "7167193056431783939",
+      "title": "Serverless Cluster Cost",
+      "slug": "serverless-cluster-cost"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1754537892",
+      "node_token": "PNj2w5fY9ifr82kbX8ucKgXAn0r",
+      "node_type": "origin",
+      "obj_create_time": "1754537892",
+      "obj_edit_time": "1764149539",
+      "obj_token": "RBNPdL9LFoisnKxK9Rccm12nnTd",
+      "obj_type": "docx",
+      "origin_node_token": "PNj2w5fY9ifr82kbX8ucKgXAn0r",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+      "space_id": "7167193056431783939",
+      "title": "Storage Cost",
+      "slug": "storage-cost"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1754538384",
+      "node_token": "BClgwKlHaiushBkPPssclTkYnef",
+      "node_type": "origin",
+      "obj_create_time": "1754538384",
+      "obj_edit_time": "1768532002",
+      "obj_token": "Ue5Cdr43SoQR0Ox2ZiycA1tknmc",
+      "obj_type": "docx",
+      "origin_node_token": "BClgwKlHaiushBkPPssclTkYnef",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+      "space_id": "7167193056431783939",
+      "title": "Data Transfer Cost",
+      "slug": "data-transfer-cost"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1754538392",
+      "node_token": "GBfswoqhviHfTVk2qhHc4eGXnfh",
+      "node_type": "origin",
+      "obj_create_time": "1754538392",
+      "obj_edit_time": "1761018468",
+      "obj_token": "M0Ygd8PLIoQG8Jx3YxBcwt3bngh",
+      "obj_type": "docx",
+      "origin_node_token": "GBfswoqhviHfTVk2qhHc4eGXnfh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+      "space_id": "7167193056431783939",
+      "title": "Audit Logs Cost",
+      "slug": "audit-log-cost"
+    }
+  ]
+}

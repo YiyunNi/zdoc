@@ -1,0 +1,233 @@
+{
+  "created_time": "1720586689",
+  "modified_time": "1747291011",
+  "name": "Collections",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "Sg3EfIgVtlTkeBdtguJchE9ynne",
+  "token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/KzitfU6c4lFXdodYOQJcupB2nJe",
+  "slug": "v2-Collections",
+  "children": [
+    {
+      "created_time": "1720587094",
+      "modified_time": "1746527174",
+      "name": "alterAlias()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "QasfdVW4voAzfwxfSc1civsHnVf",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/QasfdVW4voAzfwxfSc1civsHnVf"
+    },
+    {
+      "created_time": "1741660892",
+      "modified_time": "1746526810",
+      "name": "alterCollectionField()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "OtrZdy7OtoC9N9xb8TjcCtM7nfc",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/OtrZdy7OtoC9N9xb8TjcCtM7nfc"
+    },
+    {
+      "created_time": "1741661692",
+      "modified_time": "1746527193",
+      "name": "alterCollectionProperties()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "JQ4QdTaadoIDSPxDJRZcSDu3n5g",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/JQ4QdTaadoIDSPxDJRZcSDu3n5g"
+    },
+    {
+      "created_time": "1720587167",
+      "modified_time": "1720587235",
+      "name": "CollectionSchema",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "CAw4fDpLklKtgidSSSlcWVPunme",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/CAw4fDpLklKtgidSSSlcWVPunme"
+    },
+    {
+      "created_time": "1720587113",
+      "modified_time": "1746678544",
+      "name": "ConsistencyLevel",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "Q8IidbqKMopplgxSxaicS2o9nwc",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/Q8IidbqKMopplgxSxaicS2o9nwc"
+    },
+    {
+      "created_time": "1720587132",
+      "modified_time": "1746677328",
+      "name": "createAlias()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "NMAOdxhL1oo0E7xcFqXcF6yPnBg",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/NMAOdxhL1oo0E7xcFqXcF6yPnBg"
+    },
+    {
+      "created_time": "1720587254",
+      "modified_time": "1750646786",
+      "name": "createCollection()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "LtCFdAg8FoxWmBxOInfcUSagnHb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/LtCFdAg8FoxWmBxOInfcUSagnHb"
+    },
+    {
+      "created_time": "1741660922",
+      "modified_time": "1741663623",
+      "name": "createCollectionWithSchema()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "JYaadEAAAoYyF7xdkrXct7Xnn0c",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/JYaadEAAAoYyF7xdkrXct7Xnn0c"
+    },
+    {
+      "created_time": "1720587277",
+      "modified_time": "1746780148",
+      "name": "createSchema()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "V5KXdwdO0oqkhnxsKb9c3xaKn4c",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/V5KXdwdO0oqkhnxsKb9c3xaKn4c"
+    },
+    {
+      "created_time": "1720587296",
+      "modified_time": "1746678414",
+      "name": "DataType",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "QYPIdgWL7oDWrWxVUx0clo32nz4",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/QYPIdgWL7oDWrWxVUx0clo32nz4"
+    },
+    {
+      "created_time": "1720587341",
+      "modified_time": "1746528128",
+      "name": "describeAlias()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "B57cdiaEkotJQnxl7I9cJqotnPb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/B57cdiaEkotJQnxl7I9cJqotnPb"
+    },
+    {
+      "created_time": "1720587360",
+      "modified_time": "1761294376",
+      "name": "describeCollection()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "Lc03dk5YVo8Ilvx4XINcv5KBn9e",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/Lc03dk5YVo8Ilvx4XINcv5KBn9e"
+    },
+    {
+      "created_time": "1720587378",
+      "modified_time": "1746527494",
+      "name": "dropAlias()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "MBy3dDXFbo0buwxkh0IczwLInPf",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/MBy3dDXFbo0buwxkh0IczwLInPf"
+    },
+    {
+      "created_time": "1720587399",
+      "modified_time": "1746527547",
+      "name": "dropCollection()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "PsAGd1CNqosvirxDJ5ncIHudnSg",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/PsAGd1CNqosvirxDJ5ncIHudnSg"
+    },
+    {
+      "created_time": "1741665673",
+      "modified_time": "1746527574",
+      "name": "dropCollectionProperties()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "OPPHd2AabonMIzxzfupcyNS9n1a",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/OPPHd2AabonMIzxzfupcyNS9n1a"
+    },
+    {
+      "created_time": "1720587420",
+      "modified_time": "1757057424",
+      "name": "FieldSchema",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "WeXmdv8bioJ7AEx9sEtct6kgnUd",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/WeXmdv8bioJ7AEx9sEtct6kgnUd"
+    },
+    {
+      "created_time": "1720587438",
+      "modified_time": "1746528050",
+      "name": "getCollectionStats()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "XgfcdpBWCof3pfxhUudcRZajnPc",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/XgfcdpBWCof3pfxhUudcRZajnPc"
+    },
+    {
+      "created_time": "1720587455",
+      "modified_time": "1746528214",
+      "name": "hasCollection()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "Vs26d4WrYoJ3moxuLifcyP2enyh",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/Vs26d4WrYoJ3moxuLifcyP2enyh"
+    },
+    {
+      "created_time": "1720587472",
+      "modified_time": "1746528231",
+      "name": "listAliases()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "RvZDdxU1howmQ7x2V31c8eC7nJb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/RvZDdxU1howmQ7x2V31c8eC7nJb"
+    },
+    {
+      "created_time": "1741660963",
+      "modified_time": "1746587616",
+      "name": "listCollections()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "WxhmdPZydowLVLxR2LacSrUNnme",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/WxhmdPZydowLVLxR2LacSrUNnme"
+    },
+    {
+      "created_time": "1720587491",
+      "modified_time": "1746528264",
+      "name": "renameCollection()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "CtTvdQVMoo2ec5xbWTPcSzjNnQc",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/CtTvdQVMoo2ec5xbWTPcSzjNnQc"
+    },
+    {
+      "created_time": "1741665441",
+      "modified_time": "1741665611",
+      "name": "WaitForDropCollection()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "KzitfU6c4lFXdodYOQJcupB2nJe",
+      "token": "K9E6dtYlJojtOCxTG0EcGBVnnKe",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/K9E6dtYlJojtOCxTG0EcGBVnnKe"
+    }
+  ]
+}

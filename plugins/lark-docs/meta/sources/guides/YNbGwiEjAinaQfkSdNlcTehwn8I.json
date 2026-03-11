@@ -1,0 +1,95 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": true,
+  "node_create_time": "1694400461",
+  "node_token": "YNbGwiEjAinaQfkSdNlcTehwn8I",
+  "node_type": "origin",
+  "obj_create_time": "1694400461",
+  "obj_edit_time": "1734935092",
+  "obj_token": "S7WEdHeJ1oaQ4mxhVOjcpIEtn9b",
+  "obj_type": "docx",
+  "origin_node_token": "YNbGwiEjAinaQfkSdNlcTehwn8I",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+  "space_id": "7167193056431783939",
+  "title": "Convert Your Data",
+  "slug": "prepare-data-import",
+  "children": [
+    {
+      "creator": "ou_ee865f3d6d0036a3aa548eec6b75ce74",
+      "has_child": false,
+      "node_create_time": "1704332748",
+      "node_token": "QyjpwAaKuihAeJkNBUJcdFesn9e",
+      "node_type": "origin",
+      "obj_create_time": "1704332748",
+      "obj_edit_time": "1759110885",
+      "obj_token": "HRtvddLG2oWHM7x9FzUcQVkcnye",
+      "obj_type": "docx",
+      "origin_node_token": "QyjpwAaKuihAeJkNBUJcdFesn9e",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_b96de9b2ddef2aed77920eee632c4b7a",
+      "parent_node_token": "YNbGwiEjAinaQfkSdNlcTehwn8I",
+      "space_id": "7167193056431783939",
+      "title": "Use BulkWriter",
+      "slug": "use-bulkwriter"
+    }
+  ],
+  "blocks": {
+    "items": [
+      {
+        "block_id": "S7WEdHeJ1oaQ4mxhVOjcpIEtn9b",
+        "block_type": 1,
+        "children": [
+          "AR2jdamypoiCQixFIYjcQkTrneh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Convert Your Data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "AR2jdamypoiCQixFIYjcQkTrneh",
+        "block_type": 2,
+        "parent_id": "S7WEdHeJ1oaQ4mxhVOjcpIEtn9b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You need to prepare your data before importing it and ensure that it meets the source data requirements. This chapter provides source data requirements and an easy-to-use tool to aid in data preparations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  }
+}

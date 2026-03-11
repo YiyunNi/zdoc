@@ -1,0 +1,3461 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1714116043",
+  "node_token": "CCU1wZs6NiTEiwk8vN6cIP41nQf",
+  "node_type": "origin",
+  "obj_create_time": "1714116043",
+  "obj_edit_time": "1737797492",
+  "obj_token": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+  "obj_type": "docx",
+  "origin_node_token": "CCU1wZs6NiTEiwk8vN6cIP41nQf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "MILwwIfk3iMFsAk7ZGzcExHjn3b",
+  "space_id": "7167193056431783939",
+  "title": "Building a RAG Application with Pipelines",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "block_type": 1,
+        "children": [
+          "JLPxdrCAfoSMbwxwvQjc6B68nvf",
+          "CwYJdAb4io3VyVxAnxWcbWRTnde",
+          "Zc7cd9AiboX04ExmRXmcHl46nrd",
+          "U8ejdrcXVo0UbnxKQs9cMtjzng5",
+          "AnuTdtQHnoxRkSxsuwLcZXhGnOe",
+          "TohlduYEEoVly1xAKLKcdOZPnce",
+          "HwvPdPTRYoTWv5xlF55cA8hdngc",
+          "HSYAdh8Ako9EWJxg1nmctuCynAT",
+          "D2wXd6Eu0ohxQvxzV6VcUfcGnig",
+          "OejPdPOqVoMEgNxuclpcwDzDnre",
+          "NPiydf2q6oTQIaxvqv4cisCDntm",
+          "GXQwdgO1doyglxxMZOtccSCyn2e",
+          "Xvu1dApAtooZmExlca3ccb3lnNg",
+          "DjrzdqqSwo1KTZxgzs6ct1ULnFe",
+          "JOqqdwN3bocFPAx0ZxVcY2I1nkX",
+          "YDIMdF47Yotyu7x7X0ScsJ2inVg",
+          "YyJtdvfnGoQbsRxpp9vc4xN3nnd",
+          "D3mcdiwpNoIMGIx9iLIcct1ynme",
+          "E98xdV8OHoHgefxqXoZcITYknAb",
+          "RxyPdKEmXoQtXBxcTFnc1JFUnfe",
+          "YlK9d9p1ZoeJXpxw5XZcTW7xncf",
+          "YTx6dvoLcolIl0x6ggycHy6fnuh",
+          "GkX7dATa8oMNnKxfIEach01mnXg",
+          "PeAzd43pQoWVlCxy0T4cIKeonbd",
+          "HIxtdC5QQo5Ox2x2Da5cCPPNn3f",
+          "CrsUdXNnToNqIkx1qLwcj0cjnHg",
+          "Kv6Kdt6qqo4zMMxQNcrcvDY5nob",
+          "WJFFds30NoW13Yx66u1c3EcAnAg",
+          "Hk5kd4HI6o140cxQ0qzclXINnKc",
+          "PKThddYTLoiyufxectTcC3e0nLI",
+          "JSXld7tkuoAtT3xv9BbcsWmWnSc",
+          "CJrSdFCWvos35tx0H3Bclijknmf",
+          "ARtRdOMfLonPcJxtLOyc5eZynec",
+          "YJqKd1xVdoq4jfxrkqScRO14n5f",
+          "HOead9NAEoWXpwxEUIKcaPIOn5e",
+          "HdoudX8tkoNxK7xpC0Kcqpd7nhf",
+          "TN1odBEJyo8eY7xkIy6cGPgMnLf",
+          "AW9NdSueNoKkqoxscYdcL2mOn4f",
+          "LiUhdrqmVoGtFRxVcBCcEGY2nUd",
+          "HCfjdeVGpoJUBgxbyeYcMXAwnjf",
+          "TYS6dAmL9oWJSyx1gpSczHofnzc",
+          "Wmn9d7oVvoU6sOxOCFCc3GHxn4d",
+          "AOGFdCvyEoULUix7dS0cC42Kntb",
+          "SG3ddjoVNoWXHFxL21mcWIxxnRf",
+          "W7IadjxIWoEVB8xXgGicwprVn1c",
+          "NuOVdAhj2oH27wxYX4BceBh9nHe",
+          "Vnzcd5FGwodi0kxZN0Qcrmu8nJd",
+          "Im2dd9jR8ofB6cxrY3jcifyun0p",
+          "Kn7kdKgiHo34y0xDDrwcvEL0nQf",
+          "IzLrds8QYoz61Ux7zUDcSybance",
+          "DfwxdBk7uoaaeAxPOcEcFclyngg",
+          "GSEQdw4DvoY1oCxMt2Sc8Fs3n6f",
+          "Kp8Rdk5DioK1WFxPx9Yc0udbnE8",
+          "EkDodUr2Nor0vaxgFuzcXFRNnBf",
+          "UeVSdVrdqoPAHdxZtuIc5bMEnUh",
+          "ZGrPdkY8voSYKSxwChbcx7VJnHc",
+          "Wig5dQZcvoxIgLxPZXQcLVt9n8g",
+          "KOEwdvCjnoC2RExVO8XcUUomnib",
+          "LMp4dtbguopYwUxkBACc8P5LnTe",
+          "VmpHd0YAfooACOxeMgccnw3GnJc",
+          "Wng2dSy5HoH2NhxMKBfcByjUnie",
+          "Yt5TdP5lWo6GDaxJd4JcYnOsnkc",
+          "OyKodr0hrodzBFxJ6vMc6onwnxh",
+          "WtTzdy8GJobxeHxkCEicQcVknIc",
+          "B765d9hGQof1kexXJkJccJ8SnLh",
+          "N8nzdnCM5oukZCxKOnGcKLFJngf",
+          "W3BndcQ2OoWqqWxxWYJcUKtYnSd",
+          "FOIkd6dUroFa9jxixkFcsOomnpe",
+          "ODkQd5AI4oaofJxRai9cMDC9nRg",
+          "ORJwdoLvcoXEhNxVl83cdJRJnYL",
+          "Uuxcdg73goNiKLxFUr2cDfNZnUf",
+          "XkMWdZMctoVclXx0IdPc0yFynlh",
+          "LXGLdugZXoW3myxUWRUcqHBNnke",
+          "I2dUdAKZxosVTtxxTFNc1sqhnuf",
+          "I0PUdsTKHom4yxxHZs7cDtX8nid"
+        ],
+        "comment_ids": [
+          "7362762092103270403"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Building a RAG Application with Pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7362762092103270403"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "JLPxdrCAfoSMbwxwvQjc6B68nvf",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines is a robust solution for transforming unstructured data such as documents, text pieces and images into a searchable vector ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FZ9AMwNkVLiog0jkXxNscuMpJnjL"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This guide provides a detailed description of the three main Pipelines types and provides and example of building a RAG application with Pipelines.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CwYJdAb4io3VyVxAnxWcbWRTnde",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "W2cudHlNFoyNUcxaBd6c3t06nEf",
+          "Mp8Xd7OY4oWugixYXzUc5L4envg"
+        ],
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "W2cudHlNFoyNUcxaBd6c3t06nEf",
+        "block_type": 2,
+        "parent_id": "CwYJdAb4io3VyVxAnxWcbWRTnde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mp8Xd7OY4oWugixYXzUc5L4envg",
+        "block_type": 2,
+        "parent_id": "CwYJdAb4io3VyVxAnxWcbWRTnde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines will be discontinued by the end of Q2 2025 and replaced by a new feature, “Data In, Data Out,” to streamline embedding generation in both Milvus and Zilliz Cloud. As of December 24, 2024, new user registrations are no longer accepted. Current users can continue using the service within the $20 monthly free allowance until the sunset date; however, no SLA is provided. Please consider using embedding APIs from model providers or open-source models to generate vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zc7cd9AiboX04ExmRXmcHl46nrd",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D21763-684%26mode%3Ddesign%26t%3DpsyBh4YqzYeWmKgX-4"
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "U8ejdrcXVo0UbnxKQs9cMtjzng5",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Understanding pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "AnuTdtQHnoxRkSxsuwLcZXhGnOe",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In many modern services and applications, there is a need to search by semantics. From searching for a chunk of text that matches the meaning of a query, to finding images that look similar to each other. A typical retrieval system that finishes such task are built with data preparation and embedding, a process of representing text or images as numerical vectors in a multi-dimensional space. Zilliz Cloud Pipelines empowers such use cases with a simple yet flexible interface.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TohlduYEEoVly1xAKLKcdOZPnce",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Currently, we offer Pipelines for semantic search in texts, documents, and images, providing a critical building block of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Retrieval Augmented Generation (RAG) applications",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fbootcamp%2Fblob%2Fmaster%2Fbootcamp%2FRAG%2Fzilliz_pipeline_rag.ipynb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". More Pipelines will be added in the future for more semantic search use cases, such as video frame search and multi-modal search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HwvPdPTRYoTWv5xlF55cA8hdngc",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "There are three types of Piplines in Zilliz Cloud.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HSYAdh8Ako9EWJxg1nmctuCynAT",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ingestion pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "D2wXd6Eu0ohxQvxzV6VcUfcGnig",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ingestion pipelines can process unstructured data into searchable vector embeddings and store them in Zilliz Cloud Vector Databases. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OejPdPOqVoMEgNxuclpcwDzDnre",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An Ingestion pipeline contains several functions, each describing a transformation of some input field, such as generating vector embeddings for unstructured data (eg images, texts, documentation), and preserving some input value as additional information that can be retrieved during vector search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NPiydf2q6oTQIaxvqv4cisCDntm",
+        "block_type": 34,
+        "children": [
+          "LswDdui1VogRC3xO7OPcXQtZnzc",
+          "GgirdBQDeoYmdTxZAiicWvMQnrf"
+        ],
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "quote_container": {}
+      },
+      {
+        "block_id": "LswDdui1VogRC3xO7OPcXQtZnzc",
+        "block_type": 2,
+        "parent_id": "NPiydf2q6oTQIaxvqv4cisCDntm",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GgirdBQDeoYmdTxZAiicWvMQnrf",
+        "block_type": 2,
+        "parent_id": "NPiydf2q6oTQIaxvqv4cisCDntm",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "One Ingestion pipeline maps to exactly one ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "vector database collection",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on Zilliz Cloud. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GXQwdgO1doyglxxMZOtccSCyn2e",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "Xvu1dApAtooZmExlca3ccb3lnNg",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A Search pipeline enables vector similarity search and semantic search by converting the input into an embedding vector and then retrieving the top-K most similar embedding vectors and relevant metadata. A Search pipeline allows only one type of function.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DjrzdqqSwo1KTZxgzs6ct1ULnFe",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deletion pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "JOqqdwN3bocFPAx0ZxVcY2I1nkX",
+        "block_type": 2,
+        "comment_ids": [
+          "7368389974460743684"
+        ],
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A Deletion pipeline ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "removes all specified entities from a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7368389974460743684"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " A Deletion pipeline allows only one type of function.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YDIMdF47Yotyu7x7X0ScsJ2inVg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example: Building a RAG application with Pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "YyJtdvfnGoQbsRxpp9vc4xN3nnd",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "tutorial",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fbootcamp%2Fblob%2Fmaster%2Fbootcamp%2FRAG%2Fzilliz_pipeline_rag.ipynb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will demonstrate how to use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to build a simple yet scalable ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Retrieval Augmented Generation (RAG)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fuse-cases%2Fllm-retrieval-augmented-generation"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " application in Python. By providing a unified set of APIs, Zilliz Cloud Pipelines simplify the process of building an RAG application. You can skip the hassle of DevOps and accomplish everything with a simple API call. The figure below illustrates the main components of a basic RAG application.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D3mcdiwpNoIMGIx9iLIcct1ynme",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D47204-1489%26mode%3Ddesign%26t%3DchcX7MbpLW1R1QA7-4"
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "E98xdV8OHoHgefxqXoZcITYknAb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "RxyPdKEmXoQtXBxcTFnc1JFUnfe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensure you have ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "created a Free-tier cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FKrbjwFhy3iojF3k97XmcvvXMnW7%23doxcnFZEzaQyrV1mnoVWFQYLPwd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in Zilliz Cloud. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "YlK9d9p1ZoeJXpxw5XZcTW7xncf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set up Zilliz Cloud Pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "YTx6dvoLcolIl0x6ggycHy6fnuh",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Obtain cluster information",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "GkX7dATa8oMNnKxfIEach01mnXg",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Obtain the necessary information about the created Free cluster, including cluster ID, cloud region, API key, and project ID. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PeAzd43pQoWVlCxy0T4cIKeonbd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import os\n\nCLOUD_REGION = 'gcp-us-west1'\nCLUSTER_ID = 'your CLUSTER_ID'\nAPI_KEY = 'your API_KEY'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PROJECT_ID = 'your PROJECT_ID'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "HIxtdC5QQo5Ox2x2Da5cCPPNn3f",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create an ingestion pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "CrsUdXNnToNqIkx1qLwcj0cjnHg",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ingestion pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " can transform unstructured data into searchable vector embeddings and store them in Zilliz Cloud Vector Database. In the Ingestion pipeline you can define the type of unstructured data to process by specifying the functions. Currently, Ingestion pipeline allows the following types of functions:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kv6Kdt6qqo4zMMxQNcrcvDY5nob",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INDEX_TEXT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function is used to process texts. It converts each text to a vector embedding and maps an input field (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "text_list",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to two output fields (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "text",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "WJFFds30NoW13Yx66u1c3EcAnAg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INDEX_DOC",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function is used to process documents. It splits the input text document into chunks and generates a vector embedding for each chunk. This function maps an input field (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "doc_url",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to four output fields (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "doc_name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "chunk_id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "chunk_text",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") .",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "Hk5kd4HI6o140cxQ0qzclXINnKc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INDEX_IMAGE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function is used to process images. It generates the image embedding and maps two input fields (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "image_url",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "image_id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to two output fields (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "image_id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") .",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "PKThddYTLoiyufxectTcC3e0nLI",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PRESERVE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function is used to store additional metadata as ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "scalar",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field(s). These metadata typically include properties like document publisher info, tags, publication date etc.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "JSXld7tkuoAtT3xv9BbcsWmWnSc",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this tutorial, we will create an Ingestion pipeline with an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "INDEX_TEXT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function and a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PRESERVE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function. As part of creating the Ingestion pipeline, a vector database collection named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_text_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be created in the cluster. It contains five fields:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CJrSdFCWvos35tx0H3Bclijknmf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the auto-generated primary key for each entity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "ARtRdOMfLonPcJxtLOyc5eZynec",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as defined in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "INDEX_TEXT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "YJqKd1xVdoq4jfxrkqScRO14n5f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "title",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as defined in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PRESERVE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "HOead9NAEoWXpwxEUIKcaPIOn5e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import requests",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7368390490160267268"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\nheaders = {\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"Authorization\": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "f\"Bearer {API_KEY}\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7368390774356262915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n}\n\ncreate_pipeline_url = f\"https://controller.api.{CLOUD_REGION}.zillizcloud.com/v1/pipelines\"\n\ncollection_name = 'my_text_collection'\nembedding_service = \"zilliz/bge-base-en-v1.5\"\n\ndata = {\n    \"name\": \"my_ingestion_pipeline\",\n    \"description\": \"A pipeline that generates text embeddings and stores title information.\",\n    \"type\": \"INGESTION\",\n    \"projectId\": PROJECT_ID,\n    \"clusterId\": CLUSTER_ID,\n    \"collectionName\": collection_name,\n    \"functions\": [\n        {\n            \"name\": \"index_my_text\",\n            \"action\": \"INDEX_TEXT\",\n            \"language\": \"ENGLISH\",\n            \"embedding\": embedding_service\n        },\n        {\n            \"name\": \"title_info\",\n            \"action\": \"PRESERVE\",\n            \"inputField\": \"title\",\n            \"outputField\": \"title\",\n            \"fieldType\": \"VarChar\"\n        }\n    ]\n}\n\nresponse = requests.post(create_pipeline_url, headers=headers, json=data)\nprint(response.json())\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ingestion_pipe_id = response.json()[\"data\"][\"pipelineId\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7368390774356262915",
+          "7368390490160267268"
+        ],
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "HdoudX8tkoNxK7xpC0Kcqpd7nhf",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upon successful creation, a pipeline ID will be returned. We will use this pipeline ID later when running the pipeline.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TN1odBEJyo8eY7xkIy6cGPgMnLf",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a search pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "AW9NdSueNoKkqoxscYdcL2mOn4f",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " enables semantic search by converting a query string into a vector embedding and then retrieving top-K nearest neighbor vectors, each vector representing a chunk of ingested document and other preserved properties such as file name. Currently, Search pipeline allows the following types of functions:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LiUhdrqmVoGtFRxVcBCcEGY2nUd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SEARCH_DOC_CHUNK",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function takes a user query as input and returns relevant doc chunks from the knowledge base.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "HCfjdeVGpoJUBgxbyeYcMXAwnjf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SEARCH_TEXT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function takes a user query as input and returns relevant text entities from the knowledge base.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "TYS6dAmL9oWJSyx1gpSczHofnzc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SEARCH_IMAGE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": This function takes an image url as input and returns entities of most similar images.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "Wmn9d7oVvoU6sOxOCFCc3GHxn4d",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this tutorial, we will adopt the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SEARCH_TEXT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function for text retrieval.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AOGFdCvyEoULUix7dS0cC42Kntb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "data = {\n    \"projectId\": PROJECT_ID,\n    \"name\": \"my_search_pipeline\",\n    \"description\": \"A pipeline that receives text and search for semantically similar texts.\",\n    \"type\": \"SEARCH\",\n    \"functions\": [\n        {\n            \"name\": \"search_text_and_title\",\n            \"action\": \"SEARCH_TEXT\",\n            \"embedding\": embedding_service,\n            \"reranker\": \"zilliz/bge-reranker-base\", # optional, this will rerank search results by the reranker service\n            \"clusterId\": CLUSTER_ID,\n            \"collectionName\": collection_name,\n        }\n    ]\n}\n\nresponse = requests.post(create_pipeline_url, headers=headers, json=data)\n\nprint(response.json())\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "search_pipe_id = response.json()[\"data\"][\"pipelineId\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "SG3ddjoVNoWXHFxL21mcWIxxnRf",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Similarly, upon successful creation, a pipeline ID will be returned. We will use this pipeline ID later when running the pipeline.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W7IadjxIWoEVB8xXgGicwprVn1c",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Run ingestion pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "NuOVdAhj2oH27wxYX4BceBh9nHe",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this tutorial, we will ingest the text pieces from the blog ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "What Milvus version to start with",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fblog%2Fwhat-milvus-version-to-start-with.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vnzcd5FGwodi0kxZN0Qcrmu8nJd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "run_pipeline_url = f\"https://controller.api.{CLOUD_REGION}.zillizcloud.com/v1/pipelines/{ingestion_pipe_id}/run\"\n\nmilvus_lite_data = {\n    \"data\":\n        {\n            \"text_list\": [\n                \"As the name suggests, Milvus Lite is a lightweight version that integrates seamlessly with Google Colab and Jupyter Notebook. It is packaged as a single binary with no additional dependencies, making it easy to install and run on your machine or embed in Python applications. Additionally, Milvus Lite includes a CLI-based Milvus standalone server, providing flexibility for running it directly on your machine. Whether you embed it within your Python code or utilize it as a standalone server is entirely up to your preference and specific application requirements.\",\n                \"Milvus Lite is ideal for rapid prototyping and local development, offering support for quick setup and experimentation with small-scale datasets on your machine. However, its limitations become apparent when transitioning to production environments with larger datasets and more demanding infrastructure requirements. As such, while Milvus Lite is an excellent tool for initial exploration and testing, it may not be suitable for deploying applications in high-volume or production-ready settings.\",\n                \"Milvus Lite is perfect for prototyping on your laptop.\"\n            ],\n            \"title\": 'Milvus Lite'\n        }\n}\n\nmilvus_standalone_data = {\n    \"data\":\n        {\n            \"text_list\": [\n                \"Milvus Standalone is a mode of operation for the Milvus vector database system where it operates independently as a single instance without any clustering or distributed setup. Milvus runs on a single server or machine in this mode, providing functionalities such as indexing and searching for vectors. It is suitable for situations where the data and traffic volume scale is relatively small and does not require the distributed capabilities provided by a clustered setup.\",\n                \"Milvus Standalone offers high performance and flexibility for conducting vector searches on your datasets, making it suitable for smaller-scale deployments, CI/CD, and offline deployments when you have no Kubernetes support.\"\n            ],\n            \"title\": 'Milvus Standalone'\n        }\n}\n\nmilvus_cluster_data = {\n    \"data\":\n        {\n            \"text_list\": [\n                \"Milvus Cluster is a mode of operation for the Milvus vector database system where it operates and is distributed across multiple nodes or servers. In this mode, Milvus instances are clustered together to form a unified system that can handle larger volumes of data and higher traffic loads compared to a standalone setup. Milvus Cluster offers scalability, fault tolerance, and load balancing features, making it suitable for scenarios that need to handle big data and serve many concurrent queries efficiently.\",\n                \"Milvus Cluster provides unparalleled availability, scalability, and cost optimization for enterprise-grade workloads, making it the preferred choice for large-scale, highly available production environments.\"\n            ],\n            \"title\": 'Milvus Cluster'\n        }\n}\n\nfor data in [milvus_lite_data, milvus_standalone_data, milvus_cluster_data]:\n    response = requests.post(run_pipeline_url, headers=headers, json=data)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    print(response.json())",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "Im2dd9jR8ofB6cxrY3jcifyun0p",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Now we have successfully ingested the text pieces with corresponding titles and embeddings into the vector database. You can check the ingested data in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Data Preview ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "tab of this collection (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_text_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud web UI",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kn7kdKgiHo34y0xDDrwcvEL0nQf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Build a RAG application",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "IzLrds8QYoz61Ux7zUDcSybance",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Run search pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "DfwxdBk7uoaaeAxPOcEcFclyngg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import pprint\n\n\ndef retrieval_with_pipeline(question, search_pipe_id, top_k=2, verbose=False):\n    run_pipeline_url = f\"https://controller.api.{CLOUD_REGION}.zillizcloud.com/v1/pipelines/{search_pipe_id}/run\"\n\n    data = {\n        \"data\": {\n            \"query_text\": question\n        },\n        \"params\": {\n            \"limit\": top_k,\n            \"offset\": 0,\n            \"outputFields\": [\n                \"text\",\n                \"title\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "            ]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423678631125237788"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n            \"filter\": 'title == \"Milvus Lite\"'\n        }\n    }\n    response = requests.post(run_pipeline_url, headers=headers, json=data)\n    if verbose:\n        pprint.pprint(response.json())\n    results = response.json()[\"data\"][\"result\"]\n    retrieved_texts = [{'text': result['text'], 'title': result['title']} for result in results]\n    return retrieved_texts\n\n\nquestion = 'Which Milvus should I choose if I want to use in the jupyter notebook with a small scale of data?'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "retrieval_with_pipeline(question, search_pipe_id, top_k=2, verbose=True)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7423678631125237788"
+        ],
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "GSEQdw4DvoY1oCxMt2Sc8Fs3n6f",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", we specify to retrieve the top k results, filter only the article titled \"Milvus Lite\", and return only the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "text",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "title",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " fields. For more information about the parameters of search pipeline running, you can refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "here",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fpipelines-text-data%23run-text-search-pipeline"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kp8Rdk5DioK1WFxPx9Yc0udbnE8",
+        "block_type": 2,
+        "comment_ids": [
+          "7423678959554117660"
+        ],
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "T",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423678959554117660"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "he following is the output.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EkDodUr2Nor0vaxgFuzcXFRNnBf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{'code': 200,\n 'data': {'result': [{'distance': 0.8722565174102783,\n                      'id': 449431798276845977,\n                      'text': 'As the name suggests, Milvus Lite is a '\n                              'lightweight version that integrates seamlessly '\n                              'with Google Colab and Jupyter Notebook. It is '\n                              'packaged as a single binary with no additional '\n                              'dependencies, making it easy to install and run '\n                              'on your machine or embed in Python '\n                              'applications. Additionally, Milvus Lite '\n                              'includes a CLI-based Milvus standalone server, '\n                              'providing flexibility for running it directly '\n                              'on your machine. Whether you embed it within '\n                              'your Python code or utilize it as a standalone '\n                              'server is entirely up to your preference and '\n                              'specific application requirements.',\n                      'title': 'Milvus Lite'},\n                     {'distance': 0.3541138172149658,\n                      'id': 449431798276845978,\n                      'text': 'Milvus Lite is ideal for rapid prototyping and '\n                              'local development, offering support for quick '\n                              'setup and experimentation with small-scale '\n                              'datasets on your machine. However, its '\n                              'limitations become apparent when transitioning '\n                              'to production environments with larger datasets '\n                              'and more demanding infrastructure requirements. '\n                              'As such, while Milvus Lite is an excellent tool '\n                              'for initial exploration and testing, it may not '\n                              'be suitable for deploying applications in '\n                              'high-volume or production-ready settings.',\n                      'title': 'Milvus Lite'}],\n          'token_usage': 34}}\nOut[7]:\n[{'text': 'As the name suggests, Milvus Lite is a lightweight version that integrates seamlessly with Google Colab and Jupyter Notebook. It is packaged as a single binary with no additional dependencies, making it easy to install and run on your machine or embed in Python applications. Additionally, Milvus Lite includes a CLI-based Milvus standalone server, providing flexibility for running it directly on your machine. Whether you embed it within your Python code or utilize it as a standalone server is entirely up to your preference and specific application requirements.',\n  'title': 'Milvus Lite'},\n {'text': 'Milvus Lite is ideal for rapid prototyping and local development, offering support for quick setup and experimentation with small-scale datasets on your machine. However, its limitations become apparent when transitioning to production environments with larger datasets and more demanding infrastructure requirements. As such, while Milvus Lite is an excellent tool for initial exploration and testing, it may not be suitable for deploying applications in high-volume or production-ready settings.',\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  'title': 'Milvus Lite'}]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "UeVSdVrdqoPAHdxZtuIc5bMEnUh",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We can see that when we ask a question and run the search pipeline, the top-K most similar knowledge fragments will be returned, which forms the basis for creating a RAG application.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZGrPdkY8voSYKSxwChbcx7VJnHc",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Build a chatbot powered by RAG",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "Wig5dQZcvoxIgLxPZXQcLVt9n8g",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With the above convenient helper function ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "retrieval_with_pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", we can retrieve the knowledge ingested into the vector database. Now let's build a simple RAG-enabled chatbot  that can answer user questions based on the knowledge base we just created. In this tutorial, we will use OpenAI ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "gpt-3.5-turbo",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the LLM. Please use your own OpenAI API key in the following code.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KOEwdvCjnoC2RExVO8XcUUomnib",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import os\nfrom openai import OpenAI\n\n\nclient = OpenAI()\nclient.api_key = os.getenv('OPENAI_API_KEY')  # your OpenAI API key\n\nclass Chatbot:\n    def __init__(self, search_pipe_id):\n        self._search_pipe_id = search_pipe_id\n\n    def retrieve(self, query: str) -> list:\n        \"\"\"\n        Retrieve relevant text with Zilliz Cloud Pipelines.\n        \"\"\"\n        results = retrieval_with_pipeline(query, self._search_pipe_id, top_k=2)\n        return results\n\n    def generate_answer(self, query: str, context_str: list) -> str:\n        \"\"\"\n        Generate answer based on context, which is from the result of Search pipeline run.\n        \"\"\"\n        completion = client.chat.completions.create(\n            model=\"gpt-3.5-turbo\",\n            temperature=0,\n            messages=\n            [\n                {\"role\": \"user\",\n                 \"content\":\n                     f\"We have provided context information below. \\n\"\n                     f\"---------------------\\n\"\n                     f\"{context_str}\"\n                     f\"\\n---------------------\\n\"\n                     f\"Given this information, please answer the question: {query}\"\n                 }\n            ]\n        ).choices[0].message.content\n        return completion\n\n    def chat_with_rag(self, query: str) -> str:\n        context_str = self.retrieve(query)\n        completion = self.generate_answer(query, context_str)\n        return completion\n\n    def chat_without_rag(self, query: str) -> str:\n        return client.chat.completions.create(\n            model=\"gpt-3.5-turbo\",\n            temperature=0,\n            messages=\n            [\n                {\"role\": \"user\",\n                 \"content\": query\n                 }\n            ]\n        ).choices[0].message.content\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "chatbot = Chatbot(search_pipe_id)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "LMp4dtbguopYwUxkBACc8P5LnTe",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The code above creates a RAG-enabled chatbot that utilizes the search pipeline we just created to retrieve the most relevant text pieces from the knowledge base. Now let's see how it works.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VmpHd0YAfooACOxeMgccnw3GnJc",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ask the chatbot a question ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "Wng2dSy5HoH2NhxMKBfcByjUnie",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We ask the chatbot which Milvus version to use in Jupyter notebook if we have a small dataset.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Yt5TdP5lWo6GDaxJd4JcYnOsnkc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "question ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "=",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 'Which Milvus should I choose if I want to use in the jupyter notebook with a small scale of data?'chatbot",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "chat_with_rag(question)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "OyKodr0hrodzBFxJ6vMc6onwnxh",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The answer we got is as follows.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WtTzdy8GJobxeHxkCEicQcVknIc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Based on the context provided, you should choose Milvus Lite if you want to use it in a Jupyter Notebook with a small scale of data. Milvus Lite is specifically designed for rapid prototyping and local development, offering support for quick setup and experimentation with small-scale datasets on your machine. It is lightweight, easy to install, and integrates seamlessly with Google Colab and Jupyter Notebook.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "B765d9hGQof1kexXJkJccJ8SnLh",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The original text from the knowledge base is follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N8nzdnCM5oukZCxKOnGcKLFJngf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As the name suggests, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus Lite is a lightweight version that integrates seamlessly with Google Colab and Jupyter Notebook.",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " It is packaged as a single binary with no additional dependencies, making it easy to install and run on your machine or embed in Python applications. Additionally, Milvus Lite includes a CLI-based Milvus standalone server, providing flexibility for running it directly on your machine. Whether you embed it within your Python code or utilize it as a standalone server is entirely up to your preference and specific application requirements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "W3BndcQ2OoWqqWxxWYJcUKtYnSd",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After comparing the text piece in the knowledge base and the answer we got, we can see that the RAG-enabled chatbot has provided a perfect answer with domain knowledge to our question.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FOIkd6dUroFa9jxixkFcsOomnpe",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Now let's try asking the chatbot with the same question but without the RAG capabilities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ODkQd5AI4oaofJxRai9cMDC9nRg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "chatbot",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "chat_without_rag(question)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "ORJwdoLvcoXEhNxVl83cdJRJnYL",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We get the following answer.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Uuxcdg73goNiKLxFUr2cDfNZnUf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you are working with a small scale of data in a Jupyter notebook, you may want to consider using Milvus CE (Community Edition). Milvus CE is a free and open-source vector database that is suitable for small-scale projects and experimentation. It is easy to set up and use in a Jupyter notebook environment, making it a good choice for beginners or those working with limited data. Additionally, Milvus CE offers a range of features and functionalities that can help you efficiently store and query your data in a vectorized format.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "XkMWdZMctoVclXx0IdPc0yFynlh",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Clearly, this time, the chatbot is not infused with domain knowledge and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "hallucinates",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FHallucination_(artificial_intelligence"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LXGLdugZXoW3myxUWRUcqHBNnke",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Conclusion ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL"
+      },
+      {
+        "block_id": "I2dUdAKZxosVTtxxTFNc1sqhnuf",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We have successfully built an RAG-enabled chatbot that is infused with domain knowledge and provide accurate answers to user questions. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I0PUdsTKHom4yxxHZs7cDtX8nid",
+        "block_type": 2,
+        "parent_id": "PMRhd8KNRo1NX0xPgu2cfQLxnAL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 80
+  }
+}

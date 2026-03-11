@@ -1,0 +1,1819 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1756177249",
+  "node_token": "PpGlwYU6PiSsfVkZ7doco50vnKg",
+  "node_type": "origin",
+  "obj_create_time": "1756177249",
+  "obj_edit_time": "1766999011",
+  "obj_token": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+  "obj_type": "docx",
+  "origin_node_token": "PpGlwYU6PiSsfVkZ7doco50vnKg",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "U1LuwnY58i8nKQkK1ctcJqBjnVf",
+  "space_id": "7167193056431783939",
+  "title": "Voyage AI Ranker",
+  "slug": "voyage-ai-model-ranker",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "block_type": 1,
+        "children": [
+          "LDTsdY7YOoZVTixzKyxc8sqfndc",
+          "CVjqdTyr3oin0OxCrIecWlRpnBc",
+          "HyTYdMUWVooQeZxscDVcjm2innw",
+          "IKmMd7TyFoDBIIxA4FbczC17nzg",
+          "SVFldjQzXoyTW2xeRxIctG50nMh",
+          "OQHzdOCm4omIeHxqw4ScEFEJnfb",
+          "BZOedr73aoM8Lwx1vKqccFbrn2b",
+          "Qmz5dlwzAo5yJxxTccacyDWknDb",
+          "SJAWdJBGFocgE1xgh5vcWOHhn7b",
+          "NhT7dQf0BoKs00xC3oQcEFHDnkc",
+          "KI9TdIKKaoz3sCxFJeCcSaW9nBg",
+          "T2tVdlDr6okz7YxOUC5cwsFyn5d",
+          "AItfd3nNno5JD2xvmzXc6Q5un1d",
+          "K8GfdolryoE7uIxoHErcC8eyn8d",
+          "IzLCdwbwPo9vEQxwzzkc5vSRnPd",
+          "IDFYdHTxWousinxNnStcFBE2nPe",
+          "Y0s4dQNwIoPqxXx8j6BcVNKrnye",
+          "SdMfdTaDiouVJqxx2shc7GzBn1c",
+          "NFBBdNJU9oZ2WoxAOTwcs3a8nW8",
+          "PCeWdKYk3oif7OxtlB9ciOvAnQf",
+          "OWYpdk1GLohNCYx9qJkctsMMnid",
+          "Xb5Vd4FVbo73FXxXQrNcTdBjnXg",
+          "My8edQVPAosXM2x9HtjcixBRneg",
+          "RXFRdwU5Do8UeEx5wHJcCe5ynKf",
+          "Ri5Rd9zaoo0BGaxZJdFcURAenml",
+          "L30kdzwjvoWXu3x32I5c1bgPnAe",
+          "CFBBd3EKOoomsBxjLtAcVqGRnPb",
+          "OU8ndcqiHo7B7dxhNxUced8DnTb",
+          "Xvdudn6QjoBjeixMB8RcSjHinWc",
+          "X0tldsj9noDWdmxuGCScnttsnHb",
+          "CCUIdMr8uoiJl4xGdY3cJzArnTf",
+          "A5Dad8MIIoSGlIxsdN4c17gynTc",
+          "Z4HcdOeJvovujUx26I8csztZnHb",
+          "SHhDdMF7sogewdxMZ5Tc1cYhnqf",
+          "UKLVdv1BPo2HPkxhHu3cfRvHnVc",
+          "OVyGdeytLogaL5xWLNNchem2nLF",
+          "DM7UduM2uodigsxG7kKcs6Tknee",
+          "L8fcdyCLvoud5IxgzhtcvOrEn7e",
+          "HNaHdH1vkoUAFCxyUXkcj5ADnFh",
+          "BYsmdvftEoJKZmx1Rtsc6cnInid",
+          "R4i6dFZCwonDl9ximJwcJtKvn4g",
+          "IbEBd0Jm9oxQhzxt6BPcpsZYn0f",
+          "U4M1dtuFTotwy3x0Rs5cHc1GnXc",
+          "Lci0dl17eordQUxarQNcqvYxnIc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Voyage AI Ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "LDTsdY7YOoZVTixzKyxc8sqfndc",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The Voyage AI Ranker leverages ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Voyage AI's",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fwww.voyageai.com%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " specialized rerankers to enhance search relevance through semantic reranking. It provides high-performance reranking capabilities optimized for retrieval-augmented generation (RAG) and search applications.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CVjqdTyr3oin0OxCrIecWlRpnBc",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Voyage AI Ranker is particularly valuable for applications requiring:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HyTYdMUWVooQeZxscDVcjm2innw",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Advanced semantic understanding with models specifically trained for reranking tasks",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "IKmMd7TyFoDBIIxA4FbczC17nzg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "High-performance processing with optimized inference for production workloads",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "SVFldjQzXoyTW2xeRxIctG50nMh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Flexible truncation controls for handling diverse document lengths",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "OQHzdOCm4omIeHxqw4ScEFEJnfb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Fine-tuned performance across different model variants (rerank-2, rerank-lite, etc.)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "BZOedr73aoM8Lwx1vKqccFbrn2b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "Qmz5dlwzAo5yJxxTccacyDWknDb",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before using the Voyage AI Ranker, make sure the following prerequisites are met.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SJAWdJBGFocgE1xgh5vcWOHhn7b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Choose a rerank model",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ytgzdg3XXouOCoxtbrlcO8bYnjc"
+        ],
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "Ytgzdg3XXouOCoxtbrlcO8bYnjc",
+        "block_type": 2,
+        "parent_id": "SJAWdJBGFocgE1xgh5vcWOHhn7b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Decide which Cohere rerank model to use, such as ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank-2.5",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Your choice determines how semantic relevance is evaluated during reranking. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Voyage AI official documentation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.voyageai.com%2Fdocs%2Freranker"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NhT7dQf0BoKs00xC3oQcEFHDnkc",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "background_color": 7,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KI9TdIKKaoz3sCxFJeCcSaW9nBg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integrate with Voyage AI and get your integration ID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RQEWdUN3LocpORxDYCpcFJNwnPe",
+          "KhROdfQNqo5hgnxDcKHc1gQxn7c"
+        ],
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "RQEWdUN3LocpORxDYCpcFJNwnPe",
+        "block_type": 2,
+        "parent_id": "KI9TdIKKaoz3sCxFJeCcSaW9nBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To use Voyage AI Ranker, you must first integrate Voyage AI as a model provider in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2Flogin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KhROdfQNqo5hgnxDcKHc1gQxn7c",
+        "block_type": 2,
+        "parent_id": "KI9TdIKKaoz3sCxFJeCcSaW9nBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After integration, Zilliz Cloud generates an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "integration ID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", which you will reference when defining the rerank function. For detailed steps, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Model Providers",
+                "token": "B1cSwfWcri4VJLkCR20cHIs6nCf",
+                "url": "https://zilliverse.feishu.cn/wiki/B1cSwfWcri4VJLkCR20cHIs6nCf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T2tVdlDr6okz7YxOUC5cwsFyn5d",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "background_color": 7,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AItfd3nNno5JD2xvmzXc6Q5un1d",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "background_color": 7,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K8GfdolryoE7uIxoHErcC8eyn8d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Get your Voyage AI API key",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JDqUdcjXKoyeDYxqdsPccq6bnFd",
+          "QLYvdP2VcomJyZxGxgecq9KOnT5",
+          "T7u4ddUkYotgaHxFz7qcrDFanBc"
+        ],
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "JDqUdcjXKoyeDYxqdsPccq6bnFd",
+        "block_type": 2,
+        "parent_id": "K8GfdolryoE7uIxoHErcC8eyn8d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sign up at ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Voyage AI's platform",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fwww.voyageai.com%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to obtain your API credentials. You can either:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QLYvdP2VcomJyZxGxgecq9KOnT5",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VOYAGE_API_KEY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " environment variable, or",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8GfdolryoE7uIxoHErcC8eyn8d"
+      },
+      {
+        "block_id": "T7u4ddUkYotgaHxFz7qcrDFanBc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Specify the API key directly in the ranker configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8GfdolryoE7uIxoHErcC8eyn8d"
+      },
+      {
+        "block_id": "IzLCdwbwPo9vEQxwzzkc5vSRnPd",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "background_color": 7,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IDFYdHTxWousinxNnStcFBE2nPe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Plan a collection schema with a rerankable text field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QCx4duYnnoNkCsxAXOUcYkHonBd"
+        ],
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "QCx4duYnnoNkCsxAXOUcYkHonBd",
+        "block_type": 2,
+        "parent_id": "IDFYdHTxWousinxNnStcFBE2nPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensure that your collection includes one ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field containing the text to be reranked.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y0s4dQNwIoPqxXx8j6BcVNKrnye",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use Voyage AI Ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "SdMfdTaDiouVJqxx2shc7GzBn1c",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This section shows how to apply Voyage AI Ranker during search to rerank retrieved results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NFBBdNJU9oZ2WoxAOTwcs3a8nW8",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The rerank function is defined and applied at search time, allowing you to enable, disable, or change reranking behavior on a per-query basis.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PCeWdKYk3oif7OxtlB9ciOvAnQf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Preparations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "OWYpdk1GLohNCYx9qJkctsMMnid",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following setup prepares a collection and sample data for search and reranking.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xb5Vd4FVbo73FXxXQrNcTdBjnXg",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<details>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "My8edQVPAosXM2x9HtjcixBRneg",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<summary><strong>Prepare a collection with sample data</strong></summary>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RXFRdwU5Do8UeEx5wHJcCe5ynKf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, DataType\n\nclient = MilvusClient(\n    uri=\"YOUR_ZILLIZ_CLOUD_URI\",\n    token=\"YOUR_ZILLIZ_CLOUD_TOKEN\",\n)\n\ncollection_name = \"voyage_rerank_demo\"\n\n# Define collection schema\nschema = client.create_schema()\nschema.add_field(\"id\", DataType.INT64, is_primary=True, auto_id=False)\nschema.add_field(\"document\", DataType.VARCHAR, max_length=1000)\nschema.add_field(\"dense\", DataType.FLOAT_VECTOR, dim=4)\n\n# Configure index\nindex_params = client.prepare_index_params()\nindex_params.add_index(\n    field_name=\"dense\",\n    index_type=\"AUTOINDEX\",\n    metric_type=\"COSINE\"\n)\n\n# Create collection\nclient.create_collection(\n    collection_name=collection_name,\n    schema=schema,\n    index_params=index_params\n)\n\n# Insert sample data\ndata = [\n    {\n        \"id\": 1,\n        \"document\": \"Recent renewable energy developments include improved solar efficiency.\",\n        \"dense\": [0.10, 0.20, 0.30, 0.40],\n    },\n    {\n        \"id\": 2,\n        \"document\": \"Climate policy and carbon markets have evolved rapidly in recent years.\",\n        \"dense\": [0.11, 0.19, 0.28, 0.39],\n    },\n    {\n        \"id\": 3,\n        \"document\": \"New battery technology helps stabilize wind and solar power generation.\",\n        \"dense\": [0.90, 0.10, 0.05, 0.02],\n    },\n    {\n        \"id\": 4,\n        \"document\": \"Vector databases support similarity search for machine learning applications.\",\n        \"dense\": [0.01, 0.02, 0.03, 0.04],\n    },\n]\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.insert(collection_name, data)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "Ri5Rd9zaoo0BGaxZJdFcURAenml",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</details>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L30kdzwjvoWXu3x32I5c1bgPnAe",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Define the rerank function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "CFBBd3EKOoomsBxjLtAcVqGRnPb",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Voyage AI Ranker is defined ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "at search time",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", not as part of the collection schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OU8ndcqiHo7B7dxhNxUced8DnTb",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The rerank function specifies:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xvdudn6QjoBjeixMB8RcSjHinWc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "which text field (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "X0tldsj9noDWdmxuGCScnttsnHb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "which Voyage AI model to use",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "CCUIdMr8uoiJl4xGdY3cJzArnTf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "how queries and documents are truncated or validated",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "A5Dad8MIIoSGlIxsdN4c17gynTc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import Function, FunctionType\n\nvoyage_ranker = Function(\n    name=\"voyage_semantic_ranker\",\n    input_field_names=[\"document\"],\n    function_type=FunctionType.RERANK,\n    params={\n        \"reranker\": \"model\",\n        \"provider\": \"voyageai\",\n        \"model_name\": \"rerank-2.5\",\n        \"queries\": [\"renewable energy developments\"],\n        \"truncation\": True,\n<include target=\"zilliz\">\n        \"integration_id\": \"YOUR_INTEGRATION_ID\",\n</include>\n<include target=\"milvus\">\n        \"credential\": \"YOUR_VOYAGE_API_KEY\",\n</include>\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "Z4HcdOeJvovujUx26I8csztZnHb",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "J8und5LXJoX8OwxTjxfcyO05nie",
+          "Lj4GdypQlo8ihHx7epWcdEAunRc"
+        ],
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "J8und5LXJoX8OwxTjxfcyO05nie",
+        "block_type": 2,
+        "parent_id": "Z4HcdOeJvovujUx26I8csztZnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Lj4GdypQlo8ihHx7epWcdEAunRc",
+        "block_type": 2,
+        "parent_id": "Z4HcdOeJvovujUx26I8csztZnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of strings in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "queries",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " must match the number of queries issued in the search request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SHhDdMF7sogewdxMZ5Tc1cYhnqf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search with the rerank function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "UKLVdv1BPo2HPkxhHu3cfRvHnVc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "query_vector = [0.12, 0.21, 0.29, 0.41]\n\nresults = client.search(\n    collection_name=collection_name,\n    data=[query_vector],\n    anns_field=\"dense\",\n    limit=3,\n    output_fields=[\"document\"],\n    # highlight-next-line\n    ranker=voyage_ranker,\n)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(results)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "OVyGdeytLogaL5xWLNNchem2nLF",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During this search:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DM7UduM2uodigsxG7kKcs6Tknee",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Candidates are retrieved using vector search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "L8fcdyCLvoud5IxgzhtcvOrEn7e",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Voyage AI Ranker evaluates semantic relevance for each candidate.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "HNaHdH1vkoUAFCxyUXkcj5ADnFh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The result set is reordered before being returned.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "BYsmdvftEoJKZmx1Rtsc6cnInid",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Next steps",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd"
+      },
+      {
+        "block_id": "R4i6dFZCwonDl9ximJwcJtKvn4g",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Voyage AI Ranker can also be used with hybrid search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IbEBd0Jm9oxQhzxt6BPcpsZYn0f",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search and hybrid search apply the ranker in the same manner:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U4M1dtuFTotwy3x0Rs5cHc1GnXc",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In both cases, you pass the rerank function via the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter at search time.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Lci0dl17eordQUxarQNcqvYxnIc",
+        "block_type": 2,
+        "parent_id": "Oj2xd3Ofjo0v76xGuwkcvFNunjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Multi-Vector Hybrid Search",
+                "token": "WTsmwWdgOiKnwpkdZdScp093njh",
+                "url": "https://zilliverse.feishu.cn/wiki/WTsmwWdgOiKnwpkdZdScp093njh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 54
+  }
+}

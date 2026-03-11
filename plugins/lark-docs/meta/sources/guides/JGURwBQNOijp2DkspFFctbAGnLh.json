@@ -1,0 +1,3397 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1730174675",
+  "node_token": "JGURwBQNOijp2DkspFFctbAGnLh",
+  "node_type": "origin",
+  "obj_create_time": "1730174675",
+  "obj_edit_time": "1772606951",
+  "obj_token": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+  "obj_type": "docx",
+  "origin_node_token": "JGURwBQNOijp2DkspFFctbAGnLh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "Zu6vw6Aifi1gvNkqqO5cDjmtngh",
+  "space_id": "7167193056431783939",
+  "title": "Jieba",
+  "slug": "jieba-tokenizer",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "block_type": 1,
+        "children": [
+          "NasqdEDGwoT8B7xU8mLcVGZUnqc",
+          "C46qdNGhPobR6nxbLyjcNb3qnad",
+          "RxFBduio3oZHuMxjySJc3pJJnRb",
+          "WbwPdksH5ooWhbxVVpdczhGjnZc",
+          "XqPRdHtYHoYRNmxoz1dcfxTennB",
+          "XaaVdgpNooraDLxovQqcQ54xngd",
+          "WaSqdqUYZsGQJgbnq1dcfjmsnIH",
+          "OKfCdUTIMozk8yxxDQycwxtrntZ",
+          "RVHsd6AecoPNWoxob4Bcxd4nnBd",
+          "ZWBFdUWT0s59AVbw4TacXsEVnCh",
+          "Tha7dZLlOo7Zc5xjAejceR4Bndb",
+          "LgtRdZMvSomrVHxmgp2cCXomnKe",
+          "ZS2tddKwyoCFRQxX4vTc0Q0gnru",
+          "I41YdHpY7ohbc3xGl0Ec2p1VnAd",
+          "BHkedply1sScQ4b6SDKcmWv8nvb",
+          "YovId7xZJo1japxZIN1cWh12nAf",
+          "HbvEd5v19oT0wfxbw62cZip5nAb",
+          "XJIfdPA7WocY5vxZfHscz6LKnqe",
+          "N2JJdYPnfo9Aeqxg0rWc2D5dnih",
+          "EPWud8tZfoNtc1xmohVcyZLsnLf",
+          "TptidcY2jooA6txne1kcwml6nGf",
+          "OILBdlftfs8dXabQshlc44qqnCe",
+          "AAJpdz0vOoenFhxFO3qcuCH3n2g",
+          "Gvx0dAHYeobcpDxsF6fcffkknJU",
+          "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA",
+          "NHoFdxi0PoazskxbkY7cdNQdn7c",
+          "LzmrdJ8WBof4x9xCZMRckXxyn6f",
+          "HwAGdqiplsiKSQb5zz1cwswqnrb",
+          "TXLOd6nY4oZ5yMxHDrYcB3yYnrb"
+        ],
+        "comment_ids": [
+          "7494586705916362771"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Jieba",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7494586705916362771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "NasqdEDGwoT8B7xU8mLcVGZUnqc",
+        "block_type": 2,
+        "comment_ids": [
+          "7433337217815281667"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7433337217815281667"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jieba",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7433337217815281667"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tokenizer processes Chinese text by breaking it down into its component words.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7433337217815281667"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C46qdNGhPobR6nxbLyjcNb3qnad",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "PVmEdxUWeoKNU4xwkytcOZI2nib",
+          "W222d4bhDosURHx0fHncAaBBnrL"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "PVmEdxUWeoKNU4xwkytcOZI2nib",
+        "block_type": 2,
+        "parent_id": "C46qdNGhPobR6nxbLyjcNb3qnad",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W222d4bhDosURHx0fHncAaBBnrL",
+        "block_type": 2,
+        "parent_id": "C46qdNGhPobR6nxbLyjcNb3qnad",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jieba",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tokenizer preserves punctuation marks as separate tokens in the output. For example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"你好！世界。\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " becomes ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[\"你好\", \"！\", \"世界\", \"。\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". To remove these standalone punctuation tokens, use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "removepunct",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FTVfnwtCEQico7Bk9bngcnV1cnGb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " filter.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RxFBduio3oZHuMxjySJc3pJJnRb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "WbwPdksH5ooWhbxVVpdczhGjnZc",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus supports two configuration approaches for the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jieba",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tokenizer: a simple configuration and a custom configuration.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XqPRdHtYHoYRNmxoz1dcfxTennB",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Simple configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "XaaVdgpNooraDLxovQqcQ54xngd",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With the simple configuration, you only need to set the tokenizer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"jieba\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For example:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WaSqdqUYZsGQJgbnq1dcfjmsnIH",
+        "block_type": 49,
+        "children": [
+          "Sso5dQlgzoP2xRxFx8scTTWenph",
+          "MDB7ddrosoUT2GxfJBcc2QKZnhf",
+          "YsEgdAWivovHgDxLfticbSBknwQ",
+          "RtoadZYrXofSNSxeMmccyqtFnPb",
+          "Q73EdIM0jomNSrx8qB7cHcqenHv"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "Sso5dQlgzoP2xRxFx8scTTWenph",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Simple configuration: only specifying the tokenizer name\nanalyzer_params = {\n    \"tokenizer\": \"jieba\",  # Use the default settings: dict=[\"_default_\"], mode=\"search\", hmm=True\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "WaSqdqUYZsGQJgbnq1dcfjmsnIH"
+      },
+      {
+        "block_id": "MDB7ddrosoUT2GxfJBcc2QKZnhf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzerParams.put(\"tokenizer\", \"jieba\");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "WaSqdqUYZsGQJgbnq1dcfjmsnIH"
+      },
+      {
+        "block_id": "YsEgdAWivovHgDxLfticbSBknwQ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const analyzer_params = {\n    \"tokenizer\": \"jieba\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989299290423299"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989299290423299"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7482989299290423299"
+        ],
+        "parent_id": "WaSqdqUYZsGQJgbnq1dcfjmsnIH"
+      },
+      {
+        "block_id": "RtoadZYrXofSNSxeMmccyqtFnPb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams = map[",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989367221927955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989367221927955"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "]any{\"tokenizer\": \"jieba\"}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989367221927955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7482989367221927955"
+        ],
+        "parent_id": "WaSqdqUYZsGQJgbnq1dcfjmsnIH"
+      },
+      {
+        "block_id": "Q73EdIM0jomNSrx8qB7cHcqenHv",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7482989434251182083"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nanalyzerParams='{\n  \"tokenizer\": \"jieba\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7482989434251182083"
+        ],
+        "parent_id": "WaSqdqUYZsGQJgbnq1dcfjmsnIH"
+      },
+      {
+        "block_id": "OKfCdUTIMozk8yxxDQycwxtrntZ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzer_params = {\n    {\"tokenizer\", \"jieba\"}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "RVHsd6AecoPNWoxob4Bcxd4nnBd",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This simple configuration is equivalent to the following custom configuration:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZWBFdUWT0s59AVbw4TacXsEVnCh",
+        "block_type": 49,
+        "children": [
+          "EM0fdC7xuoFZPyxYMp1crsn5nJh",
+          "B4Pud1UmBok9iVxnprjcBBxjnwe",
+          "EdwodQxKzoidPixXRy7cwxzwnae",
+          "P0TKdiXIvo5BPWxTyMxc3ZDfnDe",
+          "FzOSd257uoDc1fxB03QczTqvnwf"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "EM0fdC7xuoFZPyxYMp1crsn5nJh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Custom configuration equivalent to the simple configuration above\nanalyzer_params = {\n    \"type\": \"jieba\",          # Tokenizer type, fixed as \"jieba\"\n    \"dict\": [\"_default_\"],     # Use the default dictionary\n    \"mode\": \"search\",          # Use search mode for improved recall (see mode details below)\n    \"hmm\": True                # Enable HMM for probabilistic segmentation\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZWBFdUWT0s59AVbw4TacXsEVnCh"
+      },
+      {
+        "block_id": "B4Pud1UmBok9iVxnprjcBBxjnwe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();\nanalyzerParams.put(\"type\", \"jieba\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzerParams.put(\"dict\", Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"_default_\"));\nanalyzerParams.put(\"mode\", \"search\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzerParams.put(\"hmm\", true);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZWBFdUWT0s59AVbw4TacXsEVnCh"
+      },
+      {
+        "block_id": "EdwodQxKzoidPixXRy7cwxzwnae",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// javascript",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZWBFdUWT0s59AVbw4TacXsEVnCh"
+      },
+      {
+        "block_id": "P0TKdiXIvo5BPWxTyMxc3ZDfnDe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams = map[",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "]any{\"type\": \"jieba\", \"dict\": []any{\"_default_\"}, \"mode\": \"search\", \"hmm\": true}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZWBFdUWT0s59AVbw4TacXsEVnCh"
+      },
+      {
+        "block_id": "FzOSd257uoDc1fxB03QczTqvnwf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZWBFdUWT0s59AVbw4TacXsEVnCh"
+      },
+      {
+        "block_id": "Tha7dZLlOo7Zc5xjAejceR4Bndb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzer_params = {\n    {\"tokenizer\", \"jieba\"},\n    {\"dict\", {\"_default_\"}},\n    {\"mode\", \"search\"},\n    {\"hmm\", true}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "LgtRdZMvSomrVHxmgp2cCXomnKe",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on parameters, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Custom configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FJGURwBQNOijp2DkspFFctbAGnLh%23ZS2tddKwyoCFRQxX4vTc0Q0gnru"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZS2tddKwyoCFRQxX4vTc0Q0gnru",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Custom configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "I41YdHpY7ohbc3xGl0Ec2p1VnAd",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more control, you can provide a custom configuration that allows you to specify a custom dictionary, select the segmentation mode, and enable or disable the Hidden Markov Model (HMM). For example:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BHkedply1sScQ4b6SDKcmWv8nvb",
+        "block_type": 49,
+        "children": [
+          "PTSQdPwaio6TwxxQFVEcTSv0nDd",
+          "MCAidh3e0orxPIxpBRxcqgWrn0g",
+          "IZ0mdYCTxowP7bx3Lz1cdEeunbf",
+          "SqmTd4BG5o5aqbx9veOc0RJanze",
+          "DRg8dTXJ5oXbt2xTDTLcXnQ0npd"
+        ],
+        "comment_ids": [
+          "7613289223952534457"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "PTSQdPwaio6TwxxQFVEcTSv0nDd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Custom configuration with user-defined settings\nanalyzer_params = {\n    \"tokenizer\": {\n        \"type\": \"jieba\",           # Fixed tokenizer type\n        \"dict\": [\"customDictionary\"],  # Custom dictionary list; replace with your own terms\n        \"mode\": \"exact\",           # Use exact mode (non-overlapping tokens)\n        \"hmm\": False               # Disable HMM; unmatched text will be split into individual characters\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "BHkedply1sScQ4b6SDKcmWv8nvb"
+      },
+      {
+        "block_id": "MCAidh3e0orxPIxpBRxcqgWrn0g",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();                                                                          \nanalyzerParams.put(\"tokenizer\", new HashMap<String, Object>() {{\n  put(\"type\", \"jieba\");                                                                                                      \n  put(\"dict\", Arrays.asList(\"customDictionary\"));             \n  put(\"mode\", \"exact\");\n  put(\"hmm\", false);\n}});\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "BHkedply1sScQ4b6SDKcmWv8nvb"
+      },
+      {
+        "block_id": "IZ0mdYCTxowP7bx3Lz1cdEeunbf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// javascript",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "BHkedply1sScQ4b6SDKcmWv8nvb"
+      },
+      {
+        "block_id": "SqmTd4BG5o5aqbx9veOc0RJanze",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams := map[string]interface{}{\n  \"tokenizer\": map[string]interface{}{\n      \"type\": \"jieba\",\n      \"dict\": []string{\"customDictionary\"},\n      \"mode\": \"exact\",\n      \"hmm\":  false,\n  },\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "BHkedply1sScQ4b6SDKcmWv8nvb"
+      },
+      {
+        "block_id": "DRg8dTXJ5oXbt2xTDTLcXnQ0npd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "BHkedply1sScQ4b6SDKcmWv8nvb"
+      },
+      {
+        "block_id": "YovId7xZJo1japxZIN1cWh12nAf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzerParams = {                                                                                              \n  {\"tokenizer\", {                          \n      {\"type\", \"jieba\"},                                                                                                     \n      {\"dict\", {\"customDictionary\"}},                         \n      {\"mode\", \"exact\"},                                                                                                     \n      {\"hmm\", false}                                          \n  }}\n};\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "block_type": 31,
+        "children": [
+          "OZMxdGRvborm4fx4ziZciothnwe",
+          "BOzXdgkraohr07xjlf4cdWd4nXe",
+          "O8yidti5Jose4MxsbrZcCv18nOg",
+          "FANYd4s9BoP53ExRbOOczjgqnYm",
+          "BIXmdJABaopxdYxq1UIcG6Wonsb",
+          "WScOdkn5EoKKwfxIYfwcyq3sn6d",
+          "ZrxvdYbvNoeMIPxqafmcnCAvnLd",
+          "Jm82dymI6oRpEfxB9bKcMPajnzn",
+          "ZXXUdhuAco30XFx5qJncZv1KnEc",
+          "G303dQCt9oXvFwxGBSucv8hfnef",
+          "BY0adDKgxoeSjqx61yecSbflnGc",
+          "DLX7djtYHoGNpXxV0tDcmm66ntf",
+          "FoCYdhzV9oLh5zxVE8Mc2gDfnjc",
+          "SJFOde3NzokhbMxd667c5fP3nfd",
+          "K5RVdzA0jofNhKxbCwicKjHHnfc"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "table": {
+          "cells": [
+            "OZMxdGRvborm4fx4ziZciothnwe",
+            "BOzXdgkraohr07xjlf4cdWd4nXe",
+            "O8yidti5Jose4MxsbrZcCv18nOg",
+            "FANYd4s9BoP53ExRbOOczjgqnYm",
+            "BIXmdJABaopxdYxq1UIcG6Wonsb",
+            "WScOdkn5EoKKwfxIYfwcyq3sn6d",
+            "ZrxvdYbvNoeMIPxqafmcnCAvnLd",
+            "Jm82dymI6oRpEfxB9bKcMPajnzn",
+            "ZXXUdhuAco30XFx5qJncZv1KnEc",
+            "G303dQCt9oXvFwxGBSucv8hfnef",
+            "BY0adDKgxoeSjqx61yecSbflnGc",
+            "DLX7djtYHoGNpXxV0tDcmm66ntf",
+            "FoCYdhzV9oLh5zxVE8Mc2gDfnjc",
+            "SJFOde3NzokhbMxd667c5fP3nfd",
+            "K5RVdzA0jofNhKxbCwicKjHHnfc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              100,
+              452,
+              136
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 5
+          }
+        }
+      },
+      {
+        "block_id": "OZMxdGRvborm4fx4ziZciothnwe",
+        "block_type": 32,
+        "children": [
+          "DiIqdzVJUoARspxkKxzcvPCXnGc"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DiIqdzVJUoARspxkKxzcvPCXnGc",
+        "block_type": 2,
+        "parent_id": "OZMxdGRvborm4fx4ziZciothnwe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BOzXdgkraohr07xjlf4cdWd4nXe",
+        "block_type": 32,
+        "children": [
+          "THnedtnpGoJYOnxgPA7cfBfCnFc"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "THnedtnpGoJYOnxgPA7cfBfCnFc",
+        "block_type": 2,
+        "parent_id": "BOzXdgkraohr07xjlf4cdWd4nXe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O8yidti5Jose4MxsbrZcCv18nOg",
+        "block_type": 32,
+        "children": [
+          "UFFpdq1RDozdQkxzBTpcE2pVnf5"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UFFpdq1RDozdQkxzBTpcE2pVnf5",
+        "block_type": 2,
+        "parent_id": "O8yidti5Jose4MxsbrZcCv18nOg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Default Value",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FANYd4s9BoP53ExRbOOczjgqnYm",
+        "block_type": 32,
+        "children": [
+          "YxlGd2BEGofP1Ax365PcL8EinZc"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YxlGd2BEGofP1Ax365PcL8EinZc",
+        "block_type": 2,
+        "parent_id": "FANYd4s9BoP53ExRbOOczjgqnYm",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BIXmdJABaopxdYxq1UIcG6Wonsb",
+        "block_type": 32,
+        "children": [
+          "C0P2dxJYDoLGzXxS5oucpm7Snmt"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "C0P2dxJYDoLGzXxS5oucpm7Snmt",
+        "block_type": 2,
+        "parent_id": "BIXmdJABaopxdYxq1UIcG6Wonsb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The type of tokenizer. This is fixed to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"jieba\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WScOdkn5EoKKwfxIYfwcyq3sn6d",
+        "block_type": 32,
+        "children": [
+          "NQqddigJQo62dCxpimTcaOmInfg"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NQqddigJQo62dCxpimTcaOmInfg",
+        "block_type": 2,
+        "parent_id": "WScOdkn5EoKKwfxIYfwcyq3sn6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"jieba\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZrxvdYbvNoeMIPxqafmcnCAvnLd",
+        "block_type": 32,
+        "children": [
+          "SMk9dsj0hoteaoxxmbScYhSPnfc"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SMk9dsj0hoteaoxxmbScYhSPnfc",
+        "block_type": 2,
+        "parent_id": "ZrxvdYbvNoeMIPxqafmcnCAvnLd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dict",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jm82dymI6oRpEfxB9bKcMPajnzn",
+        "block_type": 32,
+        "children": [
+          "RBjidBbPAoHuibxVvBdcGWalnUg",
+          "JlxxddnERoJj0RxZz9FcrkHnnjd",
+          "HyLBdjqMzox4lKxT6CAcSsacnJg",
+          "C9uQdgQQ7o1rYVxi4g5c5EcYnDb"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RBjidBbPAoHuibxVvBdcGWalnUg",
+        "block_type": 2,
+        "parent_id": "Jm82dymI6oRpEfxB9bKcMPajnzn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of dictionaries that the analyzer will load as its vocabulary source. Built-in options:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JlxxddnERoJj0RxZz9FcrkHnnjd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"_default_\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Loads the engine's built‑in Simplified‑Chinese dictionary. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dict.txt",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmessense%2Fjieba-rs%2Fblob%2Fv0.6.8%2Fsrc%2Fdata%2Fdict.txt"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Jm82dymI6oRpEfxB9bKcMPajnzn"
+      },
+      {
+        "block_id": "HyLBdjqMzox4lKxT6CAcSsacnJg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"_extend_default_\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Loads everything in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"_default_\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " plus an additional Traditional‑Chinese supplement. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dict.txt.big",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fmilvus%2Fblob%2Fv2.5.11%2Finternal%2Fcore%2Fthirdparty%2Ftantivy%2Ftantivy-binding%2Fsrc%2Fanalyzer%2Fdata%2Fjieba%2Fdict.txt.big"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Jm82dymI6oRpEfxB9bKcMPajnzn"
+      },
+      {
+        "block_id": "C9uQdgQQ7o1rYVxi4g5c5EcYnDb",
+        "block_type": 2,
+        "parent_id": "Jm82dymI6oRpEfxB9bKcMPajnzn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also mix the built‑in dictionary with any number of custom dictionaries. Example: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[\"_default_\", \"结巴分词器\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZXXUdhuAco30XFx5qJncZv1KnEc",
+        "block_type": 32,
+        "children": [
+          "Q4yUd7tjlof1SXxhtMPcI8xFnsh"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Q4yUd7tjlof1SXxhtMPcI8xFnsh",
+        "block_type": 2,
+        "parent_id": "ZXXUdhuAco30XFx5qJncZv1KnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[\"_default_\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G303dQCt9oXvFwxGBSucv8hfnef",
+        "block_type": 32,
+        "children": [
+          "Wp8Ld6MI1oLjv5xk5lWcDlPWnye"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Wp8Ld6MI1oLjv5xk5lWcDlPWnye",
+        "block_type": 2,
+        "parent_id": "G303dQCt9oXvFwxGBSucv8hfnef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "mode",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BY0adDKgxoeSjqx61yecSbflnGc",
+        "block_type": 32,
+        "children": [
+          "SktkdLioIotEkuxodVdcFl2knpf",
+          "YhDjdUpjeoQgt0xBMMocaqMNnBP",
+          "ECKFdARMWomw1mxYB3Hc1bVQnCd",
+          "NHdLdAnk8oUx4Dx2ttScHAMxnub"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SktkdLioIotEkuxodVdcFl2knpf",
+        "block_type": 2,
+        "parent_id": "BY0adDKgxoeSjqx61yecSbflnGc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The segmentation mode. Possible values:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YhDjdUpjeoQgt0xBMMocaqMNnBP",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"exact\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Tries to segment the sentence in the most precise manner, making it ideal for text analysis.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BY0adDKgxoeSjqx61yecSbflnGc"
+      },
+      {
+        "block_id": "ECKFdARMWomw1mxYB3Hc1bVQnCd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"search\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Builds on exact mode by further breaking down long words to improve recall, making it suitable for search engine tokenization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BY0adDKgxoeSjqx61yecSbflnGc"
+      },
+      {
+        "block_id": "NHdLdAnk8oUx4Dx2ttScHAMxnub",
+        "block_type": 2,
+        "parent_id": "BY0adDKgxoeSjqx61yecSbflnGc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jieba GitHub Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Ffxsjy%2Fjieba"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DLX7djtYHoGNpXxV0tDcmm66ntf",
+        "block_type": 32,
+        "children": [
+          "HpjIdnPTUoAaCPxjtMLcxTyhn5c"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HpjIdnPTUoAaCPxjtMLcxTyhn5c",
+        "block_type": 2,
+        "parent_id": "DLX7djtYHoGNpXxV0tDcmm66ntf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"search\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FoCYdhzV9oLh5zxVE8Mc2gDfnjc",
+        "block_type": 32,
+        "children": [
+          "ZBy3dYnTFoBdVvxTPecctoGenng"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZBy3dYnTFoBdVvxTPecctoGenng",
+        "block_type": 2,
+        "parent_id": "FoCYdhzV9oLh5zxVE8Mc2gDfnjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "hmm",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SJFOde3NzokhbMxd667c5fP3nfd",
+        "block_type": 32,
+        "children": [
+          "Xz0ldIaIOocVnfxoVv9cJNmanAc"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Xz0ldIaIOocVnfxoVv9cJNmanAc",
+        "block_type": 2,
+        "parent_id": "SJFOde3NzokhbMxd667c5fP3nfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A boolean flag indicating whether to enable the Hidden Markov Model (HMM) for probabilistic segmentation of words not found in the dictionary.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K5RVdzA0jofNhKxbCwicKjHHnfc",
+        "block_type": 32,
+        "children": [
+          "CZPSdUClVooTbuxVYHJcy8Qkned"
+        ],
+        "parent_id": "HbvEd5v19oT0wfxbw62cZip5nAb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CZPSdUClVooTbuxVYHJcy8Qkned",
+        "block_type": 2,
+        "parent_id": "K5RVdzA0jofNhKxbCwicKjHHnfc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "true",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XJIfdPA7WocY5vxZfHscz6LKnqe",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After defining ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzer_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can apply them to a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field when defining a collection schema. This allows ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to process the text in that field using the specified analyzer for efficient tokenization and filtering. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Example use",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FH8MVwnjdgihp0hkRHHKcjBe9n5e%23F0sgd9ramomPhqx9GLmcfZQLnBh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N2JJdYPnfo9Aeqxg0rWc2D5dnih",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "EPWud8tZfoNtc1xmohVcyZLsnLf",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before applying the analyzer configuration to your collection schema, verify its behavior using the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "run_analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " method.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TptidcY2jooA6txne1kcwml6nGf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Analyzer configuration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "OILBdlftfs8dXabQshlc44qqnCe",
+        "block_type": 49,
+        "children": [
+          "ZYLFd1TIloLCkKxPXpAcXFvGnWd",
+          "IRi0dyELFoh47vx0artcYwijnbd",
+          "LsR6dKltNoID1kxh7Qsc0PT2n6e",
+          "CvOudbgqXoijWhxfTNucKubanDd",
+          "QNd4dk12gov78Ax0rOxcdu9Gnyj"
+        ],
+        "comment_ids": [
+          "7613289330685905864"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "ZYLFd1TIloLCkKxPXpAcXFvGnWd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzer_params = {\n    \"tokenizer\": {\n        \"type\": \"jieba\",\n        \"dict\": [\"结巴分词器\"],\n        \"mode\": \"exact\",\n        \"hmm\": False\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OILBdlftfs8dXabQshlc44qqnCe"
+      },
+      {
+        "block_id": "IRi0dyELFoh47vx0artcYwijnbd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map<String, Object> analyzerParams = new HashMap<>();                                                                          \nanalyzerParams.put(\"tokenizer\", new HashMap<String, Object>() {{\n  put(\"type\", \"jieba\");                                                                                                      \n  put(\"dict\", Arrays.asList(\"结巴分词器\"));                   \n  put(\"mode\", \"exact\");\n  put(\"hmm\", false);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OILBdlftfs8dXabQshlc44qqnCe"
+      },
+      {
+        "block_id": "LsR6dKltNoID1kxh7Qsc0PT2n6e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// javascript",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "OILBdlftfs8dXabQshlc44qqnCe"
+      },
+      {
+        "block_id": "CvOudbgqXoijWhxfTNucKubanDd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "analyzerParams := map[string]interface{}{\n  \"tokenizer\": map[string]interface{}{\n      \"type\": \"jieba\",\n      \"dict\": []string{\"结巴分词器\"},\n      \"mode\": \"exact\",\n      \"hmm\":  false,\n  },\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "OILBdlftfs8dXabQshlc44qqnCe"
+      },
+      {
+        "block_id": "QNd4dk12gov78Ax0rOxcdu9Gnyj",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "OILBdlftfs8dXabQshlc44qqnCe"
+      },
+      {
+        "block_id": "AAJpdz0vOoenFhxFO3qcuCH3n2g",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nlohmann::json analyzerParams = {\n  {\"tokenizer\", {\n      {\"type\", \"jieba\"},\n      {\"dict\", {\"结巴分词器\"}},\n      {\"mode\", \"exact\"},\n      {\"hmm\", false}\n  }}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "Gvx0dAHYeobcpDxsF6fcffkknJU",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verification using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "run_analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA",
+        "block_type": 49,
+        "children": [
+          "BAbTdf21YoMYLoxuLGzcOfRxnVf",
+          "OHz7dOv02o3gEexXAdbcTfY5nd9",
+          "JkvJdrFZIooGk0xmXgYcYLSKnoe",
+          "YLbxd6oukoLs8uxNWepc5ui1nte",
+          "BtJFdzcIyotgYZx4JLBcfrCgnqg"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "BAbTdf21YoMYLoxuLGzcOfRxnVf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import (\n    MilvusClient,\n)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client = MilvusClient(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "uri=\"http://localhost:19530\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n    token=\"root:Milvus\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n\n# Sample text to analyze\nsample_text = \"milvus结巴分词器中文测试\"\n\n# Run the standard analyzer with the defined configuration\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "result = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.run_analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7506040083545194515"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(sample_text, analyzer_params)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(\"Standard analyzer output:\", result)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7506040083545194515"
+        ],
+        "parent_id": "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA"
+      },
+      {
+        "block_id": "OHz7dOv02o3gEexXAdbcTfY5nd9",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.vector.request.RunAnalyzerReq;\nimport io.milvus.v2.service.vector.response.RunAnalyzerResp;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig config = ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"http://localhost:19530\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .token(\"root:Milvus\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n        .build();\nMilvusClientV2 client = new MilvusClientV2(config);\n\nList<String> texts = new ArrayList<>();\ntexts.add(\"milvus结巴分词器中文测试\");\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RunAnalyzerResp resp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".runAnalyzer(RunAnalyzerReq.builder()\n        .texts(texts)\n        .analyzerParams(analyzerParams)\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA"
+      },
+      {
+        "block_id": "JkvJdrFZIooGk0xmXgYcYLSKnoe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// javascript",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA"
+      },
+      {
+        "block_id": "YLbxd6oukoLs8uxNWepc5ui1nte",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n    \"context\"\n    \"encoding/json\"\n    \"fmt\"\n\n    \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n)\n\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: \"localhost:19530\",\n    APIKey:  \"root:Milvus\",\n})\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nbs, _ := json.Marshal(analyzerParams)\ntexts := []string{\"milvus结巴分词器中文测试\"}\noption := milvusclient.NewRunAnalyzerOption(texts).\n    WithAnalyzerParams(string(bs))\n\nresult, err := client.RunAnalyzer(ctx, option)\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA"
+      },
+      {
+        "block_id": "BtJFdzcIyotgYZx4JLBcfrCgnqg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Yx4Ldv5a2sZvoKbQTPFcfOXJnEA"
+      },
+      {
+        "block_id": "NHoFdxi0PoazskxbkY7cdNQdn7c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nstd::string text = \"milvus结巴分词器中文测试\";\nauto request = milvus::RunAnalyzerRequest()\n                       .AddText(text)\n                       .WithAnalyzerParams(analyzer_params);\n\nmilvus::RunAnalyzerResponse response;\nstatus = client->RunAnalyzer(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "LzmrdJ8WBof4x9xCZMRckXxyn6f",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Expected output",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e"
+      },
+      {
+        "block_id": "HwAGdqiplsiKSQb5zz1cwswqnrb",
+        "block_type": 49,
+        "children": [
+          "TZwIdiHzYozd2MxWBYLc1uRWnHc"
+        ],
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "TZwIdiHzYozd2MxWBYLc1uRWnHc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "['milvus', '结巴分词器', '中', '文', '测', '试']",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "HwAGdqiplsiKSQb5zz1cwswqnrb"
+      },
+      {
+        "block_id": "TXLOd6nY4oZ5yMxHDrYcB3yYnrb",
+        "block_type": 2,
+        "parent_id": "THmNdsZfMolBSWxhXT5cBvtkn1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 94
+  }
+}

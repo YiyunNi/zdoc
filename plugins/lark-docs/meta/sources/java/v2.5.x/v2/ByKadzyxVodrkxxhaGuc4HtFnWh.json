@@ -1,0 +1,308 @@
+{
+  "created_time": "1750410175",
+  "modified_time": "1750836770",
+  "name": "close()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "QK9afsDChln13GdYSUXcDSvCnAg",
+  "token": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/ByKadzyxVodrkxxhaGuc4HtFnWh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+        "block_type": 1,
+        "children": [
+          "doxcnfsRjD1uCMbWTrDXGIZQAAd",
+          "doxcnKDsJ7V4ooR7r4u7zlkklxc",
+          "doxcnuJu95EGz7S3yDQ3rJAagCh",
+          "doxcnzB9UknfJSmR1xaoa2Wmfhg",
+          "doxcn710vZWKwyqsEip102lvPZj",
+          "doxcnepLAgxvE3a57jRQeqyRtEd",
+          "doxcnGnXFmu6Plpb6Psygn2utYc",
+          "doxcnO8JEo9PPO3ZNd5ObMWnMEb",
+          "doxcnuuHLL5Hz9k77PE1G9K2Pxh",
+          "doxcn0d04WnriehnA0Kr4K4R2Wb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "close()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnfsRjD1uCMbWTrDXGIZQAAd",
+        "block_type": 2,
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation closes the current LocalBulkWriter instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKDsJ7V4ooR7r4u7zlkklxc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void close()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh"
+      },
+      {
+        "block_id": "doxcnuJu95EGz7S3yDQ3rJAagCh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh"
+      },
+      {
+        "block_id": "doxcnzB9UknfJSmR1xaoa2Wmfhg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "remoteBulkWriter.close()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh"
+      },
+      {
+        "block_id": "doxcn710vZWKwyqsEip102lvPZj",
+        "block_type": 2,
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnepLAgxvE3a57jRQeqyRtEd",
+        "block_type": 2,
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGnXFmu6Plpb6Psygn2utYc",
+        "block_type": 2,
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnO8JEo9PPO3ZNd5ObMWnMEb",
+        "block_type": 2,
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnuuHLL5Hz9k77PE1G9K2Pxh",
+        "block_type": 4,
+        "comment_ids": [
+          "7519031472276357124"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7519031472276357124"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh"
+      },
+      {
+        "block_id": "doxcn0d04WnriehnA0Kr4K4R2Wb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "remoteBulkWriter.close();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ByKadzyxVodrkxxhaGuc4HtFnWh"
+      }
+    ],
+    "counts": 11
+  },
+  "slug": "v2-RemoteBulkWriter-close"
+}

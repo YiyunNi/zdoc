@@ -1,0 +1,649 @@
+{
+  "created_time": "1713253732",
+  "modified_time": "1716519394",
+  "name": "CohereRerankFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "Dc5lfx80VloZvpdaKOicG8V8ndd",
+  "token": "GAWOdft83oZPvHxtxzZcjrQunGg",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/GAWOdft83oZPvHxtxzZcjrQunGg",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "GAWOdft83oZPvHxtxzZcjrQunGg",
+        "block_type": 1,
+        "children": [
+          "Ls6EdpaKPosSL8xdYnEcpQElnWb",
+          "Yj0ndmh3JohLIxx5rB0cIfDnnhc",
+          "JS7HdCMCDoCJh2xpUX0cKYL0nnf",
+          "M4MzdjtAjoUC1Cxm89JcsBSCn9f",
+          "RteQdCn7QoePovxsRjnc3dzUnFi",
+          "Z9hOdLuGsoo8cqxApKucyqmgnse",
+          "D4b0digg1oupkwxjvhncEsYKnUc",
+          "Z7gJdtU7QouofcxYnKAcp7YenTc",
+          "IRRmdvDjOolwPAx9w5FcxRZPnMb",
+          "Pb7NdNp3xoCFFDx5uv5cORbQnve"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CohereRerankFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Ls6EdpaKPosSL8xdYnEcpQElnWb",
+        "block_type": 2,
+        "comment_ids": [
+          "7361023092929527812"
+        ],
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CohereRerankFunction",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is a class in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus_model",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fmilvus-model"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that takes a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "query",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023092929527812"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and document as input and directly returns a similarity score instead of embeddings. This functionality uses the underlying Cohere reranking model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Yj0ndmh3JohLIxx5rB0cIfDnnhc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.reranker.CohereRerankFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      },
+      {
+        "block_id": "JS7HdCMCDoCJh2xpUX0cKYL0nnf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      },
+      {
+        "block_id": "M4MzdjtAjoUC1Cxm89JcsBSCn9f",
+        "block_type": 2,
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a CohereRerankFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RteQdCn7QoePovxsRjnc3dzUnFi",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CohereRerankFunction(\n    model_name: str = \"rerank-english-v2.0\",\n    api_key: Optional[str] = None\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      },
+      {
+        "block_id": "Z9hOdLuGsoo8cqxApKucyqmgnse",
+        "block_type": 2,
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D4b0digg1oupkwxjvhncEsYKnUc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Uj8ads6QeoCyn8x6Wh3cgb3Enkf"
+        ],
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      },
+      {
+        "block_id": "Uj8ads6QeoCyn8x6Wh3cgb3Enkf",
+        "block_type": 2,
+        "parent_id": "D4b0digg1oupkwxjvhncEsYKnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the model to use. You can specify any of the available Cohere reranker model names, for example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank-english-v3.0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank-multilingual-v3.0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", etc. If you leave this parameter unspecified, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank-english-v2.0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be used. For a list of available models, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.cohere.com%2Fdocs%2Frerank-2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z7gJdtU7QouofcxYnKAcp7YenTc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "api_key",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AP2NdHKN9oUS3VxKLhYcpg1dnRc"
+        ],
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      },
+      {
+        "block_id": "AP2NdHKN9oUS3VxKLhYcpg1dnRc",
+        "block_type": 2,
+        "parent_id": "Z7gJdtU7QouofcxYnKAcp7YenTc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The API key for accessing the Cohere API. For information on how to create an API key, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cohere dashboard",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdashboard.cohere.com%2Fapi-keys"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IRRmdvDjOolwPAx9w5FcxRZPnMb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      },
+      {
+        "block_id": "Pb7NdNp3xoCFFDx5uv5cORbQnve",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.reranker import CohereRerankFunction\n\n# Define the rerank function\ncohere_rf = CohereRerankFunction(\n    model_name=\"rerank-english-v3.0\",  # Specify the model name. Defaults to `rerank-english-v2.0`.\n    api_key=COHERE_API_KEY # Replace with your Cohere API key\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GAWOdft83oZPvHxtxzZcjrQunGg"
+      }
+    ],
+    "counts": 13
+  },
+  "slug": "Rerankers-CohereRerankFunction"
+}

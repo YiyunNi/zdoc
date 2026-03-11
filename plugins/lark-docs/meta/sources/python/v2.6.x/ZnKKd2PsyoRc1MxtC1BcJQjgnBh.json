@@ -1,0 +1,1449 @@
+{
+  "created_time": "1761032476",
+  "modified_time": "1761035383",
+  "name": "StructFieldSchema",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "QmzcfpTxAlAaTqdRRbLc6fAanv7",
+  "token": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "block_type": 1,
+        "children": [
+          "WaLadNz0popR9yxRzT7cDcAhnOd",
+          "FZTtd4hr6oYSX9xwgnqceW09nLb",
+          "CVCxdbn8IoC6ATxw77tcd0AAnmd",
+          "HSSndgeScovtKGxBjeWcyEaSnCZ",
+          "DSNgdDYaoo4LFHxP37HcXrfbndf",
+          "ByRSdX9ZHonPgOx3paQcb5emnee",
+          "LVoUd3EwpoZqzix7QyfckdqqnCe",
+          "FVCAdqywwoORsLxzTTkc2wP1nUe",
+          "JA8BdwHCPo5jh9xKI5yc9UM8nZc",
+          "LBfqdlPtFoMG2Zxi1Jmc5iZ3nLd",
+          "RuIAdL0c3omamQx3MUjc9gwOnve",
+          "HbRldGnaZoP1zdxFGR5cRlKbnad",
+          "A38vdgYj2oqXawxh6VTcE16Tnnd",
+          "R5Hhd7y9noPLb3xOnYZcvUYAneh",
+          "K9zFdQ22AonposxQnOdc62iKn7f",
+          "JLitdq28roHtZgxxsSpcVbppnVd",
+          "DORVd03RMoVFpbxVE2FcYPzindc",
+          "Ssgud7mgmoCs0ZxHKWEcUuT9nmb",
+          "VnSWdqx8mofwmCxYBtNc1Or0nub",
+          "FDc0dfQ5XopPhwxTNClcZnGrn2g",
+          "L8Vgdp54OoG3sKxW0i8cZSEOnrg",
+          "Xwx2dr8Vro9eXzx97oTcF8uAnXc",
+          "Hw45d6TdXoQDYKxFa7gcitdsnhe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "WaLadNz0popR9yxRzT7cDcAhnOd",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A StructFieldSchema instance represents the schema of a struct element in an array of structs field. A schema sketches the structure of a struct element.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FZTtd4hr6oYSX9xwgnqceW09nLb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "class pymilvus.StructFieldSchema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "CVCxdbn8IoC6ATxw77tcd0AAnmd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "HSSndgeScovtKGxBjeWcyEaSnCZ",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs the schema of a struct element in an array of structs field by defining fields, data types, and other parameters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DSNgdDYaoo4LFHxP37HcXrfbndf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CollectionSchema(\n    fields: list,\n    description: str\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "ByRSdX9ZHonPgOx3paQcb5emnee",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LVoUd3EwpoZqzix7QyfckdqqnCe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Z21Dd43ScoydyKx5MbncX6oMnff",
+          "FDCCdERhzoTOvPxZT8lck1eyned"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "Z21Dd43ScoydyKx5MbncX6oMnff",
+        "block_type": 2,
+        "parent_id": "LVoUd3EwpoZqzix7QyfckdqqnCe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FDCCdERhzoTOvPxZT8lck1eyned",
+        "block_type": 2,
+        "parent_id": "LVoUd3EwpoZqzix7QyfckdqqnCe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the schema. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FVCAdqywwoORsLxzTTkc2wP1nUe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "fields",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QNNadWetOo3md4xsU5ycrPsmnxh",
+          "QAnrdwqO5olZhjx9Yv2cARminzf",
+          "FyLLdW4b7oXNVuxLsaTczQbKnqb"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "QNNadWetOo3md4xsU5ycrPsmnxh",
+        "block_type": 2,
+        "parent_id": "FVCAdqywwoORsLxzTTkc2wP1nUe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QAnrdwqO5olZhjx9Yv2cARminzf",
+        "block_type": 2,
+        "parent_id": "FVCAdqywwoORsLxzTTkc2wP1nUe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " objects that define the fields in the schema of a struct in an array of structs field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FyLLdW4b7oXNVuxLsaTczQbKnqb",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "CnlEdnJu1ozicexgQVzcjYT0nSd",
+          "TGV4dq8zUoJ6YDxCTLWcBXctnYe"
+        ],
+        "parent_id": "FVCAdqywwoORsLxzTTkc2wP1nUe"
+      },
+      {
+        "block_id": "CnlEdnJu1ozicexgQVzcjYT0nSd",
+        "block_type": 2,
+        "parent_id": "FyLLdW4b7oXNVuxLsaTczQbKnqb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "What is a field schema?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TGV4dq8zUoJ6YDxCTLWcBXctnYe",
+        "block_type": 2,
+        "parent_id": "FyLLdW4b7oXNVuxLsaTczQbKnqb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A field schema represents and contains metadata for a single field, while ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ties together a list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " objects to define the schema of a struct in an array of structs field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JA8BdwHCPo5jh9xKI5yc9UM8nZc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OMIPdSt9yofJTqxYHjkcgABanOh",
+          "FAiadFkPRo3uJ2xvU9nc5wtrnIf"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "OMIPdSt9yofJTqxYHjkcgABanOh",
+        "block_type": 2,
+        "parent_id": "JA8BdwHCPo5jh9xKI5yc9UM8nZc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The description of the schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FAiadFkPRo3uJ2xvU9nc5wtrnIf",
+        "block_type": 2,
+        "parent_id": "JA8BdwHCPo5jh9xKI5yc9UM8nZc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If a description is not provided, it will be set to an empty string.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LBfqdlPtFoMG2Zxi1Jmc5iZ3nLd",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RuIAdL0c3omamQx3MUjc9gwOnve",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HbRldGnaZoP1zdxFGR5cRlKbnad",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A38vdgYj2oqXawxh6VTcE16Tnnd",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R5Hhd7y9noPLb3xOnYZcvUYAneh",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K9zFdQ22AonposxQnOdc62iKn7f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FieldsTypeException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GGkAdriLgog9WXxUEdjcVCuBnHh"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "GGkAdriLgog9WXxUEdjcVCuBnHh",
+        "block_type": 2,
+        "parent_id": "K9zFdQ22AonposxQnOdc62iKn7f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fields",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter is not a list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JLitdq28roHtZgxxsSpcVbppnVd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FieldTypeException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "BsxEdgSsLovTkhxzbvUcxRUvnKb"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "BsxEdgSsLovTkhxzbvUcxRUvnKb",
+        "block_type": 2,
+        "parent_id": "JLitdq28roHtZgxxsSpcVbppnVd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when a field in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fields",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " list is not a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DORVd03RMoVFpbxVE2FcYPzindc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import StructFieldSchema, FieldSchema, DataType\n\nvector = FieldSchema(\n    name=\"vector\",\n    dtype=DataType.FLOAT_VECTOR,\n    dim=768\n)\n\nvarchar = FieldSchema(\n    name=\"varchar\",\n    dtype=DataType.VARCHAR,\n    max_length=512\n)\n\n# Construct a schema with the predefined fields\nschema = StructFieldSchema(\n    name=\"struct_schema\",\n    fields=[vector, varchar],\n    description=\"example_schema\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "Ssgud7mgmoCs0ZxHKWEcUuT9nmb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Properties",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "VnSWdqx8mofwmCxYBtNc1Or0nub",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "fields",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QXd3dSiYXoygYAx7PA8cb7c6nqg"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "QXd3dSiYXoygYAx7PA8cb7c6nqg",
+        "block_type": 2,
+        "parent_id": "VnSWdqx8mofwmCxYBtNc1Or0nub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " objects that define the fields in the schema of a struct in an array of structs field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FDc0dfQ5XopPhwxTNClcZnGrn2g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Wkk3drRCuoxaIexqcStckYUxnEe",
+          "Es2Nd8z1soKmQexUKNkcetb9nOe"
+        ],
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "Wkk3drRCuoxaIexqcStckYUxnEe",
+        "block_type": 2,
+        "parent_id": "FDc0dfQ5XopPhwxTNClcZnGrn2g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The description of the schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Es2Nd8z1soKmQexUKNkcetb9nOe",
+        "block_type": 2,
+        "parent_id": "FDc0dfQ5XopPhwxTNClcZnGrn2g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If a description is not provided, it will be an empty string.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L8Vgdp54OoG3sKxW0i8cZSEOnrg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Methods",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+      },
+      {
+        "block_id": "Xwx2dr8Vro9eXzx97oTcF8uAnXc",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following are the methods of the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " class:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hw45d6TdXoQDYKxFa7gcitdsnhe",
+        "block_type": 2,
+        "parent_id": "ZnKKd2PsyoRc1MxtC1BcJQjgnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 38
+  },
+  "slug": "MilvusClient-StructFieldSchema"
+}

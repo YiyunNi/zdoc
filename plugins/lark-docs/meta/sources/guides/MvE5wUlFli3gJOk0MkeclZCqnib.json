@@ -1,0 +1,2798 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1770014723",
+  "node_token": "MvE5wUlFli3gJOk0MkeclZCqnib",
+  "node_type": "origin",
+  "obj_create_time": "1770014723",
+  "obj_edit_time": "1770082207",
+  "obj_token": "FP1cdBCLnoh1YhxLUescsrbanBg",
+  "obj_type": "docx",
+  "origin_node_token": "MvE5wUlFli3gJOk0MkeclZCqnib",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+  "space_id": "7167193056431783939",
+  "title": "Enforce SSO in Your Organization",
+  "slug": "enforce-sso-in-your-organization",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "block_type": 1,
+        "children": [
+          "Luh3dJL6aoaelTx7aJ6ciN8Fnre",
+          "HTAJdeU92o7E0WxznN5cgLnnnyg",
+          "JLondyrSFoi8w7xINkdcL85mnvg",
+          "CqFsdRr0Vod8PCxEoErccSJvnVh",
+          "OX9vdvVrkoES2zxDwkicb3irnef",
+          "F7GAdJTU5oGDhDxsZB2cDwGQn8c",
+          "CnV1dHBmzoTV9IxNcodcVrplnTd",
+          "LWBJdPNamorYGJx6LYbcUiiWn8e",
+          "YcK6dSAVmoaBuixr9XUcaxO8nPh",
+          "MfMZdP3qeomBYRxq0tGcmZVBned",
+          "BAzFdpocMoPLQAxdNtFcTCcbnVg",
+          "YYvTd9JIlojnYsxD4tTcEvUPn2e",
+          "T04AdaP5UoTK7DxcaOMccpCcn6b",
+          "Wd4sd5kn3on8WSx8qTdct2Q0nph",
+          "E3l0dtZ4joJipqxTJ8AcAM2Tnzf",
+          "CXRMdLI6Popfk9xciJ6ctpTnndb",
+          "PCGUdsDQqo3M15x6Wi1cOpRGnBd",
+          "IWj4dAKRBoezrbx6YdpcYPtlnIc",
+          "AQiOdNGvCoEc7IxChyXclji7nPo",
+          "BqWkdIo3uoa8rPx23tic3QAYnBe",
+          "MlJjdX6y3onipIx7l85cfleMnKc",
+          "ClZTdEv0Oo9rlSxkklIcFcFUned",
+          "RXwIdhWKLo3voNxRxupclItnnNc",
+          "DsTodta25oNREvxvAXocjH4tnwO",
+          "SjzXdblpJoufyOxDWh0cu2cinUf",
+          "PsRtdTB8doqvTjxNi1lckQG3nxc",
+          "IpGtdjcswovRZBxdfcmcoP1wnah",
+          "SFkud4gFNo3WscxQVhZctC3onJg",
+          "HdgIdHlFLolbhzx7RdkcevF8nEe",
+          "O6kEdSdVRoZHNPxgN86c8KMdnoc",
+          "VZbQdnsZroHXXRxjympcGOHUnUc",
+          "BBy0dX1lmof79xxpk9ecaHejnFe",
+          "NFdzd0je6oi2xkxeOMecnbCxnmd",
+          "NMl6dyK04o6uM1xbYAec37vvnFf",
+          "NOaQdXJkcoteq8xRzkWcESMWnbb",
+          "CdkddXPH2oCM50xkN7tcldginhf",
+          "L4m0dMjm5oop65xhjobckrSinLg",
+          "OZLDdAuWwogseFxvafIc7izqnGg",
+          "REQedp52FoXOoGxaBfkcPibvn9d",
+          "TFSmd8RjCoCCi8xY2nPcBe72ndf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enforce SSO in Your Organization",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Luh3dJL6aoaelTx7aJ6ciN8Fnre",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "By default, after Single Sign-on (SSO) is configured for an organization, members can still choose to log in with email/password or third-party accounts (Google, GitHub). SSO enforcement removes this flexibility by mandating that all members use SSO as the only login method.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HTAJdeU92o7E0WxznN5cgLnnnyg",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is designed for organizations that need to meet enterprise security and compliance requirements, such as centralized authentication, audit controls, and identity governance through an identity provider (IdP).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JLondyrSFoi8w7xINkdcL85mnvg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "CqFsdRr0Vod8PCxEoErccSJvnVh",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When SSO enforcement is enabled for an organization:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OX9vdvVrkoES2zxDwkicb3irnef",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Members who attempt to log in with email/password or third-party accounts (Google, GitHub) are blocked and prompted to log in via SSO instead.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "F7GAdJTU5oGDhDxsZB2cDwGQn8c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If a user belongs to multiple organizations and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "any",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of those organizations has SSO enforcement enabled, the user must log in via SSO. This applies regardless of which organization the user intends to access.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "CnV1dHBmzoTV9IxNcodcVrplnTd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Organization Owners are automatically exempt and can still log in with other methods. See ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Exemption rules",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FMvE5wUlFli3gJOk0MkeclZCqnib%23NFdzd0je6oi2xkxeOMecnbCxnmd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for details.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "LWBJdPNamorYGJx6LYbcUiiWn8e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "All active sessions for non-exempt members are immediately invalidated. Affected members are logged out and must re-authenticate via SSO.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "YcK6dSAVmoaBuixr9XUcaxO8nPh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Direct organization member invitations are disabled. You should provision users through your IdP. Project-level invitations are limited to existing organization members only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "MfMZdP3qeomBYRxq0tGcmZVBned",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your organization has ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MFA",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FKHAMwm0HUiU6qdkH2LOcu0FFnug"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " enabled on Zilliz Cloud, it will be automatically disabled when SSO enforcement is turned on. If MFA is required, configure it within your IdP instead.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "BAzFdpocMoPLQAxdNtFcTCcbnVg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "YYvTd9JIlojnYsxD4tTcEvUPn2e",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before enabling SSO enforcement, ensure the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T04AdaP5UoTK7DxcaOMccpCcn6b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You are an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the Zilliz Cloud organization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "Wd4sd5kn3on8WSx8qTdct2Q0nph",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An SSO connection has been ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "configured and validated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for your organization. For setup instructions, refer to the configuration guide for your IdP (e.g., ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Okta (OIDC)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOQ2ZwpH9ki5EZIkwK21cghexnOh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "E3l0dtZ4joJipqxTJ8AcAM2Tnzf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "All intended members have been assigned to the SSO application in your IdP and can successfully log in via SSO.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "CXRMdLI6Popfk9xciJ6ctpTnndb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enable SSO enforcement",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cml4tlban34cozsadvi68n666\",\"isShowcase\":false}"
+        },
+        "block_id": "PCGUdsDQqo3M15x6Wi1cOpRGnBd",
+        "block_type": 40,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "IWj4dAKRBoezrbx6YdpcYPtlnIc",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AQiOdNGvCoEc7IxChyXclji7nPo",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Log in to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2Flogin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and go to the organization for which you want to enable SSO enforcement.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "BqWkdIo3uoa8rPx23tic3QAYnBe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the left-side navigation pane, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "MlJjdX6y3onipIx7l85cfleMnKc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page, find the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Single Sign-On (SSO)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section. Ensure SSO is already configured and enabled.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "ClZTdEv0Oo9rlSxkklIcFcFUned",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Locate the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enforce SSO Login",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " toggle and turn it on.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "RXwIdhWKLo3voNxRxupclItnnNc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Confirm",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This will log out all members currently using passwords and disable direct member invitations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "DsTodta25oNREvxvAXocjH4tnwO",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SjzXdblpJoufyOxDWh0cu2cinUf",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once enabled, all organization members (except ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owners",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") must log in via SSO. Attempts to log in with email/password or third-party accounts (Google, GitHub) will be blocked.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PsRtdTB8doqvTjxNi1lckQG3nxc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Disable SSO enforcement",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "IpGtdjcswovRZBxdfcmcoP1wnah",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SFkud4gFNo3WscxQVhZctC3onJg",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the Zilliz Cloud console, navigate to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and find the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Single Sign-On (SSO)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "HdgIdHlFLolbhzx7RdkcevF8nEe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Turn off the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enforce SSO Login",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " toggle.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "O6kEdSdVRoZHNPxgN86c8KMdnoc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click to confirm.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "VZbQdnsZroHXXRxjympcGOHUnUc",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BBy0dX1lmof79xxpk9ecaHejnFe",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After SSO enforcement is disabled, members can log in with their original passwords.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NFdzd0je6oi2xkxeOMecnbCxnmd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Exemption rules",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "NMl6dyK04o6uM1xbYAec37vvnFf",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Organization Owners are automatically exempt from SSO enforcement. This serves as a break-glass mechanism to ensure that at least one administrator can always access the organization, even if the IdP is misconfigured or unavailable.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NOaQdXJkcoteq8xRzkWcESMWnbb",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The exemption logic follows these rules:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CdkddXPH2oCM50xkN7tcldginhf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A user who is an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner in every SSO-enforced organization",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " they belong to is exempt and can log in with any method.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "L4m0dMjm5oop65xhjobckrSinLg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A user who is an Organization Owner in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "some",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " SSO-enforced organizations but a regular member in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "any other",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " SSO-enforced organization is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "not",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " exempt and must log in via SSO.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg"
+      },
+      {
+        "block_id": "OZLDdAuWwogseFxvafIc7izqnGg",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table illustrates the exemption behavior for users across multiple organizations:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "block_type": 31,
+        "children": [
+          "X7LbdsDH9oUa9Yx2fEPcMFkanTv",
+          "NNYydeE8To3ONhxP0Ojc3r8jn8e",
+          "T8PHdckg6opGeHx4XQtcG3F9nYg",
+          "Xix0dGyT7o9HtWxQLmEctqvmnae",
+          "AF80dQ5StoREYdxbPpJcGz8cnab",
+          "VRTkdT7ioo9esix5aPoclgNKnQg",
+          "Z468dwHf8okCH7xloH0cDDcPnAb",
+          "K5UddBFMJoufQhxxgvScfSPVnac",
+          "BQrId26ChoIxI3xkd92c7iDSnTh",
+          "Zf5YdtUuIoIqwhxuUeOcd0dnn0g",
+          "CO6gdq44jowu6GxjCQ0chU4hnEf",
+          "LivpdpVwMoEEl6x6lWCc4mPpnpc",
+          "OZX5drYdnov57Ux3cn1cHKuVnFb",
+          "DTEwdSXtIo5xU0xyePqcYhZsnvb",
+          "OtBOdzDa3oSKBuxjTGOcamR2nRd",
+          "P75pdwtJJoYRgvxuJcucfAVJncM",
+          "VH6RdEEq1o1LhdxIvk3cTyPDnKc",
+          "R1Pcd1Nhgo4EMTxtnXuc1RVJnXe",
+          "EOxtd6gS1ocVYkxCI4JcKRZynwb",
+          "T9WJdl8ZkolgNkxtkBpcsMrbnbc",
+          "Uv92dRml6okTIwxVZziczbZPnNF",
+          "Ixxzd1UaToOFZ1xZHqmc5yrDnqd",
+          "Plj4dXbtSo13jJx2ieacOtn5nhg",
+          "OAoqdBG9JoWFxKxeZbvccrzunRd",
+          "RbCbdDnAcowpzIxgAbHcEF9ynbU",
+          "SpCBdRNXroGfFOxqcaZcrVOCnYe",
+          "F722dO5hzo82FzxSxfXcqG68nXg",
+          "H6BQdlJRKosWzbx9EhLcryC1nuc",
+          "ALBYdJgRXo2gMAxpi2RcvrVgnde",
+          "ZFITdacuIoa0zSxeGAncl966nGe"
+        ],
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "table": {
+          "cells": [
+            "X7LbdsDH9oUa9Yx2fEPcMFkanTv",
+            "NNYydeE8To3ONhxP0Ojc3r8jn8e",
+            "T8PHdckg6opGeHx4XQtcG3F9nYg",
+            "Xix0dGyT7o9HtWxQLmEctqvmnae",
+            "AF80dQ5StoREYdxbPpJcGz8cnab",
+            "VRTkdT7ioo9esix5aPoclgNKnQg",
+            "Z468dwHf8okCH7xloH0cDDcPnAb",
+            "K5UddBFMJoufQhxxgvScfSPVnac",
+            "BQrId26ChoIxI3xkd92c7iDSnTh",
+            "Zf5YdtUuIoIqwhxuUeOcd0dnn0g",
+            "CO6gdq44jowu6GxjCQ0chU4hnEf",
+            "LivpdpVwMoEEl6x6lWCc4mPpnpc",
+            "OZX5drYdnov57Ux3cn1cHKuVnFb",
+            "DTEwdSXtIo5xU0xyePqcYhZsnvb",
+            "OtBOdzDa3oSKBuxjTGOcamR2nRd",
+            "P75pdwtJJoYRgvxuJcucfAVJncM",
+            "VH6RdEEq1o1LhdxIvk3cTyPDnKc",
+            "R1Pcd1Nhgo4EMTxtnXuc1RVJnXe",
+            "EOxtd6gS1ocVYkxCI4JcKRZynwb",
+            "T9WJdl8ZkolgNkxtkBpcsMrbnbc",
+            "Uv92dRml6okTIwxVZziczbZPnNF",
+            "Ixxzd1UaToOFZ1xZHqmc5yrDnqd",
+            "Plj4dXbtSo13jJx2ieacOtn5nhg",
+            "OAoqdBG9JoWFxKxeZbvccrzunRd",
+            "RbCbdDnAcowpzIxgAbHcEF9ynbU",
+            "SpCBdRNXroGfFOxqcaZcrVOCnYe",
+            "F722dO5hzo82FzxSxfXcqG68nXg",
+            "H6BQdlJRKosWzbx9EhLcryC1nuc",
+            "ALBYdJgRXo2gMAxpi2RcvrVgnde",
+            "ZFITdacuIoa0zSxeGAncl966nGe"
+          ],
+          "property": {
+            "column_size": 5,
+            "column_width": [
+              100,
+              174,
+              174,
+              200,
+              100
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 6
+          }
+        }
+      },
+      {
+        "block_id": "X7LbdsDH9oUa9Yx2fEPcMFkanTv",
+        "block_type": 32,
+        "children": [
+          "TPb8dTS6Lo8GmRxW2BOca4jnnvg"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TPb8dTS6Lo8GmRxW2BOca4jnnvg",
+        "block_type": 2,
+        "parent_id": "X7LbdsDH9oUa9Yx2fEPcMFkanTv",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NNYydeE8To3ONhxP0Ojc3r8jn8e",
+        "block_type": 32,
+        "children": [
+          "EWQ9dqkyXolMdExTy0Ec7dbznfc"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EWQ9dqkyXolMdExTy0Ec7dbznfc",
+        "block_type": 2,
+        "parent_id": "NNYydeE8To3ONhxP0Ojc3r8jn8e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org A (SSO enforced)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T8PHdckg6opGeHx4XQtcG3F9nYg",
+        "block_type": 32,
+        "children": [
+          "UW8cdFSLjom5gNxFFHTc8Pu1nKe"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UW8cdFSLjom5gNxFFHTc8Pu1nKe",
+        "block_type": 2,
+        "parent_id": "T8PHdckg6opGeHx4XQtcG3F9nYg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org B (SSO enforced)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xix0dGyT7o9HtWxQLmEctqvmnae",
+        "block_type": 32,
+        "children": [
+          "SNVZdxANsotirXxMMCncdONfnjg"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SNVZdxANsotirXxMMCncdONfnjg",
+        "block_type": 2,
+        "parent_id": "Xix0dGyT7o9HtWxQLmEctqvmnae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org C (no enforcement)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AF80dQ5StoREYdxbPpJcGz8cnab",
+        "block_type": 32,
+        "children": [
+          "PEn7d8RJAor1pyxEoxCcWRlSnCb"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PEn7d8RJAor1pyxEoxCcWRlSnCb",
+        "block_type": 2,
+        "parent_id": "AF80dQ5StoREYdxbPpJcGz8cnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Exempt?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VRTkdT7ioo9esix5aPoclgNKnQg",
+        "block_type": 32,
+        "children": [
+          "UgC2daO7LolCTExkhnYcbajvndb"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UgC2daO7LolCTExkhnYcbajvndb",
+        "block_type": 2,
+        "parent_id": "VRTkdT7ioo9esix5aPoclgNKnQg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User X",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z468dwHf8okCH7xloH0cDDcPnAb",
+        "block_type": 32,
+        "children": [
+          "R78Bdze6OoAha4xyHbTcbUsTnpe"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "R78Bdze6OoAha4xyHbTcbUsTnpe",
+        "block_type": 2,
+        "parent_id": "Z468dwHf8okCH7xloH0cDDcPnAb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K5UddBFMJoufQhxxgvScfSPVnac",
+        "block_type": 32,
+        "children": [
+          "SwhJdAapjo31LixbsUjc6fbynPc"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SwhJdAapjo31LixbsUjc6fbynPc",
+        "block_type": 2,
+        "parent_id": "K5UddBFMJoufQhxxgvScfSPVnac",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BQrId26ChoIxI3xkd92c7iDSnTh",
+        "block_type": 32,
+        "children": [
+          "Qp1kdWDCkoPaN8xFR49czNJjnmb"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Qp1kdWDCkoPaN8xFR49czNJjnmb",
+        "block_type": 2,
+        "parent_id": "BQrId26ChoIxI3xkd92c7iDSnTh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Any role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zf5YdtUuIoIqwhxuUeOcd0dnn0g",
+        "block_type": 32,
+        "children": [
+          "WnjvdTn6FogRItxY6vvcQSJRn8g"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WnjvdTn6FogRItxY6vvcQSJRn8g",
+        "block_type": 2,
+        "parent_id": "Zf5YdtUuIoIqwhxuUeOcd0dnn0g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CO6gdq44jowu6GxjCQ0chU4hnEf",
+        "block_type": 32,
+        "children": [
+          "VwuDd9JJWorN8rxRHoAc5jaYnuO"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VwuDd9JJWorN8rxRHoAc5jaYnuO",
+        "block_type": 2,
+        "parent_id": "CO6gdq44jowu6GxjCQ0chU4hnEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User Y1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LivpdpVwMoEEl6x6lWCc4mPpnpc",
+        "block_type": 32,
+        "children": [
+          "F32HdQqLgohPfDx6AtIcV88bnmf"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "F32HdQqLgohPfDx6AtIcV88bnmf",
+        "block_type": 2,
+        "parent_id": "LivpdpVwMoEEl6x6lWCc4mPpnpc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OZX5drYdnov57Ux3cn1cHKuVnFb",
+        "block_type": 32,
+        "children": [
+          "BG2CdqytToFeVIxEiBIckmLAnYf"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BG2CdqytToFeVIxEiBIckmLAnYf",
+        "block_type": 2,
+        "parent_id": "OZX5drYdnov57Ux3cn1cHKuVnFb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DTEwdSXtIo5xU0xyePqcYhZsnvb",
+        "block_type": 32,
+        "children": [
+          "Vs5xduZSyo5BTOx0WEEcqyAvn8f"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Vs5xduZSyo5BTOx0WEEcqyAvn8f",
+        "block_type": 2,
+        "parent_id": "DTEwdSXtIo5xU0xyePqcYhZsnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OtBOdzDa3oSKBuxjTGOcamR2nRd",
+        "block_type": 32,
+        "children": [
+          "VEKOdznuoowdb3x4IzYcfr8VnRf"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VEKOdznuoowdb3x4IzYcfr8VnRf",
+        "block_type": 2,
+        "parent_id": "OtBOdzDa3oSKBuxjTGOcamR2nRd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P75pdwtJJoYRgvxuJcucfAVJncM",
+        "block_type": 32,
+        "children": [
+          "BnYCdmp44ogDswxdOVHcmSRJnZb"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BnYCdmp44ogDswxdOVHcmSRJnZb",
+        "block_type": 2,
+        "parent_id": "P75pdwtJJoYRgvxuJcucfAVJncM",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User Y2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VH6RdEEq1o1LhdxIvk3cTyPDnKc",
+        "block_type": 32,
+        "children": [
+          "HOVadTXhMohy7Kx7meQc19g2nyg"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HOVadTXhMohy7Kx7meQc19g2nyg",
+        "block_type": 2,
+        "parent_id": "VH6RdEEq1o1LhdxIvk3cTyPDnKc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R1Pcd1Nhgo4EMTxtnXuc1RVJnXe",
+        "block_type": 32,
+        "children": [
+          "U021dnSmyocZ1RxWw5DcPXXenwe"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "U021dnSmyocZ1RxWw5DcPXXenwe",
+        "block_type": 2,
+        "parent_id": "R1Pcd1Nhgo4EMTxtnXuc1RVJnXe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EOxtd6gS1ocVYkxCI4JcKRZynwb",
+        "block_type": 32,
+        "children": [
+          "AEfsdqJd3orsf5xwQV7cJV75n0c"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AEfsdqJd3orsf5xwQV7cJV75n0c",
+        "block_type": 2,
+        "parent_id": "EOxtd6gS1ocVYkxCI4JcKRZynwb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T9WJdl8ZkolgNkxtkBpcsMrbnbc",
+        "block_type": 32,
+        "children": [
+          "MlAxdWftNoDIzzxWu40cSdmDn7b"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MlAxdWftNoDIzzxWu40cSdmDn7b",
+        "block_type": 2,
+        "parent_id": "T9WJdl8ZkolgNkxtkBpcsMrbnbc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Uv92dRml6okTIwxVZziczbZPnNF",
+        "block_type": 32,
+        "children": [
+          "NRvOdoe0go6x7Pxxn7bc1TyDnje"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NRvOdoe0go6x7Pxxn7bc1TyDnje",
+        "block_type": 2,
+        "parent_id": "Uv92dRml6okTIwxVZziczbZPnNF",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User Y3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ixxzd1UaToOFZ1xZHqmc5yrDnqd",
+        "block_type": 32,
+        "children": [
+          "PC5AdjlEDo9COLxmzn9cD4vzn2d"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PC5AdjlEDo9COLxmzn9cD4vzn2d",
+        "block_type": 2,
+        "parent_id": "Ixxzd1UaToOFZ1xZHqmc5yrDnqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Plj4dXbtSo13jJx2ieacOtn5nhg",
+        "block_type": 32,
+        "children": [
+          "C82Zd5bwSoDNgExSizqcdjSGnPd"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "C82Zd5bwSoDNgExSizqcdjSGnPd",
+        "block_type": 2,
+        "parent_id": "Plj4dXbtSo13jJx2ieacOtn5nhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OAoqdBG9JoWFxKxeZbvccrzunRd",
+        "block_type": 32,
+        "children": [
+          "QBiwddmAAo5fz3xmb7ZcMptHnBh"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QBiwddmAAo5fz3xmb7ZcMptHnBh",
+        "block_type": 2,
+        "parent_id": "OAoqdBG9JoWFxKxeZbvccrzunRd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RbCbdDnAcowpzIxgAbHcEF9ynbU",
+        "block_type": 32,
+        "children": [
+          "BhbRdhtaHoyo6Wxm4yBcu4JnnKg"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BhbRdhtaHoyo6Wxm4yBcu4JnnKg",
+        "block_type": 2,
+        "parent_id": "RbCbdDnAcowpzIxgAbHcEF9ynbU",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SpCBdRNXroGfFOxqcaZcrVOCnYe",
+        "block_type": 32,
+        "children": [
+          "MDtsdZ8FToDU29xlR6Icx4AunMc"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MDtsdZ8FToDU29xlR6Icx4AunMc",
+        "block_type": 2,
+        "parent_id": "SpCBdRNXroGfFOxqcaZcrVOCnYe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User Z",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F722dO5hzo82FzxSxfXcqG68nXg",
+        "block_type": 32,
+        "children": [
+          "N7zYdxqaqoZEhNx5fQOcQ6Xrnyh"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "N7zYdxqaqoZEhNx5fQOcQ6Xrnyh",
+        "block_type": 2,
+        "parent_id": "F722dO5hzo82FzxSxfXcqG68nXg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H6BQdlJRKosWzbx9EhLcryC1nuc",
+        "block_type": 32,
+        "children": [
+          "AE5gdwsETo2E4WxbbPgcvje3nwb"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AE5gdwsETo2E4WxbbPgcvje3nwb",
+        "block_type": 2,
+        "parent_id": "H6BQdlJRKosWzbx9EhLcryC1nuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ALBYdJgRXo2gMAxpi2RcvrVgnde",
+        "block_type": 32,
+        "children": [
+          "VBkrdgBl4oACh6xqZm1cwl90neg"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VBkrdgBl4oACh6xqZm1cwl90neg",
+        "block_type": 2,
+        "parent_id": "ALBYdJgRXo2gMAxpi2RcvrVgnde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Org Member",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZFITdacuIoa0zSxeGAncl966nGe",
+        "block_type": 32,
+        "children": [
+          "G67xdLOJ0opghIxvC5acDHSBnrf"
+        ],
+        "parent_id": "REQedp52FoXOoGxaBfkcPibvn9d",
+        "table_cell": {}
+      },
+      {
+        "block_id": "G67xdLOJ0opghIxvC5acDHSBnrf",
+        "block_type": 2,
+        "parent_id": "ZFITdacuIoa0zSxeGAncl966nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TFSmd8RjCoCCi8xY2nPcBe72ndf",
+        "block_type": 2,
+        "parent_id": "FP1cdBCLnoh1YhxLUescsrbanBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In summary, a user is only exempt if they hold the Organization Owner role in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "all",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " organizations that have SSO enforcement enabled. Being an Organization Owner in a non-enforced organization does not grant exemption.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 101
+  }
+}

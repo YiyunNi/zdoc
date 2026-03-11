@@ -1,0 +1,768 @@
+{
+  "created_time": "1725616138",
+  "modified_time": "1726821861",
+  "name": "NomicEmbeddingFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "ThDffzIlmlp8r8d7ohXcHyN1nug",
+  "token": "OOQvdXDqdoqKfmxEkTecfuVMnsb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/OOQvdXDqdoqKfmxEkTecfuVMnsb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb",
+        "block_type": 1,
+        "children": [
+          "doxcnluUBhFSHAgjGjAW78p8I7f",
+          "doxcnK1MCIcehz0722BgoInv6Uf",
+          "doxcntQ1PG5HAtJk0CJzp1Facke",
+          "doxcnEymZqMjw5KaxWuOX1WwLsc",
+          "doxcnj3sdWOGnrLq2TtRPIKO9Xd",
+          "doxcnvzmW6t2bAOYMigfqwONByg",
+          "doxcnfcdl1DuJ8gugul1IGpXWQh",
+          "Dmd0dZ3VioOJJQxNjkEcYcqXnwb",
+          "Y4xAdj80co90ugxw3SgcVQAhnJe",
+          "doxcnxcQGEPzwPtcZfulBOoy8ic",
+          "doxcnFSOBWyyUCOpGLgWGPGWC0N",
+          "doxcnHnRozoFX9npOnefdzoSRfS"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NomicEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnluUBhFSHAgjGjAW78p8I7f",
+        "block_type": 2,
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NomicEmbeddingFunction is a class in pymilvus that handles encoding text into embeddings using Nomic embedding models to support embedding retrieval in Milvus.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnK1MCIcehz0722BgoInv6Uf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.dense.NomicEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "doxcntQ1PG5HAtJk0CJzp1Facke",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "doxcnEymZqMjw5KaxWuOX1WwLsc",
+        "block_type": 2,
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a NomicEmbeddingFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnj3sdWOGnrLq2TtRPIKO9Xd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NomicEmbeddingFunction(\n    model_name: str = \"nomic-embed-text-v1.5\",\n    task_type: str = \"search_document\",\n    dimensions: int = 768,\n    **kwargs\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "doxcnvzmW6t2bAOYMigfqwONByg",
+        "block_type": 2,
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfcdl1DuJ8gugul1IGpXWQh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnARGzd0XAJh9gBKXYAXxknh"
+        ],
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "doxcnARGzd0XAJh9gBKXYAXxknh",
+        "block_type": 2,
+        "parent_id": "doxcnfcdl1DuJ8gugul1IGpXWQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the Nomic embedding model to use for encoding. The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "nomic-embed-text-v1.5",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Nomic official documentation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.nomic.ai%2Fatlas%2Fmodels%2Fimage-embedding"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dmd0dZ3VioOJJQxNjkEcYcqXnwb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "task_type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LmUxdT5dboBRiWxZGLOcQDBmnmg"
+        ],
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "LmUxdT5dboBRiWxZGLOcQDBmnmg",
+        "block_type": 2,
+        "parent_id": "Dmd0dZ3VioOJJQxNjkEcYcqXnwb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The type of task the model is being used for.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y4xAdj80co90ugxw3SgcVQAhnJe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dimensions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Lv1gdRJkzotk8Yx7oWKci2I8nVb"
+        ],
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "Lv1gdRJkzotk8Yx7oWKci2I8nVb",
+        "block_type": 2,
+        "parent_id": "Y4xAdj80co90ugxw3SgcVQAhnJe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The dimensionality of the output embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxcQGEPzwPtcZfulBOoy8ic",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "kwargs",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "comment_ids": [
+                    "7411467324614262787"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WczGdWXFgoUJUsx3Y8wc7usvnRc"
+        ],
+        "comment_ids": [
+          "7411467324614262787"
+        ],
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "WczGdWXFgoUJUsx3Y8wc7usvnRc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "long_text_mode",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GJHudFDG8ohqKfxYjNzcAWdAnHh"
+        ],
+        "parent_id": "doxcnxcQGEPzwPtcZfulBOoy8ic"
+      },
+      {
+        "block_id": "GJHudFDG8ohqKfxYjNzcAWdAnHh",
+        "block_type": 2,
+        "parent_id": "WczGdWXFgoUJUsx3Y8wc7usvnRc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "How to handle texts longer than the model can accept. One of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mean",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "truncate",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnFSOBWyyUCOpGLgWGPGWC0N",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      },
+      {
+        "block_id": "doxcnHnRozoFX9npOnefdzoSRfS",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.dense import NomicEmbeddingFunction\n\nef = NomicEmbeddingFunction(\n    model_name=\"nomic-embed-text-v1.5\", # Defaults to `mistral-embed`\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OOQvdXDqdoqKfmxEkTecfuVMnsb"
+      }
+    ],
+    "counts": 18
+  },
+  "slug": "EmbeddingModels-NomicEmbeddingFunction"
+}

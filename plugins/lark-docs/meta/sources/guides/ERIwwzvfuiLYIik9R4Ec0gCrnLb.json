@@ -1,0 +1,2027 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1748247902",
+  "node_token": "ERIwwzvfuiLYIik9R4Ec0gCrnLb",
+  "node_type": "origin",
+  "obj_create_time": "1748247902",
+  "obj_edit_time": "1749613324",
+  "obj_token": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+  "obj_type": "docx",
+  "origin_node_token": "ERIwwzvfuiLYIik9R4Ec0gCrnLb",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "KmYgwHNOFiPQ9sk4bSDcMuIHnjC",
+  "space_id": "7167193056431783939",
+  "title": "Required Permissions",
+  "slug": "required-permissions-gcp",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "block_type": 1,
+        "children": [
+          "FBPbd5O66o0vQpxyM3RcwKUrnSc",
+          "OPJMdKdGOoqiLfxoZ7FcNRDKnzg",
+          "QAiFd2mKZouWecxewPKcdI8qnbe",
+          "D9pydyz4Ao598dxHFeKcV6Dbnpc",
+          "LaJ4dH7AtopZpXxNDiEcHA92nce",
+          "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+          "PonndyBYQoLwBNxkYOLcrpn8nWd",
+          "WujQdgdHcoJKg1xIJ6KcwzUFnQh",
+          "XNcFd6CPeo5hNhxeqb0cWL2Inwh",
+          "Eh42dV9WCovO5AxwUPxcLm51nUd",
+          "WxCDdjoJFoH4Mox1c6LcUREjnNf",
+          "Bxrjd0dOGoHZz2xdaGBc4HuTn0n",
+          "UNjYd50IfodkafxSiO7cmbOZnfc",
+          "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+          "C8dtdcAd4oRgNuxj4ywcalV9ncg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required Permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "FBPbd5O66o0vQpxyM3RcwKUrnSc",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page lists the IAM policies required during the deployment of Zilliz BYOC data plane on your VPC network.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OPJMdKdGOoqiLfxoZ7FcNRDKnzg",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "SKVldnjPToU8lkxz3Gich4cRnkd",
+          "INVDdwLo9oG3nwxXlXFcPk1PnDf"
+        ],
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c"
+      },
+      {
+        "block_id": "SKVldnjPToU8lkxz3Gich4cRnkd",
+        "block_type": 2,
+        "parent_id": "OPJMdKdGOoqiLfxoZ7FcNRDKnzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "INVDdwLo9oG3nwxXlXFcPk1PnDf",
+        "block_type": 2,
+        "parent_id": "OPJMdKdGOoqiLfxoZ7FcNRDKnzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz BYOC is currently available in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "General Availability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For access and implementation details, please contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud sales",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QAiFd2mKZouWecxewPKcdI8qnbe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage service account",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c"
+      },
+      {
+        "block_id": "D9pydyz4Ao598dxHFeKcV6Dbnpc",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You should create a Cloud Storage bucket and a storage service account so that Zilliz Cloud can assume the service account to access the bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LaJ4dH7AtopZpXxNDiEcHA92nce",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table lists the roles that should be assigned to the storage service account.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "block_type": 31,
+        "children": [
+          "NMwkdW5MYoKhQ3xYJ4acrNzynpd",
+          "DYyldrRwBorN0lx2ywTcTlrwnhg",
+          "SC1xdWE2kolknbxTWvEc8d2knWD",
+          "M7MsdiCqLondVRxgtsxcbwyDnlh",
+          "PtlmdmQX3oEQ73xuukgcDCUenhh",
+          "VG7WdmlKvoE2mhxAeazcqJTInBc",
+          "NTssdjlsFouCRixz3I1caMs3nKY",
+          "STt4dCz6fo7e1hxxzFzcnPIHnmH",
+          "Ga57dJmmYoSZ4Tx1hGaccWtxnDb"
+        ],
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "table": {
+          "cells": [
+            "NMwkdW5MYoKhQ3xYJ4acrNzynpd",
+            "DYyldrRwBorN0lx2ywTcTlrwnhg",
+            "SC1xdWE2kolknbxTWvEc8d2knWD",
+            "M7MsdiCqLondVRxgtsxcbwyDnlh",
+            "PtlmdmQX3oEQ73xuukgcDCUenhh",
+            "VG7WdmlKvoE2mhxAeazcqJTInBc",
+            "NTssdjlsFouCRixz3I1caMs3nKY",
+            "STt4dCz6fo7e1hxxzFzcnPIHnmH",
+            "Ga57dJmmYoSZ4Tx1hGaccWtxnDb"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              221,
+              405,
+              194
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 3
+          }
+        }
+      },
+      {
+        "block_id": "NMwkdW5MYoKhQ3xYJ4acrNzynpd",
+        "block_type": 32,
+        "children": [
+          "EJOfdcmkFoaqaixypHec0CFqnqe"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EJOfdcmkFoaqaixypHec0CFqnqe",
+        "block_type": 2,
+        "parent_id": "NMwkdW5MYoKhQ3xYJ4acrNzynpd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DYyldrRwBorN0lx2ywTcTlrwnhg",
+        "block_type": 32,
+        "children": [
+          "SZApdbG3QoBUBuxhTcLcSMCsnJe"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SZApdbG3QoBUBuxhTcLcSMCsnJe",
+        "block_type": 2,
+        "parent_id": "DYyldrRwBorN0lx2ywTcTlrwnhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SC1xdWE2kolknbxTWvEc8d2knWD",
+        "block_type": 32,
+        "children": [
+          "Woiadr719olNgLxMZ5cc1bSGnwf"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Woiadr719olNgLxMZ5cc1bSGnwf",
+        "block_type": 2,
+        "parent_id": "SC1xdWE2kolknbxTWvEc8d2knWD",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Condition",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M7MsdiCqLondVRxgtsxcbwyDnlh",
+        "block_type": 32,
+        "children": [
+          "TKdhdj5FZoe2NPxaSWmcCcLsnPg"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TKdhdj5FZoe2NPxaSWmcCcLsnPg",
+        "block_type": 2,
+        "parent_id": "M7MsdiCqLondVRxgtsxcbwyDnlh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage Object Admin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Froles-permissions%2Fstorage%23storage.objectAdmin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PtlmdmQX3oEQ73xuukgcDCUenhh",
+        "block_type": 32,
+        "children": [
+          "Kc7Yd3bbVo51x0xbUcvc00EqnZd"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Kc7Yd3bbVo51x0xbUcvc00EqnZd",
+        "block_type": 2,
+        "parent_id": "PtlmdmQX3oEQ73xuukgcDCUenhh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grants full control of objects, including listing, creating, viewing, and deleting objects.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VG7WdmlKvoE2mhxAeazcqJTInBc",
+        "block_type": 32,
+        "children": [
+          "Mt4KdRfIQofCxdxx6KEcmClPnpd"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Mt4KdRfIQofCxdxx6KEcmClPnpd",
+        "block_type": 2,
+        "parent_id": "VG7WdmlKvoE2mhxAeazcqJTInBc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the target bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NTssdjlsFouCRixz3I1caMs3nKY",
+        "block_type": 32,
+        "children": [
+          "WGdydaKYGoiEfbxqRJ5cFeCOnJe"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WGdydaKYGoiEfbxqRJ5cFeCOnJe",
+        "block_type": 2,
+        "parent_id": "NTssdjlsFouCRixz3I1caMs3nKY",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage Bucket Viewer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Froles-permissions%2Fstorage%23storage.objectAdmin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "STt4dCz6fo7e1hxxzFzcnPIHnmH",
+        "block_type": 32,
+        "children": [
+          "OnmSdscAGoVNzgxyt18cPR0Pnqh"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OnmSdscAGoVNzgxyt18cPR0Pnqh",
+        "block_type": 2,
+        "parent_id": "STt4dCz6fo7e1hxxzFzcnPIHnmH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grants permission to view buckets and their metadata, excluding IAM policies.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ga57dJmmYoSZ4Tx1hGaccWtxnDb",
+        "block_type": 32,
+        "children": [
+          "EMSkdnr9soFYFbx70vbcmL4HnDh"
+        ],
+        "parent_id": "GjZ5dVQuRoKtWNxyVJmcQk8wnRh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EMSkdnr9soFYFbx70vbcmL4HnDh",
+        "block_type": 2,
+        "parent_id": "Ga57dJmmYoSZ4Tx1hGaccWtxnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the target bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PonndyBYQoLwBNxkYOLcrpn8nWd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GKE service account",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c"
+      },
+      {
+        "block_id": "WujQdgdHcoJKg1xIJ6KcwzUFnQh",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You should create a GKE service account so that Zilliz Cloud can assume this service account to manage the GKE clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XNcFd6CPeo5hNhxeqb0cWL2Inwh",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table lists the roles that should be assigned to the GKE service account.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "block_type": 31,
+        "children": [
+          "PmKRdRYudoU1Blxb0qDckzM9n3d",
+          "GP0Jd0nFPorW4axNB0zcjqUgn3d",
+          "AxZ6djxoHoNHfKxkRYYcDSvcnih",
+          "R9PSdGSHPoyhJhx9TMbckadun9b",
+          "LvpBdwiamoaAuEx0xDecJOfxnuf",
+          "DZRQd0wiRobdMUx12KJcHFG5noc"
+        ],
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "table": {
+          "cells": [
+            "PmKRdRYudoU1Blxb0qDckzM9n3d",
+            "GP0Jd0nFPorW4axNB0zcjqUgn3d",
+            "AxZ6djxoHoNHfKxkRYYcDSvcnih",
+            "R9PSdGSHPoyhJhx9TMbckadun9b",
+            "LvpBdwiamoaAuEx0xDecJOfxnuf",
+            "DZRQd0wiRobdMUx12KJcHFG5noc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              221,
+              405,
+              194
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 2
+          }
+        }
+      },
+      {
+        "block_id": "PmKRdRYudoU1Blxb0qDckzM9n3d",
+        "block_type": 32,
+        "children": [
+          "BLn1dJ9LroEhsvxSW9wceM81nNb"
+        ],
+        "parent_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BLn1dJ9LroEhsvxSW9wceM81nNb",
+        "block_type": 2,
+        "parent_id": "PmKRdRYudoU1Blxb0qDckzM9n3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GP0Jd0nFPorW4axNB0zcjqUgn3d",
+        "block_type": 32,
+        "children": [
+          "TXXvdFeB1o7dL6xTLrYcjJmJnYg"
+        ],
+        "parent_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TXXvdFeB1o7dL6xTLrYcjJmJnYg",
+        "block_type": 2,
+        "parent_id": "GP0Jd0nFPorW4axNB0zcjqUgn3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AxZ6djxoHoNHfKxkRYYcDSvcnih",
+        "block_type": 32,
+        "children": [
+          "Xud7d7gTZoJwx9xx74zc5RE3nFg"
+        ],
+        "parent_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Xud7d7gTZoJwx9xx74zc5RE3nFg",
+        "block_type": 2,
+        "parent_id": "AxZ6djxoHoNHfKxkRYYcDSvcnih",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Condition",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R9PSdGSHPoyhJhx9TMbckadun9b",
+        "block_type": 32,
+        "children": [
+          "DyOGd2C2coPehbxgislcoCAondd"
+        ],
+        "parent_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DyOGd2C2coPehbxgislcoCAondd",
+        "block_type": 2,
+        "parent_id": "R9PSdGSHPoyhJhx9TMbckadun9b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Kubernetes Engine Default Node Service Account",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Froles-permissions%2Fcontainer%23container.defaultNodeServiceAccount"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LvpBdwiamoaAuEx0xDecJOfxnuf",
+        "block_type": 32,
+        "children": [
+          "JkISdUCfRogDhXxDAojcxsixnOb"
+        ],
+        "parent_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JkISdUCfRogDhXxDAojcxsixnOb",
+        "block_type": 2,
+        "parent_id": "LvpBdwiamoaAuEx0xDecJOfxnuf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Minimal set of permissions required by a GKE node to support standard capabilities such as logging and monitoring.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DZRQd0wiRobdMUx12KJcHFG5noc",
+        "block_type": 32,
+        "children": [
+          "AAyXdgmIGoL8gQxugdScoe78nvf"
+        ],
+        "parent_id": "Eh42dV9WCovO5AxwUPxcLm51nUd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AAyXdgmIGoL8gQxugdScoe78nvf",
+        "block_type": 2,
+        "parent_id": "DZRQd0wiRobdMUx12KJcHFG5noc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "--",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WxCDdjoJFoH4Mox1c6LcUREjnNf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cross-account service account",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c"
+      },
+      {
+        "block_id": "Bxrjd0dOGoHZz2xdaGBc4HuTn0n",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You should create a cross-account service account so Zilliz Cloud can assume this service account to manage network resources.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UNjYd50IfodkafxSiO7cmbOZnfc",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table lists the roles that should be assigned to the cross-account service account.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "block_type": 31,
+        "children": [
+          "VLGrdlbWBorIksx2sOscFZsNnXr",
+          "FKX6dzTqGoUUumxiS3vctNNQnlh",
+          "NVlMdys7BotEnTxoAvfc45jrnIf",
+          "TzPrd6GLPobsQFxjCDacJ8Banef",
+          "IRSNdRmUooh4vexGFzocXkf4nHd",
+          "KcFgdpAUgo3nVZxNR4HcXbk0n6g",
+          "XwuMdAISao4ijgxZodgcZ8ahnSd",
+          "SaA1dHYbYovMnyx4Wf1cfQtKnIf",
+          "GjWTddbQqoaN31xjYCncAv9UnRe",
+          "IdYsdM2zOo1hEaxN3IMcQchTnDb",
+          "GjcQdp8weowid9xWRjCcpbIWnmt",
+          "HQMKdU1dnoFvolxe9sIczcYCnMg",
+          "NPrBd7lKYoWQZLx6dUacH92Vntg",
+          "XEXaduzgZoyVAGxn3x3cyHAHnGg",
+          "ZBxYd2FXwo84H3x1Dtjcn72HnVb",
+          "OArJdCFJSolzsqxqM5icJI7gnrf",
+          "VZKldWqEdoMtZIxvqwYctgJYnKc",
+          "PVMbdzw4GouDRJx6k9RcDDp4nFk"
+        ],
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "table": {
+          "cells": [
+            "VLGrdlbWBorIksx2sOscFZsNnXr",
+            "FKX6dzTqGoUUumxiS3vctNNQnlh",
+            "NVlMdys7BotEnTxoAvfc45jrnIf",
+            "TzPrd6GLPobsQFxjCDacJ8Banef",
+            "IRSNdRmUooh4vexGFzocXkf4nHd",
+            "KcFgdpAUgo3nVZxNR4HcXbk0n6g",
+            "XwuMdAISao4ijgxZodgcZ8ahnSd",
+            "SaA1dHYbYovMnyx4Wf1cfQtKnIf",
+            "GjWTddbQqoaN31xjYCncAv9UnRe",
+            "IdYsdM2zOo1hEaxN3IMcQchTnDb",
+            "GjcQdp8weowid9xWRjCcpbIWnmt",
+            "HQMKdU1dnoFvolxe9sIczcYCnMg",
+            "NPrBd7lKYoWQZLx6dUacH92Vntg",
+            "XEXaduzgZoyVAGxn3x3cyHAHnGg",
+            "ZBxYd2FXwo84H3x1Dtjcn72HnVb",
+            "OArJdCFJSolzsqxqM5icJI7gnrf",
+            "VZKldWqEdoMtZIxvqwYctgJYnKc",
+            "PVMbdzw4GouDRJx6k9RcDDp4nFk"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              221,
+              405,
+              194
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 6
+          }
+        }
+      },
+      {
+        "block_id": "VLGrdlbWBorIksx2sOscFZsNnXr",
+        "block_type": 32,
+        "children": [
+          "SIdhdcCrVozfQHx3GD0cxBQhnsf"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SIdhdcCrVozfQHx3GD0cxBQhnsf",
+        "block_type": 2,
+        "comment_ids": [
+          "7512723730192482308"
+        ],
+        "parent_id": "VLGrdlbWBorIksx2sOscFZsNnXr",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Role",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7512723730192482308"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FKX6dzTqGoUUumxiS3vctNNQnlh",
+        "block_type": 32,
+        "children": [
+          "J5ymd5cihosjrnxGT2bcVzUonhg"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "J5ymd5cihosjrnxGT2bcVzUonhg",
+        "block_type": 2,
+        "parent_id": "FKX6dzTqGoUUumxiS3vctNNQnlh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NVlMdys7BotEnTxoAvfc45jrnIf",
+        "block_type": 32,
+        "children": [
+          "RAh5de6wNoWFUUxCJLccaAKGnfd"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RAh5de6wNoWFUUxCJLccaAKGnfd",
+        "block_type": 2,
+        "parent_id": "NVlMdys7BotEnTxoAvfc45jrnIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Condition",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TzPrd6GLPobsQFxjCDacJ8Banef",
+        "block_type": 32,
+        "children": [
+          "JTkQdxSwpoRK07xmJXuc7MW5neh"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JTkQdxSwpoRK07xmJXuc7MW5neh",
+        "block_type": 2,
+        "parent_id": "TzPrd6GLPobsQFxjCDacJ8Banef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage Bucket Viewer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Froles-permissions%2Fstorage%23storage.objectAdmin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IRSNdRmUooh4vexGFzocXkf4nHd",
+        "block_type": 32,
+        "children": [
+          "X51ddZcGCo6fu4xnWFFc10wlnEe"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "X51ddZcGCo6fu4xnWFFc10wlnEe",
+        "block_type": 2,
+        "parent_id": "IRSNdRmUooh4vexGFzocXkf4nHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grants permission to view buckets and their metadata, excluding IAM policies.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KcFgdpAUgo3nVZxNR4HcXbk0n6g",
+        "block_type": 32,
+        "children": [
+          "AEeudSE43oN5v9xL4locK5VdnGd"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AEeudSE43oN5v9xL4locK5VdnGd",
+        "block_type": 2,
+        "parent_id": "KcFgdpAUgo3nVZxNR4HcXbk0n6g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the target bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XwuMdAISao4ijgxZodgcZ8ahnSd",
+        "block_type": 32,
+        "children": [
+          "VoTSdIV4UonmZtxKaqvcfiMPn0e"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VoTSdIV4UonmZtxKaqvcfiMPn0e",
+        "block_type": 2,
+        "parent_id": "XwuMdAISao4ijgxZodgcZ8ahnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Kubernetes Engine Admin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Froles-permissions%2Fcontainer%23container.admin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SaA1dHYbYovMnyx4Wf1cfQtKnIf",
+        "block_type": 32,
+        "children": [
+          "JLVPdOK6boNBajx2WExc253lnWc"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JLVPdOK6boNBajx2WExc253lnWc",
+        "block_type": 2,
+        "parent_id": "SaA1dHYbYovMnyx4Wf1cfQtKnIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Provides access to full management of clusters and their Kubernetes API objects.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GjWTddbQqoaN31xjYCncAv9UnRe",
+        "block_type": 32,
+        "children": [
+          "Utl5dpdBnoCqrSxehGJcoxs7nmh"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Utl5dpdBnoCqrSxehGJcoxs7nmh",
+        "block_type": 2,
+        "parent_id": "GjWTddbQqoaN31xjYCncAv9UnRe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "--",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IdYsdM2zOo1hEaxN3IMcQchTnDb",
+        "block_type": 32,
+        "children": [
+          "IV66dAJISoMygPxyTXgc54MOnpg",
+          "P2BwdwjsHoIbLGxwTNycuiFbnAe"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IV66dAJISoMygPxyTXgc54MOnpg",
+        "block_type": 2,
+        "comment_ids": [
+          "7512728201305309187"
+        ],
+        "parent_id": "IdYsdM2zOo1hEaxN3IMcQchTnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Instance Group Manager Custom Role",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7512728201305309187"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGeaswUCLVi04xQkLl4vc7cbdnVh%23CU8PdzIfzoN2uzxhgYmcWaXUnmp"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P2BwdwjsHoIbLGxwTNycuiFbnAe",
+        "block_type": 2,
+        "parent_id": "IdYsdM2zOo1hEaxN3IMcQchTnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GjcQdp8weowid9xWRjCcpbIWnmt",
+        "block_type": 32,
+        "children": [
+          "CgCGdgjHooljvPxNVpHc60z1nrb",
+          "EmZzdvTuro5iEtxrAMFcxs7anBd",
+          "Bu97dXoVYoKA6cxtobkc2wfInbc"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CgCGdgjHooljvPxNVpHc60z1nrb",
+        "block_type": 2,
+        "parent_id": "GjcQdp8weowid9xWRjCcpbIWnmt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Binds the following permissions:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EmZzdvTuro5iEtxrAMFcxs7anBd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compute.instanceGroupManagers.get",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fcompute%2Fdocs%2Freference%2Frest%2Fv1%2FinstanceGroupManagers%2Fget"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GjcQdp8weowid9xWRjCcpbIWnmt"
+      },
+      {
+        "block_id": "Bu97dXoVYoKA6cxtobkc2wfInbc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compute.instanceGroupManagers.update",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fcompute%2Fdocs%2Freference%2Frest%2Fv1%2FinstanceGroupManagers%2Fupdate"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GjcQdp8weowid9xWRjCcpbIWnmt"
+      },
+      {
+        "block_id": "HQMKdU1dnoFvolxe9sIczcYCnMg",
+        "block_type": 32,
+        "children": [
+          "MOb8dHOBpogekWx5TkxcC2zhn3d"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MOb8dHOBpogekWx5TkxcC2zhn3d",
+        "block_type": 2,
+        "parent_id": "HQMKdU1dnoFvolxe9sIczcYCnMg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the GKE cluster to create",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NPrBd7lKYoWQZLx6dUacH92Vntg",
+        "block_type": 32,
+        "children": [
+          "JcJndmRraoI6P1xp1nicJsDDn2e"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JcJndmRraoI6P1xp1nicJsDDn2e",
+        "block_type": 2,
+        "parent_id": "NPrBd7lKYoWQZLx6dUacH92Vntg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IAM Custom Role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGeaswUCLVi04xQkLl4vc7cbdnVh%23MuiLd76cuo3aTGxqeCRcTG4mnvg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XEXaduzgZoyVAGxn3x3cyHAHnGg",
+        "block_type": 32,
+        "children": [
+          "YSAhdY0xIod7YGxeCwGcO3u3ngh",
+          "TyjJdsPxAozNYXx4MA2cbDEKnbe",
+          "YbgudGmnpofYCGxeQdScm8NOnyc"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YSAhdY0xIod7YGxeCwGcO3u3ngh",
+        "block_type": 2,
+        "parent_id": "XEXaduzgZoyVAGxn3x3cyHAHnGg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Binds the following permissions:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TyjJdsPxAozNYXx4MA2cbDEKnbe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "iam.serviceAccounts.getIamPolicy",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Freference%2Frest%2Fv1%2Fprojects.serviceAccounts%2FgetIamPolicy"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XEXaduzgZoyVAGxn3x3cyHAHnGg"
+      },
+      {
+        "block_id": "YbgudGmnpofYCGxeQdScm8NOnyc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "iam.serviceAccounts.setIamPolicy",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Freference%2Frest%2Fv1%2Fprojects.serviceAccounts%2FsetIamPolicy"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XEXaduzgZoyVAGxn3x3cyHAHnGg"
+      },
+      {
+        "block_id": "ZBxYd2FXwo84H3x1Dtjcn72HnVb",
+        "block_type": 32,
+        "children": [
+          "P047d05lroUzz3xGGYVcAOoVnIh"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "P047d05lroUzz3xGGYVcAOoVnIh",
+        "block_type": 2,
+        "parent_id": "ZBxYd2FXwo84H3x1Dtjcn72HnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OArJdCFJSolzsqxqM5icJI7gnrf",
+        "block_type": 32,
+        "children": [
+          "SM6ydJFOQo263PxPy4DcY0kcn4e"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SM6ydJFOQo263PxPy4DcY0kcn4e",
+        "block_type": 2,
+        "comment_ids": [
+          "7514213565528653827"
+        ],
+        "parent_id": "OArJdCFJSolzsqxqM5icJI7gnrf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Service Account User",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7514213565528653827"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fiam%2Fdocs%2Froles-permissions%2Fiam%23iam.serviceAccountUser"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VZKldWqEdoMtZIxvqwYctgJYnKc",
+        "block_type": 32,
+        "children": [
+          "Mt28dy6JuovTsQxNfHmcIgCEnlc"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Mt28dy6JuovTsQxNfHmcIgCEnlc",
+        "block_type": 2,
+        "parent_id": "VZKldWqEdoMtZIxvqwYctgJYnKc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Run operations as the service account.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PVMbdzw4GouDRJx6k9RcDDp4nFk",
+        "block_type": 32,
+        "children": [
+          "WSdQdF6iKoMJNLxQacVcHcnxnkb"
+        ],
+        "parent_id": "FuCIdpfJcoHauex8Xx8cFcC2nLR",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WSdQdF6iKoMJNLxQacVcHcnxnkb",
+        "block_type": 2,
+        "parent_id": "PVMbdzw4GouDRJx6k9RcDDp4nFk",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "--",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C8dtdcAd4oRgNuxj4ywcalV9ncg",
+        "block_type": 2,
+        "parent_id": "LSr2dQyttoL5y0xAWjJc81Tmn5c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 89
+  }
+}

@@ -1,0 +1,1132 @@
+{
+  "creator": "ou_be2d1e67a811e6ef0b1d91a60c1df1ce",
+  "has_child": false,
+  "node_create_time": "1762329119",
+  "node_token": "CK0ewQWC2iz6lakP0kscqogbnGh",
+  "node_type": "origin",
+  "obj_create_time": "1762329119",
+  "obj_edit_time": "1764313731",
+  "obj_token": "Z5tbd2caioQYaoxnLipcwrQWn18",
+  "obj_type": "docx",
+  "origin_node_token": "CK0ewQWC2iz6lakP0kscqogbnGh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_be2d1e67a811e6ef0b1d91a60c1df1ce",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": " November 2025 Release Notes ",
+  "slug": "release-notes-2511",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Z5tbd2caioQYaoxnLipcwrQWn18",
+        "block_type": 1,
+        "children": [
+          "doxcn2CzhnOs5dmd8DOuy6RZ7Sz",
+          "doxcnhWiBLugTpXegssoMhVmM3b"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " November 2025 Release Notes ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn2CzhnOs5dmd8DOuy6RZ7Sz",
+        "block_type": 24,
+        "children": [
+          "doxcnpbefYvfJpFR4rbvBOSEkcd",
+          "doxcni8AGVb93MVA5Oqo4S2gaRf"
+        ],
+        "grid": {
+          "column_size": 2
+        },
+        "parent_id": "Z5tbd2caioQYaoxnLipcwrQWn18"
+      },
+      {
+        "block_id": "doxcnpbefYvfJpFR4rbvBOSEkcd",
+        "block_type": 25,
+        "children": [
+          "doxcnBmwYW7pf7KeFHadzvdpPvg",
+          "doxcnoUubb1oqjKQFx87lIRPgiz"
+        ],
+        "grid_column": {
+          "width_ratio": 16
+        },
+        "parent_id": "doxcn2CzhnOs5dmd8DOuy6RZ7Sz"
+      },
+      {
+        "block_id": "doxcnBmwYW7pf7KeFHadzvdpPvg",
+        "block_type": 2,
+        "parent_id": "doxcnpbefYvfJpFR4rbvBOSEkcd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "2025-11-06",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnoUubb1oqjKQFx87lIRPgiz",
+        "block_type": 2,
+        "parent_id": "doxcnpbefYvfJpFR4rbvBOSEkcd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "block_type": 25,
+        "children": [
+          "doxcnh9Doyn2A3dyhPMzlECS6sg",
+          "U36UdibOrojX8Dx2Za4cckEJnue",
+          "IFegdnujQo0GVixKOP0cIZR3nQe",
+          "EMWDdt7uSoI48XxTnd8c7pMSnlg",
+          "FVwWdjhjlo16g4x6mC3cFfyundh",
+          "RBgId757KoewhDxYFewcs9uknDd",
+          "ZCDadIG4woGkfexEgGMcYjSqnBf",
+          "URyLdW7Broy5sLx15axcq6L3nVg",
+          "SapxdCioqotzF3xfMhRcUPlWnjg",
+          "TixRd3epmoG7dXxYqxjc91Ihn4f",
+          "KKKfd5lDiohDtQxlW0ocupGpnpg",
+          "WrcCdDb8voIjcsxPJ5qcuNVvnjh",
+          "YFPudtXnooznx8xTf7bcHlV8n5d",
+          "ZcORdnx8VoVq7JxeT8ScMwNgnnb",
+          "A5A2dl7IPoRZ6WxtyXDcXrAcnvf",
+          "doxcnXlY6zDpBYSopjNbkFUmDVe",
+          "doxcnujDehwNTUMAJ43g5H8ZEHa",
+          "EPfAdqXknoWTMyxTwX3cN2VfnYK"
+        ],
+        "grid_column": {
+          "width_ratio": 83
+        },
+        "parent_id": "doxcn2CzhnOs5dmd8DOuy6RZ7Sz"
+      },
+      {
+        "block_id": "doxcnh9Doyn2A3dyhPMzlECS6sg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Business Critical Plan Availability",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "U36UdibOrojX8Dx2Za4cckEJnue",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now offers the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Business Critical",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " plan, designed for organizations with the highest security, compliance, and availability requirements. In addition to our existing HIPAA and SOC 2 Type II readiness, this plan provides advanced capabilities such as Global Cluster, multi-region replication with automatic failover, and point-in-time recovery (PITR) to deliver stronger data protection, regulatory alignment, and operational resilience at global scale. For more information or to evaluate whether this plan is right for your environment, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact us",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IFegdnujQo0GVixKOP0cIZR3nQe",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EMWDdt7uSoI48XxTnd8c7pMSnlg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus v2.6.x New Features",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "FVwWdjhjlo16g4x6mC3cFfyundh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Geometry data type support",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " — Store and query complex spatial shapes (POINT, LINESTRING, POLYGON) for geospatial search, geofencing, routing, and map-based applications. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Geometry Field",
+                "token": "H2GHwE8umiuP6WkwjxPcQOfGn0e",
+                "url": "https://zilliverse.feishu.cn/wiki/H2GHwE8umiuP6WkwjxPcQOfGn0e"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "RBgId757KoewhDxYFewcs9uknDd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Struct data type support",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " — Model nested, multi-attribute records more naturally to simplify schema design and improve querying in metadata-rich AI workloads. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Array of Structs",
+                "token": "LIMbwXk1OiS5SykUyNhc5FtSnPb",
+                "url": "https://zilliverse.feishu.cn/wiki/LIMbwXk1OiS5SykUyNhc5FtSnPb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "ZCDadIG4woGkfexEgGMcYjSqnBf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enable Dynamic Field on existing collections",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7569530568929591300"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " — Turn on dynamic field support without recreating the collection, allowing schema flexibility as business attributes evolve. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7569530568929591300"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7569530568929591300"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Modify Collection",
+                "token": "WMh8w3tbKiBhukk3ICMc4ctznEg",
+                "url": "https://zilliverse.feishu.cn/wiki/WMh8w3tbKiBhukk3ICMc4ctznEg#BY0MdhhdqoQY2Cxl8TNcYtCwn0d"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7569530568929591300"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7569530568929591300"
+        ],
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "URyLdW7Broy5sLx15axcq6L3nVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Support Deleting Scalar Indexes ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Under Loading Status",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7573535242099703827"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " — Allow deleting and rebuilding scalar indexes while the collection is in loading status. ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7573535242099703827"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7573535242099703827"
+        ],
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "SapxdCioqotzF3xfMhRcUPlWnjg",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TixRd3epmoG7dXxYqxjc91Ihn4f",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Plan moved to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "project level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "KKKfd5lDiohDtQxlW0ocupGpnpg",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With this release, subscription Plans are now managed at the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " level instead of the Cluster level, improving configuration consistency and simplifying capability governance—especially for organizations operating multiple clusters. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WrcCdDb8voIjcsxPJ5qcuNVvnjh",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your existing workloads, features, and billing remain unchanged, and no configuration updates are required.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YFPudtXnooznx8xTf7bcHlV8n5d",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "From now on, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "new ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "p",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rojects",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will require a Plan selection (Standard, Enterprise, or Business Critical), while ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Clusters",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will choose a Deployment Option (Free, Serverless, or Dedicated). ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZcORdnx8VoVq7JxeT8ScMwNgnnb",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Detailed Plan Comparison",
+                "token": "Ghq9wEiOOivgeIkmj2HcHC9onXe",
+                "url": "https://zilliverse.feishu.cn/wiki/Ghq9wEiOOivgeIkmj2HcHC9onXe"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A5A2dl7IPoRZ6WxtyXDcXrAcnvf",
+        "block_type": 2,
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnXlY6zDpBYSopjNbkFUmDVe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enhancements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "doxcnujDehwNTUMAJ43g5H8ZEHa",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migration Support enabling Full text search",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Now you can enable BM25 function to best leverage full text search functionalities powered by Milvus when migrating from popular vector databases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Migrate from Milvus to Zilliz Cloud Via Endpoint",
+                "token": "PlX3wo82Di6oWVkg2ercRWCUnvV",
+                "url": "https://zilliverse.feishu.cn/wiki/PlX3wo82Di6oWVkg2ercRWCUnvV#QlnKdaZ4poXTAExzcEHcp1IKnWP"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "External Migration Basics",
+                "token": "WZe4w7lNji6RVHkR5alcrTw8nQ2",
+                "url": "https://zilliverse.feishu.cn/wiki/WZe4w7lNji6RVHkR5alcrTw8nQ2#UIWrdrDdJo31UhxtaN6cmQjundc"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "EPfAdqXknoWTMyxTwX3cN2VfnYK",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Alert Support Interval Setting - ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "You can customize the notification interval for ongoing alerts to ensure they remain noticeable without becoming disruptive. New alerts default to a one-hour interval.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Project Alerts",
+                "token": "NvDLw4kFji0xeWkc4Hpc9wUfnRh",
+                "url": "https://zilliverse.feishu.cn/wiki/NvDLw4kFji0xeWkc4Hpc9wUfnRh#WPujdQ6xroLuDtxSgVhclOuInnd"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcni8AGVb93MVA5Oqo4S2gaRf"
+      },
+      {
+        "block_id": "doxcnhWiBLugTpXegssoMhVmM3b",
+        "block_type": 2,
+        "parent_id": "Z5tbd2caioQYaoxnLipcwrQWn18",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 25
+  }
+}

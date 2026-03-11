@@ -1,0 +1,3426 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1734597205",
+  "node_token": "PBZwwNqWjiikeYkXgHPcGhLznTh",
+  "node_type": "origin",
+  "obj_create_time": "1734597205",
+  "obj_edit_time": "1772797624",
+  "obj_token": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+  "obj_type": "docx",
+  "origin_node_token": "PBZwwNqWjiikeYkXgHPcGhLznTh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+  "space_id": "7167193056431783939",
+  "title": "Manage Cluster Roles (SDK)",
+  "slug": "cluster-roles-sdk",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "block_type": 1,
+        "children": [
+          "NhfzdeNDgobOVxx4FKUcZpXCnAh",
+          "J2o3dRB8ho0ZMYxqQ7wceZAKnmg",
+          "Gng2dz5LfogVCcxkWiCcYhIRnod",
+          "J8I7d1V0hoW4eRxUZ4FcoDNtnjh",
+          "Db7QdDQbFoIdckxgkxVcMNO9nXb",
+          "K5WYd8EI1o7MhCx3TXTcZkYXn9y",
+          "L51Cd57rRsy75UboOQMcmJm3nHg",
+          "IpxYdjayKoVDzCxlBruclniHnpe",
+          "B8e5dJvdBoKQFNxVPjpccICinPg",
+          "VCTGdT0dyskxWqbRIvycu04Znqc",
+          "MOjadaYVGopHHkxHn3lc6bODnjb",
+          "VYBAdWRWYsJ3rfbO4MQcsJ5cnIf",
+          "ItOkdA8s9oRpQkxTWH5cylc9nme",
+          "N0dTdgoEhoj0LUxYr5nc5mJPnhe",
+          "A9W9dc1pKoN2izxUdhIcJIXNnyg",
+          "Y4cMdZAcwo3O5Px4tlVc4qiFnFh",
+          "PwwHdiHW8oQLWhxDfYycaxNRn5g",
+          "UhRjdyMYBob1A5xBya7cnfIEnOb",
+          "BT3hdND5doLifhx1nEZcN1nYnkc",
+          "P8EVdDqHXstHbrbdtkGc7t5Lngf",
+          "OZEDd7Eqso2Qc4xC0c3c7vPOnvd",
+          "DSLudEHvLoUb7lxgPdYcZu9Pnzd",
+          "LuXIdmRWosCinsbP8sLckNxanWc",
+          "D1qBdsrczoVUzTxpbZ9cyXdinFe",
+          "Vv9LdWrQqsN3lHb7lxBcbpwunWb",
+          "IpcndmtwYoZ6hLxatgdc2ldonTc",
+          "BLQXdFtkGow3a1x7X52c9U7enNf",
+          "PZEedjw5jsDISfbO6mLcnd6unQe",
+          "MvuxdwYTooL1W5xyXyfcaUPsncc",
+          "DRqzdxspooVji7xY4Nbc4wCSnNf",
+          "HTjEdol4JoY9fRxEwzIcFy2NnXc",
+          "V9OLdwFhksTEEzbWljxczLJYnGh",
+          "D9tQdZYFIoByCdxDpfCcUHrinWc",
+          "SYjFdlg4vsontebfJGncAMNCnBh",
+          "VexWdogPyo3zFAxLymBcbpzunCb",
+          "N3lpdHnPIsiq5AbCs5fc7PvnnXg",
+          "PY8Sdx1awoct2dxX5gic19DnnXb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage Cluster Roles (SDK)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "NhfzdeNDgobOVxx4FKUcZpXCnAh",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A cluster role defines the privileges that a user has within the cluster. More specifically, the cluster role controls a cluster user's privileges on the cluster, database, and collection level.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J2o3dRB8ho0ZMYxqQ7wceZAKnmg",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This guide walks you through how to create a role, grant ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "built-in privilege groups",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to a role, revoke privilege groups from a role, and finally drop a role. For details about built-in privilege groups, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Privileges",
+                "token": "NitBwKVzzi0hXBkjdDFcfwRsngb",
+                "url": "https://zilliverse.feishu.cn/wiki/NitBwKVzzi0hXBkjdDFcfwRsngb#JDwcdSbOgoT4duxNEe3cnQOXnrb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gng2dz5LfogVCcxkWiCcYhIRnod",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "P2TudcGGiobkgTxQT4UcrNdVnPh",
+          "R5kTdTu1WoDnGCxMumfcnwyhngj"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "P2TudcGGiobkgTxQT4UcrNdVnPh",
+        "block_type": 2,
+        "parent_id": "Gng2dz5LfogVCcxkWiCcYhIRnod",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R5kTdTu1WoDnGCxMumfcnwyhngj",
+        "block_type": 2,
+        "parent_id": "Gng2dz5LfogVCcxkWiCcYhIRnod",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is exclusively available to Dedicated clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J8I7d1V0hoW4eRxUZ4FcoDNtnjh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "Db7QdDQbFoIdckxgkxVcMNO9nXb",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example demonstrates how to create a role named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K5WYd8EI1o7MhCx3TXTcZkYXn9y",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The role name must start with a letter and can only include uppercase or lowercase letters, numbers, and underscores.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L51Cd57rRsy75UboOQMcmJm3nHg",
+        "block_type": 49,
+        "children": [
+          "G2Fzd2XX3obfO1xWPWWcbdEcnhd",
+          "TKaZdbLSLoaT3lxbpwacX33InEd",
+          "ElESdUsRaodBmgxZ0xScmL3QnFg",
+          "NyHMdPON4oSgOKxErQfcibwDnLb"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "G2Fzd2XX3obfO1xWPWWcbdEcnhd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\nclient.create_role(role_name=\"role_a\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": true
+          }
+        },
+        "parent_id": "L51Cd57rRsy75UboOQMcmJm3nHg"
+      },
+      {
+        "block_id": "TKaZdbLSLoaT3lxbpwacX33InEd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.CreateRoleReq;\nCreateRoleReq createRoleReq = CreateRoleReq.builder()\n        .roleName(\"role_a\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "       ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": true
+          }
+        },
+        "parent_id": "L51Cd57rRsy75UboOQMcmJm3nHg"
+      },
+      {
+        "block_id": "ElESdUsRaodBmgxZ0xScmL3QnFg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.createRole(createRoleReq);\nconst { MilvusClient, DataType } = require(\"@zilliz/milvus2-sdk-node\")\n\nawait milvusClient.createRole({\n   roleName: 'role_a',\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": true
+          }
+        },
+        "parent_id": "L51Cd57rRsy75UboOQMcmJm3nHg"
+      },
+      {
+        "block_id": "NyHMdPON4oSgOKxErQfcibwDnLb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/create\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": true
+          }
+        },
+        "parent_id": "L51Cd57rRsy75UboOQMcmJm3nHg"
+      },
+      {
+        "block_id": "IpxYdjayKoVDzCxlBruclniHnpe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "B8e5dJvdBoKQFNxVPjpccICinPg",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After creating several roles, you can list and view all existing roles.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VCTGdT0dyskxWqbRIvycu04Znqc",
+        "block_type": 49,
+        "children": [
+          "Gt1xdIEDMohKSlxNMxxcQdLCnRe",
+          "Y8lsdIeTgoWLHOxBgmgcoZWqnIc",
+          "LpDIdY1wooMesPx5Oz3cSREinYf",
+          "ZKK6dMEPIopXssx27ZOc5EZLnWc"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "Gt1xdIEDMohKSlxNMxxcQdLCnRe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.list_roles()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "VCTGdT0dyskxWqbRIvycu04Znqc"
+      },
+      {
+        "block_id": "Y8lsdIeTgoWLHOxBgmgcoZWqnIc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List<String> roles = client.listRoles();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "VCTGdT0dyskxWqbRIvycu04Znqc"
+      },
+      {
+        "block_id": "LpDIdY1wooMesPx5Oz3cSREinYf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const { MilvusClient, DataType } = require(\"@zilliz/milvus2-sdk-node\")\n\nawait milvusClient.listRoles(\n    includeUserInfo: True\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "VCTGdT0dyskxWqbRIvycu04Znqc"
+      },
+      {
+        "block_id": "ZKK6dMEPIopXssx27ZOc5EZLnWc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/list\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "-d '{}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "VCTGdT0dyskxWqbRIvycu04Znqc"
+      },
+      {
+        "block_id": "MOjadaYVGopHHkxHn3lc6bODnjb",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below is an example output. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is the new role that is just created.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VYBAdWRWYsJ3rfbO4MQcsJ5cnIf",
+        "block_type": 49,
+        "children": [
+          "MTQQdndSEorI07xpAhEcXCDDnOd"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "MTQQdndSEorI07xpAhEcXCDDnOd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "['role_a']",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "VYBAdWRWYsJ3rfbO4MQcsJ5cnIf"
+      },
+      {
+        "block_id": "ItOkdA8s9oRpQkxTWH5cylc9nme",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grant a privilege or a privilege group to a role",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "N0dTdgoEhoj0LUxYr5nc5mJPnhe",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In Zilliz Cloud, you can grant the followings to a role:",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A9W9dc1pKoN2izxUdhIcJIXNnyg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Privilege",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "s:",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Zilliz Cloud provides various types of privileges. For details, refer to ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "All privileges",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FNitBwKVzzi0hXBkjdDFcfwRsngb%23WAbYdCNploRU49xdlcZcbCXxnwh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "Y4cMdZAcwo3O5Px4tlVc4qiFnFh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Built-in privilege groups",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Zilliz Cloud offers 9 built-in privilege groups. For details about the specific privileges included in each built-in privilege group, refer to ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Built-in privilege groups",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FNitBwKVzzi0hXBkjdDFcfwRsngb%23JDwcdSbOgoT4duxNEe3cnQOXnrb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "PwwHdiHW8oQLWhxDfYycaxNRn5g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Custom",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " privilege groups",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " If the built-in privileges do not meet your needs, you can combine different privileges to create your own custom privilege groups. For details, refer to ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Custom privilege groups",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FNitBwKVzzi0hXBkjdDFcfwRsngb%23VNjRdzwYPoHl0ExcqEIc5g1kn8f"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "UhRjdyMYBob1A5xBya7cnfIEnOb",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "FtL1dP3PooDYJmxJkTdcRTdnnwd",
+          "LTyWdknYTo4gk8xiowKcC2rhn2d"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "FtL1dP3PooDYJmxJkTdcRTdnnwd",
+        "block_type": 2,
+        "parent_id": "UhRjdyMYBob1A5xBya7cnfIEnOb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LTyWdknYTo4gk8xiowKcC2rhn2d",
+        "block_type": 2,
+        "parent_id": "UhRjdyMYBob1A5xBya7cnfIEnOb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you need to grant specific privileges and custom privilege groups to a role, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "create a support ticket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fsupport.zilliz.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " first so that we can enable this feature for you.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BT3hdND5doLifhx1nEZcN1nYnkc",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example demonstrates how to grant the privilege ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PrivilegeSearch",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection_01",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " under the ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " database as well as a custom privilege group named ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "privilege_group_1",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to the role ",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P8EVdDqHXstHbrbdtkGc7t5Lngf",
+        "block_type": 49,
+        "children": [
+          "RBzXdQN6DoYQ4txpvm5cB3IEn9d",
+          "T4BcdTtSJohzK6xx4uicq0D6nzc",
+          "IbNxdoZ4boicccxColVcDNEknXY",
+          "P1RndSMfHoS7oLxLJ4iclQUonKd",
+          "HEQ1d2fIXo5beOx6Rxrc6Lcsnjb"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "RBzXdQN6DoYQ4txpvm5cB3IEn9d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\nclient.grant_privilege_v2(\n    role_name=\"role_a\",\n    privilege=\"Search\",\n    collection_name='collection_01',\n    db_name='default',\n)\n    \nclient.grant_privilege_v2(\n    role_name=\"role_a\",\n    privilege=\"privilege_group_1\",\n    collection_name='collection_01',\n    db_name='default',\n)\n\nclient.grant_privilege_v2(\n    role_name=\"role_a\",\n    privilege=\"ClusterReadOnly\",\n    collection_name='*',\n    db_name='*',\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "P8EVdDqHXstHbrbdtkGc7t5Lngf"
+      },
+      {
+        "block_id": "T4BcdTtSJohzK6xx4uicq0D6nzc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.GrantPrivilegeReqV2\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".grantPrivilegeV2(GrantPrivilegeReqV2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .privilege(\"Search\")\n        .collectionName(\"collection_01\")\n        .dbName(\"default\")\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".grantPrivilegeV2(GrantPrivilegeReqV2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .privilege(\"privilege_group_1\")\n        .collectionName(\"collection_01\")\n        .dbName(\"default\")\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".grantPrivilegeV2(GrantPrivilegeReqV2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .privilege(\"ClusterReadOnly\")\n        .collectionName(\"*\")\n        .dbName(\"*\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "P8EVdDqHXstHbrbdtkGc7t5Lngf"
+      },
+      {
+        "block_id": "IbNxdoZ4boicccxColVcDNEknXY",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n    \"context\"\n    \"fmt\"\n\n    \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n)\n\nctx, cancel := context.WithCancel(context.Background())\ndefer cancel()\n\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: \"localhost:19530\",\n    APIKey:  \"root:Milvus\",\n})\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\ndefer client.Close(ctx)\n\nerr = client.GrantV2(ctx, milvusclient.NewGrantV2Option(\"role_a\", \"Search\", \"default\", \"collection_01\"))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nerr = client.GrantV2(ctx, milvusclient.NewGrantV2Option(\"role_a\", \"privilege_group_1\", \"default\", \"collection_01\"))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nerr = client.GrantV2(ctx, milvusclient.NewGrantV2Option(\"role_a\", \"ClusterReadOnly\", \"*\", \"*\"))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": true
+          }
+        },
+        "parent_id": "P8EVdDqHXstHbrbdtkGc7t5Lngf"
+      },
+      {
+        "block_id": "P1RndSMfHoS7oLxLJ4iclQUonKd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const { MilvusClient, DataType } = require(\"@zilliz/milvus2-sdk-node\")\n\nconst address = \"http://localhost:19530\";\nconst token = \"root:Milvus\";\nconst client = new MilvusClient({address, token});\n\nawait client.grantPrivilegeV2({\n    role: \"role_a\",\n    privilege: \"Search\"\n    collection_name: 'collection_01'\n    db_name: 'default',\n});\n    \nawait client.grantPrivilegeV2({\n    role: \"role_a\",\n    privilege: \"privilege_group_1\"\n    collection_name: 'collection_01'\n    db_name: 'default',\n});\n\nawait client.grantPrivilegeV2({\n    role: \"role_a\",\n    privilege: \"ClusterReadOnly\"\n    collection_name: '*'\n    db_name: '*',\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "P8EVdDqHXstHbrbdtkGc7t5Lngf"
+      },
+      {
+        "block_id": "HEQ1d2fIXo5beOx6Rxrc6Lcsnjb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/grant_privilege_v2\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\",\n    \"privilege\": \"Search\",\n    \"collectionName\": \"collection_01\",\n    \"dbName\":\"default\"\n}'\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/grant_privilege_v2\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\",\n    \"privilege\": \"privilege_group_1\",\n    \"collectionName\": \"collection_01\",\n    \"dbName\":\"default\"\n}'\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/grant_privilege_v2\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\",\n    \"privilege\": \"ClusterReadOnly\",\n    \"collectionName\": \"*\",\n    \"dbName\":\"*\"\n}'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "P8EVdDqHXstHbrbdtkGc7t5Lngf"
+      },
+      {
+        "block_id": "OZEDd7Eqso2Qc4xC0c3c7vPOnvd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Describe a role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "DSLudEHvLoUb7lxgPdYcZu9Pnzd",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example demonstrates how to view the privileges granted to the role ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " using the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "describe_role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " method.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LuXIdmRWosCinsbP8sLckNxanWc",
+        "block_type": 49,
+        "children": [
+          "AJQjd2wMNoIxkSxT8oycAOoYnzb",
+          "INrSd2XEBoaRn6xDAsQcGlzInwc",
+          "CmFNdgtZJoGTajxnFyDc2HVSn9e",
+          "An8fdLVlnoeKFaxPuz6c6Mcfn0b",
+          "WebTd2fGyoj6QoxzCZbcpMsynGd"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "AJQjd2wMNoIxkSxT8oycAOoYnzb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.describe_role(role_name=\"role_a\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "LuXIdmRWosCinsbP8sLckNxanWc"
+      },
+      {
+        "block_id": "INrSd2XEBoaRn6xDAsQcGlzInwc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import \"github.com/milvus-io/milvus-sdk-go/v2/client\"\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.ListRoles(context.Background())",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": true
+          }
+        },
+        "parent_id": "LuXIdmRWosCinsbP8sLckNxanWc"
+      },
+      {
+        "block_id": "CmFNdgtZJoGTajxnFyDc2HVSn9e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.response.DescribeRoleResp;\nimport io.milvus.v2.service.rbac.request.DescribeRoleReq\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeRoleReq describeRoleReq = DescribeRoleReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeRoleResp resp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".describeRole(describeRoleReq);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<DescribeRoleResp.GrantInfo> infos = resp.getGrantInfos();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "LuXIdmRWosCinsbP8sLckNxanWc"
+      },
+      {
+        "block_id": "An8fdLVlnoeKFaxPuz6c6Mcfn0b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const { MilvusClient, DataType } = require(\"@zilliz/milvus2-sdk-node\")\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "await milvusClient.describeRole({roleName: 'role_a'});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "LuXIdmRWosCinsbP8sLckNxanWc"
+      },
+      {
+        "block_id": "WebTd2fGyoj6QoxzCZbcpMsynGd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/describe\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "LuXIdmRWosCinsbP8sLckNxanWc"
+      },
+      {
+        "block_id": "D1qBdsrczoVUzTxpbZ9cyXdinFe",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below is an example output. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vv9LdWrQqsN3lHb7lxBcbpwunWb",
+        "block_type": 49,
+        "children": [
+          "Je1hdYHU5o98XlxG0jscLGuNn5d"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "Je1hdYHU5o98XlxG0jscLGuNn5d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n     \"role\": \"role_a\",\n     \"privileges\": [\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "         \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"\n     ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Vv9LdWrQqsN3lHb7lxBcbpwunWb"
+      },
+      {
+        "block_id": "IpcndmtwYoZ6hLxatgdc2ldonTc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Revoke a privilege or a privilege group from a role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "BLQXdFtkGow3a1x7X52c9U7enNf",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example demonstrates how to revoke the privilege ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PrivilegeSearch",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection_01",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " under the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " database as well as the privilege group ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "privilege_group_1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that have been granted to the role ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PZEedjw5jsDISfbO6mLcnd6unQe",
+        "block_type": 49,
+        "children": [
+          "UFXDdM3RToG2msxucALcT5wqngd",
+          "A9WLdmJxOoeeQRxTcVQcap3Qndh",
+          "UkNYd3USZoOlrYx3ZgXcZPvPnhc",
+          "G1uodzZnGoF5QDxedp8ciM1onPc",
+          "X5FFdg540oyxH6xWTwwcJJXxnic"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "UFXDdM3RToG2msxucALcT5wqngd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.revoke_privilege_v2(\n    role_name=\"role_a\",\n    privilege=\"Search\",\n    collection_name='collection_01',\n    db_name='default',\n)\n    \nclient.revoke_privilege_v2(\n    role_name=\"role_a\",\n    privilege=\"privilege_group_1\",\n    collection_name='collection_01',\n    db_name='default',\n)\n\nclient.revoke_privilege_v2(\n    role_name=\"role_a\",\n    privilege=\"ClusterReadOnly\",\n    collection_name='*',\n    db_name='*',\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": true
+          }
+        },
+        "parent_id": "PZEedjw5jsDISfbO6mLcnd6unQe"
+      },
+      {
+        "block_id": "A9WLdmJxOoeeQRxTcVQcap3Qndh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.RevokePrivilegeReqV2\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".revokePrivilegeV2(RevokePrivilegeReqV2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .privilege(\"Search\")\n        .collectionName(\"collection_01\")\n        .dbName(\"default\")\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".revokePrivilegeV2(RevokePrivilegeReqV2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .privilege(\"privilege_group_1\")\n        .collectionName(\"collection_01\")\n        .dbName(\"default\")\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".revokePrivilegeV2(RevokePrivilegeReqV2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .roleName(\"role_a\")\n        .privilege(\"ClusterReadOnly\")\n        .collectionName(\"*\")\n        .dbName(\"*\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "PZEedjw5jsDISfbO6mLcnd6unQe"
+      },
+      {
+        "block_id": "UkNYd3USZoOlrYx3ZgXcZPvPnhc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "err = client.RevokePrivilegeV2(ctx, milvusclient.NewRevokePrivilegeV2Option(\"role_a\", \"Search\", \"collection_01\").\n        WithDbName(\"default\"))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nerr = client.RevokePrivilegeV2(ctx, milvusclient.NewRevokePrivilegeV2Option(\"role_a\", \"privilege_group_1\", \"collection_01\").\n    WithDbName(\"default\"))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nerr = client.RevokePrivilegeV2(ctx, milvusclient.NewRevokePrivilegeV2Option(\"role_a\", \"ClusterReadOnly\", \"*\").\n    WithDbName(\"*\"))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": true
+          }
+        },
+        "parent_id": "PZEedjw5jsDISfbO6mLcnd6unQe"
+      },
+      {
+        "block_id": "G1uodzZnGoF5QDxedp8ciM1onPc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "await client.revokePrivilegeV2({\n    role: 'role_a',\n    privilege: 'Search',\n    collection_name: 'collection_01',\n    db_name: 'default'\n});\n\nawait client.revokePrivilegeV2({\n    role: 'role_a',\n    collection_name: 'collection_01',\n    privilege: 'Search',\n    db_name: 'default'\n});\n\nawait client.revokePrivilegeV2({\n    role: 'role_a',\n    collection_name: '*',\n    privilege: 'ClusterReadOnly',\n    db_name: '*'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "PZEedjw5jsDISfbO6mLcnd6unQe"
+      },
+      {
+        "block_id": "X5FFdg540oyxH6xWTwwcJJXxnic",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/revoke_privilege_v2\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\",\n    \"privilege\": \"Search\",\n    \"collectionName\": \"collection_01\",\n    \"dbName\":\"default\"\n}'\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/revoke_privilege_v2\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\",\n    \"privilege\": \"Search\",\n    \"collectionName\": \"collection_01\",\n    \"dbName\":\"default\"\n}'\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/revoke_privilege_v2\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\",\n    \"privilege\": \"ClusterReadOnly\",\n    \"collectionName\": \"*\",\n    \"dbName\":\"*\"\n}'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PZEedjw5jsDISfbO6mLcnd6unQe"
+      },
+      {
+        "block_id": "MvuxdwYTooL1W5xyXyfcaUPsncc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Drop a role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "DRqzdxspooVji7xY4Nbc4wCSnNf",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example demonstrates how to drop the role ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HTjEdol4JoY9fRxEwzIcFy2NnXc",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "XP1ldtumfoayjbxU87Vc8aHJnAh",
+          "PD6PdDTOaooH0LxLC3NcUTQEn3b"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc"
+      },
+      {
+        "block_id": "XP1ldtumfoayjbxU87Vc8aHJnAh",
+        "block_type": 2,
+        "parent_id": "HTjEdol4JoY9fRxEwzIcFy2NnXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PD6PdDTOaooH0LxLC3NcUTQEn3b",
+        "block_type": 2,
+        "parent_id": "HTjEdol4JoY9fRxEwzIcFy2NnXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The built-in role ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "admin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " cannot be dropped.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V9OLdwFhksTEEzbWljxczLJYnGh",
+        "block_type": 49,
+        "children": [
+          "IDoAdYNoCoAEbVxZAIbcCS2Tn2c",
+          "Kx6Vdqe00oID4rxFJSqcbyd1nHc",
+          "ZFcQdFAfYo7NIqxVhY1cpT91n5q",
+          "JttXdkQUjojfJ7x5ySBcVZ3Pnrc"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "IDoAdYNoCoAEbVxZAIbcCS2Tn2c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.drop_role(role_name=\"role_a\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "V9OLdwFhksTEEzbWljxczLJYnGh"
+      },
+      {
+        "block_id": "Kx6Vdqe00oID4rxFJSqcbyd1nHc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.DropRoleReq\n\nDropRoleReq dropRoleReq = DropRoleReq.builder()\n        .roleName(\"role_a\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.dropRole(dropRoleReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "V9OLdwFhksTEEzbWljxczLJYnGh"
+      },
+      {
+        "block_id": "ZFcQdFAfYo7NIqxVhY1cpT91n5q",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const { MilvusClient, DataType } = require(\"@zilliz/milvus2-sdk-node\")\n\nmilvusClient.dropRole({\n   roleName: 'role_a',\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " })",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "V9OLdwFhksTEEzbWljxczLJYnGh"
+      },
+      {
+        "block_id": "JttXdkQUjojfJ7x5ySBcVZ3Pnrc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/drop\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"roleName\": \"role_a\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "V9OLdwFhksTEEzbWljxczLJYnGh"
+      },
+      {
+        "block_id": "D9tQdZYFIoByCdxDpfCcUHrinWc",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the role is dropped, you can list all existing roles to check if the drop operation is successful. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SYjFdlg4vsontebfJGncAMNCnBh",
+        "block_type": 49,
+        "children": [
+          "UArDd3yI3oltYUxxfbwc3zpcnWc",
+          "IqDcdC4a4ogovfxsVhpcce0BnOd",
+          "HqBqdOYP1oPd5gxBsAZcuTAWnwf",
+          "R3bvdbUEwoxCVYxXtjMcULGinrc"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "UArDd3yI3oltYUxxfbwc3zpcnWc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.list_roles()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SYjFdlg4vsontebfJGncAMNCnBh"
+      },
+      {
+        "block_id": "IqDcdC4a4ogovfxsVhpcce0BnOd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List<String> resp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".listRoles();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "SYjFdlg4vsontebfJGncAMNCnBh"
+      },
+      {
+        "block_id": "HqBqdOYP1oPd5gxBsAZcuTAWnwf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const { MilvusClient, DataType } = require(\"@zilliz/milvus2-sdk-node\")\n\nmilvusClient.listRoles(\n    includeUserInfo: True\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "SYjFdlg4vsontebfJGncAMNCnBh"
+      },
+      {
+        "block_id": "R3bvdbUEwoxCVYxXtjMcULGinrc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/roles/list\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "-d '{}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "SYjFdlg4vsontebfJGncAMNCnBh"
+      },
+      {
+        "block_id": "VexWdogPyo3zFAxLymBcbpzunCb",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below is an example output. There is no ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "role_a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the list. The drop operation is successful.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N3lpdHnPIsiq5AbCs5fc7PvnnXg",
+        "block_type": 49,
+        "children": [
+          "IflTdp7IzouGwuxWLUZcWZs8nbh"
+        ],
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "IflTdp7IzouGwuxWLUZcWZs8nbh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "['admin']",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "N3lpdHnPIsiq5AbCs5fc7PvnnXg"
+      },
+      {
+        "block_id": "PY8Sdx1awoct2dxX5gic19DnnXb",
+        "block_type": 2,
+        "parent_id": "V9zpdEbjyoHjY1x54Plcfh3unFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 78
+  }
+}

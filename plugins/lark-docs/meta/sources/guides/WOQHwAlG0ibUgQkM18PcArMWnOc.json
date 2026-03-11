@@ -1,0 +1,1403 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1749192487",
+  "node_token": "WOQHwAlG0ibUgQkM18PcArMWnOc",
+  "node_type": "origin",
+  "obj_create_time": "1749192487",
+  "obj_edit_time": "1749194870",
+  "obj_token": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+  "obj_type": "docx",
+  "origin_node_token": "WOQHwAlG0ibUgQkM18PcArMWnOc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "KmYgwHNOFiPQ9sk4bSDcMuIHnjC",
+  "space_id": "7167193056431783939",
+  "title": "Required GCP API Services",
+  "slug": "required-api-services-gcp",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+        "block_type": 1,
+        "children": [
+          "ICYvdgRYIoIVFhxb3khc7qKEnFf",
+          "LgP1dESnPoymlbxnXWwcVbN8nqd",
+          "LHMpd8NKPo5S7VxrqMbckzFJnle",
+          "SyMGdYky0of3xlxIiRXcTP1Entc",
+          "Fq7GdrWiGo54bbxQRsWcelDJnhP",
+          "YkVpd4p7cosueExCBlocA01WnJh",
+          "M0dfdBaXBoviduxQZScc4Xzbntf",
+          "QPhNdl648oepX3xoLUAcD59Snzf",
+          "Qz6tdDfqeoOMrKxVhZOcrsahnIe",
+          "UIY2d7mL7okpmTxkjsXc6JYIn7f",
+          "NE3zdHFOBoY9pxxOxjQcm91an3c",
+          "TgEldEw5po1swoxtEFjc7Jubnib",
+          "A5dddUBdMo8P3RxpIoActAFyn0e",
+          "DV4kd6eQhoG282xzMW4cie57nXc",
+          "IUc2dMDUeoz2xPxxNBZc3Uytnse",
+          "EeGod0qieoGXWJxAD9oceCo8ndh",
+          "O76jdZyr7oA7FZxceC6cLWZtndg",
+          "GhhSdAjxMo5y08xrUlKcDEjIn1b"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required GCP API Services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "ICYvdgRYIoIVFhxb3khc7qKEnFf",
+        "block_type": 2,
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page lists the Google Cloud Platform (GCP) API services required to create GCP resources using the Zilliz Cloud Terraform Provider and provides several ways to enable them.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LgP1dESnPoymlbxnXWwcVbN8nqd",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "ZqITdLfA2oBcV5x6cZrcFHW4nbH",
+          "NkOgdLmmcoL3HkxJl8zchvIonwh"
+        ],
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "ZqITdLfA2oBcV5x6cZrcFHW4nbH",
+        "block_type": 2,
+        "parent_id": "LgP1dESnPoymlbxnXWwcVbN8nqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NkOgdLmmcoL3HkxJl8zchvIonwh",
+        "block_type": 2,
+        "parent_id": "LgP1dESnPoymlbxnXWwcVbN8nqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz BYOC is currently available in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "General Availability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For access and implementation details, please contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud sales",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LHMpd8NKPo5S7VxrqMbckzFJnle",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required API services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "block_type": 31,
+        "children": [
+          "MpBIdmMxco0RqbxBezycRSjvnsE",
+          "DhX6d489koXTmIxaEcGchDgznog",
+          "F7uzdgTIIoNmGHxm7kWcwv3dnko",
+          "B3YBdmsYooeGmJxdnY9cZGKvnIc",
+          "CO1xdXjD1ob3trx8kA8cqWohnjc",
+          "HJJYdUWcmoXfLqx5wDBcvV1Pnhd",
+          "Vuv7dmxVnoZfeJxOAVVcxPSEnCd",
+          "WlTOdbOBkomuOoxiRlrchp8Jnyg",
+          "POWfdST6yoy22DxSEcVchRaVnJf",
+          "IPKEdAKYNopZR0xY9sRcwI9Hnib",
+          "CUCIdieeHoHkQcxywxBc6aMgnUg",
+          "EzpwdYShlo60ENxJHm2cAIwdnpd",
+          "FS08dt057ofuXkxj61xc4d58njd",
+          "Z6m5dy2THoFnOFxPYg6cRKdxnld"
+        ],
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+        "table": {
+          "cells": [
+            "MpBIdmMxco0RqbxBezycRSjvnsE",
+            "DhX6d489koXTmIxaEcGchDgznog",
+            "F7uzdgTIIoNmGHxm7kWcwv3dnko",
+            "B3YBdmsYooeGmJxdnY9cZGKvnIc",
+            "CO1xdXjD1ob3trx8kA8cqWohnjc",
+            "HJJYdUWcmoXfLqx5wDBcvV1Pnhd",
+            "Vuv7dmxVnoZfeJxOAVVcxPSEnCd",
+            "WlTOdbOBkomuOoxiRlrchp8Jnyg",
+            "POWfdST6yoy22DxSEcVchRaVnJf",
+            "IPKEdAKYNopZR0xY9sRcwI9Hnib",
+            "CUCIdieeHoHkQcxywxBc6aMgnUg",
+            "EzpwdYShlo60ENxJHm2cAIwdnpd",
+            "FS08dt057ofuXkxj61xc4d58njd",
+            "Z6m5dy2THoFnOFxPYg6cRKdxnld"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              286,
+              534
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 7
+          }
+        }
+      },
+      {
+        "block_id": "MpBIdmMxco0RqbxBezycRSjvnsE",
+        "block_type": 32,
+        "children": [
+          "MgpfdpjB7oVcvvxUWxJcY6M1n2b"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MgpfdpjB7oVcvvxUWxJcY6M1n2b",
+        "block_type": 2,
+        "parent_id": "MpBIdmMxco0RqbxBezycRSjvnsE",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "API Services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DhX6d489koXTmIxaEcGchDgznog",
+        "block_type": 32,
+        "children": [
+          "DChFdT4oEoANBexRv4Pcf6cNnOh"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DChFdT4oEoANBexRv4Pcf6cNnOh",
+        "block_type": 2,
+        "parent_id": "DhX6d489koXTmIxaEcGchDgznog",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Purpose",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F7uzdgTIIoNmGHxm7kWcwv3dnko",
+        "block_type": 32,
+        "children": [
+          "JkZddYeGeo7HnzxmmrAcqqxEneb"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JkZddYeGeo7HnzxmmrAcqqxEneb",
+        "block_type": 2,
+        "parent_id": "F7uzdgTIIoNmGHxm7kWcwv3dnko",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compute.googleapis.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fcompute.googleapis.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B3YBdmsYooeGmJxdnY9cZGKvnIc",
+        "block_type": 32,
+        "children": [
+          "R9kedDQ0XoB6nTx6RIBcWjWWnba"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "R9kedDQ0XoB6nTx6RIBcWjWWnba",
+        "block_type": 2,
+        "parent_id": "B3YBdmsYooeGmJxdnY9cZGKvnIc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "VPC, subnets, and networking resources",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CO1xdXjD1ob3trx8kA8cqWohnjc",
+        "block_type": 32,
+        "children": [
+          "ImiYdsc2woHzw0xIWbqcWwbEnWb"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ImiYdsc2woHzw0xIWbqcWwbEnWb",
+        "block_type": 2,
+        "parent_id": "CO1xdXjD1ob3trx8kA8cqWohnjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "container.googleapis.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fcontainer.googleapis.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HJJYdUWcmoXfLqx5wDBcvV1Pnhd",
+        "block_type": 32,
+        "children": [
+          "GVMod7LPYoNCVyxyUOBcww9jnpb"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GVMod7LPYoNCVyxyUOBcww9jnpb",
+        "block_type": 2,
+        "parent_id": "HJJYdUWcmoXfLqx5wDBcvV1Pnhd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GKE cluster management",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vuv7dmxVnoZfeJxOAVVcxPSEnCd",
+        "block_type": 32,
+        "children": [
+          "ZEyldIg8uoAGkOxuDR9cr6PWnXc"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZEyldIg8uoAGkOxuDR9cr6PWnXc",
+        "block_type": 2,
+        "parent_id": "Vuv7dmxVnoZfeJxOAVVcxPSEnCd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "storage.googleapis.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fstorage.googleapis.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WlTOdbOBkomuOoxiRlrchp8Jnyg",
+        "block_type": 32,
+        "children": [
+          "VItVdanMLoQ7B3xmUMPc7HGCnSb"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VItVdanMLoQ7B3xmUMPc7HGCnSb",
+        "block_type": 2,
+        "parent_id": "WlTOdbOBkomuOoxiRlrchp8Jnyg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GCS bucket operations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "POWfdST6yoy22DxSEcVchRaVnJf",
+        "block_type": 32,
+        "children": [
+          "Vg40d0FqpoOm8GxU0kwcgUM9nOh"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Vg40d0FqpoOm8GxU0kwcgUM9nOh",
+        "block_type": 2,
+        "parent_id": "POWfdST6yoy22DxSEcVchRaVnJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "iam.googleapis.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fiam.googleapis.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IPKEdAKYNopZR0xY9sRcwI9Hnib",
+        "block_type": 32,
+        "children": [
+          "BBc3dcFfRo9ogOx6Jedcv4IdnWG"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BBc3dcFfRo9ogOx6Jedcv4IdnWG",
+        "block_type": 2,
+        "parent_id": "IPKEdAKYNopZR0xY9sRcwI9Hnib",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Service accounts and IAM roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CUCIdieeHoHkQcxywxBc6aMgnUg",
+        "block_type": 32,
+        "children": [
+          "KQLPdVhUJoqBGvxlHJJcMentnFd"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KQLPdVhUJoqBGvxlHJJcMentnFd",
+        "block_type": 2,
+        "parent_id": "CUCIdieeHoHkQcxywxBc6aMgnUg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "servicenetworking.googleapis.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fservicenetworking.googleapis.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EzpwdYShlo60ENxJHm2cAIwdnpd",
+        "block_type": 32,
+        "children": [
+          "HSDEdGDU2o9c1jxKjjjcOO8OnAe"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HSDEdGDU2o9c1jxKjjjcOO8OnAe",
+        "block_type": 2,
+        "parent_id": "EzpwdYShlo60ENxJHm2cAIwdnpd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Private Service Connect and VPC peering",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FS08dt057ofuXkxj61xc4d58njd",
+        "block_type": 32,
+        "children": [
+          "HEAOd6oRtonwwQx9Y2ScxH3En9d"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HEAOd6oRtonwwQx9Y2ScxH3En9d",
+        "block_type": 2,
+        "parent_id": "FS08dt057ofuXkxj61xc4d58njd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "cloudresourcemanager.googleapis.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fcloudresourcemanager.googleapis.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z6m5dy2THoFnOFxPYg6cRKdxnld",
+        "block_type": 32,
+        "children": [
+          "AoEfdLNAAoWGNrxAT5fc1lgAnDe"
+        ],
+        "parent_id": "SyMGdYky0of3xlxIiRXcTP1Entc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AoEfdLNAAoWGNrxAT5fc1lgAnDe",
+        "block_type": 2,
+        "parent_id": "Z6m5dy2THoFnOFxPYg6cRKdxnld",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Project-level permissions and IAM",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fq7GdrWiGo54bbxQRsWcelDJnhP",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enable required API services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "YkVpd4p7cosueExCBlocA01WnJh",
+        "block_type": 2,
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can enable these API services on the GCP console or using the gcloud CLI by referring to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "this document",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fendpoints%2Fdocs%2Fopenapi%2Fenable-api%23enabling_an_api"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for detailed procedures. To enable the above-listed API services using the gcloud CLI, do as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M0dfdBaXBoviduxQZScc4Xzbntf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "gcloud services enable \\\n  compute.googleapis.com \\\n  container.googleapis.com \\\n  storage.googleapis.com \\\n  iam.googleapis.com \\\n  servicenetworking.googleapis.com \\\n  cloudresourcemanager.googleapis.com \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  --project=PROJECT_ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 60,
+            "wrap": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "QPhNdl648oepX3xoLUAcD59Snzf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Fk01dJVePoFDKhx90ClccKhTnUd",
+          "GL1BdxXncoLcE7xZHK2cOmzDnpb",
+          "PXmbdwOeYoW4VFxJAYccf51bnIe"
+        ],
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "Fk01dJVePoFDKhx90ClccKhTnUd",
+        "block_type": 2,
+        "parent_id": "QPhNdl648oepX3xoLUAcD59Snzf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GL1BdxXncoLcE7xZHK2cOmzDnpb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before running the above command, ensure you have sufficient permissions to enable these services. Otherwise, ask a security admin in your GCP project first.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QPhNdl648oepX3xoLUAcD59Snzf"
+      },
+      {
+        "block_id": "PXmbdwOeYoW4VFxJAYccf51bnIe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You must replace ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PROJECT_ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the above command with your GCP project ID.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QPhNdl648oepX3xoLUAcD59Snzf"
+      },
+      {
+        "block_id": "Qz6tdDfqeoOMrKxVhZOcrsahnIe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verify the results",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "UIY2d7mL7okpmTxkjsXc6JYIn7f",
+        "block_type": 2,
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can check whether the above-listed API services are enabled on the GCP console or using the gcloud CLI.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NE3zdHFOBoY9pxxOxjQcm91an3c",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the GCP console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "TgEldEw5po1swoxtEFjc7Jubnib",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Visit the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API & Services Dashboard",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fconsole.cloud.google.com%2Fapis%2Fdashboard"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "A5dddUBdMo8P3RxpIoActAFyn0e",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Select your project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "DV4kd6eQhoG282xzMW4cie57nXc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Review enabled APIs in the library.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "IUc2dMDUeoz2xPxxNBZc3Uytnse",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Using the gcloud CLI",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "EeGod0qieoGXWJxAD9oceCo8ndh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "gcloud services list --enabled --project=PROJECT_ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "O76jdZyr7oA7FZxceC6cLWZtndg",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "JGMfdT88Mot0hjxLgqUcQxpNn9e",
+          "Z5dld1rbfopmNyxGamXcpTrqnMd"
+        ],
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf"
+      },
+      {
+        "block_id": "JGMfdT88Mot0hjxLgqUcQxpNn9e",
+        "block_type": 2,
+        "parent_id": "O76jdZyr7oA7FZxceC6cLWZtndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z5dld1rbfopmNyxGamXcpTrqnMd",
+        "block_type": 2,
+        "parent_id": "O76jdZyr7oA7FZxceC6cLWZtndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You must replace ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PROJECT_ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the above command with your GCP project ID.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GhhSdAjxMo5y08xrUlKcDEjIn1b",
+        "block_type": 2,
+        "parent_id": "VCfRd0GbBoLgtSx2xIHcQsrmnmf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 54
+  }
+}

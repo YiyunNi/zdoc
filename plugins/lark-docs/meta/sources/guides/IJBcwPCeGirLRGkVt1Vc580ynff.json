@@ -1,0 +1,3881 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1730796026",
+  "node_token": "IJBcwPCeGirLRGkVt1Vc580ynff",
+  "node_type": "origin",
+  "obj_create_time": "1730796026",
+  "obj_edit_time": "1767924173",
+  "obj_token": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+  "obj_type": "docx",
+  "origin_node_token": "IJBcwPCeGirLRGkVt1Vc580ynff",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "DsqzwjegpiYSdtk1k75c1zXsnZc",
+  "space_id": "7167193056431783939",
+  "title": "Create EKS IAM Role",
+  "slug": "create-eks-role",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "block_type": 1,
+        "children": [
+          "Ladxdjc0Zov0iRxfvbEcSLshnud",
+          "ByACdyzPSofelgxQwjKcxOIFnVe",
+          "T9nLdv6xOojMnExz0yCcHcIjnDe",
+          "FoN3dDgKHoSsVMxkL7Bc8A6tnbc",
+          "IUEvdZMGPouhdcxIl5hcmig2nub",
+          "NmMudzeMaoGJx8xm4h1cNCXpnCh",
+          "W2kSd8XmqoX3fvxOd13ctQ7zn1g",
+          "FpSTdGXSMoPUrOxdciSc8PvTnNd",
+          "UhAIdcyG3osTvkxMHPfcxab4nJh",
+          "KC72du4qqovplKxYot0cEmdQntg",
+          "N1umdiFV4oQmUFxhHkscIDJ0nGf",
+          "Tv3mdXYrCoQ5TxxzAjkcMVbpntz",
+          "OwyxdSpCQoISD9xUzXCc0k9hntb",
+          "KVEpdXhIeoGY17xzf7Zch1LrnMf",
+          "Yo4fd8GEfoS4rPxTUEWc95HJnGf",
+          "NzPgdQBrKoAoScxP79AcyF5yntD",
+          "NRHddsolwo2Mhnx7C6Vc3uF5n0b",
+          "Utx3dg8Zto8JBuxPVpVciFu0nrc",
+          "YqLmdQCnqo3EgWxNdcUciSB6nGh",
+          "Vb2HdmA7QoULhIxRGTPcbBj6n2d",
+          "S5gndNRdboNwNrxhJffcgUnjn0U",
+          "VjQEdk7t9oXEgSxYL3qc5oeYnDb",
+          "CxkvdNtVdofTBzxAsigcH2S1nWh",
+          "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+          "WaEGdCTBWou5J7xIOtdcWbHknQe",
+          "W8UadZ8YXo5BjOxfvPWc7K8wn0g",
+          "OP3QdG2tnoZZvhx4BoEcmKuanyh",
+          "GaPXd7D9koUNvVxIHd3cVEXRnpf",
+          "RKh6dNUHIoLzrSxMLvlcrzilnWb",
+          "LxK8dNsHbokzQrx1gZecnz2YnSf",
+          "OoK3d3xpboVrwFxShnDcHwafn5e",
+          "HmZWdEk7Worvdpx9luKc96GWnhg",
+          "Rd5vdnvTZowgKtxmyWHcKLTFnBc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create EKS IAM Role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Ladxdjc0Zov0iRxfvbEcSLshnud",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page describes how to create and configure an IAM role for Zilliz Cloud to deploy an EKS cluster for your Zilliz Cloud project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ByACdyzPSofelgxQwjKcxOIFnVe",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "CYTLdTdD9ouV3BxZegkcTjo4nzf",
+          "KiAcdMRaKo70sAxDDLQcNx3Gn2f"
+        ],
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "CYTLdTdD9ouV3BxZegkcTjo4nzf",
+        "block_type": 2,
+        "parent_id": "ByACdyzPSofelgxQwjKcxOIFnVe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KiAcdMRaKo70sAxDDLQcNx3Gn2f",
+        "block_type": 2,
+        "parent_id": "ByACdyzPSofelgxQwjKcxOIFnVe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz BYOC is currently available in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "General Availability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For access and implementation details, please contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud sales",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T9nLdv6xOojMnExz0yCcHcIjnDe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Procedure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "FoN3dDgKHoSsVMxkL7Bc8A6tnbc",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can use the AWS console to create the EKS role. As an alternative, you can use the Terraform script Zilliz Cloud provides to bootstrap the infrastructure for your Zilliz Cloud project on AWS. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Terraform Provider",
+                "token": "BX6iwjUzLi7udfksJoxc7jK1nsW",
+                "url": "https://zilliverse.feishu.cn/wiki/BX6iwjUzLi7udfksJoxc7jK1nsW"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IUEvdZMGPouhdcxIl5hcmig2nub",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 1: Create an IAM role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "NmMudzeMaoGJx8xm4h1cNCXpnCh",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this step, you will create an IAM role on AWS for Zilliz Cloud to manage EKS clusters on your behalf and paste the ARN of the role back to Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmb7llk244s2yppkpeo4oz85z\",\"isShowcase\":false}"
+        },
+        "block_id": "W2kSd8XmqoX3fvxOd13ctQ7zn1g",
+        "block_type": 40,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "FpSTdGXSMoPUrOxdciSc8PvTnNd",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UhAIdcyG3osTvkxMHPfcxab4nJh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Log into your AWS Console as a user with administrator privileges and go to the IAM dashboard.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "KC72du4qqovplKxYot0cEmdQntg",
+        "block_type": 13,
+        "comment_ids": [
+          "7450411148048597011"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Expand your account information",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7450411148048597011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and click the copy button at the start of your AWS Account ID.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "N1umdiFV4oQmUFxhHkscIDJ0nGf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Roles",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab in the left sidebar, and then click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create Role",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "Tv3mdXYrCoQ5TxxzAjkcMVbpntz",
+        "block_type": 13,
+        "children": [
+          "Te0vdh7vqo1pmPxdwcrcKozEnOh"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Select trusted entity",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", click the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Custom trust policy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tile. In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Common trust policy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", paste the trust JSON from below into the editor in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Custom trust policy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section and replace ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{accountId}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with your ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS Account ID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "Te0vdh7vqo1pmPxdwcrcKozEnOh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"Version\" : \"2012-10-17\",\n    \"Statement\" : [\n      {\n        \"Effect\" : \"Allow\",\n        \"Principal\" : {\n          \"Service\" : \"eks-nodegroup.amazonaws.com\"\n        },\n        \"Action\" : \"sts:AssumeRole\"\n      },\n      {\n        \"Sid\" : \"EKSClusterAssumeRole\",\n        \"Effect\" : \"Allow\",\n        \"Principal\" : {\n          \"Service\" : \"eks.amazonaws.com\"\n        },\n        \"Action\" : \"sts:AssumeRole\"\n      },\n      {\n        \"Sid\" : \"EKSNodeAssumeRole\",\n        \"Effect\" : \"Allow\",\n        \"Principal\" : {\n          \"Service\" : \"ec2.amazonaws.com\"\n        },\n        \"Action\" : \"sts:AssumeRole\"\n      },\n      {\n        \"Effect\" : \"Allow\",\n        \"Principal\" : {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "          \"Federated\" : \"arn:aws:iam::",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "account",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "I",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "d",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":oidc-provider/eks_oidc_url\"\n        },\n        \"Action\" : \"sts:AssumeRoleWithWebIdentity\",\n        \"Condition\" : {\n          \"StringEquals\" : {\n            \"eks_oidc_url:aud\" : \"sts.amazonaws.com\",\n            \"eks_oidc_url:sub\" : \"system:serviceaccount:kube-system:aws-load-balancer-controller\"\n          }\n        }\n      },\n      {\n        \"Effect\" : \"Allow\",\n        \"Principal\" : {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "          \"Federated\" : \"arn:aws:iam::",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{accountId}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":oidc-provider/eks_oidc_url\"\n        },\n        \"Action\" : \"sts:AssumeRoleWithWebIdentity\",\n        \"Condition\" : {\n          \"StringEquals\" : {\n            \"eks_oidc_url:sub\" : \"system:serviceaccount:kube-system:ebs-csi-controller-sa\",\n            \"eks_oidc_url:aud\" : \"sts.amazonaws.com\"\n          }\n        }\n      },\n      {\n        \"Effect\" : \"Allow\",\n        \"Principal\" : {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "          \"Federated\" : \"arn:aws:iam::",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{accountId}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":oidc-provider/eks_oidc_url\"\n        },\n        \"Action\" : \"sts:AssumeRoleWithWebIdentity\",\n        \"Condition\" : {\n          \"StringEquals\" : {\n            \"eks_oidc_url:sub\" : \"system:serviceaccount:kube-system:cluster-autoscaler\",\n            \"eks_oidc_url:aud\" : \"sts.amazonaws.com\"\n          }\n        }\n      }\n    ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  }",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434086657810497539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7434086657810497539"
+        ],
+        "parent_id": "Tv3mdXYrCoQ5TxxzAjkcMVbpntz"
+      },
+      {
+        "block_id": "OwyxdSpCQoISD9xUzXCc0k9hntb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and skip adding permissions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "KVEpdXhIeoGY17xzf7Zch1LrnMf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Name, review, and create",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " step, name the role, review the trusted entities, and click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create role",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "Yo4fd8GEfoS4rPxTUEWc95HJnGf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the role has been created, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "View role",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the green bar to go to the role details. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "NzPgdQBrKoAoScxP79AcyF5yntD",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click the copy icon in front of the role's ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ARN",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "NRHddsolwo2Mhnx7C6Vc3uF5n0b",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Go back to the Zilliz Cloud console, paste the role ARN in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IAM Role ARN",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " under ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "EKS settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "Utx3dg8Zto8JBuxPVpVciFu0nrc",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YqLmdQCnqo3EgWxNdcUciSB6nGh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 2: Add permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "Vb2HdmA7QoULhIxRGTPcbBj6n2d",
+        "block_type": 2,
+        "comment_ids": [
+          "7450035310991310852"
+        ],
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this step, you are going to add several permissions to the EKS role. On the role's details page, click the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab.  In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions policies",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". In this step, you need to select",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7450035310991310852"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Attach policies",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7450035310991310852"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and then ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7450035310991310852"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create inline policy",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7450035310991310852"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to add multiple policies from different sources .",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7450035310991310852"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmb7nj2tb4u69ppkptf3is7bo\",\"isShowcase\":false}"
+        },
+        "block_id": "S5gndNRdboNwNrxhJffcgUnjn0U",
+        "block_type": 40,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "VjQEdk7t9oXEgSxYL3qc5oeYnDb",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Attach AWS-managed policies ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "CxkvdNtVdofTBzxAsigcH2S1nWh",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table lists the permissions to add as attached policies. Click the item in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column of the table to view the required permissions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "block_type": 31,
+        "children": [
+          "G6Ymd3oY0oAoHDxk07LcmEe7nud",
+          "EoM8dJFqioAmPqxGuXFctyLmnGh",
+          "QPtOdmPNWoJ7GjxQe6LcrfI9ngh",
+          "W6k4dZ3UCoGWdaxFNfJcI63pn7b",
+          "GbTFdupE1o8sXIxZ04ccYIxAnhc",
+          "N19ud5hc7oNT8Xx0nVFcDkvqn5b",
+          "UTQVdtKxioLAOVxJ89ccIHhsnhc",
+          "PjNtdpJUdoGxeUxTjJPcwhPWn6c",
+          "B2GSdpNKaow9hkxmMVGcqZO1nie",
+          "JB6edBNrSoOPkixL96TcJliHnZd",
+          "Vi0GdoHoVo7mR8xoivKcUcMNnEf",
+          "OTukdYNLLooiA8x7G7BcZH37nBQ",
+          "Lx8bdYtpfo1G6ExHiDFcZbyjn8w",
+          "EVbBdtiXYowXzXxygl2cCo3Wnhg",
+          "ZnpBdk5DGoQk2vxUYiCc0gv5nMg",
+          "ABXKdapV8o6jLYxH75DcdrTqnGc",
+          "YZHHdSvqRoxYM2xwmBMcX6aunGf",
+          "D3U3d4EBeot0XaxOu9xcB6ZinDe"
+        ],
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "table": {
+          "cells": [
+            "G6Ymd3oY0oAoHDxk07LcmEe7nud",
+            "EoM8dJFqioAmPqxGuXFctyLmnGh",
+            "QPtOdmPNWoJ7GjxQe6LcrfI9ngh",
+            "W6k4dZ3UCoGWdaxFNfJcI63pn7b",
+            "GbTFdupE1o8sXIxZ04ccYIxAnhc",
+            "N19ud5hc7oNT8Xx0nVFcDkvqn5b",
+            "UTQVdtKxioLAOVxJ89ccIHhsnhc",
+            "PjNtdpJUdoGxeUxTjJPcwhPWn6c",
+            "B2GSdpNKaow9hkxmMVGcqZO1nie",
+            "JB6edBNrSoOPkixL96TcJliHnZd",
+            "Vi0GdoHoVo7mR8xoivKcUcMNnEf",
+            "OTukdYNLLooiA8x7G7BcZH37nBQ",
+            "Lx8bdYtpfo1G6ExHiDFcZbyjn8w",
+            "EVbBdtiXYowXzXxygl2cCo3Wnhg",
+            "ZnpBdk5DGoQk2vxUYiCc0gv5nMg",
+            "ABXKdapV8o6jLYxH75DcdrTqnGc",
+            "YZHHdSvqRoxYM2xwmBMcX6aunGf",
+            "D3U3d4EBeot0XaxOu9xcB6ZinDe"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              221,
+              113,
+              401
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 6
+          }
+        }
+      },
+      {
+        "block_id": "G6Ymd3oY0oAoHDxk07LcmEe7nud",
+        "block_type": 32,
+        "children": [
+          "FGUadDgRhoHl7mxdVzqcwG76nTe"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FGUadDgRhoHl7mxdVzqcwG76nTe",
+        "block_type": 2,
+        "parent_id": "G6Ymd3oY0oAoHDxk07LcmEe7nud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EoM8dJFqioAmPqxGuXFctyLmnGh",
+        "block_type": 32,
+        "children": [
+          "Cl3Pd8LgKotv5XxxregcY19DnSb"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Cl3Pd8LgKotv5XxxregcY19DnSb",
+        "block_type": 2,
+        "parent_id": "EoM8dJFqioAmPqxGuXFctyLmnGh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Managed by",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QPtOdmPNWoJ7GjxQe6LcrfI9ngh",
+        "block_type": 32,
+        "children": [
+          "HwOedKC4woqejaxxIbYcH2UHnuh"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HwOedKC4woqejaxxIbYcH2UHnuh",
+        "block_type": 2,
+        "parent_id": "QPtOdmPNWoJ7GjxQe6LcrfI9ngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W6k4dZ3UCoGWdaxFNfJcI63pn7b",
+        "block_type": 32,
+        "children": [
+          "XNjyd1YAjouvFdxEBAOcntLPnHc",
+          "ADIBdcMXsoyXhixwULPcbVcBnXg"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XNjyd1YAjouvFdxEBAOcntLPnHc",
+        "block_type": 2,
+        "parent_id": "W6k4dZ3UCoGWdaxFNfJcI63pn7b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AmazonEC2ContainerRegistryReadOnly",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAmazonEC2ContainerRegistryReadOnly.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ADIBdcMXsoyXhixwULPcbVcBnXg",
+        "block_type": 2,
+        "parent_id": "W6k4dZ3UCoGWdaxFNfJcI63pn7b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GbTFdupE1o8sXIxZ04ccYIxAnhc",
+        "block_type": 32,
+        "children": [
+          "UcuIdtxzvomzqXx7jvKcFkFUnah"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UcuIdtxzvomzqXx7jvKcFkFUnah",
+        "block_type": 2,
+        "parent_id": "GbTFdupE1o8sXIxZ04ccYIxAnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N19ud5hc7oNT8Xx0nVFcDkvqn5b",
+        "block_type": 32,
+        "children": [
+          "HmkldOjsOoFWR1xzmEdcsDhpnof",
+          "YtjJdyxEcosZEkxy2PzcVGoAnph"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HmkldOjsOoFWR1xzmEdcsDhpnof",
+        "block_type": 2,
+        "parent_id": "N19ud5hc7oNT8Xx0nVFcDkvqn5b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Provides read-only access to Amazon EC2 Container Registry repositories.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YtjJdyxEcosZEkxy2PzcVGoAnph",
+        "block_type": 2,
+        "parent_id": "N19ud5hc7oNT8Xx0nVFcDkvqn5b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UTQVdtKxioLAOVxJ89ccIHhsnhc",
+        "block_type": 32,
+        "children": [
+          "G7kkdMEtUovQ5AxYPpAcKnEbnje",
+          "VFBId8l7xoZzdnxRBvBce6Z0nmg"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "G7kkdMEtUovQ5AxYPpAcKnEbnje",
+        "block_type": 2,
+        "parent_id": "UTQVdtKxioLAOVxJ89ccIHhsnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AmazonEKS_CNI_Policy",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAmazonEKS_CNI_Policy.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VFBId8l7xoZzdnxRBvBce6Z0nmg",
+        "block_type": 2,
+        "parent_id": "UTQVdtKxioLAOVxJ89ccIHhsnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PjNtdpJUdoGxeUxTjJPcwhPWn6c",
+        "block_type": 32,
+        "children": [
+          "METHdy82woYcgWxoPbucjb8wnbd"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "METHdy82woYcgWxoPbucjb8wnbd",
+        "block_type": 2,
+        "parent_id": "PjNtdpJUdoGxeUxTjJPcwhPWn6c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B2GSdpNKaow9hkxmMVGcqZO1nie",
+        "block_type": 32,
+        "children": [
+          "ErXbdsj3zoSEfhxNKsicQPFun0g"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ErXbdsj3zoSEfhxNKsicQPFun0g",
+        "block_type": 2,
+        "parent_id": "B2GSdpNKaow9hkxmMVGcqZO1nie",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Provides the Amazon VPC CNI Plugin (amazon-vpc-cni-k8s) the permissions it requires to modify the IP address configuration on your EKS worker nodes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JB6edBNrSoOPkixL96TcJliHnZd",
+        "block_type": 32,
+        "children": [
+          "Bofmd4FqOoNqV9xGyKGc131Rnxb",
+          "Av3udTGCWoN2mGxG6GacwI2Znyg"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Bofmd4FqOoNqV9xGyKGc131Rnxb",
+        "block_type": 2,
+        "parent_id": "JB6edBNrSoOPkixL96TcJliHnZd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AmazonEKSWorkerNodePolicy",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAmazonEKSWorkerNodePolicy.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Av3udTGCWoN2mGxG6GacwI2Znyg",
+        "block_type": 2,
+        "parent_id": "JB6edBNrSoOPkixL96TcJliHnZd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vi0GdoHoVo7mR8xoivKcUcMNnEf",
+        "block_type": 32,
+        "children": [
+          "GNShdPb6RoXrm5xd6Yvc0x8Mnfg"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GNShdPb6RoXrm5xd6Yvc0x8Mnfg",
+        "block_type": 2,
+        "parent_id": "Vi0GdoHoVo7mR8xoivKcUcMNnEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OTukdYNLLooiA8x7G7BcZH37nBQ",
+        "block_type": 32,
+        "children": [
+          "ODjwd4QuRo8G7VxO2lVcgjURn6v"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ODjwd4QuRo8G7VxO2lVcgjURn6v",
+        "block_type": 2,
+        "parent_id": "OTukdYNLLooiA8x7G7BcZH37nBQ",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Allows Amazon EKS worker nodes to connect to Amazon EKS Clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Lx8bdYtpfo1G6ExHiDFcZbyjn8w",
+        "block_type": 32,
+        "children": [
+          "FK0XdIvp6ovvCLxGzcZc2eMNntb"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FK0XdIvp6ovvCLxGzcZc2eMNntb",
+        "block_type": 2,
+        "parent_id": "Lx8bdYtpfo1G6ExHiDFcZbyjn8w",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AmazonEKSClusterPolicy",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAmazonEKSClusterPolicy.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EVbBdtiXYowXzXxygl2cCo3Wnhg",
+        "block_type": 32,
+        "children": [
+          "ShoedJ55yowBVNxOT6dcajO8nBg"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ShoedJ55yowBVNxOT6dcajO8nBg",
+        "block_type": 2,
+        "parent_id": "EVbBdtiXYowXzXxygl2cCo3Wnhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZnpBdk5DGoQk2vxUYiCc0gv5nMg",
+        "block_type": 32,
+        "children": [
+          "K3jOde2h0odVpXxnVxScFVnGnhg"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "K3jOde2h0odVpXxnVxScFVnGnhg",
+        "block_type": 2,
+        "parent_id": "ZnpBdk5DGoQk2vxUYiCc0gv5nMg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Provides Kubernetes the permissions it requires to manage resources on your behalf. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ABXKdapV8o6jLYxH75DcdrTqnGc",
+        "block_type": 32,
+        "children": [
+          "EiTDdj0F6o2452x8Bvccm9bOnge"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EiTDdj0F6o2452x8Bvccm9bOnge",
+        "block_type": 2,
+        "parent_id": "ABXKdapV8o6jLYxH75DcdrTqnGc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AmazonEKSVPCResourceController",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAmazonEKSVPCResourceController.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YZHHdSvqRoxYM2xwmBMcX6aunGf",
+        "block_type": 32,
+        "children": [
+          "Qm01dt9T7obB8FxPyLOc4thEnWb"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Qm01dt9T7obB8FxPyLOc4thEnWb",
+        "block_type": 2,
+        "parent_id": "YZHHdSvqRoxYM2xwmBMcX6aunGf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D3U3d4EBeot0XaxOu9xcB6ZinDe",
+        "block_type": 32,
+        "children": [
+          "UUq2dpdIlo60czxauGpcq0lJnHd"
+        ],
+        "parent_id": "ZWJjdDDeVoyKf7xu4fUcCsn0nnf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UUq2dpdIlo60czxauGpcq0lJnHd",
+        "block_type": 2,
+        "parent_id": "D3U3d4EBeot0XaxOu9xcB6ZinDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Allows VPC Resource Controller to manage ENI and IPs for worker nodes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WaEGdCTBWou5J7xIOtdcWbHknQe",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After you choose ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Attach policies",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Other permissions policies",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section on the page that opens, fill in the name of each AWS-managed policy listed above in the search box and select the radio box in front of it. Once you have selected all the required policies, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W8UadZ8YXo5BjOxfvPWc7K8wn0g",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You will find that these policies are listed in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " policies list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OP3QdG2tnoZZvhx4BoEcmKuanyh",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "FDFFdFNtqoYJnDxeAnPcYJyJneh",
+          "UddXdRWDRoP2tix1Uo3cSFrbnib"
+        ],
+        "comment_ids": [
+          "7444875712723566595"
+        ],
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "FDFFdFNtqoYJnDxeAnPcYJyJneh",
+        "block_type": 2,
+        "parent_id": "OP3QdG2tnoZZvhx4BoEcmKuanyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UddXdRWDRoP2tix1Uo3cSFrbnib",
+        "block_type": 2,
+        "comment_ids": [
+          "7434835270312247300"
+        ],
+        "parent_id": "OP3QdG2tnoZZvhx4BoEcmKuanyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upon the creation of an EKS cluster, two ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "service-linked roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2FIAM%2Flatest%2FUserGuide%2Fid_roles.html%23iam-term-service-linked-role"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will also be automatically created along with the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7434835270312247300"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and they are ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AmazonEKSServiceRolePolicy",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAmazonEKSServiceRolePolicy.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWSServiceRoleForAmazonEKSNodegroup",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Faws-managed-policy%2Flatest%2Freference%2FAWSServiceRoleForAmazonEKSNodegroup.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". These two roles are required for Amazon EKS to call other AWS services on your behalf.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GaPXd7D9koUNvVxIHd3cVEXRnpf",
+        "block_type": 6,
+        "heading4": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create inline policies",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc"
+      },
+      {
+        "block_id": "RKh6dNUHIoLzrSxMLvlcrzilnWb",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table lists the policies that need to be added as customer inline policies. Click the item in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column of the table to view the required permissions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "block_type": 31,
+        "children": [
+          "W4eQd2G20oHBClxW48fcoo6xnqd",
+          "O31cdR72xodnfAxha8vchxb1nsd",
+          "Jremdg4qVo66qExfNQxcgvFXnuh",
+          "RSR3db4WLoGLCIxTQ5qc3DbrnRe",
+          "XZ93dL68dozPf4xGD7ic61xenec",
+          "NCTNdj7UdowgAfxxl2RcuHRonIf",
+          "O6f7ddbj2oysduxMQbtcKZHunZb",
+          "MlYwdn5NJoKvlHxWWJ4c5SUAneI",
+          "HyRId7AjKoac8Ux3KUIct0jnnBc",
+          "YCZTdadx0oREIxxWajucgMNEnxd",
+          "BpyAdZo7No0x9yxhOrec4jpCnFh",
+          "UmRJd4BNnofL9NxuZgBcxAJ4nLc"
+        ],
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "table": {
+          "cells": [
+            "W4eQd2G20oHBClxW48fcoo6xnqd",
+            "O31cdR72xodnfAxha8vchxb1nsd",
+            "Jremdg4qVo66qExfNQxcgvFXnuh",
+            "RSR3db4WLoGLCIxTQ5qc3DbrnRe",
+            "XZ93dL68dozPf4xGD7ic61xenec",
+            "NCTNdj7UdowgAfxxl2RcuHRonIf",
+            "O6f7ddbj2oysduxMQbtcKZHunZb",
+            "MlYwdn5NJoKvlHxWWJ4c5SUAneI",
+            "HyRId7AjKoac8Ux3KUIct0jnnBc",
+            "YCZTdadx0oREIxxWajucgMNEnxd",
+            "BpyAdZo7No0x9yxhOrec4jpCnFh",
+            "UmRJd4BNnofL9NxuZgBcxAJ4nLc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              221,
+              113,
+              401
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "W4eQd2G20oHBClxW48fcoo6xnqd",
+        "block_type": 32,
+        "children": [
+          "NPMsdHnIMonytzxlDQrcZGpin2c"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NPMsdHnIMonytzxlDQrcZGpin2c",
+        "block_type": 2,
+        "parent_id": "W4eQd2G20oHBClxW48fcoo6xnqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O31cdR72xodnfAxha8vchxb1nsd",
+        "block_type": 32,
+        "children": [
+          "H2YjdzRq4o2UZ6x3LjwcgmxEnEf"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "H2YjdzRq4o2UZ6x3LjwcgmxEnEf",
+        "block_type": 2,
+        "parent_id": "O31cdR72xodnfAxha8vchxb1nsd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Managed by",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jremdg4qVo66qExfNQxcgvFXnuh",
+        "block_type": 32,
+        "children": [
+          "IMHfdMH7toLsGCx2wOoc9iuNn1c"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IMHfdMH7toLsGCx2wOoc9iuNn1c",
+        "block_type": 2,
+        "parent_id": "Jremdg4qVo66qExfNQxcgvFXnuh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RSR3db4WLoGLCIxTQ5qc3DbrnRe",
+        "block_type": 32,
+        "children": [
+          "CSkqdVpJZozvtCx6L0mcClgSnTd",
+          "GWypdgCT2oF8cLxNf8gczXpAndg"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CSkqdVpJZozvtCx6L0mcClgSnTd",
+        "block_type": 2,
+        "parent_id": "RSR3db4WLoGLCIxTQ5qc3DbrnRe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS Load Balancer Controller",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fkubernetes-sigs%2Faws-load-balancer-controller%2Fblob%2Fmain%2Fdocs%2Finstall%2Fiam_policy.json"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GWypdgCT2oF8cLxNf8gczXpAndg",
+        "block_type": 2,
+        "parent_id": "RSR3db4WLoGLCIxTQ5qc3DbrnRe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XZ93dL68dozPf4xGD7ic61xenec",
+        "block_type": 32,
+        "children": [
+          "A5n5dTEYwoVhihxTKbocGvUNnth"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "A5n5dTEYwoVhihxTKbocGvUNnth",
+        "block_type": 2,
+        "parent_id": "XZ93dL68dozPf4xGD7ic61xenec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Kubernetes SIGs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NCTNdj7UdowgAfxxl2RcuHRonIf",
+        "block_type": 32,
+        "children": [
+          "YJP9d1vZ6oNGWPxCt5RcbFMOnuc",
+          "RESjdLxBFobuizxeHtxcP9e1n7d"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YJP9d1vZ6oNGWPxCt5RcbFMOnuc",
+        "block_type": 2,
+        "parent_id": "NCTNdj7UdowgAfxxl2RcuHRonIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS Load Balancer Controller is a controller to help manage Elastic Load Balancers for a Kubernetes cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RESjdLxBFobuizxeHtxcP9e1n7d",
+        "block_type": 2,
+        "parent_id": "NCTNdj7UdowgAfxxl2RcuHRonIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on the AWS Load Balancer Controller repository, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "README",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fkubernetes-sigs%2Faws-load-balancer-controller%2Ftree%2Fmain"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O6f7ddbj2oysduxMQbtcKZHunZb",
+        "block_type": 32,
+        "children": [
+          "XSl3dmdtNoCGn9xIm2bcYhZpnjh",
+          "PRwXdUxFvo4oyUx29ecccLsjnlc"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XSl3dmdtNoCGn9xIm2bcYhZpnjh",
+        "block_type": 2,
+        "parent_id": "O6f7ddbj2oysduxMQbtcKZHunZb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Amazon EBS CSI driver",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fkubernetes-sigs%2Faws-ebs-csi-driver%2Fblob%2Fmaster%2Fdocs%2Fexample-iam-policy.json"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PRwXdUxFvo4oyUx29ecccLsjnlc",
+        "block_type": 2,
+        "parent_id": "O6f7ddbj2oysduxMQbtcKZHunZb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MlYwdn5NJoKvlHxWWJ4c5SUAneI",
+        "block_type": 32,
+        "children": [
+          "MgN3dD5ahoFWc1x9xaVcTG0qnlc",
+          "O8WqdBeRPoA3fLx2L6CcK19nnQd"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MgN3dD5ahoFWc1x9xaVcTG0qnlc",
+        "block_type": 2,
+        "parent_id": "MlYwdn5NJoKvlHxWWJ4c5SUAneI",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Kubernetes SIGs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O8WqdBeRPoA3fLx2L6CcK19nnQd",
+        "block_type": 2,
+        "parent_id": "MlYwdn5NJoKvlHxWWJ4c5SUAneI",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HyRId7AjKoac8Ux3KUIct0jnnBc",
+        "block_type": 32,
+        "children": [
+          "Evcrdy4MloeE21xCDlccwUDvn2b",
+          "N6Gfdr7yAo5EBWxFi6WcdyuPnBb"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Evcrdy4MloeE21xCDlccwUDvn2b",
+        "block_type": 2,
+        "parent_id": "HyRId7AjKoac8Ux3KUIct0jnnBc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The Amazon Elastic Block Store Container Storage Interface (CSI) Driver provides a CSI interface used by Container Orchestrators to manage the lifecycle of Amazon EBS volumes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N6Gfdr7yAo5EBWxFi6WcdyuPnBb",
+        "block_type": 2,
+        "parent_id": "HyRId7AjKoac8Ux3KUIct0jnnBc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on the Amazon EBS CSI driver, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "README",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fkubernetes-sigs%2Faws-ebs-csi-driver"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YCZTdadx0oREIxxWajucgMNEnxd",
+        "block_type": 32,
+        "children": [
+          "WszMdpYbjoVzJYxSzsTcwdX4nUd",
+          "XVGkdFZpropDeLxrQTyc5PrUnMc"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WszMdpYbjoVzJYxSzsTcwdX4nUd",
+        "block_type": 2,
+        "comment_ids": [
+          "7447498480085712899"
+        ],
+        "parent_id": "YCZTdadx0oREIxxWajucgMNEnxd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster AutoScaler",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7447498480085712899"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fkubernetes%2Fautoscaler%2Fblob%2Fmaster%2Fcluster-autoscaler%2Fcloudprovider%2Faws%2FREADME.md%23full-cluster-autoscaler-features-policy-recommended"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XVGkdFZpropDeLxrQTyc5PrUnMc",
+        "block_type": 2,
+        "parent_id": "YCZTdadx0oREIxxWajucgMNEnxd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BpyAdZo7No0x9yxhOrec4jpCnFh",
+        "block_type": 32,
+        "children": [
+          "StvjdA8lho7hIxxyUFVcxs3ZnDe"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "StvjdA8lho7hIxxyUFVcxs3ZnDe",
+        "block_type": 2,
+        "parent_id": "BpyAdZo7No0x9yxhOrec4jpCnFh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Kubernetes SIGs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UmRJd4BNnofL9NxuZgBcxAJ4nLc",
+        "block_type": 32,
+        "children": [
+          "YLu7dr2cMoeH72xJW96cEliCnqd",
+          "LyFIdZYr2o7eoOx4LqZcgnsmnhL"
+        ],
+        "parent_id": "LxK8dNsHbokzQrx1gZecnz2YnSf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YLu7dr2cMoeH72xJW96cEliCnqd",
+        "block_type": 2,
+        "parent_id": "UmRJd4BNnofL9NxuZgBcxAJ4nLc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The Cluster AutoScaler is a component that automatically adjusts the size of a Kubernetes Cluster so that all pods have a place to run and there are no unneeded nodes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LyFIdZYr2o7eoOx4LqZcgnsmnhL",
+        "block_type": 2,
+        "parent_id": "UmRJd4BNnofL9NxuZgBcxAJ4nLc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on the Cluster AutoScaler on AWS, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "README",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fkubernetes%2Fautoscaler%2Fblob%2Fmaster%2Fcluster-autoscaler%2Fcloudprovider%2Faws%2FREADME.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OoK3d3xpboVrwFxShnDcHwafn5e",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After you choose ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create inline policy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Specify permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "JSON",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Policy editor",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section to open the policy editor. Then copy one of the above permissions and paste it into the policy editor.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HmZWdEk7Worvdpx9luKc96GWnhg",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Policy name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Policy details",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Once you have added all the listed inline policies, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create policy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". You will find that these policies are listed in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " policies list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rd5vdnvTZowgKtxmyWHcKLTFnBc",
+        "block_type": 2,
+        "parent_id": "H1Tldj9x8oZlfDxmA9rcH1gPnUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 110
+  }
+}

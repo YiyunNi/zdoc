@@ -1,0 +1,803 @@
+{
+  "created_time": "1761485098",
+  "modified_time": "1761539293",
+  "name": "add()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "BQVjf466jl9dIJdqGPKcK2Jwnig",
+  "token": "PUOBd229uoQGUIxnHLWcMSidnQh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/PUOBd229uoQGUIxnHLWcMSidnQh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "block_type": 1,
+        "children": [
+          "SbdJdOfDFo63fjxmh6ScGoXQngp",
+          "IyLjdC9ZxoGNCuxUt4cc0S50n8f",
+          "TDUDdPU1douayqxgQWXcNk54n0g",
+          "SRW8d7cJ1oGI8sx1uD3cQeOCnjd",
+          "McWkdr6MwoDp8zxIfBDcZcFfnpe",
+          "JRg6dfOjJoqhFjxQYv9ceA5vnrb",
+          "A7iMdBvqRooXhTxZDjocERtyn5E",
+          "XDXfd1Pw3olSWbxFw35cfP1jnke",
+          "K0bRdDEJYoIJpextTEmcgm3hn2c",
+          "KVkQdDxwAotNNwxaHNUcdG7on28",
+          "KVNxdWGFMo8RM8xHvfLcF5vunEc",
+          "C5YMd6nooo8HS0xsMVwc5i5WnKb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "SbdJdOfDFo63fjxmh6ScGoXQngp",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation adds vector embeddings to an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "EmbeddingList",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IyLjdC9ZxoGNCuxUt4cc0S50n8f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void add(BaseVector vector)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh"
+      },
+      {
+        "block_id": "TDUDdPU1douayqxgQWXcNk54n0g",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SRW8d7cJ1oGI8sx1uD3cQeOCnjd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "vector",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseVector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "U8gVdHNjkoHmEgxiw5IcJ10pn4f"
+        ],
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh"
+      },
+      {
+        "block_id": "U8gVdHNjkoHmEgxiw5IcJ10pn4f",
+        "block_type": 2,
+        "parent_id": "SRW8d7cJ1oGI8sx1uD3cQeOCnjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A vector embedding to be added to the current EmbeddingList. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "McWkdr6MwoDp8zxIfBDcZcFfnpe",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JRg6dfOjJoqhFjxQYv9ceA5vnrb",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EmbeddingList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A7iMdBvqRooXhTxZDjocERtyn5E",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XDXfd1Pw3olSWbxFw35cfP1jnke",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An EmbeddingList instance that can be used again to chain up other ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "add()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K0bRdDEJYoIJpextTEmcgm3hn2c",
+        "block_type": 2,
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KVkQdDxwAotNNwxaHNUcdG7on28",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RpetdncNpoOMhjxw3sycw5iInLg"
+        ],
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh"
+      },
+      {
+        "block_id": "RpetdncNpoOMhjxw3sycw5iInLg",
+        "block_type": 2,
+        "parent_id": "KVkQdDxwAotNNwxaHNUcdG7on28",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception arises if different types of vector embeddings are provided.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KVNxdWGFMo8RM8xHvfLcF5vunEc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh"
+      },
+      {
+        "block_id": "C5YMd6nooo8HS0xsMVwc5i5WnKb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2;",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.vector.request.data.EmbeddingList;",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.vector.request.data.FloatVec;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Initialize an EmbeddingList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "EmbeddingList embeddingList = new EmbeddingList();",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Add vector embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "embeddingList.add(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "new FloatVec",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[0.1, 0.2, 0.3, 0.4, 0.5])",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565676063255199748"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7565676063255199748"
+        ],
+        "parent_id": "PUOBd229uoQGUIxnHLWcMSidnQh"
+      }
+    ],
+    "counts": 15
+  },
+  "slug": "v2-EmbeddingList-add"
+}

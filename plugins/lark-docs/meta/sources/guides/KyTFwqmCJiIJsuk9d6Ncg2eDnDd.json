@@ -1,0 +1,207 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1734591212",
+  "node_token": "KyTFwqmCJiIJsuk9d6Ncg2eDnDd",
+  "node_type": "origin",
+  "obj_create_time": "1734591212",
+  "obj_edit_time": "1756370499",
+  "obj_token": "IofvdZhovotHJxxDQZfcplyBnrz",
+  "obj_type": "docx",
+  "origin_node_token": "KyTFwqmCJiIJsuk9d6Ncg2eDnDd",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "OUWXw5c4gia34ZkQUcEcMFbWn6s",
+  "space_id": "7167193056431783939",
+  "title": "Data",
+  "slug": "data",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "IofvdZhovotHJxxDQZfcplyBnrz",
+        "block_type": 1,
+        "children": [
+          "M27Ud6LQ2oM8B0xmScbceqvJnfg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "M27Ud6LQ2oM8B0xmScbceqvJnfg",
+        "block_type": 2,
+        "parent_id": "IofvdZhovotHJxxDQZfcplyBnrz",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This chapter focuses on data operations, including collection management, schema and data types, insert and delete, index operations, search and reranking, as well as import and export.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1728617300",
+      "node_creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "node_token": "XpEzwyxaJi181OkIKwqcQDWrnIh",
+      "node_type": "origin",
+      "obj_create_time": "1728617300",
+      "obj_edit_time": "1728617409",
+      "obj_token": "OWVAdcTvIobwykxXRWVcSqYJn50",
+      "obj_type": "docx",
+      "origin_node_token": "XpEzwyxaJi181OkIKwqcQDWrnIh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "RSZawVrT6iSrMFk7zbHcKgE9nrf",
+      "space_id": "7167193056431783939",
+      "title": "Collection",
+      "slug": "collection"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1728630246",
+      "node_creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "node_token": "NuWQwL1AhiDzokkx5UPckhthnsf",
+      "node_type": "origin",
+      "obj_create_time": "1728630246",
+      "obj_edit_time": "1732184239",
+      "obj_token": "YjThdVtEUoQKuLxGc5Vc8QKmngd",
+      "obj_type": "docx",
+      "origin_node_token": "NuWQwL1AhiDzokkx5UPckhthnsf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "RSZawVrT6iSrMFk7zbHcKgE9nrf",
+      "space_id": "7167193056431783939",
+      "title": "Schema & Data Fields",
+      "slug": "schema-data-fields"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1728630405",
+      "node_creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "node_token": "DCZNwZdcfivVfIkAZ6qcaK5wnHd",
+      "node_type": "origin",
+      "obj_create_time": "1728630405",
+      "obj_edit_time": "1734695507",
+      "obj_token": "GFfzdeXoAosFePxtciwccvwunHg",
+      "obj_type": "docx",
+      "origin_node_token": "DCZNwZdcfivVfIkAZ6qcaK5wnHd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "RSZawVrT6iSrMFk7zbHcKgE9nrf",
+      "space_id": "7167193056431783939",
+      "title": "Insert & Delete",
+      "slug": "insert-update-delete"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1708764316",
+      "node_token": "NDLBwtFIuihc5wkq37KchzqLnrc",
+      "node_type": "origin",
+      "obj_create_time": "1708764316",
+      "obj_edit_time": "1760525612",
+      "obj_token": "YNYxd48lAoEgeixVOVZcJi5vnob",
+      "obj_type": "docx",
+      "origin_node_token": "NDLBwtFIuihc5wkq37KchzqLnrc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "KyTFwqmCJiIJsuk9d6Ncg2eDnDd",
+      "space_id": "7167193056431783939",
+      "title": "Manage Indexes",
+      "slug": "manage-indexes"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1728630465",
+      "node_creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "node_token": "CSYrwhK4Gigk07kd6ufcNTGMnZf",
+      "node_type": "origin",
+      "obj_create_time": "1728630465",
+      "obj_edit_time": "1748397378",
+      "obj_token": "TTsjd8JDLo2MBQxjPD3c03obnDe",
+      "obj_type": "docx",
+      "origin_node_token": "CSYrwhK4Gigk07kd6ufcNTGMnZf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "RSZawVrT6iSrMFk7zbHcKgE9nrf",
+      "space_id": "7167193056431783939",
+      "title": "Search",
+      "slug": "search-query-get"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1715415953",
+      "node_token": "Oh3VwT15Yi03bRkOtoXcZpurnWe",
+      "node_type": "origin",
+      "obj_create_time": "1715415953",
+      "obj_edit_time": "1715567419",
+      "obj_token": "QmMrdp8lroI1RuxxkXkcI2ohn7d",
+      "obj_type": "docx",
+      "origin_node_token": "Oh3VwT15Yi03bRkOtoXcZpurnWe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "KyTFwqmCJiIJsuk9d6Ncg2eDnDd",
+      "space_id": "7167193056431783939",
+      "title": "Import & Export",
+      "slug": "data-import-export"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1753080396",
+      "node_token": "MC6xw7oHkimmnQkigODc5wjynwf",
+      "node_type": "origin",
+      "obj_create_time": "1753080396",
+      "obj_edit_time": "1753080469",
+      "obj_token": "Kn8GdXKndozyooxhEyqcePmKnWf",
+      "obj_type": "docx",
+      "origin_node_token": "MC6xw7oHkimmnQkigODc5wjynwf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "KyTFwqmCJiIJsuk9d6Ncg2eDnDd",
+      "space_id": "7167193056431783939",
+      "title": "Extract, Transform, and Load",
+      "slug": "extract-transform-and-load"
+    }
+  ]
+}

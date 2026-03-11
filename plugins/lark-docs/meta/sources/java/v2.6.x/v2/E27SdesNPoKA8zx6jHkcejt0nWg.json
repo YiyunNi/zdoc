@@ -1,0 +1,754 @@
+{
+  "created_time": "1720587438",
+  "modified_time": "1746528050",
+  "name": "getCollectionStats()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "LkxXfcSA7lKXqEdu8mpcHI8Fnqd",
+  "token": "E27SdesNPoKA8zx6jHkcejt0nWg",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/E27SdesNPoKA8zx6jHkcejt0nWg",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "block_type": 1,
+        "children": [
+          "doxcnddGcqbp6cqiLeM1U94Aw2b",
+          "doxcna8mOlrnLS2x4aB26GL0cKc",
+          "doxcnrAn9pP14hJjs1YImXVzWDe",
+          "doxcneBxv4XKxeE2YyVMLyCgEJc",
+          "doxcnhCE0BJK41L2CQMlKyCCIrJ",
+          "Fr4ldXdDGoi4nyxwjIlcqSynnJc",
+          "doxcn3zA16Mei7ZYDpJXkNlYF3e",
+          "doxcneCaKo245UWwN1o9hJRgIkh",
+          "doxcnSGSjdrvAFZENilqab9354d",
+          "doxcn5s6zPQk9xJoorGLlgXZSod",
+          "doxcnJ5dQD4J691DOdWDZC5VGUd",
+          "doxcnqFN7oO56sUJEH781MlJSof",
+          "doxcnfUniZlgOzoHdnacyYLSIo0",
+          "doxcnwtem5peIVfHi5L8lpSjC3e",
+          "doxcnCVdS2ZASo9a4Tu0csKaEzf",
+          "doxcnFOvXjlTBR4u79dgq4Y6Peb",
+          "doxcnl4oC3F7EGyyezFGbEhePfg",
+          "doxcnI8VfquuQTpvtelcxWK2HUg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getCollectionStats()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnddGcqbp6cqiLeM1U94Aw2b",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation lists the statistics collected on a specific collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcna8mOlrnLS2x4aB26GL0cKc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public GetCollectionStatsResp getCollectionStats(GetCollectionStatsReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcnrAn9pP14hJjs1YImXVzWDe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcneBxv4XKxeE2YyVMLyCgEJc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getCollectionStats(GetCollectionStatsReq.builder()\n    .databaseName(String databaseName)\n    .collectionName(String collectionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcnhCE0BJK41L2CQMlKyCCIrJ",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fr4ldXdDGoi4nyxwjIlcqSynnJc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FxjFdNZQXoTMMNx6CTsc29MLnNh"
+        ],
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "FxjFdNZQXoTMMNx6CTsc29MLnNh",
+        "block_type": 2,
+        "parent_id": "Fr4ldXdDGoi4nyxwjIlcqSynnJc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database to which the target collection belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3zA16Mei7ZYDpJXkNlYF3e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnxEf7Q2PfTc7CgMYGGyYkUc"
+        ],
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcnxEf7Q2PfTc7CgMYGGyYkUc",
+        "block_type": 2,
+        "parent_id": "doxcn3zA16Mei7ZYDpJXkNlYF3e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcneCaKo245UWwN1o9hJRgIkh",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnSGSjdrvAFZENilqab9354d",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GetCollectionStatsResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn5s6zPQk9xJoorGLlgXZSod",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJ5dQD4J691DOdWDZC5VGUd",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetCollectionStatsResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object containing collected statistics on the specified collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqFN7oO56sUJEH781MlJSof",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfUniZlgOzoHdnacyYLSIo0",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numOfEntities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnc0XUS7bCPBvsmbvG0mRK7g"
+        ],
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcnc0XUS7bCPBvsmbvG0mRK7g",
+        "block_type": 2,
+        "parent_id": "doxcnfUniZlgOzoHdnacyYLSIo0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The count of entities in the collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnwtem5peIVfHi5L8lpSjC3e",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCVdS2ZASo9a4Tu0csKaEzf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn9wcc1tpUlkBxCh8nn3bGGc"
+        ],
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcn9wcc1tpUlkBxCh8nn3bGGc",
+        "block_type": 2,
+        "parent_id": "doxcnCVdS2ZASo9a4Tu0csKaEzf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnFOvXjlTBR4u79dgq4Y6Peb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcnl4oC3F7EGyyezFGbEhePfg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.GetCollectionStatsReq;\nimport io.milvus.v2.service.collection.response.GetCollectionStatsResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Get collection stats\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetCollectionStatsReq getCollectionStatsReq = GetCollectionStatsReq.builder()\n        .collectionName(\"test\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetCollectionStatsResp getCollectionStatsResp = client.getCollectionStats(getCollectionStatsReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg"
+      },
+      {
+        "block_id": "doxcnI8VfquuQTpvtelcxWK2HUg",
+        "block_type": 2,
+        "parent_id": "E27SdesNPoKA8zx6jHkcejt0nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 23
+  },
+  "slug": "v2-Collections-getCollectionStats"
+}

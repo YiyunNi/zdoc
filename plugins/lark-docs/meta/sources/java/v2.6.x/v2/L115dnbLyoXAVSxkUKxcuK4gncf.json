@@ -1,0 +1,446 @@
+{
+  "created_time": "1750410146",
+  "modified_time": "1750836784",
+  "name": "append_row()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "AsMdfAmwIlKviZdQjJNc38VinFh",
+  "token": "L115dnbLyoXAVSxkUKxcuK4gncf",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/L115dnbLyoXAVSxkUKxcuK4gncf",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "L115dnbLyoXAVSxkUKxcuK4gncf",
+        "block_type": 1,
+        "children": [
+          "doxcn20PX1Lv56WCUYaKKwSzQfb",
+          "doxcnyyBC1LTiz1JAlglsdTL1rd",
+          "doxcnjP5gn4sjlhbP80B6sehz6c",
+          "doxcncG60FU2nNjbs51ovR98pnb",
+          "doxcn6dgHz8ZYWyRgEamWP52slg",
+          "doxcnb4J3wIOtdx96WDwYVAlM1g",
+          "doxcn4rq6z4spHfBhukX5td5HNe",
+          "doxcnlcHxFRyPEgPodqUv8tb1eg",
+          "doxcnykVQ2Ygo7NjYFCe5gBqkJh",
+          "doxcnvztMZUj7YIprxYlRe35uLd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "append_row()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn20PX1Lv56WCUYaKKwSzQfb",
+        "block_type": 2,
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation appends records to the writer.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnyyBC1LTiz1JAlglsdTL1rd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void appendRow(JsonObject rowData)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf"
+      },
+      {
+        "block_id": "doxcnjP5gn4sjlhbP80B6sehz6c",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf"
+      },
+      {
+        "block_id": "doxcncG60FU2nNjbs51ovR98pnb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "remoteBulkWriter.appendRow(\n    JsonObject rowData\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf"
+      },
+      {
+        "block_id": "doxcn6dgHz8ZYWyRgEamWP52slg",
+        "block_type": 2,
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnb4J3wIOtdx96WDwYVAlM1g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "rowData",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "JsonObject",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnTvoHImU6qr3IMb2whhCeDh",
+          "doxcn3iYG4LR7wD2cWBG36LfxWb"
+        ],
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf"
+      },
+      {
+        "block_id": "doxcnTvoHImU6qr3IMb2whhCeDh",
+        "block_type": 2,
+        "parent_id": "doxcnb4J3wIOtdx96WDwYVAlM1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A dictionary representing an entity to be appended.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3iYG4LR7wD2cWBG36LfxWb",
+        "block_type": 2,
+        "parent_id": "doxcnb4J3wIOtdx96WDwYVAlM1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The keys and their values in the dictionary should match the schema referenced in the current ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "LocalBulkWriter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4rq6z4spHfBhukX5td5HNe",
+        "block_type": 2,
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlcHxFRyPEgPodqUv8tb1eg",
+        "block_type": 2,
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnykVQ2Ygo7NjYFCe5gBqkJh",
+        "block_type": 4,
+        "comment_ids": [
+          "7519031418560823299"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7519031418560823299"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf"
+      },
+      {
+        "block_id": "doxcnvztMZUj7YIprxYlRe35uLd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "for (JsonObject rowObject : data) {\n    remoteBulkWriter.appendRow(rowObject);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "L115dnbLyoXAVSxkUKxcuK4gncf"
+      }
+    ],
+    "counts": 13
+  },
+  "slug": "v2-RemoteBulkWriter-append_row"
+}

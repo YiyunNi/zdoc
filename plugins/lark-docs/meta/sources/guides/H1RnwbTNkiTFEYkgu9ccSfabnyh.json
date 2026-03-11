@@ -1,0 +1,258 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1719295794",
+  "node_token": "H1RnwbTNkiTFEYkgu9ccSfabnyh",
+  "node_type": "origin",
+  "obj_create_time": "1719295794",
+  "obj_edit_time": "1760067599",
+  "obj_token": "YlAzdFBN3oCQKRx4OHZc6y6anQc",
+  "obj_type": "docx",
+  "origin_node_token": "H1RnwbTNkiTFEYkgu9ccSfabnyh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "Release Notes (Sept 15, 2022)",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc",
+        "block_type": 1,
+        "children": [
+          "doxcnEvSEBzfPexgm5hZAGMXQlb",
+          "VWo8dKx5VoKIlwxBBQGc7Dainuf",
+          "IGQjdwbAmoDMRtxss8Ac1MSPnmw",
+          "RjeVdnNv8otN4kxqohpctU5wnie",
+          "U9YDd7WIWoO4KixTmDBcG3AWnQe",
+          "M7PpdfkBYoQUHpxJGqFcxgwPncb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Release Notes (Sept 15, 2022)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnEvSEBzfPexgm5hZAGMXQlb",
+        "block_type": 2,
+        "parent_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We're delighted to announce that Zilliz Cloud's latest significant update is now generally available. This release includes enhancements to both the collection view and the vector search interface. Additionally, it introduces the convenience of signing up via Google and offers new system maintenance settings for improved administrative control.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VWo8dKx5VoKIlwxBBQGc7Dainuf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upgrades the collection view UI.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc"
+      },
+      {
+        "block_id": "IGQjdwbAmoDMRtxss8Ac1MSPnmw",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upgrades the vector search UI.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc"
+      },
+      {
+        "block_id": "RjeVdnNv8otN4kxqohpctU5wnie",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Supports signup with Google. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Register with Zilliz Cloud",
+                "token": "HriHwEU3qiQrgskz3a0cdkcpnyf",
+                "url": "https://zilliverse.feishu.cn/wiki/HriHwEU3qiQrgskz3a0cdkcpnyf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc"
+      },
+      {
+        "block_id": "U9YDd7WIWoO4KixTmDBcG3AWnQe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Supports system maintenance settings. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Organization Settings",
+                "token": "AAqUwQW3qia3akkjfDNc0kwanlh",
+                "url": "https://zilliverse.feishu.cn/wiki/AAqUwQW3qia3akkjfDNc0kwanlh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc"
+      },
+      {
+        "block_id": "M7PpdfkBYoQUHpxJGqFcxgwPncb",
+        "block_type": 2,
+        "parent_id": "YlAzdFBN3oCQKRx4OHZc6y6anQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 7
+  }
+}

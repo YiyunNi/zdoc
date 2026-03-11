@@ -1,0 +1,3027 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1741775433",
+  "node_token": "TeMBw0cAJiieRVk6kYgcPGI0ni5",
+  "node_type": "origin",
+  "obj_create_time": "1741775433",
+  "obj_edit_time": "1768813881",
+  "obj_token": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+  "obj_type": "docx",
+  "origin_node_token": "TeMBw0cAJiieRVk6kYgcPGI0ni5",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "AP0lw1SNciBJNYkJ2iDc0qnfnEg",
+  "space_id": "7167193056431783939",
+  "title": "DashScope",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "block_type": 1,
+        "children": [
+          "WsgLdqs2hoMCscx01oecipgxnng",
+          "NXB6dPMoioibxex3EElcskhxn4g",
+          "QujVdEXxeoYzIZxaw0ccddt9nFY",
+          "USdzd1YqhortE7xs3OOcZnaWnYe",
+          "LYb5dPAT1ooBGzxGSNbcf75vnde",
+          "XMyvd7MoCoERIoxUEYrcAGHjnkd",
+          "SgjZdfNu5oUlPCxlMJEcB4DenQQ",
+          "MXf2dP78Co20TVxwHNRcJH97nbc",
+          "BvufdF9buousA5x6rYzctA9fnSj",
+          "OluLdC9XioVRnoxaSSqcxFPrnWb",
+          "HBzEd6w9To3HlEx2VuzcGk07nzf",
+          "K3sJd39dqoyeAkxCIrOcgkUInJh",
+          "SzZSdywsKoPZkwxDEfjcACn5n1d",
+          "Kcywdb0tWoYAZOxIJd7ciLwgnBl",
+          "PtgIdrFj9oHzmpxiYuKcJhEOntc",
+          "CPHtdC4Mmo9uSTxWdylcGb8Lndw",
+          "VLLgdmfIfob28lxQoS8cV3lGnid",
+          "DFszdDY2UoAmAExdM2jcpQKnnrg",
+          "WJzcdPXW4oYMHbx6eercGUeenyg",
+          "C0RSdXg8TomYSGxZ99WcyihYnwe",
+          "GdD8dt5TyoeCApxDAWacEAxTnwQ",
+          "JeO9dVYLRogJ1OxO8PtcDgTvnIc",
+          "DM3rdSBwpooZkHxxERbc4lpnnAe",
+          "RGTkd4lfIouisGxLDhLcLobfnMf",
+          "OJtWd0YgNoamjuxlYu5c7WVGnfd",
+          "MWTYdoUxWoOhb6x3BUgcTwHhnlb",
+          "OK9CdwzP9ooEhEx1Afucm5f3ncc",
+          "TLIbdqvQTorE2Sx7IjNca1ZLntb",
+          "IUWHdV8apomFi9xY9s7c3GOynhh",
+          "I7rhdXPDXoKmQNxKXP5cifL2nkb",
+          "YM2HdX1N3oX5cUx7YqzcNL6unoU",
+          "T6k0dmaNeoWmTBxb5TfcPVPDnOg",
+          "GAKhdnKRuo00f3xqMDQcnxdintc",
+          "XKsGd1dT2oKitexEJSfcul0tngd",
+          "XLz3dE7OdoNj7GxVSmpcyVgRnch",
+          "BIG0d1ocWoi4OVxX6P9csse0n3f",
+          "ZTReduuy9odjenxeyercQRQJnIe",
+          "Mg5MdQ7SyoExcXx59cRcWBLSnvf",
+          "Jfh5d28vaoP5KBxkqQucLEXYnyr",
+          "UfuKd1VwAoaFSkxMojCcX9u1n5g",
+          "HV2ndfdktoByEoxCai1c0qQwnbh",
+          "DY0ydf12Zo237qxv7ooccYS7nvb",
+          "KaagdA5kdotTu9xOL3icHQVin3f",
+          "Ru49dzgbqoO7M7xM1SdcOh6enCg",
+          "JYt4dKr2Modj4IxhX3LcBEuRnyg",
+          "GYuGdz3U8oxezxx6s5Qc0OBsnwb",
+          "JrTtdbTtkonNLHxPtS9cOn8AnVh",
+          "YbkbdNOL1o3w0QxGhCFckG0Jnge"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DashScope",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "WsgLdqs2hoMCscx01oecipgxnng",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This topic describes how to configure and use DashScope embedding functions in Milvus.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NXB6dPMoioibxex3EElcskhxn4g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Choose an embedding model",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "QujVdEXxeoYzIZxaw0ccddt9nFY",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below are the currently available DashScope embedding models for quick reference:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "block_type": 31,
+        "children": [
+          "UbuHdHCxOoYy0hxU2fLcsE5DnDc",
+          "ERsGdfuBBofn9Zxll2acOG5LnFh",
+          "Z0M8dFwDeo8TvQxC5NZcoFWkn8b",
+          "Z6vEdRiH6o5txIxV7dPc6US0nLd",
+          "MHCidpBGzoHDr5xjVRgcVhJfnab",
+          "OISPdGUSfouI5hxFbV9c4CvJnSc",
+          "MRDHdbImwom8loxpZH4ctaOunTf",
+          "Hz0WdcYd5o1e6Lx9FX4cmA2Yn0c",
+          "IvlYdpm2godsWpxI2XJcbsOGnof",
+          "UYCYd5isyopO7txbvyncXY0Xnfg",
+          "CsSmdt5puoHeIhxp9D4cMKZ2nFh",
+          "EGIMduz6lo6gPCxnvQNcv5iMn0d",
+          "TcQ3d91H0o7ujyx7WcLcRHacnrh",
+          "IeuudKO2Xox1maxZBCHchoxbnge",
+          "UJXBdaBsEoqhuwxWxl3cQYLXngc",
+          "FN0mdOWXjojhocxKRgaceH7Cnbh"
+        ],
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "table": {
+          "cells": [
+            "UbuHdHCxOoYy0hxU2fLcsE5DnDc",
+            "ERsGdfuBBofn9Zxll2acOG5LnFh",
+            "Z0M8dFwDeo8TvQxC5NZcoFWkn8b",
+            "Z6vEdRiH6o5txIxV7dPc6US0nLd",
+            "MHCidpBGzoHDr5xjVRgcVhJfnab",
+            "OISPdGUSfouI5hxFbV9c4CvJnSc",
+            "MRDHdbImwom8loxpZH4ctaOunTf",
+            "Hz0WdcYd5o1e6Lx9FX4cmA2Yn0c",
+            "IvlYdpm2godsWpxI2XJcbsOGnof",
+            "UYCYd5isyopO7txbvyncXY0Xnfg",
+            "CsSmdt5puoHeIhxp9D4cMKZ2nFh",
+            "EGIMduz6lo6gPCxnvQNcv5iMn0d",
+            "TcQ3d91H0o7ujyx7WcLcRHacnrh",
+            "IeuudKO2Xox1maxZBCHchoxbnge",
+            "UJXBdaBsEoqhuwxWxl3cQYLXngc",
+            "FN0mdOWXjojhocxKRgaceH7Cnbh"
+          ],
+          "property": {
+            "column_size": 4,
+            "column_width": [
+              157,
+              192,
+              100,
+              309
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "UbuHdHCxOoYy0hxU2fLcsE5DnDc",
+        "block_type": 32,
+        "children": [
+          "WX3Ld8FsroA5ABxQL4Zc8QzqnVh"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WX3Ld8FsroA5ABxQL4Zc8QzqnVh",
+        "block_type": 2,
+        "parent_id": "UbuHdHCxOoYy0hxU2fLcsE5DnDc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Model Name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ERsGdfuBBofn9Zxll2acOG5LnFh",
+        "block_type": 32,
+        "children": [
+          "NIC9dBoBOowo4cx9J3FcNY1Onnb"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NIC9dBoBOowo4cx9J3FcNY1Onnb",
+        "block_type": 2,
+        "parent_id": "ERsGdfuBBofn9Zxll2acOG5LnFh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dimensions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z0M8dFwDeo8TvQxC5NZcoFWkn8b",
+        "block_type": 32,
+        "children": [
+          "PyRgdhFKpoOyk1xcO9ictzQqnrd"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PyRgdhFKpoOyk1xcO9ictzQqnrd",
+        "block_type": 2,
+        "parent_id": "Z0M8dFwDeo8TvQxC5NZcoFWkn8b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max Tokens ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "per Row",
+                "text_element_style": {
+                  "background_color": 15,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z6vEdRiH6o5txIxV7dPc6US0nLd",
+        "block_type": 32,
+        "children": [
+          "MoJhdcgdvoMcs7xJB7wc5bAvnWj"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MoJhdcgdvoMcs7xJB7wc5bAvnWj",
+        "block_type": 2,
+        "parent_id": "Z6vEdRiH6o5txIxV7dPc6US0nLd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Supported Languages",
+                "text_element_style": {
+                  "background_color": 15,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MHCidpBGzoHDr5xjVRgcVhJfnab",
+        "block_type": 32,
+        "children": [
+          "RRPVdhaGyoijzxxo90acYZqlnHf"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RRPVdhaGyoijzxxo90acYZqlnHf",
+        "block_type": 2,
+        "parent_id": "MHCidpBGzoHDr5xjVRgcVhJfnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text-embedding-v3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OISPdGUSfouI5hxFbV9c4CvJnSc",
+        "block_type": 32,
+        "children": [
+          "FDjqdHJQLob2Paxk2kFcDwbendd"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FDjqdHJQLob2Paxk2kFcDwbendd",
+        "block_type": 2,
+        "parent_id": "OISPdGUSfouI5hxFbV9c4CvJnSc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1,024 (default), 768, or 512",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MRDHdbImwom8loxpZH4ctaOunTf",
+        "block_type": 32,
+        "children": [
+          "SBWEd69mxo11N9xvqD8cJlXonYb"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SBWEd69mxo11N9xvqD8cJlXonYb",
+        "block_type": 2,
+        "parent_id": "MRDHdbImwom8loxpZH4ctaOunTf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "8,192",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hz0WdcYd5o1e6Lx9FX4cmA2Yn0c",
+        "block_type": 32,
+        "children": [
+          "J92JdgI7colBbCxQQ7wcEmXonxd"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "J92JdgI7colBbCxQQ7wcEmXonxd",
+        "block_type": 2,
+        "parent_id": "Hz0WdcYd5o1e6Lx9FX4cmA2Yn0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Chinese, English, Spanish, French, Portuguese, Indonesian, Japanese, Korean, German, Russian, and more than 50 other languages",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IvlYdpm2godsWpxI2XJcbsOGnof",
+        "block_type": 32,
+        "children": [
+          "EpD1dqAEVoIdxaxjDYdcSjSFn0g"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EpD1dqAEVoIdxaxjDYdcSjSFn0g",
+        "block_type": 2,
+        "parent_id": "IvlYdpm2godsWpxI2XJcbsOGnof",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text-embedding-v2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UYCYd5isyopO7txbvyncXY0Xnfg",
+        "block_type": 32,
+        "children": [
+          "WWNOdcBujow3YSxuXLGcB2B1nqh"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WWNOdcBujow3YSxuXLGcB2B1nqh",
+        "block_type": 2,
+        "parent_id": "UYCYd5isyopO7txbvyncXY0Xnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1,536",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CsSmdt5puoHeIhxp9D4cMKZ2nFh",
+        "block_type": 32,
+        "children": [
+          "KS9PdsrHCo9UTqx5gmJcvOVFnJc"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KS9PdsrHCo9UTqx5gmJcvOVFnJc",
+        "block_type": 2,
+        "parent_id": "CsSmdt5puoHeIhxp9D4cMKZ2nFh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "2,048",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EGIMduz6lo6gPCxnvQNcv5iMn0d",
+        "block_type": 32,
+        "children": [
+          "ZJ8TdaOzboT55QxltJZcr1McnXe"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZJ8TdaOzboT55QxltJZcr1McnXe",
+        "block_type": 2,
+        "parent_id": "EGIMduz6lo6gPCxnvQNcv5iMn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Chinese, English, Spanish, French, Portuguese, Indonesian, Japanese, Korean, German, Russian",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TcQ3d91H0o7ujyx7WcLcRHacnrh",
+        "block_type": 32,
+        "children": [
+          "V6nddpWTYoY76ix9YMLcnO3rnte"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "V6nddpWTYoY76ix9YMLcnO3rnte",
+        "block_type": 2,
+        "parent_id": "TcQ3d91H0o7ujyx7WcLcRHacnrh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text-embedding-v1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IeuudKO2Xox1maxZBCHchoxbnge",
+        "block_type": 32,
+        "children": [
+          "N9GGd904CoKcYJxFlE7crZWvnld"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "N9GGd904CoKcYJxFlE7crZWvnld",
+        "block_type": 2,
+        "parent_id": "IeuudKO2Xox1maxZBCHchoxbnge",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1,536",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UJXBdaBsEoqhuwxWxl3cQYLXngc",
+        "block_type": 32,
+        "children": [
+          "OgGNd1igkoSbnSxEby6ctRTPnnb"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OgGNd1igkoSbnSxEby6ctRTPnnb",
+        "block_type": 2,
+        "parent_id": "UJXBdaBsEoqhuwxWxl3cQYLXngc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "2,048",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FN0mdOWXjojhocxKRgaceH7Cnbh",
+        "block_type": 32,
+        "children": [
+          "USxldrr5qoBU69xoBTJcFNFPn33"
+        ],
+        "parent_id": "USdzd1YqhortE7xs3OOcZnaWnYe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "USxldrr5qoBU69xoBTJcFNFPn33",
+        "block_type": 2,
+        "parent_id": "FN0mdOWXjojhocxKRgaceH7Cnbh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Chinese, English, Spanish, French, Portuguese, Indonesian, Japanese, Korean, German, Russian",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LYb5dPAT1ooBGzxGSNbcf75vnde",
+        "block_type": 2,
+        "comment_ids": [
+          "7490486370084945924"
+        ],
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The embedding model ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "text-embedding-v3",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " support reducing the size of the embedding via a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter. Typically larger embeddings are more expensive from a compute, memory, and storage perspective. Being able to adjust the number of dimensions allows more control over overall cost and performance. For more details about each model, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490486370084945924"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fhelp.aliyun.com%2Fzh%2Fmodel-studio%2Fuser-guide%2Fembedding%3FdisableWebsiteRedirect%3Dtrue"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XMyvd7MoCoERIoxUEYrcAGHjnkd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configure credentials",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "SgjZdfNu5oUlPCxlMJEcB4DenQQ",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus must know your DashScope API key before it can request embeddings. Milvus provides two methods to configure credentials:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MXf2dP78Co20TVxwHNRcJH97nbc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configuration file (recommended):",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Store the API key in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " so every restart and node picks it up automatically.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "BvufdF9buousA5x6rYzctA9fnSj",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Environment variables:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Inject the key at deploy time—ideal for Docker Compose.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "OluLdC9XioVRnoxaSSqcxFPrnWb",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Choose one of the two methods below—the configuration file is easier to maintain on bare-metal and VMs, while the env-var route fits container workflows.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HBzEd6w9To3HlEx2VuzcGk07nzf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "ZIc8dmTmHoAxLCxY7nWc2UpdnIf",
+          "Hncrd2zXCokIJUxvaguckr9unZb"
+        ],
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "ZIc8dmTmHoAxLCxY7nWc2UpdnIf",
+        "block_type": 2,
+        "parent_id": "HBzEd6w9To3HlEx2VuzcGk07nzf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hncrd2zXCokIJUxvaguckr9unZb",
+        "block_type": 2,
+        "parent_id": "HBzEd6w9To3HlEx2VuzcGk07nzf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If an API key for the same provider is present in both the configuration file and an environment variable, Milvus always uses the value in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ignores the environment variable.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K3sJd39dqoyeAkxCIrOcgkUInJh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Option 1: Configuration file (recommended & higher priority)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "SzZSdywsKoPZkwxDEfjcACn5n1d",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Keep your API keys in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "; Milvus reads them at startup and overrides any environment variable for the same provider.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kcywdb0tWoYAZOxIJd7ciLwgnBl",
+        "block_type": 13,
+        "children": [
+          "SLoHdmkDnoK1Exxag9cchgxlnta",
+          "XLi4dMVjDo0zHjxWofYc1GoLncf",
+          "VYXQdLIUro2kmvxWFrWcWzl8nOc"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Declare your keys under ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "credential:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "SLoHdmkDnoK1Exxag9cchgxlnta",
+        "block_type": 2,
+        "parent_id": "Kcywdb0tWoYAZOxIJd7ciLwgnBl",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You may list one or many API keys—give each a label you invent and will reference later.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XLi4dMVjDo0zHjxWofYc1GoLncf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# milvus.yaml\ncredential:\n  apikey_dev:            # dev environment\n    apikey: <YOUR_DEV_KEY>\n  apikey_prod:           # production environment\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    apikey: <YOUR_PROD_KEY>    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "Kcywdb0tWoYAZOxIJd7ciLwgnBl"
+      },
+      {
+        "block_id": "VYXQdLIUro2kmvxWFrWcWzl8nOc",
+        "block_type": 2,
+        "parent_id": "Kcywdb0tWoYAZOxIJd7ciLwgnBl",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Putting the API keys here makes them persistent across restarts and lets you switch keys just by changing a label.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PtgIdrFj9oHzmpxiYuKcJhEOntc",
+        "block_type": 13,
+        "children": [
+          "FXIpd1jjtoUb8yxs4UvcO9mhnjh",
+          "GivxdtfUboxyjKx9Ktrca1Lonxe",
+          "W4SUdLs65oK49LxUuxtcnUlznWf"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tell Milvus which key to use for DashScope calls",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "FXIpd1jjtoUb8yxs4UvcO9mhnjh",
+        "block_type": 2,
+        "parent_id": "PtgIdrFj9oHzmpxiYuKcJhEOntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the same file, point the DashScope provider at the label you want it to use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GivxdtfUboxyjKx9Ktrca1Lonxe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "function:\n  textEmbedding:\n    providers:\n      dashscope:\n        credential: apikey_dev      # ← choose any label you defined above\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        # url: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "   # (optional) custom url",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "PtgIdrFj9oHzmpxiYuKcJhEOntc"
+      },
+      {
+        "block_id": "W4SUdLs65oK49LxUuxtcnUlznWf",
+        "block_type": 2,
+        "parent_id": "PtgIdrFj9oHzmpxiYuKcJhEOntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This binds a specific key to every request Milvus sends to the DashScope embeddings endpoint.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CPHtdC4Mmo9uSTxWdylcGb8Lndw",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Option 2: Environment variable",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "VLLgdmfIfob28lxQoS8cV3lGnid",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use this method when you run Milvus with Docker Compose and prefer to keep secrets out of files and images.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DFszdDY2UoAmAExdM2jcpQKnnrg",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus falls back to the environment variable only if no key for the provider is found in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "block_type": 31,
+        "children": [
+          "Vc3qdSlmUoBtVaxcYWdc7e56nqe",
+          "PDPudeLm2o2YzGxwWKXcysIGn7b",
+          "NrCDdpLEdoExGaxq8NEcAfXDnIf",
+          "P6bMdiDHposrEnxLkKYcj1MQnAd",
+          "UdIHdVahLon75tx36XBcxtxwnEg",
+          "QpOgd9iJ0o5YRBxjG8YcRVrXnac"
+        ],
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "table": {
+          "cells": [
+            "Vc3qdSlmUoBtVaxcYWdc7e56nqe",
+            "PDPudeLm2o2YzGxwWKXcysIGn7b",
+            "NrCDdpLEdoExGaxq8NEcAfXDnIf",
+            "P6bMdiDHposrEnxLkKYcj1MQnAd",
+            "UdIHdVahLon75tx36XBcxtxwnEg",
+            "QpOgd9iJ0o5YRBxjG8YcRVrXnac"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              209,
+              100,
+              316
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 2
+          }
+        }
+      },
+      {
+        "block_id": "Vc3qdSlmUoBtVaxcYWdc7e56nqe",
+        "block_type": 32,
+        "children": [
+          "CiwrdDUWdo03d9xcRvfc2ph6nkh"
+        ],
+        "parent_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CiwrdDUWdo03d9xcRvfc2ph6nkh",
+        "block_type": 2,
+        "parent_id": "Vc3qdSlmUoBtVaxcYWdc7e56nqe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Variable",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PDPudeLm2o2YzGxwWKXcysIGn7b",
+        "block_type": 32,
+        "children": [
+          "BoYYdE5blow7GrxuSSaclOSPnKd"
+        ],
+        "parent_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BoYYdE5blow7GrxuSSaclOSPnKd",
+        "block_type": 2,
+        "parent_id": "PDPudeLm2o2YzGxwWKXcysIGn7b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NrCDdpLEdoExGaxq8NEcAfXDnIf",
+        "block_type": 32,
+        "children": [
+          "LoPIdirs7oj03Bx92UvcT6ItnIg"
+        ],
+        "parent_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "LoPIdirs7oj03Bx92UvcT6ItnIg",
+        "block_type": 2,
+        "parent_id": "NrCDdpLEdoExGaxq8NEcAfXDnIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P6bMdiDHposrEnxLkKYcj1MQnAd",
+        "block_type": 32,
+        "children": [
+          "CtUwdrny2oxCsZxNFlMcmsO2nrc"
+        ],
+        "parent_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CtUwdrny2oxCsZxNFlMcmsO2nrc",
+        "block_type": 2,
+        "parent_id": "P6bMdiDHposrEnxLkKYcj1MQnAd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MILVUSAI_DASHSCOPE_API_KEY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UdIHdVahLon75tx36XBcxtxwnEg",
+        "block_type": 32,
+        "children": [
+          "LTG7dLl48o0IOHxXd6acvNF2nue"
+        ],
+        "parent_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "LTG7dLl48o0IOHxXd6acvNF2nue",
+        "block_type": 2,
+        "parent_id": "UdIHdVahLon75tx36XBcxtxwnEg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QpOgd9iJ0o5YRBxjG8YcRVrXnac",
+        "block_type": 32,
+        "children": [
+          "R0MAdBgPBo4k3Vxj0sVcT0BfntA"
+        ],
+        "parent_id": "WJzcdPXW4oYMHbx6eercGUeenyg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "R0MAdBgPBo4k3Vxj0sVcT0BfntA",
+        "block_type": 2,
+        "parent_id": "QpOgd9iJ0o5YRBxjG8YcRVrXnac",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Makes the DashScope key available inside each Milvus container ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(ignored when a key for DashScope exists in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C0RSdXg8TomYSGxZ99WcyihYnwe",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In your ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "docker-compose.yaml",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " file, set the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MILVUSAI_DASHSCOPE_API_KEY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " environment variable.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GdD8dt5TyoeCApxDAWacEAxTnwQ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# docker-compose.yaml (standalone service section)\nstandalone:\n  # ... other configurations ...\n  environment:\n    # ... other environment variables ...\n    # Set the environment variable pointing to the DashScope API key inside the container\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    MILVUSAI_DASHSCOPE_API_KEY: <MILVUSAI_DASHSCOPE_API_KEY>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "JeO9dVYLRogJ1OxO8PtcDgTvnIc",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "environment:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " block injects the key only into the Milvus container, leaving your host OS untouched. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Configure Milvus with Docker Compose",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fconfigure-docker.md%23Configure-Milvus-with-Docker-Compose"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DM3rdSBwpooZkHxxERbc4lpnnAe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use embedding function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "RGTkd4lfIouisGxLDhLcLobfnMf",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once credentials are configured, follow these steps to define and use embedding functions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OJtWd0YgNoamjuxlYu5c7WVGnfd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 1: Define schema fields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "MWTYdoUxWoOhb6x3BUgcTwHhnlb",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To use an embedding function, create a collection with a specific schema. This schema must include at least three necessary fields:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OK9CdwzP9ooEhEx1Afucm5f3ncc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The primary field that uniquely identifies each entity in a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "TLIbdqvQTorE2Sx7IjNca1ZLntb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A scalar field that stores raw data to be embedded.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "IUWHdV8apomFi9xY9s7c3GOynhh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A vector field reserved to store vector embeddings that the function will generate for the scalar field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "I7rhdXPDXoKmQNxKXP5cifL2nkb",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example defines a schema with one scalar field ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"document\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for storing textual data and one vector field ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"dense\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for storing embeddings to be generated by the Function module. Remember to set the vector dimension (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to match the output of your chosen embedding model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YM2HdX1N3oX5cUx7YqzcNL6unoU",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, DataType, Function, FunctionType\n\n# Initialize Milvus client\nclient = MilvusClient(\n    uri=\"http://localhost:19530\",\n)\n\n# Create a new schema for the collection\nschema = client.create_schema()\n\n# Add primary field \"id\"\nschema.add_field(\"id\", DataType.INT64, is_primary=True, auto_id=False)\n\n# Add scalar field \"document\" for storing textual data\nschema.add_field(\"document\", DataType.VARCHAR, max_length=9000)\n\n# Add vector field \"dense\" for storing embeddings.\n# IMPORTANT: Set dim to match the exact output dimension of the embedding model.\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.add_field(\"dense\", DataType.FLOAT_VECTOR, dim=1024)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "T6k0dmaNeoWmTBxb5TfcPVPDnOg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.common.DataType;\nimport io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.AddFieldReq;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq;\n\nString CLUSTER_ENDPOINT = \"http://localhost:19530\";\nString TOKEN = \"root:Milvus\";\n\nConnectConfig connectConfig = ConnectConfig.builder()\n        .uri(CLUSTER_ENDPOINT)\n        .token(TOKEN)\n        .build();\n\nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\nCreateCollectionReq.CollectionSchema schema = client.createSchema();\n\nschema.addField(AddFieldReq.builder()\n        .fieldName(\"id\")\n        .dataType(DataType.Int64)\n        .isPrimaryKey(true)\n        .autoID(false)\n        .build());\n\nschema.addField(AddFieldReq.builder()\n        .fieldName(\"document\")\n        .dataType(DataType.VarChar)\n        .maxLength(9000)\n        .build());\n        \nschema.addField(AddFieldReq.builder()\n        .fieldName(\"dense\")\n        .dataType(DataType.FloatVector)\n        .dimension(1024)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "GAKhdnKRuo00f3xqMDQcnxdintc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// nodejs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "XKsGd1dT2oKitexEJSfcul0tngd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "XLz3dE7OdoNj7GxVSmpcyVgRnch",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "BIG0d1ocWoi4OVxX6P9csse0n3f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nmilvus::CollectionSchemaPtr schema = std::make_shared<milvus::CollectionSchema>();\nschema->AddField({\"id\", milvus::DataType::INT64, \"\", true, false});\nschema->AddField(milvus::FieldSchema(\"document\", milvus::DataType::VARCHAR).WithMaxLength(9000));\nschema->AddField(milvus::FieldSchema(\"dense\", milvus::DataType::FLOAT_VECTOR).WithDimension(1024));\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "ZTReduuy9odjenxeyercQRQJnIe",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 2: Add embedding function to schema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "Mg5MdQ7SyoExcXx59cRcWBLSnvf",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The Function module in Milvus automatically converts raw data stored in a scalar field into embeddings and stores them into the explicitly defined vector field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jfh5d28vaoP5KBxkqQucLEXYnyr",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The example below adds a Function module (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ali",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") that converts the scalar field ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"document\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " into embeddings, storing the resulting vectors in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"dense\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " vector field defined earlier.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UfuKd1VwAoaFSkxMojCcX9u1n5g",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you have defined your embedding function, add it to your collection schema. This instructs Milvus to use the specified embedding function to process and store embeddings from your text data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HV2ndfdktoByEoxCai1c0qQwnbh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\n# Define embedding function specifically for model provider\ntext_embedding_function = Function(\n    name=\"ali\",                                     # Unique identifier for this embedding function\n    function_type=FunctionType.TEXTEMBEDDING,       # Indicates a text embedding function\n    input_field_names=[\"document\"],                 # Scalar field(s) containing text data to embed\n    output_field_names=[\"dense\"],                   # Vector field(s) for storing embeddings\n    params={                                        # Provider-specific embedding parameters\n        \"provider\": \"dashscope\",                    # Embedding provider name (must be \"dashscope\")\n        \"model_name\": \"text-embedding-v3\",          # Specific embedding model used\n        # Optional parameters:\n        # \"credential\": \"apikey_dev\"                # Optional: Credential label specified in milvus.yaml\n        # \"dim\": \"1024\",                            # Optional: Shorten the output vector dimension\n    }\n)\n\n# Add the configured embedding function to your existing collection schema\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.add_function(text_embedding_function)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "DY0ydf12Zo237qxv7ooccYS7nvb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.collection.request.CreateCollectionReq.Function;\n\nFunction function = Function.builder()\n        .functionType(FunctionType.TEXTEMBEDDING)\n        .name(\"ali\")\n        .inputFieldNames(Collections.singletonList(\"document\"))\n        .outputFieldNames(Collections.singletonList(\"dense\"))\n        .param(\"provider\", \"dashscope\")\n        .param(\"model_name\", \"text-embedding-v3\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.addFunction(function);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "KaagdA5kdotTu9xOL3icHQVin3f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// nodejs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "Ru49dzgbqoO7M7xM1SdcOh6enCg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "JYt4dKr2Modj4IxhX3LcBEuRnyg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "GYuGdz3U8oxezxx6s5Qc0OBsnwb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "milvus::FunctionPtr function = std::make_shared<milvus::Function>(\"ali\", milvus::FunctionType::TEXTEMBEDDING);\nfunction->AddInputFieldName(\"document\");\nfunction->AddOutputFieldName(\"dense\");\nfunction->AddParam(\"provider\", \"dashscope\");\nfunction->AddParam(\"model_name\", \"text-embedding-v3\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection_schema->AddFunction(function);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "JrTtdbTtkonNLHxPtS9cOn8AnVh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Next steps",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f"
+      },
+      {
+        "block_id": "YbkbdNOL1o3w0QxGhCFckG0Jnge",
+        "block_type": 2,
+        "parent_id": "NUlfdV651odUFtxyvLOcDY4Fn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After configuring the embedding function, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FDKyXws0pXibd45kdPXPc1PV5nIb%23MFWCdcFvVojdn8x6xzKccODjn0f"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for additional guidance on index configuration, data insertion examples, and semantic search operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 101
+  }
+}

@@ -1,0 +1,1111 @@
+{
+  "created_time": "1720587842",
+  "modified_time": "1746612853",
+  "name": "insert()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "I78jfSEHvl292Tdwoy7cO2KVn0g",
+  "token": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/P0XRd2Mgfo1uG6xk47icWRd4n6b",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "block_type": 1,
+        "children": [
+          "doxcnSThFE41fr5OVZxkoUOpFVd",
+          "doxcnlTUiCKxeHBJgzHLXHfHJkg",
+          "doxcnTUgoZk7FqR3RG3rTIPUmMh",
+          "doxcnWNYaQbRe4lPMU6JAGgZ4me",
+          "doxcnABtXsbkhS5hcN6rYZUJwyg",
+          "doxcntsoDwaUGP5tMOjonIK15Yb",
+          "doxcnyepSSaGQHnmcW1F8E163Ae",
+          "doxcnTU0udbx3eYZaU2vfIQgGeb",
+          "doxcnbfHse9nyYYMvxTeZDr2jfc",
+          "doxcnkgSJNYles5XWH3ODpnHGig",
+          "doxcno9oE9v0gQA4KFmO3hd3y4g",
+          "doxcnmjP6Guk03QNVnD7V1UVi9b",
+          "doxcns5dPh0jDkzmQZbHn3hnoYe",
+          "doxcn4wOdAPQNO7HCjuNqIH7Tgc",
+          "doxcnvRJilvXDvJRHhrJVJQElTh",
+          "doxcnHfPsLsf8DBcIavonRN5Kxh",
+          "doxcnJ1235fL9W4gdwCMagprxCd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "insert()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnSThFE41fr5OVZxkoUOpFVd",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation inserts data into a specific collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlTUiCKxeHBJgzHLXHfHJkg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public InsertResp insert(InsertReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnTUgoZk7FqR3RG3rTIPUmMh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnWNYaQbRe4lPMU6JAGgZ4me",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "insert(InsertReq.builder()\n    .collectionName(String collectionName)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .data(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "JsonObject",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "> data)\n    .partitionName(String partitionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnABtXsbkhS5hcN6rYZUJwyg",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcntsoDwaUGP5tMOjonIK15Yb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnd07VALOzabn6WJ0e0kRPYg"
+        ],
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnd07VALOzabn6WJ0e0kRPYg",
+        "block_type": 2,
+        "parent_id": "doxcntsoDwaUGP5tMOjonIK15Yb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnyepSSaGQHnmcW1F8E163Ae",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "data(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "JsonObject",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "> data)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn4PQfyD9d99ZFB3l8r3ziGg",
+          "doxcnGo5kdXfIFkXbHNry0PSrqe",
+          "doxcn7ZUlitvqnDu39LjUjYLkvf",
+          "XHS9dFaJCoPiRwxj8Swc1WQdnHf",
+          "doxcndJ5Iklzqkl41u79DXd4G0d"
+        ],
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcn4PQfyD9d99ZFB3l8r3ziGg",
+        "block_type": 2,
+        "parent_id": "doxcnyepSSaGQHnmcW1F8E163Ae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data to insert into the current collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGo5kdXfIFkXbHNry0PSrqe",
+        "block_type": 2,
+        "parent_id": "doxcnyepSSaGQHnmcW1F8E163Ae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data to insert should be a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "gson.JsonObject",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that matches the schema of the current collection or a list of such dictionaries. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn7ZUlitvqnDu39LjUjYLkvf",
+        "block_type": 2,
+        "parent_id": "doxcnyepSSaGQHnmcW1F8E163Ae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following code assumes that the schema of the current collection has two fields named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "vector",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". The former is the primary field and the latter is a field to hold 5-dimensional vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XHS9dFaJCoPiRwxj8Swc1WQdnHf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "MQgCdqWdcoAL2pxWIU8cgrqTnhh",
+          "SsIIduNBWoH0oJxShjBcpVqrnOg"
+        ],
+        "parent_id": "doxcnyepSSaGQHnmcW1F8E163Ae"
+      },
+      {
+        "block_id": "MQgCdqWdcoAL2pxWIU8cgrqTnhh",
+        "block_type": 2,
+        "parent_id": "XHS9dFaJCoPiRwxj8Swc1WQdnHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SsIIduNBWoH0oJxShjBcpVqrnOg",
+        "block_type": 2,
+        "parent_id": "XHS9dFaJCoPiRwxj8Swc1WQdnHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In Java SDK versions v2.4.1 or earlier versions, the input is a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fastjson.JSONObject",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". But ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fastjson",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is not recommended to use now because of its unsafe deserialization vulnerability. Therefore, replace ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fastjson",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "gson",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " if you use the Java SDK of v2.4.2 or later releases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcndJ5Iklzqkl41u79DXd4G0d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import com.google.gson.JsonObject;\n\nList<JsonObject> data = new ArrayList<>();\n\nJsonObject dict1 = new JsonObject();\nList<Float> vectorArray1 = new ArrayList<>();\nvectorArray1.add(0.37417449965222693);\nvectorArray1.add(-0.9401784221711342);\nvectorArray1.add(0.9197526367693833);\nvectorArray1.add(0.49519396415367245);\nvectorArray1.add(-0.558567588166478);\n\ndict1.addProperty(\"id\", 1L);\ndict1.add(\"vector\", gson.toJsonTree(vectorArray1));\n\nJsonObject dict2 = new JsonObject();\nList<Float> vectorArray2 = new ArrayList<>();\nvectorArray2.add(0.46949086179692356);\nvectorArray2.add(-0.533609076732849);\nvectorArray2.add(-0.8344432775467099);\nvectorArray2.add(0.9797361846081416);\nvectorArray2.add(0.6294256393761057);\n\ndict2.addProperty(\"id\", 2L);\ndict2.add(\"vector\", gson.toJsonTree(vectorArray2));\n\ndata.add(dict1);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "data.add(dict2);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "doxcnyepSSaGQHnmcW1F8E163Ae"
+      },
+      {
+        "block_id": "doxcnTU0udbx3eYZaU2vfIQgGeb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionName(String partitionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcntUkJt7MymYgnE6xjs52q6p"
+        ],
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcntUkJt7MymYgnE6xjs52q6p",
+        "block_type": 2,
+        "parent_id": "doxcnTU0udbx3eYZaU2vfIQgGeb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of a partition.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbfHse9nyYYMvxTeZDr2jfc",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnkgSJNYles5XWH3ODpnHGig",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "InsertResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcno9oE9v0gQA4KFmO3hd3y4g",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnmjP6Guk03QNVnD7V1UVi9b",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "InsertResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object containing information about the number of inserted entities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcns5dPh0jDkzmQZbHn3hnoYe",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4wOdAPQNO7HCjuNqIH7Tgc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnh91rXg9neFkuyLJ2uET3eJ"
+        ],
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnh91rXg9neFkuyLJ2uET3eJ",
+        "block_type": 2,
+        "parent_id": "doxcn4wOdAPQNO7HCjuNqIH7Tgc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvRJilvXDvJRHhrJVJQElTh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnHfPsLsf8DBcIavonRN5Kxh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import com.google.gson.JsonObject;\nimport io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.vector.request.InsertReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Add one row to the collection, the collection has an \"id\" field\n// and a \"vector\" field with dimension 2\nJsonObject row = new JsonObject();\nList<Float> vectorList = new ArrayList<>();\nvectorList.add(1.0f);\nvectorList.add(2.0f);\nrow.add(\"vector\", gson.toJsonTree(vectorList));\nrow.addProperty(\"id\", 0L);\n\nInsertReq insertReq = InsertReq.builder()\n        .collectionName(\"test\")\n        .data(Collections.singletonList(row))\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.insert(insertReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b"
+      },
+      {
+        "block_id": "doxcnJ1235fL9W4gdwCMagprxCd",
+        "block_type": 2,
+        "parent_id": "P0XRd2Mgfo1uG6xk47icWRd4n6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 28
+  },
+  "slug": "v2-Vector-insert"
+}

@@ -1,0 +1,778 @@
+{
+  "created_time": "1741677795",
+  "modified_time": "1746615816",
+  "name": "transferReplica()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "F7kifoqZzl3jgndMDoacjl9Unce",
+  "token": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/FmMhdGH69oXzkyxGVtycx4u0nHb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "block_type": 1,
+        "children": [
+          "HRwNdmQcxolBudxaMeTc6gb5nRe",
+          "RUDEdRBI2o92NixNNJzcuh91nsd",
+          "PAIOdJv08olTLWxA9L0cYzLjnHh",
+          "LvMcdSXS6oiIwnxKRv4ctQtpnVb",
+          "VSuAdONwvoft4yxZt20cBfcynAh",
+          "SELSddX40oe75MxtNXwcHS16n8g",
+          "H40ddtHvOowfEGxCwVQcxUgdnug",
+          "GnuKdSXofoPMxbxhV6NcogKUnHg",
+          "RNWMdjUIXo2CS8x4P45cf6C9nsg",
+          "Cw6idpawDoFTMUx6pamcDs7unsb",
+          "OkiedUoTYofi9QxYcFmcLGlwnVh",
+          "HlNRdYzNGoqo51xp3OJcjf7unre",
+          "I6ZEdBg0BoOxiexl5dKcDPRKnRb",
+          "VmS6d3muIosMCVxSjEccMyeKnWx",
+          "Bv0yds7dMoJnfCx29vRc4GCanxd",
+          "ME0zdyGSFowc9TxVQVqc5A01neg",
+          "R3ead6JqnomIYnxHv0XcHBuRnEX"
+        ],
+        "comment_ids": [
+          "7501957623505518611"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "transferReplica()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7501957623505518611"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "HRwNdmQcxolBudxaMeTc6gb5nRe",
+        "block_type": 2,
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation reassigns the specified number of replicas from the source resource group to the target resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RUDEdRBI2o92NixNNJzcuh91nsd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void transferReplica(TransferReplicaReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "PAIOdJv08olTLWxA9L0cYzLjnHh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "LvMcdSXS6oiIwnxKRv4ctQtpnVb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "transferReplica(TransferReplicaReq.builder()\n    .sourceGroupName(String sourceGroupName)\n    .targetGroupName(String targetGroupName)\n    .collectionName(String collectionName)\n    .databaseName(String databaseName)\n    .numberOfReplicas(Long numberOfReplicas)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "VSuAdONwvoft4yxZt20cBfcynAh",
+        "block_type": 2,
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SELSddX40oe75MxtNXwcHS16n8g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "sourceGroupName(String sourceGroupName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DdeidHBbDoh2A5xBCWJcWQvPnMf"
+        ],
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "DdeidHBbDoh2A5xBCWJcWQvPnMf",
+        "block_type": 2,
+        "parent_id": "SELSddX40oe75MxtNXwcHS16n8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the source resource group of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H40ddtHvOowfEGxCwVQcxUgdnug",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "targetGroupName(String targetGroupName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Yg0Id9KYzo6h0QxsHHSckqJTnUg"
+        ],
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "Yg0Id9KYzo6h0QxsHHSckqJTnUg",
+        "block_type": 2,
+        "parent_id": "H40ddtHvOowfEGxCwVQcxUgdnug",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the target resource group of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GnuKdSXofoPMxbxhV6NcogKUnHg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "I41LdvQpuo95b4xawnJcOeljnBc"
+        ],
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "I41LdvQpuo95b4xawnJcOeljnBc",
+        "block_type": 2,
+        "parent_id": "GnuKdSXofoPMxbxhV6NcogKUnHg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the collection whose replicas will be transferred.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RNWMdjUIXo2CS8x4P45cf6C9nsg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JtBjdKQCEojOiVxkX9oc5F90nWe"
+        ],
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "JtBjdKQCEojOiVxkX9oc5F90nWe",
+        "block_type": 2,
+        "parent_id": "RNWMdjUIXo2CS8x4P45cf6C9nsg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the database that holds the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Cw6idpawDoFTMUx6pamcDs7unsb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numberOfReplicas(Long numberOfReplicas)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MXqudRa7Io65YjxJtJNce1jOnPb"
+        ],
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "MXqudRa7Io65YjxJtJNce1jOnPb",
+        "block_type": 2,
+        "parent_id": "Cw6idpawDoFTMUx6pamcDs7unsb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Number of replicas to transfer.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OkiedUoTYofi9QxYcFmcLGlwnVh",
+        "block_type": 2,
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HlNRdYzNGoqo51xp3OJcjf7unre",
+        "block_type": 2,
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I6ZEdBg0BoOxiexl5dKcDPRKnRb",
+        "block_type": 2,
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VmS6d3muIosMCVxSjEccMyeKnWx",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OS1zdrvUtoUCH4xDr5QcZxvwncg"
+        ],
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "OS1zdrvUtoUCH4xDr5QcZxvwncg",
+        "block_type": 2,
+        "parent_id": "VmS6d3muIosMCVxSjEccMyeKnWx",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Bv0yds7dMoJnfCx29vRc4GCanxd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "ME0zdyGSFowc9TxVQVqc5A01neg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.resourcegroup.request.TransferReplicaReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. Transfer replicas",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "to another group",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nTransferReplicaReq transferReplicaReq = TransferReplicaReq.builder()\n    .sourceGroupName(\"DEFAULT_RESOURCE_GROUP\")\n    .targetGroupName(\"rg1\")\n    .collectionName(\"test\")\n    .numberOfReplicas(4)\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.transferReplica(transferReplicaReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb"
+      },
+      {
+        "block_id": "R3ead6JqnomIYnxHv0XcHBuRnEX",
+        "block_type": 2,
+        "parent_id": "FmMhdGH69oXzkyxGVtycx4u0nHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 24
+  },
+  "slug": "v2-ResourceGroup-transferReplica"
+}

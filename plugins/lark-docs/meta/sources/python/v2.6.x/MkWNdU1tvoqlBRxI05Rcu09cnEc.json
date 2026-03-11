@@ -1,0 +1,4439 @@
+{
+  "created_time": "1703731570",
+  "modified_time": "1770946914",
+  "name": "get_import_progress()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "I5i9f86n4lsy9IddsDocMOsfnXg",
+  "token": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/MkWNdU1tvoqlBRxI05Rcu09cnEc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "block_type": 1,
+        "children": [
+          "P34jd7PJgoyJvixBD35c0t8qnkd",
+          "CDcOdckkYoTT9Ux0G1fcEWRmn9v",
+          "YfkxdyBR3onK7CxAgMucJ4XqnLc",
+          "doxcnp4tO4sBM7KBqqwl6ypUWah",
+          "HdY5dpHkLo6NguxOP2Kc5Pgongh",
+          "BL17dD0KHo4rN9xistmcN75Ynnc",
+          "Y8A6dWXJPorJFqxnxM8ctLFAnvg",
+          "PGlVdz8xMoJAgKxPfUScBSrxnYb",
+          "doxcnSb83KEywcL13MksEIwFOCe",
+          "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+          "ZKucdFgZ5oMaycx3UUYc34zPn4e",
+          "K99vdo1qMo6bn0xmoZsctfLcn0b",
+          "ZLstdw4aloU8yrxgRBDczGCNn0c",
+          "G4ludzyKtolVDHx0XMScvDzLnrc",
+          "EXvpdy8Oto1KnRxEVTecYHddnWf",
+          "Aj2Ed7EUgoeC0oxKluEc0nqenbe",
+          "HaJhd2ASuoMCRUxhYaWc5Cl9nLf",
+          "doxcnRf8TR0pLrUbv88gVhgxDTd",
+          "BNuAdhweMov7TsxUY6bcQoxCnZg",
+          "AoGqdygvDonyG1xAcAbc2z9fnqe",
+          "ZNM9ds9BHoYdQqxMXvWc3pMEnCh",
+          "KJYodPyh3oOR5jxH6TucOyKZnJr",
+          "doxcncFv3hZq1VunaKt7qeXws3c",
+          "Tp3mdMrlLofFnVx9za0cUaHCnXe",
+          "LCfTd83V7oA6ELxeph4cHLLbnmf",
+          "NrQZdmnPYo6HiyxjkkyclH6mndf",
+          "EBOndBdeEoxfZaxPNoWcqXOTnSg",
+          "NNTJdjMjDoavlsxi3tAchqFWnjc",
+          "Z6qVdu41zohcmNxRaT1c2Uphn0g",
+          "NcQLd5rpEoH42SxUmVfcoydRnth",
+          "RHwhdcdwoodLvfxVbgJcf0ALnkb",
+          "UIA3dqRkToUK11xJhO4cf2Vsnnc",
+          "JDMCds3iDoYPHPxlKCBcFnnJnY2",
+          "SsY0dL4cYokrJoxusu8cj6T6nqX",
+          "S50ad6j4NogvnIxPpwqcE6AHnUc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "get_import_progress()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "P34jd7PJgoyJvixBD35c0t8qnkd",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation gets the progress of the specified bulk-import job.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CDcOdckkYoTT9Ux0G1fcEWRmn9v",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "YfkxdyBR3onK7CxAgMucJ4XqnLc",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnp4tO4sBM7KBqqwl6ypUWah",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.get_import_progress(\n    url: str,\n    api_key: str,\n    job_id: str,\n    cluster_id: str,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "HdY5dpHkLo6NguxOP2Kc5Pgongh",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BL17dD0KHo4rN9xistmcN75Ynnc",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y8A6dWXJPorJFqxnxM8ctLFAnvg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.get_import_progress(\n    url: str,\n    job_id: str,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "PGlVdz8xMoJAgKxPfUScBSrxnYb",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnSb83KEywcL13MksEIwFOCe",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "url",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "M0LkdMbqiobPMWxcJ4gcbCednoe",
+          "WAfQdqXWTokqDCxkhsvcFmkXnte",
+          "Z7sNdajwkoMhx1xX0ZfcwkwKnye",
+          "FmTDdsP7qoLlD2xaN1scpEF9nqc",
+          "EWwGdssyeocczIxGxjdclVSRnJh",
+          "ZDjXdZslDoGsbTx5tRVc2IkynYg",
+          "IQZGdt3OQoXXx6xCkjScvGkFnrf",
+          "Z4mtd4rpgoqBv7x3FZWcEGHMnYe",
+          "G0g1djGq6oLaGQxg0OGcAHbrnSf",
+          "OrORdd6SPoOYRrx8BvycP0NQn3g"
+        ],
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "M0LkdMbqiobPMWxcJ4gcbCednoe",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WAfQdqXWTokqDCxkhsvcFmkXnte",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z7sNdajwkoMhx1xX0ZfcwkwKnye",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The endpoint URL of your Zilliz Cloud cluster. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FmTDdsP7qoLlD2xaN1scpEF9nqc",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For example, the endpoint URL should be in the following format:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EWwGdssyeocczIxGxjdclVSRnJh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "https://api.cloud.zilliz.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e"
+      },
+      {
+        "block_id": "ZDjXdZslDoGsbTx5tRVc2IkynYg",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Replace ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cloud-region",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with the ID of the region that accommodates your cluster. You can get the cloud region ID from the endpoint URL of your cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IQZGdt3OQoXXx6xCkjScvGkFnrf",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "Z4mtd4rpgoqBv7x3FZWcEGHMnYe",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G0g1djGq6oLaGQxg0OGcAHbrnSf",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The URI of your Milvus instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OrORdd6SPoOYRrx8BvycP0NQn3g",
+        "block_type": 2,
+        "parent_id": "Fo4odwUBYoG6hvxgdpzcW3CXn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZKucdFgZ5oMaycx3UUYc34zPn4e",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K99vdo1qMo6bn0xmoZsctfLcn0b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "api_key",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Cmk8dPDoQoFhAzx5SLGc9GMpn0c",
+          "KvSUdFdH0oW628xMWhJc18oenGg"
+        ],
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "Cmk8dPDoQoFhAzx5SLGc9GMpn0c",
+        "block_type": 2,
+        "parent_id": "K99vdo1qMo6bn0xmoZsctfLcn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KvSUdFdH0oW628xMWhJc18oenGg",
+        "block_type": 2,
+        "parent_id": "K99vdo1qMo6bn0xmoZsctfLcn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid Zilliz Cloud ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " key with sufficient permissions to manipulate the cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "ZLstdw4aloU8yrxgRBDczGCNn0c",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G4ludzyKtolVDHx0XMScvDzLnrc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "job_id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YewgdZeddoybajxJlKUc70uAnQf",
+          "MNaMd77tPoQCLJxTC05cMf1CnEb",
+          "Kao3dCVLWoJHudxCYvVcQM3rnUf"
+        ],
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "YewgdZeddoybajxJlKUc70uAnQf",
+        "block_type": 2,
+        "parent_id": "G4ludzyKtolVDHx0XMScvDzLnrc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MNaMd77tPoQCLJxTC05cMf1CnEb",
+        "block_type": 2,
+        "parent_id": "G4ludzyKtolVDHx0XMScvDzLnrc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the bulk-import job of your interest. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kao3dCVLWoJHudxCYvVcQM3rnUf",
+        "block_type": 2,
+        "parent_id": "G4ludzyKtolVDHx0XMScvDzLnrc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bulk_import()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " operation usually returns a job ID. You can also call ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list-import-jobs()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to get the IDs of all bulk-import jobs related to the specific cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EXvpdy8Oto1KnRxEVTecYHddnWf",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Aj2Ed7EUgoeC0oxKluEc0nqenbe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "cluster_id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LQGldAa1HoRnyYxL6socTkPjnLe",
+          "NydKdtgMdoYouDxTRctcHGGBnef",
+          "BUy1dF6wjofDKTxB7zwc6DIRnpg"
+        ],
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "LQGldAa1HoRnyYxL6socTkPjnLe",
+        "block_type": 2,
+        "parent_id": "Aj2Ed7EUgoeC0oxKluEc0nqenbe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NydKdtgMdoYouDxTRctcHGGBnef",
+        "block_type": 2,
+        "parent_id": "Aj2Ed7EUgoeC0oxKluEc0nqenbe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The instance ID of the target cluster of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BUy1dF6wjofDKTxB7zwc6DIRnpg",
+        "block_type": 2,
+        "parent_id": "Aj2Ed7EUgoeC0oxKluEc0nqenbe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can get the instance ID of a cluster on its details page from the Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HaJhd2ASuoMCRUxhYaWc5Cl9nLf",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnRf8TR0pLrUbv88gVhgxDTd",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BNuAdhweMov7TsxUY6bcQoxCnZg",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dict",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AoGqdygvDonyG1xAcAbc2z9fnqe",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZNM9ds9BHoYdQqxMXvWc3pMEnCh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Response syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "PnI8dYzY5oB2TLxc1e9caCQ6neg"
+        ],
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "PnI8dYzY5oB2TLxc1e9caCQ6neg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# {\n#     \"code\": \"integer\",\n#     \"data\": {\n#         \"collectionName\": \"string\",\n#         \"fileSize\": \"interger\",\n#         \"jobId\": \"string\",\n#         \"state\": \"string\",\n#         \"progress\": \"integer\",\n#         \"reason\": \"string\",\n#         \"importedRows\": \"integer\",\n#         \"totalRows\": \"integer\",\n#         \"completeTime\": \"string\",\n#         \"details\":[\n#             {\n#                 \"fileName\": \"string\",\n#                 \"fileSize\": \"integer\",\n#                 \"state\": \"string\",\n#                 \"progress\": \"integer\",\n#                 \"reason\": \"string\",\n#                 \"importedRows\": \"integer\",\n#                 \"totalRows\": \"integer\",\n#                 \"completeTime\": \"string\"\n#             },\n#             ...\n#         ]\n#     }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZNM9ds9BHoYdQqxMXvWc3pMEnCh"
+      },
+      {
+        "block_id": "KJYodPyh3oOR5jxH6TucOyKZnJr",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Response structure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TeVTdlrZ4oY4KsxBvHrcTYxkn1f",
+          "YZASdYPyRonOlDxzAvJc46uvnzS",
+          "NVDFdhyjxoAIKoxN5iRcMLYWnhc",
+          "DC8ldPVhhodprvx4vP2cM6QBn9e",
+          "PKAtdr7DEoDpFkxmizKchPfQncs",
+          "O15LdxRURotAEkxvQh2csRocnwe",
+          "I7HLdti9uozVhAxm6WicphHun4e",
+          "Y02EdtHfOo4Z7Ax2JRMcjWRCnzc",
+          "M3HMdb6AxolXrxxYll6cu0UWnpe",
+          "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+        ],
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "TeVTdlrZ4oY4KsxBvHrcTYxkn1f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KfGddJtC4ofAnLx50rxc9PZFnUf"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "KfGddJtC4ofAnLx50rxc9PZFnUf",
+        "block_type": 2,
+        "parent_id": "TeVTdlrZ4oY4KsxBvHrcTYxkn1f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YZASdYPyRonOlDxzAvJc46uvnzS",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "fileSize",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "R5EndNryuo8s8OxOSxzcoLNmnEh"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "R5EndNryuo8s8OxOSxzcoLNmnEh",
+        "block_type": 2,
+        "parent_id": "YZASdYPyRonOlDxzAvJc46uvnzS",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The size of the currently processed data file in bytes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NVDFdhyjxoAIKoxN5iRcMLYWnhc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "jobId",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "F6c5dpJQYoBdzbxTlz6cE2lJn9c"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "F6c5dpJQYoBdzbxTlz6cE2lJn9c",
+        "block_type": 2,
+        "parent_id": "NVDFdhyjxoAIKoxN5iRcMLYWnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the current bulk-import job of your interests.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DC8ldPVhhodprvx4vP2cM6QBn9e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "state",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LWY0dIQwzoINSHxhWh1ckwIQnpd",
+          "MHKPdv11zoh0RTxGKVxctNWenlc",
+          "CGPrdDFhLoCeAMxHyXPcP6z3nRe",
+          "D294dKmbcoQHyZxDONLcSHfQnpb",
+          "Wkw2dkU6to9vv9xXaGSclOoRnjc"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "LWY0dIQwzoINSHxhWh1ckwIQnpd",
+        "block_type": 2,
+        "parent_id": "DC8ldPVhhodprvx4vP2cM6QBn9e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The current state of this job. Possible values are as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MHKPdv11zoh0RTxGKVxctNWenlc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pending",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks are awaiting scheduling and execution;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DC8ldPVhhodprvx4vP2cM6QBn9e"
+      },
+      {
+        "block_id": "CGPrdDFhLoCeAMxHyXPcP6z3nRe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Importing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks are currently being executed;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DC8ldPVhhodprvx4vP2cM6QBn9e"
+      },
+      {
+        "block_id": "D294dKmbcoQHyZxDONLcSHfQnpb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Completed",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks have been successfully completed;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DC8ldPVhhodprvx4vP2cM6QBn9e"
+      },
+      {
+        "block_id": "Wkw2dkU6to9vv9xXaGSclOoRnjc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Failed",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks encountered a failure.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DC8ldPVhhodprvx4vP2cM6QBn9e"
+      },
+      {
+        "block_id": "PKAtdr7DEoDpFkxmizKchPfQncs",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "progress",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GHahd0iw1oQN5AxjArwclyi8nxc",
+          "Xt6Rdq38goLG0MxzvIoce61mn8g"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "GHahd0iw1oQN5AxjArwclyi8nxc",
+        "block_type": 2,
+        "parent_id": "PKAtdr7DEoDpFkxmizKchPfQncs",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The progress of the current operation in floats. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xt6Rdq38goLG0MxzvIoce61mn8g",
+        "block_type": 2,
+        "parent_id": "PKAtdr7DEoDpFkxmizKchPfQncs",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value ranges from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and stays at ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when this operation completes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O15LdxRURotAEkxvQh2csRocnwe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "reason",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KrwsdPxJNosL4pxqbFdct3otnhd"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "KrwsdPxJNosL4pxqbFdct3otnhd",
+        "block_type": 2,
+        "parent_id": "O15LdxRURotAEkxvQh2csRocnwe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The reason for any errors that occur.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I7HLdti9uozVhAxm6WicphHun4e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "importRows",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "M6nUdICsnof9Ykx1HvscLYJAnSb"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "M6nUdICsnof9Ykx1HvscLYJAnSb",
+        "block_type": 2,
+        "parent_id": "I7HLdti9uozVhAxm6WicphHun4e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of entities already imported. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y02EdtHfOo4Z7Ax2JRMcjWRCnzc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "totalRows",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "W9QHd2a27oGIo5xJte4cFWOBn4e"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "W9QHd2a27oGIo5xJte4cFWOBn4e",
+        "block_type": 2,
+        "parent_id": "Y02EdtHfOo4Z7Ax2JRMcjWRCnzc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The total number of entities to import. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M3HMdb6AxolXrxxYll6cu0UWnpe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "completeTime",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YBvWd9Ueuo4JH2xhWghc641Pnfb",
+          "Sl5FdFIiCowOjexXfIbc9uIonxf"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "YBvWd9Ueuo4JH2xhWghc641Pnfb",
+        "block_type": 2,
+        "parent_id": "M3HMdb6AxolXrxxYll6cu0UWnpe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The time at which this operation is completed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Sl5FdFIiCowOjexXfIbc9uIonxf",
+        "block_type": 2,
+        "parent_id": "M3HMdb6AxolXrxxYll6cu0UWnpe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The time is displayed in the format of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "XXXX-XX-XXTXX:XX:XXZ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "details",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "array",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KGfXdruz2oJJcvxkB9jcNnEenNc",
+          "XmmUdlFnAoCRIHxH5KtcSWdyn2f",
+          "EEJSdHab4ohf87x9DTRcZ17zn1b",
+          "NLejdJhHfo0FlXxGsDscumksnRc",
+          "QxKhdg1PXo3RQ3xxtmlcfFOKnNg",
+          "TBGUdl34AowMawx4g4ac0hA1nMf",
+          "BG8sdynPyoLMdYx7Eaichovvnse",
+          "GvzFdNrTyoPJlkx1m7YciSIxnEd"
+        ],
+        "parent_id": "KJYodPyh3oOR5jxH6TucOyKZnJr"
+      },
+      {
+        "block_id": "KGfXdruz2oJJcvxkB9jcNnEenNc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "fileName",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JwcXdf6DVo5y79xT4AucnuGtnZe"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "JwcXdf6DVo5y79xT4AucnuGtnZe",
+        "block_type": 2,
+        "parent_id": "KGfXdruz2oJJcvxkB9jcNnEenNc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of a data file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XmmUdlFnAoCRIHxH5KtcSWdyn2f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "fileSize",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GWtOdR3qAoA7XxxjGSZcvLPnnmb"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "GWtOdR3qAoA7XxxjGSZcvLPnnmb",
+        "block_type": 2,
+        "parent_id": "XmmUdlFnAoCRIHxH5KtcSWdyn2f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The size of this data file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EEJSdHab4ohf87x9DTRcZ17zn1b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "state",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YWj9dhPhxoCr5axn0xqcSg6unFc",
+          "KrVAdMvrxoXfptxdtLQcOorKnFf",
+          "LxS5dPnEpob8JmxDzUVcMrJPnfc",
+          "NtoXd9kjVoM5Iax93joczDa2nXb",
+          "U8sVdCTWMo2gOvx4gcSccbLnnDd"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "YWj9dhPhxoCr5axn0xqcSg6unFc",
+        "block_type": 2,
+        "parent_id": "EEJSdHab4ohf87x9DTRcZ17zn1b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The current state of importing this file. Possible values are as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KrVAdMvrxoXfptxdtLQcOorKnFf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pending",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks are awaiting scheduling and execution;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "EEJSdHab4ohf87x9DTRcZ17zn1b"
+      },
+      {
+        "block_id": "LxS5dPnEpob8JmxDzUVcMrJPnfc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Importing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks are currently being executed;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "EEJSdHab4ohf87x9DTRcZ17zn1b"
+      },
+      {
+        "block_id": "NtoXd9kjVoM5Iax93joczDa2nXb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Completed",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks have been successfully completed;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "EEJSdHab4ohf87x9DTRcZ17zn1b"
+      },
+      {
+        "block_id": "U8sVdCTWMo2gOvx4gcSccbLnnDd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Failed",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tasks encountered a failure.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "EEJSdHab4ohf87x9DTRcZ17zn1b"
+      },
+      {
+        "block_id": "NLejdJhHfo0FlXxGsDscumksnRc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "progress",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "IVSLdXVA6oiy2uxAY1zcdJr0n0f"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "IVSLdXVA6oiy2uxAY1zcdJr0n0f",
+        "block_type": 2,
+        "parent_id": "NLejdJhHfo0FlXxGsDscumksnRc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The bulk-import progress of this data file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QxKhdg1PXo3RQ3xxtmlcfFOKnNg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "reason",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "EOWId2aUFohQeOxFVIVcPCBHnbd"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "EOWId2aUFohQeOxFVIVcPCBHnbd",
+        "block_type": 2,
+        "parent_id": "QxKhdg1PXo3RQ3xxtmlcfFOKnNg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The reason for any errors that occur during importing this file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TBGUdl34AowMawx4g4ac0hA1nMf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "importRows",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "J2KDdJ8HvoTUSkxIqAMcHzkynbc"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "J2KDdJ8HvoTUSkxIqAMcHzkynbc",
+        "block_type": 2,
+        "parent_id": "TBGUdl34AowMawx4g4ac0hA1nMf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of entities already imported from this file. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BG8sdynPyoLMdYx7Eaichovvnse",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "totalRows",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "L80Id6NlkoqNz2xOR6KcPBHdnRb"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "L80Id6NlkoqNz2xOR6KcPBHdnRb",
+        "block_type": 2,
+        "parent_id": "BG8sdynPyoLMdYx7Eaichovvnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The total number of entities to import from this file. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GvzFdNrTyoPJlkx1m7YciSIxnEd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "completeTime",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CFOqdHkSLof7FsxOtavcCNTKnWg"
+        ],
+        "parent_id": "I7wgdWi6eosnaVxyrKbcwBUgnAX"
+      },
+      {
+        "block_id": "CFOqdHkSLof7FsxOtavcCNTKnWg",
+        "block_type": 2,
+        "parent_id": "GvzFdNrTyoPJlkx1m7YciSIxnEd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The time at which this data file has been imported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcncFv3hZq1VunaKt7qeXws3c",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Tp3mdMrlLofFnVx9za0cUaHCnXe",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LCfTd83V7oA6ELxeph4cHLLbnmf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "NrQZdmnPYo6HiyxjkkyclH6mndf",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EBOndBdeEoxfZaxPNoWcqXOTnSg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import json\nfrom pymilvus.bulk_writer import get_import_progress\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "## Zilliz Cloud constants",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nCLOUD_API_ENDPOINT = \"https://api.cloud.zilliz.com\"\nCLUSTER_ID = \"inxx-xxxxxxxxxxxxxxx\"\nAPI_KEY = \"\"\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Get bulk-insert job progress",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nresp = get_import_progress(\n    api_key=API_KEY,\n    url=CLOUD_API_ENDPOINT,\n    cluster_id=CLUSTER_ID,\n    job_id=\"job-01fa0e5d42cjxudhpuehyp\",\n)\n\nprint(json.dumps(resp.json(), indent=4))\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Output",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# {",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#     \"code\": 200,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#     \"data\": {",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"collectionName\": \"medium_articles\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"fileName\": \"folder/1/\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"fileSize\": 26571700,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"readyPercentage\": 1,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"completeTime\": \"2023-10-28T06:51:49Z\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"errorMessage\": null,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"jobId\": \"job-01fa0e5d42cjxudhpuehyp\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         \"details\": [",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#             {",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#                 \"fileName\": \"folder/1/\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#                 \"fileSize\": 26571700,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#                 \"readyPercentage\": 1,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#                 \"completeTime\": \"2023-10-28T06:51:49Z\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#                 \"errorMessage\": null",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#             }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#         ]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#     }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "NNTJdjMjDoavlsxi3tAchqFWnjc",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Import Data (SDK)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fimport-data-via-sdks"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in our user guides.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z6qVdu41zohcmNxRaT1c2Uphn0g",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NcQLd5rpEoH42SxUmVfcoydRnth",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RHwhdcdwoodLvfxVbgJcf0ALnkb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.bulk_writer import get_import_progress\nimport json\n\nurl = f\"http://127.0.0.1:19530\"\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Get bulk-insert job progress",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nresp = get_import_progress(\n    url=url,\n    job_id=\"453240863839750922\",\n)\n\nprint(json.dumps(resp.json(), indent=4, sort_keys=True))\n# {\n#     \"code\": 0,\n#     \"data\": {\n#         \"collectionName\": \"quick_setup\",\n#         \"completeTime\": \"2024-10-15T15:27:41+08:00\",\n#         \"details\": [\n#             {\n#                 \"completeTime\": \"2024-10-15T15:27:33+08:00\",\n#                 \"fileName\": \"[8db36d4f-4ad6-4306-9f8c-7cfa985c0bbe/1.parquet]\",\n#                 \"fileSize\": 31567773,\n#                 \"importedRows\": 10000,\n#                 \"progress\": 100,\n#                 \"state\": \"Completed\",\n#                 \"totalRows\": 10000\n#             }\n#         ],\n#         \"fileSize\": 31567773,\n#         \"importedRows\": 10000,\n#         \"jobId\": \"453240863839750922\",\n#         \"progress\": 100,\n#         \"state\": \"Completed\",\n#         \"totalRows\": 10000\n#     }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "UIA3dqRkToUK11xJhO4cf2Vsnnc",
+        "block_type": 2,
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JDMCds3iDoYPHPxlKCBcFnnJnY2",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Related methods",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "SsY0dL4cYokrJoxusu8cj6T6nqX",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 22,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "bulk_import()",
+                "token": "RFSCdiUYGouQrtx8c1RczPVvnmf",
+                "url": "https://zilliverse.feishu.cn/docx/RFSCdiUYGouQrtx8c1RczPVvnmf"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      },
+      {
+        "block_id": "S50ad6j4NogvnIxPpwqcE6AHnUc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 22,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "list_import_jobs()",
+                "token": "P0vxdEVBPoTNKLxkKIzcznlYnNc",
+                "url": "https://zilliverse.feishu.cn/docx/P0vxdEVBPoTNKLxkKIzcznlYnNc"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkWNdU1tvoqlBRxI05Rcu09cnEc"
+      }
+    ],
+    "counts": 100
+  },
+  "slug": "BulkImport-get_import_progress"
+}

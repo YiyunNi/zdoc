@@ -1,0 +1,83 @@
+{
+  "created_time": "1720586712",
+  "modified_time": "1741675306",
+  "name": "Partitions",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "B1agfRbPglv4tpdTkjlcUMgVnRV",
+  "token": "JukBfPwp8luly7dRHdWc1MEBnge",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/JukBfPwp8luly7dRHdWc1MEBnge",
+  "slug": "v2-Partitions",
+  "children": [
+    {
+      "created_time": "1720587697",
+      "modified_time": "1746589162",
+      "name": "createPartition()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "WE4gduIjooCgQUxcKyLcwQe1n3g",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/WE4gduIjooCgQUxcKyLcwQe1n3g"
+    },
+    {
+      "created_time": "1720587713",
+      "modified_time": "1746600123",
+      "name": "dropPartition()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "CSaVdr3zao9zFpxaJBgcCTCYnPd",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/CSaVdr3zao9zFpxaJBgcCTCYnPd"
+    },
+    {
+      "created_time": "1741675305",
+      "modified_time": "1746684675",
+      "name": "getPartitionStats()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "ZCESd1IrfoFHByx125kcd38Zndg",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/ZCESd1IrfoFHByx125kcd38Zndg"
+    },
+    {
+      "created_time": "1720587731",
+      "modified_time": "1746600220",
+      "name": "hasPartition()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "KVSUdHV0ho7nnwxeQKMcEL47nKe",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/KVSUdHV0ho7nnwxeQKMcEL47nKe"
+    },
+    {
+      "created_time": "1720587748",
+      "modified_time": "1746600245",
+      "name": "listPartitions()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "Bjs5dej7ZoBKhXxZzMjclPCynmd",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/Bjs5dej7ZoBKhXxZzMjclPCynmd"
+    },
+    {
+      "created_time": "1720587768",
+      "modified_time": "1746600275",
+      "name": "loadPartitions()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "MH8cdNxkgoliJ5xU0f9cBKqunYe",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/MH8cdNxkgoliJ5xU0f9cBKqunYe"
+    },
+    {
+      "created_time": "1720587786",
+      "modified_time": "1761481509",
+      "name": "releasePartitions()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "JukBfPwp8luly7dRHdWc1MEBnge",
+      "token": "VsyQdDkXnoloWYxfjXNchc0dnng",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/VsyQdDkXnoloWYxfjXNchc0dnng"
+    }
+  ]
+}

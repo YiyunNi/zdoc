@@ -1,0 +1,5683 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1756729497",
+  "node_token": "OfUIwNWVuimZgFk3gBVc61GnnKW",
+  "node_type": "origin",
+  "obj_create_time": "1756729497",
+  "obj_edit_time": "1768810439",
+  "obj_token": "FKN8dKoNrodu01x9oQrcUXiunqg",
+  "obj_type": "docx",
+  "origin_node_token": "OfUIwNWVuimZgFk3gBVc61GnnKW",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "DCZNwZdcfivVfIkAZ6qcaK5wnHd",
+  "space_id": "7167193056431783939",
+  "title": "Count Entities",
+  "slug": "count-entities",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "block_type": 1,
+        "children": [
+          "KvPMdX2F4o1P8ZxqhfbcL6f7nag",
+          "LtwbdZNRfoxnK2xtJYTc7WPZnDh",
+          "F7tLdYAhRoDzZgxd9Ctc4e0xnYe",
+          "QlafdOytSowI7vx4vARcD7lFnJg",
+          "O9RPdD40lopcezxu6BbcAekEn2b",
+          "UhzsdJzeTotbFZxcBk6cDqwhnXf",
+          "KZc3dVjKAow79WxzAihcfrtnnDD",
+          "OZvxdFtORoH0B2x9PmSct28HnRb",
+          "BySjdg6sao3msJxDWoNcwPQunIc",
+          "XTY0dmDOuoLuWWxZ4ozcvJ1gnoh",
+          "MqEpdDB4YowBQHxqcc6cVDcSnwc",
+          "IwHQdtb4dsGcR3bHIhvc6T1UnUe",
+          "QNvKdeD2aoRAfKxdRVnc10jbnge",
+          "EikpdtsDzongHfxoiZlc6Wmwnch",
+          "J3X3dlK80orFIIxz74LchmF0nOc",
+          "DUDgdRMBsowZe5xVZJhce7ObnUh",
+          "O67HdNUVeswXmmbwgGWchUvpn2c",
+          "KXDrdE24aoJVZExMGoRch88mngn",
+          "FblodOS65o3g1NxOis0cUYb3nIc",
+          "U1D4dbotVo8jX9xmL0Bc83XknHb",
+          "X3SAdTkDAo8Nk7xBXSHcwKApnNh",
+          "HvNtd2IJ6ov94sxPXEFcFtNIn2d",
+          "XPkddUstwoSKxExqoq8c9qiMnkf",
+          "ItPEdXIPSoaQXXxGfxrc90eJnhd",
+          "Nvukd4Q0IovC2exL86fcoaUOnfe",
+          "C8kedxdp1oKWEExbzs6crxxxnWc",
+          "DggHdsYWJorJPRxjcwTczNUknnh",
+          "Ab2YdNNzHo0aFXx21kccvBPlnle",
+          "LEMmdQ7kEokjkaxFjXncspGin5e",
+          "I7nGdYhNQoTJfoxVmcjcPjoJnAc",
+          "PrjXdi6fvoKBXUxuRF6cyPpsn7b",
+          "LmuYddm58oUALCxtq8PccVrPn0O",
+          "J9sBddosuo4gJ0xeTEycXHQnnCd",
+          "NiDjdeTGCo591Ux9F5GcDnxPnHb",
+          "IJScdR7cgo5vsLxjbePcmPKVn5g",
+          "GJhpdD5tNoavLhxWc2EcFVzUnLb",
+          "HEMFdSfrioRZ1Px0aKrcvHH8nVh",
+          "WqqddkgaNomCswxNC5Lc6sCWn7e",
+          "MG85dWQZUo7j1ix4MaYcb1RmnWd"
+        ],
+        "comment_ids": [
+          "7545114543135948819"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Count Entities",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545114543135948819"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "KvPMdX2F4o1P8ZxqhfbcL6f7nag",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This article demonstrates how to count entities in a collection and explains why the entity count might differ from the actual figure.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LtwbdZNRfoxnK2xtJYTc7WPZnDh",
+        "block_type": 4,
+        "comment_ids": [
+          "7547646584037687299",
+          "7547643101176578067",
+          "7545113844231782404"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113844231782404",
+                    "7547643101176578067",
+                    "7547646584037687299"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "F7tLdYAhRoDzZgxd9Ctc4e0xnYe",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> provides two ways for you to count entities in a collection. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QlafdOytSowI7vx4vARcD7lFnJg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Query with ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the output field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QbRBdUk1fowxHsxXRemcb79rnof",
+          "HlDddGRgwo2sTxxfU1vcyCfFnmb",
+          "PlEDdZ93joOvSIxdHyDcRKRknVb",
+          "TEAHdVacsoNncbx31h3cQbVJnGd",
+          "Rsuddl10Po9DiexjNWFc1irjnk7",
+          "AyxidMTeMouB9Qxj8FDcPSkCnUb"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "QbRBdUk1fowxHsxXRemcb79rnof",
+        "block_type": 2,
+        "parent_id": "QlafdOytSowI7vx4vARcD7lFnJg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To get the precise entity count in a collection, you should use this method and ensure that:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HlDddGRgwo2sTxxfU1vcyCfFnmb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have loaded the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QlafdOytSowI7vx4vARcD7lFnJg"
+      },
+      {
+        "block_id": "PlEDdZ93joOvSIxdHyDcRKRknVb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "consistency_level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Strong",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the query request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QlafdOytSowI7vx4vARcD7lFnJg"
+      },
+      {
+        "block_id": "TEAHdVacsoNncbx31h3cQbVJnGd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "output_field",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "['count(*)']",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QlafdOytSowI7vx4vARcD7lFnJg"
+      },
+      {
+        "block_id": "Rsuddl10Po9DiexjNWFc1irjnk7",
+        "block_type": 2,
+        "parent_id": "QlafdOytSowI7vx4vARcD7lFnJg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When receiving such queries, <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> sends requests to the query node and counts the entities already loaded into memory.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AyxidMTeMouB9Qxj8FDcPSkCnUb",
+        "block_type": 2,
+        "parent_id": "QlafdOytSowI7vx4vARcD7lFnJg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can specify multiple partition names in the query to obtain corresponding entity counts in these partitions. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Query with count(*) as the output field",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23SdxkdTTJgooUYwx5kO9cqybWnle"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O9RPdD40lopcezxu6BbcAekEn2b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_collection_stats()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "G2O5dz8c1oJU5GxHWVDc0vugnwc",
+          "HxB9dxcK2oRUaVxn15dcENwcngb",
+          "ISQad3Y50olDGcxEMzkc5ikinTe"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "G2O5dz8c1oJU5GxHWVDc0vugnwc",
+        "block_type": 2,
+        "parent_id": "O9RPdD40lopcezxu6BbcAekEn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Although you can get the exact count of a collection using the method above, it is not recommended to use it everywhere. The process is basically a query, and frequent calls can cause network jitters or affect searches and queries related to your business. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HxB9dxcK2oRUaVxn15dcENwcngb",
+        "block_type": 2,
+        "parent_id": "O9RPdD40lopcezxu6BbcAekEn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If precision is not the main concern, you should use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_collection_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_partition_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instead. Although this call provides an estimated entity count, you do not need to load the target collection to run it, and the cost is small enough to ignore because it only reports what an internal tracker records. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ISQad3Y50olDGcxEMzkc5ikinTe",
+        "block_type": 2,
+        "parent_id": "O9RPdD40lopcezxu6BbcAekEn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For your information, all data manipulation operations are asynchronous, which is why the internal tracker cannot reflect the entity count in real time. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Use get_collection_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23EikpdtsDzongHfxoiZlc6Wmwnch"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UhzsdJzeTotbFZxcBk6cDqwhnXf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "HBhOdPsZMoFTh0xgioXcY23znrc",
+          "VWpRd93tpoah9Kx8ldwcsw68nxd"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "HBhOdPsZMoFTh0xgioXcY23znrc",
+        "block_type": 2,
+        "parent_id": "UhzsdJzeTotbFZxcBk6cDqwhnXf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VWpRd93tpoah9Kx8ldwcsw68nxd",
+        "block_type": 2,
+        "parent_id": "UhzsdJzeTotbFZxcBk6cDqwhnXf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Both methods mentioned above count entities with the same primary key as separate entities. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KZc3dVjKAow79WxzAihcfrtnnDD",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OZvxdFtORoH0B2x9PmSct28HnRb",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Instead of obtaining the entity count programmatically, you can also access the figure for a cluster, a collection, or a partition on the Zilliz Cloud console. You can read ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Entity counts on the Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23SdxkdTTJgooUYwx5kO9cqybWnle"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for details.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BySjdg6sao3msJxDWoNcwPQunIc",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XTY0dmDOuoLuWWxZ4ozcvJ1gnoh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Query with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the output field",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "MqEpdDB4YowBQHxqcc6cVDcSnwc",
+        "block_type": 2,
+        "comment_ids": [
+          "7545281986265448451"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To get the precise entity count, load the collection and run a query with ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281986265448451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281986265448451"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the output field and set the consistency level for the query to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281986265448451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Strong",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281986265448451"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281986265448451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IwHQdtb4dsGcR3bHIhvc6T1UnUe",
+        "block_type": 49,
+        "children": [
+          "S63OdGD8poupyIxsmqEc1Avlnzb",
+          "K88tdp3TRojSSKxDALUcAo6Dnhb",
+          "Fap5dRCAooP37KxnxUzcYj2fnbC",
+          "Q3VjdX7J5olc6JxDiW7ciyEtnnh",
+          "CSc2dux3Nor9q6xy3hnclCawnBg"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "S63OdGD8poupyIxsmqEc1Avlnzb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Count without the entities in growing segments",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "res = client.query(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name=\"test_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    # highlight-next-line",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    output_fields=['count(*)']",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Count with the entities in growing segments",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "res = client.query(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name=\"test_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    # highlight-start",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    output_fields=['count(*)'],",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    consistency_level=\"Strong\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    # highlight-end",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n# Count the entities in a specific partition\nres = client.query(\n    collection_name=\"test_collection\",\n    # highlight-start\n    output_fields=['count(*)'],\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    partition_names=['",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "_default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "']\n    # highlight-end\n)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Get the entity count",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(res[0]['count(*)'])",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Output",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 20",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545281916430368771"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545281916430368771"
+        ],
+        "parent_id": "IwHQdtb4dsGcR3bHIhvc6T1UnUe"
+      },
+      {
+        "block_id": "K88tdp3TRojSSKxDALUcAo6Dnhb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.vector.request.QueryReq",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323825939464211"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.vector.request.QueryResp",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323825939464211"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// Count without the entities in growing segments\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "QueryResp count = client.query(QueryReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"test_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .filter(\"\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        // highlight-next-line",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"count(*)\"))\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// Count with the entities in growing segments",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count = client.query(QueryReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .collectionName(\"test_collection\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .filter(\"\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        // highlight-start",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"count(*)\"))",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .consistencyLevel(ConsistencyLevel.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "STRONG",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        // highlight-end",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547985233931223043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// Count the entities in a specific partition\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "countR = client.query(QueryReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"test_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .filter(\"\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        // highlight-start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"count(*)\"))",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .partitionNames(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "_default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        // highlight-end",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".print(count.getQueryResults().get(0).getEntity().get(\"count(*)\"));",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// Output\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "20",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545323825939464211",
+          "7547985233931223043"
+        ],
+        "parent_id": "IwHQdtb4dsGcR3bHIhvc6T1UnUe"
+      },
+      {
+        "block_id": "Fap5dRCAooP37KxnxUzcYj2fnbC",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "resultSet, err := client.Query(ctx, milvusclient.NewQueryOption(\"test_collection\").",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    WithFilter(\"\").",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    WithOutputFields(\"count(*)\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    WithConsistencyLevel(entity.ClStrong)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "if err != nil {",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    fmt.Println(err.Error())",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    // handle error",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fmt.Println(\"count: \", resultSet.GetColumn(\"count\").FieldData().GetScalars())",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323894371598340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": true
+          }
+        },
+        "comment_ids": [
+          "7545323894371598340"
+        ],
+        "parent_id": "IwHQdtb4dsGcR3bHIhvc6T1UnUe"
+      },
+      {
+        "block_id": "Q3VjdX7J5olc6JxDiW7ciyEtnnh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient, DataType } from \"@zilliz/milvus2-sdk-node\";",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "const address = \"http://localhost:19530\";",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "const token = \"root:Milvus\";",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "const client = new MilvusClient({address, token});",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// Count with the entities in growing segments",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "let",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " res = await client.query({",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name: \"test_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    output_fields: [\"count(*)\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    consistency_level: 'Strong'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545323949329104915"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// Count the entities in a specific partition\nres = await client.query({\n    collection_name: \"test_collection\",\n    output_fields: [\"count(*)\"],\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    partition_names: ['",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "_",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default']\n});\n\n// Get the entity count\nconsole.log(res.data[0]['count(*)'])\n// Output\n// 20\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545323949329104915"
+        ],
+        "parent_id": "IwHQdtb4dsGcR3bHIhvc6T1UnUe"
+      },
+      {
+        "block_id": "CSc2dux3Nor9q6xy3hnclCawnBg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export CLUSTER_ENDPOINT=\"http://localhost:19530\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "export TOKEN=\"root:Milvus\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "curl --request POST \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--url \"${CLUSTER_ENDPOINT}/v2/vectordb/entities/query\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--header \"Authorization: Bearer ${TOKEN}\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--header \"Content-Type: application/json\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "-d '{",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"collectionName\": \"test_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"filter\": \"\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"outputFields\": [\"count(*)\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#{\"code\":0,\"cost\":0,\"data\":[{count: 20}]}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545324003629252612"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545324003629252612"
+        ],
+        "parent_id": "IwHQdtb4dsGcR3bHIhvc6T1UnUe"
+      },
+      {
+        "block_id": "QNvKdeD2aoRAfKxdRVnc10jbnge",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nauto request = milvus::QueryRequest()\n                       .WithCollectionName(\"test_collection\")\n                       .AddOutputField(\"count(*)\");\n\nmilvus::QueryResponse response;\nstatus = client->Query(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nrequest = milvus::QueryRequest()\n                   .WithCollectionName(\"test_collection\")\n                   .AddOutputField(\"count(*)\")\n                   .WithConsistencyLevel(milvus::ConsistencyLevel::STRONG);\n\nstatus = client->Query(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nrequest = milvus::QueryRequest()\n                   .WithCollectionName(\"test_collection\")\n                   .AddOutputField(\"count(*)\")\n                   .AddPartitionName(\"_default\");\n\nstatus = client->Query(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "std::cout << response.Results().GetRowCount() << std::endl;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "EikpdtsDzongHfxoiZlc6Wmwnch",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_collection_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "J3X3dlK80orFIIxz74LchmF0nOc",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As described above, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_collection_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " returns an estimated number of entities in a collection, which may differ from the actual entity count. You can use this as a reference without loading a collection. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DUDgdRMBsowZe5xVZJhce7ObnUh",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example assumes that a collection named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "test_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " exists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O67HdNUVeswXmmbwgGWchUvpn2c",
+        "block_type": 49,
+        "children": [
+          "VsSbdDfwmoE20bxrRrDcFbRnn7e",
+          "I3QVduVXWoGLKWx2NYFcIUpUntc",
+          "BaKIdceW1oxbxWxRxHecMb8unQg",
+          "Ad6xdiuaio3OYPxNdJPcp4TCn5c",
+          "IfYFd2mqhoX8Z0xHVGocFpfLnTc"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "VsSbdDfwmoE20bxrRrDcFbRnn7e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545114292434173971"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 1. Set up a milvus client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nclient = MilvusClient(\n    uri=\"http://localhost:19530\",\n    token=\"root:Milvus\"\n)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 2. Get the entity count of a collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nclient.get_collection_stats(collection_name=\"test_collection\") \n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Output",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# {",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#     'row_count': 1000",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 3. Get the entity count of a partition",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.get_partition_stats(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name=\"test_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    partition_name=\"_default\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Output",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# {",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#     'row_count': 1000",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547936612840194067"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545114292434173971",
+          "7547936612840194067"
+        ],
+        "parent_id": "O67HdNUVeswXmmbwgGWchUvpn2c"
+      },
+      {
+        "block_id": "I3QVduVXWoGLKWx2NYFcIUpUntc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.GetCollectionStatsReq;\nimport io.milvus.v2.service.collection.response.GetCollectionStatsResp;\nimport io.milvus.v2.service.partition.request.GetPartitionStatsReq;\nimport io.milvus.v2.service.partition.response.GetPartitionStatsResp;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// 1. Set up a milvus client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nMilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()\n        .uri(\"http://localhost:19530\")\n        .token(\"root:Milvus\")\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. Get the entity count of a collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetCollectionStatsResp stats = client.getCollectionStats(GetCollectionStatsReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113968390668291"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113968390668291"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"test_collection\")\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113968390668291"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113968390668291"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113968390668291"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".print(stats.getNumOfEntities());",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545113968390668291"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n// 3. Get the entity count of a partition\nGetPartitionStatsResp partitionStats = client.getPartitionStats(GetPartitionStatsReq.builder()\n        .collectionName(\"test_collection\")\n        .partitionName(\"_default\")\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".print(partitionStats.getNumOfEntities());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545113968390668291"
+        ],
+        "parent_id": "O67HdNUVeswXmmbwgGWchUvpn2c"
+      },
+      {
+        "block_id": "BaKIdceW1oxbxWxRxHecMb8unQg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545114025395552275"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545114025395552275"
+        ],
+        "parent_id": "O67HdNUVeswXmmbwgGWchUvpn2c"
+      },
+      {
+        "block_id": "Ad6xdiuaio3OYPxNdJPcp4TCn5c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient } from '@zilliz/milvus2-sdk-node';",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545114085478809604"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// 1. Set up a milvus client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nconst milvusClient = new MilvusClient({\n    address: 'http://localhost:19530',\n    token: 'root:Milvus'\n});\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. Get the entity count",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nmilvusClient.getCollectionStats({\n collection_name: 'test_collection',\n partition_name: '_default'\n});\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// Output",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n//\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// {",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "//      data: {'row_count': 1000 }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545114085478809604"
+        ],
+        "parent_id": "O67HdNUVeswXmmbwgGWchUvpn2c"
+      },
+      {
+        "block_id": "IfYFd2mqhoX8Z0xHVGocFpfLnTc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# curl",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545114144912179203"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7545114144912179203"
+        ],
+        "parent_id": "O67HdNUVeswXmmbwgGWchUvpn2c"
+      },
+      {
+        "block_id": "KXDrdE24aoJVZExMGoRch88mngn",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nmilvus::GetCollectionStatsResponse response;\nstatus = client->GetCollectionStats(milvus::GetCollectionStatsRequest()\n                                    .WithCollectionName(\"test_collection\")\n                                    , response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nstatus = client->GetCollectionStats(milvus::GetCollectionStatsRequest()\n                                    .WithCollectionName(\"test_collection\")\n                                    .WithPartitionName(\"_default\")\n                                    , response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "std::cout << response.Stats().RowCount() << std::endl;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "FblodOS65o3g1NxOis0cUYb3nIc",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U1D4dbotVo8jX9xmL0Bc83XknHb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Entity counts on the Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "X3SAdTkDAo8Nk7xBXSHcwKApnNh",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Instead of counting the entities programmatically, you can also access the Zilliz Cloud console to find the entity count for a cluster, a collection, or a partition on the following pages.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HvNtd2IJ6ov94sxPXEFcFtNIn2d",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Metrics",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "XPkddUstwoSKxExqoq8c9qiMnkf",
+        "block_type": 2,
+        "comment_ids": [
+          "7547629054573182980",
+          "7545115082930421764"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Y",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ou can find ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Entity Count",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Loaded Entities (Approx.)",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7545115082930421764",
+                    "7547629054573182980"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of a cluster on its ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Metrics",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab. Both values are estimates. Values in the curve are obtained ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "using ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23EikpdtsDzongHfxoiZlc6Wmwnch"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_collection_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23EikpdtsDzongHfxoiZlc6Wmwnch"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". If there are no further data insertions and deletions, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Entity Count",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " curve will eventually reflect the actual number of entities in the current collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7545115082930421764"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ItPEdXIPSoaQXXxGfxrc90eJnhd",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 963,
+          "scale": 1,
+          "token": "UGT3bXxnjordXpxhTZUcMYK6nQg",
+          "width": 1660
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "Nvukd4Q0IovC2exL86fcoaUOnfe",
+        "block_type": 5,
+        "comment_ids": [
+          "7547629466789429251"
+        ],
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Collection Details",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547629466789429251"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "C8kedxdp1oKWEExbzs6crxxxnWc",
+        "block_type": 2,
+        "comment_ids": [
+          "7547629635577790467"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can find the actual entity count of a collection on its ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "details",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547629635577790467"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab. This value is obtained by using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "queries with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23SdxkdTTJgooUYwx5kO9cqybWnle"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23SdxkdTTJgooUYwx5kO9cqybWnle"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the output field",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOfUIwNWVuimZgFk3gBVc61GnnKW%23SdxkdTTJgooUYwx5kO9cqybWnle"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DggHdsYWJorJPRxjcwTczNUknnh",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 639,
+          "scale": 1,
+          "token": "L8ImbqFLIonMTxx47WBcF5IbnTf",
+          "width": 1660
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "Ab2YdNNzHo0aFXx21kccvBPlnle",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Partitions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "LEMmdQ7kEokjkaxFjXncspGin5e",
+        "block_type": 2,
+        "comment_ids": [
+          "7547645684432928787"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547645684432928787"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Partitions",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7547645684432928787"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab of a collection to find the estimated number of loaded entities in its child partitions. This value is obtained by using ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547645684432928787"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_partition_stats()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547645684432928787"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7547645684432928787"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I7nGdYhNQoTJfoxVmcjcPjoJnAc",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 358,
+          "scale": 1,
+          "token": "Y4Etb0AITotVQNxvzs4cZCHsn9d",
+          "width": 1660
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "PrjXdi6fvoKBXUxuRF6cyPpsn7b",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LmuYddm58oUALCxtq8PccVrPn0O",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "J9sBddosuo4gJ0xeTEycXHQnnCd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why does the entity count obtained using ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_collection_stats()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get_partition_stats()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " not reflect the actual number of entities in the target collection or partition after I have inserted some entities? ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ftx6dUD6ro1ADSx5TIycOSMDnlg"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "Ftx6dUD6ro1ADSx5TIycOSMDnlg",
+        "block_type": 2,
+        "parent_id": "J9sBddosuo4gJ0xeTEycXHQnnCd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "These methods only report what an internal tracker records, which may differ from the actual entity counts because all data operations are asynchronous.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NiDjdeTGCo591Ux9F5GcDnxPnHb",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IJScdR7cgo5vsLxjbePcmPKVn5g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why does the Entity Count curve on the Metrics tab of a collection not change after I insert or delete some entities?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RQyodShQQoirJPxYdP1cjjV9nFg"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "RQyodShQQoirJPxYdP1cjjV9nFg",
+        "block_type": 2,
+        "parent_id": "IJScdR7cgo5vsLxjbePcmPKVn5g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Values in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Entity Count",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " curve are estimated at specific time points. Since all data operations are asynchronous, there may be a delay before they are reflected in the curve.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GJhpdD5tNoavLhxWc2EcFVzUnLb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why does the value displayed in the Entity Count (Approx.) column on the Partitions tab of a collection not change after I insert or delete some entities?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "X3q1dPfO2oWXKyxsT6gcVLjwnzg"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "X3q1dPfO2oWXKyxsT6gcVLjwnzg",
+        "block_type": 2,
+        "parent_id": "GJhpdD5tNoavLhxWc2EcFVzUnLb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The values displayed for the listed partitions are all estimates. Since all data operations are asynchronous, there may be a delay before they are reflected in the curve.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HEMFdSfrioRZ1Px0aKrcvHH8nVh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why does the value displayed in Loaded Entities on the Overview tab of a collection not reflect the actual number of entities in the collection?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Tfl6daU7uoIYvKxB2Q3c8Mhxnlc",
+          "XbOpdf08zoWpjKx8lsiczdFHnic"
+        ],
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg"
+      },
+      {
+        "block_id": "Tfl6daU7uoIYvKxB2Q3c8Mhxnlc",
+        "block_type": 2,
+        "parent_id": "HEMFdSfrioRZ1Px0aKrcvHH8nVh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value displayed in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Loaded Entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is accurate. If there is a gap between this value and the number of entities obtained from a typical query, some entities in the collection may have identical primary keys. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XbOpdf08zoWpjKx8lsiczdFHnic",
+        "block_type": 2,
+        "parent_id": "HEMFdSfrioRZ1Px0aKrcvHH8nVh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Note that queries with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the output field treat entities with identical primary keys as separate entities, while other queries will omit entities with the same primary keys before returning the final results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WqqddkgaNomCswxNC5Lc6sCWn7e",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MG85dWQZUo7j1ix4MaYcb1RmnWd",
+        "block_type": 2,
+        "parent_id": "FKN8dKoNrodu01x9oQrcUXiunqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 66
+  }
+}

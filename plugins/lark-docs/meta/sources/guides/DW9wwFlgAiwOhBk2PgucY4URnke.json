@@ -1,0 +1,1562 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1765251620",
+  "node_token": "DW9wwFlgAiwOhBk2PgucY4URnke",
+  "node_type": "origin",
+  "obj_create_time": "1765251620",
+  "obj_edit_time": "1772245332",
+  "obj_token": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+  "obj_type": "docx",
+  "origin_node_token": "DW9wwFlgAiwOhBk2PgucY4URnke",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+  "space_id": "7167193056431783939",
+  "title": "Manage Global Cluster",
+  "slug": "manage-global-cluster",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "block_type": 1,
+        "children": [
+          "BXTudNad1on4y6xuO36cRGBfn6e",
+          "Ct7pdEKR1sBqEmbr8BFcxQPynKh",
+          "PqB1de6looE9Y4xzARrcSvd1n0O",
+          "UE4nd4qdqoHQuqxUJNRcvrbWnRb",
+          "WuJkd8KxYo1TJLxtpsacrwKznkb",
+          "MezvdWId9owAxXxSd2FcNld6nWf",
+          "IC68dhl8moMLwFxwGqCczc1Snof",
+          "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+          "VhKqdyUryorEnBxGSlbcqj0BnOe",
+          "DsOQdkBfnoEOLgxpxcdcYsfqnuc",
+          "AEA1dNnvioXeIixFlDecBm5knuf",
+          "TbuCdN6DRoaF3kxjDIjcz2ACnbe",
+          "JX1Zd3fbyoee7Hx6Sp6cQ3mnnRe",
+          "Uidsd8wuRoNtayx8xdFc9z2NnQh",
+          "QtMJdeozBogbTxxzM9EcldUPnua",
+          "VfbKduRl5oSc0yxREXfcoRncncc",
+          "ZjIMdOs1QothmyxlwbicQCqtnAe",
+          "GvVhds69foABQZxMIf5cMb5ynse",
+          "HzPQdjwMmoyYO3xkg1acIUGZnzb",
+          "O1XmdHteNo4ZZ6xCTB8c9sLNnuc",
+          "HXzJdTAJYohJjcxZzskc984ln9d",
+          "HeLld6mNOoj1S4xmzK6cYFkOnQf",
+          "Xk9IdxcPforIquxy8b5cFd5KnNd",
+          "ZM6ndDmR7ouohexqc5CcjhJmnQm",
+          "Etn0detTsoQrEExVYJNcB2ZfnVh",
+          "FU9fdlYP3oyWW1xstTpcnXusnwc",
+          "DlG7du5CTot6lhx6Kk3cr8TxnVe",
+          "JApadZdHzo6uaRx4u9zcXP19nGf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage Global Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "BXTudNad1on4y6xuO36cRGBfn6e",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This guide explains how to manage your global cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ct7pdEKR1sBqEmbr8BFcxQPynKh",
+        "block_type": 49,
+        "children": [
+          "D2dzdtV7xod0TXxzAQuco4GwnKo"
+        ],
+        "comment_ids": [
+          "7581780466429070302"
+        ],
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "PqB1de6looE9Y4xzARrcSvd1n0O",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "UE4nd4qdqoHQuqxUJNRcvrbWnRb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensure you are a Project Admin.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "WuJkd8KxYo1TJLxtpsacrwKznkb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Note that the both the primary and secondary clusters cannot be suspended.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "MezvdWId9owAxXxSd2FcNld6nWf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Monitor cluster status",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "IC68dhl8moMLwFxwGqCczc1Snof",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can monitor the status of your primary and secondary clusters as well as the data replication status.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "block_type": 31,
+        "children": [
+          "JoDbdhZ1goagvYxmV17c7op1njc",
+          "E98mdmejpoyDUQx0ClccXvvknrh",
+          "LlYEdj8DtombygxpYo1cz3Qbnab",
+          "IrXAdeX1XoHP2vxmG9TcJOqhnXn",
+          "ABe6dnUz0oNHfkx2g3IcUfUEndg",
+          "GtjrdylIOocvNuxHNh7c0Vcun1c",
+          "BgkrdQphUo97b4xjNfMcXc3QnEb",
+          "CVexdqS06ofaG2xBrQecb4ornJd",
+          "XHEXdIpsuohTCcxdIFscb1vVnZF",
+          "JE8AdhrmqobdTUxN28icKwEyn4g",
+          "S83EdeuKEo20YFxIiVlcU7Ddnyh",
+          "ZqTSdOc9lo7JqWxWDWncurPRnxd",
+          "Iq7OdN4LUogQ4XxkofUcD0y2nsc",
+          "JGZqdkfndo6BJZxBexzcm9QFnBh"
+        ],
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "table": {
+          "cells": [
+            "JoDbdhZ1goagvYxmV17c7op1njc",
+            "E98mdmejpoyDUQx0ClccXvvknrh",
+            "LlYEdj8DtombygxpYo1cz3Qbnab",
+            "IrXAdeX1XoHP2vxmG9TcJOqhnXn",
+            "ABe6dnUz0oNHfkx2g3IcUfUEndg",
+            "GtjrdylIOocvNuxHNh7c0Vcun1c",
+            "BgkrdQphUo97b4xjNfMcXc3QnEb",
+            "CVexdqS06ofaG2xBrQecb4ornJd",
+            "XHEXdIpsuohTCcxdIFscb1vVnZF",
+            "JE8AdhrmqobdTUxN28icKwEyn4g",
+            "S83EdeuKEo20YFxIiVlcU7Ddnyh",
+            "ZqTSdOc9lo7JqWxWDWncurPRnxd",
+            "Iq7OdN4LUogQ4XxkofUcD0y2nsc",
+            "JGZqdkfndo6BJZxBexzcm9QFnBh"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              134,
+              464
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 7
+          }
+        }
+      },
+      {
+        "block_id": "JoDbdhZ1goagvYxmV17c7op1njc",
+        "block_type": 32,
+        "children": [
+          "Uzl6digM3ozE3Bxl5RvcYdn0n6f"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Uzl6digM3ozE3Bxl5RvcYdn0n6f",
+        "block_type": 2,
+        "parent_id": "JoDbdhZ1goagvYxmV17c7op1njc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster Status",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E98mdmejpoyDUQx0ClccXvvknrh",
+        "block_type": 32,
+        "children": [
+          "Ydrxd2baio265vxMJAUc8dVQnlg"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ydrxd2baio265vxMJAUc8dVQnlg",
+        "block_type": 2,
+        "parent_id": "E98mdmejpoyDUQx0ClccXvvknrh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LlYEdj8DtombygxpYo1cz3Qbnab",
+        "block_type": 32,
+        "children": [
+          "Vh46djpdgoMlMSxBB1wcq0hinIh"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Vh46djpdgoMlMSxBB1wcq0hinIh",
+        "block_type": 2,
+        "parent_id": "LlYEdj8DtombygxpYo1cz3Qbnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CREATING",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IrXAdeX1XoHP2vxmG9TcJOqhnXn",
+        "block_type": 32,
+        "children": [
+          "BBHFdcVZAoAM9LxE9i0cMvnAn6c"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BBHFdcVZAoAM9LxE9i0cMvnAn6c",
+        "block_type": 2,
+        "parent_id": "IrXAdeX1XoHP2vxmG9TcJOqhnXn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The cluster is being created.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ABe6dnUz0oNHfkx2g3IcUfUEndg",
+        "block_type": 32,
+        "children": [
+          "ZR8xdB7HFo9nP0xF9KgcvypKnGg"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZR8xdB7HFo9nP0xF9KgcvypKnGg",
+        "block_type": 2,
+        "parent_id": "ABe6dnUz0oNHfkx2g3IcUfUEndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RUNNING",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GtjrdylIOocvNuxHNh7c0Vcun1c",
+        "block_type": 32,
+        "children": [
+          "MrRWdYMupoZ4W5xNejUcpyM7nUf"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MrRWdYMupoZ4W5xNejUcpyM7nUf",
+        "block_type": 2,
+        "parent_id": "GtjrdylIOocvNuxHNh7c0Vcun1c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The cluster is running normally.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BgkrdQphUo97b4xjNfMcXc3QnEb",
+        "block_type": 32,
+        "children": [
+          "DOb1dkuBvopWCRxJHmIcU5fcnZd"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DOb1dkuBvopWCRxJHmIcU5fcnZd",
+        "block_type": 2,
+        "parent_id": "BgkrdQphUo97b4xjNfMcXc3QnEb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ABNORMAL",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CVexdqS06ofaG2xBrQecb4ornJd",
+        "block_type": 32,
+        "children": [
+          "D4qUdCssHobsRcxMaWNcgXgonse"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "D4qUdCssHobsRcxMaWNcgXgonse",
+        "block_type": 2,
+        "parent_id": "CVexdqS06ofaG2xBrQecb4ornJd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An issue has been detected with the cluster. Please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fsupport.zilliz.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XHEXdIpsuohTCcxdIFscb1vVnZF",
+        "block_type": 32,
+        "children": [
+          "KLmBdWUW4oHmeVxB9JccOkhJnxb"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KLmBdWUW4oHmeVxB9JccOkhJnxb",
+        "block_type": 2,
+        "parent_id": "XHEXdIpsuohTCcxdIFscb1vVnZF",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SWITCHING",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JE8AdhrmqobdTUxN28icKwEyn4g",
+        "block_type": 32,
+        "children": [
+          "CRQrdkTBVoK3vzxRRzRc9MBJnUg"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CRQrdkTBVoK3vzxRRzRc9MBJnUg",
+        "block_type": 2,
+        "parent_id": "JE8AdhrmqobdTUxN28icKwEyn4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud is switching the primary role between the primary and a secondary cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S83EdeuKEo20YFxIiVlcU7Ddnyh",
+        "block_type": 32,
+        "children": [
+          "JwP3d8QlEop5zBxAoHDcv6hfnVd"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JwP3d8QlEop5zBxAoHDcv6hfnVd",
+        "block_type": 2,
+        "comment_ids": [
+          "7581742051398519755"
+        ],
+        "parent_id": "S83EdeuKEo20YFxIiVlcU7Ddnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FENCED",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7581742051398519755"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZqTSdOc9lo7JqWxWDWncurPRnxd",
+        "block_type": 32,
+        "children": [
+          "ES97dFhzDouQ0ixj8ozcinSxnFg"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ES97dFhzDouQ0ixj8ozcinSxnFg",
+        "block_type": 2,
+        "parent_id": "ZqTSdOc9lo7JqWxWDWncurPRnxd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After a switchover or failover, the original primary cluster enters the \"Fenced\" status and rejects all write requests.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Iq7OdN4LUogQ4XxkofUcD0y2nsc",
+        "block_type": 32,
+        "children": [
+          "PrI2dEmTVo7uxKxMsHFct6FlnQf"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PrI2dEmTVo7uxKxMsHFct6FlnQf",
+        "block_type": 2,
+        "comment_ids": [
+          "7581742294049115094"
+        ],
+        "parent_id": "Iq7OdN4LUogQ4XxkofUcD0y2nsc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "REBUILDING",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7581742294049115094"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JGZqdkfndo6BJZxBexzcm9QFnBh",
+        "block_type": 32,
+        "children": [
+          "RMtgd81UgoSWeZxf6lzcbEuinac"
+        ],
+        "parent_id": "UMzBd9BOdoWVaAxg5DXcZj4Enjc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RMtgd81UgoSWeZxf6lzcbEuinac",
+        "block_type": 2,
+        "parent_id": "JGZqdkfndo6BJZxBexzcm9QFnBh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When you restore a global cluster, all of its original secondary clusters transition to the \"Rebuilding\" status.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VhKqdyUryorEnBxGSlbcqj0BnOe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Switchover",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "DsOQdkBfnoEOLgxpxcdcYsfqnuc",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For planned regional rotation, you can perform a switchover to promote a secondary cluster to the primary role.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AEA1dNnvioXeIixFlDecBm5knuf",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you click the button, switchover will take place when data between the old and new primary cluster is fully synced.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TbuCdN6DRoaF3kxjDIjcz2ACnbe",
+        "block_type": 2,
+        "comment_ids": [
+          "7584004860396178372"
+        ],
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to perform a switchover.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7584004860396178372"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmkauk6rl1hqrke4xpnketcbq\",\"isShowcase\":false}"
+        },
+        "block_id": "JX1Zd3fbyoee7Hx6Sp6cQ3mnnRe",
+        "block_type": 40,
+        "comment_ids": [
+          "7600624153791597507"
+        ],
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "Uidsd8wuRoNtayx8xdFc9z2NnQh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Add secondary clusters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "QtMJdeozBogbTxxzM9EcldUPnua",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To improve regional coverage, you can add additional secondary clusters in different regions to an existing global cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VfbKduRl5oSc0yxREXfcoRncncc",
+        "block_type": 19,
+        "callout": {
+          "background_color": 1,
+          "border_color": 1,
+          "emoji_id": "book"
+        },
+        "children": [
+          "PbA3dhGBzohk1WxfW6gclJCNnpd",
+          "DxHIdH1GWoCsUMxgAp9cojhhnGh"
+        ],
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "PbA3dhGBzohk1WxfW6gclJCNnpd",
+        "block_type": 2,
+        "parent_id": "VfbKduRl5oSc0yxREXfcoRncncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DxHIdH1GWoCsUMxgAp9cojhhnGh",
+        "block_type": 2,
+        "parent_id": "VfbKduRl5oSc0yxREXfcoRncncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A global cluster can only have up to 5 secondary clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZjIMdOs1QothmyxlwbicQCqtnAe",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to add secondary clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmkat4dkp1h55ke4xyc8i7c9y\",\"isShowcase\":false}"
+        },
+        "block_id": "GvVhds69foABQZxMIf5cMb5ynse",
+        "block_type": 40,
+        "comment_ids": [
+          "7600624361233501135"
+        ],
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "HzPQdjwMmoyYO3xkg1acIUGZnzb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Scale primary cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "O1XmdHteNo4ZZ6xCTB8c9sLNnuc",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To increase the capacity of a global cluster, you can scale the query CU of its primary cluster. Changes to the query CU of the primary cluster will be automatically synchronized to all secondary clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HXzJdTAJYohJjcxZzskc984ln9d",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details about how to scale the query CU of a primary cluster, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Scale Query CU",
+                "token": "ExUFwDY1siCa2Bkp4incCvxFnlh",
+                "url": "https://zilliverse.feishu.cn/wiki/ExUFwDY1siCa2Bkp4incCvxFnlh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HeLld6mNOoj1S4xmzK6cYFkOnQf",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Currently, replica scaling is not supported for a global cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xk9IdxcPforIquxy8b5cFd5KnNd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Drop secondary cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "ZM6ndDmR7ouohexqc5CcjhJmnQm",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details about how to drop clusters, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Cluster",
+                "token": "PharwAysCiBzvgkuqqecmNzunQf",
+                "url": "https://zilliverse.feishu.cn/wiki/PharwAysCiBzvgkuqqecmNzunQf#Uzr7d630voIeQ8xxR8Scz6gknfh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Etn0detTsoQrEExVYJNcB2ZfnVh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Drop global cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe"
+      },
+      {
+        "block_id": "FU9fdlYP3oyWW1xstTpcnXusnwc",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To drop a global cluster, first delete all secondary clusters, then the primary cluster. The global cluster is automatically deleted with the primary.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DlG7du5CTot6lhx6Kk3cr8TxnVe",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JApadZdHzo6uaRx4u9zcXP19nGf",
+        "block_type": 2,
+        "parent_id": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D2dzdtV7xod0TXxzAQuco4GwnKo",
+        "block_type": 19,
+        "callout": {
+          "background_color": 1,
+          "border_color": 1,
+          "emoji_id": "book"
+        },
+        "children": [
+          "SYZadI0TVoB6MBx2o05clqdOnRf",
+          "DwRtdUkG4oGzalxwUM9cIxVknib"
+        ],
+        "parent_id": "Ct7pdEKR1sBqEmbr8BFcxQPynKh"
+      },
+      {
+        "block_id": "SYZadI0TVoB6MBx2o05clqdOnRf",
+        "block_type": 2,
+        "parent_id": "D2dzdtV7xod0TXxzAQuco4GwnKo",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DwRtdUkG4oGzalxwUM9cIxVknib",
+        "block_type": 2,
+        "parent_id": "D2dzdtV7xod0TXxzAQuco4GwnKo",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is available only to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " clusters in a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Business Critical",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 59
+  }
+}

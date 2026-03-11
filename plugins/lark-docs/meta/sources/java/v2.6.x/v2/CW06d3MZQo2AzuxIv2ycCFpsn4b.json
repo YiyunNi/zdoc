@@ -1,0 +1,1108 @@
+{
+  "created_time": "1732871259",
+  "modified_time": "1761350225",
+  "name": "Function",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "WjrbfXtKXlr1kidVVO6cKwV7nUr",
+  "token": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/CW06d3MZQo2AzuxIv2ycCFpsn4b",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "block_type": 1,
+        "children": [
+          "doxcnLmsBYNJfZHLh0zVEoaUXnf",
+          "doxcnaT1qrReDz8PwweoM9jOoac",
+          "doxcnVLaq9ay8P9DYLEmk2YayCb",
+          "doxcns3SGNURlXqHxuGbwuEyYgb",
+          "doxcnOIyPmLYFFzTM9fqpmkhkje",
+          "doxcnLQxbwqH8bs4hBNqhGOYoZc",
+          "doxcnVv059t2WqtIde0n1fvNqTe",
+          "doxcnt2GjqndjOobGt1ThpHILJf",
+          "doxcnSWQWlWcMDip6fpUjoZEOUb",
+          "doxcnPtx6OhhsxYxA8jn4b023Zd",
+          "doxcnVCxbKN9jXXGvOoBDldPKnf",
+          "doxcndD9sZdc0qQ2aEPO9dve4eh",
+          "doxcn4OjoLlyaaSUkPnjFKEz3Qc",
+          "doxcnqNhPZoKNzi3zGSzsfxeqhb",
+          "doxcnGlCUAVOkvK8IfGO7Wdu7Cc",
+          "doxcnoXMknhHkvwntmvOk6euRm4",
+          "doxcnuXUsYBJBtXr6w5odK4TxGc",
+          "doxcnHXi4AE64q2jWHUfXDb8u2c",
+          "doxcnZNlO1vhlzY3dbcQjtspUdb",
+          "doxcnFT2XDS0ZB7vLq90bnOGJIf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnLmsBYNJfZHLh0zVEoaUXnf",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance for generating vector embeddings from user-provided raw data or configuring rerankers for searches.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnaT1qrReDz8PwweoM9jOoac",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "io.milvus.v2.service.collection.request.CreateCollectionReq.Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnVLaq9ay8P9DYLEmk2YayCb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcns3SGNURlXqHxuGbwuEyYgb",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This constructor initializes a new ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance designed to transform user's raw data into vector embeddings or configure rerankers for searches. This is achieved through an automated process that simplifies similarity search operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnOIyPmLYFFzTM9fqpmkhkje",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.Function.builder()\n    .name(String name)\n    .description(String description)\n    .functionType(FunctionType functionType)\n    .inputFieldNames(List<String> inputFieldNames)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .outputFieldNames(List<String> outputFieldNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    .params(Map<String, String> params)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnLQxbwqH8bs4hBNqhGOYoZc",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVv059t2WqtIde0n1fvNqTe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "name(String name)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnm5fQQlfLiaVrB43k8q2n0c"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnm5fQQlfLiaVrB43k8q2n0c",
+        "block_type": 2,
+        "parent_id": "doxcnVv059t2WqtIde0n1fvNqTe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the function. This identifier is used to reference the function within queries and collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnt2GjqndjOobGt1ThpHILJf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "description(String description)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn76PMRwD6a9wBfPzuE2gSHO"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcn76PMRwD6a9wBfPzuE2gSHO",
+        "block_type": 2,
+        "parent_id": "doxcnt2GjqndjOobGt1ThpHILJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A brief description of the function's purpose. This can be useful for documentation or clarity in larger projects and defaults to an empty string.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnSWQWlWcMDip6fpUjoZEOUb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "functionType(FunctionType functionType)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnpiJQy44H8SvCaASSmpQtDe",
+          "doxcnsGJ6Zy6y2xKBpFXQtSiqTd"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnpiJQy44H8SvCaASSmpQtDe",
+        "block_type": 2,
+        "parent_id": "doxcnSWQWlWcMDip6fpUjoZEOUb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The type of function for processing raw data. Possible values:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnsGJ6Zy6y2xKBpFXQtSiqTd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionType.BM25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Uses the BM25 algorithm for generating sparse embeddings from a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnSWQWlWcMDip6fpUjoZEOUb"
+      },
+      {
+        "block_id": "doxcnPtx6OhhsxYxA8jn4b023Zd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "inputFieldNames(List<String> inputFieldNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn55T2aG6og5Lrfjc5C9msCf"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcn55T2aG6og5Lrfjc5C9msCf",
+        "block_type": 2,
+        "parent_id": "doxcnPtx6OhhsxYxA8jn4b023Zd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the field containing the raw data that requires conversion to vector representation. For functions using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionType.BM25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", this parameter accepts only one field name.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVCxbKN9jXXGvOoBDldPKnf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "outputFieldNames(List<String> outputFieldNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnEjPHvFBuSp36wQWzuiG8Nb"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnEjPHvFBuSp36wQWzuiG8Nb",
+        "block_type": 2,
+        "parent_id": "doxcnVCxbKN9jXXGvOoBDldPKnf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the field where the generated embeddings will be stored. This should correspond to a vector field defined in the collection schema. For functions using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionType.BM25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", this parameter accepts only one field name.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcndD9sZdc0qQ2aEPO9dve4eh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "params(Map<String, String> params)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnOYfaOS916cDkpjPJBhO3Vg"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnOYfaOS916cDkpjPJBhO3Vg",
+        "block_type": 2,
+        "parent_id": "doxcndD9sZdc0qQ2aEPO9dve4eh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A set of key-value pairs that configures the function properties.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4OjoLlyaaSUkPnjFKEz3Qc",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqNhPZoKNzi3zGSzsfxeqhb",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGlCUAVOkvK8IfGO7Wdu7Cc",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnoXMknhHkvwntmvOk6euRm4",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object that can be registered with a Milvus collection, facilitating automatic embedding generation during data insertion.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnuXUsYBJBtXr6w5odK4TxGc",
+        "block_type": 2,
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHXi4AE64q2jWHUfXDb8u2c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnc5Bwf0qeMF6nbCNTVEDTdb"
+        ],
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnc5Bwf0qeMF6nbCNTVEDTdb",
+        "block_type": 2,
+        "parent_id": "doxcnHXi4AE64q2jWHUfXDb8u2c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZNlO1vhlzY3dbcQjtspUdb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      },
+      {
+        "block_id": "doxcnFT2XDS0ZB7vLq90bnOGJIf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.common.clientenum.FunctionType;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq.Function;\n\nimport java.util.Collections;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.Function.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .functionType(FunctionType.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n    .name(\"text_bm25_emb\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .inputFieldNames(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"text\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .outputFieldNames(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"vector\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CW06d3MZQo2AzuxIv2ycCFpsn4b"
+      }
+    ],
+    "counts": 29
+  },
+  "slug": "v2-Collections-Function"
+}

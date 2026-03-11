@@ -1,0 +1,3861 @@
+{
+  "created_time": "1720587048",
+  "modified_time": "1750387598",
+  "name": "MilvusClientV2",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "YEBjfrOXWl8s00dDTvdcMiYDn0d",
+  "token": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Y4qvdMEeioKXShxxNmncvnJ2nJf",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "block_type": 1,
+        "children": [
+          "doxcn1cpNe8j3FnuSKzuzql9yDg",
+          "doxcnlo4UIvMS35tBrBtQhfeahe",
+          "doxcn5DodXi6S7QK1XmXnq0zSVc",
+          "doxcnzAEG0NvYaAB53apDRqoDlf",
+          "doxcnT0ufnB1Q5RKL3YxX1E6ZQc",
+          "doxcn88tAjFEq6LHxrVfUc61NKc",
+          "doxcn5p3UEYKwfRMrtkR00RG1Eb",
+          "doxcnPlDAA0aCPVWgHnsvShjFhb",
+          "doxcn7wLxwBA7lbil6a5qC8Ow50",
+          "doxcno1vezWPFABCLCrhkBru0Hy",
+          "doxcn4PVOSoulIw5ehZ1cH6gBVu",
+          "doxcnEjUBiUOPlN7FajgHisJt5c",
+          "doxcnaMbkdY8ufPcZZBldi0QpCe",
+          "doxcnVJpJzleTZgf7VGqPK9jcMe",
+          "doxcnlkhtXKR9ezleF0gYPi7Pjd",
+          "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+          "doxcnvUoDVymHwFatrhHX7aLTKd",
+          "doxcnX8fomV4p50FLc1oaY1lGNe",
+          "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+          "doxcns72EkfBMYjw6eRwt3C6Nmc",
+          "doxcnEpirgBsWKpaZZJWiNxYEUb",
+          "doxcnuJkmB6ehakWDJXGE330EZf",
+          "doxcnXr3UAneYAsyfJzU2m4vjrY",
+          "doxcn8OMHLfvofzBBk0vHXX0Wde",
+          "doxcnARDWC2TWmWob19UNCq3Boc",
+          "doxcn3tzNZqM6Io8PX3aoKM2iFg",
+          "doxcnCJ46E3egaMcOy0ZlAEuyTc",
+          "doxcnFfS3N6wm74OCsamP9CRx4e",
+          "doxcnp2VRasNSYo1FJV2IOhP1Ae",
+          "doxcno8C476XmktqOLAiZxyQnBc",
+          "doxcniKvbUps2zlA5SvIKSi8hlb",
+          "doxcnKVE7e0OvkcQRP8pMCwvcHe",
+          "doxcnqreWgfc6Km9uMPoiddzTlb",
+          "doxcn33nQ0vDIfnCXjRb2LnAGQJ",
+          "PLbfd2YJSoVu0Bxb6nwcFvgGnWh",
+          "Z4v9dgCZGoAV3ix085McwMujnre",
+          "CXSxdIiTWoemdyxZqbnczDJkncb",
+          "J3aHdjnyVoLjzDxfxLWcTlZwnrb",
+          "K6XidHHUQoiTAqxKjF9cl6CBneb",
+          "DTFddocbXoIeBYx0UUbcIMvenAf",
+          "doxcnZEnpdDvmGKrDyWmsmwrHjg",
+          "doxcnxiX8lK0s5bahw4KyhAo9mg",
+          "doxcnbAqHz8HnqZqS8KFGGuatde",
+          "doxcnPhfrxwB6tiZx96s3fcCcMg",
+          "doxcnBBhzhqPpZBWoOvEBgOQVee",
+          "doxcnj44FoOpXLKZKlWZJkHpSle",
+          "doxcn0SZzn04SmDfw8IQZRJMQef",
+          "doxcnT83G9dE0bQ9ZybOye5auje"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn1cpNe8j3FnuSKzuzql9yDg",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusClientV2",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance represents a Java client that connects to a specific <include target=\"milvus\">Milvus instance</include><include target=\"zilliz\">Zilliz Cloud cluster</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlo4UIvMS35tBrBtQhfeahe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn5DodXi6S7QK1XmXnq0zSVc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnzAEG0NvYaAB53apDRqoDlf",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a client for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnT0ufnB1Q5RKL3YxX1E6ZQc",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "doxcnTn5unLg99IiWd6nHEtFKmf",
+          "doxcnVukyBHNeObrJT0fi803YCh"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnTn5unLg99IiWd6nHEtFKmf",
+        "block_type": 2,
+        "parent_id": "doxcnT0ufnB1Q5RKL3YxX1E6ZQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVukyBHNeObrJT0fi803YCh",
+        "block_type": 2,
+        "parent_id": "doxcnT0ufnB1Q5RKL3YxX1E6ZQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This client serves as an easy-to-use alternative for the current set of APIs that handles ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create, Read, Update, and Delete (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CRUD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " operations <include target=\"milvus\">in Milvus</include><include target=\"zilliz\">on Zilliz Cloud</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn88tAjFEq6LHxrVfUc61NKc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientV2(ConnectConfig connectConfig);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn5p3UEYKwfRMrtkR00RG1Eb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnPlDAA0aCPVWgHnsvShjFhb",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ConnectConfig",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "allows you to configure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " the connection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " properties",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in one place",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " so that",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusClientV2",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "can reference it to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "create and manage the connection pool.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn7wLxwBA7lbil6a5qC8Ow50",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcno1vezWPFABCLCrhkBru0Hy",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// use either token or username/password\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig.builder()\n    .uri(String uri)\n    .token(String token)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "//",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".username(String userName)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "//",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".password(String password)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn4PVOSoulIw5ehZ1cH6gBVu",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEjUBiUOPlN7FajgHisJt5c",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnaMbkdY8ufPcZZBldi0QpCe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// use either token or username/password\nConnectConfig.builder()\n    .uri(String uri)\n    .token(String token)\n    //.username(String userName)\n    //.password(String password)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnVJpJzleTZgf7VGqPK9jcMe",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlkhtXKR9ezleF0gYPi7Pjd",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "uri(String uri)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnLqAJtVCraY7grkithpiroh",
+          "doxcnKsvIrywWqGOKKAEI3w5edg",
+          "doxcn2HRhAPdqNRyP5Z5u9YDWHE",
+          "doxcnN3RvZyZvHH8ttVx749QHPh",
+          "doxcnj5XYXSCpvH9yu4J9WNLabk",
+          "doxcn9tbXwWJTqlJzvx0KOc52mh",
+          "doxcn4qTHT5Dy8OKOQeYzUMPBBf"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnLqAJtVCraY7grkithpiroh",
+        "block_type": 2,
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The URI of the <include target=\"milvus\">Milvus instance</include><include target=\"zilliz\">Zilliz Cloud cluster</include>. For example: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKsvIrywWqGOKKAEI3w5edg",
+        "block_type": 2,
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2HRhAPdqNRyP5Z5u9YDWHE",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 1,
+            "wrap": false
+          }
+        },
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb"
+      },
+      {
+        "block_id": "doxcnN3RvZyZvHH8ttVx749QHPh",
+        "block_type": 2,
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnj5XYXSCpvH9yu4J9WNLabk",
+        "block_type": 2,
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn9tbXwWJTqlJzvx0KOc52mh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "https://inxx-xxxxxxxxxxxxxxxxx.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "aws-us-west-2.vectordb-uat3.zillizcloud.com:19540",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 1,
+            "wrap": false
+          }
+        },
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb"
+      },
+      {
+        "block_id": "doxcn4qTHT5Dy8OKOQeYzUMPBBf",
+        "block_type": 2,
+        "parent_id": "doxcnMhptH3nYB4Yf8WKWfE4KSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "token(String token)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn8bTjxMcBeCYZEF9HR5uEHh",
+          "doxcncViNM56Yjdw1yRQLQG7sEf",
+          "doxcnEX44HJtKLQaXm53BkMh9Yl",
+          "doxcnt5cLB2lkzLJxM2N8EBkLyf",
+          "doxcnVihDUgvdA5nJSlwlyqftTh",
+          "doxcnez10WHbxZN5QDqVGOo5Ghd",
+          "doxcnoCU4XorZbYTeWcXS4yfmwf",
+          "doxcn2WTPjXH7C23pVMBCvpEnee",
+          "doxcnociTnNMKPNlA3E508IL0no",
+          "doxcnDYuKgU5dnM3IifX7jZi8es",
+          "doxcnCOTqKxtH6ZSpaJ6VKIkLRf",
+          "doxcnblAYVhG2pD5EQ1xuONGuDd"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn8bTjxMcBeCYZEF9HR5uEHh",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid access token to access the specified <include target=\"milvus\">Milvus instance</include><include target=\"zilliz\">Zilliz Cloud cluster</include>. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcncViNM56Yjdw1yRQLQG7sEf",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This can be used as a recommended alternative to setting ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "user",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "password",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " separately.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEX44HJtKLQaXm53BkMh9Yl",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When setting this field, notice that:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnt5cLB2lkzLJxM2N8EBkLyf",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVihDUgvdA5nJSlwlyqftTh",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid token should be a pair of username and password used to access the target cluster, joined by a colon (:). For example, you can set this to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "root:Milvus",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", which is the default credential of the root user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnez10WHbxZN5QDqVGOo5Ghd",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use this if authentication has been enabled on the target Milvus instance. To enable authentication, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authenticate User Access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fauthenticate.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnoCU4XorZbYTeWcXS4yfmwf",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2WTPjXH7C23pVMBCvpEnee",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnociTnNMKPNlA3E508IL0no",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid token should be either",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnDYuKgU5dnM3IifX7jZi8es",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API key",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fmanage-api-keys"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with sufficient permissions, or",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd"
+      },
+      {
+        "block_id": "doxcnCOTqKxtH6ZSpaJ6VKIkLRf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A pair of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "username and password ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fcluster-credentials"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "used to access the target cluster, joined by a colon (:). For example, you can set this to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "username:p@ssw0rd",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd"
+      },
+      {
+        "block_id": "doxcnblAYVhG2pD5EQ1xuONGuDd",
+        "block_type": 2,
+        "parent_id": "doxcnvUoDVymHwFatrhHX7aLTKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnX8fomV4p50FLc1oaY1lGNe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "username(String userName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn8kPCsosWUdGFoBTRuRTn8e",
+          "doxcnT5Y6LX4BsTEUw4TRpafHod",
+          "doxcnRxlUELrw8KmhdrWNgCG9pg",
+          "doxcn57GoFmuEshB7HfGfjRxAzc",
+          "doxcn8AVwnUk3BChXBxdNR1l7Jb"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn8kPCsosWUdGFoBTRuRTn8e",
+        "block_type": 2,
+        "parent_id": "doxcnX8fomV4p50FLc1oaY1lGNe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid username used to connect to the specified <include target=\"milvus\">Milvus instance</include><include target=\"zilliz\">Zilliz Cloud cluster</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnT5Y6LX4BsTEUw4TRpafHod",
+        "block_type": 2,
+        "parent_id": "doxcnX8fomV4p50FLc1oaY1lGNe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnRxlUELrw8KmhdrWNgCG9pg",
+        "block_type": 2,
+        "parent_id": "doxcnX8fomV4p50FLc1oaY1lGNe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use this if authentication has been enabled on the target Milvus instance. To enable authentication, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authenticate User Access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fauthenticate.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn57GoFmuEshB7HfGfjRxAzc",
+        "block_type": 2,
+        "parent_id": "doxcnX8fomV4p50FLc1oaY1lGNe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn8AVwnUk3BChXBxdNR1l7Jb",
+        "block_type": 2,
+        "parent_id": "doxcnX8fomV4p50FLc1oaY1lGNe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This should be used along with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "password",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "password(String password)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn4QRDd1pUep0KmA5woydMEg",
+          "doxcnU4ztOIfAXt9ZdlSiV9M5hc",
+          "doxcnVMXjwvlBKIyybudEQ5AVxf",
+          "doxcn8rjgVhQwNjSjD9a9q9zf2e",
+          "doxcnP5CYfFeXWuA3bonLyx0RYb"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn4QRDd1pUep0KmA5woydMEg",
+        "block_type": 2,
+        "parent_id": "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid password used to connect to the specified <include target=\"milvus\">Milvus instance</include><include target=\"zilliz\">Zilliz Cloud cluster</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnU4ztOIfAXt9ZdlSiV9M5hc",
+        "block_type": 2,
+        "parent_id": "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVMXjwvlBKIyybudEQ5AVxf",
+        "block_type": 2,
+        "parent_id": "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use this if authentication has been enabled on the target Milvus instance. To enable authentication, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authenticate User Access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fauthenticate.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn8rjgVhQwNjSjD9a9q9zf2e",
+        "block_type": 2,
+        "parent_id": "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnP5CYfFeXWuA3bonLyx0RYb",
+        "block_type": 2,
+        "parent_id": "doxcnMPz0gQnpc7Dt9ucoYm0tWf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This should be used along with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "user",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcns72EkfBMYjw6eRwt3C6Nmc",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEpirgBsWKpaZZJWiNxYEUb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dbName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnNLTU7UosU195ipXbPBpyWe"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnNLTU7UosU195ipXbPBpyWe",
+        "block_type": 2,
+        "parent_id": "doxcnEpirgBsWKpaZZJWiNxYEUb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database to which the target Milvus instance belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnuJkmB6ehakWDJXGE330EZf",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnXr3UAneYAsyfJzU2m4vjrY",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "connectTimeoutMs(long connectTimeout)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcndwbqy3E4p3d5Q8eSiIsGUe",
+          "doxcnZoTFOikcuEgc2BUOUdeiCf"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcndwbqy3E4p3d5Q8eSiIsGUe",
+        "block_type": 2,
+        "parent_id": "doxcnXr3UAneYAsyfJzU2m4vjrY",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The timeout duration for this operation, in milliseconds. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZoTFOikcuEgc2BUOUdeiCf",
+        "block_type": 2,
+        "parent_id": "doxcnXr3UAneYAsyfJzU2m4vjrY",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10000",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn8OMHLfvofzBBk0vHXX0Wde",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "keepAliveTimeMs(long keepAliveTime)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnyfeXcap92sRKdUQNOPKc6m",
+          "doxcnRO0A16zVwqfkfhqSJsNsGh"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnyfeXcap92sRKdUQNOPKc6m",
+        "block_type": 2,
+        "parent_id": "doxcn8OMHLfvofzBBk0vHXX0Wde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The time in milliseconds between keep-alive probes sent by the client to the server.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnRO0A16zVwqfkfhqSJsNsGh",
+        "block_type": 2,
+        "parent_id": "doxcn8OMHLfvofzBBk0vHXX0Wde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "55000",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnARDWC2TWmWob19UNCq3Boc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "keepAliveTimeoutMs(long keepAliveTimeout)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnUENg9OD1dxRZyGjwdkSsif",
+          "doxcnQGTxaLkeA3NQK9FAca9zIc"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnUENg9OD1dxRZyGjwdkSsif",
+        "block_type": 2,
+        "parent_id": "doxcnARDWC2TWmWob19UNCq3Boc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The timeout duration in milliseconds for the server to respond to a keep-alive probe sent by the client.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnQGTxaLkeA3NQK9FAca9zIc",
+        "block_type": 2,
+        "parent_id": "doxcnARDWC2TWmWob19UNCq3Boc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "20000",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3tzNZqM6Io8PX3aoKM2iFg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "keepAliveWithoutCalls(boolean enable)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnadJ6V7iWvU3uKLPD6HPmRd",
+          "doxcnCm4CLwUcFmOa1qkzp1C4Fc"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnadJ6V7iWvU3uKLPD6HPmRd",
+        "block_type": 2,
+        "parent_id": "doxcn3tzNZqM6Io8PX3aoKM2iFg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to send keep-alive probes without making requests.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCm4CLwUcFmOa1qkzp1C4Fc",
+        "block_type": 2,
+        "parent_id": "doxcn3tzNZqM6Io8PX3aoKM2iFg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "false",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCJ46E3egaMcOy0ZlAEuyTc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "rpcDeadlineMs(long rpcDeadline)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnnATfekTD8oW66xC8APRw8b",
+          "doxcnETm7BugEB1KeiQqllev3Eb"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnnATfekTD8oW66xC8APRw8b",
+        "block_type": 2,
+        "parent_id": "doxcnCJ46E3egaMcOy0ZlAEuyTc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The deadline for RPC calls (disabled).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnETm7BugEB1KeiQqllev3Eb",
+        "block_type": 2,
+        "parent_id": "doxcnCJ46E3egaMcOy0ZlAEuyTc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", which indicates the deadline is disabled.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnFfS3N6wm74OCsamP9CRx4e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "clientKeyPath(String clientKeyPath)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnISnLAsfrqsqolcCHT8Dlec"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnISnLAsfrqsqolcCHT8Dlec",
+        "block_type": 2,
+        "parent_id": "doxcnFfS3N6wm74OCsamP9CRx4e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The path to the client key file for two-way authentication.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnp2VRasNSYo1FJV2IOhP1Ae",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "clientPemPath(String clientPemPath)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn22zOWoJ693r8pmZ3lw76pc"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn22zOWoJ693r8pmZ3lw76pc",
+        "block_type": 2,
+        "parent_id": "doxcnp2VRasNSYo1FJV2IOhP1Ae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The path to the client PEM file for two-way authentication.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcno8C476XmktqOLAiZxyQnBc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "caPemPath(String caPemPath)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnLn6A89rCqLYdDPw4KyNCoh"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnLn6A89rCqLYdDPw4KyNCoh",
+        "block_type": 2,
+        "parent_id": "doxcno8C476XmktqOLAiZxyQnBc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The path to the CA PEM file for two-way authentication.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcniKvbUps2zlA5SvIKSi8hlb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "serverPemPath(String serverPemPath)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnqwZJAanrfykf3bxVf3FgZb"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnqwZJAanrfykf3bxVf3FgZb",
+        "block_type": 2,
+        "parent_id": "doxcniKvbUps2zlA5SvIKSi8hlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The path to the server PEM file for two-way authentication.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKVE7e0OvkcQRP8pMCwvcHe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "serverName(String serverName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnGWc6dEawl1B8yfxLCuGMRp"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnGWc6dEawl1B8yfxLCuGMRp",
+        "block_type": 2,
+        "parent_id": "doxcnKVE7e0OvkcQRP8pMCwvcHe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The expected name of the server.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqreWgfc6Km9uMPoiddzTlb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "secure(boolean enable)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn7aEculBOvO65QyqHb2hhIV",
+          "doxcnsgAOPbn7oSYjCqHQUNczIg"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn7aEculBOvO65QyqHb2hhIV",
+        "block_type": 2,
+        "parent_id": "doxcnqreWgfc6Km9uMPoiddzTlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to use TLS for the connection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnsgAOPbn7oSYjCqHQUNczIg",
+        "block_type": 2,
+        "parent_id": "doxcnqreWgfc6Km9uMPoiddzTlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "true",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn33nQ0vDIfnCXjRb2LnAGQJ",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "idleTimeoutMs(long idleTimeout)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn7WuqIip94pPJRZhraHE8Yg"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn7WuqIip94pPJRZhraHE8Yg",
+        "block_type": 2,
+        "parent_id": "doxcn33nQ0vDIfnCXjRb2LnAGQJ",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The idle timeout for a connection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PLbfd2YJSoVu0Bxb6nwcFvgGnWh",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PUBLIC METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z4v9dgCZGoAV3ix085McwMujnre",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getHost()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VcQxdnTOQoRq4zxlanJczjeCnrY"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "VcQxdnTOQoRq4zxlanJczjeCnrY",
+        "block_type": 2,
+        "parent_id": "Z4v9dgCZGoAV3ix085McwMujnre",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Returns the hostname of the currently connected Milvus instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CXSxdIiTWoemdyxZqbnczDJkncb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getPort()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CLzXdegDQoi0EmxA793cZTLqnif"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "CLzXdegDQoi0EmxA793cZTLqnif",
+        "block_type": 2,
+        "parent_id": "CXSxdIiTWoemdyxZqbnczDJkncb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Returns the port number at which the currently connected Milvus instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J3aHdjnyVoLjzDxfxLWcTlZwnrb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getAuthorization()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QOg3d0wHOoQRkOxVH1icmJ7sn8g"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "QOg3d0wHOoQRkOxVH1icmJ7sn8g",
+        "block_type": 2,
+        "parent_id": "J3aHdjnyVoLjzDxfxLWcTlZwnrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Returns the credentials used to set up the current connection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K6XidHHUQoiTAqxKjF9cl6CBneb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getDbName()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Z0v9dRIhKoneBUxaIP6cZq5Cnfc"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "Z0v9dRIhKoneBUxaIP6cZq5Cnfc",
+        "block_type": 2,
+        "parent_id": "K6XidHHUQoiTAqxKjF9cl6CBneb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Returns the name of the database currently in use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DTFddocbXoIeBYx0UUbcIMvenAf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "isSecure()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GibXdUJvOolyIlx7Ouac4Vqxn6d"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "GibXdUJvOolyIlx7Ouac4Vqxn6d",
+        "block_type": 2,
+        "parent_id": "DTFddocbXoIeBYx0UUbcIMvenAf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Returns whether the current connection is over TLS.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZEnpdDvmGKrDyWmsmwrHjg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnxiX8lK0s5bahw4KyhAo9mg",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbAqHz8HnqZqS8KFGGuatde",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig connectConfig = ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\") // replace this with your token\n        .build();\n        \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusClientV2 client = new MilvusClientV2(connectConfig);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnPhfrxwB6tiZx96s3fcCcMg",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnBBhzhqPpZBWoOvEBgOQVee",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnj44FoOpXLKZKlWZJkHpSle",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig connectConfig = ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .uri(\"https://in01-******.aws-us-west-2.vectordb.zillizcloud.com:19531\")\n        .token(\"user:password\") // replace this with your token\n        .build();\n        \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusClientV2 client = new MilvusClientV2(connectConfig);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcn0SZzn04SmDfw8IQZRJMQef",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "doxcnkkmnCibhXTJmQud0oaPDGd",
+          "doxcnHwuj8KjBLrTEiwHt1kw5Gb"
+        ],
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf"
+      },
+      {
+        "block_id": "doxcnkkmnCibhXTJmQud0oaPDGd",
+        "block_type": 2,
+        "parent_id": "doxcn0SZzn04SmDfw8IQZRJMQef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHwuj8KjBLrTEiwHt1kw5Gb",
+        "block_type": 2,
+        "parent_id": "doxcn0SZzn04SmDfw8IQZRJMQef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "uri",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to your cluster endpoint. The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "token",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter can be a Zilliz Cloud API key with sufficient permissions or the credentials of a cluster user in the format of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "username:p@ssw0rd",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnT83G9dE0bQ9ZybOye5auje",
+        "block_type": 2,
+        "parent_id": "Y4qvdMEeioKXShxxNmncvnJ2nJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 106
+  },
+  "slug": "v2-Client-MilvusClientV2"
+}

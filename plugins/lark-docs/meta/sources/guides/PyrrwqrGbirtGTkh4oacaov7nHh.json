@@ -1,0 +1,1311 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1729762688",
+  "node_token": "PyrrwqrGbirtGTkh4oacaov7nHh",
+  "node_type": "origin",
+  "obj_create_time": "1729762688",
+  "obj_edit_time": "1729763353",
+  "obj_token": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+  "obj_type": "docx",
+  "origin_node_token": "PyrrwqrGbirtGTkh4oacaov7nHh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "Release Notes (Oct 14, 2024)",
+  "slug": "release-notes-2102",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "block_type": 1,
+        "children": [
+          "JN1DdYa3toG0RLxldu6cUMw6npf",
+          "C1hUdYoEVocFsjxC7ZGckmHLnSe",
+          "V2k6dSKn0og03NxukDhcVQxznUb",
+          "YP1sdaA3GoJWQqxY7mpcDsawnTe",
+          "KN6ddtxc3oviZcxx8fVcmnqCnMf",
+          "HU3Bdn8ZlodAryxwZsIcLkqDnuc",
+          "Lp53dEPrfouXwwxpn7Xc0HwfnPg",
+          "LR1Udp9rhoXT6ux5TUicmvQ1ncb",
+          "MAPYds7bSoO833xqkHqcuQyEn2g",
+          "SxpfdwDxbobF0wxBINPcixASnTb",
+          "QQ4fd3pD3opy6jxf0UFciaOJnxh",
+          "DzrVdCDokouTVaxHX6gcb7h4ntb",
+          "Q7fHdXNCNojeMKxtHNbctn6vnqd",
+          "PX67dmyuLom8ugxYgGUcPCfAnqg",
+          "GohkdrHpnoJ1XAxo7uQcVb1AnPh",
+          "Qj92dmzXvoPj5lxZoiTc6SeHnHg",
+          "OdKZd00BBoO8h0xXkiCcwGMOnBe",
+          "AnUVdVItfodEvMxUSfqcAh97nKc",
+          "OeTZdnvOVogKhlxck9ocvbxdnR6",
+          "OnQ7dPLMao4lqXxRczkcmk3tnBb",
+          "Okczdmapzo5Bi3xUKwfcaVPUnVd",
+          "TRnsdg2Z0oeY0Exv6Yzc1AaNn5c",
+          "VnvAd6igXokqu5xXtsScibMxn0b",
+          "PyLLdnQ7WoouX7x19y8cO8cknrf",
+          "H8Q1doeSBotFNzxDrolcRrfunYc",
+          "DF2mdNBXMoVlJRxJYVhcNzwZnab",
+          "PpVadP2Uuo0yTEx8Yv9crBcznNe",
+          "EOeEdloEEoZXvwxx9bScu5v0nmf",
+          "CQIkd62ETo9QIux0oEFcFbqwnpt",
+          "DiJMdqDAOoTDvoxpFCJcmtqunUb",
+          "YIxPdc2eVoEQcVxTxWrcWhJnneg",
+          "UXfZdLSLmo2oyAxduzzcA5JDncg",
+          "PjgodShqoo7un0xCSzXcEclonyb",
+          "NYj6dO2q6oTAhYxAJvocKS7zn0g"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Release Notes (Oct 14, 2024)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "JN1DdYa3toG0RLxldu6cUMw6npf",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release of Zilliz Cloud introduces several key updates: the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Notebook Gallery",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", which provides examples on advanced features like RAG, embeddings, and multi-modal search; an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Improved Capacity of Performance-optimized CU",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", now increased by 50%, accommodating up to 1.5 million 768-dim vectors per CU and potentially reducing costs by 30% for large data volumes; and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Multi-replica Availability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", enhancing query performance and reliability by distributing workloads and replicas across Availability Zones (AZs). Additionally, Zilliz Cloud now supports the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS Tokyo Region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for improved performance in the Asia-Pacific area, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Prometheus Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for real-time monitoring and troubleshooting, and a revamped ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authentication and Login System with Auth0",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", offering multiple login methods including SSO. Lastly, users can evaluate Zilliz products through the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS Marketplace Free Trial",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", providing risk-free access to core features for performance and scalability testing.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C1hUdYoEVocFsjxC7ZGckmHLnSe",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V2k6dSKn0og03NxukDhcVQxznUb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus Compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "YP1sdaA3GoJWQqxY7mpcDsawnTe",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release is compatible with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus 2.4.x",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KN6ddtxc3oviZcxx8fVcmnqCnMf",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HU3Bdn8ZlodAryxwZsIcLkqDnuc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notebook Gallery",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "Lp53dEPrfouXwwxpn7Xc0HwfnPg",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this release, Zilliz Cloud introduces the Notebook Gallery. This gallery provides detailed examples showcasing advanced features of Zilliz Cloud. The notebooks cover a wide range of use cases, including but not limited to RAG (Retrieval-Augmented Generation), agents, embeddings, text search, multi-modal search, data ingestion, migration, performance optimization, and more.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LR1Udp9rhoXT6ux5TUicmvQ1ncb",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Explore the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "notebooks",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Flearn%2Fmilvus-notebooks"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " now!",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MAPYds7bSoO833xqkHqcuQyEn2g",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SxpfdwDxbobF0wxBINPcixASnTb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Improved Capacity of Performance-optimized CU",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "QQ4fd3pD3opy6jxf0UFciaOJnxh",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With this release, the capacity of the performance-optimized CU (Compute Unit) has been increased by 50%. Previously, each performance-optimized CU could hold approximately 1 million vectors when estimated with 768-dimension vectors. Now, the capacity has been enhanced to 1.5 million vectors per CU. For large data volumes, this improvement can reduce CU costs by approximately 30%.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DzrVdCDokouTVaxHX6gcb7h4ntb",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q7fHdXNCNojeMKxtHNbctn6vnqd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multi-replica Generally Available",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "PX67dmyuLom8ugxYgGUcPCfAnqg",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multi-replica is now generally available in Zilliz Cloud, enabling cluster-level replication to boost both query throughput and availability.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GohkdrHpnoJ1XAxo7uQcVb1AnPh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Improved Query Performance",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": For users requiring high query-per-second (QPS), multi-replica allows query workloads to be distributed across replicas. This parallel processing enhances overall throughput, reduces latency, and improves efficiency for query-intensive applications. In most cases, the overall QPS can be improved linearly as replicas are added.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "Qj92dmzXvoPj5lxZoiTc6SeHnHg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enhanced Availability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Multi-replica strengthens availability by distributing replicas across multiple Availability Zones (AZs). This setup ensures continuous access to data, even in the event of an AZ outage, offering greater reliability for mission-critical applications.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "OdKZd00BBoO8h0xXkiCcwGMOnBe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on configuring multi-replica, refer to our ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Replica",
+                "token": "W8Mhwa4faiQqtRkH4t9cdexCnlf",
+                "url": "https://zilliverse.feishu.cn/wiki/W8Mhwa4faiQqtRkH4t9cdexCnlf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "AnUVdVItfodEvMxUSfqcAh97nKc",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OeTZdnvOVogKhlxck9ocvbxdnR6",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "New Region Available: AWS Tokyo",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "OnQ7dPLMao4lqXxRczkcmk3tnBb",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud is now available in the AWS Tokyo region (ap-northeast-1), providing users in the Asia-Pacific region with improved latency and performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Okczdmapzo5Bi3xUKwfcaVPUnVd",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To view pricing details for the AWS Tokyo region, visit the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pricing page",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TRnsdg2Z0oeY0Exv6Yzc1AaNn5c",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VnvAd6igXokqu5xXtsScibMxn0b",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Prometheus Integration Support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "PyLLdnQ7WoouX7x19y8cO8cknrf",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now supports integration with Prometheus, allowing users to monitor and visualize system metrics in real time. This integration enables users to track performance, resource usage, and system health, ensuring proactive monitoring and efficient troubleshooting. For setup and configuration details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Prometheus",
+                "token": "Ex99woZlsico4FkfwxGckjRRnqf",
+                "url": "https://zilliverse.feishu.cn/wiki/Ex99woZlsico4FkfwxGckjRRnqf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H8Q1doeSBotFNzxDrolcRrfunYc",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DF2mdNBXMoVlJRxJYVhcNzwZnab",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Authentication and Login System Refactoring with Auth0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "PpVadP2Uuo0yTEx8Yv9crBcznNe",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this release, Zilliz Cloud has revamped its authentication and login system using Auth0. Zilliz Cloud now supports three login methods: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EOeEdloEEoZXvwxx9bScu5v0nmf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Email registration and login. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "CQIkd62ETo9QIux0oEFcFbqwnpt",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Quick login via GitHub or Google authentication. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "DiJMdqDAOoTDvoxpFCJcmtqunUb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SSO login for enterprise customers. For more details, visit ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Single Sign-on with Okta",
+                "token": "SXBNw91txiJhL6kq2ARcvYbRntg",
+                "url": "https://zilliverse.feishu.cn/wiki/SXBNw91txiJhL6kq2ARcvYbRntg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "YIxPdc2eVoEQcVxTxWrcWhJnneg",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UXfZdLSLmo2oyAxduzzcA5JDncg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS Marketplace Free Trial",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd"
+      },
+      {
+        "block_id": "PjgodShqoo7un0xCSzXcEclonyb",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With this release, Zilliz Cloud users can take advantage of the AWS Marketplace Free Trial option, providing an opportunity to explore and evaluate Zilliz products in a risk-free environment before committing to larger purchase decisions. This trial grants full access to the platform’s core features, allowing users to thoroughly test performance, scalability, and compatibility with their applications.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NYj6dO2q6oTAhYxAJvocKS7zn0g",
+        "block_type": 2,
+        "parent_id": "TH7wdYQUToMDP5x6RfjcayZwnQd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Get Zilliz services via ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS Marketplace: Zilliz",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Faws.amazon.com%2Fmarketplace%2Fseller-profile%3Fid%3D4922a541-e428-480d-8e32-db4ee9a7f46e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 35
+  }
+}

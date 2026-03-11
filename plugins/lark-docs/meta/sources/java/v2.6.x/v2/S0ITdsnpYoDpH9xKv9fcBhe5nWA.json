@@ -1,0 +1,2403 @@
+{
+  "created_time": "1750410841",
+  "modified_time": "1770946752",
+  "name": "bulkImport()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "YvTefFqP5laf91dW25kcRJzfnmg",
+  "token": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "block_type": 1,
+        "children": [
+          "R5qKd0a2foiIqgxFQd6cs7Y2nZc",
+          "HUy8diCqso0ZbEx5bsQcQYennNb",
+          "Y8gUdVdfzoYN4qx31fycTmjEnyb",
+          "Nk3Nd1cImo1JsmxQZEUc2t9xnYe",
+          "TxuOdndigomfTRxZRP8cjrQmnRd",
+          "Xe3Cd2LrvoVWqNxPIVWcw1RGncb",
+          "Isx1dV3ojoDLIRxRaHucL6YZnTd",
+          "QA0UdxTIModQxxxXckLcMF0OnNK",
+          "QruSdmucpo75ZAxIfYmcCIK4nkc",
+          "ACCndhnonoZXCbxqTVncJrttnpU",
+          "C2jFd4SakoAiVzxt4k5cj1Y9nKe",
+          "MAFldatEto4EcwxyW1vcFzaIn8e",
+          "G3EQdRiKEo1xdGxkNkbcdnDYndc",
+          "BwKRd4ZmGoloBaxlklwc33Swnef",
+          "Lp5hdXcxdocIYsx0LdicJFpQnsd",
+          "PTysdJT8HojVIKxGS32cTw4SnFh",
+          "RWxqdWoPsoidLCxLHz1c6YSunFh",
+          "HcC2dGcnIoBl3NxAEuwcUbJAnfg",
+          "CJkXdZqd7oVj6fxf0tPcJZ1Jnog",
+          "P0dqdvoJyooHp9xziehcRsHWnz2",
+          "C2fddDCl5omHN6xJkBmc4IiwnXd",
+          "DhJKdxyDTotHNRx9RMFcYzcnn8g",
+          "VJc9dKnJXoshHpxeJ7nc39OpnOc",
+          "O4ygdorZ7oTv9ax6pQTcSjHKnOf",
+          "DUjQdEajqoD8xYxPi7ocAXkLnSc",
+          "MiwodE0IAoYjZMxGJjDcn9D2npd",
+          "Vzwjd6nAyopUbZxOvIscsn7Snch",
+          "WgnxdMacEoNRyNxJRlRcrgQznGg",
+          "KL56dh9XHoUEkkxkXqjcfHw9nnb",
+          "Nn5wdus0uoQ6g6xG9kMcHbKxnFa",
+          "UgFBd10v1ouXzwxvGSZcY8aXntA",
+          "PFKodBA58onh1xxcwMacGIJrn9e",
+          "MOe2dRsLyoqTyzxcLgocSCZCnXb",
+          "OjhIdL9QUoIwMVxxTbvcJXAmnBg",
+          "RbnSdpwucofRdcxR0G0cLTmYnIb",
+          "JG2gdLj2boICzTxgq6hcladxnAq",
+          "VONJd5ZeioaHD5xcJ0Rcs6XwnCy",
+          "NQr6db7KqoK3oyxmNa3c5K4Lnxh",
+          "AY6IdmwtdojvD9xnCUDcLkkHnrc",
+          "Xj45dSGI1o5j9gxcjI8cYG48nmh",
+          "VC4Idi3wLoXKwsxC6uOcKPyDnZf",
+          "UWtHdNH3KoAYWcxnX8tcinGbnSb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "bulkImport()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "R5qKd0a2foiIqgxFQd6cs7Y2nZc",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation imports the prepared data files to <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>. To learn how to prepare your data files, read <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Prepare Source Data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fprepare-source-data.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Prepare Data Import",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fprepare-data-import"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HUy8diCqso0ZbEx5bsQcQYennNb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public static String bulkImport(String url, BaseImportRequest request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "Y8gUdVdfzoYN4qx31fycTmjEnyb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "Nk3Nd1cImo1JsmxQZEUc2t9xnYe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "bulkImport.bulkImport(\n    url, \n    request\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "TxuOdndigomfTRxZRP8cjrQmnRd",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xe3Cd2LrvoVWqNxPIVWcw1RGncb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "url",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QZj6dSJliosijXxwXzLcKBZMnWd",
+          "G7VxdHngGoax5GxGkKDcfostnzg",
+          "QBxfdYCLMo8PoexWlxmcFHbOnIg"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "QZj6dSJliosijXxwXzLcKBZMnWd",
+        "block_type": 2,
+        "parent_id": "Xe3Cd2LrvoVWqNxPIVWcw1RGncb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">The endpoint of the connected Milvus instance.</include><include target=\"zilliz\">Zilliz Cloud's Control Plane API endpoint. The endpoint URL should be in the following format:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G7VxdHngGoax5GxGkKDcfostnzg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "https://api.cloud.zilliz.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Xe3Cd2LrvoVWqNxPIVWcw1RGncb"
+      },
+      {
+        "block_id": "QBxfdYCLMo8PoexWlxmcFHbOnIg",
+        "block_type": 2,
+        "parent_id": "Xe3Cd2LrvoVWqNxPIVWcw1RGncb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Isx1dV3ojoDLIRxRaHucL6YZnTd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "request",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fdocx%2FS0ITdsnpYoDpH9xKv9fcBhe5nWA%23MAFldatEto4EcwxyW1vcFzaIn8e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MQmMdDI7WoJ7rYxNSMkc63u2npg"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "MQmMdDI7WoJ7rYxNSMkc63u2npg",
+        "block_type": 2,
+        "parent_id": "Isx1dV3ojoDLIRxRaHucL6YZnTd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QA0UdxTIModQxxxXckLcMF0OnNK",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QruSdmucpo75ZAxIfYmcCIK4nkc",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ACCndhnonoZXCbxqTVncJrttnpU",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C2jFd4SakoAiVzxt4k5cj1Y9nKe",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the created import job.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MAFldatEto4EcwxyW1vcFzaIn8e",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BaseImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "G3EQdRiKEo1xdGxkNkbcdnDYndc",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance is implemented in <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CloudImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BwKRd4ZmGoloBaxlklwc33Swnef",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Lp5hdXcxdocIYsx0LdicJFpQnsd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "PTysdJT8HojVIKxGS32cTw4SnFh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusImportRequest.builder()\n    .dbName(String dbName)\n    .collectionName(String collectionName)\n    .partitionName(String partitionName)\n    .files(List<List<String>> files)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "RWxqdWoPsoidLCxLHz1c6YSunFh",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HcC2dGcnIoBl3NxAEuwcUbJAnfg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dbName(String dbName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "K9nsd14nAodnYFxZumJcjSWpn3d"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "K9nsd14nAodnYFxZumJcjSWpn3d",
+        "block_type": 2,
+        "parent_id": "HcC2dGcnIoBl3NxAEuwcUbJAnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target database. The value of this parameter defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CJkXdZqd7oVj6fxf0tPcJZ1Jnog",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ToyDdbjsyo5SbXx2M6TcIpGpnWq"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "ToyDdbjsyo5SbXx2M6TcIpGpnWq",
+        "block_type": 2,
+        "parent_id": "CJkXdZqd7oVj6fxf0tPcJZ1Jnog",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of a collection in the target cluster of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P0dqdvoJyooHp9xziehcRsHWnz2",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionName(String partitionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WQFVdfy5vop6l3xmlJ0cHMHKnvg"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "WQFVdfy5vop6l3xmlJ0cHMHKnvg",
+        "block_type": 2,
+        "parent_id": "P0dqdvoJyooHp9xziehcRsHWnz2",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the partition in the target cluster of this operation. The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C2fddDCl5omHN6xJkBmc4IiwnXd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "files(List<List<String>> files)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "SCtNdjYClo5KAUxmFFWcJNHznEB"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "SCtNdjYClo5KAUxmFFWcJNHznEB",
+        "block_type": 2,
+        "parent_id": "C2fddDCl5omHN6xJkBmc4IiwnXd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The list of string lists, each string list contains a singular row-based file path or multiple column-based file paths.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DhJKdxyDTotHNRx9RMFcYzcnn8g",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VJc9dKnJXoshHpxeJ7nc39OpnOc",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O4ygdorZ7oTv9ax6pQTcSjHKnOf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CloudImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "DUjQdEajqoD8xYxPi7ocAXkLnSc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CloudImportRequest.builder()\n    .apiKey(String apiKey)\n    .objectUrl(String objectUrl)\n    .accessKey(String accessKey)\n    .secrectKey(String secrectKey)\n    .clusterId(String clusterId)\n    .dbName(String dbName)\n    .collectionName(String collectionName)\n    .partitionName(String partitionName)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "MiwodE0IAoYjZMxGJjDcn9D2npd",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vzwjd6nAyopUbZxOvIscsn7Snch",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "apiKey(String apiKey)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CKbtdIBiTov5MSxyO0Icr3O9nJf"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "CKbtdIBiTov5MSxyO0Icr3O9nJf",
+        "block_type": 2,
+        "parent_id": "Vzwjd6nAyopUbZxOvIscsn7Snch",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid Zilliz Cloud API key with sufficient permissions to manipulate the cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WgnxdMacEoNRyNxJRlRcrgQznGg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "objectUrl(String objectUrl)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LYHldjDtaoAzxVxemi1cob87nDb",
+          "NoLBdbREdoiLG8xUdkTcgBiknbD"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "LYHldjDtaoAzxVxemi1cob87nDb",
+        "block_type": 2,
+        "parent_id": "WgnxdMacEoNRyNxJRlRcrgQznGg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The URL of your data files in one of your block storage buckets. The following are some examples of some renowned block storage services:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NoLBdbREdoiLG8xUdkTcgBiknbD",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Google Cloud Storage\ngs://{bucket-name}/{object-path}/\n\n# AWS S3\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "s3://{bucket-name}/{object-path}/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "WgnxdMacEoNRyNxJRlRcrgQznGg"
+      },
+      {
+        "block_id": "KL56dh9XHoUEkkxkXqjcfHw9nnb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "accessKey(String accessKey)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VN3aditJ0oLPIWxT2G3cA0sBnUc"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "VN3aditJ0oLPIWxT2G3cA0sBnUc",
+        "block_type": 2,
+        "parent_id": "KL56dh9XHoUEkkxkXqjcfHw9nnb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The access key that is used to authenticate access to your data files.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nn5wdus0uoQ6g6xG9kMcHbKxnFa",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "secrectKey(String secrectKey)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FdJ2dvwv9oHILZx9s5PcAqP5npb"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "FdJ2dvwv9oHILZx9s5PcAqP5npb",
+        "block_type": 2,
+        "parent_id": "Nn5wdus0uoQ6g6xG9kMcHbKxnFa",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The secret key that is used to authenticate access to your data files.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UgFBd10v1ouXzwxvGSZcY8aXntA",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "clusterId(String clusterId)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WDhxdL4x9oKqV2xuKayccV1Vnjc",
+          "L1vddwyfYoqAM5xN4TkcTI39nKd"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "WDhxdL4x9oKqV2xuKayccV1Vnjc",
+        "block_type": 2,
+        "parent_id": "UgFBd10v1ouXzwxvGSZcY8aXntA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The instance ID of the target cluster of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L1vddwyfYoqAM5xN4TkcTI39nKd",
+        "block_type": 2,
+        "parent_id": "UgFBd10v1ouXzwxvGSZcY8aXntA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can get the instance ID of a cluster on its details page from the Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PFKodBA58onh1xxcwMacGIJrn9e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dbName(String dbName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "THzRdvJOnoL8ndxXGJRc5m4knSi"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "THzRdvJOnoL8ndxXGJRc5m4knSi",
+        "block_type": 2,
+        "parent_id": "PFKodBA58onh1xxcwMacGIJrn9e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target database. The value of this parameter defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MOe2dRsLyoqTyzxcLgocSCZCnXb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "B6Gcd4jnKoZ1uDxo4QAcYk8Jnof"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "B6Gcd4jnKoZ1uDxo4QAcYk8Jnof",
+        "block_type": 2,
+        "parent_id": "MOe2dRsLyoqTyzxcLgocSCZCnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of a collection in the target cluster of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OjhIdL9QUoIwMVxxTbvcJXAmnBg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionName(String partitionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FgWLdwYvgo8lT5xa4TrcJd4OnNe"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "FgWLdwYvgo8lT5xa4TrcJd4OnNe",
+        "block_type": 2,
+        "parent_id": "OjhIdL9QUoIwMVxxTbvcJXAmnBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the partition in the target cluster of this operation. The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "default",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RbnSdpwucofRdcxR0G0cLTmYnIb",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JG2gdLj2boICzTxgq6hcladxnAq",
+        "block_type": 4,
+        "comment_ids": [
+          "7519030892409454611"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7519030892409454611"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "VONJd5ZeioaHD5xcJ0Rcs6XwnCy",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NQr6db7KqoK3oyxmNa3c5K4Lnxh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import com.google.gson.Gson;\nimport com.google.gson.JsonObject;\nimport io.milvus.bulkwriter.request.import_.MilvusImportRequest;\nimport io.milvus.bulkwriter.restful.BulkImportUtils;\n\nimport java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.List;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<List<String>> batchFiles = new ArrayList<>();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "batchFiles.add(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"bulk_data/1.parquet\"));\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "batchFiles.add(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"bulk_data/2.parquet\"));\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusImportRequest milvusImportRequest = MilvusImportRequest.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(collectionName)\n        .files(batchFiles)\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String bulkImportResult = BulkImportUtils.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bulkImport",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(url, milvusImportRequest);\n\nGson GSON_INSTANCE = new Gson();\nJsonObject result = GSON_INSTANCE.fromJson(bulkImportResult, JsonObject.class);\nString jobId = result.getAsJsonObject(\"data\").get(\"jobId\").getAsString();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".println(\"Create a bulkInert task, job id: \" + jobId);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "AY6IdmwtdojvD9xnCUDcLkkHnrc",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xj45dSGI1o5j9gxcjI8cYG48nmh",
+        "block_type": 2,
+        "comment_ids": [
+          "7520140896818757635"
+        ],
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7520140896818757635"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "zilliz",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "comment_ids": [
+                    "7520140896818757635"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\">",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7520140896818757635"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VC4Idi3wLoXKwsxC6uOcKPyDnZf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import com.google.gson.Gson;\nimport com.google.gson.JsonObject;\nimport io.milvus.bulkwriter.request.import_.MilvusImportRequest;\nimport io.milvus.bulkwriter.restful.BulkImportUtils;\n\nimport java.util.ArrayList;\nimport java.util.Collections;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import java.util.List;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CloudImportRequest cloudImportRequest = CloudImportRequest.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .objectUrl(objectUrl).accessKey(accessKey).secretKey(secretKey)\n        .clusterId(clusterId).collectionName(collectionName)\n        .apiKey(apiKey)\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String bulkImportResult = BulkImportUtils.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bulkImport",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(url, cloudImportRequest);\n\nGson GSON_INSTANCE = new Gson();\nJsonObject result = GSON_INSTANCE.fromJson(bulkImportResult, JsonObject.class);\nString jobId = result.getAsJsonObject(\"data\").get(\"jobId\").getAsString();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".println(\"Create a bulkInert task, job id: \" + jobId);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA"
+      },
+      {
+        "block_id": "UWtHdNH3KoAYWcxnX8tcinGbnSb",
+        "block_type": 2,
+        "parent_id": "S0ITdsnpYoDpH9xKv9fcBhe5nWA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 61
+  },
+  "slug": "v2-BulkImport-bulkImport"
+}

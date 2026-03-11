@@ -1,0 +1,3223 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1741689226",
+  "node_token": "W5b7wUIxfiYuwqkUyt4cwhPTnnc",
+  "node_type": "origin",
+  "obj_create_time": "1741689226",
+  "obj_edit_time": "1768813870",
+  "obj_token": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+  "obj_type": "docx",
+  "origin_node_token": "W5b7wUIxfiYuwqkUyt4cwhPTnnc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "AP0lw1SNciBJNYkJ2iDc0qnfnEg",
+  "space_id": "7167193056431783939",
+  "title": "Azure OpenAI",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "block_type": 1,
+        "children": [
+          "WGMTdCZNPoKETIxtmrMcyLTOnLf",
+          "BiktdvDA5ovbkUxZ8ZTceoezn5g",
+          "LITLdZGuQoiMbcxcF3Jc7Zm2n4b",
+          "DXrUdQDJYorX8fx4DuTclTxhnZg",
+          "Ay5Ld6BYRobtYjxwTA6cb7kInUf",
+          "G6uxdySbXoOcw5xFPlScYfcUnxe",
+          "FKdpdr8cCo1vfqxAk64cEaTpnQg",
+          "SvjPdzvZqoRMycxpsTCcg6EVndd",
+          "XClTdlRv7otpBqxeSoecGFlmnvb",
+          "BJFSdQzepoKLs5xf64DcDn65nVh",
+          "Jbend9uPSoMZWbxc22lcoC1on3c",
+          "OXq7dkv5AoFDnfxr5dAcKDlQnCf",
+          "Qkoxdrjrzosf2ExmaEvcVrBInZd",
+          "PuQfdorqcoVS6ZxMeAEcoW8Rnjg",
+          "UI4id3B3SoRuF0x1svgcJtTTngh",
+          "ShYpd4a3loq8oVxOcOOcaYOTndh",
+          "G2K7dSO2SoyEAZxO4vDcDHYvnag",
+          "UbqRdMfJQoMxcyxWox2cQK5snBb",
+          "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+          "WZ5vdDtSkocbHExFegLcJ1Q8ndc",
+          "YhW9d5ol9ocSKGxOr1ZcZqcVnSb",
+          "FoOTdbpCroQMymxJxKccF23LnSf",
+          "Ex3qdwSP5oZDzExOf2VchqKln7d",
+          "XOA6dFHWFoCsNsxzLUpcbhLPnKe",
+          "F5XQdcTYGoIxUExA16Wc0Bc5nNb",
+          "MwXdddEjsoShZ7xUeexcjmg3nOf",
+          "MPvXdMzrtoAhlex41S4cXYlonVg",
+          "YjTidOMkjofQR0xlsrHc1NO6nwg",
+          "PUoFd6Tjwos1Ltxm9Mhc8Ssen1g",
+          "StCfdKxt8oYOX2xDexnctawPnbg",
+          "Xpc0dufzXoe5ACxpbFFc7qRFnyb",
+          "DDEvde3L6oYQVRxWVXwcssYhnRg",
+          "ThLCdCgAAoXvDExtBJVcnzX7nDf",
+          "ZN73d2uMvoQZwMxeMnFcH8CWnae",
+          "NZP6dBpbOoWYQaxzI4Dc0jIZnPb",
+          "UR83dDSexoqtshxUEuTc6ZIsnTb",
+          "BHdNdL9f7oMWduxc5gCcRhDBnsg",
+          "XZbOdaNWkomsRXx2h4Nc6wYNnPc",
+          "GPxQdFMUwoMAQZxEWZ2cN9won7e",
+          "H2z7dQWo5ooQRvx9sQbcyQgFn6n",
+          "L57idJuK9oebxZx71uOcbzn1n9f",
+          "WPwgdejaKopB8SxrXvxcvtBLnBb",
+          "PoK0d0jMCojbGox3aGVchU9OnvI",
+          "UNYjdp3SVoUydcxtEBtcgRMynlf",
+          "PFz3dJoAuohxNHxx4eBcoheMnsh",
+          "Zih4dIF2FokdRKxTqX3cCydqnGg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Azure OpenAI",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "WGMTdCZNPoKETIxtmrMcyLTOnLf",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This topic describes how to configure and use Azure OpenAI embedding functions in Milvus.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BiktdvDA5ovbkUxZ8ZTceoezn5g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Choose an embedding model",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "LITLdZGuQoiMbcxcF3Jc7Zm2n4b",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus supports all embedding models provided by Azure OpenAI. Below are the currently available Azure OpenAI embedding models for quick reference:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "block_type": 31,
+        "children": [
+          "SpCNd6YcVoL91txlqB8cHlN0nKe",
+          "HFAHdYBHhoLZl3xJlNrcj5aWnRe",
+          "VnaFdnGzFobsjOx2c2Tc0q38njb",
+          "YlyndEKotoFt9WxIq0lcK4QDnLh",
+          "TM4OdjDg0o9Uygx8yKwc1xzOnEf",
+          "CcEpdzVoEo5aV0x7pAscAw7AnOd",
+          "TlFfd9eg1osQa6xImjBcjZcxnod",
+          "WaqldY7xsofcMfx0ZSgcAmEmnDg",
+          "OJM3dM8fgoQNxkxXaircvRnynYR",
+          "PjrQdN6Q5oGR73x6c9dcjc8vnKc",
+          "XAGzdu7YCoRgfgxqdmOcLZYfnXc",
+          "ZGwRdRuCVo6zXfxUPILcl2jTngh",
+          "A7BrdnLvGoFf80xcZcCcakT3nfd",
+          "LsAYdTdUAooDSYxzS0OcYufBnre",
+          "UvWWdmmEMon8pXxS3h3crp6YnS3",
+          "LDDJdJ3LToXk4BxzIHvcWncLnHf"
+        ],
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "table": {
+          "cells": [
+            "SpCNd6YcVoL91txlqB8cHlN0nKe",
+            "HFAHdYBHhoLZl3xJlNrcj5aWnRe",
+            "VnaFdnGzFobsjOx2c2Tc0q38njb",
+            "YlyndEKotoFt9WxIq0lcK4QDnLh",
+            "TM4OdjDg0o9Uygx8yKwc1xzOnEf",
+            "CcEpdzVoEo5aV0x7pAscAw7AnOd",
+            "TlFfd9eg1osQa6xImjBcjZcxnod",
+            "WaqldY7xsofcMfx0ZSgcAmEmnDg",
+            "OJM3dM8fgoQNxkxXaircvRnynYR",
+            "PjrQdN6Q5oGR73x6c9dcjc8vnKc",
+            "XAGzdu7YCoRgfgxqdmOcLZYfnXc",
+            "ZGwRdRuCVo6zXfxUPILcl2jTngh",
+            "A7BrdnLvGoFf80xcZcCcakT3nfd",
+            "LsAYdTdUAooDSYxzS0OcYufBnre",
+            "UvWWdmmEMon8pXxS3h3crp6YnS3",
+            "LDDJdJ3LToXk4BxzIHvcWncLnHf"
+          ],
+          "property": {
+            "column_size": 4,
+            "column_width": [
+              157,
+              192,
+              100,
+              309
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "SpCNd6YcVoL91txlqB8cHlN0nKe",
+        "block_type": 32,
+        "children": [
+          "VDgvd9J1ZoDWNExG61LcoILSnW4"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VDgvd9J1ZoDWNExG61LcoILSnW4",
+        "block_type": 2,
+        "parent_id": "SpCNd6YcVoL91txlqB8cHlN0nKe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Model",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HFAHdYBHhoLZl3xJlNrcj5aWnRe",
+        "block_type": 32,
+        "children": [
+          "WFknduxMpoWVZfx61lmcvPnjnge"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WFknduxMpoWVZfx61lmcvPnjnge",
+        "block_type": 2,
+        "parent_id": "HFAHdYBHhoLZl3xJlNrcj5aWnRe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dimensions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VnaFdnGzFobsjOx2c2Tc0q38njb",
+        "block_type": 32,
+        "children": [
+          "KP6wdvIjmowWvuxZz9KcUj9bnyc"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KP6wdvIjmowWvuxZz9KcUj9bnyc",
+        "block_type": 2,
+        "parent_id": "VnaFdnGzFobsjOx2c2Tc0q38njb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max Tokens",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YlyndEKotoFt9WxIq0lcK4QDnLh",
+        "block_type": 32,
+        "children": [
+          "Wu8PdyoGIoLesKxAckdc1V5XnJc"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Wu8PdyoGIoLesKxAckdc1V5XnJc",
+        "block_type": 2,
+        "parent_id": "YlyndEKotoFt9WxIq0lcK4QDnLh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TM4OdjDg0o9Uygx8yKwc1xzOnEf",
+        "block_type": 32,
+        "children": [
+          "WznHd8iqao90dUxbyErcCQe2n0f"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WznHd8iqao90dUxbyErcCQe2n0f",
+        "block_type": 2,
+        "parent_id": "TM4OdjDg0o9Uygx8yKwc1xzOnEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text-embedding-3-small",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CcEpdzVoEo5aV0x7pAscAw7AnOd",
+        "block_type": 32,
+        "children": [
+          "PIvFdOX9KoaHU1xcmKRcRy8SnAd"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PIvFdOX9KoaHU1xcmKRcRy8SnAd",
+        "block_type": 2,
+        "parent_id": "CcEpdzVoEo5aV0x7pAscAw7AnOd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Default: 1,536 (truncatable to a dimension size below 1536)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TlFfd9eg1osQa6xImjBcjZcxnod",
+        "block_type": 32,
+        "children": [
+          "ZfKodtlAcoNsPCxY2r9c4zHtnuh"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZfKodtlAcoNsPCxY2r9c4zHtnuh",
+        "block_type": 2,
+        "parent_id": "TlFfd9eg1osQa6xImjBcjZcxnod",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "8,191",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WaqldY7xsofcMfx0ZSgcAmEmnDg",
+        "block_type": 32,
+        "children": [
+          "N59rdX3Kuo97FXx4LI5cSzwGnkh"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "N59rdX3Kuo97FXx4LI5cSzwGnkh",
+        "block_type": 2,
+        "parent_id": "WaqldY7xsofcMfx0ZSgcAmEmnDg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ideal for cost-sensitive and scalable semantic search—offers strong performance at a lower price point.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OJM3dM8fgoQNxkxXaircvRnynYR",
+        "block_type": 32,
+        "children": [
+          "CdEtdRVAQoAcvAx9GU3c3Cn1nMf"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CdEtdRVAQoAcvAx9GU3c3Cn1nMf",
+        "block_type": 2,
+        "parent_id": "OJM3dM8fgoQNxkxXaircvRnynYR",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text-embedding-3-large",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PjrQdN6Q5oGR73x6c9dcjc8vnKc",
+        "block_type": 32,
+        "children": [
+          "BV4sdnOxUoSd36xjiaucl2sMnqb",
+          "F4gAdd0S5oNjI2xDwRjcGhJBnwc"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BV4sdnOxUoSd36xjiaucl2sMnqb",
+        "block_type": 2,
+        "parent_id": "PjrQdN6Q5oGR73x6c9dcjc8vnKc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Default: 3,072 (truncatable to a dimension size below 3072)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F4gAdd0S5oNjI2xDwRjcGhJBnwc",
+        "block_type": 2,
+        "parent_id": "PjrQdN6Q5oGR73x6c9dcjc8vnKc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XAGzdu7YCoRgfgxqdmOcLZYfnXc",
+        "block_type": 32,
+        "children": [
+          "HUnDdwaVAokylrxUuuTcZBfpn2d"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HUnDdwaVAokylrxUuuTcZBfpn2d",
+        "block_type": 2,
+        "parent_id": "XAGzdu7YCoRgfgxqdmOcLZYfnXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "8,191",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZGwRdRuCVo6zXfxUPILcl2jTngh",
+        "block_type": 32,
+        "children": [
+          "BHxhd8tcRoprX9xzW22cYWsWnXf"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BHxhd8tcRoprX9xzW22cYWsWnXf",
+        "block_type": 2,
+        "parent_id": "ZGwRdRuCVo6zXfxUPILcl2jTngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Best for applications demanding enhanced retrieval accuracy and richer semantic representations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A7BrdnLvGoFf80xcZcCcakT3nfd",
+        "block_type": 32,
+        "children": [
+          "KAcGdcfLMoQAaMxgJSyc1SvlnIg"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KAcGdcfLMoQAaMxgJSyc1SvlnIg",
+        "block_type": 2,
+        "parent_id": "A7BrdnLvGoFf80xcZcCcakT3nfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text-embedding-ada-002",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LsAYdTdUAooDSYxzS0OcYufBnre",
+        "block_type": 32,
+        "children": [
+          "HJbWdLIRRoWtRWxWLtfcYsBhnhb"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HJbWdLIRRoWtRWxWLtfcYsBhnhb",
+        "block_type": 2,
+        "parent_id": "LsAYdTdUAooDSYxzS0OcYufBnre",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Fixed: 1,536 (does not support truncation)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UvWWdmmEMon8pXxS3h3crp6YnS3",
+        "block_type": 32,
+        "children": [
+          "OQSzdSSSnoP40ZxfaSycscDVnvb"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OQSzdSSSnoP40ZxfaSycscDVnvb",
+        "block_type": 2,
+        "parent_id": "UvWWdmmEMon8pXxS3h3crp6YnS3",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "8,191",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LDDJdJ3LToXk4BxzIHvcWncLnHf",
+        "block_type": 32,
+        "children": [
+          "KUordBuAFoFIh7xKKFIcQHtxnqe"
+        ],
+        "parent_id": "DXrUdQDJYorX8fx4DuTclTxhnZg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KUordBuAFoFIh7xKKFIcQHtxnqe",
+        "block_type": 2,
+        "parent_id": "LDDJdJ3LToXk4BxzIHvcWncLnHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A previous-generation model suited for legacy pipelines or scenarios requiring backward compatibility.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ay5Ld6BYRobtYjxwTA6cb7kInUf",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The third generation embedding models (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "text-embedding-3",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") support reducing the size of the embedding via a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter. Typically larger embeddings are more expensive from a compute, memory, and storage perspective. Being able to adjust the number of dimensions allows more control over overall cost and performance. For more details about each model, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Embeddings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fai-services%2Fopenai%2Fconcepts%2Fmodels%3Ftabs%3Dglobal-standard%2Cstandard-chat-completions%23embeddings"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G6uxdySbXoOcw5xFPlScYfcUnxe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configure credentials",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "FKdpdr8cCo1vfqxAk64cEaTpnQg",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus must know your Azure OpenAI API key before it can request embeddings. Milvus provides two methods to configure credentials:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SvjPdzvZqoRMycxpsTCcg6EVndd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configuration file (recommended):",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Store the API key in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " so every restart and node picks it up automatically.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "XClTdlRv7otpBqxeSoecGFlmnvb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Environment variables:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Inject the key at deploy time—ideal for Docker Compose.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "BJFSdQzepoKLs5xf64DcDn65nVh",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Choose one of the two methods below—the configuration file is easier to maintain on bare-metal and VMs, while the env-var route fits container workflows.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jbend9uPSoMZWbxc22lcoC1on3c",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "TPEpdwcdJo9TDMxShsRcTk1jnrd",
+          "DLnSdy6wWob60VxopgocUTqanWh"
+        ],
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "TPEpdwcdJo9TDMxShsRcTk1jnrd",
+        "block_type": 2,
+        "parent_id": "Jbend9uPSoMZWbxc22lcoC1on3c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DLnSdy6wWob60VxopgocUTqanWh",
+        "block_type": 2,
+        "parent_id": "Jbend9uPSoMZWbxc22lcoC1on3c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If an API key for the same provider is present in both the configuration file and an environment variable, Milvus always uses the value in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ignores the environment variable.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OXq7dkv5AoFDnfxr5dAcKDlQnCf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Option 1: Configuration file (recommended & higher priority)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "Qkoxdrjrzosf2ExmaEvcVrBInZd",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Keep your API keys in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "; Milvus reads them at startup and overrides any environment variable for the same provider.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PuQfdorqcoVS6ZxMeAEcoW8Rnjg",
+        "block_type": 13,
+        "children": [
+          "N1RZdJ8rZoici4xXAohctbxanff",
+          "KZKwdpxf7oL7XaxsFHWcRN4Pnng",
+          "XUBOdZnYrox9ySx4PllcfXQMnTq"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Declare your keys under ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "credential:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "N1RZdJ8rZoici4xXAohctbxanff",
+        "block_type": 2,
+        "parent_id": "PuQfdorqcoVS6ZxMeAEcoW8Rnjg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You may list one or many API keys—give each a label you invent and will reference later.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KZKwdpxf7oL7XaxsFHWcRN4Pnng",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# milvus.yaml\ncredential:\n  apikey_dev:            # dev environment\n    apikey: <YOUR_DEV_KEY>\n  apikey_prod:           # production environment\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    apikey: <YOUR_PROD_KEY>    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "PuQfdorqcoVS6ZxMeAEcoW8Rnjg"
+      },
+      {
+        "block_id": "XUBOdZnYrox9ySx4PllcfXQMnTq",
+        "block_type": 2,
+        "parent_id": "PuQfdorqcoVS6ZxMeAEcoW8Rnjg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Putting the API keys here makes them persistent across restarts and lets you switch keys just by changing a label.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UI4id3B3SoRuF0x1svgcJtTTngh",
+        "block_type": 13,
+        "children": [
+          "QXZgdcfuaoBGOWxF929cHAKgnXf",
+          "XqSVdINzuof97Sx2NLFcDjoLnjc",
+          "SeR4dtdrlo6jT4xJfJkcEd4znfg"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tell Milvus which key to use for Azure OpenAI calls",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "QXZgdcfuaoBGOWxF929cHAKgnXf",
+        "block_type": 2,
+        "parent_id": "UI4id3B3SoRuF0x1svgcJtTTngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the same file, point the Azure OpenAI provider at the label you want it to use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XqSVdINzuof97Sx2NLFcDjoLnjc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "function:\n  textEmbedding:\n    providers:\n      azure_openai:\n        credential: apikey_dev      # ← choose any label you defined above\n        resource_name:  # Your azure openai resource name\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        # url: # Your azure openai embedding url",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "UI4id3B3SoRuF0x1svgcJtTTngh"
+      },
+      {
+        "block_id": "SeR4dtdrlo6jT4xJfJkcEd4znfg",
+        "block_type": 2,
+        "parent_id": "UI4id3B3SoRuF0x1svgcJtTTngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This binds a specific key to every request Milvus sends to the Azure OpenAI embeddings endpoint.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ShYpd4a3loq8oVxOcOOcaYOTndh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Option 2: Environment variables",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "G2K7dSO2SoyEAZxO4vDcDHYvnag",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use this method when you run Milvus with Docker Compose and prefer to keep secrets out of files and images.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UbqRdMfJQoMxcyxWox2cQK5snBb",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus falls back to the environment variable only if no key for the provider is found in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "block_type": 31,
+        "children": [
+          "Nk6tdSuQ6of2hzx51IzcpoxundJ",
+          "JvdydDY4sozuO2xdSKucJuKPnKf",
+          "LSLqdrpWHon2fIxsJi5cbQGHnOc",
+          "SZ5HdNxUKoo6HlxXnp5cvCWYnGc",
+          "AsvDdUa2PoARK3xzBpVcOm2Gnfc",
+          "K3mmdfha7oJr0UxXjGMcAvgTnbd",
+          "O39KdFdGPosqPyxjtV5crzTvnff",
+          "RfUjdFwTFo4PCDxqOGpcCgpLnhg",
+          "KLI6dfVCvo2zPhxPoylcb1jon7W"
+        ],
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "table": {
+          "cells": [
+            "Nk6tdSuQ6of2hzx51IzcpoxundJ",
+            "JvdydDY4sozuO2xdSKucJuKPnKf",
+            "LSLqdrpWHon2fIxsJi5cbQGHnOc",
+            "SZ5HdNxUKoo6HlxXnp5cvCWYnGc",
+            "AsvDdUa2PoARK3xzBpVcOm2Gnfc",
+            "K3mmdfha7oJr0UxXjGMcAvgTnbd",
+            "O39KdFdGPosqPyxjtV5crzTvnff",
+            "RfUjdFwTFo4PCDxqOGpcCgpLnhg",
+            "KLI6dfVCvo2zPhxPoylcb1jon7W"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              209,
+              100,
+              316
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 3
+          }
+        }
+      },
+      {
+        "block_id": "Nk6tdSuQ6of2hzx51IzcpoxundJ",
+        "block_type": 32,
+        "children": [
+          "O5XtdYkvHohN3AxHav7clRHunog"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "O5XtdYkvHohN3AxHav7clRHunog",
+        "block_type": 2,
+        "parent_id": "Nk6tdSuQ6of2hzx51IzcpoxundJ",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Variable",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JvdydDY4sozuO2xdSKucJuKPnKf",
+        "block_type": 32,
+        "children": [
+          "EA09dXys9ocRgAxvvYFc7kbenxh"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EA09dXys9ocRgAxvvYFc7kbenxh",
+        "block_type": 2,
+        "parent_id": "JvdydDY4sozuO2xdSKucJuKPnKf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LSLqdrpWHon2fIxsJi5cbQGHnOc",
+        "block_type": 32,
+        "children": [
+          "TJzGdEghxo6fpvxIURkcM25Injf"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TJzGdEghxo6fpvxIURkcM25Injf",
+        "block_type": 2,
+        "parent_id": "LSLqdrpWHon2fIxsJi5cbQGHnOc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SZ5HdNxUKoo6HlxXnp5cvCWYnGc",
+        "block_type": 32,
+        "children": [
+          "JKgzdzoWHoCL1FxNkBsc77L8nzc"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JKgzdzoWHoCL1FxNkBsc77L8nzc",
+        "block_type": 2,
+        "parent_id": "SZ5HdNxUKoo6HlxXnp5cvCWYnGc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MILVUSAI_AZURE_OPENAI_API_KEY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AsvDdUa2PoARK3xzBpVcOm2Gnfc",
+        "block_type": 32,
+        "children": [
+          "L2T4dZpAvojDiUx6NqqcgSi7nig"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "L2T4dZpAvojDiUx6NqqcgSi7nig",
+        "block_type": 2,
+        "parent_id": "AsvDdUa2PoARK3xzBpVcOm2Gnfc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K3mmdfha7oJr0UxXjGMcAvgTnbd",
+        "block_type": 32,
+        "children": [
+          "H1i5dVVHqoXiC6xGmhNcO1KxnzR"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "H1i5dVVHqoXiC6xGmhNcO1KxnzR",
+        "block_type": 2,
+        "parent_id": "K3mmdfha7oJr0UxXjGMcAvgTnbd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Makes the Azure OpenAI key available inside each Milvus container ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(ignored when a key for Azure OpenAI exists in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O39KdFdGPosqPyxjtV5crzTvnff",
+        "block_type": 32,
+        "children": [
+          "HnjxdM8V6or4fNxAUQOcUzngnRh"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HnjxdM8V6or4fNxAUQOcUzngnRh",
+        "block_type": 2,
+        "parent_id": "O39KdFdGPosqPyxjtV5crzTvnff",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MILVUSAI_AZURE_OPENAI_RESOURCE_NAME",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RfUjdFwTFo4PCDxqOGpcCgpLnhg",
+        "block_type": 32,
+        "children": [
+          "YhHkdjd7aonjT4xnBRCchSAUn1f"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YhHkdjd7aonjT4xnBRCchSAUn1f",
+        "block_type": 2,
+        "parent_id": "RfUjdFwTFo4PCDxqOGpcCgpLnhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KLI6dfVCvo2zPhxPoylcb1jon7W",
+        "block_type": 32,
+        "children": [
+          "DFwddKIGSo1HgAxnw4XcfBsentf"
+        ],
+        "parent_id": "XVtVdmhRNoo1gNxZq8AcCk8Rnsb",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DFwddKIGSo1HgAxnw4XcfBsentf",
+        "block_type": 2,
+        "parent_id": "KLI6dfVCvo2zPhxPoylcb1jon7W",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your Azure OpenAI resource name as defined when you created your Azure OpenAI service resource.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WZ5vdDtSkocbHExFegLcJ1Q8ndc",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In your ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "docker-compose.yaml",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " file, set the environment variables.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YhW9d5ol9ocSKGxOr1ZcZqcVnSb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# docker-compose.yaml (standalone service section)\nstandalone:\n  # ... other configurations ...\n  environment:\n    # ... other environment variables ...\n    # Set the environment variable pointing to the Azure OpenAI API key inside the container\n    MILVUSAI_AZURE_OPENAI_API_KEY: <MILVUSAI_AZURE_OPENAI_API_KEY>\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    MILVUSAI_AZURE_OPENAI_RESOURCE_NAME: <MILVUSAI_AZURE_OPENAI_RESOURCE_NAME>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "FoOTdbpCroQMymxJxKccF23LnSf",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "environment:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " block injects the key only into the Milvus container, leaving your host OS untouched. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Configure Milvus with Docker Compose",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fconfigure-docker.md%23Configure-Milvus-with-Docker-Compose"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ex3qdwSP5oZDzExOf2VchqKln7d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use embedding function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "XOA6dFHWFoCsNsxzLUpcbhLPnKe",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once credentials are configured, follow these steps to define and use embedding functions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F5XQdcTYGoIxUExA16Wc0Bc5nNb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 1: Define schema fields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "MwXdddEjsoShZ7xUeexcjmg3nOf",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To use an embedding function, create a collection with a specific schema. This schema must include at least three necessary fields:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MPvXdMzrtoAhlex41S4cXYlonVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The primary field that uniquely identifies each entity in a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "YjTidOMkjofQR0xlsrHc1NO6nwg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A scalar field that stores raw data to be embedded.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "PUoFd6Tjwos1Ltxm9Mhc8Ssen1g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A vector field reserved to store vector embeddings that the function will generate for the scalar field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "StCfdKxt8oYOX2xDexnctawPnbg",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example defines a schema with one scalar field ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"document\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for storing textual data and one vector field ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"dense\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for storing embeddings to be generated by the Function module. Remember to set the vector dimension (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to match the output of your chosen embedding model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xpc0dufzXoe5ACxpbFFc7qRFnyb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, DataType, Function, FunctionType\n\n# Initialize Milvus client\nclient = MilvusClient(\n    uri=\"http://localhost:19530\",\n)\n\n# Create a new schema for the collection\nschema = client.create_schema()\n\n# Add primary field \"id\"\nschema.add_field(\"id\", DataType.INT64, is_primary=True, auto_id=False)\n\n# Add scalar field \"document\" for storing textual data\nschema.add_field(\"document\", DataType.VARCHAR, max_length=9000)\n\n# Add vector field \"dense\" for storing embeddings.\n# IMPORTANT: Set dim to match the exact output dimension of the embedding model.\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.add_field(\"dense\", DataType.FLOAT_VECTOR, dim=1536)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "DDEvde3L6oYQVRxWVXwcssYhnRg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.common.DataType;\nimport io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.AddFieldReq;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq;\n\nString CLUSTER_ENDPOINT = \"http://localhost:19530\";\nString TOKEN = \"root:Milvus\";\n\nConnectConfig connectConfig = ConnectConfig.builder()\n        .uri(CLUSTER_ENDPOINT)\n        .token(TOKEN)\n        .build();\n\nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\nCreateCollectionReq.CollectionSchema schema = client.createSchema();\n\nschema.addField(AddFieldReq.builder()\n        .fieldName(\"id\")\n        .dataType(DataType.Int64)\n        .isPrimaryKey(true)\n        .autoID(false)\n        .build());\n\nschema.addField(AddFieldReq.builder()\n        .fieldName(\"document\")\n        .dataType(DataType.VarChar)\n        .maxLength(9000)\n        .build());\n        \nschema.addField(AddFieldReq.builder()\n        .fieldName(\"dense\")\n        .dataType(DataType.FloatVector)\n        .dimension(1536)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "ThLCdCgAAoXvDExtBJVcnzX7nDf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// nodejs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "ZN73d2uMvoQZwMxeMnFcH8CWnae",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "NZP6dBpbOoWYQaxzI4Dc0jIZnPb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "UR83dDSexoqtshxUEuTc6ZIsnTb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nmilvus::CollectionSchemaPtr schema = std::make_shared<milvus::CollectionSchema>();\nschema->AddField({\"id\", milvus::DataType::INT64, \"\", true, false});\nschema->AddField(milvus::FieldSchema(\"document\", milvus::DataType::VARCHAR).WithMaxLength(9000));\nschema->AddField(milvus::FieldSchema(\"dense\", milvus::DataType::FLOAT_VECTOR).WithDimension(1536));\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "BHdNdL9f7oMWduxc5gCcRhDBnsg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 2: Add embedding function to schema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "XZbOdaNWkomsRXx2h4Nc6wYNnPc",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you have defined your embedding function, add it to your collection schema. This instructs Milvus to use the specified embedding function to process and store embeddings from your text data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GPxQdFMUwoMAQZxEWZ2cN9won7e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Define embedding function specifically for Azure OpenAI provider\ntext_embedding_function = Function(\n    name=\"azopenai\",                                # Unique identifier for this embedding function\n    function_type=FunctionType.TEXTEMBEDDING,       # Indicates a text embedding function\n    input_field_names=[\"document\"],                 # Scalar field(s) containing text data to embed\n    output_field_names=[\"dense\"],                   # Vector field(s) for storing embeddings\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    params={                                        # Provider-specific embedding parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        \"provider\": \"azure_openai\",                 # Embedding provider name (must be \"azure_openai\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        \"model_name\": \"zilliz-text-embedding-3-small\",      # Model should be set to the deployment name you chose when you deployed the embedding model",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Optional parameters (only specify if necessary):",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        # ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"url\": \"https://{resource_name}.openai.azure.com/\" # Optional: Your Azure OpenAI service endpoint",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n        # \"credential\": \"apikey_dev\",               # Optional: Credential label specified in milvus.yaml\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        # \"dim\": \"1536\",                            # Optional: Shorten the output vector dimension",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        # \"user\": \"user123\",                        # Optional: identifier for API tracking",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7490413783988486147"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n)\n\n# Add the configured embedding function to your existing collection schema\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.add_function(text_embedding_function)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7490413783988486147"
+        ],
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "H2z7dQWo5ooQRvx9sQbcyQgFn6n",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.collection.request.CreateCollectionReq.Function;\n\nFunction function = Function.builder()\n        .functionType(FunctionType.TEXTEMBEDDING)\n        .name(\"azopenai\")\n        .inputFieldNames(Collections.singletonList(\"document\"))\n        .outputFieldNames(Collections.singletonList(\"dense\"))\n        .param(\"provider\", \"azure_openai\")\n        .param(\"model_name\", \"zilliz-text-embedding-3-small\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.addFunction(function);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "L57idJuK9oebxZx71uOcbzn1n9f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// nodejs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "WPwgdejaKopB8SxrXvxcvtBLnBb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "PoK0d0jMCojbGox3aGVchU9OnvI",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "UNYjdp3SVoUydcxtEBtcgRMynlf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "milvus::FunctionPtr function = std::make_shared<milvus::Function>(\"azopenai\", milvus::FunctionType::TEXTEMBEDDING);\nfunction->AddInputFieldName(\"document\");\nfunction->AddOutputFieldName(\"dense\");\nfunction->AddParam(\"provider\", \"azure_openai\");\nfunction->AddParam(\"model_name\", \"zilliz-text-embedding-3-small\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection_schema->AddFunction(function);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "PFz3dJoAuohxNHxx4eBcoheMnsh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Next steps",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe"
+      },
+      {
+        "block_id": "Zih4dIF2FokdRKxTqX3cCydqnGg",
+        "block_type": 2,
+        "parent_id": "X7wPdwh2QoRmCSxWPuacWUktnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After configuring the embedding function, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FDKyXws0pXibd45kdPXPc1PV5nIb%23MFWCdcFvVojdn8x6xzKccODjn0f"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for additional guidance on index configuration, data insertion examples, and semantic search operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 106
+  }
+}

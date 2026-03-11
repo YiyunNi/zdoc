@@ -1,0 +1,1424 @@
+{
+  "created_time": "1737445858",
+  "modified_time": "1737529118",
+  "name": "alter_index_properties()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "KrK5fBnFDlG6CedvqyHcfZLynre",
+  "token": "QvyHdbEHholEqXxypKNcHHD5n0c",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/QvyHdbEHholEqXxypKNcHHD5n0c",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "block_type": 1,
+        "children": [
+          "doxcnxreX7b7ClBg0Kv48FHMbKf",
+          "doxcnNs5CHuov3K7iI3iW1wQmbd",
+          "doxcnqtCwVx5Ac6vMgUFs9OKQNc",
+          "doxcnyaLDV8bamjEkCQsVkFxoMb",
+          "doxcn03RIuDc6pgKDVZrPLsNJPh",
+          "doxcn1K5zX4XFepLUeNpivys4nb",
+          "doxcnyZnsIzCJfPrf1KTaKCycOd",
+          "doxcnLNcdd1OGGNiC0nMf8MvGFe",
+          "doxcnnXB8GDl7DMRAAgCw5hg6Bb",
+          "doxcne6MGcPpjECpfQlA8KvoxOe",
+          "doxcnlFJvmi07UhOvtqJqORVT9b",
+          "doxcnX7rwhN3gZJ0BRpDih4atcf",
+          "doxcncyY1JlsEtLiKmoxn7j2hob",
+          "doxcn55iBbrkgrkIDVqiQ5wPGhs",
+          "doxcnaonoAmjDXJ9mLMM7n8jRIc",
+          "doxcnqJSwbYpEHrXUn7mxyKikic",
+          "doxcnHUuChnUTrG9tLahdFWT4bc",
+          "doxcnp4uP2hAIWc1AU54lfHOuSf",
+          "doxcnd6YK7nHgXAHeZqkZMy3jBg",
+          "doxcn6CNOpi2CgLqeWMriUHIqTe",
+          "doxcnf9XjcuRykBuSbPkx8NSumc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "alter_index_properties()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnxreX7b7ClBg0Kv48FHMbKf",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation changes the specified index properties.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnNs5CHuov3K7iI3iW1wQmbd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnqtCwVx5Ac6vMgUFs9OKQNc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "alter_index_properties(\n    self,\n    collection_name: str,\n    index_name: str,\n    properties: dict,\n    timeout: Optional[float] = None,\n    **kwargs,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnyaLDV8bamjEkCQsVkFxoMb",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn03RIuDc6pgKDVZrPLsNJPh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collection_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcniDCZrsQ3NV5hn8uW5ORWGe"
+        ],
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcniDCZrsQ3NV5hn8uW5ORWGe",
+        "block_type": 2,
+        "parent_id": "doxcn03RIuDc6pgKDVZrPLsNJPh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn1K5zX4XFepLUeNpivys4nb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "index_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnsna2X4Ewr9kxVXE2VUpYXc"
+        ],
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnsna2X4Ewr9kxVXE2VUpYXc",
+        "block_type": 2,
+        "parent_id": "doxcn1K5zX4XFepLUeNpivys4nb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the index file to alter.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnyZnsIzCJfPrf1KTaKCycOd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "properties",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dict",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn9XgdiIfAm3NcRfsauCc7Hh",
+          "doxcnB0kyASn2Wp7uX059MT4Wec",
+          "OxGvdiEusocmYBxnUTlcFqwjn3d",
+          "ZCUsdGhILo8bOyxdkPCcHMT9nWg",
+          "Qe8sd6XK7oBYg3xSxKtcyW1Cn1d",
+          "VTvKdZhleoxidzxJQvWcvTKdngf"
+        ],
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcn9XgdiIfAm3NcRfsauCc7Hh",
+        "block_type": 2,
+        "parent_id": "doxcnyZnsIzCJfPrf1KTaKCycOd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The properties and their values after this operation. Possible properties to change include:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnB0kyASn2Wp7uX059MT4Wec",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "mmap.enabled",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnjOp0VRTk0aT4Ou3lu08ysb"
+        ],
+        "parent_id": "doxcnyZnsIzCJfPrf1KTaKCycOd"
+      },
+      {
+        "block_id": "doxcnjOp0VRTk0aT4Ou3lu08ysb",
+        "block_type": 2,
+        "parent_id": "doxcnB0kyASn2Wp7uX059MT4Wec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to enable mmap for the specified index. Setting this to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "true",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " offloads the specified index onto the disk. For details, refer to <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Mmap-enabled Data Storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fmmap.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Use mmap",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fuse-mmap"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "OxGvdiEusocmYBxnUTlcFqwjn3d",
+        "block_type": 2,
+        "parent_id": "doxcnyZnsIzCJfPrf1KTaKCycOd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"indev\">",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZCUsdGhILo8bOyxdkPCcHMT9nWg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "warmup",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "D5Asd7AwkoGAgAxqPdYcSKBInCb",
+          "AnP5d7xmBoT8sOxddaWcXhUynFg",
+          "ORI9doBfHoskiWxUSvAcqDFqnZf"
+        ],
+        "parent_id": "doxcnyZnsIzCJfPrf1KTaKCycOd"
+      },
+      {
+        "block_id": "D5Asd7AwkoGAgAxqPdYcSKBInCb",
+        "block_type": 2,
+        "parent_id": "ZCUsdGhILo8bOyxdkPCcHMT9nWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The warmup strategy for this index in Tiered Storage mode. This setting overrides collection-level and cluster-level warmup defaults. Possible values:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AnP5d7xmBoT8sOxddaWcXhUynFg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "sync",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Preload this index before the segment becomes queryable. Use for indexes critical to search latency.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZCUsdGhILo8bOyxdkPCcHMT9nWg"
+      },
+      {
+        "block_id": "ORI9doBfHoskiWxUSvAcqDFqnZf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "disable",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Skip preloading; the index is fetched on demand at first access. Use for batch or low-frequency workloads.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZCUsdGhILo8bOyxdkPCcHMT9nWg"
+      },
+      {
+        "block_id": "Qe8sd6XK7oBYg3xSxKtcyW1Cn1d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Warm Up",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fwarm-up.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnyZnsIzCJfPrf1KTaKCycOd"
+      },
+      {
+        "block_id": "VTvKdZhleoxidzxJQvWcvTKdngf",
+        "block_type": 2,
+        "parent_id": "doxcnyZnsIzCJfPrf1KTaKCycOd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLNcdd1OGGNiC0nMf8MvGFe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Optional[float]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnSW5MMpdboEvLRF4pkhFIR8",
+          "doxcnadMMxRg9SS3r2KxVPUIzgb"
+        ],
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnSW5MMpdboEvLRF4pkhFIR8",
+        "block_type": 2,
+        "parent_id": "doxcnLNcdd1OGGNiC0nMf8MvGFe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The timeout duration for this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnadMMxRg9SS3r2KxVPUIzgb",
+        "block_type": 2,
+        "parent_id": "doxcnLNcdd1OGGNiC0nMf8MvGFe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Setting this to None indicates that this operation timeouts when any response arrives or any error occurs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnnXB8GDl7DMRAAgCw5hg6Bb",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcne6MGcPpjECpfQlA8KvoxOe",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NoneType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlFJvmi07UhOvtqJqORVT9b",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnX7rwhN3gZJ0BRpDih4atcf",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcncyY1JlsEtLiKmoxn7j2hob",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn55iBbrkgrkIDVqiQ5wPGhs",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnVrlD9mN7aeYMJs1gcVp7Ph"
+        ],
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnVrlD9mN7aeYMJs1gcVp7Ph",
+        "block_type": 2,
+        "parent_id": "doxcn55iBbrkgrkIDVqiQ5wPGhs",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnaonoAmjDXJ9mLMM7n8jRIc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnqJSwbYpEHrXUn7mxyKikic",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHUuChnUTrG9tLahdFWT4bc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 1. Create a milvus client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nclient = MilvusClient(\n    uri=\"http://localhost:19530\",\n    token=\"root:Milvus\"\n)\n\n# update properties\nproperties = {\"mmap.enabled\": true}\n\nclient.alter_index_properties(\n    collection_name=\"collection_name\",\n    index_name=\"my_vector\", \n    properties = properties\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnp4uP2hAIWc1AU54lfHOuSf",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnd6YK7nHgXAHeZqkZMy3jBg",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn6CNOpi2CgLqeWMriUHIqTe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 1. Create a milvus client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nclient = MilvusClient(\n    uri=\"https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530\",\n    token=\"user:password\"\n)\n\n# update properties\nproperties = {\"mmap.enabled\": true}\n\nclient.alter_index_properties(\n    collection_name=\"collection_name\",\n    index_name=\"my_vector\", \n    properties = properties\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c"
+      },
+      {
+        "block_id": "doxcnf9XjcuRykBuSbPkx8NSumc",
+        "block_type": 2,
+        "parent_id": "QvyHdbEHholEqXxypKNcHHD5n0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 37
+  },
+  "slug": "Management-alter_index_properties"
+}

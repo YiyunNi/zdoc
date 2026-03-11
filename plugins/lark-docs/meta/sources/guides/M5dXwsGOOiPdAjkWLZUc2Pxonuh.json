@@ -1,0 +1,3285 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1735631733",
+  "node_token": "M5dXwsGOOiPdAjkWLZUc2Pxonuh",
+  "node_type": "origin",
+  "obj_create_time": "1735631733",
+  "obj_edit_time": "1772333362",
+  "obj_token": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+  "obj_type": "docx",
+  "origin_node_token": "M5dXwsGOOiPdAjkWLZUc2Pxonuh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "UfGkwPQIPiJi6OkEu47cH3Umnvb",
+  "space_id": "7167193056431783939",
+  "title": "VectorDB Audit Logs",
+  "slug": "audit-logs",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "block_type": 1,
+        "children": [
+          "DJ9VdAeNYoQTWYxbgercWJVHntm",
+          "WyVIdMlfZoiWjgxhaldcQKX0n4g",
+          "T6madRhb0oaCKexzHvWcGnNNnM6",
+          "CarNdhR53oKrnMxyXOSc1uISn7g",
+          "BF3UdHFnCoVLrrxMfi5clX3TnLf",
+          "VhYVdLTqIoPglUxga7yceCRAn9f",
+          "F3ZndsY4ZoOq06xIQ0qctGrNn2d",
+          "SwsRdmAxuoimAnxXuVrcQJH4nUc",
+          "Nm6CdGLjjozaMrxEaUmcJj0Znzh",
+          "DXhUdNLjro1oMvxqA3wcA798nUc",
+          "WTpKdJcRgoKXGRxD9YicRUoLnOg",
+          "NX0CdGfbAoCxJixOR5zchLQlnmd",
+          "PMkpd86UXodivux4xmncPGaNnud",
+          "GqY9df82NoUvn3xFqK4cFAkynYc",
+          "YyXmdvyz6oz8OMxPyrAc48Tenlb",
+          "LrJjdvIqHouJOKxtEnzcL0wenKb",
+          "IBexdKdL4otNXlxnVgQcdsXjnFe",
+          "QNkGdXQZOo8VTQxygpdcaKjRneH",
+          "Ix4fdhziqo6k90xzjWucQgBWnAf",
+          "JouCdXpUtoc6TEx2xCWcbWRjnRb",
+          "WgZidOibHooWdxxPHBFcLTgpnIh",
+          "I51pdjQhuoKPIIxEcjWcrE2DnSh",
+          "O5Fcdpe63oKkEcxvwoVcgKjYn5d",
+          "FVh9dL07YolR1Ix14emcjhzCnAE",
+          "Bzhzd86XNonzeBxkRl4cl7rtnWc",
+          "K6G1dLcWSoNWmlxnCZucknNJnNd",
+          "QxsNdeYJLoN5zYxKRUOcHfUVnQb",
+          "OhrEdKJ6uoxfNSxPzjdceXKWnvO",
+          "U3k4drsELoFKTqxx3P8cGsirnxh",
+          "Hwsdd5uR1ogsPZx0LeOcE3Zfn6f",
+          "BelPdgxjvoeZf7xCmQJciiZynVc",
+          "EZPwdi7CAorDeBxiwdkcJQh6nxf",
+          "OuzEdE5hAoj53CxEL0EcAHDvnne",
+          "Yii1dRnJtoGTpVx46FWcO7CCnod",
+          "Fbrsd1HFwoJfc8xWCGQcaO0nnXe",
+          "AWgRd5tdNoTcAQxdrhxcwpztnSd",
+          "NqsCd4THMoZt0Sx6Trucca30nI7",
+          "F5K6dBJaIozgJuxJ7ztcF4APnDe",
+          "HKrWdm3hhoa0GvxZQKlc2PPtnvg",
+          "SOaPdNp8IoTIHMxl1abc3uoynyf",
+          "J9MKdRL4RoekBZxWzYdcDUbcnoc",
+          "SNFtdGVIqoYsjmxBxmJcnCmlnGb",
+          "LYTCdHDA5oO9yQxlDeSck4g1nZd",
+          "MzZgdM4ORoiBbpxrOp0cHs7Fnng",
+          "Sip2ddoDeoSY4OxvlF3cG2q3nKg",
+          "Bwt9dx0L4oi6V6xIbKwcs9Ljnnk",
+          "KT47dFHhIoerc3xXOhGckSi8nFh",
+          "PxjAdhrhroqwUxxLfEXcc8FynH4"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "VectorDB ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Audit ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Logs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "DJ9VdAeNYoQTWYxbgercWJVHntm",
+        "block_type": 2,
+        "comment_ids": [
+          "7538460529387618308"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging allows administrators to track and monitor user-driven operations and API calls on Zilliz Cloud clusters. This feature provides a detailed record of vector db activities, including vector searches, query execution, index management, and other data operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538460529387618308"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WyVIdMlfZoiWjgxhaldcQKX0n4g",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "OMxsdvTI9oXm9XxcsgWcHS8pnwf",
+          "TgwGdPAz6ovK8cx511ecR98unFe",
+          "BMPndQXQZoEmfHxryndcPO7lnFc",
+          "C99Nd2MO2o8scDxAv27c2J9HnRg",
+          "Iq3sd1nevodWqExcPbocHfFhnTf"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "OMxsdvTI9oXm9XxcsgWcHS8pnwf",
+        "block_type": 2,
+        "parent_id": "WyVIdMlfZoiWjgxhaldcQKX0n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TgwGdPAz6ovK8cx511ecR98unFe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging is available only for",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " clusters ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "in",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enterprise",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "projects or higher plan tiers",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WyVIdMlfZoiWjgxhaldcQKX0n4g"
+      },
+      {
+        "block_id": "BMPndQXQZoEmfHxryndcPO7lnFc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging is supported only for Zilliz Cloud clusters running Milvus 2.5.x.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WyVIdMlfZoiWjgxhaldcQKX0n4g"
+      },
+      {
+        "block_id": "C99Nd2MO2o8scDxAv27c2J9HnRg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging can be forwarded to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS S3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPAViwMSb3iVMzuk56z3c1zfRnwh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Azure Blob Storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FIzXPwUlJ5isTa4kH9KTcC6SfnvZ"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Cloud Storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FINoRwFTjfiindPkaNlwc9XAgnkh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WyVIdMlfZoiWjgxhaldcQKX0n4g"
+      },
+      {
+        "block_id": "Iq3sd1nevodWqExcPbocHfFhnTf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enabling audit logging incur charges. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Audit Log",
+                "token": "GBfswoqhviHfTVk2qhHc4eGXnfh",
+                "url": "https://zilliverse.feishu.cn/wiki/GBfswoqhviHfTVk2qhHc4eGXnfh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WyVIdMlfZoiWjgxhaldcQKX0n4g"
+      },
+      {
+        "block_id": "T6madRhb0oaCKexzHvWcGnNNnM6",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "CarNdhR53oKrnMxyXOSc1uISn7g",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging tracks a wide range of operations on the data plane, including:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BF3UdHFnCoVLrrxMfi5clX3TnLf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search and Query Operations",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Vector searches, hybrid searches, and query operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "VhYVdLTqIoPglUxga7yceCRAn9f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Index creation, collection creation, partition management, and entity operations like insert, delete, and upsert.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "F3ZndsY4ZoOq06xIQ0qctGrNn2d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "System Events",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": User access attempts, authorization checks, and other predefined actions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "SwsRdmAxuoimAnxXuVrcQJH4nUc",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "V7kJdUD3hoGjZtxRpu4c1iYUnab",
+          "QAaddheBCo28DwxoBaZcYV7Jnuf"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "V7kJdUD3hoGjZtxRpu4c1iYUnab",
+        "block_type": 2,
+        "parent_id": "SwsRdmAxuoimAnxXuVrcQJH4nUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QAaddheBCo28DwxoBaZcYV7Jnuf",
+        "block_type": 2,
+        "parent_id": "SwsRdmAxuoimAnxXuVrcQJH4nUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster-level data jobs such as migration, backup, and restore do not generate audit logs. To view these activity records, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "View Activities",
+                "token": "NeUWwqRl2iwn4HkZg3ocjLjmnth",
+                "url": "https://zilliverse.feishu.cn/wiki/NeUWwqRl2iwn4HkZg3ocjLjmnth"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nm6CdGLjjozaMrxEaUmcJj0Znzh",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logs are forwarded directly to a user-designated object storage bucket at regular intervals. Logs are stored in a structured file path and naming format for easy access and management:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DXhUdNLjro1oMvxqA3wcA798nUc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "File Path",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/<Cluster ID>/<Log type>/<Date>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "WTpKdJcRgoKXGRxD9YicRUoLnOg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "File Naming Convention",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<File name><File name suffix>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the format ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HH:MM:SS-$UUID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", where ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HH:MM:SS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " represents the time in UTC and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "$UUID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is a unique random string. Example: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "09:16:53-jz5l7D8Q",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "NX0CdGfbAoCxJixOR5zchLQlnmd",
+        "block_type": 2,
+        "comment_ids": [
+          "7539598229747335171"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below are examples of",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " audit log entries forwarded to a bucket:",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7539598229747335171"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PMkpd86UXodivux4xmncPGaNnud",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create Collection",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FdVEdlsSUo4NQWxLGfocLUg7nFd"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "FdVEdlsSUo4NQWxLGfocLUg7nFd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n  \"action\": \"CreateCollection\",\n  \"cluster_id\": \"in01-0045a626277eafb\",\n  \"connection_uid\": 456912553983082500,\n  \"database\": \"default\",\n  \"interface\": \"Grpc\",\n  \"log_type\": \"AUDIT\",\n  \"params\": {\n    \"collection\": \"test_audit\",\n    \"consistency_level\": 2\n  },\n  \"status\": \"Receive\",\n  \"timestamp\": 1742983070463,\n  \"trace_id\": \"216a8129c06fd3d93a47bd69fa0a65ad\",\n  \"user\": \"key-hwjsxhwppegkatwjaivsgf\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "PMkpd86UXodivux4xmncPGaNnud"
+      },
+      {
+        "block_id": "GqY9df82NoUvn3xFqK4cFAkynYc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create Index",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CfSpdjRd6ohIrWxyaljc4bqcnjg"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "CfSpdjRd6ohIrWxyaljc4bqcnjg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n  \"action\": \"CreateIndex\",\n  \"cluster_id\": \"in01-0045a626277eafb\",\n  \"connection_uid\": 456912553983082500,\n  \"database\": \"default\",\n  \"interface\": \"Grpc\",\n  \"log_type\": \"AUDIT\",\n  \"params\": {\n    \"collection\": \"test_audit\"\n  },\n  \"status\": \"Receive\",\n  \"timestamp\": 1742983070645,\n  \"trace_id\": \"4402e7bfc498dd06be1408c7e6a7954d\",\n  \"user\": \"key-hwjsxhwppegkatwjaivsgf\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "GqY9df82NoUvn3xFqK4cFAkynYc"
+      },
+      {
+        "block_id": "YyXmdvyz6oz8OMxPyrAc48Tenlb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Drop Index",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HbHpdmRHuofj0axA05Wc5QsQnmb"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "HbHpdmRHuofj0axA05Wc5QsQnmb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n  \"action\": \"DropIndex\",\n  \"cluster_id\": \"in01-0045a626277eafb\",\n  \"connection_uid\": 456912553983082500,\n  \"database\": \"default\",\n  \"interface\": \"Grpc\",\n  \"log_type\": \"AUDIT\",\n  \"params\": {\n    \"collection\": \"test_audit\"\n  },\n  \"status\": \"Receive\",\n  \"timestamp\": 1742983073378,\n  \"trace_id\": \"066ec33c3f55d3edbf7d01c6270024e2\",\n  \"user\": \"key-hwjsxhwppegkatwjaivsgf\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "YyXmdvyz6oz8OMxPyrAc48Tenlb"
+      },
+      {
+        "block_id": "LrJjdvIqHouJOKxtEnzcL0wenKb",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Audit Log Reference",
+                "token": "Nby4wCqNviuLg3kEZpkcdKtnnnb",
+                "url": "https://zilliverse.feishu.cn/wiki/Nby4wCqNviuLg3kEZpkcdKtnnnb"
+              }
+            },
+            {
+              "text_run": {
+                "content": " for a detailed list of supported actions and corresponding log fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IBexdKdL4otNXlxnVgQcdsXjnFe",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QNkGdXQZOo8VTQxygpdcaKjRneH",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "J3lidS1kao1kaRxcFV0c1dYen3s",
+          "WiXqdoDp6oArmBxyJdZcyeIanog",
+          "TU5VdWLA9orx9px68NrcLlLanHd"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "J3lidS1kao1kaRxcFV0c1dYen3s",
+        "block_type": 2,
+        "comment_ids": [
+          "7612113055211588548"
+        ],
+        "parent_id": "QNkGdXQZOo8VTQxygpdcaKjRneH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7612113055211588548"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WiXqdoDp6oArmBxyJdZcyeIanog",
+        "block_type": 2,
+        "comment_ids": [
+          "7612113055211588548"
+        ],
+        "parent_id": "QNkGdXQZOo8VTQxygpdcaKjRneH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging will be directly forwarded to the object storage bucket configured during the data plane deployment.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7612113055211588548"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TU5VdWLA9orx9px68NrcLlLanHd",
+        "block_type": 2,
+        "parent_id": "QNkGdXQZOo8VTQxygpdcaKjRneH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To export the logs to your logging system for further analysis, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact us",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us%2Frequests%2Fnew"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ix4fdhziqo6k90xzjWucQgBWnAf",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JouCdXpUtoc6TEx2xCWcbWRjnRb",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WgZidOibHooWdxxPHBFcLTgpnIh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enable audit log",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "I51pdjQhuoKPIIxEcjWcrE2DnSh",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging on Zilliz Cloud forwards audit logs directly to your storage bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O5Fcdpe63oKkEcxvwoVcgKjYn5d",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "FVh9dL07YolR1Ix14emcjhzCnAE",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your Zilliz Cloud cluster runs on a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated-Enterprise",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " plan tier or higher. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Upgrade your plan",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPharwAysCiBzvgkuqqecmNzunQf%23share-FdmhdoENmoiBM8xXW4WcC2aVnVg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " if necessary.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "Bzhzd86XNonzeBxkRl4cl7rtnWc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have integrated your Zilliz Cloud project with object storage, as audit logs will be forwarded to your bucket after configuration. For detailed steps, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with AWS S3",
+                "token": "PAViwMSb3iVMzuk56z3c1zfRnwh",
+                "url": "https://zilliverse.feishu.cn/wiki/PAViwMSb3iVMzuk56z3c1zfRnwh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Azure Blob Storage",
+                "token": "IzXPwUlJ5isTa4kH9KTcC6SfnvZ",
+                "url": "https://zilliverse.feishu.cn/wiki/IzXPwUlJ5isTa4kH9KTcC6SfnvZ"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", or ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Google Cloud Storage",
+                "token": "INoRwFTjfiindPkaNlwc9XAgnkh",
+                "url": "https://zilliverse.feishu.cn/wiki/INoRwFTjfiindPkaNlwc9XAgnkh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7469388016579051523"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7469388016579051523"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "K6G1dLcWSoNWmlxnCZucknNJnNd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project Admin",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " access to the project. If you do not have the necessary permissions, contact your Zilliz Cloud administrator.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "QxsNdeYJLoN5zYxKRUOcHfUVnQb",
+        "block_type": 5,
+        "comment_ids": [
+          "7462997715644399620"
+        ],
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Procedure",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462997715644399620"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "OhrEdKJ6uoxfNSxPzjdceXKWnvO",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cmei9fcd99br6h3pydbp52sv8\" title=\"Zilliz Cloud - Enable audit log\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U3k4drsELoFKTqxx3P8cGsirnxh",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hwsdd5uR1ogsPZx0LeOcE3Zfn6f",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Log in to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2Flogin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "BelPdgxjvoeZf7xCmQJciiZynVc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the left-side navigation pane, choose ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Clusters",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "EZPwdi7CAorDeBxiwdkcJQh6nxf",
+        "block_type": 13,
+        "comment_ids": [
+          "7462642641314070547",
+          "7462576888373477395"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Go to the details page of the target cluster and choose the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Auditing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "This tab ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "will be unavailable",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462576888373477395",
+                    "7462642641314070547"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when your cluster is in ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CREATING",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",  ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DELETING",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DELETED",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " status.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462576888373477395"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "OuzEdE5hAoj53CxEL0EcAHDvnne",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enable Audit Log",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "Yii1dRnJtoGTpVx46FWcO7CCnod",
+        "block_type": 13,
+        "children": [
+          "Si7Kd5ihIo6qZYxxcoacomrgnse",
+          "M8cUdqm88oSugIxEXFmca2JRnWh"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enable Audit Logs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " dialog box, specify your object storage integration settings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "Si7Kd5ihIo6qZYxxcoacomrgnse",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Select your bucket to store the audit logs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XYOedLn54og8AFxdfMTcCmCInjh"
+        ],
+        "parent_id": "Yii1dRnJtoGTpVx46FWcO7CCnod"
+      },
+      {
+        "block_id": "XYOedLn54og8AFxdfMTcCmCInjh",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "VvcHdfWTGoAmHhxYOZpciY4fnMc",
+          "SI82djkV5o7FCrxlqDTcPWDen0d"
+        ],
+        "parent_id": "Si7Kd5ihIo6qZYxxcoacomrgnse"
+      },
+      {
+        "block_id": "VvcHdfWTGoAmHhxYOZpciY4fnMc",
+        "block_type": 2,
+        "parent_id": "XYOedLn54og8AFxdfMTcCmCInjh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SI82djkV5o7FCrxlqDTcPWDen0d",
+        "block_type": 2,
+        "parent_id": "XYOedLn54og8AFxdfMTcCmCInjh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Only the buckets in the same region as your cluster will appear in the drop-down list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M8cUdqm88oSugIxEXFmca2JRnWh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Forward Directory",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Specify a directory within the bucket to store audit logs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Yii1dRnJtoGTpVx46FWcO7CCnod"
+      },
+      {
+        "block_id": "Fbrsd1HFwoJfc8xWCGQcaO0nnXe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enable",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Once the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Audit Log",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " status is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Active",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", it has been enabled successfully. If the status is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Abnormal",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", go to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FAQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FM5dXwsGOOiPdAjkWLZUc2Pxonuh%23LYTCdHDA5oO9yQxlDeSck4g1nZd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for troubleshooting.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "AWgRd5tdNoTcAQxdrhxcwpztnSd",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NqsCd4THMoZt0Sx6Trucca30nI7",
+        "block_type": 2,
+        "comment_ids": [
+          "7462999222395453459",
+          "7462637451920556051"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once configured, audit logs will be forwarded to your bucket at an interval of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "about 5 minutes",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462637451920556051"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". You can access your bucket to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "view or manage the logs as needed",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462999222395453459"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F5K6dBJaIozgJuxJ7ztcF4APnDe",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once your audit logs are forwarded to your S3 bucket, you can integrate your S3 storage to visualization platforms for enhanced monitoring and analysis. For instance, if you want to use Snowflake to gain deeper insights, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Automating Snowpipe for Amazon S3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.snowflake.com%2Fen%2Fuser-guide%2Fdata-load-snowpipe-auto-s3"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HKrWdm3hhoa0GvxZQKlc2PPtnvg",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To understand parameters in log entries, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Audit Logs",
+                "token": "Nby4wCqNviuLg3kEZpkcdKtnnnb",
+                "url": "https://zilliverse.feishu.cn/wiki/Nby4wCqNviuLg3kEZpkcdKtnnnb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SOaPdNp8IoTIHMxl1abc3uoynyf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage audit logs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "J9MKdRL4RoekBZxWzYdcDUbcnoc",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once audit log is enabled, you can edit its configuration or disable it as needed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SNFtdGVIqoYsjmxBxmJcnCmlnGb",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1016,
+          "scale": 1,
+          "token": "XyvNb9sf1oGSKox0XxWc2BFAnrg",
+          "width": 3324
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "LYTCdHDA5oO9yQxlDeSck4g1nZd",
+        "block_type": 4,
+        "comment_ids": [
+          "7462644483314155524"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462644483314155524"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "MzZgdM4ORoiBbpxrOp0cHs7Fnng",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This FAQ addresses common issues and questions related to audit logging on Zilliz Cloud. For further assistance, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Sip2ddoDeoSY4OxvlF3cG2q3nKg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "What should I do if my Audit Log status is Abnormal?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "UEMgdMstzoYc09xjskmc8VjKnZd",
+          "VoY9dqYLNogOoex5wQKci8OkncT",
+          "IbWEdwiUAoT8Qsx8ukIcoJUsnxb"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "UEMgdMstzoYc09xjskmc8VjKnZd",
+        "block_type": 2,
+        "parent_id": "Sip2ddoDeoSY4OxvlF3cG2q3nKg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Abnormal",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " status means Audit Log is experiencing an issue. Follow these steps to troubleshoot:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VoY9dqYLNogOoex5wQKci8OkncT",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verify your bucket:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Confirm that the configured storage bucket is set up correctly and that you have the necessary permissions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "Sip2ddoDeoSY4OxvlF3cG2q3nKg"
+      },
+      {
+        "block_id": "IbWEdwiUAoT8Qsx8ukIcoJUsnxb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Contact support:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " If the issue persists, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for further assistance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Sip2ddoDeoSY4OxvlF3cG2q3nKg"
+      },
+      {
+        "block_id": "Bwt9dx0L4oi6V6xIbKwcs9Ljnnk",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Will an Abnormal cluster status affect the Audit Log service?",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7463003008310444051"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "V3jZdBPgLoxF9wxTkOxcIYQ0nJd"
+        ],
+        "comment_ids": [
+          "7463003008310444051"
+        ],
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d"
+      },
+      {
+        "block_id": "V3jZdBPgLoxF9wxTkOxcIYQ0nJd",
+        "block_type": 2,
+        "parent_id": "Bwt9dx0L4oi6V6xIbKwcs9Ljnnk",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An abnormal cluster status indicates that the cluster may be experiencing issues, such as network connectivity problems or disruptions in Zilliz Cloud services. However, these issues do not impact the Audit Log service, which continues to function normally and forward logs as expected. If you encounter persistent problems, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KT47dFHhIoerc3xXOhGckSi8nFh",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PxjAdhrhroqwUxxLfEXcc8FynH4",
+        "block_type": 2,
+        "parent_id": "MkwKdipEpoBBAkx68GfcrwHmn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 71
+  }
+}

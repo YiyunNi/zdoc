@@ -1,0 +1,63 @@
+{
+  "created_time": "1750399188",
+  "modified_time": "1750400880",
+  "name": "LocalBulkWriter",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "AtkCfVN4Ll6GqMdVJfxcybHanDf",
+  "token": "YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+  "slug": "v2-DataImport-LocalBulkWriter",
+  "children": [
+    {
+      "created_time": "1750400843",
+      "modified_time": "1750837039",
+      "name": "append_row()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+      "token": "HofVdjV0koj42QxX0iHcQb05nab",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/HofVdjV0koj42QxX0iHcQb05nab"
+    },
+    {
+      "created_time": "1750400878",
+      "modified_time": "1750837023",
+      "name": "close()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+      "token": "OEcUdoX1yoc94axfwpjcdA2jnEf",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/OEcUdoX1yoc94axfwpjcdA2jnEf"
+    },
+    {
+      "created_time": "1750400852",
+      "modified_time": "1750837016",
+      "name": "commit()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+      "token": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+    },
+    {
+      "created_time": "1750400870",
+      "modified_time": "1750836998",
+      "name": "getBatchFiles()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+      "token": "BLFEde4BuoCjTSxjYSUcZerEnOb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/BLFEde4BuoCjTSxjYSUcZerEnOb"
+    },
+    {
+      "created_time": "1750399510",
+      "modified_time": "1750836970",
+      "name": "LocalBulkWriter",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "YRZxfe2TRlIKgbdtIyEcW0kYn8e",
+      "token": "G7F9dQ8DwoZsaVxExdnc7K6an3g",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/G7F9dQ8DwoZsaVxExdnc7K6an3g"
+    }
+  ]
+}

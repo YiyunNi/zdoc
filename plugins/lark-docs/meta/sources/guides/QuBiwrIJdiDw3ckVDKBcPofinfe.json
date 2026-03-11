@@ -1,0 +1,6065 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1769395874",
+  "node_token": "QuBiwrIJdiDw3ckVDKBcPofinfe",
+  "node_type": "origin",
+  "obj_create_time": "1769395874",
+  "obj_edit_time": "1772333926",
+  "obj_token": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+  "obj_type": "docx",
+  "origin_node_token": "QuBiwrIJdiDw3ckVDKBcPofinfe",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "BDOHwqlMDiei78kdUefcjSQUnEg",
+  "space_id": "7167193056431783939",
+  "title": "Deploy BYOC-I on Microsoft Azure",
+  "slug": "deploy-byoc-i-azure",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "block_type": 1,
+        "children": [
+          "Kp6KdDP2Go0ZvPxfDIicgV0Un7g",
+          "JLIzdKfMwoU88Ixgb6ycoO0Wn7g",
+          "AHNMdekolomgOhxkEVxcrJKtnme",
+          "SXSGdznNqo4HWwxDsB8cCQ2knZc",
+          "PamidnzSCo1XpKxPyNwcssW5nqg",
+          "IIvodPU0pobdojxvCz3cqumNngh",
+          "XFxwd9RIXo6ubpxlmP1c6z7Cnje",
+          "JsxxdUkRBomCesxVwxOcInxInDb",
+          "LXxUdQ9ZMo4zs5x8cQpc72a2npS",
+          "XPr5doOs8opVw7x3QCZc2BqRnBq",
+          "MP2rdPSp5oeKmGxpzlZcpdt8njb",
+          "Fatbdwn8roruSBxDHJXc1QWtnwc",
+          "EnZwd7AqnooTwtxPeN8cPUUHn6S",
+          "GMj4doG3soTfjwxDXtVct1FXnp9",
+          "KRPydHhywoXFl3xmcukc8CL9nGA",
+          "CwvwdOz62o3MaZxms6ocepnMn8e",
+          "G3QpdljaSoVmvcxjzxNcN3FJnde",
+          "RJRBdPVwYo7ZBUxpmAHcQYZPnqh",
+          "N88ad1dTcox9x9xoOsacBBoonjd",
+          "OqcYdQfYLoQFnIxyDRFcYcRJnfb",
+          "QXFtdcZpiovajKx16rKcYwgmnkc",
+          "T6rmdK119o1xo5xAZjLc6bEZneb",
+          "ITgKd8riNo0M0vxvNOfcUW9tnPb",
+          "W1JqdYK8SozhQLxDKtncwLC2nZc",
+          "J54kdyc4Foz5yexmjaucSWKfnKc",
+          "T2vId9QpfogOy5x1jn7czMlPned",
+          "G4nUdVSV4o3rYtxbB3wceMcLnxg",
+          "MMkSd2320ot2Hzx5y69cpbTMnPh",
+          "AJy3dmFC6oZTucxrm7Xciaminnd",
+          "F5kddwSOpo5vSUxMldWcUifmnbd",
+          "S9ZtdavouodhZhxwdxCcue30nAf",
+          "T1tWd154Ko2Q3MxhHtscLXJ0n7g",
+          "Z3vrdb1rioWAaTxutKFc08Oanwf",
+          "WY3VdSsZhozfWNxel3oczqY6nIg",
+          "ZT6adJZxUo5sP1xjf83cBTp1n5e",
+          "Ma3Td0Fr1oSxPBxHPSccjr6PnIg",
+          "TAQKdmfNNo2OhVxFTkyc9P5VnGg",
+          "QNFDdwurAosmKhx0gWbcUFCknQh",
+          "X5jadWrEPozAFDxbBNNcZy9rnse",
+          "NA5cd7It2oAFbCxQUsEc2c5UnGh",
+          "UjiXdnrS6oS5TqxFgfRcAjiNnMe",
+          "VyMUdRo7PolBlxxzyPBcpTOvnRh",
+          "WOfsdMtSaovX49xIS5Qc1XpunQY",
+          "ULgIdkHsjo4q9bxFcrCc569lnce",
+          "MxY1diWuyocw2SxWZeQcgEY0nyb",
+          "ACiMdhy07o2Dppx57nqcNNpTnKc",
+          "CobrdDEksoecJzxDlwycyuVAnsb",
+          "KWywdMBgFo64r7xagu0cgSIvnPh",
+          "BSZ1d5Tcxo4ofvxy4EAcAiBlnkf",
+          "HzXzdUfpSoA5XJxw4uNcQLhknUd",
+          "JDK7dwICaoF6CzxzyjccPzKHnpc",
+          "PgL7d9sKhokAi3xRLWCcN6XQnNg",
+          "NR57dWuzJoAQMyxJbL2c4TNUnvd",
+          "HhsSde2bJonqbyxqeCbcH5XYnCf",
+          "HOzrd5hycowJLExMY7CcKRlpnKc",
+          "IEP2djD5bo4mFlxOsIdcx08Bndd",
+          "Ob8KdXUUjoZ00VxNEhpchByanIe",
+          "Ff8GdratfoWQe8xIaihco2mMnbf",
+          "AED3dzatAoDRZNxaZGKcnZsqnIf",
+          "IDcOdVqwuolBpvxNBWJcCCVvnUC",
+          "USLWdVH3xocaWTx8UOOckr0Fneg",
+          "Ufw6dX6YmoIslVxSkt3c3819nRe",
+          "UTpwd56G4oTfoxxCGMgcc4Klnkc",
+          "GCGQdHiMLoRmCIxO472cfa5Vnvh",
+          "HIqPdiTnIoNrbuxCxPJcuJv9n5b",
+          "Shc3dnkFFoKUWkxqCEXcX34VnCd",
+          "Y1BXdl2yuo4rpkxOlv9czKLBnwf",
+          "OeqHdKkx5oTShOxewDgcxFn9nze",
+          "Cq0DdiIaioVWuYxvrBOct0Grn5c",
+          "XpI0dLjM8omuQExDy8dcbTCVnhg",
+          "FUuBdBZjZoxOFkxjeERcwCO1nvg",
+          "AOxzdVvXXo5V61xWy5NcJIibnWg",
+          "WtoRdtCi8oXwy4xO35Tcqs8hnfd",
+          "BD2OdDV5AovBVMx7T29cpZeGnBc",
+          "VUGCdNjCpoLeDjxxP5dctKe5n6b",
+          "BFYZd4soSohC3dx0384cC3b5nvc",
+          "OUX5d4rKLoNFI8xejyPcfSDInqg",
+          "Ktp3dF1KCoMQvQxUjoochPVTn2b",
+          "HSKmdNUoBofVdXx4mo4c9OWznXe",
+          "J262dicrqo59ZexcpvGcyKP2n5b"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deploy BYOC-I on Microsoft Azure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Kp6KdDP2Go0ZvPxfDIicgV0Un7g",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page explains how to deploy a Bring-Your-Own-Cloud (BYOC) data plane with a BYOC agent in your Microsoft Azure Virtual Network.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JLIzdKfMwoU88Ixgb6ycoO0Wn7g",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Co8ydS7yLoj1XqxNeB8cK37Pnod",
+          "ZWvAdbb7XorI1ixejj2cvEwKnId",
+          "Tf8xdtZcFoMmLFxwd2YcoUpinTe"
+        ],
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Co8ydS7yLoj1XqxNeB8cK37Pnod",
+        "block_type": 2,
+        "parent_id": "JLIzdKfMwoU88Ixgb6ycoO0Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZWvAdbb7XorI1ixejj2cvEwKnId",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz BYOC is currently available in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "General Availability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For access and implementation details, please contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JLIzdKfMwoU88Ixgb6ycoO0Wn7g"
+      },
+      {
+        "block_id": "Tf8xdtZcFoMmLFxwd2YcoUpinTe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This guide demonstrates how to create the necessary resources on the Microsoft Azure console step-by-step. If you prefer to use a Terraform script to provision the infrastructure,  see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Terraform Provider",
+                "token": "BX6iwjUzLi7udfksJoxc7jK1nsW",
+                "url": "https://zilliverse.feishu.cn/wiki/BX6iwjUzLi7udfksJoxc7jK1nsW"
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JLIzdKfMwoU88Ixgb6ycoO0Wn7g"
+      },
+      {
+        "block_id": "AHNMdekolomgOhxkEVxcrJKtnme",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Prerequisites",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "SXSGdznNqo4HWwxDsB8cCQ2knZc",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensure that ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PamidnzSCo1XpKxPyNwcssW5nqg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You are the owner of a BYOC-I organization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "IIvodPU0pobdojxvCz3cqumNngh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have been granted the permissions listed in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Required permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FD1E4wLr5xiuHoFkJgblcHZ1FnLb%23TDNpdnS96oRp5AxI2qdcoOj0nQb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "XFxwd9RIXo6ubpxlmP1c6z7Cnje",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Procedures",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "JsxxdUkRBomCesxVwxOcInxInDb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 1: Prepare the deployment environment",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "LXxUdQ9ZMo4zs5x8cQpc72a2npS",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A deployment environment is a local machine, a virtual machine (VM), or a CI/CD pipeline configured to run the Terraform configuration files and deploy the data plane of your BYOC-I project. In this step, you need to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XPr5doOs8opVw7x3QCZc2BqRnBq",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configure Microsoft Azure credentials.",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Zyfyd3ERUoT0JXxj3bCcXdW0n2i",
+          "RVpIdIBa8oBCQ5xNHAecbWgGnRh",
+          "IqmedgJVYoQWSoxDFawcIvG4nPg",
+          "X6Ind1GTUoGTFbxqUmucaFxRnof"
+        ],
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Zyfyd3ERUoT0JXxj3bCcXdW0n2i",
+        "block_type": 2,
+        "parent_id": "XPr5doOs8opVw7x3QCZc2BqRnBq",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Microsoft Azure credentials include your subscription ID and resource group name. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RVpIdIBa8oBCQ5xNHAecbWgGnRh",
+        "block_type": 2,
+        "parent_id": "XPr5doOs8opVw7x3QCZc2BqRnBq",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Azure Portal",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (UI)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IqmedgJVYoQWSoxDFawcIvG4nPg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Subscription ID:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NsBtdE5uKoEEqYxfGlUcg363n2g",
+          "P3b9dF76kobbZSxcrZKcUpZFngb",
+          "KywldsuHaoP0rIxE7wdcYSjxnJe",
+          "Bmk9d0WNLoZQz7x8hYPc9qzgnEd",
+          "H2DsdvKSQoqSdhxmgAacDV0lnSf",
+          "On5OdOsq4oUoUxxQzDHcC6pnnlf"
+        ],
+        "parent_id": "XPr5doOs8opVw7x3QCZc2BqRnBq"
+      },
+      {
+        "block_id": "NsBtdE5uKoEEqYxfGlUcg363n2g",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1440,
+          "scale": 1,
+          "token": "UCcVbQX7boMNMLxoiK8ccyM9ngd",
+          "width": 2560
+        },
+        "parent_id": "IqmedgJVYoQWSoxDFawcIvG4nPg"
+      },
+      {
+        "block_id": "P3b9dF76kobbZSxcrZKcUpZFngb",
+        "block_type": 2,
+        "parent_id": "IqmedgJVYoQWSoxDFawcIvG4nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KywldsuHaoP0rIxE7wdcYSjxnJe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Navigate to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Subscriptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the top search bar or from the home page.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "IqmedgJVYoQWSoxDFawcIvG4nPg"
+      },
+      {
+        "block_id": "Bmk9d0WNLoZQz7x8hYPc9qzgnEd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Select your subscription.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "IqmedgJVYoQWSoxDFawcIvG4nPg"
+      },
+      {
+        "block_id": "H2DsdvKSQoqSdhxmgAacDV0lnSf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Find the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Subscription ID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Essentials",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section of the Overview page.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "IqmedgJVYoQWSoxDFawcIvG4nPg"
+      },
+      {
+        "block_id": "On5OdOsq4oUoUxxQzDHcC6pnnlf",
+        "block_type": 2,
+        "parent_id": "IqmedgJVYoQWSoxDFawcIvG4nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X6Ind1GTUoGTFbxqUmucaFxRnof",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Resource Group Name:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TiwYdPQUSoSyM6x4M9zcWIBznme",
+          "RzJWdqBIBoXBLXxhrtecAfpwnwb",
+          "VEVwdOldEo7io1xhlYPcacVFnOg",
+          "CjYOdsjyqoz0lXxnNqFcnOONnUe",
+          "HWwzdUEdgo5vD4xxci1cIVh0n2g",
+          "FCqKdpRCNoWFnLxMrhecuGyonRf"
+        ],
+        "parent_id": "XPr5doOs8opVw7x3QCZc2BqRnBq"
+      },
+      {
+        "block_id": "TiwYdPQUSoSyM6x4M9zcWIBznme",
+        "block_type": 2,
+        "parent_id": "X6Ind1GTUoGTFbxqUmucaFxRnof",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A resource group is a container that holds related resources for an Azure solution. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RzJWdqBIBoXBLXxhrtecAfpwnwb",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1440,
+          "scale": 1,
+          "token": "HY2ybEyBHoOrwTxvvsxcvBDFnOe",
+          "width": 2560
+        },
+        "parent_id": "X6Ind1GTUoGTFbxqUmucaFxRnof"
+      },
+      {
+        "block_id": "VEVwdOldEo7io1xhlYPcacVFnOg",
+        "block_type": 2,
+        "parent_id": "X6Ind1GTUoGTFbxqUmucaFxRnof",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CjYOdsjyqoz0lXxnNqFcnOONnUe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Navigate to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Resource groups",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the left-hand menu.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "X6Ind1GTUoGTFbxqUmucaFxRnof"
+      },
+      {
+        "block_id": "HWwzdUEdgo5vD4xxci1cIVh0n2g",
+        "block_type": 13,
+        "children": [
+          "BCLDdLV2XoQR0PxCA36ckOelnpg"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name is listed in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "X6Ind1GTUoGTFbxqUmucaFxRnof"
+      },
+      {
+        "block_id": "BCLDdLV2XoQR0PxCA36ckOelnpg",
+        "block_type": 2,
+        "comment_ids": [
+          "7599534147584953563"
+        ],
+        "parent_id": "HWwzdUEdgo5vD4xxci1cIVh0n2g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If none is displayed, you may need to create one and provide it to Zilliz Cloud. When you ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7599534147584953563"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "run the Terraform scripts later, all necessary resources will be added to the resource group, including virtual machines (VMs), virtual networks (VNets",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "), and Azure Kubernetes Service (AKS) clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7599534147584953563"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FCqKdpRCNoWFnLxMrhecuGyonRf",
+        "block_type": 2,
+        "parent_id": "X6Ind1GTUoGTFbxqUmucaFxRnof",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Add access control (IAM) permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "F0PWd5IFWowxf5xzty6c5DWUnOh",
+          "G1Sddb0YtoJ4ezxmfr7cvu41nfh",
+          "LX3xdtTDyovw9MxfHi9c9iabnpg",
+          "FbCNdDBMCoq7yax2AuzcCMCpnab",
+          "C7GydHo8Nov2TCxpts6cN51ynRc",
+          "Vun2drUNaotjW9x3O9YcNwYanEb",
+          "VHPLdKGswokLBIxgIjpcoH7bnWb",
+          "ILTydxMb2oOEMXxbdskcs6QKnDh",
+          "KEe1dAFb8obR7Xxg2tRcoFZinmc",
+          "EgmZdM3pWoomQ6xzSvXcKutAnEc"
+        ],
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "F0PWd5IFWowxf5xzty6c5DWUnOh",
+        "block_type": 2,
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Assign the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Contributor",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "User Access Administrator",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " permissions to the role that will run the Terraform scripts.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G1Sddb0YtoJ4ezxmfr7cvu41nfh",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1460,
+          "scale": 1,
+          "token": "P0NbbtVyTofpGmxtk1jcpQYsnTe",
+          "width": 2560
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "LX3xdtTDyovw9MxfHi9c9iabnpg",
+        "block_type": 2,
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FbCNdDBMCoq7yax2AuzcCMCpnab",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Navigate to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Access control (IAM)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the left-hand menu.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "C7GydHo8Nov2TCxpts6cN51ynRc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "+ Add",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add role assignment",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the drop-down list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "Vun2drUNaotjW9x3O9YcNwYanEb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Role",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Privileged administrator roles",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", filter for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Contributor",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "VHPLdKGswokLBIxgIjpcoH7bnWb",
+        "block_type": 13,
+        "children": [
+          "BTt9dNhz2obexuxqcxcciy6MnFh"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Members",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab, select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "User, group, or service principal",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Managed entity",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Assign access to",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "+ Select members",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "BTt9dNhz2obexuxqcxcciy6MnFh",
+        "block_type": 2,
+        "parent_id": "VHPLdKGswokLBIxgIjpcoH7bnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "User, group, or service principal",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " if a user, group, or service principal is used to run the Terraform script. Otherwise, select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Managed entity",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ILTydxMb2oOEMXxbdskcs6QKnDh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", review the settings, and click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Review + assign",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to save.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "KEe1dAFb8obR7Xxg2tRcoFZinmc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Repeat the steps above for the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "User Access Administrator",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " role.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb"
+      },
+      {
+        "block_id": "EgmZdM3pWoomQ6xzSvXcKutAnEc",
+        "block_type": 2,
+        "parent_id": "MP2rdPSp5oeKmGxpzlZcpdt8njb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fatbdwn8roruSBxDHJXc1QWtnwc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Install the latest Terraform binary.",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Qxbjdg1sRopmi0xkttOc3CDmn4d"
+        ],
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Qxbjdg1sRopmi0xkttOc3CDmn4d",
+        "block_type": 2,
+        "parent_id": "Fatbdwn8roruSBxDHJXc1QWtnwc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on installing Terraform, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "this document",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdeveloper.hashicorp.com%2Fterraform%2Finstall%3Fproduct_intent%3Dterraform"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EnZwd7AqnooTwtxPeN8cPUUHn6S",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 2: Create a project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "GMj4doG3soTfjwxDXtVct1FXnp9",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Within your BYOC-I organization, click the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create Project and Deploy Data Plane",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " button to start the deployment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KRPydHhywoXFl3xmcukc8CL9nGA",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1630,
+          "scale": 1,
+          "token": "YYgcbgENMo6672xja9ucq9Dsnne",
+          "width": 2810
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "CwvwdOz62o3MaZxms6ocepnMn8e",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 3: Set up the general settings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "G3QpdljaSoVmvcxjzxNcN3FJnde",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "General Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you need to set the project name and determine the cloud providers and regions where Zilliz Cloud deploys the data plane for the project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RJRBdPVwYo7ZBUxpmAHcQYZPnqh",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1148,
+          "scale": 1,
+          "token": "Ugm3bsxb9oCsxzxqOYkclb7ZnRb",
+          "width": 1280
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "N88ad1dTcox9x9xoOsacBBoonjd",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OqcYdQfYLoQFnIxyDRFcYcRJnfb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project Name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "QXFtdcZpiovajKx16rKcYwgmnkc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cloud Provider",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "T6rmdK119o1xo5xAZjLc6bEZneb",
+        "block_type": 13,
+        "children": [
+          "EGWVdGeMeoJgwIxDbOTcSMmYnJb"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Determine whether to enable ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Azure Private Service Connect",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "EGWVdGeMeoJgwIxDbOTcSMmYnJb",
+        "block_type": 2,
+        "parent_id": "T6rmdK119o1xo5xAZjLc6bEZneb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This option allows private connectivity to the clusters within the current project. If you enable this option, you must create a VPC Endpoint for private connectivity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ITgKd8riNo0M0vxvNOfcUW9tnPb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Fill in your Azure ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Subscription ID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Resource Group Name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " obtained in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Step 1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FQuBiwrIJdiDw3ckVDKBcPofinfe%23JsxxdUkRBomCesxVwxOcInxInDb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "W1JqdYK8SozhQLxDKtncwLC2nZc",
+        "block_type": 13,
+        "children": [
+          "OQw0doYOEoo67JxohyQcy8AEnsg"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Select an architecture type that matches your application in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Architecture",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "OQw0doYOEoo67JxohyQcy8AEnsg",
+        "block_type": 2,
+        "parent_id": "W1JqdYK8SozhQLxDKtncwLC2nZc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This determines the architecture type of the Zilliz BYOC image to use. Available options are ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "X86",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ARM",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J54kdyc4Foz5yexmjaucSWKfnKc",
+        "block_type": 13,
+        "children": [
+          "RFSzdrpshocLJMxjtNbc8CQYnAe",
+          "PTjodBHWToIbp0xgbvZcjFK7nti"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Resource Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you need to",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "RFSzdrpshocLJMxjtNbc8CQYnAe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enable or disable ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Auto-scaling",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to allow Zilliz Cloud to automatically adjust the number of VM instances within a defined range based on your project workloads, ensuring efficient resource use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "J54kdyc4Foz5yexmjaucSWKfnKc"
+      },
+      {
+        "block_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "block_type": 13,
+        "children": [
+          "ZspZdCdZ2olmYYxct3TcuOXinhc",
+          "K8sddB0ULojBV1x9XlZcpNUTnQh",
+          "JyVLdo5JHo6h6nxBx0DcJZgJntg",
+          "CTByd8RxaoRFn2xb8uqcJ5ZvnSh",
+          "GvvlddLHboAEnbxlb90czRbgnld",
+          "GoqmdVcXEoVGqExDya4cdPmOnMg",
+          "JPTddUpwqo4NbYxTsd2cninMnsg",
+          "KX1zdS7SZoh7uexir6Uc2DnsnJd"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configure ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Initial Project Size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "J54kdyc4Foz5yexmjaucSWKfnKc"
+      },
+      {
+        "block_id": "ZspZdCdZ2olmYYxct3TcuOXinhc",
+        "block_type": 2,
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In a BYOC project, the query node, index services, Milvus components, and dependencies use different types of VM instances. You can set instance types and counts for these services and components individually. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K8sddB0ULojBV1x9XlZcpNUTnQh",
+        "block_type": 2,
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Auto-scaling",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is disabled, simply specify the number of VM instances required for each project component in the corresponding ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Count",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JyVLdo5JHo6h6nxBx0DcJZgJntg",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 720,
+          "scale": 1,
+          "token": "Ut9fbvTUDoXYxOxfp99cZIAGnMd",
+          "width": 1280
+        },
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti"
+      },
+      {
+        "block_id": "CTByd8RxaoRFn2xb8uqcJ5ZvnSh",
+        "block_type": 2,
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Auto-scaling",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is enabled, you need to specify a range for Zilliz Cloud to automatically scale the number of VM instances based on actual project workloads by setting the corresponding ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Min",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Max",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GvvlddLHboAEnbxlb90czRbgnld",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 720,
+          "scale": 1,
+          "token": "VS2UbJ1cDoIqj0x3fiKc4vhMnLg",
+          "width": 1280
+        },
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti"
+      },
+      {
+        "block_id": "GoqmdVcXEoVGqExDya4cdPmOnMg",
+        "block_type": 2,
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To facilitate resource settings, there are four predefined project size options. The following table shows the mapping between these project size options and the number of clusters that can be created in the project, along with the number of entities each cluster can contain.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "block_type": 31,
+        "children": [
+          "ZKzJd5MGuoJn2FxRlYHcqSLdnGd",
+          "XUksdATFsoFskTx0PGJcC6AsnEa",
+          "CJ7Ddh89joX32nxAXeDc9VsYn0T",
+          "THuddaSr1ovY7SxrOfEciESmn0Z",
+          "Gd2odQBlYoHP2QxehMocLWn2nDb",
+          "El0Ddo6OToQ22cxwhQzcIHTJnEf",
+          "GfbudGNngoho5ExJrIdcy0ajnOf",
+          "BJAtd3Zz9omUvMxMCbFcBUWvn0K",
+          "M5eadNUSfonlZRxNHXjcbZBwnzh",
+          "PGrXdbMpVo2csbxHuUPc5d0Pnvf",
+          "NDFodHzFGogiEuxLgaBcrmnRnug",
+          "Rtt1dJz3Iomyh6xeljAcvT7nnUh",
+          "BNtVduerxoHobnxNXazcY09knBb",
+          "NnzQdJ7sLoFCgaxngNWc0yF3nEf",
+          "NtsHdFEwUoVfomxgJPRcq2Pjnfg",
+          "AQtmdgyOJov7ZaxgCpTcsR1Vnm2",
+          "TbZidJ6YNoBMIzxOOL9ct077nTf",
+          "C3CPdUpqBooCJIxEitScw6conZg",
+          "RjYQdz2o8oey0qxScsbc0dpLnnh",
+          "VnPFduBVsoVwQTxPsNLchTh0nTh",
+          "I4GBdTMnIop0nmxx9p7cpEZunBd",
+          "Hj0PdYTejobNUoxJWbYcQ2JsnCd",
+          "MpASdOi3looInzxPsdpc0ODzn3f",
+          "Zr0mdADivogtjSx3wGFc7MranLf"
+        ],
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "table": {
+          "cells": [
+            "ZKzJd5MGuoJn2FxRlYHcqSLdnGd",
+            "XUksdATFsoFskTx0PGJcC6AsnEa",
+            "CJ7Ddh89joX32nxAXeDc9VsYn0T",
+            "THuddaSr1ovY7SxrOfEciESmn0Z",
+            "Gd2odQBlYoHP2QxehMocLWn2nDb",
+            "El0Ddo6OToQ22cxwhQzcIHTJnEf",
+            "GfbudGNngoho5ExJrIdcy0ajnOf",
+            "BJAtd3Zz9omUvMxMCbFcBUWvn0K",
+            "M5eadNUSfonlZRxNHXjcbZBwnzh",
+            "PGrXdbMpVo2csbxHuUPc5d0Pnvf",
+            "NDFodHzFGogiEuxLgaBcrmnRnug",
+            "Rtt1dJz3Iomyh6xeljAcvT7nnUh",
+            "BNtVduerxoHobnxNXazcY09knBb",
+            "NnzQdJ7sLoFCgaxngNWc0yF3nEf",
+            "NtsHdFEwUoVfomxgJPRcq2Pjnfg",
+            "AQtmdgyOJov7ZaxgCpTcsR1Vnm2",
+            "TbZidJ6YNoBMIzxOOL9ct077nTf",
+            "C3CPdUpqBooCJIxEitScw6conZg",
+            "RjYQdz2o8oey0qxScsbc0dpLnnh",
+            "VnPFduBVsoVwQTxPsNLchTh0nTh",
+            "I4GBdTMnIop0nmxx9p7cpEZunBd",
+            "Hj0PdYTejobNUoxJWbYcQ2JsnCd",
+            "MpASdOi3looInzxPsdpc0ODzn3f",
+            "Zr0mdADivogtjSx3wGFc7MranLf"
+          ],
+          "property": {
+            "column_size": 4,
+            "column_width": [
+              78,
+              237,
+              255,
+              255
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 2
+              },
+              {
+                "col_span": 1,
+                "row_span": 2
+              },
+              {
+                "col_span": 2,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 6
+          }
+        }
+      },
+      {
+        "block_id": "ZKzJd5MGuoJn2FxRlYHcqSLdnGd",
+        "block_type": 32,
+        "children": [
+          "Iv9rd4WP6ou3gNxz26mcdpMqnSc"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Iv9rd4WP6ou3gNxz26mcdpMqnSc",
+        "block_type": 2,
+        "parent_id": "ZKzJd5MGuoJn2FxRlYHcqSLdnGd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Size",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XUksdATFsoFskTx0PGJcC6AsnEa",
+        "block_type": 32,
+        "children": [
+          "Q7bsdZm4boyhPnxRG7Pc0o2Snzd"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Q7bsdZm4boyhPnxRG7Pc0o2Snzd",
+        "block_type": 2,
+        "parent_id": "XUksdATFsoFskTx0PGJcC6AsnEa",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Maximum Cluster Quantity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CJ7Ddh89joX32nxAXeDc9VsYn0T",
+        "block_type": 32,
+        "children": [
+          "EhtYdkNfcoiJCixtUdGcX8iPnBg"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EhtYdkNfcoiJCixtUdGcX8iPnBg",
+        "block_type": 2,
+        "parent_id": "CJ7Ddh89joX32nxAXeDc9VsYn0T",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Maximum Number of Entities (Million)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "THuddaSr1ovY7SxrOfEciESmn0Z",
+        "block_type": 32,
+        "children": [
+          "T7l3dVEcTowIGyxuXEicPy5nnFf"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "T7l3dVEcTowIGyxuXEicPy5nnFf",
+        "block_type": 2,
+        "parent_id": "THuddaSr1ovY7SxrOfEciESmn0Z",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gd2odQBlYoHP2QxehMocLWn2nDb",
+        "block_type": 32,
+        "children": [
+          "TQQIdcb2moEfFPxJtbPcnIgrnzc"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TQQIdcb2moEfFPxJtbPcnIgrnzc",
+        "block_type": 2,
+        "parent_id": "Gd2odQBlYoHP2QxehMocLWn2nDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "El0Ddo6OToQ22cxwhQzcIHTJnEf",
+        "block_type": 32,
+        "children": [
+          "UB8Hd6EFRoRP3AxWCnOcwtrdnUf"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UB8Hd6EFRoRP3AxWCnOcwtrdnUf",
+        "block_type": 2,
+        "parent_id": "El0Ddo6OToQ22cxwhQzcIHTJnEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GfbudGNngoho5ExJrIdcy0ajnOf",
+        "block_type": 32,
+        "children": [
+          "PPsVdiBWgoMPWTxvQc0cDSYxnvg"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PPsVdiBWgoMPWTxvQc0cDSYxnvg",
+        "block_type": 2,
+        "parent_id": "GfbudGNngoho5ExJrIdcy0ajnOf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Performance-optimized CU",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BJAtd3Zz9omUvMxMCbFcBUWvn0K",
+        "block_type": 32,
+        "children": [
+          "N0RFdKtx3oXZV1xCbQGcOsEBnag"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "N0RFdKtx3oXZV1xCbQGcOsEBnag",
+        "block_type": 2,
+        "parent_id": "BJAtd3Zz9omUvMxMCbFcBUWvn0K",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Capacity-optimized CU",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M5eadNUSfonlZRxNHXjcbZBwnzh",
+        "block_type": 32,
+        "children": [
+          "VZILdLei4op8Yox9O4HcBZj2nMe"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VZILdLei4op8Yox9O4HcBZj2nMe",
+        "block_type": 2,
+        "parent_id": "M5eadNUSfonlZRxNHXjcbZBwnzh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Small",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PGrXdbMpVo2csbxHuUPc5d0Pnvf",
+        "block_type": 32,
+        "children": [
+          "FXhjdLWw8ob3dKxr5WEcxxHOnmb"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FXhjdLWw8ob3dKxr5WEcxxHOnmb",
+        "block_type": 2,
+        "parent_id": "PGrXdbMpVo2csbxHuUPc5d0Pnvf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "3 clusters with 8 to 16 CUs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NDFodHzFGogiEuxLgaBcrmnRnug",
+        "block_type": 32,
+        "children": [
+          "XdkEdkfDFoe8WmxG7POc31Dln5g"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XdkEdkfDFoe8WmxG7POc31Dln5g",
+        "block_type": 2,
+        "parent_id": "NDFodHzFGogiEuxLgaBcrmnRnug",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "10 Million - 25 Million",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rtt1dJz3Iomyh6xeljAcvT7nnUh",
+        "block_type": 32,
+        "children": [
+          "Oh6odvL0ao7hWqxvpvZcxYoLnSd"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Oh6odvL0ao7hWqxvpvZcxYoLnSd",
+        "block_type": 2,
+        "parent_id": "Rtt1dJz3Iomyh6xeljAcvT7nnUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "40 Million - 80 Million",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BNtVduerxoHobnxNXazcY09knBb",
+        "block_type": 32,
+        "children": [
+          "TI37dbm4FoIa0ex0lDOcSs8Unfb"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TI37dbm4FoIa0ex0lDOcSs8Unfb",
+        "block_type": 2,
+        "parent_id": "BNtVduerxoHobnxNXazcY09knBb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Medium",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NnzQdJ7sLoFCgaxngNWc0yF3nEf",
+        "block_type": 32,
+        "children": [
+          "OdT8dHH9Doyn5ixCm60cUxOInSf"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OdT8dHH9Doyn5ixCm60cUxOInSf",
+        "block_type": 2,
+        "parent_id": "NnzQdJ7sLoFCgaxngNWc0yF3nEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "7 clusters with 16 to 64 CUs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NtsHdFEwUoVfomxgJPRcq2Pjnfg",
+        "block_type": 32,
+        "children": [
+          "WNGqdIzlSo7d1txyr4Bcfy96n5R"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WNGqdIzlSo7d1txyr4Bcfy96n5R",
+        "block_type": 2,
+        "parent_id": "NtsHdFEwUoVfomxgJPRcq2Pjnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "25 Million - 100 Million",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AQtmdgyOJov7ZaxgCpTcsR1Vnm2",
+        "block_type": 32,
+        "children": [
+          "U4ggdg97noY3KgxQgNHcMiZTngb"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "U4ggdg97noY3KgxQgNHcMiZTngb",
+        "block_type": 2,
+        "parent_id": "AQtmdgyOJov7ZaxgCpTcsR1Vnm2",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "80 Million - 350 Million",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TbZidJ6YNoBMIzxOOL9ct077nTf",
+        "block_type": 32,
+        "children": [
+          "IYgTdh1s9oC55fxHHgkcKcBuneh"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IYgTdh1s9oC55fxHHgkcKcBuneh",
+        "block_type": 2,
+        "parent_id": "TbZidJ6YNoBMIzxOOL9ct077nTf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Large",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C3CPdUpqBooCJIxEitScw6conZg",
+        "block_type": 32,
+        "children": [
+          "GBn7d5GxBoFrmYxjfVXcPnqznBb"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GBn7d5GxBoFrmYxjfVXcPnqznBb",
+        "block_type": 2,
+        "parent_id": "C3CPdUpqBooCJIxEitScw6conZg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "12 clusters with 64 to 192 CUs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RjYQdz2o8oey0qxScsbc0dpLnnh",
+        "block_type": 32,
+        "children": [
+          "VlU9dSdMYooECOxjiwbcWYe4nuh"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VlU9dSdMYooECOxjiwbcWYe4nuh",
+        "block_type": 2,
+        "parent_id": "RjYQdz2o8oey0qxScsbc0dpLnnh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "100 Million - 300 Million",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VnPFduBVsoVwQTxPsNLchTh0nTh",
+        "block_type": 32,
+        "children": [
+          "D8jcd0aQRo0hMcxpRKvckerxnBc"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "D8jcd0aQRo0hMcxpRKvckerxnBc",
+        "block_type": 2,
+        "parent_id": "VnPFduBVsoVwQTxPsNLchTh0nTh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "350 Million - 1 Billion",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I4GBdTMnIop0nmxx9p7cpEZunBd",
+        "block_type": 32,
+        "children": [
+          "GPdcdN0WyoA8qxx3e6scS5wSn8f"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GPdcdN0WyoA8qxx3e6scS5wSn8f",
+        "block_type": 2,
+        "parent_id": "I4GBdTMnIop0nmxx9p7cpEZunBd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "X-Large",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hj0PdYTejobNUoxJWbYcQ2JsnCd",
+        "block_type": 32,
+        "children": [
+          "WTmMdT29yozMLlxEq9Fc4y9vnrd"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WTmMdT29yozMLlxEq9Fc4y9vnrd",
+        "block_type": 2,
+        "parent_id": "Hj0PdYTejobNUoxJWbYcQ2JsnCd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "17 clusters with 192 to 576 CUs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MpASdOi3looInzxPsdpc0ODzn3f",
+        "block_type": 32,
+        "children": [
+          "NSIfdUNbQoAvZ3xhsxPcO310n0K"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NSIfdUNbQoAvZ3xhsxPcO310n0K",
+        "block_type": 2,
+        "parent_id": "MpASdOi3looInzxPsdpc0ODzn3f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "300 Million - 900 Million",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zr0mdADivogtjSx3wGFc7MranLf",
+        "block_type": 32,
+        "children": [
+          "BSqqdl5JdoZ6kZxSboWcBzhgnPh"
+        ],
+        "parent_id": "JPTddUpwqo4NbYxTsd2cninMnsg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BSqqdl5JdoZ6kZxSboWcBzhgnPh",
+        "block_type": 2,
+        "parent_id": "Zr0mdADivogtjSx3wGFc7MranLf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 Billion - 3 Billion",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KX1zdS7SZoh7uexir6Uc2DnsnJd",
+        "block_type": 2,
+        "parent_id": "PTjodBHWToIbp0xgbvZcjFK7nti",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also customize the settings by selecting ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Custom",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Initial Project Size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and adjusting the VM instance types and counts for all data plane components. If your preferred VM instance types are not listed, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact Zilliz support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for further assistance. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T2vId9QpfogOy5x1jn7czMlPned",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "G4nUdVSV4o3rYtxbB3wceMcLnxg",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MMkSd2320ot2Hzx5y69cpbTMnPh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 4: Deploy the data plane",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "AJy3dmFC6oZTucxrm7Xciaminnd",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Follow the steps displayed in the dialog to deploy the data plane for the currently created project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F5kddwSOpo5vSUxMldWcUifmnbd",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 858,
+          "scale": 1,
+          "token": "X3s2bYas0o5ICVxZ18rcta5TnLd",
+          "width": 1280
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "S9ZtdavouodhZhxwdxCcue30nAf",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on running the above Terraform scripts, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud BYOC-I Project Setup Guide",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fregistry.terraform.io%2Fproviders%2Fzilliztech%2Fzillizcloud%2Flatest%2Fdocs%2Fguides%2Fcreate-a-byoc-i-project"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T1tWd154Ko2Q3MxhHtscLXJ0n7g",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you have deployed the project's data plane and created clusters, you can connect to these clusters either through direct VPC access or via Azure Private Link. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Connect to BYOC Clusters",
+                "token": "Ah0DwMIWsilLa4kVbYocJGCMnlh",
+                "url": "https://zilliverse.feishu.cn/wiki/Ah0DwMIWsilLa4kVbYocJGCMnlh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z3vrdb1rioWAaTxutKFc08Oanwf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage projects",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "WY3VdSsZhozfWNxel3oczqY6nIg",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 720,
+          "scale": 1,
+          "token": "J3Xibh9vtozuRHxt8Hjc0SqwnYg",
+          "width": 1280
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "ZT6adJZxUo5sP1xjf83cBTp1n5e",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Projects with an Undeploy tag",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Ma3Td0Fr1oSxPBxHPSccjr6PnIg",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the status tag on the right corner of a project card reads ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Undeploy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can always click the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy Data Plane",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " button on the project card to reopen it. To rename or delete the project, click the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "...",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " button in the project card and select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Rename",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Delete",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from the drop-down menu.  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TAQKdmfNNo2OhVxFTkyc9P5VnGg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Projects with a Deploying tag",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "QNFDdwurAosmKhx0gWbcUFCknQh",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you have prepared the deployment environment and executed the displayed commands, you must wait for the BYOC agent to activate. When the status tag on the project card reads ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploying",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and shows the progress percentage, you cannot rename or delete the project until the data plane is in place.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X5jadWrEPozAFDxbBNNcZy9rnse",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Projects with a Running tag",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "NA5cd7It2oAFbCxQUsEc2c5UnGh",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the status tag on a project card reads ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Running",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can start creating clusters in the project. To rename or delete a running project, ensure that there are no clusters in the project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UjiXdnrS6oS5TqxFgfRcAjiNnMe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Technical support access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "VyMUdRo7PolBlxxzyPBcpTOvnRh",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To assist you with troubleshooting and maintenance operations, Zilliz Cloud enables technical support to access your project's data plane by default. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WOfsdMtSaovX49xIS5Qc1XpunQY",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 362,
+          "scale": 1,
+          "token": "LozAb735eoX00UxLYAKcWqY2nkG",
+          "width": 1280
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "ULgIdkHsjo4q9bxFcrCc569lnce",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When you click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Technical Support Access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from the target project's drop-down menu to view the current settings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MxY1diWuyocw2SxWZeQcgEY0nyb",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 720,
+          "scale": 1,
+          "token": "NdnSbwFbkokOPpxaW1ocGwklnab",
+          "width": 1280
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "ACiMdhy07o2Dppx57nqcNNpTnKc",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can disable it to meet data governance and security requirements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CobrdDEksoecJzxDlwycyuVAnsb",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"indev\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KWywdMBgFo64r7xagu0cgSIvnPh",
+        "block_type": 4,
+        "comment_ids": [
+          "7599534806560427213"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7599534806560427213"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "BSZ1d5Tcxo4ofvxy4EAcAiBlnkf",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this section, you will find all the key permissions required to deploy BYOC-I on AWS.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HzXzdUfpSoA5XJxw4uNcQLhknUd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "VPC and networking resource permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "JDK7dwICaoF6CzxzyjccPzKHnpc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "VPC Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, modify, describe, and delete VPCs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "PgL7d9sKhokAi3xRLWCcN6XQnNg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Subnet Operations",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create and delete subnets",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "NR57dWuzJoAQMyxJbL2c4TNUnvd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Security Groups",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, modify, and delete security groups and their rules",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "HhsSde2bJonqbyxqeCbcH5XYnCf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Route Tables",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, associate, and manage route tables",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "HOzrd5hycowJLExMY7CcKRlpnKc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Internet Gateways",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, attach, and detach internet gateways",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "IEP2djD5bo4mFlxOsIdcx08Bndd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NAT Gateways",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create and delete NAT gateways with Elastic IPs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Ob8KdXUUjoZ00VxNEhpchByanIe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "VPC Endpoints",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create and delete VPC endpoints for AWS services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Ff8GdratfoWQe8xIaihco2mMnbf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Launch Templates",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create and delete EC2 launch templates",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "AED3dzatAoDRZNxaZGKcnZsqnIf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Route53",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Associate VPCs with hosted zones",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "IDcOdVqwuolBpvxNBWJcCCVvnUC",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tagging",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create and delete tags on VPC resources",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "USLWdVH3xocaWTx8UOOckr0Fneg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IAM roles and BYOC-I deployment permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Ufw6dX6YmoIslVxSkt3c3819nRe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Role Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, get, list, attach/detach policies, and delete IAM roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "UTpwd56G4oTfoxxCGMgcc4Klnkc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Policy Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, get, list versions, and delete IAM policies",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "GCGQdHiMLoRmCIxO472cfa5Vnvh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tagging",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Tag and untag roles and policies",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "HIqPdiTnIoNrbuxCxPJcuJv9n5b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Identity Verification",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Get caller identity (STS)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Shc3dnkFFoKUWkxqCEXcX34VnCd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "S3 bucket permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Y1BXdl2yuo4rpkxOlv9czKLBnwf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Bucket Operations",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, list, get configuration, and delete S3 buckets",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "OeqHdKkx5oTShOxewDgcxFn9nze",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Bucket Configuration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Manage bucket tagging, policies, ACLs, CORS, versioning, encryption, and public access settings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Cq0DdiIaioVWuYxvrBOct0Grn5c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Object Tagging",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Put, get, and delete object tags",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "XpI0dLjM8omuQExDy8dcbTCVnhg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Bucket Listing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": List all buckets in the account",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "FUuBdBZjZoxOFkxjeERcwCO1nvg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EKS cluster and related resource permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "AOxzdVvXXo5V61xWy5NcJIibnWg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Service-Linked Roles",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create EKS service-linked roles for cluster and node group management",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "WtoRdtCi8oXwy4xO35Tcqs8hnfd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "OIDC Provider",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, tag, get, and delete OpenID Connect providers (with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Vendor=zilliz-byoc",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tag requirement)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "BD2OdDV5AovBVMx7T29cpZeGnBc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IAM Role Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Read EKS roles and pass roles to EKS service",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "VUGCdNjCpoLeDjxxP5dctKe5n6b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EC2 Resources",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create launch templates, run instances, and manage tags (with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Vendor=zilliz-byoc",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tag requirement)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "BFYZd4soSohC3dx0384cC3b5nvc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EKS Cluster Operations",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, update, describe, tag, and delete EKS clusters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "OUX5d4rKLoNFI8xejyPcfSDInqg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Node Group Operations",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, update, describe, and delete EKS node groups",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "Ktp3dF1KCoMQvQxUjoochPVTn2b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Addon Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, update, describe, and delete EKS addons",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "HSKmdNUoBofVdXx4mo4c9OWznXe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access Entry Management",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Create, update, describe, and delete EKS access entries and pod identity associations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": true,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh"
+      },
+      {
+        "block_id": "J262dicrqo59ZexcpvGcyKP2n5b",
+        "block_type": 2,
+        "parent_id": "UcmGdBuh1oUmhlxO8TYctUT5nUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 173
+  }
+}

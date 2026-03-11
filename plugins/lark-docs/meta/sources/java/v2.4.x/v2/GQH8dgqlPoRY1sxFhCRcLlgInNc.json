@@ -1,0 +1,662 @@
+{
+  "created_time": "1720587025",
+  "modified_time": "1746527131",
+  "name": "updatePassword()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "U16KfBnGVlNp5edR7DycvFF1nfy",
+  "token": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/GQH8dgqlPoRY1sxFhCRcLlgInNc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+        "block_type": 1,
+        "children": [
+          "doxcnLP4kH0ngQM8MSJ4IHV9xm1",
+          "doxcnIQnE5fpQncWKg0apSw1gIe",
+          "doxcnCXdTOqrYg5nGTrnvcQcQYc",
+          "doxcn5JyLRBV1ZuYS37NXewRxmg",
+          "doxcnQPhGEdg5iV59w3wrJFweNd",
+          "doxcnK6PJXC0gMnIWYXMuYy2w1e",
+          "doxcnKcMmPArnC906tDWjB7jRCf",
+          "doxcn44wUZeJ4gUYQt0vM24dmSg",
+          "doxcn64H0ol6sMDiTBldCm9h3zh",
+          "doxcnAHhgdPcWsLQ3gbm4TS8Ctc",
+          "doxcn25fT2pkdqochaTYTTvyf3b",
+          "doxcnR4T9IJTfKu9iHSCtJAmqlf",
+          "doxcna0BweSHp4SvspWDAPAerMd",
+          "doxcnQyUN7IZD3v5Unmv6MQAXQh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "updatePassword()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnLP4kH0ngQM8MSJ4IHV9xm1",
+        "block_type": 2,
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation updates the password of a specific user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnIQnE5fpQncWKg0apSw1gIe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void updatePassword(UpdatePasswordReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnCXdTOqrYg5nGTrnvcQcQYc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcn5JyLRBV1ZuYS37NXewRxmg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "updatePassword(UpdatePasswordReq.builder()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .userName(String userName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    .password(String password)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".newPassword(String newPassword)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnQPhGEdg5iV59w3wrJFweNd",
+        "block_type": 2,
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnK6PJXC0gMnIWYXMuYy2w1e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "userName(String userName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnW6QbbwSkpLa1A0iDi32Lqb"
+        ],
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnW6QbbwSkpLa1A0iDi32Lqb",
+        "block_type": 2,
+        "parent_id": "doxcnK6PJXC0gMnIWYXMuYy2w1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of an existing user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKcMmPArnC906tDWjB7jRCf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "password(String password)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnyF74ehH0Q4bY0RlzkPD5xe"
+        ],
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnyF74ehH0Q4bY0RlzkPD5xe",
+        "block_type": 2,
+        "parent_id": "doxcnKcMmPArnC906tDWjB7jRCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The original password of the user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn44wUZeJ4gUYQt0vM24dmSg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "newPassword(String newPassword)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnwg5NaQ4vwcFw3bItwuyL2c"
+        ],
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnwg5NaQ4vwcFw3bItwuyL2c",
+        "block_type": 2,
+        "parent_id": "doxcn44wUZeJ4gUYQt0vM24dmSg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The new password of the user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn64H0ol6sMDiTBldCm9h3zh",
+        "block_type": 2,
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnAHhgdPcWsLQ3gbm4TS8Ctc",
+        "block_type": 2,
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn25fT2pkdqochaTYTTvyf3b",
+        "block_type": 2,
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnR4T9IJTfKu9iHSCtJAmqlf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnmwXxS1eG0fYJooPZr6nmph"
+        ],
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnmwXxS1eG0fYJooPZr6nmph",
+        "block_type": 2,
+        "parent_id": "doxcnR4T9IJTfKu9iHSCtJAmqlf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcna0BweSHp4SvspWDAPAerMd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      },
+      {
+        "block_id": "doxcnQyUN7IZD3v5Unmv6MQAXQh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.rbac.request.UpdatePasswordReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Reset password\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "UpdatePasswordReq updatePasswordReq = UpdatePasswordReq.builder()\n        .userName(\"test\")\n        .password(\"Zilliz@2023\")\n        .newPassword(\"Zilliz@2024\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.updatePassword(updatePasswordReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GQH8dgqlPoRY1sxFhCRcLlgInNc"
+      }
+    ],
+    "counts": 19
+  },
+  "slug": "v2-Authentication-updatePassword"
+}

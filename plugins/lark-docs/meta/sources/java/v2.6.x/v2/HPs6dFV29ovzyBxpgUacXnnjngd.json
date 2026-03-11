@@ -1,0 +1,1018 @@
+{
+  "created_time": "1761479071",
+  "modified_time": "1761538964",
+  "name": "addFunction()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "WtCQfKhCll78bpdsAeHcc42BnYc",
+  "token": "HPs6dFV29ovzyBxpgUacXnnjngd",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/HPs6dFV29ovzyBxpgUacXnnjngd",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "block_type": 1,
+        "children": [
+          "QKW2d9BvnoAIq1x4qLOcUtw6nkh",
+          "TM3wdckqfo3HnPxElAeccDjqnkd",
+          "KGINdywipowMATxs86AcdBNGnNe",
+          "Wz7ddibDcoh5uox7KQuce3h3nFe",
+          "Qke7dARX4oeuRNxaMGxc6uUfnjc",
+          "AdcTdL9U6oZbOUxOOUqcQKDbnfg",
+          "YgIUdxL2dotuboxsCG7cBVmYnve",
+          "AibedHtL1oZUHfx78qec5gBhn9d",
+          "IWOEdion9ogM0bxhPRlcvXkgnug",
+          "CvFldFiSnoDJWIxN7OfcrD2tnjh",
+          "QCjZdIbk4okQIDxgTQkcPVronQS",
+          "UMKQdHIb0oAWW3xy2ELcTZVOnBc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "addFunction()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "QKW2d9BvnoAIq1x4qLOcUtw6nkh",
+        "block_type": 2,
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation adds a function to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TM3wdckqfo3HnPxElAeccDjqnkd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public B addFunction(CreateCollectionReq.Function func)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd"
+      },
+      {
+        "block_id": "KGINdywipowMATxs86AcdBNGnNe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd"
+      },
+      {
+        "block_id": "Wz7ddibDcoh5uox7KQuce3h3nFe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "addFunction(\n    CreateCollectionReq.Function func\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd"
+      },
+      {
+        "block_id": "Qke7dARX4oeuRNxaMGxc6uUfnjc",
+        "block_type": 2,
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AdcTdL9U6oZbOUxOOUqcQKDbnfg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Aq30dCzsyo3kmdxrURzcqvvjnwe"
+        ],
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd"
+      },
+      {
+        "block_id": "Aq30dCzsyo3kmdxrURzcqvvjnwe",
+        "block_type": 2,
+        "parent_id": "AdcTdL9U6oZbOUxOOUqcQKDbnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A function.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YgIUdxL2dotuboxsCG7cBVmYnve",
+        "block_type": 2,
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AibedHtL1oZUHfx78qec5gBhn9d",
+        "block_type": 2,
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "B extends FunctionScore.FunctionScoreBuilder<C, B>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IWOEdion9ogM0bxhPRlcvXkgnug",
+        "block_type": 2,
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CvFldFiSnoDJWIxN7OfcrD2tnjh",
+        "block_type": 2,
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " builder for chaining up multiple ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "addFunction()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QCjZdIbk4okQIDxgTQkcPVronQS",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd"
+      },
+      {
+        "block_id": "UMKQdHIb0oAWW3xy2ELcTZVOnBc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.common.clientenum.FunctionType;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq;\nimport io.milvus.v2.service.vector.request.SearchReq;\nimport io.milvus.v2.service.vector.response.SearchResp;\nimport io.milvus.v2.service.vector.request.data.EmbeddedText;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.Function ranker = CreateCollectionReq.Function.builder()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .functionType(FunctionType.RERANK)",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .name(\"boost\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"reranker\", \"boost\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"filter\", \"doctype == \\\"abstract\\\"\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"weight\", \"0.5\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"random_score\", \"{\\\"seed\\\": 126, \\\"field\\\": \\\"id\\\"}\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n                 \n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchReq = client.search(SearchReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"my_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .data(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(new FloatVec(new float[]{-0.619954f, 0.447943f, -0.174938f, -0.424803f, -0.864845f})))\n        .annsField(\"vector\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"doctype\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .functionScore(FunctionScore.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                .addFunction(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n                .build())\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".search(searchReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565496385596948499"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7565496385596948499"
+        ],
+        "parent_id": "HPs6dFV29ovzyBxpgUacXnnjngd"
+      }
+    ],
+    "counts": 14
+  },
+  "slug": "v2-FunctionScore-addFunction"
+}

@@ -1,0 +1,3992 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1754272129",
+  "node_token": "INoRwFTjfiindPkaNlwc9XAgnkh",
+  "node_type": "origin",
+  "obj_create_time": "1754272129",
+  "obj_edit_time": "1767852329",
+  "obj_token": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+  "obj_type": "docx",
+  "origin_node_token": "INoRwFTjfiindPkaNlwc9XAgnkh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+  "space_id": "7167193056431783939",
+  "title": "Integrate with Google Cloud Storage",
+  "slug": "integrate-with-gcp",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "block_type": 1,
+        "children": [
+          "KhvKdG3fAomqNhxJqFVc6fPznUb",
+          "EegddFcOnoNhM0xS8qmcAkAcnLp",
+          "NwYpdWHlTsZCUlbiUBCc8mWDnde",
+          "Gpdgd2k5RoTvUxxI2NUc0sbpnEh",
+          "Vv1qd0KN3oVnlSx2yELcNwWVn5e",
+          "X17ida2vqovujLx6efuckL0ynIb",
+          "AZB9dhSgtowpTwx7rS3co4JAnXd",
+          "WlT8dxW19o3sZExqpvccoyw5nDf",
+          "ILscd5upYoBZqcxUdoHce0MvnVg",
+          "TpSOdLNY5oLbZpxhXPyc3Q0jnPh",
+          "TuK3d1XIfogUrQxZPYfc6Mfsnyg",
+          "NyNldNtEYoP3ryxEx99cO4JunPe",
+          "FChZdVXHUo2qjHxq05ycHa77nmg",
+          "ZxKNdl1Xbo6nmUxqHMLcARXunWf",
+          "SI4udWGAhoqSbgxujOTcJazonrf",
+          "J4YYdGj6hobK9IxJheiccinTnAh",
+          "OQBdd6cntoawcexCOqscmSQkngg",
+          "G8h8dOtJPoAGMjxfdqBcLtHxnif",
+          "XaCNdB4ZNoABivx61RWciK3XncS",
+          "QzLcdTwvfo2nzfxIDHXcRzQmngh",
+          "XYazdLRVuocWnqxYgHzcCxFXnVd",
+          "BVAHdJhreo8zfyxuUTgcRhEOngB",
+          "LT1ZduM5xoSLVTxAKzKcTDH0nxq",
+          "IV0LdGnEno8eDVxRFRvcAZB2nqe",
+          "AO5Vdu88HoXQnexyevycx1HQnHf",
+          "QYESd0c90oMV1GxKSHVcnE2wnIc",
+          "D8gUdejJdoU4Ftxx3becVZDAnzh",
+          "FAGxdoMiNodv03xoWPXcJOmenbr",
+          "SYIEdfHNcojlgMxP80UcQ9Cnnoe",
+          "ZT6qdXj36o7gNSxRxGVcfzOAnD7",
+          "L0ESdtxjEocR94xF2JrcT5qTnqg",
+          "F8LbdhvqjoBLuExaLi1ca91yngh",
+          "CS8Odh0Q8oQy1WxDCbmc8UQanxb",
+          "UP8GdVIBqozPZyxIM6DcCJPBnRe",
+          "RqDtdpeNiocRRJxsDk5cMcw1njd",
+          "RGAmdJ6wCokeoHx0MvrcJm1bn7e",
+          "LGFWdp7FGona2IxtQyvckRobnIh",
+          "LXXTdGJYLo81acxzeMZc6ximnJh",
+          "QM1DdQcAcoMRsIxMf3TcPqwUnrd",
+          "OLtgd0AuAoVBbyx7Br8cqWCcnig",
+          "VR3gdANM2oulozx4vGecl97Cn6f",
+          "OatJdCsLBoVxStxJDRMcdyM3nPh",
+          "DuXsdpsAZoUBeRxbxezcRKeTnqs",
+          "VJl5dCfwkoxhwcxi6YYcikYrnof",
+          "N05rdKu7AozLRUxengIcb8K3nDh",
+          "LVkzdz8pwoM8F2x6moUcReKCnJb",
+          "ScFbdKXm1oJr69xoaA3cyhCRnyh",
+          "LKlAdurzkomlZqxq41jctuqFnbe",
+          "Ks2VdOQ8Eop4rlxXlqHcHqIvnfe",
+          "JS35dxTKWoZ0z1xVHSrcOCUynce",
+          "FA34dSnKTolK2FxtE8bc1SKznX6",
+          "EIM6d2y4bofDVgxohIscHrxknYc",
+          "Nq0LdxOZJo2VQOxAmCpc2muWnjg",
+          "TH4QdydhJo6bvPxsus6cAUnynMT",
+          "Kfz0dm60Ko8RimxsK6hcE0wsn1b",
+          "EwkBdy2ncoPrVbxxm39cBe6vnoc",
+          "H2yydPbaaoJZfTxyTH3cMmVOnQe",
+          "UDE4d50dUo6mDYxxNryc12tNnve",
+          "QL2sdta4ooR5cuxGDOYcwr0WnMf",
+          "Ot8TdwF4XoyReCxYIQUch1k0nme",
+          "SzlPdSGy0owsAgxArsYc2YbWnvd",
+          "UZRVdLQHTonAvKxQcggc9IdSnhf",
+          "VEmRdfcEcouEuXxEoVZcIXxSnng",
+          "NBeXd3XBFo1Xu5xk2omcsH7an3e",
+          "ISCOddivIoJZmMxbwNBcsTwLnIg",
+          "SWyndbu9CodnLBxVZtWcQd09nZd",
+          "P9IBdyClXoKEgMxeWO0cL6iinvd"
+        ],
+        "comment_ids": [
+          "7538703012928765955"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integrate with Google Cloud Storage",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538703012928765955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "KhvKdG3fAomqNhxJqFVc6fPznUb",
+        "block_type": 2,
+        "comment_ids": [
+          "7538731674542161924"
+        ],
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud allows you to integrate with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Cloud Storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fstorage"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "export",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538731674542161924"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " audit logs or backup files to designated buckets.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EegddFcOnoNhM0xS8qmcAkAcnLp",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NwYpdWHlTsZCUlbiUBCc8mWDnde",
+        "block_type": 49,
+        "children": [
+          "GV79dp6sao2n23xNUwFcZoyHn1d"
+        ],
+        "comment_ids": [
+          "7569795596258885635"
+        ],
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "Gpdgd2k5RoTvUxxI2NUc0sbpnEh",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vv1qd0KN3oVnlSx2yELcNwWVn5e",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following digram illustrates the necessary steps on Zilliz Cloud and Google Admin console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X17ida2vqovujLx6efuckL0ynIb",
+        "block_type": 43,
+        "board": {
+          "height": 662,
+          "token": "UNmxw6LdCh60Dob3j7KcHGxynkg",
+          "width": 529
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "AZB9dhSgtowpTwx7rS3co4JAnXd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "WlT8dxW19o3sZExqpvccoyw5nDf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To integrate Zilliz Cloud with GCP, you must have ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project A",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dmin",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " access to the project. If you do not have necessary permissions, contact your Zilliz Cloud administrator.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "ILscd5upYoBZqcxUdoHce0MvnVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have administrative access to the Google Admin console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "TpSOdLNY5oLbZpxhXPyc3Q0jnPh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 1: Start integration in Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "TuK3d1XIfogUrQxZPYfc6Mfsnyg",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cmdzpf4ze0t2bh5wkphtbn39l\" title=\"Step 1: Start integration in Zilliz Cloud console\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NyNldNtEYoP3ryxEx99cO4JunPe",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FChZdVXHUo2qjHxq05ycHa77nmg",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Log in to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2Flogin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "ZxKNdl1Xbo6nmUxqHMLcARXunWf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On your project page, navigate to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Integrations",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from the left-side navigation pane.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "SI4udWGAhoqSbgxujOTcJazonrf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Under the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Cloud Storage Bucket",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "+ Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "J4YYdGj6hobK9IxJheiccinTnAh",
+        "block_type": 13,
+        "children": [
+          "YaPWdjnr6oWdeixkYjbcRV5FnWe",
+          "WVludgzFwodU2ox5T3qc6d2dnOg",
+          "MntOdNVAko83MqxEJ1Gck4kLn8c"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the dialog box that appears, complete ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Basic Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "YaPWdjnr6oWdeixkYjbcRV5FnWe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integration Name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": A unique name for this integration (e.g. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket_for_auditlog",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "J4YYdGj6hobK9IxJheiccinTnAh"
+      },
+      {
+        "block_id": "WVludgzFwodU2ox5T3qc6d2dnOg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integration Description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(optional)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": A description for this integration (e.g. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "for auditlog export",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "J4YYdGj6hobK9IxJheiccinTnAh"
+      },
+      {
+        "block_id": "MntOdNVAko83MqxEJ1Gck4kLn8c",
+        "block_type": 2,
+        "parent_id": "J4YYdGj6hobK9IxJheiccinTnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Then, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to proceed to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Step 2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FINoRwFTjfiindPkaNlwc9XAgnkh%23G8h8dOtJPoAGMjxfdqBcLtHxnif"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OQBdd6cntoawcexCOqscmSQkngg",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G8h8dOtJPoAGMjxfdqBcLtHxnif",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 2: Create a role in Google Admin console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "XaCNdB4ZNoABivx61RWciK3XncS",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cmdzqastn0uw1h5wklj65425w\" title=\"Step 2: Create role in Google Admin console\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QzLcdTwvfo2nzfxIDHXcRzQmngh",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XYazdLRVuocWnqxYgHzcCxFXnVd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Log in to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Admin console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fadmin.google.com%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "BVAHdJhreo8zfyxuUTgcRhEOngB",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Go to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IAM & Admin / Roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fconsole.cloud.google.com%2Fiam-admin%2Froles"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page, then click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "+ Create role",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "LT1ZduM5xoSLVTxAKzKcTDH0nxq",
+        "block_type": 13,
+        "children": [
+          "OQNbdQqRXoKX8oxfos9cbJGJn6K",
+          "W997dUfqdoE8OJxUukDcP8zJnAe"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the page that appears, configure role settings and add permissions to the role:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "OQNbdQqRXoKX8oxfos9cbJGJn6K",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Customize ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Title",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the role (e.g. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ZillizBucketRole",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") and optionally add ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "LT1ZduM5xoSLVTxAKzKcTDH0nxq"
+      },
+      {
+        "block_id": "W997dUfqdoE8OJxUukDcP8zJnAe",
+        "block_type": 13,
+        "children": [
+          "O3vkdTH8Eoa9hVxoN2wc4QaOnig",
+          "TzzjdCrjeoF9qfxn8mYc292rnue",
+          "LRE1dT2ivoYaelx7t0AcRjKunyb",
+          "N75sdIgmMo9E9ox6wrTc3oIcnQf"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "+ Add permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", then assign the following minimum permissions to the role:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "LT1ZduM5xoSLVTxAKzKcTDH0nxq"
+      },
+      {
+        "block_id": "O3vkdTH8Eoa9hVxoN2wc4QaOnig",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "storage.buckets.get",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "W997dUfqdoE8OJxUukDcP8zJnAe"
+      },
+      {
+        "block_id": "TzzjdCrjeoF9qfxn8mYc292rnue",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "storage.objects.create",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "W997dUfqdoE8OJxUukDcP8zJnAe"
+      },
+      {
+        "block_id": "LRE1dT2ivoYaelx7t0AcRjKunyb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "storage.objects.list",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "W997dUfqdoE8OJxUukDcP8zJnAe"
+      },
+      {
+        "block_id": "N75sdIgmMo9E9ox6wrTc3oIcnQf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "storage.objects.get",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "W997dUfqdoE8OJxUukDcP8zJnAe"
+      },
+      {
+        "block_id": "IV0LdGnEno8eDVxRFRvcAZB2nqe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "AO5Vdu88HoXQnexyevycx1HQnHf",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QYESd0c90oMV1GxKSHVcnE2wnIc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 3: Create a bucket in Google Admin console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "D8gUdejJdoU4Ftxx3becVZDAnzh",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cme0qzcy102dbg56jx7ucft1c\" title=\"Step 3: Create a bucket in Google Admin console (1)\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FAGxdoMiNodv03xoWPXcJOmenbr",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SYIEdfHNcojlgMxP80UcQ9Cnnoe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Go to the Google Cloud Storage ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Buckets",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fconsole.cloud.google.com%2Fstorage%2Fbrowser"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "ZT6qdXj36o7gNSxRxGVcfzOAnD7",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "+ Create",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "L0ESdtxjEocR94xF2JrcT5qTnqg",
+        "block_type": 13,
+        "children": [
+          "Q1FRd3X8cobd7IxWRf4cmxP5nAe",
+          "RkYvdYo80oZdvHxunhpcqVGUnJi"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create a bucket",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page, enter your bucket information. After each of the following steps, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Continue",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to proceed to the next step:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "Q1FRd3X8cobd7IxWRf4cmxP5nAe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Get started",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section, enter a globally unique name that meets the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket name requirements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fstorage%2Fdocs%2Fbuckets%23naming"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Remember your bucket name as you will need to enter the name in the Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "L0ESdtxjEocR94xF2JrcT5qTnqg"
+      },
+      {
+        "block_id": "RkYvdYo80oZdvHxunhpcqVGUnJi",
+        "block_type": 13,
+        "children": [
+          "NHj6deB76opLVWxoXcBc6tkFnbg",
+          "OB3gdG7Vjo8fbwxdqu8cRq1pnah"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Choose where to store your data",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "L0ESdtxjEocR94xF2JrcT5qTnqg"
+      },
+      {
+        "block_id": "NHj6deB76opLVWxoXcBc6tkFnbg",
+        "block_type": 13,
+        "comment_ids": [
+          "7538733431699111955"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Select the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Location type",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538733431699111955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fstorage%2Fdocs%2Flocations"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Do not choose the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538733431699111955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Multi-region",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7538733431699111955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538733431699111955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dual-region",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7538733431699111955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " option.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538733431699111955"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "RkYvdYo80oZdvHxunhpcqVGUnJi"
+      },
+      {
+        "block_id": "OB3gdG7Vjo8fbwxdqu8cRq1pnah",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Then, select the region where you want to create the bucket. The location you select must be the same as the cloud region where your Zilliz Cloud cluster resides.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "RkYvdYo80oZdvHxunhpcqVGUnJi"
+      },
+      {
+        "block_id": "F8LbdhvqjoBLuExaLi1ca91yngh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "CS8Odh0Q8oQy1WxDCbmc8UQanxb",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UP8GdVIBqozPZyxIM6DcCJPBnRe",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the bucket is created, go back to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.zilliz.com%2Flogin"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and do the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RqDtdpeNiocRRJxsDk5cMcw1njd",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cme0rnexv02mng56joiwb4wrg\" title=\"Step 3: Create a bucket in Google Admin console (2)\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RGAmdJ6wCokeoHx0MvrcJm1bn7e",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LGFWdp7FGona2IxtQyvckRobnIh",
+        "block_type": 13,
+        "children": [
+          "UisgdHHTsoFmqDxQxqScEMrbnaf",
+          "YAqgdHmwFocZZFxYmJbc30uanEd"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add Google Cloud Storage Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " dialog box, proceed to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Step 3 - Create Google Cloud Storage Bucket",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "UisgdHHTsoFmqDxQxqScEMrbnaf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Cluster Region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", select the cloud region of your Zilliz Cloud cluster. This region must be the same as the region where your bucket is created.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "LGFWdp7FGona2IxtQyvckRobnIh"
+      },
+      {
+        "block_id": "YAqgdHmwFocZZFxYmJbc30uanEd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Bucket Name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", enter the name of the bucket you created.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "LGFWdp7FGona2IxtQyvckRobnIh"
+      },
+      {
+        "block_id": "LXXTdGJYLo81acxzeMZc6ximnJh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Then, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Next",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "QM1DdQcAcoMRsIxMf3TcPqwUnrd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After, copy the Google Cloud Service Account from Zilliz Cloud console. It will be required when granting access to the bucket in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Step 4",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FINoRwFTjfiindPkaNlwc9XAgnkh%23VR3gdANM2oulozx4vGecl97Cn6f"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "OLtgd0AuAoVBbyx7Br8cqWCcnig",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VR3gdANM2oulozx4vGecl97Cn6f",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 4: Grant access to bucket in Google Admin console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "OatJdCsLBoVxStxJDRMcdyM3nPh",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cme0s7wmr02phg56jw9hix3q1\" title=\"Step 4: Grant access to bucket in Google Admin console\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DuXsdpsAZoUBeRxbxezcRKeTnqs",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VJl5dCfwkoxhwcxi6YYcikYrnof",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Admin console",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fconsole.cloud.google.com%2Fstorage%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", go to the details page of the bucket you created in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Step 3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FINoRwFTjfiindPkaNlwc9XAgnkh%23QYESd0c90oMV1GxKSHVcnE2wnIc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "N05rdKu7AozLRUxengIcb8K3nDh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " tab, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Grant access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "LVkzdz8pwoM8F2x6moUcReKCnJb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add principals",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " area, paste the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Service Account",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " you get from Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "ScFbdKXm1oJr69xoaA3cyhCRnyh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Assign roles",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " area, select the role you created in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Step 2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FINoRwFTjfiindPkaNlwc9XAgnkh%23G8h8dOtJPoAGMjxfdqBcLtHxnif"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "LKlAdurzkomlZqxq41jctuqFnbe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Save",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "Ks2VdOQ8Eop4rlxXlqHcHqIvnfe",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JS35dxTKWoZ0z1xVHSrcOCUynce",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 5: Validate and add integration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "FA34dSnKTolK2FxtE8bc1SKznX6",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cme0siceh02thg56jeh3wlbgw\" title=\"Step 5: Validate and add integration\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EIM6d2y4bofDVgxohIscHrxknYc",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you grant access to the bucket, go back to the Zilliz Cloud console and do the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nq0LdxOZJo2VQOxAmCpc2muWnjg",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TH4QdydhJo6bvPxsus6cAUnynMT",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Validate Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to verify that the container and role assignment settings are valid.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "Kfz0dm60Ko8RimxsK6hcE0wsn1b",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once validation is successful, click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to finalize the integration.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "EwkBdy2ncoPrVbxxm39cBe6vnoc",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H2yydPbaaoJZfTxyTH3cMmVOnQe",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your Google Cloud Storage is now integrated with Zilliz Cloud for exporting audit logs or backup files. For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Audit Logging",
+                "token": "M5dXwsGOOiPdAjkWLZUc2Pxonuh",
+                "url": "https://zilliverse.feishu.cn/wiki/M5dXwsGOOiPdAjkWLZUc2Pxonuh"
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Export Backup Files",
+                "token": "QUTDwkbTTiA2UlkWYDlc796ensf",
+                "url": "https://zilliverse.feishu.cn/wiki/QUTDwkbTTiA2UlkWYDlc796ensf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UDE4d50dUo6mDYxxNryc12tNnve",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage integrations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "QL2sdta4ooR5cuxGDOYcwr0WnMf",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the integration is added, you can view its details or remove the integration as needed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ot8TdwF4XoyReCxYIQUch1k0nme",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1138,
+          "scale": 1,
+          "token": "FKLYbB02LoDDA9xENiYccBTun5e",
+          "width": 3342
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "SzlPdSGy0owsAgxArsYc2YbWnvd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "UZRVdLQHTonAvKxQcggc9IdSnhf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why do I get a \"bucket region not match\" error during validation?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "VEmRdfcEcouEuXxEoVZcIXxSnng",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This error can happen for two reasons:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NBeXd3XBFo1Xu5xk2omcsH7an3e",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You selected ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Multi-region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dual-region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Location type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for your bucket. Zilliz Cloud only supports single ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " buckets.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "ISCOddivIoJZmMxbwNBcsTwLnIg",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You selected ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Region",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Location type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", but the chosen region does not exactly match your Zilliz Cloud cluster’s region.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb"
+      },
+      {
+        "block_id": "SWyndbu9CodnLBxVZtWcQd09nZd",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For example, if your Zilliz Cloud cluster is in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "us-east1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you must create the bucket in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "us-east1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " region—not in Multi-region \"United States\", and not in a different Region like ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "us-west1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P9IBdyClXoKEgMxeWO0cL6iinvd",
+        "block_type": 2,
+        "parent_id": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your bucket was created with the wrong ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Location type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or region, delete it and recreate it with the correct single Region setting.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GV79dp6sao2n23xNUwFcZoyHn1d",
+        "block_type": 19,
+        "callout": {
+          "background_color": 1,
+          "border_color": 1,
+          "emoji_id": "book"
+        },
+        "children": [
+          "PZpedWCASo5kj6xxFp5cfKranoh",
+          "OtDFdwx6Aoam3Gx689fcLmfenkf"
+        ],
+        "parent_id": "NwYpdWHlTsZCUlbiUBCc8mWDnde"
+      },
+      {
+        "block_id": "PZpedWCASo5kj6xxFp5cfKranoh",
+        "block_type": 2,
+        "parent_id": "GV79dp6sao2n23xNUwFcZoyHn1d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OtDFdwx6Aoam3Gx689fcLmfenkf",
+        "block_type": 2,
+        "parent_id": "GV79dp6sao2n23xNUwFcZoyHn1d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is available only to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " clusters in an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enterprise",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 83
+  }
+}

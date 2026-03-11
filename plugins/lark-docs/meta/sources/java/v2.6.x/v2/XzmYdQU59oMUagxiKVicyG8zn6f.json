@@ -1,0 +1,118 @@
+{
+  "created_time": "1769156088",
+  "modified_time": "1769156268",
+  "name": "Highlighter",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "XauNfur7plRj0fduVP7czB7knBb",
+  "token": "XzmYdQU59oMUagxiKVicyG8zn6f",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/XzmYdQU59oMUagxiKVicyG8zn6f",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "XzmYdQU59oMUagxiKVicyG8zn6f",
+        "block_type": 1,
+        "children": [
+          "LhEZdpHEVo1maVxFKOwc82wvnFh",
+          "LhnKdt1Vuoj6pJxcRfwcYgiGnjb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Highlighter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "LhEZdpHEVo1maVxFKOwc82wvnFh",
+        "block_type": 2,
+        "parent_id": "XzmYdQU59oMUagxiKVicyG8zn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Highlighter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance configures post-processing term highlighting for text fields in search results. There are two types of highlighters, namely lexical highlighters and semantic highlighters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LhnKdt1Vuoj6pJxcRfwcYgiGnjb",
+        "block_type": 2,
+        "parent_id": "XzmYdQU59oMUagxiKVicyG8zn6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 3
+  },
+  "slug": "v2-Vector-Highlighter"
+}

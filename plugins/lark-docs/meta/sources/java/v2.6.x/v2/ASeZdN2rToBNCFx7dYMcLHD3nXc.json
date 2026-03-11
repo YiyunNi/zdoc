@@ -1,0 +1,1030 @@
+{
+  "created_time": "1747291260",
+  "modified_time": "1747368391",
+  "name": "checkHealth()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "ALDZfPYy3lNm8ZdotPecBX7rnNd",
+  "token": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/ASeZdN2rToBNCFx7dYMcLHD3nXc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "block_type": 1,
+        "children": [
+          "JMdYdNVIgoPvwYx9Wj7cuEcMnrR",
+          "IDaNdWj4HomHNPxJDKFcvq9KnGb",
+          "XnV5dMBb9o2xVexhi1OcPkYznme",
+          "LfUndHLKDoEmoNxGJ0Hcwv7CnHb",
+          "GkX3d4Mo3o7OSPx4Cctcyn3FnQS",
+          "TxEcd67JHoYUSjxTuSrcFiLRn8d",
+          "Udvcdb19dorUCDxL6fPckt0Mnyb",
+          "RfDodPRFxoMFamxWdJ8cegOKnmg",
+          "WgUid2u3EoE5G9x9UYncOJirnIh",
+          "Gq8Ldfv1RoZBuxxOEtJcFyunnod",
+          "JTPMdPTaLoTNiJxjGBqc4a6RnWb",
+          "GpasdIPFgoUkMExDYQCcdfq7nRe",
+          "Ax5RduGnDotlnHx3uyPcqaQBnVg",
+          "Q6JUdjyu4oMyBRxU0dYc23L2nse",
+          "RGrmdVdS3onszdxdmsxcmmfUnzy",
+          "XkDWdaewsos1STxw4nycar7Pnth",
+          "Pk01dWD6QoCBFWxgGZockHDZnMb",
+          "BHk6dvYrUoINfEx8K2zcGvWEn9g"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "checkHealth()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "JMdYdNVIgoPvwYx9Wj7cuEcMnrR",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation checks the health condition of the current Milvus instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IDaNdWj4HomHNPxJDKFcvq9KnGb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public CheckHealthResp checkHealth()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "XnV5dMBb9o2xVexhi1OcPkYznme",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "LfUndHLKDoEmoNxGJ0Hcwv7CnHb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CheckHealthResp()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "GkX3d4Mo3o7OSPx4Cctcyn3FnQS",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TxEcd67JHoYUSjxTuSrcFiLRn8d",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Udvcdb19dorUCDxL6fPckt0Mnyb",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RfDodPRFxoMFamxWdJ8cegOKnmg",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CheckHealthResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WgUid2u3EoE5G9x9UYncOJirnIh",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gq8Ldfv1RoZBuxxOEtJcFyunnod",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CheckHealthResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object that contains detailed information about the current Milvus instance. The object has the following fields:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JTPMdPTaLoTNiJxjGBqc4a6RnWb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "isHealthy",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Boolean",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Dl2mdKI48oU7UQxsKPCcU016nZg"
+        ],
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "Dl2mdKI48oU7UQxsKPCcU016nZg",
+        "block_type": 2,
+        "parent_id": "JTPMdPTaLoTNiJxjGBqc4a6RnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether the current Milvus instance is in a healthy state.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GpasdIPFgoUkMExDYQCcdfq7nRe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "reasons",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<String>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KjXvdMyYQokRp2xmCgocWu9lnpb"
+        ],
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "KjXvdMyYQokRp2xmCgocWu9lnpb",
+        "block_type": 2,
+        "parent_id": "GpasdIPFgoUkMExDYQCcdfq7nRe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Return t",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "he ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "unhealthy reasons if the server is in an unhealthy state",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ax5RduGnDotlnHx3uyPcqaQBnVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "quotaStates",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<String>",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HEZzd3MnCoG2DGxYnzec777YnEh"
+        ],
+        "comment_ids": [
+          "7504574863030927379"
+        ],
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "HEZzd3MnCoG2DGxYnzec777YnEh",
+        "block_type": 2,
+        "comment_ids": [
+          "7504574863030927379"
+        ],
+        "parent_id": "Ax5RduGnDotlnHx3uyPcqaQBnVg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "names of unhealthy states. The following names could be in the list: \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ReadLimited",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\", \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "WriteLimited",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\", \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DenyToRead",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\", \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DenyToWrite",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\", \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DenyToDDL",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574863030927379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q6JUdjyu4oMyBRxU0dYc23L2nse",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RGrmdVdS3onszdxdmsxcmmfUnzy",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HV78dpSu9oAAUqxIo0OcFKdgnff"
+        ],
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "HV78dpSu9oAAUqxIo0OcFKdgnff",
+        "block_type": 2,
+        "parent_id": "RGrmdVdS3onszdxdmsxcmmfUnzy",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XkDWdaewsos1STxw4nycar7Pnth",
+        "block_type": 4,
+        "comment_ids": [
+          "7504574904310857747"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504574904310857747"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "Pk01dWD6QoCBFWxgGZockHDZnMb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.utility.response.CheckHealthResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Check healthy\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CheckHealthResp healthyResp = client.checkHealth();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc"
+      },
+      {
+        "block_id": "BHk6dvYrUoINfEx8K2zcGvWEn9g",
+        "block_type": 2,
+        "parent_id": "ASeZdN2rToBNCFx7dYMcLHD3nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 23
+  },
+  "slug": "v2-Management-checkHealth"
+}

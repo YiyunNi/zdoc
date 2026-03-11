@@ -1,0 +1,1395 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1714116414",
+  "node_token": "LNuqwIPPai9GUYk5U4ccAQhQn1b",
+  "node_type": "origin",
+  "obj_create_time": "1714116414",
+  "obj_edit_time": "1737797558",
+  "obj_token": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+  "obj_type": "docx",
+  "origin_node_token": "LNuqwIPPai9GUYk5U4ccAQhQn1b",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "TS2SwawqwiQ9Iek7p2LcdAHKnKg",
+  "space_id": "7167193056431783939",
+  "title": "Estimate Pipeline Usage",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "block_type": 1,
+        "children": [
+          "OZEjdUwWZocaALxjJMJcZ0WinMc",
+          "NdJUdN3v9oujCUxwspIcQnManPg",
+          "XWbad4iv4o5dGOxf47rc6Qwunah",
+          "TmHRdP0fzozroXxYnWFcyXtUnRE",
+          "PWkWd1s63o0pyHxgesZcWYALnbf",
+          "I6sJdfez4oPCodxWoTAcP5QLnAf",
+          "JfhCdScuyoazjtxS8FKcyL2Tnzf",
+          "YFund2MUooFVjIxZE0scJyt6nSg",
+          "DccWd3gO3ow2RwxOpXCc4DJsnkd",
+          "I761dnKZUoSdNQxwf1Icg6PMn1d",
+          "UTnQdTpSCoxiKzxGc91chpmBnhf",
+          "EXYFdSPmBodelFxgo6UceReCn8b",
+          "QOqRdWUZNoouKExhocachD2Cnkg",
+          "TiLAdplOLoIojoxnWnUczpV7n9e",
+          "Y1HLd0mSDo4kFqx5MchcSfcYnCd",
+          "FuXWdFsi6oVlZGxoVCxcNmB1nbf",
+          "PaPndW2UAorfUlxeWfBch9Btn4e",
+          "F0vLdyfSmoFgfAxHLHycLZOrn7e",
+          "Kh4HdfZQEo7phWxtzzCc1NaYnug",
+          "JEotdbH8eogutoxuhClcpvEqnMb",
+          "FR46dFouuoTQRIxgcjzcAN1rnvd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Estimate Pipeline Usage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "OZEjdUwWZocaALxjJMJcZ0WinMc",
+        "block_type": 2,
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The cost of running pipelines is measured by tokens. Similar to Large Language Model (LLM) that uses token as a basic unit, pipelines process documents and search queries by parsing and embedding the text as a series of tokens. To understand the cost of a pipeline run, you can use our Estimate Pipeline Usage tool to count tokens of a file or a text string. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NdJUdN3v9oujCUxwspIcQnManPg",
+        "block_type": 34,
+        "children": [
+          "E05LdBLGNoPcvPxUBFBcBTkOn4b",
+          "AzaSdVlT6oMNFCxyCDDcjwFZn5f",
+          "ST0rdseoKoACSPxcDJscnHIvnEc"
+        ],
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "quote_container": {}
+      },
+      {
+        "block_id": "E05LdBLGNoPcvPxUBFBcBTkOn4b",
+        "block_type": 2,
+        "parent_id": "NdJUdN3v9oujCUxwspIcQnManPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AzaSdVlT6oMNFCxyCDDcjwFZn5f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines will be discontinued by the end of Q2 2025 and replaced by a new feature, “Data In, Data Out,” to streamline embedding generation in both Milvus and Zilliz Cloud. As of December 24, 2024, new user registrations are no longer accepted. Current users can continue using the service within the $20 monthly free allowance until the sunset date; however, no SLA is provided. Please consider using embedding APIs from model providers or open-source models to generate vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NdJUdN3v9oujCUxwspIcQnManPg"
+      },
+      {
+        "block_id": "ST0rdseoKoACSPxcDJscnHIvnEc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This tool uses a Byte-Pair Encoding (BPE) tokenizer and the estimated usage may vary by 30% based on different processing strategy. Therefore, you should only use the estimated usage as a reference. For actual usage, please refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Pipelines list",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FZSPVwfZyTilSfKkuVxWcCG58nzb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NdJUdN3v9oujCUxwspIcQnManPg"
+      },
+      {
+        "block_id": "XWbad4iv4o5dGOxf47rc6Qwunah",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "What are tokens?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "TmHRdP0fzozroXxYnWFcyXtUnRE",
+        "block_type": 2,
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Token is a special concept in NLP. It can be thought of as a sub-word. Some word is a token itself, while some longer words may contain multiple tokens. Token is also language dependent. As a rule of thumb, on average:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PWkWd1s63o0pyHxgesZcWYALnbf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 token is 3 to 4 English characters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "I6sJdfez4oPCodxWoTAcP5QLnAf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 token is 1.12 Chinese characters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "JfhCdScuyoazjtxS8FKcyL2Tnzf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 English word contains 1.3 tokens",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "YFund2MUooFVjIxZE0scJyt6nSg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "How is the token processed by Pipelines?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "DccWd3gO3ow2RwxOpXCc4DJsnkd",
+        "block_type": 2,
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ingestion Pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " processes documents by parsing files into tokens and then splitting and embedding the token series. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Search Pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " processes the query by embedding the token series. By passing the tokens to a deep learning model (called embedding model), the \"essence\" of the text is converted into a vector representation, which can be stored in and retrieved by a vector database. With the help of this process, Pipelines is able to help the API users to understand the meaning and semantics of different words and their context within a sentence or text.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I761dnKZUoSdNQxwf1Icg6PMn1d",
+        "block_type": 2,
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deletion",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Pipelines usually doesn't involve processing text as tokens.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UTnQdTpSCoxiKzxGc91chpmBnhf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Estimate Pipelines Usage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "EXYFdSPmBodelFxgo6UceReCn8b",
+        "block_type": 2,
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To help easily understand the cost implication of any pipeline run, we offer a web UI tool that can estimate the token of a file or text string. You can use this tool to estimate cost before running a pipeline.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QOqRdWUZNoouKExhocachD2Cnkg",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D26923-1143%26mode%3Ddesign%26t%3DUcjs4oYkYMEsBCr5-4"
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "TiLAdplOLoIojoxnWnUczpV7n9e",
+        "block_type": 13,
+        "children": [
+          "XCrcdtMb1oxQZ2xifTCc1lGFnAg",
+          "F2q3dYcNRoy02qx9bwfcEspHnVc"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Input",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "XCrcdtMb1oxQZ2xifTCc1lGFnAg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An Ingestion pipeline takes a file as input. You can directly upload a local file or use a file from object storage to estimate the usage of an Ingestion pipeline run.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TYZrdmeAMozFDgxFK2tcr28Unng",
+          "R8H2dSxCjoJ2mCxhYb9cSjyenkg"
+        ],
+        "parent_id": "TiLAdplOLoIojoxnWnUczpV7n9e"
+      },
+      {
+        "block_id": "TYZrdmeAMozFDgxFK2tcr28Unng",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upload a local file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZbPtdvQ5QovkiLxjfEBceeponSc"
+        ],
+        "parent_id": "XCrcdtMb1oxQZ2xifTCc1lGFnAg"
+      },
+      {
+        "block_id": "ZbPtdvQ5QovkiLxjfEBceeponSc",
+        "block_type": 2,
+        "parent_id": "TYZrdmeAMozFDgxFK2tcr28Unng",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upload a local file of no more than 10 MB. Supported file formats include ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".txt",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".pdf",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".md",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".html",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".epub",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".csv",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".doc",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " .docx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".xls",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".xlsx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".ppt",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".pptx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R8H2dSxCjoJ2mCxhYb9cSjyenkg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import a file from object storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "O1XSd06JgoZTQ0xB5RqcCwChnZg"
+        ],
+        "parent_id": "XCrcdtMb1oxQZ2xifTCc1lGFnAg"
+      },
+      {
+        "block_id": "O1XSd06JgoZTQ0xB5RqcCwChnZg",
+        "block_type": 2,
+        "parent_id": "R8H2dSxCjoJ2mCxhYb9cSjyenkg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Provide the public or pre-signed URLs on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS S3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2FAmazonS3%2Flatest%2Fuserguide%2FShareObjectPreSignedURL.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GCS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fstorage%2Fdocs%2Faccess-control%2Fsigned-urls"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Enter one URL each time.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F2q3dYcNRoy02qx9bwfcEspHnVc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A Search pipeline takes a query string as input. You can directly input a text string to estimate the usage of a Search pipeline run.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ctpkd5G5Io0Z5fxNeuVcoxQfnkg",
+          "AmJ8dlgzcoi4qZxBrTicCxdvnxm"
+        ],
+        "parent_id": "TiLAdplOLoIojoxnWnUczpV7n9e"
+      },
+      {
+        "block_id": "Ctpkd5G5Io0Z5fxNeuVcoxQfnkg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Directly input the text for tokenization in the input box. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F2q3dYcNRoy02qx9bwfcEspHnVc"
+      },
+      {
+        "block_id": "AmJ8dlgzcoi4qZxBrTicCxdvnxm",
+        "block_type": 34,
+        "children": [
+          "J1UId3yk8oDkVjxRw2TcBVDIn7c",
+          "Xn9qd27AwowPrBxKHHBcQnGjn5c"
+        ],
+        "parent_id": "F2q3dYcNRoy02qx9bwfcEspHnVc",
+        "quote_container": {}
+      },
+      {
+        "block_id": "J1UId3yk8oDkVjxRw2TcBVDIn7c",
+        "block_type": 2,
+        "parent_id": "AmJ8dlgzcoi4qZxBrTicCxdvnxm",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xn9qd27AwowPrBxKHHBcQnGjn5c",
+        "block_type": 2,
+        "parent_id": "AmJ8dlgzcoi4qZxBrTicCxdvnxm",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can only input a maximum of 100,000 characters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y1HLd0mSDo4kFqx5MchcSfcYnCd",
+        "block_type": 13,
+        "children": [
+          "UX11dWGfYoSRttxSQPPc3nbdnVe"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Calculate",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "UX11dWGfYoSRttxSQPPc3nbdnVe",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D26909-1156%26mode%3Ddesign%26t%3DBTFDAlG4P6AO6hnZ-4"
+          }
+        },
+        "parent_id": "Y1HLd0mSDo4kFqx5MchcSfcYnCd"
+      },
+      {
+        "block_id": "FuXWdFsi6oVlZGxoVCxcNmB1nbf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Check the estimated token count of your file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "PaPndW2UAorfUlxeWfBch9Btn4e",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Reset",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to upload another local file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "F0vLdyfSmoFgfAxHLHycLZOrn7e",
+        "block_type": 2,
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kh4HdfZQEo7phWxtzzCc1NaYnug",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Related topics",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "JEotdbH8eogutoxuhClcpvEqnMb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Zilliz Cloud Limits",
+                "token": "PuxkwMWvbiHxvTkHsVkcMZP9n5f",
+                "url": "https://zilliverse.feishu.cn/wiki/PuxkwMWvbiHxvTkHsVkcMZP9n5f#HiXpd49EYoUuO2xqZGdc24nTnfN"
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      },
+      {
+        "block_id": "FR46dFouuoTQRIxgcjzcAN1rnvd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Ffaq-pipelines"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YHYAdOpGroLFHFx8qPdcOE95ntc"
+      }
+    ],
+    "counts": 36
+  }
+}

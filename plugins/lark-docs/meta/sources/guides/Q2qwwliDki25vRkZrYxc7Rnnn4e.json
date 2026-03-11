@@ -1,0 +1,3376 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1753079784",
+  "node_token": "Q2qwwliDki25vRkZrYxc7Rnnn4e",
+  "node_type": "origin",
+  "obj_create_time": "1753079784",
+  "obj_edit_time": "1763627816",
+  "obj_token": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+  "obj_type": "docx",
+  "origin_node_token": "Q2qwwliDki25vRkZrYxc7Rnnn4e",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "MC6xw7oHkimmnQkigODc5wjynwf",
+  "space_id": "7167193056431783939",
+  "title": "Merge Data",
+  "slug": "merge-data",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "block_type": 1,
+        "children": [
+          "Oee3dTvyjoz3wcxHDsCcTJEAnof",
+          "HbVDdBpVCoR7o7x396IcuWvYnKH",
+          "RPpJdOhlvoznTVxEThucNQlOnms",
+          "XzNVdZD6SoghWOxOUvLcksUTnTb",
+          "VylEdU0RIooriixM05icoPShnO2",
+          "OCXrdknaLoiwhrxQD23c7qvXnad",
+          "GtX7dFrA5oSNqDxztm9c1Z67nxe",
+          "ECIldHca2onYC4xmF45cuEJ2nDT",
+          "SfbqdxzjKoiyfUxMsxFc7dBNnIg",
+          "GcrAdVM0oofeoTxBMbwcHLjRn7c",
+          "HCdTdPwMFoWezwx01ARcrsbnnce",
+          "I2Gydprejo1DJtxmVndcxAJpn5e",
+          "Ib8qd6unHoT0Anxt6qTcr0H6n6f",
+          "CAcxdwxy5oyX5Fxg4nqchmi3nFb",
+          "E1t6dVbYtoQkeIxYbxPcihiYnFb",
+          "Ba1ydLHy5oPTnPx3V2Qcz7U8nac",
+          "LgpQdJbrgoDABwxA0Ydc5rPOnBh",
+          "OW11d6PbkovLnPx9BCRckJEHnhb",
+          "Mnn9dg7awoUAZsxv5N2ctp7Knhg",
+          "FuWwdjhceouSIKxVcmqcllzvnLg",
+          "O202d6IxPoOO8pxq9adcEzDZnPc",
+          "KBKHd3sRgo71znxnZ07cilUJnOf",
+          "BGGid6ImPoNuljx7hbPcet5ynSb",
+          "SgkhdZu0noyP8ixc6fmcIQXDnlc",
+          "EBthdJxmKoCD9qxOX2ZcA5p4nNd",
+          "YRbHdmVOvobRAYxl85GcfSkunwd",
+          "R0RVdYPkdoyMHlxeiKuc3yMMnif",
+          "DuxTdVABQosChOxffSactZ4xnd7",
+          "HR5idYjadoB38mxf9nMcFnnunHb",
+          "Iki0dOWhxoe1eVxvddhci5Mknvg",
+          "FC6Zdm4XooXnbhxoLXncYHNRnzd",
+          "UxFgdyGXDoaFY4xaKDVcz9p7nYb",
+          "ACHmdCENYoJE4rx9D5zcje9tnHb",
+          "AJYpdCvmKo1H7fxyrQZcl1TKnKa",
+          "CCRDd5Uk2onSrMxrauTcrrw5n4b",
+          "ZxZLd5diEonRF2xJVREc398mnTh",
+          "GH9LdcjxwoiGwPxUVr4cxrmJnEg",
+          "IVZzdxccJoX52MxNKwqctTz3nvb",
+          "HU5BdaOuao4tvqxFEnMcq1Otnrg",
+          "ZXL4dDkTAomvkFxnpZjcVuDsnif",
+          "T5mCdnPu7oKehMxGWQrcpNhpnSy",
+          "XcaZd1mhCozGntxsz5Gcya8Hnff",
+          "KUFFdkvsvoP4aqxdrsmcXPt5nAc",
+          "OmJxducq2oLwsQxx0Pzco4jknqf",
+          "LYEDdxeCKoFVjwxhKusc6lfAnjU",
+          "MomfdgGudowBBUxhqr9cMtHdnXb",
+          "Na34d1vspo8TU7xznlgcthuznad"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Merge Data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Oee3dTvyjoz3wcxHDsCcTJEAnof",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can merge data from an existing Zilliz Cloud collection with data from a local file or an external object storage bucket to create a collection that combines data from both sources. This is referred to as a data merging operation, and you can use it as a workaround to add fields with data to an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HbVDdBpVCoR7o7x396IcuWvYnKH",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "RwDLdPSFgo1XH7xmqGLcMLG3nIg",
+          "WSH8dBKJ5oUIEsx8y9OcxDzSnSf",
+          "Ru5udlYvKolmbexVMl8ciMgqnve",
+          "TUALdbXpdoZgjzxmJ9hcTx04nrh",
+          "E83UdPOqvoeJEsxkFRNch5nYnlD"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "RwDLdPSFgo1XH7xmqGLcMLG3nIg",
+        "block_type": 2,
+        "parent_id": "HbVDdBpVCoR7o7x396IcuWvYnKH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WSH8dBKJ5oUIEsx8y9OcxDzSnSf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is currently in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PRIVATE PREVIEW",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". If you are interested in this feature and want to have a try, please do not hesitate to contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HbVDdBpVCoR7o7x396IcuWvYnKH"
+      },
+      {
+        "block_id": "Ru5udlYvKolmbexVMl8ciMgqnve",
+        "block_type": 2,
+        "parent_id": "HbVDdBpVCoR7o7x396IcuWvYnKH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"indev\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TUALdbXpdoZgjzxmJ9hcTx04nrh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data merging operation differs from what has been described in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Add Fields to an Existing Collection",
+                "token": "UR9SwucAIiQ2TYkc9EucsgvSnng",
+                "url": "https://zilliverse.feishu.cn/wiki/UR9SwucAIiQ2TYkc9EucsgvSnng"
+              }
+            },
+            {
+              "text_run": {
+                "content": ". If you only want to add a field to a collection, optionally with the default value, you should call the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "add_collection_field()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " method instead of what is described below.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HbVDdBpVCoR7o7x396IcuWvYnKH"
+      },
+      {
+        "block_id": "E83UdPOqvoeJEsxkFRNch5nYnlD",
+        "block_type": 2,
+        "parent_id": "HbVDdBpVCoR7o7x396IcuWvYnKH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RPpJdOhlvoznTVxEThucNQlOnms",
+        "block_type": 4,
+        "comment_ids": [
+          "7543162473072410627"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7543162473072410627"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "XzNVdZD6SoghWOxOUvLcksUTnTb",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data merging operation is similar to a LEFT JOIN operation in relational databases, which combines data from a collection and all matching records from the specified data source, storing the merged data in a new collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VylEdU0RIooriixM05icoPShnO2",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data source should be a set of PARQUET files stored either in a Zilliz Cloud ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or an object storage bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OCXrdknaLoiwhrxQD23c7qvXnad",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As shown in the following diagram, there is a collection containing three fields, with the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field serving as the primary key. Additionally, there is a PARQUET file with two fields, named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "date",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field acts as the merge key, and its value should match those in the source collection. The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "date",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field is the field to be added. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GtX7dFrA5oSNqDxztm9c1Z67nxe",
+        "block_type": 43,
+        "board": {
+          "token": "Gfduwu9hGh8CGkbcJ1JccREunRf"
+        },
+        "comment_ids": [
+          "7543164701938139140"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "ECIldHca2onYC4xmF45cuEJ2nDT",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you upload the PARQUET file to a Zilliz Cloud ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or an object storage bucket, you can use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Merge Data API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fmerge-data-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to create a target collection that stores data from both sources.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SfbqdxzjKoiyfUxMsxFc7dBNnIg",
+        "block_type": 2,
+        "comment_ids": [
+          "7543162971777040388"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data source is optional. You can also use the Merge Data API without specifying the data source as a workaround to add fields to an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7543162971777040388"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GcrAdVM0oofeoTxBMbwcHLjRn7c",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This guide will demonstrate how to use the Merge Data API to add fields with and without data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HCdTdPwMFoWezwx01ARcrsbnnce",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Add fields with data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "I2Gydprejo1DJtxmVndcxAJpn5e",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To add fields with data, you need to provide the source collection, the data source, and the new fields to be added to the target collection. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ib8qd6unHoT0Anxt6qTcr0H6n6f",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data source should be a set of PARQUET file either in a Zilliz Cloud ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or an AWS S3 bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CAcxdwxy5oyX5Fxg4nqchmi3nFb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "E1t6dVbYtoQkeIxYbxPcihiYnFb",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To perform a data merging operation using a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you first create a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and upload the data from the local file system into it. Once that is done, you can perform a data merge operation to create a new collection that combines the data from both the existing collection and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ba1ydLHy5oPTnPx3V2Qcz7U8nac",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following code snippet demonstrates how to perform the data merging operation using a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For details on how to create a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and upload data to it, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Stages",
+                "token": "VCL7wmP6oieCkJkHEcicCsKQnxc",
+                "url": "https://zilliverse.feishu.cn/wiki/VCL7wmP6oieCkJkHEcicCsKQnxc"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LgpQdJbrgoDABwxA0Ydc5rPOnBh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export BASE_URL=\"https://api.cloud.zilliz.com\"\nexport TOKEN=\"YOUR_API_KEY\"\n\ncurl --request POST \\\n--url \"${BASE_URL}/v2/etl/merge\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"clusterId\": \"in00-xxxxxxxxxxxxxxx\",\n    \"dbName\": \"my_database\",\n    \"collectionName\": \"my_collection\",\n    \"destDbName\": \"my_database\",\n    \"destCollectionName\": \"my_merged_collection\",\n    \"dataSource\": {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"type\": \"volume\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317541032804355"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"volumeName\": \"my_volume\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317541032804355"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n        \"dataPath\": \"path/to/your/parquet.parquet\"\n    },\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"mergeField\": \"id\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7530629684112343044"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    \"newFields\": [\n        {\n            \"fieldName\": \"date\",\n            \"dataType\": \"VARCHAR\",\n            \"params\": {\n                \"maxLength\": 10\n            }\n        }\n    ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7574317541032804355",
+          "7530629684112343044"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "OW11d6PbkovLnPx9BCRckJEHnhb",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before running the above command, there are several fields that you may need to pay attention to:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mnn9dg7awoUAZsxv5N2ctp7Knhg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dbName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collectionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "X2wHd7EgIo633Xxh6XHcD1cCnFc"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "X2wHd7EgIo633Xxh6XHcD1cCnFc",
+        "block_type": 2,
+        "parent_id": "Mnn9dg7awoUAZsxv5N2ctp7Knhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "These two parameters determine the source collection of the data merging operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FuWwdjhceouSIKxVcmqcllzvnLg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "destDbName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "destCollectionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "X6USdrernoG42Fx6jlvc3CCPnfd"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "X6USdrernoG42Fx6jlvc3CCPnfd",
+        "block_type": 2,
+        "parent_id": "FuWwdjhceouSIKxVcmqcllzvnLg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "These two parameters determine the target collection that will be generated after the data merging operation. The target collection should be in the same cluster as the source collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O202d6IxPoOO8pxq9adcEzDZnPc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dataSource",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "IgaZd4XWIolr1AxqZgscWfMynEc",
+          "VrQOdaYAHo2ZRbxxklrcJjGVnlb",
+          "LLsWdEfftoHZzrxF6P7cp8DznAn"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "IgaZd4XWIolr1AxqZgscWfMynEc",
+        "block_type": 2,
+        "parent_id": "O202d6IxPoOO8pxq9adcEzDZnPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This parameter is optional and includes the data source settings, such as the data source type and the path to the Parquet file that contains column-wise data, which will be merged with data from the source collection and stored in the target collection. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VrQOdaYAHo2ZRbxxklrcJjGVnlb",
+        "block_type": 2,
+        "comment_ids": [
+          "7574317480580058042"
+        ],
+        "parent_id": "O202d6IxPoOO8pxq9adcEzDZnPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When using a ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the intermediate storage spot, you need to set ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volumeName",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dataPath",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " after setting ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "type",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7574317480580058042"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LLsWdEfftoHZzrxF6P7cp8DznAn",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "PH8ed1LhVoxiHPxGAwycHjg5nlh",
+          "MbA0doSUcoAmNyxmDNccZntcnKd",
+          "Zc2cdWRtOou6pTxlhNFcrFXpnPf"
+        ],
+        "parent_id": "O202d6IxPoOO8pxq9adcEzDZnPc"
+      },
+      {
+        "block_id": "PH8ed1LhVoxiHPxGAwycHjg5nlh",
+        "block_type": 2,
+        "parent_id": "LLsWdEfftoHZzrxF6P7cp8DznAn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MbA0doSUcoAmNyxmDNccZntcnKd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value of the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dataPath",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter can be an absolute path to a file relative to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "'s root, or a folder within the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that contains multiple Parquet files. If the value points to a folder, ensure that the Parquet files in the folder have the same data structure.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Melld3OKDozFlMxiyHNcIrfbnNf"
+        ],
+        "parent_id": "LLsWdEfftoHZzrxF6P7cp8DznAn"
+      },
+      {
+        "block_id": "Melld3OKDozFlMxiyHNcIrfbnNf",
+        "block_type": 2,
+        "parent_id": "MbA0doSUcoAmNyxmDNccZntcnKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For example, the value could be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "path/to/your/file.parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (file) or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "path/to/your/folder/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (folder).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "Zc2cdWRtOou6pTxlhNFcrFXpnPf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can leave this parameter unspecified if you simply want to add fields without data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "LLsWdEfftoHZzrxF6P7cp8DznAn"
+      },
+      {
+        "block_id": "KBKHd3sRgo71znxnZ07cilUJnOf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "mergeField",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TZvRdWPwMoD62vxkTUbcPUA5nY8"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "TZvRdWPwMoD62vxkTUbcPUA5nY8",
+        "block_type": 2,
+        "parent_id": "KBKHd3sRgo71znxnZ07cilUJnOf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data merging operation is similar to a LEFT JOIN operation in relational database systems, with the merge field serving as the shared key between the source collection and the Parquet file containing column-wise data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BGGid6ImPoNuljx7hbPcet5ynSb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "newFields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AEEQdEVwhoutDMxbTtVc4Eqwn7e"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "AEEQdEVwhoutDMxbTtVc4Eqwn7e",
+        "block_type": 2,
+        "parent_id": "BGGid6ImPoNuljx7hbPcet5ynSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is a list of schemas for the fields to add to the target collection after the data merging operation. Supported data types are VARCHAR, INT8, INT16, INT32, INT64, FLOAT, DOUBLE, and BOOL.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SgkhdZu0noyP8ixc6fmcIQXDnlc",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The above command creates a data merging job and returns its ID. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EBthdJxmKoCD9qxOX2ZcA5p4nNd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"jobId\": \"job-xxxxxxxxxxxxxxxxxxxxx\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "YRbHdmVOvobRAYxl85GcfSkunwd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use object storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "R0RVdYPkdoyMHlxeiKuc3yMMnif",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To perform a data merging operation using an object storage bucket, you first create an object storage bucket and upload the data to it. Once that is done, you can perform a data merge operation to create a new collection that combines the data from both the existing collection and the bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DuxTdVABQosChOxffSactZ4xnd7",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following code snippet demonstrates how to use an object storage bucket to perform a data merging operation. You can refer to the documents of your block storage service provider to learn how to create a bucket and upload data to it.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HR5idYjadoB38mxf9nMcFnnunHb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export BASE_URL=\"https://api.cloud.zilliz.com\"\nexport TOKEN=\"YOUR_API_KEY\"\n\ncurl --request POST \\\n--url \"${BASE_URL}/v2/etl/merge\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"clusterId\": \"in00-xxxxxxxxxxxxxxx\",\n    \"dbName\": \"my_database\",\n    \"collectionName\": \"my_collection\",\n    \"destDbName\": \"my_database\",\n    \"destCollectionName\": \"my_merged_collection\",\n    \"dataSource\": {\n        \"type\": \"s3\",\n        \"dataPath\": \"s3://my_bucket/path/to/your/parquet.parquet\",\n        \"credential\": {\n            \"accessKey\": \"xxxx\",\n            \"secretKey\": \"xxxx\"\n        }\n    },\n    \"mergeField\": \"id\",\n    \"newFields\": [\n        {\n            \"fieldName\": \"date\",\n            \"dataType\": \"VARCHAR\",\n            \"params\": {\n                \"maxLength\": 10\n            }\n        }\n    ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "Iki0dOWhxoe1eVxvddhci5Mknvg",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before running the above command, there are several fields that you may need to pay attention to:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FC6Zdm4XooXnbhxoLXncYHNRnzd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dbName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collectionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CCIpdbXrwobPvNxIMWecLS8gnKf"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "CCIpdbXrwobPvNxIMWecLS8gnKf",
+        "block_type": 2,
+        "parent_id": "FC6Zdm4XooXnbhxoLXncYHNRnzd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "These two parameters determine the source collection of the data merging operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UxFgdyGXDoaFY4xaKDVcz9p7nYb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "destDbName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "destCollectionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "W4TgdxTIHo2vVNxoKFrcClHHn7d"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "W4TgdxTIHo2vVNxoKFrcClHHn7d",
+        "block_type": 2,
+        "parent_id": "UxFgdyGXDoaFY4xaKDVcz9p7nYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "These two parameters determine the target collection that will be generated after the data merging operation. Note that the target collection should be in the same cluster as the source collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ACHmdCENYoJE4rx9D5zcje9tnHb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dataSource",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WG5EdbjLsoy294xR0PpcSVPwnBd",
+          "X2MBdO8Czo8tn4xu0eKc008tnnc",
+          "Pg7HdC3M0o3GU2x5KbNc3u9pnMg"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "WG5EdbjLsoy294xR0PpcSVPwnBd",
+        "block_type": 2,
+        "parent_id": "ACHmdCENYoJE4rx9D5zcje9tnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This parameter is optional and includes the data source settings, such as the data source type and the path to the Parquet file that contains column-wise data, which will be merged with data from the source collection and stored in the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X2MBdO8Czo8tn4xu0eKc008tnnc",
+        "block_type": 2,
+        "parent_id": "ACHmdCENYoJE4rx9D5zcje9tnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When using an S3-compatible object storage bucket as the intermediate storage spot, you need to set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dataPath",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "credential",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " after setting ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "s3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Pg7HdC3M0o3GU2x5KbNc3u9pnMg",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "WT9OdX4cJoug7zxh2X0cTxFMnNc",
+          "NFsod2A8yoTqXSxWGxrcoTYRn7d",
+          "D7dMdoaIDoXuFox5qRYcMtJknTg"
+        ],
+        "parent_id": "ACHmdCENYoJE4rx9D5zcje9tnHb"
+      },
+      {
+        "block_id": "WT9OdX4cJoug7zxh2X0cTxFMnNc",
+        "block_type": 2,
+        "parent_id": "Pg7HdC3M0o3GU2x5KbNc3u9pnMg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NFsod2A8yoTqXSxWGxrcoTYRn7d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value of the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dataPath",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter can be an absolute path to a file relative to the bucket's root, or a folder within the bucket that contains multiple Parquet files. If the value points to a folder, ensure that the Parquet files in the folder have the same data structure.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FGTodPzAHoQW6Txdeymcb32onje"
+        ],
+        "parent_id": "Pg7HdC3M0o3GU2x5KbNc3u9pnMg"
+      },
+      {
+        "block_id": "FGTodPzAHoQW6Txdeymcb32onje",
+        "block_type": 2,
+        "parent_id": "NFsod2A8yoTqXSxWGxrcoTYRn7d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For example, the value could be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "s3://path/to/your/file.parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (file) or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "s3://path/to/your/folder/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (folder).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "D7dMdoaIDoXuFox5qRYcMtJknTg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can leave this parameter unspecified if you simply want to add fields without data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Pg7HdC3M0o3GU2x5KbNc3u9pnMg"
+      },
+      {
+        "block_id": "AJYpdCvmKo1H7fxyrQZcl1TKnKa",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "mergeField",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "UYz8dll0JoqgX3xQtJOcpBiTnKd"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "UYz8dll0JoqgX3xQtJOcpBiTnKd",
+        "block_type": 2,
+        "parent_id": "AJYpdCvmKo1H7fxyrQZcl1TKnKa",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data merging operation is similar to a LEFT JOIN operation in relational database systems, with the merge field serving as the shared key between the source collection and the Parquet file containing column-wise data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CCRDd5Uk2onSrMxrauTcrrw5n4b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "newFields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QvLmdfbmGo2wYqxzapscWwKinFh"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "QvLmdfbmGo2wYqxzapscWwKinFh",
+        "block_type": 2,
+        "comment_ids": [
+          "7543172007111573507"
+        ],
+        "parent_id": "CCRDd5Uk2onSrMxrauTcrrw5n4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is a list of schemas for the fields to add to the target collection after the data merging operation. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Supported data types are VARCHAR, INT8, INT16, INT32, INT64, FLOAT, DOUBLE, and BOOL.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7543172007111573507"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZxZLd5diEonRF2xJVREc398mnTh",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The above command creates a data merging job and returns its ID. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GH9LdcjxwoiGwPxUVr4cxrmJnEg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"jobId\": \"job-xxxxxxxxxxxxxxxxxxxxx\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "IVZzdxccJoX52MxNKwqctTz3nvb",
+        "block_type": 4,
+        "comment_ids": [
+          "7543164866795077635"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Add fields without data",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7543164866795077635"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "HU5BdaOuao4tvqxFEnMcq1Otnrg",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also use the Merge Data API as a workaround to add fields to an existing collection. In this case, you do not need to set the data source.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZXL4dDkTAomvkFxnpZjcVuDsnif",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export BASE_URL=\"https://api.cloud.zilliz.com\"\nexport TOKEN=\"YOUR_API_KEY\"\n\ncurl --request POST \\\n--url \"${BASE_URL}/v2/etl/merge\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"clusterId\": \"in00-xxxxxxxxxxxxxxx\",\n    \"dbName\": \"my_database\",\n    \"collectionName\": \"my_collection\",\n    \"destDbName\": \"my_database\",\n    \"destCollectionName\": \"my_merged_collection\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"mergeField\": \"id\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7543471700265304067"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    \"newFields\": [\n        {\n            \"fieldName\": \"date\",\n            \"dataType\": \"VARCHAR\",\n            \"params\": {\n                \"maxLength\": 10\n            }\n        }\n    ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7543471700265304067"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "T5mCdnPu7oKehMxGWQrcpNhpnSy",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The above command creates a data merging job and returns its ID. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XcaZd1mhCozGntxsz5Gcya8Hnff",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"jobId\": \"job-xxxxxxxxxxxxxxxxxxxxx\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "KUFFdkvsvoP4aqxdrsmcXPt5nAc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verify the results",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "OmJxducq2oLwsQxx0Pzco4jknqf",
+        "block_type": 2,
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After obtaining the ID of the data merging job, you can use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Describe Job",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fdescribe-job-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or the steps listed in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Project Jobs",
+                "token": "RY8ww0NDQi8yU9kNpjicHP7Gn4b",
+                "url": "https://zilliverse.feishu.cn/wiki/RY8ww0NDQi8yU9kNpjicHP7Gn4b"
+              }
+            },
+            {
+              "text_run": {
+                "content": " to check its status in detail.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LYEDdxeCKoFVjwxhKusc6lfAnjU",
+        "block_type": 2,
+        "comment_ids": [
+          "7543171613718495236"
+        ],
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the data merging job is complete, you can check whether the schema of the target collection and the number of entities in the target collection meet your expectations.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7543171613718495236"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MomfdgGudowBBUxhqr9cMtHdnXb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Troubleshooting",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "Na34d1vspo8TU7xznlgcthuznad",
+        "block_type": 13,
+        "children": [
+          "KJi4dPt28oUovlxNwlvcH4Q3nac",
+          "Y0DodDbTUo8V1CxcFIIczWuxnpg"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "How can I handle the situation where the rows in the Parquet file have merge keys that do not match any entities in the source collection?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "Gz5idnDnwoTpXaxAWqdcyjCWnb0"
+      },
+      {
+        "block_id": "KJi4dPt28oUovlxNwlvcH4Q3nac",
+        "block_type": 2,
+        "parent_id": "Na34d1vspo8TU7xznlgcthuznad",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Similar to a left join operation in relational database systems, the data merging operation combines all rows from the source collection with matching rows from the specified Parquet file. This results in a new destination collection containing all fields from the source, the fields defined in newFields, and the combined data. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y0DodDbTUo8V1CxcFIIczWuxnpg",
+        "block_type": 2,
+        "parent_id": "Na34d1vspo8TU7xznlgcthuznad",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Only rows from the Parquet file with a merge key matching those in the source collection will be merged. Rows are skipped if their merge keys do not match any entity in the source collection. If none of the rows in the Parquet file match any entity, only the fields specified in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "newFields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be created with null values, if configured.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 77
+  }
+}

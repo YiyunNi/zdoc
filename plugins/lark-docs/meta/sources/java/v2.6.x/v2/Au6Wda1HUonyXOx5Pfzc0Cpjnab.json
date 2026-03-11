@@ -1,0 +1,1459 @@
+{
+  "created_time": "1761478404",
+  "modified_time": "1761538613",
+  "name": "FunctionScore",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "WtCQfKhCll78bpdsAeHcc42BnYc",
+  "token": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "block_type": 1,
+        "children": [
+          "S2gsdNAGPo77tLxmyAjcwFJ4nGc",
+          "BdXod6eXboaeX5xOYPjcJP1DnEd",
+          "PgmWdRUbfoHXi9xxvRYcCjmKnQf",
+          "TEGbdPNvpoahrRxLNuocLgmsnMb",
+          "Emb6dhYIHov1FZxrFQ6cdj0inPf",
+          "IQC2dKlwgoTagLxPbGjcD73Snlg",
+          "HELKdhV18orrbXxLu3ncWEK4ngd",
+          "VgO8d87BKoP6i1xxBxHcZToEnVg",
+          "QQIQd1B2ko1dEmxs7e1cfEQAnbe",
+          "BM8IdeSXCoTKjlxTgXDcpbkmndf",
+          "PErndNN7Vo14d8xqQrdcJeidnJh",
+          "EQR3deNY1o7Aaqx6g4fcGn7knGb",
+          "X6qtdP9f2oWUjoxZhMFchKB1ng2",
+          "FHPldVE6bo2EC4xupl8cwZlZnYg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "S2gsdNAGPo77tLxmyAjcwFJ4nGc",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance is a list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instances used as rerankers.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BdXod6eXboaeX5xOYPjcJP1DnEd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "io.milvus.v2.service.vector.request.FunctionScore",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      },
+      {
+        "block_id": "PgmWdRUbfoHXi9xxvRYcCjmKnQf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      },
+      {
+        "block_id": "TEGbdPNvpoahrRxLNuocLgmsnMb",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This constructor initializes a new ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance that comprises one or more rankers.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Emb6dhYIHov1FZxrFQ6cdj0inPf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionScore.builder()\n    .functions(List<CreateCollectionReq.Function> functions)\n    .params(Map<String, String> params)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      },
+      {
+        "block_id": "IQC2dKlwgoTagLxPbGjcD73Snlg",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HELKdhV18orrbXxLu3ncWEK4ngd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "functions(List<CreateCollectionReq.Function> functions)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VTovdsgMaoP7Crxqi34c7JotnSb"
+        ],
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      },
+      {
+        "block_id": "VTovdsgMaoP7Crxqi34c7JotnSb",
+        "block_type": 2,
+        "parent_id": "HELKdhV18orrbXxLu3ncWEK4ngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instances.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VgO8d87BKoP6i1xxBxHcZToEnVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "params(Map<String, String> params)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JlsUdonEAon88dxYVwKcCpsEnVf",
+          "IWB2daRZfoL2NsxLtq9cM4zvnJf",
+          "OSw3drEBUoHaM4xxCUPccJwUnSq"
+        ],
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      },
+      {
+        "block_id": "JlsUdonEAon88dxYVwKcCpsEnVf",
+        "block_type": 2,
+        "parent_id": "VgO8d87BKoP6i1xxBxHcZToEnVg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Extra parameters for how the specified functions work together. For a Boost ranker, you can set the following parameters:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IWB2daRZfoL2NsxLtq9cM4zvnJf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "boost_mode",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (String)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LWkMdCrMyo2ex7xu7aPcaRQvnN0",
+          "DUB5dmvdCoD0fmxRqo6c0B9cn2b",
+          "F4eddGFFjoURE2xwDYpcDqk5nRf"
+        ],
+        "parent_id": "VgO8d87BKoP6i1xxBxHcZToEnVg"
+      },
+      {
+        "block_id": "LWkMdCrMyo2ex7xu7aPcaRQvnN0",
+        "block_type": 2,
+        "parent_id": "IWB2daRZfoL2NsxLtq9cM4zvnJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Specifies how the specified weights influence the scores of any matching entities. Possible values are:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DUB5dmvdCoD0fmxRqo6c0B9cn2b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multiple",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Y1cudh70So1KBhxBolZcUF1snTg",
+          "VIuyd0YTvoSbtqxQqnrc7c4WnWe"
+        ],
+        "parent_id": "IWB2daRZfoL2NsxLtq9cM4zvnJf"
+      },
+      {
+        "block_id": "Y1cudh70So1KBhxBolZcUF1snTg",
+        "block_type": 2,
+        "parent_id": "DUB5dmvdCoD0fmxRqo6c0B9cn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Indicates that the weighted value is equal to the original score of a matching entity multiplied by the specified weight.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VIuyd0YTvoSbtqxQqnrc7c4WnWe",
+        "block_type": 2,
+        "parent_id": "DUB5dmvdCoD0fmxRqo6c0B9cn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is the default value.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F4eddGFFjoURE2xwDYpcDqk5nRf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sum",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MyGbdp90AoLQmPxwp1fcmN6Yn5g"
+        ],
+        "parent_id": "IWB2daRZfoL2NsxLtq9cM4zvnJf"
+      },
+      {
+        "block_id": "MyGbdp90AoLQmPxwp1fcmN6Yn5g",
+        "block_type": 2,
+        "parent_id": "F4eddGFFjoURE2xwDYpcDqk5nRf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Indicates that the weighted value is equal to the sum of the original score of a matching entity and the specified weight",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OSw3drEBUoHaM4xxCUPccJwUnSq",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "function_mode",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (String)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZvvAdQZ0UonnDSxdAZ8cB5qwnPG",
+          "FR52ddjDAoCMdvxfXVzc3gBxnwd",
+          "LzBCdw9DNonucSxL4FUcXkMknCh"
+        ],
+        "parent_id": "VgO8d87BKoP6i1xxBxHcZToEnVg"
+      },
+      {
+        "block_id": "ZvvAdQZ0UonnDSxdAZ8cB5qwnPG",
+        "block_type": 2,
+        "parent_id": "OSw3drEBUoHaM4xxCUPccJwUnSq",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Specifies how the weighted values from various Boost Rankers are processed. Possible values are:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FR52ddjDAoCMdvxfXVzc3gBxnwd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multiplify",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "EvL7d0Q8ioADIoxVuPncx227nHd",
+          "At3UdtH3ho1GEUx4xumcSvmAnUe"
+        ],
+        "parent_id": "OSw3drEBUoHaM4xxCUPccJwUnSq"
+      },
+      {
+        "block_id": "EvL7d0Q8ioADIoxVuPncx227nHd",
+        "block_type": 2,
+        "parent_id": "FR52ddjDAoCMdvxfXVzc3gBxnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Indicates that the final score of a matching entity is equal to the product of the weighted values from all Boost Rankers.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "At3UdtH3ho1GEUx4xumcSvmAnUe",
+        "block_type": 2,
+        "parent_id": "FR52ddjDAoCMdvxfXVzc3gBxnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is the default value.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LzBCdw9DNonucSxL4FUcXkMknCh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sum",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NhUSdFn3Xotmx4xs79TcSgLNnYg"
+        ],
+        "parent_id": "OSw3drEBUoHaM4xxCUPccJwUnSq"
+      },
+      {
+        "block_id": "NhUSdFn3Xotmx4xs79TcSgLNnYg",
+        "block_type": 2,
+        "parent_id": "LzBCdw9DNonucSxL4FUcXkMknCh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Indicates that the final score of a matching entity is equal to the sum of the weighted values from all Boost Rankers.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QQIQd1B2ko1dEmxs7e1cfEQAnbe",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BM8IdeSXCoTKjlxTgXDcpbkmndf",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PErndNN7Vo14d8xqQrdcJeidnJh",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EQR3deNY1o7Aaqx6g4fcGn7knGb",
+        "block_type": 2,
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionScore",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X6qtdP9f2oWUjoxZhMFchKB1ng2",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      },
+      {
+        "block_id": "FHPldVE6bo2EC4xupl8cwZlZnYg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.common.clientenum.FunctionType;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq;\nimport io.milvus.v2.service.vector.request.SearchReq;\nimport io.milvus.v2.service.vector.response.SearchResp;\nimport io.milvus.v2.service.vector.request.data.EmbeddedText;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.Function ranker = CreateCollectionReq.Function.builder()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .functionType(FunctionType.RERANK)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .name(\"boost\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"reranker\", \"boost\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"filter\", \"doctype == \\\"abstract\\\"\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"weight\", \"0.5\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .param(\"random_score\", \"{\\\"seed\\\": 126, \\\"field\\\": \\\"id\\\"}\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                 .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n                 \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchReq = client.search(SearchReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"my_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .data(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(new FloatVec(new float[]{-0.619954f, 0.447943f, -0.174938f, -0.424803f, -0.864845f})))\n        .annsField(\"vector\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"doctype\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .functionScore(FunctionScore.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "                .addFunction(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n                .build())\n        .build());\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".search(searchReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565494978961752068"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7565494978961752068"
+        ],
+        "parent_id": "Au6Wda1HUonyXOx5Pfzc0Cpjnab"
+      }
+    ],
+    "counts": 31
+  },
+  "slug": "v2-Vector-FunctionScore"
+}

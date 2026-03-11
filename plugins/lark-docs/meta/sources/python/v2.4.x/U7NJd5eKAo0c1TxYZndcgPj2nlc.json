@@ -1,0 +1,658 @@
+{
+  "created_time": "1716516427",
+  "modified_time": "1716877283",
+  "name": "JinaEmbeddingFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "N9dYfl0xElohGudrO5dcEakYnpb",
+  "token": "U7NJd5eKAo0c1TxYZndcgPj2nlc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/U7NJd5eKAo0c1TxYZndcgPj2nlc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc",
+        "block_type": 1,
+        "children": [
+          "Py67db4Gwodr0sxpRSmcTCt3nRh",
+          "SmQhdCSgpoXLz8xplSvcSprenjf",
+          "TfXRdqzXroUVUrxw6v3cfLWCngg",
+          "XWCkdxdJjoj1Luxja9ichbGqnMb",
+          "F11FdJM6polW0WxzSa5ciaQBnMc",
+          "GboAdbvfeoSDA3xBs94cMQ49nZc",
+          "AwhbdKxh2olGCGxmcqicRn2anZf",
+          "G5FTdAm8Conmh2xle0UccNrVnQe",
+          "CCiFd9ybAozVBLxbe4Jc3Y8enNe",
+          "Rfnhde7iDoHNrZxFijMc2y8NnWh",
+          "JK8JdFPreobNOLxOpxJcZRe7nxe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JinaEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Py67db4Gwodr0sxpRSmcTCt3nRh",
+        "block_type": 2,
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JinaEmbeddingFunction is a class in pymilvus that handles encoding text into embeddings using Jina AI embedding models to support embedding retrieval in Milvus.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SmQhdCSgpoXLz8xplSvcSprenjf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.dense.JinaEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "TfXRdqzXroUVUrxw6v3cfLWCngg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "XWCkdxdJjoj1Luxja9ichbGqnMb",
+        "block_type": 2,
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a JinaEmbeddingFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F11FdJM6polW0WxzSa5ciaQBnMc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JinaEmbeddingFunction(\n    model_name: str = \"jina-embeddings-v2-base-en\",\n    api_key: Optional[str] = None,\n    **kwargs\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "GboAdbvfeoSDA3xBs94cMQ49nZc",
+        "block_type": 2,
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AwhbdKxh2olGCGxmcqicRn2anZf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VaSHdvFgio1C8ZxNDr6cbNA9nze"
+        ],
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "VaSHdvFgio1C8ZxNDr6cbNA9nze",
+        "block_type": 2,
+        "comment_ids": [
+          "7373887762803884036"
+        ],
+        "parent_id": "AwhbdKxh2olGCGxmcqicRn2anZf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the Jina AI embedding model to use for encoding. You can specify any of the available Jina AI embedding model names, for example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jina-embeddings-v2-base-en",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jina-embeddings-v2-small-en",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", etc. If you leave this parameter unspecified, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jina-embeddings-v2-base-en",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be used. For a list of available models, refer to",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7373887762803884036"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jina Embeddings",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7373887762803884036"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fjina.ai%2Fembeddings%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7373887762803884036"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G5FTdAm8Conmh2xle0UccNrVnQe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "api_key",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GjIYdONFGoJkMWxZDaTcLC1hnNb"
+        ],
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "GjIYdONFGoJkMWxZDaTcLC1hnNb",
+        "block_type": 2,
+        "parent_id": "G5FTdAm8Conmh2xle0UccNrVnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The API key for accessing the Jina AI API.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CCiFd9ybAozVBLxbe4Jc3Y8enNe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "kwargs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AZcjd7U47ov04txvppRcyEO8nte"
+        ],
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "AZcjd7U47ov04txvppRcyEO8nte",
+        "block_type": 2,
+        "parent_id": "CCiFd9ybAozVBLxbe4Jc3Y8enNe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Allows additional keyword arguments to be passed to the model initialization. For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Embedding API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fjina.ai%2Fembeddings%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rfnhde7iDoHNrZxFijMc2y8NnWh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      },
+      {
+        "block_id": "JK8JdFPreobNOLxOpxJcZRe7nxe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.dense import JinaEmbeddingFunction\n\njina_ef = JinaEmbeddingFunction(\n    model_name=\"jina-embeddings-v2-base-en\", # Defaults to `jina-embeddings-v2-base-en`\n    api_key=\"YOUR_JINAAI_API_KEY\" # Provide your Jina AI API key\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "U7NJd5eKAo0c1TxYZndcgPj2nlc"
+      }
+    ],
+    "counts": 15
+  },
+  "slug": "EmbeddingModels-JinaEmbeddingFunction"
+}

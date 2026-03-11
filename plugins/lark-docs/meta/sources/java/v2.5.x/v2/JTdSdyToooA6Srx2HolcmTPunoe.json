@@ -1,0 +1,588 @@
+{
+  "created_time": "1720587713",
+  "modified_time": "1746600123",
+  "name": "dropPartition()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "AooAfPsaBlJBpIdBPwMcQF3FnVg",
+  "token": "JTdSdyToooA6Srx2HolcmTPunoe",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/JTdSdyToooA6Srx2HolcmTPunoe",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "block_type": 1,
+        "children": [
+          "doxcn0ska0zflS4Ox5kl1Bcfkye",
+          "doxcnEsB2DHuXZYMCkyrViZ1GQs",
+          "doxcnL6v7bepTUbChjx7GpLe6jc",
+          "doxcn9HB9mtyTZFnQwoTUDq2k6b",
+          "doxcnrpdXInfOji3noC8yPll2CL",
+          "doxcn4tKA26niJmcRg3zJHlLTWg",
+          "doxcntZXkwJeAHI6LqAv2IN8emf",
+          "doxcnzSV05atyHQHcYdjLE4rr5b",
+          "doxcnZOJwy4DtpVhloTf9burr8b",
+          "doxcnXvSbBfVFySOrgoVMQ0SG9c",
+          "doxcncQ9fNv4qZEdoCjf9QPnZJg",
+          "doxcnLVdLeQCrGk1qw4fDbZ7INb",
+          "doxcnvHrZV5DOtDyAo5rKeWWaUe",
+          "doxcnMQfjaWicuUskneZGdNVUue",
+          "doxcnhINtvmXC7sJvEVNLBzcdQe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dropPartition()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn0ska0zflS4Ox5kl1Bcfkye",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation drops a specified partition from the current collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEsB2DHuXZYMCkyrViZ1GQs",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before dropping a partition, you must first release it.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnL6v7bepTUbChjx7GpLe6jc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void dropPartition(DropPartitionReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcn9HB9mtyTZFnQwoTUDq2k6b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcnrpdXInfOji3noC8yPll2CL",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dropPartition(DropPartitionReq.builder()\n    .collectionName(String collectionName)\n    .partitionName(String partitionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcn4tKA26niJmcRg3zJHlLTWg",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcntZXkwJeAHI6LqAv2IN8emf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn4Vs6vR3bZ7H3yHGzuWyGTh"
+        ],
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcn4Vs6vR3bZ7H3yHGzuWyGTh",
+        "block_type": 2,
+        "parent_id": "doxcntZXkwJeAHI6LqAv2IN8emf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "(Required) The name of an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnzSV05atyHQHcYdjLE4rr5b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionName(String partitionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnipCEx3udRhUw9vWRvrnPiH"
+        ],
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcnipCEx3udRhUw9vWRvrnPiH",
+        "block_type": 2,
+        "parent_id": "doxcnzSV05atyHQHcYdjLE4rr5b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "(Required) The name of the partition to drop.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZOJwy4DtpVhloTf9burr8b",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnXvSbBfVFySOrgoVMQ0SG9c",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcncQ9fNv4qZEdoCjf9QPnZJg",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLVdLeQCrGk1qw4fDbZ7INb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnEXoQQ7sMwpmZRnptPDa3Yc"
+        ],
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcnEXoQQ7sMwpmZRnptPDa3Yc",
+        "block_type": 2,
+        "parent_id": "doxcnLVdLeQCrGk1qw4fDbZ7INb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvHrZV5DOtDyAo5rKeWWaUe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcnMQfjaWicuUskneZGdNVUue",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.partition.request.DropPartitionReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Drop partition \"test_partition\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DropPartitionReq dropPartitionReq = DropPartitionReq.builder()\n        .collectionName(\"test\")\n        .partitionName(\"test_partition\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.dropPartition(dropPartitionReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe"
+      },
+      {
+        "block_id": "doxcnhINtvmXC7sJvEVNLBzcdQe",
+        "block_type": 2,
+        "parent_id": "JTdSdyToooA6Srx2HolcmTPunoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 19
+  },
+  "slug": "v2-Partitions-dropPartition"
+}

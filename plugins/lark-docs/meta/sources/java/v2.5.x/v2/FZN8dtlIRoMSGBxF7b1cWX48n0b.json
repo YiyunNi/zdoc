@@ -1,0 +1,844 @@
+{
+  "created_time": "1741675694",
+  "modified_time": "1746677193",
+  "name": "revokePrivilegeV2()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "HR9xfgwXylmfqOdKmJ7c9xCqnQb",
+  "token": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/FZN8dtlIRoMSGBxF7b1cWX48n0b",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "block_type": 1,
+        "children": [
+          "QsmFdjY2So7gnVx2YxtcdcTSnYf",
+          "UhhHdlWq5oM9qOxkKMwcWMyunxc",
+          "I7kddiU0loyeBoxmAJtczByXnXf",
+          "VPXbdJzfionM9cxXmbRcQJSNnJf",
+          "Msc6djHUookUtfxzlJPccNjKnDh",
+          "Ijm8d7sCmobfEqxJfGQcaqVAnHf",
+          "NnmQdSonUoBCiOxVVfHcIoh9nhf",
+          "MTTkdkENKoS5oUxGeHPcAywXnwx",
+          "R0VtdhdPNom51KxF7GIcbAiWnsf",
+          "PxxfdKnABoxU0BxTyd6c3hepnpc",
+          "NH4rdIYTeo1YNKxlxMhcyJAfnBV",
+          "IzhcdriCSovDlXxhVHScDHdInYc",
+          "FCSjdLoRYo9MfTxvVeBcibaQnzA",
+          "Z0DldydOpouXAlx1BQHciMX7ndf",
+          "FMn7d4Si0obTNYxRLHNc0g0InHf",
+          "MpnmdMW6GoEVt6xKwalcHGpCnxd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "revokePrivilegeV2()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "QsmFdjY2So7gnVx2YxtcdcTSnYf",
+        "block_type": 2,
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation revokes privileges or privilege groups from a specific role.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UhhHdlWq5oM9qOxkKMwcWMyunxc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void revokePrivilegeV2(RevokePrivilegeReqV2 request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "I7kddiU0loyeBoxmAJtczByXnXf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "VPXbdJzfionM9cxXmbRcQJSNnJf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "revokePrivilegeV2(RevokePrivilegeReqV2.builder()\n    .roleName(String roleName)\n    .privilege(String privilege)\n    .dbName(String dbName)\n    .collectionName(String collectionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "Msc6djHUookUtfxzlJPccNjKnDh",
+        "block_type": 2,
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ijm8d7sCmobfEqxJfGQcaqVAnHf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "roleName(String roleName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "BktsdqFzboG78LxJGUtcClHOnme"
+        ],
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "BktsdqFzboG78LxJGUtcClHOnme",
+        "block_type": 2,
+        "parent_id": "Ijm8d7sCmobfEqxJfGQcaqVAnHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target role.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NnmQdSonUoBCiOxVVfHcIoh9nhf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "privilege(String privilege)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Z8aAdUqUpouKN0xv4gscikxynwb"
+        ],
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "Z8aAdUqUpouKN0xv4gscikxynwb",
+        "block_type": 2,
+        "parent_id": "NnmQdSonUoBCiOxVVfHcIoh9nhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The privilege or privilege group to be revoked from the specified role. For details on possible privileges, refer to <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Grant Privileges or Privilege Group to Roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fgrant_privileges.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Privileges",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fcluster-privileges"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MTTkdkENKoS5oUxGeHPcAywXnwx",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dbName(String dbName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TLoGd2ERRoEN1Txx8ULcjaRtnUe"
+        ],
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "TLoGd2ERRoEN1Txx8ULcjaRtnUe",
+        "block_type": 2,
+        "parent_id": "MTTkdkENKoS5oUxGeHPcAywXnwx",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The target resource database. After this operation, the specified role loses access to the specified privileges within the specified database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R0VtdhdPNom51KxF7GIcbAiWnsf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JvOvd7CQPodEzzxYaKZcQiIDnld"
+        ],
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "JvOvd7CQPodEzzxYaKZcQiIDnld",
+        "block_type": 2,
+        "parent_id": "R0VtdhdPNom51KxF7GIcbAiWnsf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The target resource collection in the specified database. After this operation, the specified role loses access to the specified privileges within the specified collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PxxfdKnABoxU0BxTyd6c3hepnpc",
+        "block_type": 2,
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NH4rdIYTeo1YNKxlxMhcyJAfnBV",
+        "block_type": 2,
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IzhcdriCSovDlXxhVHScDHdInYc",
+        "block_type": 2,
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FCSjdLoRYo9MfTxvVeBcibaQnzA",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FF1cdgjcuoMvXOxMHMwcYQybnEg"
+        ],
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "FF1cdgjcuoMvXOxMHMwcYQybnEg",
+        "block_type": 2,
+        "parent_id": "FCSjdLoRYo9MfTxvVeBcibaQnzA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z0DldydOpouXAlx1BQHciMX7ndf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "FMn7d4Si0obTNYxRLHNc0g0InHf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RevokePrivilegeReqV2;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// 2. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "R",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "evoke privilege or privilege group\nRevokePrivilegeReqV2 revokePrivilegeReqV2 = RevokePrivilegeReqV2.builder()\n    .roleName(\"my_role\")\n    .privilege(\"read_only\")\n    .dbName(\"my_db\")\n    .collectionName(\"my_collection\")\n    .build()\n        \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.revokePrivilegeV2(revokePrivilegeReqV2);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b"
+      },
+      {
+        "block_id": "MpnmdMW6GoEVt6xKwalcHGpCnxd",
+        "block_type": 2,
+        "parent_id": "FZN8dtlIRoMSGBxF7b1cWX48n0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 22
+  },
+  "slug": "v2-Authentication-revokePrivilegeV2"
+}

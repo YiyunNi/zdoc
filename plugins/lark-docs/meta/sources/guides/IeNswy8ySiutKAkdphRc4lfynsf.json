@@ -1,0 +1,237 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1698025996",
+  "node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+  "node_type": "origin",
+  "obj_create_time": "1698025996",
+  "obj_edit_time": "1751250746",
+  "obj_token": "KaULdTsvsoMd3OxatWac19hunwh",
+  "obj_type": "docx",
+  "origin_node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "OUWXw5c4gia34ZkQUcEcMFbWn6s",
+  "space_id": "7167193056431783939",
+  "title": "Migrations",
+  "slug": "migrations",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "KaULdTsvsoMd3OxatWac19hunwh",
+        "block_type": 1,
+        "children": [
+          "CjBTdy1TCozPdixljeackjdynyw",
+          "LlREdbDNio7E5IxiPY3cX7Krn2d",
+          "VJfHdVS8eoASCTxIhB7cBDYlnVc"
+        ],
+        "comment_ids": [
+          "7471185299956137988"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrations",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7471185299956137988"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "CjBTdy1TCozPdixljeackjdynyw",
+        "block_type": 2,
+        "comment_ids": [
+          "7521565248774176787"
+        ],
+        "parent_id": "KaULdTsvsoMd3OxatWac19hunwh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud provides migration options from external sources such as Milvus, Elasticsearch, and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PostgreSQL",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7521565248774176787"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", as well as cross-cluster migrations within the same or different organizations, enabling efficient data integration and management.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LlREdbDNio7E5IxiPY3cX7Krn2d",
+        "block_type": 2,
+        "parent_id": "KaULdTsvsoMd3OxatWac19hunwh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VJfHdVS8eoASCTxIhB7cBDYlnVc",
+        "block_type": 2,
+        "parent_id": "KaULdTsvsoMd3OxatWac19hunwh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 4
+  },
+  "children": [
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": true,
+      "node_create_time": "1739345265",
+      "node_token": "CEJrwt9sYizQgtkPlBBcJXvRnff",
+      "node_type": "origin",
+      "obj_create_time": "1739345265",
+      "obj_edit_time": "1762481561",
+      "obj_token": "DwEBd1HK4oaOisxGTCTc8VDun7g",
+      "obj_type": "docx",
+      "origin_node_token": "CEJrwt9sYizQgtkPlBBcJXvRnff",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+      "space_id": "7167193056431783939",
+      "title": "Zilliz to Zilliz Migrations",
+      "slug": "migrate-between-clusters"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": true,
+      "node_create_time": "1724297697",
+      "node_token": "TDkbwhwMyi7bPykZAoUc5PFfnIb",
+      "node_type": "origin",
+      "obj_create_time": "1724297697",
+      "obj_edit_time": "1754036662",
+      "obj_token": "RsIed9EfSokMbWxSW5ncJjXInYg",
+      "obj_type": "docx",
+      "origin_node_token": "TDkbwhwMyi7bPykZAoUc5PFfnIb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from Milvus to Zilliz Cloud",
+      "slug": "migrate-from-milvus"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": true,
+      "node_create_time": "1748418972",
+      "node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "node_type": "origin",
+      "obj_create_time": "1748418972",
+      "obj_edit_time": "1749469772",
+      "obj_token": "Y9Djdj94tojo99xcCUoc7HiinLd",
+      "obj_type": "docx",
+      "origin_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from External Sources",
+      "slug": "migrate-from-external-sources"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1734425219",
+      "node_token": "KfgvwJKPDi8uDekl2aHcPOvgnSb",
+      "node_type": "origin",
+      "obj_create_time": "1734425219",
+      "obj_edit_time": "1770606111",
+      "obj_token": "Zmi9dgE6toCiYdxKIZZciRmZn9d",
+      "obj_type": "docx",
+      "origin_node_token": "KfgvwJKPDi8uDekl2aHcPOvgnSb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+      "space_id": "7167193056431783939",
+      "title": "Zilliz Cloud IPs",
+      "slug": "zilliz-cloud-ips"
+    }
+  ]
+}

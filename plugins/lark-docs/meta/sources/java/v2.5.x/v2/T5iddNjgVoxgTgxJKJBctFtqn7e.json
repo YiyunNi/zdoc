@@ -1,0 +1,2018 @@
+{
+  "created_time": "1720587614",
+  "modified_time": "1720763788",
+  "name": "IndexType",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "MTBuf5wQ7lardCddEtCc4R2uncb",
+  "token": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/T5iddNjgVoxgTgxJKJBctFtqn7e",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "block_type": 1,
+        "children": [
+          "doxcnnFnGrLoTI2r8BdyPvelwjh",
+          "doxcnfGXnR2JBOqdU0clwSKcush",
+          "EeKpdfyNfo3CwJx1HtwcSa0en3L",
+          "doxcndK0kUJtlQ74Dah06jVIrWc",
+          "doxcnn7dwOztp7oXqVjQZql2eQe",
+          "doxcnTO5pcbbaDYU4ORvtJ1Mndh",
+          "doxcnUs4hOWcIh54mmwYJOPVR3e",
+          "doxcnotfQftfGgNbgshG6W1Rczg",
+          "HLIHd6CN3o7KRSxVPbHcKHYInqg",
+          "XIoVd2bqqobz7Sx5nnjcmn9ZnHd",
+          "WBi6dGcL0oZf0bxbQRtc8Pgvnof",
+          "doxcnctDQKoPQ14cxU6nKYintWc",
+          "SiZ1d3XkRo41kkxb1dccjHY3nxc",
+          "doxcnPDXBT4Z6Ds1YOW1yp5Cech",
+          "QW85d8b9lok57KxvROGczrMnn4d",
+          "doxcno5oED4pc0WdJatfY5SeJae",
+          "doxcn3wOz6pDDKcsP0pFzTO3Cqf",
+          "doxcnRLpq6TuucmbAn9kJag5aFc",
+          "doxcn2lK6RYTFlCkSNoQ9qZGVcf",
+          "doxcnjuiRSMrQozTDTA2z9UEEod",
+          "doxcnnX7shL8YhWncVb37T0BOjh",
+          "doxcnxzwD25wxxdGv2048eRWvxc",
+          "Df0pd7LYaoQX9jxGktBcXYdhnZg",
+          "DeJ2ddQhdorA1Gx82zrcp5WnnWg",
+          "XAivd9reIopgAvxZ4Tmc1DsZnve",
+          "FPRdd0AzQonYRYxwQRqcbz5on0d",
+          "doxcnCCZ9hQLUTmJQ43xXQA0Vue",
+          "doxcnU5lgnqGmyjGfmXT2RIWicc",
+          "GwXXd8YQbonsj7x9oyBcLaEonMh",
+          "doxcn4g1ZonjevFPchv0GQMXtqA"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IndexType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnnFnGrLoTI2r8BdyPvelwjh",
+        "block_type": 2,
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an enumeration that provides the following constants.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfGXnR2JBOqdU0clwSKcush",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constants",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "EeKpdfyNfo3CwJx1HtwcSa0en3L",
+        "block_type": 2,
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcndK0kUJtlQ74Dah06jVIrWc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FLAT(1)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnXduZuer1AK0ZmWa55Mq67f"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnXduZuer1AK0ZmWa55Mq67f",
+        "block_type": 2,
+        "parent_id": "doxcndK0kUJtlQ74Dah06jVIrWc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FLAT",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnn7dwOztp7oXqVjQZql2eQe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_FLAT(2)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnPAX2mmGMp2bMHqtosepBJb"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnPAX2mmGMp2bMHqtosepBJb",
+        "block_type": 2,
+        "parent_id": "doxcnn7dwOztp7oXqVjQZql2eQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IVF_FLAT",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnTO5pcbbaDYU4ORvtJ1Mndh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_SQ8(3)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnMycrnnpUxq1GgDnFXQmYzd"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnMycrnnpUxq1GgDnFXQmYzd",
+        "block_type": 2,
+        "parent_id": "doxcnTO5pcbbaDYU4ORvtJ1Mndh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IVF_SQ8",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnUs4hOWcIh54mmwYJOPVR3e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_PQ(4)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnfA359VWB6STvIeBPid2GGe"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnfA359VWB6STvIeBPid2GGe",
+        "block_type": 2,
+        "parent_id": "doxcnUs4hOWcIh54mmwYJOPVR3e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IVF_PQ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnotfQftfGgNbgshG6W1Rczg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW(5)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnHxvjyIjBtmv8Y1511y74Me"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnHxvjyIjBtmv8Y1511y74Me",
+        "block_type": 2,
+        "parent_id": "doxcnotfQftfGgNbgshG6W1Rczg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HNSW",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HLIHd6CN3o7KRSxVPbHcKHYInqg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW_SQ(6)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XKNXdMYA3osof8xIg5Yc93r9nRg"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "XKNXdMYA3osof8xIg5Yc93r9nRg",
+        "block_type": 2,
+        "parent_id": "HLIHd6CN3o7KRSxVPbHcKHYInqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HNSW",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XIoVd2bqqobz7Sx5nnjcmn9ZnHd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW_PQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VuSadHQoqo42jFxvi3Wc7QjRnzd"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "VuSadHQoqo42jFxvi3Wc7QjRnzd",
+        "block_type": 2,
+        "parent_id": "XIoVd2bqqobz7Sx5nnjcmn9ZnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HNSW_PQ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WBi6dGcL0oZf0bxbQRtc8Pgvnof",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW_PRQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TIgRdq4ryozjNoxHUFhcOqQynmr"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "TIgRdq4ryozjNoxHUFhcOqQynmr",
+        "block_type": 2,
+        "parent_id": "WBi6dGcL0oZf0bxbQRtc8Pgvnof",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HNSW_PRQ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnctDQKoPQ14cxU6nKYintWc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DISKANN(10)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnn7xDl6u75334Ww0svXf1Cm"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnn7xDl6u75334Ww0svXf1Cm",
+        "block_type": 2,
+        "parent_id": "doxcnctDQKoPQ14cxU6nKYintWc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DISKANN",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SiZ1d3XkRo41kkxb1dccjHY3nxc",
+        "block_type": 2,
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnPDXBT4Z6Ds1YOW1yp5Cech",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AUTOINDEX(11)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnzGlA8ETyKw3NxmuXe4Fblg"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnzGlA8ETyKw3NxmuXe4Fblg",
+        "block_type": 2,
+        "parent_id": "doxcnPDXBT4Z6Ds1YOW1yp5Cech",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AUTOINDEX",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QW85d8b9lok57KxvROGczrMnn4d",
+        "block_type": 2,
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcno5oED4pc0WdJatfY5SeJae",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SCANN(12)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnAFBe9c7snRj5IAEEZdIMEh"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnAFBe9c7snRj5IAEEZdIMEh",
+        "block_type": 2,
+        "parent_id": "doxcno5oED4pc0WdJatfY5SeJae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SCANN",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3wOz6pDDKcsP0pFzTO3Cqf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_IVF_FLAT(50)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnxSCncsVSXROyw4nC6avjMh"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnxSCncsVSXROyw4nC6avjMh",
+        "block_type": 2,
+        "parent_id": "doxcn3wOz6pDDKcsP0pFzTO3Cqf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GPU_IVF_FLAT",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to GPU indexes only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnRLpq6TuucmbAn9kJag5aFc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_IVF_PQ(51)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnMcuyQDJyyocjC6GWmBXoDc"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnMcuyQDJyyocjC6GWmBXoDc",
+        "block_type": 2,
+        "parent_id": "doxcnRLpq6TuucmbAn9kJag5aFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GPU_IVF_PQ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to GPU indexes only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2lK6RYTFlCkSNoQ9qZGVcf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_BRUTE_FORCE(52)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnsjEf0H3DG6PQobAhNMBA3b"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnsjEf0H3DG6PQobAhNMBA3b",
+        "block_type": 2,
+        "parent_id": "doxcn2lK6RYTFlCkSNoQ9qZGVcf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GPU_BRUTE_FORCE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to GPU indexes only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnjuiRSMrQozTDTA2z9UEEod",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_CAGRA(53)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcneglS1z9nkqYedA6tnz3Rpm"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcneglS1z9nkqYedA6tnz3Rpm",
+        "block_type": 2,
+        "parent_id": "doxcnjuiRSMrQozTDTA2z9UEEod",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GPU_CAGRA",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to GPU indexes only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnnX7shL8YhWncVb37T0BOjh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BIN_FLAT(80)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnwFfCdjwoTULih4qnC5AQze"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnwFfCdjwoTULih4qnC5AQze",
+        "block_type": 2,
+        "parent_id": "doxcnnX7shL8YhWncVb37T0BOjh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BIN_FLAT",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to binary vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxzwD25wxxdGv2048eRWvxc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BIN_IVF_FLAT(81)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnAUIYWCOyXn9jYmIwOLENvb"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnAUIYWCOyXn9jYmIwOLENvb",
+        "block_type": 2,
+        "parent_id": "doxcnxzwD25wxxdGv2048eRWvxc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BIN_IVF_FLAT",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to binary vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Df0pd7LYaoQX9jxGktBcXYdhnZg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "TRIE(\"Trie\", 100)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DNqedXcAaoyM6fxQ5Y6cUyqDn7c"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "DNqedXcAaoyM6fxQ5Y6cUyqDn7c",
+        "block_type": 2,
+        "parent_id": "Df0pd7LYaoQX9jxGktBcXYdhnZg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TRIE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to VarChar fields only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DeJ2ddQhdorA1Gx82zrcp5WnnWg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "STL_SORT(200)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WtiGdMFr9oGOqhxXys5c3Cjvnee"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "WtiGdMFr9oGOqhxXys5c3Cjvnee",
+        "block_type": 2,
+        "parent_id": "DeJ2ddQhdorA1Gx82zrcp5WnnWg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SLT_SORT",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to fields of numeric types only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XAivd9reIopgAvxZ4Tmc1DsZnve",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INVERTED(201)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CZjNdo0Iro8panxq7Rpcl4cmnpc"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "CZjNdo0Iro8panxq7Rpcl4cmnpc",
+        "block_type": 2,
+        "parent_id": "XAivd9reIopgAvxZ4Tmc1DsZnve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "INVERTED",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to all scalar fields except JSON fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FPRdd0AzQonYRYxwQRqcbz5on0d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BITMAP(202)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KsSSdpITvoNBt2xQYJKcFOIsnpd"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "KsSSdpITvoNBt2xQYJKcFOIsnpd",
+        "block_type": 2,
+        "parent_id": "FPRdd0AzQonYRYxwQRqcbz5on0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BITMAP",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to all scalar fields except JSON, FLOAT, and DOUBLE fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCCZ9hQLUTmJQ43xXQA0Vue",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SPARSE_INVERTED_INDEX",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnO0LxnVYFxy8HNGAMVLdPLe"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnO0LxnVYFxy8HNGAMVLdPLe",
+        "block_type": 2,
+        "parent_id": "doxcnCCZ9hQLUTmJQ43xXQA0Vue",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SPARSE_INVERTED_INDEX",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to sparse vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnU5lgnqGmyjGfmXT2RIWicc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SPARSE_WAND",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnIfQVBUoKFHHN96BJzSHJzc"
+        ],
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e"
+      },
+      {
+        "block_id": "doxcnIfQVBUoKFHHN96BJzSHJzc",
+        "block_type": 2,
+        "parent_id": "doxcnU5lgnqGmyjGfmXT2RIWicc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the index type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SPARSE_WAND",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to sparse vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GwXXd8YQbonsj7x9oyBcLaEonMh",
+        "block_type": 2,
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4g1ZonjevFPchv0GQMXtqA",
+        "block_type": 2,
+        "parent_id": "T5iddNjgVoxgTgxJKJBctFtqn7e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 54
+  },
+  "slug": "v2-Management-IndexType"
+}

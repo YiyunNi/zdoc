@@ -1,0 +1,1432 @@
+{
+  "created_time": "1720687506",
+  "modified_time": "1757064311",
+  "name": "searchIterator()",
+  "owner_id": "ou_933b606655fd39dab164d89c936db4ed",
+  "parent_token": "XkwkfO0XUlwfQzd6cficDg8enoh",
+  "token": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/NYIqdKnfWobgPrxOmxFcbi3JnSd",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "block_type": 1,
+        "children": [
+          "doxcnQrrMSQQV1gKPO6LqGOse8e",
+          "doxcn4Ghsl5hEb0h0qGM16ZkPve",
+          "doxcn8HzGVNXKCd4PfWfE5TPOJg",
+          "doxcngNUJ09ybaPt5PEC1OnXcOg",
+          "doxcnCSP85UpVHyxBczrbzyEumg",
+          "doxcnJnm0KbejPcOg53atVbo5sb",
+          "doxcnlRVxodZhCUAaGbTTs7Lqlh",
+          "doxcntLIVYEmnySAxoHANhKJYGg",
+          "doxcnLiP21fceidUnDh2GyvvG9f",
+          "doxcnk9EhhRoc7gruSwOZIP6Pcp",
+          "doxcnyRF3lI3iNQ3GEQ3532tWEh",
+          "doxcnlBCrhYx2u4eefMi9ffISWc",
+          "doxcnz20ZESana6MLQVUMTGPU9g",
+          "doxcn2hVRsK54fUBVi1YcEGZ5fe",
+          "doxcn6sdbC2XbiUPhJ1NivJXM0d",
+          "doxcnqblqqFMbu9Jddq5oN3ojpf",
+          "doxcneCCbWNe0zz9SwmU6LGy0Bb",
+          "doxcna6oiEcybzHZpxdpGEt4Wl4",
+          "doxcnvw2ub4so1kLsrNzxVZ4VO9",
+          "doxcndgvSxrbSEdKhK0Y1p2ObFh",
+          "doxcnI7QREwuQZe8wUIYDlJ2EId",
+          "doxcnSbczvqRVuDcXBO0od2s61c",
+          "doxcnds4xSq27HzRpGQZUhTWFle",
+          "doxcn4UBPtnCZxFJHExGJ60YRXg",
+          "doxcnZPR8q47QkJNlImQ6D04FG5",
+          "doxcnteI51OgRgBZl4a9WZUFt9g",
+          "doxcnYP1m8avorhXl9UzLiTmhcY"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "searchIterator()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnQrrMSQQV1gKPO6LqGOse8e",
+        "block_type": 2,
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This method returns a search iterator to iterate search results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4Ghsl5hEb0h0qGM16ZkPve",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public SearchIterator searchIterator(SearchIteratorReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcn8HzGVNXKCd4PfWfE5TPOJg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcngNUJ09ybaPt5PEC1OnXcOg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "searchIterator(SearchIteratorReq.builder()\n    .databaseName(String databaseName)\n    .collectionName(String collectionName)\n    .partitionNames(List<String> partitionNames)\n    .vectorFieldName(String vectorFieldName)\n    .topK(int topK)\n    .limit(long limit)\n    .expr(String expr)\n    .outputFields(List<String> outputFields)\n    .vectors(List<BaseVector> vectors)\n    .roundDecimal(int roundDecimal)\n    .params(String params)\n    .consistencyLevel(ConsistencyLevel consistencyLevel)\n    .ignoreGrowing(boolean ignoreGrowing)\n    .groupByFieldName(String groupByFieldName)\n    .batchSize(long batchSize)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnCSP85UpVHyxBczrbzyEumg",
+        "block_type": 2,
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJnm0KbejPcOg53atVbo5sb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnq9IYSlxVCw36nv60IOL4wh"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnq9IYSlxVCw36nv60IOL4wh",
+        "block_type": 2,
+        "parent_id": "doxcnJnm0KbejPcOg53atVbo5sb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database. Defaults to the current database if not specified.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlRVxodZhCUAaGbTTs7Lqlh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnYurcZRC8kmhMFkWL0DYnBd"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnYurcZRC8kmhMFkWL0DYnBd",
+        "block_type": 2,
+        "parent_id": "doxcnlRVxodZhCUAaGbTTs7Lqlh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcntLIVYEmnySAxoHANhKJYGg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionNames(List<String> partitionNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnYajP38nKLUD3tl7awb4dfb"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnYajP38nKLUD3tl7awb4dfb",
+        "block_type": 2,
+        "parent_id": "doxcntLIVYEmnySAxoHANhKJYGg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of partition names to target.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLiP21fceidUnDh2GyvvG9f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "vectorFieldName(String vectorFieldName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnTTCBOnkXhxBUfHyojBhylN"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnTTCBOnkXhxBUfHyojBhylN",
+        "block_type": 2,
+        "parent_id": "doxcnLiP21fceidUnDh2GyvvG9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the vector field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnk9EhhRoc7gruSwOZIP6Pcp",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "topK(int topK)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnXcckcb4yGhJN3BCRACh7Hh"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnXcckcb4yGhJN3BCRACh7Hh",
+        "block_type": 2,
+        "parent_id": "doxcnk9EhhRoc7gruSwOZIP6Pcp",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of top results to return.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnyRF3lI3iNQ3GEQ3532tWEh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "limit(long limit)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnqSO2O00cL7EJsmzJ75PIig"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnqSO2O00cL7EJsmzJ75PIig",
+        "block_type": 2,
+        "parent_id": "doxcnyRF3lI3iNQ3GEQ3532tWEh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The maximum number of results to return.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnlBCrhYx2u4eefMi9ffISWc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "expr(String expr)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn3DB4zFTtRJQhlFlnbctAzf"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcn3DB4zFTtRJQhlFlnbctAzf",
+        "block_type": 2,
+        "parent_id": "doxcnlBCrhYx2u4eefMi9ffISWc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A boolean expression to filter results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnz20ZESana6MLQVUMTGPU9g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "outputFields(List<String> outputFields)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnv7OZRvVGHTaySVAibu8mqd"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnv7OZRvVGHTaySVAibu8mqd",
+        "block_type": 2,
+        "parent_id": "doxcnz20ZESana6MLQVUMTGPU9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of field names to include in the output.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2hVRsK54fUBVi1YcEGZ5fe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "vectors(List<BaseVector> vectors)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnndCnldeyZYkIGNihRfe0df"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnndCnldeyZYkIGNihRfe0df",
+        "block_type": 2,
+        "parent_id": "doxcn2hVRsK54fUBVi1YcEGZ5fe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of vectors to search with.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn6sdbC2XbiUPhJ1NivJXM0d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "roundDecimal(int roundDecimal)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcntXE31EqbfyLQpCOkgkFuFd"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcntXE31EqbfyLQpCOkgkFuFd",
+        "block_type": 2,
+        "parent_id": "doxcn6sdbC2XbiUPhJ1NivJXM0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of decimal places for distance/score rounding.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqblqqFMbu9Jddq5oN3ojpf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "params(String params)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn9S4kSeTHi600Hz5hKoqRvd"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcn9S4kSeTHi600Hz5hKoqRvd",
+        "block_type": 2,
+        "parent_id": "doxcnqblqqFMbu9Jddq5oN3ojpf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Additional search parameters as a JSON string.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcneCCbWNe0zz9SwmU6LGy0Bb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "consistencyLevel(ConsistencyLevel consistencyLevel)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnuCKnRSVYv1J5SY2LbsypHc"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnuCKnRSVYv1J5SY2LbsypHc",
+        "block_type": 2,
+        "parent_id": "doxcneCCbWNe0zz9SwmU6LGy0Bb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The consistency level for the operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcna6oiEcybzHZpxdpGEt4Wl4",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ignoreGrowing(boolean ignoreGrowing)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnjwaTPWhdVGhR4lwLL22E4c"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnjwaTPWhdVGhR4lwLL22E4c",
+        "block_type": 2,
+        "parent_id": "doxcna6oiEcybzHZpxdpGEt4Wl4",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to ignore growing segments during the operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvw2ub4so1kLsrNzxVZ4VO9",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupByFieldName(String groupByFieldName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnbZjK3yEfN9I2B5eVFNVV7f"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnbZjK3yEfN9I2B5eVFNVV7f",
+        "block_type": 2,
+        "parent_id": "doxcnvw2ub4so1kLsrNzxVZ4VO9",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The field name to group search results by.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcndgvSxrbSEdKhK0Y1p2ObFh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "batchSize(long batchSize)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn07gU3g6DzlKb9lsNJaoxUe"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcn07gU3g6DzlKb9lsNJaoxUe",
+        "block_type": 2,
+        "parent_id": "doxcndgvSxrbSEdKhK0Y1p2ObFh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The batch size for iterator operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnI7QREwuQZe8wUIYDlJ2EId",
+        "block_type": 2,
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnSbczvqRVuDcXBO0od2s61c",
+        "block_type": 2,
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SearchIterator",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnds4xSq27HzRpGQZUhTWFle",
+        "block_type": 2,
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchIterator",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "object to iterate search results, which offers the following methods:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4UBPtnCZxFJHExGJ60YRXg",
+        "block_type": 2,
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZPR8q47QkJNlImQ6D04FG5",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnLwN0JZI9sBZuYBUosbkxKf"
+        ],
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnLwN0JZI9sBZuYBUosbkxKf",
+        "block_type": 2,
+        "parent_id": "doxcnZPR8q47QkJNlImQ6D04FG5",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnteI51OgRgBZl4a9WZUFt9g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      },
+      {
+        "block_id": "doxcnYP1m8avorhXl9UzLiTmhcY",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.orm.iterator.SearchIterator;\nimport io.milvus.response.QueryResultsWrapper;\nimport io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.common.ConsistencyLevel;\nimport io.milvus.v2.common.IndexParam;\nimport io.milvus.v2.service.vector.request.SearchIteratorReq;\nimport io.milvus.v2.service.vector.request.data.FloatVec;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n        .uri(\"http://localhost:19530\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Iterator search\nList<Float> vector = generateFloatVector();\nSearchIterator searchIterator = client.searchIterator(SearchIteratorReq.builder()\n        .collectionName(\"test\")\n        .outputFields(Lists.newArrayList(\"vector\"))\n        .batchSize(50L)\n        .vectorFieldName(\"vector\")\n        .vectors(Collections.singletonList(new FloatVec(vector)))\n        .expr(\"id > 100\")\n        .params(\"{\\\"range_filter\\\": 15.0, \\\"radius\\\": 20.0}\")\n        .topK(300)\n        .metricType(IndexParam.MetricType.L2)\n        .consistencyLevel(ConsistencyLevel.BOUNDED)\n        .build());\n\nSystem.out.println(\"SearchIteratorV1 results:\");\nwhile (true) {\n    List<QueryResultsWrapper.RowRecord> res = searchIterator.next();\n    if (res.isEmpty()) {\n        System.out.println(\"Search iteration finished, close\");\n        searchIterator.close();\n        break;\n    }\n\n    for (QueryResultsWrapper.RowRecord record : res) {\n        System.out.println(record);\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NYIqdKnfWobgPrxOmxFcbi3JnSd"
+      }
+    ],
+    "counts": 44
+  },
+  "slug": "v2-Vector-searchIterator"
+}

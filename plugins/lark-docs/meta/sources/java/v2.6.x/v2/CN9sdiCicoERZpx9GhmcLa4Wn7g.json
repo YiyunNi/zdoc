@@ -1,0 +1,1311 @@
+{
+  "created_time": "1750410861",
+  "modified_time": "1770946766",
+  "name": "listImportJobs()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "YvTefFqP5laf91dW25kcRJzfnmg",
+  "token": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/CN9sdiCicoERZpx9GhmcLa4Wn7g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "block_type": 1,
+        "children": [
+          "I0G3dt8ymozEJIxwXkNchSyongn",
+          "Ks6FdYon1ok0NGxHhHAczIZonRc",
+          "W1SodToVWoA0LoxvUlucNTLfnbe",
+          "NTh8dFMU6o87TrxmUqCcEhfun1e",
+          "XAb8d6eA0o2jUdxbmftcM5JanIb",
+          "Ak1kdUw6koSTKsxIgX8czxCYntc",
+          "YaQ4damQ7oFRQDxZ3zWcuRF1noX",
+          "IaBqdEgoTovSVox7we6cBs0Tnze",
+          "QxIDdFiHmoag3Jx1sCXcMR8Knsf",
+          "LxL2dD51ToAJx9xm3jEcJwZunJ0",
+          "FXEOdjhTlomFoZxSr4tcd6TTnXf",
+          "JPKpdwFULo4m5DxydTKc9SKcndf",
+          "LJYPd5CYroVg4NxgyQAcdR9hnS4",
+          "L0bpdcGyGotnK1xzlY8cVX5GnAg",
+          "HeKOdfJedo4VyRxC6pDcLVunndd",
+          "ZLqydSXBtoM7rox9kPEc13gNnYf",
+          "APASdhppXowZXhxUwwKccrIDnof",
+          "KhAlddmZioDdvexPlKZcb2ymn6g",
+          "Xbt2d53tKoYjLZxrrx1cGepdnkc",
+          "Z2UPdT7kIo5AXNxGP7vccYW6n1e",
+          "QAXidBeGFohk7NxbynWcSndnnjU",
+          "Aoend7DIboLZEexvf4lcpsF0nbe",
+          "AC9Nd8fDmo0fJgxV1RGcQX3jn4d",
+          "UkEAdyJHVosxRUx1nD0cGl1wnXf",
+          "GCU4dum29orSagx2X2Rcnk9bnRh",
+          "LqsVdkieWorOPoxZDZUcMYLynFe",
+          "Po0SdQ3hPoOABexVDHbcgkTynre",
+          "XFhodLCUtoALPFxUXwUc6Owkn4c",
+          "NmE9dcuuEolN0gxBm2dcOn1fnZd",
+          "PKlbdiHEMo8dCdx8l92cYAAznZf",
+          "NXTsd6uNHoIyzoxpxafc3D7qnxf",
+          "HByDd3V30oyZlyxlgSecn3USnrd",
+          "XCAHdhqesoaWmlxd8EDc2AoInuf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "listImportJobs()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "I0G3dt8ymozEJIxwXkNchSyongn",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation lists all existing import jobs regarding the specified collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ks6FdYon1ok0NGxHhHAczIZonRc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public static String listImportJobs(String url, BaseListImportJobsRequest request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "W1SodToVWoA0LoxvUlucNTLfnbe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "NTh8dFMU6o87TrxmUqCcEhfun1e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "bulkImport.listImportJobs(\n    url,\n    request\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "XAb8d6eA0o2jUdxbmftcM5JanIb",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ak1kdUw6koSTKsxIgX8czxCYntc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "url",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AFU3dpGJkot7frx8yx6crjmJnQd",
+          "VsHWdmpMaoSkJ4xbXfKcONhMnUJ",
+          "YyxxdiBCnohXsRxaejEcIQ0KnYg"
+        ],
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "AFU3dpGJkot7frx8yx6crjmJnQd",
+        "block_type": 2,
+        "parent_id": "Ak1kdUw6koSTKsxIgX8czxCYntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">The endpoint of the connected Milvus instance.</include><include target=\"zilliz\">Zilliz Cloud's Control Plane API endpoint. The endpoint URL should be in the following format:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VsHWdmpMaoSkJ4xbXfKcONhMnUJ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "https://api.cloud.zilliz.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Ak1kdUw6koSTKsxIgX8czxCYntc"
+      },
+      {
+        "block_id": "YyxxdiBCnohXsRxaejEcIQ0KnYg",
+        "block_type": 2,
+        "parent_id": "Ak1kdUw6koSTKsxIgX8czxCYntc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YaQ4damQ7oFRQDxZ3zWcuRF1noX",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "request",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseListImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fdocx%2FCN9sdiCicoERZpx9GhmcLa4Wn7g%23JPKpdwFULo4m5DxydTKc9SKcndf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MRZidHFN6oTYmrxOYxUcCVhLnCh"
+        ],
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "MRZidHFN6oTYmrxOYxUcCVhLnCh",
+        "block_type": 2,
+        "parent_id": "YaQ4damQ7oFRQDxZ3zWcuRF1noX",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IaBqdEgoTovSVox7we6cBs0Tnze",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QxIDdFiHmoag3Jx1sCXcMR8Knsf",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LxL2dD51ToAJx9xm3jEcJwZunJ0",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FXEOdjhTlomFoZxSr4tcd6TTnXf",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of import job IDs of the specified collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JPKpdwFULo4m5DxydTKc9SKcndf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BaseListImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "LJYPd5CYroVg4NxgyQAcdR9hnS4",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BaseListImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance is implemented in <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusListImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CloudListImportRequest",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L0bpdcGyGotnK1xzlY8cVX5GnAg",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HeKOdfJedo4VyRxC6pDcLVunndd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusListImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "ZLqydSXBtoM7rox9kPEc13gNnYf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusListImportRequest.builder()\n    .collectionName(String collectionName)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "APASdhppXowZXhxUwwKccrIDnof",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KhAlddmZioDdvexPlKZcb2ymn6g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "B65ddq8KZoFWOrxlJ7ZcZDhjnIh"
+        ],
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "B65ddq8KZoFWOrxlJ7ZcZDhjnIh",
+        "block_type": 2,
+        "parent_id": "KhAlddmZioDdvexPlKZcb2ymn6g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xbt2d53tKoYjLZxrrx1cGepdnkc",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z2UPdT7kIo5AXNxGP7vccYW6n1e",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QAXidBeGFohk7NxbynWcSndnnjU",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CloudListImportRequest",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "Aoend7DIboLZEexvf4lcpsF0nbe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CloudListImportRequest.builder()\n    .apiKey(String apiKey)\n    .collectionName(String collectionName)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "AC9Nd8fDmo0fJgxV1RGcQX3jn4d",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UkEAdyJHVosxRUx1nD0cGl1wnXf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "apiKey(String apiKey)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Xty0dL4BfoYGu5xYlbkcIuFfnHb"
+        ],
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "Xty0dL4BfoYGu5xYlbkcIuFfnHb",
+        "block_type": 2,
+        "parent_id": "UkEAdyJHVosxRUx1nD0cGl1wnXf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid Zilliz Cloud API key with sufficient permissions to manipulate the cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GCU4dum29orSagx2X2Rcnk9bnRh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "CwhIdS10io5BE3xizYAcA0Zfn4b"
+        ],
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "CwhIdS10io5BE3xizYAcA0Zfn4b",
+        "block_type": 2,
+        "parent_id": "GCU4dum29orSagx2X2Rcnk9bnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection of this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LqsVdkieWorOPoxZDZUcMYLynFe",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Po0SdQ3hPoOABexVDHbcgkTynre",
+        "block_type": 4,
+        "comment_ids": [
+          "7519031043364945939"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7519031043364945939"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "XFhodLCUtoALPFxUXwUc6Owkn4c",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NmE9dcuuEolN0gxBm2dcOn1fnZd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "PKlbdiHEMo8dCdx8l92cYAAznZf",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NXTsd6uNHoIyzoxpxafc3D7qnxf",
+        "block_type": 2,
+        "comment_ids": [
+          "7520141008765026308"
+        ],
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7520141008765026308"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HByDd3V30oyZlyxlgSecn3USnrd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g"
+      },
+      {
+        "block_id": "XCAHdhqesoaWmlxd8EDc2AoInuf",
+        "block_type": 2,
+        "parent_id": "CN9sdiCicoERZpx9GhmcLa4Wn7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 41
+  },
+  "slug": "v2-BulkImport-listImportJobs"
+}

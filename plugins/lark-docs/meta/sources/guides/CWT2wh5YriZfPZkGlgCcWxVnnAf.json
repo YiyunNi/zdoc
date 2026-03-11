@@ -1,0 +1,837 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1733998265",
+  "node_token": "CWT2wh5YriZfPZkGlgCcWxVnnAf",
+  "node_type": "origin",
+  "obj_create_time": "1733998265",
+  "obj_edit_time": "1762157550",
+  "obj_token": "Oip4diTSTojb5vxLMSocJj8qngg",
+  "obj_type": "docx",
+  "origin_node_token": "CWT2wh5YriZfPZkGlgCcWxVnnAf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+  "space_id": "7167193056431783939",
+  "title": "Manage Cluster Users (Console)",
+  "slug": "cluster-users",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "block_type": 1,
+        "children": [
+          "QwUbdlriVo8RWXx9qgCcDzxRnNf",
+          "QPmSdejfaoy7y9xhMxlc1gf7nbh",
+          "YitNdCKt4oOqwUxnVyccYvvnnBb",
+          "WW2OdJZqmoQuP0xM7r7cQzxMneh",
+          "SiGNdPtlYsolW2bezjjcngeUnMd",
+          "GL5rd4lvqoUNNDxKYDHcYURnnuf",
+          "MLPcdy9OCobXYSxpcz9cuS6xnRc",
+          "SHNjdVnIUoy2kmxMROOcjQrhn1f",
+          "Wofqdiailod9iOxUem0carfKnSf",
+          "WyBAdbNtlouu0Yx9LYGcXiK8nlb",
+          "G5RGdSaAJoJcQqxiCpMcd0OvnQe",
+          "THfxdPf5UoP48YxCf5HcPK6snzf",
+          "THxBd1CEjoaqi4xkpRacKNAHnLg",
+          "D0SadS8fZoIyb8xkTmJcOuL4n8H",
+          "NmOQdOn0aotoJRxbTvTcBJfVnEb",
+          "Lbg4dSnR7oc3nZxzVbkcaJV8nIe",
+          "Pce7d3XMjoiSl9x6EZ5clBTTnef",
+          "QEa1dstikoFuM8xBgp5c08JZnHF",
+          "OLtkdua8pocp9WxjiufcbY03nb0"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage Cluster Users (Console)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "QwUbdlriVo8RWXx9qgCcDzxRnNf",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In Zilliz Cloud, you can create cluster users and assign them cluster roles to define the privileges, achieving data security.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QPmSdejfaoy7y9xhMxlc1gf7nbh",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upon the creation of a cluster, a default user named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "db_admin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is automatically generated. This user cannot be dropped. In addition to this default user, you can create more cluster users for fine-grained access control.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YitNdCKt4oOqwUxnVyccYvvnnBb",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To manage cluster users, you must be an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project Admin",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or have a role with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cluster_Admin",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " privileges.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WW2OdJZqmoQuP0xM7r7cQzxMneh",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SiGNdPtlYsolW2bezjjcngeUnMd",
+        "block_type": 49,
+        "children": [
+          "PTrXdtEU3obUTjxJnoMcRNo2n8b"
+        ],
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "GL5rd4lvqoUNNDxKYDHcYURnnuf",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MLPcdy9OCobXYSxpcz9cuS6xnRc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a cluster user",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "SHNjdVnIUoy2kmxMROOcjQrhn1f",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When creating a cluster user, you need to:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Wofqdiailod9iOxUem0carfKnSf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Input the name of the user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "WyBAdbNtlouu0Yx9LYGcXiK8nlb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grant this user either a built-in cluster role or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "a custom cluster role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FYHG0wCYxfiZILvkZ2VLclmvsn7g"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "G5RGdSaAJoJcQqxiCpMcd0OvnQe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set the password for this cluster user. This password will be used for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "authentication",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FYmsVwIzOBinv4OklCfmc2nyznAe"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "THfxdPf5UoP48YxCf5HcPK6snzf",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D12001-494%26mode%3Ddesign%26t%3Dt7LYuM8yVdw4pRND-4"
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "THxBd1CEjoaqi4xkpRacKNAHnLg",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "LYv5drlCNoZ29bxosfPcyYs3nHc",
+          "WYJfdpsZroTC6kxVWTpcN5VznJb"
+        ],
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "LYv5drlCNoZ29bxosfPcyYs3nHc",
+        "block_type": 2,
+        "parent_id": "THxBd1CEjoaqi4xkpRacKNAHnLg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WYJfdpsZroTC6kxVWTpcN5VznJb",
+        "block_type": 2,
+        "parent_id": "THxBd1CEjoaqi4xkpRacKNAHnLg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Each cluster can have up to 100 cluster users.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D0SadS8fZoIyb8xkTmJcOuL4n8H",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Edit the role of a cluster user",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "NmOQdOn0aotoJRxbTvTcBJfVnEb",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D20847-702%26mode%3Ddesign%26t%3DmScATtqfDvxbhO10-4"
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "Lbg4dSnR7oc3nZxzVbkcaJV8nIe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Drop a cluster user",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "Pce7d3XMjoiSl9x6EZ5clBTTnef",
+        "block_type": 34,
+        "children": [
+          "H9rwdptWloAbn9xG1oxcGiiOnh3",
+          "E0v3dpLCmoXChUxjkimc86Z8ncg"
+        ],
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "quote_container": {}
+      },
+      {
+        "block_id": "H9rwdptWloAbn9xG1oxcGiiOnh3",
+        "block_type": 2,
+        "parent_id": "Pce7d3XMjoiSl9x6EZ5clBTTnef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E0v3dpLCmoXChUxjkimc86Z8ncg",
+        "block_type": 2,
+        "parent_id": "Pce7d3XMjoiSl9x6EZ5clBTTnef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The default user ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "db_admin ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cannot be dropped.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QEa1dstikoFuM8xBgp5c08JZnHF",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D12032-541%26mode%3Ddesign%26t%3Dt7LYuM8yVdw4pRND-4"
+          }
+        },
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg"
+      },
+      {
+        "block_id": "OLtkdua8pocp9WxjiufcbY03nb0",
+        "block_type": 2,
+        "parent_id": "Oip4diTSTojb5vxLMSocJj8qngg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PTrXdtEU3obUTjxJnoMcRNo2n8b",
+        "block_type": 19,
+        "callout": {
+          "background_color": 1,
+          "border_color": 1,
+          "emoji_id": "book"
+        },
+        "children": [
+          "Srv0d177Vojaa8xiZ7OcP4qInog",
+          "Rytidu26Hol8vhxhBh5crVsYngf"
+        ],
+        "parent_id": "SiGNdPtlYsolW2bezjjcngeUnMd"
+      },
+      {
+        "block_id": "Srv0d177Vojaa8xiZ7OcP4qInog",
+        "block_type": 2,
+        "parent_id": "PTrXdtEU3obUTjxJnoMcRNo2n8b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rytidu26Hol8vhxhBh5crVsYngf",
+        "block_type": 2,
+        "parent_id": "PTrXdtEU3obUTjxJnoMcRNo2n8b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is available only to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 24
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "created_time": "1726208030",
+  "modified_time": "1726208159",
+  "name": "MGTEEmbeddingFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "G3Qvfzptcl9gcFdHholcBmgQnib",
+  "token": "DAtffKPU7lOdbwdUXPTcKRnlnRf",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/DAtffKPU7lOdbwdUXPTcKRnlnRf",
+  "slug": "EmbeddingModels-MGTEEmbeddingFunction",
+  "children": [
+    {
+      "created_time": "1726208112",
+      "modified_time": "1726210880",
+      "name": "encode_documents()",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "DAtffKPU7lOdbwdUXPTcKRnlnRf",
+      "token": "GyrmdRjGZoOFKdxsYyCcvNG7npg",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/GyrmdRjGZoOFKdxsYyCcvNG7npg"
+    },
+    {
+      "created_time": "1726208131",
+      "modified_time": "1726210779",
+      "name": "encode_queries()",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "DAtffKPU7lOdbwdUXPTcKRnlnRf",
+      "token": "HEWIdid9BoFMyNxN8Bbc0P3nn6g",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/HEWIdid9BoFMyNxN8Bbc0P3nn6g"
+    },
+    {
+      "created_time": "1726208158",
+      "modified_time": "1726209655",
+      "name": "MGTEEmbeddingFunction",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "DAtffKPU7lOdbwdUXPTcKRnlnRf",
+      "token": "OF1mdh4tSo8ZQQxxVgEcdITRndb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/OF1mdh4tSo8ZQQxxVgEcdITRndb"
+    },
+    {
+      "created_time": "1726208086",
+      "modified_time": "1726210493",
+      "name": "\\_\\_call\\_\\_()",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "DAtffKPU7lOdbwdUXPTcKRnlnRf",
+      "token": "L4PUdEhrpoS1Q5xN3m2chVVEnWg",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/L4PUdEhrpoS1Q5xN3m2chVVEnWg"
+    }
+  ]
+}

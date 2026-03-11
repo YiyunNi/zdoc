@@ -1,0 +1,410 @@
+{
+  "created_time": "1761551601",
+  "modified_time": "1761551795",
+  "name": "closeConnection()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "WlKqf2dXKljRPDdiiUIcdsh5nxd",
+  "token": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+        "block_type": 1,
+        "children": [
+          "VsEUd9Y1loZ3vRxGJi9chCbcnTa",
+          "SvjFdKDFhoLe31xIXxkctvqJn7d",
+          "NScFd0OO3omI83xIi8mckqUCn2b",
+          "MvuPdFvo2oszlKxSygzcaNC1n80",
+          "PlANdA1vlo9wNrxq3DYcanhhn8b",
+          "MytddgiNJoqMJ6xMOnycQ9kknDh",
+          "XQkodsnw7o0rGaxpIcDceVFHnAg",
+          "LJFudVU6uoq74nx3DFxc5Qg5nGF",
+          "VxY9dA0vqo9Z5LxqEPOciQ7cndT",
+          "LYfadR0RDoL2VmxRsnycFXI6nPe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "closeConnection()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "VsEUd9Y1loZ3vRxGJi9chCbcnTa",
+        "block_type": 2,
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation closes the current connection to the Milvus server.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SvjFdKDFhoLe31xIXxkctvqJn7d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "closeConnection(): ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Promise",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CONNECT_STATUS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh"
+      },
+      {
+        "block_id": "NScFd0OO3omI83xIi8mckqUCn2b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh"
+      },
+      {
+        "block_id": "MvuPdFvo2oszlKxSygzcaNC1n80",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "milvusClient.closeConnection()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh"
+      },
+      {
+        "block_id": "PlANdA1vlo9wNrxq3DYcanhhn8b",
+        "block_type": 2,
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MytddgiNJoqMJ6xMOnycQ9kknDh",
+        "block_type": 2,
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Promise",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CONNECT_STATUS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XQkodsnw7o0rGaxpIcDceVFHnAg",
+        "block_type": 2,
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LJFudVU6uoq74nx3DFxc5Qg5nGF",
+        "block_type": 2,
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A promise that resolves to the final status of the current connection to the Milvus server, which should be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SHUTDOWN",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VxY9dA0vqo9Z5LxqEPOciQ7cndT",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh"
+      },
+      {
+        "block_id": "LYfadR0RDoL2VmxRsnycFXI6nPe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "milvusClient.closeConnection()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "HtOGdjTpOoG0RcxpGv1cCBcEnAh"
+      }
+    ],
+    "counts": 11
+  },
+  "slug": "Client-closeConnection"
+}

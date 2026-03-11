@@ -1,0 +1,1348 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1763460237",
+  "node_token": "JwYYw2v0yi2eHBkFZuJcM7pXnnc",
+  "node_type": "origin",
+  "obj_create_time": "1763460237",
+  "obj_edit_time": "1764149321",
+  "obj_token": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+  "obj_type": "docx",
+  "origin_node_token": "JwYYw2v0yi2eHBkFZuJcM7pXnnc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "Fe9vwGQQKiaqurkTuz1cSAaUn2d",
+  "space_id": "7167193056431783939",
+  "title": "Manage Volumes (Console)",
+  "slug": "manage-volumes-via-console",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "block_type": 1,
+        "children": [
+          "FgJ6dstFpooTXZxkYH9c1Eamn1b",
+          "F97vdccjFoPXIRx78wjcaNFTntg",
+          "CsxvdHCoTodG4bxUGUEciI4GnDe",
+          "HyM9dZiCZoWwyAxBFNBcWde2ntb",
+          "T5mWdmO70oBiUvx85vjcWiW8n8c",
+          "C0rpditOXoN2mXxZFedc6rBinNc",
+          "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+          "OwMydxC4hoyEUTxFww7c66U7nLd",
+          "BlPndvalGo9H6axWSKZcq0XQnAe",
+          "EZ7md5P4GoQVpIxQ7EdclZQ3n9b",
+          "GvSzdqlmnoKiP8xsLcRc5Bujnwb",
+          "Vo5dd1Pgjozcy0xOfoLcCpfWnsd",
+          "CHwpdX4Zxol92sxWZaBcaqoDnrf",
+          "WHNTdzg9ZoLbv0xE4KhcdySFnzd",
+          "LgDJd7nQ1oI5bVxoc2McRCCCnIh",
+          "Cha0dwT2goZIXOxTwaEclCqLnrd",
+          "MhQfdz4J5oGVh9xArFycy16HnUe",
+          "ZjfEdXrAcoNH57xce3QcXRzUnyd",
+          "VyHxdDOjno4W04xuVQTce7o2nmf",
+          "SZ2ZdbyBIoYDuhxVxFycqwrPnjc",
+          "KAVadTxgdoPxvqxnhaFchTVNnAh",
+          "IArNdsGrsoKBLVxgCsdconwjnUc",
+          "UEI6dQ3E8o6Ktbx9FNIcijUpnug",
+          "UGDSdX71uok6mBxWdInc15NZn9d",
+          "F2NHdO9n8oQwbRxehG3cncQmnLg",
+          "He7EdEPXuoZQQRx6It5cXffDnpd",
+          "VBH6dgVe6o9y9cxX92Ic3aJJn8e",
+          "FLhJdfV2CoYBObxDsjCcSVOgnbe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage Volumes (Console)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "FgJ6dstFpooTXZxkYH9c1Eamn1b",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page describes how to manage volumes using the web console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F97vdccjFoPXIRx78wjcaNFTntg",
+        "block_type": 34,
+        "children": [
+          "B81AdxkKyo2tHAxDIjBcgozan9b",
+          "BLYKdcEikomiWNxC3tkcl5BWnSh"
+        ],
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "quote_container": {}
+      },
+      {
+        "block_id": "B81AdxkKyo2tHAxDIjBcgozan9b",
+        "block_type": 2,
+        "parent_id": "F97vdccjFoPXIRx78wjcaNFTntg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Note",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BLYKdcEikomiWNxC3tkcl5BWnSh",
+        "block_type": 2,
+        "parent_id": "F97vdccjFoPXIRx78wjcaNFTntg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can only create volumes on AWS and Google Cloud. If you need to use a volume on Azure, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fsupport.zilliz.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CsxvdHCoTodG4bxUGUEciI4GnDe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "HyM9dZiCZoWwyAxBFNBcWde2ntb",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you only want to try out the volume feature, create a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "free trial volume",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". A free trial volume can be created ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "once per organization",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and has limits on capacity and file uploads. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Volume Explained",
+                "token": "H22PwQ4DxiwKrrkQxlac21WenRe",
+                "url": "https://zilliverse.feishu.cn/wiki/H22PwQ4DxiwKrrkQxlac21WenRe#Gy5Ydsx46okNkDxQvhlcYvNwnkb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T5mWdmO70oBiUvx85vjcWiW8n8c",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For production workloads, create a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pay-as-you-go volume",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C0rpditOXoN2mXxZFedc6rBinNc",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table describes each parameter used when creating a volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "block_type": 31,
+        "children": [
+          "KfKUd2D7zoGl06xqx55czvufnnb",
+          "SImQdnXlWotRaPxbaW6cKaEMnwF",
+          "NoE5d9X1toAgI1xHnvCcw3USnvg",
+          "MKeyd79ugoopEKxr8z3c30dLnbb",
+          "OrJ1d5jXAoPjbVxYhrkcEngHn7f",
+          "KrfUd4NqbogbcWxVjPscAfplnsh",
+          "RFOyd8NK1o2HMDxTw6Oc1V10nqc",
+          "UkumdqkoOohQZdxvY8KcY4Jmnld"
+        ],
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "table": {
+          "cells": [
+            "KfKUd2D7zoGl06xqx55czvufnnb",
+            "SImQdnXlWotRaPxbaW6cKaEMnwF",
+            "NoE5d9X1toAgI1xHnvCcw3USnvg",
+            "MKeyd79ugoopEKxr8z3c30dLnbb",
+            "OrJ1d5jXAoPjbVxYhrkcEngHn7f",
+            "KrfUd4NqbogbcWxVjPscAfplnsh",
+            "RFOyd8NK1o2HMDxTw6Oc1V10nqc",
+            "UkumdqkoOohQZdxvY8KcY4Jmnld"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              172,
+              411
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "KfKUd2D7zoGl06xqx55czvufnnb",
+        "block_type": 32,
+        "children": [
+          "UkIVd4GFUowq2nxkFmHcs69Enpe"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UkIVd4GFUowq2nxkFmHcs69Enpe",
+        "block_type": 2,
+        "parent_id": "KfKUd2D7zoGl06xqx55czvufnnb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SImQdnXlWotRaPxbaW6cKaEMnwF",
+        "block_type": 32,
+        "children": [
+          "JPP5d45EDo9eOIxhbKNcheyOnag"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JPP5d45EDo9eOIxhbKNcheyOnag",
+        "block_type": 2,
+        "parent_id": "SImQdnXlWotRaPxbaW6cKaEMnwF",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NoE5d9X1toAgI1xHnvCcw3USnvg",
+        "block_type": 32,
+        "children": [
+          "Gh80ds0kooQWVoxHwlecFQnvnlg"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Gh80ds0kooQWVoxHwlecFQnvnlg",
+        "block_type": 2,
+        "parent_id": "NoE5d9X1toAgI1xHnvCcw3USnvg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MKeyd79ugoopEKxr8z3c30dLnbb",
+        "block_type": 32,
+        "children": [
+          "JjaUdawgyo8adKxxJWic3CC7ned"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JjaUdawgyo8adKxxJWic3CC7ned",
+        "block_type": 2,
+        "parent_id": "MKeyd79ugoopEKxr8z3c30dLnbb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The volume name must be unique across the organization, no longer than 64 characters, start with a letter or underscore, and contain only letters, digits, hyphens, and underscores.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OrJ1d5jXAoPjbVxYhrkcEngHn7f",
+        "block_type": 32,
+        "children": [
+          "VhyHdq16coCLy4xgq9ncgO0YnQh"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VhyHdq16coCLy4xgq9ncgO0YnQh",
+        "block_type": 2,
+        "parent_id": "OrJ1d5jXAoPjbVxYhrkcEngHn7f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KrfUd4NqbogbcWxVjPscAfplnsh",
+        "block_type": 32,
+        "children": [
+          "EJRYdWn8roEPp7xGbsqcabsNn1d"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EJRYdWn8roEPp7xGbsqcabsNn1d",
+        "block_type": 2,
+        "parent_id": "KrfUd4NqbogbcWxVjPscAfplnsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This parameter is optional.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RFOyd8NK1o2HMDxTw6Oc1V10nqc",
+        "block_type": 32,
+        "children": [
+          "DZXadlxrUokxtpxqArecyqN4ncd"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DZXadlxrUokxtpxqArecyqN4ncd",
+        "block_type": 2,
+        "parent_id": "RFOyd8NK1o2HMDxTw6Oc1V10nqc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cloud Provider & Region",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UkumdqkoOohQZdxvY8KcY4Jmnld",
+        "block_type": 32,
+        "children": [
+          "AQdFddflWoo3MtxFLP2ccLx9nYf"
+        ],
+        "parent_id": "Fjy8dDIK8odQoqxIPDMcjT61nOc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AQdFddflWoo3MtxFLP2ccLx9nYf",
+        "block_type": 2,
+        "parent_id": "UkumdqkoOohQZdxvY8KcY4Jmnld",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The volume cloud provider and region must match the cloud provider and region of the target cluster you plan to import or migrate data into.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmi76tseu4ok8b7b4l5nods0s?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "OwMydxC4hoyEUTxFww7c66U7nLd",
+        "block_type": 40,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "BlPndvalGo9H6axWSKZcq0XQnAe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View volumes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "EZ7md5P4GoQVpIxQ7EdclZQ3n9b",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can view the list of volumes in a project and inspect the details of a specific volume by clicking on the volume name.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GvSzdqlmnoKiP8xsLcRc5Bujnwb",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1396,
+          "scale": 1,
+          "token": "Ar8zbXfHQoQCaQxnKU4c34ednSh",
+          "width": 2880
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "Vo5dd1Pgjozcy0xOfoLcCpfWnsd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage files or folders in a volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "CHwpdX4Zxol92sxWZaBcaqoDnrf",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can upload, view, and delete files or folders stored in a volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WHNTdzg9ZoLbv0xE4KhcdySFnzd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upload a file or folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "LgDJd7nQ1oI5bVxoc2McRCCCnIh",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Uploading files or folders to a volume from the web console is currently ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "not supported",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Use the SDKs instead. See ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Volumes (SDK)",
+                "token": "VCL7wmP6oieCkJkHEcicCsKQnxc",
+                "url": "https://zilliverse.feishu.cn/wiki/VCL7wmP6oieCkJkHEcicCsKQnxc#IoaKdETN4o8LbjxxhcwcxNVInZg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Cha0dwT2goZIXOxTwaEclCqLnrd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View files and folders ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "MhQfdz4J5oGVh9xArFycy16HnUe",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can browse the existing files and folders in a volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZjfEdXrAcoNH57xce3QcXRzUnyd",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1404,
+          "scale": 1,
+          "token": "UOT3bP88no57f8xNqmYcjFwXnFh",
+          "width": 2880
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "VyHxdDOjno4W04xuVQTce7o2nmf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Delete a file or folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "SZ2ZdbyBIoYDuhxVxFycqwrPnjc",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you no longer need a file or folder, you can delete it from the volume. Deletion may take several minutes, depending on the size of the file or folder.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KAVadTxgdoPxvqxnhaFchTVNnAh",
+        "block_type": 34,
+        "children": [
+          "CkRxdH1Upo5OXWx2yJncgJyVnLg"
+        ],
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "quote_container": {}
+      },
+      {
+        "block_id": "CkRxdH1Upo5OXWx2yJncgJyVnLg",
+        "block_type": 2,
+        "parent_id": "KAVadTxgdoPxvqxnhaFchTVNnAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "⚠️ Warning\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Deleted files and folders ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cannot be recovered",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Proceed with caution.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmidzfkoqad9sb7b44vnbfzyd?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "IArNdsGrsoKBLVxgCsdconwjnUc",
+        "block_type": 40,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "UEI6dQ3E8o6Ktbx9FNIcijUpnug",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Delete a volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "UGDSdX71uok6mBxWdInc15NZn9d",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can delete a volume at any time if it is no longer needed. Note that the free trial volume can only be created once per organization. Once deleted, you can no longer create any free trial volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F2NHdO9n8oQwbRxehG3cncQmnLg",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deleting a volume removes ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "all its files and folders",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as well.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "He7EdEPXuoZQQRx6It5cXffDnpd",
+        "block_type": 34,
+        "children": [
+          "FORQdvcT5oBAKFxeKurcxVVvn1g"
+        ],
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "quote_container": {}
+      },
+      {
+        "block_id": "FORQdvcT5oBAKFxeKurcxVVvn1g",
+        "block_type": 2,
+        "parent_id": "He7EdEPXuoZQQRx6It5cXffDnpd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "⚠️ Warning\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Deleted volumes ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cannot be recovered",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Proceed with caution.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmi77c5554p1gb7b4sqqsm7nn?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "VBH6dgVe6o9y9cxX92Ic3aJJn8e",
+        "block_type": 40,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG"
+      },
+      {
+        "block_id": "FLhJdfV2CoYBObxDsjCcSVOgnbe",
+        "block_type": 2,
+        "parent_id": "JprWdtPCDo1Ub1xp9W2c8XXYnbG",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 49
+  }
+}

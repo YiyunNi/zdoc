@@ -1,0 +1,3028 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1763460203",
+  "node_token": "H22PwQ4DxiwKrrkQxlac21WenRe",
+  "node_type": "origin",
+  "obj_create_time": "1763460203",
+  "obj_edit_time": "1770641088",
+  "obj_token": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+  "obj_type": "docx",
+  "origin_node_token": "H22PwQ4DxiwKrrkQxlac21WenRe",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "Fe9vwGQQKiaqurkTuz1cSAaUn2d",
+  "space_id": "7167193056431783939",
+  "title": "Volume Explained",
+  "slug": "volume-explained",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "block_type": 1,
+        "children": [
+          "YBO1dwkKho6kYHxmnr3cOLqvnyh",
+          "Tx7hdxNHjoBhqHxEqOQcLtUxnhh",
+          "SlPud4FPGoVmRIxnh0Kck2HSnUb",
+          "SsEldnxoNoBNk4xwwk7cQkhwnHc",
+          "HeqUdfc7uoaKC7xC13qcAnDtnLd",
+          "H6VUd6KUIoppKIxO23Pcmekuncb",
+          "IwFxdrauVoJ67xxsbrTc0eb6nhb",
+          "DJ3adzqBioVKbdx3YDmcyTTunMh",
+          "ZBp6d4rZdosgKIxDNmTcW6WZn4f",
+          "EUAVd50pKoRLnOxNuyFcQ0cPn1b",
+          "LNapdd1kzoAj08x9KbucjXxAneh",
+          "Dd2Id8P64oM2ogxuQk5cFfjenMg",
+          "WSzHdD82moPGjuxgXPxc7FLWnEh",
+          "SPCVdwesVocaDBxD803cER2Nnig",
+          "KjandpoDwovPAZxyERqchN30nP8",
+          "Cwa9dKBBnoC3qTxgK3NcKmyxn16",
+          "B3oZdIc1VoABIaxCZmSctvWtnef",
+          "GPHGdV3kconT33xE9k6cAH2KnGf",
+          "Y664dcoqioxwK5xiB0zcfEwanQf",
+          "TNcsdQUUboak4lxUEykcpAfCnrb",
+          "KARudo6Tlopd3hxxZLxciTZHnRc",
+          "R5U6dV768otYofxVrh3c3G17nMf",
+          "E0jfdS3bpol7NNxao2PceKzinzx",
+          "EZufdaU7voS6CQxJJ0IcZ2j7nCh",
+          "UywVdFXAJomrFOxcG5WcgiDQnSc",
+          "Q06vdT04foHSdrxXe0ucibqnnuh",
+          "UPvBdOqg9ohuVTxpz9fcYYCynFX",
+          "SyufdgFJOoiC0kxvlwocVAjxnDb",
+          "Gy5Ydsx46okNkDxQvhlcYvNwnkb",
+          "PNKudFvsmomRzdxDCVyc6njdnhJ",
+          "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+          "BnzBdcZBzoGVXTx3aaacX9SOn7c",
+          "Drhzd99mwo0GkWxCslIcq5GjnLb",
+          "Wrsbd4XTmomCCvxa7uRcYlkYnqd",
+          "IGVEdYqOHoS32hxl3yqcu2vWnnh",
+          "M2rYdA8Awo7VaBxez2zc5rfanD5",
+          "D7wxdFDa8o1PRpxZxzmco1R6nhh",
+          "HXAKd06ggolgUfxIKZSc76unn5c",
+          "SfsFdrmK0omLeLx0ZdsclJBsnoh",
+          "GGvRdpZweo8bocxEUdocUTxMnVd",
+          "Vb0SdqD8roqP5GxVz1qcUtXlnmh",
+          "CTXcdbxfYoEUhExorMXcr1wInrd",
+          "FD0RdivMvozVWpxmRUScR3xwnFc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Volume Explained",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "YBO1dwkKho6kYHxmnr3cOLqvnyh",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A volume is an object store that holds either structured data or collections of unstructured data files. It provides a unified place to access, store, govern, and organize these data assets. Structured and unstructured data from local file systems or cloud object storage are first uploaded into a volume in Zilliz Cloud. From there, you can import or migrate structured data directly into collections, or run ETL pipelines to transform unstructured data into embeddings and then load those embeddings into collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Tx7hdxNHjoBhqHxEqOQcLtUxnhh",
+        "block_type": 43,
+        "board": {
+          "token": "DKAYwcIgJhudJnbw8Sbczhttntb"
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "SlPud4FPGoVmRIxnh0Kck2HSnUb",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SsEldnxoNoBNk4xwwk7cQkhwnHc",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A volume belongs to a project, not to a single cluster. Any cluster in the same project can read/write it, subject to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "project roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPZ4uwwgUfio5OikY0Ecc5nrunFf%23M1vDd34kEocOvFxVCZhcV60QnMc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HeqUdfc7uoaKC7xC13qcAnDtnLd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Organization\n└─ Project\n   ├─ Clusters\n   │   └─ Databases\n   │       └─ Collections\n   └─ Volumes\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "       └─ Data files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "H6VUd6KUIoppKIxO23Pcmekuncb",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"indev\">",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IwFxdrauVoJ67xxsbrTc0eb6nhb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Types of volumes",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "DJ3adzqBioVKbdx3YDmcyTTunMh",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud supports two types of volumes: ",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZBp6d4rZdosgKIxDNmTcW6WZn4f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Managed volume",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": a Zilliz-managed storage",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "EUAVd50pKoRLnOxNuyFcQ0cPn1b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "External volume (Coming Soon)",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": maps to your external cloud object storage locations",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "LNapdd1kzoAj08x9KbucjXxAneh",
+        "block_type": 43,
+        "board": {
+          "height": 385,
+          "token": "BUH4whwrZhbf80bpxhlc76dmnmb",
+          "width": 820
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "Dd2Id8P64oM2ogxuQk5cFfjenMg",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table compares the two types of volumes.",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "block_type": 31,
+        "children": [
+          "AQ35db5LRowSQbx2qaDcZ0lOnVf",
+          "DPJjdUzdgo0HkIxrHkec7MEHn3c",
+          "MYaCdsG3DoErFfxoYiUcxU1Pn5b",
+          "M10YdT44ToniWPxvNSVcSRcGnQc",
+          "ALKBd0RS7oGwiLxPSN7cU4SUn0m",
+          "UOsBdjBCVo4QLpxUPhncZfJwncg",
+          "Ei4CdMH5Topef0xiwuXcpv6snlc",
+          "HVlvdVe2BohqkPxPz99cMl5ln1e",
+          "Uhl2dlKuioKJdfxVUS9c4aQMnPb",
+          "UNg3dVUGYoblXyxQuZicYraQnFT",
+          "S2jfd6u2xoHZSzxfkV2cXRIjn4f",
+          "RDxQdEXeioVRjfxNwdEcmERInnd",
+          "AwEcd3e30ow9nOx8LA6c7MeOnKe",
+          "AVs8dwFykoKMTUxLDpkcpZ94nYd",
+          "P4w5dke0coFBofxzhENckUelnVc"
+        ],
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "table": {
+          "cells": [
+            "AQ35db5LRowSQbx2qaDcZ0lOnVf",
+            "DPJjdUzdgo0HkIxrHkec7MEHn3c",
+            "MYaCdsG3DoErFfxoYiUcxU1Pn5b",
+            "M10YdT44ToniWPxvNSVcSRcGnQc",
+            "ALKBd0RS7oGwiLxPSN7cU4SUn0m",
+            "UOsBdjBCVo4QLpxUPhncZfJwncg",
+            "Ei4CdMH5Topef0xiwuXcpv6snlc",
+            "HVlvdVe2BohqkPxPz99cMl5ln1e",
+            "Uhl2dlKuioKJdfxVUS9c4aQMnPb",
+            "UNg3dVUGYoblXyxQuZicYraQnFT",
+            "S2jfd6u2xoHZSzxfkV2cXRIjn4f",
+            "RDxQdEXeioVRjfxNwdEcmERInnd",
+            "AwEcd3e30ow9nOx8LA6c7MeOnKe",
+            "AVs8dwFykoKMTUxLDpkcpZ94nYd",
+            "P4w5dke0coFBofxzhENckUelnVc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              150,
+              331,
+              331
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 5
+          }
+        }
+      },
+      {
+        "block_id": "AQ35db5LRowSQbx2qaDcZ0lOnVf",
+        "block_type": 32,
+        "children": [
+          "MYrOdEkfcopkwUx1bKuc17NVnif"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MYrOdEkfcopkwUx1bKuc17NVnif",
+        "block_type": 2,
+        "parent_id": "AQ35db5LRowSQbx2qaDcZ0lOnVf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DPJjdUzdgo0HkIxrHkec7MEHn3c",
+        "block_type": 32,
+        "children": [
+          "MQRndIRvJomTeoxa5AlcBHmvnHg"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MQRndIRvJomTeoxa5AlcBHmvnHg",
+        "block_type": 2,
+        "parent_id": "DPJjdUzdgo0HkIxrHkec7MEHn3c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Managed volumes",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MYaCdsG3DoErFfxoYiUcxU1Pn5b",
+        "block_type": 32,
+        "children": [
+          "KFDQdz5ynoYw06xSxVEcRFomned"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KFDQdz5ynoYw06xSxVEcRFomned",
+        "block_type": 2,
+        "parent_id": "MYaCdsG3DoErFfxoYiUcxU1Pn5b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "External volumes (Coming Soon)",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M10YdT44ToniWPxvNSVcSRcGnQc",
+        "block_type": 32,
+        "children": [
+          "KjyQdbMgsoiQntxthQncziLrnGf"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KjyQdbMgsoiQntxthQncziLrnGf",
+        "block_type": 2,
+        "parent_id": "M10YdT44ToniWPxvNSVcSRcGnQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage location",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ALKBd0RS7oGwiLxPSN7cU4SUn0m",
+        "block_type": 32,
+        "children": [
+          "YZxmdVPgsoHg0DxQBX2cnThenJd"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YZxmdVPgsoHg0DxQBX2cnThenJd",
+        "block_type": 2,
+        "parent_id": "ALKBd0RS7oGwiLxPSN7cU4SUn0m",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Created inside a Zilliz-managed storage.",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UOsBdjBCVo4QLpxUPhncZfJwncg",
+        "block_type": 32,
+        "children": [
+          "KcqJd3DzioSFqoxsIKpc3AWKnfd"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KcqJd3DzioSFqoxsIKpc3AWKnfd",
+        "block_type": 2,
+        "parent_id": "UOsBdjBCVo4QLpxUPhncZfJwncg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Maps to an external cloud object storage path.",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ei4CdMH5Topef0xiwuXcpv6snlc",
+        "block_type": 32,
+        "children": [
+          "Qezxd10reoJOTwx2uyzcJ19inac",
+          "IHRNdTTqloce1gxREz3cesqCnpe"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Qezxd10reoJOTwx2uyzcJ19inac",
+        "block_type": 2,
+        "parent_id": "Ei4CdMH5Topef0xiwuXcpv6snlc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data lifecycle",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IHRNdTTqloce1gxREz3cesqCnpe",
+        "block_type": 2,
+        "parent_id": "Ei4CdMH5Topef0xiwuXcpv6snlc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HVlvdVe2BohqkPxPz99cMl5ln1e",
+        "block_type": 32,
+        "children": [
+          "RIlsdHQcooMFdpx6EWGcbaENnpf"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RIlsdHQcooMFdpx6EWGcbaENnpf",
+        "block_type": 2,
+        "parent_id": "HVlvdVe2BohqkPxPz99cMl5ln1e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data are managed on Zilliz Cloud and if a managed volume is deleted, all data in the volume are removed.",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Uhl2dlKuioKJdfxVUS9c4aQMnPb",
+        "block_type": 32,
+        "children": [
+          "VMYkd7f93ouUDkxrO0rcy6X1nW8"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VMYkd7f93ouUDkxrO0rcy6X1nW8",
+        "block_type": 2,
+        "parent_id": "Uhl2dlKuioKJdfxVUS9c4aQMnPb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data remains in the external cloud storage when you delete the external volume.",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UNg3dVUGYoblXyxQuZicYraQnFT",
+        "block_type": 32,
+        "children": [
+          "Q4UwdoxThoE5uUxfLR1cPW0nnAh"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Q4UwdoxThoE5uUxfLR1cPW0nnAh",
+        "block_type": 2,
+        "parent_id": "UNg3dVUGYoblXyxQuZicYraQnFT",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access control",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S2jfd6u2xoHZSzxfkV2cXRIjn4f",
+        "block_type": 32,
+        "children": [
+          "YtCwdcHl1oAPlixEgVvcXuPanBf",
+          "AZbFdT3C5oJnq4xIIvecqWhmn8b"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YtCwdcHl1oAPlixEgVvcXuPanBf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Determined by Zilliz Cloud RBAC",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S2jfd6u2xoHZSzxfkV2cXRIjn4f"
+      },
+      {
+        "block_id": "AZbFdT3C5oJnq4xIIvecqWhmn8b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Authenticate via Zilliz Cloud API key",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "S2jfd6u2xoHZSzxfkV2cXRIjn4f"
+      },
+      {
+        "block_id": "RDxQdEXeioVRjfxNwdEcmERInnd",
+        "block_type": 32,
+        "children": [
+          "HQVid6afZoupwoxu2HUcBMzXnse",
+          "D1VIdac1joHtpXxYYLTciBadnJb"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HQVid6afZoupwoxu2HUcBMzXnse",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Determined by Object Storage Service (OSS) RBAC",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "RDxQdEXeioVRjfxNwdEcmERInnd"
+      },
+      {
+        "block_id": "D1VIdac1joHtpXxYYLTciBadnJb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Authenticate via OSS credentials",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "RDxQdEXeioVRjfxNwdEcmERInnd"
+      },
+      {
+        "block_id": "AwEcd3e30ow9nOx8LA6c7MeOnKe",
+        "block_type": 32,
+        "children": [
+          "FgZmdd495ou3U5xVltfcusmnnym"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FgZmdd495ou3U5xVltfcusmnnym",
+        "block_type": 2,
+        "parent_id": "AwEcd3e30ow9nOx8LA6c7MeOnKe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Typical use case",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AVs8dwFykoKMTUxLDpkcpZ94nYd",
+        "block_type": 32,
+        "children": [
+          "Ucy1d8432ozksmxE5CTc2jhxnyc",
+          "HkzbdNIrhoOZWmxVuFpctNyXn9g",
+          "NcBydDj1foDK5xxA0Wecr2yknIb"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ucy1d8432ozksmxE5CTc2jhxnyc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Users do not have a cloud object storage",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AVs8dwFykoKMTUxLDpkcpZ94nYd"
+      },
+      {
+        "block_id": "HkzbdNIrhoOZWmxVuFpctNyXn9g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Simplest option for Zilliz Cloud-only workloads like import, migrate local data to Zilliz Cloud",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AVs8dwFykoKMTUxLDpkcpZ94nYd"
+      },
+      {
+        "block_id": "NcBydDj1foDK5xxA0Wecr2yknIb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Process both structured and unstructured data",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AVs8dwFykoKMTUxLDpkcpZ94nYd"
+      },
+      {
+        "block_id": "P4w5dke0coFBofxzhENckUelnVc",
+        "block_type": 32,
+        "children": [
+          "VVmSd6fqTowcUTxgTTdcu0slnXb",
+          "Erhadzr21o4p5LxrGErc5YTGnye",
+          "OE00d68lloxwiLxVXxYck6ZPnrc"
+        ],
+        "parent_id": "WSzHdD82moPGjuxgXPxc7FLWnEh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VVmSd6fqTowcUTxgTTdcu0slnXb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Users already have a cloud object storage",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "P4w5dke0coFBofxzhENckUelnVc"
+      },
+      {
+        "block_id": "Erhadzr21o4p5LxrGErc5YTGnye",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Adding governance where data already resides, without requiring data copy",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "P4w5dke0coFBofxzhENckUelnVc"
+      },
+      {
+        "block_id": "OE00d68lloxwiLxVXxYck6ZPnrc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Process unstructured data",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "P4w5dke0coFBofxzhENckUelnVc"
+      },
+      {
+        "block_id": "SPCVdwesVocaDBxD803cER2Nnig",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "background_color": 14,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KjandpoDwovPAZxyERqchN30nP8",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use cases for volumes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "Cwa9dKBBnoC3qTxgK3NcKmyxn16",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can use volumes for easier data processing. The following diagram shows the major application scenarios of Zilliz Cloud volumes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B3oZdIc1VoABIaxCZmSctvWtnef",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GPHGdV3kconT33xE9k6cAH2KnGf",
+        "block_type": 43,
+        "board": {
+          "token": "NRlhw8PMBhszdybIu6mcQro9npv"
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "Y664dcoqioxwK5xiB0zcfEwanQf",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TNcsdQUUboak4lxUEykcpAfCnrb",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KARudo6Tlopd3hxxZLxciTZHnRc",
+        "block_type": 43,
+        "board": {
+          "token": "W2hBwyxYBhVzzYbGGqXcZs6Vnlg"
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "R5U6dV768otYofxVrh3c3G17nMf",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E0jfdS3bpol7NNxao2PceKzinzx",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can use volumes in data import<include target=\"saas\">, data migration,</include> and data merging, all of which need to fetch data from external sources but use the fetched data in different ways. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EZufdaU7voS6CQxJJ0IcZ2j7nCh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data import",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LyNodLGjGoZHY2xAR2WczqlhnJA"
+        ],
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "LyNodLGjGoZHY2xAR2WczqlhnJA",
+        "block_type": 2,
+        "parent_id": "EZufdaU7voS6CQxJJ0IcZ2j7nCh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During data import, you can upload prepared datasets into a volume and import them from the volume into a Zilliz Cloud collection. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data (Console)",
+                "token": "KkdswLx2bi4bgCkY6bEc7Do9neh",
+                "url": "https://zilliverse.feishu.cn/wiki/KkdswLx2bi4bgCkY6bEc7Do9neh#I3ZFdltXLoEG9yxSVBPcZfj4nXd"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data (RESTful API)",
+                "token": "ZOikw2pIUiAZj9kuLYRcdhLnnoc",
+                "url": "https://zilliverse.feishu.cn/wiki/ZOikw2pIUiAZj9kuLYRcdhLnnoc"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data (SDK)",
+                "token": "MvgAwL4HIiuRRJkH0FwcJhxSnld",
+                "url": "https://zilliverse.feishu.cn/wiki/MvgAwL4HIiuRRJkH0FwcJhxSnld"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UywVdFXAJomrFOxcG5WcgiDQnSc",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q06vdT04foHSdrxXe0ucibqnnuh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data migration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "V22xd2WYEo3id2x6bCxcDW7Dnze"
+        ],
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "V22xd2WYEo3id2x6bCxcDW7Dnze",
+        "block_type": 2,
+        "parent_id": "Q06vdT04foHSdrxXe0ucibqnnuh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In data migration, you upload backup files of your Milvus instance into a volume and use the data in the volume to restore the Milvus instance as a Zilliz Cloud cluster. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Migrate from Milvus to Zilliz Cloud Via Backup Files",
+                "token": "IO4fwm5fJiroaoktKeIcbdkDnRb",
+                "url": "https://zilliverse.feishu.cn/wiki/IO4fwm5fJiroaoktKeIcbdkDnRb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UPvBdOqg9ohuVTxpz9fcYYCynFX",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SyufdgFJOoiC0kxvlwocVAjxnDb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data merging",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZaccdTKb1oNy0fxVLKqce8s2nbu"
+        ],
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "ZaccdTKb1oNy0fxVLKqce8s2nbu",
+        "block_type": 2,
+        "parent_id": "SyufdgFJOoiC0kxvlwocVAjxnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can merge data from an existing Zilliz Cloud collection and that from a local file uploaded to a volume to create a collection that combines the data from both sources. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Merge Data",
+                "token": "Q2qwwliDki25vRkZrYxc7Rnnn4e",
+                "url": "https://zilliverse.feishu.cn/wiki/Q2qwwliDki25vRkZrYxc7Rnnn4e"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gy5Ydsx46okNkDxQvhlcYvNwnkb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Billing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "PNKudFvsmomRzdxDCVyc6njdnhJ",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When you create a volume, you can choose either a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "free trial volume",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pay-as-you-go volume",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". The table below compares their typical use cases and limits.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "block_type": 31,
+        "children": [
+          "FpEZdnONLo7WYNxQYkbcwAVHnB1",
+          "X5QEdOc6boc6mExwslQcX1xVnrg",
+          "FriBdjdcKowmoMxNVK3ckn8jnhc",
+          "GaAGd4rmtoKuA3xho3qcjJ6dn6e",
+          "SivIdK8PuomybExefGqcr4GBnre",
+          "VQfJdUYK2oyy6vxUxlRcP7tWnth",
+          "JVybdoDBNoGTcNxqil4ccN4Onfg",
+          "ShbTdfw8moYkdgxJCQmcEiOcnNh",
+          "G1V1dRKDroIrrKxjSfLcGNr5nQg",
+          "FtXAdkUUDofBtIx5Zj6ciw92nye",
+          "YO9CdAVKZoX0G4x20SUci0zhnih",
+          "XxqIdldNuoxJC7xKeK0cw7tdnTe",
+          "KoGkdc5oOoPsPhxd31zcmxBmnKO",
+          "OLAvdF94Ko4konxIqiic8F9mnne",
+          "JLtWdGQ18oRpuSxO44Wc1Vo1nqg"
+        ],
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "table": {
+          "cells": [
+            "FpEZdnONLo7WYNxQYkbcwAVHnB1",
+            "X5QEdOc6boc6mExwslQcX1xVnrg",
+            "FriBdjdcKowmoMxNVK3ckn8jnhc",
+            "GaAGd4rmtoKuA3xho3qcjJ6dn6e",
+            "SivIdK8PuomybExefGqcr4GBnre",
+            "VQfJdUYK2oyy6vxUxlRcP7tWnth",
+            "JVybdoDBNoGTcNxqil4ccN4Onfg",
+            "ShbTdfw8moYkdgxJCQmcEiOcnNh",
+            "G1V1dRKDroIrrKxjSfLcGNr5nQg",
+            "FtXAdkUUDofBtIx5Zj6ciw92nye",
+            "YO9CdAVKZoX0G4x20SUci0zhnih",
+            "XxqIdldNuoxJC7xKeK0cw7tdnTe",
+            "KoGkdc5oOoPsPhxd31zcmxBmnKO",
+            "OLAvdF94Ko4konxIqiic8F9mnne",
+            "JLtWdGQ18oRpuSxO44Wc1Vo1nqg"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              223,
+              279,
+              267
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 5
+          }
+        }
+      },
+      {
+        "block_id": "FpEZdnONLo7WYNxQYkbcwAVHnB1",
+        "block_type": 32,
+        "children": [
+          "RA7hdft9uokFZHxkS2ccGUlLnxg"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RA7hdft9uokFZHxkS2ccGUlLnxg",
+        "block_type": 2,
+        "parent_id": "FpEZdnONLo7WYNxQYkbcwAVHnB1",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X5QEdOc6boc6mExwslQcX1xVnrg",
+        "block_type": 32,
+        "children": [
+          "Po9rd5hcPotrc1xHR1actT2dnfg"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Po9rd5hcPotrc1xHR1actT2dnfg",
+        "block_type": 2,
+        "parent_id": "X5QEdOc6boc6mExwslQcX1xVnrg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Free Trial",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FriBdjdcKowmoMxNVK3ckn8jnhc",
+        "block_type": 32,
+        "children": [
+          "S5CcdvEEWoS3FVxijybcmRjlnfo"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "S5CcdvEEWoS3FVxijybcmRjlnfo",
+        "block_type": 2,
+        "parent_id": "FriBdjdcKowmoMxNVK3ckn8jnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pay-as-you-go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GaAGd4rmtoKuA3xho3qcjJ6dn6e",
+        "block_type": 32,
+        "children": [
+          "FgL2dxyTWofyHOxWc6CcL7ERnkh"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FgL2dxyTWofyHOxWc6CcL7ERnkh",
+        "block_type": 2,
+        "parent_id": "GaAGd4rmtoKuA3xho3qcjJ6dn6e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use case",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SivIdK8PuomybExefGqcr4GBnre",
+        "block_type": 32,
+        "children": [
+          "UwXGdQh3tohvO4x9wHacAHQMnRe"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UwXGdQh3tohvO4x9wHacAHQMnRe",
+        "block_type": 2,
+        "parent_id": "SivIdK8PuomybExefGqcr4GBnre",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For testing environments only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VQfJdUYK2oyy6vxUxlRcP7tWnth",
+        "block_type": 32,
+        "children": [
+          "KboNdBqTXovkfnxVcDrcuB42nih"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KboNdBqTXovkfnxVcDrcuB42nih",
+        "block_type": 2,
+        "parent_id": "VQfJdUYK2oyy6vxUxlRcP7tWnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For production usage.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JVybdoDBNoGTcNxqil4ccN4Onfg",
+        "block_type": 32,
+        "children": [
+          "AUprdxLTxosFB8xQCCfcbuSpnQD"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AUprdxLTxosFB8xQCCfcbuSpnQD",
+        "block_type": 2,
+        "parent_id": "JVybdoDBNoGTcNxqil4ccN4Onfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Capacity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ShbTdfw8moYkdgxJCQmcEiOcnNh",
+        "block_type": 32,
+        "children": [
+          "EJScdOeKkotJQYxP0wccA9Aknee"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EJScdOeKkotJQYxP0wccA9Aknee",
+        "block_type": 2,
+        "parent_id": "ShbTdfw8moYkdgxJCQmcEiOcnNh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "5 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G1V1dRKDroIrrKxjSfLcGNr5nQg",
+        "block_type": 32,
+        "children": [
+          "CJ3Rdb854o4zQexRzr9ctH1Wnzg"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CJ3Rdb854o4zQexRzr9ctH1Wnzg",
+        "block_type": 2,
+        "parent_id": "G1V1dRKDroIrrKxjSfLcGNr5nQg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Unlimited",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FtXAdkUUDofBtIx5Zj6ciw92nye",
+        "block_type": 32,
+        "children": [
+          "OO1Edcc1KofNVZxYfdMcRGWnnLc"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OO1Edcc1KofNVZxYfdMcRGWnnLc",
+        "block_type": 2,
+        "parent_id": "FtXAdkUUDofBtIx5Zj6ciw92nye",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "File size & amount per upload",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YO9CdAVKZoX0G4x20SUci0zhnih",
+        "block_type": 32,
+        "children": [
+          "CiuSddJoKoXBNmxaf92cDnpinbi"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CiuSddJoKoXBNmxaf92cDnpinbi",
+        "block_type": 2,
+        "parent_id": "YO9CdAVKZoX0G4x20SUci0zhnih",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Up to 1 GB of data and no more than 1,000 files in each upload",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XxqIdldNuoxJC7xKeK0cw7tdnTe",
+        "block_type": 32,
+        "children": [
+          "T6XOdLOPFogTA0xSlzRcKO4onSh"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "T6XOdLOPFogTA0xSlzRcKO4onSh",
+        "block_type": 2,
+        "parent_id": "XxqIdldNuoxJC7xKeK0cw7tdnTe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Up to 100 GB of data and unlimited number of files in each upload",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KoGkdc5oOoPsPhxd31zcmxBmnKO",
+        "block_type": 32,
+        "children": [
+          "XRU0dM4mUo8wPhxZgVtcGaWwnJg"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XRU0dM4mUo8wPhxZgVtcGaWwnJg",
+        "block_type": 2,
+        "parent_id": "KoGkdc5oOoPsPhxd31zcmxBmnKO",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max. numbers volumes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OLAvdF94Ko4konxIqiic8F9mnne",
+        "block_type": 32,
+        "children": [
+          "TtsKdWU7IoWYnmxnW2ccC3dznVh"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TtsKdWU7IoWYnmxnW2ccC3dznVh",
+        "block_type": 2,
+        "parent_id": "OLAvdF94Ko4konxIqiic8F9mnne",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JLtWdGQ18oRpuSxO44Wc1Vo1nqg",
+        "block_type": 32,
+        "children": [
+          "Ny8zd2f6hoedNMxOtkXc4TDfnhb"
+        ],
+        "parent_id": "EWZtd8XlgoDAoHxroS6cZAYDnQe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ny8zd2f6hoedNMxOtkXc4TDfnhb",
+        "block_type": 2,
+        "parent_id": "JLtWdGQ18oRpuSxO44Wc1Vo1nqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "100",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BnzBdcZBzoGVXTx3aaacX9SOn7c",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Free trial volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "Drhzd99mwo0GkWxCslIcq5GjnLb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No payment method is required.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "Wrsbd4XTmomCCvxa7uRcYlkYnqd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Each organization can have only one free trial volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "IGVEdYqOHoS32hxl3yqcu2vWnnh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The free trial volume is retained for 30 days and is then deleted automatically.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "M2rYdA8Awo7VaBxez2zc5rfanD5",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pay-as-you-go volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "D7wxdFDa8o1PRpxZxzmco1R6nhh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid payment method is required.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "HXAKd06ggolgUfxIKZSc76unn5c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Using a pay-as-you-go volume incurs charges.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ndladl4WToOdtxx8zxKcJU8hnig",
+          "J3tVdDiUwosj9sxmfftcv2GAnzc"
+        ],
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "Ndladl4WToOdtxx8zxKcJU8hnig",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For list prices, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Pricing Guide",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fzilliz.com%2Fpricing%2Fpricing-guide"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HXAKd06ggolgUfxIKZSc76unn5c"
+      },
+      {
+        "block_id": "J3tVdDiUwosj9sxmfftcv2GAnzc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To understand how volume charges are calculated, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage Cost",
+                "token": "PNj2w5fY9ifr82kbX8ucKgXAn0r",
+                "url": "https://zilliverse.feishu.cn/wiki/PNj2w5fY9ifr82kbX8ucKgXAn0r"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HXAKd06ggolgUfxIKZSc76unn5c"
+      },
+      {
+        "block_id": "SfsFdrmK0omLeLx0ZdsclJBsnoh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "GGvRdpZweo8bocxEUdocUTxMnVd",
+        "block_type": 13,
+        "children": [
+          "TssSdvpxmoPCdex2Lm7cUmV6nRc",
+          "UnfIdRv3SoviJxxqa2hc3nuanUb"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "What happens to my volumes if my organization is frozen due to overdue invoices?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "TssSdvpxmoPCdex2Lm7cUmV6nRc",
+        "block_type": 2,
+        "parent_id": "GGvRdpZweo8bocxEUdocUTxMnVd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If an organization is frozen, all volumes—both free trial and pay-as-you-go volumes—and all files stored in them are deleted and cannot be restored.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UnfIdRv3SoviJxxqa2hc3nuanUb",
+        "block_type": 2,
+        "parent_id": "GGvRdpZweo8bocxEUdocUTxMnVd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To continue using volumes, please first settle all outstanding invoices, then create new volumes and re-upload your files.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vb0SdqD8roqP5GxVz1qcUtXlnmh",
+        "block_type": 13,
+        "children": [
+          "WpYzdmPT3oYOqRxdp1HcOa53nP3"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why can't I see the free trial volume option on the web console?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg"
+      },
+      {
+        "block_id": "WpYzdmPT3oYOqRxdp1HcOa53nP3",
+        "block_type": 2,
+        "parent_id": "Vb0SdqD8roqP5GxVz1qcUtXlnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The free trial volume option is hidden once a free trial volume has been created for your organization. Each organization can create only one free trial volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CTXcdbxfYoEUhExorMXcr1wInrd",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FD0RdivMvozVWpxmRUScR3xwnFc",
+        "block_type": 2,
+        "parent_id": "ARcqdwBTYowQioxMzVxcW5rLnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 119
+  }
+}

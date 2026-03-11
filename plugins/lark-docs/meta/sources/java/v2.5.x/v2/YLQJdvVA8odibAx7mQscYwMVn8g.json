@@ -1,0 +1,760 @@
+{
+  "created_time": "1720586828",
+  "modified_time": "1746526962",
+  "name": "describeUser()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "HR9xfgwXylmfqOdKmJ7c9xCqnQb",
+  "token": "YLQJdvVA8odibAx7mQscYwMVn8g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/YLQJdvVA8odibAx7mQscYwMVn8g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "block_type": 1,
+        "children": [
+          "doxcngPMY82zvyFydeZwVikTYwh",
+          "doxcn2UHwtNAcm9OcQHeqBXUz2d",
+          "doxcnREBOvSy60jsu6AmN6Sz0Bg",
+          "doxcny6igKA9wEJvWfZczXJyUlg",
+          "doxcntY81Drom9pC1KwEw7UWeOc",
+          "doxcnOJfLTYDXm5pCk3fZCd7gjT",
+          "doxcnKmkMWuAXVbiwPgKE0p4zMe",
+          "doxcnfGtUILUvFvHxNw2uNoNZCg",
+          "doxcnzLgiSnspu1SlFQODVu07mb",
+          "doxcnexPitGWqtvhH7o0mFzXtWf",
+          "doxcnO34uBBfgXbsAINOeP06N6e",
+          "doxcnxnwrbfyv19YVKwlD6nsEng",
+          "doxcn7KrkgM3EUBENHQqURMCi4d",
+          "doxcnCTtoPKvcXbedgHFLpGRVmg",
+          "doxcnMf5iWhQX78BJy8BVPQHtEc",
+          "doxcn2owFUurEZjyfUMyEu2JgZE",
+          "doxcnw4VrtiX22yeKKVaLY3X9hP"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "describeUser()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcngPMY82zvyFydeZwVikTYwh",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation describes a specific user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2UHwtNAcm9OcQHeqBXUz2d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public DescribeUserResp describeUser(DescribeUserReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcnREBOvSy60jsu6AmN6Sz0Bg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcny6igKA9wEJvWfZczXJyUlg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "describeUser(DescribeUserReq.builder()\n    .userName(String userName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcntY81Drom9pC1KwEw7UWeOc",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnOJfLTYDXm5pCk3fZCd7gjT",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "userName(String userName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn0an8Aao038djl8WdAyHKmc"
+        ],
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcn0an8Aao038djl8WdAyHKmc",
+        "block_type": 2,
+        "parent_id": "doxcnOJfLTYDXm5pCk3fZCd7gjT",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the user to describe.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKmkMWuAXVbiwPgKE0p4zMe",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfGtUILUvFvHxNw2uNoNZCg",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DescribeUserResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnzLgiSnspu1SlFQODVu07mb",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnexPitGWqtvhH7o0mFzXtWf",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeUserResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object containing the details of the user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnO34uBBfgXbsAINOeP06N6e",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxnwrbfyv19YVKwlD6nsEng",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "roles",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnJqNQMdEcosq9mYysoFmHLb"
+        ],
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcnJqNQMdEcosq9mYysoFmHLb",
+        "block_type": 2,
+        "parent_id": "doxcnxnwrbfyv19YVKwlD6nsEng",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of role names associated with the user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn7KrkgM3EUBENHQqURMCi4d",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCTtoPKvcXbedgHFLpGRVmg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnMKAQq8GZoi8nQBoQnmU2Wb"
+        ],
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcnMKAQq8GZoi8nQBoQnmU2Wb",
+        "block_type": 2,
+        "parent_id": "doxcnCTtoPKvcXbedgHFLpGRVmg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnMf5iWhQX78BJy8BVPQHtEc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcn2owFUurEZjyfUMyEu2JgZE",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.rbac.request.DescribeUserReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Describe a user\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeUserReq describeUserReq = DescribeUserReq.builder()\n        .userName(\"test\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeUserResp describeUserResp = client.describeUser(describeUserReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g"
+      },
+      {
+        "block_id": "doxcnw4VrtiX22yeKKVaLY3X9hP",
+        "block_type": 2,
+        "parent_id": "YLQJdvVA8odibAx7mQscYwMVn8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 21
+  },
+  "slug": "v2-Authentication-describeUser"
+}

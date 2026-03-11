@@ -1,0 +1,167 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1740735736",
+  "node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+  "node_type": "origin",
+  "obj_create_time": "1740735736",
+  "obj_edit_time": "1741863131",
+  "obj_token": "Kxr9dKEhMo10Lhx3WapcPuTFnF5",
+  "obj_type": "docx",
+  "origin_node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "IE6JwWJPgiHaZKkHCLccwq4vngh",
+  "space_id": "7167193056431783939",
+  "title": "Partition",
+  "slug": "v2-Partition",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Kxr9dKEhMo10Lhx3WapcPuTFnF5",
+        "block_type": 1,
+        "children": [
+          "U7mydIGoXoWEQNxHkg9cPxp5ncf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Partition",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "U7mydIGoXoWEQNxHkg9cPxp5ncf",
+        "block_type": 2,
+        "parent_id": "Kxr9dKEhMo10Lhx3WapcPuTFnF5",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This chapter provides references for the methods to manipulate partitions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740737623",
+      "node_token": "OFEAw1PlfikMhaklM1WcPSggnPd",
+      "node_type": "origin",
+      "obj_create_time": "1740737623",
+      "obj_edit_time": "1741314645",
+      "obj_token": "Rob7dMX0aogN3txwCyKcBl8CnDh",
+      "obj_type": "docx",
+      "origin_node_token": "OFEAw1PlfikMhaklM1WcPSggnPd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+      "space_id": "7167193056431783939",
+      "title": "CreatePartition()",
+      "slug": "v2-Partition-CreatePartition"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740737855",
+      "node_token": "IhEmw0AbvioUciktDE8cqzJqnQc",
+      "node_type": "origin",
+      "obj_create_time": "1740737855",
+      "obj_edit_time": "1741314653",
+      "obj_token": "SLNNdsgvVoGUpWxuW3OcR6QKnih",
+      "obj_type": "docx",
+      "origin_node_token": "IhEmw0AbvioUciktDE8cqzJqnQc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+      "space_id": "7167193056431783939",
+      "title": "DropPartition()",
+      "slug": "v2-Partition-DropPartition"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740737995",
+      "node_token": "Jid8wGZUZiXPSYks7c5c0wh3nEg",
+      "node_type": "origin",
+      "obj_create_time": "1740737995",
+      "obj_edit_time": "1741315223",
+      "obj_token": "ECbadqVhPogIR8xGJBocy0rqnPg",
+      "obj_type": "docx",
+      "origin_node_token": "Jid8wGZUZiXPSYks7c5c0wh3nEg",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+      "space_id": "7167193056431783939",
+      "title": "GetPartitionStats()",
+      "slug": "v2-Partition-GetPartitionStats"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740738134",
+      "node_token": "YDDBwm1kfiAdPvkKXprcwbAxnzc",
+      "node_type": "origin",
+      "obj_create_time": "1740738134",
+      "obj_edit_time": "1740738234",
+      "obj_token": "YkE2dXejgo4WeLx4F0wcYn2encb",
+      "obj_type": "docx",
+      "origin_node_token": "YDDBwm1kfiAdPvkKXprcwbAxnzc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+      "space_id": "7167193056431783939",
+      "title": "HasPartition()",
+      "slug": "v2-Partition-HasPartition"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740738253",
+      "node_token": "Ax3Kwk1xLimiK7k4YErctMZXnlc",
+      "node_type": "origin",
+      "obj_create_time": "1740738253",
+      "obj_edit_time": "1740738425",
+      "obj_token": "FPdUd0kBtow4VTxwQhQcaKn2no0",
+      "obj_type": "docx",
+      "origin_node_token": "Ax3Kwk1xLimiK7k4YErctMZXnlc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "UyX7worDHi0VNEk5zmwcXR7FnNf",
+      "space_id": "7167193056431783939",
+      "title": "ListPartitions()",
+      "slug": "v2-Partition-ListPartitions"
+    }
+  ]
+}

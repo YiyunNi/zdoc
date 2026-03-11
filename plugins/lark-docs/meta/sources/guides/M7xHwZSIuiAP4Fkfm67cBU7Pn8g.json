@@ -1,0 +1,3351 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1747208333",
+  "node_token": "M7xHwZSIuiAP4Fkfm67cBU7Pn8g",
+  "node_type": "origin",
+  "obj_create_time": "1747208333",
+  "obj_edit_time": "1768378553",
+  "obj_token": "Q542du4oZodluvx3phYcSHkZnVb",
+  "obj_type": "docx",
+  "origin_node_token": "M7xHwZSIuiAP4Fkfm67cBU7Pn8g",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "HPP3wBq1xiuGWYk4QfKcZ2PrnHf",
+  "space_id": "7167193056431783939",
+  "title": "Linear Decay",
+  "slug": "linear-decay",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "block_type": 1,
+        "children": [
+          "VSkmdwrWdobAJjxBpdxcB5WBnJe",
+          "GhafdX6Upo6pPhxZ755cne4tnVR",
+          "WG5kdz04xokGNuxxoztcMuHrnOh",
+          "JSyWdubcYofxE7xvEU1cFGLrn8c",
+          "LuaDdsXhRojBI4xaG9nc0KZonkg",
+          "S3QQdeGZMoXyr1xla2ZcT9NgnAh",
+          "UD0Idpibeokx9dxhybkct7vFnbf",
+          "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+          "HzI7dSdyzo2jVCxMvLWcpB9En0f",
+          "MiqIdaU8rouo6mxzKefcUGvYntg",
+          "GlTGd2tyAoSgE0xEnFScuH6Lnuf",
+          "ADOFdJpmXo5azox2XEsc5I6NnWh",
+          "Aa09dwzXYoyCSjxQTOqc5rdonHh",
+          "NU70dZ3wUo59Q7xTqFccZMIPnlb",
+          "OrgjdBCcuobMGvx0JCWcyrTmnld",
+          "FX2qdR6cToRrbUxXeEjcp8o2nyf",
+          "F3rwdLNZholKELxA6BFcI7imnie",
+          "DfHFdDyf1ojxEkxCzb2cM7mHn2G",
+          "NVk8dZO2qovMKnxNe3scH4kbnDd",
+          "XYbLdLltLoP3fDxaaopc4r6Gnyd",
+          "LmOTd2pDBoJkf0xXJNNcpGKgnnc",
+          "OPnIdduSIo5aWNxfmeUcP8u8ntg",
+          "Eyrod640qo68mnxxm3RcbBjfnPd",
+          "BPqrdNdg8oHtCXxWGQmcSGwgn0f",
+          "BwbBdE8jXoGoZ6xD1uDcNNhDnfc",
+          "Or9Cdq81PosedMxkSYYc1GpYnLb",
+          "Nvf8dlWbCoDCVFxUQgOcAXUVnzb",
+          "PInGdUAcWoDsQ4xZgjncDCzZnVy",
+          "MJR4dGEDloUcBLxwp3mcFj2TnOh",
+          "V3IHdRtq1oIkaqxZGavc6qHInKb",
+          "WWcjdv80Joh1d3xL4DVcFecnnXb",
+          "ZGeydK676oRLTJxaCtIcG0fFnFd",
+          "DJ09dSm4hoFODlxUMVncG6scnFd",
+          "Av5VdHxHXocszUxMDGqcRsonnMh",
+          "FyELd8BKFouvGhxa7Z8cuwXwnEd",
+          "FgRIdQhpuorc87xZgzfcmgWSnvf",
+          "RXKydntOXo1Z6FxnHeZcaQwznid",
+          "WHkFdoIlcoBYJ5xCVAccgpGhnDc",
+          "Cg3ydMr9qopWuvxKEt1cl4E3nPe",
+          "Dik5dT5TdoXQg1xUdYrcGMj4nsg",
+          "VFcPd7p9SoNgNFxxM5lc5mf2ncg",
+          "OXi4dDs44oq1qixB3ORcLs8on6d",
+          "NKMsdZY7PsvhYIb84wYc3FYJnFh",
+          "LtlcdcFaco0OV6xvIN0cGsUEn4g",
+          "VUXRdKS1coq8sMxUe97ciID5ntd",
+          "Y96WdBGzssozHLb0dAncyEgLnRe"
+        ],
+        "comment_ids": [
+          "7564971106321252356"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear Decay",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7564971106321252356"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "VSkmdwrWdobAJjxBpdxcB5WBnJe",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear decay creates a straight-line decline that terminates at an absolute zero point in your search results. Like an upcoming event countdown where relevance gradually fades until the event has passed, linear decay applies a predictable, steady reduction in relevance as items move away from your ideal point until they completely disappear. This approach is ideal when you want a consistent decay rate with a clear cutoff, ensuring that items beyond a certain boundary are completely excluded from results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GhafdX6Upo6pPhxZ755cne4tnVR",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Unlike other decay functions:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WG5kdz04xokGNuxxoztcMuHrnOh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian decay follows a bell curve that gradually approaches but never reaches zero",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "JSyWdubcYofxE7xvEU1cFGLrn8c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Exponential decay maintains a long tail of minimal relevance that extends indefinitely",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "LuaDdsXhRojBI4xaG9nc0KZonkg",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear decay uniquely creates a definitive endpoint, making it particularly effective for applications with natural boundaries or deadlines.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S3QQdeGZMoXyr1xla2ZcT9NgnAh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When to use linear decay",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "UD0Idpibeokx9dxhybkct7vFnbf",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear decay is particularly effective for:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "block_type": 31,
+        "children": [
+          "Em6fdD2K7okgCExVe9Dcq2lTn7y",
+          "GbvEd0DztoqrsZxjqOHc6Raonlc",
+          "Rjz4deNTqoVyrHxf6OVcy5cNnQA",
+          "QTrrd6u8soYAzLxs5e2cRgBanIh",
+          "CqendjXrnoCrT0xMGI6cb3RUn9g",
+          "VbUvdAIO1oyj3gxUMfWcHwyIn2g",
+          "SBs0dBB0HoVQFAxlERDcIC2Mnib",
+          "MOTddGfFTox4xExePowc0Uinncc",
+          "YAL8dUYeTo9woDxUOOEcNqbpnPf",
+          "YybcdrLDZoLf2QxEv4ocyCtUnJd",
+          "IudBdujYnobZGdx38nycXx9Ln45",
+          "MK9cdT6uxoptL1xeNP2c3AsAnfb",
+          "UHMcdGUZIoHfTaxMlF4cYJxPnAc",
+          "TDBZddICboSbo6xNdhJchYf6nTh",
+          "U8LedjD2LoZSQFxwsWYcmSrantf"
+        ],
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "table": {
+          "cells": [
+            "Em6fdD2K7okgCExVe9Dcq2lTn7y",
+            "GbvEd0DztoqrsZxjqOHc6Raonlc",
+            "Rjz4deNTqoVyrHxf6OVcy5cNnQA",
+            "QTrrd6u8soYAzLxs5e2cRgBanIh",
+            "CqendjXrnoCrT0xMGI6cb3RUn9g",
+            "VbUvdAIO1oyj3gxUMfWcHwyIn2g",
+            "SBs0dBB0HoVQFAxlERDcIC2Mnib",
+            "MOTddGfFTox4xExePowc0Uinncc",
+            "YAL8dUYeTo9woDxUOOEcNqbpnPf",
+            "YybcdrLDZoLf2QxEv4ocyCtUnJd",
+            "IudBdujYnobZGdx38nycXx9Ln45",
+            "MK9cdT6uxoptL1xeNP2c3AsAnfb",
+            "UHMcdGUZIoHfTaxMlF4cYJxPnAc",
+            "TDBZddICboSbo6xNdhJchYf6nTh",
+            "U8LedjD2LoZSQFxwsWYcmSrantf"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              172,
+              198,
+              208
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 5
+          }
+        }
+      },
+      {
+        "block_id": "Em6fdD2K7okgCExVe9Dcq2lTn7y",
+        "block_type": 32,
+        "children": [
+          "Xm15dnHMnoz38sxu3q5czzXUn7c"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Xm15dnHMnoz38sxu3q5czzXUn7c",
+        "block_type": 2,
+        "parent_id": "Em6fdD2K7okgCExVe9Dcq2lTn7y",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use Case",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GbvEd0DztoqrsZxjqOHc6Raonlc",
+        "block_type": 32,
+        "children": [
+          "GwsqdyV3RoTi7vxoh08cZGlqnse"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GwsqdyV3RoTi7vxoh08cZGlqnse",
+        "block_type": 2,
+        "parent_id": "GbvEd0DztoqrsZxjqOHc6Raonlc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rjz4deNTqoVyrHxf6OVcy5cNnQA",
+        "block_type": 32,
+        "children": [
+          "KgyJdKFS4oXfOBxxgPPcuqfgnsh"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KgyJdKFS4oXfOBxxgPPcuqfgnsh",
+        "block_type": 2,
+        "parent_id": "Rjz4deNTqoVyrHxf6OVcy5cNnQA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why Linear Works Well",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QTrrd6u8soYAzLxs5e2cRgBanIh",
+        "block_type": 32,
+        "children": [
+          "Df8mddWZzoTJtlxNkHacx8kBnVh"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Df8mddWZzoTJtlxNkHacx8kBnVh",
+        "block_type": 2,
+        "parent_id": "QTrrd6u8soYAzLxs5e2cRgBanIh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Event listings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CqendjXrnoCrT0xMGI6cb3RUn9g",
+        "block_type": 32,
+        "children": [
+          "DtkGdWG5poLZzbxdMobcx205nIh"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DtkGdWG5poLZzbxdMobcx205nIh",
+        "block_type": 2,
+        "parent_id": "CqendjXrnoCrT0xMGI6cb3RUn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Concert ticket platforms",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VbUvdAIO1oyj3gxUMfWcHwyIn2g",
+        "block_type": 32,
+        "children": [
+          "D6dpdhkTuoRieLxIuZWcqujtnNb"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "D6dpdhkTuoRieLxIuZWcqujtnNb",
+        "block_type": 2,
+        "parent_id": "VbUvdAIO1oyj3gxUMfWcHwyIn2g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Creates a clear cutoff for events too far in the future",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SBs0dBB0HoVQFAxlERDcIC2Mnib",
+        "block_type": 32,
+        "children": [
+          "Q2r9dwtrmociMoxC5xwcbcpsnU7"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Q2r9dwtrmociMoxC5xwcbcpsnU7",
+        "block_type": 2,
+        "parent_id": "SBs0dBB0HoVQFAxlERDcIC2Mnib",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limited-time offers",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MOTddGfFTox4xExePowc0Uinncc",
+        "block_type": 32,
+        "children": [
+          "Jnv5dC40ao42oIxUpYJcMpTunfh"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Jnv5dC40ao42oIxUpYJcMpTunfh",
+        "block_type": 2,
+        "parent_id": "MOTddGfFTox4xExePowc0Uinncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Flash sales, promotions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YAL8dUYeTo9woDxUOOEcNqbpnPf",
+        "block_type": 32,
+        "children": [
+          "TJAhddUJuofT0nx9lYLcIs7Cnic"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TJAhddUJuofT0nx9lYLcIs7Cnic",
+        "block_type": 2,
+        "parent_id": "YAL8dUYeTo9woDxUOOEcNqbpnPf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensures expired or soon-to-expire offers don't appear",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YybcdrLDZoLf2QxEv4ocyCtUnJd",
+        "block_type": 32,
+        "children": [
+          "QjSzdlHi0ovBk7xkxp5cenhEnBb"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QjSzdlHi0ovBk7xkxp5cenhEnBb",
+        "block_type": 2,
+        "parent_id": "YybcdrLDZoLf2QxEv4ocyCtUnJd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Delivery radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IudBdujYnobZGdx38nycXx9Ln45",
+        "block_type": 32,
+        "children": [
+          "YVHCdpamJoX9OxxzhsUcWiUpn8f"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YVHCdpamJoX9OxxzhsUcWiUpn8f",
+        "block_type": 2,
+        "parent_id": "IudBdujYnobZGdx38nycXx9Ln45",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Food delivery, courier services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MK9cdT6uxoptL1xeNP2c3AsAnfb",
+        "block_type": 32,
+        "children": [
+          "YlY1dlEveoIqwOxSn5ZcX9pwnpb"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YlY1dlEveoIqwOxSn5ZcX9pwnpb",
+        "block_type": 2,
+        "parent_id": "MK9cdT6uxoptL1xeNP2c3AsAnfb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enforces hard geographical boundaries",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UHMcdGUZIoHfTaxMlF4cYJxPnAc",
+        "block_type": 32,
+        "children": [
+          "CMc3dHtBhojijoxPHK6cHRbonQf"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CMc3dHtBhojijoxPHK6cHRbonQf",
+        "block_type": 2,
+        "parent_id": "UHMcdGUZIoHfTaxMlF4cYJxPnAc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Age-restricted content",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TDBZddICboSbo6xNdhJchYf6nTh",
+        "block_type": 32,
+        "children": [
+          "HkGndhybsoNjAYxNJFvctwLSnGh"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HkGndhybsoNjAYxNJFvctwLSnGh",
+        "block_type": 2,
+        "parent_id": "TDBZddICboSbo6xNdhJchYf6nTh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dating platforms, media services",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U8LedjD2LoZSQFxwsWYcmSrantf",
+        "block_type": 32,
+        "children": [
+          "XSz6dJM9BoA0ZqxlzTEcFcUTn6c"
+        ],
+        "parent_id": "ORrRdkOJ5oDf6SxOjhecURAOnqh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XSz6dJM9BoA0ZqxlzTEcFcUTn6c",
+        "block_type": 2,
+        "parent_id": "U8LedjD2LoZSQFxwsWYcmSrantf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Establishes firm age thresholds",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HzI7dSdyzo2jVCxMvLWcpB9En0f",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Choose linear decay when:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MiqIdaU8rouo6mxzKefcUGvYntg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your application has a natural boundary, deadline, or threshold",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "GlTGd2tyAoSgE0xEnFScuH6Lnuf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Items beyond a certain point should be completely excluded from results",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "ADOFdJpmXo5azox2XEsc5I6NnWh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You need a predictable, consistent rate of decline in relevance",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "Aa09dwzXYoyCSjxQTOqc5rdonHh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Users should see a clear demarcation between relevant and irrelevant items",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "NU70dZ3wUo59Q7xTqFccZMIPnlb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Steady decline principle",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "OrgjdBCcuobMGvx0JCWcyrTmnld",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear decay creates a straight-line drop that decreases at a constant rate until reaching exactly zero. This pattern appears in many everyday scenarios like countdown timers, inventory depletion, and deadline approaches where relevance has a clear expiration point.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FX2qdR6cToRrbUxXeEjcp8o2nyf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "GPcedMnshoJ4fexF2IbcDUdznYb",
+          "A5hxdluNSoWUqRxlrYZcLg7Cnld"
+        ],
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "GPcedMnshoJ4fexF2IbcDUdznYb",
+        "block_type": 2,
+        "parent_id": "FX2qdR6cToRrbUxXeEjcp8o2nyf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A5hxdluNSoWUqRxlrYZcLg7Cnld",
+        "block_type": 2,
+        "parent_id": "FX2qdR6cToRrbUxXeEjcp8o2nyf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "All time parameters (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "origin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "offset",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "scale",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") must use the same unit as the collection data. If your collection stores timestamps in a different unit (milliseconds, microseconds), adjust all parameters accordingly.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F3rwdLNZholKELxA6BFcI7imnie",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 1030,
+          "scale": 0.41490683229813663,
+          "token": "LNwQbV5FYo7OYbxaA1VcetPgnUh",
+          "width": 1610
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "DfHFdDyf1ojxEkxCzb2cM7mHn2G",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The graph above shows how linear decay would affect event listings on a ticketing platform:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NVk8dZO2qovMKnxNe3scH4kbnDd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "origin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (current date): The present moment, where relevance is at its maximum (1.0).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "XYbLdLltLoP3fDxaaopc4r6Gnyd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "offset",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (1 day): The \"immediate events window\"—all events happening within the next day maintain full relevance scores (1.0), ensuring that very imminent events aren't penalized for slight time differences.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "LmOTd2pDBoJkf0xXJNNcpGKgnnc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "decay",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (0.5): The score at the scale distance—this parameter controls the rate of decline in relevance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "OPnIdduSIo5aWNxfmeUcP8u8ntg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "scale",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (10 days): The time period at which relevance drops to the decay value—events 10 days away have their relevance scores halved (0.5).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "Eyrod640qo68mnxxm3RcbBjfnPd",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As you can see from the straight-line curve, events beyond approximately 16 days away have exactly zero relevance and won't appear in search results at all. This creates a clear boundary that ensures users only see relevant upcoming events within a defined time window.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BPqrdNdg8oHtCXxWGQmcSGwgn0f",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This behavior mirrors how event planning typically works—imminent events are most relevant, events in the coming weeks have diminishing importance, and events too far in the future (or already past) shouldn't appear at all.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BwbBdE8jXoGoZ6xD1uDcNNhDnfc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Formula",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "Or9Cdq81PosedMxkSYYc1GpYnLb",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The mathematical formula for calculating a linear decay score is:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nvf8dlWbCoDCVFxUQgOcAXUVnzb",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "equation": {
+                "content": "S(doc) = \\max\\left( \\frac{s - \\max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \\right)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PInGdUAcWoDsQ4xZgjncDCzZnVy",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Where:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MJR4dGEDloUcBLxwp3mcFj2TnOh",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "equation": {
+                "content": "s = \\frac {scale}{(1.0 - decay)}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V3IHdRtq1oIkaqxZGavc6qHInKb",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Breaking this down in plain language:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WWcjdv80Joh1d3xL4DVcFecnnXb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Calculate how far the field value is from the origin: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "|fieldvalue_{doc} - origin|\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "ZGeydK676oRLTJxaCtIcG0fFnFd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Subtract the offset (if any) but never go below zero: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "\\max(0, distance - offset)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "DJ09dSm4hoFODlxUMVncG6scnFd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Determine the parameter ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "s\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from your scale and decay values.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "Av5VdHxHXocszUxMDGqcRsonnMh",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Subtract the adjusted distance from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "s\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and divide by ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "s\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "FyELd8BKFouvGhxa7Z8cuwXwnEd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensure the result never goes below zero: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "\\max(result, 0)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "FgRIdQhpuorc87xZgzfcmgWSnvf",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "s\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " calculation transforms your scale and decay parameters into the point where the score reaches zero. For example, with decay=0.5 and scale=7, the score will reach exactly zero at distance=14 (twice the scale value).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RXKydntOXo1Z6FxnHeZcaQwznid",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use linear decay",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "WHkFdoIlcoBYJ5xCVAccgpGhnDc",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear decay can be applied to both standard vector search and hybrid search operations in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Below are the key code snippets for implementing this feature.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Cg3ydMr9qopWuvxKEt1cl4E3nPe",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "KiigdezjvobpRXxmNANcBzbpnYc",
+          "RCNCd3nRNoCu1LxECmPcwNC7nwd"
+        ],
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "KiigdezjvobpRXxmNANcBzbpnYc",
+        "block_type": 2,
+        "parent_id": "Cg3ydMr9qopWuvxKEt1cl4E3nPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RCNCd3nRNoCu1LxECmPcwNC7nwd",
+        "block_type": 2,
+        "parent_id": "Cg3ydMr9qopWuvxKEt1cl4E3nPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Decay Ranker Tutorial",
+                "token": "Dj2NwrlqTiYlmDkwfAbcJNWSntd",
+                "url": "https://zilliverse.feishu.cn/wiki/Dj2NwrlqTiYlmDkwfAbcJNWSntd"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dik5dT5TdoXQg1xUdYrcGMj4nsg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a decay ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "VFcPd7p9SoNgNFxxM5lc5mf2ncg",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After your collection is set up with a numeric field (in this example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "event_date",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as seconds from now), create a linear decay ranker:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OXi4dDs44oq1qixB3ORcLs8on6d",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "WPBzdw1VIoVkFLxZRM7cI3ZxnTb",
+          "GUpydGbYxosci1x1WZFcMsr3nbg"
+        ],
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "WPBzdw1VIoVkFLxZRM7cI3ZxnTb",
+        "block_type": 2,
+        "parent_id": "OXi4dDs44oq1qixB3ORcLs8on6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GUpydGbYxosci1x1WZFcMsr3nbg",
+        "block_type": 2,
+        "parent_id": "OXi4dDs44oq1qixB3ORcLs8on6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Time unit consistency",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": When using time-based decay, ensure that ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "origin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "scale",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "offset",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameters use the same time unit as your collection data. If your collection stores timestamps in seconds, use seconds for all parameters. If it uses milliseconds, use milliseconds for all parameters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh",
+        "block_type": 49,
+        "children": [
+          "ONHxdUzFpoHJ3QxH3mlcrkeYnJb",
+          "QsmFdwp70oRIH7xIsMecsYZPnme",
+          "JA42d9LIOo0ackxLZp8c7M5Onrh",
+          "WZhzdpBAvoBFeVx1Gtyc0e34nOR",
+          "YmLHdy1exoQSn1xuIN3cuJUhnue",
+          "Ue3mdP0OQohjrLx1MD7cZwnCnzf"
+        ],
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "ONHxdUzFpoHJ3QxH3mlcrkeYnJb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import Function, FunctionType\nimport time\n\n# Calculate current time\ncurrent_time = int(time.time())\n\n# Create a linear decay ranker for event listings\n# Note: All time parameters must use the same unit as your collection data\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " = Function(\n    name=\"event_relevance\",               # Function identifier\n    input_field_names=[\"event_date\"],     # Numeric field to use\n    function_type=FunctionType.RERANK,    # Function type. Must be RERANK\n    params={\n        \"reranker\": \"decay\",              # Specify decay reranker\n        \"function\": \"linear\",             # Choose linear decay\n        \"origin\": current_time,           # Current time (seconds, matching collection data)\n        \"offset\": 12 * 60 * 60,           # 12 hour immediate events window (seconds)\n        \"decay\": 0.5,                     # Half score at scale distance\n        \"scale\": 7 * 24 * 60 * 60         # 7 days (in seconds, matching collection data)\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh"
+      },
+      {
+        "block_id": "QsmFdwp70oRIH7xIsMecsYZPnme",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.vector.request.ranker.DecayRanker;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DecayRanker rerank = DecayRanker.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .name(\"event_relevance\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .inputFieldNames(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"event_date\"))\n        .function(\"linear\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .origin(System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "currentTimeMillis",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "())\n        .offset(12 * 60 * 60)\n        .decay(0.5)\n        .scale(7 * 24 * 60 * 60)\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh"
+      },
+      {
+        "block_id": "JA42d9LIOo0ackxLZp8c7M5Onrh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { FunctionType } from \"@zilliz/milvus2-sdk-node\";\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "const ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " = {\n  name: \"event_relevance\",\n  input_field_names: [\"event_date\"],\n  type: FunctionType.RERANK,\n  params: {\n    reranker: \"decay\",\n    function: \"linear\",\n    origin: new Date(2025, 1, 15).getTime(),\n    offset: 12 * 60 * 60,\n    decay: 0.5,\n    scale: 7 * 24 * 60 * 60,\n  },\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "};",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh"
+      },
+      {
+        "block_id": "WZhzdpBAvoBFeVx1Gtyc0e34nOR",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh"
+      },
+      {
+        "block_id": "YmLHdy1exoQSn1xuIN3cuJUhnue",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh"
+      },
+      {
+        "block_id": "Ue3mdP0OQohjrLx1MD7cZwnCnzf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto rerank = std::make_shared<milvus::DecayRerank>(\"event_relevance\");\nrerank->AddInputFieldName(\"event_date\");\nrerank->SetFunction(\"exp\");\nrerank->SetOrigin(1736870400);\nrerank->SetScale(7 * 24 * 60 * 60);\nrerank->SetOffset(12 * 60 * 60);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank->SetDecay(0.5);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "NKMsdZY7PsvhYIb84wYc3FYJnFh"
+      },
+      {
+        "block_id": "LtlcdcFaco0OV6xvIN0cGsUEn4g",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Apply to standard vector search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb"
+      },
+      {
+        "block_id": "VUXRdKS1coq8sMxUe97ciID5ntd",
+        "block_type": 2,
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After defining your decay ranker, you can apply it during search operations by passing it to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y96WdBGzssozHLb0dAncyEgLnRe",
+        "block_type": 49,
+        "children": [
+          "BELFdxuJQoZNd3x25ducsvkVnfc",
+          "AMQhd7fYvoZwS0x9dX9cFkiynFg",
+          "VJ3kdFv4ao5C7BxX2YJcx3A0n8d",
+          "DAxwddCiloa8K1xqGlbcW5ksnph",
+          "Rnk5dmxBrodYrxxZ3tichxR5nxb",
+          "OxTedAi2soaYvDx9FG2cF8jTnPf"
+        ],
+        "parent_id": "Q542du4oZodluvx3phYcSHkZnVb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "BELFdxuJQoZNd3x25ducsvkVnfc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Apply decay ranker to vector search\nresult = milvus_client.search(\n    collection_name,\n    data=[your_query_vector],              # Replace with your query vector\n    anns_field=\"dense\",                   # Vector field to search\n    limit=10,                             # Number of results\n    output_fields=[\"title\", \"venue\", \"event_date\"], # Fields to return\n    #  highlight-next-line\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ranker=",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",                        # Apply the decay ranker\n    consistency_level=\"Strong\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y96WdBGzssozHLb0dAncyEgLnRe"
+      },
+      {
+        "block_id": "AMQhd7fYvoZwS0x9dX9cFkiynFg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.common.ConsistencyLevel;\nimport io.milvus.v2.service.vector.request.SearchReq;\nimport io.milvus.v2.service.vector.response.SearchResp;\nimport io.milvus.v2.service.vector.request.data.FloatVec;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchReq searchReq = SearchReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .collectionName(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "COLLECTION_NAME",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .data(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(new FloatVec(embedding)))\n        .annsField(\"dense\")\n        .limit(10)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Arrays.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "asList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"title\", \"venue\", \"event_date\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .functionScore(FunctionScore.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n                .addFunction(rerank)\n                .build())\n        .consistencyLevel(ConsistencyLevel.STRONG)\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".search(searchReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y96WdBGzssozHLb0dAncyEgLnRe"
+      },
+      {
+        "block_id": "VJ3kdFv4ao5C7BxX2YJcx3A0n8d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const result = await milvusClient.search({\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  collection_name: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection_name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  data: [",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "your_query_vector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "],",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " // Replace with your query vector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n  anns_field: \"dense\",\n  limit: 10,\n  output_fields: [\"title\", \"venue\", \"event_date\"],\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  rerank: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n  consistency_level: \"Strong\",\n});\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y96WdBGzssozHLb0dAncyEgLnRe"
+      },
+      {
+        "block_id": "DAxwddCiloa8K1xqGlbcW5ksnph",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y96WdBGzssozHLb0dAncyEgLnRe"
+      },
+      {
+        "block_id": "Rnk5dmxBrodYrxxZ3tichxR5nxb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y96WdBGzssozHLb0dAncyEgLnRe"
+      },
+      {
+        "block_id": "OxTedAi2soaYvDx9FG2cF8jTnPf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto function_score = std::make_shared<milvus::FunctionScore>();\nfunction_score->AddFunction(rerank);\n\nauto request = milvus::SearchRequest()\n                   .WithCollectionName(collection_name)\n                   .WithAnnsField(\"dense\")\n                   .WithRerank(function_score)\n                   .WithLimit(10)\n                   .AddOutputField(\"title\")\n                   .AddOutputField(\"venue\")\n                   .AddOutputField(\"event_date\")\n                   .AddFloatVector(your_query_vector)\n                   .WithConsistencyLevel(milvus::ConsistencyLevel::BOUNDED);\n\nmilvus::SearchResponse response;\nauto status = client->Search(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "Y96WdBGzssozHLb0dAncyEgLnRe"
+      }
+    ],
+    "counts": 95
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1734591383",
+  "node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+  "node_type": "origin",
+  "obj_create_time": "1734591383",
+  "obj_edit_time": "1734662621",
+  "obj_token": "DDvJdw0gfonmkNxnVV5cg72SnXc",
+  "obj_type": "docx",
+  "origin_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "OUWXw5c4gia34ZkQUcEcMFbWn6s",
+  "space_id": "7167193056431783939",
+  "title": "Security",
+  "slug": "security",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "DDvJdw0gfonmkNxnVV5cg72SnXc",
+        "block_type": 1,
+        "children": [
+          "UlQOd2rKXo27wgxnFj1cAwqYnPc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Security",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "UlQOd2rKXo27wgxnFj1cAwqYnPc",
+        "block_type": 2,
+        "parent_id": "DDvJdw0gfonmkNxnVV5cg72SnXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The chapter focuses on security-related measures, including authentication, role-based access control (RBAC), private endpoints, and whitelist.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1693477481",
+      "node_token": "SIhBwKFJri4u2CkyD3ucnO7an3g",
+      "node_type": "origin",
+      "obj_create_time": "1693477481",
+      "obj_edit_time": "1759975573",
+      "obj_token": "HAEQdkX3No0cm0xg8VocaRmOnsh",
+      "obj_type": "docx",
+      "origin_node_token": "SIhBwKFJri4u2CkyD3ucnO7an3g",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+      "space_id": "7167193056431783939",
+      "title": "Data Security",
+      "slug": "data-security"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1698026200",
+      "node_token": "XiOsw8A3eibZInk1aJNceBqznLb",
+      "node_type": "origin",
+      "obj_create_time": "1698026200",
+      "obj_edit_time": "1716544863",
+      "obj_token": "EZOzdUvQGo0yaKxkTFbcY0Vpnre",
+      "obj_type": "docx",
+      "origin_node_token": "XiOsw8A3eibZInk1aJNceBqznLb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+      "space_id": "7167193056431783939",
+      "title": "Authentication",
+      "slug": "authentication"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": true,
+      "node_create_time": "1733998186",
+      "node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "node_type": "origin",
+      "obj_create_time": "1733998186",
+      "obj_edit_time": "1734950844",
+      "obj_token": "F2hadnoauoqZxDxCELlcHW6Eni7",
+      "obj_type": "docx",
+      "origin_node_token": "UEFXwAUL4icMjMkUej9cqncJncd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+      "space_id": "7167193056431783939",
+      "title": "Access Control",
+      "slug": "access-control"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1698026184",
+      "node_token": "WVcuwmMQ8iKlrKk7Kwacu9w1nCZ",
+      "node_type": "origin",
+      "obj_create_time": "1698026184",
+      "obj_edit_time": "1708758064",
+      "obj_token": "CeMJdQgA8ofE1UxPh7HcYQw6nce",
+      "obj_type": "docx",
+      "origin_node_token": "WVcuwmMQ8iKlrKk7Kwacu9w1nCZ",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+      "space_id": "7167193056431783939",
+      "title": "Network & Security",
+      "slug": "network-and-security"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1765261324",
+      "node_token": "GLxhwO5vWiWkTBkoNCPcg4ahnbe",
+      "node_type": "origin",
+      "obj_create_time": "1765261324",
+      "obj_edit_time": "1770692663",
+      "obj_token": "QHPsdJ4UkoxpdTxt6S1clHqsnuf",
+      "obj_type": "docx",
+      "origin_node_token": "GLxhwO5vWiWkTBkoNCPcg4ahnbe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+      "space_id": "7167193056431783939",
+      "title": "Customer-Managed Encryption Keys",
+      "slug": "cmek"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": true,
+      "node_create_time": "1735631720",
+      "node_token": "UfGkwPQIPiJi6OkEu47cH3Umnvb",
+      "node_type": "origin",
+      "obj_create_time": "1735631720",
+      "obj_edit_time": "1758174172",
+      "obj_token": "EMSkdGrKsoRpTAxQXCocjpHmndw",
+      "obj_type": "docx",
+      "origin_node_token": "UfGkwPQIPiJi6OkEu47cH3Umnvb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "HAF7wZny2ip5BRky4zmcK446nOe",
+      "space_id": "7167193056431783939",
+      "title": "Auditing Logs",
+      "slug": "auditing"
+    }
+  ]
+}

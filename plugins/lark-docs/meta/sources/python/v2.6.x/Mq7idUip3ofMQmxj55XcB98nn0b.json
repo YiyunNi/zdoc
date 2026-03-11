@@ -1,0 +1,444 @@
+{
+  "created_time": "1761032516",
+  "modified_time": "1761966375",
+  "name": "to_dict()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "QmzcfpTxAlAaTqdRRbLc6fAanv7",
+  "token": "Mq7idUip3ofMQmxj55XcB98nn0b",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Mq7idUip3ofMQmxj55XcB98nn0b",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "block_type": 1,
+        "children": [
+          "WkoPdjgmtoQMznxvEaPc0BgLnuf",
+          "TrBKdp1p6oZ1b6xfrvFceWEznX7",
+          "QiKcdjYq9onGFkxd0pLcvDinnjg",
+          "MQo0dKcpPof0zkxsmQHc1NUpnes",
+          "SlsBdfLzGo529lxHGV1c03wUn1d",
+          "HH1wdFirxoFY8vx33yMceJs8ncb",
+          "ElAAdlLyBoktMyxg0M7c3SMZnNd",
+          "OaSMdxS5YoS1HsxIU7HcdtFvn0b",
+          "Vd9PdbqRfo449rxTRGVcwDxVnyy",
+          "SVXLde9ZvoPPwLxVgp0c0pbDnrh",
+          "VIEVdGKewoZrVixWIhocr9yrnub",
+          "MSXRdQb4Bo2Lj7xlOHfchKbNnQf",
+          "Y04rddzMbotGoKx2OwscEQdznSh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "to_dict()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "WkoPdjgmtoQMznxvEaPc0BgLnuf",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation converts a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object to a dictionary representation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TrBKdp1p6oZ1b6xfrvFceWEznX7",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b"
+      },
+      {
+        "block_id": "QiKcdjYq9onGFkxd0pLcvDinnjg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "to_dict()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b"
+      },
+      {
+        "block_id": "MQo0dKcpPof0zkxsmQHc1NUpnes",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SlsBdfLzGo529lxHGV1c03wUn1d",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HH1wdFirxoFY8vx33yMceJs8ncb",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ElAAdlLyBoktMyxg0M7c3SMZnNd",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dict",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OaSMdxS5YoS1HsxIU7HcdtFvn0b",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vd9PdbqRfo449rxTRGVcwDxVnyy",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The dictionary representation of the collection schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SVXLde9ZvoPPwLxVgp0c0pbDnrh",
+        "block_type": 2,
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VIEVdGKewoZrVixWIhocr9yrnub",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "T7mSd9d1Ko6wmlx3ZaRcKXfCnbe"
+        ],
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b"
+      },
+      {
+        "block_id": "T7mSd9d1Ko6wmlx3ZaRcKXfCnbe",
+        "block_type": 2,
+        "parent_id": "VIEVdGKewoZrVixWIhocr9yrnub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MSXRdQb4Bo2Lj7xlOHfchKbNnQf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b"
+      },
+      {
+        "block_id": "Y04rddzMbotGoKx2OwscEQdznSh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import StructFieldSchema, FieldSchema, DataType  \n\nvector = FieldSchema(\n    name=\"vector\",\n    dtype=DataType.FLOAT_VECTOR,\n    dim=768,\n)\n\nvarchar = FieldSchema(\n    name=\"varchar\",\n    dtype=DataType.VARCHAR,\n    max_length=512\n)\n\n# Create a StructFieldSchema with field schemas\n\nschema = StructFieldSchema(\n    name=\"struct_schema\",\n    fields = [vector, varchar]\n)\n\n# Call to_dict() to get a dictionary representation of the schema \n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema_dict = schema.to_dict()  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Mq7idUip3ofMQmxj55XcB98nn0b"
+      }
+    ],
+    "counts": 15
+  },
+  "slug": "StructFieldSchema-to_dict"
+}

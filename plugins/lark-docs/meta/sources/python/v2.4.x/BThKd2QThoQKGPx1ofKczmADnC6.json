@@ -1,0 +1,1062 @@
+{
+  "created_time": "1737446228",
+  "modified_time": "1770599645",
+  "name": "compact()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "IZKcfUEfClhhnWdFhk2co7krnAV",
+  "token": "BThKd2QThoQKGPx1ofKczmADnC6",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/BThKd2QThoQKGPx1ofKczmADnC6",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "block_type": 1,
+        "children": [
+          "doxcnebaHETr378taoW5akm6SIb",
+          "QB12dZqmZojcyax7MgIcfJZ8n3c",
+          "KCi8dBB5VoyHolxBs1fcO3AIn9d",
+          "S4tnd0KQ9opewLxNv4CcVWt8nqd",
+          "Vw7JdyV0jo1mtLxn7BqcFudinLh",
+          "CvJZdsTuMoLV7Ex4E68cfgUAnTg",
+          "XlmvdM4mmo0WGkxlQZEcqdoenyh",
+          "HAEIdGyhGoFaQ3xZXyrcZk6tnyc",
+          "A1jJd1ymNodrCzx85MZcXYgEnld",
+          "HxVKdCdtKoQjOLxWe7Ic1LYinyb",
+          "CIwqdJYwuoP0RSxttd0cdRz4neb",
+          "Z0lsdcnfNomMSXxZ19qcflbznle",
+          "U4eIdbIR3oHxOjxcbwDcWsyknNg",
+          "NTPhdYpmRoHHnyxcT8AcApEMnsb",
+          "PbxpdiAZBoXAyax7HstciUPCnJe",
+          "DJGsd105OoytnfxV70bc3KM4nyd",
+          "IOgod71pLoaYn1xi8SZcpzi1n0b",
+          "Y8Bud3V43oBX15xELgPcZ3JXnae",
+          "GJcHdYWXIo3WGAxxWfscCGs0nFc",
+          "RW9qdZMQIomr8YxzffacA908n4d",
+          "Voa6dyym1oa7zBxLRyVcjqPQnFd",
+          "UNgYdYN10ouwQqxBzxwcqefkngg",
+          "Rg6FdrRgRo93Faxt95gc1n8ankf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compact()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnebaHETr378taoW5akm6SIb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "is_l0",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnM3OhyWvbPsYvw9MTljBxAh"
+        ],
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "doxcnM3OhyWvbPsYvw9MTljBxAh",
+        "block_type": 2,
+        "parent_id": "doxcnebaHETr378taoW5akm6SIb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to perform an L0 compaction, which specifically handles L0 segments by merging delete operations into existing data segments. Defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "False",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QB12dZqmZojcyax7MgIcfJZ8n3c",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KCi8dBB5VoyHolxBs1fcO3AIn9d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "S4tnd0KQ9opewLxNv4CcVWt8nqd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compact(\n    collection_name: str,\n    is_clustering: Optional[bool] = False,\n    is_l0: Optional[bool] = False,\n    timeout: Optional[float] = None,\n    **kwargs,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -> int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "Vw7JdyV0jo1mtLxn7BqcFudinLh",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CvJZdsTuMoLV7Ex4E68cfgUAnTg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collection_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "SYuMdnWbzoMJChx6Zm5c0rhGnGl"
+        ],
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "SYuMdnWbzoMJChx6Zm5c0rhGnGl",
+        "block_type": 2,
+        "parent_id": "CvJZdsTuMoLV7Ex4E68cfgUAnTg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XlmvdM4mmo0WGkxlQZEcqdoenyh",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HAEIdGyhGoFaQ3xZXyrcZk6tnyc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "is_clustering",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NYwdd5KkXodHbBxJS9GcRoJVnrf"
+        ],
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "NYwdd5KkXodHbBxJS9GcRoJVnrf",
+        "block_type": 2,
+        "parent_id": "HAEIdGyhGoFaQ3xZXyrcZk6tnyc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to perform a clustering compaction. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Clustering Compaction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fclustering-compaction.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A1jJd1ymNodrCzx85MZcXYgEnld",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HxVKdCdtKoQjOLxWe7Ic1LYinyb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Optional[float]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Cf8udNVZmoFqx5xydRec2dLnnSg",
+          "KRpKdn3HjoBUZwxGB28co3zCnWe"
+        ],
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "Cf8udNVZmoFqx5xydRec2dLnnSg",
+        "block_type": 2,
+        "parent_id": "HxVKdCdtKoQjOLxWe7Ic1LYinyb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The timeout duration for this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KRpKdn3HjoBUZwxGB28co3zCnWe",
+        "block_type": 2,
+        "parent_id": "HxVKdCdtKoQjOLxWe7Ic1LYinyb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Setting this to None indicates that this operation timeouts when any response arrives or any error occurs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CIwqdJYwuoP0RSxttd0cdRz4neb",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z0lsdcnfNomMSXxZ19qcflbznle",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U4eIdbIR3oHxOjxcbwDcWsyknNg",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NTPhdYpmRoHHnyxcT8AcApEMnsb",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A compaction job ID, which can be used to get the compaction status.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PbxpdiAZBoXAyax7HstciUPCnJe",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DJGsd105OoytnfxV70bc3KM4nyd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KYxWd3zH7orpLQxNhslcVjiHnif"
+        ],
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "KYxWd3zH7orpLQxNhslcVjiHnif",
+        "block_type": 2,
+        "parent_id": "DJGsd105OoytnfxV70bc3KM4nyd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation, especially when the specified alias does not exist.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "IOgod71pLoaYn1xi8SZcpzi1n0b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "Y8Bud3V43oBX15xELgPcZ3JXnae",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GJcHdYWXIo3WGAxxWfscCGs0nFc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\nclient = MilvusClient(uri=\"http://localhost:19530\")\n\n# Standard compaction\njob_id = client.compact(\n    collection_name=\"my_collection\"\n)\n\n# Clustering compaction\njob_id = client.compact(\n    collection_name=\"my_collection\",\n    is_clustering=True\n)\n\n# L0 compaction\njob_id = client.compact(\n    collection_name=\"my_collection\",\n    is_l0=True\n)\n\n# Check compaction status\nstate = client.get_compaction_state(job_id)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(state)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "RW9qdZMQIomr8YxzffacA908n4d",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Voa6dyym1oa7zBxLRyVcjqPQnFd",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UNgYdYN10ouwQqxBzxwcqefkngg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# 1. Create a milvus client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nclient = MilvusClient(\n    uri=\"https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530\",\n    token=\"user:password\"\n)\n\nclient.compact(\n    collection_name=\"collection_name\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6"
+      },
+      {
+        "block_id": "Rg6FdrRgRo93Faxt95gc1n8ankf",
+        "block_type": 2,
+        "parent_id": "BThKd2QThoQKGPx1ofKczmADnC6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 30
+  },
+  "slug": "Management-compact"
+}

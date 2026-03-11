@@ -1,0 +1,570 @@
+{
+  "created_time": "1730796539",
+  "modified_time": "1742891029",
+  "name": "construct_from_dict()",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "DEyifyf4elns3mdsbo3cZLOEnih",
+  "token": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Ulypd24byoDBOpxGnnJcbF3Nnkb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "block_type": 1,
+        "children": [
+          "YjJVd4OkJoqC6Rx5j30cUKpOnze",
+          "IlFyd60PEo0fvKxiIgUcP8eKnAb",
+          "Dz62duQMEoJXoJx14wmcTkAAnjf",
+          "CjdedOgzJo5s7LxQvKwcxvtfnfg",
+          "UsJkd5RJVoRiFjx3by4cneoUnsb",
+          "EgIhdS1Xyo7KMxxhxlbcAqzbnZf",
+          "DwJdde3FhoZmvMx3h51c4wbNnTf",
+          "RLIidIofzoZfBAxzEIXcoJhxnOh",
+          "WGFTdXiH0oKL8LxMwgbc5x0hnEh",
+          "VTG2damB9og0IfxIfIjcAgmWn0e",
+          "QwkGdqeh2oNF4ixNEZgcUf6dnRe",
+          "Vz4ednuSHoVzKpxU4jwcP5cQnDd",
+          "Mu8idNgbtofQDZxriAecmP3Wnoc",
+          "W7wgdMiipo7Fh9xf2pMcHurhnWm"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "construct_from_dict()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "YjJVd4OkJoqC6Rx5j30cUKpOnze",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation constructs a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object from a dictionary representation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IlFyd60PEo0fvKxiIgUcP8eKnAb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb"
+      },
+      {
+        "block_id": "Dz62duQMEoJXoJx14wmcTkAAnjf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "construct_from_dict(\n    raw: dict\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb"
+      },
+      {
+        "block_id": "CjdedOgzJo5s7LxQvKwcxvtfnfg",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UsJkd5RJVoRiFjx3by4cneoUnsb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "raw",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dict",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WzrSdX0fOoNX8wxwhA3cUxM2nTf"
+        ],
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb"
+      },
+      {
+        "block_id": "WzrSdX0fOoNX8wxwhA3cUxM2nTf",
+        "block_type": 2,
+        "parent_id": "UsJkd5RJVoRiFjx3by4cneoUnsb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A dictionary containing the raw data to construct the collection schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EgIhdS1Xyo7KMxxhxlbcAqzbnZf",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DwJdde3FhoZmvMx3h51c4wbNnTf",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RLIidIofzoZfBAxzEIXcoJhxnOh",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WGFTdXiH0oKL8LxMwgbc5x0hnEh",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VTG2damB9og0IfxIfIjcAgmWn0e",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QwkGdqeh2oNF4ixNEZgcUf6dnRe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OOB3dlY9oo8JBJxL4zwcu6xJnze"
+        ],
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb"
+      },
+      {
+        "block_id": "OOB3dlY9oo8JBJxL4zwcu6xJnze",
+        "block_type": 2,
+        "parent_id": "QwkGdqeh2oNF4ixNEZgcUf6dnRe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vz4ednuSHoVzKpxU4jwcP5cQnDd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb"
+      },
+      {
+        "block_id": "Mu8idNgbtofQDZxriAecmP3Wnoc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import Function  \n\nfunction_dict = {  \n    \"name\": \"bm25\",  \n    \"type\": \"BM25\",  \n    \"input_field_names\": [\"text\"],  \n    \"output_field_names\": [\"score\"],  \n    \"description\": \"BM25 text search function\",  \n}  \n\nfunction = Function.construct_from_dict(function_dict)  \n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(function)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb"
+      },
+      {
+        "block_id": "W7wgdMiipo7Fh9xf2pMcHurhnWm",
+        "block_type": 2,
+        "parent_id": "Ulypd24byoDBOpxGnnJcbF3Nnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 17
+  },
+  "slug": "Function-construct_from_dict"
+}

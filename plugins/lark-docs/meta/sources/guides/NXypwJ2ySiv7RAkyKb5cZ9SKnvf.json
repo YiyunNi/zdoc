@@ -1,0 +1,2837 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1734071143",
+  "node_token": "NXypwJ2ySiv7RAkyKb5cZ9SKnvf",
+  "node_type": "origin",
+  "obj_create_time": "1734071143",
+  "obj_edit_time": "1764640149",
+  "obj_token": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+  "obj_type": "docx",
+  "origin_node_token": "NXypwJ2ySiv7RAkyKb5cZ9SKnvf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "QHzrwVlEOipspAkPiyucWezqneC",
+  "space_id": "7167193056431783939",
+  "title": "Manage Projects",
+  "slug": "manage-projects",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "block_type": 1,
+        "children": [
+          "W4XDdDKploPrcJxBd87chQN1n8g",
+          "QK9yd7eTyo0denxtEFbcpbtsnNc",
+          "W0EQdPIkeoH4EIxPtt0ct37Mnfb",
+          "Eh22dfCjyoT1ZyxYF20c47rVnSc",
+          "LoJidqJupoe1n0xTiINcgb0QnIb",
+          "IhIidsVvGo1dHkxwuroc7A0BnYf",
+          "FfBIdB3clotjl0xMO9QcLO3dnJb",
+          "RF6FdLZayohwZPxh1CWcqyvUnAe",
+          "AH79dBkQ2otASYxFFjBczi6YnKf",
+          "N40wdN1GGoLhOzxV49BcFy0dnye",
+          "QH6tdzAunoDnnVxXAhMcTN8pn7g",
+          "DJKkd84Ino2bihxSb7mczrrPnUg",
+          "UcIhd7EcQoHHXyxMP9acqc9JnTe",
+          "UyFVdziuPoGIpuxYUP6cMSSqncc",
+          "C7nJdmqGgoHc8vxGM5JctNyMn7d",
+          "XyEqdGbgVotPwWx6h69cw3k9nyx",
+          "G5Erdima8oH1HpxfCuFcNe7xnmE",
+          "LWNsd7pjdoUXvPxntIQcww0vnnc",
+          "BcrpdJDCeouEylxcEOjcQuv5nwh",
+          "Mj7zdb5GNozXh0xen3BcdAYYn1g",
+          "Mw9fdzUM9oH900xT25RcRCEFnsh",
+          "MaO5dyjK5o6geQxSkECc1rFxnjb",
+          "L8Xqd69jyofrsmxlo06c6SNynod",
+          "YgtddClgZoJfbZxuWTpc1zgynBx",
+          "NJakdhVvHoqxqIxGX7cci22GnVg",
+          "LEXQdZNpToYWhfxHbhjc9EhanJf",
+          "YFWrdsHC8ok0zuxhnDvc3i9xnYg",
+          "VrHEdVzQBou2AxxofNKcc9z3nDf",
+          "WlA3dCXx6o0vvcxqKoyccMIrnpe",
+          "JkZEdbq1boIJSxxYtwfcRYQ8nRg",
+          "R2HIdYCT8o4oHCxzqaTczdoSn8d",
+          "O9n7dgPypoNinTxJ1UkcGesAnOe",
+          "UCLGdz9j0ozRjaxDSgWcKllYnUB",
+          "UeWNdaeWbohh8bxBOiEcjtWBnDe",
+          "LcAvduAhaoFs1rxDbBkcBCp5npe",
+          "BcRZdQVPjoyOqex3tT3cathjn7c",
+          "M4NNdv6KUorFBExXzxOcDhq8nAb",
+          "PuIGdIfTWoIz6axIPD7cYe3qnFh",
+          "YFqHdKCYJojVGzx80BycXRGVncb",
+          "TD0OdOZtWoXFuFxWseZcaTkbnxF",
+          "BzQcdz9wIoHO2dxWxlkcHZmnnrd",
+          "WQCOdZQ24oNOToxD9D5cCCH6nNb",
+          "GUWndgNr2ogBXlxiNnpcCNCsnYc",
+          "S0K9djtHaol6tvxfYlNcj57SnQb",
+          "EPdxdAYlDobuuAx3303c7rqCnbe",
+          "MgyldzAE4oSYkjxqSy3cPDtnn8g",
+          "W4O5ddzIwoaTN9xfL4AcN7b9n4e",
+          "OUuhdu4VBoRhz7xF4xucXKX3n7f",
+          "TfqWdC49ZodvBhxcd7ncdn19nSf",
+          "ZBSWdncCvo9X9txLcSQchq56nNf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manage Projects",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "W4XDdDKploPrcJxBd87chQN1n8g",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In Zilliz Cloud, a project serves as a logical container within an organization, grouping clusters and related resources. You can create multiple projects tailored to different aspects of your business. For example, if your company offers multimedia recommendation services, you can create one project for video recommendations and another for music recommendations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QK9yd7eTyo0denxtEFbcpbtsnNc",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This guide will walk you through the steps of managing projects.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W0EQdPIkeoH4EIxPtt0ct37Mnfb",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Eh22dfCjyoT1ZyxYF20c47rVnSc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "LoJidqJupoe1n0xTiINcgb0QnIb",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Each organization comes with a default ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enterprise",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " project named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Default Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that cannot be deleted. Based on your workload and business needs, you can create additional projects. When you create a project, you automatically become the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project Admin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPZ4uwwgUfio5OikY0Ecc5nrunFf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of the project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IhIidsVvGo1dHkxwuroc7A0BnYf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limits ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "FfBIdB3clotjl0xMO9QcLO3dnJb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To create a project, you must be an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOzLjwMmWliJdEBkz0gPcVZrqnZb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "RF6FdLZayohwZPxh1CWcqyvUnAe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can create a maximum of 100 projects in each organization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "AH79dBkQ2otASYxFFjBczi6YnKf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Procedures",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "N40wdN1GGoLhOzxV49BcFy0dnye",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QH6tdzAunoDnnVxXAhMcTN8pn7g",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When creating a project, you need to specify the project name and select a project plan that best suits your needs. The plan determines available features and the billing. For details about the pricing, plan differences, and how to select a right plan, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Detailed Plan Comparison",
+                "token": "Ghq9wEiOOivgeIkmj2HcHC9onXe",
+                "url": "https://zilliverse.feishu.cn/wiki/Ghq9wEiOOivgeIkmj2HcHC9onXe"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DJKkd84Ino2bihxSb7mczrrPnUg",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UcIhd7EcQoHHXyxMP9acqc9JnTe",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can create a project via the Zilliz Cloud web console or RESTful API.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UyFVdziuPoGIpuxYUP6cMSSqncc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via web console",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Dbgsdqo7XokySfxZZc3cieQsn4E",
+          "NXfwdIZD2oYhHWxY0Y6cz0exnCc",
+          "NNmudedN1oMnDUxcOr6c4PYMnAf",
+          "GLutdAlDYocy0PxQYs8c1nHBn2g",
+          "PYIHd7ByqoUGUyx9EGFczIV8nph",
+          "RbRYdLUjEodtzQx8oyecCZtJnlc",
+          "ByzUddIJXoAkYXxtybhcQALBnVh",
+          "QpzVdqoeooJZYVxpmAHcDzM1nwp"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "Dbgsdqo7XokySfxZZc3cieQsn4E",
+        "block_type": 2,
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to create a project on the Zilliz Cloud web console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmhivxhnz5zctfatifx1jw34l?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "NXfwdIZD2oYhHWxY0Y6cz0exnCc",
+        "block_type": 40,
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc"
+      },
+      {
+        "block_id": "NNmudedN1oMnDUxcOr6c4PYMnAf",
+        "block_type": 2,
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GLutdAlDYocy0PxQYs8c1nHBn2g",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D5817-1664%26mode%3Ddesign%26t%3Ds1kI41AtQAMMX1Zu-4"
+          }
+        },
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc"
+      },
+      {
+        "block_id": "PYIHd7ByqoUGUyx9EGFczIV8nph",
+        "block_type": 2,
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RbRYdLUjEodtzQx8oyecCZtJnlc",
+        "block_type": 2,
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ByzUddIJXoAkYXxtybhcQALBnVh",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D19236-683%26mode%3Ddesign%26t%3D3Lp0tZ2PWPEWtVgl-4"
+          }
+        },
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc"
+      },
+      {
+        "block_id": "QpzVdqoeooJZYVxpmAHcDzM1nwp",
+        "block_type": 2,
+        "parent_id": "UyFVdziuPoGIpuxYUP6cMSSqncc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C7nJdmqGgoHc8vxGM5JctNyMn7d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via RESTful API",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Y5lwdUykYoLKSWxmnHUcp3YVnoh",
+          "EMvQdy9rBodjdYxONjAcIg2rnhe",
+          "JReUdw0aToAbgkxMqwjcBSZjn6J",
+          "RHpBdwIssoBOI4xjpkYcI3rCnPh"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "Y5lwdUykYoLKSWxmnHUcp3YVnoh",
+        "block_type": 2,
+        "parent_id": "C7nJdmqGgoHc8vxGM5JctNyMn7d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example shows how to create a Standard project named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "My Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the current organization. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fcreate-project-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EMvQdy9rBodjdYxONjAcIg2rnhe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export TOKEN=\"YOUR_API_KEY\"\n\ncurl --request POST \\\n--url \"${BASE_URL}/v2/projects\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"projectName\": \"My Project\",\n    \"plan\": \"Standard\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7nJdmqGgoHc8vxGM5JctNyMn7d"
+      },
+      {
+        "block_id": "JReUdw0aToAbgkxMqwjcBSZjn6J",
+        "block_type": 2,
+        "parent_id": "C7nJdmqGgoHc8vxGM5JctNyMn7d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following is an example output.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RHpBdwIssoBOI4xjpkYcI3rCnPh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"projectId\": \"proj-x\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7nJdmqGgoHc8vxGM5JctNyMn7d"
+      },
+      {
+        "block_id": "XyEqdGbgVotPwWx6h69cw3k9nyx",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upgrade a project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "G5Erdima8oH1HpxfCuFcNe7xnmE",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To unlock for advanced features, you can upgrade the plan of your existing projects.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LWNsd7pjdoUXvPxntIQcww0vnnc",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upgrading the project will also upgrade all clusters in the project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BcrpdJDCeouEylxcEOjcQuv5nwh",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you need to upgrade a project to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Business Critical",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BYOC",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " plan, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact sales",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mj7zdb5GNozXh0xen3BcdAYYn1g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via web console",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AYxFdJkjPol9kOx0E2DcmPzyn2f",
+          "NUSodj70yoqJHix019VcWVuKnYd",
+          "FqRXdnxg1otcB3xUsoAcu9Xjn5e"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "AYxFdJkjPol9kOx0E2DcmPzyn2f",
+        "block_type": 2,
+        "parent_id": "Mj7zdb5GNozXh0xen3BcdAYYn1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to upgrade the plan of a project from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Standard",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Enterprise",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmhiw3gu85zhlfati4r154s2h?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "NUSodj70yoqJHix019VcWVuKnYd",
+        "block_type": 40,
+        "parent_id": "Mj7zdb5GNozXh0xen3BcdAYYn1g"
+      },
+      {
+        "block_id": "FqRXdnxg1otcB3xUsoAcu9Xjn5e",
+        "block_type": 2,
+        "parent_id": "Mj7zdb5GNozXh0xen3BcdAYYn1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mw9fdzUM9oH900xT25RcRCEFnsh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via RESTful API",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "M4rrdNF6iogk2xxn3HMc8gijnze",
+          "EKUPdSoZ3osIsXxd9Inc3Yohnkd",
+          "QvARdFJBEo3jEGxsuLRcGVn8n4d",
+          "BnsqdrlY0oZG9cxxKHzcX29in0f"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "M4rrdNF6iogk2xxn3HMc8gijnze",
+        "block_type": 2,
+        "parent_id": "Mw9fdzUM9oH900xT25RcRCEFnsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to upgrade the plan of a project from Standard to Enterprise. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Upgrade Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fupgrade-project-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EKUPdSoZ3osIsXxd9Inc3Yohnkd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export TOKEN=\"YOUR_API_KEY\"\nexport projectId=\"proj-xx\"\n\ncurl --request PATCH \\\n--url \"${BASE_URL}/v2/projects/${projectId}\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"plan\": \"Enterprise\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Mw9fdzUM9oH900xT25RcRCEFnsh"
+      },
+      {
+        "block_id": "QvARdFJBEo3jEGxsuLRcGVn8n4d",
+        "block_type": 2,
+        "parent_id": "Mw9fdzUM9oH900xT25RcRCEFnsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following is an example output.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BnsqdrlY0oZG9cxxKHzcX29in0f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"projectId\": \"proj-x\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Mw9fdzUM9oH900xT25RcRCEFnsh"
+      },
+      {
+        "block_id": "MaO5dyjK5o6geQxSkECc1rFxnjb",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L8Xqd69jyofrsmxlo06c6SNynod",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View all projects",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "YgtddClgZoJfbZxuWTpc1zgynBx",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can view the list of all projects in your permission scope in the organization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NJakdhVvHoqxqIxGX7cci22GnVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via web console",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "UgDVdYYDAoEP7Bx4r4EcbTeOnCd",
+          "AUjOdSTkSoCg5Dx8URTcnuzVnZb",
+          "ESi7dwCWvoraYNxRUEQcLS7Hnpe",
+          "TRu4dOI6PoT3oXxtIL8c287Sn4c",
+          "Yo0ndqgKgoQj3rxzmB5cZ5Xenje",
+          "CrYtdpfkroT59zxL9OacvjSPnph"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "UgDVdYYDAoEP7Bx4r4EcbTeOnCd",
+        "block_type": 2,
+        "parent_id": "NJakdhVvHoqxqIxGX7cci22GnVg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AUjOdSTkSoCg5Dx8URTcnuzVnZb",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D25911-1165%26mode%3Ddesign%26t%3D5LGsFv8TRk7KKG6r-4"
+          }
+        },
+        "parent_id": "NJakdhVvHoqxqIxGX7cci22GnVg"
+      },
+      {
+        "block_id": "ESi7dwCWvoraYNxRUEQcLS7Hnpe",
+        "block_type": 2,
+        "parent_id": "NJakdhVvHoqxqIxGX7cci22GnVg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TRu4dOI6PoT3oXxtIL8c287Sn4c",
+        "block_type": 2,
+        "parent_id": "NJakdhVvHoqxqIxGX7cci22GnVg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Yo0ndqgKgoQj3rxzmB5cZ5Xenje",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D27930-4550%26mode%3Ddesign%26t%3DyWaKMcWxZpp9ikbW-4"
+          }
+        },
+        "parent_id": "NJakdhVvHoqxqIxGX7cci22GnVg"
+      },
+      {
+        "block_id": "CrYtdpfkroT59zxL9OacvjSPnph",
+        "block_type": 2,
+        "parent_id": "NJakdhVvHoqxqIxGX7cci22GnVg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LEXQdZNpToYWhfxHbhjc9EhanJf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via RESTful API",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "SwBBdmgzIozNqmxGRh1cenL8ndc",
+          "GpS1dOetfo6xPqx7jkncCK0Qnkg",
+          "O6IxddGPCoT91AxximXcRpQqnVf",
+          "TVP0dEwnjodoW8xjQOkcHmhQnmg"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "SwBBdmgzIozNqmxGRh1cenL8ndc",
+        "block_type": 2,
+        "parent_id": "LEXQdZNpToYWhfxHbhjc9EhanJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example shows how to list all projects in the current organization. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List Projects",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Flist-projects-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GpS1dOetfo6xPqx7jkncCK0Qnkg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export TOKEN=\"YOUR_API_KEY\"\n\ncurl --request GET \\\n--url \"${BASE_URL}/v2/projects\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Accept: application/json\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--header \"Content-Type: application/json\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "LEXQdZNpToYWhfxHbhjc9EhanJf"
+      },
+      {
+        "block_id": "O6IxddGPCoT91AxximXcRpQqnVf",
+        "block_type": 2,
+        "parent_id": "LEXQdZNpToYWhfxHbhjc9EhanJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following is an example output.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TVP0dEwnjodoW8xjQOkcHmhQnmg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": [\n        {\n            \"projectName\": \"Default Project\",\n            \"projectId\": \"proj-xxxxxxxxxxxxxxxxxxxxxxx\",\n            \"instanceCount\": 2,\n            \"createTime\": \"2023-08-16T07:34:06Z\",\n            \"plan\": \"Enterprise\"\n        }\n    ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "LEXQdZNpToYWhfxHbhjc9EhanJf"
+      },
+      {
+        "block_id": "YFWrdsHC8ok0zuxhnDvc3i9xnYg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View project details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "VrHEdVzQBou2AxxofNKcc9z3nDf",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also check the details of a certain project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WlA3dCXx6o0vvcxqKoyccMIrnpe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via web console",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HmJXdB5HPoWpsnxKhZ2cSJc6nec",
+          "NyzodsEnZo2Btcxr8MOcgHoLnZd"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "HmJXdB5HPoWpsnxKhZ2cSJc6nec",
+        "block_type": 2,
+        "parent_id": "WlA3dCXx6o0vvcxqKoyccMIrnpe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can check the project name, plan, creation time, and the number of clusters within the project on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Projects",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page. You can further click on a certain project to view its clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NyzodsEnZo2Btcxr8MOcgHoLnZd",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1396,
+          "scale": 1,
+          "token": "NoSTbfMVjoPp99x5cjcc0cwWnbd",
+          "width": 2880
+        },
+        "parent_id": "WlA3dCXx6o0vvcxqKoyccMIrnpe"
+      },
+      {
+        "block_id": "JkZEdbq1boIJSxxYtwfcRYQ8nRg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Via RESTful API",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "V42Ydvf3Voyn3QxwcJvcURvCnfH",
+          "Z5VDdXxjPoLXewxEVjrc5a1fnff",
+          "F9hrdWFEfoxy6kxI925csR6fnWg",
+          "XuufdWl7UoonTaxTUYKcP9wmnCg"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "V42Ydvf3Voyn3QxwcJvcURvCnfH",
+        "block_type": 2,
+        "parent_id": "JkZEdbq1boIJSxxYtwfcRYQ8nRg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example describes the project ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "proj-xxxxxxxxxxxxxxx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Describe Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fdescribe-project-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z5VDdXxjPoLXewxEVjrc5a1fnff",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export TOKEN=\"YOUR_API_KEY\"\nexport projectId=\"proj-xx\"\n\ncurl --request GET \\\n--url \"${BASE_URL}/v2/projects/${projectId}\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--header \"Content-Type: application/json\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "JkZEdbq1boIJSxxYtwfcRYQ8nRg"
+      },
+      {
+        "block_id": "F9hrdWFEfoxy6kxI925csR6fnWg",
+        "block_type": 2,
+        "parent_id": "JkZEdbq1boIJSxxYtwfcRYQ8nRg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following is an example output",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XuufdWl7UoonTaxTUYKcP9wmnCg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{\n    \"code\": 0,\n    \"data\": {\n        \"projectId\": \"proj-x\",\n        \"projectName\": \"My Project\",\n        \"instanceCount\": 2,\n        \"createTime\": \"2023-08-16T07:34:06Z\",\n        \"plan\": \"Enterprise\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 28,
+            "wrap": false
+          }
+        },
+        "parent_id": "JkZEdbq1boIJSxxYtwfcRYQ8nRg"
+      },
+      {
+        "block_id": "R2HIdYCT8o4oHCxzqaTczdoSn8d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Rename a project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "O9n7dgPypoNinTxJ1UkcGesAnOe",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To rename a project, you must be an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOzLjwMmWliJdEBkz0gPcVZrqnZb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". You can rename a project via the web console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UCLGdz9j0ozRjaxDSgWcKllYnUB",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmhiwa69y5zk2fatiw4ou24k6?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "UeWNdaeWbohh8bxBOiEcjtWBnDe",
+        "block_type": 40,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "LcAvduAhaoFs1rxDbBkcBCp5npe",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BcRZdQVPjoyOqex3tT3cathjn7c",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M4NNdv6KUorFBExXzxOcDhq8nAb",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D19241-683%26mode%3Ddesign%26t%3DbJrKfmZj2QfJi6Ex-4"
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "PuIGdIfTWoIz6axIPD7cYe3qnFh",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YFqHdKCYJojVGzx80BycXRGVncb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Delete a project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "TD0OdOZtWoXFuFxWseZcaTkbnxF",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To delete a project, you must be an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FOzLjwMmWliJdEBkz0gPcVZrqnZb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BzQcdz9wIoHO2dxWxlkcHZmnnrd",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you delete a project, you must drop all ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "clusters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPharwAysCiBzvgkuqqecmNzunQf%23Uzr7d630voIeQ8xxR8Scz6gknfh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volumes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FJwYYw2v0yi2eHBkFZuJcM7pXnnc%23UEI6dQ3E8o6Ktbx9FNIcijUpnug"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "within the project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WQCOdZQ24oNOToxD9D5cCCH6nNb",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once a project is deleted, all its associated data and resources will be irreversibly cleaned as well.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GUWndgNr2ogBXlxiNnpcCNCsnYc",
+        "block_type": 34,
+        "children": [
+          "J69Ddt7aUoAzjaxKPIvcrGZgnHg",
+          "HojbdgvCyoLWz8xcBgWccYhZn7d"
+        ],
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "quote_container": {}
+      },
+      {
+        "block_id": "J69Ddt7aUoAzjaxKPIvcrGZgnHg",
+        "block_type": 2,
+        "parent_id": "GUWndgNr2ogBXlxiNnpcCNCsnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HojbdgvCyoLWz8xcBgWccYhZn7d",
+        "block_type": 2,
+        "parent_id": "GUWndgNr2ogBXlxiNnpcCNCsnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The default project cannot be deleted.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S0K9djtHaol6tvxfYlNcj57SnQb",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can delete a project via the web console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EPdxdAYlDobuuAx3303c7rqCnbe",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmhiwf80b5zoufatic4p14w7m?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "MgyldzAE4oSYkjxqSy3cPDtnn8g",
+        "block_type": 40,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "W4O5ddzIwoaTN9xfL4AcN7b9n4e",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OUuhdu4VBoRhz7xF4xucXKX3n7f",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TfqWdC49ZodvBhxcd7ncdn19nSf",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D19249-683%26mode%3Ddesign%26t%3DBIwG7lNLP2jg8qKw-4"
+          }
+        },
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf"
+      },
+      {
+        "block_id": "ZBSWdncCvo9X9txLcSQchq56nNf",
+        "block_type": 2,
+        "parent_id": "DK4Kdgbs6o8fGlxZ9wfc3tFxnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 88
+  }
+}

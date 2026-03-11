@@ -1,0 +1,760 @@
+{
+  "created_time": "1741675664",
+  "modified_time": "1746677201",
+  "name": "removePrivilegesFromGroup()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "HR9xfgwXylmfqOdKmJ7c9xCqnQb",
+  "token": "Qbntdds6XoByxcxrG1acL7IxnQe",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Qbntdds6XoByxcxrG1acL7IxnQe",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "block_type": 1,
+        "children": [
+          "MFFPdeTLEo8YIzxJKMhc0WFAnhd",
+          "AhLmdlhHmoCA5oxS8UicKGGWnVg",
+          "OF00djAVdo8EBixg5AzcfqPensg",
+          "Aw4YdqspgoStKgxb3DscnO32nDb",
+          "Fj6idwEV9oWA1Uxx2X7cLQLQnIe",
+          "OmtOdsoDOoelKPxrCy4csuDJnMb",
+          "NXE1d3jL3oywA6x5uXAcjcJJn2b",
+          "JJsgdkH78oo42bxe5Jqc1QIAn7d",
+          "IpOtdZlxFoOyx6xNHvkc410Tnxe",
+          "HqHFdOAz5okcDzxjOisc7GgRnne",
+          "XBfJdHVp3onIi0xZgvQcdHCEnvb",
+          "FzQTdzV56oB83FxPAfmcveswnvc",
+          "PYoAd9k2to4b3oxInGMc2OctnAf",
+          "WPuhdXzPWoQ8SRxYlG2cRN0Wnje"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "removePrivilegesFromGroup()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "MFFPdeTLEo8YIzxJKMhc0WFAnhd",
+        "block_type": 2,
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation removes privileges from a specific privilege group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AhLmdlhHmoCA5oxS8UicKGGWnVg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void removePrivilegesFromGroup(RemovePrivilegesFromGroupReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "OF00djAVdo8EBixg5AzcfqPensg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "Aw4YdqspgoStKgxb3DscnO32nDb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "removePrivilegesFromGroup(RemovePrivilegesFromGroupReq.builder()\n    .groupName(String groupName)\n    .privileges(List<String> privileges)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "Fj6idwEV9oWA1Uxx2X7cLQLQnIe",
+        "block_type": 2,
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OmtOdsoDOoelKPxrCy4csuDJnMb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupName(String groupName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HWzEdRnbeoN34WxozdPc3p59nQc"
+        ],
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "HWzEdRnbeoN34WxozdPc3p59nQc",
+        "block_type": 2,
+        "parent_id": "OmtOdsoDOoelKPxrCy4csuDJnMb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target privilege group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NXE1d3jL3oywA6x5uXAcjcJJn2b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "privileges(List<String> privileges)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AZpZdtvXWoI3EqxGRI1crAY7nrg"
+        ],
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "AZpZdtvXWoI3EqxGRI1crAY7nrg",
+        "block_type": 2,
+        "parent_id": "NXE1d3jL3oywA6x5uXAcjcJJn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The privileges to be deleted from the specified privilege groups. For details on possible privileges, refer to <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Grant Privileges or Privilege Group to Roles",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fgrant_privileges.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Privileges",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fcluster-privileges"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JJsgdkH78oo42bxe5Jqc1QIAn7d",
+        "block_type": 2,
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IpOtdZlxFoOyx6xNHvkc410Tnxe",
+        "block_type": 2,
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HqHFdOAz5okcDzxjOisc7GgRnne",
+        "block_type": 2,
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XBfJdHVp3onIi0xZgvQcdHCEnvb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HfmCdTAqQoGJ7Ax806Pc5qdWnWc"
+        ],
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "HfmCdTAqQoGJ7Ax806Pc5qdWnWc",
+        "block_type": 2,
+        "parent_id": "XBfJdHVp3onIi0xZgvQcdHCEnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FzQTdzV56oB83FxPAfmcveswnvc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "PYoAd9k2to4b3oxInGMc2OctnAf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RemovePrivilegesFromGroupReq;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// 2. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Remove",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " privileges from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "group\nList<String> privileges = new ArrayList<>();\nprivileges.add(\"Query\", \"Search\")\n\nRemovePrivilegesFromGroupReq removePrivilegesFromGroupReq = RemovePrivilegesFromGroupReq.builder()\n        .groupName(\"read_only\")\n        .privileges(privileges)\n        .build();\n        \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.removePrivilegesFromGroup(addPrivilegesToGroupReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe"
+      },
+      {
+        "block_id": "WPuhdXzPWoQ8SRxYlG2cRN0Wnje",
+        "block_type": 2,
+        "parent_id": "Qbntdds6XoByxcxrG1acL7IxnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 18
+  },
+  "slug": "v2-Authentication-removePrivilegesFromGroup"
+}

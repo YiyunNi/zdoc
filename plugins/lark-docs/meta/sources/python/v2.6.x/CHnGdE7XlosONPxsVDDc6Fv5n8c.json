@@ -1,0 +1,496 @@
+{
+  "created_time": "1713169394",
+  "modified_time": "1713175705",
+  "name": "encode_queries()",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "UaedfEts7lWlFEdq2WNcVAczn6d",
+  "token": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/CHnGdE7XlosONPxsVDDc6Fv5n8c",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "block_type": 1,
+        "children": [
+          "RkWvdwrOUovgoTxBYhVcyCsxnbf",
+          "IeL2dTgrbodq8uxHqU7cTD3Dnzd",
+          "U7CZd7HzcoatdbxhUIicZtERnqd",
+          "X4HNdz2naoB2TexoNP7cGfsHnEb",
+          "MSeZdcPsSoq4W1xFybSchqxonae",
+          "EXSQdyQjZowoCaxIMsJcNcUdnGd",
+          "JOAedZeIeoxjUnxIlXBcdhcQnqb",
+          "Y2OldLJQuonwgkx8xStcn8xinmY",
+          "OhUjdIIRPotepfxbotDcDxKIncB",
+          "FHspd7534onJhZxqP52ckWaenUh",
+          "AJc2dkXYloIWS0xeAvlcPCDVnwb",
+          "SLl7dX4vkoDBaXxP5cXcVsnOnxe",
+          "I0g7dZmRJodGPnxJQLCcjUGsnif"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "encode_queries()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "RkWvdwrOUovgoTxBYhVcyCsxnbf",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation takes in a list of query strings and encodes each query into a vector embedding.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IeL2dTgrbodq8uxHqU7cTD3Dnzd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c"
+      },
+      {
+        "block_id": "U7CZd7HzcoatdbxhUIicZtERnqd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "encode_queries(\n    queries: List[str], \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -> List[np.array]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c"
+      },
+      {
+        "block_id": "X4HNdz2naoB2TexoNP7cGfsHnEb",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MSeZdcPsSoq4W1xFybSchqxonae",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "queries",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KMeoddaDFoNiJHxd4Y6ckGQunnf"
+        ],
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c"
+      },
+      {
+        "block_id": "KMeoddaDFoNiJHxd4Y6ckGQunnf",
+        "block_type": 2,
+        "parent_id": "MSeZdcPsSoq4W1xFybSchqxonae",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of string values, where each string represents a query that will be passed to the embedding model for encoding. The model will generate an embedding vector for each string in the list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EXSQdyQjZowoCaxIMsJcNcUdnGd",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JOAedZeIeoxjUnxIlXBcdhcQnqb",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List[np.array]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y2OldLJQuonwgkx8xStcn8xinmY",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OhUjdIIRPotepfxbotDcDxKIncB",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list where each element is a NumPy array.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FHspd7534onJhZxqP52ckWaenUh",
+        "block_type": 2,
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Exceptions:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AJc2dkXYloIWS0xeAvlcPCDVnwb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ImportError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GiqVdczYdoBAXpxsuNKclOKAnve"
+        ],
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c"
+      },
+      {
+        "block_id": "GiqVdczYdoBAXpxsuNKclOKAnve",
+        "block_type": 2,
+        "parent_id": "AJc2dkXYloIWS0xeAvlcPCDVnwb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when the Voyage module is not installed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SLl7dX4vkoDBaXxP5cXcVsnOnxe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c"
+      },
+      {
+        "block_id": "I0g7dZmRJodGPnxJQLCcjUGsnif",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.dense import VoyageEmbeddingFunction\n\nvoyage_ef = VoyageEmbeddingFunction(\n    model_name=\"voyage-lite-02-instruct\", # Defaults to `voyage-2`\n    api_key='YOUR_API_KEY' # Replace with your own Voyage API key\n)\n\nqueries = [\"When was artificial intelligence founded\", \n           \"Where was Alan Turing born?\"]\n\nquery_embeddings = voyage_ef.encode_queries(queries)\n\nprint(\"Embeddings:\", query_embeddings)\nprint(\"Dim\", voyage_ef.dim, query_embeddings[0].shape)\n\n# Embeddings: [array([ 0.01733501, -0.0230672 , -0.05208827, ..., -0.00957995,\n#         0.04493361,  0.01485138]), array([ 0.05937521, -0.00729363, -0.02184347, ..., -0.02107683,\n#         0.05706626,  0.0263358 ])]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Dim 1024 (1024,)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "CHnGdE7XlosONPxsVDDc6Fv5n8c"
+      }
+    ],
+    "counts": 16
+  },
+  "slug": "VoyageEmbeddingFunction-encode_queries"
+}

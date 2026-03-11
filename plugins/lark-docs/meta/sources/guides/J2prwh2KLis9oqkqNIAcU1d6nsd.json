@@ -1,0 +1,1496 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1754537884",
+  "node_token": "J2prwh2KLis9oqkqNIAcU1d6nsd",
+  "node_type": "origin",
+  "obj_create_time": "1754537884",
+  "obj_edit_time": "1765190345",
+  "obj_token": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+  "obj_type": "docx",
+  "origin_node_token": "J2prwh2KLis9oqkqNIAcU1d6nsd",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "PuQOwUaY5irgTrk0V10cNdHUned",
+  "space_id": "7167193056431783939",
+  "title": "Dedicated Cluster Cost",
+  "slug": "dedicated-cluster-cost",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "block_type": 1,
+        "children": [
+          "R25Md1mREoIu6mxR2U7c0dnynDd",
+          "HFJJdf1VwoZdcCxl1XocRB3lnyc",
+          "HTNJdScCCopx1OxSCMYcTGWAnbd",
+          "MHtfd13Cdo663BxKNAYcXzKEnfg",
+          "A1fidOdENoJxmAxRrYccPAzmnlf",
+          "Q6jWdK3hsoKQg8xtyiMctrpJnjh",
+          "NbKgdLf8uo4iISxYa2HcB59Tnq4",
+          "Afutdr9pdot9mXxIW5sc8izpnof",
+          "M5nWdOWEGoBYmKxTjJfcGHJXnbb",
+          "A97GdnnANocYrwxSCXycRrCAn8b",
+          "COFLdrnunoUYfvx1oLxcInelnPd",
+          "MwqqdNDFioLfSVx7xzpcLbPxngg",
+          "JSKFdwijoof1gUxcLJXcZ5UgnMz",
+          "MaWtdeIVfoiIF3xP7JhcBz11nIg",
+          "BBsXdREuWoI8ToxyibNcOCRJn9b",
+          "RRl9dP5CWoqaEWxDPxVczVfQnee",
+          "MxBrdp4w6omx82x0GihcRFWYnff",
+          "GtSPdQnUYoVDizxHE38cTBtvnng",
+          "Im5zd9EHgoGwkRxH0IUcAb7ynWd",
+          "SzpbdOesxoFXxBxFyTgcVpIpnKg",
+          "VrCHdwdqGov383xju6yczpfOn0f",
+          "XerndrZc6oUNgCxdfJlcQn54npJ",
+          "Wk8Jdk5HZovqCrxOp3LcuBIFn6c",
+          "TwGOdVvNKoLhrYxXsZZcx3tQnrg",
+          "FKCydUEtZoXG2dxtFBuc8yX6ngf",
+          "RQJYdIUPao2HyPxfLtkcbIj1nJf",
+          "WblOdI9pJokOoCxbQgucRTyJnnc",
+          "B9mndXPkEof5dnxHNr1cHFx4n1d",
+          "T6sMd9jJloNMlcxu7TQcYJMunfd",
+          "HxcUdUyKCoDSPnxf5SIcbm4bndh",
+          "PyFMdXQbUocq7nxNnQucXMJHnNg",
+          "EPDtdE6vRok02OxCeaucvEfJnN4",
+          "FJDhdgl1soEKg1xit5mcacMsnzg",
+          "O0k3d3ooxoCWsExkRAfcsdKlneh",
+          "Nvt6dJHTwos1DnxxpnWc1kA6nPh",
+          "Tv0OdAzRBoKzoCx8as1cofiqnNd"
+        ],
+        "comment_ids": [
+          "7577712295518669761"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dedicated Cluster Cost",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7577712295518669761"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "R25Md1mREoIu6mxR2U7c0dnynDd",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dedicated clusters in Zilliz Cloud follows a pay-as-you-go model, where you are mainly charged for the compute resources consumed by your clusters. This ensures you only pay for what you actually use, without the need to over-provision resources in advance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HFJJdf1VwoZdcCxl1XocRB3lnyc",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The total cost of a Dedicated cluster is the sum of the following components:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HTNJdScCCopx1OxSCMYcTGWAnbd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Vector database costs",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7581430257278929880"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FJ2prwh2KLis9oqkqNIAcU1d6nsd%23Afutdr9pdot9mXxIW5sc8izpnof"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7581430257278929880"
+        ],
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "MHtfd13Cdo663BxKNAYcXzKEnfg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage costs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FJ2prwh2KLis9oqkqNIAcU1d6nsd%23B9mndXPkEof5dnxHNr1cHFx4n1d"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "A1fidOdENoJxmAxRrYccPAzmnlf",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In addition to the two primary billing items above, the following optional add-on charges may apply:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q6jWdK3hsoKQg8xtyiMctrpJnjh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data transfer cost",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBClgwKlHaiushBkPPssclTkYnef"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "NbKgdLf8uo4iISxYa2HcB59Tnq4",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit log cost",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGBfswoqhviHfTVk2qhHc4eGXnfh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "Afutdr9pdot9mXxIW5sc8izpnof",
+        "block_type": 4,
+        "comment_ids": [
+          "7581430214194973628"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Vector database",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7581430214194973628"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " cost",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "M5nWdOWEGoBYmKxTjJfcGHJXnbb",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The vector database cost includes charges for using computing resources of a Dedicated cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A97GdnnANocYrwxSCXycRrCAn8b",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cost calculation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "COFLdrnunoUYfvx1oLxcInelnPd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Vector Database Cost = Query CU Unit Price x Total Number of Query CU x Cluster ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Runtime",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7581435099468532701"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 1,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7581435099468532701"
+        ],
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "MwqqdNDFioLfSVx7xzpcLbPxngg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Query CU Unit Price",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Determined by your cluster region, type, and project plan. For detailed rates, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pricing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fzilliz.com%2Fpricing"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "JSKFdwijoof1gUxcLJXcZ5UgnMz",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Total Number of Query CU",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The total number of query CUs in the cluster, factoring in replicas.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LLbHdCjBcos1nFxFjBRc6u60nAg",
+          "TsASd79SXo7GVgxuN4acxiTkn8d"
+        ],
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "LLbHdCjBcos1nFxFjBRc6u60nAg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Total Number of Query CU = Number of Query CU × Replica Count",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 1,
+            "wrap": false
+          }
+        },
+        "parent_id": "JSKFdwijoof1gUxcLJXcZ5UgnMz"
+      },
+      {
+        "block_id": "TsASd79SXo7GVgxuN4acxiTkn8d",
+        "block_type": 2,
+        "parent_id": "JSKFdwijoof1gUxcLJXcZ5UgnMz",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For example, a cluster with 2 query CUs and 2 replicas has a total of 4 CUs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MaWtdeIVfoiIF3xP7JhcBz11nIg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster Runtime",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The total time (in hours) your cluster is in a billable status:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HBTCdH68JoIT4IxOEMccqcArnKf",
+          "P7rwdu5Zfo5Jagxc9wTc9aZ1nNd"
+        ],
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "HBTCdH68JoIT4IxOEMccqcArnKf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Billable statuses: Running, Modifying, etc.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MaWtdeIVfoiIF3xP7JhcBz11nIg"
+      },
+      {
+        "block_id": "P7rwdu5Zfo5Jagxc9wTc9aZ1nNd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Non-billable statuses: Creating, Suspending, Resuming, Suspended, etc. During non-billable statuses, CU charges stop but storage charges still apply.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MaWtdeIVfoiIF3xP7JhcBz11nIg"
+      },
+      {
+        "block_id": "BBsXdREuWoI8ToxyibNcOCRJn9b",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "RRl9dP5CWoqaEWxDPxVczVfQnee",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Suppose your cluster configuration is as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MxBrdp4w6omx82x0GihcRFWYnff",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Project Plan:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Enterprise",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "GtSPdQnUYoVDizxHE38cTBtvnng",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster Deployment Option",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Dedicated",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "Im5zd9EHgoGwkRxH0IUcAb7ynWd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cloud Provider & Region:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " AWS us-east-1 (Virginia)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "SzpbdOesxoFXxBxFyTgcVpIpnKg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster Type:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Performance-optimized ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "VrCHdwdqGov383xju6yczpfOn0f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Number of Query CU:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 8 CU ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "XerndrZc6oUNgCxdfJlcQn54npJ",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Replica Count:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 2 ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "Wk8Jdk5HZovqCrxOp3LcuBIFn6c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Runtime:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 720 hours (1 month).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "TwGOdVvNKoLhrYxXsZZcx3tQnrg",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With the plan, cloud provider and region, and the cluster type information, you can find on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Pricing Page",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that the CU Unit Price is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "$0.248/hour",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FKCydUEtZoXG2dxtFBuc8yX6ngf",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Fdesign%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Fnode-id%3D73504-1030%26t%3DwaGBH2t0YlBzk72L-4"
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "RQJYdIUPao2HyPxfLtkcbIj1nJf",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "According to the number of query CU and replica count, the total number of query CU is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "8 CU x 2 Replica = 16 CU",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WblOdI9pJokOoCxbQgucRTyJnnc",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The total vector database cost of the example Dedicated cluster is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "$0.248 x 16 x 720 = $2856.96",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B9mndXPkEof5dnxHNr1cHFx4n1d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage cost",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "T6sMd9jJloNMlcxu7TQcYJMunfd",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage costs are charged separately from CU costs and depend on:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HxcUdUyKCoDSPnxf5SIcbm4bndh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster cloud provider and region, type, and plan",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "PyFMdXQbUocq7nxNnQucXMJHnNg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage usage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "EPDtdE6vRok02OxCeaucvEfJnN4",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage",
+                "token": "PNj2w5fY9ifr82kbX8ucKgXAn0r",
+                "url": "https://zilliverse.feishu.cn/wiki/PNj2w5fY9ifr82kbX8ucKgXAn0r"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FJDhdgl1soEKg1xit5mcacMsnzg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "O0k3d3ooxoCWsExkRAfcsdKlneh",
+        "block_type": 13,
+        "children": [
+          "E2V9dOiJfopH6SxsR5WcW622nYc"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Will I be charged if I suspend my Dedicated cluster?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "E2V9dOiJfopH6SxsR5WcW622nYc",
+        "block_type": 2,
+        "parent_id": "O0k3d3ooxoCWsExkRAfcsdKlneh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When your Dedicated cluster is suspended, vector database costs stop, but storage charges continue until you delete the cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "Nvt6dJHTwos1DnxxpnWc1kA6nPh",
+        "block_type": 13,
+        "children": [
+          "C34edaTRwoNhFZxTDIVccowwnNg"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " Will I be billed during cluster creation or suspension?",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh"
+      },
+      {
+        "block_id": "C34edaTRwoNhFZxTDIVccowwnNg",
+        "block_type": 2,
+        "parent_id": "Nvt6dJHTwos1DnxxpnWc1kA6nPh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No vector database costs are charged while in Creating, Suspending, Resuming, or Suspended status. However, storage costs still apply.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "Tv0OdAzRBoKzoCx8as1cofiqnNd",
+        "block_type": 2,
+        "parent_id": "N4T3dOTOhoZX7SxnGmJc41Bnnyh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 43
+  }
+}

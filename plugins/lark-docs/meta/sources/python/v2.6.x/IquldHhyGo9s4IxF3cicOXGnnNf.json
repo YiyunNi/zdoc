@@ -1,0 +1,1745 @@
+{
+  "created_time": "1747897004",
+  "modified_time": "1769743237",
+  "name": "add_collection_field()",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "CqXrfDyXZlkNSrdh5eJcI0Fznjh",
+  "token": "IquldHhyGo9s4IxF3cicOXGnnNf",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/IquldHhyGo9s4IxF3cicOXGnnNf",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "block_type": 1,
+        "children": [
+          "Mszfd0ZsQoImPZxLgi2c0hMynVg",
+          "ODsKdtU9cojXluxVYNsc7qo8nEh",
+          "V5lwdrx82odHmLxdvMicf0dsnmh",
+          "RAVHd87u6oUbsWxtzs0cNYi7nef",
+          "V5mTdr2tpo3io1xBEOoc46Y4nTg",
+          "BoyZds9oCo4TVvxFoTtc1jlyn6d",
+          "Q2xmdKB9Go6FjGxl6P4cgT5DnAd",
+          "X7gbdyh9nopFXcxOFdScEQElnWb",
+          "TQFudutKkoTpsCxZmSHcuRlInrf",
+          "YiS6dZK74oDalyx7lK1cn97Gnxb",
+          "VuxVdG8LQodX89xRzMYcoZR9n5d",
+          "NykWdIN8vocOaYxbrExc5AgZnhg",
+          "POxPdlYC4oQ1EcxcjU3cu4qlncd",
+          "UyoCdO3I5oU1ImxXl8Icl9jRnib",
+          "FI6IdjojGoa5Yaxz6cjchXf5nve",
+          "JGy7dI3iDocwuRx64Wmc0y6Cnvh",
+          "Ra5rdEiuxoFkjlxvP9PcNS8knie",
+          "G4f1d5TFZogEyVxRiVNcI9fhnSe",
+          "WWt6dqzhUotzpbx6lbVcZRfVn89",
+          "T6TQdYgVGoLgGDxpsnmcjxEpnBN"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add_collection_field()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Mszfd0ZsQoImPZxLgi2c0hMynVg",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation adds a new scalar field to an existing collection without recreating it. The field becomes available almost immediately with minimal delay due to internal schema synchronization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ODsKdtU9cojXluxVYNsc7qo8nEh",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "RwGgdcNKkoYzfjxcEE7c15FOnCh",
+          "WI6OdMZGXoaYjRxkbDfc11YRn3e"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "RwGgdcNKkoYzfjxcEE7c15FOnCh",
+        "block_type": 2,
+        "parent_id": "ODsKdtU9cojXluxVYNsc7qo8nEh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WI6OdMZGXoaYjRxkbDfc11YRn3e",
+        "block_type": 2,
+        "parent_id": "ODsKdtU9cojXluxVYNsc7qo8nEh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the collection has dynamic field enabled and you add a static field with the same name as an existing dynamic field key, the static field will mask the dynamic field key. The original dynamic values remain accessible via ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "$meta['field_name']",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " syntax.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V5lwdrx82odHmLxdvMicf0dsnmh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "RAVHd87u6oUbsWxtzs0cNYi7nef",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add_collection_field(\n    collection_name: str,\n    timeout: Optional[float] = None,\n    **kwargs\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "V5mTdr2tpo3io1xBEOoc46Y4nTg",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BoyZds9oCo4TVvxFoTtc1jlyn6d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collection_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(string)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " –",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "D22GddGNWomWX3xF3iTc9p7GnGg",
+          "PvxWdDmdboMb1jxibjTcI5Qqnrh"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "D22GddGNWomWX3xF3iTc9p7GnGg",
+        "block_type": 2,
+        "parent_id": "BoyZds9oCo4TVvxFoTtc1jlyn6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PvxWdDmdboMb1jxibjTcI5Qqnrh",
+        "block_type": 2,
+        "parent_id": "BoyZds9oCo4TVvxFoTtc1jlyn6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q2xmdKB9Go6FjGxl6P4cgT5DnAd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "field_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(string)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " –",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Y65NdwkUsoe8kLxe8CLc0l9knRe",
+          "IX6edncVOooZyOxbmQ0ccn25nYc"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "Y65NdwkUsoe8kLxe8CLc0l9knRe",
+        "block_type": 2,
+        "parent_id": "Q2xmdKB9Go6FjGxl6P4cgT5DnAd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IX6edncVOooZyOxbmQ0ccn25nYc",
+        "block_type": 2,
+        "parent_id": "Q2xmdKB9Go6FjGxl6P4cgT5DnAd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the new field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X7gbdyh9nopFXcxOFdScEQElnWb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "data_type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(DataType)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " –",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VJUOd7WF5oGjCRx5EvTcyxbTndc",
+          "R3EZdxPsEoTFLXxruWecTjBBnPh"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "VJUOd7WF5oGjCRx5EvTcyxbTndc",
+        "block_type": 2,
+        "parent_id": "X7gbdyh9nopFXcxOFdScEQElnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R3EZdxPsEoTFLXxruWecTjBBnPh",
+        "block_type": 2,
+        "parent_id": "X7gbdyh9nopFXcxOFdScEQElnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data type of the new field. See DataType for supported types.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TQFudutKkoTpsCxZmSHcuRlInrf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "desc",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(string, optional)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " –",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AAICdi1qMopku0xpgRlcb3MznLd"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "AAICdi1qMopku0xpgRlcb3MznLd",
+        "block_type": 2,
+        "parent_id": "TQFudutKkoTpsCxZmSHcuRlInrf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A brief description of the field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YiS6dZK74oDalyx7lK1cn97Gnxb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(float)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " –",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "K6eVd8TOEo6f8mxZiVjcS0NKnab"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "K6eVd8TOEo6f8mxZiVjcS0NKnab",
+        "block_type": 2,
+        "parent_id": "YiS6dZK74oDalyx7lK1cn97Gnxb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Timeout (in seconds) for the RPC request. If ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the call waits indefinitely.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VuxVdG8LQodX89xRzMYcoZR9n5d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "kwargs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(dict, optional)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " –",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GRdjdGMm7oVbQaxF69ecmQX7ngh",
+          "DilJdjdAzo9DgexMG8lcyjX3nVZ",
+          "OSBCdVtYpo8AAHx268pcoajbnWb",
+          "If6ldqXtzo5m5qxRsvBcY8CMn1d",
+          "G0gMdnSaro0fo5xR1DLcSZdQnIb",
+          "H86kd4ZiZolEfUxE3DacmA0pnie"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "GRdjdGMm7oVbQaxF69ecmQX7ngh",
+        "block_type": 2,
+        "parent_id": "VuxVdG8LQodX89xRzMYcoZR9n5d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Additional parameters include:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DilJdjdAzo9DgexMG8lcyjX3nVZ",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nullable",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(bool)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NfADd0HPLomVisxA6SNcipC6nsv"
+        ],
+        "parent_id": "VuxVdG8LQodX89xRzMYcoZR9n5d"
+      },
+      {
+        "block_id": "NfADd0HPLomVisxA6SNcipC6nsv",
+        "block_type": 2,
+        "parent_id": "DilJdjdAzo9DgexMG8lcyjX3nVZ",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Must be set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "True",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for dynamically added fields to accommodate existing entities that don't have values for the new field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OSBCdVtYpo8AAHx268pcoajbnWb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "default_value",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(DataType-specific)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JQzedUyEcoDCa6xF2nacZByUn6b"
+        ],
+        "parent_id": "VuxVdG8LQodX89xRzMYcoZR9n5d"
+      },
+      {
+        "block_id": "JQzedUyEcoDCa6xF2nacZByUn6b",
+        "block_type": 2,
+        "parent_id": "OSBCdVtYpo8AAHx268pcoajbnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A default value for the field if none is provided during data insertion.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "If6ldqXtzo5m5qxRsvBcY8CMn1d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "max_length",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(int)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TGxQd0OI9o6HLgxWdvQc5Ln7nad"
+        ],
+        "parent_id": "VuxVdG8LQodX89xRzMYcoZR9n5d"
+      },
+      {
+        "block_id": "TGxQd0OI9o6HLgxWdvQc5Ln7nad",
+        "block_type": 2,
+        "parent_id": "If6ldqXtzo5m5qxRsvBcY8CMn1d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DataType.VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " fields. Sets the maximum allowed byte length for strings (1 to 65,535).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G0gMdnSaro0fo5xR1DLcSZdQnIb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "element_type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(DataType)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LX8fdbtFpo7AR0xYKCkcOgIInKf"
+        ],
+        "parent_id": "VuxVdG8LQodX89xRzMYcoZR9n5d"
+      },
+      {
+        "block_id": "LX8fdbtFpo7AR0xYKCkcOgIInKf",
+        "block_type": 2,
+        "parent_id": "G0gMdnSaro0fo5xR1DLcSZdQnIb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DataType.ARRAY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " fields. Specifies the data type of elements within the array.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H86kd4ZiZolEfUxE3DacmA0pnie",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "max_capacity",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(int)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "U10cd71tgoMUmAxXkgecTcH7n7g"
+        ],
+        "parent_id": "VuxVdG8LQodX89xRzMYcoZR9n5d"
+      },
+      {
+        "block_id": "U10cd71tgoMUmAxXkgecTcH7n7g",
+        "block_type": 2,
+        "parent_id": "H86kd4ZiZolEfUxE3DacmA0pnie",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DataType.ARRAY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " fields. Defines the maximum number of elements in the array.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NykWdIN8vocOaYxbrExc5AgZnhg",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "POxPdlYC4oQ1EcxcjU3cu4qlncd",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UyoCdO3I5oU1ImxXl8Icl9jRnib",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FI6IdjojGoa5Yaxz6cjchXf5nve",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Vy1zdrKl3owi2jxtGsNceAt7nL4"
+        ],
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "Vy1zdrKl3owi2jxtGsNceAt7nL4",
+        "block_type": 2,
+        "parent_id": "FI6IdjojGoa5Yaxz6cjchXf5nve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JGy7dI3iDocwuRx64Wmc0y6Cnvh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "Ra5rdEiuxoFkjlxvP9PcNS8knie",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example 1:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Add a basic nullable field",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G4f1d5TFZogEyVxRiVNcI9fhnSe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.add_collection_field(\n    collection_name=\"product_catalog\",\n    field_name=\"created_timestamp\",\n    data_type=DataType.INT64,\n    nullable=True  # Required for added fields\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      },
+      {
+        "block_id": "WWt6dqzhUotzpbx6lbVcZRfVn89",
+        "block_type": 2,
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example 2: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Add a field with default value",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T6TQdYgVGoLgGDxpsnmcjxEpnBN",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.add_collection_field(\n    collection_name=\"product_catalog\",\n    field_name=\"priority_level\",\n    data_type=DataType.VARCHAR,\n    max_length=20,\n    nullable=True,          # Required for added fields\n    default_value=\"standard\"  # Default value for existing entities\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "IquldHhyGo9s4IxF3cicOXGnnNf"
+      }
+    ],
+    "counts": 43
+  },
+  "slug": "Collections-add_collection_field"
+}

@@ -1,0 +1,71 @@
+{
+  "createUid": "7152689750686859267",
+  "editUid": "7152689750686859267",
+  "id": "7317455051873271812",
+  "name": "v2.4.x",
+  "ownUid": "7317454875196129284",
+  "parentId": "7317455005450371076",
+  "token": "IaWgf4osAlpdwqdVIclct97wnCg",
+  "children": [
+    {
+      "created_time": "1708317351",
+      "modified_time": "1711014580",
+      "name": "DataImport",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "IaWgf4osAlpdwqdVIclct97wnCg",
+      "token": "I37hfvVOClbThMdGuH4cV4R6nkc",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/I37hfvVOClbThMdGuH4cV4R6nkc"
+    },
+    {
+      "created_time": "1710498198",
+      "modified_time": "1726208031",
+      "name": "EmbeddingModels",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "IaWgf4osAlpdwqdVIclct97wnCg",
+      "token": "A6atfZDQxl1INud6VYGcX54zngf",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/A6atfZDQxl1INud6VYGcX54zngf"
+    },
+    {
+      "created_time": "1708403264",
+      "modified_time": "1720743076",
+      "name": "MilvusClient",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "IaWgf4osAlpdwqdVIclct97wnCg",
+      "token": "B2fdfjb1nl9Pjidkaa9cM6lAngd",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/B2fdfjb1nl9Pjidkaa9cM6lAngd"
+    },
+    {
+      "created_time": "1708317292",
+      "modified_time": "1710931615",
+      "name": "ORM",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "IaWgf4osAlpdwqdVIclct97wnCg",
+      "token": "QYo4fSeVFlex8ZdeGZ4cAlmcnof",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/QYo4fSeVFlex8ZdeGZ4cAlmcnof"
+    },
+    {
+      "created_time": "1713253521",
+      "modified_time": "1716516036",
+      "name": "Rerankers",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "IaWgf4osAlpdwqdVIclct97wnCg",
+      "token": "Ph7xfldrplFoihdiSAkciCuenyh",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/Ph7xfldrplFoihdiSAkciCuenyh"
+    },
+    {
+      "created_time": "1754561436",
+      "modified_time": "1763707607",
+      "name": "Volume",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "IaWgf4osAlpdwqdVIclct97wnCg",
+      "token": "UJtvfGYb4lKoF1dy7iicFwcAnWr",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/UJtvfGYb4lKoF1dy7iicFwcAnWr"
+    }
+  ]
+}

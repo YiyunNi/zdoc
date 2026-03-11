@@ -1,0 +1,1134 @@
+{
+  "created_time": "1720587656",
+  "modified_time": "1720587656",
+  "name": "MetricType",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "ALDZfPYy3lNm8ZdotPecBX7rnNd",
+  "token": "GEcrdVWnboOetOx08RrcRHVhn3g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/GEcrdVWnboOetOx08RrcRHVhn3g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "GEcrdVWnboOetOx08RrcRHVhn3g",
+        "block_type": 1,
+        "children": [
+          "doxcnqKjdJ4HM0KpT2GKiEgCj6P",
+          "doxcnKAlfbIX3BhiPHNhiozz9xh",
+          "doxcny8Q3vGAy4LltietCgfdsje",
+          "doxcnZJoBMgauAc2USpRtmYJjKd",
+          "doxcny3rx5qKh7CZsABBiVLBf0c",
+          "doxcna2XrYbKfyrDlEiu9R2cqtb",
+          "doxcnWSWRF5ShzxeA2FrnHuZU6d",
+          "doxcn7wWP7rRWAAIfeWCndFnKob",
+          "doxcnD8aNrSuHKg8xOsTeaPGn5f",
+          "KFygdIUbPoGuDhxkC41cNLBcnNh",
+          "L9cTd3WncoFDatxNvzJc1hNendc",
+          "NqW3d17OxoTXJ6xlkHJc4m4unwg",
+          "FODWdV7TuorFfOxbhxncLTlDnLL",
+          "LgJSdmgplo0RmQxYsZJcLIyjnOr",
+          "XU2UdfNqyoBEXPx0UEqckvYanAg",
+          "doxcnZzoR8yk7AkVcjmi5HR3dEc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MetricType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnqKjdJ4HM0KpT2GKiEgCj6P",
+        "block_type": 2,
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an enumeration that provides the following constants.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKAlfbIX3BhiPHNhiozz9xh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constants",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcny8Q3vGAy4LltietCgfdsje",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INVALID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn78Iphi0kLjo8QmPNeSOk5c"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcn78Iphi0kLjo8QmPNeSOk5c",
+        "block_type": 2,
+        "parent_id": "doxcny8Q3vGAy4LltietCgfdsje",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "INVALID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZJoBMgauAc2USpRtmYJjKd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "L2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn6aObMrRlafALFflCNm0w0f"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcn6aObMrRlafALFflCNm0w0f",
+        "block_type": 2,
+        "parent_id": "doxcnZJoBMgauAc2USpRtmYJjKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "L2",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to float vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcny3rx5qKh7CZsABBiVLBf0c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnfvJClpEKPlE2KTSAIIup3f"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcnfvJClpEKPlE2KTSAIIup3f",
+        "block_type": 2,
+        "parent_id": "doxcny3rx5qKh7CZsABBiVLBf0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "IP",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to float vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcna2XrYbKfyrDlEiu9R2cqtb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn9copZxfz1fRfEvSyWjJReg"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcn9copZxfz1fRfEvSyWjJReg",
+        "block_type": 2,
+        "parent_id": "doxcna2XrYbKfyrDlEiu9R2cqtb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to float vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnWSWRF5ShzxeA2FrnHuZU6d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HAMMING",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnguC7tfpUpCrNOSO9bzu8mf"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcnguC7tfpUpCrNOSO9bzu8mf",
+        "block_type": 2,
+        "parent_id": "doxcnWSWRF5ShzxeA2FrnHuZU6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "HAMMING",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to binary vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn7wWP7rRWAAIfeWCndFnKob",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JACCARD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnwwoMnJ3vYuf2ZrkCaraPAb"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcnwwoMnJ3vYuf2ZrkCaraPAb",
+        "block_type": 2,
+        "parent_id": "doxcn7wWP7rRWAAIfeWCndFnKob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "JACCARD",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to binary vectors only.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnD8aNrSuHKg8xOsTeaPGn5f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn9keZ3HRhdmDtPI9DD8fC6e"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "doxcn9keZ3HRhdmDtPI9DD8fC6e",
+        "block_type": 2,
+        "parent_id": "doxcnD8aNrSuHKg8xOsTeaPGn5f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies to sparse vector fields derived from BM25 functions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KFygdIUbPoGuDhxkC41cNLBcnNh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ron2d2C4uoiyGmxtMqrc8HVSnzc"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "Ron2d2C4uoiyGmxtMqrc8HVSnzc",
+        "block_type": 2,
+        "parent_id": "KFygdIUbPoGuDhxkC41cNLBcnNh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MAX_SIM",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies only to all vectors in Struct elements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L9cTd3WncoFDatxNvzJc1hNendc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_COSINE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "X3IbdTizyoyzPkxef6TcycIEnAg"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "X3IbdTizyoyzPkxef6TcycIEnAg",
+        "block_type": 2,
+        "parent_id": "L9cTd3WncoFDatxNvzJc1hNendc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MAX_SIM_COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies only to float vectors in Struct elements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NqW3d17OxoTXJ6xlkHJc4m4unwg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_IP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TKyHdMvpeokQHfxSxCLcaZlinle"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "TKyHdMvpeokQHfxSxCLcaZlinle",
+        "block_type": 2,
+        "parent_id": "NqW3d17OxoTXJ6xlkHJc4m4unwg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MAX_SIM_IP",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies only to float vectors in Struct elements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FODWdV7TuorFfOxbhxncLTlDnLL",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_L2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "IN5CdNArKos3ncxLA8oceFy0nVg"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "IN5CdNArKos3ncxLA8oceFy0nVg",
+        "block_type": 2,
+        "parent_id": "FODWdV7TuorFfOxbhxncLTlDnLL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MAX_SIM_L2",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies only to float vectors in Struct elements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LgJSdmgplo0RmQxYsZJcLIyjnOr",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_JACCARD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FesNd0rJnoAmhqxJhKBcUL2ynxk"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "FesNd0rJnoAmhqxJhKBcUL2ynxk",
+        "block_type": 2,
+        "parent_id": "LgJSdmgplo0RmQxYsZJcLIyjnOr",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MAX_SIM_JACCARD",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies only to binary vectors in Struct elements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XU2UdfNqyoBEXPx0UEqckvYanAg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_HAMMING",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HFIPdBEQ0og80Wxh92VcxmgYn1q"
+        ],
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g"
+      },
+      {
+        "block_id": "HFIPdBEQ0og80Wxh92VcxmgYn1q",
+        "block_type": 2,
+        "parent_id": "XU2UdfNqyoBEXPx0UEqckvYanAg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MAX_SIM_HAMMING",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This applies only to binary vectors in Struct elements.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZzoR8yk7AkVcjmi5HR3dEc",
+        "block_type": 2,
+        "parent_id": "GEcrdVWnboOetOx08RrcRHVhn3g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 30
+  },
+  "slug": "v2-Management-MetricType"
+}

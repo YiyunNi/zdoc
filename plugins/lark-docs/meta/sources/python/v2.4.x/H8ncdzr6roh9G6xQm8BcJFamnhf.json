@@ -1,0 +1,544 @@
+{
+  "created_time": "1725616226",
+  "modified_time": "1725846062",
+  "name": "encode_documents()",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "ThDffzIlmlp8r8d7ohXcHyN1nug",
+  "token": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/H8ncdzr6roh9G6xQm8BcJFamnhf",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "block_type": 1,
+        "children": [
+          "doxcnrL0ic2FReTNYJDU6nHC4ub",
+          "doxcnWOrIoYHVw6KcHw9HQT6P9t",
+          "doxcnO2f353kwidK2jpjkr318xd",
+          "doxcnc66Hjhl3wT1p5aq0WdnGke",
+          "doxcnBEAvgS03KkwRjVDU1Hoq5d",
+          "doxcnqJk1dNPyR4Qg2pjUQWV2Gg",
+          "doxcnZL4IBfHfIojSoKlsolWA8g",
+          "doxcnTWPlcR2cgLKNoEeGVgR4Oc",
+          "doxcnoxCGfDNWauqsidi6Gk4QXc",
+          "doxcnf0aNzmxJGCKOWcFYPc8VJc",
+          "doxcnXUet6vuBz7Yz0UeJSyTmRU",
+          "doxcnxCj52W4Wuhjm4rYHtBgW9f",
+          "doxcnqIgUV9ZutWG1qS8L3vqPvf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "encode_documents()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnrL0ic2FReTNYJDU6nHC4ub",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation takes in documents and encodes them into vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnWOrIoYHVw6KcHw9HQT6P9t",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf"
+      },
+      {
+        "block_id": "doxcnO2f353kwidK2jpjkr318xd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "encode_documents(\n    documents: List[str], \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -> List[np.array]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf"
+      },
+      {
+        "block_id": "doxcnc66Hjhl3wT1p5aq0WdnGke",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnBEAvgS03KkwRjVDU1Hoq5d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "documents",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn5RmqCnUTPykqRmvoBbEgFd"
+        ],
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf"
+      },
+      {
+        "block_id": "doxcn5RmqCnUTPykqRmvoBbEgFd",
+        "block_type": 2,
+        "parent_id": "doxcnBEAvgS03KkwRjVDU1Hoq5d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of string values, where each string represents a document that will be passed to the embedding model for encoding. The model will generate an embedding vector for each string in the list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqJk1dNPyR4Qg2pjUQWV2Gg",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZL4IBfHfIojSoKlsolWA8g",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List[np.array]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnTWPlcR2cgLKNoEeGVgR4Oc",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnoxCGfDNWauqsidi6Gk4QXc",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list where each element is a NumPy array.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnf0aNzmxJGCKOWcFYPc8VJc",
+        "block_type": 2,
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Exceptions:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnXUet6vuBz7Yz0UeJSyTmRU",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ValueError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcniCf2duyTuMfJyl0n3Lna8S"
+        ],
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf"
+      },
+      {
+        "block_id": "doxcniCf2duyTuMfJyl0n3Lna8S",
+        "block_type": 2,
+        "parent_id": "doxcnXUet6vuBz7Yz0UeJSyTmRU",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "api_key",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is not provided and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NOMIC_API_KEY",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " environment variable is also not set.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxCj52W4Wuhjm4rYHtBgW9f",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf"
+      },
+      {
+        "block_id": "doxcnqIgUV9ZutWG1qS8L3vqPvf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.dense import NomicEmbeddingFunction\n\nef = NomicEmbeddingFunction(\n    model_name=\"nomic-embed-text-v1.5\", # Defaults to `mistral-embed`\n    api_key=\"NOMIC_API_KEY\" # Provide your Nomic API key\n)\n\ndocs = [\n    \"Artificial intelligence was founded as an academic discipline in 1956.\",\n    \"Alan Turing was the first person to conduct substantial research in AI.\",\n    \"Born in Maida Vale, London, Turing was raised in southern England.\",\n]\n\ndocs_embeddings = ef.encode_documents(docs)\n\n# Print embeddings\nprint(\"Embeddings:\", docs_embeddings)\n# Print dimension and shape of embeddings\nprint(\"Dim:\", ef.dim, docs_embeddings[0].shape)\n\n# Embeddings: [array([ 5.59997560e-02,  7.23266600e-02, -1.51977540e-01, -4.53491200e-02,\n#         6.49414060e-02,  4.33654800e-02,  2.26593020e-02, -3.51867680e-02,\n#         3.49998470e-03,  1.75571440e-03, -4.30297850e-03,  1.81274410e-02,\n#         ...\n#        -1.64337160e-02, -3.85437000e-02,  6.14318850e-02, -2.82745360e-02,\n#        -7.25708000e-02, -4.15563580e-04, -7.63320900e-03,  1.88446040e-02,\n#        -5.78002930e-02,  1.69830320e-02, -8.91876200e-03, -2.37731930e-02])]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Dim: 768 (768,)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "H8ncdzr6roh9G6xQm8BcJFamnhf"
+      }
+    ],
+    "counts": 16
+  },
+  "slug": "NomicEmbeddingFunction-encode_documents"
+}

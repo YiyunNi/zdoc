@@ -1,0 +1,364 @@
+{
+  "created_time": "1761351725",
+  "modified_time": "1761547160",
+  "name": "getElementType()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "KDpHfwpQ6l3yzddvDD3c8xkfnoh",
+  "token": "PvRGdribPou7PHxcoSWcRK3unUc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/PvRGdribPou7PHxcoSWcRK3unUc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "block_type": 1,
+        "children": [
+          "TR98dooQio7ofFxSsgNc0Djjn4c",
+          "S2GSdLX4QodkkPxqSyacMNkynGc",
+          "IQvCdvO8PoX6XDxULKHcoE6BnCh",
+          "EB4tdQMydognLkxETtacHNfHnHe",
+          "LxsBd4YP4o5F3DxDExtcBvlmnle",
+          "M7WkdzFD4o4Dp5xmIhcchLXjnwd",
+          "JgPqdFxkgoT1M7x0AIEcHdH2nUb",
+          "YTKTdcxBnovTwSx8S4Mc1kiNneh",
+          "LYNPdobZwoGhKDxisIUcKmrOnHg",
+          "Qy6idde6YoHc8RxVWLKcaYkWnGJ",
+          "S6skd8l03oDvKzxZSE3cy2VTnyg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getElementType()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "TR98dooQio7ofFxSsgNc0Djjn4c",
+        "block_type": 2,
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation returns the data type of the Struct elements within an Array of Structs field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S2GSdLX4QodkkPxqSyacMNkynGc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public DataType getElementType()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc"
+      },
+      {
+        "block_id": "IQvCdvO8PoX6XDxULKHcoE6BnCh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc"
+      },
+      {
+        "block_id": "EB4tdQMydognLkxETtacHNfHnHe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getElementType()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc"
+      },
+      {
+        "block_id": "LxsBd4YP4o5F3DxDExtcBvlmnle",
+        "block_type": 2,
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M7WkdzFD4o4Dp5xmIhcchLXjnwd",
+        "block_type": 2,
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DataType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JgPqdFxkgoT1M7x0AIEcHdH2nUb",
+        "block_type": 2,
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YTKTdcxBnovTwSx8S4Mc1kiNneh",
+        "block_type": 2,
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The return value will always be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DataType.Array",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LYNPdobZwoGhKDxisIUcKmrOnHg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc"
+      },
+      {
+        "block_id": "Qy6idde6YoHc8RxVWLKcaYkWnGJ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// You can get an instance of StructFieldSchema by describing\n// a collection containing an Array of Struct field.\n\nstructFieldSchema.getElementType();\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// DataType.Struct",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc"
+      },
+      {
+        "block_id": "S6skd8l03oDvKzxZSE3cy2VTnyg",
+        "block_type": 2,
+        "parent_id": "PvRGdribPou7PHxcoSWcRK3unUc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 12
+  },
+  "slug": "v2-StructFieldSchema-getElementType"
+}

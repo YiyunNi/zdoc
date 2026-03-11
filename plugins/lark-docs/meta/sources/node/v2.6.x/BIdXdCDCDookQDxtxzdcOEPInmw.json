@@ -1,0 +1,418 @@
+{
+  "created_time": "1770789810",
+  "modified_time": "1771911110",
+  "name": "use()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "WlKqf2dXKljRPDdiiUIcdsh5nxd",
+  "token": "BIdXdCDCDookQDxtxzdcOEPInmw",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/BIdXdCDCDookQDxtxzdcOEPInmw",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "BIdXdCDCDookQDxtxzdcOEPInmw",
+        "block_type": 1,
+        "children": [
+          "doxcnut6WNw1By33ygzOFzodDie",
+          "doxcnariaOHZAO4eEx1vkwpUyvg",
+          "doxcnEbW6qQ6FLPI4WfANOWt9tc",
+          "doxcnswMIvHtMgFzMTGGNUXw1Ee",
+          "doxcnc8CwYaxvb4qWmgfY8N29qc",
+          "doxcnJFvy1zF4AxHShKyReR9BUg",
+          "doxcn3IzPAjAhX82Cdd1Q87oQJe",
+          "doxcnxS8LhnNAowlIC2GsL3CRde",
+          "doxcnBMmJ0n1rOGTcuNJP8hTmQd",
+          "doxcn8izUQKy2NvPlAVVn9f846b"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "use()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnut6WNw1By33ygzOFzodDie",
+        "block_type": 2,
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation s",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ets the active database for the gRPC client. After calling this method, all subsequent operations will target the specified database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnariaOHZAO4eEx1vkwpUyvg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "await milvusClient.use({ db_name: string })",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw"
+      },
+      {
+        "block_id": "doxcnEbW6qQ6FLPI4WfANOWt9tc",
+        "block_type": 2,
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnswMIvHtMgFzMTGGNUXw1Ee",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "db_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnIQFpNEURDDH6UK6JOqquFd"
+        ],
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw"
+      },
+      {
+        "block_id": "doxcnIQFpNEURDDH6UK6JOqquFd",
+        "block_type": 2,
+        "parent_id": "doxcnswMIvHtMgFzMTGGNUXw1Ee",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database to use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnc8CwYaxvb4qWmgfY8N29qc",
+        "block_type": 2,
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJFvy1zF4AxHShKyReR9BUg",
+        "block_type": 2,
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Promise\\<ResStatus\\>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3IzPAjAhX82Cdd1Q87oQJe",
+        "block_type": 2,
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxS8LhnNAowlIC2GsL3CRde",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnYiYDFUG5IgQbONit05rYNc"
+        ],
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw"
+      },
+      {
+        "block_id": "doxcnYiYDFUG5IgQbONit05rYNc",
+        "block_type": 2,
+        "parent_id": "doxcnxS8LhnNAowlIC2GsL3CRde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnBMmJ0n1rOGTcuNJP8hTmQd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw"
+      },
+      {
+        "block_id": "doxcn8izUQKy2NvPlAVVn9f846b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient } from '@zilliz/milvus2-sdk-node';\n\nconst client = new MilvusClient({ address: 'localhost:19530' });\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "await client.use({ db_name: 'my_database' });",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "BIdXdCDCDookQDxtxzdcOEPInmw"
+      }
+    ],
+    "counts": 13
+  },
+  "slug": "Client-use"
+}

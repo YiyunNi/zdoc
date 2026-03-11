@@ -1,0 +1,3176 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1694400410",
+  "node_token": "ZOikw2pIUiAZj9kuLYRcdhLnnoc",
+  "node_type": "origin",
+  "obj_create_time": "1694400410",
+  "obj_edit_time": "1763627657",
+  "obj_token": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+  "obj_type": "docx",
+  "origin_node_token": "ZOikw2pIUiAZj9kuLYRcdhLnnoc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "VTZZwCkkCi7FwnklLDhcMJwvnQb",
+  "space_id": "7167193056431783939",
+  "title": "Import Data (RESTful API)",
+  "slug": "import-data-via-restful-api",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "block_type": 1,
+        "children": [
+          "KFOVdlYbJoDUqTxQ27wclZQCncf",
+          "HjzodN4O2oNC6YxLgO2c0GXun4g",
+          "Gp4mdJqVuoq87CxtRhQcc32lnXU",
+          "IdjVd5ITuoFiqMxn4kicGyCinio",
+          "LJAZdzYMmoL298xKRJLcXvU0nPh",
+          "RADEdrwEWoVUiBxuouhc5azlnXe",
+          "V4BxdmWF1oSqsvxPeNfcwrkFnff",
+          "VexNdSxe4osRwCxGMCHcHcArnAg",
+          "Y2hwdDzL6opgp2xbT03cyjXdnwc",
+          "W44id1GOsowCKAxwqz2cBsC8nip",
+          "FKEcdF7n5oareoxESETcsmkTngd",
+          "FrSUdb3Gbo8zS9x1ERCcb9b0ndg",
+          "XdpBdh1nRoYrBDxdRRXcg7fmnxh",
+          "HEpcdLF3Uo6mIRx9fWpc58LSn2g",
+          "BbGDdKdwvo0LiSxciHkc0OnFnw1",
+          "SMZEdEIkpomgRLxbeBNcD8Bgndc",
+          "FCkJdhV05oPRoZxcofbcPuZxnBd",
+          "B895d4PH8oWO2rxQt21cj3M1nae",
+          "Xs8ndh63Qo5MLsxsQ6icTKdfnCf",
+          "DfsddARfto7Lbwxb81vcqwNQn7d",
+          "Fm9hd9LsUoduNcxluWvc8HQUnTf",
+          "FZmUdP0HWoaZ8AxrOU2cEGhvnnd",
+          "NKeudRAwrogh8gxA2RfcrlU6nJf",
+          "KHxBdDZnaooWhUxRvfMcKdaGnrf",
+          "H5bXdvhSFo5ziQxFCzNc28Qfnbd",
+          "OR4Od5wf6oLrpFxGnIvc6SsYn1g",
+          "Pr7NdH0whoarbCxYGFfct0Menbg",
+          "LtpKdQHJpoRXFkxG25DcTYrZnUd",
+          "UAvid4m0OoC7LTxuJX5c4yhpnkd",
+          "L4YHdyszyoOqwUxtCCJcTCten7d",
+          "TAx1dltnvojpGjxfCkucgGkunCf",
+          "FbKyd7EbKoVUjRx1n3HcKGponHb",
+          "XfObdEVNUor15YxxmdNckRLJncf",
+          "D9T0dONIXoXqNsxAc2TceySenph",
+          "Bw81dy3QgoYfJcxsKD8cSlrLnIg",
+          "DyF0d5S0YolmPLxLLLfcSPKKnIh",
+          "ZpnvdCklzoNTCKxIx9ecX9YwnNe",
+          "AcVtdTrgAoYbBLxEhaVcUvQnnpf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import Data ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RESTful ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "KFOVdlYbJoDUqTxQ27wclZQCncf",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page introduces how to import the prepared data via the Zilliz Cloud RESTful ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HjzodN4O2oNC6YxLgO2c0GXun4g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "Gp4mdJqVuoq87CxtRhQcc32lnXU",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Make sure the following conditions are met:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IdjVd5ITuoFiqMxn4kicGyCinio",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have obtained an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " key for your cluster. For details, see",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "API Keys",
+                "token": "BRsZwqOUTiBbrPk9b5WcvFgTnze",
+                "url": "https://zilliverse.feishu.cn/wiki/BRsZwqOUTiBbrPk9b5WcvFgTnze"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "LJAZdzYMmoL298xKRJLcXvU0nPh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have prepared your data in either of the supported formats. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VtxVdSEkyovEMmxZUV4cugqonKd"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "VtxVdSEkyovEMmxZUV4cugqonKd",
+        "block_type": 2,
+        "parent_id": "LJAZdzYMmoL298xKRJLcXvU0nPh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on how to prepare your data, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage Options",
+                "token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+                "url": "https://zilliverse.feishu.cn/wiki/TjxAw7lx6iNluBkR4a6czoHpn0f"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Format Options",
+                "token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+                "url": "https://zilliverse.feishu.cn/wiki/MtGywZwmXiHg0AkJMavcWAtxnCg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ". You can also refer to the end-to-end notebook ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Data Import Hands-On",
+                "token": "BjHZwBkk0iFScik49QMc1Wwjndb",
+                "url": "https://zilliverse.feishu.cn/wiki/BjHZwBkk0iFScik49QMc1Wwjndb"
+              }
+            },
+            {
+              "text_run": {
+                "content": " to get more.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RADEdrwEWoVUiBxuouhc5azlnXe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have created a collection with a schema matching the example dataset.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "S6IHdET5ToMlZuxlD8ic8oMnnqg"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "S6IHdET5ToMlZuxlD8ic8oMnnqg",
+        "block_type": 2,
+        "parent_id": "RADEdrwEWoVUiBxuouhc5azlnXe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " For details on creating a collection, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Collections (Console)",
+                "token": "CmR5wFcybi3iMokOJBxcXDQcntg",
+                "url": "https://zilliverse.feishu.cn/wiki/CmR5wFcybi3iMokOJBxcXDQcntg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V4BxdmWF1oSqsvxPeNfcwrkFnff",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VexNdSxe4osRwCxGMCHcHcArnAg",
+        "block_type": 4,
+        "comment_ids": [
+          "7529447194332315651"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import data via ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7529447194332315651"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7529447194332315651"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "Y2hwdDzL6opgp2xbT03cyjXdnwc",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To import data from files via ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you must first create a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and upload the files to it. Once that's done, obtain the path to the files in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Volumes (SDK)",
+                "token": "VCL7wmP6oieCkJkHEcicCsKQnxc",
+                "url": "https://zilliverse.feishu.cn/wiki/VCL7wmP6oieCkJkHEcicCsKQnxc"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W44id1GOsowCKAxwqz2cBsC8nip",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Then you can import the uploaded data into a specific collection as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FKEcdF7n5oareoxESETcsmkTngd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"https://api.cloud.zilliz.com/v2/vectordb/jobs/import/create\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n    \"dbName\": \"default\",\n    \"collectionName\": \"medium_articles\",\n    \"partitionName\": \"\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"volumeName\": \"my_volume\",",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    \"dataPaths\": [\n        [\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "            ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"json-folder/1.json\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n        ]\n    ]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "FrSUdb3Gbo8zS9x1ERCcb9b0ndg",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To import data into a specific partition, you need to include ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "partitionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XdpBdh1nRoYrBDxdRRXcg7fmnxh",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After Zilliz Cloud processes the above request, you will receive a job ID. Use this job ID to monitor the import progress with the following command:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HEpcdLF3Uo6mIRx9fWpc58LSn2g",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "POST",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7529448508456173572"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " \\\n     --url \"https://api.cloud.zilliz.com/v2/vectordb/jobs/import/getProgress\" \\\n     --header \"Authorization: Bearer ${TOKEN}\" \\\n     --header \"Accept: application/json\" \\\n     --header \"Content-Type: application/json\" \\\n     -d '{\n        \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n        \"jobId\": \"job-xxxxxxxxxxxxxxxxxxxxx\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7529448508456173572"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "BbGDdKdwvo0LiSxciHkc0OnFnw1",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import data ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "via external storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "SMZEdEIkpomgRLxbeBNcD8Bgndc",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FCkJdhV05oPRoZxcofbcPuZxnBd",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B895d4PH8oWO2rxQt21cj3M1nae",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "Xs8ndh63Qo5MLsxsQ6icTKdfnCf",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DfsddARfto7Lbwxb81vcqwNQn7d",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To import data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from files via external storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you must first upload ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "the files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to an object storage bucket<exclude target=\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "paas",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\">, such as ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "S3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or Google Cloud Storage (GCS)</exclude>. Once uploaded, obtain the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "path to the files in the remote bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and bucket credentials for Zilliz Cloud to pull data from your bucket. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "For details on supported object paths, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage Options",
+                "token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+                "url": "https://zilliverse.feishu.cn/wiki/TjxAw7lx6iNluBkR4a6czoHpn0f"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fm9hd9LsUoduNcxluWvc8HQUnTf",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Based on your data security requirements, you can use either long-term ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "or short-term ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "credentials during data import. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FZmUdP0HWoaZ8AxrOU2cEGhvnnd",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more information about obtaining credentials, refer to:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NKeudRAwrogh8gxA2RfcrlU6nJf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Amazon S3: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authenticate using long-term credentials",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Fsdkref%2Flatest%2Fguide%2Faccess-iam-users.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "KHxBdDZnaooWhUxRvfMcKdaGnrf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Google Cloud Storage: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Manage HMAC keys for service accounts",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fstorage%2Fdocs%2Fauthentication%2Fmanaging-hmackeys"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "H5bXdvhSFo5ziQxFCzNc28Qfnbd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Azure Blob Storage: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "View account access keys",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fstorage%2Fcommon%2Fstorage-account-keys-manage%3Ftabs%3Dazure-portal%23view-account-access-keys"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "OR4Od5wf6oLrpFxGnIvc6SsYn1g",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more information about using session tokens, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "this FAQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Ffaq-data-import%23can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Pr7NdH0whoarbCxYGFfct0Menbg",
+        "block_type": 34,
+        "children": [
+          "Y9rDdEBfiokj5Vx7b2xcn7sJnfd",
+          "DCdLd2kiOosRGRxI2J5cMV83nyb"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "quote_container": {}
+      },
+      {
+        "block_id": "Y9rDdEBfiokj5Vx7b2xcn7sJnfd",
+        "block_type": 2,
+        "parent_id": "Pr7NdH0whoarbCxYGFfct0Menbg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DCdLd2kiOosRGRxI2J5cMV83nyb",
+        "block_type": 2,
+        "comment_ids": [
+          "7449209358967406611",
+          "7367206513502470147"
+        ],
+        "parent_id": "Pr7NdH0whoarbCxYGFfct0Menbg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For successful data import, ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7367206513502470147",
+                    "7449209358967406611"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ensure the target collection has less than 10,000 running or pending import jobs.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7367206513502470147",
+                    "7449209358967406611"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LtpKdQHJpoRXFkxG25DcTYrZnUd",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the object path and bucket credentials are obtained, call the API as follo",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ws:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UAvid4m0OoC7LTxuJX5c4yhpnkd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# replace url and token with your own",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "curl --request POST \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --url \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/create",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --header \"Authorization: Bearer ${TOKEN}\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --header \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "A",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ccept: application/json\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --header \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "C",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ontent-",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "T",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ype: application/json\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     -d ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "'{\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"collectionName\": \"medium_articles\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"partitionName\": \"\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"objectUrl\": \"https://assets.zilliz.com/docs/example-data-import.json\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"accessKey\": \"\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"secretKey\": \"\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408195599751086084"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7408195599751086084"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "L4YHdyszyoOqwUxtCCJcTCten7d",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To import data into a specific partition, you need to include ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "partitionName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TAx1dltnvojpGjxfCkucgGkunCf",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After Zilliz Cloud",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "processes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " the",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " above",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " request, you will receive a job ID. Use this job ID to monitor the import progress with the following command:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FbKyd7EbKoVUjRx1n3HcKGponHb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "POST",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --url \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "https://api.cloud.zilliz.com/v2/vectordb/jobs/import/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "getProgress",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7440760791806017540"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\" \\\n     --header \"Authorization: Bearer ${TOKEN}\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --header \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "A",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ccept: application/json\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     --header \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "C",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ontent-",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "T",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ype: application/json\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n     -d '{\n        \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n        \"jobId\": \"job-xxxxxxxxxxxxxxxxxxxxx\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7440760791806017540"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "XfObdEVNUor15YxxmdNckRLJncf",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Import",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fcreate-import-jobs-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Get Import Progress",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fget-import-job-progress-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D9T0dONIXoXqNsxAc2TceySenph",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verify the result",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "Bw81dy3QgoYfJcxsKD8cSlrLnIg",
+        "block_type": 2,
+        "comment_ids": [
+          "7423310042822557698"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the command output is similar as follows, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import job",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is successfully",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " submitted",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DyF0d5S0YolmPLxLLLfcSPKKnIh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "{",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"code\": 0,",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"data\": {",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        \"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "jobId",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698",
+                    "7441034382618017794"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\": \"job-xxxxxxxxxxxxxxxxxxxxx\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7423310042822557698"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7441034382618017794",
+          "7423310042822557698"
+        ],
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg"
+      },
+      {
+        "block_id": "ZpnvdCklzoNTCKxIx9ecX9YwnNe",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also call RESTful APIs to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get the progress of the current import job",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fget-import-job-progress-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "list all import jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Flist-import-jobs-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to get more. As an alternative, y",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ou can also go to the",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "job center",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRY8ww0NDQi8yU9kNpjicHP7Gn4b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on the",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Zilliz Cloud console to view the result and job details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AcVtdTrgAoYbBLxEhaVcUvQnnpf",
+        "block_type": 2,
+        "parent_id": "PSRUdR7rVo8acGxFNZ7c0Gu1nPg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 43
+  }
+}

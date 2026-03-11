@@ -1,0 +1,1561 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1740708114",
+  "node_token": "JROjw7wQFi2uS8k1DZCcDkYEnFd",
+  "node_type": "origin",
+  "obj_create_time": "1740708114",
+  "obj_edit_time": "1752239260",
+  "obj_token": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+  "obj_type": "docx",
+  "origin_node_token": "JROjw7wQFi2uS8k1DZCcDkYEnFd",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "UMgkwcXZdiLdi1kw0dQckGkHn5f",
+  "space_id": "7167193056431783939",
+  "title": "UpdatePassword()",
+  "slug": "v2-Authentication-UpdatePassword",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "block_type": 1,
+        "children": [
+          "doxcnC848LayVuEIw7zMHnkR05b",
+          "doxcnDpmQZGcW1vu8HdXDXCcIFc",
+          "doxcnY21AtnTwUxQE6K0HUSsYpd",
+          "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+          "doxcn3fD0kgPfWFQUXciJe8Tx1d",
+          "doxcnB2qjNeXfyLvsEkMwb88BPd",
+          "doxcnjb6M9PkUaB8RztO9k7ptMc",
+          "doxcnJAhru8elZ2FUeA9r3c0Rxf",
+          "doxcnxVigutCL3DFSMKv7TOenaf",
+          "doxcnxl0sDhvy5yyIoVN9vJnJlj",
+          "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+          "doxcn5sgqjyn53Ku8RAPI3mZm7f",
+          "doxcnvAOcqp5iwwLQTZjYwgdYYd",
+          "doxcnhRZzYeK1qh6KKxoJV5KS2f",
+          "doxcnRg3PuX58QjwUbjCsg33g3e",
+          "doxcndOx8N1ZnVFaPqoxsPiWJIb",
+          "doxcnZvqVmBiuKWNHJuyrlsMknf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "UpdatePassword()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnC848LayVuEIw7zMHnkR05b",
+        "block_type": 2,
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This method updates the password for an existing user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnDpmQZGcW1vu8HdXDXCcIFc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func (c *Client) UpdatePassword(ctx context.Context, opt UpdatePasswordOption, callOpts ...grpc.CallOption) error",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnY21AtnTwUxQE6K0HUSsYpd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "block_type": 31,
+        "children": [
+          "doxcnu7bSRIZ3jiaHjI7Yiuqe6g",
+          "doxcnxi0ZlDUuLGes7XveeV2XPc",
+          "doxcnbDTvAWVoxOu21JQmx1hCPc",
+          "doxcnJvOi4g6mu3gWm4w2wXmrsh",
+          "doxcnIhk0L9enmINejR4BiTJnJb",
+          "doxcnqTnoDl6iB37Z8WZuZLOQed",
+          "doxcnEfRMShqePY6cWyTuSPjVWb",
+          "doxcnfqnZqxg4xt9dkEy5plTkte",
+          "doxcnWk5HRXpBNB4TqaUeIevVQc",
+          "doxcnrG2Dee5952RSsqcnxIU4ud",
+          "doxcnYGBJYAX0bNMTQZvaiD6gTe",
+          "doxcnTg0KXhu4KLG2s0X2st2AKe"
+        ],
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "table": {
+          "cells": [
+            "doxcnu7bSRIZ3jiaHjI7Yiuqe6g",
+            "doxcnxi0ZlDUuLGes7XveeV2XPc",
+            "doxcnbDTvAWVoxOu21JQmx1hCPc",
+            "doxcnJvOi4g6mu3gWm4w2wXmrsh",
+            "doxcnIhk0L9enmINejR4BiTJnJb",
+            "doxcnqTnoDl6iB37Z8WZuZLOQed",
+            "doxcnEfRMShqePY6cWyTuSPjVWb",
+            "doxcnfqnZqxg4xt9dkEy5plTkte",
+            "doxcnWk5HRXpBNB4TqaUeIevVQc",
+            "doxcnrG2Dee5952RSsqcnxIU4ud",
+            "doxcnYGBJYAX0bNMTQZvaiD6gTe",
+            "doxcnTg0KXhu4KLG2s0X2st2AKe"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              138,
+              421,
+              298
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "doxcnu7bSRIZ3jiaHjI7Yiuqe6g",
+        "block_type": 32,
+        "children": [
+          "doxcnRkjtviiy1Q32sZgComZ5Rb"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnRkjtviiy1Q32sZgComZ5Rb",
+        "block_type": 2,
+        "parent_id": "doxcnu7bSRIZ3jiaHjI7Yiuqe6g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxi0ZlDUuLGes7XveeV2XPc",
+        "block_type": 32,
+        "children": [
+          "doxcnhWr47OGZzR5nkfe8BmfWzm"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnhWr47OGZzR5nkfe8BmfWzm",
+        "block_type": 2,
+        "parent_id": "doxcnxi0ZlDUuLGes7XveeV2XPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbDTvAWVoxOu21JQmx1hCPc",
+        "block_type": 32,
+        "children": [
+          "doxcnRZ54CWlIG5rcVasULYE1ab"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnRZ54CWlIG5rcVasULYE1ab",
+        "block_type": 2,
+        "parent_id": "doxcnbDTvAWVoxOu21JQmx1hCPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJvOi4g6mu3gWm4w2wXmrsh",
+        "block_type": 32,
+        "children": [
+          "doxcnOLZCvwuVwkz3MkNjJLDuQg"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnOLZCvwuVwkz3MkNjJLDuQg",
+        "block_type": 2,
+        "parent_id": "doxcnJvOi4g6mu3gWm4w2wXmrsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ctx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnIhk0L9enmINejR4BiTJnJb",
+        "block_type": 32,
+        "children": [
+          "doxcnP4wzpRxYdMikOpZ1YJSYhN"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnP4wzpRxYdMikOpZ1YJSYhN",
+        "block_type": 2,
+        "parent_id": "doxcnIhk0L9enmINejR4BiTJnJb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Context for the current call to work.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqTnoDl6iB37Z8WZuZLOQed",
+        "block_type": 32,
+        "children": [
+          "doxcndWEvTh1rGx1ZZf1JGUo7Yc"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcndWEvTh1rGx1ZZf1JGUo7Yc",
+        "block_type": 2,
+        "parent_id": "doxcnqTnoDl6iB37Z8WZuZLOQed",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "context.Context",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEfRMShqePY6cWyTuSPjVWb",
+        "block_type": 32,
+        "children": [
+          "doxcn9iOHjPjIOemuChyZTzbUvS"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcn9iOHjPjIOemuChyZTzbUvS",
+        "block_type": 2,
+        "parent_id": "doxcnEfRMShqePY6cWyTuSPjVWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "opt",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfqnZqxg4xt9dkEy5plTkte",
+        "block_type": 32,
+        "children": [
+          "doxcnPVvp534S2NS8T8qvEsO01d"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnPVvp534S2NS8T8qvEsO01d",
+        "block_type": 2,
+        "parent_id": "doxcnfqnZqxg4xt9dkEy5plTkte",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional parameters of the methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnWk5HRXpBNB4TqaUeIevVQc",
+        "block_type": 32,
+        "children": [
+          "doxcnVdFYBYaYlwUuEeBc20MtCe"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnVdFYBYaYlwUuEeBc20MtCe",
+        "block_type": 2,
+        "parent_id": "doxcnWk5HRXpBNB4TqaUeIevVQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "UpdatePasswordOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FJROjw7wQFi2uS8k1DZCcDkYEnFd%23doxcn3fD0kgPfWFQUXciJe8Tx1d"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnrG2Dee5952RSsqcnxIU4ud",
+        "block_type": 32,
+        "children": [
+          "doxcnCsetpPiu0hhfughagYGOWg"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnCsetpPiu0hhfughagYGOWg",
+        "block_type": 2,
+        "parent_id": "doxcnrG2Dee5952RSsqcnxIU4ud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "callOpts",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnYGBJYAX0bNMTQZvaiD6gTe",
+        "block_type": 32,
+        "children": [
+          "doxcnGiETJMsmiLEbjhA0JrPz2c"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnGiETJMsmiLEbjhA0JrPz2c",
+        "block_type": 2,
+        "parent_id": "doxcnYGBJYAX0bNMTQZvaiD6gTe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional parameters for calling the methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnTg0KXhu4KLG2s0X2st2AKe",
+        "block_type": 32,
+        "children": [
+          "doxcnJXZn3CAr0KLPsyef1lQdth"
+        ],
+        "parent_id": "doxcnKLnFFb3IHERw1A8eyP6vPQ",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnJXZn3CAr0KLPsyef1lQdth",
+        "block_type": 2,
+        "parent_id": "doxcnTg0KXhu4KLG2s0X2st2AKe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "grpc.CallOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3fD0kgPfWFQUXciJe8Tx1d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "UpdatePasswordOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnB2qjNeXfyLvsEkMwb88BPd",
+        "block_type": 2,
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an interface type. The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "updatePasswordOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " struct type implements this interface type. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnjb6M9PkUaB8RztO9k7ptMc",
+        "block_type": 2,
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NewUpdatePasswordOption()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function to get the concrete implementation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJAhru8elZ2FUeA9r3c0Rxf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NewUpdatePasswordOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnxVigutCL3DFSMKv7TOenaf",
+        "block_type": 2,
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The signature of the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NewUpdatePasswordOption()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxl0sDhvy5yyIoVN9vJnJlj",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func NewUpdatePasswordOption(userName, oldPassword, newPassword string) *updatePasswordOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "block_type": 31,
+        "children": [
+          "doxcnouF6HhZneBGptSMUqiPd0b",
+          "doxcnPHE8HSpzeArNh5YPApUXmh",
+          "doxcnm7Y44X9ljtGE6KuqU3Rjvf",
+          "doxcnoO2CR3DRN5veco2r5LimHd",
+          "doxcnGchXlJJzrh5slLybeKH5Cc",
+          "doxcnzbz7H8QRYaOYv8sl780mng",
+          "TZlZdmX0BoEPOSxpN5DcZiOAnef",
+          "Br4OdSLLno8vPtxVvhxcu27xnHe",
+          "Qwq2dz3fBoWvgJxtwyxcisNunJh",
+          "doxcnjBydmHq7cD8X3wxr5Clppf",
+          "doxcnQ7Vhc19dNmkeSewrZleRAh",
+          "doxcn7uRJJcanjx4XHTNUQsmpld"
+        ],
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "table": {
+          "cells": [
+            "doxcnouF6HhZneBGptSMUqiPd0b",
+            "doxcnPHE8HSpzeArNh5YPApUXmh",
+            "doxcnm7Y44X9ljtGE6KuqU3Rjvf",
+            "doxcnoO2CR3DRN5veco2r5LimHd",
+            "doxcnGchXlJJzrh5slLybeKH5Cc",
+            "doxcnzbz7H8QRYaOYv8sl780mng",
+            "TZlZdmX0BoEPOSxpN5DcZiOAnef",
+            "Br4OdSLLno8vPtxVvhxcu27xnHe",
+            "Qwq2dz3fBoWvgJxtwyxcisNunJh",
+            "doxcnjBydmHq7cD8X3wxr5Clppf",
+            "doxcnQ7Vhc19dNmkeSewrZleRAh",
+            "doxcn7uRJJcanjx4XHTNUQsmpld"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              138,
+              421,
+              298
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "doxcnouF6HhZneBGptSMUqiPd0b",
+        "block_type": 32,
+        "children": [
+          "doxcnhtODtTeVMH6jzvxqz6mKvc"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnhtODtTeVMH6jzvxqz6mKvc",
+        "block_type": 2,
+        "parent_id": "doxcnouF6HhZneBGptSMUqiPd0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnPHE8HSpzeArNh5YPApUXmh",
+        "block_type": 32,
+        "children": [
+          "doxcn0DJD1ee9ojipFpvOJqnhzc"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcn0DJD1ee9ojipFpvOJqnhzc",
+        "block_type": 2,
+        "parent_id": "doxcnPHE8HSpzeArNh5YPApUXmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnm7Y44X9ljtGE6KuqU3Rjvf",
+        "block_type": 32,
+        "children": [
+          "doxcnr7L7d5VnWX9wzuymBSRr6g"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnr7L7d5VnWX9wzuymBSRr6g",
+        "block_type": 2,
+        "parent_id": "doxcnm7Y44X9ljtGE6KuqU3Rjvf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnoO2CR3DRN5veco2r5LimHd",
+        "block_type": 32,
+        "children": [
+          "doxcnVqWfsNwC85PkxEMMLJs7qd"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnVqWfsNwC85PkxEMMLJs7qd",
+        "block_type": 2,
+        "parent_id": "doxcnoO2CR3DRN5veco2r5LimHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "userName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGchXlJJzrh5slLybeKH5Cc",
+        "block_type": 32,
+        "children": [
+          "doxcnjVFBeMZ8AULrZF2QJGPDqc"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnjVFBeMZ8AULrZF2QJGPDqc",
+        "block_type": 2,
+        "parent_id": "doxcnGchXlJJzrh5slLybeKH5Cc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the user whose password is to be updated.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnzbz7H8QRYaOYv8sl780mng",
+        "block_type": 32,
+        "children": [
+          "doxcnSFEh5FiFNbf5AJvDWwdAXM"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnSFEh5FiFNbf5AJvDWwdAXM",
+        "block_type": 2,
+        "parent_id": "doxcnzbz7H8QRYaOYv8sl780mng",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TZlZdmX0BoEPOSxpN5DcZiOAnef",
+        "block_type": 32,
+        "children": [
+          "BNKcdXYmAozyB3x4YoicRXgpnOe"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BNKcdXYmAozyB3x4YoicRXgpnOe",
+        "block_type": 2,
+        "parent_id": "TZlZdmX0BoEPOSxpN5DcZiOAnef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "oldPassword",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Br4OdSLLno8vPtxVvhxcu27xnHe",
+        "block_type": 32,
+        "children": [
+          "UYV0dYcOZo5lZtxecowcnmEkncg"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UYV0dYcOZo5lZtxecowcnmEkncg",
+        "block_type": 2,
+        "parent_id": "Br4OdSLLno8vPtxVvhxcu27xnHe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The old password of the user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Qwq2dz3fBoWvgJxtwyxcisNunJh",
+        "block_type": 32,
+        "children": [
+          "GGaqdNOfroUsvHxi4MVcRb9ynVd"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GGaqdNOfroUsvHxi4MVcRb9ynVd",
+        "block_type": 2,
+        "parent_id": "Qwq2dz3fBoWvgJxtwyxcisNunJh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnjBydmHq7cD8X3wxr5Clppf",
+        "block_type": 32,
+        "children": [
+          "doxcnH49oGaDAH5qVgxYBmAi3Jf"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnH49oGaDAH5qVgxYBmAi3Jf",
+        "block_type": 2,
+        "parent_id": "doxcnjBydmHq7cD8X3wxr5Clppf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "newPassword",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnQ7Vhc19dNmkeSewrZleRAh",
+        "block_type": 32,
+        "children": [
+          "doxcniY3BSd1ptUOtfEJ5RiXSFb"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcniY3BSd1ptUOtfEJ5RiXSFb",
+        "block_type": 2,
+        "parent_id": "doxcnQ7Vhc19dNmkeSewrZleRAh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The new Password of the user to create.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn7uRJJcanjx4XHTNUQsmpld",
+        "block_type": 32,
+        "children": [
+          "doxcnKqv0J0YT4aEUnZT7Xo9k0g"
+        ],
+        "parent_id": "doxcnlt6lJcvAmsSL7a6TRmtr7x",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnKqv0J0YT4aEUnZT7Xo9k0g",
+        "block_type": 2,
+        "parent_id": "doxcn7uRJJcanjx4XHTNUQsmpld",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn5sgqjyn53Ku8RAPI3mZm7f",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "grpc.CallOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnvAOcqp5iwwLQTZjYwgdYYd",
+        "block_type": 2,
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This interface provided by the gRPC Go library allows you to specify additional options or configurations when making requests. For possible implementations of this interface, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "this file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fgrpc%2Fgrpc-go%2Fblob%2Fv1.69.4%2Frpc_util.go%23L174"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnhRZzYeK1qh6KKxoJV5KS2f",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Return",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnRg3PuX58QjwUbjCsg33g3e",
+        "block_type": 2,
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Null",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcndOx8N1ZnVFaPqoxsPiWJIb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      },
+      {
+        "block_id": "doxcnZvqVmBiuKWNHJuyrlsMknf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n   \"context\"\n   \"google.golang.org/grpc\"\n   \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n)\n\nuserName := \"my_user\"\noldpass := \"p@ssw0rd\"\nnewpass := \"p@ssw1rd\"\nopts := client.NewUpdatePasswordOption(userName, oldpass, newpass)\n\nonFinish := func(ctx context.Context, err error) {\n    if err != nil {\n        fmt.Printf(\"gRPC call finished with error: %v\\n\", err)\n    } else {\n        fmt.Printf(\"gRPC call finished successfully\")\n    }\n}\n\ncallOption := grpc.OnFinish(onFinish)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "err := mclient.UpdatePassword(context.Background(), opts, callOpts)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "YLCbd1XEjoShG9xN68gcyXlkn9d"
+      }
+    ],
+    "counts": 66
+  }
+}

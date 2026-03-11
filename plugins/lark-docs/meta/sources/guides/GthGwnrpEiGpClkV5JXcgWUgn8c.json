@@ -1,0 +1,4401 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1737856709",
+  "node_token": "GthGwnrpEiGpClkV5JXcgWUgn8c",
+  "node_type": "origin",
+  "obj_create_time": "1737856709",
+  "obj_edit_time": "1767760259",
+  "obj_token": "DniFdKjCso54myxF5VCc8KkknPc",
+  "obj_type": "docx",
+  "origin_node_token": "GthGwnrpEiGpClkV5JXcgWUgn8c",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "XpEzwyxaJi181OkIKwqcQDWrnIh",
+  "space_id": "7167193056431783939",
+  "title": "Set Collection TTL",
+  "slug": "set-collection-ttl",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "block_type": 1,
+        "children": [
+          "KkasdvttXof2DOxc5r7cV53lnzQ",
+          "LFQRdfkNRo8jxvxeq5Jco3aRnSR",
+          "HDg0dGsc1o7aaDxpeq4cXwAVnqf",
+          "JHuJd6YlNodyDhxEqq3cIFTPnLg",
+          "VMTXdThdjoCdiNxlTjSccBttndf",
+          "GQkkdJAq1omWXPxvHbncbTAFn1b",
+          "EoTQdNGawo02dVxZ8q3cVxGNnFd",
+          "Dyq9dQUmwoAk9WxwEuEcSDkPnoc",
+          "Y2todS9TjoOsBQxlLYRcYtzgn6g",
+          "Y67Nd3g2joAtu6xULDdcilV8nHc",
+          "GfLLdssPwoAyCixr164c4p58nfc",
+          "UWg4dIvGzoSRFjxfwsmcyOlTnTb",
+          "C76zda6r8o1Wm3xkhtzciynCnhd",
+          "MomjdtpJBop6mCxoY8qcVeUnnFe",
+          "GTlsd5PymoHaCqxp3YtccBN4nXf",
+          "IIyBdr6WLoYsAHxq02Nc3eCZn1e",
+          "E33sdgZRWoGZFkxlFYqcynlrn8d",
+          "Eov4dHhYjoLmNNx7Rnwc2Eogndj",
+          "XQiEdpXsHoNmrjxBCx7cFgTbnub",
+          "QW1md0MffoHkApxckUDc3xZ0njb",
+          "VUzBdVlHmopgZzxHG3scN9zbnPd",
+          "ZvHBdKtTxokgkZxFtECcWnO5nTh",
+          "ZAUcdvXHgofGj6xcWksc1kJwnBe",
+          "Bg2Wd1fQ5owyyWxwe5dca4hGn3d",
+          "Tto0dCQe3oSXWFxO2UIcu72rnle",
+          "IzEddOUEsoleaDx1mYScfm5bnwd",
+          "ANWwdDUYso6oMPx8VIbcouNPnyc",
+          "XoEGd10Eros1qpxXhk2cihZ6nyd",
+          "DlAKddaA3od55IxfDwdcOAz6n9c",
+          "QfxbdBBKyorPQ3xkd6ac3d3dnPh",
+          "GjbLd5r54osiqKxTcb0cUs3Znzb",
+          "YFqBdVxossQZwEbWg9hcjlIHnIe",
+          "NUEMdcCqmoTbxvx1wbfcONoqnEd",
+          "G0RndvyBBosYWUx1TWqc0ljMn2e",
+          "ZyUVdvsTys8ScSbbBQ0c4mE2nHe",
+          "VRYVdMUUjo46qcx8JuJczr9wn4b",
+          "Z8ojdvC2ooPgGixgCa4c4JE7nOg",
+          "RN70dgo4us4Cmib0DZJcsQepnxe",
+          "JJCcdQgvxovld0xQBcocbdDOn9t",
+          "HSVBdnROgoKKk6xntPpcw5l8nPc",
+          "IK5Sd4bDTocLlOx3qpqcHlXpnbb",
+          "Gg6bdPeFDouIdwxF40WcqQHlnvf",
+          "G9cadj41aoDrAtxctVecrCsZnHh",
+          "NHcMdbMRWoVSpxxvlgScy5l3nAd",
+          "KMwSdwhWbo0znYxza8Mcuakpncf",
+          "FGL8drNKsoAubnxRORYcNfpanVe",
+          "UgXxdD3yVoJrr8xTCKvcN6GtnRh",
+          "WatpdPR5ioxlOmxMxNEcLn79nad"
+        ],
+        "comment_ids": [
+          "7493016697469943811"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set Collection TTL",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7493016697469943811"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "KkasdvttXof2DOxc5r7cV53lnzQ",
+        "block_type": 2,
+        "comment_ids": [
+          "7464047997589389314"
+        ],
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once data is inserted into a collection, it remains there by default. However, in some scenarios, you may want to remove or clean up data after a certain period. In such cases, you can configure the collection’s Time-to-Live (TTL) property ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "so",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464047997589389314"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> automatically deletes the data once the TTL expires.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LFQRdfkNRo8jxvxeq5Jco3aRnSR",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "HDg0dGsc1o7aaDxpeq4cXwAVnqf",
+        "block_type": 2,
+        "comment_ids": [
+          "7464048148069679105"
+        ],
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Time-to-Live (TTL) is commonly used in databases for scenarios where data should only remain valid or accessible for a certain period after any ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "insertion or modification",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464048148069679105"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Then, the data can be automatically removed. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JHuJd6YlNodyDhxEqq3cIFTPnLg",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For instance, if you ingest data daily but only need to retain records for 14 days, you can configure <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> to automatically remove any data older than that by setting the collection’s TTL to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "14 × 24 × 3600 = 1209600",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " seconds. This ensures that only the most recent 14 days’ worth of data remain in the collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "YvfydWfD6ox5TRxnvt0cKDMFnbC",
+          "EVG2dovrBoME9wxQUuIcUVSBnec",
+          "PZRjdW6IXoa22wxDopjcaRJfnkb",
+          "PTOcdBOX6ov0Lrxvb8nc3vwlnhf",
+          "DAPNdnSMLoeP3ExG5S6cjErwnog",
+          "IRLjdkfivoikEbxUHOVcKAlgnfb"
+        ],
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "YvfydWfD6ox5TRxnvt0cKDMFnbC",
+        "block_type": 2,
+        "parent_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EVG2dovrBoME9wxQUuIcUVSBnec",
+        "block_type": 2,
+        "comment_ids": [
+          "7517996112242901011"
+        ],
+        "parent_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Expired",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " entities will not appear in any search or query results. However, they may stay in the storage until the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "subsequent",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " data compaction, which should be ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "carried",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " out within the next 24 hours.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PZRjdW6IXoa22wxDopjcaRJfnkb",
+        "block_type": 2,
+        "comment_ids": [
+          "7517996112242901011"
+        ],
+        "parent_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PTOcdBOX6ov0Lrxvb8nc3vwlnhf",
+        "block_type": 2,
+        "comment_ids": [
+          "7517996112242901011"
+        ],
+        "parent_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can control when to trigger the data compaction by setting the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dataCoord.compaction.expiry.tolerance",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " configuration item in your Milvus configuration file.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DAPNdnSMLoeP3ExG5S6cjErwnog",
+        "block_type": 2,
+        "comment_ids": [
+          "7517996112242901011"
+        ],
+        "parent_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This configuration item defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "-1",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", indicating that the existing data compaction interval applies. However, when you change its value to a positive integer, like ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "12",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", data compaction will be triggered the specified number of hours after any entities become expired.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IRLjdkfivoikEbxUHOVcKAlgnfb",
+        "block_type": 2,
+        "comment_ids": [
+          "7517996112242901011"
+        ],
+        "parent_id": "VMTXdThdjoCdiNxlTjSccBttndf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7517996112242901011"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GQkkdJAq1omWXPxvHbncbTAFn1b",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The TTL property in a <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> collection is specified as an integer in seconds. Once set, any data that surpasses its TTL will be automatically deleted from the collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EoTQdNGawo02dVxZ8q3cVxGNnFd",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Because the deletion process is asynchronous, data might not be removed from search results exactly once the specified TTL has elapsed. Instead, there may be a delay, as the removal depends on the garbage collection (GC) and compaction processes, which occur at non-deterministic intervals.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dyq9dQUmwoAk9WxwEuEcSDkPnoc",
+        "block_type": 4,
+        "comment_ids": [
+          "7589573016649026746"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7589573016649026746"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "Y2todS9TjoOsBQxlLYRcYtzgn6g",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Generally, Collection TTL is closely related to when TTL settings are enforced and when entities are inserted or updated. To better understand the TTL mechanism, consider the following examples.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y67Nd3g2joAtu6xULDdcilV8nHc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example 1: Set TTL upon collection creation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "GfLLdssPwoAyCixr164c4p58nfc",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You set the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TTL",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2592000 (30 days)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when you create a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UWg4dIvGzoSRFjxfwsmcyOlTnTb",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "At ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 1st",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you inserted ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10 billion entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and no other write operations followed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C76zda6r8o1Wm3xkhtzciynCnhd",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 31st",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10 billion entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will become unsearchable, and the result of a query with the output fields set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MomjdtpJBop6mCxoY8qcVeUnnFe",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example 2: Set TTL for an existing collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "GTlsd5PymoHaCqxp3YtccBN4nXf",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have created a collection without TTL.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IIyBdr6WLoYsAHxq02Nc3eCZn1e",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "At ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 1st",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you insert ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10 billion entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E33sdgZRWoGZFkxlFYqcynlrn8d",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "At ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 31st",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you insert another ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "20 billion entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and no other write operations follow.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Eov4dHhYjoLmNNx7Rnwc2Eogndj",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "At ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Feburary 28th",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you set TTL to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2592000 (30 days)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XQiEdpXsHoNmrjxBCx7cFgTbnub",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10 billion entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " inserted on January 1st become unsearchable immediately after the TTL has been set, and the result of a query with the output fields set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "count(*)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "20 billion",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QW1md0MffoHkApxckUDc3xZ0njb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example 3: Upsert entities",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "VUzBdVlHmopgZzxHG3scN9zbnPd",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You set the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TTL",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2592000 (30 days)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when you create a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZvHBdKtTxokgkZxFtECcWnO5nTh",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "At ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 1st",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you inserted ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "20 billion entities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and no other write operations followed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZAUcdvXHgofGj6xcWksc1kJwnBe",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "From ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "23:59:59",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 15th",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you upsert all the 20 billion entities in merge mode, and no other write operations follow.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Bg2Wd1fQ5owyyWxwe5dca4hGn3d",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During the period from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "January 31st",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "February 13th",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the 20 billion entities remain searchable, and the query count remains 20 billion. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Tto0dCQe3oSXWFxO2UIcu72rnle",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Since ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "February 14th",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the query count has been decreasing and reached ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " at ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "00:00",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "February 15th",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IzEddOUEsoleaDx1mYScfm5bnwd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set TTL",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "ANWwdDUYso6oMPx8VIbcouNPnyc",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can set the TTL property when you",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XoEGd10Eros1qpxXhk2cihZ6nyd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGthGwnrpEiGpClkV5JXcgWUgn8c%23QfxbdBBKyorPQ3xkd6ac3d3dnPh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "DlAKddaA3od55IxfDwdcOAz6n9c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Alter the TTL property of an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGthGwnrpEiGpClkV5JXcgWUgn8c%23NUEMdcCqmoTbxvx1wbfcONoqnEd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "QfxbdBBKyorPQ3xkd6ac3d3dnPh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set TTL when creating a collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "GjbLd5r54osiqKxTcb0cUs3Znzb",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following code snippet demonstrates how to set the TTL property when you create a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YFqBdVxossQZwEbWg9hcjlIHnIe",
+        "block_type": 49,
+        "children": [
+          "HOrMd9MSKo0Qulxrw1dcDklcnXg",
+          "LSOJdUCixoY2b2xHwB7cIOPzncb",
+          "RCNrdBo71o0IeaxBJ8icBkEFnQd",
+          "MFUSde49WomlpQxuJDxcmKrQnIb",
+          "JgjHdBUe1oB0nqxdk3ecLkZtnvd",
+          "CMeUd0aNporr5rxzNVXcMBcInge"
+        ],
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "HOrMd9MSKo0Qulxrw1dcDklcnXg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\n# With TTL\nclient.create_collection(\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name=",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"my_collection\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n    schema=schema,\n    # highlight-start\n    properties={\n        \"collection.ttl.seconds\": 1209600\n    }\n    # highlight-end\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "YFqBdVxossQZwEbWg9hcjlIHnIe"
+      },
+      {
+        "block_id": "LSOJdUCixoY2b2xHwB7cIOPzncb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.collection.request.CreateCollectionReq;\nimport io.milvus.v2.service.collection.request.AlterCollectionReq;\nimport io.milvus.param.Constant;\nimport java.util.HashMap;\nimport java.util.Map;\n\n// With TTL\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq customizedSetupReq = CreateCollectionReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .collectionName(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"my_collection\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n        .collectionSchema(schema)\n        // highlight-next-line\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .property(Constant.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TTL_SECONDS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", \"1209600\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".createCollection(customizedSetupReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "YFqBdVxossQZwEbWg9hcjlIHnIe"
+      },
+      {
+        "block_id": "RCNrdBo71o0IeaxBJ8icBkEFnQd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const createCollectionReq = {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"my_collection\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n    schema: schema,\n    // highlight-start\n    properties: {\n        \"collection.ttl.seconds\": 1209600\n    }\n    // highlight-end\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "YFqBdVxossQZwEbWg9hcjlIHnIe"
+      },
+      {
+        "block_id": "MFUSde49WomlpQxuJDxcmKrQnIb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption(\"my_collection\", schema).\n    WithProperty(common.CollectionTTLConfigKey, 1209600)) //  TTL in seconds\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "YFqBdVxossQZwEbWg9hcjlIHnIe"
+      },
+      {
+        "block_id": "JgjHdBUe1oB0nqxdk3ecLkZtnvd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export params='{\n    \"ttlSeconds\": 1209600\n}'\n\nexport CLUSTER_ENDPOINT=\"http://localhost:19530\"\nexport TOKEN=\"root:Milvus\"\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/collections/create\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d \"{\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \\\"collectionName\\\": \\\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\\",\n    \\\"schema\\\": $schema,\n    \\\"params\\\": $params\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "YFqBdVxossQZwEbWg9hcjlIHnIe"
+      },
+      {
+        "block_id": "CMeUd0aNporr5rxzNVXcMBcInge",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto status = client->CreateCollection(milvus::CreateCollectionRequest()\n                                        .WithCollectionName(\"my_collection\")\n                                        .WithCollectionSchema(schema)\n                                        .AddProperty(milvus::COLLECTION_TTL_SECONDS, \"1209600\"));\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "YFqBdVxossQZwEbWg9hcjlIHnIe"
+      },
+      {
+        "block_id": "NUEMdcCqmoTbxvx1wbfcONoqnEd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set TTL for an existing collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "G0RndvyBBosYWUx1TWqc0ljMn2e",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following code snippet demonstrates how to alter the TTL property in an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe",
+        "block_type": 49,
+        "children": [
+          "ARAadjbxIokDuKxxrrZcGIRNnBb",
+          "TIBsdZDOzoowWWx5Wk9c7lB6n0a",
+          "TSKVd6dP9oisZmxp5wHckpSnnih",
+          "V7pvd5E20okPvpxrlbIcmebInji",
+          "LTzxdid5Bod2vuxs6Zec7FBDnMb",
+          "LJRedIl3qoMqfex55Ihcpm5cnsg"
+        ],
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "ARAadjbxIokDuKxxrrZcGIRNnBb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.alter_collection_properties(\n    collection_name=\"my_collection\",\n    properties={\"collection.ttl.seconds\": 1209600}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe"
+      },
+      {
+        "block_id": "TIBsdZDOzoowWWx5Wk9c7lB6n0a",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AlterCollectionPropertiesReq alterCollectionReq = AlterCollectionPropertiesReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"my_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .property(Constant.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TTL_SECONDS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", \"1209600\")\n        .build();\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.alterCollectionProperties(alterCollectionReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe"
+      },
+      {
+        "block_id": "TSKVd6dP9oisZmxp5wHckpSnnih",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "res = await client.alterCollection({\n    collection_name: \"my_collection\",\n    properties: {\n        \"collection.ttl.seconds\": 1209600\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "})",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe"
+      },
+      {
+        "block_id": "V7pvd5E20okPvpxrlbIcmebInji",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "err = client.AlterCollectionProperties(ctx, milvusclient.NewAlterCollectionPropertiesOption(\"my_collection\").\n    WithProperty(common.CollectionTTLConfigKey, 60))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe"
+      },
+      {
+        "block_id": "LTzxdid5Bod2vuxs6Zec7FBDnMb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/collections/alter_properties\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d \"{\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \\\"collectionName\\\": \\\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\\",\n    \\\"properties\\\": {\n        \\\"collection.ttl.seconds\\\": 1209600\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe"
+      },
+      {
+        "block_id": "LJRedIl3qoMqfex55Ihcpm5cnsg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto status = client->AlterCollectionProperties(milvus::AlterCollectionPropertiesRequest()\n                                                   .WithCollectionName(\"my_collection\")\n                                                   .AddProperty(milvus::COLLECTION_TTL_SECONDS, \"1209600\"));\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZyUVdvsTys8ScSbbBQ0c4mE2nHe"
+      },
+      {
+        "block_id": "VRYVdMUUjo46qcx8JuJczr9wn4b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Drop TTL setting",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "Z8ojdvC2ooPgGixgCa4c4JE7nOg",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you decide to keep the data in a collection indefinitely, you can simply drop the TTL setting from that collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RN70dgo4us4Cmib0DZJcsQepnxe",
+        "block_type": 49,
+        "children": [
+          "QBt1dPKfWoZvfkxsb2jc9dNentg",
+          "Xu0ndYPqlo8OaEx6U19c3vv7nSe",
+          "JsdRdwSlxoWr7VxenK1cUFo0nab",
+          "PeffdxtkBoBScXx9qR0cRTpqnue",
+          "ClvydTGNKo0eK0xcQsocFnFgnQe",
+          "Aj5NdJ1rYolEHOxERDFcFNq6nAb"
+        ],
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "QBt1dPKfWoZvfkxsb2jc9dNentg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.drop_collection_properties(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049604342857732"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name=\"my_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049604342857732"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    property",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049604342857732"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "_k",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049604342857732"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "eys=[\"collection.ttl.seconds\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049604342857732"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049604342857732"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7464049604342857732"
+        ],
+        "parent_id": "RN70dgo4us4Cmib0DZJcsQepnxe"
+      },
+      {
+        "block_id": "Xu0ndYPqlo8OaEx6U19c3vv7nSe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.dropCollectionProperties(DropCollectionPropertiesReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"my_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .propertyKeys(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(Constant.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TTL_SECONDS",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049504926482451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7464049504926482451"
+        ],
+        "parent_id": "RN70dgo4us4Cmib0DZJcsQepnxe"
+      },
+      {
+        "block_id": "JsdRdwSlxoWr7VxenK1cUFo0nab",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "res = await client.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dropCollectionProperties",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "({",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name: \"my_collection\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "properties",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": [\"collection.ttl.seconds\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "})",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049727102140419"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7464049727102140419"
+        ],
+        "parent_id": "RN70dgo4us4Cmib0DZJcsQepnxe"
+      },
+      {
+        "block_id": "PeffdxtkBoBScXx9qR0cRTpqnue",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "err = client.DropCollectionProperties(ctx, milvusclient.NewDropCollectionPropertiesOption(\"my_collection\", common.CollectionTTLConfigKey))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049810543378451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049810543378451"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7464049810543378451"
+        ],
+        "parent_id": "RN70dgo4us4Cmib0DZJcsQepnxe"
+      },
+      {
+        "block_id": "ClvydTGNKo0eK0xcQsocFnFgnQe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--url \"${CLUSTER_ENDPOINT}/v2/vectordb/collections/",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "drop_properties",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--header \"Authorization: Bearer ${TOKEN}\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "--header \"Content-Type: application/json\" \\",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "-d \"{",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \\\"collectionName\\\": \\\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\\",",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \\\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "propertyKeys",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\\": ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        \\\"collection.ttl.seconds\\\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "]",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7464049902465728516"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7464049902465728516"
+        ],
+        "parent_id": "RN70dgo4us4Cmib0DZJcsQepnxe"
+      },
+      {
+        "block_id": "Aj5NdJ1rYolEHOxERDFcFNq6nAb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto status = client->DropCollectionProperties(milvus::DropCollectionPropertiesRequest()\n                                                  .WithCollectionName(\"my_collection\")\n                                                  .AddPropertyKey(milvus::COLLECTION_TTL_SECONDS));\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "RN70dgo4us4Cmib0DZJcsQepnxe"
+      },
+      {
+        "block_id": "JJCcdQgvxovld0xQBcocbdDOn9t",
+        "block_type": 4,
+        "comment_ids": [
+          "7589573080922524894"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FAQs",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7589573080922524894"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "HSVBdnROgoKKk6xntPpcw5l8nPc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When does data expire due to TTL settings?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "IK5Sd4bDTocLlOx3qpqcHlXpnbb",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Currently, the data expires based on the time point at which it was inserted or upserted. Expired data will not be displayed in search results. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGthGwnrpEiGpClkV5JXcgWUgn8c%23Dyq9dQUmwoAk9WxwEuEcSDkPnoc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gg6bdPeFDouIdwxF40WcqQHlnvf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When will the expired data be physically deleted?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "G9cadj41aoDrAtxctVecrCsZnHh",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the data expires, it will not be included in any search results. However, it will be physically deleted only after the subsequent system compaction, according to your cluster's compaction policies.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NHcMdbMRWoVSpxxvlgScy5l3nAd",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KMwSdwhWbo0znYxza8Mcuakpncf",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you need to delete the data shortly after it expires, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact us",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us%2Frequests%2Fnew"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FGL8drNKsoAubnxRORYcNfpanVe",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When will the CU capacity decrease?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc"
+      },
+      {
+        "block_id": "UgXxdD3yVoJrr8xTCKvcN6GtnRh",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The CU capacity of a cluster is whichever is higher between memory usage and storage usage. If storage usage applies, you can view the decrease in the CU capacity on the Zilliz Cloud console after the expired data is physically deleted.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WatpdPR5ioxlOmxMxNEcLn79nad",
+        "block_type": 2,
+        "parent_id": "DniFdKjCso54myxF5VCc8KkknPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 73
+  }
+}

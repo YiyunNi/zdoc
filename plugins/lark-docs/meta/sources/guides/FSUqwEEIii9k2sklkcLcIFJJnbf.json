@@ -1,0 +1,1324 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1742440415",
+  "node_token": "FSUqwEEIii9k2sklkcLcIFJJnbf",
+  "node_type": "origin",
+  "obj_create_time": "1742440415",
+  "obj_edit_time": "1767602482",
+  "obj_token": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+  "obj_type": "docx",
+  "origin_node_token": "FSUqwEEIii9k2sklkcLcIFJJnbf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "Release Notes (March 27, 2025)",
+  "slug": "release-notes-2140",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "block_type": 1,
+        "children": [
+          "DsiadiXuPo6g6Ext1kNcc1rHnkg",
+          "Dhymd1yzuoQ2vHxclgAcASWcnFf",
+          "MJfwd5pzbovSntxGrtUcibodnve",
+          "LBtvdBPFMogOsSxIj1Oc4dSOnde",
+          "RIiAdxmBDoDAiCxJOyrc8A9inIf",
+          "MRM5dtJAaomw3Tx89X5cJPGTnEc",
+          "PUjXdG1faoim6NxdHVhchCO4nvc",
+          "Q5RUdtwLLoAVLSxt8Yacm0Aantd",
+          "RAKXdKGTjog9jexg1zWcXKa0nje",
+          "IlSkdxaImobfp9xS1p2c7MvknEd",
+          "UH9Gd8Ud7oPDmdxfGVAcPa2dnFh",
+          "CaqSdd0tvol40TxsUVNcQ1TFnoh",
+          "UNRMdGPrXoEHFTxgmvmcsKNqnPe",
+          "FZmDdcvP1oc0npxNfuocHfz4nqD",
+          "Abz1dAsyGoL1cvxAe7wcr1j3n8o",
+          "P18TdEAMtoMGWGxcVptcr4zunWh",
+          "TpgrdsfCAooK8XxxskKcG6p8nIh",
+          "U6RtdGXsloggm8xCyUgc45dVnJd",
+          "OzIidbzkqoUBOzxSzRrcE0hfnnn",
+          "UbtldueuuoFQ9Sx6csxc3m5UnY2",
+          "P2qXdYhsNo356sx4pe6cChsYnTg",
+          "UHG2dZRunoKYuqxb11pcO6qnnBd"
+        ],
+        "comment_ids": [
+          "7486383919672590340"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Release Notes (March 27, 2025)",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486383919672590340"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "DsiadiXuPo6g6Ext1kNcc1rHnkg",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release introduces two new features in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PRIVATE PREVIEW",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": a new BYOC deployment option called BYOC-I and a data plane audit logging feature. The former is designed to ensure complete data sovereignty without any cross-account IAM authorization, while the latter aims to enhance data security by providing detailed logs of actions performed on the data plane. In addition to launching these features, Zilliz Cloud has also revised its credit strategies.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dhymd1yzuoQ2vHxclgAcASWcnFf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus Compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke"
+      },
+      {
+        "block_id": "MJfwd5pzbovSntxGrtUcibodnve",
+        "block_type": 2,
+        "comment_ids": [
+          "7486386931305103379"
+        ],
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release is compatible with ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus v2.4.x",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LBtvdBPFMogOsSxIj1Oc4dSOnde",
+        "block_type": 2,
+        "comment_ids": [
+          "7486386931305103379"
+        ],
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you prefer to upgrade your clusters to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Public Preview",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus 2.5.x",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " features are available after the upgrade",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486386931305103379"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". You can click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Try Preview Features",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cluster Details",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page on the Zilliz Cloud console to learn more about the features in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Public Preview",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RIiAdxmBDoDAiCxJOyrc8A9inIf",
+        "block_type": 27,
+        "image": {
+          "height": 586,
+          "scale": 1,
+          "token": "Koy0bfMhuoaJ2ZxtVJfcUSl9n6d",
+          "width": 862
+        },
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke"
+      },
+      {
+        "block_id": "MRM5dtJAaomw3Tx89X5cJPGTnEc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC-I: A New Deployment Option That Provides Complete Data Sovereignty with Enhanced Project Management Capabilities",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke"
+      },
+      {
+        "block_id": "PUjXdG1faoim6NxdHVhchCO4nvc",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With the addition of BYOC-I, Zilliz BYOC now provides two deployment options, namely the standard ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BYOC",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BYOC-I",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q5RUdtwLLoAVLSxt8Yacm0Aantd",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Unlike the standard BYOC, which requires cross-account authorization, BYOC-I employs an agent deployed in the customer-managed VPC as the single point of contact between the control panel in Zilliz's VPC and the data plane in the customer-managed VPC.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RAKXdKGTjog9jexg1zWcXKa0nje",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz BYOC supports data governance and compliance across industries like finance, healthcare, resources, education, and e-commerce, all of which face stringent compliance requirements. For enterprises and organizations that require more stringent regulatory measures, BYOC-I is an ideal deployment option for achieving complete data sovereignty.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IlSkdxaImobfp9xS1p2c7MvknEd",
+        "block_type": 2,
+        "comment_ids": [
+          "7486428196615962643"
+        ],
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release also improves the management of projects deployed using the standard BYOC deployment option by adding ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Suspend",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Resume",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " functionalities. You can choose to pause the data plane and",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " release the EC2 instances",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7486428196615962643"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " associated with the EKS cluster to lower infrastructure costs and restore the data plane whenever you see fit.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UH9Gd8Ud7oPDmdxfGVAcPa2dnFh",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this release, Zilliz BYOC is generally available. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Contact us",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to learn about the pricing or request this feature if you are interested. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CaqSdd0tvol40TxsUVNcQ1TFnoh",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details about Zilliz BYOC deployment options, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BYOC Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fbyoc-intro"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For the deployment procedures and the enhanced project management capabilities, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC on AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-aws"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC-I on AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-i-aws"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UNRMdGPrXoEHFTxgmvmcsKNqnPe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data Plane Audit Logs: Protect Your Data Operations with Comprehensive Action Logs for Auditing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke"
+      },
+      {
+        "block_id": "FZmDdcvP1oc0npxNfuocHfz4nqD",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Audit logging enables administrators to monitor and track user-driven operations and API calls on Zilliz Cloud clusters. This feature offers a comprehensive record of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Data Plane ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "activities, such as vector searches, query execution, index management, and various data manipulation operations. It also provides insights and visibility into how data is accessed and managed for security audits, compliance reviews, and issue resolution.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Abz1dAsyGoL1cvxAe7wcr1j3n8o",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you enable this feature, Zilliz Cloud will stream the audit logs to your designated object storage bucket. You can then use third-party data warehouse services like Snowflake for audit analysis, enhancing regulatory compliance, data security, and operational monitoring in your cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P18TdEAMtoMGWGxcVptcr4zunWh",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is now in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PRIVATE PREVIEW",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Contact us",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " learn about pricing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "request this feature",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " if you are interested",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TpgrdsfCAooK8XxxskKcG6p8nIh",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details about the procedure to enable audit logging in your clusters, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Audit Logging",
+                "token": "M5dXwsGOOiPdAjkWLZUc2Pxonuh",
+                "url": "https://zilliverse.feishu.cn/wiki/M5dXwsGOOiPdAjkWLZUc2Pxonuh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ". To gain deeper insights into the collected audit logs using third-party data warehouse services like Snowflake, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Automating Snowpipe for Amazon S3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.snowflake.com%2Fen%2Fuser-guide%2Fdata-load-snowpipe-auto-s3"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U6RtdGXsloggm8xCyUgc45dVnJd",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now supports logging over 70 types of actions and events related to Collections, Databases, Entities (Search, HybridSearch, Insert, Upsert, Delete), Indexes, Partitions, and Aliases. More events will be included in future releases. For details on applicable actions and events, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Audit Log Reference",
+                "token": "Nby4wCqNviuLg3kEZpkcdKtnnnb",
+                "url": "https://zilliverse.feishu.cn/wiki/Nby4wCqNviuLg3kEZpkcdKtnnnb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OzIidbzkqoUBOzxSzRrcE0hfnnn",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Other Enhancements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke"
+      },
+      {
+        "block_id": "UbtldueuuoFQ9Sx6csxc3m5UnY2",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Since this release, Zilliz Cloud has adjusted its credit strategies. For details on the new credit strategies, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Try Zilliz Cloud For Free",
+                "token": "LMfdwRwKIiJtywkwbHVcGnOFnRf",
+                "url": "https://zilliverse.feishu.cn/wiki/LMfdwRwKIiJtywkwbHVcGnOFnRf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P2qXdYhsNo356sx4pe6cChsYnTg",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UHG2dZRunoKYuqxb11pcO6qnnBd",
+        "block_type": 2,
+        "parent_id": "K1cRdEcQSoAPIhxrag8c1C3Wnke",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 23
+  }
+}

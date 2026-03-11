@@ -1,0 +1,738 @@
+{
+  "created_time": "1761437191",
+  "modified_time": "1761437973",
+  "name": "RRFRanker",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "WjrbfXtKXlr1kidVVO6cKwV7nUr",
+  "token": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/FuSTdeSCdojDu0xSBEmcYgv9n4g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "block_type": 1,
+        "children": [
+          "Mbgdd9WPqohmnpxuejUcRl4mnif",
+          "EYo3doShIovT37xlcZXcgFxinyh",
+          "XOfud70aAoWFRFxi4qicEW0GnRe",
+          "VK2gdbM5Co8jahxmKaDc75FXnvh",
+          "JsMLdUVJKoVMcHx5yI6cGm03n7b",
+          "OcEodmvDwoO4ZYxFnzLcxhE8nxb",
+          "Gvyodv1proTimMxGewmcQqYDnre",
+          "XavBdCfkPoTd1qxzKDgcEVxhnmF",
+          "ImUMdAIaboJLGlxFtqMckKaRnkg",
+          "KvpJdYxxsoFX4Axod1IcaJUMnpg",
+          "S6c9dvujyowA0nxmCtDcsJiOnyh",
+          "R1f5dpbB8oLFz2xlL6tc0AX6n8b",
+          "HehfdkH8uoVlD0xgq3YcK5qpnqf",
+          "FYFJd19Yyo3VzGx5v6PcWaO2nBh",
+          "FbMPd2ymQoQ2qjxUGCicL9M6nYd",
+          "G8MWdtSKGo92NfxNVbFc7DIdnuc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RRFRanker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Mbgdd9WPqohmnpxuejUcRl4mnif",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RRFRanker",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " class extends from the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " class and provides extra parameters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EYo3doShIovT37xlcZXcgFxinyh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public class RRFRanker extends CreateCollectionReq.Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "XOfud70aAoWFRFxi4qicEW0GnRe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "VK2gdbM5Co8jahxmKaDc75FXnvh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RRFRanker.builder()\n    .name(String name)\n    .description(String description)\n    .params(Map<String, String> params)\n    .k(int k)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "JsMLdUVJKoVMcHx5yI6cGm03n7b",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OcEodmvDwoO4ZYxFnzLcxhE8nxb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "name(String name)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GSsWdRy6QokJNSxwfCPcFVDynfd"
+        ],
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "GSsWdRy6QokJNSxwfCPcFVDynfd",
+        "block_type": 2,
+        "parent_id": "OcEodmvDwoO4ZYxFnzLcxhE8nxb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the function. This identifier is used to reference the function within queries and collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gvyodv1proTimMxGewmcQqYDnre",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "description(String description)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AYdHdzSeAoK7fBxW6CjcgsIEn86"
+        ],
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "AYdHdzSeAoK7fBxW6CjcgsIEn86",
+        "block_type": 2,
+        "parent_id": "Gvyodv1proTimMxGewmcQqYDnre",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A brief description of the function's purpose. This can be useful for documentation or clarity in larger projects and defaults to an empty string.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XavBdCfkPoTd1qxzKDgcEVxhnmF",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "params(Map<String, String> params)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RYCmdUAwdoqsTJxk2FNcn9Q2nTf"
+        ],
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "RYCmdUAwdoqsTJxk2FNcn9Q2nTf",
+        "block_type": 2,
+        "parent_id": "XavBdCfkPoTd1qxzKDgcEVxhnmF",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A set of key-value pairs that configures the function properties.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ImUMdAIaboJLGlxFtqMckKaRnkg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "k(int k)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZzAud5pOwoxpBvxx9cBcddNCn5d"
+        ],
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "ZzAud5pOwoxpBvxx9cBcddNCn5d",
+        "block_type": 2,
+        "parent_id": "ImUMdAIaboJLGlxFtqMckKaRnkg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A smoothing parameter that controls the impact of document ranks; higher ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "k",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " reduces sensitivity to top ranks. The value ranges from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "16383",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "60",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KvpJdYxxsoFX4Axod1IcaJUMnpg",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S6c9dvujyowA0nxmCtDcsJiOnyh",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RRFRanker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R1f5dpbB8oLFz2xlL6tc0AX6n8b",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HehfdkH8uoVlD0xgq3YcK5qpnqf",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " A RRF ranker instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FYFJd19Yyo3VzGx5v6PcWaO2nBh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "FbMPd2ymQoQ2qjxUGCicL9M6nYd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.collection.request.CreateCollectionReq.Function;\nimport io.milvus.v2.service.vector.request.ranker.RRFRanker\nimport java.util.Collections;\n\n// use the RRFRanker class\nRRFRanker.builder()\n    .k(60)\n    .build());\n    \n// Instead, you can use the Function class as well\nCreateCollectionReq.Function rr = CreateCollectionReq.Function.builder()\n    .functionType(FunctionType.RERANK)\n    .param(\"strategy\", \"rrf\")\n    .param(\"params\", \"{\\\"k\\\": 60}\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g"
+      },
+      {
+        "block_id": "G8MWdtSKGo92NfxNVbFc7DIdnuc",
+        "block_type": 2,
+        "parent_id": "FuSTdeSCdojDu0xSBEmcYgv9n4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 21
+  },
+  "slug": "v2-Function-RRFRanker"
+}

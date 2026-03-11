@@ -1,0 +1,582 @@
+{
+  "created_time": "1761482052",
+  "modified_time": "1761482491",
+  "name": "compact()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "PohgfmtiBlwuPRdcACmc9JDZnve",
+  "token": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/HMLydCfcUoZFAExH4WVcg0TLnvh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "block_type": 1,
+        "children": [
+          "N7HbdO9pWoip51xpJx1ckBU3n6d",
+          "N5JpdLoXOovbeXxnXKuccGOPnxf",
+          "MK0UdnQfEocVOhxPJNycSKPannn",
+          "Vo6Zd7W1Mo3F4Ax1rNHcwKnDnzg",
+          "MX7WdZme1oHiKyxgvRwcTKcenXe",
+          "AKtzdhTzuo9GhExXalgcLeNenG6",
+          "BKkyd2EpFojFHgx8oqEcXxC9nMx",
+          "BV8QdEBVeoLFsoxZCUVc6iAFnRh",
+          "Ul2ndU7AFo59fJxwUDycqPP9nCc",
+          "AKhUdNOTUoqtR8x2Zp8cIz4Vnse",
+          "Mc6vdXByioWQPpx5lmbc0VCUnub",
+          "MfDWdcCdfoz2tAxUpUpcN7AfnDh",
+          "JqRidf70lorvg8xEauXcvjo5nue",
+          "AEeydHALJojWkWxV7fpczgEOn1b"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compact()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "N7HbdO9pWoip51xpJx1ckBU3n6d",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N5JpdLoXOovbeXxnXKuccGOPnxf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public CompactResp compact(CompactReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "MK0UdnQfEocVOhxPJNycSKPannn",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "Vo6Zd7W1Mo3F4Ax1rNHcwKnDnzg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compact(CompactReq.builder()\n    .collectionName(String collection)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "MX7WdZme1oHiKyxgvRwcTKcenXe",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AKtzdhTzuo9GhExXalgcLeNenG6",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collection)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WCwFdeAuEonAKjxQqMLcJHHZnWf"
+        ],
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "WCwFdeAuEonAKjxQqMLcJHHZnWf",
+        "block_type": 2,
+        "parent_id": "AKtzdhTzuo9GhExXalgcLeNenG6",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BKkyd2EpFojFHgx8oqEcXxC9nMx",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BV8QdEBVeoLFsoxZCUVc6iAFnRh",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CompactResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ul2ndU7AFo59fJxwUDycqPP9nCc",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AKhUdNOTUoqtR8x2Zp8cIz4Vnse",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CompactResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object contains a compaction ID.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mc6vdXByioWQPpx5lmbc0VCUnub",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "compactionID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DKs5dyr0OoRLWSxpDq5cBNuPnIf"
+        ],
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "DKs5dyr0OoRLWSxpDq5cBNuPnIf",
+        "block_type": 2,
+        "parent_id": "Mc6vdXByioWQPpx5lmbc0VCUnub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the current compact operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MfDWdcCdfoz2tAxUpUpcN7AfnDh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "JqRidf70lorvg8xEauXcvjo5nue",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.utility.request.CompactReq;\nimport io.milvus.v2.service.utility.response.CompactResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Compact a collection\nclient.compact(CompactReq.builder()\n    .collectionName(\"my_collection\")\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh"
+      },
+      {
+        "block_id": "AEeydHALJojWkWxV7fpczgEOn1b",
+        "block_type": 2,
+        "parent_id": "HMLydCfcUoZFAExH4WVcg0TLnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 17
+  },
+  "slug": "v2-Management-compact"
+}

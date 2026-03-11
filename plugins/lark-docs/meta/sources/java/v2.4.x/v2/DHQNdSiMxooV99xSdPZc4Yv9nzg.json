@@ -1,0 +1,558 @@
+{
+  "created_time": "1741677752",
+  "modified_time": "1746615250",
+  "name": "dropResourceGroup()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "RmMNfMgc3lMPTBdfs0WcK1YGn6M",
+  "token": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/DHQNdSiMxooV99xSdPZc4Yv9nzg",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "block_type": 1,
+        "children": [
+          "LicDdjt1uoznoDxIsDmcuOMJnkc",
+          "TNfrdFD0aozC6lxDQbocJZgOnAf",
+          "C9indcIGyoTb6Px2DcKceHtgn6d",
+          "BnQQdIlZyoKzfgxYoPRcDBtPnWf",
+          "Vn3wdrnNNo8LrtxF4nLcshsBnFe",
+          "VmfDdJ437oARAux3tNPcob1vnye",
+          "G6AjdqAikoXnN6xJkEycUdHunLb",
+          "QWlLdY8jLolKggxJXRocxykznkc",
+          "CkOmdA484oGx5FxMvGccD38vnEc",
+          "KAxQdbPX6oWHWAxtJ7OcbAzznKg",
+          "XE01dIx5QoDuhex151Kcm20unDd",
+          "QqdAdoxI7oclGrxYqVAceDNYnPd",
+          "S8sTdyiKKom9Xbxx2K0cRLronXg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dropResourceGroup()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "LicDdjt1uoznoDxIsDmcuOMJnkc",
+        "block_type": 2,
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation drops a resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TNfrdFD0aozC6lxDQbocJZgOnAf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void dropResourceGroup(DropResourceGroupReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "C9indcIGyoTb6Px2DcKceHtgn6d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "BnQQdIlZyoKzfgxYoPRcDBtPnWf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dropResourceGroup(DropResourceGroupReq.builder()\n    .groupName(String groupName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "Vn3wdrnNNo8LrtxF4nLcshsBnFe",
+        "block_type": 2,
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VmfDdJ437oARAux3tNPcob1vnye",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NbMsdiGSKos8Tvxbe7XcnBIrnMh",
+          "SLAPdWLZaoLkjWxmtZycwmwUnmd"
+        ],
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "NbMsdiGSKos8Tvxbe7XcnBIrnMh",
+        "block_type": 2,
+        "parent_id": "VmfDdJ437oARAux3tNPcob1vnye",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SLAPdWLZaoLkjWxmtZycwmwUnmd",
+        "block_type": 2,
+        "parent_id": "VmfDdJ437oARAux3tNPcob1vnye",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target resource group to drop.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G6AjdqAikoXnN6xJkEycUdHunLb",
+        "block_type": 2,
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QWlLdY8jLolKggxJXRocxykznkc",
+        "block_type": 2,
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CkOmdA484oGx5FxMvGccD38vnEc",
+        "block_type": 2,
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KAxQdbPX6oWHWAxtJ7OcbAzznKg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "F8ndd4ptZoYCSBxOlRZcUA6qnZb"
+        ],
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "F8ndd4ptZoYCSBxOlRZcUA6qnZb",
+        "block_type": 2,
+        "parent_id": "KAxQdbPX6oWHWAxtJ7OcbAzznKg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XE01dIx5QoDuhex151Kcm20unDd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "QqdAdoxI7oclGrxYqVAceDNYnPd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.resourcegroup.request.DropResourceGroupReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. Drop a resource group",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  \nDropResourceGroupReq dropResourceGroupReq = DropResourceGroupReq.builder()\n    .groupName(\"rg1\")\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.dropResourceGroup(dropResourceGroupReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg"
+      },
+      {
+        "block_id": "S8sTdyiKKom9Xbxx2K0cRLronXg",
+        "block_type": 2,
+        "parent_id": "DHQNdSiMxooV99xSdPZc4Yv9nzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 17
+  },
+  "slug": "v2-ResourceGroup-dropResourceGroup"
+}

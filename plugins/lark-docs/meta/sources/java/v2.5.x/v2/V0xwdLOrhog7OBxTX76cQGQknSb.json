@@ -1,0 +1,566 @@
+{
+  "created_time": "1720586757",
+  "modified_time": "1746526930",
+  "name": "createRole()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "HR9xfgwXylmfqOdKmJ7c9xCqnQb",
+  "token": "V0xwdLOrhog7OBxTX76cQGQknSb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/V0xwdLOrhog7OBxTX76cQGQknSb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "V0xwdLOrhog7OBxTX76cQGQknSb",
+        "block_type": 1,
+        "children": [
+          "doxcn0whu93YLouEmAWF1jcSvSg",
+          "doxcnbgV18wz7EXx5aLpAafCxac",
+          "doxcnHUyNuC3gZgF4Jwp2gfRt9f",
+          "doxcnRPNASFTRlk63sgqEhwMy6d",
+          "doxcn28ayb1gz5ruW7j5SzazImf",
+          "doxcnCG2RpWMAwbVEn9QV2UlEAf",
+          "doxcn18blf04fmkotDxLTrcVjzd",
+          "doxcnLXO2nlcJJLSxv7yTQ48IOd",
+          "doxcnUgssgVAjXOuRqW0fWmYZ5f",
+          "doxcnJFvmrpGHSDkFwXFQWVTnNd",
+          "doxcnTRaiRcQ4mWeVULrxexeOOb",
+          "doxcn8YI5osaquhBGaJDjVga1qh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "createRole()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn0whu93YLouEmAWF1jcSvSg",
+        "block_type": 2,
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation creates a custom role.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbgV18wz7EXx5aLpAafCxac",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void createRole(CreateRoleReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      },
+      {
+        "block_id": "doxcnHUyNuC3gZgF4Jwp2gfRt9f",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      },
+      {
+        "block_id": "doxcnRPNASFTRlk63sgqEhwMy6d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "createRole(CreateRoleReq.builder()\n    .roleName(String roleName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      },
+      {
+        "block_id": "doxcn28ayb1gz5ruW7j5SzazImf",
+        "block_type": 2,
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCG2RpWMAwbVEn9QV2UlEAf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "roleName(String roleName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnIObbqqVnf7JgNb9KBR7c5z"
+        ],
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      },
+      {
+        "block_id": "doxcnIObbqqVnf7JgNb9KBR7c5z",
+        "block_type": 2,
+        "parent_id": "doxcnCG2RpWMAwbVEn9QV2UlEAf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the role to create.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn18blf04fmkotDxLTrcVjzd",
+        "block_type": 2,
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLXO2nlcJJLSxv7yTQ48IOd",
+        "block_type": 2,
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnUgssgVAjXOuRqW0fWmYZ5f",
+        "block_type": 2,
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJFvmrpGHSDkFwXFQWVTnNd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn1jMzlUypjwGQXKbz2v6wfg"
+        ],
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      },
+      {
+        "block_id": "doxcn1jMzlUypjwGQXKbz2v6wfg",
+        "block_type": 2,
+        "parent_id": "doxcnJFvmrpGHSDkFwXFQWVTnNd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnTRaiRcQ4mWeVULrxexeOOb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      },
+      {
+        "block_id": "doxcn8YI5osaquhBGaJDjVga1qh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.CreateRoleReq",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n\n// 2. Create a role\nCreateRoleReq createRoleReq = CreateRoleReq.builder()\n        .roleName(\"read_only\")\n        .build();\n        \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.createRole(createRoleReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "V0xwdLOrhog7OBxTX76cQGQknSb"
+      }
+    ],
+    "counts": 15
+  },
+  "slug": "v2-Authentication-createRole"
+}

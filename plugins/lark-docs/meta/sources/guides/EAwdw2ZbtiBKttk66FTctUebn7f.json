@@ -1,0 +1,4199 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1766126961",
+  "node_token": "EAwdw2ZbtiBKttk66FTctUebn7f",
+  "node_type": "origin",
+  "obj_create_time": "1766126961",
+  "obj_edit_time": "1772702671",
+  "obj_token": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+  "obj_type": "docx",
+  "origin_node_token": "EAwdw2ZbtiBKttk66FTctUebn7f",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "SyvKwN1f9i40ypk4o7FcRBzJnRe",
+  "space_id": "7167193056431783939",
+  "title": "MinHash Function",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "block_type": 1,
+        "children": [
+          "D5ujdN2oOoMOUgx8qDJci06YnAc",
+          "QmNEdz14VowY1vx7KlhcBBYrnIh",
+          "ZT5KdC28NoBxq3xXxdecsvDfnzd",
+          "VQPld3XIJoUHgjxyqLXcGouHnIb",
+          "JNpndm5Qfow82BxEXDGchwJenEd",
+          "O1iod8j1sogrxZxwbw2cMgo0nof",
+          "RkPddFdLtobczUxhDizcnwQ7nxh",
+          "JegqdaqtEoXoH8xKdMBc4EFXnHe",
+          "FXFBdoVDtongzKxGHSXczlEjnNe",
+          "YyTmdJt7DoyXSLxHtrZcsyblnrc",
+          "NIetdZzypop34oxUgz5cb8PNnkb",
+          "HTDMdWoiro0Q2QxWs7IcFaBNnye",
+          "IZdQdpZHYoekWsxCbshcxvp3nFg",
+          "Enl0dTT7WoeuURxSWCRcQPvknSe",
+          "Wo2odAI6Yonbm6xoSvKcK9p8n4e",
+          "CrV1dNGCKokbo1xYpjYcrTdsnFf",
+          "AiO3dMnV2ogQaWxrgPAcy5WXnBg",
+          "BCC2digoMo50Arx52ZMcM9Onnog",
+          "OO2Ad92jQoNHilxv5iKcihFEnxd",
+          "F5Aadil14oN73IxiZnTcBmTUnzf",
+          "U7kFdQ9nPolTNhxqIfYcjaf3nsd",
+          "YBGddPkxvoWx2Jxjq72ck7W0npd",
+          "C8SzdoXWdozqyoxKvHTcL2WNnVd",
+          "PRPCdQrguo47EgxkUT9cWsJwntf",
+          "H0hCdbag2oCD66xzZqfcHcoQnWz",
+          "RvbkddTYJoZBoTxunM6cBSjCnxd",
+          "YZ5GduWaYoqNAMxY0ezcsynXn6e",
+          "UqQodMBtmohNUkxOx7XcaHsbnZg",
+          "FLZddOlPRoT5KQxhfYdcwFennnb",
+          "IdPLdXfx7ooS6rxfTagc72RxnQg",
+          "IGhPdg3wZoae8JxuQfHcK52bnrd",
+          "Jk2Jdr43RoLN9Tx5vXFcYd3Fnjg",
+          "TFaWdDfm1oSFQ5xMuXfchqShnRd",
+          "JfzVdgOnSooJ1Sx5ZHYcnZjrnyD",
+          "YaMTdtokaovtztxHVe9cQVn3nRc",
+          "YUOrd0ChrorNdrxgk4JcdiB2npf",
+          "SxuKdUxj3o00ncxwAmichdWNnBb",
+          "DUJEddZmTo5PsmxVbeVcUSTyn7t",
+          "Dv2idGy6EoyVc7xcKbQcwWTanRh",
+          "T0l9dt3RtoYVXHxjIjNcQUpanSc",
+          "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+          "D6rEdALHRohwwExBSxGctI9ynrg",
+          "S1EqdHqxpouYZPxI6rxcWB1unig",
+          "Tmdwd4dh3oKGJBxI1qocDvfvnLf",
+          "PYIGdAfsMoZSRkxBT0Tca01Fnqx",
+          "PGWIdiiapocTpsxpYLHcLPTpn7c",
+          "Ayped2C1ioZ7bGxe0CucocKynSI",
+          "ByVwdkvV4opfFAxwfSYcRFCjnCb",
+          "BWCmdoIq5o5iYKxadckcsvzbnfh",
+          "CZF7dL04AoR9zKxnJM3cOtoWnkd",
+          "TUKedzdVCoLQKNxnib6cj2MvnVc",
+          "IWUKdIUMAotH8qx0YnIcLlr8nce",
+          "WQzSdAXfmoVNU2xHrdgcRm68n0c",
+          "HK39doFrZojwQYxtBDacf7DBn3g",
+          "HeRldpc82oIDMKxLzJrctvS5nld",
+          "Om66dtyWLoEGZIxU8CZczzbhnNf",
+          "Cj2wd5KLwoRTC5xpyXJc0ltonYc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MinHash Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "D5ujdN2oOoMOUgx8qDJci06YnAc",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MinHash function",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " converts raw text into ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "binary vectors",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that approximate ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jaccard similarity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FJaccard_index"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " between documents. It applies text shingling and multiple hash functions to produce fixed-length signature vectors, enabling fast near-duplicate detection and document deduplication at scale.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QmNEdz14VowY1vx7KlhcBBYrnIh",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As a built-in function, MinHash runs within Milvus and does not require external model inference or preprocessing. You insert raw text, and Milvus generates the MinHash signature vectors automatically.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZT5KdC28NoBxq3xXxdecsvDfnzd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limits",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "VQPld3XIJoUHgjxyqLXcGouHnIb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The output field must be a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BINARY_VECTOR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with a dimension that satisfies ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim % 32 == 0",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", because each MinHash signature is a 32-bit hash value.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "JNpndm5Qfow82BxEXDGchwJenEd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of the binary vector field must equal ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32 * num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". A mismatch causes an error.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "O1iod8j1sogrxZxwbw2cMgo0nof",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MINHASH_LSH",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " index with MinHash function output, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mh_element_bit_width",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " must be set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "RkPddFdLtobczUxhDizcnwQ7nxh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "How MinHash works",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "JegqdaqtEoXoH8xKdMBc4EFXnHe",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MinHash",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMinHash"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is a locality-sensitive hashing technique that estimates ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jaccard similarity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FJaccard_index"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " between sets. In Milvus, the MinHash function follows this pipeline: you provide raw text as input, and Milvus produces a binary vector as output — handling all intermediate steps internally.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FXFBdoVDtongzKxGHSXczlEjnNe",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The overall workflow consists of a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "shared text processing pipeline",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " used by both document ingestion and query processing, followed by phase-specific operations for storage and retrieval.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YyTmdJt7DoyXSLxHtrZcsyblnrc",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 2048,
+          "scale": 0.27392578125,
+          "token": "IaqkbFEh8oQgGSx6NsocFoSOnDo",
+          "width": 2048
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "NIetdZzypop34oxUgz5cb8PNnkb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Shared text processing pipeline",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "HTDMdWoiro0Q2QxWs7IcFaBNnye",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Both document ingestion and query processing pass raw text through the same four-stage transformation:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IZdQdpZHYoekWsxCbshcxvp3nFg",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Text analysis",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The text is processed by an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FH8MVwnjdgihp0hkRHHKcjBe9n5e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (when ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "token_level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"word\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") or used directly (when ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "token_level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"char\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "). Word-level tokenization applies the analyzer configured on the input field to segment text into terms — for example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"milvus is vector db\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " becomes ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[\"milvus\", \"is\", \"vector\", \"db\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "Enl0dTT7WoeuURxSWCRcQPvknSe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Shingling",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The tokens are split into overlapping n-grams (shingles) of size ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "shingle_size",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For example, with 3-grams at word level, the tokens ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[\"information\", \"retrieval\", \"is\", \"a\", \"field\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " become shingles like ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[\"information retrieval is\", \"retrieval is a\", \"is a field\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "Wo2odAI6Yonbm6xoSvKcK9p8n4e",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MinHash signature generation",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Multiple hash functions (H1, H2, ..., Hn, where n = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") are applied to the shingle set. For each hash function, the minimum hash value across all shingles is selected. The collection of these minimum values forms the MinHash signature — a fixed-length representation that approximates the Jaccard similarity of the original document.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "CrV1dNGCKokbo1xYpjYcrTdsnFf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Binary vector encoding",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Each signature value is a 32-bit hash, and the full signature is packed into a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BINARY_VECTOR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of dimension ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32 * num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "AiO3dMnV2ogQaWxrgPAcy5WXnBg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Document ingestion",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "BCC2digoMo50Arx52ZMcM9Onnog",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During insertion, the binary vector produced by the shared pipeline is stored in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MINHASH_LSH",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " index. The index maintains an LSH (Locality-Sensitive Hashing) table that groups similar signatures into the same buckets, enabling fast candidate retrieval at query time.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OO2Ad92jQoNHilxv5iKcihFEnxd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Query processing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "F5Aadil14oN73IxiZnTcBmTUnzf",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During search, the query text goes through the same shared pipeline to produce a binary vector. This vector is used to perform an LSH lookup in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MINHASH_LSH",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " index, which quickly identifies candidate pairs that are likely similar. Candidates are then ranked by estimated Jaccard similarity and the top-K results are returned.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U7kFdQ9nPolTNhxqIfYcjaf3nsd",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Because both paths share the same transformation logic, two documents with highly overlapping content produce similar MinHash signatures. This makes the function effective for finding near-duplicates even when documents differ in word order, formatting, or minor phrasing.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YBGddPkxvoWx2Jxjq72ck7W0npd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "C8SzdoXWdozqyoxKvHTcL2WNnVd",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before using the MinHash function, plan your collection schema to include the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PRPCdQrguo47EgxkUT9cWsJwntf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A text field for raw content",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "PKwXdZ9vHoLfxkxngrpcrWA1nGh"
+        ],
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "PKwXdZ9vHoLfxkxngrpcrWA1nGh",
+        "block_type": 2,
+        "parent_id": "PRPCdQrguo47EgxkUT9cWsJwntf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your collection must include a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field to store raw text. This field serves as the input to the MinHash function.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H0hCdbag2oCD66xzZqfcHcoQnWz",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An analyzer for the text field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (when using word-level tokenization)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZIJudqaqvoj449xOEnucS5d7n9b"
+        ],
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "ZIJudqaqvoj449xOEnucS5d7n9b",
+        "block_type": 2,
+        "parent_id": "H0hCdbag2oCD66xzZqfcHcoQnWz",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "token_level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"word\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (default), the text field must have an analyzer enabled. The analyzer defines how text is tokenized before shingling. By default, Milvus uses the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "standard",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". To configure a different analyzer, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Choose the Right Analyzer for Your Use Case",
+                "token": "Pulhw06e5iXJTFkidFXcGbylnod",
+                "url": "https://zilliverse.feishu.cn/wiki/Pulhw06e5iXJTFkidFXcGbylnod"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RvbkddTYJoZBoTxunM6cBSjCnxd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A binary vector field for MinHash output",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NpV8d1Hb3o1rgWxk70IcmRjAnPW"
+        ],
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "NpV8d1Hb3o1rgWxk70IcmRjAnPW",
+        "block_type": 2,
+        "parent_id": "RvbkddTYJoZBoTxunM6cBSjCnxd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your collection must include a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BINARY_VECTOR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field to store the binary vectors generated by the MinHash function. The dimension must equal ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32 * num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YZ5GduWaYoqNAMxY0ezcsynXn6e",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 1: Create a collection with a MinHash function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "UqQodMBtmohNUkxOx7XcaHsbnZg",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To use the MinHash function, define it when creating the collection. The function becomes part of the collection schema and is applied automatically during data insertion and search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FLZddOlPRoT5KQxhfYdcwFennnb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Define schema fields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "IdPLdXfx7ooS6rxfTagc72RxnQg",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your collection schema must include at least three fields:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IGhPdg3wZoae8JxuQfHcK52bnrd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Primary field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Uniquely identifies each entity in the collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "Jk2Jdr43RoLN9Tx5vXFcYd3Fnjg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Text field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "): Stores raw text documents. Set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "enable_analyzer=True",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " so Milvus can process the text for MinHash signature generation. By default, Milvus uses the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "standard",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "analyzer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for text analysis. To configure a different analyzer, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Choose the Right Analyzer for Your Use Case",
+                "token": "Pulhw06e5iXJTFkidFXcGbylnod",
+                "url": "https://zilliverse.feishu.cn/wiki/Pulhw06e5iXJTFkidFXcGbylnod"
+              }
+            },
+            {
+              "text_run": {
+                "content": "..",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "TFaWdDfm1oSFQ5xMuXfchqShnRd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Binary vector field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BINARY_VECTOR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "): Stores binary vectors automatically generated by the MinHash function. The dimension must equal ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32 * num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "JfzVdgOnSooJ1Sx5ZHYcnZjrnyD",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, DataType, Function, FunctionType\n\nclient = MilvusClient(uri=\"http://localhost:19530\", token=\"root:Milvus\")\n\nschema = client.create_schema()\n\nschema.add_field(field_name=\"id\", datatype=DataType.INT64, is_primary=True, auto_id=True)\nschema.add_field(field_name=\"document_content\", datatype=DataType.VARCHAR, max_length=9000, enable_analyzer=True) # Text field\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.add_field(field_name=\"binary_vector\", datatype=DataType.BINARY_VECTOR, dim=8192) # Binary vector field; dim = 32 * num_hashes (256)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "YaMTdtokaovtztxHVe9cQVn3nRc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Define the MinHash function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "YUOrd0ChrorNdrxgk4JcdiB2npf",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The MinHash function converts analyzed text into binary vectors that approximate Jaccard similarity between documents.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SxuKdUxj3o00ncxwAmichdWNnBb",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Define the function and add it to your schema:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DUJEddZmTo5PsmxVbeVcUSTyn7t",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "minhash_function = Function(\n    name=\"minhash_function\",\n    input_field_names=[\"document_content\"], # Name of the VARCHAR field containing raw text\n    output_field_names=[\"binary_vector\"], # Name of the BINARY_VECTOR field for generated signatures\n    function_type=FunctionType.MINHASH,\n    params={\n        \"num_hashes\": 256, # Number of hash functions; produces dim = 32 * 256 = 8192\n        \"shingle_size\": 3, # N-gram size for shingling\n    }\n)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "schema.add_function(minhash_function)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "Dv2idGy6EoyVc7xcKbQcwWTanRh",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configuration options",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T0l9dt3RtoYVXHxjIjNcQUpanSc",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " dictionary of the MinHash function accepts the following parameters. All parameter names are ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "case-insensitive",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "block_type": 31,
+        "children": [
+          "AJ6Pdcig1orLLOxtFpKcfW6HnkP",
+          "OtRcdzyEConeUQxAjqFcmcKCnhk",
+          "IUUOdg6TBo2tukxJeg2cdga9nHe",
+          "DKLjdKZ1Novh3RxSiCwc3XmHnve",
+          "L0WqdagoBonOD2xYqIxciPeWnjg",
+          "CFPrd2D0RoyjYhxxW6ZcB7kbnhg",
+          "AxlDdsdGXo1cRoxcvptcdYfcnjb",
+          "Ta7LdqpGboYqCJxYoxQcvck6nBg",
+          "Inc7dxcOfo0VEzxRPDCcrPlInGb",
+          "GX3odSDr9o52COxGL5Tc2sTYnkf",
+          "LkHWdcYz7o6nFyx7uMNcTBxxnvb",
+          "J184dHj6ToFQGFxicjkcEAXonhf",
+          "TXfKdZpqeohpTlxIBIgcmCzrncf",
+          "ZKf4d29WloOYI8xvl2xc3jXqnkb",
+          "PucIdhxkSoivC4xPwaFcl6y6nJc",
+          "FN2Zd8EcAo1r6dxUBaicj4xJnme",
+          "JOSqdQjiXoOXvQxmTRpcd2UTnpd",
+          "DcMHdR1c1oorD6xGQE6cg4hIn5g",
+          "HSXEdijT0oCLN7xYIJpcLVOonic",
+          "SsPBdjciAoKyr5xD8EicODBIn8e",
+          "SxNjd2uvSo236Ex9u1FcVblVnpe",
+          "DnprdCLp0oyS1zxg1TZcknZbn9c",
+          "HYYLd2O5WoDLJcxQXt8ciSrmnef",
+          "Uv3nd9XxNonq7KxTRGacg9U0nzb"
+        ],
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "table": {
+          "cells": [
+            "AJ6Pdcig1orLLOxtFpKcfW6HnkP",
+            "OtRcdzyEConeUQxAjqFcmcKCnhk",
+            "IUUOdg6TBo2tukxJeg2cdga9nHe",
+            "DKLjdKZ1Novh3RxSiCwc3XmHnve",
+            "L0WqdagoBonOD2xYqIxciPeWnjg",
+            "CFPrd2D0RoyjYhxxW6ZcB7kbnhg",
+            "AxlDdsdGXo1cRoxcvptcdYfcnjb",
+            "Ta7LdqpGboYqCJxYoxQcvck6nBg",
+            "Inc7dxcOfo0VEzxRPDCcrPlInGb",
+            "GX3odSDr9o52COxGL5Tc2sTYnkf",
+            "LkHWdcYz7o6nFyx7uMNcTBxxnvb",
+            "J184dHj6ToFQGFxicjkcEAXonhf",
+            "TXfKdZpqeohpTlxIBIgcmCzrncf",
+            "ZKf4d29WloOYI8xvl2xc3jXqnkb",
+            "PucIdhxkSoivC4xPwaFcl6y6nJc",
+            "FN2Zd8EcAo1r6dxUBaicj4xJnme",
+            "JOSqdQjiXoOXvQxmTRpcd2UTnpd",
+            "DcMHdR1c1oorD6xGQE6cg4hIn5g",
+            "HSXEdijT0oCLN7xYIJpcLVOonic",
+            "SsPBdjciAoKyr5xD8EicODBIn8e",
+            "SxNjd2uvSo236Ex9u1FcVblVnpe",
+            "DnprdCLp0oyS1zxg1TZcknZbn9c",
+            "HYYLd2O5WoDLJcxQXt8ciSrmnef",
+            "Uv3nd9XxNonq7KxTRGacg9U0nzb"
+          ],
+          "property": {
+            "column_size": 4,
+            "column_width": [
+              150,
+              100,
+              145,
+              372
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 6
+          }
+        }
+      },
+      {
+        "block_id": "AJ6Pdcig1orLLOxtFpKcfW6HnkP",
+        "block_type": 32,
+        "children": [
+          "VGMLdfdhFowOQ6xDJ0FcSAQLnLe"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VGMLdfdhFowOQ6xDJ0FcSAQLnLe",
+        "block_type": 2,
+        "parent_id": "AJ6Pdcig1orLLOxtFpKcfW6HnkP",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OtRcdzyEConeUQxAjqFcmcKCnhk",
+        "block_type": 32,
+        "children": [
+          "CQazdn8r3o3xKpxF1IvcpQXfnbd"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CQazdn8r3o3xKpxF1IvcpQXfnbd",
+        "block_type": 2,
+        "parent_id": "OtRcdzyEConeUQxAjqFcmcKCnhk",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Type",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IUUOdg6TBo2tukxJeg2cdga9nHe",
+        "block_type": 32,
+        "children": [
+          "RQ32dKMnyoEJVsxp4vjch5X6nXc"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RQ32dKMnyoEJVsxp4vjch5X6nXc",
+        "block_type": 2,
+        "parent_id": "IUUOdg6TBo2tukxJeg2cdga9nHe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Default",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DKLjdKZ1Novh3RxSiCwc3XmHnve",
+        "block_type": 32,
+        "children": [
+          "Ik4CdwyZdo9kuwxHK0Scz9hlndc"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ik4CdwyZdo9kuwxHK0Scz9hlndc",
+        "block_type": 2,
+        "parent_id": "DKLjdKZ1Novh3RxSiCwc3XmHnve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L0WqdagoBonOD2xYqIxciPeWnjg",
+        "block_type": 32,
+        "children": [
+          "SnnYd7XMSoZlyKxhiFZcPgxpnTb"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SnnYd7XMSoZlyKxhiFZcPgxpnTb",
+        "block_type": 2,
+        "parent_id": "L0WqdagoBonOD2xYqIxciPeWnjg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CFPrd2D0RoyjYhxxW6ZcB7kbnhg",
+        "block_type": 32,
+        "children": [
+          "SB5Ld3SBvoKQJqxiBn3cUO0onM4"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SB5Ld3SBvoKQJqxiBn3cUO0onM4",
+        "block_type": 2,
+        "parent_id": "CFPrd2D0RoyjYhxxW6ZcB7kbnhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AxlDdsdGXo1cRoxcvptcdYfcnjb",
+        "block_type": 32,
+        "children": [
+          "YMHidwe92or6j6x2STzcFPvgnsd",
+          "VCzkdLhN6o21XwxSHxscCoQcnyb"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YMHidwe92or6j6x2STzcFPvgnsd",
+        "block_type": 2,
+        "parent_id": "AxlDdsdGXo1cRoxcvptcdYfcnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Derived from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "dim / 32",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VCzkdLhN6o21XwxSHxscCoQcnyb",
+        "block_type": 2,
+        "parent_id": "AxlDdsdGXo1cRoxcvptcdYfcnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ta7LdqpGboYqCJxYoxQcvck6nBg",
+        "block_type": 32,
+        "children": [
+          "IoH5dSBmJo4HYaxAA2Scfo1InKg"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IoH5dSBmJo4HYaxAA2Scfo1InKg",
+        "block_type": 2,
+        "parent_id": "Ta7LdqpGboYqCJxYoxQcvck6nBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Number of hash functions for signature generation. The output binary vector dimension equals ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32 * num_hashes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Higher values reduce variance in similarity estimation but increase computation. Recommended: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "256",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (dim = 8192).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Inc7dxcOfo0VEzxRPDCcrPlInGb",
+        "block_type": 32,
+        "children": [
+          "Uh1sdq8RQoTkv2xkwRwcwYWCnbf"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Uh1sdq8RQoTkv2xkwRwcwYWCnbf",
+        "block_type": 2,
+        "parent_id": "Inc7dxcOfo0VEzxRPDCcrPlInGb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "shingle_size",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GX3odSDr9o52COxGL5Tc2sTYnkf",
+        "block_type": 32,
+        "children": [
+          "K0nqdqJM0o7YqQxGkmlc9nJfncf"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "K0nqdqJM0o7YqQxGkmlc9nJfncf",
+        "block_type": 2,
+        "parent_id": "GX3odSDr9o52COxGL5Tc2sTYnkf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LkHWdcYz7o6nFyx7uMNcTBxxnvb",
+        "block_type": 32,
+        "children": [
+          "BUKwdYyU5oL9SUx2s5KcU9K9nSc"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BUKwdYyU5oL9SUx2s5KcU9K9nSc",
+        "block_type": 2,
+        "parent_id": "LkHWdcYz7o6nFyx7uMNcTBxxnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J184dHj6ToFQGFxicjkcEAXonhf",
+        "block_type": 32,
+        "children": [
+          "E3dTdiVTTolSKxx5R4ycA8zJnUf"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "E3dTdiVTTolSKxx5R4ycA8zJnUf",
+        "block_type": 2,
+        "parent_id": "J184dHj6ToFQGFxicjkcEAXonhf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "N-gram size for shingling. Word-level: 1-3 is typical. Character-level: 2-6 is typical.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TXfKdZpqeohpTlxIBIgcmCzrncf",
+        "block_type": 32,
+        "children": [
+          "WnwrdRbxwoDYdExlYercSJpFn2c"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WnwrdRbxwoDYdExlYercSJpFn2c",
+        "block_type": 2,
+        "parent_id": "TXfKdZpqeohpTlxIBIgcmCzrncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "hash_function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZKf4d29WloOYI8xvl2xc3jXqnkb",
+        "block_type": 32,
+        "children": [
+          "BpaSdiRbaoQaYGx21Kaclx3InJh"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BpaSdiRbaoQaYGx21Kaclx3InJh",
+        "block_type": 2,
+        "parent_id": "ZKf4d29WloOYI8xvl2xc3jXqnkb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PucIdhxkSoivC4xPwaFcl6y6nJc",
+        "block_type": 32,
+        "children": [
+          "F0pLdJCEpockXxxlIcBcoDtgnah"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "F0pLdJCEpockXxxlIcBcoDtgnah",
+        "block_type": 2,
+        "parent_id": "PucIdhxkSoivC4xPwaFcl6y6nJc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"xxhash\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FN2Zd8EcAo1r6dxUBaicj4xJnme",
+        "block_type": 32,
+        "children": [
+          "AZaNdnSRtoZu7VxLIT2ciEPfnAf",
+          "QDAudme6AokArKxK2QecvlLZnah",
+          "BoJBdilc1o7LtOxi59xcycf4nTf"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "AZaNdnSRtoZu7VxLIT2ciEPfnAf",
+        "block_type": 2,
+        "parent_id": "FN2Zd8EcAo1r6dxUBaicj4xJnme",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Hash function to use. Options: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QDAudme6AokArKxK2QecvlLZnah",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"xxhash\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (fast) ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FN2Zd8EcAo1r6dxUBaicj4xJnme"
+      },
+      {
+        "block_id": "BoJBdilc1o7LtOxi59xcycf4nTf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"sha1\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (slower, higher collision resistance).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FN2Zd8EcAo1r6dxUBaicj4xJnme"
+      },
+      {
+        "block_id": "JOSqdQjiXoOXvQxmTRpcd2UTnpd",
+        "block_type": 32,
+        "children": [
+          "G3EZdqi9FoHwGxxOQKlcD4Ffn9c"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "G3EZdqi9FoHwGxxOQKlcD4Ffn9c",
+        "block_type": 2,
+        "parent_id": "JOSqdQjiXoOXvQxmTRpcd2UTnpd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "token_level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DcMHdR1c1oorD6xGQE6cg4hIn5g",
+        "block_type": 32,
+        "children": [
+          "Z6UEdl4qJooc90xMePvcM6d5ngd"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Z6UEdl4qJooc90xMePvcM6d5ngd",
+        "block_type": 2,
+        "parent_id": "DcMHdR1c1oorD6xGQE6cg4hIn5g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HSXEdijT0oCLN7xYIJpcLVOonic",
+        "block_type": 32,
+        "children": [
+          "LWdvdJqBuoYusnxohoicIuc7noY"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "LWdvdJqBuoYusnxohoicIuc7noY",
+        "block_type": 2,
+        "parent_id": "HSXEdijT0oCLN7xYIJpcLVOonic",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"word\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SsPBdjciAoKyr5xD8EicODBIn8e",
+        "block_type": 32,
+        "children": [
+          "Jr0BdPFeyoQVngxosZgcXnvjnBd",
+          "TozgdVi5eo8R9bx7iO6c9kQMnqg",
+          "AmyAdvF82op4alx7xv8cIOQNngi",
+          "KSKLds4EQoqnDDxg09Fc1zOhnNf"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Jr0BdPFeyoQVngxosZgcXnvjnBd",
+        "block_type": 2,
+        "parent_id": "SsPBdjciAoKyr5xD8EicODBIn8e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tokenization level. Options:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TozgdVi5eo8R9bx7iO6c9kQMnqg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"word\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": uses the field's analyzer for tokenization, then applies n-gram shingling.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SsPBdjciAoKyr5xD8EicODBIn8e"
+      },
+      {
+        "block_id": "AmyAdvF82op4alx7xv8cIOQNngi",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"char\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " / ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"character\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": applies n-gram shingling directly on raw characters (no analyzer).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SsPBdjciAoKyr5xD8EicODBIn8e"
+      },
+      {
+        "block_id": "KSKLds4EQoqnDDxg09Fc1zOhnNf",
+        "block_type": 2,
+        "parent_id": "SsPBdjciAoKyr5xD8EicODBIn8e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Word-level provides stronger semantics and higher efficiency but depends on language-specific tokenization. Character-level is language-agnostic but produces higher-dimensional shingles with weaker semantics.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SxNjd2uvSo236Ex9u1FcVblVnpe",
+        "block_type": 32,
+        "children": [
+          "CMTOd4A7Gom9EaxubHvc0Ambntb"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CMTOd4A7Gom9EaxubHvc0Ambntb",
+        "block_type": 2,
+        "parent_id": "SxNjd2uvSo236Ex9u1FcVblVnpe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "seed",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DnprdCLp0oyS1zxg1TZcknZbn9c",
+        "block_type": 32,
+        "children": [
+          "E8gQdjibtosp9AxQ2MtcF5l1n5g"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "E8gQdjibtosp9AxQ2MtcF5l1n5g",
+        "block_type": 2,
+        "parent_id": "DnprdCLp0oyS1zxg1TZcknZbn9c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HYYLd2O5WoDLJcxQXt8ciSrmnef",
+        "block_type": 32,
+        "children": [
+          "GHvIdHr0No9gDKxBNlGcfnwjnmc"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GHvIdHr0No9gDKxBNlGcfnwjnmc",
+        "block_type": 2,
+        "parent_id": "HYYLd2O5WoDLJcxQXt8ciSrmnef",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1234",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Uv3nd9XxNonq7KxTRGacg9U0nzb",
+        "block_type": 32,
+        "children": [
+          "QvFmdBL1DoXRRvxIDyLcNwO8npZ"
+        ],
+        "parent_id": "EgSsdC3BvoH11lxSbSFcW7FCnnh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QvFmdBL1DoXRRvxIDyLcNwO8npZ",
+        "block_type": 2,
+        "parent_id": "Uv3nd9XxNonq7KxTRGacg9U0nzb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Random seed for MinHash function initialization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D6rEdALHRohwwExBSxGctI9ynrg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Configure the index",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "S1EqdHqxpouYZPxI6rxcWB1unig",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The recommended index type for MinHash binary vectors is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MINHASH_LSH",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", with metric type ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MHJACCARD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Tmdwd4dh3oKGJBxI1qocDvfvnLf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "index_params = client.prepare_index_params()\n\nindex_params.add_index(\n    field_name=\"binary_vector\",\n    index_type=\"MINHASH_LSH\",\n    metric_type=\"MHJACCARD\",\n    params={\n        \"mh_lsh_band\": 14, # Number of LSH bands; affects recall vs. speed tradeoff\n        \"mh_element_bit_width\": 32, # Must be 32 when using the MinHash function\n        \"with_raw_data\": True\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "PYIGdAfsMoZSRkxBT0Tca01Fnqx",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create the collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "PGWIdiiapocTpsxpYLHcLPTpn7c",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create the collection using the schema and index parameters defined above:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ayped2C1ioZ7bGxe0CucocKynSI",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.create_collection(\n    collection_name=\"dedup_collection\",\n    schema=schema,\n    index_params=index_params\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "ByVwdkvV4opfFAxwfSYcRFCjnCb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 2: Insert documents",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "BWCmdoIq5o5iYKxadckcsvzbnfh",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After setting up your collection, insert text data. You only need to provide the raw text — the MinHash function automatically generates the binary vector for each document.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CZF7dL04AoR9zKxnJM3cOtoWnkd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "client.insert(\"dedup_collection\", [\n    {\"document_content\": \"information retrieval is a field of study.\"},\n    {\"document_content\": \"information retrieval focuses on finding relevant information in large datasets.\"},\n    {\"document_content\": \"data mining and information retrieval overlap in research.\"},\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "])",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "TUKedzdVCoLQKNxnib6cj2MvnVc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Step 3: Search with MinHash",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "IWUKdIUMAotH8qx0YnIcLlr8nce",
+        "block_type": 2,
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you have inserted data, search for near-duplicate documents by providing raw text queries. Milvus automatically converts your query text into a MinHash binary vector and retrieves the most similar documents using estimated Jaccard similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WQzSdAXfmoVNU2xHrdgcRm68n0c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "search_params = {\n    \"metric_type\": \"MHJACCARD\",\n    \"params\": {}\n}\n\nresults = client.search(\n    collection_name=\"dedup_collection\",\n    data=[\"whats the focus of information retrieval?\"],\n    anns_field=\"binary_vector\",\n    limit=3,\n    output_fields=[\"document_content\"],\n    search_params=search_params\n)\n\nfor hits in results:\n    for hit in hits:\n        print(f\"ID: {hit['id']}, Distance: {hit['distance']}\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        print(f\"  Document: {hit['entity']['document_content']}\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "HK39doFrZojwQYxtBDacf7DBn3g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "What's next",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "HeRldpc82oIDMKxLzJrctvS5nld",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Full Text Search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRQTRwhOVPiwnwokqr4scAtyfnBf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Use BM25 for lexical relevance ranking instead of near-duplicate detection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "Om66dtyWLoEGZIxU8CZczzbhnNf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Analyzer Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FH8MVwnjdgihp0hkRHHKcjBe9n5e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Configure custom analyzers for text tokenization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      },
+      {
+        "block_id": "Cj2wd5KLwoRTC5xpyXJc0ltonYc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MINHASH_LSH Index",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBYtDwHuOXiG7imkyIjHcWa6fnlb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Learn about tuning LSH parameters for recall and performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "SIgjdKQY7oGrQBxrZG8cQzBtnlb"
+      }
+    ],
+    "counts": 115
+  }
+}

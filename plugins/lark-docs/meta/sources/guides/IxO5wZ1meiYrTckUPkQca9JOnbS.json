@@ -1,0 +1,2448 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1751525678",
+  "node_token": "IxO5wZ1meiYrTckUPkQca9JOnbS",
+  "node_type": "origin",
+  "obj_create_time": "1751525678",
+  "obj_edit_time": "1767851553",
+  "obj_token": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+  "obj_type": "docx",
+  "origin_node_token": "IxO5wZ1meiYrTckUPkQca9JOnbS",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "TDkbwhwMyi7bPykZAoUc5PFfnIb",
+  "space_id": "7167193056431783939",
+  "title": "Migrate from Milvus to Zilliz Cloud Via Backup Tool",
+  "slug": "via-stage",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "block_type": 1,
+        "children": [
+          "RYJodinF8oTH37xe5Ltc1YLSnfc",
+          "CUYUddQifoOgqcxNxNvcoM5Anqd",
+          "KJLDdp9BrodBEXxMIB8crQGlnac",
+          "VP1jdk8FYox1QpxVD9CcKEKLnBg",
+          "JKyFd3rvTobckGxXc7Ics1dVnff",
+          "W2X5defQgonCdNxjeoAc4NuknWe",
+          "N0TRdqdewoE7xMxkyQic1qHTnch",
+          "UFKGdBWtdoTC6Vx5okEcIK4MnHc",
+          "Z8l4dxhFho9ulcx2C8ZcKsGnndb",
+          "LCrcdcKp9oQcOcxCs79cRxaznRW",
+          "F7G3dmyTQou16Ixcketcl1tHn4b",
+          "SrT7dAIvPoZWFxxufBkcMGzYnsh",
+          "WqHAd0UMXolLgPxpalUcAMAhnBd",
+          "EK9VdxrTEojl64xbZmacnX4On7g",
+          "Vra2dcKpWoQ1e0xtKwNcDeyZnxd",
+          "T6KkdBAeJoEZEDxhjd4c3W0rnUh",
+          "UkmqdaZuDoLpOfxQBTAcyy3Envr",
+          "DSU0dImI2oFlH3xVziwcefucnlf",
+          "I68tdGOOgoqp0xxszEmchzAFnOf",
+          "TiCbdI4enoEq8YxBc5dcqoDCnV9",
+          "GRh2d5rieozrWVxS0MEceLDTnVd",
+          "OauwdmAvBoOHnmxVZCmcQ2q6nGh",
+          "Wl7Edtf2movsXlxrRSccs4lSntd",
+          "DkvjduNz4oWIczxOyqDciVNLnwc",
+          "DhZyd8WT9oZ5TaxdAnwcjAwQnBO",
+          "G1judRTJVohEWlxuIkIcbDrunSd",
+          "Hcasd1mHzoBVHxx5PxZcpCuBnwP",
+          "AC3DdntraoQ98GxGfY9cr6C3nwb",
+          "Rbi8dyrSHoztkgxoQLvcMbhznC4",
+          "Il2wdDdegok8shxJDCbcqaNPnpd",
+          "FasidtyYwop9rJxUjoTc5Nn3nDb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrate from Milvus to Zilliz Cloud Via ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Backup Tool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "RYJodinF8oTH37xe5Ltc1YLSnfc",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud provides a",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " backup tool for",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " data migration from Milvus. This ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "backup tool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " allows users to perform data migration more easily and efficiently, without needing to handle complex details manually, thus greatly enhancing usability and success rates.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CUYUddQifoOgqcxNxNvcoM5Anqd",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature eliminates the operational complexity across various migration scenarios, such as:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KJLDdp9BrodBEXxMIB8crQGlnac",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "File size limitations when migrating with local backup files.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "VP1jdk8FYox1QpxVD9CcKEKLnBg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Understanding cloud storage bucket configurations from different cloud providers when using bucket-based migration.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "JKyFd3rvTobckGxXc7Ics1dVnff",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensuring network accessibility of the Milvus instance endpoint when performing endpoint-based migrations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "W2X5defQgonCdNxjeoAc4NuknWe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "N0TRdqdewoE7xMxkyQic1qHTnch",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have been granted the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Organization Owner",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Project Admin",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " role. If you do not have the necessary permissions, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact your Zilliz Cloud Organization Owner.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "UFKGdBWtdoTC6Vx5okEcIK4MnHc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Make sure the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number of query CUs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of the target cluster can accommodate your source data. To estimate the required ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number of query CUs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "calculator",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing%3F_gl%3D1*qro801*_ga*MzkzNTY1NDM0LjE3Mjk1MDExNzQ.*_ga_Q1F8R2NWDP*MTc0NTQ4MzY1Ni4zMDEuMS4xNzQ1NDg0MTEzLjAuMC4w*_ga_KKMVYG8YF2*MTc0NTQ4MzY1Ni4yNTIuMS4xNzQ1NDg0MTEzLjAuMC4w%23calculator"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "Z8l4dxhFho9ulcx2C8ZcKsGnndb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Procedure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "LCrcdcKp9oQcOcxCs79cRxaznRW",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this procedure, you will use Milvus Backup to prepare the backup files, upload them to Zilliz Cloud, and migrate them to the specified target Zilliz Cloud cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F7G3dmyTQou16Ixcketcl1tHn4b",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SrT7dAIvPoZWFxxufBkcMGzYnsh",
+        "block_type": 13,
+        "children": [
+          "XLEmdEDLloKvqJxOXKfcRw9UnlG"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Download ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus-backup",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fzilliztech%2Fmilvus-backup%2Freleases"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Always use the latest release.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "XLEmdEDLloKvqJxOXKfcRw9UnlG",
+        "block_type": 2,
+        "parent_id": "SrT7dAIvPoZWFxxufBkcMGzYnsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Currently, you can migrate data from Milvus 2.2 and later versions to Zilliz Cloud clusters. For details on compatible source and target Milvus versions, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus Backup Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fmilvus_backup_overview.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WqHAd0UMXolLgPxpalUcAMAhnBd",
+        "block_type": 13,
+        "children": [
+          "W8z7duyRKoKMp7x7Gm5cprIzn5e",
+          "HjZOdLH7WoN6HGx5DgEcQwUynBf"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "configs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " folder side by side with the downloaded binary, and download ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "backup.yaml",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fraw.githubusercontent.com%2Fzilliztech%2Fmilvus-backup%2Fmaster%2Fconfigs%2Fbackup.yaml"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " into the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "configs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " folder.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "W8z7duyRKoKMp7x7Gm5cprIzn5e",
+        "block_type": 2,
+        "parent_id": "WqHAd0UMXolLgPxpalUcAMAhnBd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once the step is done, the structure of your workspace folder should look like this:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "HjZOdLH7WoN6HGx5DgEcQwUynBf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "workspace\n├── milvus-backup\n└── configs\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "     └── backup.yaml",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "wrap": false
+          }
+        },
+        "parent_id": "WqHAd0UMXolLgPxpalUcAMAhnBd"
+      },
+      {
+        "block_id": "EK9VdxrTEojl64xbZmacnX4On7g",
+        "block_type": 13,
+        "children": [
+          "DaXIduJFRoqQWox56dhcfa8Anzg",
+          "LQjqdhxlcoA1erxX1JDcu3tJnmg",
+          "Wdl9d7mxuoBDlgxTTmxc7Xu6nPL"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Customize ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "backup.yaml",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "DaXIduJFRoqQWox56dhcfa8Anzg",
+        "block_type": 13,
+        "children": [
+          "EvjKdxLeLoVuSixKWLac2rWGn5A",
+          "AjAUdhGN3oNx6BxUbiWcfvs6neg",
+          "CpCKdx9mHokrNHx6G0ScEZ8QnKd"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set the following configuration items:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "EK9VdxrTEojl64xbZmacnX4On7g"
+      },
+      {
+        "block_id": "EvjKdxLeLoVuSixKWLac2rWGn5A",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "...\ncloud:\n  address: https://api.cloud.zilliz.com\n  apikey: <your-api-key>\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "...",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "DaXIduJFRoqQWox56dhcfa8Anzg"
+      },
+      {
+        "block_id": "AjAUdhGN3oNx6BxUbiWcfvs6neg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "cloud.address",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XzzRdCAxboSehRxtINbcvpeZndc"
+        ],
+        "parent_id": "DaXIduJFRoqQWox56dhcfa8Anzg"
+      },
+      {
+        "block_id": "XzzRdCAxboSehRxtINbcvpeZndc",
+        "block_type": 2,
+        "parent_id": "AjAUdhGN3oNx6BxUbiWcfvs6neg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The Zilliz Cloud Control Plane endpoint, which is ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "https://api.cloud.zilliz.com",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CpCKdx9mHokrNHx6G0ScEZ8QnKd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "cloud.apikey",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DoWwdiePColRSoxgN3pc2ePUnof"
+        ],
+        "parent_id": "DaXIduJFRoqQWox56dhcfa8Anzg"
+      },
+      {
+        "block_id": "DoWwdiePColRSoxgN3pc2ePUnof",
+        "block_type": 2,
+        "parent_id": "CpCKdx9mHokrNHx6G0ScEZ8QnKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A valid Zilliz Cloud API key with sufficient permissions to operate the target cluster of the migration. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "API Keys",
+                "token": "BRsZwqOUTiBbrPk9b5WcvFgTnze",
+                "url": "https://zilliverse.feishu.cn/wiki/BRsZwqOUTiBbrPk9b5WcvFgTnze"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LQjqdhxlcoA1erxX1JDcu3tJnmg",
+        "block_type": 13,
+        "children": [
+          "VcE1dghB7sB1QLb5NRHcAKurnbZ"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Check whether the following configuration items are correct:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "EK9VdxrTEojl64xbZmacnX4On7g"
+      },
+      {
+        "block_id": "VcE1dghB7sB1QLb5NRHcAKurnbZ",
+        "block_type": 49,
+        "children": [
+          "ZuoMdd9zTondXIx2LJrc23zAn2B"
+        ],
+        "parent_id": "LQjqdhxlcoA1erxX1JDcu3tJnmg",
+        "source_synced": {
+          "align": 1
+        }
+      },
+      {
+        "block_id": "ZuoMdd9zTondXIx2LJrc23zAn2B",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "...\n# milvus proxy address, compatible to milvus.yaml\nmilvus:\n  address: localhost\n  port: 19530\n  ...\n  \n# Related configuration of minio, which is responsible for data persistence for Milvus.\nminio:\n  # Milvus storage configs, make them the same with milvus config\n  storageType: \"minio\" # support storage type: local, minio, s3, aws, gcp, ali(aliyun), azure, tc(tencent), gcpnative\n  # You can use \"gcpnative\" for the Google Cloud Platform provider. Uses service account credentials for authentication.\n  address: localhost # Address of MinIO/S3\n  port: 9000   # Port of MinIO/S3\n  bucketName: \"a-bucket\" # Milvus Bucket name in MinIO/S3, make it the same as your milvus instance\n  backupBucketName: \"a-bucket\" # Bucket name to store backup data. Backup data will store to backupBucketName/backupRootPath\n  rootPath: \"files\" # Milvus storage root path in MinIO/S3, make it the same as your milvus instance\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  ...",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 67,
+            "wrap": false
+          }
+        },
+        "parent_id": "VcE1dghB7sB1QLb5NRHcAKurnbZ"
+      },
+      {
+        "block_id": "Wdl9d7mxuoBDlgxTTmxc7Xu6nPL",
+        "block_type": 34,
+        "children": [
+          "SiaRdSCj2owB2Vxcdg0csNvmnIb",
+          "VEZWdz5jgomaZCxxX1bcZzNanUg",
+          "SOk5dc93Go2KYjxWUjAcff0mnfc"
+        ],
+        "parent_id": "EK9VdxrTEojl64xbZmacnX4On7g",
+        "quote_container": {}
+      },
+      {
+        "block_id": "SiaRdSCj2owB2Vxcdg0csNvmnIb",
+        "block_type": 2,
+        "parent_id": "Wdl9d7mxuoBDlgxTTmxc7Xu6nPL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VEZWdz5jgomaZCxxX1bcZzNanUg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For a Milvus instance installed using Docker Compose, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "minio.bucketName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "a-bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rootPath",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Wdl9d7mxuoBDlgxTTmxc7Xu6nPL"
+      },
+      {
+        "block_id": "SOk5dc93Go2KYjxWUjAcff0mnfc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For a Milvus instance installed on Kubernetes, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "minio.bucketName",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus-bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rootPath",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Wdl9d7mxuoBDlgxTTmxc7Xu6nPL"
+      },
+      {
+        "block_id": "Vra2dcKpWoQ1e0xtKwNcDeyZnxd",
+        "block_type": 13,
+        "children": [
+          "GNMSdyqRooFvkmxOUhwcs33RnQb"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a backup of your Milvus installation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "GNMSdyqRooFvkmxOUhwcs33RnQb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "./milvus-backup --config backup.yaml create -n my_backup\n\n# my_backup is the name of the backup file \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# and will be used in the migrate command",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Vra2dcKpWoQ1e0xtKwNcDeyZnxd"
+      },
+      {
+        "block_id": "T6KkdBAeJoEZEDxhjd4c3W0rnUh",
+        "block_type": 13,
+        "children": [
+          "Fy03deAxlomjQGxlkB5cQuXMnTc",
+          "NGAHdtWRyoOgLxxgBWOcj4PznHd",
+          "U3Y5ducPioIUxFxUKc1cLBCqnvb"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create the target Zilliz Cloud cluster, note the cluster ID, and run the following command to initiate the migration.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "Fy03deAxlomjQGxlkB5cQuXMnTc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "./milvus-backup migrate --cluster_id inxx-xxxxxxxxxxxxxxx -n my_backup\n\n# cluster_id is the ID of the target Zilliz Cloud cluster\n# my_backup is the name of the backup file created in the above command\n\n# The command output is similar to the following:\n# Successfully triggered migration with backup name: my_backup target cluster: inxx-xxxxxxxxxxxxxxx migration job id: job-xxxxxxxxxxxxxxxxxxx.\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# You can check the progress of the migration job in Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "T6KkdBAeJoEZEDxhjd4c3W0rnUh"
+      },
+      {
+        "block_id": "NGAHdtWRyoOgLxxgBWOcj4PznHd",
+        "block_type": 2,
+        "parent_id": "T6KkdBAeJoEZEDxhjd4c3W0rnUh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upon executing this command, Milvus Backup uploads the prepared backup files to the Zilliz Cloud",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " platform",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", creates a migration job, and returns the job ID as the command output.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U3Y5ducPioIUxFxUKc1cLBCqnvb",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "DL8gdSzkToc5CexirXscK77Cncg",
+          "PhvEdFrGzog7VfxClv8coxb0nHc"
+        ],
+        "parent_id": "T6KkdBAeJoEZEDxhjd4c3W0rnUh"
+      },
+      {
+        "block_id": "DL8gdSzkToc5CexirXscK77Cncg",
+        "block_type": 2,
+        "parent_id": "U3Y5ducPioIUxFxUKc1cLBCqnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PhvEdFrGzog7VfxClv8coxb0nHc",
+        "block_type": 2,
+        "parent_id": "U3Y5ducPioIUxFxUKc1cLBCqnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The backup files uploaded to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "the Zilliz Cloud platform",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "be retained",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "3",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " days after the upload and will then be deleted.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UkmqdaZuDoLpOfxQBTAcyy3Envr",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DSU0dImI2oFlH3xVziwcefucnlf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Monitor the migration process",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "I68tdGOOgoqp0xxszEmchzAFnOf",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Migrate",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", a migration job will be generated. You can check the migration progress on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRY8ww0NDQi8yU9kNpjicHP7Gn4b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page. When the job status switches from",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " In Progress",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Successful",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the migration is complete.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TiCbdI4enoEq8YxBc5dcqoDCnV9",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Hu5PdasZgoy1cLxePl7cgtN6nu9",
+          "M4rSdce3zoiG4PxzyMdcfCNEnzd"
+        ],
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "Hu5PdasZgoy1cLxePl7cgtN6nu9",
+        "block_type": 2,
+        "parent_id": "TiCbdI4enoEq8YxBc5dcqoDCnV9",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M4rSdce3zoiG4PxzyMdcfCNEnzd",
+        "block_type": 2,
+        "parent_id": "TiCbdI4enoEq8YxBc5dcqoDCnV9",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After migration, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GRh2d5rieozrWVxS0MEceLDTnVd",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Ffile%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Ftype%3Ddesign%26node-id%3D5822-1729%26t%3DKVQcZbOax22DPeME-4"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "OauwdmAvBoOHnmxVZCmcQ2q6nGh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Post-migration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "Wl7Edtf2movsXlxrRSccs4lSntd",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After the migration job is completed, note the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DkvjduNz4oWIczxOyqDciVNLnwc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Index Creation",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7524630017637351428"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The migration process automatically creates ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7524630017637351428"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AUTOINDEX",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7524630017637351428"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FEA2twSf5oiERMDkriKScU9GInc4"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for migrated collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7524630017637351428"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7524630017637351428"
+        ],
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "DhZyd8WT9oZ5TaxdAnwcjAwQnBO",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manual Loading Required",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Despite automatic indexing, the migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Load & Release",
+                "token": "CemEwKryciMUepkgYWZcOw6wncb",
+                "url": "https://zilliverse.feishu.cn/wiki/CemEwKryciMUepkgYWZcOw6wncb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "G1judRTJVohEWlxuIkIcbDrunSd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cancel migration job",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "Hcasd1mHzoBVHxx5PxZcpCuBnwP",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the migration process encounters any issues, you can take the following steps to troubleshoot and resume the migration:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AC3DdntraoQ98GxGfY9cr6C3nwb",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rbi8dyrSHoztkgxoQLvcMbhznC4",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRY8ww0NDQi8yU9kNpjicHP7Gn4b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page, identify the failed migration job and cancel it.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "Il2wdDdegok8shxJDCbcqaNPnpd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "View Details",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Actions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column to access the error log.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b"
+      },
+      {
+        "block_id": "FasidtyYwop9rJxUjoTc5Nn3nDb",
+        "block_type": 2,
+        "parent_id": "GJstdX8DzouaRox6YeRcgA6Zn2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 56
+  }
+}

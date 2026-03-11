@@ -1,0 +1,714 @@
+{
+  "created_time": "1770789866",
+  "modified_time": "1771910226",
+  "name": "loadBalance()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "UmOafcFDglyFe3dayhAcRA0RnEd",
+  "token": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/RrkZdVoE9oM00dxoLWfcnk2Zncf",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+        "block_type": 1,
+        "children": [
+          "doxcnrei8Tx4wPYHUb6OOJmPWCh",
+          "doxcnLqlDVgZpoTTzdzsD1dbyHd",
+          "doxcnbBHojKrJcpBHtWFtnL8dkh",
+          "doxcn4Bksrza8x9Ed9vHt5x0wqg",
+          "doxcnaBTpVpj7Uf0OQemffo8TFc",
+          "doxcno0uTNRuqZZerQYpVhR8jnd",
+          "doxcnqj3tGPBLuwP9Zlny676Vsh",
+          "doxcnStYKFyKfZhLEs3WQmtZnKf",
+          "doxcnPq8YeJ3UqS2TvjywHQItOh",
+          "doxcn3eJ4CGKU7tNGhP4KoufQxb",
+          "doxcnVFubXUP3QQYMHX1agmCqfh",
+          "doxcnkISQuHWnSjbBkKVPlSyolg",
+          "doxcn5Oa7mu01STmOQ1YtehNrQv"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "loadBalance()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnrei8Tx4wPYHUb6OOJmPWCh",
+        "block_type": 2,
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation implements load-balancing by shifting data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from a source query node to destination query nodes. This function only works in a Milvus cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLqlDVgZpoTTzdzsD1dbyHd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "await milvusClient.loadBalance(data: LoadBalanceReq)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcnbBHojKrJcpBHtWFtnL8dkh",
+        "block_type": 2,
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn4Bksrza8x9Ed9vHt5x0wqg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "src_nodeID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnNGmXFvW34ByGBsfTDJXVvh",
+          "doxcn1cVIEsdtTAo4GCoMuMieSO"
+        ],
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcnNGmXFvW34ByGBsfTDJXVvh",
+        "block_type": 2,
+        "parent_id": "doxcn4Bksrza8x9Ed9vHt5x0wqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn1cVIEsdtTAo4GCoMuMieSO",
+        "block_type": 2,
+        "parent_id": "doxcn4Bksrza8x9Ed9vHt5x0wqg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the source query node to balance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnaBTpVpj7Uf0OQemffo8TFc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dst_nodeIDs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number[]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnn6r286YHXZcEvDZppGesud"
+        ],
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcnn6r286YHXZcEvDZppGesud",
+        "block_type": 2,
+        "parent_id": "doxcnaBTpVpj7Uf0OQemffo8TFc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The IDs of the destination query nodes. Optional.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcno0uTNRuqZZerQYpVhR8jnd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "sealed_segmentIDs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number[]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnRuPgWkgzKUrNKxWe7sQwDb"
+        ],
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcnRuPgWkgzKUrNKxWe7sQwDb",
+        "block_type": 2,
+        "parent_id": "doxcno0uTNRuqZZerQYpVhR8jnd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The IDs of sealed segments to balance. Optional.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqj3tGPBLuwP9Zlny676Vsh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnV5QzFiTVC0wvGvAJkfq9cg"
+        ],
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcnV5QzFiTVC0wvGvAJkfq9cg",
+        "block_type": 2,
+        "parent_id": "doxcnqj3tGPBLuwP9Zlny676Vsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RPC timeout in milliseconds. Optional.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnStYKFyKfZhLEs3WQmtZnKf",
+        "block_type": 2,
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnPq8YeJ3UqS2TvjywHQItOh",
+        "block_type": 2,
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Promise\\<ResStatus\\>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3eJ4CGKU7tNGhP4KoufQxb",
+        "block_type": 2,
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVFubXUP3QQYMHX1agmCqfh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnokH3WIUNl5rmYKPlD6ySig"
+        ],
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcnokH3WIUNl5rmYKPlD6ySig",
+        "block_type": 2,
+        "parent_id": "doxcnVFubXUP3QQYMHX1agmCqfh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnkISQuHWnSjbBkKVPlSyolg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      },
+      {
+        "block_id": "doxcn5Oa7mu01STmOQ1YtehNrQv",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient } from '@zilliz/milvus2-sdk-node';\n\nconst client = new MilvusClient({ address: 'localhost:19530' });\nawait client.loadBalance({\n    src_nodeID: 1,\n    dst_nodeIDs: [2, 3],\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "RrkZdVoE9oM00dxoLWfcnk2Zncf"
+      }
+    ],
+    "counts": 20
+  },
+  "slug": "Management-loadBalance"
+}

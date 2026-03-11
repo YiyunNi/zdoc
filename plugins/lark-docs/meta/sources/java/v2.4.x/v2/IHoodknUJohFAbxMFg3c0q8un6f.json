@@ -1,0 +1,514 @@
+{
+  "created_time": "1722593206",
+  "modified_time": "1746614338",
+  "name": "listDatabases()",
+  "owner_id": "ou_933b606655fd39dab164d89c936db4ed",
+  "parent_token": "Ja2Wf1J9glm6oCdCxfDc9BzPnoc",
+  "token": "IHoodknUJohFAbxMFg3c0q8un6f",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/IHoodknUJohFAbxMFg3c0q8un6f",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "block_type": 1,
+        "children": [
+          "ZtV3dxgj1opemzxVivUc2xDKnpg",
+          "GKcOd7sGBoNQwPxlPMwcWmt9nTe",
+          "PqVod4acpo598FxJHPAcKPUYnah",
+          "S5TVd1dIzofcdaxFQJncGaKln9b",
+          "BxBFdlLXWokKOpxLKobc0MitnRc",
+          "UssadUPGeo1kVvxu0XmcPYuInNg",
+          "OjnYdw2g7oQrmMxTK9IchQDenNz",
+          "Z4GEd7ewtoAz87xQBmVcaO6VnIe",
+          "S1vMdCf6YomXv7xFuafcgztRn0g",
+          "Vn2Ydq9WCoqjUyxZuwacTtaxnfc",
+          "V9tkd9zIWoV74Px9ct0cM0zTnIg",
+          "KSExdaoFAo1KhbxTla8c4ZzEnLg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "listDatabases()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "ZtV3dxgj1opemzxVivUc2xDKnpg",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation lists all the database names. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GKcOd7sGBoNQwPxlPMwcWmt9nTe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public ListDatabasesResp listDatabases()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f"
+      },
+      {
+        "block_id": "PqVod4acpo598FxJHPAcKPUYnah",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f"
+      },
+      {
+        "block_id": "S5TVd1dIzofcdaxFQJncGaKln9b",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BxBFdlLXWokKOpxLKobc0MitnRc",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ListDatabasesResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UssadUPGeo1kVvxu0XmcPYuInNg",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OjnYdw2g7oQrmMxTK9IchQDenNz",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ListDatabasesResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "object contains",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "a list of all database names.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z4GEd7ewtoAz87xQBmVcaO6VnIe",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S1vMdCf6YomXv7xFuafcgztRn0g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZC6DdYIpxosgWxxCwdpckEqSnDc"
+        ],
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f"
+      },
+      {
+        "block_id": "ZC6DdYIpxosgWxxCwdpckEqSnDc",
+        "block_type": 2,
+        "parent_id": "S1vMdCf6YomXv7xFuafcgztRn0g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vn2Ydq9WCoqjUyxZuwacTtaxnfc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f"
+      },
+      {
+        "block_id": "V9tkd9zIWoV74Px9ct0cM0zTnIg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.database.response.ListDatabasesResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. List databases\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ListDatabasesResp listDatabasesResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".listDatabases();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<String> dbNames = listDatabasesResp.getDatabaseNames();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f"
+      },
+      {
+        "block_id": "KSExdaoFAo1KhbxTla8c4ZzEnLg",
+        "block_type": 2,
+        "parent_id": "IHoodknUJohFAbxMFg3c0q8un6f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 14
+  },
+  "slug": "v2-Database-listDatabases"
+}

@@ -1,0 +1,1790 @@
+{
+  "created_time": "1747291234",
+  "modified_time": "1761481775",
+  "name": "getQuerySegmentInfo()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "ALDZfPYy3lNm8ZdotPecBX7rnNd",
+  "token": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/ZVhHdijY5oYhxYxk4TgcjmGanle",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "block_type": 1,
+        "children": [
+          "doxcnNiFkMdkirniKZMCqMeTnJ5",
+          "doxcnnOACKFTKvMl5HR4CdtzZye",
+          "doxcnFmQ8nsOzrcwxqZYkACl1jh",
+          "doxcnYTjqEVVENpBaWe7uk97Edg",
+          "doxcnO0nQdPZOwq7uPHta7nFXSb",
+          "doxcn27SGbRSco73wt8kx1XQOLc",
+          "doxcnVJ2CNIhRuadWtHQDvD2ajc",
+          "doxcnebQ0OkEeMmDjFtCO0RQFfG",
+          "doxcnmvxypI4lktgAKj7Y3ozOid",
+          "doxcnvOXuY9KUKauCZ5QhfsWsrf",
+          "doxcnLON4dVVP3lBzj9yepeIJcr",
+          "doxcnStYKZHBn3aOJUSX2yDgQWh",
+          "doxcnriEvZzfG2qh40PUeFsNXch",
+          "doxcnxM3zZ5c2Il3PU9lz2QrTBb",
+          "doxcnzXCGEINcDXbCXMY2nVtOeh",
+          "doxcnrZcoFUojbx8hSOgvLFJtcg",
+          "doxcnBPuF08Hyobgm8aybLZLIRb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getQuerySegmentInfo()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnNiFkMdkirniKZMCqMeTnJ5",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation gets information about persistent segments of a collection from the query nodes, including the number of entities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnnOACKFTKvMl5HR4CdtzZye",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public GetQuerySegmentInfoResp getQuerySegmentInfo(GetQuerySegmentInfoReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnFmQ8nsOzrcwxqZYkACl1jh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnYTjqEVVENpBaWe7uk97Edg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getQuerySegmentInfo(GetQuerySegmentInfoReq.builder()\n    .databaseName(String databaseName)\n    .collectionName(String collectionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnO0nQdPZOwq7uPHta7nFXSb",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn27SGbRSco73wt8kx1XQOLc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnU5aDpWGXlGlP1oA2HrFkKg"
+        ],
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnU5aDpWGXlGlP1oA2HrFkKg",
+        "block_type": 2,
+        "parent_id": "doxcn27SGbRSco73wt8kx1XQOLc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database to which the target collection belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVJ2CNIhRuadWtHQDvD2ajc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcniY7yDGGBHCuG8FZJpjfm9g"
+        ],
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcniY7yDGGBHCuG8FZJpjfm9g",
+        "block_type": 2,
+        "parent_id": "doxcnVJ2CNIhRuadWtHQDvD2ajc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnebQ0OkEeMmDjFtCO0RQFfG",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnmvxypI4lktgAKj7Y3ozOid",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GetQuerySegmentInfoResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvOXuY9KUKauCZ5QhfsWsrf",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLON4dVVP3lBzj9yepeIJcr",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetQuerySegmentInfoResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object that contains detailed information about the persisted segments in the specified collection, including the number of entities in each of these segments. The object has the following parameters:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnStYKZHBn3aOJUSX2yDgQWh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "segmentInfos",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<PersistentSegmentInfo>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnIrF7peoncAgrSpu0N1Ldlc",
+          "doxcnpU2MDHPwlHyuL0GBuAtWw5",
+          "doxcnSdDENkHPQFNhnM95bKK5Ug",
+          "doxcnAemMdOVnetDj1TVfzBCtWf",
+          "doxcn3AOGXl1BxQ7LFlZh1dfnIe",
+          "doxcn2TFg01XHN1QiGQOhz9JTMe",
+          "doxcnOQUbdUbjvpW1LG2bLqXAJh",
+          "doxcnHGeg1t2QEaqUbukcCxyBHf",
+          "doxcnL6vRD0zZZC3fzWlARk2LFg",
+          "doxcn2JR29NU0tZtPjBpTC1aCUg",
+          "doxcnqU4SgD8up05XN4zlx7HNCb",
+          "doxcnBV9EbZeZSZsXhxT7V2dQhL"
+        ],
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnIrF7peoncAgrSpu0N1Ldlc",
+        "block_type": 2,
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of segments, each represented by a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PersistentSegmentInfo",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object, which has the following fields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnpU2MDHPwlHyuL0GBuAtWw5",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "segmentID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn8gJPI8fR0vQrxdzj0SsqMk"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcn8gJPI8fR0vQrxdzj0SsqMk",
+        "block_type": 2,
+        "parent_id": "doxcnpU2MDHPwlHyuL0GBuAtWw5",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnSdDENkHPQFNhnM95bKK5Ug",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn6v8obwP1rE7YGGEmlvmu4v"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcn6v8obwP1rE7YGGEmlvmu4v",
+        "block_type": 2,
+        "parent_id": "doxcnSdDENkHPQFNhnM95bKK5Ug",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the collection to which the current segment belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnAemMdOVnetDj1TVfzBCtWf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcna2Bck2SMmwv5C0eYfXt28d"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcna2Bck2SMmwv5C0eYfXt28d",
+        "block_type": 2,
+        "parent_id": "doxcnAemMdOVnetDj1TVfzBCtWf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the partition to which the current segment belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3AOGXl1BxQ7LFlZh1dfnIe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "memSize",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnmp3oZbMzy4r3Vkul1shxgd"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcnmp3oZbMzy4r3Vkul1shxgd",
+        "block_type": 2,
+        "parent_id": "doxcn3AOGXl1BxQ7LFlZh1dfnIe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The size that the current segment takes up in memory.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2TFg01XHN1QiGQOhz9JTMe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numOfRows",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnDTBsvlmUuH7NPBmW9ttfo5"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcnDTBsvlmUuH7NPBmW9ttfo5",
+        "block_type": 2,
+        "parent_id": "doxcn2TFg01XHN1QiGQOhz9JTMe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of entities in the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnOQUbdUbjvpW1LG2bLqXAJh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "indexName",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn7V3frIyUOwvic2Y8mjpENh"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcn7V3frIyUOwvic2Y8mjpENh",
+        "block_type": 2,
+        "parent_id": "doxcnOQUbdUbjvpW1LG2bLqXAJh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the index that is related to the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHGeg1t2QEaqUbukcCxyBHf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "indexID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnlpvrxk6eK50myCQSEmUGhh"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcnlpvrxk6eK50myCQSEmUGhh",
+        "block_type": 2,
+        "parent_id": "doxcnHGeg1t2QEaqUbukcCxyBHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the index that is related to the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnL6vRD0zZZC3fzWlARk2LFg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "state",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnmi2iZGQOQ2D9C3FFje3OBM"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcnmi2iZGQOQ2D9C3FFje3OBM",
+        "block_type": 2,
+        "parent_id": "doxcnL6vRD0zZZC3fzWlARk2LFg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The state of the current segment. Possible values are: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"Growing\", \"Sealed\", \"Flushed\", \"Flushing\", \"Dropped\", \"Importing\".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2JR29NU0tZtPjBpTC1aCUg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn1kC8viPR5F96319EwFkWyw"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcn1kC8viPR5F96319EwFkWyw",
+        "block_type": 2,
+        "parent_id": "doxcn2JR29NU0tZtPjBpTC1aCUg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The compaction level of the current segment. Possible values are :",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " \"Legacy\", \"L0\", \"L1\", \"L2\".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqU4SgD8up05XN4zlx7HNCb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nodeIDs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<Long>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnjlB7JENty01Xav6qMIzd2f"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcnjlB7JENty01Xav6qMIzd2f",
+        "block_type": 2,
+        "parent_id": "doxcnqU4SgD8up05XN4zlx7HNCb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of query node IDs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnBV9EbZeZSZsXhxT7V2dQhL",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "isSorted",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Boolean",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -   ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnfAXce4Nj2qeRMx9mhoJvmd"
+        ],
+        "parent_id": "doxcnStYKZHBn3aOJUSX2yDgQWh"
+      },
+      {
+        "block_id": "doxcnfAXce4Nj2qeRMx9mhoJvmd",
+        "block_type": 2,
+        "parent_id": "doxcnBV9EbZeZSZsXhxT7V2dQhL",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether the entities in the current segment are sorted.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnriEvZzfG2qh40PUeFsNXch",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxM3zZ5c2Il3PU9lz2QrTBb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn7OR0d5Xxfuh5BAkZC5UHnd"
+        ],
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcn7OR0d5Xxfuh5BAkZC5UHnd",
+        "block_type": 2,
+        "parent_id": "doxcnxM3zZ5c2Il3PU9lz2QrTBb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnzXCGEINcDXbCXMY2nVtOeh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnrZcoFUojbx8hSOgvLFJtcg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.utility.request.GetQuerySegmentInfoReq;\nimport io.milvus.v2.service.utility.response.GetQuerySegmentInfoResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Get segment info\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetQuerySegmentInfoResp segInfoResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".getQuerySegmentInfo(GetQuerySegmentInfoReq.builder()\n        .collectionName(\"test\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle"
+      },
+      {
+        "block_id": "doxcnBPuF08Hyobgm8aybLZLIRb",
+        "block_type": 2,
+        "parent_id": "ZVhHdijY5oYhxYxk4TgcjmGanle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 44
+  },
+  "slug": "v2-Management-getQuerySegmentInfo"
+}

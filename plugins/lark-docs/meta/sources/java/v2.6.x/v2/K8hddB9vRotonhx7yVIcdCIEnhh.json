@@ -1,0 +1,1742 @@
+{
+  "created_time": "1720587592",
+  "modified_time": "1757063526",
+  "name": "IndexParam",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "ALDZfPYy3lNm8ZdotPecBX7rnNd",
+  "token": "K8hddB9vRotonhx7yVIcdCIEnhh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/K8hddB9vRotonhx7yVIcdCIEnhh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "K8hddB9vRotonhx7yVIcdCIEnhh",
+        "block_type": 1,
+        "children": [
+          "doxcnT39y2K1fuHUSDyIrz0EqAe",
+          "doxcnGr3ZU0tOHyQAfe8t5blWah",
+          "doxcn9eA5LAJT69O4wjHEd6nzZc",
+          "doxcn2kAILYe2rroopgntFHTZ6g",
+          "doxcnqx3KAUxYhFnrT5CLBZrTNh",
+          "doxcnivoWQeKeJZfbsZtYIQfcbf",
+          "doxcnEnwUVPUtEPDcyK74h1rYIe",
+          "doxcnAC3oeeihz4tAUfOdMrzc6e",
+          "doxcnz4YZ2wUlPdso3uJ6C8bd9d",
+          "doxcnHZjpUMkX3B7KBRjp2Li3pr",
+          "doxcnzX4Scsmexlj0h5Xo2eCJme",
+          "doxcnKMwb9rczT5a6GHJw0Efqbe",
+          "doxcngxfOSjDFiybHcuRoCekYVc",
+          "doxcnauka8qNf1uz5KLdYlshpVg",
+          "doxcnFkXOuTa0mFsb3zV9SjCm9c",
+          "doxcnoGlKtCVebBb8MNpB0arHtf",
+          "doxcnisFTXP60hiLGGYro53bGce",
+          "doxcn40DLw49RC8syfDQxTIR5Oh",
+          "doxcn8BEndA5248BVg1e9Oo0Wkd",
+          "doxcnQHVzbOll7q9X1gHwi3cxmh",
+          "doxcn8lD8cAx6YKVXby4HmWZr1c",
+          "doxcnaveEgu4dFFLq8bbWzGoSOb",
+          "doxcnvxgIPh7D36Uk52Cxgbo4Yd",
+          "doxcnSceeQmDvgN6MoCX1XrkKHc",
+          "doxcnW4aC2UeUTDEDP92qzdG2lb",
+          "doxcn5t5MhQW7HcFFKG0VYBpz9e",
+          "doxcn1b4llxJ323JPWIDorptZyd",
+          "doxcnZU3KdIr6oOupzYddtZgz3e",
+          "doxcnPESntnbe8V96NopBmHqlOf",
+          "doxcnY4GShSA2fAmngwqZxIyXLd",
+          "doxcnNlfSZNjGgnJT1T1xg3cfph",
+          "doxcnj0szRmhu77Z8fNC2PwCAie",
+          "doxcnhjP2ZY6h1uzu800dNSae7d",
+          "doxcnRq3h6Mo9mCb2j2DiD6eCGg",
+          "doxcnxWzOgIiFjLU3g7nTTU4eTd",
+          "doxcnlsecIMdOwLCEc1LnMg9PTc",
+          "doxcncr6K3elUlNhv6QH4ZU5qpc",
+          "doxcneCoOJk6JwawFmOC0VSDfBe",
+          "doxcnfiMJuBywFfjWM4R3AHHbqf",
+          "doxcnvyanZAJQhZfyWXA8Wrkpwb",
+          "doxcn6FX6iDECg42U0bq3cjXfIh",
+          "doxcnQ6RZwtAXOyobxzuFh9tr4g",
+          "doxcnY7aqoHssS4eMunZhYRg3Wf",
+          "doxcnp1XltKTdBzaqJmTFVhIEef",
+          "doxcnRnvlAyReou2sp2flXRA5of",
+          "doxcnu4III7FZBk962I7Ttt6uCg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IndexParam",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnT39y2K1fuHUSDyIrz0EqAe",
+        "block_type": 2,
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IndexParam defines the parameters for configuring an index on a collection field. It includes MetricType and IndexType enums.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGr3ZU0tOHyQAfe8t5blWah",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IndexParam.builder()\n    .fieldName(String fieldName)\n    .indexType(IndexType indexType)\n    .metricType(MetricType metricType)\n    .extraParams(Map<String, Object> extraParams)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn9eA5LAJT69O4wjHEd6nzZc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MetricType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn2kAILYe2rroopgntFHTZ6g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INVALID",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Invalid metric type (default).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnqx3KAUxYhFnrT5CLBZrTNh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "L2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Euclidean distance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnivoWQeKeJZfbsZtYIQfcbf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Inner product.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnEnwUVPUtEPDcyK74h1rYIe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Cosine similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnAC3oeeihz4tAUfOdMrzc6e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HAMMING",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Hamming distance (for binary vectors).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnz4YZ2wUlPdso3uJ6C8bd9d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JACCARD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Jaccard distance (for binary vectors).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnHZjpUMkX3B7KBRjp2Li3pr",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - BM25 scoring for full-text search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnzX4Scsmexlj0h5Xo2eCJme",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Maximum similarity for multi-vector search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnKMwb9rczT5a6GHJw0Efqbe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_COSINE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Maximum similarity using cosine distance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcngxfOSjDFiybHcuRoCekYVc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_IP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Maximum similarity using inner product.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnauka8qNf1uz5KLdYlshpVg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_L2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Maximum similarity using Euclidean distance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnFkXOuTa0mFsb3zV9SjCm9c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_JACCARD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Maximum similarity using Jaccard distance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnoGlKtCVebBb8MNpB0arHtf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_HAMMING",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Maximum similarity using Hamming distance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnisFTXP60hiLGGYro53bGce",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IndexType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn40DLw49RC8syfDQxTIR5Oh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FLAT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Brute-force search (no index).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn8BEndA5248BVg1e9Oo0Wkd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_FLAT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Inverted file index with flat storage.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnQHVzbOll7q9X1gHwi3cxmh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_SQ8",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Inverted file index with scalar quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn8lD8cAx6YKVXby4HmWZr1c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_PQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Inverted file index with product quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnaveEgu4dFFLq8bbWzGoSOb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Hierarchical Navigable Small World graph.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnvxgIPh7D36Uk52Cxgbo4Yd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW_SQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - HNSW with scalar quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnSceeQmDvgN6MoCX1XrkKHc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW_PQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - HNSW with product quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnW4aC2UeUTDEDP92qzdG2lb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HNSW_PRQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - HNSW with product residual quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn5t5MhQW7HcFFKG0VYBpz9e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DISKANN",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Disk-based approximate nearest neighbor.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn1b4llxJ323JPWIDorptZyd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AUTOINDEX",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Automatic index type selection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnZU3KdIr6oOupzYddtZgz3e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SCANN",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - ScaNN index.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnPESntnbe8V96NopBmHqlOf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IVF_RABITQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - IVF with RaBitQ quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnY4GShSA2fAmngwqZxIyXLd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_IVF_FLAT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - GPU-accelerated IVF flat.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnNlfSZNjGgnJT1T1xg3cfph",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_IVF_PQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - GPU-accelerated IVF with product quantization.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnj0szRmhu77Z8fNC2PwCAie",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_BRUTE_FORCE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - GPU-accelerated brute-force search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnhjP2ZY6h1uzu800dNSae7d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GPU_CAGRA",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - GPU-accelerated CAGRA index.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnRq3h6Mo9mCb2j2DiD6eCGg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BIN_FLAT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Binary flat index.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnxWzOgIiFjLU3g7nTTU4eTd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BIN_IVF_FLAT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Binary IVF flat index.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnlsecIMdOwLCEc1LnMg9PTc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MINHASH_LSH",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - MinHash LSH index for set similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcncr6K3elUlNhv6QH4ZU5qpc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "TRIE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Trie index for string fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcneCoOJk6JwawFmOC0VSDfBe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NGRAM",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - N-gram index for text fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnfiMJuBywFfjWM4R3AHHbqf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RTREE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - R-tree index for spatial data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnvyanZAJQhZfyWXA8Wrkpwb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "STL_SORT",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - STL sort index for scalar fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcn6FX6iDECg42U0bq3cjXfIh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "INVERTED",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Inverted index for scalar fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnQ6RZwtAXOyobxzuFh9tr4g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BITMAP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Bitmap index for low-cardinality fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnY7aqoHssS4eMunZhYRg3Wf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SPARSE_INVERTED_INDEX",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Inverted index for sparse vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnp1XltKTdBzaqJmTFVhIEef",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SPARSE_WAND",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - WAND index for sparse vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnRnvlAyReou2sp2flXRA5of",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      },
+      {
+        "block_id": "doxcnu4III7FZBk962I7Ttt6uCg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.common.IndexParam;\n\nIndexParam indexParam = IndexParam.builder()\n    .fieldName(\"vector\")\n    .indexType(IndexParam.IndexType.HNSW)\n    .metricType(IndexParam.MetricType.COSINE)\n    .extraParams(Map.of(\"M\", 16, \"efConstruction\", 256))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "K8hddB9vRotonhx7yVIcdCIEnhh"
+      }
+    ],
+    "counts": 47
+  },
+  "slug": "v2-Management-IndexParam"
+}

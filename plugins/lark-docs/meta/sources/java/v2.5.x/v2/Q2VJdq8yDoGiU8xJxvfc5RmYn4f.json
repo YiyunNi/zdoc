@@ -1,0 +1,1916 @@
+{
+  "created_time": "1747291234",
+  "modified_time": "1761481775",
+  "name": "getQuerySegmentInfo()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "MTBuf5wQ7lardCddEtCc4R2uncb",
+  "token": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "block_type": 1,
+        "children": [
+          "G0QNdlUnLojavvxcWZDcTyXwn7d",
+          "MA2gd0Kcoo94X3xsn9TcQxPvnog",
+          "LaD4dJJFpoPScpxj4aQcxRfXnhd",
+          "UkQ6dapcCoZQnZxgQTdcnOZknGQ",
+          "G7rgd46yxo7H5dxCLP2clnNlndb",
+          "YSZ1dZZtho1s3dx1Ahsc7imxnAb",
+          "U5y0duV1fov3cIx4D9fcd82EnVe",
+          "WcXOdcqEioAu6sxMTskc24lKnxc",
+          "KQpedIVkkonIvZxCrDrcbxLDnad",
+          "P9JddiApdoQrUuxZUqycza8knUe",
+          "IpNbdwytKo4M9dxp7sucxeZjn0c",
+          "UPWtduW5KoDN8bxodQecLNkWnpd",
+          "KpFId3sUMoZF0Ex4muIc2BMVnrh",
+          "TmrLdlRGMo3yDRxryvActR92nkD",
+          "FPSRd5uTzoD9NyxwsYEcRuxFnif",
+          "AFD2dNuGyoiWDlxmZKjcp2pMnee"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getQuerySegmentInfo()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "G0QNdlUnLojavvxcWZDcTyXwn7d",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation gets information about persistent segments of a collection from the query nodes, including the number of entities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MA2gd0Kcoo94X3xsn9TcQxPvnog",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public GetQuerySegmentInfoResp getQuerySegmentInfo(GetQuerySegmentInfoReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "LaD4dJJFpoPScpxj4aQcxRfXnhd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "UkQ6dapcCoZQnZxgQTdcnOZknGQ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getQuerySegmentInfo(GetQuerySegmentInfoReq.builder()\n    .collectionName(String collectionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "G7rgd46yxo7H5dxCLP2clnNlndb",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YSZ1dZZtho1s3dx1Ahsc7imxnAb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "V1LqdemsPovpr4xqGMkcR4jEnGd"
+        ],
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "V1LqdemsPovpr4xqGMkcR4jEnGd",
+        "block_type": 2,
+        "parent_id": "YSZ1dZZtho1s3dx1Ahsc7imxnAb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U5y0duV1fov3cIx4D9fcd82EnVe",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WcXOdcqEioAu6sxMTskc24lKnxc",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "GetQuerySegmentInfoResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KQpedIVkkonIvZxCrDrcbxLDnad",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P9JddiApdoQrUuxZUqycza8knUe",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetQuerySegmentInfoResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object that contains detailed information about the persisted segments in the specified collection, including the number of entities in each of these segments. The object has the following parameters:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IpNbdwytKo4M9dxp7sucxeZjn0c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "segmentInfos",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<PersistentSegmentInfo>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LGfkd7bduowGkGx9fLOcmGtcnJb",
+          "YPKQdbudPohTYixVDiQcok15n5b",
+          "DwJpd45TNoyK0wx6T1ace7Vin0c",
+          "KqyldEBCooB0gExQopjcnI6EnVc",
+          "F4NbdyVQMoiSABxHm1UcO05lnfT",
+          "WHZ6dvg8XodkfZxT7kZcBikpnvh",
+          "QVNqd06HpowTp5xXgYQcYV8An2b",
+          "H2PkdZSpjoa0mCxNcZncA54Dn7d",
+          "IhlNdaPKmocgHexBcCqcs6Lmnkf",
+          "JruudkzRDoDowPxFSwrcqHv1nzb",
+          "XMfCd4YaNoablKx1bVYca9xBnmh",
+          "PjzZdMbE0oYbtTx2G3Hc4ca8nLd"
+        ],
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "LGfkd7bduowGkGx9fLOcmGtcnJb",
+        "block_type": 2,
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of segments, each represented by a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PersistentSegmentInfo",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object, which has the following fields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YPKQdbudPohTYixVDiQcok15n5b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "segmentID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "BCq8dUhm8oDuLNx6xWkcltJLnNd"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "BCq8dUhm8oDuLNx6xWkcltJLnNd",
+        "block_type": 2,
+        "parent_id": "YPKQdbudPohTYixVDiQcok15n5b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DwJpd45TNoyK0wx6T1ace7Vin0c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DmgOd5aaFoufA0xXqW6cXkl9nPc"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "DmgOd5aaFoufA0xXqW6cXkl9nPc",
+        "block_type": 2,
+        "parent_id": "DwJpd45TNoyK0wx6T1ace7Vin0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the collection to which the current segment belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KqyldEBCooB0gExQopjcnI6EnVc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XOmpdLC1zowYIPxexpHcO9pVnZg"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "XOmpdLC1zowYIPxexpHcO9pVnZg",
+        "block_type": 2,
+        "parent_id": "KqyldEBCooB0gExQopjcnI6EnVc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the partition to which the current segment belongs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F4NbdyVQMoiSABxHm1UcO05lnfT",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "memSize",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "IMMId3tHYo9GwMxsqnPcZNW8nPd"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "IMMId3tHYo9GwMxsqnPcZNW8nPd",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "F4NbdyVQMoiSABxHm1UcO05lnfT",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The size that the current segment takes up in memory.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WHZ6dvg8XodkfZxT7kZcBikpnvh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numOfRows",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ipwbd1HoroHBxwxrOB5c62HCnVU"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "Ipwbd1HoroHBxwxrOB5c62HCnVU",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "WHZ6dvg8XodkfZxT7kZcBikpnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of entities in the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QVNqd06HpowTp5xXgYQcYV8An2b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "indexName",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "D0UtdzyOHowaxgxJkSEcZkKknKd"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "D0UtdzyOHowaxgxJkSEcZkKknKd",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "QVNqd06HpowTp5xXgYQcYV8An2b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the index that is related to the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H2PkdZSpjoa0mCxNcZncA54Dn7d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "indexID",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Long",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "C4FfdE6NbojZA4xh4wNcxBTzn4e"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "C4FfdE6NbojZA4xh4wNcxBTzn4e",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "H2PkdZSpjoa0mCxNcZncA54Dn7d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the index that is related to the current segment.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IhlNdaPKmocgHexBcCqcs6Lmnkf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "state",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XzyHdTBEko6eDox9whJclVcbnVc"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "XzyHdTBEko6eDox9whJclVcbnVc",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IhlNdaPKmocgHexBcCqcs6Lmnkf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The state of the current segment. Possible values are: ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"Growing\", \"Sealed\", \"Flushed\", \"Flushing\", \"Dropped\", \"Importing\".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JruudkzRDoDowPxFSwrcqHv1nzb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JpuodlnHSo808Dxh0lfcTAKQnoh"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "JpuodlnHSo808Dxh0lfcTAKQnoh",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "JruudkzRDoDowPxFSwrcqHv1nzb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The compaction level of the current segment. Possible values are :",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " \"Legacy\", \"L0\", \"L1\", \"L2\".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XMfCd4YaNoablKx1bVYca9xBnmh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nodeIDs",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<Long>",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "F3Rud1L5aoAZykxkaP0clv1bnbf"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "F3Rud1L5aoAZykxkaP0clv1bnbf",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "XMfCd4YaNoablKx1bVYca9xBnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of query node IDs.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PjzZdMbE0oYbtTx2G3Hc4ca8nLd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "isSorted",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Boolean",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -   ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RSVydIRakoYqhfx6DtxcVnPlnhb"
+        ],
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "IpNbdwytKo4M9dxp7sucxeZjn0c"
+      },
+      {
+        "block_id": "RSVydIRakoYqhfx6DtxcVnPlnhb",
+        "block_type": 2,
+        "comment_ids": [
+          "7504571455809011731"
+        ],
+        "parent_id": "PjzZdMbE0oYbtTx2G3Hc4ca8nLd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether the entities in the current segment are sorted.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571455809011731"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UPWtduW5KoDN8bxodQecLNkWnpd",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KpFId3sUMoZF0Ex4muIc2BMVnrh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LWaFddganoLCzExFnoxcbzuFnJg"
+        ],
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "LWaFddganoLCzExFnoxcbzuFnJg",
+        "block_type": 2,
+        "parent_id": "KpFId3sUMoZF0Ex4muIc2BMVnrh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TmrLdlRGMo3yDRxryvActR92nkD",
+        "block_type": 4,
+        "comment_ids": [
+          "7504571502069317651"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7504571502069317651"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "FPSRd5uTzoD9NyxwsYEcRuxFnif",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.utility.request.GetQuerySegmentInfoReq;\nimport io.milvus.v2.service.utility.response.GetQuerySegmentInfoResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Get segment info\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetQuerySegmentInfoResp segInfoResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".getQuerySegmentInfo(GetQuerySegmentInfoReq.builder()\n        .collectionName(\"test\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f"
+      },
+      {
+        "block_id": "AFD2dNuGyoiWDlxmZKjcp2pMnee",
+        "block_type": 2,
+        "parent_id": "Q2VJdq8yDoGiU8xJxvfc5RmYn4f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 42
+  },
+  "slug": "v2-Management-getQuerySegmentInfo"
+}

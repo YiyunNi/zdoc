@@ -1,0 +1,616 @@
+{
+  "created_time": "1761550755",
+  "modified_time": "1761551238",
+  "name": "checkCompatibility()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "WlKqf2dXKljRPDdiiUIcdsh5nxd",
+  "token": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Tq1Md4GuIoNbfuxK03ncIa7onMc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "block_type": 1,
+        "children": [
+          "Ma6AdB7Fvo832RxhPRdc30CVnfb",
+          "Pu2KdjFEioFU4wxpqRnc4keDnDf",
+          "Pkr5d2fUYo2Mozxxu3Ycg9MgnIg",
+          "KnMVdvDD6oc1HMxrd5TcabcdnUb",
+          "Kua2dzfoBoBYwFxAVpQcvvETnFP",
+          "M7GCdgYZyogzs3x80DAcf3uyndg",
+          "KENkdq4g3oRX03xid8ycRAl6n9b",
+          "Dnqvd2CWPopYIyx0Z3WcGmxVnul",
+          "JBPcdIRcKowUbgx4wQlc0Ot6n5d",
+          "BN7ydAG4xodC7hxV54Fc6XXAnxg",
+          "IEkSdAg4vom2mwxSIEOcBknhnvc",
+          "MEEKdlag6osCUyxecXacN5IYnaf",
+          "HEPidD8Nto1PTwxOvMcczBTyndg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "checkCompatibility()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Ma6AdB7Fvo832RxhPRdc30CVnfb",
+        "block_type": 2,
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation checks the compatibility of the SDK with the Milvus server.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Pu2KdjFEioFU4wxpqRnc4keDnDf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "checkCompatibility(data?): ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Promise",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "any",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      },
+      {
+        "block_id": "Pkr5d2fUYo2Mozxxu3Ycg9MgnIg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      },
+      {
+        "block_id": "KnMVdvDD6oc1HMxrd5TcabcdnUb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "milvusClient.checkCompatibility({\n    checker?: Function,\n    message?: string\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "})",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      },
+      {
+        "block_id": "Kua2dzfoBoBYwFxAVpQcvvETnFP",
+        "block_type": 2,
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M7GCdgYZyogzs3x80DAcf3uyndg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "checker",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KUDzdbfTMoHl2hxDqn8cnW6znpb"
+        ],
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      },
+      {
+        "block_id": "KUDzdbfTMoHl2hxDqn8cnW6znpb",
+        "block_type": 2,
+        "parent_id": "M7GCdgYZyogzs3x80DAcf3uyndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A callback function that will be called if the current SDK is compatible.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KENkdq4g3oRX03xid8ycRAl6n9b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "message",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "S14cdRUuio5HeVxwaOTcOc06nvf"
+        ],
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      },
+      {
+        "block_id": "S14cdRUuio5HeVxwaOTcOc06nvf",
+        "block_type": 2,
+        "parent_id": "KENkdq4g3oRX03xid8ycRAl6n9b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The error message to throw if the SDK is incompatible.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dnqvd2CWPopYIyx0Z3WcGmxVnul",
+        "block_type": 2,
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JBPcdIRcKowUbgx4wQlc0Ot6n5d",
+        "block_type": 2,
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Promise",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "any",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BN7ydAG4xodC7hxV54Fc6XXAnxg",
+        "block_type": 2,
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IEkSdAg4vom2mwxSIEOcBknhnvc",
+        "block_type": 2,
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A promise that resolves to the result of the specified checker function.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MEEKdlag6osCUyxecXacN5IYnaf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      },
+      {
+        "block_id": "HEPidD8Nto1PTwxOvMcczBTyndg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "milvusClient.checkCompatibility({\n   checker: () => { console.log(\"compatible\") },\n   message: \"incompatible\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Tq1Md4GuIoNbfuxK03ncIa7onMc"
+      }
+    ],
+    "counts": 16
+  },
+  "slug": "Client-checkCompatibility"
+}

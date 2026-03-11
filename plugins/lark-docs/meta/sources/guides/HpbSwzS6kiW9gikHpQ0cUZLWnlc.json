@@ -1,0 +1,1613 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1748572459",
+  "node_token": "HpbSwzS6kiW9gikHpQ0cUZLWnlc",
+  "node_type": "origin",
+  "obj_create_time": "1748572459",
+  "obj_edit_time": "1768877466",
+  "obj_token": "Kn9jdszHToOto8xuCuLcHcoOnff",
+  "obj_type": "docx",
+  "origin_node_token": "HpbSwzS6kiW9gikHpQ0cUZLWnlc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "BDOHwqlMDiei78kdUefcjSQUnEg",
+  "space_id": "7167193056431783939",
+  "title": "Feature Availability",
+  "slug": "feature-availability",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Kn9jdszHToOto8xuCuLcHcoOnff",
+        "block_type": 1,
+        "children": [
+          "GHFddYDGRoCzKXxd6XWcMlYonvd",
+          "VJMydCgl7ogoEdxgxsDc9Mf2nUh",
+          "Gi1YdsbPWoLpQMxfovzc5T2Hn4e",
+          "CjPsdow4noWvyUxvxe0cGE4Innb",
+          "HKUedkhlBoEOyMx5hdJc7yXSnLW",
+          "Vv47dEFGeobD8vx6aKjcroH6nfR",
+          "XtbhdsEz2o6VSexKjEUcIvpan0b",
+          "PXjjd0oV5oWAPexqGkpcWECxnpd",
+          "ZrBpd7GbloUD45xkLLUcTI8tnjf",
+          "ZJgKdkzaNoM6EExu6KWc1YXpnkd",
+          "X3sydmF5zoKHgNxwvw2cNCcwnwh",
+          "YkLDdVU8doDfVtxGuQ5cLPo1nyc",
+          "VNVCd2Z5NoeEJCxI00vcwrfNnJh",
+          "Ha8Ndg9kkoC9NmxTgETcwYtpnWd",
+          "YeTMd0QARoAheKxAWpocswAxnCf",
+          "YGjJdHkn8ofk7Wxy80YcE5GCnW8",
+          "Yoy1dFE0PoTvzfxrdPRcDKtFnze",
+          "QEkKd4XHnocI41xQveEcXZ8anog",
+          "RuafdkYsZo6QAvxtK2UcItEmnot",
+          "J5SpdhetloatV1xhtAgcEV0lnhc",
+          "NwuXdF77noJizFxvC91cQvEBndg",
+          "AOTedEoxooAQC3xIb9VcPLuXnth",
+          "IuqZd5c5goV7cTxznG6c1gzcn3c",
+          "QkeZdsgDroUqlgxR4ohcPgaNnff",
+          "F6oqdHuujo2RscxjN13c4uWcnEA"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Feature Availability",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "GHFddYDGRoCzKXxd6XWcMlYonvd",
+        "block_type": 2,
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Last updated: Oct 13, 2025",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VJMydCgl7ogoEdxgxsDc9Mf2nUh",
+        "block_type": 2,
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "availability phase",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of a feature indicates its maturity, stability, and recommended usage in Zilliz Cloud. Below is an overview of the feature lifecycle stages and what they mean for you as a user.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gi1YdsbPWoLpQMxfovzc5T2Hn4e",
+        "block_type": 43,
+        "board": {
+          "token": "YBh6wiorGhbetoba42DchATjnVm"
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "CjPsdow4noWvyUxvxe0cGE4Innb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Private Preview:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Ycp2d98NoogPD4xLbMbc5v2Vnec",
+          "V2WUdqO7BoY8EjxG5dwcQ7Bdnre",
+          "QiNjdQrmxoZHEVxUfpcctyIBnPb"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "Ycp2d98NoogPD4xLbMbc5v2Vnec",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Definition:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Features in private preview are under active development and subject to change. While they have been implemented and tested within Zilliz Cloud, full usability, stability, and corner-case coverage may not be complete.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CjPsdow4noWvyUxvxe0cGE4Innb"
+      },
+      {
+        "block_id": "V2WUdqO7BoY8EjxG5dwcQ7Bdnre",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Not available by default. Contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fsupport.zilliz.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to request access.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CjPsdow4noWvyUxvxe0cGE4Innb"
+      },
+      {
+        "block_id": "QiNjdQrmxoZHEVxUfpcctyIBnPb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Usage",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Not intended for production workloads.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CjPsdow4noWvyUxvxe0cGE4Innb"
+      },
+      {
+        "block_id": "HKUedkhlBoEOyMx5hdJc7yXSnLW",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Public Preview:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YvMrdXmcfoODBIxalAScxlmcnxb",
+          "Xp5ud34zLoUy3xxyDhrc9HhZnTc",
+          "PkpddaSY6o1aH0x6Rcfcax5FnDf"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "YvMrdXmcfoODBIxalAScxlmcnxb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Definition:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Features in public preview are close to production-ready and unlikely to change significantly before reaching General Availability (GA). ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HKUedkhlBoEOyMx5hdJc7yXSnLW"
+      },
+      {
+        "block_id": "Xp5ud34zLoUy3xxyDhrc9HhZnTc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Generally enabled by default after upgrading your cluster Milvus version. Some features may be inaccessible if your cluster is running an older version of Milvus. In such cases, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fsupport.zilliz.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to upgrade your cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HKUedkhlBoEOyMx5hdJc7yXSnLW"
+      },
+      {
+        "block_id": "PkpddaSY6o1aH0x6Rcfcax5FnDf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Usage:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Not recommended for production use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "HKUedkhlBoEOyMx5hdJc7yXSnLW"
+      },
+      {
+        "block_id": "Vv47dEFGeobD8vx6aKjcroH6nfR",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "General Availability (GA):",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HYwzd0jVjofQOdx3JgXc8qnRn5m",
+          "YNExdXUcdoNTaGxUBQ0cQ85jnQf",
+          "Tc72d6mA9oxwWjxCh2JcmgPFnUh"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "HYwzd0jVjofQOdx3JgXc8qnRn5m",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Definition: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GA features are fully released, production-ready, and actively supported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Vv47dEFGeobD8vx6aKjcroH6nfR"
+      },
+      {
+        "block_id": "YNExdXUcdoNTaGxUBQ0cQ85jnQf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Enabled by default for most users, except for a few features—such as those enterprise features with pricing considerations—which require ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contacting sales",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for activation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Vv47dEFGeobD8vx6aKjcroH6nfR"
+      },
+      {
+        "block_id": "Tc72d6mA9oxwWjxCh2JcmgPFnUh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Usage",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": For production use.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Vv47dEFGeobD8vx6aKjcroH6nfR"
+      },
+      {
+        "block_id": "XtbhdsEz2o6VSexKjEUcIvpan0b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deprecation Notice:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "E8cqdbapmoyz6Ix90D4co4z1nid",
+          "F1IpdIU7RodYqmxUBijcf5Mgnwg",
+          "ESlndrdgdoZhQBx2sZ1c3Wvpncb"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "E8cqdbapmoyz6Ix90D4co4z1nid",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Definition: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Features in this phase are still functional and accessible but are no longer under active development except for critical bug fixes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XtbhdsEz2o6VSexKjEUcIvpan0b"
+      },
+      {
+        "block_id": "F1IpdIU7RodYqmxUBijcf5Mgnwg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Still available, but a formal deprecation announcement has been issued via email.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XtbhdsEz2o6VSexKjEUcIvpan0b"
+      },
+      {
+        "block_id": "ESlndrdgdoZhQBx2sZ1c3Wvpncb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Usage",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Talk to our expert",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to begin migrating to a new solution as the feature will be removed on a future date.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XtbhdsEz2o6VSexKjEUcIvpan0b"
+      },
+      {
+        "block_id": "PXjjd0oV5oWAPexqGkpcWECxnpd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deprecated:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "A1LMde09hoKknTxTLSucfM7HnBb",
+          "OebTdWBMyokdsuxtYkuc5ZF8nLe"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "A1LMde09hoKknTxTLSucfM7HnBb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Definition: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "The feature has been fully removed from Zilliz Cloud and is no longer accessible or supported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PXjjd0oV5oWAPexqGkpcWECxnpd"
+      },
+      {
+        "block_id": "OebTdWBMyokdsuxtYkuc5ZF8nLe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Access",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Unavailable.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PXjjd0oV5oWAPexqGkpcWECxnpd"
+      },
+      {
+        "block_id": "ZrBpd7GbloUD45xkLLUcTI8tnjf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "How to identify a feature's availability phase",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "ZJgKdkzaNoM6EExu6KWc1YXpnkd",
+        "block_type": 2,
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The availability phase of each feature is indicated in the Zilliz Cloud documentation by a corresponding label. Unless otherwise indicated, a feature is considered to be in general availability.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X3sydmF5zoKHgNxwvw2cNCcwnwh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Current Feature Availability",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "YkLDdVU8doDfVtxGuQ5cLPo1nyc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Private Preview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "VNVCd2Z5NoeEJCxI00vcwrfNnJh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Extract, Transform & Load (ETL)",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7524648001361707027"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fmerge-data-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7524648001361707027"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "Ha8Ndg9kkoC9NmxTgETcwYtpnWd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero downtime migration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FXDoSwZodyigAEVkjkWfc9nsfnCg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "YeTMd0QARoAheKxAWpocswAxnCf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Export backup files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FQUTDwkbTTiA2UlkWYDlc796ensf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "YGjJdHkn8ofk7Wxy80YcE5GCnW8",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Hosted models",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FDMrCwn4LXi1uKBkbHGfcpGnsnyh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "Yoy1dFE0PoTvzfxrdPRcDKtFnze",
+        "block_type": 34,
+        "children": [
+          "M0p3dvWfJo6B5Rx7Khuc6to7nVd",
+          "J3ykdML41o5FSHxxRlDcwS2On1d"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff",
+        "quote_container": {}
+      },
+      {
+        "block_id": "M0p3dvWfJo6B5Rx7Khuc6to7nVd",
+        "block_type": 2,
+        "parent_id": "Yoy1dFE0PoTvzfxrdPRcDKtFnze",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J3ykdML41o5FSHxxRlDcwS2On1d",
+        "block_type": 2,
+        "comment_ids": [
+          "7512395224578064403"
+        ],
+        "parent_id": "Yoy1dFE0PoTvzfxrdPRcDKtFnze",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "http%3A%2F%2Fsupport.zilliz.com"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to request access to these features.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7512395224578064403"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBkDMwo71MiZMazk7gbtc7fqknbh%23Y09mdJRUooJo69xZtGnc4LSTnhd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QEkKd4XHnocI41xQveEcXZ8anog",
+        "block_type": 5,
+        "comment_ids": [
+          "7576967082283011021"
+        ],
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Public preview",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7576967082283011021"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "RuafdkYsZo6QAvxtK2UcItEmnot",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Embedding",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FAP0lw1SNciBJNYkJ2iDc0qnfnEg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FM4IYwThFKiatBkk0Cp3c9p4QnZc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Functions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "J5SpdhetloatV1xhtAgcEV0lnhc",
+        "block_type": 34,
+        "children": [
+          "EA48d2OCJoc6j1xA79tc4p12nCh",
+          "KuE6dz6f6oHJl8xQXPjcn3uvncd"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff",
+        "quote_container": {}
+      },
+      {
+        "block_id": "EA48d2OCJoc6j1xA79tc4p12nCh",
+        "block_type": 2,
+        "parent_id": "J5SpdhetloatV1xhtAgcEV0lnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KuE6dz6f6oHJl8xQXPjcn3uvncd",
+        "block_type": 2,
+        "parent_id": "J5SpdhetloatV1xhtAgcEV0lnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Upgrade your cluster Milvus version to access these features.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NwuXdF77noJizFxvC91cQvEBndg",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deprecation notice",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "AOTedEoxooAQC3xIb9VcPLuXnth",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import Data from NumPy Files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FFOwZwuxaWiuthnkZdedcGbJOnZf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "IuqZd5c5goV7cTxznG6c1gzcn3c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RESTful APIs (V1)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fv1"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "QkeZdsgDroUqlgxR4ohcPgaNnff",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Deprecated",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      },
+      {
+        "block_id": "F6oqdHuujo2RscxjN13c4uWcnEA",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7559472726388490244"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7559472726388490244"
+        ],
+        "parent_id": "Kn9jdszHToOto8xuCuLcHcoOnff"
+      }
+    ],
+    "counts": 44
+  }
+}

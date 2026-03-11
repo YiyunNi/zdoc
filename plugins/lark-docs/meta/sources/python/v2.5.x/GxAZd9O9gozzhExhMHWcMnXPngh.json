@@ -1,0 +1,1036 @@
+{
+  "created_time": "1713253678",
+  "modified_time": "1716519367",
+  "name": "BGERerankFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "NeUZfRa99lNgBfdI5UOcz02Onuf",
+  "token": "GxAZd9O9gozzhExhMHWcMnXPngh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/GxAZd9O9gozzhExhMHWcMnXPngh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "GxAZd9O9gozzhExhMHWcMnXPngh",
+        "block_type": 1,
+        "children": [
+          "TYsjdfPjzoCqXjxPEKxcw0DenKh",
+          "RgC4d958mozYeUxcixmcuoEHnXe",
+          "JaMvddp0GowxqBxCVyqcmWHRnvg",
+          "L9agdTOaPozuTzxFL7jcTbbAn5d",
+          "PNCYdFO3coIU1CxDQodchjJ9nmh",
+          "SP0wdVcgaoAlgYxZkyWcZG5hn4d",
+          "DYNXdhLzuo8Ab9xdqwxcDq26nvf",
+          "JeZfdPjLzouOrExUx3OcphrBnld",
+          "OseFdqJ4noJXmhxzgldcu3wsnih",
+          "OZY4dcCGoohYhjxE6eMcZfz8nCb",
+          "O3OFdVcWDo9QFKxbCJfcdQlxnGb",
+          "I7ZtdhsB4oYyacxNS2LcGXahnEh",
+          "BWsydjExioYA4VxbLIecS5Uon6f"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BGERerankFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "TYsjdfPjzoCqXjxPEKxcw0DenKh",
+        "block_type": 2,
+        "comment_ids": [
+          "7361023440520724484"
+        ],
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BGERerankFunction",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is a class in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "milvus_model",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fmilvus-model"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that takes a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "query",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023440520724484"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and document as input and directly returns a similarity score instead of embeddings. This functionality uses the underlying BGE reranking model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RgC4d958mozYeUxcixmcuoEHnXe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.reranker.BGERerankFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "JaMvddp0GowxqBxCVyqcmWHRnvg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "L9agdTOaPozuTzxFL7jcTbbAn5d",
+        "block_type": 2,
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a BGERerankFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PNCYdFO3coIU1CxDQodchjJ9nmh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BGERerankFunction(\n    model_name: str = \"BAAI/bge-reranker-v2-m3\",\n    use_fp16: bool = True,\n    batch_size: int = 32,\n    normalize: bool = True,\n    device: Optional[str] = None,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "SP0wdVcgaoAlgYxZkyWcZG5hn4d",
+        "block_type": 2,
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DYNXdhLzuo8Ab9xdqwxcDq26nvf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "GCJudgeS2ok9n6xwAvhcVAMEnQc"
+        ],
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "GCJudgeS2ok9n6xwAvhcVAMEnQc",
+        "block_type": 2,
+        "parent_id": "DYNXdhLzuo8Ab9xdqwxcDq26nvf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the model to use. You can specify any of the available BGE reranker model names, for example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BAAI/bge-reranker-base",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BAAI/bge-reranker-large",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", etc. If you leave this parameter unspecified, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BAAI/bge-reranker-v2-m3",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " will be used. For a list of available models, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Model List",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2FFlagOpen%2FFlagEmbedding%2Ftree%2Fmaster%2FFlagEmbedding%2Fllm_reranker%23model-list"
+                  },
+                  "strikethrough": false,
+                  "underline": true
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JeZfdPjLzouOrExUx3OcphrBnld",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "use_fp16",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JV5kdVlpZochaixLxC6ckyOxnTh"
+        ],
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "JV5kdVlpZochaixLxC6ckyOxnTh",
+        "block_type": 2,
+        "comment_ids": [
+          "7361023618174599172"
+        ],
+        "parent_id": "JeZfdPjLzouOrExUx3OcphrBnld",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to utilize 16-bit floating-point precision (fp16). The value is ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "false",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "device",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cpu",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7361023618174599172"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OseFdqJ4noJXmhxzgldcu3wsnih",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "batch_size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KuaVdptWxojYdNxSP4Pcih9znkd"
+        ],
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "KuaVdptWxojYdNxSP4Pcih9znkd",
+        "block_type": 2,
+        "parent_id": "OseFdqJ4noJXmhxzgldcu3wsnih",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The batch size used for the computation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OZY4dcCGoohYhjxE6eMcZfz8nCb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "normalize",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HemAdRxJ6oIadTxoYq8cLWvDnrf"
+        ],
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "HemAdRxJ6oIadTxoYq8cLWvDnrf",
+        "block_type": 2,
+        "parent_id": "OZY4dcCGoohYhjxE6eMcZfz8nCb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to normalize the reranking scores.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O3OFdVcWDo9QFKxbCJfcdQlxnGb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "device",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WlzBdDHZVoWhuyxTOI6cEPgmnxd"
+        ],
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "WlzBdDHZVoWhuyxTOI6cEPgmnxd",
+        "block_type": 2,
+        "parent_id": "O3OFdVcWDo9QFKxbCJfcdQlxnGb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional. The device to use for running the model. If not specified, the model will be run on the CPU. You can specify ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cpu",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the CPU and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cuda:n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the nth GPU device.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I7ZtdhsB4oYyacxNS2LcGXahnEh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      },
+      {
+        "block_id": "BWsydjExioYA4VxbLIecS5Uon6f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.reranker import BGERerankFunction\n\n# Define the rerank function\nbge_rf = BGERerankFunction(\n    model_name=\"BAAI/bge-reranker-v2-m3\",  # Specify the model name. Defaults to `BAAI/bge-reranker-v2-m3`.\n    device=\"cpu\" # Specify the device to use, e.g., 'cpu' or 'cuda:0'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "GxAZd9O9gozzhExhMHWcMnXPngh"
+      }
+    ],
+    "counts": 19
+  },
+  "slug": "Rerankers-BGERerankFunction"
+}

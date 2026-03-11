@@ -1,0 +1,656 @@
+{
+  "created_time": "1770789855",
+  "modified_time": "1771910530",
+  "name": "getMetric()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "DFjqfW5yclNaqWdpjpqckLM2nud",
+  "token": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "block_type": 1,
+        "children": [
+          "doxcnxzCy7aCmkwQyBXhVmxT2bf",
+          "doxcnxZAqYsUMvz0JKTIFxtpwKw",
+          "doxcnsjaqzQLmgmZmQx4YOYovIe",
+          "doxcn3xh2Fd8kmiMGCiS4rYLrHg",
+          "doxcnCKj3sa3HOfzxAb9i2ZppTb",
+          "doxcndzLUqch3UwzNFJBGPaCzXd",
+          "doxcnBshzl6rJtrR4oi1IL25Q9d",
+          "doxcnvHg2lcC0FwOPrnMsuEFl1e",
+          "doxcny6Z327n90SAgcMdCFknAi8",
+          "doxcnR5wTYgvIa8NiyOqa8G19xe",
+          "doxcngc309PwFYthmFkpHBA0SPe",
+          "doxcnbhMoYSRaajDO64IURViiZg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getMetric()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnxzCy7aCmkwQyBXhVmxT2bf",
+        "block_type": 2,
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation returns",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " metric information from the Milvus system, including system info, statistics, or logs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnxZAqYsUMvz0JKTIFxtpwKw",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "await milvusClient.getMetric(data: GetMetricsRequest)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh"
+      },
+      {
+        "block_id": "doxcnsjaqzQLmgmZmQx4YOYovIe",
+        "block_type": 2,
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3xh2Fd8kmiMGCiS4rYLrHg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "request",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "object",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnJ5Z0lSzWr8hqzl2ml4Cxuh",
+          "doxcnqflBJHLn3ehMriptlRuHIb"
+        ],
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh"
+      },
+      {
+        "block_id": "doxcnJ5Z0lSzWr8hqzl2ml4Cxuh",
+        "block_type": 2,
+        "parent_id": "doxcn3xh2Fd8kmiMGCiS4rYLrHg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnqflBJHLn3ehMriptlRuHIb",
+        "block_type": 2,
+        "parent_id": "doxcn3xh2Fd8kmiMGCiS4rYLrHg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An object containing ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "metric_type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " which can be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"system_info\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"system_statistics\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"system_log\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCKj3sa3HOfzxAb9i2ZppTb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnB7sM8qV6ypXvI5XEQG78oc"
+        ],
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh"
+      },
+      {
+        "block_id": "doxcnB7sM8qV6ypXvI5XEQG78oc",
+        "block_type": 2,
+        "parent_id": "doxcnCKj3sa3HOfzxAb9i2ZppTb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RPC timeout in milliseconds. Optional.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcndzLUqch3UwzNFJBGPaCzXd",
+        "block_type": 2,
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnBshzl6rJtrR4oi1IL25Q9d",
+        "block_type": 2,
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Promise\\<GetMetricsResponse\\>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvHg2lcC0FwOPrnMsuEFl1e",
+        "block_type": 2,
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The response contains the parsed metric data and the component name.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcny6Z327n90SAgcMdCFknAi8",
+        "block_type": 2,
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnR5wTYgvIa8NiyOqa8G19xe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnCesd9YpWtC70Eb89QUecHj"
+        ],
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh"
+      },
+      {
+        "block_id": "doxcnCesd9YpWtC70Eb89QUecHj",
+        "block_type": 2,
+        "parent_id": "doxcnR5wTYgvIa8NiyOqa8G19xe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcngc309PwFYthmFkpHBA0SPe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh"
+      },
+      {
+        "block_id": "doxcnbhMoYSRaajDO64IURViiZg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient } from '@zilliz/milvus2-sdk-node';\n\nconst client = new MilvusClient({ address: 'localhost:19530' });\nconst res = await client.getMetric({\n    request: { metric_type: 'system_info' },\n});\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "console.log(res.response);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "TUKudnvAso6ZMZx7e6Kc4eJYnRh"
+      }
+    ],
+    "counts": 17
+  },
+  "slug": "Vector-getMetric"
+}

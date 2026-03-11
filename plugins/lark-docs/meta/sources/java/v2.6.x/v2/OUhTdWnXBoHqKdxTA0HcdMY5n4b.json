@@ -1,0 +1,384 @@
+{
+  "created_time": "1750400852",
+  "modified_time": "1750837016",
+  "name": "commit()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "YUsTfjjjYlRNMtdr7J3cJrQznSc",
+  "token": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+        "block_type": 1,
+        "children": [
+          "Z0zWdnX8JoAsrExluIccdeu4nxd",
+          "PwFvdo5OXoelAExO4wQcir7Rn3f",
+          "FXOVd44nho2KpPxzdidcl03PnBc",
+          "QPJAd3R26oxe9exjHO9cSzAknLb",
+          "VXbtdgeefoPN9fxAwdMcqmgTnmd",
+          "CBbBdLlqHodAdKxwnb3cNPDCn68",
+          "B8s9doLTXoH0tuxNpcZcnuLGn2d",
+          "EenjdHV78otdbNxjccMcUtgUn8R",
+          "SetPdpmzIoFCV3xcHaWcjcitn6b",
+          "HRgrdYFM5o3DLOxcEvMckkn0npv"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "commit()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Z0zWdnX8JoAsrExluIccdeu4nxd",
+        "block_type": 2,
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation commits the appended data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PwFvdo5OXoelAExO4wQcir7Rn3f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " public void commit(boolean async)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+      },
+      {
+        "block_id": "FXOVd44nho2KpPxzdidcl03PnBc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+      },
+      {
+        "block_id": "QPJAd3R26oxe9exjHO9cSzAknLb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "localBulkWriter.commit(\n    boolean async\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+      },
+      {
+        "block_id": "VXbtdgeefoPN9fxAwdMcqmgTnmd",
+        "block_type": 2,
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CBbBdLlqHodAdKxwnb3cNPDCn68",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "async",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "boolean",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "I6iJdiUnLo84N7xpzXbcHXktnTc"
+        ],
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+      },
+      {
+        "block_id": "I6iJdiUnLo84N7xpzXbcHXktnTc",
+        "block_type": 2,
+        "parent_id": "CBbBdLlqHodAdKxwnb3cNPDCn68",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether the commit operation returns immediately after being called.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B8s9doLTXoH0tuxNpcZcnuLGn2d",
+        "block_type": 2,
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EenjdHV78otdbNxjccMcUtgUn8R",
+        "block_type": 2,
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SetPdpmzIoFCV3xcHaWcjcitn6b",
+        "block_type": 4,
+        "comment_ids": [
+          "7519031221705670659"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7519031221705670659"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+      },
+      {
+        "block_id": "HRgrdYFM5o3DLOxcEvMckkn0npv",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "localBulkWriter.commit(false);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OUhTdWnXBoHqKdxTA0HcdMY5n4b"
+      }
+    ],
+    "counts": 12
+  },
+  "slug": "v2-LocalBulkWriter-commit"
+}

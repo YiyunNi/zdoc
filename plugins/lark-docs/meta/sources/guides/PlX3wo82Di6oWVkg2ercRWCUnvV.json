@@ -1,0 +1,1880 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1724297580",
+  "node_token": "PlX3wo82Di6oWVkg2ercRWCUnvV",
+  "node_type": "origin",
+  "obj_create_time": "1724297580",
+  "obj_edit_time": "1767851422",
+  "obj_token": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+  "obj_type": "docx",
+  "origin_node_token": "PlX3wo82Di6oWVkg2ercRWCUnvV",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "TDkbwhwMyi7bPykZAoUc5PFfnIb",
+  "space_id": "7167193056431783939",
+  "title": "Migrate from Milvus to Zilliz Cloud Via Endpoint",
+  "slug": "via-endpoint",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "block_type": 1,
+        "children": [
+          "Pjcgd5AI5oMy70xdcupcW0xunhh",
+          "OqNvdZXbCovd7kxHWCUce74UnYe",
+          "NfKDdSMZwo3PiTxyw1ScqPL6nPh",
+          "UUSKdZ1pWovQnIxhPKBcgoPynDc",
+          "UT54dmxdVomqldxZHGFcrpmGneh",
+          "Me4zdm1Y6oPoMIxExWscIFTtnOd",
+          "GHTfdujM6oiukox0UtWcIAwOnPd",
+          "QlnKdaZ4poXTAExzcEHcp1IKnWP",
+          "GFd9dxZJ7oWAAjxtSCUcLQcOnBe",
+          "ElCWdfZVcoJM37xMjWUckPlwnhe",
+          "BiGUdmtBnozZ0exW04NcmvBOncb",
+          "FgH0dPgQVoFJe5xmxn4cSnkBnRi",
+          "WZXqdDhnfoYKaXxFztDcZJgknAc",
+          "Zpn9dtzMootbIrxt2omcbLspnjh",
+          "M9FVdYKx9oCmWsxDZURc3WUbncg",
+          "EUxrdVbGAo70APx4h19cYi0XnUd",
+          "FeOwdvKY5oJ5HLxyOhjcCUijnNc",
+          "AubKdp0hLo4T8TxzSDGcoKDhnNh",
+          "ZuFvdXo0qopJJixtUU1cy9RKn6g",
+          "PXvsdCotko3H2IxmaDCcNH58nxg",
+          "Hpe8dGnb8o5Py0x56uicPr5nnb3",
+          "KQqqdC4SVoVJstxviBRciQOnnog",
+          "Iz7ndFh5cogrtmxFVL0ccPq1nrf",
+          "GzvHdCgtYoiRGHx7rfYcXbDknbd",
+          "DQrAddDGFo04k1xINPecXPA1nRf"
+        ],
+        "comment_ids": [
+          "7428477764871667716"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrate from Milvus to Zilliz Cloud Via Endpoint",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7428477764871667716"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Pjcgd5AI5oMy70xdcupcW0xunhh",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud offers ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as a fully managed, cloud-hosted solution for users who want to use the Milvus vector database without the need to manage the infrastructure themselves. This topic describes how to migrate from Milvus via",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " the",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "database",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " endpoint. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OqNvdZXbCovd7kxHWCUce74UnYe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Prerequisites",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "NfKDdSMZwo3PiTxyw1ScqPL6nPh",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before starting your Milvus to Zilliz Cloud migration, ensure you meet these requirements:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UUSKdZ1pWovQnIxhPKBcgoPynDc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus requirements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "block_type": 31,
+        "children": [
+          "JLSLdUcxiov0LDxtyqTc244rnif",
+          "NBU1ddTLAoTmHix4x3tcgs2yn8d",
+          "JBNjduL2soHORUxWB5pclUJxndb",
+          "AEpVdnkgJotY6GxdmwmcSqOknQc",
+          "V1oxd1K3FoBJy9xmZRGc1RmhnCe",
+          "MPwPdJIvHoQtKVxY9wncCCWVn5g",
+          "XCzZdLgRVo0YRGx1jRUc4kyEnvb",
+          "GFebdOHDIojxLyxIzDhc0PvFn0k"
+        ],
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "table": {
+          "cells": [
+            "JLSLdUcxiov0LDxtyqTc244rnif",
+            "NBU1ddTLAoTmHix4x3tcgs2yn8d",
+            "JBNjduL2soHORUxWB5pclUJxndb",
+            "AEpVdnkgJotY6GxdmwmcSqOknQc",
+            "V1oxd1K3FoBJy9xmZRGc1RmhnCe",
+            "MPwPdJIvHoQtKVxY9wncCCWVn5g",
+            "XCzZdLgRVo0YRGx1jRUc4kyEnvb",
+            "GFebdOHDIojxLyxIzDhc0PvFn0k"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              172,
+              466
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "JLSLdUcxiov0LDxtyqTc244rnif",
+        "block_type": 32,
+        "children": [
+          "IjOwdB8TrogFQZxAOmTcvQ4Bnzd"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IjOwdB8TrogFQZxAOmTcvQ4Bnzd",
+        "block_type": 2,
+        "parent_id": "JLSLdUcxiov0LDxtyqTc244rnif",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Requirement",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NBU1ddTLAoTmHix4x3tcgs2yn8d",
+        "block_type": 32,
+        "children": [
+          "Fv6vd4qszovrH4xqlGxcMUfpn1d"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Fv6vd4qszovrH4xqlGxcMUfpn1d",
+        "block_type": 2,
+        "parent_id": "NBU1ddTLAoTmHix4x3tcgs2yn8d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JBNjduL2soHORUxWB5pclUJxndb",
+        "block_type": 32,
+        "children": [
+          "UJnIdm64NoVxHOxDeJDcQnKin1d"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UJnIdm64NoVxHOxDeJDcQnKin1d",
+        "block_type": 2,
+        "parent_id": "JBNjduL2soHORUxWB5pclUJxndb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Version compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AEpVdnkgJotY6GxdmwmcSqOknQc",
+        "block_type": 32,
+        "children": [
+          "GEYndINVEouL9uxWIVAcsTFen9c"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GEYndINVEouL9uxWIVAcsTFen9c",
+        "block_type": 2,
+        "parent_id": "AEpVdnkgJotY6GxdmwmcSqOknQc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus 2.3.6 or later",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V1oxd1K3FoBJy9xmZRGc1RmhnCe",
+        "block_type": 32,
+        "children": [
+          "UExLdEEphoFGXaxKzQ7cEbCJnPd"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UExLdEEphoFGXaxKzQ7cEbCJnPd",
+        "block_type": 2,
+        "parent_id": "V1oxd1K3FoBJy9xmZRGc1RmhnCe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Network access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MPwPdJIvHoQtKVxY9wncCCWVn5g",
+        "block_type": 32,
+        "children": [
+          "Ob0odC95aokFwixhV58ch49YnOh"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ob0odC95aokFwixhV58ch49YnOh",
+        "block_type": 2,
+        "parent_id": "MPwPdJIvHoQtKVxY9wncCCWVn5g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Source Milvus instance must be accessible from the public internet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XCzZdLgRVo0YRGx1jRUc4kyEnvb",
+        "block_type": 32,
+        "children": [
+          "QGavd19zIoEQjjx0NR7caAh7nXc"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QGavd19zIoEQjjx0NR7caAh7nXc",
+        "block_type": 2,
+        "parent_id": "XCzZdLgRVo0YRGx1jRUc4kyEnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Authentication credentials",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GFebdOHDIojxLyxIzDhc0PvFn0k",
+        "block_type": 32,
+        "children": [
+          "JuoNdqpm5ox9lZxi2i4cCKg6n4f"
+        ],
+        "parent_id": "UT54dmxdVomqldxZHGFcrpmGneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JuoNdqpm5ox9lZxi2i4cCKg6n4f",
+        "block_type": 2,
+        "parent_id": "GFebdOHDIojxLyxIzDhc0PvFn0k",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Username and password if authentication is enabled (refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authenticate User Access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fauthenticate.md%3Ftab%3Ddocker%23Authenticate-User-Access"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Me4zdm1Y6oPoMIxExWscIFTtnOd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud requirements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "block_type": 31,
+        "children": [
+          "JALvdOuheo8NFLx9lYXcH9DHnSc",
+          "LMxndXmlfoA1KvxmXI6c8o2Znpw",
+          "BknHdCYkGopDL9xtYXdcswRfnOe",
+          "Qo4YdQW1HoRQM8xW1K7cV2agn0c",
+          "Yfg2doGOFozaVpxM2QUcVim9nid",
+          "PEJgdHZNcoXN1bxn4vHcSJTenLc",
+          "PzMcditELoItWfxVSS5cvINAnuc",
+          "BAMadMSuKoHZDXx0CkzcbrmTnQh"
+        ],
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "table": {
+          "cells": [
+            "JALvdOuheo8NFLx9lYXcH9DHnSc",
+            "LMxndXmlfoA1KvxmXI6c8o2Znpw",
+            "BknHdCYkGopDL9xtYXdcswRfnOe",
+            "Qo4YdQW1HoRQM8xW1K7cV2agn0c",
+            "Yfg2doGOFozaVpxM2QUcVim9nid",
+            "PEJgdHZNcoXN1bxn4vHcSJTenLc",
+            "PzMcditELoItWfxVSS5cvINAnuc",
+            "BAMadMSuKoHZDXx0CkzcbrmTnQh"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              172,
+              466
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "JALvdOuheo8NFLx9lYXcH9DHnSc",
+        "block_type": 32,
+        "children": [
+          "J72JdXBpZosAczxyVA2c7D5inKc"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "J72JdXBpZosAczxyVA2c7D5inKc",
+        "block_type": 2,
+        "parent_id": "JALvdOuheo8NFLx9lYXcH9DHnSc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Requirement",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LMxndXmlfoA1KvxmXI6c8o2Znpw",
+        "block_type": 32,
+        "children": [
+          "J2d2dllRpof4RvxkqrEcT9xXnob"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "J2d2dllRpof4RvxkqrEcT9xXnob",
+        "block_type": 2,
+        "parent_id": "LMxndXmlfoA1KvxmXI6c8o2Znpw",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BknHdCYkGopDL9xtYXdcswRfnOe",
+        "block_type": 32,
+        "children": [
+          "ECvTdmcUDoL9wWx1EeIcXUrpnag"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ECvTdmcUDoL9wWx1EeIcXUrpnag",
+        "block_type": 2,
+        "parent_id": "BknHdCYkGopDL9xtYXdcswRfnOe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Qo4YdQW1HoRQM8xW1K7cV2agn0c",
+        "block_type": 32,
+        "children": [
+          "KPKGdGj8ionrmJxn81YcoKOYnSb"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KPKGdGj8ionrmJxn81YcoKOYnSb",
+        "block_type": 2,
+        "parent_id": "Qo4YdQW1HoRQM8xW1K7cV2agn0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Organization Owner or Project Admin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Yfg2doGOFozaVpxM2QUcVim9nid",
+        "block_type": 32,
+        "children": [
+          "U4Tmdw4FooFvkQxDRaqcqce6nNx"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "U4Tmdw4FooFvkQxDRaqcqce6nNx",
+        "block_type": 2,
+        "parent_id": "Yfg2doGOFozaVpxM2QUcVim9nid",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster capacity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PEJgdHZNcoXN1bxn4vHcSJTenLc",
+        "block_type": 32,
+        "children": [
+          "OnUkdFeXjoNzCPxgsbKc57xXnmd"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OnUkdFeXjoNzCPxgsbKc57xXnmd",
+        "block_type": 2,
+        "parent_id": "PEJgdHZNcoXN1bxn4vHcSJTenLc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sufficient storage and compute resources (use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CU calculator",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing%23calculator"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to estimate CU size)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PzMcditELoItWfxVSS5cvINAnuc",
+        "block_type": 32,
+        "children": [
+          "Twj6d3esJoIEQYxBmcTcZQC3n4z"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Twj6d3esJoIEQYxBmcTcZQC3n4z",
+        "block_type": 2,
+        "parent_id": "PzMcditELoItWfxVSS5cvINAnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Network access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BAMadMSuKoHZDXx0CkzcbrmTnQh",
+        "block_type": 32,
+        "children": [
+          "HbDXdvjGfo7qD2xPSyJcxJ5jn5b"
+        ],
+        "parent_id": "GHTfdujM6oiukox0UtWcIAwOnPd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HbDXdvjGfo7qD2xPSyJcxJ5jn5b",
+        "block_type": 2,
+        "parent_id": "BAMadMSuKoHZDXx0CkzcbrmTnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Add ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud IPs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FKfgvwJKPDi8uDekl2aHcPOvgnSb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to allowlists if using network restrictions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QlnKdaZ4poXTAExzcEHcp1IKnWP",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Getting started",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "GFd9dxZJ7oWAAjxtSCUcLQcOnBe",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo walks you through how to start migrating from Milvus via endpoint:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ElCWdfZVcoJM37xMjWUckPlwnhe",
+        "block_type": 2,
+        "comment_ids": [
+          "7510061229344931859"
+        ],
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cmbkiuxw98p13sn1rc65tt6b0\" title=\"Zilliz Cloud - Migrate from Milvus via Endpoint\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "comment_ids": [
+                    "7510061229344931859"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BiGUdmtBnozZ0exW04NcmvBOncb",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "SymedTvIHouyJEx6sqkcClIPnTh",
+          "Knd8dVoMuo3jnPx73UbcM5EqnAf",
+          "Y3wUdXEHPoztZBx5p3vcdQ1Anch"
+        ],
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "SymedTvIHouyJEx6sqkcClIPnTh",
+        "block_type": 2,
+        "parent_id": "BiGUdmtBnozZ0exW04NcmvBOncb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Knd8dVoMuo3jnPx73UbcM5EqnAf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If full text search is already enabled for the source collection, Zilliz Cloud will preserve its Function settings in the target collection after migration. These inherited settings cannot be modified.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BiGUdmtBnozZ0exW04NcmvBOncb"
+      },
+      {
+        "block_id": "Y3wUdXEHPoztZBx5p3vcdQ1Anch",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also enable full text search for other VARCHAR fields during migration. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Full Text Search",
+                "token": "RQTRwhOVPiwnwokqr4scAtyfnBf",
+                "url": "https://zilliverse.feishu.cn/wiki/RQTRwhOVPiwnwokqr4scAtyfnBf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "BiGUdmtBnozZ0exW04NcmvBOncb"
+      },
+      {
+        "block_id": "FgH0dPgQVoFJe5xmxn4cSnkBnRi",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Monitor the migration process",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "WZXqdDhnfoYKaXxFztDcZJgknAc",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Migrate",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", a migration job will be generated. You can check the migration progress on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRY8ww0NDQi8yU9kNpjicHP7Gn4b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page. When the job status switches from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "In Progress",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Successful",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the migration is complete.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zpn9dtzMootbIrxt2omcbLspnjh",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 1020,
+          "scale": 0.27888730385164046,
+          "token": "RGsvb7oFpo7uzbxjSSFc6owNn0c",
+          "width": 2804
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "M9FVdYKx9oCmWsxDZURc3WUbncg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Post-migration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "EUxrdVbGAo70APx4h19cYi0XnUd",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After the migration job is completed, note the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FeOwdvKY5oJ5HLxyOhjcCUijnNc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Index Creation",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The migration process automatically creates ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AUTOINDEX",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FEA2twSf5oiERMDkriKScU9GInc4"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the migrated collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "AubKdp0hLo4T8TxzSDGcoKDhnNh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Manual Loading Required",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Despite automatic indexing, the migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Load & Release",
+                "token": "CemEwKryciMUepkgYWZcOw6wncb",
+                "url": "https://zilliverse.feishu.cn/wiki/CemEwKryciMUepkgYWZcOw6wncb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "ZuFvdXo0qopJJixtUU1cy9RKn6g",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "WeWPdcANioIBVJxNTizc6Yvinve",
+          "Fz90dXd0XozCakxEb5ncjcStnEb"
+        ],
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "WeWPdcANioIBVJxNTizc6Yvinve",
+        "block_type": 2,
+        "parent_id": "ZuFvdXo0qopJJixtUU1cy9RKn6g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fz90dXd0XozCakxEb5ncjcStnEb",
+        "block_type": 2,
+        "comment_ids": [
+          "7408084947673661444"
+        ],
+        "parent_id": "ZuFvdXo0qopJJixtUU1cy9RKn6g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once your collection is loaded, verify that the number of collections and entities in the target cluster matches the data source. If discrepancies are found, delete the collections with missing entities and re-migrate them.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7408084947673661444"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PXvsdCotko3H2IxmaDCcNH58nxg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cancel migration job",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "Hpe8dGnb8o5Py0x56uicPr5nnb3",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the migration process encounters any issues, you can take the following steps to troubleshoot and resume the migration:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KQqqdC4SVoVJstxviBRciQOnnog",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Iz7ndFh5cogrtmxFVL0ccPq1nrf",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "On the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRY8ww0NDQi8yU9kNpjicHP7Gn4b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page, identify the failed migration job and cancel it.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "GzvHdCgtYoiRGHx7rfYcXbDknbd",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "View Details",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Actions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column to access the error log.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d"
+      },
+      {
+        "block_id": "DQrAddDGFo04k1xINPecXPA1nRf",
+        "block_type": 2,
+        "parent_id": "R7evdZ9fFoFkJIxRXDccGOpun6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</Procedures>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 63
+  }
+}

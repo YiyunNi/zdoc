@@ -1,0 +1,572 @@
+{
+  "created_time": "1770789827",
+  "modified_time": "1770789830",
+  "name": "hasRole()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "KWn3ff3dRlg3zndqerbcW0QXn1c",
+  "token": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "block_type": 1,
+        "children": [
+          "doxcnh1A07JXUTTFUDciNgUsoue",
+          "doxcnbk91relRX3e8r1Qo9yAHXd",
+          "doxcnhTMw3gCLECPKQ5um2bzPTb",
+          "doxcnuaeVm0o32QoX6sBknTuC4c",
+          "doxcnEff9VmSr1z7stCM2O6CFkh",
+          "doxcnkYYy9AOPX8eR4LKBcu44Rb",
+          "doxcn99KGbMxh0tQr9F5feqR6ke",
+          "doxcnKh9VZsaZEcNuzk7m0JXLcb",
+          "doxcnViP8fmkrde3koh5UgxWeZe",
+          "doxcnDrjDJDgc6iDbwgg8xUZ45e",
+          "doxcnfS8hQ9glEuPhPEVoJR9Nrg",
+          "doxcn1Ac2jCYwc8aNyAhH91UnOc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "hasRole()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnh1A07JXUTTFUDciNgUsoue",
+        "block_type": 2,
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Checks if a role exists in the Milvus cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbk91relRX3e8r1Qo9yAHXd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "await milvusClient.hasRole(data: HasRoleReq)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc"
+      },
+      {
+        "block_id": "doxcnhTMw3gCLECPKQ5um2bzPTb",
+        "block_type": 2,
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnuaeVm0o32QoX6sBknTuC4c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "roleName",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnKia1kpk5XmmJcCD4UybMEh",
+          "doxcnrN7CxV1cWaNJ7zvu8VK50d"
+        ],
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc"
+      },
+      {
+        "block_id": "doxcnKia1kpk5XmmJcCD4UybMEh",
+        "block_type": 2,
+        "parent_id": "doxcnuaeVm0o32QoX6sBknTuC4c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnrN7CxV1cWaNJ7zvu8VK50d",
+        "block_type": 2,
+        "parent_id": "doxcnuaeVm0o32QoX6sBknTuC4c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the role to check.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEff9VmSr1z7stCM2O6CFkh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn8EN7LtoAP9afku4NwxA5pc"
+        ],
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc"
+      },
+      {
+        "block_id": "doxcn8EN7LtoAP9afku4NwxA5pc",
+        "block_type": 2,
+        "parent_id": "doxcnEff9VmSr1z7stCM2O6CFkh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RPC timeout in milliseconds. Optional.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnkYYy9AOPX8eR4LKBcu44Rb",
+        "block_type": 2,
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn99KGbMxh0tQr9F5feqR6ke",
+        "block_type": 2,
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Promise\\<HasRoleResponse\\>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnKh9VZsaZEcNuzk7m0JXLcb",
+        "block_type": 2,
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The response contains a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "hasRole",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " boolean indicating whether the role exists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnViP8fmkrde3koh5UgxWeZe",
+        "block_type": 2,
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnDrjDJDgc6iDbwgg8xUZ45e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnb4uqCRQrqjK7yZIvKWronq"
+        ],
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc"
+      },
+      {
+        "block_id": "doxcnb4uqCRQrqjK7yZIvKWronq",
+        "block_type": 2,
+        "parent_id": "doxcnDrjDJDgc6iDbwgg8xUZ45e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfS8hQ9glEuPhPEVoJR9Nrg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc"
+      },
+      {
+        "block_id": "doxcn1Ac2jCYwc8aNyAhH91UnOc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient } from '@zilliz/milvus2-sdk-node';\n\nconst client = new MilvusClient({ address: 'localhost:19530' });\nconst res = await client.hasRole({ roleName: 'my_role' });\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "console.log(res.hasRole); // true or false",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 63,
+            "wrap": false
+          }
+        },
+        "parent_id": "Cgm7deeT9oQ6DwxCI3tc9GSfnuc"
+      }
+    ],
+    "counts": 17
+  },
+  "slug": "Authentication-hasRole"
+}

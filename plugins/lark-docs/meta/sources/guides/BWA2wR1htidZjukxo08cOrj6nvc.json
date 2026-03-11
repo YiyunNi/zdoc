@@ -1,0 +1,113 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": true,
+  "node_create_time": "1766127020",
+  "node_token": "BWA2wR1htidZjukxo08cOrj6nvc",
+  "node_type": "origin",
+  "obj_create_time": "1766127020",
+  "obj_edit_time": "1766546410",
+  "obj_token": "QKE3dJKxLoEi8Ux5xFOc7TNRn0b",
+  "obj_type": "docx",
+  "origin_node_token": "BWA2wR1htidZjukxo08cOrj6nvc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "M4IYwThFKiatBkk0Cp3c9p4QnZc",
+  "space_id": "7167193056431783939",
+  "title": "Hybrid Search Rankers",
+  "slug": "hybrid-search-rankers",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "QKE3dJKxLoEi8Ux5xFOc7TNRn0b",
+        "block_type": 1,
+        "children": [
+          "Vt29d1WfDosmhvxOaFKcbatwnmh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Hybrid Search Rankers",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Vt29d1WfDosmhvxOaFKcbatwnmh",
+        "block_type": 2,
+        "parent_id": "QKE3dJKxLoEi8Ux5xFOc7TNRn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Rankers in this section should be used in hybrid searches.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1745983621",
+      "node_token": "Oyy6w5DYJiVCMYkdduEc6eD9nZg",
+      "node_type": "origin",
+      "obj_create_time": "1745983621",
+      "obj_edit_time": "1768362385",
+      "obj_token": "KRDUdbOHooR6OTxai25cBMRxnYc",
+      "obj_type": "docx",
+      "origin_node_token": "Oyy6w5DYJiVCMYkdduEc6eD9nZg",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "BWA2wR1htidZjukxo08cOrj6nvc",
+      "space_id": "7167193056431783939",
+      "title": "Weighted Ranker",
+      "slug": "reranking-weighted-reranker"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1745983629",
+      "node_token": "Nqguwf6ikiKrHEkGKgAc8g7Lnnh",
+      "node_type": "origin",
+      "obj_create_time": "1745983629",
+      "obj_edit_time": "1768370999",
+      "obj_token": "Lu2ndUPtboOD4AxxuCZcO590n5M",
+      "obj_type": "docx",
+      "origin_node_token": "Nqguwf6ikiKrHEkGKgAc8g7Lnnh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "BWA2wR1htidZjukxo08cOrj6nvc",
+      "space_id": "7167193056431783939",
+      "title": "RRF Ranker",
+      "slug": "reranking-rrf"
+    }
+  ]
+}

@@ -1,0 +1,1874 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1719023665",
+  "node_token": "GanXwLnJkiymKVkNPhecdi9MnGf",
+  "node_type": "origin",
+  "obj_create_time": "1719023665",
+  "obj_edit_time": "1760064682",
+  "obj_token": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+  "obj_type": "docx",
+  "origin_node_token": "GanXwLnJkiymKVkNPhecdi9MnGf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "Release Notes (June 18, 2024)",
+  "slug": "release-notes-290",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "block_type": 1,
+        "children": [
+          "doxcnNnxt2WFbzPi2qfKQXlhRkg",
+          "doxcn3Yz8GHMIq8n11ajKkKXGQf",
+          "doxcn1ym311nrwl9EJjEVHOOf9c",
+          "doxcnZt55OW0QE7zdNej7aAZ3Jf",
+          "RtOvd6NvgoCWEhxJTaBc6FEGn0e",
+          "doxcnLsBUJURlQoVpqGVqTs6UYe",
+          "doxcnVqvcnFHReVwjcAeLJg0E6g",
+          "Xuu1dSn75oTn6sxXOPdcLw20nGc",
+          "AgRedmip8oGVknxmLexcXSUEn4e",
+          "XESgd7fcmof9BWxJHdPcNkJ1nnc",
+          "FJLTd1z8IoNIuZxAAlGcos9InBh",
+          "KcMWdx09doP9Otx4DLEcWI17nN7",
+          "JjVZd2aD8obN9Nx6b7scxYSRnod",
+          "OwIpdfdwJok7gzxkObpcAU4xn5c",
+          "G8HgdcQwqo6eGbxGCbccO6fjn8e",
+          "NKGvd1SHSo5YQOxeNVCc9fgYnch",
+          "MUkTdQlvmo59w5x2tZac4KKPnYf",
+          "IzP6dkhFfoe939xlzrRcuAojnIe",
+          "Wh9fd9POnoHBJBxRlE5cJlnbnkh",
+          "DeP0dhSSVo5CaTxZJdacegxMnAf",
+          "A9esdPKlGovE45xHvmgcoqu5n7f",
+          "MQePd6GOTol6BtxC2xWcsXH3n1c",
+          "SWXUdTVumoPvgkxBwlocI54RnBh",
+          "MnNrdxXQJoAG7WxhtDbcvk82nce",
+          "G6DgdpNjqoQDSFxTLEscZOBOntb",
+          "Erc2dsTZioPOx0x5VCRc9fHlnq4",
+          "RTkxdC9Q4oprkdxp8SXcnjAYnTe",
+          "IEzKdSF8yor2iKx1pvwcSrVpnod",
+          "WZ1jdCXQ3oir6Xxq8aWc0yJ0n9b",
+          "GEdgdFoXfoVGlExhh3YcR2u4nld",
+          "Zrd4d9NfWohZBzxYQ53c3K1wnZc",
+          "CPrtdp8AbokWbdx4aM5ctXtQnQf",
+          "S99kdKhJiof5SCxdaMEcj6fBnWf",
+          "ONCWdXaiuoXkc5x3xlKcMnHGnIc",
+          "CvupdHBUuoY8khx9wTCc6VRnnBh",
+          "LLlJd5HWrolM86xoLJAcRMBfnkh",
+          "GVo4d2aukoG6mZxDGP1csHPFnWf",
+          "doxcnNZiUghgapnHoVuCz8O05xd"
+        ],
+        "comment_ids": [
+          "7383162352604495876"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Release Notes (June 18, 2024)",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7383162352604495876"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnNnxt2WFbzPi2qfKQXlhRkg",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this release, Zilliz Cloud has unveiled an array of new features backed by Milvus 2.4, including sparse vector support, enhanced multi-vector and hybrid search, an inverted index and fuzzy matching for faster queries, and grouping search for document-level recall. It also introduces Float16 and BFloat16 data types for improved search efficiency. In addition, the Pipelines feature now tracks token usage stats with every data ingestion and search request, streamlining performance monitoring. You can find detailed stats on the invoice page.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3Yz8GHMIq8n11ajKkKXGQf",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn1ym311nrwl9EJjEVHOOf9c",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus Compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "doxcnZt55OW0QE7zdNej7aAZ3Jf",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release is compatible with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus 2.3.x",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RtOvd6NvgoCWEhxJTaBc6FEGn0e",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you prefer to upgrade your clusters to BETA, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus 2.4.x ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "features are available after the upgrade.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnLsBUJURlQoVpqGVqTs6UYe",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVqvcnFHReVwjcAeLJg0E6g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus 2.4.x New Features Available on Zilliz Cloud",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "Xuu1dSn75oTn6sxXOPdcLw20nGc",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus 2.4 offers many efficient capabilities for RAG and multimodal data search. If you want to try these new features, you can update your cluster to BETA. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AgRedmip8oGVknxmLexcXSUEn4e",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "M9RNdjxApohHiYxQAN0c2GCfntx",
+          "TCEyd3E5poVpdHxl84XcoM43nUc"
+        ],
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "M9RNdjxApohHiYxQAN0c2GCfntx",
+        "block_type": 2,
+        "parent_id": "AgRedmip8oGVknxmLexcXSUEn4e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TCEyd3E5poVpdHxl84XcoM43nUc",
+        "block_type": 2,
+        "parent_id": "AgRedmip8oGVknxmLexcXSUEn4e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus 2.4 has not reached a stable version. Be cautious when you adopt Milvus 2.4 features in your production environment.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XESgd7fcmof9BWxJHdPcNkJ1nnc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sparse Vector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "FJLTd1z8IoNIuZxAAlGcos9InBh",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sparse vectors differ from their dense counterparts as they tend to have several magnitude higher numbers of dimensions with only a handful being non-zero. This feature offers better interpretability due to its term-based nature and can be more effective in certain domains. Learned sparse models such as SPLADEv2/BGE-M3 have proven useful for common first-stage ranking tasks. The main use case for this new feature is to allow efficient approximate semantic nearest neighbor search over sparse vectors generated by neural models such as SPLADEv2/BGE-M3 and statistics models such as the BM25 algorithm. Zilliz Cloud now supports effective and high-performance storage, indexing, and searching (MIPS, Maximum Inner Product Search) of sparse vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KcMWdx09doP9Otx4DLEcWI17nN7",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, check out the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Sparse Vector",
+                "token": "JbPDwHqd0iZZSuk5tYicGqKbn9c",
+                "url": "https://zilliverse.feishu.cn/wiki/JbPDwHqd0iZZSuk5tYicGqKbn9c"
+              }
+            },
+            {
+              "text_run": {
+                "content": " guide and the example code in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "hello_sparse.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Fhello_sparse.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Be sure to update the connection details in the example code with your Zilliz Cloud cluster credentials.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JjVZd2aD8obN9Nx6b7scxYSRnod",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multi Embedding & Hybrid Search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "OwIpdfdwJok7gzxkObpcAU4xn5c",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multi-vector support is the cornerstone for applications that require multi-model data processing or a mix of dense and sparse vectors. With multi-vector support, now you can:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G8HgdcQwqo6eGbxGCbccO6fjn8e",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Store vector embeddings generated for unstructured text, image, or audio samples from multiple models.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "NKGvd1SHSo5YQOxeNVCc9fgYnch",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Conduct ANN searches against a collection that carries multiple vectors in each entity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "MUkTdQlvmo59w5x2tZac4KKPnYf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Customize search strategies by assigning weights to different embedding models.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "IzP6dkhFfoe939xlzrRcuAojnIe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Experiment with various embedding models to find the optimal model combination.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "Wh9fd9POnoHBJBxRlE5cJlnbnkh",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multi-vector support allows storing, indexing, and applying reranking strategies to multiple vector fields of different types, such as FLOAT_VECTOR and SPARSE_FLOAT_VECTOR, in a collection. Currently, two reranking strategies are available: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Reciprocal Rank Fusion (RRF)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Average Weighted Scoring",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Both strategies combine the search results from different vector fields into a unified result set. The first strategy prioritizes the entities that consistently appear in the search results from various vector fields, and the other strategy assigns weights to the search results from each vector field to determine their importance in the final result set.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DeP0dhSSVo5CaTxZJdacegxMnAf",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, check out the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Basic ANN Search",
+                "token": "BaGlwzDmyiyVvVk6NurcFclInCd",
+                "url": "https://zilliverse.feishu.cn/wiki/BaGlwzDmyiyVvVk6NurcFclInCd"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Hybrid Search",
+                "token": "WTsmwWdgOiKnwpkdZdScp093njh",
+                "url": "https://zilliverse.feishu.cn/wiki/WTsmwWdgOiKnwpkdZdScp093njh"
+              }
+            },
+            {
+              "text_run": {
+                "content": " guides and the example code in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "hybrid_search.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Fhybrid_search.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Be sure to update the connection details in the example code with your Zilliz Cloud cluster credentials.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A9esdPKlGovE45xHvmgcoqu5n7f",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Inverted Index and Fuzzy Match",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "MQePd6GOTol6BtxC2xWcsXH3n1c",
+        "block_type": 2,
+        "comment_ids": [
+          "7383155725090750467"
+        ],
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In previous releases of Milvus, memory-based binary search indexes and Marisa Trie indexes were used for scalar field indexing. However, these methods were memory-intensive. The latest release of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now employs auto-index ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7383155725090750467"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "to optimize these mechanism",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7383155725090750467"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", which can be applied to all numeric and string data types. This new index dramatically improves scalar query performance, reducing the query of keywords in strings by ten times. In addition, the inverted index consumes less memory, thanks to additional optimizations in data compression and the Memory-mapped storage (MMap) mechanism of the internal indexing structure.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SWXUdTVumoPvgkxBwlocI54RnBh",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release also supports fuzzy matches in scalar filtering using prefixes, infixes, and suffixes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MnNrdxXQJoAG7WxhtDbcvk82nce",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, check out the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Binary Vector",
+                "token": "NTwawtvYdiXTkukbss7ccw2RnXc",
+                "url": "https://zilliverse.feishu.cn/wiki/NTwawtvYdiXTkukbss7ccw2RnXc"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Index Scalar Fields",
+                "token": "XCCwwOLqKi2nYGkfy5Gc0Vnfnpb",
+                "url": "https://zilliverse.feishu.cn/wiki/XCCwwOLqKi2nYGkfy5Gc0Vnfnpb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FLBbUwOGcwi1UMak3eE2cM1gvnUe%23BIWqdTyc0o4Z3GxnNw8c6Ddsntb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "like",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FLBbUwOGcwi1UMak3eE2cM1gvnUe%23BIWqdTyc0o4Z3GxnNw8c6Ddsntb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Operator",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FLBbUwOGcwi1UMak3eE2cM1gvnUe%23BIWqdTyc0o4Z3GxnNw8c6Ddsntb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " guides as well as the example code in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "inverted_index_example.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Finverted_index_example.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fuzzy_match.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Ffuzzy_match.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Be sure to update the connection details in the example code with your Zilliz Cloud cluster credentials and use AUTOINDEX instead.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G6DgdpNjqoQDSFxTLEscZOBOntb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Grouping Search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "Erc2dsTZioPOx0x5VCRc9fHlnq4",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can now aggregate the search results by the values in a specific scalar field. This helps RAG applications to implement document-level recall. Consider a collection of documents, each document splits into various passages. Each passage is represented by one vector embedding and belongs to one document. To find the most relevant documents instead of scattering passages, you can include the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "group_by_field",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " argument in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "search()",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " operation to group results by the document ID.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RTkxdC9Q4oprkdxp8SXcnjAYnTe",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, check out the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Grouping Search",
+                "token": "JWZGw89MBiUDBNkhtGfcyyUcnsd",
+                "url": "https://zilliverse.feishu.cn/wiki/JWZGw89MBiUDBNkhtGfcyyUcnsd"
+              }
+            },
+            {
+              "text_run": {
+                "content": " guide and the example code in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "example_group_by.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Fexample_group_by.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Be sure to update the connection details in the example code with your Zilliz Cloud cluster credentials.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IEzKdSF8yor2iKx1pvwcSrVpnod",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Float16 and BFloat- Vector DataType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "WZ1jdCXQ3oir6Xxq8aWc0yJ0n9b",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Machine learning and neural networks often use half-precision data types, such as Float16 and BFloat- While these data types can improve query efficiency and reduce memory usage, they come with a tradeoff of reduced accuracy. With this release, Zilliz Cloud now supports these data types for vector fields.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GEdgdFoXfoVGlExhh3YcR2u4nld",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For deatils, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Search & Rerank",
+                "token": "CSYrwhK4Gigk07kd6ufcNTGMnZf",
+                "url": "https://zilliverse.feishu.cn/wiki/CSYrwhK4Gigk07kd6ufcNTGMnZf"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and the example code in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "float16_example.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Fdatatypes%2Ffloat16_example.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bfloat16_example.py",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus%2Fblob%2F2.4%2Fexamples%2Fdatatypes%2Fbfloat16_example.py"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Be sure to update the connection details in the example code with your Zilliz Cloud cluster credentials.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zrd4d9NfWohZBzxYQ53c3K1wnZc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Refined MilvusClient Interfaces",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "CPrtdp8AbokWbdx4aM5ctXtQnQf",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClient is an easy-to-use alternative to the ORM module. It adopts a purely functional approach to simplify interactions with the server. Instead of maintaining a connection pool, each MilvusClient establishes a gRPC connection to the server. The MilvusClient module has implemented most of the functionalities of the ORM module. To learn more about the MilvusClient module, visit ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pymilvus",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fgithub.com%2Fmilvus-io%2Fpymilvus"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "reference documents",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Fpython"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S99kdKhJiof5SCxdaMEcj6fBnWf",
+        "block_type": 4,
+        "comment_ids": [
+          "7383161415097647107"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pipelines",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7383161415097647107"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "ONCWdXaiuoXkc5x3xlKcMnHGnIc",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now monitors token usage for your pipeline requests, with details available on the invoice page and within each API response. However, you will not be charged until this feature is generally available.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CvupdHBUuoY8khx9wTCc6VRnnBh",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The image embedding model has been upgraded to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "clip-vit-base-patch32",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from the previous ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "clip-vit-base-patch16",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to fulfill a wider range of requirements. Additionally, support for multilingual text embeddings is scheduled for implementation shortly.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LLlJd5HWrolM86xoLJAcRMBfnkh",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enhancements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      },
+      {
+        "block_id": "GVo4d2aukoG6mZxDGP1csHPFnWf",
+        "block_type": 2,
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release also includes a series of enhancements:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnNZiUghgapnHoVuCz8O05xd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Now you can scale your dedicated cluster to 256 CUs in a self-service manner. You can also contact us for an even larger cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "VO0fd0rEuolo0YxtlQRcXMwLnab"
+      }
+    ],
+    "counts": 41
+  }
+}

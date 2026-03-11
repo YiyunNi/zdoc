@@ -1,0 +1,826 @@
+{
+  "created_time": "1720587811",
+  "modified_time": "1746600430",
+  "name": "delete()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "XkwkfO0XUlwfQzd6cficDg8enoh",
+  "token": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/NTCHdGKwNo9kl2xFzgKcjo8wndg",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "block_type": 1,
+        "children": [
+          "doxcnJXEKRlh6JVBguGOgAhW9If",
+          "doxcnyYIK3XZSiMNwkxEnYTYWYd",
+          "doxcnKdjUThUAzPEaCQhoTqUZHf",
+          "doxcnJaWDroDJ7tJMXNx1qFvm5b",
+          "doxcnG2op87d7dpdkxfssJFvach",
+          "doxcnCBmF8vnLqkYFcMLt8Qfmhd",
+          "doxcnwSwrn6z1fU19FOSMlAwIEe",
+          "doxcnDmISzMYTKQDFpPYMsSUaMf",
+          "doxcncpMy6mt4lr9dCMOunnPZ6b",
+          "doxcngY5XNXG7xqu2DM6Ypvoy5W",
+          "doxcng5JF1ixIKDUXj3eeNBmj1d",
+          "doxcngh6XrQQSgjYcqj57tW01CR",
+          "doxcn8zAY7zURqYo4JAvTdrWevd",
+          "doxcnhkpd12baqEUQv4ExvWtpec",
+          "doxcnInP0fDWx5cbLiitLyBBuph",
+          "doxcnHqk5H5qzvKggIMptiolWfc",
+          "doxcn2VhgtraRVLerK2j15UJxnf",
+          "doxcnu52W0xLZbTA03aprKQIi0d"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "delete()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnJXEKRlh6JVBguGOgAhW9If",
+        "block_type": 2,
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation deletes entities by their IDs or with a boolean expression.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnyYIK3XZSiMNwkxEnYTYWYd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public DeleteResp delete(DeleteReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnKdjUThUAzPEaCQhoTqUZHf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnJaWDroDJ7tJMXNx1qFvm5b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "delete(DeleteReq.builder()\n    .databaseName(String databaseName)\n    .collectionName(String collectionName)\n    .partitionName(String partitionName)\n    .filter(String filter)\n    .ids(List<Object> ids)\n    .filterTemplateValues(Map<String, Object> filterTemplateValues)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnG2op87d7dpdkxfssJFvach",
+        "block_type": 2,
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnCBmF8vnLqkYFcMLt8Qfmhd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnmKOsicVXMrngA5GUKenHKb"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnmKOsicVXMrngA5GUKenHKb",
+        "block_type": 2,
+        "parent_id": "doxcnCBmF8vnLqkYFcMLt8Qfmhd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database. Defaults to the current database if not specified.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnwSwrn6z1fU19FOSMlAwIEe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnoqQqkYAaWrMTTmi94C1qxd"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnoqQqkYAaWrMTTmi94C1qxd",
+        "block_type": 2,
+        "parent_id": "doxcnwSwrn6z1fU19FOSMlAwIEe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnDmISzMYTKQDFpPYMsSUaMf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionName(String partitionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnS8fDitetZ48zP1Cy0IdtOg"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnS8fDitetZ48zP1Cy0IdtOg",
+        "block_type": 2,
+        "parent_id": "doxcnDmISzMYTKQDFpPYMsSUaMf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target partition.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcncpMy6mt4lr9dCMOunnPZ6b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "filter(String filter)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnohE6GIgPSxfi1PH7mpauPg"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnohE6GIgPSxfi1PH7mpauPg",
+        "block_type": 2,
+        "parent_id": "doxcncpMy6mt4lr9dCMOunnPZ6b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A boolean expression to filter results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcngY5XNXG7xqu2DM6Ypvoy5W",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ids(List<Object> ids)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn9C6TlLRlhjWYBjF0Mag5wc"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcn9C6TlLRlhjWYBjF0Mag5wc",
+        "block_type": 2,
+        "parent_id": "doxcngY5XNXG7xqu2DM6Ypvoy5W",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of primary key values to identify specific entities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcng5JF1ixIKDUXj3eeNBmj1d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "filterTemplateValues(Map<String, Object> filterTemplateValues)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnTrerPhqNO63MVHyOZCj3Qb"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnTrerPhqNO63MVHyOZCj3Qb",
+        "block_type": 2,
+        "parent_id": "doxcng5JF1ixIKDUXj3eeNBmj1d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A map of template variable values for parameterized filters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcngh6XrQQSgjYcqj57tW01CR",
+        "block_type": 2,
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn8zAY7zURqYo4JAvTdrWevd",
+        "block_type": 2,
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DeleteResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnhkpd12baqEUQv4ExvWtpec",
+        "block_type": 2,
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DeleteResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object contains the number of deleted entities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnInP0fDWx5cbLiitLyBBuph",
+        "block_type": 2,
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHqk5H5qzvKggIMptiolWfc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnYWX5klXNSmTPgQqHGzT4Ig"
+        ],
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnYWX5klXNSmTPgQqHGzT4Ig",
+        "block_type": 2,
+        "parent_id": "doxcnHqk5H5qzvKggIMptiolWfc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn2VhgtraRVLerK2j15UJxnf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      },
+      {
+        "block_id": "doxcnu52W0xLZbTA03aprKQIi0d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.vector.request.DeleteReq;\nimport io.milvus.v2.service.vector.response.DeleteResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n        .uri(\"http://localhost:19530\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Delete entities with filter \"id > 10\"\nDeleteReq deleteReq = DeleteReq.builder()\n        .collectionName(\"test\")\n        .filter(\"id > 10\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DeleteResp deleteResp = client.delete(deleteReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "NTCHdGKwNo9kl2xFzgKcjo8wndg"
+      }
+    ],
+    "counts": 26
+  },
+  "slug": "v2-Vector-delete"
+}

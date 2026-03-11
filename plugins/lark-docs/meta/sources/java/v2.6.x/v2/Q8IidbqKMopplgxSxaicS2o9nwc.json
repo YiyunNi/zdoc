@@ -1,0 +1,432 @@
+{
+  "created_time": "1720587113",
+  "modified_time": "1746678544",
+  "name": "ConsistencyLevel",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "LkxXfcSA7lKXqEdu8mpcHI8Fnqd",
+  "token": "Q8IidbqKMopplgxSxaicS2o9nwc",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Q8IidbqKMopplgxSxaicS2o9nwc",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Q8IidbqKMopplgxSxaicS2o9nwc",
+        "block_type": 1,
+        "children": [
+          "doxcnaziEIPv7uwf8k3QyRKCIGf",
+          "doxcns2OtJqnCG45WDVG1HPCZ5g",
+          "doxcn30o8Ixqo81gJ4xHs8v7Gme",
+          "RoGLd6Z1uon4I5x1RQMcDTF9nJe",
+          "doxcnSivp6XuxFZ9ysvUh0pajsg",
+          "doxcnIXt3YfbgJsooLEzkEVTalh",
+          "doxcnk0EVRWU1uIsLPgxOxleLde"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ConsistencyLevel",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnaziEIPv7uwf8k3QyRKCIGf",
+        "block_type": 2,
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an enumeration that provides the following constants.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcns2OtJqnCG45WDVG1HPCZ5g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constants",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc"
+      },
+      {
+        "block_id": "doxcn30o8Ixqo81gJ4xHs8v7Gme",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "STRONG",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnhs9K5aMsolSnSXDKbEmZse"
+        ],
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc"
+      },
+      {
+        "block_id": "doxcnhs9K5aMsolSnSXDKbEmZse",
+        "block_type": 2,
+        "parent_id": "doxcn30o8Ixqo81gJ4xHs8v7Gme",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the consistency level to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Strong",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", with a code value of 0.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RoGLd6Z1uon4I5x1RQMcDTF9nJe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "SESSION",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MAC7dHz07odKtqxOt5BcC4jFnRe"
+        ],
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc"
+      },
+      {
+        "block_id": "MAC7dHz07odKtqxOt5BcC4jFnRe",
+        "block_type": 2,
+        "parent_id": "RoGLd6Z1uon4I5x1RQMcDTF9nJe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the consistency level to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Session",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", with a code value of 1.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnSivp6XuxFZ9ysvUh0pajsg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BOUNDED",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnqFXHikkBtR6YpwRS80oboe"
+        ],
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc"
+      },
+      {
+        "block_id": "doxcnqFXHikkBtR6YpwRS80oboe",
+        "block_type": 2,
+        "parent_id": "doxcnSivp6XuxFZ9ysvUh0pajsg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the consistency level to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Bounded",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", with a code value of 2.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnIXt3YfbgJsooLEzkEVTalh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EVENTUALLY",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnzOn3Zo7jUJ7DgLkhITSW1b"
+        ],
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc"
+      },
+      {
+        "block_id": "doxcnzOn3Zo7jUJ7DgLkhITSW1b",
+        "block_type": 2,
+        "parent_id": "doxcnIXt3YfbgJsooLEzkEVTalh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the consistency level to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Eventually",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", with a code value of 3.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnk0EVRWU1uIsLPgxOxleLde",
+        "block_type": 2,
+        "parent_id": "Q8IidbqKMopplgxSxaicS2o9nwc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 12
+  },
+  "slug": "v2-Collections-ConsistencyLevel"
+}

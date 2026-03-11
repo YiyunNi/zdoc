@@ -1,0 +1,163 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": true,
+  "node_create_time": "1764817366",
+  "node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+  "node_type": "origin",
+  "obj_create_time": "1764817366",
+  "obj_edit_time": "1765272128",
+  "obj_token": "MsfjdDNevoK3MexXpoecQk7rn0e",
+  "obj_type": "docx",
+  "origin_node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "BIy4we6qXiq8NpkHfXgcxuONngb",
+  "space_id": "7167193056431783939",
+  "title": "Global Cluster",
+  "slug": "global-cluster",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "MsfjdDNevoK3MexXpoecQk7rn0e",
+        "block_type": 1,
+        "children": [
+          "SargdsCVEo0WkYxniUmceQIwnTg",
+          "XQJNdwvXvoJJiyxqP5ycASchnCh"
+        ],
+        "comment_ids": [
+          "7582121838055017433"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Global Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7582121838055017433"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "SargdsCVEo0WkYxniUmceQIwnTg",
+        "block_type": 2,
+        "parent_id": "MsfjdDNevoK3MexXpoecQk7rn0e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A global cluster is cluster deployed across multiple regions for improved resilience and lower read latency.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XQJNdwvXvoJJiyxqP5ycASchnCh",
+        "block_type": 2,
+        "parent_id": "MsfjdDNevoK3MexXpoecQk7rn0e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 3
+  },
+  "children": [
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1764817390",
+      "node_token": "AICcwQ55yiNqEPkjdV6cb2i8nqe",
+      "node_type": "origin",
+      "obj_create_time": "1764817390",
+      "obj_edit_time": "1772265149",
+      "obj_token": "SSa0dxdndovYT0xa1DvcK9y2nbb",
+      "obj_type": "docx",
+      "origin_node_token": "AICcwQ55yiNqEPkjdV6cb2i8nqe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+      "space_id": "7167193056431783939",
+      "title": "Global Cluster Explained",
+      "slug": "global-cluster-explained"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1765250101",
+      "node_token": "MZ2WwklE5ifX4hkO4ZOcXz0indc",
+      "node_type": "origin",
+      "obj_create_time": "1765250101",
+      "obj_edit_time": "1772244357",
+      "obj_token": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+      "obj_type": "docx",
+      "origin_node_token": "MZ2WwklE5ifX4hkO4ZOcXz0indc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+      "space_id": "7167193056431783939",
+      "title": "Create Global Cluster",
+      "slug": "create-global-cluster"
+    },
+    {
+      "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+      "has_child": false,
+      "node_create_time": "1765251620",
+      "node_token": "DW9wwFlgAiwOhBk2PgucY4URnke",
+      "node_type": "origin",
+      "obj_create_time": "1765251620",
+      "obj_edit_time": "1772245332",
+      "obj_token": "AQx5dCzO9oJbJnxuRrLczKr1nGe",
+      "obj_type": "docx",
+      "origin_node_token": "DW9wwFlgAiwOhBk2PgucY4URnke",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+      "parent_node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+      "space_id": "7167193056431783939",
+      "title": "Manage Global Cluster",
+      "slug": "manage-global-cluster"
+    }
+  ]
+}

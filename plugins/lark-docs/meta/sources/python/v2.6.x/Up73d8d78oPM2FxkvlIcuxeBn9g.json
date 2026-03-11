@@ -1,0 +1,1068 @@
+{
+  "created_time": "1761032508",
+  "modified_time": "1761966403",
+  "name": "add_field()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "QmzcfpTxAlAaTqdRRbLc6fAanv7",
+  "token": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Up73d8d78oPM2FxkvlIcuxeBn9g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "block_type": 1,
+        "children": [
+          "AlFrdGK1zoEsLWxQXyscQj3anZf",
+          "JVZWdLfN2oR51Axm9RXcgQKlnPr",
+          "BRRhdT2heoViS9xohjVcwoulnmd",
+          "Pi9Ndm479o2ogQxPaokcwuSynxd",
+          "SNDQdbvXSoGzuIxrQCfcryQXnwd",
+          "GPsGdI4vJoC95Vx19fLcgQmRncd",
+          "XC52dAp6eo1KjDxWgFwcaemtnGf",
+          "Hrtjd6VR5owK4RxUBracH1Hmnwg",
+          "MMxtdZsKqouEM5xQPC5cuDsRngh",
+          "BdKidnGocofUVYx6dqvc1Spknjf",
+          "UpNHdhRSWoxS6CxXKPOcR47nnAf",
+          "BhsRdPgWDoiBCsxa9BXcvaVYn4g",
+          "V3ModYGpYo48pdxJLLfcAbzun7b",
+          "XqXjdz5YRoTyaixT4U9cpGpQnob",
+          "SRtrdRM8FoZz46x3mHKcyPb3nmg",
+          "Nk0ldaP73ohmO6xn4xDcGW2knDf",
+          "R9qvdTzdKoBPVIx1UZgcK1vknlg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add_field()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "AlFrdGK1zoEsLWxQXyscQj3anZf",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation adds a field to the schema of a struct element in an array of structs field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JVZWdLfN2oR51Axm9RXcgQKlnPr",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "BRRhdT2heoViS9xohjVcwoulnmd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add_field(\n    field_name: str,\n    datatype: DataType\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "Pi9Ndm479o2ogQxPaokcwuSynxd",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SNDQdbvXSoGzuIxrQCfcryQXnwd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "field_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OLWvdJjNwonLaGx850zcP5Ytnlc",
+          "PBQ3dqWZfo76FQxJ7Nrc0xsvnOf"
+        ],
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "OLWvdJjNwonLaGx850zcP5Ytnlc",
+        "block_type": 2,
+        "parent_id": "SNDQdbvXSoGzuIxrQCfcryQXnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PBQ3dqWZfo76FQxJ7Nrc0xsvnOf",
+        "block_type": 2,
+        "parent_id": "SNDQdbvXSoGzuIxrQCfcryQXnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GPsGdI4vJoC95Vx19fLcgQmRncd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "datatype",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DataType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fdocx%2FKvNsd3aV4ocRNJxrZN2cg1zenqb"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "V8tgdQXJ2oakT4x3qtScDmrbntI",
+          "GhQhdLsHaoWYo8xMcxnclGDbnde",
+          "MwiYdidjzoVYSpxjrHdcPrM3nEe"
+        ],
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "V8tgdQXJ2oakT4x3qtScDmrbntI",
+        "block_type": 2,
+        "parent_id": "GPsGdI4vJoC95Vx19fLcgQmRncd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GhQhdLsHaoWYo8xMcxnclGDbnde",
+        "block_type": 2,
+        "parent_id": "GPsGdI4vJoC95Vx19fLcgQmRncd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The data type of the field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MwiYdidjzoVYSpxjrHdcPrM3nEe",
+        "block_type": 2,
+        "parent_id": "GPsGdI4vJoC95Vx19fLcgQmRncd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can choose from the following options when selecting a data type for different fields. For details, refer to <include target=\"zilliz\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Array of Structs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Farray-of-structs"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include><include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Array of Structs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Farray-of-structs.md"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XC52dAp6eo1KjDxWgFwcaemtnGf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "max_length",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OQAnd8c7eoWGEnxzjylcKCJ5nRd",
+          "QM0IdAXI1o4wycxD65XcNO0entg"
+        ],
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "OQAnd8c7eoWGEnxzjylcKCJ5nRd",
+        "block_type": 2,
+        "parent_id": "XC52dAp6eo1KjDxWgFwcaemtnGf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The maximum byte length for strings allowed to be inserted. Note that multibyte characters (e.g., Unicode characters) may occupy more than one byte each, so ensure the byte length of inserted strings does not exceed the specified limit. Value range: [1, 65,535].",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QM0IdAXI1o4wycxD65XcNO0entg",
+        "block_type": 2,
+        "parent_id": "XC52dAp6eo1KjDxWgFwcaemtnGf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is mandatory for a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DataType.VARCHAR",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hrtjd6VR5owK4RxUBracH1Hmnwg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dim",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OdnAdVr28oq1H7x2uP5cMZJcnwg"
+        ],
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "OdnAdVr28oq1H7x2uP5cMZJcnwg",
+        "block_type": 2,
+        "parent_id": "Hrtjd6VR5owK4RxUBracH1Hmnwg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The dimension of the vector embeddings. The value should be an integer greater than 1.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MMxtdZsKqouEM5xQPC5cuDsRngh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "mmap_enabled",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "PVyFdgSvGovvO9x6tnbc2EsYnrr"
+        ],
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "PVyFdgSvGovvO9x6tnbc2EsYnrr",
+        "block_type": 2,
+        "parent_id": "MMxtdZsKqouEM5xQPC5cuDsRngh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether Milvus maps the field data into memory instead of fully loading it. For details settings, refer to MMap-enabled Data Storage.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BdKidnGocofUVYx6dqvc1Spknjf",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UpNHdhRSWoxS6CxXKPOcR47nnAf",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fdocx%2FZnKKd2PsyoRc1MxtC1BcJQjgnBh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BhsRdPgWDoiBCsxa9BXcvaVYn4g",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V3ModYGpYo48pdxJLLfcAbzun7b",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "StructFieldSchema",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object contains the fields that have been added to the schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XqXjdz5YRoTyaixT4U9cpGpQnob",
+        "block_type": 2,
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SRtrdRM8FoZz46x3mHKcyPb3nmg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Y2PzdrZyzoLnuOxfD95cHqgSntd"
+        ],
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "Y2PzdrZyzoLnuOxfD95cHqgSntd",
+        "block_type": 2,
+        "parent_id": "SRtrdRM8FoZz46x3mHKcyPb3nmg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nk0ldaP73ohmO6xn4xDcGW2knDf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      },
+      {
+        "block_id": "R9qvdTzdKoBPVIx1UZgcK1vknlg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import DataType, FieldSchema, StructFieldSchema\n\nschema = StructFieldSchema(\n    name=\"struct_schema\",\n    fields=[vector, varchar]\n)\n\n# Add the vector field\nschema.add_field(\n    field_name=\"vector_02\",\n    datatype=DataType.FLOAT_VECTOR,\n    dim=768\n)\n\n# Add a scalar field to the schema\nschema.add_field(\n    field_name=\"scalar_01\",\n    datatype=DataType.INT32\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Up73d8d78oPM2FxkvlIcuxeBn9g"
+      }
+    ],
+    "counts": 28
+  },
+  "slug": "StructFieldSchema-add_field"
+}

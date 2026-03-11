@@ -1,0 +1,586 @@
+{
+  "created_time": "1725607805",
+  "modified_time": "1725608590",
+  "name": "MistralAIEmbeddingFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "KgH6f6pJGlZeU0d5rEMcF0JPnQA",
+  "token": "CvxodXz8OoWXrlxD7OVcqqJLn8e",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/CvxodXz8OoWXrlxD7OVcqqJLn8e",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e",
+        "block_type": 1,
+        "children": [
+          "doxcnCc8zWJfuXe6J65rx20tDof",
+          "doxcnL7iLeOxqU7vKnz0bdZoDif",
+          "doxcnTUDCAoimVUE6nwtwQFdXoh",
+          "doxcnpxGq9p6UP4TwzgfqjDrQVh",
+          "doxcnmRHSMYReAq3cBVCjoHhn5c",
+          "doxcncgctsngPeF6jF6Jdma19pc",
+          "doxcnj9ZbKd7KSq2L1XKv9IjIkd",
+          "doxcnke1YiMaHRqB0qDYpMm7F7b",
+          "doxcnjYKPeSRi01umsCQBT5Eaqe",
+          "doxcnET7pt3nf3vKSs2Cfn76AXe",
+          "doxcnwdy9QPC36vWx2JfAQx0ZCe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MistralAIEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnCc8zWJfuXe6J65rx20tDof",
+        "block_type": 2,
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MistralAIEmbeddingFunction is a class in pymilvus that handles encoding text into embeddings using Mistral AI embedding models to support embedding retrieval in Milvus.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnL7iLeOxqU7vKnz0bdZoDif",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "pymilvus.model.dense.MistralAIEmbeddingFunction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcnTUDCAoimVUE6nwtwQFdXoh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcnpxGq9p6UP4TwzgfqjDrQVh",
+        "block_type": 2,
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constructs a MistralAIEmbeddingFunction for common use cases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnmRHSMYReAq3cBVCjoHhn5c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MistralAIEmbeddingFunction(\n    api_key: str,\n    model_name: str = \"mistral-embed\",\n    **kwargs\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcncgctsngPeF6jF6Jdma19pc",
+        "block_type": 2,
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnj9ZbKd7KSq2L1XKv9IjIkd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "api_key",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnEvnrGrVr5dXz8HMB1V0xnf"
+        ],
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcnEvnrGrVr5dXz8HMB1V0xnf",
+        "block_type": 2,
+        "parent_id": "doxcnj9ZbKd7KSq2L1XKv9IjIkd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The API key for accessing the Mistral AI API.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnke1YiMaHRqB0qDYpMm7F7b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "model_name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnnqs70CjclRq4Tot7E7wVpd"
+        ],
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcnnqs70CjclRq4Tot7E7wVpd",
+        "block_type": 2,
+        "parent_id": "doxcnke1YiMaHRqB0qDYpMm7F7b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the Mistral AI embedding model to use for encoding. The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mistral-embed",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Embeddings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.mistral.ai%2Fcapabilities%2Fembeddings%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnjYKPeSRi01umsCQBT5Eaqe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "kwargs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnttFy6CsZWBRgKnqdMbIWEf"
+        ],
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcnttFy6CsZWBRgKnqdMbIWEf",
+        "block_type": 2,
+        "parent_id": "doxcnjYKPeSRi01umsCQBT5Eaqe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Allows additional keyword arguments to be passed to the model initialization. For more information, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Embedding API",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.mistral.ai%2Fapi%2F%23tag%2Fembeddings%2Foperation%2Fembeddings_v1_embeddings_post"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnET7pt3nf3vKSs2Cfn76AXe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      },
+      {
+        "block_id": "doxcnwdy9QPC36vWx2JfAQx0ZCe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.dense import MistralAIEmbeddingFunction\n\nef = MistralAIEmbeddingFunction(\n    model_name=\"mistral-embed\", # Defaults to `mistral-embed`\n    api_key=\"MISTRAL_API_KEY\" # Provide your Mistral AI API key\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "CvxodXz8OoWXrlxD7OVcqqJLn8e"
+      }
+    ],
+    "counts": 15
+  },
+  "slug": "EmbeddingModels-MistralAIEmbeddingFunction"
+}

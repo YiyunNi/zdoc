@@ -1,0 +1,2242 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1694400387",
+  "node_token": "KkdswLx2bi4bgCkY6bEc7Do9neh",
+  "node_type": "origin",
+  "obj_create_time": "1694400387",
+  "obj_edit_time": "1764586596",
+  "obj_token": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+  "obj_type": "docx",
+  "origin_node_token": "KkdswLx2bi4bgCkY6bEc7Do9neh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "VTZZwCkkCi7FwnklLDhcMJwvnQb",
+  "space_id": "7167193056431783939",
+  "title": "Import Data (Console)",
+  "slug": "import-data-on-web-ui",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "block_type": 1,
+        "children": [
+          "OLMad1mOGoLUxIxclGyct2z9nrf",
+          "Gbb6dJdGwoYbvcx5uY6cmQmAnH5",
+          "PB2TdKt9sogW34x4WfzcemjrnHb",
+          "JEJudAVoood5Tnxa8DScWkgrnFd",
+          "LjZid4gEqotsgMxDgkZcmEEgn7g",
+          "NyMEdlFdsoGsPHxeuvAcb0rRnoe",
+          "TWH5dExuQoZAIexR7gBcWtiinhb",
+          "IYpAdI0pRoqLv5xdF1TcOx9Vnfh",
+          "ZAr7dIgQoohKMFx4MyhcZOzpnH0",
+          "E5madH5zco8QPkxk2SacYPMInng",
+          "WwJ6dbPfIoThsjxmB6Xcmr6qnHb",
+          "Cg5Yd3RShot4UWxfsSLcBj4Ynsg",
+          "XkEYdWXVVoFGjEx5kU8cibV7nXb",
+          "Xkdxd8FOHoiPjixzBqVcRPomnTd",
+          "NneOdxT2RozSxvxvYdccys5dnbg",
+          "ENH9dZWpboHXUAxPofBc1wHgneu",
+          "FygKdi50honqjuxf5G8cOHx0n7d",
+          "Lu1zdfJEtoyH2txfKeNcGAzMnPh",
+          "Dww5dPyxuoLOupxRrGoc4io4n6f",
+          "OFI0d1VTUoDPHKxyCHUcXklPnuc",
+          "Tx6YdA8bCoTGyExAv9ecVc52nXd",
+          "Scx0dvdGKoH1sJxDzeVcIeYsnBn",
+          "WIwedomDLovcR6xxKMkcpNHknye",
+          "KfUVd0BFqoVnc1xQCD7cD6rOnXf",
+          "LWeLdeNZToTSXUxDQVZcw1QGn5l",
+          "C3opd89O1oJtjEx5GENcmOBknGc",
+          "T0RQdzlqKo0zW8xXWnpckQrEnEf",
+          "COrOdLHlYoRVWbx4uhNcuJt6nEe",
+          "OUOkdlmsnoGqfgxwgB6cYwMHn0U",
+          "I3ZFdltXLoEG9yxSVBPcZfj4nXd",
+          "VEfNdvYGXobm9VxZ7RxcBcUFnGd",
+          "YjNsdXeLnoortVxns5cc5eVRnCg",
+          "AhoSdL2tvofPL3xxFhlcmDjGnpe",
+          "YGwSdjuUao3lPIxPLp5ccNNtnIo",
+          "Th1Vdahs6oWzBbxGF1pcdiGGn3c",
+          "QrWVd8y4eoyqeMxeyhdccvlDn9Q",
+          "OHZIdBxZdoOLlUxBifYcFaI3nxh",
+          "OYWhdfM7cobUDnx9Sk3cS3bbnAg",
+          "B2fTd183NopZD0xNuthclVn9ncf",
+          "YwBidH13DoyEexxXwiic8wsWnMb",
+          "UbBTdekMQoXGXaxbqiXcnlUWnWe",
+          "LfLTdKr8vohmw0xiTZpchzt3n0b",
+          "W4eadPGTvo6PWsx7JyxcJhRMnnh",
+          "LavSdQ7BAojfNqxyOJ4cFKWqnUe"
+        ],
+        "comment_ids": [
+          "7307443742461018115"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import Data ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7307443742461018115"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7307443742461018115"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Console",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7307443742461018115"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7307443742461018115"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "OLMad1mOGoLUxIxclGyct2z9nrf",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This page introduces how to import the prepared data on the Zilliz Cloud console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gbb6dJdGwoYbvcx5uY6cmQmAnH5",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"indev\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PB2TdKt9sogW34x4WfzcemjrnHb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "JEJudAVoood5Tnxa8DScWkgrnFd",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Make sure the following conditions are met:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LjZid4gEqotsgMxDgkZcmEEgn7g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have created a cluster. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Create Cluster",
+                "token": "KrbjwFhy3iojF3k97XmcvvXMnW7",
+                "url": "https://zilliverse.feishu.cn/wiki/KrbjwFhy3iojF3k97XmcvvXMnW7"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "NyMEdlFdsoGsPHxeuvAcb0rRnoe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have prepared your data in either of the supported formats. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "E3iTdkzdnoBnVCxU2FgcRYWxnme"
+        ],
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "E3iTdkzdnoBnVCxU2FgcRYWxnme",
+        "block_type": 2,
+        "parent_id": "NyMEdlFdsoGsPHxeuvAcb0rRnoe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on how to prepare your data, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage Options",
+                "token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+                "url": "https://zilliverse.feishu.cn/wiki/TjxAw7lx6iNluBkR4a6czoHpn0f"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Format Options",
+                "token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+                "url": "https://zilliverse.feishu.cn/wiki/MtGywZwmXiHg0AkJMavcWAtxnCg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ". You can also refer to the end-to-end notebook ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Data Import Hands-On",
+                "token": "BjHZwBkk0iFScik49QMc1Wwjndb",
+                "url": "https://zilliverse.feishu.cn/wiki/BjHZwBkk0iFScik49QMc1Wwjndb"
+              }
+            },
+            {
+              "text_run": {
+                "content": " to get more.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TWH5dExuQoZAIexR7gBcWtiinhb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You have created a collection with a schema matching the example dataset. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "N2VRdlmUYoR3WHxqJhQcipEMn8e"
+        ],
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "N2VRdlmUYoR3WHxqJhQcipEMn8e",
+        "block_type": 2,
+        "parent_id": "TWH5dExuQoZAIexR7gBcWtiinhb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on creating a collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", see",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Collections (Console)",
+                "token": "CmR5wFcybi3iMokOJBxcXDQcntg",
+                "url": "https://zilliverse.feishu.cn/wiki/CmR5wFcybi3iMokOJBxcXDQcntg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IYpAdI0pRoqLv5xdF1TcOx9Vnfh",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZAr7dIgQoohKMFx4MyhcZOzpnH0",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import data on the web ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "UI",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "E5madH5zco8QPkxk2SacYPMInng",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once data files are ready, you can<exclude target=\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "paas",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"> import them directly from your local drive or</exclude> upload them to an object storage bucket<exclude target=\"paas\">, such as ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " S3 or Google Cloud GCS,",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Azure Blob Storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</exclude> for data imports.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WwJ6dbPfIoThsjxmB6Xcmr6qnHb",
+        "block_type": 34,
+        "children": [
+          "MzjYdOkGIonr1WxMDBMcHNJknTf",
+          "T7iCdhddUod1YSxkAwMc3jQen6g",
+          "JasidNOZBoNOS1xaC5DcVGwtnUb"
+        ],
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "quote_container": {}
+      },
+      {
+        "block_id": "MzjYdOkGIonr1WxMDBMcHNJknTf",
+        "block_type": 2,
+        "parent_id": "WwJ6dbPfIoThsjxmB6Xcmr6qnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T7iCdhddUod1YSxkAwMc3jQen6g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can have up to 10,000 running or pending import jobs in a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7367205981267443716",
+                    "7449205681163075587"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7449205681163075587",
+          "7367205981267443716"
+        ],
+        "parent_id": "WwJ6dbPfIoThsjxmB6Xcmr6qnHb"
+      },
+      {
+        "block_id": "JasidNOZBoNOS1xaC5DcVGwtnUb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The web console supports uploading a local JSON",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "or Parquet ",
+                "text_element_style": {
+                  "background_color": 10,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "file of up to 1 GB. For larger files, it is recommended to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "upload from an object storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FKkdswLx2bi4bgCkY6bEc7Do9neh%23Lu1zdfJEtoyH2txfKeNcGAzMnPh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instead. If you have any difficulties with data import, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "create a support ticket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "WwJ6dbPfIoThsjxmB6Xcmr6qnHb"
+      },
+      {
+        "block_id": "Cg5Yd3RShot4UWxfsSLcBj4Ynsg",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<exclude target=\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "paas",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XkEYdWXVVoFGjEx5kU8cibV7nXb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Local file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "Xkdxd8FOHoiPjixzBqVcRPomnTd",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud supports importing data from a local JSON or Parquet file. If your data is prepared in the NumPy format, please import from an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "object storage bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FKkdswLx2bi4bgCkY6bEc7Do9neh%23Lu1zdfJEtoyH2txfKeNcGAzMnPh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NneOdxT2RozSxvxvYdccys5dnbg",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To import data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " from a local file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can drag ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "or",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " drop a file into the upload area ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "and click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Import",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cme7x3fgv388ch3pyymi6ek0q?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "ENH9dZWpboHXUAxPofBc1wHgneu",
+        "block_type": 40,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "FygKdi50honqjuxf5G8cOHx0n7d",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</exclude>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Lu1zdfJEtoyH2txfKeNcGAzMnPh",
+        "block_type": 5,
+        "comment_ids": [
+          "7322748349105684484"
+        ],
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Remote files from an object storage bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7322748349105684484"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "Dww5dPyxuoLOupxRrGoc4io4n6f",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To import remote files, you must first upload them to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "a remote",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " You can easily convert your raw data into supported formats and upload the result files ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "using the BulkWriter tool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FQyjpwAaKuihAeJkNBUJcdFesn9e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OFI0d1VTUoDPHKxyCHUcXklPnuc",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " you have",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " uploaded",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " the prepared files to a remote bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "select the object storage service and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fill in the",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "path to the files in the remote bucket",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and bucket credentials for Zilliz Cloud to pull data from your bucket.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Tx6YdA8bCoTGyExAv9ecVc52nXd",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Based on your data security requirements, you can use either long-term credentials or short-term tokens during data import. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Scx0dvdGKoH1sJxDzeVcIeYsnBn",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more information about obtaining credentials, refer to:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WIwedomDLovcR6xxKMkcpNHknye",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Amazon S3: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Authenticate using long-term credentials",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.aws.amazon.com%2Fsdkref%2Flatest%2Fguide%2Faccess-iam-users.html"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "KfUVd0BFqoVnc1xQCD7cD6rOnXf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Google Cloud Storage: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Manage HMAC keys for service accounts",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fcloud.google.com%2Fstorage%2Fdocs%2Fauthentication%2Fmanaging-hmackeys"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "LWeLdeNZToTSXUxDQVZcw1QGn5l",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Azure Blob Storage: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "View account access keys",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fstorage%2Fcommon%2Fstorage-account-keys-manage%3Ftabs%3Dazure-portal%23view-account-access-keys"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "C3opd89O1oJtjEx5GENcmOBknGc",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more information about using short-term tokens, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "this FAQ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Ffaq-data-import%23can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T0RQdzlqKo0zW8xXWnpckQrEnEf",
+        "block_type": 34,
+        "children": [
+          "ZGAUduCm6oHJJ6xYPJGcYd09nRo",
+          "XNmndlHt8orERmx1iytcX2mvnTh"
+        ],
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "quote_container": {}
+      },
+      {
+        "block_id": "ZGAUduCm6oHJJ6xYPJGcYd09nRo",
+        "block_type": 2,
+        "parent_id": "T0RQdzlqKo0zW8xXWnpckQrEnEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "📘 Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XNmndlHt8orERmx1iytcX2mvnTh",
+        "block_type": 2,
+        "parent_id": "T0RQdzlqKo0zW8xXWnpckQrEnEf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now allows you to import data from any object storage service to any Zilliz Cloud cluster, regardless of the cloud provider hosting the clusters. For instance, you can import data from an AWS S3 bucket to a Zilliz Cloud cluster deployed on GCP.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cme7xfbw40096xf0irz21196r?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "COrOdLHlYoRVWbx4uhNcuJt6nEe",
+        "block_type": 40,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "OUOkdlmsnoGqfgxwgB6cYwMHn0U",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I3ZFdltXLoEG9yxSVBPcZfj4nXd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Files uploaded to a volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "VEfNdvYGXobm9VxZ7RxcBcUFnGd",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your local file is extremely large (> 1GB), you can ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "upload the file to a volume",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FVCL7wmP6oieCkJkHEcicCsKQnxc%23IoaKdETN4o8LbjxxhcwcxNVInZg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " first and them import from the volume.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YjNsdXeLnoortVxns5cc5eVRnCg",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you have uploaded the prepared files to a volume, copy the file path and continue to import the file into a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmidzr662adilb7b4d7l45rnf?utm_source=link\",\"isShowcase\":false}"
+        },
+        "block_id": "AhoSdL2tvofPL3xxFhlcmDjGnpe",
+        "block_type": 40,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "YGwSdjuUao3lPIxPLp5ccNNtnIo",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Th1Vdahs6oWzBbxGF1pcdiGGn3c",
+        "block_type": 4,
+        "comment_ids": [
+          "7540501311444762627"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Verify results",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7540501311444762627"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "QrWVd8y4eoyqeMxeyhdccvlDn9Q",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can view the progress and status of the import job on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Jobs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FRY8ww0NDQi8yU9kNpjicHP7Gn4b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OHZIdBxZdoOLlUxBifYcFaI3nxh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Supported object paths",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "OYWhdfM7cobUDnx9Sk3cS3bbnAg",
+        "block_type": 2,
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For applicable object paths, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage Options",
+                "token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+                "url": "https://zilliverse.feishu.cn/wiki/TjxAw7lx6iNluBkR4a6czoHpn0f"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Format Options",
+                "token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+                "url": "https://zilliverse.feishu.cn/wiki/MtGywZwmXiHg0AkJMavcWAtxnCg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B2fTd183NopZD0xNuthclVn9ncf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Related topics",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "YwBidH13DoyEexxXwiic8wsWnMb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Storage Options",
+                "token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+                "url": "https://zilliverse.feishu.cn/wiki/TjxAw7lx6iNluBkR4a6czoHpn0f"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "UbBTdekMQoXGXaxbqiXcnlUWnWe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Format Options",
+                "token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+                "url": "https://zilliverse.feishu.cn/wiki/MtGywZwmXiHg0AkJMavcWAtxnCg"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "LfLTdKr8vohmw0xiTZpchzt3n0b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data via RESTful API",
+                "token": "ZOikw2pIUiAZj9kuLYRcdhLnnoc",
+                "url": "https://zilliverse.feishu.cn/wiki/ZOikw2pIUiAZj9kuLYRcdhLnnoc"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "W4eadPGTvo6PWsx7JyxcJhRMnnh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data via SDKs",
+                "token": "MvgAwL4HIiuRRJkH0FwcJhxSnld",
+                "url": "https://zilliverse.feishu.cn/wiki/MvgAwL4HIiuRRJkH0FwcJhxSnld"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      },
+      {
+        "block_id": "LavSdQ7BAojfNqxyOJ4cFKWqnUe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Data Import Hands-On",
+                "token": "BjHZwBkk0iFScik49QMc1Wwjndb",
+                "url": "https://zilliverse.feishu.cn/wiki/BjHZwBkk0iFScik49QMc1Wwjndb"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Np4Sdm31soFi7DxOtqncL4lhnHb"
+      }
+    ],
+    "counts": 52
+  }
+}

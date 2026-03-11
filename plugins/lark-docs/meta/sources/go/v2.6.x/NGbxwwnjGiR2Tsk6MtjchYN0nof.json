@@ -1,0 +1,329 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1740714013",
+  "node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+  "node_type": "origin",
+  "obj_create_time": "1740714013",
+  "obj_edit_time": "1741863119",
+  "obj_token": "FU04dnHZDoXHMzx66H8cGSp7nOe",
+  "obj_type": "docx",
+  "origin_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "IE6JwWJPgiHaZKkHCLccwq4vngh",
+  "space_id": "7167193056431783939",
+  "title": "Management",
+  "slug": "v2-Management",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FU04dnHZDoXHMzx66H8cGSp7nOe",
+        "block_type": 1,
+        "children": [
+          "JkKedhWKIobyaQxqEITcTsHOndc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Management",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "JkKedhWKIobyaQxqEITcTsHOndc",
+        "block_type": 2,
+        "parent_id": "FU04dnHZDoXHMzx66H8cGSp7nOe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This chapter provides references for the methods to perform operations over indexes, collections, and partitions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1751339385",
+      "node_token": "PNgAwd83viY5lsk58tHcWrfynPb",
+      "node_type": "origin",
+      "obj_create_time": "1751339385",
+      "obj_edit_time": "1751339634",
+      "obj_token": "DZiRdeDvNoekbxxYflocK1iqnfA",
+      "obj_type": "docx",
+      "origin_node_token": "PNgAwd83viY5lsk58tHcWrfynPb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "AlterIndexProperties()",
+      "slug": "v2-Management-AlterIndexProperties"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740714031",
+      "node_token": "FT7FwU4P6itcFmkHJNvcnTe6nRb",
+      "node_type": "origin",
+      "obj_create_time": "1740714031",
+      "obj_edit_time": "1762238243",
+      "obj_token": "LKPcdcZ9po3moAxmBdVceo9knrh",
+      "obj_type": "docx",
+      "origin_node_token": "FT7FwU4P6itcFmkHJNvcnTe6nRb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "CreateIndex()",
+      "slug": "v2-Management-CreateIndex"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740728209",
+      "node_token": "RciIwOPIJiPV8EkKPglcIg7Fn3e",
+      "node_type": "origin",
+      "obj_create_time": "1740728209",
+      "obj_edit_time": "1741304926",
+      "obj_token": "DWDTdqHiYoWBp7x7NxFcI4jInBh",
+      "obj_type": "docx",
+      "origin_node_token": "RciIwOPIJiPV8EkKPglcIg7Fn3e",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "DescribeIndex()",
+      "slug": "v2-Management-DescribeIndex"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740728791",
+      "node_token": "Bp2iw4UZNi5dk5kwXMwcqvVLnrf",
+      "node_type": "origin",
+      "obj_create_time": "1740728791",
+      "obj_edit_time": "1741304904",
+      "obj_token": "C6VpdHlqmoPDJ9xsdTOcr3BbnQg",
+      "obj_type": "docx",
+      "origin_node_token": "Bp2iw4UZNi5dk5kwXMwcqvVLnrf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "DropIndex()",
+      "slug": "v2-Management-DropIndex"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1751280355",
+      "node_token": "TSiywcdT7iz6vHkrOhucbVUcn6X",
+      "node_type": "origin",
+      "obj_create_time": "1751280355",
+      "obj_edit_time": "1751280695",
+      "obj_token": "Pi9wdO3uHo61RJx8cN7cHzBpnjf",
+      "obj_type": "docx",
+      "origin_node_token": "TSiywcdT7iz6vHkrOhucbVUcn6X",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "DropIndexProperties()",
+      "slug": "v2-Management-DropIndexProperties"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740728918",
+      "node_token": "HCI1wkDbMiGPfwkKUk3cX0vVnAe",
+      "node_type": "origin",
+      "obj_create_time": "1740728918",
+      "obj_edit_time": "1741305328",
+      "obj_token": "Pj8SdkVDnoxUDAxALtQcCVUanvb",
+      "obj_type": "docx",
+      "origin_node_token": "HCI1wkDbMiGPfwkKUk3cX0vVnAe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "ListIndexes()",
+      "slug": "v2-Management-ListIndexes"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740729073",
+      "node_token": "OmqGwFub5i55uzk0jbTc0fn1nEf",
+      "node_type": "origin",
+      "obj_create_time": "1740729073",
+      "obj_edit_time": "1741305496",
+      "obj_token": "MnPpdiBKEoCbjSxJrXrcK0krnEb",
+      "obj_type": "docx",
+      "origin_node_token": "OmqGwFub5i55uzk0jbTc0fn1nEf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "LoadCollection()",
+      "slug": "v2-Management-LoadCollection"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740729360",
+      "node_token": "OvcxwsncEiH64fkJyX9cFnzvnLd",
+      "node_type": "origin",
+      "obj_create_time": "1740729360",
+      "obj_edit_time": "1741305550",
+      "obj_token": "Hz4FdPGjBoFf2ixLvaJcxoxxnpe",
+      "obj_type": "docx",
+      "origin_node_token": "OvcxwsncEiH64fkJyX9cFnzvnLd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "LoadPartitions()",
+      "slug": "v2-Management-LoadPartitions"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740729203",
+      "node_token": "ICyuweLbjiEjMkktBIzcLQTHnDc",
+      "node_type": "origin",
+      "obj_create_time": "1740729203",
+      "obj_edit_time": "1741305567",
+      "obj_token": "VVFvdvyCfoKHyfx7mIXcA1mEnMe",
+      "obj_type": "docx",
+      "origin_node_token": "ICyuweLbjiEjMkktBIzcLQTHnDc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "ReleaseCollection()",
+      "slug": "v2-Management-ReleaseCollection"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740730089",
+      "node_token": "Y9o0wlGyBiOVNaknQCcchBCpnie",
+      "node_type": "origin",
+      "obj_create_time": "1740730089",
+      "obj_edit_time": "1741305578",
+      "obj_token": "VoRyd5buioSjYexbHq9c5V9vnwb",
+      "obj_type": "docx",
+      "origin_node_token": "Y9o0wlGyBiOVNaknQCcchBCpnie",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "ReleasePartitions()",
+      "slug": "v2-Management-ReleasePartitions"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740730341",
+      "node_token": "CPSXwgQoHiz5fvk8bevcen22nEh",
+      "node_type": "origin",
+      "obj_create_time": "1740730341",
+      "obj_edit_time": "1741312947",
+      "obj_token": "Zh80dEW4QoCy62xYz8RcxQ21nNc",
+      "obj_type": "docx",
+      "origin_node_token": "CPSXwgQoHiz5fvk8bevcen22nEh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "GetLoadState()",
+      "slug": "v2-Management-GetLoadState"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740735492",
+      "node_token": "YlhLwS9n1inn7kk2jvpcLmxdnFd",
+      "node_type": "origin",
+      "obj_create_time": "1740735492",
+      "obj_edit_time": "1741314033",
+      "obj_token": "Lh5bd9ePioN41Yx838Jcz9fnntO",
+      "obj_type": "docx",
+      "origin_node_token": "YlhLwS9n1inn7kk2jvpcLmxdnFd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "RefreshLoad()",
+      "slug": "v2-Management-RefreshLoad"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740733223",
+      "node_token": "EPiVwFDR4iicrbkg50dcQYWsnMb",
+      "node_type": "origin",
+      "obj_create_time": "1740733223",
+      "obj_edit_time": "1741314549",
+      "obj_token": "Dxumdf0wvoQo8Dx94PPcxY1yn6n",
+      "obj_type": "docx",
+      "origin_node_token": "EPiVwFDR4iicrbkg50dcQYWsnMb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "Compact()",
+      "slug": "v2-Management-Compact"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740733572",
+      "node_token": "LsC0whs7xiVDnckI4l1c13IKnHd",
+      "node_type": "origin",
+      "obj_create_time": "1740733572",
+      "obj_edit_time": "1741314628",
+      "obj_token": "IHe4dhvGcoWPwUxCOiXc8CA8nvA",
+      "obj_type": "docx",
+      "origin_node_token": "LsC0whs7xiVDnckI4l1c13IKnHd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "NGbxwwnjGiR2Tsk6MtjchYN0nof",
+      "space_id": "7167193056431783939",
+      "title": "GetCompactionState()",
+      "slug": "v2-Management-GetCompactionState"
+    }
+  ]
+}

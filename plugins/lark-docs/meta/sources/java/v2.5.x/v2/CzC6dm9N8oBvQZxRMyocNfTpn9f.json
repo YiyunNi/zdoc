@@ -1,0 +1,1001 @@
+{
+  "created_time": "1741674010",
+  "modified_time": "1746685276",
+  "name": "dropDatabaseProperties()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "TOZmfXZa3luWIMdjXUycMbaanCd",
+  "token": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/CzC6dm9N8oBvQZxRMyocNfTpn9f",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "block_type": 1,
+        "children": [
+          "XNAnd9joRogagSxD2TIcJNCbnZf",
+          "KhlndNrYco1Hs9xSORKcUGBJnSg",
+          "JOdpdIQ6io4R08xtCTPcJaibnYe",
+          "YZbwdkRRpoXEUmxENmyc9vsNnJd",
+          "GkLGdDHePoZ1kixv32ucpomVnce",
+          "Subvd1Hj8olmy5xr17rcBETCnmb",
+          "SgvtdtHfaoBemMxoAxscJUf4nPe",
+          "XlvydtwdMof4KZxSv6kcILcSnFh",
+          "G6zAdhxy7omJakxOGH7c0r6tnGd",
+          "F63odVKb9oHTqQxJCk1cle50nKe",
+          "D0K0dSjxooGd97xPNXOc1co1nIg",
+          "Hu9ydae7BoNeaxxgNBbcVKQHnZd",
+          "UtmSd74EPoJaYDxfEzKc1hLwnOc",
+          "Tkkcd6QxSoaHfxx6hfrcsaudn3g"
+        ],
+        "comment_ids": [
+          "7501956319042093075"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dropDatabaseProperties()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7501956319042093075"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "XNAnd9joRogagSxD2TIcJNCbnZf",
+        "block_type": 2,
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation resets the database properties to their default values.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KhlndNrYco1Hs9xSORKcUGBJnSg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void dropDatabaseProperties(DropDatabasePropertiesReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "JOdpdIQ6io4R08xtCTPcJaibnYe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "YZbwdkRRpoXEUmxENmyc9vsNnJd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "dropDatabaseProperties(DropDatabasePropertiesReq.builder()\n    .databaseName(String databaseName)\n    .propertyKeys(List<String> propertyKeys)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "GkLGdDHePoZ1kixv32ucpomVnce",
+        "block_type": 2,
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Subvd1Hj8olmy5xr17rcBETCnmb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VmTNdq0vHoFOFgxhlnccoPSPnpf"
+        ],
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "VmTNdq0vHoFOFgxhlnccoPSPnpf",
+        "block_type": 2,
+        "parent_id": "Subvd1Hj8olmy5xr17rcBETCnmb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SgvtdtHfaoBemMxoAxscJUf4nPe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "propertyKeys(List<String propertyKeys>)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ORxYdAoVKojC1bxgpqscOigCnsb",
+          "Ek3xdEWmDobxXix8TvXcn11cnmh",
+          "R90wdCI0SoVcuUxjyMZceABgnhh",
+          "WKIBdcIZ0ozZwLxqoU6cSaw3ntd",
+          "GqikdmonUomllNxq6ouccdGWnUf",
+          "JAPzdkHQeogkgDxAKKmchdwUnhd",
+          "CL62dleDxoNwP7xeyLTc4yexn7T"
+        ],
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "ORxYdAoVKojC1bxgpqscOigCnsb",
+        "block_type": 2,
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The properties of the database, such as replica number, resource groups. Possible database properties are as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "Ek3xdEWmDobxXix8TvXcn11cnmh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "database.replica.number",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "T34GddlA4oYyWSxgp3ocbb6ln8c"
+        ],
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe"
+      },
+      {
+        "block_id": "T34GddlA4oYyWSxgp3ocbb6ln8c",
+        "block_type": 2,
+        "parent_id": "Ek3xdEWmDobxXix8TvXcn11cnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Number of replicas for the database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R90wdCI0SoVcuUxjyMZceABgnhh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "database.resource_groups",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "EqAAddrDbo40NNxVf55cYHQZngh"
+        ],
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe"
+      },
+      {
+        "block_id": "EqAAddrDbo40NNxVf55cYHQZngh",
+        "block_type": 2,
+        "parent_id": "R90wdCI0SoVcuUxjyMZceABgnhh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Resource groups dedicated to the database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WKIBdcIZ0ozZwLxqoU6cSaw3ntd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "database.diskQuota.mb",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "U1zidkBgQosSj7xHGudc7kFunoh"
+        ],
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe"
+      },
+      {
+        "block_id": "U1zidkBgQosSj7xHGudc7kFunoh",
+        "block_type": 2,
+        "parent_id": "WKIBdcIZ0ozZwLxqoU6cSaw3ntd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Disk quota allocated to the database in megabytes (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MB",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GqikdmonUomllNxq6ouccdGWnUf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "database.max.collections",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HHtgdFRXoo14tSxLtLictgfVnyd"
+        ],
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe"
+      },
+      {
+        "block_id": "HHtgdFRXoo14tSxLtLictgfVnyd",
+        "block_type": 2,
+        "parent_id": "GqikdmonUomllNxq6ouccdGWnUf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Maximum number of collections allowed in the database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JAPzdkHQeogkgDxAKKmchdwUnhd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "database.force.deny.writing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DdnrdtBkAoj7RMxlgC6cBrijnLn"
+        ],
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe"
+      },
+      {
+        "block_id": "DdnrdtBkAoj7RMxlgC6cBrijnLn",
+        "block_type": 2,
+        "parent_id": "JAPzdkHQeogkgDxAKKmchdwUnhd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to deny all write operations in the database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CL62dleDxoNwP7xeyLTc4yexn7T",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "database.force.deny.reading",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "PwArdMYI9oQvukxoUiIcdmsTne9"
+        ],
+        "parent_id": "SgvtdtHfaoBemMxoAxscJUf4nPe"
+      },
+      {
+        "block_id": "PwArdMYI9oQvukxoUiIcdmsTne9",
+        "block_type": 2,
+        "parent_id": "CL62dleDxoNwP7xeyLTc4yexn7T",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to deny all read operations in the database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XlvydtwdMof4KZxSv6kcILcSnFh",
+        "block_type": 2,
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G6zAdhxy7omJakxOGH7c0r6tnGd",
+        "block_type": 2,
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F63odVKb9oHTqQxJCk1cle50nKe",
+        "block_type": 2,
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D0K0dSjxooGd97xPNXOc1co1nIg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HyrNdtudooWHstxO6q5cALjHnrh"
+        ],
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "HyrNdtudooWHstxO6q5cALjHnrh",
+        "block_type": 2,
+        "parent_id": "D0K0dSjxooGd97xPNXOc1co1nIg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hu9ydae7BoNeaxxgNBbcVKQHnZd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "UtmSd74EPoJaYDxfEzKc1hLwnOc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.database.request.DropDatabasePropertiesReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Drop database properties\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<String> propertyKeys = new ArrayList<>();\npropertyKeys.add(\"database.replica.number\");\n\nDropDatabasePropertiesReq dropDatabasePropertiesReq = DropDatabasePropertiesReq.builder()\n        .databaseName(databaseName)\n        .propertyKeys(propertyKeys)\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".dropDatabaseProperties(alterDatabaseReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f"
+      },
+      {
+        "block_id": "Tkkcd6QxSoaHfxx6hfrcsaudn3g",
+        "block_type": 2,
+        "parent_id": "CzC6dm9N8oBvQZxRMyocNfTpn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 30
+  },
+  "slug": "v2-Database-dropDatabaseProperties"
+}

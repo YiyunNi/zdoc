@@ -1,0 +1,3779 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1734936056",
+  "node_token": "WtkSwXgDdiB0eTkEkorcDCFlnme",
+  "node_type": "origin",
+  "obj_create_time": "1734936056",
+  "obj_edit_time": "1768270090",
+  "obj_token": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+  "obj_type": "docx",
+  "origin_node_token": "WtkSwXgDdiB0eTkEkorcDCFlnme",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+  "space_id": "7167193056431783939",
+  "title": "Import from a Parquet File",
+  "slug": "data-import-parquet",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "block_type": 1,
+        "children": [
+          "UFdfdFUoBooMySxewnScFk4Vnue",
+          "UmVMd2M6MoGWBux6Pmrc9ew2n8g",
+          "LATwd8A2UoaUcax2OnKcVXHPn9f",
+          "HMZxdBhSDovnbtxagDgcuQOqnRn",
+          "K6HWdMT4MoTVIRxKYFxci8MsnSf",
+          "ZMFldTtHboCtKsx1VMoceSkYnue",
+          "Wf9EdSMLpo9hfdxbgT2cPPHJnXf",
+          "YddUd4fYlordgAx5KT7c0kbfnDb",
+          "QhOKdKaOaoH7XIxxfVWc1wHBn4g",
+          "AtotdJOVcolX9Vx5ZqrcsLiEnze",
+          "VznCdoBu9oe4EAxllHIctMkinog",
+          "G559diin0o0D8NxGzsucvLUGnNf",
+          "EYfCdZbBWotnchxBjzQcepmRnuf",
+          "WXVCdDS7ooS2bXx1FuBcYPLcnod",
+          "SFY9d4A1XoxjKPxu6MEc4DxCnkF",
+          "SHlKdbH3NomublxLpNaclHUYnte",
+          "Xhpid3XRvotJI8xDZhmc1RvcnEX",
+          "PDWpdW4QAoeKLIxPLFvc9hZ3n8f",
+          "JRzKdpYfqog6LCxe9aVcwoSsnBe",
+          "HfF9deZjOomukMxIgQTcEE5BnLh",
+          "ET8PdiVlgsFnBrbN2WzcuefjnIh",
+          "KGkbdfXSaoJZlqxGQl2c8BVwn4d",
+          "FmhldNt8roUYyPx3uaucMRiDnOh",
+          "COfod8AuIoZKTQxoA15c1i2nnKf",
+          "RYaZdplLWoHaT5xzRWNcOIEfndf",
+          "U2ggdNlZXoYkPkxUCD7caksfnWf",
+          "B1rpdzXdeo3Ahtx0qMscYxGOn4c",
+          "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+          "VFlSdi7wroQeRFxsBTccujETnqf",
+          "TEV6dTFOAoCKtJxGmZLcQ7E8nZm",
+          "AHPUdpQUYoJWksxG22Jcy6BgnUg",
+          "LwcBdl8sXogB3JxbIekcEt2unOd",
+          "YaXadiwCaobh6bxa4i9cHW7Jnte",
+          "KPEKdsGyXoEYXpxOLnacGUbgnsc",
+          "MKK7dGeP3ofARPxPmTacNo6eneh",
+          "EYUEdNxKXo6cKKxJs7IcjbrCn7b",
+          "Cc0TdQCyLoCqtyx4LeJcEPXSnWc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import from a Parquet File",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "UFdfdFUoBooMySxewnScFk4Vnue",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Apache Parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fparquet.apache.org%2Fdocs%2Foverview%2F"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is an open-source, column-oriented data file format designed for efficient data storage and retrieval. It offers high-performance compression and encoding schemes to manage complex data in bulk and is supported in various programming languages and analytics tools tools.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UmVMd2M6MoGWBux6Pmrc9ew2n8g",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You are advised to use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "the BulkWriter tool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FQyjpwAaKuihAeJkNBUJcdFesn9e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to prepare your raw data into Parquet files. The following figure demonstrates how your raw data can be mapped into a Parquet file.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LATwd8A2UoaUcax2OnKcVXHPn9f",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Fdesign%2FRb9z8tsmYYdqdultiKx7kT%2FDiagrams-2024%3Fnode-id%3D89623-1878%26t%3DPO2QXB2KtlLhOKm2-4"
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "HMZxdBhSDovnbtxagDgcuQOqnRn",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "QGJXd9KWYoz9LhxEnIkcrXEcnBg",
+          "E0ocdGXZ7oNjh4xlujBcbA2gnud",
+          "JLtMdWdpIoVAbLxh8kucllClnMe",
+          "YVPjdVEPkoE0XyxmnNpcBw9rnVc"
+        ],
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "QGJXd9KWYoz9LhxEnIkcrXEcnBg",
+        "block_type": 2,
+        "parent_id": "HMZxdBhSDovnbtxagDgcuQOqnRn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E0ocdGXZ7oNjh4xlujBcbA2gnud",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to enable AutoID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AIGPdZJRyog6A3xzXs3cNsMMnMd"
+        ],
+        "parent_id": "HMZxdBhSDovnbtxagDgcuQOqnRn"
+      },
+      {
+        "block_id": "AIGPdZJRyog6A3xzXs3cNsMMnMd",
+        "block_type": 2,
+        "parent_id": "E0ocdGXZ7oNjh4xlujBcbA2gnud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field serves as the primary field of the collection. To make the primary field automatically increment, you can enable ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AutoID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the schema. In this case, you should exclude the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field from each row in the source data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "JLtMdWdpIoVAbLxh8kucllClnMe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to enable dynamic fields",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WQGCdjiJ5oYqKSxzPRRcRhWwnxe"
+        ],
+        "parent_id": "HMZxdBhSDovnbtxagDgcuQOqnRn"
+      },
+      {
+        "block_id": "WQGCdjiJ5oYqKSxzPRRcRhWwnxe",
+        "block_type": 2,
+        "parent_id": "JLtMdWdpIoVAbLxh8kucllClnMe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When the target collection enables dynamic fields, if you need to store fields that are not included in the pre-defined schema, you can specify the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "$meta",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " column during the write operation and provide the corresponding key-value data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YVPjdVEPkoE0XyxmnNpcBw9rnVc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Case-sensitive",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Jr98daxL6ok4YwxftAxcL1eRnOf"
+        ],
+        "parent_id": "HMZxdBhSDovnbtxagDgcuQOqnRn"
+      },
+      {
+        "block_id": "Jr98daxL6ok4YwxftAxcL1eRnOf",
+        "block_type": 2,
+        "parent_id": "YVPjdVEPkoE0XyxmnNpcBw9rnVc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dictionary keys and collection field names are case-sensitive. Ensure that the dictionary keys in your data exactly match the field names in the target collection. If there is a field named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in the target collection, each entity dictionary should have a key named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id.",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ID",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " results in errors. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "K6HWdMT4MoTVIRxKYFxci8MsnSf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Directory structure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "ZMFldTtHboCtKsx1VMoceSkYnue",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you prefer to prepare your data into Parquet files, place all Parquet files directly into the source data folder as shown in the tree diagram below.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Wf9EdSMLpo9hfdxbgT2cPPHJnXf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "├── parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "│       ├── 1.parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "│       └── 2.parquet ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 1,
+            "wrap": true
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "YddUd4fYlordgAx5KT7c0kbfnDb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import data",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "QhOKdKaOaoH7XIxxfVWc1wHBn4g",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once your data is ready, you can use either of the following methods to import them into your Zilliz Cloud collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AtotdJOVcolX9Vx5ZqrcsLiEnze",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import files from multiple paths (recommended)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FWtkSwXgDdiB0eTkEkorcDCFlnme%23SFY9d4A1XoxjKPxu6MEc4DxCnkF"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "VznCdoBu9oe4EAxllHIctMkinog",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import files from the source folder ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FWtkSwXgDdiB0eTkEkorcDCFlnme%23PDWpdW4QAoeKLIxPLFvc9hZ3n8f"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "G559diin0o0D8NxGzsucvLUGnNf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import a single file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FWtkSwXgDdiB0eTkEkorcDCFlnme%23KGkbdfXSaoJZlqxGQl2c8BVwn4d"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "EYfCdZbBWotnchxBjzQcepmRnuf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "CUlgdWau4oyMY5xNNMncWbLnn3b",
+          "VTUud3HhxoDPBExLx3qcpHkgnwh"
+        ],
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "CUlgdWau4oyMY5xNNMncWbLnn3b",
+        "block_type": 2,
+        "parent_id": "EYfCdZbBWotnchxBjzQcepmRnuf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VTUud3HhxoDPBExLx3qcpHkgnwh",
+        "block_type": 2,
+        "parent_id": "EYfCdZbBWotnchxBjzQcepmRnuf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your files are relatively small, it is recommended to use the folder or multiple-path method to import them all at once. This approach allows for internal optimizations during the import process, which helps reduce resource consumption later.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WXVCdDS7ooS2bXx1FuBcYPLcnod",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also import your data on the Zilliz Cloud console using Milvus SDKs. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data (Console)",
+                "token": "KkdswLx2bi4bgCkY6bEc7Do9neh",
+                "url": "https://zilliverse.feishu.cn/wiki/KkdswLx2bi4bgCkY6bEc7Do9neh"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import Data (SDK)",
+                "token": "MvgAwL4HIiuRRJkH0FwcJhxSnld",
+                "url": "https://zilliverse.feishu.cn/wiki/MvgAwL4HIiuRRJkH0FwcJhxSnld"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SFY9d4A1XoxjKPxu6MEc4DxCnkF",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import files from multiple paths (Recommended)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "SHlKdbH3NomublxLpNaclHUYnte",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When importing files from multiple paths, include each Parquet file path in a separate list, then group all the lists into a higher-level list as in the following code example.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xhpid3XRvotJI8xDZhmc1RvcnEX",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n     --url \"https://api.cloud.zilliz.com/v2/vectordb/jobs/import/create\" \\\n     --header \"Authorization: Bearer ${TOKEN}\" \\\n     --header \"Accept: application/json\" \\\n     --header \"Content-Type: application/json\" \\\n     -d '{\n        \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n        \"collectionName\": \"medium_articles\",\n        \"partitionName\": \"\",\n        \"objectUrls\": [\n            [\"s3://bucket-name/parquet-folder-1/1.parquet\"],\n            [\"s3://bucket-name/parquet-folder-2/1.parquet\"],\n            [\"s3://bucket-name/parquet-folder-3/\"]\n         ],\n        \"accessKey\": \"\",\n        \"secretKey\": \"\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": true
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "PDWpdW4QAoeKLIxPLFvc9hZ3n8f",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import files from a folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "JRzKdpYfqog6LCxe9aVcwoSsnBe",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the source folder contains only the Parquet files to import, you can simply include the source folder in the request as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HfF9deZjOomukMxIgQTcEE5BnLh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n     --url \"https://api.cloud.zilliz.com/v2/vectordb/jobs/import/create\" \\\n     --header \"Authorization: Bearer ${TOKEN}\" \\\n     --header \"Accept: application/json\" \\\n     --header \"Content-Type: application/json\" \\\n     -d '{\n        \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n        \"collectionName\": \"medium_articles\",\n        \"partitionName\": \"\",\n        \"objectUrls\": [\n            [\"s3://bucket-name/parquet-folder/\"]\n         ],\n        \"accessKey\": \"\",\n        \"secretKey\": \"\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": true
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "ET8PdiVlgsFnBrbN2WzcuefjnIh",
+        "block_type": 49,
+        "children": [
+          "LA1MdBn4GoVn42xPPmWcODmwn5e"
+        ],
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "KGkbdfXSaoJZlqxGQl2c8BVwn4d",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import a single file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "FmhldNt8roUYyPx3uaucMRiDnOh",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your prepared data file is a single Parquet file, import it as demonstrated in the following code example.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "COfod8AuIoZKTQxoA15c1i2nnKf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n     --url \"https://api.cloud.zilliz.com/v2/vectordb/jobs/import/create\" \\\n     --header \"Authorization: Bearer ${TOKEN}\" \\\n     --header \"Accept: application/json\" \\\n     --header \"Content-Type: application/json\" \\\n     -d '{\n        \"clusterId\": \"inxx-xxxxxxxxxxxxxxx\",\n        \"collectionName\": \"medium_articles\",\n        \"partitionName\": \"\",\n        \"objectUrls\": [\n            [\"s3://bucket-name/parquet-folder/1.parquet\"]\n         ],\n        \"accessKey\": \"\",\n        \"secretKey\": \"\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    }'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": true
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "RYaZdplLWoHaT5xzRWNcOIEfndf",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U2ggdNlZXoYkPkxUCD7caksfnWf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Storage paths",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "B1rpdzXdeo3Ahtx0qMscYxGOn4c",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud supports data import from your cloud storage. The table below lists the possible storage paths for your data files.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "block_type": 31,
+        "children": [
+          "JMRldWS9Fo80khxpaGGcq1NSnug",
+          "InqAdXNrIolsWExqbbWcEAyjnjg",
+          "CXojdPzNeoW7AixD6Puc3M6snfb",
+          "E9hMdbcx1ogZQFxxkBtcauoInQX",
+          "KXGjdSoN8oVJYzxFZzicEtgen6P",
+          "Fa3bdD785oDxYoxkgLUc7gXknHi",
+          "JkshdLLKSo6aoPxlLILcTpfinde",
+          "Z2DfdVpEdoVZoQxPIYpcAfdenIc"
+        ],
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "table": {
+          "cells": [
+            "JMRldWS9Fo80khxpaGGcq1NSnug",
+            "InqAdXNrIolsWExqbbWcEAyjnjg",
+            "CXojdPzNeoW7AixD6Puc3M6snfb",
+            "E9hMdbcx1ogZQFxxkBtcauoInQX",
+            "KXGjdSoN8oVJYzxFZzicEtgen6P",
+            "Fa3bdD785oDxYoxkgLUc7gXknHi",
+            "JkshdLLKSo6aoPxlLILcTpfinde",
+            "Z2DfdVpEdoVZoQxPIYpcAfdenIc"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              198,
+              644
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "JMRldWS9Fo80khxpaGGcq1NSnug",
+        "block_type": 32,
+        "children": [
+          "KQIFdlBT4oOdAVx3hKdcWWYxnjg"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KQIFdlBT4oOdAVx3hKdcWWYxnjg",
+        "block_type": 2,
+        "parent_id": "JMRldWS9Fo80khxpaGGcq1NSnug",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cloud",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "InqAdXNrIolsWExqbbWcEAyjnjg",
+        "block_type": 32,
+        "children": [
+          "Gjz4duVuAoHfI9xSeYCczmaAnig"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Gjz4duVuAoHfI9xSeYCczmaAnig",
+        "block_type": 2,
+        "parent_id": "InqAdXNrIolsWExqbbWcEAyjnjg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Quick Examples",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CXojdPzNeoW7AixD6Puc3M6snfb",
+        "block_type": 32,
+        "children": [
+          "D1LcdeDLXoe6vBxtFjbcW6tkn9L"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "D1LcdeDLXoe6vBxtFjbcW6tkn9L",
+        "block_type": 2,
+        "parent_id": "CXojdPzNeoW7AixD6Puc3M6snfb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AWS S3",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E9hMdbcx1ogZQFxxkBtcauoInQX",
+        "block_type": 32,
+        "children": [
+          "Y45jdXAAPojuo8xWyFGceV7Nnjh",
+          "ImqGdSOgjoI5jlxnxphca38mnyh"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Y45jdXAAPojuo8xWyFGceV7Nnjh",
+        "block_type": 2,
+        "parent_id": "E9hMdbcx1ogZQFxxkBtcauoInQX",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "s3://",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket-name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ImqGdSOgjoI5jlxnxphca38mnyh",
+        "block_type": 2,
+        "parent_id": "E9hMdbcx1ogZQFxxkBtcauoInQX",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "s3://",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket-name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "data.parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KXGjdSoN8oVJYzxFZzicEtgen6P",
+        "block_type": 32,
+        "children": [
+          "GROrdWskio4P2cx5qfQc6eJXnue"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GROrdWskio4P2cx5qfQc6eJXnue",
+        "block_type": 2,
+        "parent_id": "KXGjdSoN8oVJYzxFZzicEtgen6P",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Google Cloud Storage",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fa3bdD785oDxYoxkgLUc7gXknHi",
+        "block_type": 32,
+        "children": [
+          "BuModfGQyoQ5fWxZGd8cL7a1n2b",
+          "DJN4dXnzroXjn3xUTIPcMupAnwd"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BuModfGQyoQ5fWxZGd8cL7a1n2b",
+        "block_type": 2,
+        "parent_id": "Fa3bdD785oDxYoxkgLUc7gXknHi",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "gs://",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket-name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DJN4dXnzroXjn3xUTIPcMupAnwd",
+        "block_type": 2,
+        "parent_id": "Fa3bdD785oDxYoxkgLUc7gXknHi",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "gs://",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket-name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "data.parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JkshdLLKSo6aoPxlLILcTpfinde",
+        "block_type": 32,
+        "children": [
+          "CVr6dN4IFokiVjx2Ijocn7sNnmf"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CVr6dN4IFokiVjx2Ijocn7sNnmf",
+        "block_type": 2,
+        "parent_id": "JkshdLLKSo6aoPxlLILcTpfinde",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Azure Bolb",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z2DfdVpEdoVZoQxPIYpcAfdenIc",
+        "block_type": 32,
+        "children": [
+          "LX5JdFDynocsdLxASUpc6blMnYd",
+          "BCmtdvfjVoOFitxUO35cm2v3n1d"
+        ],
+        "parent_id": "C62Gd2H0GoMfx5x2Q9vcMaKnnGd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "LX5JdFDynocsdLxASUpc6blMnYd",
+        "block_type": 2,
+        "parent_id": "Z2DfdVpEdoVZoQxPIYpcAfdenIc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "https:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "//",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "myaccount",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".blob.core.windows.net",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket-name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BCmtdvfjVoOFitxUO35cm2v3n1d",
+        "block_type": 2,
+        "parent_id": "Z2DfdVpEdoVZoQxPIYpcAfdenIc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "https:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "//myaccount.blob.core.windows.net",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "bucket-name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "parquet-folder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "/",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "data.parquet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VFlSdi7wroQeRFxsBTccujETnqf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limits",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe"
+      },
+      {
+        "block_id": "TEV6dTFOAoCKtJxGmZLcQ7E8nZm",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "There are some limits you need to observe when you import data in a local Parquet file or Parquet files from your cloud storage. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AHPUdpQUYoJWksxG22Jcy6BgnUg",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"saas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "block_type": 31,
+        "children": [
+          "W8iWdmkGVoTDiIxGmFkcEcBcnqd",
+          "O8VMdCMfNoUAiDxJOlCcAwztndh",
+          "A8rhdrrYxoVhGwxy1qVcabk9n56",
+          "EbB0dPsCUoLY9nxVrdXcncVvnvb",
+          "HwCJdDI2Vo6a2fxngZ5ccUfVn9f",
+          "GX5BdBSk0ocIdXxolbkchrIFnwc",
+          "LN3cdKvRuoybFVxZQsico35an0g",
+          "MOecdBLzRobVeaxogD2cpEranxA",
+          "I6ORdk6J9oX18Qx4VOZcKC6kn7f",
+          "FwL8dHGZzohn9AxZ4J5c1VLDnWh",
+          "XNpKdH17loWGrDxN2vPctyg9nSd",
+          "Nk31dK4dOoCRSmxvguGcsJOKndc",
+          "ATGidyU8HoillDx2hm0cW92fnCc",
+          "L6iCdls7KojbOSxvx4acb0CUnIf",
+          "XuX1dNnDioPzo3xAgnRchQnRnUb",
+          "ZDEId8f0AorijjxzZhScgubwncd",
+          "YFlmd1T0VoVccFxKyxWcR8VEnMe",
+          "WvWZdSbuyoxfc6xODJacIqLFnmh",
+          "IpAbdInMGoAxoHxojB3c8KW9naf",
+          "ESFCdbq5XoXXkhxqsC7c4t93nYb"
+        ],
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "table": {
+          "cells": [
+            "W8iWdmkGVoTDiIxGmFkcEcBcnqd",
+            "O8VMdCMfNoUAiDxJOlCcAwztndh",
+            "A8rhdrrYxoVhGwxy1qVcabk9n56",
+            "EbB0dPsCUoLY9nxVrdXcncVvnvb",
+            "HwCJdDI2Vo6a2fxngZ5ccUfVn9f",
+            "GX5BdBSk0ocIdXxolbkchrIFnwc",
+            "LN3cdKvRuoybFVxZQsico35an0g",
+            "MOecdBLzRobVeaxogD2cpEranxA",
+            "I6ORdk6J9oX18Qx4VOZcKC6kn7f",
+            "FwL8dHGZzohn9AxZ4J5c1VLDnWh",
+            "XNpKdH17loWGrDxN2vPctyg9nSd",
+            "Nk31dK4dOoCRSmxvguGcsJOKndc",
+            "ATGidyU8HoillDx2hm0cW92fnCc",
+            "L6iCdls7KojbOSxvx4acb0CUnIf",
+            "XuX1dNnDioPzo3xAgnRchQnRnUb",
+            "ZDEId8f0AorijjxzZhScgubwncd",
+            "YFlmd1T0VoVccFxKyxWcR8VEnMe",
+            "WvWZdSbuyoxfc6xODJacIqLFnmh",
+            "IpAbdInMGoAxoHxojB3c8KW9naf",
+            "ESFCdbq5XoXXkhxqsC7c4t93nYb"
+          ],
+          "property": {
+            "column_size": 5,
+            "column_width": [
+              163,
+              183,
+              127,
+              107,
+              180
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 2
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "W8iWdmkGVoTDiIxGmFkcEcBcnqd",
+        "block_type": 32,
+        "children": [
+          "NGpJd3Xh8oyFQFxe8Gzc9FR3nxc"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NGpJd3Xh8oyFQFxe8Gzc9FR3nxc",
+        "block_type": 2,
+        "parent_id": "W8iWdmkGVoTDiIxGmFkcEcBcnqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import Method",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "O8VMdCMfNoUAiDxJOlCcAwztndh",
+        "block_type": 32,
+        "children": [
+          "Pr48dhmWPoIQ4XxC3oKciLdenmd"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Pr48dhmWPoIQ4XxC3oKciLdenmd",
+        "block_type": 2,
+        "parent_id": "O8VMdCMfNoUAiDxJOlCcAwztndh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster Plan",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "A8rhdrrYxoVhGwxy1qVcabk9n56",
+        "block_type": 32,
+        "children": [
+          "IRQJdrnQIoahWBxjtMxcnKSUnJe"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IRQJdrnQIoahWBxjtMxcnKSUnJe",
+        "block_type": 2,
+        "parent_id": "A8rhdrrYxoVhGwxy1qVcabk9n56",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max Files per Import",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EbB0dPsCUoLY9nxVrdXcncVvnvb",
+        "block_type": 32,
+        "children": [
+          "Za7VdfnCcoskYlxZDTHcfkrbneL"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Za7VdfnCcoskYlxZDTHcfkrbneL",
+        "block_type": 2,
+        "parent_id": "EbB0dPsCUoLY9nxVrdXcncVvnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max File Size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HwCJdDI2Vo6a2fxngZ5ccUfVn9f",
+        "block_type": 32,
+        "children": [
+          "EiQXdrG7MoSM7XxScc1cl9uVnRb"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EiQXdrG7MoSM7XxScc1cl9uVnRb",
+        "block_type": 2,
+        "parent_id": "HwCJdDI2Vo6a2fxngZ5ccUfVn9f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max Total Import Size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GX5BdBSk0ocIdXxolbkchrIFnwc",
+        "block_type": 32,
+        "children": [
+          "RdPfdvHhQoFMFuxVu8ucIbL1n5g"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RdPfdvHhQoFMFuxVu8ucIbL1n5g",
+        "block_type": 2,
+        "parent_id": "GX5BdBSk0ocIdXxolbkchrIFnwc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "From local file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LN3cdKvRuoybFVxZQsico35an0g",
+        "block_type": 32,
+        "children": [
+          "T2TydkxD9oY32bxXcrHcYyomnfc"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "T2TydkxD9oY32bxXcrHcYyomnfc",
+        "block_type": 2,
+        "parent_id": "LN3cdKvRuoybFVxZQsico35an0g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "All Plans",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MOecdBLzRobVeaxogD2cpEranxA",
+        "block_type": 32,
+        "children": [
+          "A5Obd1R5don7ESxaeaocl39CnRf"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "A5Obd1R5don7ESxaeaocl39CnRf",
+        "block_type": 2,
+        "parent_id": "MOecdBLzRobVeaxogD2cpEranxA",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 File",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I6ORdk6J9oX18Qx4VOZcKC6kn7f",
+        "block_type": 32,
+        "children": [
+          "BCNsdJ1YWoN2LDxl5Icc9yr0nzc"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BCNsdJ1YWoN2LDxl5Icc9yr0nzc",
+        "block_type": 2,
+        "parent_id": "I6ORdk6J9oX18Qx4VOZcKC6kn7f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FwL8dHGZzohn9AxZ4J5c1VLDnWh",
+        "block_type": 32,
+        "children": [
+          "Gy7ndEwwUoikw2xZnZ3c68qCn0b"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Gy7ndEwwUoikw2xZnZ3c68qCn0b",
+        "block_type": 2,
+        "parent_id": "FwL8dHGZzohn9AxZ4J5c1VLDnWh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XNpKdH17loWGrDxN2vPctyg9nSd",
+        "block_type": 32,
+        "children": [
+          "ASU9dolqWoAoioxHE6LcFKS9nQe"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ASU9dolqWoAoioxHE6LcFKS9nQe",
+        "block_type": 2,
+        "parent_id": "XNpKdH17loWGrDxN2vPctyg9nSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "From object storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Nk31dK4dOoCRSmxvguGcsJOKndc",
+        "block_type": 32,
+        "children": [
+          "K6dVdIEieobN2YxVwCJcjGzVnFv"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "K6dVdIEieobN2YxVwCJcjGzVnFv",
+        "block_type": 2,
+        "parent_id": "Nk31dK4dOoCRSmxvguGcsJOKndc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Free",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ATGidyU8HoillDx2hm0cW92fnCc",
+        "block_type": 32,
+        "children": [
+          "SVVddSxYwoMO5Uxq8d5cxv8bnSN"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SVVddSxYwoMO5Uxq8d5cxv8bnSN",
+        "block_type": 2,
+        "parent_id": "ATGidyU8HoillDx2hm0cW92fnCc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1,000 Files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L6iCdls7KojbOSxvx4acb0CUnIf",
+        "block_type": 32,
+        "children": [
+          "GBSodo40CowhvlxH2jBc0Z5An2i"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GBSodo40CowhvlxH2jBc0Z5An2i",
+        "block_type": 2,
+        "parent_id": "L6iCdls7KojbOSxvx4acb0CUnIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XuX1dNnDioPzo3xAgnRchQnRnUb",
+        "block_type": 32,
+        "children": [
+          "D8XFdpczGoNqfOx7X4LcgLBLn3b"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "D8XFdpczGoNqfOx7X4LcgLBLn3b",
+        "block_type": 2,
+        "parent_id": "XuX1dNnDioPzo3xAgnRchQnRnUb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZDEId8f0AorijjxzZhScgubwncd",
+        "block_type": 32,
+        "children": [
+          "Ws8CdbkdyoQGXrxzcSZcMfApnIc"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ws8CdbkdyoQGXrxzcSZcMfApnIc",
+        "block_type": 2,
+        "parent_id": "ZDEId8f0AorijjxzZhScgubwncd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YFlmd1T0VoVccFxKyxWcR8VEnMe",
+        "block_type": 32,
+        "children": [
+          "WjM9d2fu6oVzN1xO2pecWOWMnHb"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WjM9d2fu6oVzN1xO2pecWOWMnHb",
+        "block_type": 2,
+        "parent_id": "YFlmd1T0VoVccFxKyxWcR8VEnMe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Serverless & Dedicated",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WvWZdSbuyoxfc6xODJacIqLFnmh",
+        "block_type": 32,
+        "children": [
+          "N6yFdmjLXoOLxCxeCspcLhmKnoU"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "N6yFdmjLXoOLxCxeCspcLhmKnoU",
+        "block_type": 2,
+        "parent_id": "WvWZdSbuyoxfc6xODJacIqLFnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1,000 Files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IpAbdInMGoAxoHxojB3c8KW9naf",
+        "block_type": 32,
+        "children": [
+          "VMaTd4Rl0ot2AixODI9cDwcYnWb"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VMaTd4Rl0ot2AixODI9cDwcYnWb",
+        "block_type": 2,
+        "parent_id": "IpAbdInMGoAxoHxojB3c8KW9naf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "10 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ESFCdbq5XoXXkhxqsC7c4t93nYb",
+        "block_type": 32,
+        "children": [
+          "QfIhdISwToMFeVxmEBxcUWHmn6e"
+        ],
+        "parent_id": "LwcBdl8sXogB3JxbIekcEt2unOd",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QfIhdISwToMFeVxmEBxcUWHmn6e",
+        "block_type": 2,
+        "parent_id": "ESFCdbq5XoXXkhxqsC7c4t93nYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 TB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YaXadiwCaobh6bxa4i9cHW7Jnte",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KPEKdsGyXoEYXpxOLnacGUbgnsc",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<include target=\"paas\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "block_type": 31,
+        "children": [
+          "VCuPdIox6oQbFwx5kffcUSuVnzf",
+          "VRYFdgssBoMlvDxE5dZcOmbsn1f",
+          "Vo78djt53oM8oJxB5gwcvPECnbf",
+          "DorwdR7wMoAxCQxaJYmcWkpWn4g",
+          "WG0HdRFFhoID3Qx5KVXcNcXEnIc",
+          "KeWUdj7NkoSdj5xN3iNcR1iBnGb",
+          "SDindu0Y1oZngFxA1HycWouOnbb",
+          "CGJEdT6q5od8Q5xRDYNcBujunSd",
+          "KTY8dJReOoFsAbxDZUGcl8CXntf",
+          "JHAQdchzPoUcqoxf2hzcqJN7ntb",
+          "Sx9IdEKTCodS2DxEFIFcne70nac",
+          "GMbbdHKVjo2MNYxZLjHc5fWJnFb"
+        ],
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "table": {
+          "cells": [
+            "VCuPdIox6oQbFwx5kffcUSuVnzf",
+            "VRYFdgssBoMlvDxE5dZcOmbsn1f",
+            "Vo78djt53oM8oJxB5gwcvPECnbf",
+            "DorwdR7wMoAxCQxaJYmcWkpWn4g",
+            "WG0HdRFFhoID3Qx5KVXcNcXEnIc",
+            "KeWUdj7NkoSdj5xN3iNcR1iBnGb",
+            "SDindu0Y1oZngFxA1HycWouOnbb",
+            "CGJEdT6q5od8Q5xRDYNcBujunSd",
+            "KTY8dJReOoFsAbxDZUGcl8CXntf",
+            "JHAQdchzPoUcqoxf2hzcqJN7ntb",
+            "Sx9IdEKTCodS2DxEFIFcne70nac",
+            "GMbbdHKVjo2MNYxZLjHc5fWJnFb"
+          ],
+          "property": {
+            "column_size": 4,
+            "column_width": [
+              163,
+              127,
+              107,
+              180
+            ],
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 3
+          }
+        }
+      },
+      {
+        "block_id": "VCuPdIox6oQbFwx5kffcUSuVnzf",
+        "block_type": 32,
+        "children": [
+          "S7VwdQM4lo3WAcxhQjwc9QRRnSg"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "S7VwdQM4lo3WAcxhQjwc9QRRnSg",
+        "block_type": 2,
+        "parent_id": "VCuPdIox6oQbFwx5kffcUSuVnzf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Import Method",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VRYFdgssBoMlvDxE5dZcOmbsn1f",
+        "block_type": 32,
+        "children": [
+          "QN9zdpm2WoBkTbxq1K3cmR8znMd"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QN9zdpm2WoBkTbxq1K3cmR8znMd",
+        "block_type": 2,
+        "parent_id": "VRYFdgssBoMlvDxE5dZcOmbsn1f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max Files per Import",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vo78djt53oM8oJxB5gwcvPECnbf",
+        "block_type": 32,
+        "children": [
+          "ObgBdro2lowAt3xFTUTcoasanNb"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ObgBdro2lowAt3xFTUTcoasanNb",
+        "block_type": 2,
+        "parent_id": "Vo78djt53oM8oJxB5gwcvPECnbf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max File Size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DorwdR7wMoAxCQxaJYmcWkpWn4g",
+        "block_type": 32,
+        "children": [
+          "QxTed8vmpo7iVvxk9drcd8htnWc"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QxTed8vmpo7iVvxk9drcd8htnWc",
+        "block_type": 2,
+        "parent_id": "DorwdR7wMoAxCQxaJYmcWkpWn4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Max Total Import Size",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WG0HdRFFhoID3Qx5KVXcNcXEnIc",
+        "block_type": 32,
+        "children": [
+          "FtyedfmqKoRYYdxVavecHijenJh"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FtyedfmqKoRYYdxVavecHijenJh",
+        "block_type": 2,
+        "parent_id": "WG0HdRFFhoID3Qx5KVXcNcXEnIc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "From local file",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KeWUdj7NkoSdj5xN3iNcR1iBnGb",
+        "block_type": 32,
+        "children": [
+          "PdTzdBCA5oLwLUxGWuccRakKnmF"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PdTzdBCA5oLwLUxGWuccRakKnmF",
+        "block_type": 2,
+        "parent_id": "KeWUdj7NkoSdj5xN3iNcR1iBnGb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 File",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SDindu0Y1oZngFxA1HycWouOnbb",
+        "block_type": 32,
+        "children": [
+          "XaSQdL2mxorFyRxKIOQcvvEVnJg"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XaSQdL2mxorFyRxKIOQcvvEVnJg",
+        "block_type": 2,
+        "parent_id": "SDindu0Y1oZngFxA1HycWouOnbb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CGJEdT6q5od8Q5xRDYNcBujunSd",
+        "block_type": 32,
+        "children": [
+          "ATkbdJx4wodUGBxkNfUcmJDTnLc"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ATkbdJx4wodUGBxkNfUcmJDTnLc",
+        "block_type": 2,
+        "parent_id": "CGJEdT6q5od8Q5xRDYNcBujunSd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KTY8dJReOoFsAbxDZUGcl8CXntf",
+        "block_type": 32,
+        "children": [
+          "Ctt1d0jfgogEcBxZZ9UcZj61n4d"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ctt1d0jfgogEcBxZZ9UcZj61n4d",
+        "block_type": 2,
+        "parent_id": "KTY8dJReOoFsAbxDZUGcl8CXntf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "From object storage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JHAQdchzPoUcqoxf2hzcqJN7ntb",
+        "block_type": 32,
+        "children": [
+          "EBmJdEFFGoLKdQxN90scGFGhnah"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EBmJdEFFGoLKdQxN90scGFGhnah",
+        "block_type": 2,
+        "parent_id": "JHAQdchzPoUcqoxf2hzcqJN7ntb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1,000 Files",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Sx9IdEKTCodS2DxEFIFcne70nac",
+        "block_type": 32,
+        "children": [
+          "SHReddiVpo5ddCxz0dTcXC4ZnJc"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "SHReddiVpo5ddCxz0dTcXC4ZnJc",
+        "block_type": 2,
+        "parent_id": "Sx9IdEKTCodS2DxEFIFcne70nac",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "10 GB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GMbbdHKVjo2MNYxZLjHc5fWJnFb",
+        "block_type": 32,
+        "children": [
+          "ZVaod7Sa1oLzcWx4eJecUgrSnRb"
+        ],
+        "parent_id": "MKK7dGeP3ofARPxPmTacNo6eneh",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZVaod7Sa1oLzcWx4eJecUgrSnRb",
+        "block_type": 2,
+        "parent_id": "GMbbdHKVjo2MNYxZLjHc5fWJnFb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "1 TB",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EYUEdNxKXo6cKKxJs7IcjbrCn7b",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Cc0TdQCyLoCqtyx4LeJcEPXSnWc",
+        "block_type": 2,
+        "parent_id": "F149dJ9PFoNUrNxk5iccD2dxnDe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You are advised to use ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "the BulkWriter tool",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FQyjpwAaKuihAeJkNBUJcdFesn9e"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to prepare your raw data into parquet files. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Click here to download the prepared sample data based on the schema in the above diagram",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fassets.zilliz.com%2Fprepared_parquet_data.parquet"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LA1MdBn4GoVn42xPPmWcODmwn5e",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "I4fBdtYdqohoFqxKqWHcpujPnLf",
+          "M6lHdkujOoctefx4qYicia3InVf"
+        ],
+        "parent_id": "ET8PdiVlgsFnBrbN2WzcuefjnIh"
+      },
+      {
+        "block_id": "I4fBdtYdqohoFqxKqWHcpujPnLf",
+        "block_type": 2,
+        "parent_id": "LA1MdBn4GoVn42xPPmWcODmwn5e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M6lHdkujOoctefx4qYicia3InVf",
+        "block_type": 2,
+        "parent_id": "LA1MdBn4GoVn42xPPmWcODmwn5e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the folder contains multiple formats of files, the request will fail.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 130
+  }
+}

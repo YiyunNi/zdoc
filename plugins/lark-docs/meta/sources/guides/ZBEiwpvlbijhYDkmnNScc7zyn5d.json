@@ -1,0 +1,3919 @@
+{
+  "creator": "ou_be2d1e67a811e6ef0b1d91a60c1df1ce",
+  "has_child": false,
+  "node_create_time": "1767960530",
+  "node_token": "ZBEiwpvlbijhYDkmnNScc7zyn5d",
+  "node_type": "origin",
+  "obj_create_time": "1767960530",
+  "obj_edit_time": "1769684704",
+  "obj_token": "Qfm6d9S0SoLdcaxOMuPcFzmonBe",
+  "obj_type": "docx",
+  "origin_node_token": "ZBEiwpvlbijhYDkmnNScc7zyn5d",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_be2d1e67a811e6ef0b1d91a60c1df1ce",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "January 2026 Release Notes",
+  "slug": "release-notes-2601",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Qfm6d9S0SoLdcaxOMuPcFzmonBe",
+        "block_type": 1,
+        "children": [
+          "R9tmds5afoutbsx7z00cLI0fndd",
+          "DLqadrCMbo960axnLezcDiCvn9c",
+          "doxcnwUEnFwwB8idJ9MpaQvPEBe",
+          "doxcnp3SW1MRh8SABi2DFFuLFAK"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Jan",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "uary",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 2026 Release Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "R9tmds5afoutbsx7z00cLI0fndd",
+        "block_type": 24,
+        "children": [
+          "CghodG6EPoOpwDx1TrRcIOsCnPc",
+          "IvHWdjkvgohegPxsX6acwfQfnub"
+        ],
+        "grid": {
+          "column_size": 2
+        },
+        "parent_id": "Qfm6d9S0SoLdcaxOMuPcFzmonBe"
+      },
+      {
+        "block_id": "CghodG6EPoOpwDx1TrRcIOsCnPc",
+        "block_type": 25,
+        "children": [
+          "BiBqdKVyfoqcuFx80rZcccwnnlg"
+        ],
+        "grid_column": {
+          "width_ratio": 20
+        },
+        "parent_id": "R9tmds5afoutbsx7z00cLI0fndd"
+      },
+      {
+        "block_id": "BiBqdKVyfoqcuFx80rZcccwnnlg",
+        "block_type": 2,
+        "comment_ids": [
+          "7600665009584180153"
+        ],
+        "parent_id": "CghodG6EPoOpwDx1TrRcIOsCnPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "2026-01-2",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7600665009584180153"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "9",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7600665009584180153"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IvHWdjkvgohegPxsX6acwfQfnub",
+        "block_type": 25,
+        "children": [
+          "FVVJdwPdBo34yfxUV5ncohMun6c",
+          "TtxfdzM6Do10vOxZrW4cebyTnOT",
+          "E7TIdbwIUoxsBWxEWTqcRIkHnGg",
+          "WDvudKCl8osnoixBURfcSTiynk7",
+          "AXdGdWhh3orrwExgTC9cbXLCnxM",
+          "MrfLdxtkmobcXAx1LsKcc1cInmh",
+          "CID0dC4KyopqROxhFw6cY8d7nId",
+          "JKi9dpwy1ocUCQxaU6KcnF19nWg",
+          "AdyudzhysoIAWoxsOxGcTu9UnVh",
+          "FT8OdClYRoJTvcx9kxtczn1Znhh",
+          "NAeSd6iuIoGb7Rxk7GOcFDDnnFe",
+          "Dl0gdlYAYog4jKxJFHXcyVZenqd",
+          "RgLLdUUkmogo7ixuG7EcQvrznnc"
+        ],
+        "grid_column": {
+          "width_ratio": 80
+        },
+        "parent_id": "R9tmds5afoutbsx7z00cLI0fndd"
+      },
+      {
+        "block_id": "FVVJdwPdBo34yfxUV5ncohMun6c",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Another ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus v2.6.x new feature",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "TtxfdzM6Do10vOxZrW4cebyTnOT",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search using primary keys",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7600677810390371280"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": You can now perform ANN searches using a ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7600677810390371280"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "primary key",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7600677810390371280"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instead of a raw vector. This eliminates the need to manually retrieve vectors from the target collection before searching. For more details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7600677810390371280"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7600677810390371280"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Primary-Key Search",
+                "token": "U7OvwHP3AiUWlckzIEKclLQQnPr",
+                "url": "https://zilliverse.feishu.cn/wiki/U7OvwHP3AiUWlckzIEKclLQQnPr"
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7600677810390371280"
+        ],
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "E7TIdbwIUoxsBWxEWTqcRIkHnGg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CMEK",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "WDvudKCl8osnoixBURfcSTiynk7",
+        "block_type": 2,
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz supports elevating your security posture with AWS KMS integration now. Essential for strict compliance (GDPR, HIPAA), this feature secures your sensitive assets using keys exclusively managed and governed by you.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AXdGdWhh3orrwExgTC9cbXLCnxM",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Comprehensive Data Protection: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Rigorously encrypts assets across all storage tiers and processing states, eliminating security gaps throughout the entire data lifecycle.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "MrfLdxtkmobcXAx1LsKcc1cInmh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Secure Isolation & Architecture: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Granular security boundaries isolation via Encryption Zones, backed by a 3-Tier Envelope Hierarchy (Root Key → Encryption Zone Key → Data Key). This strictly isolates databases to prevent cross-tenant access while optimizing performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "CID0dC4KyopqROxhFw6cY8d7nId",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Lifecycle Governance: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Supports automated zero-downtime rotation, instant data lockdown via key revocation, and immutable configurations to prevent security drift.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "JKi9dpwy1ocUCQxaU6KcnF19nWg",
+        "block_type": 2,
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Customer-Managed Encryption Keys",
+                "token": "GLxhwO5vWiWkTBkoNCPcg4ahnbe",
+                "url": "https://zilliverse.feishu.cn/wiki/GLxhwO5vWiWkTBkoNCPcg4ahnbe"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "AWS KMS",
+                "token": "FOamwIi07ia7kpkBPW8cEuIpniu",
+                "url": "https://zilliverse.feishu.cn/wiki/FOamwIi07ia7kpkBPW8cEuIpniu"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AdyudzhysoIAWoxsOxGcTu9UnVh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC now available on",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Azure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "FT8OdClYRoJTvcx9kxtczn1Znhh",
+        "block_type": 2,
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud extends ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Bring Your Own Cloud (BYOC)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to Microsoft Azure, combining managed service simplicity with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "absolute data sovereignty",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NAeSd6iuIoGb7Rxk7GOcFDDnnFe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC-I Deployment for Maximum Control:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Hosts the Data Plane entirely within your Azure subscription. Ensures you maintain absolute control over your data sovereignty and security policies.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "Dl0gdlYAYog4jKxJFHXcyVZenqd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Terraform Automation: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Accelerates deployment via the official Terraform Provider, fully automating complex networking and authentication for reproducible Infrastructure-as-Code (IaC).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub"
+      },
+      {
+        "block_id": "RgLLdUUkmogo7ixuG7EcQvrznnc",
+        "block_type": 2,
+        "parent_id": "IvHWdjkvgohegPxsX6acwfQfnub",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC-I on Microsoft Azure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-i-azure"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DLqadrCMbo960axnLezcDiCvn9c",
+        "block_type": 24,
+        "children": [
+          "DyV2dJ0KWofc4zxRX8jc8vA0nzd",
+          "GF4TdwcZ7oYg5mxEPytcQwRonxh"
+        ],
+        "grid": {
+          "column_size": 2
+        },
+        "parent_id": "Qfm6d9S0SoLdcaxOMuPcFzmonBe"
+      },
+      {
+        "block_id": "DyV2dJ0KWofc4zxRX8jc8vA0nzd",
+        "block_type": 25,
+        "children": [
+          "GsHNdoaGGoWVUKxk0lZcjWcbnCf"
+        ],
+        "grid_column": {
+          "width_ratio": 20
+        },
+        "parent_id": "DLqadrCMbo960axnLezcDiCvn9c"
+      },
+      {
+        "block_id": "GsHNdoaGGoWVUKxk0lZcjWcbnCf",
+        "block_type": 2,
+        "parent_id": "DyV2dJ0KWofc4zxRX8jc8vA0nzd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "2026-01-23",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GF4TdwcZ7oYg5mxEPytcQwRonxh",
+        "block_type": 25,
+        "children": [
+          "LFwHdWtB4obT2Xxx98EcVGPonRk",
+          "MdF7dD1ZjoiVv4xxjaUcPG0Rnie",
+          "FgEAdtJ5Qo9dAaxrzCVc4rGenGi",
+          "NbpPdrGQIojlw1x7RdQcRLKDnTc"
+        ],
+        "grid_column": {
+          "width_ratio": 80
+        },
+        "parent_id": "DLqadrCMbo960axnLezcDiCvn9c"
+      },
+      {
+        "block_id": "LFwHdWtB4obT2Xxx98EcVGPonRk",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus v2.6.x new feature",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GF4TdwcZ7oYg5mxEPytcQwRonxh"
+      },
+      {
+        "block_id": "MdF7dD1ZjoiVv4xxjaUcPG0Rnie",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Semantic Highlighter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Identifies and highlights the most relevant text segments in search results based on query intent rather than exact keyword matches, improving result explainability.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GF4TdwcZ7oYg5mxEPytcQwRonxh"
+      },
+      {
+        "block_id": "FgEAdtJ5Qo9dAaxrzCVc4rGenGi",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is powered by the semantic highlighting model recently open-sourced by Zilliz (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "zilliz/semantic-highlight-bilingual-v1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fhuggingface.co%2Fzilliz%2Fsemantic-highlight-bilingual-v1"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") and provides out-of-the-box inference support through the Zilliz hosted model service (refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Hosted Models",
+                "token": "DMrCwn4LXi1uKBkbHGfcpGnsnyh",
+                "url": "https://zilliverse.feishu.cn/wiki/DMrCwn4LXi1uKBkbHGfcpGnsnyh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GF4TdwcZ7oYg5mxEPytcQwRonxh"
+      },
+      {
+        "block_id": "NbpPdrGQIojlw1x7RdQcRLKDnTc",
+        "block_type": 2,
+        "parent_id": "GF4TdwcZ7oYg5mxEPytcQwRonxh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " For more details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Semantic Highlighter",
+                "token": "GLG4wi6zhisaxYkBkmacXqItnbJ",
+                "url": "https://zilliverse.feishu.cn/wiki/GLG4wi6zhisaxYkBkmacXqItnbJ"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnwUEnFwwB8idJ9MpaQvPEBe",
+        "block_type": 24,
+        "children": [
+          "doxcnXzWJeF0pSdcSFY3PTzQNPc",
+          "doxcnHeAF0f3SA3JV998EsFxPdd"
+        ],
+        "grid": {
+          "column_size": 2
+        },
+        "parent_id": "Qfm6d9S0SoLdcaxOMuPcFzmonBe"
+      },
+      {
+        "block_id": "doxcnXzWJeF0pSdcSFY3PTzQNPc",
+        "block_type": 25,
+        "children": [
+          "doxcnoj1HCHHJMvKwiYOoxjdU8b",
+          "OOtHdH5spooxSzxOKLEcvRJmnyf"
+        ],
+        "grid_column": {
+          "width_ratio": 20
+        },
+        "parent_id": "doxcnwUEnFwwB8idJ9MpaQvPEBe"
+      },
+      {
+        "block_id": "doxcnoj1HCHHJMvKwiYOoxjdU8b",
+        "block_type": 2,
+        "parent_id": "doxcnXzWJeF0pSdcSFY3PTzQNPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "202",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "6",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "-01-14",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OOtHdH5spooxSzxOKLEcvRJmnyf",
+        "block_type": 2,
+        "parent_id": "doxcnXzWJeF0pSdcSFY3PTzQNPc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "block_type": 25,
+        "children": [
+          "XzmAd5jxmofKLyxoZJQckZKNnHc",
+          "Q5OUdsvcyoqavixYfCHcQgvynme",
+          "Klrvdx0TYoaY0pxlnfycvcN9nie",
+          "doxcnYuSALx5KmLr7eHvnq748Yb",
+          "JJDydxHnDork9pxS1xTcK98nnmg",
+          "PXgFd4g2gopHwPxYfFcctM4Znsc",
+          "PQB1d1suLoPNgmxUbxTc1nDNnOE",
+          "Pekyd821BordHvxp76ucRaOCnHh",
+          "Dki2d3U1OopsCFxBmFAckzRqnBc",
+          "NymBdCojuorz8px7SHHceaqdnAb",
+          "KYq0dV4E5oBH4ox72vfcWuMzn5b",
+          "CXq6dT34eoS4sbxpGm6caIn5nIA",
+          "WBv2dNB1zoe3tixcn4mcLZpknXc",
+          "T70Zdnu0FouPzfxajoecc30MnEe",
+          "RuJpd9nt7owJf9xS71jcLdwsnib",
+          "CCdMd50vCo947Xx5zlqcYZyFnLf",
+          "IQ0jdayz3oLtWTx8Fv6cjJbOnvf",
+          "JtrEdKetOoemzixtaNoc3BWNn1c",
+          "ZYI9dajFuobAIcxIHfUcmJh0nUg",
+          "FzEmdQ8hNoTHsgxQe5scJFvfnbb",
+          "R3fvda8oUoPvZGxeMHtcqfiBn3g",
+          "YpLIdLqd4oeZERxcDCHcwiL8nrb",
+          "DrqXdmPIJoGgMtxHZlKcQbjunnh",
+          "MQJXduMmwoFQ1txXN7JcLYC4nxf",
+          "FGwQd9jbRo72CQxce8dcIcOZnod",
+          "QJ1vd8IuMo6qUjxwaVccKdkKnqg",
+          "LQsVdWPovovULdxr3y6cUUfPnac",
+          "LSlxdDSM4o2MjnxEVJycuP9enOc",
+          "HigFdxSP0ozHKexEPkAcuPK5njh",
+          "Bx1pdTzoKoBBUcxyoGccCN8onCe",
+          "UEtKdoXSYoQAR4xyncGcBBTJn11",
+          "CGBzdctQjouQuGxTeCCcLregnDn",
+          "MdIMdwyJbo6IiOxzFbPczzyhnGc",
+          "T8eWd0MG8oA2XRxIhWPcm1nTnWc",
+          "KpZfdM8uvoD9nlxDrHnclwLinOd",
+          "F2NNdoNSVoXktmxmBxMceCt3n2f",
+          "Ygj3d2jicoQiNax1PYzcw4I4nze",
+          "QaLmd0CMvoiHq4xbGiOcdE0Unlg",
+          "C6VJdRnIyoSDNkxOopMcY8uonlb",
+          "FKbTdGvmgoz5H2x7q5Ucp1hcnoc",
+          "GBVAdPFaiomEJVx4A6oc5hgAndf",
+          "TZezdgKbBo81dpxv1jacIvlOnsh",
+          "ARaIdk6I9o5iKVxQrO7cF34bnvf",
+          "MM4cdHu0xoIc2zx8xNic7a4gnTI",
+          "YrKhdHCqoocBBzxf1SvcA3rNnJg",
+          "Gfs6dn34Po8rftxhsiAceFQunVX",
+          "Qy5IdSIQko0HYFxgdAhcpRcBnnk",
+          "N4NVdhwU7oBlMbxG2Ftch8pBnec",
+          "YyESdtRk9oNfjOxVfOrcPnhFnZc",
+          "KS3FdmQFKo5ct4xdehBc1V93ndc",
+          "JwfGdSWERo7hpgxfGymcVanUnuh",
+          "Ng5GdUCJDoyiPPxNGducN7OCnAh",
+          "NstBdByLhoH4tfx0gTbc0NzHntf"
+        ],
+        "grid_column": {
+          "width_ratio": 80
+        },
+        "parent_id": "doxcnwUEnFwwB8idJ9MpaQvPEBe"
+      },
+      {
+        "block_id": "XzmAd5jxmofKLyxoZJQckZKNnHc",
+        "block_type": 4,
+        "comment_ids": [
+          "7594819870399663064"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594819870399663064"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "v",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594819870399663064"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2.6",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594819870399663064"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".x",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594819870399663064"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594819870399663064"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "new features",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594819870399663064"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Q5OUdsvcyoqavixYfCHcQgvynme",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Time-zone-aware timestamp support",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " — Supports the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TIMESTAMPTZ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " data type for storing, comparing, and filtering globally consistent timestamps—without manual time-zone handling. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "TIMESTAMPTZ Field",
+                "token": "RxUiwJ77WiFKZGkC8rEcLeopnTf",
+                "url": "https://zilliverse.feishu.cn/wiki/RxUiwJ77WiFKZGkC8rEcLeopnTf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Klrvdx0TYoaY0pxlnfycvcN9nie",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Highlighter ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "— Annotates matched terms with customizable tags and fragment-level context, making full-text search results easier to interpret and debug. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Lexical Highlighter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBJCjwpj8JizP0nkI11uci1pPndh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "doxcnYuSALx5KmLr7eHvnq748Yb",
+        "block_type": 4,
+        "comment_ids": [
+          "7594718669385567179"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Function and Model Inference",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594718669385567179"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "JJDydxHnDork9pxS1xTcK98nnmg",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We are excited to announce the Public Preview of Model-Based Embedding and Reranking Functions and the Private Preview of Zilliz Hosted Models on Zilliz Cloud. This update streamlines the AI development process by allowing users to insert raw text directly into Zilliz Cloud, with the system automatically handling embedding and reranking to ensure the most relevant search results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PXgFd4g2gopHwPxYfFcctM4Znsc",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can now choose models from top-tier third-party providers like OpenAI, Cohere, and VoyageAI, or host your models directly on Zilliz Cloud.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PQB1d1suLoPNgmxUbxTc1nDNnOE",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Model-Based Embedding",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Define a text embedding function during collection creation. After configuration, simply ingest raw text via Insert, Upsert, or Import, and Zilliz automatically handles embedding generation and storage. During search, the system converts text into a dense vector for efficient ANN search. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Model-based Functions",
+                "token": "AP0lw1SNciBJNYkJ2iDc0qnfnEg",
+                "url": "https://zilliverse.feishu.cn/wiki/AP0lw1SNciBJNYkJ2iDc0qnfnEg"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Pekyd821BordHvxp76ucRaOCnHh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Model-Based Reranking",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Choose the reranking model that best fits your needs, ensuring the most relevant search results are prioritized for your specific use case. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Model-based Rankers",
+                "token": "U1LuwnY58i8nKQkK1ctcJqBjnVf",
+                "url": "https://zilliverse.feishu.cn/wiki/U1LuwnY58i8nKQkK1ctcJqBjnVf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Dki2d3U1OopsCFxBmFAckzRqnBc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Hosted Models (Private Preview)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Deploy fully managed model instances directly on Zilliz infrastructure to ensure stable, high-performance inference with zero data transfer fees. With models running in the Zilliz Cloud environment, your data stays within a private network, ensuring enhanced privacy and ultra-low latency. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Hosted Models",
+                "token": "DMrCwn4LXi1uKBkbHGfcpGnsnyh",
+                "url": "https://zilliverse.feishu.cn/wiki/DMrCwn4LXi1uKBkbHGfcpGnsnyh"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "NymBdCojuorz8px7SHHceaqdnAb",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Additionally, to streamline integration with third-party models, we’ve introduced ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Third-Party Model Provider Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". This feature allows you to manage AI model credentials within Zilliz Cloud and rotate API keys at any time without modifying application code, ensuring flexible and secure integration. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Integrate with Model Providers",
+                "token": "B1cSwfWcri4VJLkCR20cHIs6nCf",
+                "url": "https://zilliverse.feishu.cn/wiki/B1cSwfWcri4VJLkCR20cHIs6nCf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KYq0dV4E5oBH4ox72vfcWuMzn5b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dynamic Replica Autoscaling",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "CXq6dT34eoS4sbxpGm6caIn5nIA",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We are introducing ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Intelligent Replica Autoscaling",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", a key feature designed for high-QPS environments with fluctuating demand. It automatically adjusts your cluster’s replica count based on real-time traffic patterns.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WBv2dNB1zoe3tixcn4mcLZpknXc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Load-Adaptive Scaling",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Automatically scales replicas up during periods of high traffic and scales them down during low demand, optimizing both performance and cost.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "T70Zdnu0FouPzfxajoecc30MnEe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero-Touch Reliability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": With simple resource guardrails, the system automatically handles unpredictable traffic spikes, ensuring consistent performance without manual intervention.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "RuJpd9nt7owJf9xS71jcLdwsnib",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Scale Replica",
+                "token": "W8Mhwa4faiQqtRkH4t9cdexCnlf",
+                "url": "https://zilliverse.feishu.cn/wiki/W8Mhwa4faiQqtRkH4t9cdexCnlf#VsJYdscGqo1OE6xImwJcNfoVnNf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CCdMd50vCo947Xx5zlqcYZyFnLf",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 2,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IQ0jdayz3oLtWTx8Fv6cjJbOnvf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Advanced Scheduled Scaling with Cron",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "JtrEdKetOoemzixtaNoc3BWNn1c",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We have upgraded our scheduling engine to orchestrate complex, predictable business cycles. You can now automate precise scaling strategies for both CUs and Replicas using industry-standard Cron expressions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZYI9dajFuobAIcxIHfUcmJh0nUg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Flexible Scheduling Strategies",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Move beyond basic daily schedules. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Utilize standard Cron syntax (e.g., ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7595479750836014029"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0 ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7595479750836014029"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "9",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7595479750836014029"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " * *",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7595479750836014029"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " * 1-5",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7595479750836014029"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7595479750836014029"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "to define intricate rules, such as \"scale up exclusively for month-end.\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7595479750836014029"
+        ],
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "FzEmdQ8hNoTHsgxQe5scJFvfnbb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Multi-Schedule Logic:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Configure independent, layered schedules for the same cluster, enabling you to adjust resource profiles for peak weekdays and off-peak weekends, optimizing efficiency in line with your business realities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "R3fvda8oUoPvZGxeMHtcqfiBn3g",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Scale Query CU",
+                "token": "ExUFwDY1siCa2Bkp4incCvxFnlh",
+                "url": "https://zilliverse.feishu.cn/wiki/ExUFwDY1siCa2Bkp4incCvxFnlh#Hu1rdgXegoZp4pxhTZlc6KXVnQf"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Scale Replica",
+                "token": "W8Mhwa4faiQqtRkH4t9cdexCnlf",
+                "url": "https://zilliverse.feishu.cn/wiki/W8Mhwa4faiQqtRkH4t9cdexCnlf#QoridMdRloAe76xaHuOcty5wnXb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YpLIdLqd4oeZERxcDCHcwiL8nrb",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DrqXdmPIJoGgMtxHZlKcQbjunnh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Global Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "MQJXduMmwoFQ1txXN7JcLYC4nxf",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We are excited to announce the Global Cluster for the Zilliz Cloud Business Critical Plan.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FGwQd9jbRo72CQxce8dcIcOZnod",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The Global Cluster creates a unified database architecture across multiple geographic regions by linking a primary cluster with cross-region secondary clusters for automated replication. This solution provides robust Disaster Recovery (DR), ensuring your mission-critical applications remain resilient and your data durable, even in the event of a regional outage.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QJ1vd8IuMo6qUjxwaVccKdkKnqg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Automated Global Deployment: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "The system handles the seamless orchestration of Primary-Secondary topologies with one click, allowing you to provision a Global Cluster in a single step with automated data replication channels.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "LQsVdWPovovULdxr3y6cUUfPnac",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Seamless DR Expansion: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Support for the dynamic addition of secondary clusters to active production instances. You can now upgrade a running dedicated cluster to a multi-region global architecture smoothly without service interruption or downtime.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "LSlxdDSM4o2MjnxEVJycuP9enOc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enhanced Observability: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "A new Global Topology dashboard provides a unified view of your cluster hierarchy. You can now monitor real-time replication latency and synchronization status across regions from one interface.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "HigFdxSP0ozHKexEPkAcuPK5njh",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Coming Soon:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "We are expanding our resilience toolkit. The next phase will introduce Failover for automatic switching during region-level outages, and a Global Endpoint that reroutes SDK traffic, significantly reducing Recovery Time Objectives (RTO).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Bx1pdTzoKoBBUcxyoGccCN8onCe",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Global Cluster Explained",
+                "token": "AICcwQ55yiNqEPkjdV6cb2i8nqe",
+                "url": "https://zilliverse.feishu.cn/wiki/AICcwQ55yiNqEPkjdV6cb2i8nqe"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Create Global Cluster",
+                "token": "MZ2WwklE5ifX4hkO4ZOcXz0indc",
+                "url": "https://zilliverse.feishu.cn/wiki/MZ2WwklE5ifX4hkO4ZOcXz0indc"
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Global Cluster",
+                "token": "DW9wwFlgAiwOhBk2PgucY4URnke",
+                "url": "https://zilliverse.feishu.cn/wiki/DW9wwFlgAiwOhBk2PgucY4URnke"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UEtKdoXSYoQAR4xyncGcBBTJn11",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CGBzdctQjouQuGxTeCCcLregnDn",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC - Full Autoscaling Suite aligns with SaaS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "MdIMdwyJbo6IiOxzFbPczzyhnGc",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Bring Your Own Cloud (BYOC)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " deployments now support the complete Zilliz Cloud autoscaling ecosystem. This update aligns BYOC with our SaaS offering, granting access to all previously released optimizations (like automatic scale-down) as well as the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "latest capabilities",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T8eWd0MG8oA2XRxIhWPcm1nTnWc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dynamic Scaling: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Available for both CUs and Replicas, the system intelligently adjusts resources based on real-time load to optimize performance and cost, with simple Min/Max configuration.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "KpZfdM8uvoD9nlxDrHnclwLinOd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Scheduled Scaling: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Full support for the new Advanced Mode. Users can now leverage standard Cron expressions and multi-schedule logic to automate precise resource adjustments for complex, predictable business cycles.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "F2NNdoNSVoXktmxmBxMceCt3n2f",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Scale Query CU",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fscale-cluster"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Scale Replica",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fmanage-replica"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ygj3d2jicoQiNax1PYzcw4I4nze",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QaLmd0CMvoiHq4xbGiOcdE0Unlg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC - Support & Troubleshooting Access Control",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "C6VJdRnIyoSDNkxOopMcY8uonlb",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gain authority over operational access to your data plane. Ensuring that Zilliz engineers have access to your infrastructure only when explicitly permitted.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FKbTdGvmgoz5H2x7q5Ucp1hcnoc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Just-in-Time (JIT) Privileges: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Grant temporary access during troubleshooting windows and revoke it immediately once resolved.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "GBVAdPFaiomEJVx4A6oc5hgAndf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Operational Isolation: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Revoking access creates a strict barrier without disrupting essential observability pipelines (Metrics, Logs, and Alerts).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "TZezdgKbBo81dpxv1jacIvlOnsh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Governance & Compliance: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "All access grants and revocations are immutably logged in your Audit Logs for complete accountability and security reviews.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "ARaIdk6I9o5iKVxQrO7cF34bnvf",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC on AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-aws%23technical-support-access"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC-I on AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-i-aws%23technical-support-access"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC on GCP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-gcp%23technical-support-access"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MM4cdHu0xoIc2zx8xNic7a4gnTI",
+        "block_type": 2,
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YrKhdHCqoocBBzxf1SvcA3rNnJg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enhancements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Gfs6dn34Po8rftxhsiAceFQunVX",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Collection TTL and AutoID Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": You can now monitor and modify the collection TTL and Allow insert AutoID settings directly from the Collection Overview GUI. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Set Collection TTL",
+                "token": "GthGwnrpEiGpClkV5JXcgWUgn8c",
+                "url": "https://zilliverse.feishu.cn/wiki/GthGwnrpEiGpClkV5JXcgWUgn8c"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Modify Collection",
+                "token": "WMh8w3tbKiBhukk3ICMc4ctznEg",
+                "url": "https://zilliverse.feishu.cn/wiki/WMh8w3tbKiBhukk3ICMc4ctznEg#share-RspvdjdanoUqAMxRiiJcMcWcnTe"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Qy5IdSIQko0HYFxgdAhcpRcBnnk",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data Import",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Support for JSON lines format (.JSONL and .NDJSON extensions) is now available.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Import from a JSON/JSON Lines File",
+                "token": "EHmOwLz5qi3tPDkb0gZcb5ExnJb",
+                "url": "https://zilliverse.feishu.cn/wiki/EHmOwLz5qi3tPDkb0gZcb5ExnJb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "N4NVdhwU7oBlMbxG2Ftch8pBnec",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus Endpoint Migration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Now supports ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Geometry",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Struct",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " data types, enabling seamless migration of collections with spatial shapes and deeply nested attributes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "YyESdtRk9oNfjOxVfOrcPnhFnZc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Job Details View",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The side drawer UI has been refreshed for improved navigation and better user experience.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "KS3FdmQFKo5ct4xdehBc1V93ndc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC - Custom S3 Bucket Support",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": You can now deploy BYOC clusters with custom, dedicated S3 buckets, providing granular data isolation and independent lifecycle management.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "JwfGdSWERo7hpgxfGymcVanUnuh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC - AWS KMS Integration",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7594729343805524932"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": AWS KMS (CMEK) integration for S3 bucket encryption has been added, satisfying strict security compliance standards.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7594729343805524932"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "comment_ids": [
+          "7594729343805524932"
+        ],
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "Ng5GdUCJDoyiPPxNGducN7OCnAh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enhanced Metrics Dashboards",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Visual threshold guidelines have been added to help users identify optimal utilization levels for scaling CUs and Replicas.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "NstBdByLhoH4tfx0gTbc0NzHntf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RESTful API & Terraform Enhancements: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Now supports ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Auto Scaling",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fmodify-cluster-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cross-Region Backup",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fcreate-backup-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Tiered Storage for Create Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fcreate-dedicated-cluster-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Business Critical Plan for Create Project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fcreate-project-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", improving disaster recovery and storage management, enabling more efficient automation programming.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "doxcnHeAF0f3SA3JV998EsFxPdd"
+      },
+      {
+        "block_id": "doxcnp3SW1MRh8SABi2DFFuLFAK",
+        "block_type": 2,
+        "parent_id": "Qfm6d9S0SoLdcaxOMuPcFzmonBe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 85
+  }
+}

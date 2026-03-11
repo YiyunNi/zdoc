@@ -1,0 +1,239 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1740738438",
+  "node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+  "node_type": "origin",
+  "obj_create_time": "1740738438",
+  "obj_edit_time": "1741863141",
+  "obj_token": "W67BdOrAVotPy3x9t7ecznvYnkH",
+  "obj_type": "docx",
+  "origin_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "Ai49wNllSihwEzkNZN8cd02Jn8c",
+  "space_id": "7167193056431783939",
+  "title": "Vector",
+  "slug": "v2-Vector",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "W67BdOrAVotPy3x9t7ecznvYnkH",
+        "block_type": 1,
+        "children": [
+          "AH6MdQtUEoR7atxiOkOcCAPLnGg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Vector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "AH6MdQtUEoR7atxiOkOcCAPLnGg",
+        "block_type": 2,
+        "parent_id": "W67BdOrAVotPy3x9t7ecznvYnkH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This chapter provides references for the methods to manipulate data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740969820",
+      "node_token": "DSUtwOAjSijOjkkyjVzcnSX4nNh",
+      "node_type": "origin",
+      "obj_create_time": "1740969820",
+      "obj_edit_time": "1762257510",
+      "obj_token": "UEt1dqsEvoDcE2xJpNAcAlzAnwe",
+      "obj_type": "docx",
+      "origin_node_token": "DSUtwOAjSijOjkkyjVzcnSX4nNh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Insert()",
+      "slug": "v2-Vector-Insert"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740989463",
+      "node_token": "Rcuewz3xfiASysknLf6cwTOUnGc",
+      "node_type": "origin",
+      "obj_create_time": "1740989463",
+      "obj_edit_time": "1762257662",
+      "obj_token": "ZjKydPzKoomWSWxtdBJcfOrZnYe",
+      "obj_type": "docx",
+      "origin_node_token": "Rcuewz3xfiASysknLf6cwTOUnGc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Upsert()",
+      "slug": "v2-Vector-Upsert"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740989722",
+      "node_token": "Nl51wq7jri12ark4Fh3cACY2n8g",
+      "node_type": "origin",
+      "obj_create_time": "1740989722",
+      "obj_edit_time": "1741852650",
+      "obj_token": "BMVtdPbbkoCQXIxS9aAcJy62nCX",
+      "obj_type": "docx",
+      "origin_node_token": "Nl51wq7jri12ark4Fh3cACY2n8g",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Delete()",
+      "slug": "v2-Vector-Delete"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1741056023",
+      "node_token": "Aj3mwu2vxiY3aZkwJ4CcExiynKb",
+      "node_type": "origin",
+      "obj_create_time": "1741056023",
+      "obj_edit_time": "1741854047",
+      "obj_token": "NSBqdOL4No50dExsjgccpNOVnGe",
+      "obj_type": "docx",
+      "origin_node_token": "Aj3mwu2vxiY3aZkwJ4CcExiynKb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Flush()",
+      "slug": "v2-Vector-Flush"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740990003",
+      "node_token": "U3XqwG0MHiQf0tkvv24clUVxnhf",
+      "node_type": "origin",
+      "obj_create_time": "1740990003",
+      "obj_edit_time": "1741854816",
+      "obj_token": "Ct4KdXLeHom184xH14hcBX2Fn3f",
+      "obj_type": "docx",
+      "origin_node_token": "U3XqwG0MHiQf0tkvv24clUVxnhf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Get()",
+      "slug": "v2-Vector-Get"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740990937",
+      "node_token": "PFegwz4zQiBs69khRm2cr70knQd",
+      "node_type": "origin",
+      "obj_create_time": "1740990937",
+      "obj_edit_time": "1741855288",
+      "obj_token": "ZsBAdGHmCoYbMFxN5yzcmuJfnSg",
+      "obj_type": "docx",
+      "origin_node_token": "PFegwz4zQiBs69khRm2cr70knQd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Query()",
+      "slug": "v2-Vector-Query"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740990999",
+      "node_token": "Ynycw5BLmi06kTkBJSwc7zVjnjf",
+      "node_type": "origin",
+      "obj_create_time": "1740990999",
+      "obj_edit_time": "1762257604",
+      "obj_token": "XsnNdifxfotZscxzv1ocC8yMn2f",
+      "obj_type": "docx",
+      "origin_node_token": "Ynycw5BLmi06kTkBJSwc7zVjnjf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "Search()",
+      "slug": "v2-Vector-Search"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1740991884",
+      "node_token": "GEZLwYkdGigwnEkCmudc1K1Ln2e",
+      "node_type": "origin",
+      "obj_create_time": "1740991884",
+      "obj_edit_time": "1762257389",
+      "obj_token": "C3YDdLcKGoIqT0xlxEEcVg8FnBf",
+      "obj_type": "docx",
+      "origin_node_token": "GEZLwYkdGigwnEkCmudc1K1Ln2e",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "HybridSearch()",
+      "slug": "v2-Vector-HybridSearch"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1762224095",
+      "node_token": "QLNZwIL7DizTEAkIx1TcMaX6nqc",
+      "node_type": "origin",
+      "obj_create_time": "1762224095",
+      "obj_edit_time": "1762257628",
+      "obj_token": "GlbrdvvwMoJVSCxDqrWcDc8enHx",
+      "obj_type": "docx",
+      "origin_node_token": "QLNZwIL7DizTEAkIx1TcMaX6nqc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "EHyPwDXkVieWCTkyQjDcXWdjnxf",
+      "space_id": "7167193056431783939",
+      "title": "SearchIterator()",
+      "slug": "v2-Vector-SearchIterator"
+    }
+  ]
+}

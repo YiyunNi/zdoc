@@ -1,0 +1,1197 @@
+{
+  "created_time": "1761436335",
+  "modified_time": "1761438008",
+  "name": "ModelRanker",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "WjrbfXtKXlr1kidVVO6cKwV7nUr",
+  "token": "IW5SdBOhUop0P8xBslCc6OHLnse",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/IW5SdBOhUop0P8xBslCc6OHLnse",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "block_type": 1,
+        "children": [
+          "CU55dBRNZoM0NVxL5qKc7AdvnZg",
+          "Xc68dsdlCogSuUxwgYqciJV9nFh",
+          "FNngdmA11oWZipxCJETcnrNynKf",
+          "WPxMdWAdFoIrqYxy58sc9p4Tncg",
+          "YG2qdcwyeoaIcYxfwEYcsv6fnFf",
+          "XNBOdxAino9y0axOXQZcfgWPnZc",
+          "OX3rdDFOmoO7H4xeOP8ckHlZnx0",
+          "XmpBdhJt8oNeB1xOLZccxC5Vnmg",
+          "GkPdd2PwPoFmvRx5EjocVNMUnAe",
+          "XCRmdnol1ojSMDxEoZXcixpRnlf",
+          "Hz97djqEmoH4nCxSPdlcebiDnth",
+          "X7yRdFxVLoB7kgxfdLOcsHYoneg",
+          "HW7adQOuGoyeMdxTzxPcJcq7nKe",
+          "GTjadCR9Moto75x5CigcQcvCndf",
+          "Hg36dUaEtoAYjRxFHuWcIkzNnko",
+          "NFDfdoRSSoApEjxc91ScSE42n2b",
+          "UUQ1dBwy4oYT5QxxZf5cJpH1noe",
+          "WiCndwXzOoy8irxj2bScy6mKnTJ",
+          "EqVQdm7a6odwrmxceFEcuCSxnAh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ModelRanker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "CU55dBRNZoM0NVxL5qKc7AdvnZg",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ModelRanker",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " class extends from the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Function",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " class and provides extra parameters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xc68dsdlCogSuUxwgYqciJV9nFh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public class ModelRanker extends CreateCollectionReq.Function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "FNngdmA11oWZipxCJETcnrNynKf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "WPxMdWAdFoIrqYxy58sc9p4Tncg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ModelRanker.builder()\n    .name(String name)\n    .description(String description)\n    .inputFieldNames(List<String> inputFieldNames)\n    .params(Map<String, String> params)\n    .provider(String provider)\n    .queries(List<String> queries)\n    .endpoint(String endpoint)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "YG2qdcwyeoaIcYxfwEYcsv6fnFf",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XNBOdxAino9y0axOXQZcfgWPnZc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "name(String name)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "A5ZOdEjcbo5p5Px587yc7b3Qntd"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "A5ZOdEjcbo5p5Px587yc7b3Qntd",
+        "block_type": 2,
+        "parent_id": "XNBOdxAino9y0axOXQZcfgWPnZc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the function. This identifier is used to reference the function within queries and collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OX3rdDFOmoO7H4xeOP8ckHlZnx0",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "description(String description)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ZiYfdYOzVoKigvxmYGDcT2I3nqb"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "ZiYfdYOzVoKigvxmYGDcT2I3nqb",
+        "block_type": 2,
+        "parent_id": "OX3rdDFOmoO7H4xeOP8ckHlZnx0",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A brief description of the function's purpose. This can be useful for documentation or clarity in larger projects and defaults to an empty string.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XmpBdhJt8oNeB1xOLZccxC5Vnmg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "inputFieldNames(List<String> inputFieldNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TAY2dB3o9oYLtXxe56TcmHKCnMc"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "TAY2dB3o9oYLtXxe56TcmHKCnMc",
+        "block_type": 2,
+        "parent_id": "XmpBdhJt8oNeB1xOLZccxC5Vnmg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the field containing the raw data that requires conversion to vector representation. For functions using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "FunctionType.RERANK",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", this parameter accepts only one field name.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GkPdd2PwPoFmvRx5EjocVNMUnAe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "params(Map<String, String> params)",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "USzvd5r2XoL4wGxOmUMcLddUnxc",
+          "XK4EdPKjko6GBexkRxqcC0t0nph"
+        ],
+        "comment_ids": [
+          "7565317660870213636"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "USzvd5r2XoL4wGxOmUMcLddUnxc",
+        "block_type": 2,
+        "comment_ids": [
+          "7565317660870213636"
+        ],
+        "parent_id": "GkPdd2PwPoFmvRx5EjocVNMUnAe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A set of key-value pairs that configures the function properties.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XK4EdPKjko6GBexkRxqcC0t0nph",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "max_client_batch_size",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(int) -",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "ErA1dl6wEokDj5xXRrScHodXnPh"
+        ],
+        "comment_ids": [
+          "7565317660870213636"
+        ],
+        "parent_id": "GkPdd2PwPoFmvRx5EjocVNMUnAe"
+      },
+      {
+        "block_id": "ErA1dl6wEokDj5xXRrScHodXnPh",
+        "block_type": 2,
+        "comment_ids": [
+          "7565317660870213636"
+        ],
+        "parent_id": "XK4EdPKjko6GBexkRxqcC0t0nph",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The maximum number of documents to process in a single batch. Larger values increase throughput but require more memory. The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "32",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565317660870213636"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XCRmdnol1ojSMDxEoZXcixpRnlf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "provider(String provider)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "By7KdPsvaokUNVx6BrKcGwTdnWh"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "By7KdPsvaokUNVx6BrKcGwTdnWh",
+        "block_type": 2,
+        "parent_id": "XCRmdnol1ojSMDxEoZXcixpRnlf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the reranking model provider. For possible values, refer to <include target=\"milvus\">",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Choose a model provider for your needs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fmilvus.io%2Fdocs%2Fmodel-ranker-overview.md%23Choose-a-model-provider-for-your-needs"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "</include>.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hz97djqEmoH4nCxSPdlcebiDnth",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "queries(List<String> queries)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VnAOddL2Lox4jjxwvgQcg1zbnPd"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "VnAOddL2Lox4jjxwvgQcg1zbnPd",
+        "block_type": 2,
+        "parent_id": "Hz97djqEmoH4nCxSPdlcebiDnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of query strings used by the reranking model to calculate relevance scores. The number of query strings must match exactly the number of queries in your search operation (even when using query vectors instead of text). Otherwise, an error will be reported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X7yRdFxVLoB7kgxfdLOcsHYoneg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "endpoint(String endpoint)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "B2lEdm0VVonbNaxWclKcKaW7nHc"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "B2lEdm0VVonbNaxWclKcKaW7nHc",
+        "block_type": 2,
+        "parent_id": "X7yRdFxVLoB7kgxfdLOcsHYoneg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The URL of the model service.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HW7adQOuGoyeMdxTzxPcJcq7nKe",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GTjadCR9Moto75x5CigcQcvCndf",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ModelRanker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hg36dUaEtoAYjRxFHuWcIkzNnko",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NFDfdoRSSoApEjxc91ScSE42n2b",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": " A model ranker instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UUQ1dBwy4oYT5QxxZf5cJpH1noe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "WiCndwXzOoy8irxj2bScy6mKnTJ",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.collection.request.CreateCollectionReq.Function;\nimport io.milvus.v2.service.vector.request.ranker.ModelRanker\nimport java.util.Collections;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// use the ModelRanker class",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ModelRanker.builder()",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .function(\"tei\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .name(\"TEI ranker\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    .inputFieldNames(Collections.singletonList(\"document\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .provider(\"tei\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .queries(\"[\\\"machine learning for time series\\\"]\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .endpoint(\"http://model-service:8080\")",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build());",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565316799403671571"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n    \n// Instead, you can use the Function class as well\nCreateCollectionReq.Function rr = CreateCollectionReq.Function.builder()\n    .functionType(FunctionType.RERANK)\n    .name(\"semantic_ranker\")\n    .description(\"semantic ranker\")\n    .inputFieldNames(Collections.singletonList(\"document\"))\n    .param(\"reranker\", \"model\")\n    .param(\"provider\", \"tei\")\n    .param(\"queries\", \"[\\\"machine learning for time series\\\"]\")\n    .param(\"endpoint\", \"http://model-service:8080\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7565316799403671571"
+        ],
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse"
+      },
+      {
+        "block_id": "EqVQdm7a6odwrmxceFEcuCSxnAh",
+        "block_type": 2,
+        "parent_id": "IW5SdBOhUop0P8xBslCc6OHLnse",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 29
+  },
+  "slug": "v2-Function-ModelRanker"
+}

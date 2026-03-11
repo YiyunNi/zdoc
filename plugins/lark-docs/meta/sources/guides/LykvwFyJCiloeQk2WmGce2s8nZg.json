@@ -1,0 +1,185 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": true,
+  "node_create_time": "1736912928",
+  "node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+  "node_type": "origin",
+  "obj_create_time": "1736912928",
+  "obj_edit_time": "1755592141",
+  "obj_token": "HPqCdQgPdo14VZxktE0crNQ4nKh",
+  "obj_type": "docx",
+  "origin_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "QHzrwVlEOipspAkPiyucWezqneC",
+  "space_id": "7167193056431783939",
+  "title": "Integrate with Third Parties",
+  "slug": "integrate-with-third-parties",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "HPqCdQgPdo14VZxktE0crNQ4nKh",
+        "block_type": 1,
+        "children": [
+          "U7T5diwpmocb5mxHPRRcjEGPnIg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Integrate with Third Parties",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "U7T5diwpmocb5mxHPRRcjEGPnIg",
+        "block_type": 2,
+        "parent_id": "HPqCdQgPdo14VZxktE0crNQ4nKh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Learn how to integrate your Zilliz Cloud project with third-party services.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1734328830",
+      "node_token": "PAViwMSb3iVMzuk56z3c1zfRnwh",
+      "node_type": "origin",
+      "obj_create_time": "1734328830",
+      "obj_edit_time": "1767873121",
+      "obj_token": "CTxFdN35coEB0wx1TZccfTNYn4b",
+      "obj_type": "docx",
+      "origin_node_token": "PAViwMSb3iVMzuk56z3c1zfRnwh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+      "space_id": "7167193056431783939",
+      "title": "Integrate with AWS S3",
+      "slug": "integrate-with-aws-s3"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1754272129",
+      "node_token": "INoRwFTjfiindPkaNlwc9XAgnkh",
+      "node_type": "origin",
+      "obj_create_time": "1754272129",
+      "obj_edit_time": "1767852329",
+      "obj_token": "TEQMdiElxo8vB4xRXEJcH4SpnXb",
+      "obj_type": "docx",
+      "origin_node_token": "INoRwFTjfiindPkaNlwc9XAgnkh",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+      "space_id": "7167193056431783939",
+      "title": "Integrate with Google Cloud Storage",
+      "slug": "integrate-with-gcp"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1742893535",
+      "node_token": "IzXPwUlJ5isTa4kH9KTcC6SfnvZ",
+      "node_type": "origin",
+      "obj_create_time": "1742893535",
+      "obj_edit_time": "1767852437",
+      "obj_token": "Luw2dS8hroQT7ExEeYxcfFmkn2b",
+      "obj_type": "docx",
+      "origin_node_token": "IzXPwUlJ5isTa4kH9KTcC6SfnvZ",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+      "space_id": "7167193056431783939",
+      "title": "Integrate with Azure Blob Storage",
+      "slug": "integrate-with-azure-blob-storage"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1731478986",
+      "node_token": "JGFQwMcVmiikeOkhepGcQ8Ken0e",
+      "node_type": "origin",
+      "obj_create_time": "1731478986",
+      "obj_edit_time": "1767852476",
+      "obj_token": "MiBrdQwTGohC8nxHy4ocHX4VnUb",
+      "obj_type": "docx",
+      "origin_node_token": "JGFQwMcVmiikeOkhepGcQ8Ken0e",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+      "space_id": "7167193056431783939",
+      "title": "Integrate with Datadog",
+      "slug": "integrate-with-datadog"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1724311035",
+      "node_token": "Ex99woZlsico4FkfwxGckjRRnqf",
+      "node_type": "origin",
+      "obj_create_time": "1724311035",
+      "obj_edit_time": "1767852498",
+      "obj_token": "IH2ndzVI0os2kxxOoaRc67XOn3g",
+      "obj_type": "docx",
+      "origin_node_token": "Ex99woZlsico4FkfwxGckjRRnqf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+      "space_id": "7167193056431783939",
+      "title": "Integrate with Prometheus",
+      "slug": "prometheus-monitoring"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1762919625",
+      "node_token": "B1cSwfWcri4VJLkCR20cHIs6nCf",
+      "node_type": "origin",
+      "obj_create_time": "1762919625",
+      "obj_edit_time": "1768479852",
+      "obj_token": "YQgdd9MMDoY35Yx2wZ5chOAwn9g",
+      "obj_type": "docx",
+      "origin_node_token": "B1cSwfWcri4VJLkCR20cHIs6nCf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LykvwFyJCiloeQk2WmGce2s8nZg",
+      "space_id": "7167193056431783939",
+      "title": "Integrate with Model Providers",
+      "slug": "integrate-with-model-providers"
+    }
+  ]
+}

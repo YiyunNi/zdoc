@@ -1,0 +1,33 @@
+{
+  "created_time": "1754561436",
+  "modified_time": "1763707607",
+  "name": "Volume",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "Z1SFf89zYlGHXvdo6dxcR6gXntc",
+  "token": "UJtvfGYb4lKoF1dy7iicFwcAnWr",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/UJtvfGYb4lKoF1dy7iicFwcAnWr",
+  "slug": "Volume",
+  "children": [
+    {
+      "created_time": "1754561462",
+      "modified_time": "1763696192",
+      "name": "VolumeFileManager",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "UJtvfGYb4lKoF1dy7iicFwcAnWr",
+      "token": "ELExfHT8dlTyVfdN7Shcl1vUnCb",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/ELExfHT8dlTyVfdN7Shcl1vUnCb"
+    },
+    {
+      "created_time": "1754561449",
+      "modified_time": "1763696197",
+      "name": "VolumeManager",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "UJtvfGYb4lKoF1dy7iicFwcAnWr",
+      "token": "Kt3HfD9NHlk6qyddL5GcZtKhnWf",
+      "type": "folder",
+      "url": "https://zilliverse.feishu.cn/drive/folder/Kt3HfD9NHlk6qyddL5GcZtKhnWf"
+    }
+  ]
+}

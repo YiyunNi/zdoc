@@ -1,0 +1,578 @@
+{
+  "created_time": "1720587491",
+  "modified_time": "1746528264",
+  "name": "renameCollection()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "LkxXfcSA7lKXqEdu8mpcHI8Fnqd",
+  "token": "EZw8dwHXzoggBsxB0SWc0MANnud",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/EZw8dwHXzoggBsxB0SWc0MANnud",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "EZw8dwHXzoggBsxB0SWc0MANnud",
+        "block_type": 1,
+        "children": [
+          "doxcnj5HlOOaA3arUfz05MKNGqg",
+          "doxcnRDv5Pf9txzHI2g0H82jb8c",
+          "doxcnDMoVXw7ZD8l2lcFNmbDYxe",
+          "doxcnFlZVsJFh9kDPQhw58c0vPh",
+          "doxcn9q9fcCRVnbXPFReIauhetb",
+          "doxcniuIRb1VgY0XK3vnz9oKdHf",
+          "doxcnFyKK0WiqNrnh4oxjJnZQYb",
+          "doxcn61FgKdm5HGFN4ztuymhJGc",
+          "doxcnu2DnVfU3zpUFCltsDtimGe",
+          "doxcnO40R0SPC1ae43npoYmCgbf",
+          "doxcn6IiGAVHwVHyy8i7CfWFkFc",
+          "doxcngcnlbHh663iz2jMGTqIjGh",
+          "doxcn29WHDBiSk5J7l6Wkon8zee",
+          "doxcnQSINJU7pl8cqIZBr9WT77c"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "renameCollection()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcnj5HlOOaA3arUfz05MKNGqg",
+        "block_type": 2,
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation renames an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnRDv5Pf9txzHI2g0H82jb8c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void renameCollection(RenameCollectionReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnDMoVXw7ZD8l2lcFNmbDYxe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnFlZVsJFh9kDPQhw58c0vPh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "renameCollection(RenameCollectionReq.builder()\n    .databaseName(String databaseName)\n    .collectionName(String collectionName)\n    .newCollectionName(String newCollectionName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcn9q9fcCRVnbXPFReIauhetb",
+        "block_type": 2,
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcniuIRb1VgY0XK3vnz9oKdHf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "databaseName(String databaseName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnGjtMHdTMXLHFdYpoFdB98g"
+        ],
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnGjtMHdTMXLHFdYpoFdB98g",
+        "block_type": 2,
+        "parent_id": "doxcniuIRb1VgY0XK3vnz9oKdHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the database. Defaults to the current database if not specified.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnFyKK0WiqNrnh4oxjJnZQYb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnwoQ8GuJP1FnXdEYaXC1drf"
+        ],
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnwoQ8GuJP1FnXdEYaXC1drf",
+        "block_type": 2,
+        "parent_id": "doxcnFyKK0WiqNrnh4oxjJnZQYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn61FgKdm5HGFN4ztuymhJGc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "newCollectionName(String newCollectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnYsFpArHwBi2Wo3CXRbivLd"
+        ],
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnYsFpArHwBi2Wo3CXRbivLd",
+        "block_type": 2,
+        "parent_id": "doxcn61FgKdm5HGFN4ztuymhJGc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The new name for the collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnu2DnVfU3zpUFCltsDtimGe",
+        "block_type": 2,
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnO40R0SPC1ae43npoYmCgbf",
+        "block_type": 2,
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn6IiGAVHwVHyy8i7CfWFkFc",
+        "block_type": 2,
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcngcnlbHh663iz2jMGTqIjGh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnuFYp9YUNPoW4BfVb3MRJFd"
+        ],
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnuFYp9YUNPoW4BfVb3MRJFd",
+        "block_type": 2,
+        "parent_id": "doxcngcnlbHh663iz2jMGTqIjGh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn29WHDBiSk5J7l6Wkon8zee",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      },
+      {
+        "block_id": "doxcnQSINJU7pl8cqIZBr9WT77c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.RenameCollectionReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n        .uri(\"http://localhost:19530\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Rename collection \"test\" to \"test2\"\nRenameCollectionReq renameCollectionReq = RenameCollectionReq.builder()\n        .collectionName(\"test\")\n        .newCollectionName(\"test2\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.renameCollection(renameCollectionReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "EZw8dwHXzoggBsxB0SWc0MANnud"
+      }
+    ],
+    "counts": 19
+  },
+  "slug": "v2-Collections-renameCollection"
+}

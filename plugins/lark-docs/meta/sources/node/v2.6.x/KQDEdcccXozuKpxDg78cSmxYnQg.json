@@ -1,0 +1,771 @@
+{
+  "created_time": "1761528917",
+  "modified_time": "1761529150",
+  "name": "MetricType",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "UmOafcFDglyFe3dayhAcRA0RnEd",
+  "token": "KQDEdcccXozuKpxDg78cSmxYnQg",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/KQDEdcccXozuKpxDg78cSmxYnQg",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "KQDEdcccXozuKpxDg78cSmxYnQg",
+        "block_type": 1,
+        "children": [
+          "doxcna4vJZtJV22L3rfz0OQGb5B",
+          "doxcnQf4ynKrsiuKNu5WyXNVLFf",
+          "doxcnfa1GursfUjIF5u4I7HDDfd",
+          "doxcnWkHL456AKMvrJLNp2bS9jc",
+          "doxcn5pxenTjL0DZMk9WDzr2FEd",
+          "doxcn9hL0XSoRUIv77W81wHMklg",
+          "doxcnO3h4OteKIkXaQ6sF5Am2rh",
+          "Iqnzd5RwGofmSgxPISOc9WaDnWb",
+          "Rip4dm7c4okDq5x9KA8cgfEQnHH",
+          "OeMAdsNx7o01XhxQBSDcMwFenod",
+          "ZLCgdYSwHo4f63xHtwecsquIn3d",
+          "Fxi6dlRAJoPO1axwjRacp3zSnQe",
+          "UXSgdqJVdopSkZxrSxHcP006n7g",
+          "KjQnditFuoMAKSxS66McK6W1nOe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MetricType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcna4vJZtJV22L3rfz0OQGb5B",
+        "block_type": 2,
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an enumeration that provides the following constants.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnQf4ynKrsiuKNu5WyXNVLFf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "L2",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcng11ypKXXaAJjyyyKilObTd"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "doxcng11ypKXXaAJjyyyKilObTd",
+        "block_type": 2,
+        "parent_id": "doxcnQf4ynKrsiuKNu5WyXNVLFf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to Euclidean distance (L2). This applies only to float vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnfa1GursfUjIF5u4I7HDDfd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IP",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnU2ucVXssttckVW7nJjAemg"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "doxcnU2ucVXssttckVW7nJjAemg",
+        "block_type": 2,
+        "parent_id": "doxcnfa1GursfUjIF5u4I7HDDfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to inner product (IP). This applies only to float vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnWkHL456AKMvrJLNp2bS9jc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnsqhUmS7KF97xKMFPPdWvFc"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "doxcnsqhUmS7KF97xKMFPPdWvFc",
+        "block_type": 2,
+        "parent_id": "doxcnWkHL456AKMvrJLNp2bS9jc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to COSINE. This applies only to float vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn5pxenTjL0DZMk9WDzr2FEd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HAMMING",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn64mn6NdYO5ok7e11BJc4eh"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "doxcn64mn6NdYO5ok7e11BJc4eh",
+        "block_type": 2,
+        "parent_id": "doxcn5pxenTjL0DZMk9WDzr2FEd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to HAMMING. This applies only to binary vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn9hL0XSoRUIv77W81wHMklg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JACCARD",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcneD8sa3kAJVRfgAlLYvAUDe"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "doxcneD8sa3kAJVRfgAlLYvAUDe",
+        "block_type": 2,
+        "parent_id": "doxcn9hL0XSoRUIv77W81wHMklg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to JACCARD. This applies only to binary vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnO3h4OteKIkXaQ6sF5Am2rh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnKRXQbuLiZph3QgxhYwXjBf"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "doxcnKRXQbuLiZph3QgxhYwXjBf",
+        "block_type": 2,
+        "parent_id": "doxcnO3h4OteKIkXaQ6sF5Am2rh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to BM25. This applies only to sparse vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Iqnzd5RwGofmSgxPISOc9WaDnWb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MHJACCARD",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Lr4Md3Ii4ojWg3x6LfNczTRVnSc"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "Lr4Md3Ii4ojWg3x6LfNczTRVnSc",
+        "block_type": 2,
+        "parent_id": "Iqnzd5RwGofmSgxPISOc9WaDnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to MHJACCARD. This applies only to binary vectors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rip4dm7c4okDq5x9KA8cgfEQnHH",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FCOldnA2HoQeaexCcAicjmt4neh"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "FCOldnA2HoQeaexCcAicjmt4neh",
+        "block_type": 2,
+        "parent_id": "Rip4dm7c4okDq5x9KA8cgfEQnHH",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to MAX_SIM. This applies only to embedding lists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "OeMAdsNx7o01XhxQBSDcMwFenod",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YSAJdibnGoX1dZxCy2ScBhJ6nZb"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "YSAJdibnGoX1dZxCy2ScBhJ6nZb",
+        "block_type": 2,
+        "parent_id": "OeMAdsNx7o01XhxQBSDcMwFenod",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to MAX_SIM_COSINE. This applies only to embedding lists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZLCgdYSwHo4f63xHtwecsquIn3d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_IP",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "OsoCdZXm6ozIsKx34rtc5T7qnqf"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "OsoCdZXm6ozIsKx34rtc5T7qnqf",
+        "block_type": 2,
+        "parent_id": "ZLCgdYSwHo4f63xHtwecsquIn3d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to MAX_SIM_IP. This applies only to embedding lists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Fxi6dlRAJoPO1axwjRacp3zSnQe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MAX_SIM_L2",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WarndbI9gows5oxq353cKf9Jnfd"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "WarndbI9gows5oxq353cKf9Jnfd",
+        "block_type": 2,
+        "parent_id": "Fxi6dlRAJoPO1axwjRacp3zSnQe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to MAX_SIM_L2. This applies only to embedding lists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UXSgdqJVdopSkZxrSxHcP006n7g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DTW_COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "W7gKdVWUGolOUxxHgAycNe9znRe"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "W7gKdVWUGolOUxxHgAycNe9znRe",
+        "block_type": 2,
+        "parent_id": "UXSgdqJVdopSkZxrSxHcP006n7g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to DTW_COSINE. This applies only to embedding lists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KjQnditFuoMAKSxS66McK6W1nOe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DTW_IP",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "IuTAdzSrDofDnDxKPGHcWcFvnAd"
+        ],
+        "parent_id": "KQDEdcccXozuKpxDg78cSmxYnQg"
+      },
+      {
+        "block_id": "IuTAdzSrDofDnDxKPGHcWcFvnAd",
+        "block_type": 2,
+        "parent_id": "KjQnditFuoMAKSxS66McK6W1nOe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the metric type to DTW_IP. This applies only to embedding lists.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 28
+  },
+  "slug": "Management-MetricType"
+}

@@ -1,0 +1,53 @@
+{
+  "created_time": "1713169313",
+  "modified_time": "1713169429",
+  "name": "VoyageEmbeddingFunction",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "G3Qvfzptcl9gcFdHholcBmgQnib",
+  "token": "UaedfEts7lWlFEdq2WNcVAczn6d",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/UaedfEts7lWlFEdq2WNcVAczn6d",
+  "slug": "EmbeddingModels-VoyageEmbeddingFunction",
+  "children": [
+    {
+      "created_time": "1713169374",
+      "modified_time": "1713175559",
+      "name": "encode_documents()",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "UaedfEts7lWlFEdq2WNcVAczn6d",
+      "token": "S9zrdw1etovCFKx0gcic6AiVn0e",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/S9zrdw1etovCFKx0gcic6AiVn0e"
+    },
+    {
+      "created_time": "1713169394",
+      "modified_time": "1713175705",
+      "name": "encode_queries()",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "UaedfEts7lWlFEdq2WNcVAczn6d",
+      "token": "CHnGdE7XlosONPxsVDDc6Fv5n8c",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/CHnGdE7XlosONPxsVDDc6Fv5n8c"
+    },
+    {
+      "created_time": "1713169428",
+      "modified_time": "1716517360",
+      "name": "VoyageEmbeddingFunction",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "UaedfEts7lWlFEdq2WNcVAczn6d",
+      "token": "HEyLd2lxzo3bl4xqVBOco8vWn1c",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/HEyLd2lxzo3bl4xqVBOco8vWn1c"
+    },
+    {
+      "created_time": "1713169344",
+      "modified_time": "1716287376",
+      "name": "\\_\\_call\\_\\_()",
+      "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_token": "UaedfEts7lWlFEdq2WNcVAczn6d",
+      "token": "DQFbdMhfcodFuxxhYFeccDzEnkf",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/DQFbdMhfcodFuxxhYFeccDzEnkf"
+    }
+  ]
+}

@@ -1,0 +1,1382 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1765250101",
+  "node_token": "MZ2WwklE5ifX4hkO4ZOcXz0indc",
+  "node_type": "origin",
+  "obj_create_time": "1765250101",
+  "obj_edit_time": "1772244357",
+  "obj_token": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+  "obj_type": "docx",
+  "origin_node_token": "MZ2WwklE5ifX4hkO4ZOcXz0indc",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "VKMNwpMl0idY2nkEntncL9hTncb",
+  "space_id": "7167193056431783939",
+  "title": "Create Global Cluster",
+  "slug": "create-global-cluster",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "block_type": 1,
+        "children": [
+          "A8SmdqK91oV77gxVAhcc58xAnZa",
+          "Xmrdd09dloxqUcxZu2mcgh9CnJE",
+          "Ct7pdEKR1sBqEmbr8BFcxQPynKh",
+          "BekrdvRbgo2Kf5xHcAocu8jgnGb",
+          "RYaEdmw3uou1ETxqAencqrbAn7c",
+          "FEk6dTlOColRsYx27BLcwygonD6",
+          "UKtod9vgGoLHkGxNVnCciLJ8nBg",
+          "FOcmdas5soDnsGxcz9kcERJIndw",
+          "Zq1VdsOf1oLSb1xmMg3c7FrAnNP",
+          "RhBqdhYLooWuSyx9g7KcJT9fnfe",
+          "W3Iidw7fMoYLykxWO4GcyncRnQc",
+          "MkOYd4zg8o5vq0xfbhPcCJisnzc",
+          "VH6rdrMutoV1InxqOlicose1nfd",
+          "XuWbdba8oojEMZxl2QKcHF2Cnuc",
+          "Ei6fdVt9ZoHOvHxOPtNc1h6Enld",
+          "NQF3dL9Zeof2ygxodbrcpzHJnjb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create Global Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "A8SmdqK91oV77gxVAhcc58xAnZa",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This guide explains how to create a global cluster. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xmrdd09dloxqUcxZu2mcgh9CnJE",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you need to enable the global cluster feature for an existing cluster, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Cluster",
+                "token": "PharwAysCiBzvgkuqqecmNzunQf",
+                "url": "https://zilliverse.feishu.cn/wiki/PharwAysCiBzvgkuqqecmNzunQf#X812d1NkCol9GPxpDgzcJImPnjf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ct7pdEKR1sBqEmbr8BFcxQPynKh",
+        "block_type": 49,
+        "children": [
+          "D2dzdtV7xod0TXxzAQuco4GwnKo"
+        ],
+        "comment_ids": [
+          "7581780466429070302"
+        ],
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "BekrdvRbgo2Kf5xHcAocu8jgnGb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before you start",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "RYaEdmw3uou1ETxqAencqrbAn7c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ensure you are a Project Admin.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "FEk6dTlOColRsYx27BLcwygonD6",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a global cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "UKtod9vgGoLHkGxNVnCciLJ8nBg",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Turn on the switch next to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Global Cluster",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cluster Settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and provide a name for the global cluster. A global cluster must have 1 primary cluster and 1 to 5 secondary cluster. The cloud provider, cluster type, number of query CU should be consistent with those of the primary cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FOcmdas5soDnsGxcz9kcERJIndw",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to create a global cluster via the web console.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "add_ons": {
+          "component_id": "",
+          "component_type_id": "blk_682093ba9580c002363b9dc3",
+          "record": "{\"id\":\"cmkasmmcr1glake4xm2kdnfbt\",\"isShowcase\":false}"
+        },
+        "block_id": "Zq1VdsOf1oLSb1xmMg3c7FrAnNP",
+        "block_type": 40,
+        "comment_ids": [
+          "7600622169386683339"
+        ],
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "RhBqdhYLooWuSyx9g7KcJT9fnfe",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud starts to create the global cluster and its primary and secondary clusters. After creation completes, Zilliz Cloud starts replicating data from the primary cluster to each secondary cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "W3Iidw7fMoYLykxWO4GcyncRnQc",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can monitor the sync status and replication latency between the primary and secondary clusters in the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Global Topology",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " section on the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Global Cluster",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MkOYd4zg8o5vq0xfbhPcCJisnzc",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1560,
+          "scale": 1,
+          "token": "WJNNb0XQ9oG1tjxmYCSc00WJnxe",
+          "width": 2880
+        },
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "VH6rdrMutoV1InxqOlicose1nfd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Connect to a global cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "XuWbdba8oojEMZxl2QKcHF2Cnuc",
+        "block_type": 2,
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After your global cluster is running, connect to it using a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "global endpoint",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "public endpoint",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "authentication token",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ei6fdVt9ZoHOvHxOPtNc1h6Enld",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Global endpoint/Public Endpoint:",
+                "text_element_style": {
+                  "bold": true,
+                  "comment_ids": [
+                    "7584008623148338121"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Yo",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7584008623148338121"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "u can obtain this on the Zilliz Cloud web console. Navigate to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Cluster Details",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " page of the target cluster. On the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Connect",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " card, you can copy the global endpoint or public endpoint. To understand when to use which endpoint, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Global Cluster Explained",
+                "token": "AICcwQ55yiNqEPkjdV6cb2i8nqe",
+                "url": "https://zilliverse.feishu.cn/wiki/AICcwQ55yiNqEPkjdV6cb2i8nqe#E0e8ds7anosc8ZxSla3cCW2dn4c"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "FT0ddSH5zoHIeDxkYkmc0Z4vnpc",
+          "JiNQdSOWeowDSRxoUGbcuIaSn0b"
+        ],
+        "comment_ids": [
+          "7584008623148338121"
+        ],
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "FT0ddSH5zoHIeDxkYkmc0Z4vnpc",
+        "block_type": 19,
+        "callout": {
+          "background_color": 1,
+          "border_color": 1,
+          "emoji_id": "book"
+        },
+        "children": [
+          "PBxfdXLSxoj76sxC6L3cfCl6nVe",
+          "UOMLd0EPDohuDpx4jeJccOPKnrb"
+        ],
+        "parent_id": "Ei6fdVt9ZoHOvHxOPtNc1h6Enld"
+      },
+      {
+        "block_id": "PBxfdXLSxoj76sxC6L3cfCl6nVe",
+        "block_type": 2,
+        "parent_id": "FT0ddSH5zoHIeDxkYkmc0Z4vnpc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Note",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UOMLd0EPDohuDpx4jeJccOPKnrb",
+        "block_type": 2,
+        "parent_id": "FT0ddSH5zoHIeDxkYkmc0Z4vnpc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you have configured a private endpoint, you can choose to disable the public endpoint and global endpoint for greater security. For details, see ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Manage internet access to your clusters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FGBY6wbUmwi9lLjkXSuKccODgnne%23JpGtdzvMloW881xnFWwcNBqKnwh"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JiNQdSOWeowDSRxoUGbcuIaSn0b",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1560,
+          "scale": 1,
+          "token": "VmvpbMxW8oXwYyxk2n0cZ2f7nsh",
+          "width": 2880
+        },
+        "parent_id": "Ei6fdVt9ZoHOvHxOPtNc1h6Enld"
+      },
+      {
+        "block_id": "NQF3dL9Zeof2ygxodbrcpzHJnjb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Token:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " This token can be <exclude target=\"paas\"> an ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "API key",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBRsZwqOUTiBbrPk9b5WcvFgTnze"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or </exclude>a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cluster credential",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FYmsVwIzOBinv4OklCfmc2nyznAe"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " that consists of a username and password pair. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Fxz8dBBIQo7EjyxCtUlc0Nt8nvh",
+          "C7d6dAmpusE0qXbAeVqcKtK9nvf"
+        ],
+        "parent_id": "JbGudE0LLoGXgsxsgtnc2sL8n1g"
+      },
+      {
+        "block_id": "Fxz8dBBIQo7EjyxCtUlc0Nt8nvh",
+        "block_type": 2,
+        "parent_id": "NQF3dL9Zeof2ygxodbrcpzHJnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following example shows how to connect to a cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C7d6dAmpusE0qXbAeVqcKtK9nvf",
+        "block_type": 49,
+        "children": [
+          "Ut9qdVt1jojXExx7sitc8gGEnLh",
+          "GKpTdqBWmozPplxiYXvcSXgmnQf",
+          "AJKVdy0x4oIxQPxdC3bcqG6znFb",
+          "NjwVdVz4Fo6G7ZxBe9Cc5xhsn8c",
+          "C03Xde20qoXKsZx71lGcViqbnsg"
+        ],
+        "parent_id": "NQF3dL9Zeof2ygxodbrcpzHJnjb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "D2dzdtV7xod0TXxzAQuco4GwnKo",
+        "block_type": 19,
+        "callout": {
+          "background_color": 1,
+          "border_color": 1,
+          "emoji_id": "book"
+        },
+        "children": [
+          "SYZadI0TVoB6MBx2o05clqdOnRf",
+          "DwRtdUkG4oGzalxwUM9cIxVknib"
+        ],
+        "parent_id": "Ct7pdEKR1sBqEmbr8BFcxQPynKh"
+      },
+      {
+        "block_id": "SYZadI0TVoB6MBx2o05clqdOnRf",
+        "block_type": 2,
+        "parent_id": "D2dzdtV7xod0TXxzAQuco4GwnKo",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DwRtdUkG4oGzalxwUM9cIxVknib",
+        "block_type": 2,
+        "parent_id": "D2dzdtV7xod0TXxzAQuco4GwnKo",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This feature is available only to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " clusters in a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Business Critical",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " project.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ut9qdVt1jojXExx7sitc8gGEnLh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Connect using a MilvusClient object\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nCLUSTER_ENDPOINT=\"YOUR_CLUSTER_ENDPOINT\" # Set your cluster endpoint\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TOKEN=\"YOUR_CLUSTER_TOKEN\" # Set your token",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n# Initialize a MilvusClient instance\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Replace uri and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "token",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with your own\nclient = MilvusClient(\n    uri=CLUSTER_ENDPOINT, # Cluster endpoint obtained from the console\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    token=TOKEN",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " # <exclude target=\"paas\">API key or </exclude>a colon-separated cluster username and password",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7d6dAmpusE0qXbAeVqcKtK9nvf"
+      },
+      {
+        "block_id": "GKpTdqBWmozPplxiYXvcSXgmnQf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.client.ConnectConfig;\n\nString CLUSTER_ENDPOINT = \"YOUR_CLUSTER_ENDPOINT\";\nString TOKEN = \"YOUR_CLUSTER_TOKEN\";\n\n// 1. Connect to Milvus server\nConnectConfig connectConfig = ConnectConfig.builder()\n    .uri(CLUSTER_ENDPOINT)\n    .token(TOKEN)\n    .build();\n\nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7d6dAmpusE0qXbAeVqcKtK9nvf"
+      },
+      {
+        "block_id": "AJKVdy0x4oIxQPxdC3bcqG6znFb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const { MilvusClient, DataType, sleep } = require(\"@zilliz/milvus2-sdk-node\")\n\nconst address = \"YOUR_CLUSTER_ENDPOINT\"\nconst token = \"YOUR_CLUSTER_TOKEN\"\n\n// 1. Connect to the cluster\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "const client = new MilvusClient({address, token})",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7d6dAmpusE0qXbAeVqcKtK9nvf"
+      },
+      {
+        "block_id": "NjwVdVz4Fo6G7ZxBe9Cc5xhsn8c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: \"YOUR_CLUSTER_ENDPOINT\",\n    APIKey:  \"YOUR_CLUSTER_TOKEN\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "})",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7d6dAmpusE0qXbAeVqcKtK9nvf"
+      },
+      {
+        "block_id": "C03Xde20qoXKsZx71lGcViqbnsg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "curl --request POST \\\n  --url \"YOUR_CLUSTER_ENDPOINT\" \\\n  --header \"Authorization: Bearer YOUR_CLUSTER_TOKEN\" \\\n  --header \"Content-Type: application/json\" \\\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  --data '{\"dbName\": \"default\"}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "C7d6dAmpusE0qXbAeVqcKtK9nvf"
+      }
+    ],
+    "counts": 23
+  }
+}

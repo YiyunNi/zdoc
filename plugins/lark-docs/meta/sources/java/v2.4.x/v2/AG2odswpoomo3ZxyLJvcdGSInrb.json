@@ -1,0 +1,1226 @@
+{
+  "created_time": "1741677727",
+  "modified_time": "1746615143",
+  "name": "createResourceGroup()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "RmMNfMgc3lMPTBdfs0WcK1YGn6M",
+  "token": "AG2odswpoomo3ZxyLJvcdGSInrb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/AG2odswpoomo3ZxyLJvcdGSInrb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "block_type": 1,
+        "children": [
+          "AjYSd7N0FoRyA7xHv4ncn46RnGe",
+          "WUYndC67lon90Lxe84nce1Dmnaf",
+          "OMgvdy7SkoQMusxv4Yec0Gzgnag",
+          "AvHOdzuFtoGyddxmOdVcBMpsnhb",
+          "T8EAdk5gvooJp5xYi1rcBBNan6f",
+          "EcbGd87HTow6EuxeUxPcyYvYn7d",
+          "BpYqdvmM6o7ILHxRwILcpCzUnWb",
+          "HuWtdrO4Iow9LbxttFHcnUWCnjb",
+          "KJZNd841po5U48x5RfOc3S80nOb",
+          "RqmjdnycIoRBBrxbVwQcL9ppnKf",
+          "WbU8dHeORogJhuxgeGTcFUUcnXc",
+          "Le41dfJHiohEnexh9ArcOG6Nn0d",
+          "GjYzdRZvDoGIn3xHegTcobhmnEc",
+          "L6opdpBh8oPtzDxHYmac2yninx9"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "createResourceGroup()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "AjYSd7N0FoRyA7xHv4ncn46RnGe",
+        "block_type": 2,
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation creates a resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WUYndC67lon90Lxe84nce1Dmnaf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void createResourceGroup(CreateResourceGroupReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "OMgvdy7SkoQMusxv4Yec0Gzgnag",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "AvHOdzuFtoGyddxmOdVcBMpsnhb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "createResourceGroup(CreateResourceGroupReq.builder()\n    .groupName(String collectionName)\n    .config(ResourceGroupConfig config)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "T8EAdk5gvooJp5xYi1rcBBNan6f",
+        "block_type": 2,
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EcbGd87HTow6EuxeUxPcyYvYn7d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "D3LQdkn0wotg0qxd0dIcq79QnCc",
+          "GckRd1NDko2MZgxHCjFcYBr0nAg"
+        ],
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "D3LQdkn0wotg0qxd0dIcq79QnCc",
+        "block_type": 2,
+        "parent_id": "EcbGd87HTow6EuxeUxPcyYvYn7d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GckRd1NDko2MZgxHCjFcYBr0nAg",
+        "block_type": 2,
+        "parent_id": "EcbGd87HTow6EuxeUxPcyYvYn7d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target resource group to create.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "config(ResourceGroupConfig config)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Inb9dDEGWo3p3RxEKFkcerCNnUd",
+          "L8OPd7TpkoMnz2xKACMc33xFnef",
+          "DiCkdCY9QopIjmxWpdCcUqbanmh",
+          "Tmzyd45Szos2uox5YxvcpWy6ntf",
+          "QqkPdPBz7o9647xuqe3cId4an9d",
+          "HsgldQO1joP4bOxSZowcpzOJnPe",
+          "RGHcdPmECo4T1Wx8RkEccM2Anzg"
+        ],
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "Inb9dDEGWo3p3RxEKFkcerCNnUd",
+        "block_type": 2,
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L8OPd7TpkoMnz2xKACMc33xFnef",
+        "block_type": 2,
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The configuration of the target resource group, which is a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupConfig",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object that provides the following builder methods:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DiCkdCY9QopIjmxWpdCcUqbanmh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "withRequests(ResourceGroupLimit requests)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "WhHmdfdrRo3LgFx1YlNcLGe2nqb"
+        ],
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb"
+      },
+      {
+        "block_id": "WhHmdfdrRo3LgFx1YlNcLGe2nqb",
+        "block_type": 2,
+        "parent_id": "DiCkdCY9QopIjmxWpdCcUqbanmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupLimit",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance that defines the number of nodes required by a resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Tmzyd45Szos2uox5YxvcpWy6ntf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "withLimits(ResourceGroupLimit limits)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "RCgxdfmN6oSQNqx73fecT7DOnMe"
+        ],
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb"
+      },
+      {
+        "block_id": "RCgxdfmN6oSQNqx73fecT7DOnMe",
+        "block_type": 2,
+        "parent_id": "Tmzyd45Szos2uox5YxvcpWy6ntf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupLimit",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance that defines the maximum number of nodes required by a resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QqkPdPBz7o9647xuqe3cId4an9d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "withFrom(List<ResourceGroupTransfer> from)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "K55CdFl6eopQdZxceBjc0SgKnUe"
+        ],
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb"
+      },
+      {
+        "block_id": "K55CdFl6eopQdZxceBjc0SgKnUe",
+        "block_type": 2,
+        "parent_id": "QqkPdPBz7o9647xuqe3cId4an9d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupTransfer",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instances that defines the source resource groups for necessary transfers. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HsgldQO1joP4bOxSZowcpzOJnPe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "withTo(List<ResourceGroupTransfer> to)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "EjRYdnASsoucTQxtS7ucO5XRnpb"
+        ],
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb"
+      },
+      {
+        "block_id": "EjRYdnASsoucTQxtS7ucO5XRnpb",
+        "block_type": 2,
+        "parent_id": "HsgldQO1joP4bOxSZowcpzOJnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupTransfer",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instances that defines the target resource groups for necessary transfers. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RGHcdPmECo4T1Wx8RkEccM2Anzg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "withNodeFilter(ResourceGroupNodeFilter nodeFilter)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Pa1Jdma8JoQngzxqfpocNnPknCg",
+          "FZ9ZdY8jWopQ1uxQlZScFx9wnNM"
+        ],
+        "parent_id": "BpYqdvmM6o7ILHxRwILcpCzUnWb"
+      },
+      {
+        "block_id": "Pa1Jdma8JoQngzxqfpocNnPknCg",
+        "block_type": 2,
+        "parent_id": "RGHcdPmECo4T1Wx8RkEccM2Anzg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupNodeFilter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is used to filter the query nodes with specified node labels.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "FZ9ZdY8jWopQ1uxQlZScFx9wnNM",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Bpzxdc2OJoCmGrxEsJaciBi1nPf",
+          "ZcGod2Rr1ou7Pbx8o4fcTgKyn3b"
+        ],
+        "parent_id": "RGHcdPmECo4T1Wx8RkEccM2Anzg"
+      },
+      {
+        "block_id": "Bpzxdc2OJoCmGrxEsJaciBi1nPf",
+        "block_type": 2,
+        "parent_id": "FZ9ZdY8jWopQ1uxQlZScFx9wnNM",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "How can I label a query node?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZcGod2Rr1ou7Pbx8o4fcTgKyn3b",
+        "block_type": 2,
+        "parent_id": "FZ9ZdY8jWopQ1uxQlZScFx9wnNM",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can set an environment variable for Milvus to label the query node during its startup. For example, to add the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "QUERYNODE_LOCATION",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " label, you need to create an environment variable named after the label, prefixed by ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MILVUS_SERVER_LABEL_",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and set the value for the label, as in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MILVUS_SERVER_LABEL_QUERYNODE_LOCATION=dc1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HuWtdrO4Iow9LbxttFHcnUWCnjb",
+        "block_type": 2,
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KJZNd841po5U48x5RfOc3S80nOb",
+        "block_type": 2,
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RqmjdnycIoRBBrxbVwQcL9ppnKf",
+        "block_type": 2,
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WbU8dHeORogJhuxgeGTcFUUcnXc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DypvdAxrZoiVZCxjo4NcUzzXnrg"
+        ],
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "DypvdAxrZoiVZCxjo4NcUzzXnrg",
+        "block_type": 2,
+        "parent_id": "WbU8dHeORogJhuxgeGTcFUUcnXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Le41dfJHiohEnexh9ArcOG6Nn0d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "GjYzdRZvDoGIn3xHegTcobhmnEc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.common.resourcegroup.*;\nimport io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.resourcegroup.request.CreateResourceGroupReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. P",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "repare resource group config\nResourceGroupLimit requests = new ResourceGroupLimit(1);\nResourceGroupLimit limits = new ResourceGroupLimit(1);\nList<ResourceGroupTransfer> from = new ArrayList<>();\nfrom.add(new ResourceGroupTransfer(\"DEFAULT_RESOURCE_GROUP\"));\nList<ResourceGroupTransfer> to = new ArrayList<>();\nto.add(new ResourceGroupTransfer(\"DEFAULT_RESOURCE_GROUP\"));\n\nResourceGroupConfig config = ResourceGroupConfig.builder()\n    .withRequests(requests)\n    .withLimits(limits)\n    .withFrom(from)\n    .withTo(to)\n    .build();\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "3. Create a resource group",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\nCreateResourceGroupReq createResourceGroupReq = CreateResourceGroupReq.builder()\n    .groupName(\"rg1\")\n    .config(config)\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.createResourceGroup(createResourceGroupReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb"
+      },
+      {
+        "block_id": "L6opdpBh8oPtzDxHYmac2yninx9",
+        "block_type": 2,
+        "parent_id": "AG2odswpoomo3ZxyLJvcdGSInrb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 33
+  },
+  "slug": "v2-ResourceGroup-createResourceGroup"
+}

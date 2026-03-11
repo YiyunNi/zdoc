@@ -1,0 +1,113 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": true,
+  "node_create_time": "1766127066",
+  "node_token": "LZ5zwVuJ6iXRvhki0yWcnefTnVg",
+  "node_type": "origin",
+  "obj_create_time": "1766127066",
+  "obj_edit_time": "1766546460",
+  "obj_token": "T4T5d81T9okCsixPVfOcKI9xn2d",
+  "obj_type": "docx",
+  "origin_node_token": "LZ5zwVuJ6iXRvhki0yWcnefTnVg",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "M4IYwThFKiatBkk0Cp3c9p4QnZc",
+  "space_id": "7167193056431783939",
+  "title": "Rule-based Rankers",
+  "slug": "rule-based-rankers",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "T4T5d81T9okCsixPVfOcKI9xn2d",
+        "block_type": 1,
+        "children": [
+          "T8RpdnaJso2AmDxRKB0cmGF1n8g"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Rule-based Rankers",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "T8RpdnaJso2AmDxRKB0cmGF1n8g",
+        "block_type": 2,
+        "parent_id": "T4T5d81T9okCsixPVfOcKI9xn2d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Rankers in this section should be used in semantic searches, but not hybrid searches.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1756785381",
+      "node_token": "Qa60w2vDuiqNk0kclKLcZ0uQnkg",
+      "node_type": "origin",
+      "obj_create_time": "1756785381",
+      "obj_edit_time": "1768814150",
+      "obj_token": "RoM6dCXzho2t9Cxtyjdcsvwhnef",
+      "obj_type": "docx",
+      "origin_node_token": "Qa60w2vDuiqNk0kclKLcZ0uQnkg",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "LZ5zwVuJ6iXRvhki0yWcnefTnVg",
+      "space_id": "7167193056431783939",
+      "title": "Boost Ranker",
+      "slug": "boost-ranker"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": true,
+      "node_create_time": "1745983639",
+      "node_token": "HPP3wBq1xiuGWYk4QfKcZ2PrnHf",
+      "node_type": "origin",
+      "obj_create_time": "1745983639",
+      "obj_edit_time": "1758089612",
+      "obj_token": "G3DVdA43to6snQxUndRcW375nIa",
+      "obj_type": "docx",
+      "origin_node_token": "HPP3wBq1xiuGWYk4QfKcZ2PrnHf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "LZ5zwVuJ6iXRvhki0yWcnefTnVg",
+      "space_id": "7167193056431783939",
+      "title": "Decay Ranker",
+      "slug": "decay-ranker"
+    }
+  ]
+}

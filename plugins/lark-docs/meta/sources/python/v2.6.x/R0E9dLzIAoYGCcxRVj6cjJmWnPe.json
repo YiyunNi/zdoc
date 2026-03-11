@@ -1,0 +1,580 @@
+{
+  "created_time": "1760184862",
+  "modified_time": "1760185586",
+  "name": "add()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "KE7AfgsvalVIwFdRllUcFLWUn5c",
+  "token": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "block_type": 1,
+        "children": [
+          "UGZ2dkXVuo2cnWxQHKMcnieNn6d",
+          "RFNkdbsO9opuiJxjmbqcRR1Fn0v",
+          "FI1MdxlN9oym6zxQIlicLuomnSh",
+          "XSusdE0EnokumfxXEBQcsvGAnqc",
+          "ZVVQd9gzbodIJYxt63ActrydnzK",
+          "KK2hddTGjo9EZuxkwDrcYBoAncW",
+          "VbSvdfNgTodT43x3Vi1cc7Omnqf",
+          "H0budCCJsouTJUxTdMdcS3JInze",
+          "IFQJdJ5blo2xW3xujHDc01MFnPc",
+          "FJjfd4GOsoD2c7xJ0ftcwIj5nVg",
+          "FPjqd3Risoxlo1xdcD2cX2TsnEb",
+          "NL1Gd5N7WoHkYVxWAslcJaJCn7b",
+          "XzrcdEnn1o7g9gxD3GSckw4InCe"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "UGZ2dkXVuo2cnWxQHKMcnieNn6d",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation adds a single vector embedding to the current ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "EmbeddingList",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RFNkdbsO9opuiJxjmbqcRR1Fn0v",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe"
+      },
+      {
+        "block_id": "FI1MdxlN9oym6zxQIlicLuomnSh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "add(\n    self,\n    embedding: Union[np.ndarray, List[Any]]\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe"
+      },
+      {
+        "block_id": "XSusdE0EnokumfxXEBQcsvGAnqc",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZVVQd9gzbodIJYxt63ActrydnzK",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "embedding",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "np.ndarray, List[Any]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HHAodlFmXo2Ze5xPRn7cERNJnFd"
+        ],
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe"
+      },
+      {
+        "block_id": "HHAodlFmXo2Ze5xPRn7cERNJnFd",
+        "block_type": 2,
+        "parent_id": "ZVVQd9gzbodIJYxt63ActrydnzK",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The vector embedding that is to be added to the current ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "EmbeddingList",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KK2hddTGjo9EZuxkwDrcYBoAncW",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VbSvdfNgTodT43x3Vi1cc7Omnqf",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EmbeddingList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H0budCCJsouTJUxTdMdcS3JInze",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IFQJdJ5blo2xW3xujHDc01MFnPc",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The current ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "EmbeddingList",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance itself for method chaining",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FJjfd4GOsoD2c7xJ0ftcwIj5nVg",
+        "block_type": 2,
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FPjqd3Risoxlo1xdcD2cX2TsnEb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ValueError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ":",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AAyZdckv2oyDSjxs8VrcB3g2nMf"
+        ],
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe"
+      },
+      {
+        "block_id": "AAyZdckv2oyDSjxs8VrcB3g2nMf",
+        "block_type": 2,
+        "parent_id": "FPjqd3Risoxlo1xdcD2cX2TsnEb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised if the provided vector embedding does not match the existing ones in dimensionality.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NL1Gd5N7WoHkYVxWAslcJaJCn7b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe"
+      },
+      {
+        "block_id": "XzrcdEnn1o7g9gxD3GSckw4InCe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import EmbeddingList\n\n# create an empty embedding list\nembeddingList = EmbeddingList()\n\n# add multiple vector embeddings one after another\nembeddingList.add([0.1, 0.2, 0.3, 0.4, 0.5])\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "embeddingList.add([0.5, 0.4, 0.3, 0.2, 0.1])",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "R0E9dLzIAoYGCcxRVj6cjJmWnPe"
+      }
+    ],
+    "counts": 16
+  },
+  "slug": "EmbeddingList-add"
+}

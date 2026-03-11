@@ -1,0 +1,1626 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1736302594",
+  "node_token": "Fz9swr5WwixkH8kKHircWCejnye",
+  "node_type": "origin",
+  "obj_create_time": "1736302594",
+  "obj_edit_time": "1767527411",
+  "obj_token": "F5CUdPSEropBEYx6euicxxTbnYb",
+  "obj_type": "docx",
+  "origin_node_token": "Fz9swr5WwixkH8kKHircWCejnye",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "CSYrwhK4Gigk07kd6ufcNTGMnZf",
+  "space_id": "7167193056431783939",
+  "title": "Tune Recall Rate",
+  "slug": "tune-recall-rate",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "block_type": 1,
+        "children": [
+          "JdMFd0J9gofDLkxOJTzc0e5Unjg",
+          "CO9VdlAXfoviUqxKUlzclUFbnah",
+          "X6ULdA39coQDcBxsq6WcsQwRnph",
+          "UO0rdWsprokOXhxzhlGcsKabnod",
+          "X9Aed75QjodjIXxwNpKcBsqnntb",
+          "LcuXdo993oenG9xWStfcvWaAngb",
+          "VMFhdPxOtoCzBexV4FxcTMhNnue",
+          "HhDIdBJ3GoIVfux40JHcX4zHn9e",
+          "H94gd3ITXoRkJVx7u9NcofmHn1T",
+          "Gsx6dlYrRskFiCbLaDIc7NfNnzf",
+          "JvHhdmw1Cor3a6xrE2EcQAhwnAe",
+          "YZ7PddD30obiPkxDQ8tcbTfwnye",
+          "Rd2nddPVuofu6Qx2KPscDCsHn0b",
+          "Y2CRdeAcKolkRFxmUIccx2DMnod",
+          "NBCJdTAb0oL2tTxd2L0cdHfQn9e",
+          "NWAudQgSpsakzTbrkGScjLHZn0b",
+          "HI1mdcB6QoNyn4xp4gBcvHSNnmh",
+          "DBRldUYCgsOa7MbiU3xcyIYcnce",
+          "B356djn8WokUfIx3DmMczx2Qnqh",
+          "Wam5dkAl6ob7SBxjbH2cmDA1nTh",
+          "S82tdUwbRoUywuxg2PvckWGFnVb",
+          "XO45dTBXxoW767xgk7Ec85MVnYg",
+          "WfbxdCZ09oNFlpxpOIyct1yunmg",
+          "Idi6dwuXBofKgCxEhmTc4ipenYY",
+          "AsfCdl49tocFjqxeUplcVyhZnKc",
+          "IKSVd9twmo3G0vxL0A8cOvLInXb",
+          "CpMNdCyemoxzvyxkIKLc45UcnDf",
+          "LDI1d2FXooJ0VXx3HGUcRwD5nud"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tune Recall Rate",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "JdMFd0J9gofDLkxOJTzc0e5Unjg",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud introduces a search parameter ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to allow users to balance search recall and performance. It also provides another search parameter, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "enable_recall_calculation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", to give users the estimated recall rate of the current search. You can combine these two parameters to tune the recall rate of vector searches.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CO9VdlAXfoviUqxKUlzclUFbnah",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "B9Mfd4vjToZg4ox7WLLc7LP1nsd",
+          "Jak9dVFfNokFarxc1J9c1ifKnTh"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "B9Mfd4vjToZg4ox7WLLc7LP1nsd",
+        "block_type": 2,
+        "parent_id": "CO9VdlAXfoviUqxKUlzclUFbnah",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jak9dVFfNokFarxc1J9c1ifKnTh",
+        "block_type": 2,
+        "parent_id": "CO9VdlAXfoviUqxKUlzclUFbnah",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This applies to all searches, including basic vector searches, filtered searches, range searches, grouping searches, hybrid searches, and search iterators.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X6ULdA39coQDcBxsq6WcsQwRnph",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "UO0rdWsprokOXhxzhlGcsKabnod",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The recall rate in Zilliz Cloud usually refers to the proportion of relevant results successfully retrieved by a search. It measures the system's ability to recover all the relevant items from a collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X9Aed75QjodjIXxwNpKcBsqnntb",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 152,
+          "scale": 1,
+          "token": "OdMnbeHYOoAEqKxNEEnc9SwNnmf",
+          "width": 1416
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "LcuXdo993oenG9xWStfcvWaAngb",
+        "block_type": 2,
+        "comment_ids": [
+          "7457765126792577043"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To calculate a search's recall rate, you can divide the number of relevant items retrieved by the total number of applicable items that should be retrieved. For example, if a search retrieves 90 of 100 relevant items, the recall rate should be ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0.9",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "or ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457765126792577043"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "90%",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VMFhdPxOtoCzBexV4FxcTMhNnue",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A high recall rate usually indicates a more precise search result, which may be time-consuming. You may want to tune the recall rate to balance the precision and efficiency of vector searches.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HhDIdBJ3GoIVfux40JHcX4zHn9e",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Set up a search request",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "H94gd3ITXoRkJVx7u9NcofmHn1T",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To set up a search request with tunable recall, you must include the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter inside the search parameters as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gsx6dlYrRskFiCbLaDIc7NfNnzf",
+        "block_type": 49,
+        "children": [
+          "KzNvdPK8aovyKYxjbGXcFBwMntf"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "KzNvdPK8aovyKYxjbGXcFBwMntf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "query_vector = [0.3580376395471989, ..., 0.9029438446296592],\n\nres = client.search(\n    collection_name=\"quick_setup\",\n    data=[query_vector],\n    limit=3, # The number of results to return\n    search_params={\n        \"params\": {\n            # highlight-next-line\n            \"level\": 1 # The precision control\n        }\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Gsx6dlYrRskFiCbLaDIc7NfNnzf"
+      },
+      {
+        "block_id": "JvHhdmw1Cor3a6xrE2EcQAhwnAe",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter ranges from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". The default value results in a recall rate of 90%, which is typically sufficient for most use cases. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YZ7PddD30obiPkxDQ8tcbTfwnye",
+        "block_type": 2,
+        "comment_ids": [
+          "7457765410906439699"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For scenarios that require a high recall rate (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "99%",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or above), try setting the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter to an integer between ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "6",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". If search efficiency is not a concern, you can set this parameter to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to get the most precise results",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457765410906439699"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Rd2nddPVuofu6Qx2KPscDCsHn0b",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "LbAGdFoCqoG0ADxXnowcHCydnp0",
+          "RBW1dnTDZoIQcXxZ9iYcG7mjncc"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "LbAGdFoCqoG0ADxXnowcHCydnp0",
+        "block_type": 2,
+        "parent_id": "Rd2nddPVuofu6Qx2KPscDCsHn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RBW1dnTDZoIQcXxZ9iYcG7mjncc",
+        "block_type": 2,
+        "parent_id": "Rd2nddPVuofu6Qx2KPscDCsHn0b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the top-most level settings still do not suffice, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y2CRdeAcKolkRFxmUIccx2DMnod",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Tune recall rate",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "NBCJdTAb0oL2tTxd2L0cdHfQn9e",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud also introduces another search parameter named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "enable_recall_calculation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to facilitate the tuning process. Setting this parameter to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "True",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " indicates that Zilliz Cloud will estimate the recall rate for the current search and include that estimate along with the search results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NWAudQgSpsakzTbrkGScjLHZn0b",
+        "block_type": 49,
+        "children": [
+          "A1PDd71a4ooQb3x5IBfcgea3nDe"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "A1PDd71a4ooQb3x5IBfcgea3nDe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "query_vector = [0.3580376395471989, ..., 0.9029438446296592],\n\nres = client.search(\n    collection_name=\"quick_setup\",\n    data=[query_vector],\n    limit=3, # The number of results to return\n    search_params={\n        \"params\": {\n            \"level\": 6 # The precision control\n            # highlight-next-line\n            \"enable_recall_calculation\": True # Ask for recall rate calculation\n        }\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "NWAudQgSpsakzTbrkGScjLHZn0b"
+      },
+      {
+        "block_id": "HI1mdcB6QoNyn4xp4gBcvHSNnmh",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With the above search request, you can get an estimated recall rate of the current search as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DBRldUYCgsOa7MbiU3xcyIYcnce",
+        "block_type": 49,
+        "children": [
+          "PvKPdi9QIolQD4x2IkZcldA5nzs"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "PvKPdi9QIolQD4x2IkZcldA5nzs",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# data: [...], recalls: [0.98]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "DBRldUYCgsOa7MbiU3xcyIYcnce"
+      },
+      {
+        "block_id": "B356djn8WokUfIx3DmMczx2Qnqh",
+        "block_type": 2,
+        "comment_ids": [
+          "7457766520177868819"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During the estimation process, Zilliz Cloud:",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Wam5dkAl6ob7SBxjbH2cmDA1nTh",
+        "block_type": 13,
+        "comment_ids": [
+          "7457766520177868819"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Searches with the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter set to the user-defined value, and",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "S82tdUwbRoUywuxg2PvckWGFnVb",
+        "block_type": 13,
+        "comment_ids": [
+          "7468608555111317508",
+          "7457766520177868819"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Conducts another search in an internal high-precision mode.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7468608555111317508"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "XO45dTBXxoW767xgk7Ec85MVnYg",
+        "block_type": 13,
+        "comment_ids": [
+          "7457766520177868819"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use the second search as the ground truth to estimate the recall rate.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "WfbxdCZ09oNFlpxpOIyct1yunmg",
+        "block_type": 2,
+        "comment_ids": [
+          "7458188167532642323",
+          "7457766520177868819"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "While setting ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "enable_recall_calculation",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "True",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can adjust the value of the ",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter to obtain multiple recall rates. By considering these estimated figures and the duration of each search, you can roughly estimate the appropriate level setting.",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7457766520177868819",
+                    "7458188167532642323"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Idi6dwuXBofKgCxEhmTc4ipenYY",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "VLiKd2UcvoZQxyx9UAec67wkn8f",
+          "JsymdBlzZolHc3x03K3cSJxTnrb"
+        ],
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "VLiKd2UcvoZQxyx9UAec67wkn8f",
+        "block_type": 2,
+        "comment_ids": [
+          "7538286175346556947"
+        ],
+        "parent_id": "Idi6dwuXBofKgCxEhmTc4ipenYY",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7538286175346556947"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JsymdBlzZolHc3x03K3cSJxTnrb",
+        "block_type": 2,
+        "parent_id": "Idi6dwuXBofKgCxEhmTc4ipenYY",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Enabling ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "enable_recall_calculation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " may impact search performance and is not recommended in production.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AsfCdl49tocFjqxeUplcVyhZnKc",
+        "block_type": 4,
+        "comment_ids": [
+          "7462575612721643539"
+        ],
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limits",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7462575612721643539"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb"
+      },
+      {
+        "block_id": "IKSVd9twmo3G0vxL0A8cOvLInXb",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Currently, this feature is available only for Zilliz Cloud clusters in basic vector searches, filtered searches, and range searches.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CpMNdCyemoxzvyxkIKLc45UcnDf",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LDI1d2FXooJ0VXx3HGUcRwD5nud",
+        "block_type": 2,
+        "parent_id": "F5CUdPSEropBEYx6euicxxTbnYb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 38
+  }
+}

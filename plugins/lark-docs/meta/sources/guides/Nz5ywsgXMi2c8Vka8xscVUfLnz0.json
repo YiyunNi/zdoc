@@ -1,0 +1,3043 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1747620214",
+  "node_token": "Nz5ywsgXMi2c8Vka8xscVUfLnz0",
+  "node_type": "origin",
+  "obj_create_time": "1747620214",
+  "obj_edit_time": "1768814374",
+  "obj_token": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+  "obj_type": "docx",
+  "origin_node_token": "Nz5ywsgXMi2c8Vka8xscVUfLnz0",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "U1LuwnY58i8nKQkK1ctcJqBjnVf",
+  "space_id": "7167193056431783939",
+  "title": "TEI Ranker",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "block_type": 1,
+        "children": [
+          "Q0lSdkxEro5LI2xwdJXcxX0en8c",
+          "DHJLdLAXSoiLdnxe1FIcY74dnpg",
+          "BXNWdHhRJodGJoxlM1dcKWS8nFE",
+          "X1UTdtKnSoy4wxxsGzMcP8oXnRe",
+          "MszJdBrWqoAHyTxqNe9c5Yzcn2q",
+          "Qxatd1acRoLm1hxuzmUcBqbFnYc",
+          "PaCLd7846oAVubxdN7KcNEIWnfe",
+          "CDz2dAa3bsb6tfbYBegcQRDvnYb",
+          "HYRvd6KNBocu01xbZZEcfbFQn2d",
+          "THyBdrhlzoOnV0x8FZqcMHSXnWg",
+          "V5stdqeX2oYv6hxPX2wc7y12n1g",
+          "CQlWdk9bqoUc6dxNX0zcpVQRnph",
+          "WnCSdKRPwowgcvxVmL4c5Kihnud",
+          "CJ1SdVQSUol6wcxQJGncqx0snod",
+          "G4bEdTjnistyADbDlbyc6iAVned"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "TEI Ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Q0lSdkxEro5LI2xwdJXcxX0en8c",
+        "block_type": 2,
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The TEI Ranker leverages the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Text Embedding Inference (TEI)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fhuggingface.co%2Fdocs%2Ftext-embeddings-inference%2Findex"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " service from Hugging Face to enhance search relevance through semantic reranking. It represents an advanced approach to search result ordering that goes beyond traditional vector similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DHJLdLAXSoiLdnxe1FIcY74dnpg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Prerequisites",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "BXNWdHhRJodGJoxlM1dcKWS8nFE",
+        "block_type": 2,
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before implementing ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "TEI",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Ranker in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ensure you have:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X1UTdtKnSoy4wxxsGzMcP8oXnRe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " collection with a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VARCHAR",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " field containing the text to be reranked",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "MszJdBrWqoAHyTxqNe9c5Yzcn2q",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A running TEI service with reranking capabilities. For detailed instructions on setting up a TEI service, refer to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "official TEI documentation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fhuggingface.co%2Fdocs%2Ftext-embeddings-inference%2Fen%2Fquick_tour"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "Qxatd1acRoLm1hxuzmUcBqbFnYc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a TEI ranker function",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "PaCLd7846oAVubxdN7KcNEIWnfe",
+        "block_type": 2,
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To use TEI Ranker in your ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " application, create a Function object that specifies how the reranking should operate. This function will be passed to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " search operations to enhance result ranking.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb",
+        "block_type": 49,
+        "children": [
+          "WIBBdd9UsoADRRxCNJVc2tdnnfd",
+          "WfUidsmG2osmL8xOz5CcWMDdnDf",
+          "LL4Kd13evo54ghxNwObc5SwInDe",
+          "DlbVdApPhoKrRYxOBvCcAG6SnEh",
+          "R6XndZqLtohx42xxddYcgoyTn7c",
+          "R6rNdY7zso9Yf4xFKZyc4FIIn1g"
+        ],
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "WIBBdd9UsoADRRxCNJVc2tdnnfd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, Function, FunctionType\n\n# Connect to your Milvus server\nclient = MilvusClient(\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    uri=\"http://localhost:19530\"  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# Replace with your Milvus server URI",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n)\n\n# Configure TEI Ranker\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " = Function(\n    name=\"tei_semantic_ranker\",            # Unique identifier for your ranker\n    input_field_names=[\"document\"],        # VARCHAR field containing text to rerank\n    function_type=FunctionType.RERANK,     # Must be RERANK for reranking functions\n    params={\n        \"reranker\": \"model\",               # Enables model-based reranking\n        \"provider\": \"tei\",                 # Specifies TEI as the service provider\n        \"queries\": [\"renewable energy developments\"],  # Query text for relevance evaluation\n        \"endpoint\": \"http://localhost:8080\",  # Your TEI service URL\n        \"max_client_batch_size\": 32,                    # Optional: batch size for processing (default: 32)\n        \"truncate\": True,                # Optional: Truncate the inputs that are longer than the maximum supported size\n        \"truncation_direction\": \"Right\",    # Optional: Direction to truncate the inputs\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb"
+      },
+      {
+        "block_id": "WfUidsmG2osmL8xOz5CcWMDdnDf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.vector.request.ranker.ModelRanker;\n\nMilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()\n        .uri(\"http://localhost:19530\")\n        .build());\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ModelRanker rerank = ModelRanker.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .name(\"tei_semantic_ranker\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .inputFieldNames(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"document\"))\n        .provider(\"tei\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .queries(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"renewable energy developments\"))\n        .endpoint(\"http://localhost:8080\")\n        .param(\"max_client_batch_size\", \"32\")\n        .param(\"truncate\", \"true\")\n        .param(\"truncation_direction\", \"Right\")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb"
+      },
+      {
+        "block_id": "LL4Kd13evo54ghxNwObc5SwInDe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// nodejs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb"
+      },
+      {
+        "block_id": "DlbVdApPhoKrRYxOBvCcAG6SnEh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb"
+      },
+      {
+        "block_id": "R6XndZqLtohx42xxddYcgoyTn7c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb"
+      },
+      {
+        "block_id": "R6rNdY7zso9Yf4xFKZyc4FIIn1g",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nauto rerank = std::make_shared<milvus::ModelRerank>(\"tei_semantic_ranker\");\nrerank->AddInputFieldName(\"document\");\nrerank->SetProvider(\"tei\");\nrerank->SetQueries(std::vector<std::string>{\"renewable energy developments\"});\nrerank->SetEndpoint(\"http://localhost:8080\");\nrerank->AddParam(\"max_client_batch_size\", \"32\");\nrerank->AddParam(\"truncate\", \"true\");\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank->AddParam(\"truncation_direction\", \"Right\");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "CDz2dAa3bsb6tfbYBegcQRDvnYb"
+      },
+      {
+        "block_id": "HYRvd6KNBocu01xbZZEcfbFQn2d",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "TEI ranker-specific parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "THyBdrhlzoOnV0x8FZqcMHSXnWg",
+        "block_type": 2,
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following parameters are specific to the TEI ranker:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "block_type": 31,
+        "children": [
+          "GNnZdSikjoRlDyxqs3LcM3zinMg",
+          "PBNPdr1upoQBGyxRiy7cL77PnIf",
+          "EQ18d45xNonxrWxlzgucqYoZngd",
+          "TiXxdoaeDobcJWxWlFXcp7xSnDh",
+          "K2aQd2gLooVRYkxO8XqckLcwnle",
+          "YXhPdssIPoD699xCnthcTUxInPh",
+          "Dfpxd50wjoJjVoxkzr0cBdeDnvb",
+          "LV7xddMIWoWmE5xeCHacclaqnMb",
+          "X0PodsCNDoR1sPxDeEHcOWX0nTf",
+          "OceKdCCoCoDHkExeoTGcOl9bnbb",
+          "Uvsmd0a83oUJDUxrJXwcKmldn0e",
+          "T5hAdey0poH3MWx43lNc0jZvnBc",
+          "B6mLde75foof8PxzuLEc8w5WnQh",
+          "SwFKdq33voMYKlxzzqUc6Uapnth",
+          "Ho3cdOCMdoNpSvx4tWCcU2u8nbd",
+          "Et7MdASGzoXje3xokS5coXQqn3c",
+          "IgFLdhVlVoyHyexkxSVcR6yynxf",
+          "R2oedDildoYW3HxtaB4cUa20nYc",
+          "OkHLdRmCzoowJZxomCGcMowQnwd",
+          "PUZnd8tQZoa4rhxZFtPcDzqnn4g",
+          "F7DYdTDqhoPNECxqvSNcuNgfnPf",
+          "VvhqdlRHdo1UCUxFN1ic41XEnJf",
+          "JVHrdgYnho87MYxi2HQcH9hsnOu",
+          "HS8Ndzl9uocrIBx8xyocs1aFnuf",
+          "XYcidBiwYoh4vyx0ORwcRUS4nLh",
+          "ZqbndWeyDo58bsxQdylcUYsCnYf",
+          "QtTcdevq2oLTbBxilSac23ZinJb",
+          "Y5f1d3nQmonTOVxBl6XciJOenhg",
+          "INGTdoiIioHSfjxj3wAcqKJ5nfb",
+          "J4QzdBlrSogenhxjN1HcuvWEnbg",
+          "XgLcddl7CovrL4xDGTWcq4G0nH3",
+          "VxljdYHlloxgdWxys8Ec0uCbnSh"
+        ],
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "table": {
+          "cells": [
+            "GNnZdSikjoRlDyxqs3LcM3zinMg",
+            "PBNPdr1upoQBGyxRiy7cL77PnIf",
+            "EQ18d45xNonxrWxlzgucqYoZngd",
+            "TiXxdoaeDobcJWxWlFXcp7xSnDh",
+            "K2aQd2gLooVRYkxO8XqckLcwnle",
+            "YXhPdssIPoD699xCnthcTUxInPh",
+            "Dfpxd50wjoJjVoxkzr0cBdeDnvb",
+            "LV7xddMIWoWmE5xeCHacclaqnMb",
+            "X0PodsCNDoR1sPxDeEHcOWX0nTf",
+            "OceKdCCoCoDHkExeoTGcOl9bnbb",
+            "Uvsmd0a83oUJDUxrJXwcKmldn0e",
+            "T5hAdey0poH3MWx43lNc0jZvnBc",
+            "B6mLde75foof8PxzuLEc8w5WnQh",
+            "SwFKdq33voMYKlxzzqUc6Uapnth",
+            "Ho3cdOCMdoNpSvx4tWCcU2u8nbd",
+            "Et7MdASGzoXje3xokS5coXQqn3c",
+            "IgFLdhVlVoyHyexkxSVcR6yynxf",
+            "R2oedDildoYW3HxtaB4cUa20nYc",
+            "OkHLdRmCzoowJZxomCGcMowQnwd",
+            "PUZnd8tQZoa4rhxZFtPcDzqnn4g",
+            "F7DYdTDqhoPNECxqvSNcuNgfnPf",
+            "VvhqdlRHdo1UCUxFN1ic41XEnJf",
+            "JVHrdgYnho87MYxi2HQcH9hsnOu",
+            "HS8Ndzl9uocrIBx8xyocs1aFnuf",
+            "XYcidBiwYoh4vyx0ORwcRUS4nLh",
+            "ZqbndWeyDo58bsxQdylcUYsCnYf",
+            "QtTcdevq2oLTbBxilSac23ZinJb",
+            "Y5f1d3nQmonTOVxBl6XciJOenhg",
+            "INGTdoiIioHSfjxj3wAcqKJ5nfb",
+            "J4QzdBlrSogenhxjN1HcuvWEnbg",
+            "XgLcddl7CovrL4xDGTWcq4G0nH3",
+            "VxljdYHlloxgdWxys8Ec0uCbnSh"
+          ],
+          "property": {
+            "column_size": 4,
+            "column_width": [
+              136,
+              100,
+              205,
+              186
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 8
+          }
+        }
+      },
+      {
+        "block_id": "GNnZdSikjoRlDyxqs3LcM3zinMg",
+        "block_type": 32,
+        "children": [
+          "WgVmdbWSsocX9bxmonncwbtsnTw"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WgVmdbWSsocX9bxmonncwbtsnTw",
+        "block_type": 2,
+        "parent_id": "GNnZdSikjoRlDyxqs3LcM3zinMg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PBNPdr1upoQBGyxRiy7cL77PnIf",
+        "block_type": 32,
+        "children": [
+          "W5S4d6DcaohzNvxqKszcmSGQnjc"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "W5S4d6DcaohzNvxqKszcmSGQnjc",
+        "block_type": 2,
+        "parent_id": "PBNPdr1upoQBGyxRiy7cL77PnIf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Required?",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EQ18d45xNonxrWxlzgucqYoZngd",
+        "block_type": 32,
+        "children": [
+          "EgAldMTYvot56dx1uhzcktZEnLg"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EgAldMTYvot56dx1uhzcktZEnLg",
+        "block_type": 2,
+        "parent_id": "EQ18d45xNonxrWxlzgucqYoZngd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TiXxdoaeDobcJWxWlFXcp7xSnDh",
+        "block_type": 32,
+        "children": [
+          "VL8tdaDJbo25TuxkGwBchnOUnHe"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VL8tdaDJbo25TuxkGwBchnOUnHe",
+        "block_type": 2,
+        "parent_id": "TiXxdoaeDobcJWxWlFXcp7xSnDh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Value / Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K2aQd2gLooVRYkxO8XqckLcwnle",
+        "block_type": 32,
+        "children": [
+          "Pk3XdK1G3ocbtzxMtnJcxUIHnve"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Pk3XdK1G3ocbtzxMtnJcxUIHnve",
+        "block_type": 2,
+        "parent_id": "K2aQd2gLooVRYkxO8XqckLcwnle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "reranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YXhPdssIPoD699xCnthcTUxInPh",
+        "block_type": 32,
+        "children": [
+          "InFbddhpHoQRFIxejlEcgvbqnFf"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "InFbddhpHoQRFIxejlEcgvbqnFf",
+        "block_type": 2,
+        "parent_id": "YXhPdssIPoD699xCnthcTUxInPh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dfpxd50wjoJjVoxkzr0cBdeDnvb",
+        "block_type": 32,
+        "children": [
+          "Ns5pdhs8qoMTIFxlifHc0GfJnXe"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ns5pdhs8qoMTIFxlifHc0GfJnXe",
+        "block_type": 2,
+        "parent_id": "Dfpxd50wjoJjVoxkzr0cBdeDnvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Must be set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"model\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to enable model reranking.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LV7xddMIWoWmE5xeCHacclaqnMb",
+        "block_type": 32,
+        "children": [
+          "DpeOdp4Fgo5smux8dBicyDfAn8W"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DpeOdp4Fgo5smux8dBicyDfAn8W",
+        "block_type": 2,
+        "parent_id": "LV7xddMIWoWmE5xeCHacclaqnMb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"model\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "X0PodsCNDoR1sPxDeEHcOWX0nTf",
+        "block_type": 32,
+        "children": [
+          "VmKXdtwy8oRZcMxNn3bczTkGnjh"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VmKXdtwy8oRZcMxNn3bczTkGnjh",
+        "block_type": 2,
+        "parent_id": "X0PodsCNDoR1sPxDeEHcOWX0nTf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "provider",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OceKdCCoCoDHkExeoTGcOl9bnbb",
+        "block_type": 32,
+        "children": [
+          "VNQxdiLNEoa4InxgB02cdHBxnW6"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VNQxdiLNEoa4InxgB02cdHBxnW6",
+        "block_type": 2,
+        "parent_id": "OceKdCCoCoDHkExeoTGcOl9bnbb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Uvsmd0a83oUJDUxrJXwcKmldn0e",
+        "block_type": 32,
+        "children": [
+          "JoAPdItNeossVFxioglc2P6WnQd"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JoAPdItNeossVFxioglc2P6WnQd",
+        "block_type": 2,
+        "parent_id": "Uvsmd0a83oUJDUxrJXwcKmldn0e",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The model service provider to use for reranking.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "T5hAdey0poH3MWx43lNc0jZvnBc",
+        "block_type": 32,
+        "children": [
+          "FbxPdt8i1oOvHKxfrigcNtAanFC"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FbxPdt8i1oOvHKxfrigcNtAanFC",
+        "block_type": 2,
+        "parent_id": "T5hAdey0poH3MWx43lNc0jZvnBc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"tei\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B6mLde75foof8PxzuLEc8w5WnQh",
+        "block_type": 32,
+        "children": [
+          "VOYpdsPNcowtVJxGP71ciIF2nSb"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VOYpdsPNcowtVJxGP71ciIF2nSb",
+        "block_type": 2,
+        "parent_id": "B6mLde75foof8PxzuLEc8w5WnQh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "queries",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SwFKdq33voMYKlxzzqUc6Uapnth",
+        "block_type": 32,
+        "children": [
+          "IbpcdWkRFo9IP5xcqGvcklYmnyg",
+          "VjWRdcPebo9uJsx4ZsycabpXn0f"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IbpcdWkRFo9IP5xcqGvcklYmnyg",
+        "block_type": 2,
+        "parent_id": "SwFKdq33voMYKlxzzqUc6Uapnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VjWRdcPebo9uJsx4ZsycabpXn0f",
+        "block_type": 2,
+        "parent_id": "SwFKdq33voMYKlxzzqUc6Uapnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ho3cdOCMdoNpSvx4tWCcU2u8nbd",
+        "block_type": 32,
+        "children": [
+          "Dt19dSKmMo2JNLx933qcZfRgneg"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Dt19dSKmMo2JNLx933qcZfRgneg",
+        "block_type": 2,
+        "parent_id": "Ho3cdOCMdoNpSvx4tWCcU2u8nbd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List of query strings used by the rerank model to calculate relevance scores. The number of query strings must match exactly the number of queries in your search operation (even when using query vectors instead of text), otherwise an error will be reported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Et7MdASGzoXje3xokS5coXQqn3c",
+        "block_type": 32,
+        "children": [
+          "X4Msdtby1oa8Qyxj0MjcUvl8nVb"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "X4Msdtby1oa8Qyxj0MjcUvl8nVb",
+        "block_type": 2,
+        "parent_id": "Et7MdASGzoXje3xokS5coXQqn3c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[\"search query\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IgFLdhVlVoyHyexkxSVcR6yynxf",
+        "block_type": 32,
+        "children": [
+          "ZSKudntYgoPS8txMgbmcJShAnnd"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZSKudntYgoPS8txMgbmcJShAnnd",
+        "block_type": 2,
+        "parent_id": "IgFLdhVlVoyHyexkxSVcR6yynxf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "endpoint",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R2oedDildoYW3HxtaB4cUa20nYc",
+        "block_type": 32,
+        "children": [
+          "ZAU2d4dVqoOwAwx0fKFc6sxpnKe"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZAU2d4dVqoOwAwx0fKFc6sxpnKe",
+        "block_type": 2,
+        "parent_id": "R2oedDildoYW3HxtaB4cUa20nYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Yes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OkHLdRmCzoowJZxomCGcMowQnwd",
+        "block_type": 32,
+        "children": [
+          "N7u4dHYBfoHf6bxghdhclkhEnjE"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "N7u4dHYBfoHf6bxghdhclkhEnjE",
+        "block_type": 2,
+        "parent_id": "OkHLdRmCzoowJZxomCGcMowQnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Your TEI service URL.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PUZnd8tQZoa4rhxZFtPcDzqnn4g",
+        "block_type": 32,
+        "children": [
+          "RGoSdRGcJo8EkbxcE3HcUrhdnIc"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RGoSdRGcJo8EkbxcE3HcUrhdnIc",
+        "block_type": 2,
+        "parent_id": "PUZnd8tQZoa4rhxZFtPcDzqnn4g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:8080",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F7DYdTDqhoPNECxqvSNcuNgfnPf",
+        "block_type": 32,
+        "children": [
+          "JBBqdWg1do3AKwxIsU3cZABLnye"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JBBqdWg1do3AKwxIsU3cZABLnye",
+        "block_type": 2,
+        "parent_id": "F7DYdTDqhoPNECxqvSNcuNgfnPf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "max_client_batch_size",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VvhqdlRHdo1UCUxFN1ic41XEnJf",
+        "block_type": 32,
+        "children": [
+          "W3IZdcaPWoH4jYxpe1pcvV8mnEf",
+          "I883d3eJaovGzYxBfsccmWv3nWh"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "W3IZdcaPWoH4jYxpe1pcvV8mnEf",
+        "block_type": 2,
+        "parent_id": "VvhqdlRHdo1UCUxFN1ic41XEnJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "I883d3eJaovGzYxBfsccmWv3nWh",
+        "block_type": 2,
+        "parent_id": "VvhqdlRHdo1UCUxFN1ic41XEnJf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JVHrdgYnho87MYxi2HQcH9hsnOu",
+        "block_type": 32,
+        "children": [
+          "RaVQdSk34o37G1xneAKcnrgTn4d"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RaVQdSk34o37G1xneAKcnrgTn4d",
+        "block_type": 2,
+        "parent_id": "JVHrdgYnho87MYxi2HQcH9hsnOu",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Since model services may not process all data at once, this sets the batch size for accessing the model service in multiple requests.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HS8Ndzl9uocrIBx8xyocs1aFnuf",
+        "block_type": 32,
+        "children": [
+          "HmbYdrbjtoYnDqx2mf6cBqNYnRf"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HmbYdrbjtoYnDqx2mf6cBqNYnRf",
+        "block_type": 2,
+        "parent_id": "HS8Ndzl9uocrIBx8xyocs1aFnuf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "32",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (default)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XYcidBiwYoh4vyx0ORwcRUS4nLh",
+        "block_type": 32,
+        "children": [
+          "NCKVdx6ruoMLoXxAyrvcmZgDnPf"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NCKVdx6ruoMLoXxAyrvcmZgDnPf",
+        "block_type": 2,
+        "parent_id": "XYcidBiwYoh4vyx0ORwcRUS4nLh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "truncate",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZqbndWeyDo58bsxQdylcUYsCnYf",
+        "block_type": 32,
+        "children": [
+          "KowKdPf6Woqro8xqV0bcqgsQnUb"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KowKdPf6Woqro8xqV0bcqgsQnUb",
+        "block_type": 2,
+        "parent_id": "ZqbndWeyDo58bsxQdylcUYsCnYf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QtTcdevq2oLTbBxilSac23ZinJb",
+        "block_type": 32,
+        "children": [
+          "L2rfdEzc1ouKG7xrV0jcT5J0nSh"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "L2rfdEzc1ouKG7xrV0jcT5J0nSh",
+        "block_type": 2,
+        "parent_id": "QtTcdevq2oLTbBxilSac23ZinJb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to truncate inputs exceeding max sequence length. If ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "False",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", long inputs raise errors.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Y5f1d3nQmonTOVxBl6XciJOenhg",
+        "block_type": 32,
+        "children": [
+          "KJOwdC6dRotfFYxrP2fcbD1inzh"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KJOwdC6dRotfFYxrP2fcbD1inzh",
+        "block_type": 2,
+        "parent_id": "Y5f1d3nQmonTOVxBl6XciJOenhg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "True",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "False",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "INGTdoiIioHSfjxj3wAcqKJ5nfb",
+        "block_type": 32,
+        "children": [
+          "F6iIdKRVdoZskOxZNOBcQlEbnBb"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "F6iIdKRVdoZskOxZNOBcQlEbnBb",
+        "block_type": 2,
+        "parent_id": "INGTdoiIioHSfjxj3wAcqKJ5nfb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "truncation_direction",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J4QzdBlrSogenhxjN1HcuvWEnbg",
+        "block_type": 32,
+        "children": [
+          "RblpdoiERo4QROxPGJLcKBojnWf"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RblpdoiERo4QROxPGJLcKBojnWf",
+        "block_type": 2,
+        "parent_id": "J4QzdBlrSogenhxjN1HcuvWEnbg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XgLcddl7CovrL4xDGTWcq4G0nH3",
+        "block_type": 32,
+        "children": [
+          "NZtOdRPKVo2LoZxFXNNcjWDZnSd",
+          "HHQ2dUetooCA70xv0zbclYdsndd",
+          "EksidUEcRojWoqxpMZ7cYkgOnCh"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NZtOdRPKVo2LoZxFXNNcjWDZnSd",
+        "block_type": 2,
+        "parent_id": "XgLcddl7CovrL4xDGTWcq4G0nH3",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Direction to truncate from when input is too long:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HHQ2dUetooCA70xv0zbclYdsndd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"Right\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (default):  Tokens are removed from the end of the sequence until the maximum supported size is matched.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XgLcddl7CovrL4xDGTWcq4G0nH3"
+      },
+      {
+        "block_id": "EksidUEcRojWoqxpMZ7cYkgOnCh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"Left\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Tokens are removed from the beginning of the sequence.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "XgLcddl7CovrL4xDGTWcq4G0nH3"
+      },
+      {
+        "block_id": "VxljdYHlloxgdWxys8Ec0uCbnSh",
+        "block_type": 32,
+        "children": [
+          "HJA6dwQrpodLWMxQnoncXL4snab"
+        ],
+        "parent_id": "V5stdqeX2oYv6hxPX2wc7y12n1g",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HJA6dwQrpodLWMxQnoncXL4snab",
+        "block_type": 2,
+        "parent_id": "VxljdYHlloxgdWxys8Ec0uCbnSh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\"Right\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"Left\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CQlWdk9bqoUc6dxNX0zcpVQRnph",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Cj13drV9rolVIyxX7obcBXKKn9b",
+          "SDGldk22zofDRex0AEIc7SFendg"
+        ],
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "Cj13drV9rolVIyxX7obcBXKKn9b",
+        "block_type": 2,
+        "parent_id": "CQlWdk9bqoUc6dxNX0zcpVQRnph",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SDGldk22zofDRex0AEIc7SFendg",
+        "block_type": 2,
+        "parent_id": "CQlWdk9bqoUc6dxNX0zcpVQRnph",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For general parameters shared across all model rankers (e.g., ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "provider",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "queries",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "), refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Create a model ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FJiMtwKKYgiCf24kdFyIc9dv4nRc%23M0eMdkF4AoauAbxy3gWcTMhPnqc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WnCSdKRPwowgcvxVmL4c5Kihnud",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Apply to standard vector search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc"
+      },
+      {
+        "block_id": "CJ1SdVQSUol6wcxQJGncqx0snod",
+        "block_type": 2,
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To apply TEI Ranker to a standard vector search:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G4bEdTjnistyADbDlbyc6iAVned",
+        "block_type": 49,
+        "children": [
+          "W4vcdrfScoQtJQx0haWcYm3kn2c",
+          "EqEldTchCoonf1xF9hmc6ObDn0g",
+          "TuekdeXB5oUmpUxWv4EcsYd4nUV",
+          "JU0gdiC3loOVZjxTCdwcI2Mmnjd",
+          "Gi9Edpd20obHqEx78Q4cbBbDnWb",
+          "QcTAdGdAzo5uuixgEX5crIR1nmh"
+        ],
+        "parent_id": "Bkzqd3ekaoWY8exfKFwcTMzUnYc",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "W4vcdrfScoQtJQx0haWcYm3kn2c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Execute search with vLLM reranking\nresults = client.search(\n    collection_name=\"your_collection\",\n    data=[your_query_vector],  # Replace with your query vector\n    anns_field=\"dense_vector\",                   # Vector field to search\n    limit=5,                                     # Number of results to return\n    output_fields=[\"document\"],                  # Include text field for reranking\n    #  highlight-next-line\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ranker=",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",                         # Apply tei reranking\n    consistency_level=\"Bounded\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "G4bEdTjnistyADbDlbyc6iAVned"
+      },
+      {
+        "block_id": "EqEldTchCoonf1xF9hmc6ObDn0g",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.common.ConsistencyLevel;\nimport io.milvus.v2.service.vector.request.SearchReq;\nimport io.milvus.v2.service.vector.response.SearchResp;\nimport io.milvus.v2.service.vector.request.data.EmbeddedText;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchReq searchReq = SearchReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"your_collection\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .data(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(your_query_vector))\n        .annsField(\"vector_field\")\n        .limit(5)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"document\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .functionScore(FunctionScore.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n                .addFunction(rerank)\n                .build())\n        .consistencyLevel(ConsistencyLevel.BOUNDED)\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".search(searchReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "G4bEdTjnistyADbDlbyc6iAVned"
+      },
+      {
+        "block_id": "TuekdeXB5oUmpUxWv4EcsYd4nUV",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// nodejs",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "G4bEdTjnistyADbDlbyc6iAVned"
+      },
+      {
+        "block_id": "JU0gdiC3loOVZjxTCdwcI2Mmnjd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "G4bEdTjnistyADbDlbyc6iAVned"
+      },
+      {
+        "block_id": "Gi9Edpd20obHqEx78Q4cbBbDnWb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "G4bEdTjnistyADbDlbyc6iAVned"
+      },
+      {
+        "block_id": "QcTAdGdAzo5uuixgEX5crIR1nmh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto function_score = std::make_shared<milvus::FunctionScore>();\nfunction_score->AddFunction(rerank);\n\nauto request = milvus::SearchRequest()\n                   .WithCollectionName(\"your_collection\")\n                   .WithAnnsField(\"vector_field\")\n                   .WithRerank(function_score)\n                   .WithLimit(5)\n                   .AddOutputField(\"document\")\n                   .AddFloatVector(your_query_vector)\n                   .WithConsistencyLevel(milvus::ConsistencyLevel::BOUNDED);\n\nmilvus::SearchResponse response;\nauto status = client->Search(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "G4bEdTjnistyADbDlbyc6iAVned"
+      }
+    ],
+    "counts": 98
+  }
+}

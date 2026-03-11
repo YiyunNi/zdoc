@@ -1,0 +1,184 @@
+{
+  "created_time": "1732874095",
+  "modified_time": "1761294653",
+  "name": "FunctionType",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "LkxXfcSA7lKXqEdu8mpcHI8Fnqd",
+  "token": "Z467dWnBYoGmDhxbJMocAGoHnle",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/Z467dWnBYoGmDhxbJMocAGoHnle",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Z467dWnBYoGmDhxbJMocAGoHnle",
+        "block_type": 1,
+        "children": [
+          "ZD20dvHjgoQAHmxm4Cwc8AIQn3f",
+          "YEOzdGwB7ocXRpxHFz0c0FXqn6g",
+          "N7gedbLcmoCZbvxomu1cmmAanid"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionType",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "ZD20dvHjgoQAHmxm4Cwc8AIQn3f",
+        "block_type": 2,
+        "parent_id": "Z467dWnBYoGmDhxbJMocAGoHnle",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an enumeration that provides the following constants.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YEOzdGwB7ocXRpxHFz0c0FXqn6g",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Constants",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Z467dWnBYoGmDhxbJMocAGoHnle"
+      },
+      {
+        "block_id": "N7gedbLcmoCZbvxomu1cmmAanid",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (1)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "IcQxd8V2hodcMDxQYkRcg4DRnHd"
+        ],
+        "parent_id": "Z467dWnBYoGmDhxbJMocAGoHnle"
+      },
+      {
+        "block_id": "IcQxd8V2hodcMDxQYkRcg4DRnHd",
+        "block_type": 2,
+        "parent_id": "N7gedbLcmoCZbvxomu1cmmAanid",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sets the function type to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BM25",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 5
+  },
+  "slug": "v2-Collections-FunctionType"
+}

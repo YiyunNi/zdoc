@@ -1,0 +1,1004 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1740968803",
+  "node_token": "UnSHwmJSZii2tkkbzXQcEEJxn59",
+  "node_type": "origin",
+  "obj_create_time": "1740968803",
+  "obj_edit_time": "1741320429",
+  "obj_token": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+  "obj_type": "docx",
+  "origin_node_token": "UnSHwmJSZii2tkkbzXQcEEJxn59",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "BQbrwVyiMi64yykBERZcRKH4nvc",
+  "space_id": "7167193056431783939",
+  "title": "ListResourceGroups()",
+  "slug": "v2-ResourceGroup-ListResourceGroups",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "block_type": 1,
+        "children": [
+          "doxcn54mklH7KrpxDluLsU1dkSc",
+          "doxcnkWEb0fCkJrgRl97enZqfxe",
+          "doxcn7wOm2r4RdH5CVlLpyC1Rsf",
+          "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+          "doxcnrRCLrDnjXzJVJJEPQYK9qg",
+          "doxcnDBi0oXlsGejo4de71dAoqc",
+          "doxcn6MbwwqTCG0YKWZl2ErfKHd",
+          "doxcnI4qeLEmGEKyYZKy0lNAxDd",
+          "doxcncpAJMva9ZXA1ZA56TYrtwe",
+          "doxcnzDR7tRhkl7mNd21DRofHGc",
+          "doxcnyqjJXUnDMu8L6EPubVfIZg",
+          "doxcn4HIqm4bQYvtPurCgMPCLKe",
+          "doxcnojinzVGLWzPAmj1Yz7ijPb",
+          "doxcnsNp7jh6al3oRYZkG36CMIc",
+          "doxcnRTFvgVenYHy0BS1Urf2vhd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ListResourceGroups()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn54mklH7KrpxDluLsU1dkSc",
+        "block_type": 2,
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This method lists the names of all available resource groups.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnkWEb0fCkJrgRl97enZqfxe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func (c *Client) ListResourceGroups(ctx context.Context, opt ListResourceGroupsOption, callOptions ...grpc.CallOption) ([]string, error)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcn7wOm2r4RdH5CVlLpyC1Rsf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "block_type": 31,
+        "children": [
+          "doxcnEQ60qfyRe8fOp2u7oxGJPf",
+          "doxcnv0RpiDuRsHQrtMNq5SKAff",
+          "doxcnbhDPbGVvrqVQ8CghHgbtLc",
+          "doxcnbvUd9UmE37ZjyrPNd5c7vb",
+          "doxcnmPQklYXmVnMEsDOs2B5tGc",
+          "doxcnAEVdR9JKvy8HEpsICfchjf",
+          "doxcn8KqLLkTCqxr7hEcXSSM9k4",
+          "doxcnGFVDaOWcxelMGDJsFwdRxe",
+          "doxcnJYbXjowusa19B8S4AdZYvb",
+          "doxcnreu464iMbwnPz5wPmK04gf",
+          "doxcnBCkyHj2bWh5XY6Wl56L1Fd",
+          "doxcnDoKP3JgDkthuiPAGEbdGHf"
+        ],
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "table": {
+          "cells": [
+            "doxcnEQ60qfyRe8fOp2u7oxGJPf",
+            "doxcnv0RpiDuRsHQrtMNq5SKAff",
+            "doxcnbhDPbGVvrqVQ8CghHgbtLc",
+            "doxcnbvUd9UmE37ZjyrPNd5c7vb",
+            "doxcnmPQklYXmVnMEsDOs2B5tGc",
+            "doxcnAEVdR9JKvy8HEpsICfchjf",
+            "doxcn8KqLLkTCqxr7hEcXSSM9k4",
+            "doxcnGFVDaOWcxelMGDJsFwdRxe",
+            "doxcnJYbXjowusa19B8S4AdZYvb",
+            "doxcnreu464iMbwnPz5wPmK04gf",
+            "doxcnBCkyHj2bWh5XY6Wl56L1Fd",
+            "doxcnDoKP3JgDkthuiPAGEbdGHf"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              138,
+              421,
+              298
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEQ60qfyRe8fOp2u7oxGJPf",
+        "block_type": 32,
+        "children": [
+          "doxcns2FvmZANP9qdkvFcJHJTXb"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcns2FvmZANP9qdkvFcJHJTXb",
+        "block_type": 2,
+        "parent_id": "doxcnEQ60qfyRe8fOp2u7oxGJPf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnv0RpiDuRsHQrtMNq5SKAff",
+        "block_type": 32,
+        "children": [
+          "doxcnytQsaCsq5iot2se0o7mHdh"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnytQsaCsq5iot2se0o7mHdh",
+        "block_type": 2,
+        "parent_id": "doxcnv0RpiDuRsHQrtMNq5SKAff",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbhDPbGVvrqVQ8CghHgbtLc",
+        "block_type": 32,
+        "children": [
+          "doxcnGPbXRJ0zg3Vh3M45aAhIUe"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnGPbXRJ0zg3Vh3M45aAhIUe",
+        "block_type": 2,
+        "parent_id": "doxcnbhDPbGVvrqVQ8CghHgbtLc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnbvUd9UmE37ZjyrPNd5c7vb",
+        "block_type": 32,
+        "children": [
+          "doxcn9Hh0Rp2FFCWam6XawINwQb"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcn9Hh0Rp2FFCWam6XawINwQb",
+        "block_type": 2,
+        "parent_id": "doxcnbvUd9UmE37ZjyrPNd5c7vb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ctx",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnmPQklYXmVnMEsDOs2B5tGc",
+        "block_type": 32,
+        "children": [
+          "doxcnEI3Zvokae0J6rknkKd9CDf"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnEI3Zvokae0J6rknkKd9CDf",
+        "block_type": 2,
+        "parent_id": "doxcnmPQklYXmVnMEsDOs2B5tGc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Context for the current call to work.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnAEVdR9JKvy8HEpsICfchjf",
+        "block_type": 32,
+        "children": [
+          "doxcn56crHpdMWYsjTESITXpZBf"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcn56crHpdMWYsjTESITXpZBf",
+        "block_type": 2,
+        "parent_id": "doxcnAEVdR9JKvy8HEpsICfchjf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "context.Context",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn8KqLLkTCqxr7hEcXSSM9k4",
+        "block_type": 32,
+        "children": [
+          "doxcnoW7oTPeGRmYkpWssmDV14F"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnoW7oTPeGRmYkpWssmDV14F",
+        "block_type": 2,
+        "parent_id": "doxcn8KqLLkTCqxr7hEcXSSM9k4",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "opt",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGFVDaOWcxelMGDJsFwdRxe",
+        "block_type": 32,
+        "children": [
+          "doxcnXIfKp7ZBKgT5PA1z4CcX6e"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnXIfKp7ZBKgT5PA1z4CcX6e",
+        "block_type": 2,
+        "parent_id": "doxcnGFVDaOWcxelMGDJsFwdRxe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional parameters of the methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJYbXjowusa19B8S4AdZYvb",
+        "block_type": 32,
+        "children": [
+          "doxcnP9wfY62t75vISknsT40HuR"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnP9wfY62t75vISknsT40HuR",
+        "block_type": 2,
+        "parent_id": "doxcnJYbXjowusa19B8S4AdZYvb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ListResourceGroupsOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FUnSHwmJSZii2tkkbzXQcEEJxn59%23doxcnrRCLrDnjXzJVJJEPQYK9qg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnreu464iMbwnPz5wPmK04gf",
+        "block_type": 32,
+        "children": [
+          "doxcnPgz0AckoPXvk2MR35vLQde"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnPgz0AckoPXvk2MR35vLQde",
+        "block_type": 2,
+        "parent_id": "doxcnreu464iMbwnPz5wPmK04gf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "callOptions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnBCkyHj2bWh5XY6Wl56L1Fd",
+        "block_type": 32,
+        "children": [
+          "doxcny1a7stKaJgRggsAp8cPKfb"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcny1a7stKaJgRggsAp8cPKfb",
+        "block_type": 2,
+        "parent_id": "doxcnBCkyHj2bWh5XY6Wl56L1Fd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optional parameters for calling the methods.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnDoKP3JgDkthuiPAGEbdGHf",
+        "block_type": 32,
+        "children": [
+          "doxcnpsne6XLeuKQxhN1QCWPgZc"
+        ],
+        "parent_id": "doxcnYZNa8QrbUwjxsEyJAHwPXf",
+        "table_cell": {}
+      },
+      {
+        "block_id": "doxcnpsne6XLeuKQxhN1QCWPgZc",
+        "block_type": 2,
+        "parent_id": "doxcnDoKP3JgDkthuiPAGEbdGHf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "grpc.CallOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnrRCLrDnjXzJVJJEPQYK9qg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ListResourceGroupsOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcnDBi0oXlsGejo4de71dAoqc",
+        "block_type": 2,
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This is an interface type. The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "listResourceGroupsOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " struct type implements this interface type. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn6MbwwqTCG0YKWZl2ErfKHd",
+        "block_type": 2,
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NewListResourceGroupsOption()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function to get the concrete implementation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnI4qeLEmGEKyYZKy0lNAxDd",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "NewDescribeResourceGroupOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcncpAJMva9ZXA1ZA56TYrtwe",
+        "block_type": 2,
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The signature of this method is as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnzDR7tRhkl7mNd21DRofHGc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "func NewListResourceGroupsOption() *listResourceGroupsOption",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcnyqjJXUnDMu8L6EPubVfIZg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Return",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcn4HIqm4bQYvtPurCgMPCLKe",
+        "block_type": 2,
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[]string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnojinzVGLWzPAmj1Yz7ijPb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcnsNp7jh6al3oRYZkG36CMIc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n        \"context\"\n        \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\nrgNames, err := cli.ListResourceGroups(ctx, milvusclient.NewListResourceGroupsOption())\nif err != nil {\n    // handle error\n}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fmt.Println(rgNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf"
+      },
+      {
+        "block_id": "doxcnRTFvgVenYHy0BS1Urf2vhd",
+        "block_type": 2,
+        "parent_id": "PgTfdL9p1ogT1Lx0EMmckYSnnDf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 40
+  }
+}

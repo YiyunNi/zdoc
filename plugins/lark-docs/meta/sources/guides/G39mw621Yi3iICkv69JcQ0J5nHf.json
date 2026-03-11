@@ -1,0 +1,2943 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1747208309",
+  "node_token": "G39mw621Yi3iICkv69JcQ0J5nHf",
+  "node_type": "origin",
+  "obj_create_time": "1747208309",
+  "obj_edit_time": "1768378592",
+  "obj_token": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+  "obj_type": "docx",
+  "origin_node_token": "G39mw621Yi3iICkv69JcQ0J5nHf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "HPP3wBq1xiuGWYk4QfKcZ2PrnHf",
+  "space_id": "7167193056431783939",
+  "title": "Gaussian Decay",
+  "slug": "gaussian-decay",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "block_type": 1,
+        "children": [
+          "Dt1JdEq8po0LdWxtP1ec8K54nte",
+          "OPNid7ERYo1XTdxg7NTcKMeGnmh",
+          "Xb03duURBosZUcxmPzWcUjVVnIg",
+          "Vbxfdch2noqVOJxfVNgcEJmtnxc",
+          "KQq5dfLJ3oBfWMxsPprcUm25ntR",
+          "JUnSdto1go54CbxshRucYErYn7d",
+          "JxmAdNUu8oMklyxcK0scLyf6ncu",
+          "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+          "K6ZHd7O8BoEpx3xh5NTc6r7Infe",
+          "HQFPdy7C8oE8umxvfCxcBzD7nig",
+          "JVoxdWx6Xo8b56x7O3icC5HunXg",
+          "CmPSd4KguoOAfXxyfP7cznFqnqe",
+          "RKqRdAvg7oHBaPxyb3ZcxKGOntf",
+          "OBDfdLjwxoN0I5xFoyTc4NplnCb",
+          "Odf9dczMAo0hvPxONWNcJsLXnUf",
+          "LCE3dC8Q3oEHPmxbX6vcEzSEnYc",
+          "LU14d4vsMoL8iRxYonpczilSnoS",
+          "Z7UydZwxHoLbyjx21jMcysw6n4y",
+          "VXCndcf3EoB40wxrOvwcB0ntnDL",
+          "ZPuBdLz9Ro1UIzxTnAIcSawMnyc",
+          "O2gHdrGUIoRwRYx4scfcVxDInmf",
+          "AFwhd2baVo5277xr4bKcqWa1nrD",
+          "UlaxdirMBooXxaxU88WcUW6Cnhd",
+          "HRvkdC0pBoEYQTxPUM9cYUsanEb",
+          "Mq8dd4SymoWGlSx7nUDcU0m8n4e",
+          "RIt9dSFsLovNj1xUvTNc828knOe",
+          "FmZgdJwQfoZW4Hxl0Xxc9ez9nif",
+          "Pq9sd0jqCoOZPjx5JSVcsEebnsg",
+          "BTBzdeX0boaMEJxzoyBcSl2nnEc",
+          "MfhsdViEqojlIIx49NKcaK7Unig",
+          "TSiWdXGIKo3szMxA6g5cjF9mnSd",
+          "EZn3dKCN4oR8eexzGoycWvZcn5c",
+          "Y0KzdRtjrogb87xkVWkcxGkvnCg",
+          "MQjJdgYfvolJCnxD54ecAmKNnKd",
+          "QZtgdsPx6oVzszxdcxRcCKyanCy",
+          "OM9ldU1Meo4p51xFA8vc8G9pnYd",
+          "PngmdkoKLsDpZjbtXyZctfHCndf",
+          "STcvdaSZCozKWGxapCycL8z2nhf",
+          "XBwjdYNT6ouv8QxEMrYcIwiPn6g",
+          "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+        ],
+        "comment_ids": [
+          "7564971053903249412"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian Decay",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7564971053903249412"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Dt1JdEq8po0LdWxtP1ec8K54nte",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian decay, also known as normal decay, creates the most natural-feeling adjustment to your search results. Like human vision that gradually blurs with distance, Gaussian decay creates a smooth, bell-shaped curve that gently reduces relevance as items move away from your ideal point. This approach is ideal when you want a balanced decay that doesn't harshly penalize items just outside your preferred range but still significantly reduces the relevance of distant items.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OPNid7ERYo1XTdxg7NTcKMeGnmh",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Unlike other decay rankers:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Xb03duURBosZUcxmPzWcUjVVnIg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Exponential decay drops sharply at first, creating a stronger initial penalty",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "Vbxfdch2noqVOJxfVNgcEJmtnxc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Linear decay decreases at a constant rate until reaching zero, creating a clear cutoff",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "KQq5dfLJ3oBfWMxsPprcUm25ntR",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian decay provides a more balanced, intuitive approach that feels natural to users.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JUnSdto1go54CbxshRucYErYn7d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When to use Gaussian decay",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "JxmAdNUu8oMklyxcK0scLyf6ncu",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian decay is particularly effective for:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "block_type": 31,
+        "children": [
+          "LOmVddBDhoaXIixzbjucCsVSnEe",
+          "MKnkd5wzzoou0Vxw9BVc8ZMdnwd",
+          "UPS0dH7EjojBkjxs1AXcPmzBn6r",
+          "Vc5Sdc72WowSTtxy8x7cgCfAnZd",
+          "AlWhdxhdNoaHZyxV8YFcn8Y2n5d",
+          "XPu9dzz7qoB6lzxwJ6Sc6d1knAf",
+          "EoMrd8cA8ohR2VxL3FFc0HJcnIg",
+          "BS7RdHaDJoPPOgxCMnxcVsY1nDc",
+          "S9cOdYS4kooVXdxGlwGcL3DpnJg",
+          "JyfEdXzGBozUBrx2tz5c1MDsnjc",
+          "MfgqdxUtlosYdzxSfyfcZYW7nxd",
+          "E016dtMSyoSW26xSRntcMVavn1b",
+          "ITzRdpPPGoAgxpxx4OycmBGYnag",
+          "Oyq7dYQwCoNaDRxGXDxc3Np3nmh",
+          "TMdYdv6Q4ocLm6xB34NcdOBgnBc"
+        ],
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "table": {
+          "cells": [
+            "LOmVddBDhoaXIixzbjucCsVSnEe",
+            "MKnkd5wzzoou0Vxw9BVc8ZMdnwd",
+            "UPS0dH7EjojBkjxs1AXcPmzBn6r",
+            "Vc5Sdc72WowSTtxy8x7cgCfAnZd",
+            "AlWhdxhdNoaHZyxV8YFcn8Y2n5d",
+            "XPu9dzz7qoB6lzxwJ6Sc6d1knAf",
+            "EoMrd8cA8ohR2VxL3FFc0HJcnIg",
+            "BS7RdHaDJoPPOgxCMnxcVsY1nDc",
+            "S9cOdYS4kooVXdxGlwGcL3DpnJg",
+            "JyfEdXzGBozUBrx2tz5c1MDsnjc",
+            "MfgqdxUtlosYdzxSfyfcZYW7nxd",
+            "E016dtMSyoSW26xSRntcMVavn1b",
+            "ITzRdpPPGoAgxpxx4OycmBGYnag",
+            "Oyq7dYQwCoNaDRxGXDxc3Np3nmh",
+            "TMdYdv6Q4ocLm6xB34NcdOBgnBc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              172,
+              198,
+              208
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 5
+          }
+        }
+      },
+      {
+        "block_id": "LOmVddBDhoaXIixzbjucCsVSnEe",
+        "block_type": 32,
+        "children": [
+          "Ej0CdRa3foHvxPx7djwcL7uenlf"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ej0CdRa3foHvxPx7djwcL7uenlf",
+        "block_type": 2,
+        "parent_id": "LOmVddBDhoaXIixzbjucCsVSnEe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use Case",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MKnkd5wzzoou0Vxw9BVc8ZMdnwd",
+        "block_type": 32,
+        "children": [
+          "DB4fdGWnToyV5wxJSNbcus0yndf"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DB4fdGWnToyV5wxJSNbcus0yndf",
+        "block_type": 2,
+        "parent_id": "MKnkd5wzzoou0Vxw9BVc8ZMdnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UPS0dH7EjojBkjxs1AXcPmzBn6r",
+        "block_type": 32,
+        "children": [
+          "Ti39dfXjCoV7HKxU6upcsp2Innc"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ti39dfXjCoV7HKxU6upcsp2Innc",
+        "block_type": 2,
+        "parent_id": "UPS0dH7EjojBkjxs1AXcPmzBn6r",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Why Gaussian Works Well",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Vc5Sdc72WowSTtxy8x7cgCfAnZd",
+        "block_type": 32,
+        "children": [
+          "R8EudMuHGo2rm3xKZoUcK3VbnSz"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "R8EudMuHGo2rm3xKZoUcK3VbnSz",
+        "block_type": 2,
+        "parent_id": "Vc5Sdc72WowSTtxy8x7cgCfAnZd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Location-based searches",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AlWhdxhdNoaHZyxV8YFcn8Y2n5d",
+        "block_type": 32,
+        "children": [
+          "C8iWdW7REohH2MxfqtzcQOQ5n2Q"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "C8iWdW7REohH2MxfqtzcQOQ5n2Q",
+        "block_type": 2,
+        "parent_id": "AlWhdxhdNoaHZyxV8YFcn8Y2n5d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Restaurant finders, store locators",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XPu9dzz7qoB6lzxwJ6Sc6d1knAf",
+        "block_type": 32,
+        "children": [
+          "WuQDdfW0uojqKcxxhh8cuAzMnBh"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WuQDdfW0uojqKcxxhh8cuAzMnBh",
+        "block_type": 2,
+        "parent_id": "XPu9dzz7qoB6lzxwJ6Sc6d1knAf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Mimics natural human perception of distance relevance",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EoMrd8cA8ohR2VxL3FFc0HJcnIg",
+        "block_type": 32,
+        "children": [
+          "Ss2sdGbfWotTNKxkFj6c2ncinRh"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Ss2sdGbfWotTNKxkFj6c2ncinRh",
+        "block_type": 2,
+        "parent_id": "EoMrd8cA8ohR2VxL3FFc0HJcnIg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Content recommendations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BS7RdHaDJoPPOgxCMnxcVsY1nDc",
+        "block_type": 32,
+        "children": [
+          "TQYndT6iLoKEjxx8zMuc50JXn0e"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "TQYndT6iLoKEjxx8zMuc50JXn0e",
+        "block_type": 2,
+        "parent_id": "BS7RdHaDJoPPOgxCMnxcVsY1nDc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Article suggestions based on publication date",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S9cOdYS4kooVXdxGlwGcL3DpnJg",
+        "block_type": 32,
+        "children": [
+          "CNbldswIMoDloGxF1sUckN5MnLb"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CNbldswIMoDloGxF1sUckN5MnLb",
+        "block_type": 2,
+        "parent_id": "S9cOdYS4kooVXdxGlwGcL3DpnJg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gradual decline in relevance as content ages",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JyfEdXzGBozUBrx2tz5c1MDsnjc",
+        "block_type": 32,
+        "children": [
+          "M0DzdMqdQoDzMzxvw8UcJYfVnPc"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "M0DzdMqdQoDzMzxvw8UcJYfVnPc",
+        "block_type": 2,
+        "parent_id": "JyfEdXzGBozUBrx2tz5c1MDsnjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Product listings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MfgqdxUtlosYdzxSfyfcZYW7nxd",
+        "block_type": 32,
+        "children": [
+          "MfE5dBy2MoV4U6x5QdgcJpOFnid"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MfE5dBy2MoV4U6x5QdgcJpOFnid",
+        "block_type": 2,
+        "parent_id": "MfgqdxUtlosYdzxSfyfcZYW7nxd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Items priced near a target",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E016dtMSyoSW26xSRntcMVavn1b",
+        "block_type": 32,
+        "children": [
+          "GyUpd00QzoZji4x2JBec3etinFb"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GyUpd00QzoZji4x2JBec3etinFb",
+        "block_type": 2,
+        "parent_id": "E016dtMSyoSW26xSRntcMVavn1b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Smooth relevance decline as prices deviate from target",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ITzRdpPPGoAgxpxx4OycmBGYnag",
+        "block_type": 32,
+        "children": [
+          "QosYda6xfogoLYxp356cnk38nib"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QosYda6xfogoLYxp356cnk38nib",
+        "block_type": 2,
+        "parent_id": "ITzRdpPPGoAgxpxx4OycmBGYnag",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Expertise matching",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Oyq7dYQwCoNaDRxGXDxc3Np3nmh",
+        "block_type": 32,
+        "children": [
+          "BxoSd9clBoYeMUxFA5FcXGYwnQe"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BxoSd9clBoYeMUxFA5FcXGYwnQe",
+        "block_type": 2,
+        "parent_id": "Oyq7dYQwCoNaDRxGXDxc3Np3nmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Finding professionals with relevant experience",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TMdYdv6Q4ocLm6xB34NcdOBgnBc",
+        "block_type": 32,
+        "children": [
+          "KhzWdHUcroiBw3xWYIqcfBAGnvb"
+        ],
+        "parent_id": "XCX0dt45RoVwhFxLwz6c9oBJnTe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KhzWdHUcroiBw3xWYIqcfBAGnvb",
+        "block_type": 2,
+        "parent_id": "TMdYdv6Q4ocLm6xB34NcdOBgnBc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Balanced assessment of experience relevance",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K6ZHd7O8BoEpx3xh5NTc6r7Infe",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If your application requires a natural feeling of declining relevance without harsh penalties or strict cutoffs, Gaussian decay is likely your best choice.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HQFPdy7C8oE8umxvfCxcBzD7nig",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Bell curve principle",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "JVoxdWx6Xo8b56x7O3icC5HunXg",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian decay creates a smooth, bell-shaped curve that gradually reduces relevance as distance increases from an ideal point. Named after mathematician Carl Friedrich Gauss, this distribution appears frequently in nature and statistics, which explains why it feels so intuitive to human perception.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CmPSd4KguoOAfXxyfP7cznFqnqe",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 744,
+          "scale": 0.5432937181663838,
+          "token": "DP1AbcqZPoyfqhxpJ2icptjQnfc",
+          "width": 1178
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "RKqRdAvg7oHBaPxyb3ZcxKGOntf",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The graph above shows how Gaussian decay would affect restaurant rankings in a mobile search app:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OBDfdLjwxoN0I5xFoyTc4NplnCb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "origin",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (0 km): Your current location, where relevance is at its maximum (1.0).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "Odf9dczMAo0hvPxONWNcJsLXnUf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "offset",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (±300 m): The \"perfect score zone\" around you—all restaurants within 300 meters maintain full relevance scores (1.0), ensuring that very nearby options aren't needlessly penalized for tiny distance differences.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "LCE3dC8Q3oEHPmxbX6vcEzSEnYc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "scale",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (±2 km): The distance at which relevance drops to the decay value—restaurants exactly 2 kilometers away have their relevance scores halved (0.5).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "LU14d4vsMoL8iRxYonpczilSnoS",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "decay",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (0.5): The score at the scale distance—this parameter essentially controls how quickly scores diminish with distance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "Z7UydZwxHoLbyjx21jMcysw6n4y",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As you can see from the curve, restaurants beyond 2 km continue to decrease in relevance but never quite reach zero. Even restaurants 4-5 kilometers away retain some minimal relevance, allowing excellent but distant restaurants to still appear in your results (albeit ranked lower).",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VXCndcf3EoB40wxrOvwcB0ntnDL",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This behavior mimics how people naturally think about distance relevance—nearby places are preferred, but we're willing to travel farther for exceptional options.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZPuBdLz9Ro1UIzxTnAIcSawMnyc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Formula",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "O2gHdrGUIoRwRYx4scfcVxDInmf",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The mathematical formula for calculating a Gaussian decay score is:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AFwhd2baVo5277xr4bKcqWa1nrD",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "equation": {
+                "content": "S(doc) = \\exp\\left( -\\frac{\\left( \\max\\left(0, \\left|fieldvalue_{doc} - origin\\right| - offset \\right) \\right)^2}{2\\sigma^2} \\right)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UlaxdirMBooXxaxU88WcUW6Cnhd",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Where:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HRvkdC0pBoEYQTxPUM9cYUsanEb",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "equation": {
+                "content": "\\sigma^2 = -\\frac{scale^2}{2 \\cdot \\ln(decay)}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mq8dd4SymoWGlSx7nUDcU0m8n4e",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Breaking this down in plain language:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RIt9dSFsLovNj1xUvTNc828knOe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Calculate how far the field value is from the origin:  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "|fieldvalue_{doc} - origin|\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "FmZgdJwQfoZW4Hxl0Xxc9ez9nif",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Subtract the offset (if any) but never go below zero: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "\\max(0, distance - offset)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "Pq9sd0jqCoOZPjx5JSVcsEebnsg",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Square this adjusted distance: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "(adjusted\\_distance)^2\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "BTBzdeX0boaMEJxzoyBcSl2nnEc",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Divide by ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "2\\sigma^2\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", which is calculated from your scale and decay parameters",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "MfhsdViEqojlIIx49NKcaK7Unig",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Take the negative exponent, which gives you a value between 0 and 1: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "\\exp(-value)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "TSiWdXGIKo3szMxA6g5cjF9mnSd",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "equation": {
+                "content": "\\sigma^2\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " calculation converts your scale and decay parameters into the standard deviation squared for the Gaussian distribution. This is what gives the function its characteristic bell shape.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EZn3dKCN4oR8eexzGoycWvZcn5c",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use Gaussian decay",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "Y0KzdRtjrogb87xkVWkcxGkvnCg",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Gaussian decay can be applied to both standard vector search and hybrid search operations in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Below are the key code snippets for implementing this feature.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MQjJdgYfvolJCnxD54ecAmKNnKd",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "FyBpdG4rbozwirxNbDUcNph9nub",
+          "IaHJd9JIzoraMFxk3oUcQ5uNn7G"
+        ],
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "FyBpdG4rbozwirxNbDUcNph9nub",
+        "block_type": 2,
+        "parent_id": "MQjJdgYfvolJCnxD54ecAmKNnKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IaHJd9JIzoraMFxk3oUcQ5uNn7G",
+        "block_type": 2,
+        "parent_id": "MQjJdgYfvolJCnxD54ecAmKNnKd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before using decay functions, you must first create a collection with appropriate numeric fields (like timestamps, distances, etc.) that will be used for decay calculations. For complete working examples including collection setup, schema definition, and data insertion, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Tutorial: Implement Time-based Ranking in Milvus",
+                "token": "Dj2NwrlqTiYlmDkwfAbcJNWSntd",
+                "url": "https://zilliverse.feishu.cn/wiki/Dj2NwrlqTiYlmDkwfAbcJNWSntd"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QZtgdsPx6oVzszxdcxRcCKyanCy",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create a decay ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "OM9ldU1Meo4p51xFA8vc8G9pnYd",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After your collection is set up with a numeric field (in this example, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "distance",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " in meters from the user), create a Gaussian decay ranker:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PngmdkoKLsDpZjbtXyZctfHCndf",
+        "block_type": 49,
+        "children": [
+          "PQigdiiB6ovETGxmO4Sc1wCknD3",
+          "C3G4dQTmHoxbuBxXZrhcYuSynGh",
+          "Ivondm0y5oFla5xp9sOcoyjdnRe",
+          "QmpNdGDpdoSxj7xlr6GcEXAHnOh",
+          "I8YqdpJ2KojjCexYA7Nc8BvCnId",
+          "MiLcdZz6qo36wvxLnpycUD95nHe"
+        ],
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "PQigdiiB6ovETGxmO4Sc1wCknD3",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import Function, FunctionType\n\n# Create a Gaussian decay ranker for location-based restaurant search\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " = Function(\n    name=\"restaurant_distance_decay\",     # Function identifier\n    input_field_names=[\"distance\"],       # Numeric field for distance in meters\n    function_type=FunctionType.RERANK,    # Function type. Must be RERANK\n    params={\n        \"reranker\": \"decay\",              # Specify decay reranker\n        \"function\": \"gauss\",              # Choose Gaussian decay\n        \"origin\": 0,                      # Your current location (0 meters)\n        \"offset\": 300,                    # 300m no-decay zone\n        \"decay\": 0.5,                     # Half score at scale distance\n        \"scale\": 2000                     # 2 km scale (2000 meters)\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "PngmdkoKLsDpZjbtXyZctfHCndf"
+      },
+      {
+        "block_id": "C3G4dQTmHoxbuBxXZrhcYuSynGh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.vector.request.ranker.DecayRanker;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DecayRanker rerank = DecayRanker.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .name(\"restaurant_distance_decay\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .inputFieldNames(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"distance\"))\n        .function(\"gauss\")\n        .origin(0)\n        .offset(300)\n        .decay(0.5)\n        .scale(2000)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .build();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "PngmdkoKLsDpZjbtXyZctfHCndf"
+      },
+      {
+        "block_id": "Ivondm0y5oFla5xp9sOcoyjdnRe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { FunctionType } from \"@zilliz/milvus2-sdk-node\";\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "const ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " = {\n  name: \"restaurant_distance_decay\",\n  input_field_names: [\"distance\"],\n  function_type: FunctionType.RERANK,\n  params: {\n    reranker: \"decay\",\n    function: \"gauss\",\n    origin: 0,\n    offset: 300,\n    decay: 0.5,\n    scale: 2000,\n  },\n};\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "PngmdkoKLsDpZjbtXyZctfHCndf"
+      },
+      {
+        "block_id": "QmpNdGDpdoSxj7xlr6GcEXAHnOh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "PngmdkoKLsDpZjbtXyZctfHCndf"
+      },
+      {
+        "block_id": "I8YqdpJ2KojjCexYA7Nc8BvCnId",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "PngmdkoKLsDpZjbtXyZctfHCndf"
+      },
+      {
+        "block_id": "MiLcdZz6qo36wvxLnpycUD95nHe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto rerank = std::make_shared<milvus::DecayRerank>(\"restaurant_distance_decay\");\nrerank->AddInputFieldName(\"distance\");\nrerank->SetFunction(\"gauss\");\nrerank->SetOrigin(0);\nrerank->SetScale(2000);\nrerank->SetOffset(300);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank->SetDecay(0.5);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "PngmdkoKLsDpZjbtXyZctfHCndf"
+      },
+      {
+        "block_id": "STcvdaSZCozKWGxapCycL8z2nhf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Apply to standard vector search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd"
+      },
+      {
+        "block_id": "XBwjdYNT6ouv8QxEMrYcIwiPn6g",
+        "block_type": 2,
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After defining your decay ranker, you can apply it during search operations by passing it to the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ranker",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag",
+        "block_type": 49,
+        "children": [
+          "Cri9dtNoVo99yxxWCDSccOCWnlc",
+          "KZgSdT74qovZi0xu7K2cK3WRnXc",
+          "IxP4dgN0goK3hQxKzSdcQcOWn6e",
+          "RlPcdDurKo77FIxKiHlcYzqHnwf",
+          "UGmndVyKXoykx7xvCi2carIrn3f",
+          "O73Qdt28vo87KCxb7jbcXYWCnVf"
+        ],
+        "parent_id": "R4rxdJcGQokRo3xcHvtcY5EOnHd",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "Cri9dtNoVo99yxxWCDSccOCWnlc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Apply decay ranker to restaurant vector search\nresult = milvus_client.search(\n    collection_name,\n    data=[your_query_vector],         # Replace with your query vector\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    anns_field=",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\"dense\"",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7565730113023754244"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",                   # Vector field to search\n    limit=10,                             # Number of results\n    output_fields=[\"name\", \"cuisine\", \"distance\"],  # Fields to return\n    #  highlight-next-line\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    ranker=",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",                        # Apply the decay ranker\n    consistency_level=\"Strong\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "comment_ids": [
+          "7565730113023754244"
+        ],
+        "parent_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+      },
+      {
+        "block_id": "KZgSdT74qovZi0xu7K2cK3WRnXc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.common.ConsistencyLevel;\nimport io.milvus.v2.service.vector.request.SearchReq;\nimport io.milvus.v2.service.vector.response.SearchResp;\nimport io.milvus.v2.service.vector.request.data.EmbeddedText;\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchReq searchReq = SearchReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .collectionName(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "COLLECTION_NAME",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .data(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(new EmbeddedText(\"italian restaurants\")))\n        .annsField(\"vector_field\")\n        .limit(10)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .outputFields(Arrays.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "asList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(\"name\", \"cuisine\", \"distance\"))\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .functionScore(FunctionScore.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n                .addFunction(rerank)\n                .build())\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .consistencyLevel(ConsistencyLevel.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "STRONG",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".search(searchReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+      },
+      {
+        "block_id": "IxP4dgN0goK3hQxKzSdcQcOWn6e",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "const result = await milvusClient.search({\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  collection_name: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "collection_name",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  data: [",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "your_query_vector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "],",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " // Replace with your query vector",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n  anns_field: \"dense\",\n  limit: 10,\n  output_fields: [\"name\", \"cuisine\", \"distance\"],\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  rerank: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "rerank",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n  consistency_level: \"Strong\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "});",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+      },
+      {
+        "block_id": "RlPcdDurKo77FIxKiHlcYzqHnwf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// go",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+      },
+      {
+        "block_id": "UGmndVyKXoykx7xvCi2carIrn3f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# restful",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+      },
+      {
+        "block_id": "O73Qdt28vo87KCxb7jbcXYWCnVf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "auto function_score = std::make_shared<milvus::FunctionScore>();\nfunction_score->AddFunction(rerank);\n\nauto request = milvus::SearchRequest()\n                   .WithCollectionName(collection_name)\n                   .WithAnnsField(\"dense\")\n                   .WithRerank(function_score)\n                   .WithLimit(10)\n                   .AddOutputField(\"name\")\n                   .AddOutputField(\"cuisine\")\n                   .AddOutputField(\"distance\")\n                   .AddFloatVector(your_query_vector)\n                   .WithConsistencyLevel(milvus::ConsistencyLevel::STRONG);\n\nmilvus::SearchResponse response;\nauto status = client->Search(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "JnyTdK6mEsLVgAbsKL4cTo1Inag"
+      }
+    ],
+    "counts": 85
+  }
+}

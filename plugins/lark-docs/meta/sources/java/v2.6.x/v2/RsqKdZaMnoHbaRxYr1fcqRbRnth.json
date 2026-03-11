@@ -1,0 +1,302 @@
+{
+  "created_time": "1770630406",
+  "modified_time": "1770775715",
+  "name": "getFunctions()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "WtCQfKhCll78bpdsAeHcc42BnYc",
+  "token": "RsqKdZaMnoHbaRxYr1fcqRbRnth",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/RsqKdZaMnoHbaRxYr1fcqRbRnth",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth",
+        "block_type": 1,
+        "children": [
+          "doxcn36lyPmgaSbt4Ox3V3sewJe",
+          "doxcnI8g5w6OXKDDyGGIq6nIV0f",
+          "doxcnA1SUwvzRMopcN9ouCNhE8c",
+          "doxcn1OTI9JoN3Jl4ZpNjpjOdAD",
+          "doxcnGnBr3cd3RPo9O4yJh4VS1S",
+          "doxcnHG00sxKP1t3cml8hDE5XEe",
+          "doxcn04i7nAoGaORYHybjvuSMsb",
+          "doxcnETQCiV67dfP74O2NaUrLFb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getFunctions()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn36lyPmgaSbt4Ox3V3sewJe",
+        "block_type": 2,
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This getter r",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "eturns the list of functions defined in this FunctionScore object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnI8g5w6OXKDDyGGIq6nIV0f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public List<CreateCollectionReq.Function> getFunctions()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth"
+      },
+      {
+        "block_id": "doxcnA1SUwvzRMopcN9ouCNhE8c",
+        "block_type": 2,
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn1OTI9JoN3Jl4ZpNjpjOdAD",
+        "block_type": 2,
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List\\<CreateCollectionReq.Function\\>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnGnBr3cd3RPo9O4yJh4VS1S",
+        "block_type": 2,
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnHG00sxKP1t3cml8hDE5XEe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnkP0FKp3pMpUOw3ReJFCVhd"
+        ],
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth"
+      },
+      {
+        "block_id": "doxcnkP0FKp3pMpUOw3ReJFCVhd",
+        "block_type": 2,
+        "parent_id": "doxcnHG00sxKP1t3cml8hDE5XEe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn04i7nAoGaORYHybjvuSMsb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth"
+      },
+      {
+        "block_id": "doxcnETQCiV67dfP74O2NaUrLFb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionScore score = FunctionScore.builder()\n    .addFunction(func)\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List<CreateCollectionReq.Function> functions = score.getFunctions();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "RsqKdZaMnoHbaRxYr1fcqRbRnth"
+      }
+    ],
+    "counts": 10
+  },
+  "slug": "v2-FunctionScore-getFunctions"
+}

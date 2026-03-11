@@ -1,0 +1,1565 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1728629361",
+  "node_token": "BkpkwR8Y1iwxPokhqy0cKY3xn8b",
+  "node_type": "origin",
+  "obj_create_time": "1728629361",
+  "obj_edit_time": "1768807590",
+  "obj_token": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+  "obj_type": "docx",
+  "origin_node_token": "BkpkwR8Y1iwxPokhqy0cKY3xn8b",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "XpEzwyxaJi181OkIKwqcQDWrnIh",
+  "space_id": "7167193056431783939",
+  "title": "Create Collection Instantly",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "block_type": 1,
+        "children": [
+          "IqlTdYTGpoKBztxuR4jctD5onQj",
+          "FD6edW6UbotQMTxF9r2ckWnhn7b",
+          "M5NpdLRs7odTRtx5uKicLU9BnVc",
+          "HRqXdv8z4oarZhxZ0X4c9603nOf",
+          "YlgqdRRwHoEWOvxaHagcr7p0nAc",
+          "TU45dlcvSovaa1xahe5coMwJnH2",
+          "Btdqd1hAHo87ouxkUV1cq53AnKe",
+          "HD1kdrrq3oCBZ3xGpmjcrYSVned",
+          "JV96dBWVbokAIzxQoh6ctyUun9b",
+          "To0pdTfdwoMmekxo38GcD08unXg",
+          "QZucd5HYBoSmHxxULOxcsZERn8b",
+          "KcNzdeMHporJfYxALPYc3GAinvb",
+          "VX7sdUf3qoaXDVxmNWJcSokJn0b",
+          "DiYKdwSW4oimVdxyfXkc1mtNnah",
+          "Kzm3d2uGlovuw6xP6Jic4buEnMh",
+          "GafVdJlVToDsPuxTq20cdPcQn4b",
+          "K2tTdxrKpoaG16xCBkAcP2KqnLg",
+          "PdjndiEtPo3qhVxvp4Ac8TBNnFb",
+          "VqHOdmPb4o2Ee4xj8AvcEVfIn1d",
+          "Y5CHdbxp6o9EK4xETDJczIJ2nEh",
+          "DrD1dYCdVotVYvxR2bbcm4LHn0f",
+          "AOpNdrzWqosMGwxOo5Nc4CUBn8b",
+          "GV05dyaytoJElSxzrZRcWKJHnrb",
+          "RyyEd54hOoHbZQxAHsKcjavknnd",
+          "DB7Md0xbPoJCiAx9egQcV0Y0nJc",
+          "Njv1dm3Fuoq0PbxQAysc33CbnPg",
+          "TY4kd3QRboTxv0xYEnecSaBMnHe",
+          "X0sidljRMoOv3Jxk6yzceFK1nxe",
+          "T1egd71JQoDT3dxPVyico2oCnwf",
+          "BqxXdaEdIoNgRSx8DtpcmGO2nYc",
+          "T4VId2CuYoHvN3xIMcEcc8BBn6e"
+        ],
+        "comment_ids": [
+          "7493007272227618820"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Create Collection Instantly",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7493007272227618820"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "IqlTdYTGpoKBztxuR4jctD5onQj",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can create a collection instantly by setting its name and the vector field dimensionality. <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> automatically indexes the vector field and loads the collection upon creation. This page demonstrates how to create a collection instantly with default settings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FD6edW6UbotQMTxF9r2ckWnhn7b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "M5NpdLRs7odTRtx5uKicLU9BnVc",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A collection is a two-dimensional table with fixed columns and variant rows. Each column represents a field, and each row represents an entity. A schema is required to implement such structural data management. Every entity to insert has to meet the constraints defined in the schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HRqXdv8z4oarZhxZ0X4c9603nOf",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AIGC applications usually use vector databases as a knowledge base to manage the data generated during the interaction between users and Large Language Models (LLMs). Such knowledge bases are almost similar. To accelerate the use of <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> clusters in such scenarios, an instant method is available for you to create a collection with only two parameters, namely the collection name and the vector field dimensionality.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YlgqdRRwHoEWOvxaHagcr7p0nAc",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When you create a collection instantly with default settings, the following settings apply:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TU45dlcvSovaa1xahe5coMwJnH2",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The primary and vector fields are added to the schema (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "id",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "vector",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ").",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "Btdqd1hAHo87ouxkUV1cq53AnKe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The primary field accepts integers and disables ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AutoId",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "HD1kdrrq3oCBZ3xGpmjcrYSVned",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The vector field accepts floating vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "JV96dBWVbokAIzxQoh6ctyUun9b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "AUTOINDEX",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is used to create an index on the vector field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "To0pdTfdwoMmekxo38GcD08unXg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is used to measure similarities between vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "QZucd5HYBoSmHxxULOxcsZERn8b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The reserves dynamic field named ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\\$meta",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " is enabled to save non-schema-defined fields and their values in key-value pairs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "KcNzdeMHporJfYxALPYc3GAinvb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The collection is automatically loaded upon creation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "VX7sdUf3qoaXDVxmNWJcSokJn0b",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on the terminologies above, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Collection Explained",
+                "token": "Z9AMwNkVLiog0jkXxNscuMpJnjL",
+                "url": "https://zilliverse.feishu.cn/wiki/Z9AMwNkVLiog0jkXxNscuMpJnjL"
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DiYKdwSW4oimVdxyfXkc1mtNnah",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "It is worth noting that creating a collection instantly with default settings does not fit all scenarios. You are advised to familiarize yourself with the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "common collection creation procedure",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FEmcowmwYpiFbWgkmnqfcMf3knVc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " so that you can gain a better understanding of <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>'s capabilities.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Kzm3d2uGlovuw6xP6Jic4buEnMh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Quick Setup",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "GafVdJlVToDsPuxTq20cdPcQn4b",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this manner, you can create a collection instantly with only the collection name and the vector field dimensionality.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "K2tTdxrKpoaG16xCBkAcP2KqnLg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, DataType\n\nCLUSTER_ENDPOINT = \"http://localhost:19530\"\nTOKEN = \"root:Milvus\"\n\n# 1. Set up a Milvus client\nclient = MilvusClient(\n    uri=CLUSTER_ENDPOINT,\n    token=TOKEN \n)\n\n# 2. Create a collection in quick setup mode\nclient.create_collection(\n    collection_name=\"quick_setup\",\n    dimension=5\n)\n\nres = client.get_load_state(\n    collection_name=\"quick_setup\"\n)\n\nprint(res)\n\n# Output\n#\n# {\n#     \"state\": \"<LoadState: Loaded>\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "PdjndiEtPo3qhVxvp4Ac8TBNnFb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.GetLoadStateReq;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq;\n\nString CLUSTER_ENDPOINT = \"http://localhost:19530\";\nString TOKEN = \"root:Milvus\";\n\n// 1. Connect to Milvus server\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig connectConfig = ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .uri(CLUSTER_ENDPOINT)\n        .token(TOKEN)\n        .build();\n\nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Create a collection in quick setup mode\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq quickSetupReq = CreateCollectionReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"quick_setup\")\n        .dimension(5)\n        .build();\n\nclient.createCollection(quickSetupReq);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetLoadStateReq quickSetupLoadStateReq = GetLoadStateReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"quick_setup\")\n        .build();\n\nBoolean res = client.getLoadState(quickSetupLoadStateReq);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".println(res);\n\n// Output:\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// true",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "VqHOdmPb4o2Ee4xj8AvcEVfIn1d",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// 1. Set up a Milvus Client\nimport { MilvusClient, DataType } from \"@zilliz/milvus2-sdk-node\";\n\nconst address = \"http://localhost:19530\";\nconst token = \"root:Milvus\";\nconst client = new MilvusClient({address, token});\n\n// 2. Create a collection in quick setup mode\nlet res = await client.createCollection({\n    collection_name: \"quick_setup\",\n    dimension: 5,\n});  \n\nconsole.log(res.error_code)\n\n// Output\n// \n// Success\n// \n\nres = await client.getLoadState({\n    collection_name: \"quick_setup\"\n})\n\nconsole.log(res.state)\n\n// Output\n// \n// LoadStateLoaded\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "Y5CHdbxp6o9EK4xETDJczIJ2nEh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n    \"context\"\n    \"fmt\"\n\n    \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ctx, cancel := context.WithCancel(context.Background())\ndefer cancel()\n\nmilvusAddr := \"localhost:19530\"\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: milvusAddr,\n})\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\ndefer client.Close(ctx)\n\nerr = client.CreateCollection(ctx, milvusclient.SimpleCreateCollectionOptions(\"quick_setup\", 5))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "fmt.Println(\"collection created\")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "DrD1dYCdVotVYvxR2bbcm4LHn0f",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export CLUSTER_ENDPOINT=\"http://localhost:19530\"\nexport TOKEN=\"root:Milvus\"\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/collections/create\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"collectionName\": \"quick_setup\",\n    \"dimension\": 5\n}'\n\n# {\n#     \"code\": 0,\n#     \"data\": {}\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "AOpNdrzWqosMGwxOo5Nc4CUBn8b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nstatus = client->CreateCollection(milvus::CreateSimpleCollectionRequest()\n                                          .WithCollectionName(\"quick_setup\")\n                                          .WithDimension(5));\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "GV05dyaytoJElSxzrZRcWKJHnrb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Quick Setup with Custom Fields",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "RyyEd54hOoHbZQxAHsKcjavknnd",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the default metric type, field names, and data types does not meet your need, you can tune these settings as follows.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DB7Md0xbPoJCiAx9egQcV0Y0nJc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient, DataType\n\nCLUSTER_ENDPOINT = \"http://localhost:19530\"\nTOKEN = \"root:Milvus\"\n\n# 1. Set up a Milvus client\nclient = MilvusClient(\n    uri=CLUSTER_ENDPOINT,\n    token=TOKEN \n)\n\n# 2. Create a collection in quick setup mode\nclient.create_collection(\n    collection_name=\"custom_quick_setup\",\n    dimension=5,\n    primary_field_name=\"my_id\",\n    id_type=\"string\",\n    vector_field_name=\"my_vector\",\n    metric_type=\"L2\",\n    auto_id=True,\n    max_length=512\n)\n\nres = client.get_load_state(\n    collection_name=\"custom_quick_setup\"\n)\n\nprint(res)\n\n# Output\n#\n# {\n#     \"state\": \"<LoadState: Loaded>\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# }",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "Njv1dm3Fuoq0PbxQAysc33CbnPg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.collection.request.GetLoadStateReq;\nimport io.milvus.v2.service.collection.request.CreateCollectionReq;\n\nString CLUSTER_ENDPOINT = \"http://localhost:19530\";\nString TOKEN = \"root:Milvus\";\n\n// 1. Connect to Milvus server\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ConnectConfig connectConfig = ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .uri(CLUSTER_ENDPOINT)\n        .token(TOKEN)\n        .build();\n\nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n// 2. Create a collection in quick setup mode\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq customQuickSetupReq = CreateCollectionReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"custom_quick_setup\")\n        .dimension(5)\n        .primaryFieldName(\"my_id\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .idType(DataType.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "VarChar",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")\n        .maxLength(512)\n        .vectorFieldName(\"my_vector\")\n        .metricType(\"L2\")\n        .autoID(true)\n        .build();\n\nclient.createCollection(customQuickSetupReq);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "GetLoadStateReq customQuickSetupLoadStateReq = GetLoadStateReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .collectionName(\"custom_quick_setup\")\n        .build();\n\nBoolean res = client.getLoadState(customQuickSetupLoadStateReq);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".println(res);\n\n// Output:\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// true",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "TY4kd3QRboTxv0xYEnecSaBMnHe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "// 1. Set up a Milvus Client\nconst address = \"http://localhost:19530\";\nconst token = \"root:Milvus\";\nconst client = new MilvusClient({address, token});\n\n// 2. Create a collection in quick setup mode\nlet res = await client.createCollection({\n    collection_name: \"custom_quick_setup\",\n    dimension: 5,\n    primary_field_name: \"my_id\",\n    id_type: \"Varchar\",\n    max_length: 512,\n    vector_field_name: \"my_vector\",\n    metric_type: \"L2\",\n    auto_id: true\n});  \n\nconsole.log(res.error_code)\n\n// Output\n// \n// Success\n// \n\nres = await client.getLoadState({\n    collection_name: \"custom_quick_setup\"\n})\n\nconsole.log(res.state)\n\n// Output\n// \n// LoadStateLoaded\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "X0sidljRMoOv3Jxk6yzceFK1nxe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n    \"context\"\n    \"fmt\"\n\n    \"github.com/milvus-io/milvus/client/v2/entity\"\n    \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n)\n\nctx, cancel := context.WithCancel(context.Background())\ndefer cancel()\n\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: \"localhost:19530\",\n})\nif err != nil {\n    fmt.Println(err.Error())\n    // handle err\n}\ndefer client.Close(ctx)\n\nerr = client.CreateCollection(ctx, milvusclient.SimpleCreateCollectionOptions(\"custom_quick_setup\", 5).\n    WithPKFieldName(\"my_id\").\n    WithVarcharPK(true, 512).\n    WithVectorFieldName(\"my_vector\").\n    WithMetricType(entity.L2).\n    WithAutoID(true),\n)\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": true
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "T1egd71JQoDT3dxPVyico2oCnwf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export CLUSTER_ENDPOINT=\"http://localhost:19530\"\nexport TOKEN=\"root:Milvus\"\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/collections/create\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n    \"collectionName\": \"custom_quick_setup\",\n    \"dimension\": 5,\n    \"primaryFieldName\": \"my_id\",\n    \"idType\": \"VarChar\",\n    \"vectorFieldName\": \"my_vector\",\n    \"metricType\": \"L2\",\n    \"autoId\": true,\n    \"params\": {\n        \"max_length\": \"512\"\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}'",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "BqxXdaEdIoNgRSx8DtpcmGO2nYc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nstatus = client->CreateCollection(milvus::CreateSimpleCollectionRequest()\n                                      .WithCollectionName(\"custom_quick_setup\")\n                                      .WithPrimaryFieldName(\"my_id\")\n                                      .WithPrimaryFieldType(milvus::DataType::VARCHAR)\n                                      .WithMaxLength(512)\n                                      .WithAutoID(true)\n                                      .WithVectorFieldName(\"my_vector\")\n                                      .WithMetricType(milvus::MetricType::L2)\n                                      .WithDimension(5));\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g"
+      },
+      {
+        "block_id": "T4VId2CuYoHvN3xIMcEcc8BBn6e",
+        "block_type": 2,
+        "parent_id": "JsTTdQZKZoUnS1xhRY0ciaW7n1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the collections created using the above two manners still cannot meet your needs, consider following the procedure in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Create Collection",
+                "token": "EmcowmwYpiFbWgkmnqfcMf3knVc",
+                "url": "https://zilliverse.feishu.cn/wiki/EmcowmwYpiFbWgkmnqfcMf3knVc"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 32
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": true,
+  "node_create_time": "1748418972",
+  "node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+  "node_type": "origin",
+  "obj_create_time": "1748418972",
+  "obj_edit_time": "1749469772",
+  "obj_token": "Y9Djdj94tojo99xcCUoc7HiinLd",
+  "obj_type": "docx",
+  "origin_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "IeNswy8ySiutKAkdphRc4lfynsf",
+  "space_id": "7167193056431783939",
+  "title": "Migrate from External Sources",
+  "slug": "migrate-from-external-sources",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Y9Djdj94tojo99xcCUoc7HiinLd",
+        "block_type": 1,
+        "children": [
+          "DHzSdo0gPodBMVxgwqNcqYSNnXc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrate from External Sources",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "DHzSdo0gPodBMVxgwqNcqYSNnXc",
+        "block_type": 2,
+        "parent_id": "Y9Djdj94tojo99xcCUoc7HiinLd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud helps you confidently handle complex collection and field mappings with improved data type support, dynamic-to-fixed field conversion, and intuitive controls for configuring field and shard settings within a responsive, user-friendly interface.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 2
+  },
+  "children": [
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1748419005",
+      "node_token": "WZe4w7lNji6RVHkR5alcrTw8nQ2",
+      "node_type": "origin",
+      "obj_create_time": "1748419005",
+      "obj_edit_time": "1767851692",
+      "obj_token": "QIy7dTPcSop0z1xwrrYc1kTenLe",
+      "obj_type": "docx",
+      "origin_node_token": "WZe4w7lNji6RVHkR5alcrTw8nQ2",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "External Migration Basics",
+      "slug": "external-migration-basics"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1729241403",
+      "node_token": "R33EwQchxiO3HKk4vPnce6vkntc",
+      "node_type": "origin",
+      "obj_create_time": "1729241403",
+      "obj_edit_time": "1749116568",
+      "obj_token": "BYpmduBldozeK4xWpcccVqkZn7b",
+      "obj_type": "docx",
+      "origin_node_token": "R33EwQchxiO3HKk4vPnce6vkntc",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from Pinecone to Zilliz Cloud",
+      "slug": "migrate-from-pinecone"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1729241444",
+      "node_token": "LqMIw1DXyiHUjAk9TEAcqHp6nDd",
+      "node_type": "origin",
+      "obj_create_time": "1729241444",
+      "obj_edit_time": "1749438697",
+      "obj_token": "YcwQdDniQocxZRxs4z2cm6TLnYc",
+      "obj_type": "docx",
+      "origin_node_token": "LqMIw1DXyiHUjAk9TEAcqHp6nDd",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from Qdrant to Zilliz Cloud",
+      "slug": "migrate-from-qdrant"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1693363951",
+      "node_token": "Y8nwwbi0KiwtVZkMaSQcsPcwnkf",
+      "node_type": "origin",
+      "obj_create_time": "1693363951",
+      "obj_edit_time": "1749116647",
+      "obj_token": "LCR9dQcdKojgN1x9GSKcu8lJnch",
+      "obj_type": "docx",
+      "origin_node_token": "Y8nwwbi0KiwtVZkMaSQcsPcwnkf",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from Elasticsearch to Zilliz Cloud",
+      "slug": "migrate-from-elasticsearch"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1722398238",
+      "node_token": "CiVHwbwPwipX5SkFkqVcLpESnfe",
+      "node_type": "origin",
+      "obj_create_time": "1722398238",
+      "obj_edit_time": "1749116670",
+      "obj_token": "J2Keds0bwoEKRFxp0fvc1guvnqg",
+      "obj_type": "docx",
+      "origin_node_token": "CiVHwbwPwipX5SkFkqVcLpESnfe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from PostgreSQL to Zilliz Cloud",
+      "slug": "migrate-from-pgvector"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1729241498",
+      "node_token": "SwgXwdHG6iqpbUknXrHcOPd7nRe",
+      "node_type": "origin",
+      "obj_create_time": "1729241498",
+      "obj_edit_time": "1749116713",
+      "obj_token": "SsK1d9GC5o3rvWxgxlacjtxMnRf",
+      "obj_type": "docx",
+      "origin_node_token": "SwgXwdHG6iqpbUknXrHcOPd7nRe",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from Tencent Cloud to Zilliz Cloud",
+      "slug": "migrate-from-tencent-cloud"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": false,
+      "node_create_time": "1739525122",
+      "node_token": "VFMLwxpsniVGKYkE3DecmpQ2nrg",
+      "node_type": "origin",
+      "obj_create_time": "1739525122",
+      "obj_edit_time": "1749116764",
+      "obj_token": "Ry00dUDWuo9Dymx5zjYcMNGdnOe",
+      "obj_type": "docx",
+      "origin_node_token": "VFMLwxpsniVGKYkE3DecmpQ2nrg",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "OpQHwQrMki9brIkTsAGcq93Zndf",
+      "space_id": "7167193056431783939",
+      "title": "Migrate from OpenSearch to Zilliz Cloud",
+      "slug": "migrate-from-opensearch"
+    }
+  ]
+}

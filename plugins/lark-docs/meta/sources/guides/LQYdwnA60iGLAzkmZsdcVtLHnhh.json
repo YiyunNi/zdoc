@@ -1,0 +1,619 @@
+{
+  "creator": "ou_fbc044d19930afd389d5c369466c38b1",
+  "has_child": false,
+  "node_create_time": "1714116401",
+  "node_token": "LQYdwnA60iGLAzkmZsdcVtLHnhh",
+  "node_type": "origin",
+  "obj_create_time": "1714116401",
+  "obj_edit_time": "1737797546",
+  "obj_token": "Or8Sds5ozoodbDxkI8ScolELnec",
+  "obj_type": "docx",
+  "origin_node_token": "LQYdwnA60iGLAzkmZsdcVtLHnhh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_fbc044d19930afd389d5c369466c38b1",
+  "parent_node_token": "TS2SwawqwiQ9Iek7p2LcdAHKnKg",
+  "space_id": "7167193056431783939",
+  "title": "Pipelines Pricing",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Or8Sds5ozoodbDxkI8ScolELnec",
+        "block_type": 1,
+        "children": [
+          "ItnQdPCCsoPDKqxi4W3cb946n2b",
+          "EmLLdeWDtoQ2OMxA7vjceGHhnBb",
+          "IPsAdx8iPoWeSTxMKqac3GcZn9d",
+          "W0HFdMMYpoXVSGxTKD8cMXPvnPe",
+          "RBh8dVyAgo79ScxMtstcsI0yncd",
+          "E56Edjtszovb1axwLWLcc4alnif",
+          "IVN7deFo7o59jlxrU98ciHxFnyh",
+          "JOHvdmZBtoc7IvxatEhcNkCKnfg",
+          "EEnPd7BgUoCH3SxtgQ9cn8F3nGd",
+          "ZGXydsadlozp0kxTHoMcDHu5nvd"
+        ],
+        "comment_ids": [
+          "7379510526112710660"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pipelines Pricing",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7379510526112710660"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "ItnQdPCCsoPDKqxi4W3cb946n2b",
+        "block_type": 2,
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines adopts a pay-as-you-go ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pricing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " model. More specifically, you only pay for the actual usage of the models in Ingestion and Search Pipelines. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EmLLdeWDtoQ2OMxA7vjceGHhnBb",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "XusddOJO6oobQwxcOgHcosDXnef",
+          "JcoIdfgLZoPlSYxgZyccsFZ9n5c"
+        ],
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec"
+      },
+      {
+        "block_id": "XusddOJO6oobQwxcOgHcosDXnef",
+        "block_type": 2,
+        "parent_id": "EmLLdeWDtoQ2OMxA7vjceGHhnBb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JcoIdfgLZoPlSYxgZyccsFZ9n5c",
+        "block_type": 2,
+        "parent_id": "EmLLdeWDtoQ2OMxA7vjceGHhnBb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines will be discontinued by the end of Q2 2025 and replaced by a new feature, “Data In, Data Out,” to streamline embedding generation in both Milvus and Zilliz Cloud. As of December 24, 2024, new user registrations are no longer accepted. Current users can continue using the service within the $20 monthly free allowance until the sunset date; however, no SLA is provided. Please consider using embedding APIs from model providers or open-source models to generate vector embeddings.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IPsAdx8iPoWeSTxMKqac3GcZn9d",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Pipelines pricing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec"
+      },
+      {
+        "block_id": "W0HFdMMYpoXVSGxTKD8cMXPvnPe",
+        "block_type": 2,
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For detailed information on the pricing of each embedding model and reranker model, please visit ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Pricing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RBh8dVyAgo79ScxMtstcsI0yncd",
+        "block_type": 2,
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Currently, Zilliz Cloud Pipelines offers free quota. This means that your initial spend of $20 is complimentary. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E56Edjtszovb1axwLWLcc4alnif",
+        "block_type": 2,
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Additionally, there is a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cap on the total usage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FPuxkwMWvbiHxvTkHsVkcMZP9n5f%23XgU7dttsOomcQSxbFmpc3MObnQg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " of Zilliz Cloud Pipelines. Each organization can consume up to $20 worth of pipeline usage per month. If you need to increase the quota limit, please ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "contact sales",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or submit a ticket at the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Support Portal",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IVN7deFo7o59jlxrU98ciHxFnyh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View costs and usage",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec"
+      },
+      {
+        "block_id": "JOHvdmZBtoc7IvxatEhcNkCKnfg",
+        "block_type": 2,
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud Pipelines invoice is integrated into the Zilliz Cloud vector database billing. Therefore, to understand the Pipelines charges incurred, please click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Billing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " on the top navigation bar or on the left-side panel. For more information, please refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "View Invoice",
+                "token": "PBEbwjRu9iyyaFkZnuzcINHCnke",
+                "url": "https://zilliverse.feishu.cn/wiki/PBEbwjRu9iyyaFkZnuzcINHCnke"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EEnPd7BgUoCH3SxtgQ9cn8F3nGd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View costs",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "N1sGdMjlnoVtntxP98gcoXAPnkh",
+          "JB3xdSsQdoVQcoxBiJUcJXiWndd"
+        ],
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec"
+      },
+      {
+        "block_id": "N1sGdMjlnoVtntxP98gcoXAPnkh",
+        "block_type": 2,
+        "parent_id": "EEnPd7BgUoCH3SxtgQ9cn8F3nGd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below is an example of a detailed breakdown of the Pipelines costs in your invoice. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JB3xdSsQdoVQcoxBiJUcJXiWndd",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Fdesign%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Fnode-id%3D52051-1642%26t%3DFqsl1dNjFUQXaI5K-4"
+          }
+        },
+        "parent_id": "EEnPd7BgUoCH3SxtgQ9cn8F3nGd"
+      },
+      {
+        "block_id": "ZGXydsadlozp0kxTHoMcDHu5nvd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "View usage",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JWSBdmt3oo5IJMxtyGmcQrTUn1e",
+          "ASF0dvcpioLr5Nx0jDKcQMtdnEf"
+        ],
+        "parent_id": "Or8Sds5ozoodbDxkI8ScolELnec"
+      },
+      {
+        "block_id": "JWSBdmt3oo5IJMxtyGmcQrTUn1e",
+        "block_type": 2,
+        "parent_id": "ZGXydsadlozp0kxTHoMcDHu5nvd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Below is an example of the Pipelines usage.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ASF0dvcpioLr5Nx0jDKcQMtdnEf",
+        "block_type": 26,
+        "iframe": {
+          "component": {
+            "iframe_type": 8,
+            "url": "https%3A%2F%2Fwww.figma.com%2Fdesign%2FRb9z8tsmYYdqdultiKx7kT%2FZilliz-Diagrams%3Fnode-id%3D52062-1621%26t%3DFqsl1dNjFUQXaI5K-4"
+          }
+        },
+        "parent_id": "ZGXydsadlozp0kxTHoMcDHu5nvd"
+      }
+    ],
+    "counts": 17
+  }
+}

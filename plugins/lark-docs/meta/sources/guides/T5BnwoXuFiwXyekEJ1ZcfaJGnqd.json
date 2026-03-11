@@ -1,0 +1,193 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": true,
+  "node_create_time": "1698025686",
+  "node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+  "node_type": "origin",
+  "obj_create_time": "1698025686",
+  "obj_edit_time": "1734935434",
+  "obj_token": "Wvk2dEXeho7XwOxe9vQcgdyfnqd",
+  "obj_type": "docx",
+  "origin_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "Oh3VwT15Yi03bRkOtoXcZpurnWe",
+  "space_id": "7167193056431783939",
+  "title": "Data Import",
+  "slug": "data-import",
+  "children": [
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": false,
+      "node_create_time": "1734934939",
+      "node_token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+      "node_type": "origin",
+      "obj_create_time": "1734934939",
+      "obj_edit_time": "1755589502",
+      "obj_token": "Rigrd9OqjoVaU7x0WvVcfnydnRe",
+      "obj_type": "docx",
+      "origin_node_token": "TjxAw7lx6iNluBkR4a6czoHpn0f",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+      "space_id": "7167193056431783939",
+      "title": "Storage Options",
+      "slug": "data-import-storage-options"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1734934965",
+      "node_token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+      "node_type": "origin",
+      "obj_create_time": "1734934965",
+      "obj_edit_time": "1734936050",
+      "obj_token": "QIfQdRuQNoRRY6xFVG0cF5FYnzb",
+      "obj_type": "docx",
+      "origin_node_token": "MtGywZwmXiHg0AkJMavcWAtxnCg",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+      "space_id": "7167193056431783939",
+      "title": "Format Options",
+      "slug": "data-import-format-options"
+    },
+    {
+      "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+      "has_child": true,
+      "node_create_time": "1694400461",
+      "node_token": "YNbGwiEjAinaQfkSdNlcTehwn8I",
+      "node_type": "origin",
+      "obj_create_time": "1694400461",
+      "obj_edit_time": "1734935092",
+      "obj_token": "S7WEdHeJ1oaQ4mxhVOjcpIEtn9b",
+      "obj_type": "docx",
+      "origin_node_token": "YNbGwiEjAinaQfkSdNlcTehwn8I",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+      "parent_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+      "space_id": "7167193056431783939",
+      "title": "Convert Your Data",
+      "slug": "prepare-data-import"
+    },
+    {
+      "creator": "ou_8554528ee6e965bad56710acde1c7847",
+      "has_child": true,
+      "node_create_time": "1701844170",
+      "node_token": "VTZZwCkkCi7FwnklLDhcMJwvnQb",
+      "node_type": "origin",
+      "obj_create_time": "1701844170",
+      "obj_edit_time": "1708757996",
+      "obj_token": "MomDdhGAioojyTxn3HfcUrNqnjb",
+      "obj_type": "docx",
+      "origin_node_token": "VTZZwCkkCi7FwnklLDhcMJwvnQb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+      "space_id": "7167193056431783939",
+      "title": "Import Data",
+      "slug": "import-data"
+    },
+    {
+      "creator": "ou_ee865f3d6d0036a3aa548eec6b75ce74",
+      "has_child": false,
+      "node_create_time": "1704332777",
+      "node_token": "BjHZwBkk0iFScik49QMc1Wwjndb",
+      "node_type": "origin",
+      "obj_create_time": "1704332777",
+      "obj_edit_time": "1771370809",
+      "obj_token": "TXlrdXzlPokEQ5xnA30c93SLnMc",
+      "obj_type": "docx",
+      "origin_node_token": "BjHZwBkk0iFScik49QMc1Wwjndb",
+      "origin_space_id": "7167193056431783939",
+      "owner": "ou_b96de9b2ddef2aed77920eee632c4b7a",
+      "parent_node_token": "T5BnwoXuFiwXyekEJ1ZcfaJGnqd",
+      "space_id": "7167193056431783939",
+      "title": "Data Import Hands-On",
+      "slug": "data-import-zero-to-hero"
+    }
+  ],
+  "blocks": {
+    "items": [
+      {
+        "block_id": "Wvk2dEXeho7XwOxe9vQcgdyfnqd",
+        "block_type": 1,
+        "children": [
+          "GRvqdavHeoK4YgxfFoScLYslnJb",
+          "V78Adjmv0oE3huxHUxoc9WiNnzj"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data Import",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "GRvqdavHeoK4YgxfFoScLYslnJb",
+        "block_type": 2,
+        "parent_id": "Wvk2dEXeho7XwOxe9vQcgdyfnqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud supports data import from various storage options, including AWS S3, GCP Storage, and Azure Blob Storage, as well as formats such as Parquet (recommended), JSON, and NumPy files. In this chapter, you will find the procedure for importing data in the supported formats from these storage options.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V78Adjmv0oE3huxHUxoc9WiNnzj",
+        "block_type": 2,
+        "parent_id": "Wvk2dEXeho7XwOxe9vQcgdyfnqd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 3
+  }
+}

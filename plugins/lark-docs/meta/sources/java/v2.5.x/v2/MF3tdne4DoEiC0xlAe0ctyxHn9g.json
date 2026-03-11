@@ -1,0 +1,592 @@
+{
+  "created_time": "1741675616",
+  "modified_time": "1746526912",
+  "name": "createPrivilegeGroup()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "HR9xfgwXylmfqOdKmJ7c9xCqnQb",
+  "token": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/MF3tdne4DoEiC0xlAe0ctyxHn9g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "block_type": 1,
+        "children": [
+          "USawdnNtAo7rQ2xeVpscydJAnff",
+          "LMaqdVHnioRhUGxmQyWclrSqngd",
+          "T1vIdA0YpoSGPmx2sKPc7q0Mngf",
+          "TUCVddjlho8sKzxGnbicwMRWnKc",
+          "PrMadNkW7occyLx36FCc4DEfnj4",
+          "JXthdcx8CoVQS4xq0YQcGikhnHg",
+          "KggCdoOGjoVtMRxuWM8cu7NPnAc",
+          "NIxudd6ZgofcbOxTLvQcxp1anoR",
+          "Q9HmddAA8ofC9Bx62LqcBIxJnZd",
+          "TU6pdpOR9oDl99xgl9Lc3nDpnHc",
+          "XEKudOm7FoQ6gaxX894cchJZnic",
+          "M0jkdDS7FovM9vxUoKMcK7csnIb",
+          "H1PUd9T4qorKOvx8tpMc3COonJf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "createPrivilegeGroup()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "USawdnNtAo7rQ2xeVpscydJAnff",
+        "block_type": 2,
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation creates a privilege group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LMaqdVHnioRhUGxmQyWclrSqngd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Void createPrivilegeGroup(CreatePrivilegeGroupReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "T1vIdA0YpoSGPmx2sKPc7q0Mngf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "TUCVddjlho8sKzxGnbicwMRWnKc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "createPrivilegeGroup(CreatePrivilegeGroupReq.builder()\n    .groupName(String groupName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "PrMadNkW7occyLx36FCc4DEfnj4",
+        "block_type": 2,
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JXthdcx8CoVQS4xq0YQcGikhnHg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupName(String groupName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "VdatdrSM1oefIpxXzKxcCAprn4b"
+        ],
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "VdatdrSM1oefIpxXzKxcCAprn4b",
+        "block_type": 2,
+        "parent_id": "JXthdcx8CoVQS4xq0YQcGikhnHg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the privilege group to create.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KggCdoOGjoVtMRxuWM8cu7NPnAc",
+        "block_type": 2,
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NIxudd6ZgofcbOxTLvQcxp1anoR",
+        "block_type": 2,
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q9HmddAA8ofC9Bx62LqcBIxJnZd",
+        "block_type": 2,
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TU6pdpOR9oDl99xgl9Lc3nDpnHc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JrWLdIcjnoawqCxj2h5cH65NnYg"
+        ],
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "JrWLdIcjnoawqCxj2h5cH65NnYg",
+        "block_type": 2,
+        "parent_id": "TU6pdpOR9oDl99xgl9Lc3nDpnHc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XEKudOm7FoQ6gaxX894cchJZnic",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "M0jkdDS7FovM9vxUoKMcK7csnIb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.MilvusClientV2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ";",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.service.rbac.request.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreatePrivilegeGroupReq;",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n\n// 2. Create a privilege group\nCreatePrivilegeGroupReq createPrivilegeGroupReq = CreatePrivilegeGroupReq.builder()\n        .groupName(\"read_only\")\n        .build();\n        \n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.createPrivilegeGroup(createPrivilegeGroupReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g"
+      },
+      {
+        "block_id": "H1PUd9T4qorKOvx8tpMc3COonJf",
+        "block_type": 2,
+        "parent_id": "MF3tdne4DoEiC0xlAe0ctyxHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 16
+  },
+  "slug": "v2-Authentication-createPrivilegeGroup"
+}

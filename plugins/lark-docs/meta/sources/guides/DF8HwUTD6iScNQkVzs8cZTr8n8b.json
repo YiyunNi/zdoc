@@ -1,0 +1,1778 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1749461080",
+  "node_token": "DF8HwUTD6iScNQkVzs8cZTr8n8b",
+  "node_type": "origin",
+  "obj_create_time": "1749461080",
+  "obj_edit_time": "1767602454",
+  "obj_token": "UqiqdS7kHoiif6xHnggcYWExnfg",
+  "obj_type": "docx",
+  "origin_node_token": "DF8HwUTD6iScNQkVzs8cZTr8n8b",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "Release Notes (June 9, 2025)",
+  "slug": "release-notes-2170",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "block_type": 1,
+        "children": [
+          "H97FdU37YoMmaaxH2vecp9qynjg",
+          "OHtydzTU2oud9Zx3SEnc1v9unik",
+          "QzsRdeeVPo321QxdzUJcNG4PnYg",
+          "YEo4dOoqIoVdMUxyNPHcdIQWnWg",
+          "BgoQdScHhobK7lxNdWlcTLvSn8d",
+          "Cz6JdcTdrocAVUxB5SHc8yZvnLe",
+          "C9icdTAksokYt6xVC19cImABnld",
+          "SXAQdgtTbo5PNKxasqDcKr5qn7d",
+          "V52Ad5wYUoBFNMx6u2ccvU7hn4b",
+          "GQt4d9DQuo7Vfcx1loJcwyrYnHg",
+          "YNdxdRfyro4mSTxc1XocxRTnn8f",
+          "Tuo7dZHQvoDGj9xC3AGclXYmndc",
+          "RvFNdCXxnoRGo8xsjXrcE46SnPg",
+          "F5TydG7XUopRKdxH8CGctOdVnec",
+          "WySyd4NIGortCixiJewcUZasnEb",
+          "HNYQdfCnpoSjCCx0UrxcVOdzndc",
+          "Vog5dY8L5opV6kxN0WocWZoUnVd",
+          "OQUed9Xufoe1jxxR4C3cmUFLn1b",
+          "Jp1cdicraoCyWqxSG6zcZSlYn8t",
+          "ZUt7dDWC5oy8uixO2YHcTg4wned",
+          "AOsqdN3T2oNFD0xj6EjcTvQYnQh",
+          "Wzrud7WFLoOdN9xhr9QcibQgncg",
+          "DsLfdwPZtoYtvVxBLr2cvCELn4f",
+          "Jernd7vOno4xqKxFjLucETY6nch",
+          "UkkTd8w6yobYiOxcXQucaGbtn4d",
+          "Mg99douIGoVRalxUwppcsuElnbg",
+          "XwR4dLELJoawfLxdTXAcWYcTnNg",
+          "VBuXdiyguoePDGxou8UcLfXOnwe",
+          "IhVad2sQRoRZ8bxgdjgcdrdGnQS",
+          "Itx9dWNulorcPpxaZ2tciA37nE8",
+          "ZmWKd0cZloqLyUxkf4Fcp7OFn0c",
+          "Cu5md5ulEoDcHUxvvEvcSkQEnAh"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Release Notes (June 9, 2025)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "H97FdU37YoMmaaxH2vecp9qynjg",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release delivers a more refined and intuitive user experience across multiple features of Zilliz Cloud. From a redesigned migration console to policy-based alerting and improved mmap controls, we've focused on making your workflows faster, more flexible, and easier to manage. New AI assistant capabilities and support for BYOC on GCP further extend the platform's power and usability, whether you're managing infrastructure, monitoring environments, or seeking support.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OHtydzTU2oud9Zx3SEnc1v9unik",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus Compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "QzsRdeeVPo321QxdzUJcNG4PnYg",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "All Zilliz Cloud clusters created after this release are compatible with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus v2.5.x",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and all features from Milvus v2.5.x are ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Generally Available",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YEo4dOoqIoVdMUxyNPHcdIQWnWg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Refined user interface and best practice docs, improving the migration experience",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "BgoQdScHhobK7lxNdWlcTLvSn8d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "New console user interface:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Quickly locate data sources and select the proper migration method with a clean, intuitive GUI.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LI07dFOrsoDc5Qxj6BlcpK9yncb",
+          "UoEOdzCkbomX8wxKYLFcV3DJnie"
+        ],
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "LI07dFOrsoDc5Qxj6BlcpK9yncb",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 1522,
+          "scale": 0.2415618795499669,
+          "token": "M3K4bSnIeoqBKExPdaPcd6j7nVb",
+          "width": 3022
+        },
+        "parent_id": "BgoQdScHhobK7lxNdWlcTLvSn8d"
+      },
+      {
+        "block_id": "UoEOdzCkbomX8wxKYLFcV3DJnie",
+        "block_type": 2,
+        "parent_id": "BgoQdScHhobK7lxNdWlcTLvSn8d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud supports migrations between Zilliz Cloud clusters, from Milvus instances, and from several external sources. For details on the possible data sources, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Migrations",
+                "token": "IeNswy8ySiutKAkdphRc4lfynsf",
+                "url": "https://zilliverse.feishu.cn/wiki/IeNswy8ySiutKAkdphRc4lfynsf"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Cz6JdcTdrocAVUxB5SHc8yZvnLe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Advanced collection & configuration tools: ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Confidently handle complex collection and field mappings with improved data type support, dynamic-to-fixed field conversion, and intuitive controls for configuring field and shard settings — all within a responsive, user-friendly interface.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "F91sda20wopn9YxYqTzccXBvnod",
+          "LTSddgvNWoP9Kux0MrycyRKhnzc"
+        ],
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "F91sda20wopn9YxYqTzccXBvnod",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 2173,
+          "scale": 0.24204244031830238,
+          "token": "O3AebUiCjonYFSxLrbucDp5SnOb",
+          "width": 3016
+        },
+        "parent_id": "Cz6JdcTdrocAVUxB5SHc8yZvnLe"
+      },
+      {
+        "block_id": "LTSddgvNWoP9Kux0MrycyRKhnzc",
+        "block_type": 2,
+        "parent_id": "Cz6JdcTdrocAVUxB5SHc8yZvnLe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can read ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "External Migration Basics",
+                "token": "WZe4w7lNji6RVHkR5alcrTw8nQ2",
+                "url": "https://zilliverse.feishu.cn/wiki/WZe4w7lNji6RVHkR5alcrTw8nQ2"
+              }
+            },
+            {
+              "text_run": {
+                "content": " for guidance on general procedures for migrations from external sources, and learn about the requirements and common issues handling rules for specific external sources, including ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Pinecone",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FR33EwQchxiO3HKk4vPnce6vkntc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Qdrant",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FLqMIw1DXyiHUjAk9TEAcqHp6nDd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Elasticsearch",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FY8nwwbi0KiwtVZkMaSQcsPcwnkf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "PostgreSQL",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FCiVHwbwPwipX5SkFkqVcLpESnfe"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Tencent Cloud",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FSwgXwdHG6iqpbUknXrHcOPd7nRe"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "OpenSearch",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FVFMLwxpsniVGKYkE3DecmpQ2nrg"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "C9icdTAksokYt6xVC19cImABnld",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Policy-based alerts for granular and flexible monitoring",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "SXAQdgtTbo5PNKxasqDcKr5qn7d",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This alert system upgrade ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "introduces",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Alert Policies",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "more ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "granular",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and flexible monitoring. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "V52Ad5wYUoBFNMx6u2ccvU7hn4b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Policy-Based Alerts:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " You can now target specific clusters for precision monitoring.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "GQt4d9DQuo7Vfcx1loJcwyrYnHg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Clone Policies:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Save time by duplicating existing policies with just a click.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "YNdxdRfyro4mSTxc1XocxRTnn8f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "OpenAPI Support:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Automate alert management via programmatic access.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "Tuo7dZHQvoDGj9xC3AGclXYmndc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Seamless Migration:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " All legacy alerts have been transitioned to the new framework without disruption.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "RvFNdCXxnoRGo8xsjXrcE46SnPg",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details on policy-based alerts, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Manage Project Alerts",
+                "token": "NvDLw4kFji0xeWkc4Hpc9wUfnRh",
+                "url": "https://zilliverse.feishu.cn/wiki/NvDLw4kFji0xeWkc4Hpc9wUfnRh"
+              }
+            },
+            {
+              "text_run": {
+                "content": " and the RESTful API reference pages on ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "creating",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fcreate-alert-rule-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "updating",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fupdate-alert-rule-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "listing",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Flist-alert-rules-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "deleting",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Freference%2Frestful%2Fdelete-alert-rule-v2"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " alert rules.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F5TydG7XUopRKdxH8CGctOdVnec",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "UI support for mmap settings",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "WySyd4NIGortCixiJewcUZasnEb",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud follows ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "cluster-level defaults",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FP3wrwSMNNihy8Vkf9p6cTsWYnTb%23GqKTdMgL5omergxkMjEclm0UnSf"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " based on your CU type and plan. Since this release, you can manage ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mmap settings",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " directly from the graphical user interface (GUI) at the collection and field levels. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HNYQdfCnpoSjCCx0UrxcVOdzndc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Collection-Level Configuration:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Easily apply mmap settings to raw data if needed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "Vog5dY8L5opV6kxN0WocWZoUnVd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Field-Level Control:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Enable, disable, or remove mmap settings for raw and index data of a specific field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "OQUed9Xufoe1jxxR4C3cmUFLn1b",
+        "block_type": 27,
+        "image": {
+          "align": 1,
+          "height": 1084,
+          "scale": 0.35714285714285715,
+          "token": "JspDbBt12o4ra2x353ycjG1Mn7b",
+          "width": 1708
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "Jp1cdicraoCyWqxSG6zcZSlYn8t",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC now available on GCP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "ZUt7dDWC5oy8uixO2YHcTg4wned",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Bring Your Own Cloud (BYOC)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " now supports ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Google Cloud Platform (GCP)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AOsqdN3T2oNFD0xj6EjcTvQYnQh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Data Plane Deployment:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Run Zilliz Cloud Data Plane in your own GCP environment for full control over data and security.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "Wzrud7WFLoOdN9xhr9QcibQgncg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Flexible Setup Options:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Use our Terraform provider for IaC automation or follow a step-by-step manual guide to configure networking, auth rules, and projects.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "DsLfdwPZtoYtvVxBLr2cvCELn4f",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC on GCP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-gcp"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for the manual guides, and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Terraform Provider",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fterraform-provider"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for IaC automation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Jernd7vOno4xqKxFjLucETY6nch",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Well-designed AI assistance connects you directly to Zilliz supports",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "UkkTd8w6yobYiOxcXQucaGbtn4d",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release has enhanced the visual design of Zilliz Cloud AI assistance for a more intuitive and pleasant user experience and introduced two new smart capabilities:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Mg99douIGoVRalxUwppcsuElnbg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Escalate to Support:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Automatically detects requests for human support and routes them promptly.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "XwR4dLELJoawfLxdTXAcWYcTnNg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Detect Sales Signals:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " Identifies buying intent and sales-related cues for timely follow-up.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "VBuXdiyguoePDGxou8UcLfXOnwe",
+        "block_type": 27,
+        "image": {
+          "align": 2,
+          "height": 1204,
+          "scale": 1,
+          "token": "OQTSbop2WoTH2px3o5tcbDmmnYf",
+          "width": 2566
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "IhVad2sQRoRZ8bxgdjgcdrdGnQS",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Other Improvements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "Itx9dWNulorcPpxaZ2tciA37nE8",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Improved alert settings and alert history display.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "ZmWKd0cZloqLyUxkf4Fcp7OFn0c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Streamlined workflows for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "invitation registration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "password recovery",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg"
+      },
+      {
+        "block_id": "Cu5md5ulEoDcHUxvvEvcSkQEnAh",
+        "block_type": 2,
+        "parent_id": "UqiqdS7kHoiif6xHnggcYWExnfg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 37
+  }
+}

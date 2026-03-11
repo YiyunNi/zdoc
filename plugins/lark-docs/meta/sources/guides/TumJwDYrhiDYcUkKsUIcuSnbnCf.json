@@ -1,0 +1,1189 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1733802794",
+  "node_token": "TumJwDYrhiDYcUkKsUIcuSnbnCf",
+  "node_type": "origin",
+  "obj_create_time": "1733802794",
+  "obj_edit_time": "1734945168",
+  "obj_token": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+  "obj_type": "docx",
+  "origin_node_token": "TumJwDYrhiDYcUkKsUIcuSnbnCf",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "ObdvwrXi9ia9i0kTLKUcCaYtnhd",
+  "space_id": "7167193056431783939",
+  "title": "Filter Templating",
+  "slug": "filtering-templating",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "block_type": 1,
+        "children": [
+          "BzlEdDq0HorE9Yx9GSecdUtBnyh",
+          "DvCIdhXY5oIta3x69DDcBTGkn0e",
+          "NpqDddbcnofyfNxNCfhchlCpnNp",
+          "RN1rdTZu6oQQM9xGlubcbunsn3d",
+          "Zcv8dcaqAogQT0x3WwacHMxnnWb",
+          "O4qKdl1QgoQ4o1xS93xchRTunpd",
+          "Ida4doELKo2YQhxUSzNcXY39nOd",
+          "PzbQdkZFnoL9QkxGyYHcbEF8nzb",
+          "ViUDdhRRzoUdMaxvA2HcDc1gnEe",
+          "TZxLdaO5Do6yYex87uecZ861nbc",
+          "JxFZdtZtao36EUxSesacoHX5nIb",
+          "SBKGdSSJgoKJUIxjwzWc1uXfnhd",
+          "HdKRd5IrxoW3hBxgyDHcwJvmn9c",
+          "BKojdrbeZozp7RxHLEWcdfpvn2e",
+          "XkcfdlR8To8ILGxURppc79cJnmb",
+          "IjIvdemiNoQrnaxiVA0c14nbnze",
+          "OxJIdkbMooX7aJx5coVc28mEnOf",
+          "DeECduphMoKqOBxRk0ncaHstnOg",
+          "DG8pdJFphoOXCTxWbrXcbmp6nKe",
+          "NizfdyiFYoEaavxe9Xhc4VljnPb",
+          "Hz0GdZiMXo9nzLxvoaDcaBKinMe",
+          "A7RBdQU9Po5gSYxDdHXceGCinxb",
+          "PcB1dGZpsoFFcIxVhoNcRiyGnxe",
+          "GdHQdMpp6o7W06xCVzOcyHPsntb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Filter Templating",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "BzlEdDq0HorE9Yx9GSecdUtBnyh",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>, complex filter expressions with numerous elements, especially those involving non-ASCII characters like CJK characters, can significantly affect query performance. To address this, <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> introduces a filter expression templating mechanism designed to improve efficiency by reducing the time spent parsing complex expressions. This page explains using filter expression templating in search, query, and delete operations.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DvCIdhXY5oIta3x69DDcBTGkn0e",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "NpqDddbcnofyfNxNCfhchlCpnNp",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Filter expression templating allows you to create filter expressions with placeholders, which can be dynamically substituted with values during query execution. Using templating, you avoid embedding large arrays or complex expressions directly into the filter, reducing parsing time and improving query performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "RN1rdTZu6oQQM9xGlubcbunsn3d",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Let's say you have a filter expression involving two fields, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "age",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "city",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", and you want to find all people whose age is greater than 25 and who live in either \"北京\" (Beijing) or \"上海\" (Shanghai). Instead of directly embedding the values in the filter expression, you can use a template:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zcv8dcaqAogQT0x3WwacHMxnnWb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "filter = \"age > {age} AND city IN {city}\"\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params = {\"age\": 25, \"city\": [\"北京\", \"上海\"]}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "O4qKdl1QgoQ4o1xS93xchRTunpd",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Here, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{age}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{city}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " are placeholders that will be replaced with the actual values in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when the query is executed.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ida4doELKo2YQhxUSzNcXY39nOd",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Using filter expression templating in <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> has several key advantages:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PzbQdkZFnoL9QkxGyYHcbEF8nzb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Reduced Parsing Time",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": By replacing large or complex filter expressions with placeholders, the system spends less time parsing and processing the filter.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "ViUDdhRRzoUdMaxvA2HcDc1gnEe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Improved Query Performance",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": With reduced parsing overhead, query performance improves, leading to higher QPS and faster response times.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "TZxLdaO5Do6yYex87uecZ861nbc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Scalability",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": As your datasets grow and filter expressions become more complex, templating ensures that performance remains efficient and scalable.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "JxFZdtZtao36EUxSesacoHX5nIb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Search Operations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "SBKGdSSJgoKJUIxjwzWc1uXfnhd",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For search operations in <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " expression is used to define the filtering condition, and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter is used to specify the values for the placeholders. The ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " dictionary contains the dynamic values that <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> will use to substitute into the filter expression.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HdKRd5IrxoW3hBxgyDHcwJvmn9c",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "expr = \"age > {age} AND city IN {city}\"\nfilter_params = {\"age\": 25, \"city\": [\"北京\", \"上海\"]}\nres = client.search(\n    \"hello_milvus\",\n    vectors[:nq],\n    filter=expr,\n    limit=10,\n    output_fields=[\"age\", \"city\"],\n    search_params={\"metric_type\": \"COSINE\", \"params\": {\"search_list\": 100}},\n    filter_params=filter_params,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "BKojdrbeZozp7RxHLEWcdfpvn2e",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In this example, <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> will dynamically replace ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{age}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "25",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{city}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "[\"北京\", \"上海\"]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " when executing the search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XkcfdlR8To8ILGxURppc79cJnmb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Query Operations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "IjIvdemiNoQrnaxiVA0c14nbnze",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The same templating mechanism can be applied to query operations in <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>. In the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "query",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " function, you define the filter expression and use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to specify the values to substitute.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OxJIdkbMooX7aJx5coVc28mEnOf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "expr = \"age > {age} AND city IN {city}\"\nfilter_params = {\"age\": 25, \"city\": [\"北京\", \"上海\"]}\nres = client.query(\n    \"hello_milvus\",\n    filter=expr,\n    output_fields=[\"age\", \"city\"],\n    filter_params=filter_params\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "DeECduphMoKqOBxRk0ncaHstnOg",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "By using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> efficiently handles the dynamic insertion of values, improving the speed of query execution.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DG8pdJFphoOXCTxWbrXcbmp6nKe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Delete Operations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "NizfdyiFYoEaavxe9Xhc4VljnPb",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You can also use filter expression templating in delete operations. Similar to search and query, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " expression defines the conditions, and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " provides the dynamic values for the placeholders.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Hz0GdZiMXo9nzLxvoaDcaBKinMe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "expr = \"age > {age} AND city IN {city}\"\nfilter_params = {\"age\": 25, \"city\": [\"北京\", \"上海\"]}\nres = client.delete(\n    \"hello_milvus\",\n    filter=expr,\n    filter_params=filter_params\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "A7RBdQU9Po5gSYxDdHXceGCinxb",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This approach improves the performance of delete operations, especially when dealing with complex filter conditions.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PcB1dGZpsoFFcIxVhoNcRiyGnxe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Conclusion",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt"
+      },
+      {
+        "block_id": "GdHQdMpp6o7W06xCVzOcyHPsntb",
+        "block_type": 2,
+        "parent_id": "QTCSdR1dYoI8DKxBzyhcQSDsnXt",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Filter expression templating is an essential tool for optimizing query performance in <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include>. By using placeholders and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "filter_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " dictionary, you can significantly reduce the time spent parsing complex filter expressions. This leads to faster query execution and better overall performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 25
+  }
+}

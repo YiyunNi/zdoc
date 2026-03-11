@@ -1,0 +1,63 @@
+{
+  "created_time": "1750399198",
+  "modified_time": "1750410205",
+  "name": "RemoteBulkWriter",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "AtkCfVN4Ll6GqMdVJfxcybHanDf",
+  "token": "QK9afsDChln13GdYSUXcDSvCnAg",
+  "type": "folder",
+  "url": "https://zilliverse.feishu.cn/drive/folder/QK9afsDChln13GdYSUXcDSvCnAg",
+  "slug": "v2-DataImport-RemoteBulkWriter",
+  "children": [
+    {
+      "created_time": "1750410146",
+      "modified_time": "1750836784",
+      "name": "append_row()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "QK9afsDChln13GdYSUXcDSvCnAg",
+      "token": "L115dnbLyoXAVSxkUKxcuK4gncf",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/L115dnbLyoXAVSxkUKxcuK4gncf"
+    },
+    {
+      "created_time": "1750410175",
+      "modified_time": "1750836770",
+      "name": "close()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "QK9afsDChln13GdYSUXcDSvCnAg",
+      "token": "ByKadzyxVodrkxxhaGuc4HtFnWh",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/ByKadzyxVodrkxxhaGuc4HtFnWh"
+    },
+    {
+      "created_time": "1750410189",
+      "modified_time": "1750836744",
+      "name": "commit()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "QK9afsDChln13GdYSUXcDSvCnAg",
+      "token": "SJ3ndk2d7oQbAOxP5iHcGtr1nrb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/SJ3ndk2d7oQbAOxP5iHcGtr1nrb"
+    },
+    {
+      "created_time": "1750410203",
+      "modified_time": "1750836730",
+      "name": "getBatchFiles()",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "QK9afsDChln13GdYSUXcDSvCnAg",
+      "token": "YlpQdEUnKoFR3xxizt2cCV8UnZb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/YlpQdEUnKoFR3xxizt2cCV8UnZb"
+    },
+    {
+      "created_time": "1750403569",
+      "modified_time": "1750836606",
+      "name": "RemoteBulkWriter",
+      "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+      "parent_token": "QK9afsDChln13GdYSUXcDSvCnAg",
+      "token": "XAIndF6XWoQzvRxDvpLcgEE1nEb",
+      "type": "docx",
+      "url": "https://zilliverse.feishu.cn/docx/XAIndF6XWoQzvRxDvpLcgEE1nEb"
+    }
+  ]
+}

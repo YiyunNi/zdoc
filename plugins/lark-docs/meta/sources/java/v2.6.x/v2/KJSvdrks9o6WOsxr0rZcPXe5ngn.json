@@ -1,0 +1,418 @@
+{
+  "created_time": "1770630327",
+  "modified_time": "1770770974",
+  "name": "getStructField()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "Jr0wfLhvOlhWbEdEdY8cdyvGnTb",
+  "token": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/KJSvdrks9o6WOsxr0rZcPXe5ngn",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+        "block_type": 1,
+        "children": [
+          "doxcn00fOQyYZ5Eo4FMXoFWr6Fg",
+          "doxcnhXYwcDrz9ND2kvdIaLI4pb",
+          "doxcnv8YMYzdErm56JoSH0zrKcd",
+          "doxcnkd5Ea6NxawcT5oe9isSvnd",
+          "doxcnMdQxsuN1Q1ZaLyX2PDS1Kb",
+          "doxcnQRRwSxSFFypTjG6sDxBD1e",
+          "doxcnVrE3GO1qPeCiyzCM1bDzF7",
+          "doxcn3tXqlcPxPvf2kpqjVL5Mb8",
+          "doxcnmSNluJ78wlx8jI7QyGtsqe",
+          "doxcnxPbOxWqsN24mjPBRFGavqg"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getStructField()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn00fOQyYZ5Eo4FMXoFWr6Fg",
+        "block_type": 2,
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This getter r",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "eturns a struct field schema by name from the collection schema.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnhXYwcDrz9ND2kvdIaLI4pb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public CreateCollectionReq.StructFieldSchema getStructField(String fieldName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn"
+      },
+      {
+        "block_id": "doxcnv8YMYzdErm56JoSH0zrKcd",
+        "block_type": 2,
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnkd5Ea6NxawcT5oe9isSvnd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "fieldName",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnhaq3CTKwXmSse0JomE6sLc"
+        ],
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn"
+      },
+      {
+        "block_id": "doxcnhaq3CTKwXmSse0JomE6sLc",
+        "block_type": 2,
+        "parent_id": "doxcnkd5Ea6NxawcT5oe9isSvnd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the struct field.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnMdQxsuN1Q1ZaLyX2PDS1Kb",
+        "block_type": 2,
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnQRRwSxSFFypTjG6sDxBD1e",
+        "block_type": 2,
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.StructFieldSchema",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnVrE3GO1qPeCiyzCM1bDzF7",
+        "block_type": 2,
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcn3tXqlcPxPvf2kpqjVL5Mb8",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn0S6VXpH6VE98KUeTeT20Kb"
+        ],
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn"
+      },
+      {
+        "block_id": "doxcn0S6VXpH6VE98KUeTeT20Kb",
+        "block_type": 2,
+        "parent_id": "doxcn3tXqlcPxPvf2kpqjVL5Mb8",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnmSNluJ78wlx8jI7QyGtsqe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn"
+      },
+      {
+        "block_id": "doxcnxPbOxWqsN24mjPBRFGavqg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CollectionSchema schema = CollectionSchema.builder().build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateCollectionReq.StructFieldSchema structField = schema.getStructField(\"metadata\");",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "KJSvdrks9o6WOsxr0rZcPXe5ngn"
+      }
+    ],
+    "counts": 13
+  },
+  "slug": "v2-CollectionSchema-getStructField"
+}

@@ -1,0 +1,2748 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1728630496",
+  "node_token": "GnvtwMeQWi8iRCk7dGccCBQZnOh",
+  "node_type": "origin",
+  "obj_create_time": "1728630496",
+  "obj_edit_time": "1768812047",
+  "obj_token": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+  "obj_type": "docx",
+  "origin_node_token": "GnvtwMeQWi8iRCk7dGccCBQZnOh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "CSYrwhK4Gigk07kd6ufcNTGMnZf",
+  "space_id": "7167193056431783939",
+  "title": "Range Search",
+  "slug": "range-search",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "block_type": 1,
+        "children": [
+          "EFBcd4gihoHFrQxN86scVFFYnnf",
+          "EXlPdUim7oQG8RxLJv5c5peonPb",
+          "FsfYdBVZooUTFix90GBcBpoFnHg",
+          "Gv0odzuoRopvKVxITsycWZOTnMf",
+          "USZ4dv5L5ovtMxx39O6cPGYGnDd",
+          "ALsQdNPN1oRdmvxJuNuc7whnn2b",
+          "OIZQdJDqIoEFVDxQRMscCxRinlb",
+          "TS3zdvYjAoijKYxRaVgc5w8Mnkh",
+          "D7aJdZwFooRgtvxRUxvc3YCGnLg",
+          "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+          "MPGudMEPTo79Gox7cKRcQbX7n1b",
+          "XInBdhcguodQmJxPGIUc2HBNnBd",
+          "AtlGdYvbkoV6s3xxHrUcDyyCnPS",
+          "Im7KdYGQ5s5WwHb7RsQcH4m2npf",
+          "NRXIdOTpHoBgdtxiEBocKclonkg",
+          "POPSdwznbsYQGHbkOOucpC5Rngh"
+        ],
+        "comment_ids": [
+          "7493817635369385987"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Range Search",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7493817635369385987"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "EFBcd4gihoHFrQxN86scVFFYnnf",
+        "block_type": 2,
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A range search improves search result relevancy by restricting the distance or score of the returned entities within a specific range. This page helps you understand what range search is and the procedures to conduct a range search.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EXlPdUim7oQG8RxLJv5c5peonPb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "FsfYdBVZooUTFix90GBcBpoFnHg",
+        "block_type": 2,
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When executing a Range Search request, <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> uses the most similar vectors to the query vector from the ANN Search results as the center, with the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " specified in the Search request as the outer circle's radius, and the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " as the inner circle's radius to draw two concentric circles. All vectors with similarity scores that fall within the annular region formed by these two concentric circles will be returned. Here, the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " can be set to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", indicating that all entities within the specified similarity score (radius) will be returned.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Gv0odzuoRopvKVxITsycWZOTnMf",
+        "block_type": 43,
+        "board": {
+          "token": "Sewjwp5DShFgKAbC1Mwcrr7enOD"
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "USZ4dv5L5ovtMxx39O6cPGYGnDd",
+        "block_type": 2,
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The above diagram shows that a range search request carries two parameters: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Upon receiving a range search request, <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> does the following:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ALsQdNPN1oRdmvxJuNuc7whnn2b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use the specified metric type (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") to find all vector embeddings most similar to the query vector.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "OIZQdJDqIoEFVDxQRMscCxRinlb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Filter the vector embeddings whose ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "distances",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " or ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "scores",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to the query vector fall within the range specified by the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "TS3zdvYjAoijKYxRaVgc5w8Mnkh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Return the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "top-K",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " entities from the filtered ones.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "D7aJdZwFooRgtvxRUxvc3YCGnLg",
+        "block_type": 2,
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The way to set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " varies with the metric type of the search. The following table lists the requirements for setting these two parameters with different metric types.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "block_type": 31,
+        "children": [
+          "SpBZdGprzoEoaixW6EfcaIFqnDh",
+          "NwWNdOvpHoOQF0xDvuHcFcHQnte",
+          "D1eedZmCjow2Whx7vIicOx4Enrc",
+          "C3xxdZ0uHon6bWxACXkcOM0bnrf",
+          "AcRkdW156oOcQixJbXZchC8WnEd",
+          "Ja1hdVXtholWNfxCGKAcXzQ9nCc",
+          "UIkGdxueEo9hNox7TMFcUTTUn6d",
+          "VcGrdY9X5o2I8Zxv1EYcgSiwngc",
+          "DETWdE7fWo21TzxH2FxcRoQZnwd",
+          "NVeUd1byionhILxsXLRcTx32nbc",
+          "IdUKdAUIdoNllqxLiKncqQE0nbc",
+          "JHc5dyljBogsOKxsPSfcb9qrnHh",
+          "WsI8dAHxxobNtBxkYCmcFFtFn4c",
+          "YC1MdSNIwoYPg2xUXAZcL74AnZd",
+          "JOfSdPDQmopx3exh68zctrUCnJc",
+          "BVuOdQPiKoJBYoxwBgQcqugqnmh",
+          "OnAOdCFC8oyQwrx4XTRcMik1nbg",
+          "VBaIdrQOOokaBvxlegWcTKDvnkc"
+        ],
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "table": {
+          "cells": [
+            "SpBZdGprzoEoaixW6EfcaIFqnDh",
+            "NwWNdOvpHoOQF0xDvuHcFcHQnte",
+            "D1eedZmCjow2Whx7vIicOx4Enrc",
+            "C3xxdZ0uHon6bWxACXkcOM0bnrf",
+            "AcRkdW156oOcQixJbXZchC8WnEd",
+            "Ja1hdVXtholWNfxCGKAcXzQ9nCc",
+            "UIkGdxueEo9hNox7TMFcUTTUn6d",
+            "VcGrdY9X5o2I8Zxv1EYcgSiwngc",
+            "DETWdE7fWo21TzxH2FxcRoQZnwd",
+            "NVeUd1byionhILxsXLRcTx32nbc",
+            "IdUKdAUIdoNllqxLiKncqQE0nbc",
+            "JHc5dyljBogsOKxsPSfcb9qrnHh",
+            "WsI8dAHxxobNtBxkYCmcFFtFn4c",
+            "YC1MdSNIwoYPg2xUXAZcL74AnZd",
+            "JOfSdPDQmopx3exh68zctrUCnJc",
+            "BVuOdQPiKoJBYoxwBgQcqugqnmh",
+            "OnAOdCFC8oyQwrx4XTRcMik1nbg",
+            "VBaIdrQOOokaBvxlegWcTKDvnkc"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              108,
+              328,
+              360
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 6
+          }
+        }
+      },
+      {
+        "block_id": "SpBZdGprzoEoaixW6EfcaIFqnDh",
+        "block_type": 32,
+        "children": [
+          "FwxDd8logofNV2xVMdycwXUvnMg"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FwxDd8logofNV2xVMdycwXUvnMg",
+        "block_type": 2,
+        "parent_id": "SpBZdGprzoEoaixW6EfcaIFqnDh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Metric Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NwWNdOvpHoOQF0xDvuHcFcHQnte",
+        "block_type": 32,
+        "children": [
+          "MiqddcN2voEZUSxe8hCcW3g0nXc"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "MiqddcN2voEZUSxe8hCcW3g0nXc",
+        "block_type": 2,
+        "parent_id": "NwWNdOvpHoOQF0xDvuHcFcHQnte",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Denotations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "D1eedZmCjow2Whx7vIicOx4Enrc",
+        "block_type": 32,
+        "children": [
+          "K7bldgyVFo2DmDxNamFcNddNnNb"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "K7bldgyVFo2DmDxNamFcNddNnNb",
+        "block_type": 2,
+        "parent_id": "D1eedZmCjow2Whx7vIicOx4Enrc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Requirements for Setting radius and range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C3xxdZ0uHon6bWxACXkcOM0bnrf",
+        "block_type": 32,
+        "children": [
+          "EoJSd1jo1oqt0pxhKElcLptwnJe"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "EoJSd1jo1oqt0pxhKElcLptwnJe",
+        "block_type": 2,
+        "parent_id": "C3xxdZ0uHon6bWxACXkcOM0bnrf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "L2",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AcRkdW156oOcQixJbXZchC8WnEd",
+        "block_type": 32,
+        "children": [
+          "ATGrduoF1ownRSxJngycJ3NYnAe"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ATGrduoF1ownRSxJngycJ3NYnAe",
+        "block_type": 2,
+        "parent_id": "AcRkdW156oOcQixJbXZchC8WnEd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A smaller L2 distance indicates a higher similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ja1hdVXtholWNfxCGKAcXzQ9nCc",
+        "block_type": 32,
+        "children": [
+          "FqvMdDe6DocjQXxKHdvcp0hTnmb",
+          "Ctzxdq1bjoIqKOx5WOScosN3nUf"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "FqvMdDe6DocjQXxKHdvcp0hTnmb",
+        "block_type": 2,
+        "parent_id": "Ja1hdVXtholWNfxCGKAcXzQ9nCc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To ignore the most similar vector embeddings, ensure that",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ctzxdq1bjoIqKOx5WOScosN3nUf",
+        "block_type": 2,
+        "parent_id": "Ja1hdVXtholWNfxCGKAcXzQ9nCc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " <= distance < ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UIkGdxueEo9hNox7TMFcUTTUn6d",
+        "block_type": 32,
+        "children": [
+          "IpGVd1lBrojv3uxxcv1c5ZcZnBh"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "IpGVd1lBrojv3uxxcv1c5ZcZnBh",
+        "block_type": 2,
+        "parent_id": "UIkGdxueEo9hNox7TMFcUTTUn6d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "IP",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VcGrdY9X5o2I8Zxv1EYcgSiwngc",
+        "block_type": 32,
+        "children": [
+          "WQs5dm4BrotLVhxSRpecH6wInUc"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WQs5dm4BrotLVhxSRpecH6wInUc",
+        "block_type": 2,
+        "parent_id": "VcGrdY9X5o2I8Zxv1EYcgSiwngc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A greater IP distance indicates a higher similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "DETWdE7fWo21TzxH2FxcRoQZnwd",
+        "block_type": 32,
+        "children": [
+          "Wy8jdWzhsoZUJhx98jLcNIKjnSb",
+          "TqYLdOaBzoVv2ZxXlwkc2UHln0d"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Wy8jdWzhsoZUJhx98jLcNIKjnSb",
+        "block_type": 2,
+        "parent_id": "DETWdE7fWo21TzxH2FxcRoQZnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To ignore the most similar vector embeddings, ensure that",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TqYLdOaBzoVv2ZxXlwkc2UHln0d",
+        "block_type": 2,
+        "parent_id": "DETWdE7fWo21TzxH2FxcRoQZnwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " < distance <= ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NVeUd1byionhILxsXLRcTx32nbc",
+        "block_type": 32,
+        "children": [
+          "ZvAcdO3b4oYibFxohwqcEIObnoh"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZvAcdO3b4oYibFxohwqcEIObnoh",
+        "block_type": 2,
+        "parent_id": "NVeUd1byionhILxsXLRcTx32nbc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IdUKdAUIdoNllqxLiKncqQE0nbc",
+        "block_type": 32,
+        "children": [
+          "UBiudQZVbopMjcx9mg6cSLQpnVh"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "UBiudQZVbopMjcx9mg6cSLQpnVh",
+        "block_type": 2,
+        "parent_id": "IdUKdAUIdoNllqxLiKncqQE0nbc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A greater COSINE distance indicates a higher similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JHc5dyljBogsOKxsPSfcb9qrnHh",
+        "block_type": 32,
+        "children": [
+          "CLWEd89pQoUTeZxYOJFczlu2nwh",
+          "Zx9TdYxu5ouObNxhZjvcS95wnMd"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "CLWEd89pQoUTeZxYOJFczlu2nwh",
+        "block_type": 2,
+        "parent_id": "JHc5dyljBogsOKxsPSfcb9qrnHh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To ignore the most similar vector embeddings, ensure that",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Zx9TdYxu5ouObNxhZjvcS95wnMd",
+        "block_type": 2,
+        "parent_id": "JHc5dyljBogsOKxsPSfcb9qrnHh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " < distance <= ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WsI8dAHxxobNtBxkYCmcFFtFn4c",
+        "block_type": 32,
+        "children": [
+          "XvsMdyuLEoLR2wx0KdXcUmOcnlf"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XvsMdyuLEoLR2wx0KdXcUmOcnlf",
+        "block_type": 2,
+        "parent_id": "WsI8dAHxxobNtBxkYCmcFFtFn4c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "JACCARD",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YC1MdSNIwoYPg2xUXAZcL74AnZd",
+        "block_type": 32,
+        "children": [
+          "JaCGdLjCKonfQsxe5pecj5uQn7g",
+          "QAFVdSmNEonNSxxb65Xc4zAYnYc"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "JaCGdLjCKonfQsxe5pecj5uQn7g",
+        "block_type": 2,
+        "parent_id": "YC1MdSNIwoYPg2xUXAZcL74AnZd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A smaller Jaccard distance indicates a higher similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QAFVdSmNEonNSxxb65Xc4zAYnYc",
+        "block_type": 2,
+        "parent_id": "YC1MdSNIwoYPg2xUXAZcL74AnZd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JOfSdPDQmopx3exh68zctrUCnJc",
+        "block_type": 32,
+        "children": [
+          "YoZzdQw3CoUKcfx60roc0DuKnze",
+          "AURId9AadouFaLxI8esczMpgnrf"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YoZzdQw3CoUKcfx60roc0DuKnze",
+        "block_type": 2,
+        "parent_id": "JOfSdPDQmopx3exh68zctrUCnJc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To ignore the most similar vector embeddings, ensure that",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AURId9AadouFaLxI8esczMpgnrf",
+        "block_type": 2,
+        "parent_id": "JOfSdPDQmopx3exh68zctrUCnJc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " <= distance < ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BVuOdQPiKoJBYoxwBgQcqugqnmh",
+        "block_type": 32,
+        "children": [
+          "R96ldn7iHoUj2Gxrf65c2TmAnmf"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "R96ldn7iHoUj2Gxrf65c2TmAnmf",
+        "block_type": 2,
+        "parent_id": "BVuOdQPiKoJBYoxwBgQcqugqnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "HAMMING",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OnAOdCFC8oyQwrx4XTRcMik1nbg",
+        "block_type": 32,
+        "children": [
+          "LDT4dk5ygoAFKtxF12WctkFRnfb"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "LDT4dk5ygoAFKtxF12WctkFRnfb",
+        "block_type": 2,
+        "parent_id": "OnAOdCFC8oyQwrx4XTRcMik1nbg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A smaller Hamming distance indicates a higher similarity.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VBaIdrQOOokaBvxlegWcTKDvnkc",
+        "block_type": 32,
+        "children": [
+          "Z2ridFRhBoS64vxBiTrcfOagnIh",
+          "UOf2do2U8oGdDNxMzqlcYdMVnie"
+        ],
+        "parent_id": "QZ8mdLSnAotxZKxSzvpcQkNNnhe",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Z2ridFRhBoS64vxBiTrcfOagnIh",
+        "block_type": 2,
+        "parent_id": "VBaIdrQOOokaBvxlegWcTKDvnkc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "To ignore the most similar vector embeddings, ensure that",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UOf2do2U8oGdDNxMzqlcYdMVnie",
+        "block_type": 2,
+        "parent_id": "VBaIdrQOOokaBvxlegWcTKDvnkc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " <= distance < ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MPGudMEPTo79Gox7cKRcQbX7n1b",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "XInBdhcguodQmJxPGIUc2HBNnBd",
+        "block_type": 2,
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This section demonstrates how to conduct a range search. The search requests in the following code snippets do not carry a metric type, indicating the default metric type ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "COSINE",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " applies. In this case, ensure that the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " value is smaller than the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " value.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "AtlGdYvbkoV6s3xxHrUcDyyCnPS",
+        "block_type": 2,
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "In the following code snippets, set ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "radius",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0.4",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "range_filter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0.6",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " so that <include target=\"milvus\">Milvus</include><include target=\"zilliz\">Zilliz Cloud</include> returns all entities whose distances or scores to the query vector fall within ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0.4",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "0.6",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Im7KdYGQ5s5WwHb7RsQcH4m2npf",
+        "block_type": 49,
+        "children": [
+          "URqEdNl1goKSGHxcLUncdg0Gnje",
+          "KCApdOPLBoGMUex7miTcqv91nZ1",
+          "Ubbudl9YroYivPxRaO6c4GrqnMh",
+          "VsbtdF3yaosD7CxIbhVcPAQxnnc",
+          "Z4ZbdbwFqozZISxj0tXcekt0nRc"
+        ],
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "URqEdNl1goKSGHxcLUncdg0Gnje",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import MilvusClient\n\nclient = MilvusClient(\n    uri=\"http://localhost:19530\",\n    token=\"root:Milvus\"\n)\n\nquery_vector = [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592]\n\nres = client.search(\n    collection_name=\"my_collection\",\n    data=[query_vector],\n    limit=3,\n    search_params={\n        # highlight-start\n        \"params\": {\n            \"radius\": 0.4,\n            \"range_filter\": 0.6\n        }\n        # highlight-end\n    }\n)\n\nfor hits in res:\n    print(\"TopK results:\")\n    for hit in hits:\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        print(hit)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "Im7KdYGQ5s5WwHb7RsQcH4m2npf"
+      },
+      {
+        "block_id": "KCApdOPLBoGMUex7miTcqv91nZ1",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\n io.milvus.v2.service.vector.request.SearchReq\nimport io.milvus.v2.service.vector.request.data.FloatVec;\nimport io.milvus.v2.service.vector.response.SearchResp\n\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "MilvusClientV2 client ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "= new MilvusClientV2(ConnectConfig.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n        .uri(\"http://localhost:19530\")\n        .token(\"root:Milvus\")\n        .build());\n\nFloatVec queryVector = new FloatVec(new float[]{0.3580376395471989f, -0.6023495712049978f, 0.18414012509913835f, -0.26286205330961354f, 0.9029438446296592f});\nMap<String,Object> extraParams = new HashMap<>();\nextraParams.put(\"radius\", 0.4);\nextraParams.put(\"range_filter\", 0.6);\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchReq searchReq = SearchReq.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "builder",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .collectionName(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .data(Collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "singletonList",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "(queryVector))\n        .topK(5)\n        .searchParams(extraParams)\n        .build();\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "SearchResp searchResp = ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".search(searchReq);\n\nList<List<SearchResp.SearchResult>> searchResults = searchResp.getSearchResults();\nfor (List<SearchResp.SearchResult> results : searchResults) {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".println(\"TopK results:\");\n    for (SearchResp.SearchResult result : results) {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        System.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "out",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".println(result);\n    }\n}\n\n// Output\n// TopK results:\n// SearchResp.SearchResult(entity={}, score=0.5975797, id=4)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// SearchResp.SearchResult(entity={}, score=0.46704385, id=5)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "Im7KdYGQ5s5WwHb7RsQcH4m2npf"
+      },
+      {
+        "block_id": "Ubbudl9YroYivPxRaO6c4GrqnMh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import (\n    \"context\"\n    \"fmt\"\n    \n    \"github.com/milvus-io/milvus/client/v2/index\"\n    \"github.com/milvus-io/milvus/client/v2/entity\"\n    \"github.com/milvus-io/milvus/client/v2/milvusclient\"\n)\n\nctx, cancel := context.WithCancel(context.Background())\ndefer cancel()\n\nmilvusAddr := \"localhost:19530\"\nclient, err := milvusclient.New(ctx, &milvusclient.ClientConfig{\n    Address: milvusAddr,\n})\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\ndefer client.Close(ctx)\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "queryVector := []",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "float32",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}\n\nannParam := index.NewCustomAnnParam()\nannParam.WithRadius(0.4)\nannParam.WithRangeFilter(0.6)\nresultSets, err := client.Search(ctx, milvusclient.NewSearchOption(\n    \"my_collection\", // collectionName\n    5,               // limit\n    []entity.Vector{entity.FloatVector(queryVector)},\n).WithConsistencyLevel(entity.ClStrong).\n    WithANNSField(\"vector\").\n    WithAnnParam(annParam))\nif err != nil {\n    fmt.Println(err.Error())\n    // handle error\n}\n\nfor _, resultSet := range resultSets {\n    fmt.Println(\"IDs: \", resultSet.IDs.FieldData().GetScalars())\n    fmt.Println(\"Scores: \", resultSet.Scores)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 22,
+            "wrap": false
+          }
+        },
+        "parent_id": "Im7KdYGQ5s5WwHb7RsQcH4m2npf"
+      },
+      {
+        "block_id": "VsbtdF3yaosD7CxIbhVcPAQxnnc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import { MilvusClient, DataType } from \"@zilliz/milvus2-sdk-node\";\n\nconst address = \"http://localhost:19530\";\nconst token = \"root:Milvus\";\nconst client = new MilvusClient({address, token});\n\nvar query_vector = [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592]\n\nres = await client.search({\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    collection_name: \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\",\n    data: [query_vector],\n    limit: 5,\n    // highlight-start\n    params: {\n        \"radius\": 0.4,\n        \"range_filter\": 0.6\n    }\n    // highlight-end\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "})",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 30,
+            "wrap": false
+          }
+        },
+        "parent_id": "Im7KdYGQ5s5WwHb7RsQcH4m2npf"
+      },
+      {
+        "block_id": "Z4ZbdbwFqozZISxj0tXcekt0nRc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "export CLUSTER_ENDPOINT=\"http://localhost:19530\"\nexport TOKEN=\"root:Milvus\"\n\ncurl --request POST \\\n--url \"${CLUSTER_ENDPOINT}/v2/vectordb/entities/search\" \\\n--header \"Authorization: Bearer ${TOKEN}\" \\\n--header \"Content-Type: application/json\" \\\n-d '{\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"collectionName\": \"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "my_collection",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\",\n    \"data\": [\n        [0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592]\n    ],\n    \"annsField\": \"vector\",\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    \"limit\": ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "5",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ",\n    \"searchParams\": {\n        \"params\": {\n            \"radius\": 0.4,\n            \"range_filter\": 0.6\n        }\n    }\n}'\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "# {\"code\":0,\"cost\":0,\"data\":[]}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 7,
+            "wrap": false
+          }
+        },
+        "parent_id": "Im7KdYGQ5s5WwHb7RsQcH4m2npf"
+      },
+      {
+        "block_id": "NRXIdOTpHoBgdtxiEBocKclonkg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "#include \"milvus/MilvusClientV2.h\"\n\nauto client = milvus::MilvusClientV2::Create();\n\nmilvus::ConnectParam connect_param{\"http://localhost:19530\", \"root:Milvus\"};\nauto status = client->Connect(connect_param);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nstd::vector<float> query_vector = {0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592};\nauto request = milvus::SearchRequest()\n                   .WithCollectionName(\"my_collection\")\n                   .AddFloatVector(query_vector)\n                   .WithLimit(5)\n                   .WithAnnsField(\"vector\")\n                   .WithRadius(0.4)\n                   .WithRangeFilter(0.6);\n\nmilvus::SearchResponse response;\nauto status = client->Search(request, response);\nif (!status.IsOk()) {\n    std::cout << status.Message() << std::endl;\n}\n\nfor (auto& result : response.Results().Results()) {\n    std::cout << \"TopK results:\" << std::endl;\n    milvus::EntityRows output_rows;\n    status = result.OutputRows(output_rows);\n    for (const auto& row : output_rows) {\n        std::cout << \"\\t\" << row << std::endl;\n    }\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "}",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 9,
+            "wrap": false
+          }
+        },
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb"
+      },
+      {
+        "block_id": "POPSdwznbsYQGHbkOOucpC5Rngh",
+        "block_type": 49,
+        "children": [
+          "BnBcdzRjmo7iUFx9xpJcw1QznKg"
+        ],
+        "parent_id": "M2pEdzqYDovkjjxnFpwceDQQnjb",
+        "source_synced": {
+          "align": 1,
+          "elements": [
+            {
+              "text_run": {
+                "content": "同步块",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "block_id": "BnBcdzRjmo7iUFx9xpJcw1QznKg",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Kr7kdmZY2oC6cTxPBQIcFKf9nxd",
+          "UBg3dqA2xowJIcxQxDTcMJRznaf"
+        ],
+        "parent_id": "POPSdwznbsYQGHbkOOucpC5Rngh"
+      },
+      {
+        "block_id": "Kr7kdmZY2oC6cTxPBQIcFKf9nxd",
+        "block_type": 2,
+        "parent_id": "BnBcdzRjmo7iUFx9xpJcw1QznKg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UBg3dqA2xowJIcxQxDTcMJRznaf",
+        "block_type": 2,
+        "parent_id": "BnBcdzRjmo7iUFx9xpJcw1QznKg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the query vectors already exist in the target collection, consider using ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ids",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " instead of retrieving them before searches. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Primary-Key Search",
+                "token": "U7OvwHP3AiUWlckzIEKclLQQnPr",
+                "url": "https://zilliverse.feishu.cn/wiki/U7OvwHP3AiUWlckzIEKclLQQnPr"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 64
+  }
+}

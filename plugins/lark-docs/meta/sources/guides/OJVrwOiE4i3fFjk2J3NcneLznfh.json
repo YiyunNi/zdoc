@@ -1,0 +1,1592 @@
+{
+  "creator": "ou_8554528ee6e965bad56710acde1c7847",
+  "has_child": false,
+  "node_create_time": "1736145481",
+  "node_token": "OJVrwOiE4i3fFjk2J3NcneLznfh",
+  "node_type": "origin",
+  "obj_create_time": "1736145481",
+  "obj_edit_time": "1760062919",
+  "obj_token": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+  "obj_type": "docx",
+  "origin_node_token": "OJVrwOiE4i3fFjk2J3NcneLznfh",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_node_token": "NOYvw884PigqIhk1gwLcw1OYnfe",
+  "space_id": "7167193056431783939",
+  "title": "Release Notes (Dec 26, 2024)",
+  "slug": "release-notes-2120",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "block_type": 1,
+        "children": [
+          "TLhjdo7JZoADYOxaNkLciPUknze",
+          "GKwFdg5MXouWwLxDYGYc5udOnjb",
+          "CQSZdGes1oSmRyxOiWncHzgpnef",
+          "HrCWdwEkzo49NOxpnxJc8EtPnsd",
+          "TaNCdXwotoqVGCxvMXscmT0pneh",
+          "UQuCdI1cVo9VKjx3T4bcm3Sknbg",
+          "FHoydq5IvoHRd9xie1ccPlXln9v",
+          "FQv1dCxTioHnHZx7FwDczHoznYc",
+          "BfbtdMBzOoFCWJx2N6jc3mpHnRw",
+          "B3codPPT8oPCvIxfTfDcIl6lnFg",
+          "VAsmdoQcJoGS5cxDxhacwKyDn09",
+          "ZNWXdaXe2oBcNQxiIGDcZy2InEb",
+          "W2pedjrYzo8H5ixJlvpcbSRknjh",
+          "KpSidLAxUo0nGMx3mTGc0zhLnte",
+          "NMCndu3enoS39Gxw9bKc7Uu2nLd",
+          "NOoNduZndorwQtxe39EceVU8npd",
+          "H04RdTiZOozJ13xQ4qLcVHDwnzh",
+          "Rb6Tdi5gToD0cCxb5KJcCuQAn9u",
+          "FoTCdxPaBo3I2vxyCPVc0Z3anTf",
+          "YPOMdupyfoKCdwxF91Ac1bPBnIf",
+          "LxrddrtCxoQG76xAOw6cAhA6nhf",
+          "DCuhdBoSNotEjDxzWPqcsQABnBc",
+          "Rv9idp3F1ozY9Xxvzqyc5N6Xnqe",
+          "OD1Ud8YfeorEXrxFGZBcF4KnnPc",
+          "TK5cdKRyvoxycmxIgmCc8xa3nKd",
+          "E5gvd1MOiopmBFxJSqzcoZcJnKd",
+          "WhKJdbNQvouA1Dx1MDYcRRFxnAs",
+          "UpKRdwduMo9ZenxhoRycmmlonoh",
+          "KLmcdM8gmoYSfpxhteEcCJNpnF6",
+          "IwCbdbaaUoBIo1xsog3cHtZbnig",
+          "BRrrd4UNDo6y5MxV1wRcG53Onah",
+          "SGcSdAAtRonjRpx7AA6ct1Uvnlb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Release Notes (Dec 26, 2024)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "TLhjdo7JZoADYOxaNkLciPUknze",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "With this release, Zilliz Cloud introduces significant enhancements to improve security, performance, and usability across its BYOC solution. A global mmap strategy is now implemented, offering customizable configurations at both the field and index levels, which enables increased collection capacity while maintaining search performance. Building on Milvus, Zilliz Cloud now supports database creation within clusters and provides collection-level Role-Based Access Control (RBAC) for better data management and multi-tenancy. Additionally, search precision settings have been refined, and these are now coupled with recall rate estimation capabilities to help optimize search accuracy and performance effectively.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GKwFdg5MXouWwLxDYGYc5udOnjb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Milvus compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "CQSZdGes1oSmRyxOiWncHzgpnef",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release is compatible with ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Milvus 2.4.x",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HrCWdwEkzo49NOxpnxJc8EtPnsd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BYOC - A Brand New Solution for Data Security and Permission Control",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "TaNCdXwotoqVGCxvMXscmT0pneh",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "As enterprise adoption of Zilliz Cloud grows, more and more become concerned with data security governance and permission control. Therefore, this release introduces a brand new Bring-Your-Own (BYOC) solution to meet their stringent requirements for data security and service quality in vector database services. This solution ensures:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UQuCdI1cVo9VKjx3T4bcm3Sknbg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Secure Communication",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Communication between the control and data planes now occurs exclusively over outbound port 443, ensuring a robust and secure connection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "FHoydq5IvoHRd9xie1ccPlXln9v",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Optimized Permissions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Deployment and operational tasks now require minimized, fine-grained permission settings, improving security and ease of management. Please take a look at the full permission list ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "here",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fpermissions-in-roles"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "FQv1dCxTioHnHZx7FwDczHoznYc",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "BYOC Overview",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fbyoc-intro"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Deploy BYOC on AWS",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fbyoc%2Fdeploy-byoc-aws"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BfbtdMBzOoFCWJx2N6jc3mpHnRw",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "New Region Available: GCP us-central1 (lowa)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "B3codPPT8oPCvIxfTfDcIl6lnFg",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud is now accessible in the GCP us-central1 region (Iowa), offering enhanced latency and performance for users in the central United States.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VAsmdoQcJoGS5cxDxhacwKyDn09",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For detailed pricing information of all available regions, please visit the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "pricing page",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZNWXdaXe2oBcNQxiIGDcZy2InEb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Support for Database Layer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "W2pedjrYzo8H5ixJlvpcbSRknjh",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud now includes a database layer positioned between clusters and collections, offering an efficient way to manage and organize data while enabling multi-tenancy. In this structure, a database is a logical unit for organizing and managing data. Users can create multiple databases to logically isolate data across different applications or tenants to enhance data security and enable multi-tenancy. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Learn more about databases",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fdocs.zilliz.com%2Fdocs%2Fdatabase"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KpSidLAxUo0nGMx3mTGc0zhLnte",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "mmap Support for Expanded Data Capacity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "NMCndu3enoS39Gxw9bKc7Uu2nLd",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release brings ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mmap",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " support to Zilliz Cloud, enabling it to serve up to 3x more data optimally. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mmap",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " allows direct memory access to large files stored on disk, enabling Zilliz Cloud to store indexes and data across both memory and disk. This setup optimizes data placement based on access frequency, significantly expanding storage capacity for collections while preserving search performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NOoNduZndorwQtxe39EceVU8npd",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For dedicated cluster users, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mmap",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " settings are fully customizable based on workload requirements. Users can flexibly control ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "mmap",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " strategies for vector data, scalar data, and scalar indexes within each collection. For more details on the global mmap strategies, read ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Use mmap",
+                "token": "P3wrwSMNNihy8Vkf9p6cTsWYnTb",
+                "url": "https://zilliverse.feishu.cn/wiki/P3wrwSMNNihy8Vkf9p6cTsWYnTb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "H04RdTiZOozJ13xQ4qLcVHDwnzh",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Collection Level RBAC Support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "Rb6Tdi5gToD0cCxb5KJcCuQAn9u",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This release introduces support for collection-level Role-Based Access Control (RBAC), enabling users to manage permissions and enforce multi-tenancy isolation at the collection level.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "FoTCdxPaBo3I2vxyCPVc0Z3anTf",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Three built-in collection-level privilege groups are now available:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YPOMdupyfoKCdwxF91Ac1bPBnIf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CollectionReadOnly (COLL_RO)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Grants read-only access to collection data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "LxrddrtCxoQG76xAOw6cAhA6nhf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CollectionReadWrite (COLL_RW)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Grants both read and write access to collection data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "DCuhdBoSNotEjDxzWPqcsQABnBc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "CollectionAdmin (COLL_ADMIN)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Grants read and write access to collection data, along with permissions to manage collections.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "Rv9idp3F1ozY9Xxvzqyc5N6Xnqe",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "For more details, ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "see collection level privilege groups",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FNitBwKVzzi0hXBkjdDFcfwRsngb%23Te87d9Sy0oggs0xLjIscntB2nKd"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OD1Ud8YfeorEXrxFGZBcF4KnnPc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "High Recall Search",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "TK5cdKRyvoxycmxIgmCc8xa3nKd",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zilliz Cloud introduces a search parameter called ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " to optimize vector searches by controlling search precision. This parameter ranges from ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1 to 10",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". Adjusting the parameter allows users to balance search recall and performance:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "E5gvd1MOiopmBFxJSqzcoZcJnKd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Default Value (leve=1)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Provides above 90% recall in typical cases while maintaining optimal search performance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "WhKJdbNQvouA1Dx1MDYcRRFxnAs",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "High Recall Search (level=6~10)",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": For scenarios requiring high recall rates (e.g., 99% or even higher), users can set the parameter between ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "6 ",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "and",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 10",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", or select ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "10",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " if performance is less critical.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "UpKRdwduMo9ZenxhoRycmmlonoh",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This flexibility allows users to tailor search behavior to their specific requirements, achieving the desired balance between precision and speed. See ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "use the 'level' parameter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBaGlwzDmyiyVvVk6NurcFclInCd%23WZCsdyVa0oactBxGgOncImEdnsc"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " for more details.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "KLmcdM8gmoYSfpxhteEcCJNpnF6",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Recall Rate Estimation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc"
+      },
+      {
+        "block_id": "IwCbdbaaUoBIo1xsog3cHtZbnig",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "We’ve introduced a feature to estimate recall rates during searches. By enabling the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "enable_recall_calculation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "search_params",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and setting it to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "true",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", you can receive system-estimated recall rates as part of your search results.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BRrrd4UNDo6y5MxV1wRcG53Onah",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "By combining recall rate estimation with the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " parameter, users can easily identify the appropriate ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "level",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " setting to achieve the desired recall rates for their applications. For more details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "get recall rate",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliverse.feishu.cn%2Fwiki%2FBaGlwzDmyiyVvVk6NurcFclInCd%23PAXZd7tD1ocxT9xrpllcdVBvn2b"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SGcSdAAtRonjRpx7AA6ct1Uvnlb",
+        "block_type": 2,
+        "parent_id": "FL7pdTrj2ouPjhxyJhJcEozanjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 33
+  }
+}

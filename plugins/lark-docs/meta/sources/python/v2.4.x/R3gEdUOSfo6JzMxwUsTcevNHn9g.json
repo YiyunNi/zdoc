@@ -1,0 +1,1001 @@
+{
+  "created_time": "1716516091",
+  "modified_time": "1716520768",
+  "name": "\\_\\_call\\_\\_()",
+  "owner_id": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_token": "XrwufFHF4ltI9jdQyeycZf3Knig",
+  "token": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/R3gEdUOSfo6JzMxwUsTcevNHn9g",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "block_type": 1,
+        "children": [
+          "LjazdOWcFof4DZxM1Zhc8IWmnkc",
+          "GRnodzfGboHFJBxcjPBcdSCtnUf",
+          "XI12dklwRonJIqxDYQCcVEwLn0b",
+          "F0GfdAQxxoPrUrx8RWocfI98nvu",
+          "J84bdB21noiH0CxgeK6cyKKsnCf",
+          "SS1LdUparo0sa9xpagrcEUiFn0d",
+          "Eknxdoux8ohTVQx8cN9cd02rn9g",
+          "ROl2dxhE0owemBxQPT1cOLDvnCd",
+          "JEDHdsukqoi6Maxsx7McddfpnSe",
+          "MPOudMXBsoff13x99AzcKQ9EnIf",
+          "Ic3ddHVyOoqEWhxa59ocvwrhngg",
+          "LzsHdN46QoPaZpxtyCIcfpOOnKh",
+          "Y6szdi1txoibKNxSHMIcCRVHnqb",
+          "Twlodz2zfosj5txvtbQcnTfonOf",
+          "MM4xdrLl0oEsDMxWCKicnS2Bnab",
+          "VReRdJmlWoerLrxU5POcr7X5nqk",
+          "XlMhd001bo2FBxx0MCMcolKUnBc",
+          "C3fjdQt9norL9wxpvxVciNu6n8g",
+          "UOp9dCdiBoG1rZxEJlrcKkdFnu0",
+          "G2CPdRh2QobudJx87yNcnmdQnsb"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "\\_\\_call\\_\\_()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "LjazdOWcFof4DZxM1Zhc8IWmnkc",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation in ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 22,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "JinaRerankFunction",
+                "token": "E3opdXwZCoY8igxMjQ1cwsTbnzh",
+                "url": "https://zilliverse.feishu.cn/docx/E3opdXwZCoY8igxMjQ1cwsTbnzh"
+              }
+            },
+            {
+              "text_run": {
+                "content": " takes in a query and document strings and returns a list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RerankResult",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " objects with the top k documents ranked by score.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GRnodzfGboHFJBxcjPBcdSCtnUf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "XI12dklwRonJIqxDYQCcVEwLn0b",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "# Instance created\njina_rf = JinaRerankFunction()\n\n# __call__ method will be called\njina_rf(\n    query: str,\n    documents: List[str],\n    top_k: int = 5\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -> List[RerankResult]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "F0GfdAQxxoPrUrx8RWocfI98nvu",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J84bdB21noiH0CxgeK6cyKKsnCf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "query",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "string",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TVSKd9vZJo15XAxynNkcT7TJnIg"
+        ],
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "TVSKd9vZJo15XAxynNkcT7TJnIg",
+        "block_type": 2,
+        "parent_id": "J84bdB21noiH0CxgeK6cyKKsnCf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The query string to use for ranking.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SS1LdUparo0sa9xpagrcEUiFn0d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "documents",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List[str]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YDvVdeon6oO2o1xjyARc9exznbe"
+        ],
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "YDvVdeon6oO2o1xjyARc9exznbe",
+        "block_type": 2,
+        "parent_id": "SS1LdUparo0sa9xpagrcEUiFn0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of document strings that will be ranked for the given query.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Eknxdoux8ohTVQx8cN9cd02rn9g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "top_k",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "int",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "SOkodugZIoMyerxqEkHcA00HnGb"
+        ],
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "SOkodugZIoMyerxqEkHcA00HnGb",
+        "block_type": 2,
+        "parent_id": "Eknxdoux8ohTVQx8cN9cd02rn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The maximum number of top ranked documents to return. Defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "5",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ROl2dxhE0owemBxQPT1cOLDvnCd",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JEDHdsukqoi6Maxsx7McddfpnSe",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "List[RerankResult]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MPOudMXBsoff13x99AzcKQ9EnIf",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ic3ddHVyOoqEWhxa59ocvwrhngg",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RerankResult",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " objects.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LzsHdN46QoPaZpxtyCIcfpOOnKh",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "├── RerankResult\n|    └── text\n|    └── score\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "|    └── index",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 1,
+            "wrap": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "Y6szdi1txoibKNxSHMIcCRVHnqb",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Each ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RerankResult",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object contains:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Twlodz2zfosj5txvtbQcnTfonOf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "text",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The matched document text.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "MM4xdrLl0oEsDMxWCKicnS2Bnab",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "score",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The score assigned to that document by the reranking model.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "VReRdJmlWoerLrxU5POcr7X5nqk",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "index",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": The index of the document in the original documents list.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "XlMhd001bo2FBxx0MCMcolKUnBc",
+        "block_type": 2,
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "C3fjdQt9norL9wxpvxVciNu6n8g",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RuntimeError",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YNkOdCsikoF8szxwnqrcnr8anuc"
+        ],
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "YNkOdCsikoF8szxwnqrcnr8anuc",
+        "block_type": 2,
+        "parent_id": "C3fjdQt9norL9wxpvxVciNu6n8g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when the response from the Jina API does not contain the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "results",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " key.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UOp9dCdiBoG1rZxEJlrcKkdFnu0",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      },
+      {
+        "block_id": "G2CPdRh2QobudJx87yNcnmdQnsb",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus.model.reranker import JinaRerankFunction\n\njina_rf = JinaRerankFunction(\n    model_name=\"jina-reranker-v1-base-en\", # Defaults to `jina-reranker-v1-base-en`\n    api_key=\"YOUR_JINAAI_API_KEY\"\n)\n\nquery = \"What event in 1956 marked the official birth of artificial intelligence as a discipline?\"\n\ndocuments = [\n    \"In 1950, Alan Turing published his seminal paper, 'Computing Machinery and Intelligence,' proposing the Turing Test as a criterion of intelligence, a foundational concept in the philosophy and development of artificial intelligence.\",\n    \"The Dartmouth Conference in 1956 is considered the birthplace of artificial intelligence as a field; here, John McCarthy and others coined the term 'artificial intelligence' and laid out its basic goals.\",\n    \"In 1951, British mathematician and computer scientist Alan Turing also developed the first program designed to play chess, demonstrating an early example of AI in game strategy.\",\n    \"The invention of the Logic Theorist by Allen Newell, Herbert A. Simon, and Cliff Shaw in 1955 marked the creation of the first true AI program, which was capable of solving logic problems, akin to proving mathematical theorems.\"\n]\n\njina_rf(query, documents)\n\n# [RerankResult(text=\"The Dartmouth Conference in 1956 is considered the birthplace of artificial intelligence as a field; here, John McCarthy and others coined the term 'artificial intelligence' and laid out its basic goals.\", score=0.9370958209037781, index=1),\n#  RerankResult(text='The invention of the Logic Theorist by Allen Newell, Herbert A. Simon, and Cliff Shaw in 1955 marked the creation of the first true AI program, which was capable of solving logic problems, akin to proving mathematical theorems.', score=0.35420963168144226, index=3),\n#  RerankResult(text=\"In 1950, Alan Turing published his seminal paper, 'Computing Machinery and Intelligence,' proposing the Turing Test as a criterion of intelligence, a foundational concept in the philosophy and development of artificial intelligence.\", score=0.3498658835887909, index=0),\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "#  RerankResult(text='In 1951, British mathematician and computer scientist Alan Turing also developed the first program designed to play chess, demonstrating an early example of AI in game strategy.', score=0.2728956639766693, index=2)]",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "R3gEdUOSfo6JzMxwUsTcevNHn9g"
+      }
+    ],
+    "counts": 25
+  },
+  "slug": "JinaRerankFunction-__call__"
+}

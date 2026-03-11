@@ -1,0 +1,1038 @@
+{
+  "created_time": "1720587768",
+  "modified_time": "1746600275",
+  "name": "loadPartitions()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "AooAfPsaBlJBpIdBPwMcQF3FnVg",
+  "token": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/GDScd1Tyco6JwkxCRs8c6bOvnfd",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "block_type": 1,
+        "children": [
+          "doxcn4kJRYRrAwsQLwxK9PwSTKe",
+          "doxcnJQrjt9QBwreTAwphuPSPYf",
+          "doxcnSx2KcGDh8vhgk2cWM1LUbb",
+          "doxcnsrDeBqN1KSRgOosPeOXHxe",
+          "doxcn4SZ8wuac1zGBxOvnAZl67e",
+          "doxcnoeM4jnrK9VaYlWxzAEapmg",
+          "doxcnvvWvWi6EssoiPoHU0O04Eg",
+          "UJGWdgV3voy7slxzkl9cd71fnjc",
+          "ZTsJdAzBboVg4uxf8YUcdCx4noc",
+          "TJlCdUXMRo7iJRxHmSVcN1B8nmf",
+          "OnIOdYP36okfHaxFkG0c5QvTnnd",
+          "P6gadrJ2coQK9Mxw7dScPPqbnBF",
+          "doxcnuKlY6pZtGbfPu1PvDuM3wK",
+          "doxcnNll2etUEOvyxqSv5bT6cch",
+          "doxcnEDTZkEKrwKB2497rFX4eae",
+          "doxcnL6SriZm01yKlP08CVMqBJh",
+          "doxcnt7MGz7x2aHk5nRMgiTLUxb",
+          "doxcn1DlvIuR9GxS42DiAdSjNFe",
+          "doxcnLb170V70jlifhoX84hqsbd"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "loadPartitions()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcn4kJRYRrAwsQLwxK9PwSTKe",
+        "block_type": 2,
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation releases the partitions in a specified collection from memory.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnJQrjt9QBwreTAwphuPSPYf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public void loadPartitions(LoadPartitionsReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcnSx2KcGDh8vhgk2cWM1LUbb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcnsrDeBqN1KSRgOosPeOXHxe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "loadPartitions(LoadPartitionsReq.builder()\n    .collectionName(String collectionName)\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "    .partitionNames(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "> partitionNames)\n    .numReplicas(Interger numReplicas)\n    .sync(Boolean sync)\n    .timeout(Long timeout)\n    .refresh(Boolean refresh)\n    .loadFields(List<String> loadFields)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcn4SZ8wuac1zGBxOvnAZl67e",
+        "block_type": 2,
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnoeM4jnrK9VaYlWxzAEapmg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "collectionName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnjqXoP9XYbaIrk6Mm1qM0Le"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcnjqXoP9XYbaIrk6Mm1qM0Le",
+        "block_type": 2,
+        "parent_id": "doxcnoeM4jnrK9VaYlWxzAEapmg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of an existing collection.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnvvWvWi6EssoiPoHU0O04Eg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "partitionNames(",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "> partitionNames)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcn2xP1tsgXByW4HcPVQnUZ8e"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcn2xP1tsgXByW4HcPVQnUZ8e",
+        "block_type": 2,
+        "parent_id": "doxcnvvWvWi6EssoiPoHU0O04Eg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of the names of the partitions to load.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UJGWdgV3voy7slxzkl9cd71fnjc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numReplicas(Interger numReplicas)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "SrBOd3BNfoFLpCx0zv6c0IDgnGd"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "SrBOd3BNfoFLpCx0zv6c0IDgnGd",
+        "block_type": 2,
+        "parent_id": "UJGWdgV3voy7slxzkl9cd71fnjc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of replicas to create during the load process.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZTsJdAzBboVg4uxf8YUcdCx4noc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "sync(Boolean sync)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "YVkxd0KwlocfWnxAojvcE5sHn0b",
+          "Yhhxd5lDFoiHzWxf4kyce10dnof"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "YVkxd0KwlocfWnxAojvcE5sHn0b",
+        "block_type": 2,
+        "parent_id": "ZTsJdAzBboVg4uxf8YUcdCx4noc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether the current operation is synchronous.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Yhhxd5lDFoiHzWxf4kyce10dnof",
+        "block_type": 2,
+        "parent_id": "ZTsJdAzBboVg4uxf8YUcdCx4noc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Boolean.True",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", indicating that the operation returns only after the specified partitions are fully loaded.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "TJlCdUXMRo7iJRxHmSVcN1B8nmf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout(Long timeout)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NOWDdDjmYodfE0xa7aTcypLenno"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "NOWDdDjmYodfE0xa7aTcypLenno",
+        "block_type": 2,
+        "parent_id": "TJlCdUXMRo7iJRxHmSVcN1B8nmf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The timeout duration for this operation. The value defaults to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "60000L",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", indicating the operation times out after 1000 hours.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OnIOdYP36okfHaxFkG0c5QvTnnd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "refresh(Boolean refresh)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "X58ed4M4HoQrBjxi9AVcbmVbnIf"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "X58ed4M4HoQrBjxi9AVcbmVbnIf",
+        "block_type": 2,
+        "parent_id": "OnIOdYP36okfHaxFkG0c5QvTnnd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Whether to refresh the data after load.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "P6gadrJ2coQK9Mxw7dScPPqbnBF",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "loadFields(List<String> loadFields)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "PK9jdtJE3o5ZW0xayr5cvkxCnye"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "PK9jdtJE3o5ZW0xayr5cvkxCnye",
+        "block_type": 2,
+        "parent_id": "P6gadrJ2coQK9Mxw7dScPPqbnBF",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A name list of the fields to load during the process.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnuKlY6pZtGbfPu1PvDuM3wK",
+        "block_type": 2,
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnNll2etUEOvyxqSv5bT6cch",
+        "block_type": 2,
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "void",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEDTZkEKrwKB2497rFX4eae",
+        "block_type": 2,
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnL6SriZm01yKlP08CVMqBJh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnJTjjo0A5uQmzDHTbXrjcwg"
+        ],
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcnJTjjo0A5uQmzDHTbXrjcwg",
+        "block_type": 2,
+        "parent_id": "doxcnL6SriZm01yKlP08CVMqBJh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnt7MGz7x2aHk5nRMgiTLUxb",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcn1DlvIuR9GxS42DiAdSjNFe",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.partition.request.LoadPartitionsReq;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. L",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "oad partition in collection\nLoadPartitionsReq loadPartitionsReq = LoadPartitionsReq.builder()\n        .collectionName(\"test\")\n        .partitionNames(Collections.singletonList(\"test_partition\"))\n        .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "client.loadPartitions(loadPartitionsReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd"
+      },
+      {
+        "block_id": "doxcnLb170V70jlifhoX84hqsbd",
+        "block_type": 2,
+        "parent_id": "GDScd1Tyco6JwkxCRs8c6bOvnfd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 29
+  },
+  "slug": "v2-Partitions-loadPartitions"
+}

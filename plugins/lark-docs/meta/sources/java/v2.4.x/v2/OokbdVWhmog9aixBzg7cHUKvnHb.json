@@ -1,0 +1,2050 @@
+{
+  "created_time": "1741677780",
+  "modified_time": "1746685482",
+  "name": "describeResourceGroup()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "RmMNfMgc3lMPTBdfs0WcK1YGn6M",
+  "token": "OokbdVWhmog9aixBzg7cHUKvnHb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/OokbdVWhmog9aixBzg7cHUKvnHb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "block_type": 1,
+        "children": [
+          "Vkg5dZqiZo9gjExZ8L1cNzDcnob",
+          "EB5VdQs4nosgF0xAFaQczK0hn36",
+          "XHTndtvs2oqZ1AxlWTwcpU8DnOe",
+          "WCYpdusV7oLYt3xr5mScdaWqnfc",
+          "HMWxdzkc3oFUWPxRVjLcfDHAnGh",
+          "UK9CdxREYo3SpMx1YXkcMNjlnzb",
+          "Q1c8durffotRovxouBCcJ0LdnIh",
+          "ClESdSvbqoiWwXxouSYcanEjngh",
+          "R8YndcfUVoGQj6xASf2cJtGSnJb",
+          "GGYQd2QrJoK7u1xNeyBcgxoCn6g",
+          "MQGEdGEaFoA4rOxvuy5cGclinkc",
+          "ThFFds3tmolZIRxaU6tckC6enpd",
+          "XMOcdpZIFo2eKKx2z8icGV88n0d",
+          "B9sUd9U67ommPlxE115cqKevn8d",
+          "BXMedevnvoRpwnxlrlNcC50Wnug",
+          "CeDodf5Gjok2oxxZp60cgNXhnKb",
+          "MlsId8DNaocQMuxPnVfcyaWWnEb",
+          "M2u1dm5PHotLVjx4zhHcp8rjndb",
+          "CaxedLH3xoGe6axnShtckSsAnmb",
+          "Pk43dhIIdolT5Axqd67cp8LEnG7",
+          "Qyu8dku4qoQNSwxzOYkcxq6Knwp",
+          "ZISBd4EY0o9qJdxDwUVcSodTnMd",
+          "U57qdBO3gobZcix14S7chFlFnqf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "describeResourceGroup()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "Vkg5dZqiZo9gjExZ8L1cNzDcnob",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation describes a specific resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EB5VdQs4nosgF0xAFaQczK0hn36",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public DescribeResourceGroupResp describeResourceGroup(DescribeResourceGroupReq request)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "XHTndtvs2oqZ1AxlWTwcpU8DnOe",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "WCYpdusV7oLYt3xr5mScdaWqnfc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "describeResourceGroup(DescribeResourceGroupReq.builder()\n    .groupName(String groupName)\n    .build()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "HMWxdzkc3oFUWPxRVjLcfDHAnGh",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "BUILDER METHODS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UK9CdxREYo3SpMx1YXkcMNjlnzb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupName(String collectionName)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "AzePdKu31oQD2pxvWkXcrYEenHc",
+          "G4kxdQ5fuo8zDexMsOtcea3Yndb"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "AzePdKu31oQD2pxvWkXcrYEenHc",
+        "block_type": 2,
+        "parent_id": "UK9CdxREYo3SpMx1YXkcMNjlnzb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "[REQUIRED]",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "G4kxdQ5fuo8zDexMsOtcea3Yndb",
+        "block_type": 2,
+        "parent_id": "UK9CdxREYo3SpMx1YXkcMNjlnzb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the target resource group to describe.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q1c8durffotRovxouBCcJ0LdnIh",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ClESdSvbqoiWwXxouSYcanEjngh",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "DescribeResourceGroupResp",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R8YndcfUVoGQj6xASf2cJtGSnJb",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GGYQd2QrJoK7u1xNeyBcgxoCn6g",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeResourceGroupResp",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object contains the following fields:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MQGEdGEaFoA4rOxvuy5cGclinkc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "groupName",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "String",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "I9svdMZsxo0qh8xZQ4Lc3DAZnnh"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "I9svdMZsxo0qh8xZQ4Lc3DAZnnh",
+        "block_type": 2,
+        "parent_id": "MQGEdGEaFoA4rOxvuy5cGclinkc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The name of the current resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ThFFds3tmolZIRxaU6tckC6enpd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "capacity",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Integer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "I7g7d7R8PoGW7exjY4Nc17kknFW"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "I7g7d7R8PoGW7exjY4Nc17kknFW",
+        "block_type": 2,
+        "parent_id": "ThFFds3tmolZIRxaU6tckC6enpd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of query nodes allocated to the current resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XMOcdpZIFo2eKKx2z8icGV88n0d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numberOfAvailableNode",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Interger",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HLtZdvBVfoWOyTxk2WncagLsnFg"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "HLtZdvBVfoWOyTxk2WncagLsnFg",
+        "block_type": 2,
+        "parent_id": "XMOcdpZIFo2eKKx2z8icGV88n0d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of available query nodes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B9sUd9U67ommPlxE115cqKevn8d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numberOfLoadedReplica",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Map<String, Integer>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JhG1dbSgioq9H4xPhKdceNMInEg"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "JhG1dbSgioq9H4xPhKdceNMInEg",
+        "block_type": 2,
+        "parent_id": "B9sUd9U67ommPlxE115cqKevn8d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of loaded replicas per query node.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BXMedevnvoRpwnxlrlNcC50Wnug",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numberOfOutgoingNode",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Map<String, Integer>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "NnJ2dkl1moqZhcxzUTEcYpg6nCc"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "NnJ2dkl1moqZhcxzUTEcYpg6nCc",
+        "block_type": 2,
+        "parent_id": "BXMedevnvoRpwnxlrlNcC50Wnug",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of outgoing nodes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CeDodf5Gjok2oxxZp60cgNXhnKb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "numberOfInComingNode",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Map<String, Integer>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "KFVMdraMGoAhp0xeig1cI4BWnqb"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "KFVMdraMGoAhp0xeig1cI4BWnqb",
+        "block_type": 2,
+        "parent_id": "CeDodf5Gjok2oxxZp60cgNXhnKb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of incoming nodes.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MlsId8DNaocQMuxPnVfcyaWWnEb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "config",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "QpaAdqIOyoNR8LxijXwcHsKPn0d",
+          "OTeMdqTQlosHlXxwDyFcokuon8c",
+          "LeggdO7Iaot70FxzUqVc7kgoncd",
+          "Dzd3dQhwJoSIicxnbpgcRX5inpg",
+          "Qpl9dj6D6oYboNxsi3Nc3FotnJh",
+          "B253dVPteoN2YuxREHnc3TV5n3b"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "QpaAdqIOyoNR8LxijXwcHsKPn0d",
+        "block_type": 2,
+        "parent_id": "MlsId8DNaocQMuxPnVfcyaWWnEb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The configuration of the current resource group, which is a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupConfig",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object as follows:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OTeMdqTQlosHlXxwDyFcokuon8c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "requests",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupLimit",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "K255dBi2jo3PH4xOWwccBIcdngc"
+        ],
+        "parent_id": "MlsId8DNaocQMuxPnVfcyaWWnEb"
+      },
+      {
+        "block_id": "K255dBi2jo3PH4xOWwccBIcdngc",
+        "block_type": 2,
+        "parent_id": "OTeMdqTQlosHlXxwDyFcokuon8c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of nodes required by a resource group",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LeggdO7Iaot70FxzUqVc7kgoncd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "limits",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupLimit",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "DNyCdCZgHobkqnxXy2pcsBuVnTd"
+        ],
+        "parent_id": "MlsId8DNaocQMuxPnVfcyaWWnEb"
+      },
+      {
+        "block_id": "DNyCdCZgHobkqnxXy2pcsBuVnTd",
+        "block_type": 2,
+        "parent_id": "LeggdO7Iaot70FxzUqVc7kgoncd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The maximum number of nodes required by a resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Dzd3dQhwJoSIicxnbpgcRX5inpg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List\\<ResourceGroupTransfer>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "U29wdePyNoW01ixHmmzc9sn6n2e"
+        ],
+        "parent_id": "MlsId8DNaocQMuxPnVfcyaWWnEb"
+      },
+      {
+        "block_id": "U29wdePyNoW01ixHmmzc9sn6n2e",
+        "block_type": 2,
+        "parent_id": "Dzd3dQhwJoSIicxnbpgcRX5inpg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The source resource groups for necessary transfers. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Qpl9dj6D6oYboNxsi3Nc3FotnJh",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "to",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List\\<ResourceGroupTransfer>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "HxVpddc9uoSlSvxemcncpV5vnpf"
+        ],
+        "parent_id": "MlsId8DNaocQMuxPnVfcyaWWnEb"
+      },
+      {
+        "block_id": "HxVpddc9uoSlSvxemcncpV5vnpf",
+        "block_type": 2,
+        "parent_id": "Qpl9dj6D6oYboNxsi3Nc3FotnJh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The target resource groups for necessary transfers. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B253dVPteoN2YuxREHnc3TV5n3b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nodeFilter",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupNodeFilter",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "TSmId6Jb9oDKsixo5QOcIQ2JnTf"
+        ],
+        "parent_id": "MlsId8DNaocQMuxPnVfcyaWWnEb"
+      },
+      {
+        "block_id": "TSmId6Jb9oDKsixo5QOcIQ2JnTf",
+        "block_type": 2,
+        "parent_id": "B253dVPteoN2YuxREHnc3TV5n3b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A filter used to filter the query nodes with specified node labels.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M2u1dm5PHotLVjx4zhHcp8rjndb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nodes",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "List\\<NodeInfo>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -  ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XGpndSZF2odZrqxptDvcOYwZnFg",
+          "SrZadAHlAo0gQNxgfH1cs44wnhc",
+          "B3vtd2hbHopH1oxYdjEcoIKPn5v",
+          "OGyZd9rsnoiz6KxWzTtcKzVmn0c"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "XGpndSZF2odZrqxptDvcOYwZnFg",
+        "block_type": 2,
+        "parent_id": "M2u1dm5PHotLVjx4zhHcp8rjndb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A list of nodes, each of which is a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "NodeInfo",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SrZadAHlAo0gQNxgfH1cs44wnhc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "nodeId",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (Long) -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "BdeVdnshUoMySXxQRIicqppGnse"
+        ],
+        "parent_id": "M2u1dm5PHotLVjx4zhHcp8rjndb"
+      },
+      {
+        "block_id": "BdeVdnshUoMySXxQRIicqppGnse",
+        "block_type": 2,
+        "parent_id": "SrZadAHlAo0gQNxgfH1cs44wnhc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The ID of the current query node.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B3vtd2hbHopH1oxYdjEcoIKPn5v",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "address",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (String) -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "XQIKdVEc3oH3YmxTWPBcSjkXnKf"
+        ],
+        "parent_id": "M2u1dm5PHotLVjx4zhHcp8rjndb"
+      },
+      {
+        "block_id": "XQIKdVEc3oH3YmxTWPBcSjkXnKf",
+        "block_type": 2,
+        "parent_id": "B3vtd2hbHopH1oxYdjEcoIKPn5v",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The address of the current query node.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OGyZd9rsnoiz6KxWzTtcKzVmn0c",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "hostname",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (String) -   ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "Xzmad3NSvoG3HYxbUsHcOKUnnte"
+        ],
+        "parent_id": "M2u1dm5PHotLVjx4zhHcp8rjndb"
+      },
+      {
+        "block_id": "Xzmad3NSvoG3HYxbUsHcOKUnnte",
+        "block_type": 2,
+        "parent_id": "OGyZd9rsnoiz6KxWzTtcKzVmn0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The hostname of the current query node.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CaxedLH3xoGe6axnShtckSsAnmb",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Pk43dhIIdolT5Axqd67cp8LEnG7",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientExceptions",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "MzTUdwJOyoUQrxxI68zcUiconde"
+        ],
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "MzTUdwJOyoUQrxxI68zcUiconde",
+        "block_type": 2,
+        "parent_id": "Pk43dhIIdolT5Axqd67cp8LEnG7",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Qyu8dku4qoQNSwxzOYkcxq6Knwp",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "ZISBd4EY0o9qJdxDwUVcSodTnMd",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "import io.milvus.v2.client.ConnectConfig;\nimport io.milvus.v2.client.MilvusClientV2;\nimport io.milvus.v2.service.resourcegroup.request.DescribeResourceGroupReq;\nimport io.milvus.v2.service.resourcegroup.response.DescribeResourceGroupResp;\n\n// 1. Set up a client\nConnectConfig connectConfig = ConnectConfig.builder()\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "        .uri(\"",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "http://localhost:19530",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\")\n        .token(\"root:Milvus\")\n        .build();\n        \nMilvusClientV2 client = new MilvusClientV2(connectConfig);\n\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "// ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "2. Describe the resource group",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  \nDescribeResourceGroupReq describeResourceGroupReq = DescribeResourceGroupReq.builder()\n    .groupName(\"rg1\")\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DescribeResourceGroupResp group = client.describeResourceGroup(describeResourceGroupReq);",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb"
+      },
+      {
+        "block_id": "U57qdBO3gobZcix14S7chFlFnqf",
+        "block_type": 2,
+        "parent_id": "OokbdVWhmog9aixBzg7cHUKvnHb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      }
+    ],
+    "counts": 51
+  },
+  "slug": "v2-ResourceGroup-describeResourceGroup"
+}

@@ -1,0 +1,1311 @@
+{
+  "created_time": "1737010175",
+  "modified_time": "1737084238",
+  "name": "describe_resource_group()",
+  "owner_id": "ou_8554528ee6e965bad56710acde1c7847",
+  "parent_token": "Lr8lfQ7TjlcKntdAB97ctH2Qnjd",
+  "token": "OcJXde1ppo9h5MxYcBJc5WTunob",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/OcJXde1ppo9h5MxYcBJc5WTunob",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "block_type": 1,
+        "children": [
+          "OoG6d0nuKozpdVxLIOVcoBIfnke",
+          "XuqodHrPCodJfNxHcJOcPrPunbf",
+          "TArOdAsYHof7Kvx53RhcwM9onWg",
+          "P1Bqdfu8doEtcmxda8JctpYanWg",
+          "Frpnd7ZlMonKTwxsBvpcSIqrnBg",
+          "SKRRdt6nHoLMq3xFovTcAHdTnUg",
+          "VGv5dZgqBo4lCixkM33cFu1Unnd",
+          "Z8XZdrE0PoW35cxkMB9cmovtnWf",
+          "ZHHUdaqPNoQcx8xSFO2caRszntB",
+          "S2tgdA91coOFU2xKQfyct4YOn9c",
+          "XMJUdbLpKotLiUxf8kOcE9B7nLg",
+          "I0Sid7UwUoqZsgxeMOUcWBywnxR",
+          "WSoNd0euGodaEzxleArc9Sz3nTb",
+          "VFiKdFMqFof6ICxXP6McLvgUnNf",
+          "CBqYdrh4PojtMRxse1CcJNv0n5d",
+          "M8DcdCt8Coqn9rxHgPxcW9Xin7b",
+          "VfZYdK5nSosKTXxNGXlcPsyOnnc",
+          "U221d9og0oP69XxKvYVcKheZnNU",
+          "ODSWdyGezoD8f8xdZVKcKEl5nmf",
+          "CLTvdSSQBo0MowxzUd8csaROndb",
+          "NHK0ddQmooC7xkxPjZxcD1xEnoc",
+          "ZieAdLsqeoDdkuxUwC9cGiSZnrf"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "describe_resource_group()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "OoG6d0nuKozpdVxLIOVcoBIfnke",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This operation lists detailed information about the specified resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XuqodHrPCodJfNxHcJOcPrPunbf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Request Syntax",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "TArOdAsYHof7Kvx53RhcwM9onWg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "describe_resource_group(\n    name: str,\n    timeout: Optional[float] = None\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -> ResourceGroupInfo",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "P1Bqdfu8doEtcmxda8JctpYanWg",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "Frpnd7ZlMonKTwxsBvpcSIqrnBg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "X7XNd7rHJokGhAxiULjcj2tVndf"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "X7XNd7rHJokGhAxiULjcj2tVndf",
+        "block_type": 2,
+        "parent_id": "Frpnd7ZlMonKTwxsBvpcSIqrnBg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the resource group to describe.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "indentation_level": "NoIndent"
+          }
+        }
+      },
+      {
+        "block_id": "SKRRdt6nHoLMq3xFovTcAHdTnUg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "timeout",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "float",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " | ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "F46xdV4cJo5Y6axo4nYc7KP1ngg"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "F46xdV4cJo5Y6axo4nYc7KP1ngg",
+        "block_type": 2,
+        "parent_id": "SKRRdt6nHoLMq3xFovTcAHdTnUg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The timeout duration for this operation. Setting this to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "None",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " indicates that it timeouts when a response arrives or an error occurs.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VGv5dZgqBo4lCixkM33cFu1Unnd",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURN TYPE:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Z8XZdrE0PoW35cxkMB9cmovtnWf",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ResourceGroupInfo",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZHHUdaqPNoQcx8xSFO2caRszntB",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "S2tgdA91coOFU2xKQfyct4YOn9c",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "A ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupInfo",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " object that contains detailed information about the specified resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XMJUdbLpKotLiUxf8kOcE9B7nLg",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "ResourceGroupInfo:\n<name:rg1>, # resource group name\n<capacity:1>, # resource group capacity\n<num_available_node:1>, # resource group node num\n<num_loaded_replica:{'hello_milvus': 1}>, # collection loaded replica num in resource group\n<num_outgoing_node:{}>, # node num which still in use by replica in other resource group\n<num_incoming_node:{}>, # node num which is in use by replica but belong to other resource group \n<config:requests { # resource group config\n  node_num: 1\n}\nlimits {\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "  node_num: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "1",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "\n}\ntransfer_from {\n  resource_group: \"__default_resource_group\"\n}\ntransfer_to {\n  resource_group: \"__default_resource_group\"\n}\n>,\n<nodes:[NodeInfo: # node detailed info\n<node_id: 1>,\n<address:ip:port>,\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "<hostname: hostname>]>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "I0Sid7UwUoqZsgxeMOUcWBywnxR",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "PARAMETERS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WSoNd0euGodaEzxleArc9Sz3nTb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "name",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "str",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") - ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "EORgdYTyqoADc8xsZZqcfwnonyf"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "EORgdYTyqoADc8xsZZqcfwnonyf",
+        "block_type": 2,
+        "parent_id": "WSoNd0euGodaEzxleArc9Sz3nTb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Name of the specified resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VFiKdFMqFof6ICxXP6McLvgUnNf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "capacity",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "number",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LrG9dLlZUoPazaxBCsOcjjYgn5d"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "LrG9dLlZUoPazaxBCsOcjjYgn5d",
+        "block_type": 2,
+        "parent_id": "VFiKdFMqFof6ICxXP6McLvgUnNf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The number of query nodes that have been transferred to this resource group.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CBqYdrh4PojtMRxse1CcJNv0n5d",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "num_available_replica",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Object",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "JpYadusm2ogjKzxwYobcboQ4nMh"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "JpYadusm2ogjKzxwYobcboQ4nMh",
+        "block_type": 2,
+        "parent_id": "CBqYdrh4PojtMRxse1CcJNv0n5d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An object that contains collection-specific statistics on the number of available replicas, with the collection names as the keys and their numbers of replicas as the values.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "M8DcdCt8Coqn9rxHgPxcW9Xin7b",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "num_outgoing_node",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Object",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "BxQ0dMDP7ok1zAxOlUjcZElXn8f"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "BxQ0dMDP7ok1zAxOlUjcZElXn8f",
+        "block_type": 2,
+        "parent_id": "M8DcdCt8Coqn9rxHgPxcW9Xin7b",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An object that contains collection-specific statistics on the number of outgoing nodes accessed by the replicas loaded in this resource group, with the collection names as the keys and their numbers of outgoing nodes as the values.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VfZYdK5nSosKTXxNGXlcPsyOnnc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "num_incoming_node",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Object",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "LxfPdrHR5oYl7JxWgujcM7zWn1g"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "LxfPdrHR5oYl7JxWgujcM7zWn1g",
+        "block_type": 2,
+        "parent_id": "VfZYdK5nSosKTXxNGXlcPsyOnnc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "An object that contains collection-specific statistics on the number of incoming nodes accessed by the replicas loaded in this resource group, with the collection names as the keys and their numbers of incoming nodes as the values.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "U221d9og0oP69XxKvYVcKheZnNU",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "config",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "ResourceGroupConfig",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ") -",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "REWdd4zzto1eKKxXEIUcWt7snXg"
+        ],
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "REWdd4zzto1eKKxXEIUcWt7snXg",
+        "block_type": 2,
+        "parent_id": "U221d9og0oP69XxKvYVcKheZnNU",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The configurations of the specified resource group in a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 22,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "ResourceGroupConfig",
+                "token": "LrfjdgJXkoe90gxNR1YcrsJMnYg",
+                "url": "https://zilliverse.feishu.cn/docx/LrfjdgJXkoe90gxNR1YcrsJMnYg"
+              }
+            },
+            {
+              "text_run": {
+                "content": " instance.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ODSWdyGezoD8f8xdZVKcKEl5nmf",
+        "block_type": 2,
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CLTvdSSQBo0MowxzUd8csaROndb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusException",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " - Raised if any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "NHK0ddQmooC7xkxPjZxcD1xEnoc",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Examples",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      },
+      {
+        "block_id": "ZieAdLsqeoDdkuxUwC9cGiSZnrf",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "from pymilvus import (\n    MilvusClient,\n    DataType,\n)\nfrom pymilvus.client.constants import DEFAULT_RESOURCE_GROUP\n\nfrom pymilvus.client.types import (\n    ResourceGroupConfig,\n)\n\ncollection_name = \"hello_milvus\"\nclient = MilvusClient(\"http://localhost:19530\")\n\n## create resource group\nprint(\"create resource group\")\nclient.create_resource_group(\"rg1\", config=ResourceGroupConfig(\n                requests={\"node_num\": 1},\n                limits={\"node_num\": 1},\n                transfer_from=[{\"resource_group\": DEFAULT_RESOURCE_GROUP}],\n                transfer_to=[{\"resource_group\": DEFAULT_RESOURCE_GROUP}],\n            ))\n\n## describe resource group\nprint(\"describe rg1\")\nresult = client.describe_resource_group(\"rg1\")\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "print(result)",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 49,
+            "wrap": false
+          }
+        },
+        "parent_id": "OcJXde1ppo9h5MxYcBJc5WTunob"
+      }
+    ],
+    "counts": 31
+  },
+  "slug": "ResourceGroup-describe_resource_group"
+}

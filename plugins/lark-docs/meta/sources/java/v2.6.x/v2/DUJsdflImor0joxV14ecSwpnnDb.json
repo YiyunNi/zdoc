@@ -1,0 +1,302 @@
+{
+  "created_time": "1770630411",
+  "modified_time": "1770775730",
+  "name": "getParams()",
+  "owner_id": "ou_0078951f6723d3bbd581b9032f8a99f5",
+  "parent_token": "WtCQfKhCll78bpdsAeHcc42BnYc",
+  "token": "DUJsdflImor0joxV14ecSwpnnDb",
+  "type": "docx",
+  "url": "https://zilliverse.feishu.cn/docx/DUJsdflImor0joxV14ecSwpnnDb",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "DUJsdflImor0joxV14ecSwpnnDb",
+        "block_type": 1,
+        "children": [
+          "doxcniCepjOXrjs2IDuXF7Naylf",
+          "doxcnZuirJV1GWqUjPQL9WhV3te",
+          "doxcnOOwkCTe98jGOjmvxb817Tn",
+          "doxcnQkfPcqRctyVvd2WgR2fLcg",
+          "doxcnDUroYwojgWvinWJavyMmdf",
+          "doxcnyqNYLuot4CKOsUwaloAgxe",
+          "doxcnEeRb4qKT2jN8uOfYfwxead",
+          "doxcnHNWjZHkwWJo8pjJvLbmJkc"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "getParams()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "doxcniCepjOXrjs2IDuXF7Naylf",
+        "block_type": 2,
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This getter r",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "eturns the parameters map of this FunctionScore object.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnZuirJV1GWqUjPQL9WhV3te",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "public Map<String, String> getParams()",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb"
+      },
+      {
+        "block_id": "doxcnOOwkCTe98jGOjmvxb817Tn",
+        "block_type": 2,
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "RETURNS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnQkfPcqRctyVvd2WgR2fLcg",
+        "block_type": 2,
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Map\\<String, String\\>",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": true,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnDUroYwojgWvinWJavyMmdf",
+        "block_type": 2,
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "EXCEPTIONS:",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnyqNYLuot4CKOsUwaloAgxe",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "MilvusClientException",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "children": [
+          "doxcnBuRzW8xYw3V6nXIwp8tBmd"
+        ],
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb"
+      },
+      {
+        "block_id": "doxcnBuRzW8xYw3V6nXIwp8tBmd",
+        "block_type": 2,
+        "parent_id": "doxcnyqNYLuot4CKOsUwaloAgxe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This exception will be raised when any error occurs during this operation.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "doxcnEeRb4qKT2jN8uOfYfwxead",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Example",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb"
+      },
+      {
+        "block_id": "doxcnHNWjZHkwWJo8pjJvLbmJkc",
+        "block_type": 14,
+        "code": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "FunctionScore score = FunctionScore.builder()\n    .params(Map.of(\"weight\", \"0.8\"))\n    .build();\n",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Map<String, String> params = score.getParams();",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "language": 29,
+            "wrap": false
+          }
+        },
+        "parent_id": "DUJsdflImor0joxV14ecSwpnnDb"
+      }
+    ],
+    "counts": 10
+  },
+  "slug": "v2-FunctionScore-getParams"
+}

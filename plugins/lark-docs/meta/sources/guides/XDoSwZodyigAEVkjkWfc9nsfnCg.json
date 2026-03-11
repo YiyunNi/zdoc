@@ -1,0 +1,3664 @@
+{
+  "creator": "ou_e55a208a81fc721928685fc3df9cb678",
+  "has_child": false,
+  "node_create_time": "1739346941",
+  "node_token": "XDoSwZodyigAEVkjkWfc9nsfnCg",
+  "node_type": "origin",
+  "obj_create_time": "1739346941",
+  "obj_edit_time": "1766732953",
+  "obj_token": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+  "obj_type": "docx",
+  "origin_node_token": "XDoSwZodyigAEVkjkWfc9nsfnCg",
+  "origin_space_id": "7167193056431783939",
+  "owner": "ou_e55a208a81fc721928685fc3df9cb678",
+  "parent_node_token": "CEJrwt9sYizQgtkPlBBcJXvRnff",
+  "space_id": "7167193056431783939",
+  "title": "Zero Downtime Migration",
+  "slug": "zero-downtime-migration",
+  "blocks": {
+    "items": [
+      {
+        "block_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "block_type": 1,
+        "children": [
+          "StJ3dzuZsocpAgxELOmcc7LFnZc",
+          "PrRidcmKHoaV4ixqugXcKCtunpe",
+          "FIz3dLRSKofoPNxaSwXcTlEcn6c",
+          "TvVjdcNsxoks0ZxR8IPck0exnLb",
+          "CohQdDNrjoE0lVxxKNWcS6b6nXf",
+          "VfI1d2T4woSr3DxQfrScqI08n2d",
+          "Oltud7ZFUoIfdcxH9qQc0Dhsnkf",
+          "Y2qadWhtDo7hEqxVUpkcfQL4nof",
+          "SmNzduq9xoP12mxH6IYc9TrPndc",
+          "ZyRYdhNtYomTOJxdKXLcORE3noc",
+          "VPGzd2mtLoQ8yFxBZhTcG0jNnOg",
+          "CBJ8datW0obeLoxqNWicIZfrnJb",
+          "HmGEdNySsoJiKnxTVXpcJByTnog",
+          "UxindOv7zoguC1xBAvkcz4IwnUf",
+          "YoundDugNomADfxdLUic1RWjnpj",
+          "OAezdgqnZohBeKxzM3TcrLXEnPg",
+          "E86eddT3OopgcZxmuDucrzuxnTc",
+          "VifIdQp4Wo56eOxlyVtc2e5jnsb",
+          "HLwZdMJ8Voe6udxsNnOcMCRPnKh",
+          "JaC5dC2Kooyph4xGy5lc8A88ndb",
+          "RCiLdJGcEo6H2NxnpBOcJQJjnVd",
+          "F7eOdCS1UorfMHxDVn6ck0BcnJc",
+          "EJZNdQ6SDoDLLzxBNDEcyNo8nzg",
+          "ZiywdcJsgoAAgjx1AVkcYJuinhd",
+          "B6vfdju2vo7cfcxWHVqctWOGnlb",
+          "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+          "Ik2tdhi0foLa8ZxqiKqc36uennb",
+          "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+          "HHI5dQGRfoDK92x130yc2wgmncd",
+          "MIi6dcT3gocTktxTjk1ccmyAnNe",
+          "XqxUd4O09otzPoxDRJmcIjlande",
+          "Q70VdYJVPomWyVx2zuYcjsktn3n",
+          "LbyYdZZEUovL3bxVAG8caJ80nJc",
+          "UsWzd1eduoJ3wQx2U7tcrXJOnxg",
+          "LDubdFZgToeD6GxSEb8cSfISnYc",
+          "RVVbdIShSo4d44xPrqCc7xuWn3f",
+          "Cs8fddBOfoFl8exvtnbcjigMnsc",
+          "GItBdAeVuoFGxsxKCA9c3skqnxd",
+          "L9TudojZaozDNqx0C6kcKFhLncd",
+          "BqpWdjVy1oooJzxxM3zc3nT8nrf",
+          "SsQpdp33moYaJRxecIfc69bmnwc",
+          "ChfSdismVo4dk9xd9IacHfXGnIg",
+          "R72QduTuyoa7Fixdk8YcP6xVnDe",
+          "PCKedJGH1o80jExQsdrc8qokntB",
+          "NzSRdXor7o5LlXx6tEQcEPLOnEd",
+          "O9IPdZQ51oUTN2xGKENcrvd0nid",
+          "Ymsvd3pulosDLGxKB22cY8kpnsh"
+        ],
+        "comment_ids": [
+          "7473822875078787076",
+          "7473816143909912580",
+          "7472966797826768900"
+        ],
+        "page": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero Downtime Migration",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7472966797826768900",
+                    "7473816143909912580",
+                    "7473822875078787076"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1
+          }
+        },
+        "parent_id": ""
+      },
+      {
+        "block_id": "StJ3dzuZsocpAgxELOmcc7LFnZc",
+        "block_type": 2,
+        "comment_ids": [
+          "7473814328683479041"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero Downtime Migration allows database services to remain operational throughout the migration, providing uninterrupted access to the database. It consists of these stages:",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7473814328683479041"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PrRidcmKHoaV4ixqugXcKCtunpe",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Initialization",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Select the source cluster and create a new target cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "FIz3dLRSKofoPNxaSwXcTlEcn6c",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migration",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Migrate existing data and sync incremental data.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "TvVjdcNsxoks0ZxR8IPck0exnLb",
+        "block_type": 13,
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Finalization",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Stop sync when lag is under 10 seconds and switch over to the target cluster.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "CohQdDNrjoE0lVxxKNWcS6b6nXf",
+        "block_type": 43,
+        "board": {
+          "height": 314,
+          "token": "PTB0wxmm2hCBc3b2dj1cCCJgnRb",
+          "width": 742
+        },
+        "comment_ids": [
+          "7473823428875485188",
+          "7473814484738768924",
+          "7473770984030552067"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "VfI1d2T4woSr3DxQfrScqI08n2d",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "Yx2VdPeRSoQaVyxkB2NcLApDntc",
+          "WTbddHnVJo67mhxLttmcO6oXnzc"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "Yx2VdPeRSoQaVyxkB2NcLApDntc",
+        "block_type": 2,
+        "parent_id": "VfI1d2T4woSr3DxQfrScqI08n2d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WTbddHnVJo67mhxLttmcO6oXnzc",
+        "block_type": 2,
+        "parent_id": "VfI1d2T4woSr3DxQfrScqI08n2d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero Downtime Migration is available only for Zilliz Cloud clusters running on Milvus 2.5.x. To enable this feature or discuss pricing, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fsupport.zilliz.com%2Fhc%2Fen-us%2Frequests%2Fnew"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Oltud7ZFUoIfdcxH9qQc0Dhsnkf",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migration capabilities",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "Y2qadWhtDo7hEqxVUpkcfQL4nof",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster compatibility",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "SmNzduq9xoP12mxH6IYc9TrPndc",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following table outlines the migration capabilities and constraints between clusters:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "block_type": 31,
+        "children": [
+          "L6NddP3LnoMFjlxkigKcSiA9nxc",
+          "CtyOd37epo58u8xpvJlcwkyXn7E",
+          "JScJd3yZUo0kBPx710acmcV0nmg",
+          "N59BdgCSkoLmzbxTjMsc87t4nkD",
+          "GaWKddkuNoLYctxC8TKcM4MKnjd",
+          "VTYZdaBXnoJaxFxGHMjc1KxMneb",
+          "Am3tdC4OAoy2Y1xc5VEcXkEQncg",
+          "ASdodJowHooBvnxpYLecPZoonqh",
+          "EDTTd6BaNoSDX7xyAJUc9TaAnGf"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "table": {
+          "cells": [
+            "L6NddP3LnoMFjlxkigKcSiA9nxc",
+            "CtyOd37epo58u8xpvJlcwkyXn7E",
+            "JScJd3yZUo0kBPx710acmcV0nmg",
+            "N59BdgCSkoLmzbxTjMsc87t4nkD",
+            "GaWKddkuNoLYctxC8TKcM4MKnjd",
+            "VTYZdaBXnoJaxFxGHMjc1KxMneb",
+            "Am3tdC4OAoy2Y1xc5VEcXkEQncg",
+            "ASdodJowHooBvnxpYLecPZoonqh",
+            "EDTTd6BaNoSDX7xyAJUc9TaAnGf"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              154,
+              154,
+              281
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 3
+          }
+        }
+      },
+      {
+        "block_id": "L6NddP3LnoMFjlxkigKcSiA9nxc",
+        "block_type": 32,
+        "children": [
+          "XbKBdZjego4ZRfxFs1icfa6Knkd"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XbKBdZjego4ZRfxFs1icfa6Knkd",
+        "block_type": 2,
+        "parent_id": "L6NddP3LnoMFjlxkigKcSiA9nxc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Source Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CtyOd37epo58u8xpvJlcwkyXn7E",
+        "block_type": 32,
+        "children": [
+          "DDijdY801o5hG1x1rrFcajGhntb"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "DDijdY801o5hG1x1rrFcajGhntb",
+        "block_type": 2,
+        "parent_id": "CtyOd37epo58u8xpvJlcwkyXn7E",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Target Cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JScJd3yZUo0kBPx710acmcV0nmg",
+        "block_type": 32,
+        "children": [
+          "GmBqdg4AEogNz0xutGzc7u0fn6d"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GmBqdg4AEogNz0xutGzc7u0fn6d",
+        "block_type": 2,
+        "parent_id": "JScJd3yZUo0kBPx710acmcV0nmg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migration Scope",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "N59BdgCSkoLmzbxTjMsc87t4nkD",
+        "block_type": 32,
+        "children": [
+          "O604dPuDQoWIwtx2Vv9cMQRanLk"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "O604dPuDQoWIwtx2Vv9cMQRanLk",
+        "block_type": 2,
+        "parent_id": "N59BdgCSkoLmzbxTjMsc87t4nkD",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Dedicated",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GaWKddkuNoLYctxC8TKcM4MKnjd",
+        "block_type": 32,
+        "children": [
+          "ZZCydcZEyoCivLxyhMLc58G6ngg"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "ZZCydcZEyoCivLxyhMLc58G6ngg",
+        "block_type": 2,
+        "parent_id": "GaWKddkuNoLYctxC8TKcM4MKnjd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "New Dedicated cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VTYZdaBXnoJaxFxGHMjc1KxMneb",
+        "block_type": 32,
+        "children": [
+          "R4CIdBMFboOl4Sxx21scQ3f1n1f"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "R4CIdBMFboOl4Sxx21scQ3f1n1f",
+        "block_type": 2,
+        "parent_id": "VTYZdaBXnoJaxFxGHMjc1KxMneb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrates every database from the source cluster. Partially migrating specific databases is not supported.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Am3tdC4OAoy2Y1xc5VEcXkEQncg",
+        "block_type": 32,
+        "children": [
+          "XXQ2d5ZtbopLCXxR1oocIZIDn3d"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "XXQ2d5ZtbopLCXxR1oocIZIDn3d",
+        "block_type": 2,
+        "parent_id": "Am3tdC4OAoy2Y1xc5VEcXkEQncg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Serverless / Free",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ASdodJowHooBvnxpYLecPZoonqh",
+        "block_type": 32,
+        "children": [
+          "BP4tdCwbaoknnDxYXEYchC8pnkb"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BP4tdCwbaoknnDxYXEYchC8pnkb",
+        "block_type": 2,
+        "parent_id": "ASdodJowHooBvnxpYLecPZoonqh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "New Dedicated cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "EDTTd6BaNoSDX7xyAJUc9TaAnGf",
+        "block_type": 32,
+        "children": [
+          "QWWAdiZlioK4aNxGsa7coDR3nMb"
+        ],
+        "parent_id": "ZyRYdhNtYomTOJxdKXLcORE3noc",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QWWAdiZlioK4aNxGsa7coDR3nMb",
+        "block_type": 2,
+        "parent_id": "EDTTd6BaNoSDX7xyAJUc9TaAnGf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrate a single database from the source cluster, as Serverless/Free clusters contain at most one database.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VPGzd2mtLoQ8yFxBZhTcG0jNnOg",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "HF28dTtm8oDIwvxCC2FcfFcUnnf",
+          "Q4lOdxMFoovbtqx9Oa1cHLUWndd"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "HF28dTtm8oDIwvxCC2FcfFcUnnf",
+        "block_type": 2,
+        "parent_id": "VPGzd2mtLoQ8yFxBZhTcG0jNnOg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Q4lOdxMFoovbtqx9Oa1cHLUWndd",
+        "block_type": 2,
+        "parent_id": "VPGzd2mtLoQ8yFxBZhTcG0jNnOg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "You cannot migrate to a lower-tier cluster plan. In other words, the target cluster’s plan must be the same as or higher than the source cluster’s plan.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "CBJ8datW0obeLoxqNWicIZfrnJb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migration scope options",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "block_type": 31,
+        "children": [
+          "IlPFdLADWo8KAKxU3gbcI3CMn1g",
+          "WAhMdg4NioP610xSZYycYM6knob",
+          "UeM9doWd6oCGb4xyWQ7cFJ6Gnvh",
+          "XMmFdIVWpoHuk9xXShLcpZqmnJc",
+          "LH4HdVc41o17FUxbQv2c3ACbnwe",
+          "APGldbmORoFSxZx7vcucCAZBnmh",
+          "VRIcdGndZoFmf3x06nDcRDLinwd",
+          "F44xdDx7FoYgL6x1ZqQc1MXxnFg",
+          "XTPOdNDQooKDTWxlbqVcqRXCnlg"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "table": {
+          "cells": [
+            "IlPFdLADWo8KAKxU3gbcI3CMn1g",
+            "WAhMdg4NioP610xSZYycYM6knob",
+            "UeM9doWd6oCGb4xyWQ7cFJ6Gnvh",
+            "XMmFdIVWpoHuk9xXShLcpZqmnJc",
+            "LH4HdVc41o17FUxbQv2c3ACbnwe",
+            "APGldbmORoFSxZx7vcucCAZBnmh",
+            "VRIcdGndZoFmf3x06nDcRDLinwd",
+            "F44xdDx7FoYgL6x1ZqQc1MXxnFg",
+            "XTPOdNDQooKDTWxlbqVcqRXCnlg"
+          ],
+          "property": {
+            "column_size": 3,
+            "column_width": [
+              154,
+              234,
+              217
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 3
+          }
+        }
+      },
+      {
+        "block_id": "IlPFdLADWo8KAKxU3gbcI3CMn1g",
+        "block_type": 32,
+        "children": [
+          "WZfhdxc3qo4bpWxSMieckTDLneT"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WZfhdxc3qo4bpWxSMieckTDLneT",
+        "block_type": 2,
+        "parent_id": "IlPFdLADWo8KAKxU3gbcI3CMn1g",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migration Type",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WAhMdg4NioP610xSZYycYM6knob",
+        "block_type": 32,
+        "children": [
+          "HoKadjOfaodAGpxS4LscTsIQngd"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HoKadjOfaodAGpxS4LscTsIQngd",
+        "block_type": 2,
+        "parent_id": "WAhMdg4NioP610xSZYycYM6knob",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Description",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UeM9doWd6oCGb4xyWQ7cFJ6Gnvh",
+        "block_type": 32,
+        "children": [
+          "PZUbd476Mohjs8xunkccYMHnnLf"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "PZUbd476Mohjs8xunkccYMHnnLf",
+        "block_type": 2,
+        "parent_id": "UeM9doWd6oCGb4xyWQ7cFJ6Gnvh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Use Cases",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XMmFdIVWpoHuk9xXShLcpZqmnJc",
+        "block_type": 32,
+        "children": [
+          "YM8Hd53KCoAkXPxWAYPcnHdVnOg"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "YM8Hd53KCoAkXPxWAYPcnHdVnOg",
+        "block_type": 2,
+        "parent_id": "XMmFdIVWpoHuk9xXShLcpZqmnJc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Within same project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LH4HdVc41o17FUxbQv2c3ACbnwe",
+        "block_type": 32,
+        "children": [
+          "OmFYd2Pl5ot6QjxI1B0cqNW5nsd"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OmFYd2Pl5ot6QjxI1B0cqNW5nsd",
+        "block_type": 2,
+        "parent_id": "LH4HdVc41o17FUxbQv2c3ACbnwe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrate between existing clusters in the same Zilliz Cloud project",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "APGldbmORoFSxZx7vcucCAZBnmh",
+        "block_type": 32,
+        "children": [
+          "Qlc9dSJcyoFnPdx4FNdcWZgrn5f"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Qlc9dSJcyoFnPdx4FNdcWZgrn5f",
+        "block_type": 2,
+        "parent_id": "APGldbmORoFSxZx7vcucCAZBnmh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cluster upgrades, performance optimization, data consolidation",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "VRIcdGndZoFmf3x06nDcRDLinwd",
+        "block_type": 32,
+        "children": [
+          "Sjridysv9oxdjixoM3jcsRf9nuc"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Sjridysv9oxdjixoM3jcsRf9nuc",
+        "block_type": 2,
+        "parent_id": "VRIcdGndZoFmf3x06nDcRDLinwd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cross-project or organization",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "F44xdDx7FoYgL6x1ZqQc1MXxnFg",
+        "block_type": 32,
+        "children": [
+          "Jh8IdZTXqo3rOixfFk7c5BFQnUg"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Jh8IdZTXqo3rOixfFk7c5BFQnUg",
+        "block_type": 2,
+        "parent_id": "F44xdDx7FoYgL6x1ZqQc1MXxnFg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Migrate between existing clusters in different Zilliz Cloud projects or organizations",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XTPOdNDQooKDTWxlbqVcqRXCnlg",
+        "block_type": 32,
+        "children": [
+          "J1MId5gkQoMwmJxIixMc1WAtnJe"
+        ],
+        "parent_id": "HmGEdNySsoJiKnxTVXpcJByTnog",
+        "table_cell": {}
+      },
+      {
+        "block_id": "J1MId5gkQoMwmJxIixMc1WAtnJe",
+        "block_type": 2,
+        "parent_id": "XTPOdNDQooKDTWxlbqVcqRXCnlg",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Company mergers, department transfers, multi-tenant scenarios",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UxindOv7zoguC1xBAvkcz4IwnUf",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Direct data transfer",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "YoundDugNomADfxdLUic1RWjnpj",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero Downtime Migration performs direct data replication between Zilliz Cloud clusters with the following characteristics:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "OAezdgqnZohBeKxzM3TcrLXEnPg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Schema preservation",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Source schema transferred unchanged to target cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "E86eddT3OopgcZxmuDucrzuxnTc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "No field modifications",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": Cannot rename fields, change data types, or modify field attributes during migration",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "VifIdQp4Wo56eOxlyVtc2e5jnsb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Automatic indexing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": AUTOINDEX automatically created for vector fields in target cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "HLwZdMJ8Voe6udxsNnOcMCRPnKh",
+        "block_type": 5,
+        "comment_ids": [
+          "7475246968233492484",
+          "7473817781423620100",
+          "7472965433748733956"
+        ],
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Limits",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7472965433748733956",
+                    "7473817781423620100",
+                    "7475246968233492484"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "JaC5dC2Kooyph4xGy5lc8A88ndb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During migration, you cannot perform any of the following operations on the source cluster: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AlterCollection",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AlterCollectionField",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CreateAlias",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "DropAlias",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AlterAlias",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "RenameCollection",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "AlterDatabase",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Import",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "RCiLdJGcEo6H2NxnpBOcJQJjnVd",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Canceling",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " an ongoing Zero Downtime Migration job is not supported. This functionality will be available in future releases.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "F7eOdCS1UorfMHxDVn6ck0BcnJc",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Zero Downtime Migration requires ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "approximately",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " 10 seconds of downtime for data sync to stop and the cluster transition to complete.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "EJZNdQ6SDoDLLzxBNDEcyNo8nzg",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Prerequisites",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "ZiywdcJsgoAAgjx1AVkcYJuinhd",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before starting your offline migration, ensure you meet these requirements:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B6vfdju2vo7cfcxWHVqctWOGnlb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "General requirements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "block_type": 31,
+        "children": [
+          "UBgndjPPzow3eyxDQHoc7BOynAc",
+          "J2a6d8B6uoehtuxizCOc9X0KnRD",
+          "NIaLdDSDuoEumjx5x19cjNuEnsh",
+          "B0PRdjEpeoqAHJxYU6ZcpOfinCb",
+          "WXgLd6wFdo8QZlxrVyWcVrJ9n8d",
+          "ME3Md2pcToDZOLxVBn8cSUs7nch",
+          "INuGdUMJSoTgwMxrKxjctxFjn1f",
+          "HDKQdAqDGoVQJLxWTiMceAhDnth"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "table": {
+          "cells": [
+            "UBgndjPPzow3eyxDQHoc7BOynAc",
+            "J2a6d8B6uoehtuxizCOc9X0KnRD",
+            "NIaLdDSDuoEumjx5x19cjNuEnsh",
+            "B0PRdjEpeoqAHJxYU6ZcpOfinCb",
+            "WXgLd6wFdo8QZlxrVyWcVrJ9n8d",
+            "ME3Md2pcToDZOLxVBn8cSUs7nch",
+            "INuGdUMJSoTgwMxrKxjctxFjn1f",
+            "HDKQdAqDGoVQJLxWTiMceAhDnth"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              154,
+              383
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 4
+          }
+        }
+      },
+      {
+        "block_id": "UBgndjPPzow3eyxDQHoc7BOynAc",
+        "block_type": 32,
+        "children": [
+          "BddKduxZ9ohouyxKW8ackw04nZV"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "BddKduxZ9ohouyxKW8ackw04nZV",
+        "block_type": 2,
+        "parent_id": "UBgndjPPzow3eyxDQHoc7BOynAc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Requirement",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "J2a6d8B6uoehtuxizCOc9X0KnRD",
+        "block_type": 32,
+        "children": [
+          "WSzvdhdeao6x7uxlXtxc2gcCnAc"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "WSzvdhdeao6x7uxlXtxc2gcCnAc",
+        "block_type": 2,
+        "parent_id": "J2a6d8B6uoehtuxizCOc9X0KnRD",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NIaLdDSDuoEumjx5x19cjNuEnsh",
+        "block_type": 32,
+        "children": [
+          "E42LdXlIjoiJaQxxnKGcbdJnnpf"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "E42LdXlIjoiJaQxxnKGcbdJnnpf",
+        "block_type": 2,
+        "parent_id": "NIaLdDSDuoEumjx5x19cjNuEnsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "User permissions",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "B0PRdjEpeoqAHJxYU6ZcpOfinCb",
+        "block_type": 32,
+        "children": [
+          "O5aKdy1taoyIa8xHLKjcZA3Sn4c"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "O5aKdy1taoyIa8xHLKjcZA3Sn4c",
+        "block_type": 2,
+        "parent_id": "B0PRdjEpeoqAHJxYU6ZcpOfinCb",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Organization Owner or Project Admin role",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "WXgLd6wFdo8QZlxrVyWcVrJ9n8d",
+        "block_type": 32,
+        "children": [
+          "Sb7OdI9B5oqzVgxLLRgcrcgen4g"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Sb7OdI9B5oqzVgxLLRgcrcgen4g",
+        "block_type": 2,
+        "parent_id": "WXgLd6wFdo8QZlxrVyWcVrJ9n8d",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Source cluster access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ME3Md2pcToDZOLxVBn8cSUs7nch",
+        "block_type": 32,
+        "children": [
+          "VYNodN2iooA5Cpxx56hc8r7YnKh"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "VYNodN2iooA5Cpxx56hc8r7YnKh",
+        "block_type": 2,
+        "parent_id": "ME3Md2pcToDZOLxVBn8cSUs7nch",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Source cluster must be accessible from the public internet",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "INuGdUMJSoTgwMxrKxjctxFjn1f",
+        "block_type": 32,
+        "children": [
+          "HZeSdIVyXoIIgOxvFYWcbkhgnSh"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "HZeSdIVyXoIIgOxvFYWcbkhgnSh",
+        "block_type": 2,
+        "parent_id": "INuGdUMJSoTgwMxrKxjctxFjn1f",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Target cluster capacity",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HDKQdAqDGoVQJLxWTiMceAhDnth",
+        "block_type": 32,
+        "children": [
+          "OygFdUJr0oLpiDxm4bLcQQPWnrf"
+        ],
+        "parent_id": "Kskpd6JZXoCeqRxcqxEcOpnqnwg",
+        "table_cell": {}
+      },
+      {
+        "block_id": "OygFdUJr0oLpiDxm4bLcQQPWnrf",
+        "block_type": 2,
+        "parent_id": "HDKQdAqDGoVQJLxWTiMceAhDnth",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Sufficient CU size to accommodate source data (use the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "CU calculator",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fpricing%23calculator"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ")",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ik2tdhi0foLa8ZxqiKqc36uennb",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Cross-project or organization migration requirements",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "block_type": 31,
+        "children": [
+          "OJ5Xd2aZRoXlAFx5sMSct9r1nXc",
+          "QGLRdyl4toMgA8x8oKNcPscEnCq",
+          "JzEudNZyZo2nWmxVYlNcXHbTn0c",
+          "ZDStdcSKno4L71xrjmScRKncnmd",
+          "YOoYdait2oerwLxWPIJc4gRUnId",
+          "PnZidR2SVozxHmxaHVYcKy9vnve"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "table": {
+          "cells": [
+            "OJ5Xd2aZRoXlAFx5sMSct9r1nXc",
+            "QGLRdyl4toMgA8x8oKNcPscEnCq",
+            "JzEudNZyZo2nWmxVYlNcXHbTn0c",
+            "ZDStdcSKno4L71xrjmScRKncnmd",
+            "YOoYdait2oerwLxWPIJc4gRUnId",
+            "PnZidR2SVozxHmxaHVYcKy9vnve"
+          ],
+          "property": {
+            "column_size": 2,
+            "column_width": [
+              154,
+              383
+            ],
+            "header_row": true,
+            "merge_info": [
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              },
+              {
+                "col_span": 1,
+                "row_span": 1
+              }
+            ],
+            "row_size": 3
+          }
+        }
+      },
+      {
+        "block_id": "OJ5Xd2aZRoXlAFx5sMSct9r1nXc",
+        "block_type": 32,
+        "children": [
+          "NcAWd8OzeoL0jQxIH4TcKIrInXe"
+        ],
+        "parent_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "table_cell": {}
+      },
+      {
+        "block_id": "NcAWd8OzeoL0jQxIH4TcKIrInXe",
+        "block_type": 2,
+        "parent_id": "OJ5Xd2aZRoXlAFx5sMSct9r1nXc",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Requirement",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "QGLRdyl4toMgA8x8oKNcPscEnCq",
+        "block_type": 32,
+        "children": [
+          "Gbgfdy01OofDE0xcGD2cvor4n4d"
+        ],
+        "parent_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "table_cell": {}
+      },
+      {
+        "block_id": "Gbgfdy01OofDE0xcGD2cvor4n4d",
+        "block_type": 2,
+        "parent_id": "QGLRdyl4toMgA8x8oKNcPscEnCq",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Details",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "JzEudNZyZo2nWmxVYlNcXHbTn0c",
+        "block_type": 32,
+        "children": [
+          "GUTxdsbdvoJiDgx6XD8cjHASnEe"
+        ],
+        "parent_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "table_cell": {}
+      },
+      {
+        "block_id": "GUTxdsbdvoJiDgx6XD8cjHASnEe",
+        "block_type": 2,
+        "parent_id": "JzEudNZyZo2nWmxVYlNcXHbTn0c",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Connection credentials",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ZDStdcSKno4L71xrjmScRKncnmd",
+        "block_type": 32,
+        "children": [
+          "QaLkdt0KPoHAewxyU5fcJgy1nNP"
+        ],
+        "parent_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "table_cell": {}
+      },
+      {
+        "block_id": "QaLkdt0KPoHAewxyU5fcJgy1nNP",
+        "block_type": 2,
+        "parent_id": "ZDStdcSKno4L71xrjmScRKncnmd",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Public endpoint, API key, or cluster username and password for source cluster",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "YOoYdait2oerwLxWPIJc4gRUnId",
+        "block_type": 32,
+        "children": [
+          "RHYYdBuB3oZkbPxWZsKcVApXn1c"
+        ],
+        "parent_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "table_cell": {}
+      },
+      {
+        "block_id": "RHYYdBuB3oZkbPxWZsKcVApXn1c",
+        "block_type": 2,
+        "parent_id": "YOoYdait2oerwLxWPIJc4gRUnId",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Network access",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "PnZidR2SVozxHmxaHVYcKy9vnve",
+        "block_type": 32,
+        "children": [
+          "KpQHdCI92oualmxMDPacuVZXnLh"
+        ],
+        "parent_id": "Qxw7dJM2FoMLHbxTQB9ca1cKns5",
+        "table_cell": {}
+      },
+      {
+        "block_id": "KpQHdCI92oualmxMDPacuVZXnLh",
+        "block_type": 2,
+        "parent_id": "PnZidR2SVozxHmxaHVYcKy9vnve",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Ability to connect to source cluster from target organization",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HHI5dQGRfoDK92x130yc2wgmncd",
+        "block_type": 4,
+        "heading2": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Getting started",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "MIi6dcT3gocTktxTjk1ccmyAnNe",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The zero downtime migration process consists of three main phases that require your attention and action:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "XqxUd4O09otzPoxDRJmcIjlande",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Phase 1: Initialize",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "Q70VdYJVPomWyVx2zuYcjsktn3n",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The following demo shows how to set up and start your zero downtime migration:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LbyYdZZEUovL3bxVAG8caJ80nJc",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cmb94ul040o06sn1ri0s8ydn5\" title=\"Zilliz Cloud - Zero Downtime Migration Demo\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "UsWzd1eduoJ3wQx2U7tcrXJOnxg",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Once you click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Migrate",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ", the source cluster will enter ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Locked",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " state and cannot be deleted during migration.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "LDubdFZgToeD6GxSEb8cSfISnYc",
+        "block_type": 5,
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Phase 2: Monitor",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "RVVbdIShSo4d44xPrqCc7xuWn3f",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After starting the migration, you'll be taken to the target cluster details page where you need to actively monitor the migration progress.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Cs8fddBOfoFl8exvtnbcjigMnsc",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "<Supademo id=\"cmba5mvlu1g20sn1rruotossj\" title=\"Zilliz Cloud - Monitor Zero Downtime Migration Demo\" />",
+                "text_element_style": {
+                  "background_color": 6,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "GItBdAeVuoFGxsxKCA9c3skqnxd",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Stage 1: Prepare the target cluster and migrate the existing data",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "L9TudojZaozDNqx0C6kcKFhLncd",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "This stage migrates the existing data from the source cluster to the target cluster. The duration depends on the volume of data being transferred and may take several hours for large datasets. ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "BqpWdjVy1oooJzxxM3zc3nT8nrf",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "PN9NdWLJ5o7Nr1xaflEcVEatnVh",
+          "MjwEddQ07oz7YPxI5Qtcohvvn7c"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "PN9NdWLJ5o7Nr1xaflEcVEatnVh",
+        "block_type": 2,
+        "parent_id": "BqpWdjVy1oooJzxxM3zc3nT8nrf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "MjwEddQ07oz7YPxI5Qtcohvvn7c",
+        "block_type": 2,
+        "parent_id": "BqpWdjVy1oooJzxxM3zc3nT8nrf",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If the process is taking a while, feel free to leave this page and work on other tasks. You can return at any time to continue monitoring the incremental data syncing progress.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "SsQpdp33moYaJRxecIfc69bmnwc",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Stage 2: Sync incremental data",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "ChfSdismVo4dk9xd9IacHfXGnIg",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "During this stage, the system continuously syncs new data inserted into the source cluster to the target cluster. The target cluster will display a ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Syncing",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " state, indicating that it does not accept external data writes. At this stage, follow these steps:",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "R72QduTuyoa7Fixdk8YcP6xVnDe",
+        "block_type": 13,
+        "children": [
+          "V5CDdAdf5oylBqxLFoRcn7mYnhg",
+          "J5MfdLXwjoyiV9xh6IZcAFoLnig",
+          "EO7udW38IoYTzVxUMpncsNoenOU"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Monitor sync lag",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "1"
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "V5CDdAdf5oylBqxLFoRcn7mYnhg",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Track the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Lag Behind Source",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " (in seconds) to monitor sync progress. This indicator shows the time difference between the most recent data in the source and target clusters.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R72QduTuyoa7Fixdk8YcP6xVnDe"
+      },
+      {
+        "block_id": "J5MfdLXwjoyiV9xh6IZcAFoLnig",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Lag Behind Source",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " drops below 10s, you'll receive an email notification indicating you can proceed with stopping data sync.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R72QduTuyoa7Fixdk8YcP6xVnDe"
+      },
+      {
+        "block_id": "EO7udW38IoYTzVxUMpncsNoenOU",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Important",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ": If the sync lag never reaches below 10s after a reasonable waiting period, contact ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Zilliz Cloud support",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "link": {
+                    "url": "https%3A%2F%2Fzilliz.com%2Fcontact-sales"
+                  },
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "R72QduTuyoa7Fixdk8YcP6xVnDe"
+      },
+      {
+        "block_id": "PCKedJGH1o80jExQsdrc8qokntB",
+        "block_type": 13,
+        "children": [
+          "JDuRd1097o8a8RxPeLUccRwHnhb",
+          "BBFHdvSocoaSWkxakhvcSUZMnwf",
+          "MO1Fdn9VloyGizxuUy0cXKaJnKh"
+        ],
+        "ordered": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Stop data sync",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false,
+            "sequence": "auto"
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "JDuRd1097o8a8RxPeLUccRwHnhb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Before proceeding, stop all writes to the source cluster and plan for approximately 10",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " seconds of maintenance window for sync stopping and cluster switchover",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PCKedJGH1o80jExQsdrc8qokntB"
+      },
+      {
+        "block_id": "BBFHdvSocoaSWkxakhvcSUZMnwf",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When the ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Lag Behind Source",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " reaches an acceptable threshold, select the checkbox: ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "I confirm that I have stopped writes to the source cluster",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": " and then click ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "Stop Data Sync",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "PCKedJGH1o80jExQsdrc8qokntB"
+      },
+      {
+        "block_id": "MO1Fdn9VloyGizxuUy0cXKaJnKh",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "PVTwdeNF7oCfb6xl0a2c4LKHnEf",
+          "IBDzdOsPfoKqXVxMmfHc1S5Kntf"
+        ],
+        "parent_id": "PCKedJGH1o80jExQsdrc8qokntB"
+      },
+      {
+        "block_id": "PVTwdeNF7oCfb6xl0a2c4LKHnEf",
+        "block_type": 2,
+        "parent_id": "MO1Fdn9VloyGizxuUy0cXKaJnKh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "IBDzdOsPfoKqXVxMmfHc1S5Kntf",
+        "block_type": 2,
+        "parent_id": "MO1Fdn9VloyGizxuUy0cXKaJnKh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "If you do not manually stop data sync, Zilliz Cloud will continue syncing for ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "up to 7 days",
+                "text_element_style": {
+                  "background_color": 3,
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". After this period, the system will automatically stop sync to prevent resource wastage, resulting in the migration job failing.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "NzSRdXor7o5LlXx6tEQcEPLOnEd",
+        "block_type": 5,
+        "comment_ids": [
+          "7473818709484666883"
+        ],
+        "heading3": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Phase 3: Switch",
+                "text_element_style": {
+                  "bold": false,
+                  "comment_ids": [
+                    "7473818709484666883"
+                  ],
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "O9IPdZQ51oUTN2xGKENcrvd0nid",
+        "block_type": 2,
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "When you receive the email notification that the sync lag has dropped below 10 seconds, you're ready for the final switchover. For instructions on connecting to a cluster, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Connect to Cluster",
+                "token": "IVFfws0lJi8gIVkRvrvc9aXvnNe",
+                "url": "https://zilliverse.feishu.cn/wiki/IVFfws0lJi8gIVkRvrvc9aXvnNe"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "Ymsvd3pulosDLGxKB22cY8kpnsh",
+        "block_type": 19,
+        "callout": {
+          "background_color": 2,
+          "border_color": 2,
+          "emoji_id": "blue_book"
+        },
+        "children": [
+          "QDwxdDPvioEfmAxBOG0cvLiTnld",
+          "HU68dZCQbo4s0Zx8EiwcaF5ln6f",
+          "IZMUdoTcAovfwTx7DgZcfAkMnKb"
+        ],
+        "parent_id": "D6ZydUZy7orSEbx3N0fcTmnjnhe"
+      },
+      {
+        "block_id": "QDwxdDPvioEfmAxBOG0cvLiTnld",
+        "block_type": 2,
+        "parent_id": "Ymsvd3pulosDLGxKB22cY8kpnsh",
+        "text": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "Notes",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        }
+      },
+      {
+        "block_id": "HU68dZCQbo4s0Zx8EiwcaF5ln6f",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "After migration, the source cluster ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": "will not be deleted automatically",
+                "text_element_style": {
+                  "bold": true,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "text_run": {
+                "content": ". We recommend keeping it for a period to verify data consistency before manual deletion.",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Ymsvd3pulosDLGxKB22cY8kpnsh"
+      },
+      {
+        "block_id": "IZMUdoTcAovfwTx7DgZcfAkMnKb",
+        "block_type": 12,
+        "bullet": {
+          "elements": [
+            {
+              "text_run": {
+                "content": "The migrated collections are not immediately available for search or query operations. You must manually load the collections in Zilliz Cloud to enable search and query functionalities. For details, refer to ",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            },
+            {
+              "mention_doc": {
+                "obj_type": 16,
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                },
+                "title": "Load & Release",
+                "token": "CemEwKryciMUepkgYWZcOw6wncb",
+                "url": "https://zilliverse.feishu.cn/wiki/CemEwKryciMUepkgYWZcOw6wncb"
+              }
+            },
+            {
+              "text_run": {
+                "content": ".",
+                "text_element_style": {
+                  "bold": false,
+                  "inline_code": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false
+                }
+              }
+            }
+          ],
+          "style": {
+            "align": 1,
+            "folded": false
+          }
+        },
+        "parent_id": "Ymsvd3pulosDLGxKB22cY8kpnsh"
+      }
+    ],
+    "counts": 129
+  }
+}
