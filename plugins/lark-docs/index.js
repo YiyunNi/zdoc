@@ -32,6 +32,8 @@ module.exports = function (context, options) {
                     }
                     const manuals = Object.keys(options)
                     const utils = new Utils()
+                    const resolveTarget = (targets, path) =>
+                        path ? path.split('.').reduce((obj, key) => obj?.[key], targets) : undefined
 
                     // Determine the manual to fetch
                     var manual;
@@ -58,7 +60,7 @@ module.exports = function (context, options) {
                     // Sidebar-only mode: regenerate sidebar from existing sources without re-fetching
                     if (opts.sidebarOnly) {
                         if (!sidebarPath) throw new Error('sidebarPath is not configured for this manual')
-                        const { outputDir } = targets[opts.pubTarget] ?? Object.values(targets)[0]
+                        const { outputDir } = resolveTarget(targets, opts.pubTarget) ?? resolveTarget(targets, utils.list_valid_targets(targets)[0])
                         const writer = sourceType === 'wiki' || sourceType === 'onePager'
                             ? new docWriter(root, base, displayedSidebar, docSourceDir, null, opts.pubTarget ?? Object.keys(targets)[0], true, false)
                             : new driveWriter(root, base, displayedSidebar, docSourceDir, null, opts.pubTarget ?? Object.keys(targets)[0], true, false, opts.manual)
@@ -90,7 +92,7 @@ module.exports = function (context, options) {
                         }
                     } else {
                         try {
-                            var { outputDir, imageDir } = targets[opts.pubTarget]
+                            var { outputDir, imageDir } = resolveTarget(targets, opts.pubTarget)
                         } catch (e) {
                             throw new Error(`Please provide a valid target... \n\nAvailable targets: \n- ${utils.list_valid_targets(targets).join('\n- ')}\n`)
                         }
