@@ -74,14 +74,6 @@ jobs:
         THROTTLE_MIN_TIME: ${{ vars.THROTTLE_MIN_TIME }}
         THROTTLE_MAX_CONCURRENT: ${{ vars.THROTTLE_MAX_CONCURRENT }}
 
-    # Always save the DB even if later steps fail — partial progress is better than none.
-    - name: save translation DB
-      if: always()
-      uses: actions/cache/save@v4
-      with:
-        path: translation.db
-        key: translation-db-dev-${{ github.run_id }}
-
     - name: check for broken translations
       id: check_broken
       run: |
@@ -216,6 +208,16 @@ jobs:
       if: steps.check_broken.outputs.has_broken == 'true'
       run: |
         npx docusaurus translate-i18n --mark-repaired /tmp/broken-files.json --locale ja-JP
+
+    # Save AFTER mark-repaired so the repaired-file markers are included in the cached DB.
+    # if: always() ensures we save even if agent repair or mark-repaired failed — partial
+    # progress (translations without repair marks) is still better than losing the whole DB.
+    - name: save translation DB
+      if: always()
+      uses: actions/cache/save@v4
+      with:
+        path: translation.db
+        key: translation-db-dev-${{ github.run_id }}
 
     - name: advance Agent Repair stage
       if: steps.check_broken.outputs.has_broken == 'true'
