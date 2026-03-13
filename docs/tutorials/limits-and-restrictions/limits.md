@@ -17,10 +17,10 @@ keywords:
   - cloud
   - milvus
   - limits
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
+  - Machine Learning
+  - RAG
+  - NLP
+  - Neural Network
 
 ---
 

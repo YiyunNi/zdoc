@@ -20,10 +20,10 @@ keywords:
   - analyzer
   - best
   - practice
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
 
 ---
 
@@ -622,6 +622,23 @@ analyzer_params = {
         "type": "stop",
         "stop_words": [<put stop words list here>]
     }]
+}
+```
+
+### Korean\{#korean}
+
+```json
+{
+    "tokenizer": {
+        "type": "lindera",
+        "dict_kind": "ko-dic",
+        "filter": [
+            {
+                "kind": "korean_stop_tags",
+                "tags": ["SP", "SSC", "SSO", "SC", "SE", "SF", "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ", "JX", "JC", "UNK", "EP", "ETM"]
+            }
+        ]
+    }
 }
 ```
 
