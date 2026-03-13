@@ -476,8 +476,32 @@ pre {
 }
 
 /* Breadcrumbs */
+.breadcrumbs__link {
+  font-size: 14px;
+}
+
+@keyframes shimmertext {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Shimmer "thinking" effect — sweeping highlight across breadcrumb text */
+.breadcrumbs__item:not(.breadcrumbs__item--first) .breadcrumbs__link {
+  background-image: linear-gradient(
+    to right,
+    #6b7280 30%,
+    #d1d5db 50%,
+    #6b7280 70%
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmertext 4s ease infinite;
+}
+
 .breadcrumbs__item--active .breadcrumbs__link {
-  color: #374151;
   background: transparent;
 }
 
@@ -513,7 +537,10 @@ pre {
   }
 }
 
-/* Code block line highlighting — use a lighter tint on dark backgrounds */
+/* Code block line highlighting */
+:root {
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
+}
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
 }

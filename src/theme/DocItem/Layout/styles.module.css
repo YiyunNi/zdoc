@@ -63,12 +63,30 @@
 }
 
 /* Parent category label — shown above the page h1 */
+@keyframes blurwave {
+  0%   { transform: translateX(-150%); }
+  100% { transform: translateX(500%); }
+}
+
 .parentLabel {
   display: block;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--zd-gray-600);
   margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.parentLabel::after {
+  content: '';
+  position: absolute;
+  inset: -20% 0;
+  width: 40%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.35), transparent);
+  filter: blur(6px);
+  animation: blurwave 3s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .docItemContainer header + *,
