@@ -1045,8 +1045,12 @@ class larkDocWriter {
                         case 'unexpected-character':
                             offset = error.place?.offset;
 
-                            if (error.message.includes('U+003D') && offset !== undefined && offset > 0) {
-                                // `=` sign unexpected — typically from `<=` where `<` was parsed as a JSX tag opener.
+                            if (
+                                (error.message.includes('U+003D') || /U\+003[0-9]/.test(error.message)) &&
+                                offset !== undefined && offset > 0
+                            ) {
+                                // `=` sign or a digit (0–9) unexpected — typically from `<=` or `<10` where
+                                // `<` was parsed as a JSX tag opener but the following char is not a valid name start.
                                 // Replace `<` with `&lt;` (not `\`) so the entity renders correctly in HTML.
                                 for (let i = offset - 1; i >= Math.max(0, offset - 10); i--) {
                                     if (patchedContent[i] === '<') {
