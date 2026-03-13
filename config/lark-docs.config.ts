@@ -1,6 +1,8 @@
 interface TargetConfig {
     outputDir: string;
     imageDir: string;
+    sidebarPath?: string;
+    overridePath?: string;
 }
 
 interface Targets { [key: string]: TargetConfig | { [key: string]: TargetConfig } }
@@ -37,8 +39,10 @@ const guides: Manual = {
                 imageDir: 'static/img',
             },
             paas: {
-                outputDir: 'versioned_docs/version-byoc/tutorials',
+                outputDir: 'docs-byoc/tutorials',
                 imageDir: 'static/img',
+                sidebarPath: './config/generated/guides-byoc.sidebar.js',
+                overridePath: './config/sidebar-overrides/guides-byoc.json',
             },
         },
     },

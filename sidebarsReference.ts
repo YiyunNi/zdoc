@@ -7,13 +7,17 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 function tryRequire(path: string): any[] {
   try { return require(path) } catch { return [] }
 }
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const applyOverrides = require('./config/applyOverrides')
 
 const sidebars: SidebarsConfig = {
   // SDK reference sidebars — generated from Feishu drive/wiki sources
-  pythonSidebar: tryRequire('./config/generated/python.sidebar'),
-  javaSidebar:   tryRequire('./config/generated/java.sidebar'),
-  nodeSidebar:   tryRequire('./config/generated/node.sidebar'),
-  goSidebar:     tryRequire('./config/generated/go.sidebar'),
+  pythonSidebar:  applyOverrides(tryRequire('./config/generated/python.sidebar'), require.resolve('./config/sidebar-overrides/python.json')),
+  javaSidebar:    applyOverrides(tryRequire('./config/generated/java.sidebar'),   require.resolve('./config/sidebar-overrides/java.json')),
+  nodeSidebar:    applyOverrides(tryRequire('./config/generated/node.sidebar'),   require.resolve('./config/sidebar-overrides/node.json')),
+  goSidebar:      applyOverrides(tryRequire('./config/generated/go.sidebar'),     require.resolve('./config/sidebar-overrides/go.json')),
+  // REST API reference sidebar — generated from Apifox specifications
+  restfulSidebar: applyOverrides(tryRequire('./config/generated/restful.sidebar'), require.resolve('./config/sidebar-overrides/restful.json')),
 };
 
 export default sidebars;

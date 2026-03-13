@@ -12,38 +12,54 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.75rem;
+  padding: 0 0.625rem 0 0.75rem;
   border-bottom: 1px solid var(--ifm-toc-border-color);
+  flex-shrink: 0;
+}
+
+/* Left group: avatar + title + online dot */
+.chatTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Gradient circle avatar */
+.chatAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--zd-gradient-avatar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
   flex-shrink: 0;
 }
 
 .chatTitle {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #374151;
+  color: var(--zd-gray-900);
 }
 
-.headerBtn {
+/* Green online indicator dot */
+.chatOnline {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+/* Right group: action buttons */
+.chatHeaderActions {
   display: flex;
   align-items: center;
-  gap: 0.375rem;
-  padding: 0.375rem 0.5rem;
-  border-radius: 0.375rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #6b7280;
-  font-size: 0.75rem;
-  font-weight: 500;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  gap: 0.125rem;
 }
 
-.headerBtn:hover {
-  background: #f3f4f6;
-  color: #111827;
-}
-
-/* Empty state — fills remaining height after header, content is centered */
+/* Empty state — fills remaining height after header */
 .emptyState {
   flex: 1;
   min-height: 0;
@@ -51,35 +67,37 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1.5rem 1.25rem;
   overflow-y: auto;
 }
 
-.greeting {
+/* Two-line large greeting */
+.greetingBlock {
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.greeting h2 {
+.greetingLine {
   font-size: 1.25rem !important;
   font-weight: 600 !important;
-  color: #111827;
-  margin-bottom: 0.375rem !important;
-  line-height: 1.4 !important;
+  color: var(--zd-gray-700);
+  line-height: 1.35 !important;
+  margin: 0 !important;
 }
 
-.greeting p {
-  font-size: 0.8125rem;
-  color: #6b7280;
-  line-height: 1.5;
-  margin: 0;
+.greetingLineAccent {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--zd-gray-900);
+  line-height: 1.35 !important;
+  margin: 0 !important;
 }
 
 .inputArea {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.875rem;
 }
 
 /* Pill-shaped row containing the text input + round send button */
@@ -87,7 +105,7 @@
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--zd-gray-200);
   border-radius: 9999px;
   padding: 0.375rem 0.375rem 0.375rem 1rem;
   background: #ffffff;
@@ -95,8 +113,8 @@
 }
 
 .inputRow:focus-within {
-  border-color: #d1d5db;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px var(--zd-primary-alpha-8);
 }
 
 .input {
@@ -105,17 +123,17 @@
   border: none;
   outline: none;
   background: transparent;
-  color: #111827;
+  color: var(--zd-gray-900);
   line-height: 1.5;
   padding: 0.25rem 0;
   min-width: 0;
 }
 
 .input::placeholder {
-  color: #9ca3af;
+  color: var(--zd-gray-400);
 }
 
-/* Round dark send button — lives inside the pill */
+/* Round blue send button — lives inside the pill */
 .sendRound {
   flex-shrink: 0;
   width: 32px;
@@ -123,7 +141,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #175fff;
+  background: var(--ifm-color-primary);
   color: #ffffff;
   border: none;
   border-radius: 9999px;
@@ -132,7 +150,7 @@
 }
 
 .sendRound:hover {
-  background: #004efa;
+  background: var(--ifm-color-primary-dark);
 }
 
 .sendRound:disabled {
@@ -140,38 +158,57 @@
   cursor: default;
 }
 
-.hotTopics {
-  margin-top: 0.75rem;
+/* Suggestion cards */
+.suggestions {
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
 }
 
-.hotTopicsLabel {
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: #9ca3af;
+.suggestionsLabel {
+  font-size: 0.6875rem !important;
+  font-weight: 600 !important;
+  color: var(--zd-gray-400);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.25rem 0 !important;
 }
 
-.topicBtn {
-  padding: 0.5rem 0.75rem;
+.suggestionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.625rem 0.5rem 0.75rem;
   font-size: 0.75rem;
   text-align: left;
-  color: #374151;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  color: var(--zd-gray-700);
+  background: var(--zd-gray-50);
+  border: 1px solid var(--zd-gray-200);
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   line-height: 1.4;
 }
 
-.topicBtn:hover {
-  background: #f3f4f6;
-  border-color: #d1d5db;
+.suggestionBtn span {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestionBtn svg {
+  flex-shrink: 0;
+  color: var(--zd-gray-400);
+}
+
+.suggestionBtn:hover {
+  background: var(--zd-gray-100);
+  border-color: var(--zd-gray-300);
+  color: var(--zd-gray-900);
+}
+
+.suggestionBtn:hover svg {
+  color: var(--zd-gray-500);
 }
 
 /* Conversation state */
@@ -188,24 +225,42 @@
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.625rem;
 }
 
-.message {
+/* Message bubble — shared base */
+.messageBubble {
   max-width: 88%;
   border-radius: 0.625rem;
   padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-.message p {
-  font-size: 0.875rem;
-  line-height: 1.5;
+.messageBubble p {
+  font-size: 0.8125rem;
+  line-height: 1.55;
   margin: 0;
+}
+
+/* Mini avatar for assistant bubbles */
+.assistantAvatar {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--zd-gradient-avatar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 1px;
 }
 
 .userMessage {
   align-self: flex-end;
-  background: #175fff;
+  background: var(--ifm-color-primary);
   color: #ffffff;
 }
 
@@ -215,13 +270,14 @@
 
 .assistantMessage {
   align-self: flex-start;
-  background: #f3f4f6;
-  color: #111827;
+  background: var(--zd-gray-100);
+  color: var(--zd-gray-900);
+  max-width: 92%;
 }
 
 .bottomInput {
   padding: 0.75rem;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--zd-gray-200);
 }
 
 /* ── Expanded view — constrain content width ── */
@@ -234,7 +290,7 @@
   max-width: 640px;
 }
 
-.chatInnerExpanded .greeting {
+.chatInnerExpanded .greetingBlock {
   width: 100%;
   max-width: 640px;
 }
@@ -263,8 +319,19 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 .inkeepWrapper > * {
   flex: 1;
+  min-height: 0;
+  height: 100%;
+}
+
+/* Ensure any iframe rendered by Inkeep fills the wrapper */
+.inkeepWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }

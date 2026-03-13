@@ -39,18 +39,6 @@ class larkUtils {
     }
 
     post_process_file_paths(outputDir) {
-        // remove empty folders
-        const paths = fs.readdirSync(outputDir, {recursive: true})
-        const folders = paths.filter(path => fs.statSync(`${outputDir}/${path}`).isDirectory())
-
-        for (const folder of folders) {
-            const files = fs.readdirSync(`${outputDir}/${folder}`)
-
-            if (files.length === 1 && files[0] === folder.split('/').slice(-1)[0] + '.md') {
-                fs.rmSync(`${outputDir}/${folder}`, {recursive: true, force: true})
-            }   
-        }
-
         // check broken links and anchors
         const mds = fs.readdirSync(outputDir, {recursive: true}).filter(path => path.endsWith('.md'))
         const broken_links = []

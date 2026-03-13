@@ -12,12 +12,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.items::-webkit-scrollbar {
-  display: none;
+  flex-shrink: 0; /* Prevent items from collapsing — parent scrolls instead */
 }
 
 .item {
@@ -27,24 +22,91 @@
   padding: 0.375rem 0.75rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
-  color: #4b5563;
+  color: var(--zd-gray-600);
   text-decoration: none !important;
   white-space: nowrap;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .item:hover {
-  background: #f9fafb;
-  color: #111827;
+  background: var(--ifm-background-color);
+  color: var(--zd-gray-900);
+}
+
+.item:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
 }
 
 .itemActive {
-  background: rgba(23, 95, 255, 0.06);
-  color: #175fff;
+  background: var(--ifm-menu-color-background-active);
+  color: var(--ifm-menu-color-active);
   font-weight: 500;
 }
 
 .itemActive:hover {
-  background: rgba(23, 95, 255, 0.06);
-  color: #175fff;
+  background: var(--ifm-menu-color-background-active);
+  color: var(--ifm-menu-color-active);
+}
+
+/* ── Dropdown ──────────────────────────────────────────────────────────────── */
+
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.chevron {
+  display: flex;
+  align-items: center;
+  margin-left: 0.125rem;
+  opacity: 0.6;
+}
+
+.dropdownPanel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #ffffff;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 0.375rem;
+  min-width: 160px;
+  z-index: 200;
+}
+
+.dropdownPanelItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  color: var(--zd-gray-700);
+  text-decoration: none !important;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.dropdownPanelItem:hover {
+  background: var(--ifm-background-color);
+  color: var(--zd-gray-900);
+}
+
+.dropdownPanelItem:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
+  background: var(--ifm-background-color);
+}
+
+.dropdownPanelItemActive {
+  background: var(--ifm-menu-color-background-active);
+  color: var(--ifm-menu-color-active);
+  font-weight: 500;
 }

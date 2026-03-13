@@ -1,6 +1,8 @@
 import React, {useState, useCallback, type ReactNode} from 'react';
-import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import {useDoc, useDocsSidebar} from '@docusaurus/plugin-content-docs/client';
+import {useLocation} from '@docusaurus/router';
 import {useWindowSize} from '@docusaurus/theme-common';
+import type {PropSidebarItem} from '@docusaurus/plugin-content-docs';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
 import DocItemFooter from '@theme/DocItem/Footer';
@@ -11,6 +13,36 @@ import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import ContentVisibility from '@theme/ContentVisibility';
 import type {Props} from '@theme/DocItem/Layout';
 import styles from './styles.module.css';
+
+/** Recursively walks the sidebar tree and returns the label of the category
+ *  that directly contains the given pathname. */
+function findParentLabel(
+  items: PropSidebarItem[],
+  pathname: string,
+  parentLabel: string | null = null,
+): string | null {
+  const normalize = (p: string) => p.replace(/\/$/, '');
+  const norm = normalize(pathname);
+  for (const item of items) {
+    if (item.type === 'link') {
+      if (normalize(item.href) === norm) return parentLabel;
+    } else if (item.type === 'category') {
+      if (item.href && normalize(item.href) === norm) return parentLabel;
+      const found = findParentLabel(item.items, pathname, item.label);
+      if (found !== null) return found;
+    }
+  }
+  return null;
+}
+
+function ParentCategoryLabel(): ReactNode {
+  const sidebar = useDocsSidebar();
+  const {pathname} = useLocation();
+  if (!sidebar) return null;
+  const label = findParentLabel(sidebar.items, pathname);
+  if (!label) return null;
+  return <div className={styles.parentLabel}>{label}</div>;
+}
 
 function TOCToggleIcon() {
   return (
@@ -36,11 +68,12 @@ export default function DocItemLayout({children}: Props): ReactNode {
       <ContentVisibility metadata={metadata} />
       <DocVersionBanner />
       <div className={styles.docItemRow}>
-        <div className={`${styles.docItemCol} ${showDesktopTOC && !tocVisible ? styles.docItemColWide : ''}`}>
+        <div className={`${styles.docItemCol} ${!showDesktopTOC || !tocVisible ? styles.docItemColWide : ''}`}>
           <article>
             <DocBreadcrumbs />
             {hasTOC && windowSize === 'mobile' && <DocItemTOCMobile />}
             <DocVersionBadge />
+            <ParentCategoryLabel />
             <DocItemContent>{children}</DocItemContent>
             <DocItemFooter />
           </article>

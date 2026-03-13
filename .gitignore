@@ -39,9 +39,15 @@ node_modules/
 
 # Lark-docs generated doc output (populated by fetch-lark-docs at build time)
 /docs/tutorials/
-/versioned_docs/version-byoc/tutorials/
+/docs-byoc/tutorials/
 /reference/api/
 
 # Generated sidebar files
 /config/generated/*.js
+
+# AI tooling local state
+.agents/
+.claude/
+.qwen/
+skills-lock.json
 

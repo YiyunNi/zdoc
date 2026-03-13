@@ -30,12 +30,42 @@ import type {
   PropSidebarItemLink,
 } from '@docusaurus/plugin-content-docs';
 
-import type {IconData} from '@lineiconshq/react-lineicons';
+import type IconData from '@lineiconshq/react-lineicons';
+import {LineIcon} from '@site/src/utils/navIcons';
 import {
   Rocket5Outlined,
   Database2Outlined,
+  Layers1Outlined,
   Cloud2Outlined,
+  CloudUploadOutlined,
   Gear1Outlined,
+  QuestionMarkCircleOutlined,
+  Search1Outlined,
+  // Reference sidebar icons
+  Key1Outlined,
+  Code1Outlined,
+  Gears3Outlined,
+  Slice2Outlined,
+  VectorNodes6Outlined,
+  VectorNodes7Outlined,
+  Upload1Outlined,
+  StorageHdd2Outlined,
+  VectorizeraiOutlined,
+  SortHighToLowOutlined,
+  // REST-specific icons
+  Globe1Outlined,
+  SyncOutlined,
+  Folder1Outlined,
+  RefreshCircle1ClockwiseOutlined,
+  BoxArchive1Outlined,
+  BarChart4Outlined,
+  CalendarDaysOutlined,
+  CreditCardMultipleOutlined,
+  PieChart2Outlined,
+  Shield2Outlined,
+  Link2AngularRightOutlined,
+  User4Outlined,
+  Bookmark1Outlined,
 } from '@lineiconshq/free-icons';
 
 import styles from './styles.module.css';
@@ -43,34 +73,45 @@ import styles from './styles.module.css';
 // ─── Icon map ────────────────────────────────────────────────────────────────
 
 const CATEGORY_ICONS: Record<string, IconData> = {
-  quickstarts: Rocket5Outlined,
-  data: Database2Outlined,
+  // Guides sidebar
+  quickstarts:    Rocket5Outlined,
+  'deploy-byoc':  CloudUploadOutlined,
+  data:           Database2Outlined,
+  indexes:        Layers1Outlined,
+  search:         Search1Outlined,
   infrastructure: Cloud2Outlined,
   administration: Gear1Outlined,
+  faqs:           QuestionMarkCircleOutlined,
+  // Reference sidebar
+  auth:              Key1Outlined,
+  'client-code':     Code1Outlined,
+  'collections-ref': Layers1Outlined,
+  'db-ref':          Database2Outlined,
+  mgmt:              Gears3Outlined,
+  partition:         Slice2Outlined,
+  'vector-ref':      VectorizeraiOutlined,
+  'import-ref':      Upload1Outlined,
+  'storage-ref':     StorageHdd2Outlined,
+  'embed-ref':       VectorizeraiOutlined,
+  'rerank-ref':      SortHighToLowOutlined,
+  'cloud-ctrl':      Cloud2Outlined,
+  'data-plane':      VectorNodes7Outlined,
+  // REST API items
+  'rest-cloud-meta': Globe1Outlined,
+  'rest-elt':        SyncOutlined,
+  'rest-project':    Folder1Outlined,
+  'rest-cluster':    VectorNodes6Outlined,
+  'rest-migrate':    RefreshCircle1ClockwiseOutlined,
+  'rest-backup':     BoxArchive1Outlined,
+  'rest-metrics':    BarChart4Outlined,
+  'rest-job':        CalendarDaysOutlined,
+  'rest-invoices':   CreditCardMultipleOutlined,
+  'rest-usage':      PieChart2Outlined,
+  'rest-role':       Shield2Outlined,
+  'rest-alias':      Link2AngularRightOutlined,
+  'rest-user':       User4Outlined,
+  'rest-index':      Bookmark1Outlined,
 };
-
-/**
- * Renders a LineIcons IconData as a proper SVG.
- * The library stores SVG paths with `{color}` placeholders and `//` self-closing
- * tags; we fix both before injecting.
- */
-function LineIcon({icon, size = 16}: {icon: IconData; size?: number}) {
-  const inner = icon.svg
-    .replace(/\{color\}/g, 'currentColor')
-    .replace(/\/\/>/g, '/>');
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={icon.viewBox}
-      fill={icon.hasFill ? 'currentColor' : 'none'}
-      stroke={icon.hasStroke ? 'currentColor' : 'none'}
-      aria-hidden="true"
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{__html: inner}}
-    />
-  );
-}
 
 // ─── Internals (unchanged from Docusaurus source) ────────────────────────────
 

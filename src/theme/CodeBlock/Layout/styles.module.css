@@ -1,0 +1,117 @@
+/* ── Window frame ── */
+.windowFrame {
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.18),
+    0 8px 32px rgba(0, 0, 0, 0.18) !important;
+  margin-bottom: 1.5rem !important;
+  padding: 0 !important;
+}
+
+/* ── Title bar chrome ── */
+.titleBar {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 1rem;
+  background: #2a2b36;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ── Traffic lights ── */
+.trafficLights {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dotRed    { background: #ff5f57; }
+.dotYellow { background: #febc2e; }
+.dotGreen  { background: #28c840; }
+
+/* ── Filename / language label ── */
+.filename {
+  flex: 1;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  /* Optical centering: shift left by roughly the width of the traffic lights
+     so the label appears centered in the full bar, not just in the flex remainder */
+  margin-right: 4.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Copy button in title bar ── */
+.titleBarRight {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Override the absolute-positioned copy button to sit inline */
+.copyBtn {
+  position: static !important;
+  opacity: 1 !important;
+  display: inline-flex !important;
+  align-items: center;
+  padding: 0.25rem 0.625rem !important;
+  height: 26px;
+  font-size: 0.6875rem !important;
+  font-weight: 600;
+  border-radius: 0.375rem !important;
+  background: rgba(255, 255, 255, 0.09) !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(255, 255, 255, 0.13) !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  line-height: 1;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Force icon visibility — SVGs use opacity:inherit so we must be explicit.
+   Use tag selectors since CSS module class names are hashed at runtime. */
+.copyBtn span {
+  display: block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+.copyBtn span svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  opacity: 1 !important;
+}
+
+/* ── Code content area ── */
+.codeContent {
+  position: relative;
+}
+
+/* Remove the border-radius on the pre since the frame handles it */
+.windowFrame pre {
+  border-radius: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}

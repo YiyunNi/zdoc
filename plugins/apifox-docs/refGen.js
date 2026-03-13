@@ -128,38 +128,88 @@ class refGen {
         }
       }
 
-      if (!fs.existsSync(folder_path)) {
-        fs.mkdirSync(folder_path, { recursive: true })
-      }
+      // Create folder structure only — no index files for any category level
+      fs.mkdirSync(folder_path, { recursive: true })
 
-      if (target === 'zilliz') {
-        if (!fs.existsSync(`${target_path}/${version}/${version}.mdx`)) {
-          fs.writeFileSync(`${target_path}/${version}/${version}.mdx`, template.render({
-            group_name: version === 'v2' ? 'V2' : 'V1',
-            position: version === 'v2' ? 1 : 2,
-            slug: version,
-            beta_tag: version === 'v2' ? 'FALSE' : 'NEAR DEPRECATE',
-            description: ''
-          }))
-        }
-  
-        if (!fs.existsSync(`${target_path}/${version}/${upper_folder}/${upper_folder}.mdx`)) {
-          const title = upper_folder.startsWith('control') ? 'Control Plane' : 'Data Plane'
-          const pos = upper_folder.startsWith('control') ? 1 : 2
-          const desc = upper_folder.startsWith('control') ? 'This provide API endpoints for managing Zilliz Cloud clusters and resources.' : 'This provide API endpoints for managing data stored in Zilliz Cloud clusters.'
-  
-          fs.writeFileSync(`${target_path}/${version}/${upper_folder}/${upper_folder}.mdx`, template.render({
-            group_name: title + (version === 'v2' ? ' (V2)' : ' (V1)'),
-            position: pos,
-            slug: `${upper_folder}-${version}`,
-            beta_tag: version === 'v2' ? 'FALSE' : 'NEAR DEPRECATE',
-            description: desc
-          }))
-        }      
-  
-        fs.writeFileSync(`${folder_path}/${slug}.mdx`, t)
+      // Clean up any stale index files from previous runs
+      const staleFiles = [
+        `${target_path}/${version}/${version}.mdx`,
+        `${target_path}/${version}/${upper_folder}/${upper_folder}.mdx`,
+        `${folder_path}/${slug}.mdx`,
+      ]
+      for (const f of staleFiles) {
+        if (fs.existsSync(f)) fs.rmSync(f)
       }
     }
+  }
+
+  generate_sidebar(contentRoot) {
+    const { target, specifications, target_path } = this.options
+    const descriptions = JSON.parse(fs.readFileSync(path.join(META_DIR, 'descriptions.json'), 'utf-8'))
+    const stripRoot = str => str.replace(/\\/g, '/').replace(new RegExp(`^${contentRoot}/`), '')
+
+    // Collect groups keyed by version → plane, preserving spec order
+    const tree = {}
+    for (const group of Object.keys(specifications.tags)) {
+      const tag = specifications.tags[group]
+      if (tag['x-include-target'] && !tag['x-include-target'].includes(target)) continue
+
+      const slug = tag.name.replace('&', 'and').split(' ').join('-').replace(/\(|\)|,/g, '').toLowerCase()
+      const version = slug.includes('v2') ? 'v2' : 'v1'
+      const plane = target === 'milvus' ? this.__get_plane_for_milvus(slug) : this.__get_plane_for_cloud(slug)
+      const group_label = (version === 'v2' ? tag.name.slice(0, -5) : tag.name) + (version === 'v2' ? ' (V2)' : ' (V1)')
+      const position = specifications.tags.map(x => x.name).indexOf(tag.name)
+
+      let folder_slug = slug
+      if (target === 'milvus') {
+        const name = descriptions.find(x => x.name === slug)?.milvus?.name
+        if (name) folder_slug = name
+      }
+
+      const groupDocId = stripRoot(`${target_path}/${version}/${plane}/${folder_slug}/${folder_slug}`)
+
+      // Collect pages for this group in spec order
+      const pages = []
+      for (const page_url of Object.keys(specifications.paths)) {
+        for (const method of Object.keys(specifications.paths[page_url])) {
+          const spec = specifications.paths[page_url][method]
+          if (spec?.['x-include-target'] && !spec['x-include-target'].includes(target)) continue
+          if (spec.tags[0] !== tag.name) continue
+
+          const page_title = target === 'milvus' && spec['x-i18n'] ? spec['x-i18n']['en-US']?.summary ?? spec.summary : spec.summary
+          let page_slug = this.get_slug(page_title, target)
+          if (target !== 'milvus') page_slug += version === 'v2' ? '-v2' : ''
+
+          const docId = stripRoot(`${target_path}/${version}/${plane}/${folder_slug}/${page_slug}`)
+          pages.push({ type: 'doc', id: docId, label: page_title + (version === 'v2' ? ' (V2)' : ' (V1)') })
+        }
+      }
+
+      if (!tree[version]) tree[version] = {}
+      if (!tree[version][plane]) tree[version][plane] = []
+      tree[version][plane].push({ position, label: group_label, docId: groupDocId, pages })
+    }
+
+    // Build sidebar items
+    const sidebar = []
+    for (const version of ['v2', 'v1']) {
+      if (!tree[version]) continue
+      const planeItems = []
+
+      for (const plane of ['control-plane', 'data-plane']) {
+        if (!tree[version][plane]) continue
+        const planeLabel = (plane.startsWith('control') ? 'Control Plane' : 'Data Plane') + (version === 'v2' ? ' (V2)' : ' (V1)')
+        const groups = tree[version][plane]
+          .sort((a, b) => a.position - b.position)
+          .map(g => ({ type: 'category', label: g.label, items: g.pages }))
+
+        planeItems.push({ type: 'category', label: planeLabel, items: groups })
+      }
+
+      sidebar.push({ type: 'category', label: version.toUpperCase(), items: planeItems })
+    }
+
+    return sidebar
   }
 
   get_slug(page_title, target) {

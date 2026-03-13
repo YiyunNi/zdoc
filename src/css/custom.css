@@ -46,6 +46,42 @@ h1, h2, h3, h4, h5, h6 {
 
   --ifm-list-left-padding: 1.5rem;
   --ifm-paragraph-margin-bottom: 0.875rem;
+
+  /* ── Custom design tokens ────────────────────────────────────────────────── */
+
+  /* Neutral gray scale (Tailwind-compatible values) */
+  --zd-gray-900: #111827;
+  --zd-gray-800: #1f2937;
+  --zd-gray-700: #374151;
+  --zd-gray-600: #4b5563;
+  --zd-gray-500: #6b7280;
+  --zd-gray-400: #9ca3af;
+  --zd-gray-300: #d1d5db;
+  --zd-gray-200: #e5e7eb;
+  --zd-gray-100: #f3f4f6;
+  --zd-gray-50:  #f9fafb;
+
+  /* Primary color with opacity — avoids decomposing the hex in every file */
+  --zd-primary-alpha-4:  rgba(23, 95, 255, 0.04);
+  --zd-primary-alpha-6:  rgba(23, 95, 255, 0.06);
+  --zd-primary-alpha-7:  rgba(23, 95, 255, 0.07);
+  --zd-primary-alpha-8:  rgba(23, 95, 255, 0.08);
+  --zd-primary-alpha-10: rgba(23, 95, 255, 0.10);
+  --zd-primary-alpha-40: rgba(23, 95, 255, 0.40);
+  --zd-primary-alpha-50: rgba(23, 95, 255, 0.50);
+
+  /* Shared gradients */
+  --zd-gradient-avatar: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-lightest) 100%);
+  --zd-gradient-banner: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary-lighter) 100%);
+
+  /* Layout sizes — referenced by overlay/pane calculations */
+  --zd-secondary-navbar-height: 48px;
+}
+
+/* Carets */
+.menu__caret::before,
+.menu__link--sublist-caret::after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.1rem 1.1rem !important;
 }
 
 /* Navbar */
@@ -82,6 +118,12 @@ h1, h2, h3, h4, h5, h6 {
   background: #f3f4f6;
 }
 
+.navbar-support-link:focus-visible,
+.navbar-login-link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
+}
+
 .navbar-signup-btn {
   display: inline-flex !important;
   align-items: center;
@@ -102,9 +144,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff !important;
 }
 
+.navbar-signup-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
 /* Sidebar */
 .theme-doc-sidebar-container {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
 }
 
 /* Remove the 56px top padding Docusaurus adds to the sidebar div for sticky
@@ -116,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* All menu links */
 .menu__link {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: #4b5563;
   border-radius: 0.375rem;
   padding: 0.3125rem 0.75rem;
@@ -137,46 +184,77 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── First-level category headers ── */
 .theme-doc-sidebar-item-category-level-1 {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
 }
 
 .theme-doc-sidebar-item-category-level-1:first-child {
   margin-top: 0.25rem;
 }
 
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist {
-  font-size: 0.875rem;
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.9375rem;
   font-weight: 600;
   color: #111827;
   letter-spacing: 0;
   text-transform: none;
 }
 
-.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link--sublist:hover {
+.theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link:hover {
   color: #111827 !important;
 }
 
-/* Caret — small and subtle */
-.menu__link--sublist-caret::after {
-  width: 1rem !important;
-  height: 1rem !important;
-  background-size: 1rem 1rem !important;
-  opacity: 0.4;
-}
-
-.menu__link--sublist-caret:hover::after {
-  opacity: 0.65;
-}
-
 /* Child links (level 2+) — align text with category label (2.5rem target − 0.75rem list indent = 1.75rem) */
+.theme-doc-sidebar-item-link-level-2,
+.theme-doc-sidebar-item-category-level-2 {
+  margin-top: 0;
+}
+
 .theme-doc-sidebar-item-link-level-2 .menu__link,
 .theme-doc-sidebar-item-category-level-2 > .menu__list-item-collapsible > .menu__link {
   padding-left: 1.75rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  min-height: unset;
+  font-weight: 400;
+  color: #374151;
+}
+
+/* Level-3 items — deeper indent */
+.theme-doc-sidebar-item-link-level-3 .menu__link,
+.theme-doc-sidebar-item-category-level-3 > .menu__list-item-collapsible > .menu__link {
+  padding-left: 2.75rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  min-height: unset;
+  font-weight: 400;
+  color: #374151;
+}
+
+/* Level-3 items — zero out margin */
+.theme-doc-sidebar-item-link-level-3,
+.theme-doc-sidebar-item-category-level-3 {
+  margin-top: 0;
+}
+
+/* Level-4+ items — deepest indent */
+.theme-doc-sidebar-item-link-level-4,
+.theme-doc-sidebar-item-category-level-4 {
+  margin-top: 0;
+}
+
+.theme-doc-sidebar-item-link-level-4 .menu__link,
+.theme-doc-sidebar-item-category-level-4 > .menu__list-item-collapsible > .menu__link {
+  padding-left: 3.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  min-height: unset;
+  font-weight: 400;
+  color: #374151;
 }
 
 /* Content */
 .markdown {
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: #1f2937;
 }
@@ -192,25 +270,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .markdown h2 {
-  font-size: 1.625rem !important;
+  font-size: 1.875rem !important;
   font-weight: 700 !important;
   line-height: 1.3 !important;
   margin-top: 2.75rem !important;
-  margin-bottom: 0.75rem !important;
+  margin-bottom: 1rem !important;
   color: #111827;
 }
 
 .markdown h3 {
-  font-size: 1.0625rem !important;
+  font-size: 1.4375rem !important;
   font-weight: 600 !important;
-  line-height: 1.5 !important;
+  line-height: 1.4 !important;
   margin-top: 1.75rem !important;
   margin-bottom: 0.375rem !important;
   color: #111827;
 }
 
 .markdown h4 {
-  font-size: 0.9375rem !important;
+  font-size: 1.125rem !important;
   font-weight: 600 !important;
   margin-top: 1.25rem !important;
   margin-bottom: 0.25rem !important;
@@ -237,6 +315,25 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.25rem;
 }
 
+@media (max-width: 996px) {
+  .markdown h1 {
+    font-size: 2rem !important;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .markdown h3 {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* Home page — smaller h1 (it's a landing overview, not a deep-dive doc) */
+.docs-doc-id-tutorials\/home .markdown h1 {
+  font-size: 2.25rem !important; /* 36px */
+}
+
 article p a {
   color: var(--ifm-color-primary) !important;
 }
@@ -246,6 +343,68 @@ pre {
   max-height: 36rem;
   overflow-y: auto;
   border-radius: 0.5rem !important;
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+
+/* Strip the big cream/beige container background */
+.tabs-container {
+  background: transparent !important;
+}
+
+/* Tab strip: compact inline pill row */
+.tabs {
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+  gap: 2px !important;
+  display: inline-flex !important;
+  align-items: center;
+  background: var(--zd-gray-100);
+  border-radius: 8px;
+  padding: 3px !important;
+}
+
+/* Individual tab */
+.tabs__item {
+  padding: 0.3rem 0.75rem !important;
+  border-radius: 6px !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  font-family: var(--ifm-font-family-base);
+  color: var(--zd-gray-500) !important;
+  border-bottom: none !important;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+.tabs__item:hover:not(.tabs__item--active) {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--zd-gray-700) !important;
+}
+
+/* Active pill */
+.tabs__item--active {
+  background: #ffffff !important;
+  color: var(--zd-gray-900) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  border-bottom: none !important;
+}
+
+/* Tighten the gap between tab strip and code block below */
+.tabs-container > .margin-top--md {
+  margin-top: 0.5rem !important;
+}
+
+/* Let the window frame handle border-radius and shadow; zero out the container defaults */
+.theme-code-block {
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 /* Pagination */
@@ -262,7 +421,7 @@ pre {
 
 /* Table of Contents */
 .table-of-contents {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   padding: 0 !important;
   margin: 0 !important;
 }
@@ -335,8 +494,21 @@ pre {
   height: 16px;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Code block line highlighting — use a lighter tint on dark backgrounds */
@@ -386,7 +558,7 @@ html {
   gap: 0.5rem;
   width: 100%;
   padding: 0.5rem 0.75rem;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   color: #9ca3af;
   background: #f3f4f6;
   border: none;
@@ -399,6 +571,11 @@ html {
 .mobile-action-search:hover {
   background: #ebebeb;
   color: #6b7280;
+}
+
+.mobile-action-search:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
 }
 
 /* Action links — styled like sidebar nav items, pinned at bottom */
@@ -414,7 +591,7 @@ html {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 400;
   color: #374151;
   text-decoration: none;
@@ -426,6 +603,11 @@ html {
   background: #f3f4f6;
   color: #111827;
   text-decoration: none;
+}
+
+.mobile-action-link:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
 }
 
 .mobile-action-link--primary {
@@ -499,4 +681,9 @@ html {
     padding-bottom: 0.25rem;
   }
 
+}
+
+/* Hide copy-page button on the home page (/docs/home → doc id: tutorials/home) */
+html.docs-doc-id-tutorials\/home #copy-page-btn {
+  display: none;
 }

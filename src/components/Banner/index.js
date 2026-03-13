@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
     InkeepModalChat,
 } from "@inkeep/cxkit-react";
@@ -16,9 +16,7 @@ export default function Banner({ bannerText, bannerLinkText }) {
 
     const config = inkeepSettings;
 
-    config.baseSettings.apiKey = siteConfig.plugins.find(plugin => {
-        return plugin[0] === '@inkeep/cxkit-docusaurus';
-    })[1].SearchBar.baseSettings.apiKey;
+    config.baseSettings.apiKey = siteConfig.customFields.inkeepApiKey;
 
     config.modalSettings = {
         isOpen,
@@ -31,10 +29,10 @@ export default function Banner({ bannerText, bannerLinkText }) {
                 <span className={styles.bannerText}>
                     { bannerText }
                 </span>
-                <span type="button" className={styles.bannerLink} onClick={() => setIsOpen(true)}>
+                <button type="button" className={styles.bannerLink} onClick={() => setIsOpen(true)}>
                     <span>{ bannerLinkText }</span>
                     <i className={styles.zillizStar} />
-                </span>
+                </button>
             </div> 
 
             <InkeepModalChat {...config} />

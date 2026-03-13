@@ -59,17 +59,19 @@ module.exports = function (context, options) {
 
                     // Sidebar-only mode: regenerate sidebar from existing sources without re-fetching
                     if (opts.sidebarOnly) {
-                        if (!sidebarPath) throw new Error('sidebarPath is not configured for this manual')
-                        const { outputDir } = resolveTarget(targets, opts.pubTarget) ?? resolveTarget(targets, utils.list_valid_targets(targets)[0])
+                        const targetConfig = resolveTarget(targets, opts.pubTarget) ?? resolveTarget(targets, utils.list_valid_targets(targets)[0])
+                        const { outputDir } = targetConfig
+                        const effectiveSidebarPath = targetConfig.sidebarPath ?? sidebarPath
+                        if (!effectiveSidebarPath) throw new Error('sidebarPath is not configured for this manual or target')
                         const writer = sourceType === 'wiki' || sourceType === 'onePager'
                             ? new docWriter(root, base, displayedSidebar, docSourceDir, null, opts.pubTarget ?? Object.keys(targets)[0], true, false)
                             : new driveWriter(root, base, displayedSidebar, docSourceDir, null, opts.pubTarget ?? Object.keys(targets)[0], true, false, opts.manual)
                         console.log('Generating sidebar from existing sources...')
-                        const sidebarItems = await writer.generate_sidebar(outputDir, contentRoot || outputDir.split('/')[0], overridePath || null)
-                        const sidebarDir = require('node:path').dirname(sidebarPath)
+                        const sidebarItems = await writer.generate_sidebar(outputDir, outputDir.split('/')[0])
+                        const sidebarDir = require('node:path').dirname(effectiveSidebarPath)
                         if (!fs.existsSync(sidebarDir)) fs.mkdirSync(sidebarDir, { recursive: true })
-                        fs.writeFileSync(sidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
-                        console.log(`Sidebar written to ${sidebarPath}`)
+                        fs.writeFileSync(effectiveSidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
+                        console.log(`Sidebar written to ${effectiveSidebarPath}`)
                         return
                     }
 
@@ -92,7 +94,8 @@ module.exports = function (context, options) {
                         }
                     } else {
                         try {
-                            var { outputDir, imageDir } = resolveTarget(targets, opts.pubTarget)
+                            var targetConfig = resolveTarget(targets, opts.pubTarget)
+                            var { outputDir, imageDir } = targetConfig
                         } catch (e) {
                             throw new Error(`Please provide a valid target... \n\nAvailable targets: \n- ${utils.list_valid_targets(targets).join('\n- ')}\n`)
                         }
@@ -135,15 +138,21 @@ module.exports = function (context, options) {
                                     }
                                 }
 
+                                if (opts.sourceOnly) {
+                                    writerCleanup()
+                                    return
+                                }
+
                                 await writer.write_docs(outputDir, root)
 
-                                if (sidebarPath && !opts.skipSidebar) {
+                                const effectiveSidebarPath = targetConfig.sidebarPath ?? sidebarPath
+                                if (effectiveSidebarPath && !opts.skipSidebar) {
                                     console.log('Generating sidebar...')
-                                    const sidebarItems = await writer.generate_sidebar(outputDir, contentRoot || outputDir.split('/')[0], overridePath || null)
-                                    const sidebarDir = require('node:path').dirname(sidebarPath)
+                                    const sidebarItems = await writer.generate_sidebar(outputDir, outputDir.split('/')[0])
+                                    const sidebarDir = require('node:path').dirname(effectiveSidebarPath)
                                     if (!fs.existsSync(sidebarDir)) fs.mkdirSync(sidebarDir, { recursive: true })
-                                    fs.writeFileSync(sidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
-                                    console.log(`Sidebar written to ${sidebarPath}`)
+                                    fs.writeFileSync(effectiveSidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
+                                    console.log(`Sidebar written to ${effectiveSidebarPath}`)
                                 }
 
                                 utils.post_process_file_paths(outputDir)

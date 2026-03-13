@@ -1,1 +1,123 @@
-{}
+{
+  "overrideCategories": {
+    "Function & Model Inference": {
+      "label": "AI & Embeddings"
+    },
+    "Data": {
+      "label": "Collection",
+      "className": "data",
+      "collapsed": false,
+      "customProps": { "icon": "data" }
+    },
+    "Extract, Transform, and Load": {
+        "label": "ETL"
+    },
+    "Index Vector Fields": {
+        "label": "Vector Indexes"
+    },
+    "Index Scalar Fields": {
+        "label": "Scalar Indexes"
+    }
+  },
+  "group": [
+    {
+      "label": "Quickstarts",
+      "afterDoc": "tutorials/home",
+      "customProps": { "icon": "quickstarts" },
+      "categories": ["Get Started"]
+    },
+    {
+      "label": "Infrastructure",
+      "collapsed": false,
+      "afterCategory": "Collection",
+      "customProps": { "icon": "infrastructure" },
+      "categories": ["Cluster", "Volume", "Migrations", "Metrics & Alerts", "Backup & Restore"]
+    },
+    {
+      "label": "Administration",
+      "collapsed": false,
+      "customProps": { "icon": "administration" },
+      "categories": ["Organizations", "Projects", "Security", "Payment & Billing", "Limits & Restrictions"]
+    }
+  ],
+  "moveCategory": [
+    {
+      "label": "Search",
+      "afterCategory": "Collection",
+      "collapsed": false,
+      "customProps": { "icon": "search" }
+    },
+    {
+      "label": "Indexes",
+      "beforeCategory": "Search",
+      "collapsed": false,
+      "customProps": { "icon": "indexes" }
+    },
+    {
+      "label": "AI & Embeddings",
+      "into": "Collection"
+    },
+    {
+      "label": "Analyzer",
+      "into": "Collection",
+      "afterSibling": "Schema & Data Fields"
+    },
+    {
+      "label": "Data Import",
+      "into": "Collection",
+      "afterSibling": "Insert & Delete"
+    },
+    {
+      "label": "Data Export",
+      "into": "Collection",
+      "afterSibling": "Data Import"
+    }
+  ],
+  "move": [
+    {
+      "id": "tutorials/get-started/understand-basics/autoindex-explained",
+      "into": "Indexes",
+      "position": "first"
+    },
+    {
+      "id": "tutorials/data/manage-indexes/index-vector-fields/tune-index-build-level",
+      "into": "Indexes",
+      "afterSibling": "tutorials/get-started/understand-basics/autoindex-explained"
+    },
+    {
+      "id": "tutorials/data/data-import-export/data-export/export-data-iterators",
+      "into": "ETL",
+      "position": "first"
+    }
+  ],
+  "override": {
+    "tutorials/home": { "customProps": { "icon": "home" } }
+  },
+  "inject": [
+    {
+      "append": true,
+      "item": {
+        "type": "category",
+        "label": "FAQs",
+        "customProps": { "icon": "faqs" },
+        "link": { "type": "doc", "id": "tutorials/faqs/faqs" },
+        "items": [
+          { "type": "doc", "id": "tutorials/faqs/faq-get-started",        "label": "Get Started" },
+          { "type": "doc", "id": "tutorials/faqs/faq-resource-planning",  "label": "Resource Planning" },
+          { "type": "doc", "id": "tutorials/faqs/faq-cluster",            "label": "Cluster" },
+          { "type": "doc", "id": "tutorials/faqs/faq-collection",         "label": "Collection" },
+          { "type": "doc", "id": "tutorials/faqs/faq-data-import",        "label": "Data Import" },
+          { "type": "doc", "id": "tutorials/faqs/faq-migration",          "label": "Migration" },
+          { "type": "doc", "id": "tutorials/faqs/faq-monitors-and-metrics","label": "Monitors & Metrics" },
+          { "type": "doc", "id": "tutorials/faqs/faq-backup-and-restore", "label": "Backup & Restore" },
+          { "type": "doc", "id": "tutorials/faqs/faq-account",            "label": "Account" },
+          { "type": "doc", "id": "tutorials/faqs/faq-users-and-roles",    "label": "Users & Roles" },
+          { "type": "doc", "id": "tutorials/faqs/faq-authentication",     "label": "Authentication" },
+          { "type": "doc", "id": "tutorials/faqs/faq-security",           "label": "Security" },
+          { "type": "doc", "id": "tutorials/faqs/faq-payment-and-billing","label": "Payment & Billing" },
+          { "type": "doc", "id": "tutorials/faqs/faq-integrations",       "label": "Integrations" }
+        ]
+      }
+    }
+  ]
+}

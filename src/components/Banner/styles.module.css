@@ -1,66 +1,75 @@
 .container {
-    display: block;
-    width: 100%;
-    max-width: 996px;
-    margin: 20px auto;
-    padding: 0 20px;
+  display: block;
+  width: 100%;
+  max-width: 996px;
+  margin: 1.25rem auto;
+  padding: 0 1.25rem;
 }
 
 .banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    background: linear-gradient(79.78deg, #7D2EFF -17.27%, #00B3FF 61.91%, #00CDD1 121.86%);
-    border-radius: 12px;
-    padding: 24px 32px;
-    color: #FFFFFF;
-    margin-bottom: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--zd-gradient-banner);
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
 }
 
 .bannerText {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 600;
-    margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 0;
 }
 
 .bannerLink {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border: 1px solid #FFFFFF;
-    border-radius: 12px;
-    padding: 16px 60px;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 600;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  background: transparent;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  padding: 0.75rem 2.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.bannerLink:hover,
-.bannerLink:link {
-    background-color: rgba(255, 255, 255, 0.1);
+.bannerLink:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+.bannerLink:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.9);
 }
 
 .zillizStar {
-    display: inline-block;
-    background-image: url('/icons/zilliz-star.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px;    
+  display: inline-block;
+  background-image: url('/icons/zilliz-star.svg');
+  width: 1.25rem;
+  height: 1.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
-    .banner {
-        flex-direction: column;
-        text-align: center;
-    }
+@media (max-width: 996px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+  }
 
-    .bannerLink {
-        width: 100%;
-    }
+  .bannerLink {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+  }
 }

@@ -2,6 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import larkDocsConfig from './config/lark-docs.config';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import 'dotenv/config';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -28,15 +30,28 @@ const config: Config = {
   customFields: {
     inkeepApiKey: process.env.INKEEP_API_KEY || '',
     secondaryNavbar: [
-      { label: 'Cloud Guides',  href: '/docs',            prefix: '/docs',            icon: 'cloud'     },
-      { label: 'BYOC Guides',   href: '/docs/byoc',       prefix: '/docs/byoc',       icon: 'server'    },
-      { label: 'API & SDK',     href: '/reference',       prefix: '/reference',       icon: 'code'      },
-      { label: 'CLI',           href: '/docs',            prefix: null,               icon: 'terminal'  },
-      { label: 'Releases',      href: '/docs',            prefix: null,               icon: 'tag'       },
+      { label: 'Cloud Guides', href: '/docs/home',            prefix: '/docs',       icon: 'cloud'  },
+      { label: 'BYOC Guides',  href: '/docs/byoc/byoc-intro', prefix: '/docs/byoc',  icon: 'server' },
+      {
+        label: 'API & SDK',
+        prefix: '/reference',
+        icon: 'code',
+        items: [
+          { label: 'Python SDK',  href: '/reference/python/python/DataImport-BulkFileType',      prefix: '/reference/python',   icon: 'python'  },
+          { label: 'Java SDK',    href: '/reference/java/java/v2-Authentication-createRole',     prefix: '/reference/java',     icon: 'java'    },
+          { label: 'Node.js SDK', href: '/reference/node/node/Authentication-addUserToRole',     prefix: '/reference/node',     icon: 'nodejs'  },
+          { label: 'Go SDK',      href: '/reference/go/v2-Authentication-CreateRole',            prefix: '/reference/go',       icon: 'go'      },
+          { label: 'REST API',    href: '/reference/restful/list-cloud-providers-v2',            prefix: '/reference/restful',  icon: 'rest'    },
+        ],
+      },
+      { label: 'CLI',      href: '/docs',            prefix: null,                icon: 'terminal', hidden: true },
+      { label: 'Releases', href: '/docs/changelogs', prefix: '/docs/changelogs', icon: 'tag'      },
     ],
   },
 
   plugins: [
+    // Watch sidebar override files so `docusaurus start` rebuilds on changes
+    () => ({ name: 'watch-sidebar-overrides', getPathsToWatch: () => ['config/sidebar-overrides'] }),
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -44,11 +59,32 @@ const config: Config = {
         path: 'reference',
         routeBasePath: 'reference',
         sidebarPath: './sidebarsReference.ts',
-        breadcrumbs: true,
+        breadcrumbs: false,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'byoc',
+        path: 'docs-byoc',
+        routeBasePath: 'docs/byoc',
+        sidebarPath: './sidebarsByoc.ts',
+        breadcrumbs: false,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     ],
     ['./plugins/lark-docs', larkDocsConfig],
     './plugins/apifox-docs',
+    ['./plugins/embed-markdown', {
+      sources: [
+        { folder: 'docs',      route: '/docs'     },
+        { folder: 'reference', route: '/reference' },
+        { folder: 'docs-byoc', route: '/docs/byoc' },
+      ],
+    }],
   ],
 
   presets: [
@@ -60,17 +96,8 @@ const config: Config = {
           routeBasePath: 'docs',
           sidebarPath: './sidebarsTutorial.ts',
           breadcrumbs: false,
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'User Guides (Cloud)',
-            },
-            byoc: {
-              label: 'User Guides (BYOC)',
-              path: 'byoc',
-              banner: 'none',
-            },
-          },
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false,
         theme: {
@@ -78,6 +105,14 @@ const config: Config = {
         },
       } satisfies Preset.Options,
     ],
+  ],
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+      type: 'text/css',
+      crossorigin: 'anonymous',
+    },
   ],
 
   headTags: [
@@ -141,7 +176,7 @@ const config: Config = {
     },
     docs: {
       sidebar: {
-        autoCollapseCategories: false,
+        autoCollapseCategories: true,
       },
     },
   } satisfies Preset.ThemeConfig,

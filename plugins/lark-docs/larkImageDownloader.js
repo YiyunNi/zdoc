@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 const Bottleneck = require('bottleneck')
 const process = require('node:process')
 const crypto = require('node:crypto')
-const { S3Client, PutObjectCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
+const { S3Client, PutObjectCommand, HeadObjectCommand } = require('@aws-sdk/client-s3');
 const { NodeHttpHandler } = require('@smithy/node-http-handler');
 
 require('dotenv/config')
@@ -28,8 +28,8 @@ class larkImageDownloader {
             },
             region: process.env.AWS_REGION,
             requestHandler: new NodeHttpHandler({
-                connectionTimeout: 5000,
-                socketTimeout: 30000,
+                connectionTimeout: 15000,
+                socketTimeout: 60000,
             }),
         })
     }    
@@ -44,7 +44,6 @@ class larkImageDownloader {
             ...get_params,
             Body: buffer,
             ContentType: 'image/png',
-            ACL: 'public-read',
             Metadata: {
                 hash: crypto.createHash('md5').update(buffer).digest('hex'),
             }
@@ -52,10 +51,10 @@ class larkImageDownloader {
 
         try {
             console.log(`[s3] checking if ${key} exists`)
-            const getObjectCommand = new GetObjectCommand(get_params);
-            const response = await this.s3.send(getObjectCommand);
+            const headObjectCommand = new HeadObjectCommand(get_params);
+            const response = await this.s3.send(headObjectCommand);
             console.log(`[s3] ${key} found in bucket, checking hash`)
-            if (response.Metadata.hash === crypto.createHash('md5').update(buffer).digest('hex')) {
+            if (response.Metadata?.hash === crypto.createHash('md5').update(buffer).digest('hex')) {
                 console.log(`[s3] ${key} unchanged, skipping upload`);
                 return
             }
@@ -64,13 +63,14 @@ class larkImageDownloader {
             await this.s3.send(putObjectCommand);
             console.log(`[s3] uploaded ${key}`);
         } catch (err) {
-            if (err.Code === 'NoSuchKey' || err.name === 'NoSuchKey') {
+            if (err.$metadata?.httpStatusCode === 404 || err.name === 'NotFound' || err.name === 'NoSuchKey') {
                 console.log(`[s3] ${key} not found, uploading`)
                 const putObjectCommand = new PutObjectCommand(put_params);
                 await this.s3.send(putObjectCommand);
                 console.log(`[s3] uploaded ${key}`)
             } else {
                 console.error(`[s3] ERROR uploading ${key}:`, err.message ?? err);
+                throw err;
             }
         }
     }

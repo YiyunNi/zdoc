@@ -47,7 +47,33 @@ class larkDocWriter {
 
     categorize_node(source) {
         const RICH_TYPES = new Set([9, 11, 17, 22, 23, 27])
-        const contentBlocks = (source.blocks?.items ?? []).filter(b => b.block_type !== 1)
+        const allBlocks = (source.blocks?.items ?? []).filter(b => b.block_type !== 1)
+        if (allBlocks.length === 0) return 'meaningless'
+
+        // Apply include/exclude filtering at block level, mirroring __filter_content logic
+        const targetParts = (this.targets || '').split('.')
+        const contentBlocks = []
+        let skipDepth = 0
+        for (const block of allBlocks) {
+            const blockText = (block.text?.elements ?? []).map(e => e.text_run?.content ?? '').join('').trim()
+            const includeMatch = blockText.match(/^<include target="(.+?)">$/)
+            const excludeMatch = blockText.match(/^<exclude target="(.+?)">$/)
+            const closeMatch = blockText.match(/^<\/(include|exclude)>$/)
+            if (includeMatch) {
+                if (!targetParts.includes(includeMatch[1].trim())) skipDepth++
+                continue
+            }
+            if (excludeMatch) {
+                if (targetParts.includes(excludeMatch[1].trim())) skipDepth++
+                continue
+            }
+            if (closeMatch) {
+                if (skipDepth > 0) skipDepth--
+                continue
+            }
+            if (skipDepth === 0) contentBlocks.push(block)
+        }
+
         if (contentBlocks.length === 0) return 'meaningless'
         if (contentBlocks.some(b => RICH_TYPES.has(b.block_type))) return 'meaningful'
         const wordCount = contentBlocks
@@ -56,13 +82,14 @@ class larkDocWriter {
             .join(' ')
             .split(/\s+/)
             .filter(Boolean).length
-        return (contentBlocks.length >= 2 || wordCount >= 60) ? 'meaningful' : 'meaningless'
+        const nonEmptyBlocks = contentBlocks.filter(b =>
+            b.text?.elements?.some(e => e.text_run?.content?.trim())
+        )
+        return (nonEmptyBlocks.length >= 2 || wordCount >= 60) ? 'meaningful' : 'meaningless'
     }
 
-    async generate_sidebar(outputDir, contentRoot, overridePath = null) {
-        const items = await this.__sidebar_items(outputDir, contentRoot, this.root_token)
-        const merged = overridePath ? this.__apply_sidebar_overrides(items, overridePath) : items
-        return merged
+    async generate_sidebar(outputDir, contentRoot) {
+        return this.__sidebar_items(outputDir, contentRoot, this.root_token)
     }
 
     async __sidebar_items(currentPath, contentRoot, token) {
@@ -85,7 +112,7 @@ class larkDocWriter {
                 let childSource = null
                 try { childSource = this.__fetch_doc_source('node_token', child.node_token) } catch (e) {}
                 const category = childSource ? this.categorize_node(childSource) : 'meaningful'
-                const childItems = await this.__sidebar_items(`${currentPath}/${slug}`, contentRoot, token)
+                const childItems = await this.__sidebar_items(`${currentPath}/${slug}`, contentRoot, child.node_token)
 
                 if (category === 'meaningful') {
                     const docId = node_path.join(currentPath, slug, slug)
@@ -100,54 +127,6 @@ class larkDocWriter {
                     .replace(/\\/g, '/')
                     .replace(new RegExp(`^${contentRoot}/`), '')
                 items.push({ type: 'doc', id: docId, label })
-            }
-        }
-
-        return items
-    }
-
-    __apply_sidebar_overrides(items, overridePath) {
-        let overrides
-        try {
-            overrides = JSON.parse(require('node:fs').readFileSync(overridePath, 'utf-8'))
-        } catch (e) {
-            return items
-        }
-
-        // Apply label/className overrides by doc id
-        if (overrides.override) {
-            const applyOverride = (list) => list.map(item => {
-                if (item.type === 'doc' && overrides.override[item.id]) {
-                    return { ...item, ...overrides.override[item.id] }
-                }
-                if (item.items) return { ...item, items: applyOverride(item.items) }
-                return item
-            })
-            items = applyOverride(items)
-        }
-
-        // Hide specific doc ids
-        if (overrides.hide && overrides.hide.length > 0) {
-            const hidden = new Set(overrides.hide)
-            const filterHidden = (list) => list
-                .filter(item => !(item.type === 'doc' && hidden.has(item.id)))
-                .map(item => item.items ? { ...item, items: filterHidden(item.items) } : item)
-            items = filterHidden(items)
-        }
-
-        // Inject custom items
-        if (overrides.inject && overrides.inject.length > 0) {
-            for (const injection of overrides.inject) {
-                if (injection.prepend) { items.unshift(injection.item); continue }
-                if (injection.append)  { items.push(injection.item);    continue }
-                if (injection.after) {
-                    const idx = items.findIndex(i => i.type === 'doc' && i.id === injection.after)
-                    if (idx !== -1) items.splice(idx + 1, 0, injection.item)
-                }
-                if (injection.before) {
-                    const idx = items.findIndex(i => i.type === 'doc' && i.id === injection.before)
-                    if (idx !== -1) items.splice(idx, 0, injection.item)
-                }
             }
         }
 
@@ -992,6 +971,13 @@ class larkDocWriter {
                         part = part.replace(/(?<!\\)<\/?([a-z][a-z0-9]*(?:[_-][a-z0-9]+)*)\s*\/?>/g, (match, tagName) => {
                             return KNOWN_TAGS.has(tagName) ? match : '\\' + match;
                         });
+                        // Escape lowercase dotted-name member expressions (e.g. <gson.JsonObject>),
+                        // which are Java/Kotlin type references that MDX misparses as JSX member
+                        // expressions. Backslash escaping doesn't suppress JSX parsing for dotted
+                        // names, so convert to HTML entities (same as PascalCase dotted names).
+                        part = part.replace(/\\?<\/?([a-z][a-z0-9]*(?:\.[A-Za-z][A-Za-z0-9]*)+)\s*\/?>/g, (match) => {
+                            return match.replace(/^\\/, '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                        });
                         // Escape uppercase/PascalCase tags not identified as real JSX components.
                         // Uses HTML entities so the angle brackets render correctly in the output.
                         part = part.replace(/(?<!\\)<\/?([A-Z][A-Za-z0-9]*)\s*\/?>/g, (match, tagName) => {
@@ -1005,6 +991,17 @@ class larkDocWriter {
                         part = part.replace(/\\?<\/?([A-Z][A-Za-z0-9]*(?:\.[A-Za-z][A-Za-z0-9]*)+)\s*\/?>/g, (match) => {
                             return match.replace(/^\\/, '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                         });
+                        // Escape `<` immediately before a tag-like name that contains an HTML entity (`&`),
+                        // e.g. Java generics like List<List&lt;String&gt;&gt; — invalid JSX tag name.
+                        part = part.replace(/(?<!\\)<([A-Za-z][A-Za-z0-9]*)&/g, '&lt;$1&');
+                        // Escape `<?` which MDX misparses as a JSX tag opener, e.g. Java wildcard `List<?>`.
+                        part = part.replace(/(?<!\\)<\?/g, '&lt;?');
+                        // Escape `<Tag<` — nested generic types like `SortedMap<Long, Float>` where the outer
+                        // `<SortedMap` starts a JSX tag that then hits another `<` (U+003C) in the name.
+                        part = part.replace(/(?<!\\)<([A-Za-z][A-Za-z0-9]*)</g, '&lt;$1<');
+                        // Escape `<Tag[` — array generic types like `SortedMap[Long, Float]` where the outer
+                        // `<SortedMap` starts a JSX tag that then hits `[` (U+005B) in the name.
+                        part = part.replace(/(?<!\\)<([A-Za-z][A-Za-z0-9]*)\[/g, '&lt;$1[');
                         return part;
                     }
                     return part; // Inside inline code — leave unchanged
@@ -1116,6 +1113,35 @@ class larkDocWriter {
                                     patchedContent = lines.join('\n');
                                     madeChanges = true;
                                 }
+                            } else {
+                                // Variant: "Expected the closing tag `</X>` either after the end of `link` (line:col) or
+                                // another opening tag after the start of `link` (line:col)"
+                                // This occurs when <X> opens before a markdown link `[text](url)` and </X> is placed
+                                // inside the link text instead of after. Fix: escape both opening and closing tags.
+                                const v3Tag = error.message.match(/Expected the closing tag `<\/([^>]+)>`/)?.[1];
+                                const closeOffset = error.place?.start?.offset;
+
+                                if (v3Tag && closeOffset !== undefined) {
+                                    const closeTag = `</${v3Tag}>`;
+                                    const openTag = `<${v3Tag}>`;
+                                    let adjustedClose = closeOffset;
+
+                                    // Walk back to find and escape the opening tag
+                                    for (let i = closeOffset - 1; i >= 0; i--) {
+                                        if (patchedContent.slice(i, i + openTag.length) === openTag) {
+                                            patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
+                                            adjustedClose += 3; // '&lt;' is 3 chars longer than '<'
+                                            madeChanges = true;
+                                            break;
+                                        }
+                                    }
+
+                                    // Also escape the closing tag at the (adjusted) known offset
+                                    if (patchedContent.slice(adjustedClose, adjustedClose + closeTag.length) === closeTag) {
+                                        patchedContent = patchedContent.slice(0, adjustedClose) + '&lt;/' + v3Tag + '>' + patchedContent.slice(adjustedClose + closeTag.length);
+                                        madeChanges = true;
+                                    }
+                                }
                             }
 
                             break;
@@ -1166,9 +1192,12 @@ class larkDocWriter {
                         case 'unexpected-character':
                             offset = error.place?.offset;
 
-                            if (error.message.includes('U+003D') && offset !== undefined && offset > 0) {
-                                // `=` sign unexpected — typically from `<=` where `<` was parsed as a JSX tag opener.
-                                // Replace `<` with `&lt;` (not `\`) so the entity renders correctly in HTML.
+                            if (
+                                (error.message.includes('U+003D') || /U\+003[0-9]/.test(error.message)) &&
+                                offset !== undefined && offset > 0
+                            ) {
+                                // `=` sign or a digit (0–9) unexpected — typically from `<=` or `<10` where
+                                // `<` was parsed as a JSX tag opener but the following char is not a valid name start.
                                 for (let i = offset - 1; i >= Math.max(0, offset - 10); i--) {
                                     if (patchedContent[i] === '<') {
                                         patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
@@ -1184,6 +1213,46 @@ class larkDocWriter {
                                 for (let i = offset - 1; i >= 0; i--) {
                                     if (patchedContent[i] === '<') {
                                         patchedContent = patchedContent.slice(0, i) + '\\' + patchedContent.slice(i);
+                                        madeChanges = true;
+                                        break;
+                                    }
+                                }
+                            } else if (error.message.includes('U+0026') && offset !== undefined && offset > 0) {
+                                // `&` in JSX tag name — e.g. `<Tag&entity;` from Java generics with HTML-encoded brackets.
+                                // Walk back to find the `<` that opened the invalid tag and replace with `&lt;`.
+                                for (let i = offset - 1; i >= Math.max(0, offset - 30); i--) {
+                                    if (patchedContent[i] === '<') {
+                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
+                                        madeChanges = true;
+                                        break;
+                                    }
+                                }
+                            } else if (error.message.includes('U+003F') && offset !== undefined && offset > 0) {
+                                // `?` as JSX tag name start — e.g. `<?>` from Java wildcard generics.
+                                // Walk back to find the `<` and replace with `&lt;`.
+                                for (let i = offset - 1; i >= Math.max(0, offset - 5); i--) {
+                                    if (patchedContent[i] === '<') {
+                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
+                                        madeChanges = true;
+                                        break;
+                                    }
+                                }
+                            } else if (error.message.includes('U+003C') && offset !== undefined && offset > 0) {
+                                // `<` inside a JSX tag name — nested generics like `<SortedMap<Long, Float>`.
+                                // Walk back to find the `<` that opened the outer tag and escape with `&lt;`.
+                                for (let i = offset - 1; i >= Math.max(0, offset - 50); i--) {
+                                    if (patchedContent[i] === '<') {
+                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
+                                        madeChanges = true;
+                                        break;
+                                    }
+                                }
+                            } else if (error.message.includes('U+005B') && offset !== undefined && offset > 0) {
+                                // `[` inside a JSX tag name — array types like `<SortedMap[Long, Float]`.
+                                // Walk back to find the `<` that opened the tag and escape with `&lt;`.
+                                for (let i = offset - 1; i >= Math.max(0, offset - 50); i--) {
+                                    if (patchedContent[i] === '<') {
+                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
                                         madeChanges = true;
                                         break;
                                     }

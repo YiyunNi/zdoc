@@ -1,0 +1,48 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+/* One meta entry: [pill] [value] */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+
+/* Colored pill: icon + label */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #24292f;
+}
+
+/* ── Variants ───────────────────────────────────────────────────────────── */
+
+.added {
+  color: #175fff;
+}
+
+.modified {
+  color: #6e7781;
+}
+
+.deprecated {
+  color: #dc3545;
+}

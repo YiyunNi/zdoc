@@ -1,76 +1,74 @@
 import React, {type ReactNode, useState} from 'react';
 import {useLocation, useHistory} from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import DocSidebar from '@theme-original/DocSidebar';
 import type DocSidebarType from '@theme/DocSidebar';
 import type {WrapperProps} from '@docusaurus/types';
 import type {PropSidebarItemCategory} from '@docusaurus/plugin-content-docs';
 import {findFirstSidebarItemLink} from '@docusaurus/plugin-content-docs/client';
-import type {IconData} from '@lineiconshq/react-lineicons';
 import {
   Rocket5Outlined,
   Database2Outlined,
+  Layers1Outlined,
   Cloud2Outlined,
+  CloudUploadOutlined,
   Gear1Outlined,
+  QuestionMarkCircleOutlined,
+  Search1Outlined,
+  // Reference sidebar icons
+  Key1Outlined,
+  Code1Outlined,
+  Gears3Outlined,
+  Slice2Outlined,
+  VectorNodes6Outlined,
+  VectorNodes7Outlined,
+  Upload1Outlined,
+  StorageHdd2Outlined,
+  VectorizeraiOutlined,
+  SortHighToLowOutlined,
+  // REST-specific icons
+  Globe1Outlined,
+  SyncOutlined,
+  Folder1Outlined,
+  RefreshCircle1ClockwiseOutlined,
+  BoxArchive1Outlined,
+  BarChart4Outlined,
+  CalendarDaysOutlined,
+  CreditCardMultipleOutlined,
+  PieChart2Outlined,
+  Shield2Outlined,
+  Link2AngularRightOutlined,
+  User4Outlined,
+  Bookmark1Outlined,
 } from '@lineiconshq/free-icons';
+import ICONS, {LineIcon} from '../../utils/navIcons';
+import {useDropdownClose} from '../../utils/useDropdownClose';
+import IconButton from '../../components/IconButton';
 
 import styles from './styles.module.css';
 
 type Props = WrapperProps<typeof DocSidebarType>;
 
-const SECTIONS = [
-  {
-    label: 'Cloud Guides',
-    href: '/intro',
-    prefix: null as string | null,
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'BYOC Guides',
-    href: '/tutorial-basics/create-a-document',
-    prefix: '/tutorial-basics',
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
-        <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'API & SDK',
-    href: '/tutorial-extras/manage-docs-versions',
-    prefix: '/tutorial-extras',
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'CLI',
-    href: '/intro',
-    prefix: null as string | null,
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/>
-      </svg>
-    ),
-  },
-  {
-    label: 'Releases',
-    href: '/intro',
-    prefix: null as string | null,
-    icon: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
-        <line x1="7" y1="7" x2="7.01" y2="7"/>
-      </svg>
-    ),
-  },
-];
+interface NavItem {
+  label: string;
+  href?: string;
+  prefix: string | null;
+  icon: string;
+  hidden?: boolean;
+  items?: NavItem[];
+}
+
+/** Flatten secondaryNavbar config into sections for the ProductDropdown.
+ *  Items with sub-items (e.g. API & SDK) are expanded into individual sections.
+ *  Hidden items are filtered out.
+ */
+function flattenNavSections(navItems: NavItem[]): NavItem[] {
+  return navItems.flatMap(item => {
+    if (item.hidden) return [];
+    if (item.items?.length) return item.items;
+    return [item];
+  });
+}
 
 function ChevronDown() {
   return (
@@ -96,31 +94,58 @@ function ChevronRight() {
   );
 }
 
-/** Same SVG fix as in DocSidebarItem/Category — replaces {color} and //> */
-function LineIcon({icon, size = 18}: {icon: IconData; size?: number}) {
-  const inner = icon.svg
-    .replace(/\{color\}/g, 'currentColor')
-    .replace(/\/\/>/g, '/>');
+function HomeIcon() {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={icon.viewBox}
-      fill={icon.hasFill ? 'currentColor' : 'none'}
-      stroke={icon.hasStroke ? 'currentColor' : 'none'}
-      aria-hidden="true"
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{__html: inner}}
-    />
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
   );
 }
 
-const COLLAPSED_ICONS: {key: string; icon: IconData; label: string}[] = [
-  {key: 'quickstarts',    icon: Rocket5Outlined,   label: 'Quickstarts'},
-  {key: 'data',           icon: Database2Outlined, label: 'Data'},
-  {key: 'infrastructure', icon: Cloud2Outlined,    label: 'Infrastructure'},
-  {key: 'administration', icon: Gear1Outlined,     label: 'Administration'},
-];
+/** All known sidebar section icon keys → icon element.
+ *  New section icons should be added here as they appear in sidebar customProps.
+ */
+const SIDEBAR_ICON_MAP: Record<string, React.ReactNode> = {
+  home:           <HomeIcon />,
+  quickstarts:    <LineIcon icon={Rocket5Outlined}           size={18} />,
+  'deploy-byoc':  <LineIcon icon={CloudUploadOutlined}       size={18} />,
+  data:           <LineIcon icon={Database2Outlined}         size={18} />,
+  indexes:        <LineIcon icon={Layers1Outlined}           size={18} />,
+  search:         <LineIcon icon={Search1Outlined}           size={18} />,
+  infrastructure: <LineIcon icon={Cloud2Outlined}            size={18} />,
+  administration: <LineIcon icon={Gear1Outlined}             size={18} />,
+  faqs:           <LineIcon icon={QuestionMarkCircleOutlined} size={18} />,
+  // Reference doc section icons
+  auth:            <LineIcon icon={Key1Outlined}           size={18} />,
+  'client-code':   <LineIcon icon={Code1Outlined}          size={18} />,
+  'collections-ref': <LineIcon icon={Layers1Outlined}      size={18} />,
+  'db-ref':        <LineIcon icon={Database2Outlined}      size={18} />,
+  mgmt:            <LineIcon icon={Gears3Outlined}         size={18} />,
+  partition:       <LineIcon icon={Slice2Outlined}         size={18} />,
+  'vector-ref':    <LineIcon icon={VectorizeraiOutlined}   size={18} />,
+  'import-ref':    <LineIcon icon={Upload1Outlined}        size={18} />,
+  'storage-ref':   <LineIcon icon={StorageHdd2Outlined}    size={18} />,
+  'embed-ref':     <LineIcon icon={VectorizeraiOutlined}   size={18} />,
+  'rerank-ref':    <LineIcon icon={SortHighToLowOutlined}  size={18} />,
+  'cloud-ctrl':    <LineIcon icon={Cloud2Outlined}         size={18} />,
+  'data-plane':    <LineIcon icon={VectorNodes7Outlined}   size={18} />,
+  // REST API items
+  'rest-cloud-meta': <LineIcon icon={Globe1Outlined}                  size={18} />,
+  'rest-elt':        <LineIcon icon={SyncOutlined}                    size={18} />,
+  'rest-project':    <LineIcon icon={Folder1Outlined}                 size={18} />,
+  'rest-cluster':    <LineIcon icon={VectorNodes6Outlined}            size={18} />,
+  'rest-migrate':    <LineIcon icon={RefreshCircle1ClockwiseOutlined} size={18} />,
+  'rest-backup':     <LineIcon icon={BoxArchive1Outlined}             size={18} />,
+  'rest-metrics':    <LineIcon icon={BarChart4Outlined}               size={18} />,
+  'rest-job':        <LineIcon icon={CalendarDaysOutlined}            size={18} />,
+  'rest-invoices':   <LineIcon icon={CreditCardMultipleOutlined}      size={18} />,
+  'rest-usage':      <LineIcon icon={PieChart2Outlined}               size={18} />,
+  'rest-role':       <LineIcon icon={Shield2Outlined}                 size={18} />,
+  'rest-alias':      <LineIcon icon={Link2AngularRightOutlined}       size={18} />,
+  'rest-user':       <LineIcon icon={User4Outlined}                   size={18} />,
+  'rest-index':      <LineIcon icon={Bookmark1Outlined}               size={18} />,
+};
 
 function CollapsedIconColumn({
   onExpand,
@@ -131,51 +156,50 @@ function CollapsedIconColumn({
 }): ReactNode {
   const history = useHistory();
 
-  // Build a map of icon key → first link URL from the live sidebar data
-  const firstLinks = React.useMemo(() => {
-    const map: Record<string, string | undefined> = {};
+  // Derive icon entries dynamically from the live sidebar, preserving order.
+  // Only items with a customProps.icon that exists in SIDEBAR_ICON_MAP are included.
+  const iconEntries = React.useMemo(() => {
+    const entries: {key: string; label: string; href: string | undefined; icon: React.ReactNode}[] = [];
     for (const item of sidebar) {
+      const key = (item as {customProps?: {icon?: string}}).customProps?.icon;
+      if (!key || !SIDEBAR_ICON_MAP[key]) continue;
+      const label = (item as {label?: string}).label ?? key;
+      let href: string | undefined;
       if (item.type === 'category') {
-        const key = (item as PropSidebarItemCategory).customProps?.icon as string | undefined;
-        if (key) {
-          map[key] = findFirstSidebarItemLink(item as PropSidebarItemCategory);
-        }
+        href = findFirstSidebarItemLink(item as PropSidebarItemCategory);
+      } else if (item.type === 'link') {
+        href = (item as {href: string}).href;
       }
+      entries.push({key, label, href, icon: SIDEBAR_ICON_MAP[key]});
     }
-    return map;
+    return entries;
   }, [sidebar]);
-
-  const handleIconClick = (key: string) => {
-    const href = firstLinks[key];
-    if (href) {
-      history.push(href);
-    }
-    onExpand();
-  };
 
   return (
     <div className={styles.collapsedColumn}>
       <div className={styles.collapsedHeader}>
-        <button
-          type="button"
-          className={styles.expandIconButton}
+        <IconButton
+          size="sm"
+          variant="outlined"
           onClick={onExpand}
           title="Expand sidebar"
           aria-label="Expand sidebar">
           <ChevronRight />
-        </button>
+        </IconButton>
       </div>
       <div className={styles.collapsedIcons}>
-        {COLLAPSED_ICONS.map(({key, icon, label}) => (
-          <button
+        {iconEntries.map(({key, label, href, icon}) => (
+          <IconButton
             key={key}
-            type="button"
-            className={styles.collapsedIconBtn}
-            onClick={() => handleIconClick(key)}
+            activePrimary
+            onClick={() => {
+              if (href) history.push(href);
+              onExpand();
+            }}
             title={label}
             aria-label={label}>
-            <LineIcon icon={icon} size={18} />
-          </button>
+            {icon}
+          </IconButton>
         ))}
       </div>
     </div>
@@ -185,11 +209,22 @@ function CollapsedIconColumn({
 function ProductDropdown({onCollapse}: {onCollapse?: () => void}): ReactNode {
   const {pathname} = useLocation();
   const history = useHistory();
+  const {siteConfig} = useDocusaurusContext();
   const [open, setOpen] = useState(false);
 
-  const active =
-    SECTIONS.find(s => s.prefix && (pathname === s.prefix || pathname.startsWith(s.prefix + '/'))) ??
-    SECTIONS[0];
+  useDropdownClose(open, setOpen);
+
+  const navItems = (siteConfig.customFields?.secondaryNavbar ?? []) as NavItem[];
+  const sections = flattenNavSections(navItems);
+
+  // Use longest-prefix match so /docs/byoc/... prefers BYOC over Cloud Guides
+  const active = sections.reduce<NavItem | null>((best, s) => {
+    if (!s.prefix) return best;
+    const matches = pathname === s.prefix || pathname.startsWith(s.prefix + '/');
+    if (!matches) return best;
+    if (!best || s.prefix.length > (best.prefix?.length ?? 0)) return s;
+    return best;
+  }, null) ?? sections[0];
 
   return (
     <div className={styles.dropdownWrapper}>
@@ -199,37 +234,38 @@ function ProductDropdown({onCollapse}: {onCollapse?: () => void}): ReactNode {
         onClick={() => setOpen(o => !o)}
         aria-expanded={open}>
         <span className={styles.dropdownTriggerInner}>
-          {active.icon}
-          {active.label}
+          {active?.icon && ICONS[active.icon]}
+          {active?.label}
         </span>
         <ChevronDown />
       </button>
 
       {onCollapse && (
-        <button
-          type="button"
-          className={styles.collapseButton}
+        <IconButton
+          size="sm"
+          variant="outlined"
           onClick={onCollapse}
           title="Collapse sidebar"
           aria-label="Collapse sidebar">
           <ChevronLeft />
-        </button>
+        </IconButton>
       )}
 
       {open && (
         <>
-          <div className={styles.dropdownBackdrop} onClick={() => setOpen(false)} />
-          <div className={styles.dropdownMenu}>
-            {SECTIONS.map(s => (
+          <div className={styles.dropdownBackdrop} onClick={() => setOpen(false)} aria-hidden="true" />
+          <div className={styles.dropdownMenu} role="menu">
+            {sections.map(s => (
               <button
                 key={s.label}
                 type="button"
-                className={`${styles.dropdownItem} ${s.label === active.label ? styles.dropdownItemActive : ''}`}
+                role="menuitem"
+                className={`${styles.dropdownItem} ${s.label === active?.label ? styles.dropdownItemActive : ''}`}
                 onClick={() => {
-                  history.push(s.href);
+                  if (s.href) history.push(s.href);
                   setOpen(false);
                 }}>
-                {s.icon}
+                {s.icon && ICONS[s.icon]}
                 {s.label}
               </button>
             ))}

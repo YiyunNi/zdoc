@@ -13,6 +13,7 @@ module.exports = function (context, options) {
                 .option('-o, --output_path <target_path>', 'Target path of the API Reference', 'reference/api/restful/restful')
                 .option('-i, --strings <strings>', 'Localization strings for Chinese docs')
                 .option('-t, --target <string>', 'Publication target of the API Reference', 'zilliz')
+                .option('-sb, --sidebarPath <sidebarPath>', 'Path to write the generated sidebar file')
                 .action((opts) => {
                     let lang = opts.lang
                     let target = opts.target
@@ -57,6 +58,15 @@ module.exports = function (context, options) {
 
                     refGen.make_groups()
                     refGen.write_refs()
+
+                    if (opts.sidebarPath) {
+                        const contentRoot = opts.output_path.split('/')[0]
+                        const sidebarItems = refGen.generate_sidebar(contentRoot)
+                        const sidebarDir = require('node:path').dirname(opts.sidebarPath)
+                        if (!fs.existsSync(sidebarDir)) fs.mkdirSync(sidebarDir, { recursive: true })
+                        fs.writeFileSync(opts.sidebarPath, `module.exports = ${JSON.stringify(sidebarItems, null, 2)}\n`)
+                        console.log(`Sidebar written to ${opts.sidebarPath}`)
+                    }
                 })
             }
         }

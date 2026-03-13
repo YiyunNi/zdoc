@@ -20,7 +20,7 @@
   align-items: center;
   flex-shrink: 0;
   margin-right: 0.5rem;
-  color: var(--ifm-color-emphasis-600);
+  color: inherit;
 }
 
 .categoryIcon svg {

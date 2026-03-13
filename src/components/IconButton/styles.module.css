@@ -1,0 +1,39 @@
+.iconBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0;
+  color: var(--zd-gray-500);
+  background: transparent;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.iconBtn:hover {
+  background: var(--zd-gray-100);
+  color: var(--zd-gray-700);
+}
+
+/* Size variants */
+.sizeSm {
+  width: 36px;
+  height: 36px;
+}
+
+.sizeMd {
+  width: 44px;
+  height: 44px;
+}
+
+/* Outlined variant adds a subtle border */
+.outlined {
+  border: 1px solid var(--zd-gray-200);
+}
+
+/* Primary-colored hover (e.g. collapsed sidebar icon nav) */
+.activePrimary:hover {
+  color: var(--ifm-color-primary);
+}

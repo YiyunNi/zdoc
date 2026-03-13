@@ -34,6 +34,8 @@ export default function DocRootLayout({children}: Props): ReactNode {
   const startWidth = useRef(0);
   // Track whether we auto-collapsed the sidebar so we can auto-restore it
   const autoCollapsedSidebar = useRef(false);
+  // Pending rAF handle — keeps resize updates capped to display refresh rate
+  const rafRef = useRef<number | null>(null);
 
   const onMouseDown = useCallback((e: React.MouseEvent) => {
     dragging.current = true;
@@ -43,29 +45,52 @@ export default function DocRootLayout({children}: Props): ReactNode {
     document.body.style.userSelect = 'none';
   }, [chatWidth]);
 
+  const onKeyDown = useCallback((e: React.KeyboardEvent) => {
+    const STEP = 20;
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      setChatWidth(w => Math.min(CHAT_MAX_WIDTH, w + STEP));
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      setChatWidth(w => Math.max(CHAT_MIN_WIDTH, w - STEP));
+    }
+  }, []);
+
   useEffect(() => {
     const onMouseMove = (e: MouseEvent) => {
       if (!dragging.current) return;
-      const delta = e.clientX - startX.current;
-      const next = Math.min(CHAT_MAX_WIDTH, Math.max(CHAT_MIN_WIDTH, startWidth.current + delta));
-      setChatWidth(next);
+      // Capture position synchronously — event object may be recycled before rAF fires
+      const clientX = e.clientX;
+      // Skip if a frame update is already queued — caps work to display refresh rate
+      if (rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const delta = clientX - startX.current;
+        const next = Math.min(CHAT_MAX_WIDTH, Math.max(CHAT_MIN_WIDTH, startWidth.current + delta));
+        setChatWidth(next);
 
-      setHiddenSidebarContainer(prev => {
-        if (next >= SIDEBAR_COLLAPSE_THRESHOLD && !prev) {
-          autoCollapsedSidebar.current = true;
-          return true;
-        }
-        if (next <= SIDEBAR_RESTORE_THRESHOLD && prev && autoCollapsedSidebar.current) {
-          autoCollapsedSidebar.current = false;
-          setHiddenSidebar(false);
-          return false;
-        }
-        return prev;
+        setHiddenSidebarContainer(prev => {
+          if (next >= SIDEBAR_COLLAPSE_THRESHOLD && !prev) {
+            autoCollapsedSidebar.current = true;
+            return true;
+          }
+          if (next <= SIDEBAR_RESTORE_THRESHOLD && prev && autoCollapsedSidebar.current) {
+            autoCollapsedSidebar.current = false;
+            setHiddenSidebar(false);
+            return false;
+          }
+          return prev;
+        });
       });
     };
     const onMouseUp = () => {
       if (!dragging.current) return;
       dragging.current = false;
+      // Cancel any pending frame so a stale position isn't applied after release
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
     };
@@ -74,6 +99,9 @@ export default function DocRootLayout({children}: Props): ReactNode {
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+      }
     };
   }, []);
 
@@ -98,9 +126,14 @@ export default function DocRootLayout({children}: Props): ReactNode {
         <div
           className={styles.chatResizeHandle}
           onMouseDown={onMouseDown}
+          onKeyDown={onKeyDown}
           role="separator"
           aria-orientation="vertical"
           aria-label="Resize chat panel"
+          aria-valuenow={chatWidth}
+          aria-valuemin={CHAT_MIN_WIDTH}
+          aria-valuemax={CHAT_MAX_WIDTH}
+          tabIndex={0}
         />
 
         {/* Pane 2: Sidebar */}
