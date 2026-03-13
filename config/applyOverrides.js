@@ -173,6 +173,7 @@ function removeEmptyCategories(items) {
  *   move               — [{ id, before? | after? | into?, position? }]
  *   hide               — [docId, ...]
  *   hideCategories     — [categoryLabel, ...]   (removes top-level categories by label)
+ *   hideCategoriesDeep — [categoryLabel, ...]   (removes categories by label at any depth)
  *   flattenCategories  — [categoryLabel, ...]   (replaces top-level category with its children)
  *   inject             — [{ item, prepend? | append? | before? | after? | into?, position? }]
  *
@@ -372,6 +373,15 @@ function applyOverrides(items, overridePath) {
   if (overrides.hideCategories && overrides.hideCategories.length > 0) {
     const hidden = new Set(overrides.hideCategories)
     items = items.filter(item => !(item.type === 'category' && hidden.has(item.label)))
+  }
+
+  // 7.5 hideCategoriesDeep — recursively remove categories by label at any depth
+  if (overrides.hideCategoriesDeep && overrides.hideCategoriesDeep.length > 0) {
+    const hidden = new Set(overrides.hideCategoriesDeep)
+    const filterDeep = (list) => list
+      .filter(item => !(item.type === 'category' && hidden.has(item.label)))
+      .map(item => item.items ? { ...item, items: filterDeep(item.items) } : item)
+    items = filterDeep(items)
   }
 
   // 8. flattenCategories — replace top-level category with its own children

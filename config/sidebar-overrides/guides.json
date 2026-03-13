@@ -17,6 +17,9 @@
     },
     "Index Scalar Fields": {
         "label": "Scalar Indexes"
+    },
+    "Collection": {
+        "label": "Collections"
     }
   },
   "group": [
@@ -54,6 +57,14 @@
       "customProps": { "icon": "indexes" }
     },
     {
+      "label": "Resource Planning",
+      "into": "Infrastructure"
+    },
+    {
+      "label": "Best Practices",
+      "into": "Infrastructure"
+    },
+    {
       "label": "AI & Embeddings",
       "into": "Collection"
     },
@@ -73,7 +84,18 @@
       "afterSibling": "Data Import"
     }
   ],
+  "hideCategoriesDeep": ["Get Started"],
   "move": [
+    {
+      "id": "tutorials/get-started/quick-start",
+      "into": "Quickstarts",
+      "position": "first"
+    },
+    {
+      "id": "tutorials/get-started/free-trials",
+      "into": "Payment & Billing",
+      "position": "first"
+    },
     {
       "id": "tutorials/get-started/understand-basics/autoindex-explained",
       "into": "Indexes",

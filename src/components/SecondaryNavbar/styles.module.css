@@ -1,11 +1,15 @@
 .secondaryNavbar {
-  height: 48px;
+  position: fixed;
+  top: var(--ifm-navbar-height);
+  left: 0;
+  right: 0;
+  height: var(--zd-secondary-navbar-height);
   border-bottom: 1px solid var(--ifm-toc-border-color);
   background: #ffffff;
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  flex-shrink: 0;
+  z-index: 100;
 }
 
 .items {

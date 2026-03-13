@@ -6,7 +6,8 @@
 .docsWrapper {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - var(--ifm-navbar-height));
+  margin-top: var(--zd-secondary-navbar-height);
+  height: calc(100vh - var(--ifm-navbar-height) - var(--zd-secondary-navbar-height));
   overflow: hidden;
   background: var(--ifm-background-color);
 }

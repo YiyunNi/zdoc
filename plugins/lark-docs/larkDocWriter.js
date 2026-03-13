@@ -1372,8 +1372,8 @@ class larkDocWriter {
                 break;
             default:
                 type = `<Admonition type="info" icon="📘" title="${children[0].trim()}">`
-                break; 
-        }               
+                break;
+        }         
         
         const converter = new showdown.Converter()
         const html = converter.makeHtml(children.slice(1).map(line => line.replace(/^\s*/g, '')).join('\n'))
