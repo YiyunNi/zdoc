@@ -1,11 +1,11 @@
 /* Fonts */
 body {
-  font-family: 'Barlow', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 /* Design tokens */
@@ -23,8 +23,8 @@ h1, h2, h3, h4, h5, h6 {
   --ifm-navbar-height: 56px;
   --ifm-navbar-shadow: 0 1px 0 0 #e5e7eb;
 
-  --ifm-font-family-base: 'Barlow', system-ui, -apple-system, sans-serif;
-  --ifm-heading-font-family: 'Source Serif 4', Georgia, serif;
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.7;
   --ifm-code-font-size: 90%;
@@ -151,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sidebar */
 .theme-doc-sidebar-container {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 /* Remove the 56px top padding Docusaurus adds to the sidebar div for sticky
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* All menu links */
 .menu__link {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: #4b5563;
   border-radius: 0.375rem;
   padding: 0.3125rem 0.75rem;
@@ -192,7 +192,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #111827;
   letter-spacing: 0;
@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Level-3 items — deeper indent */
 .theme-doc-sidebar-item-link-level-3 .menu__link,
 .theme-doc-sidebar-item-category-level-3 > .menu__list-item-collapsible > .menu__link {
-  padding-left: 2.75rem;
+  padding-left: 2.25rem;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   min-height: unset;
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .theme-doc-sidebar-item-link-level-4 .menu__link,
 .theme-doc-sidebar-item-category-level-4 > .menu__list-item-collapsible > .menu__link {
-  padding-left: 3.5rem;
+  padding-left: 2.75rem;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   min-height: unset;
@@ -421,20 +421,31 @@ pre {
 
 /* Table of Contents */
 .table-of-contents {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   padding: 0 !important;
   margin: 0 !important;
 }
 
 
-/* Remove left border rail */
+/* TOC rail is drawn by the SVG overlay in src/theme/TOCItems/index.tsx.
+   No border-left on containers or links — the SVG handles all rail rendering. */
 .table-of-contents__left-border {
   border-left: none !important;
   padding-left: 0 !important;
 }
 
+.table-of-contents li > ul {
+  padding-left: 0.75rem; /* indent nested link text */
+  /* Vertical padding gives the SVG S-curve room to breathe at each
+     level transition. Without it prevY === y and the bezier degenerates
+     to a horizontal line. 0.5rem matches ~Fumadocs spacing. */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 0;
+}
+
 .table-of-contents li {
-  margin: 0.75rem 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -442,9 +453,9 @@ pre {
   color: #9ca3af;
   font-weight: 400;
   line-height: 1.5;
-  padding: 0;
   transition: color 0.12s ease;
   display: block;
+  padding: 0.375rem 0 0.375rem 0.875rem;
 }
 
 .table-of-contents__link:hover {
@@ -452,19 +463,10 @@ pre {
   text-decoration: none;
 }
 
-/* All links shifted so active border can bleed to container edge */
-.table-of-contents__link {
-  margin-left: -0.75rem;
-  padding-left: 0.75rem;
-}
-
-/* Active: dark bold text + left bar */
 .table-of-contents__link--active,
 .table-of-contents__link--active:hover {
-  color: #111827 !important;
+  color: #175fff !important;
   font-weight: 600;
-  border-left: 2px solid #111827;
-  padding-left: calc(0.75rem - 2px);
 }
 
 /* Footer */
@@ -514,6 +516,14 @@ pre {
 /* Code block line highlighting — use a lighter tint on dark backgrounds */
 [data-theme='dark'] {
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
+}
+
+/* Neutralize oneLight's warm pink background to match page palette */
+:root {
+  --prism-background-color: #f8fafc;
+}
+.prism-code {
+  background: #f8fafc !important;
 }
 
 /* Mobile secondary menu — flex column so toolbar pins to bottom */
@@ -686,4 +696,72 @@ pre {
 /* Hide copy-page button on the home page (/docs/home → doc id: tutorials/home) */
 html.docs-doc-id-tutorials\/home #copy-page-btn {
   display: none;
+}
+
+/* ── Admonitions ─────────────────────────────────────────────────────────── */
+
+/* Structural overrides — applied once to all admonitions */
+.alert {
+  --ifm-alert-border-width: 0px;
+  --ifm-alert-border-left-width: 3px;
+  --ifm-alert-border-radius: 8px;
+  --ifm-alert-shadow: none;
+  --ifm-alert-padding-vertical: 0.875rem;
+  --ifm-alert-padding-horizontal: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Title-case heading, Inter font (not Plus Jakarta Sans at this small size) */
+.alert [class*="admonitionHeading"] {
+  text-transform: none;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  font-family: var(--ifm-font-family-base);
+  margin-bottom: 0.375rem;
+}
+
+/* Tighten icon to match smaller heading */
+.alert [class*="admonitionIcon"] svg {
+  height: 1em;
+  width: 1em;
+}
+
+/* note (alert--secondary) — neutral gray */
+.alert--secondary {
+  --ifm-alert-background-color: #f3f4f6;
+  --ifm-alert-foreground-color: #374151;
+  --ifm-alert-border-color: #9ca3af;
+}
+
+/* info (alert--info) — primary brand blue */
+.alert--info {
+  --ifm-alert-background-color: rgba(23, 95, 255, 0.05);
+  --ifm-alert-foreground-color: #175fff;
+  --ifm-alert-border-color: #175fff;
+}
+/* Keep body text dark (not blue) inside info */
+.alert--info [class*="admonitionContent"] {
+  color: #1f2937;
+}
+
+/* tip (alert--success) — cold emerald green */
+.alert--success {
+  --ifm-alert-background-color: #ecfdf5;
+  --ifm-alert-foreground-color: #065f46;
+  --ifm-alert-border-color: #059669;
+}
+
+/* warning / caution (alert--warning) — amber */
+.alert--warning {
+  --ifm-alert-background-color: #fffbeb;
+  --ifm-alert-foreground-color: #92400e;
+  --ifm-alert-border-color: #d97706;
+}
+
+/* danger (alert--danger) — red */
+.alert--danger {
+  --ifm-alert-background-color: #fef2f2;
+  --ifm-alert-foreground-color: #991b1b;
+  --ifm-alert-border-color: #dc2626;
 }
