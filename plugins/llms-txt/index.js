@@ -35,6 +35,70 @@ function cleanText(str) {
 }
 
 /**
+ * Detect programming languages from fenced code blocks.
+ * @param {string} rawContent
+ * @returns {string[]}
+ */
+function detectLanguages(rawContent) {
+  const langs = new Set();
+  const re = /^```(\w+)/gm;
+  let match;
+  while ((match = re.exec(rawContent)) !== null) {
+    const lang = match[1].toLowerCase();
+    const map = {
+      py: 'python', python: 'python',
+      java: 'java',
+      javascript: 'nodejs', js: 'nodejs', typescript: 'nodejs', ts: 'nodejs', node: 'nodejs',
+      go: 'go', golang: 'go',
+      curl: 'rest', http: 'rest', rest: 'rest',
+      bash: null, shell: null, sh: null, json: null, yaml: null, xml: null, sql: null, text: null,
+    };
+    const normalized = map.hasOwnProperty(lang) ? map[lang] : null;
+    if (normalized) langs.add(normalized);
+  }
+  return [...langs];
+}
+
+/**
+ * Extract a one-line description from the page body.
+ * Takes the first non-heading, non-empty paragraph (up to 200 chars).
+ * @param {string} strippedBody  Output of stripMdxBody()
+ * @returns {string}
+ */
+function extractDescription(strippedBody) {
+  const lines = strippedBody.split('\n');
+  let paragraph = '';
+  for (const line of lines) {
+    if (!line || /^(#|```|>|- |\d+\.)/.test(line.trimStart())) continue;
+    if (/^\w+:/.test(line)) continue;
+    paragraph = line.trim();
+    break;
+  }
+  if (paragraph.length > 200) {
+    paragraph = paragraph.slice(0, 197) + '...';
+  }
+  return paragraph;
+}
+
+/**
+ * Infer content type from frontmatter or file path.
+ * @param {Record<string, any>} fm
+ * @param {string} filePath
+ * @returns {string}
+ */
+function inferContentType(fm, filePath) {
+  if (fm.content_type) {
+    const ct = String(fm.content_type).toLowerCase();
+    const valid = ['tutorial', 'api-reference', 'conceptual', 'troubleshooting'];
+    if (valid.includes(ct)) return ct;
+    console.warn(`[llms-txt] Invalid content_type "${fm.content_type}" in ${filePath}, inferring from path`);
+  }
+  if (/[/\\]reference[/\\]/.test(filePath)) return 'api-reference';
+  if (/faq|troubleshoot/i.test(filePath)) return 'troubleshooting';
+  return 'tutorial';
+}
+
+/**
  * Build a canonical URL from frontmatter slug or file path.
  * @param {Record<string, any>} fm
  * @param {string} filePath     Absolute path to the .md file
@@ -215,22 +279,86 @@ function buildSectionContent(sourceDir, route, siteUrl) {
 }
 
 /**
+ * Build a summary-only index for one source section.
+ * @param {string} sourceDir
+ * @param {string} route
+ * @param {string} siteUrl
+ * @returns {{ content: string, count: number }}
+ */
+function buildSectionSummary(sourceDir, route, siteUrl) {
+  const files = walkAllFiles(sourceDir);
+  const parts = [];
+
+  for (const filePath of files) {
+    let raw;
+    try {
+      raw = fs.readFileSync(filePath, 'utf-8');
+    } catch {
+      continue;
+    }
+
+    const fm = parseFrontmatter(filePath);
+    const title = fm.sidebar_label || fm.title;
+    if (!title) continue;
+
+    const cleanedTitle = cleanText(String(title));
+    // Build .md URL directly from route + slug
+    const slug = fm.slug
+      ? String(fm.slug).replace(/^\//, '')
+      : path.relative(sourceDir, filePath).replace(/\.mdx?$/, '').replace(/\\/g, '/');
+    const mdUrl = `${siteUrl}${route}/${slug}.md`.replace(/([^:])\/\/+/g, '$1/');
+    const contentType = inferContentType(fm, filePath);
+    const languages = fm.languages
+      ? [].concat(fm.languages).map(l => String(l).toLowerCase())
+      : detectLanguages(raw);
+    const prerequisites = fm.prerequisites
+      ? [].concat(fm.prerequisites)
+      : [];
+    const body = stripMdxBody(raw);
+    const description = fm.description
+      ? cleanText(String(fm.description))
+      : extractDescription(body);
+
+    const lines = [`## ${cleanedTitle}`];
+    lines.push(`- URL: ${mdUrl}`);
+    lines.push(`- Type: ${contentType}`);
+    if (languages.length) lines.push(`- Languages: ${languages.join(', ')}`);
+    if (prerequisites.length) lines.push(`- Prerequisites: ${prerequisites.join(', ')}`);
+    if (description) lines.push(`> ${description}`);
+
+    parts.push(lines.join('\n'));
+  }
+
+  return {
+    content: parts.join('\n\n'),
+    count: parts.length,
+  };
+}
+
+/**
  * Render the slim root llms.txt that links to per-section content files.
  * @param {{ label: string, outputFile: string, optional?: boolean }[]} sources
- * @param {string} outDirUrl  Full URL prefix for section files, e.g. "https://docs.zilliz.com/llms"
+ * @param {string} outDirUrl
  * @param {string} header
  * @param {string} summary
+ * @param {string} [mcpEndpoint]
  */
-function renderRoot(sources, outDirUrl, header, summary) {
+function renderRoot(sources, outDirUrl, header, summary, mcpEndpoint) {
   const lines = [`# ${header}`, ''];
 
   if (summary) {
     lines.push(`> ${summary}`, '');
   }
 
+  if (mcpEndpoint) {
+    lines.push('## Programmatic Access', '');
+    lines.push(`- MCP Server: ${mcpEndpoint}`, '');
+  }
+
   const regular = sources.filter((s) => !s.optional);
   const optional = sources.filter((s) => s.optional);
 
+  lines.push('## Documentation', '');
   for (const { label, outputFile } of regular) {
     lines.push(`- [${label}](${outDirUrl}/${outputFile}.txt)`);
   }
@@ -275,28 +403,26 @@ module.exports = function pluginLlmsTxt(context, options) {
       const header = siteConfig.title;
       const summary = siteConfig.tagline || '';
       const outDirUrl = `${siteUrl}/${outputDir}`;
+      const mcpEndpoint = siteConfig.customFields?.mcpEndpoint || '';
 
-      // Normalize sources: fill in defaults for label and outputFile
       const normalized = sources.map((s) => ({
         ...s,
         outputFile: s.outputFile || path.basename(s.folder),
         label: s.label || s.sectionPrefix || path.basename(s.folder),
       }));
 
-      // Write per-section full content files
       let totalPages = 0;
       for (const { folder, route, outputFile } of normalized) {
         const sourceDir = path.join(siteDir, folder);
-        const { content, count } = buildSectionContent(sourceDir, route, siteUrl);
+        const { content, count } = buildSectionSummary(sourceDir, route, siteUrl);
         const dest = path.join(outDir, outputDir, `${outputFile}.txt`);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         fs.writeFileSync(dest, content, 'utf-8');
         totalPages += count;
-        console.log(`[llms-txt] ${dest} — ${count} pages`);
+        console.log(`[llms-txt] ${dest} — ${count} pages (summary)`);
       }
 
-      // Write root slim index
-      const rootContent = renderRoot(normalized, outDirUrl, header, summary);
+      const rootContent = renderRoot(normalized, outDirUrl, header, summary, mcpEndpoint);
       for (const rel of outputPaths) {
         const dest = path.join(outDir, rel);
         fs.mkdirSync(path.dirname(dest), { recursive: true });

@@ -29,6 +29,7 @@ const config: Config = {
 
   customFields: {
     inkeepApiKey: process.env.INKEEP_API_KEY || '',
+    mcpEndpoint: 'https://agents.inkeep.com/mcp',
     secondaryNavbar: [
       { label: 'Cloud Guides', href: '/docs/home',            prefix: '/docs',       icon: 'cloud'  },
       { label: 'BYOC Guides',  href: '/docs/byoc/byoc-intro', prefix: '/docs/byoc',  icon: 'server' },
@@ -83,6 +84,13 @@ const config: Config = {
         { folder: 'docs',      route: '/docs'     },
         { folder: 'reference', route: '/reference' },
         { folder: 'docs-byoc', route: '/docs/byoc' },
+      ],
+    }],
+    ['./plugins/llms-txt', {
+      sources: [
+        { folder: 'docs',      route: '/docs',      outputFile: 'cloud-guides', label: 'Cloud Guides' },
+        { folder: 'docs-byoc', route: '/docs/byoc',  outputFile: 'byoc-guides',  label: 'BYOC Guides' },
+        { folder: 'reference', route: '/reference',   outputFile: 'api-reference', label: 'API & SDK Reference' },
       ],
     }],
   ],
