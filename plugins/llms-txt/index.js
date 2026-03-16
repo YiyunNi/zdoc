@@ -5,6 +5,21 @@ const path = require('node:path');
 const yaml = require('js-yaml');
 
 /**
+ * Parse YAML frontmatter from a content string.
+ * @param {string} content
+ * @returns {Record<string, any>}
+ */
+function parseFrontmatterFromContent(content) {
+  try {
+    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!match) return {};
+    return /** @type {Record<string, any>} */ (yaml.load(match[1])) || {};
+  } catch {
+    return {};
+  }
+}
+
+/**
  * Parse YAML frontmatter from a markdown file.
  * @param {string} filePath
  * @returns {Record<string, any>}
@@ -12,9 +27,7 @@ const yaml = require('js-yaml');
 function parseFrontmatter(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf-8');
-    const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-    if (!match) return {};
-    return /** @type {Record<string, any>} */ (yaml.load(match[1])) || {};
+    return parseFrontmatterFromContent(content);
   } catch {
     return {};
   }
@@ -42,17 +55,17 @@ function cleanText(str) {
 function detectLanguages(rawContent) {
   const langs = new Set();
   const re = /^```(\w+)/gm;
+  const map = {
+    py: 'python', python: 'python',
+    java: 'java',
+    javascript: 'nodejs', js: 'nodejs', typescript: 'nodejs', ts: 'nodejs', node: 'nodejs',
+    go: 'go', golang: 'go',
+    curl: 'rest', http: 'rest', rest: 'rest',
+    bash: null, shell: null, sh: null, json: null, yaml: null, xml: null, sql: null, text: null,
+  };
   let match;
   while ((match = re.exec(rawContent)) !== null) {
     const lang = match[1].toLowerCase();
-    const map = {
-      py: 'python', python: 'python',
-      java: 'java',
-      javascript: 'nodejs', js: 'nodejs', typescript: 'nodejs', ts: 'nodejs', node: 'nodejs',
-      go: 'go', golang: 'go',
-      curl: 'rest', http: 'rest', rest: 'rest',
-      bash: null, shell: null, sh: null, json: null, yaml: null, xml: null, sql: null, text: null,
-    };
     const normalized = map.hasOwnProperty(lang) ? map[lang] : null;
     if (normalized) langs.add(normalized);
   }
@@ -96,25 +109,6 @@ function inferContentType(fm, filePath) {
   if (/[/\\]reference[/\\]/.test(filePath)) return 'api-reference';
   if (/faq|troubleshoot/i.test(filePath)) return 'troubleshooting';
   return 'tutorial';
-}
-
-/**
- * Build a canonical URL from frontmatter slug or file path.
- * @param {Record<string, any>} fm
- * @param {string} filePath     Absolute path to the .md file
- * @param {string} sectionDir   Absolute path to the source root dir
- * @param {string} route        URL route prefix, e.g. "/docs"
- * @param {string} siteUrl      Base URL, e.g. "https://docs.zilliz.com"
- */
-function buildUrl(fm, filePath, sectionDir, route, siteUrl) {
-  if (fm.slug) {
-    const slug = String(fm.slug).replace(/^\//, '');
-    return `${siteUrl}${route}/${slug}`.replace(/([^:])\/\/+/g, '$1/');
-  }
-  const rel = path.relative(path.dirname(sectionDir), filePath)
-    .replace(/\.mdx?$/, '')
-    .replace(/\\/g, '/');
-  return `${siteUrl}${route}/${rel}`.replace(/([^:])\/\/+/g, '$1/');
 }
 
 /**
@@ -235,50 +229,6 @@ function walkAllFiles(dir) {
 }
 
 /**
- * Build full concatenated content for one source (all pages as markdown blocks).
- * Each page block is separated by a --- divider.
- * @param {string} sourceDir
- * @param {string} route
- * @param {string} siteUrl
- * @returns {{ content: string, count: number }}
- */
-function buildSectionContent(sourceDir, route, siteUrl) {
-  const files = walkAllFiles(sourceDir);
-  const parts = [];
-
-  for (const filePath of files) {
-    let raw;
-    try {
-      raw = fs.readFileSync(filePath, 'utf-8');
-    } catch {
-      continue;
-    }
-
-    const fm = parseFrontmatter(filePath);
-    const title = fm.sidebar_label || fm.title;
-    if (!title) continue;
-
-    const url = buildUrl(fm, filePath, sourceDir, route, siteUrl);
-    const body = stripMdxBody(raw);
-
-    // Remove the leading H1 from the stripped body to avoid duplication
-    // (the page body typically opens with # Title, which we emit ourselves)
-    const cleanedTitle = cleanText(String(title));
-    const bodyLines = body.split('\n');
-    const deduped = bodyLines[0] === `# ${cleanedTitle}`
-      ? bodyLines.slice(1).join('\n').trimStart()
-      : body;
-
-    parts.push(`# ${cleanedTitle}\n\nURL: ${url}\n\n${deduped}`);
-  }
-
-  return {
-    content: parts.join('\n\n---\n\n'),
-    count: parts.length,
-  };
-}
-
-/**
  * Build a summary-only index for one source section.
  * @param {string} sourceDir
  * @param {string} route
@@ -297,7 +247,7 @@ function buildSectionSummary(sourceDir, route, siteUrl) {
       continue;
     }
 
-    const fm = parseFrontmatter(filePath);
+    const fm = parseFrontmatterFromContent(raw);
     const title = fm.sidebar_label || fm.title;
     if (!title) continue;
 
