@@ -1,15 +1,52 @@
 import React, {useState, useEffect, useRef} from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {useLocation} from '@docusaurus/router';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 
-const SUGGESTIONS = [
+const DEFAULT_SUGGESTIONS = [
   'How do I get started with Zilliz Cloud?',
   'What are the API rate limits?',
   'Show me integration examples',
   'How to handle authentication?',
 ];
+
+function getSuggestions(pathname: string): string[] {
+  if (pathname.includes('/reference/python')) {
+    return [
+      'Show me a pymilvus insert example',
+      'How do I search with filters?',
+      'How to create a collection with dynamic schema?',
+      'What index types are available?',
+    ];
+  }
+  if (pathname.includes('/reference/')) {
+    return [
+      'Show me a code example for this API',
+      'What are the required parameters?',
+      'How do I handle errors?',
+      'What are the rate limits for this endpoint?',
+    ];
+  }
+  if (pathname.includes('/docs/byoc')) {
+    return [
+      'How do I deploy BYOC on AWS?',
+      'What are the networking requirements?',
+      'How to configure private endpoints?',
+      'Compare BYOC vs Serverless',
+    ];
+  }
+  if (pathname.includes('/docs')) {
+    return [
+      'Help me design a schema for my use case',
+      'What cluster size do I need?',
+      'Show me a vector search example',
+      'How to optimize search performance?',
+    ];
+  }
+  return DEFAULT_SUGGESTIONS;
+}
 
 interface ChatPanelProps {
   isExpanded: boolean;
@@ -93,6 +130,8 @@ function ChatHeader({onNewChat, onToggle, isExpanded}: {onNewChat: () => void; o
 function ChatPlaceholder({onToggle, isExpanded}: ChatPanelProps) {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{role: 'user' | 'assistant'; text: string}[]>([]);
+  const location = useLocation();
+  const suggestions = getSuggestions(location.pathname);
 
   const send = (text: string) => {
     if (!text.trim()) return;
@@ -140,7 +179,7 @@ function ChatPlaceholder({onToggle, isExpanded}: ChatPanelProps) {
 
             <div className={styles.suggestions}>
               <p className={styles.suggestionsLabel}>Suggested questions</p>
-              {SUGGESTIONS.map(q => (
+              {suggestions.map(q => (
                 <button type="button" key={q} className={styles.suggestionBtn} onClick={() => send(q)}>
                   <span>{q}</span>
                   <ChevronRightIcon />
@@ -197,6 +236,8 @@ function InkeepChat({apiKey, onToggle, isExpanded}: ChatPanelProps & {apiKey: st
   const [inkeepFailed, setInkeepFailed] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const {InkeepEmbeddedChat} = require('@inkeep/cxkit-react');
+  const location = useLocation();
+  const suggestions = getSuggestions(location.pathname);
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -224,7 +265,7 @@ function InkeepChat({apiKey, onToggle, isExpanded}: ChatPanelProps & {apiKey: st
           aiChatSettings={{
             chatSubjectName: 'Zilliz Cloud',
             introMessage: "Hi! I'm the Zilliz Cloud AI Assistant.\nWhat can I help you with today?",
-            exampleQuestions: SUGGESTIONS,
+            exampleQuestions: suggestions,
           }}
         />
       </div>
