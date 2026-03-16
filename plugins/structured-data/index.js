@@ -49,7 +49,7 @@ function detectLanguages(rawContent) {
  * @returns {string}
  */
 function getGenre(urlPath) {
-  if (/^\/reference\//.test(urlPath)) return 'API Reference';
+  if (/^\/reference(\/|$)/.test(urlPath)) return 'API Reference';
   return 'Guide';
 }
 
