@@ -93,6 +93,13 @@ const config: Config = {
         { folder: 'reference', route: '/reference',   outputFile: 'api-reference', label: 'API & SDK Reference' },
       ],
     }],
+    ['./plugins/structured-data', {
+      sources: [
+        { folder: 'docs',      route: '/docs' },
+        { folder: 'docs-byoc', route: '/docs/byoc' },
+        { folder: 'reference', route: '/reference' },
+      ],
+    }],
   ],
 
   presets: [
