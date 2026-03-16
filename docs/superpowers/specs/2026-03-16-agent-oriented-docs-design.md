@@ -74,25 +74,38 @@ Concatenated section files force agents to ingest all pages when they may only n
 
 Define an agent in `config/inkeep-agent.ts` with three tool capabilities:
 
-| Tool | Input | Output | Boundary |
-|------|-------|--------|----------|
-| Schema Designer | Use case description | Field types, index types, metric types + `create_collection` code | Read-only: generates code, never executes |
-| Cluster Config Advisor | Data size, QPS, latency requirements | CU size, replica count, partition strategy recommendation | Read-only: advice only |
-| Code Generator | Operation + preferred language | Working code snippet in Python/Java/Node.js/Go/REST | Read-only: includes `# Verify and run this` comment |
+| Tool | Input | Output | Implementation | Boundary |
+|------|-------|--------|----------------|----------|
+| Schema Designer | Use case description | Field types, index types, metric types + `create_collection` code | Prompt-engineered with RAG context from docs; no external API calls | Read-only: generates code, never executes |
+| Cluster Config Advisor | Data size, QPS, latency requirements | CU size, replica count, partition strategy recommendation | Prompt-engineered with RAG context from cluster/sizing docs | Read-only: advice only |
+| Code Generator | Operation + preferred language | Working code snippet in Python/Java/Node.js/Go/REST | Prompt-engineered with RAG context from SDK reference docs | Read-only: includes `# Verify and run this` comment |
 
-All tools are grounded in the docs via Inkeep's RAG. The agent's system prompt explicitly prohibits resource manipulation.
+All tools are RAG-grounded — Inkeep automatically retrieves relevant doc sections as context for each tool invocation. The agent's system prompt explicitly prohibits resource manipulation.
 
-**2b. Enhanced ChatPanel UX**
+**2b. Deployment Architecture**
+
+- The agent is defined using `@inkeep/agents-sdk` (must be added to `package.json` dependencies)
+- Agent configuration is pushed to Inkeep's platform via `inkeep push` — it runs on Inkeep's infrastructure, not self-hosted
+- The client-side `InkeepEmbeddedChat` widget connects to the deployed agent by agent ID via updated `aiChatSettings`
+- No custom backend required
+
+**2c. Enhanced ChatPanel UX**
 
 - **Context-aware suggestions**: Replace hardcoded `SUGGESTIONS` with suggestions derived from the current doc page URL/title
 - **Copy code button**: On generated code blocks in chat responses
-- **Confidence indicators**: Surface Inkeep's `answerConfidence` (very_confident → not_confident) visually
+- **Confidence indicators**: Surface answer confidence visually — feasibility depends on `@inkeep/cxkit-react` exposing response metadata callbacks. If unavailable, defer to a future version or implement via custom chat UI.
 
-**2c. Configuration**
+**2d. Configuration**
 
 - Agent definition: `config/inkeep-agent.ts`
 - Uses Inkeep TypeScript SDK patterns from `.agents/skills/typescript-sdk/`
-- Wired into `ChatPanel` via updated Inkeep settings
+- Deployed via `inkeep push`, referenced in `ChatPanel` by agent ID
+
+**2e. Failure Modes**
+
+- Agent unavailable → fall back to existing `ChatPlaceholder` UI (already implemented)
+- Tool call timeout → agent responds with "I couldn't complete that analysis" + suggestion to check docs directly
+- Low-confidence / no-source answers → agent says "I don't have enough information" instead of guessing (enforced via system prompt)
 
 ---
 
@@ -110,10 +123,10 @@ Injects `<script type="application/ld+json">` per doc page at build time.
 
 **Schema type mapping:**
 
-| Path pattern | Schema type |
-|-------------|-------------|
-| `/reference/**` | `APIReference` |
-| `/docs/**` | `TechArticle` |
+| Path pattern | Schema type | Genre |
+|-------------|-------------|-------|
+| `/reference/**` | `TechArticle` | `"API Reference"` |
+| `/docs/**` | `TechArticle` | `"Guide"` |
 
 **Properties (all pages):**
 
@@ -194,9 +207,28 @@ proficiencyLevel: beginner  # beginner | intermediate | advanced
 ---
 ```
 
+**Field validation:**
+
+| Field | Type | Allowed values | Default if missing | On invalid value |
+|-------|------|---------------|-------------------|-----------------|
+| `content_type` | string (case-insensitive) | `tutorial`, `api-reference`, `conceptual`, `troubleshooting` | Inferred from path (`/reference/` → `api-reference`, else `tutorial`) | Warn at build time, fall back to inferred |
+| `languages` | string[] | `python`, `java`, `nodejs`, `go`, `rest`, `curl` | Detected from code block language tags | Ignore unrecognized values |
+| `prerequisites` | string[] | Free-form | Empty array | N/A |
+| `proficiencyLevel` | string (case-insensitive) | `beginner`, `intermediate`, `advanced` | `beginner` | Warn at build time, fall back to `beginner` |
+
 **5c. No enforcement tooling**
 
 Guidelines only. Plugins handle missing fields gracefully with inferred defaults.
+
+---
+
+## Prerequisites / New Dependencies
+
+| Package | Purpose | Phase |
+|---------|---------|-------|
+| `@inkeep/agents-sdk` | Agent definition + deployment | Phase 4 |
+
+No new dependencies required for Phases 1-3 and 5.
 
 ---
 
