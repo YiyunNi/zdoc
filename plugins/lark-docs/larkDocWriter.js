@@ -760,6 +760,7 @@ class larkDocWriter {
         try {
             // Import MDX compiler dynamically as it's an ES module
             const { compile } = await import('@mdx-js/mdx');
+            const remarkMath = (await import('remark-math')).default;
 
             let patchedContent = content;
             let maxIterations = 50; // Prevent infinite loops
@@ -780,7 +781,7 @@ class larkDocWriter {
 
                 try {
                     // Try to compile the current content
-                    await compile(patchedContent, { development: false });
+                    await compile(patchedContent, { development: false, remarkPlugins: [remarkMath] });
                     console.log(`MDX compilation succeeded after ${iteration} fixes`);
                     return patchedContent; // If compilation succeeds, return the fixed content
                 } catch (error) {
