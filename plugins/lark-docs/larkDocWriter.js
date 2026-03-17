@@ -1018,12 +1018,9 @@ class larkDocWriter {
         try {
             // Import MDX compiler dynamically as it's an ES module
             const { compile } = await import('@mdx-js/mdx');
+            const remarkMath = (await import('remark-math')).default;
 
-            // Pre-process: fix translation/editor artefacts, then escape problem characters
-            let patchedContent = removeTabsHallucinations(content);
-            patchedContent = unescapeKnownJsxTags(patchedContent);
-            patchedContent = this.__escape_currency_dollars(patchedContent);
-            patchedContent = this.__escape_non_html_tags(patchedContent);
+            let patchedContent = content;
             let maxIterations = 50; // Prevent infinite loops
             let iteration = 0;
             const seenHashes = new Set();
@@ -1042,7 +1039,7 @@ class larkDocWriter {
 
                 try {
                     // Try to compile the current content
-                    await compile(patchedContent, { development: false });
+                    await compile(patchedContent, { development: false, remarkPlugins: [remarkMath] });
                     console.log(`MDX compilation succeeded after ${iteration} fixes`);
                     return patchedContent; // If compilation succeeds, return the fixed content
                 } catch (error) {
@@ -1070,191 +1067,65 @@ class larkDocWriter {
                                 }
                             }
                             break;
-                        case 'end-tag-mismatch': {
-                            // Error: "Unexpected closing tag `</Y>`, expected corresponding closing tag for `<X>` (line:col-line:col)"
-                            // The position refers to the OPENING tag <X>.
-                            // Strategy: replace the wrong closing tag </Y> with the correct </X>.
-                            // Exception: if <X> is a non-standard tag (contains _ or -) it is a URL/API
-                            // placeholder, not a real element. Replacing the closing tag causes an
-                            // oscillating loop; instead fall through to the fallback (escape opening tag).
-                            const wrongClose = error.message.match(/Unexpected closing tag `<\/([^>]+)>`/)?.[1];
-                            const expectedOpen = error.message.match(/closing tag for `<([A-Za-z][^>/ ]*)(?:\s[^>]*)?>?`/)?.[1];
-                            const posMatch = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
-                            const isPlaceholder = expectedOpen && /[_-]/.test(expectedOpen);
+                        case 'end-tag-mismatch':
+                            let tag = error.message.match(/<(?!\/)([A-Za-z][A-Za-z0-9:_-]*)\b[^>]*>/g)?.[0];
+                            let pos = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
+                            if (tag && pos) {
+                                const start = { line: parseInt(pos[1]), column: parseInt(pos[2]) }
 
-                            if (!isPlaceholder && wrongClose && expectedOpen && wrongClose !== expectedOpen && posMatch) {
-                                const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
-                                const wrongCloseTag = `</${wrongClose}>`;
-                                const correctCloseTag = `</${expectedOpen}>`;
-                                const lines = patchedContent.split('\n');
-
-                                for (let i = openLine; i < lines.length; i++) {
-                                    const idx = lines[i].indexOf(wrongCloseTag);
-                                    if (idx !== -1) {
-                                        lines[i] = lines[i].slice(0, idx) + correctCloseTag + lines[i].slice(idx + wrongCloseTag.length);
-                                        madeChanges = true;
-                                        break;
-                                    }
-                                }
-
-                                if (madeChanges) {
-                                    patchedContent = lines.join('\n');
-                                }
-                            } else if (!wrongClose && expectedOpen && posMatch) {
-                                // Variant: "Expected a closing tag for `<X>` (line:col-line:col) before the end of `paragraph`"
-                                // The opening tag is not closed within its paragraph. Escape it with &lt; so it
-                                // renders as literal text instead of being treated as a JSX element.
-                                const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
-                                const openCol = parseInt(posMatch[2]) - 1;  // 0-indexed
-                                const lines = patchedContent.split('\n');
-
-                                if (openLine < lines.length && lines[openLine][openCol] === '<') {
-                                    lines[openLine] = lines[openLine].slice(0, openCol) + '&lt;' + lines[openLine].slice(openCol + 1);
-                                    patchedContent = lines.join('\n');
-                                    madeChanges = true;
-                                }
-                            } else {
-                                // Variant: "Expected the closing tag `</X>` either after the end of `link` (line:col) or
-                                // another opening tag after the start of `link` (line:col)"
-                                // This occurs when <X> opens before a markdown link `[text](url)` and </X> is placed
-                                // inside the link text instead of after. Fix: escape both opening and closing tags.
-                                const v3Tag = error.message.match(/Expected the closing tag `<\/([^>]+)>`/)?.[1];
-                                const closeOffset = error.place?.start?.offset;
-
-                                if (v3Tag && closeOffset !== undefined) {
-                                    const closeTag = `</${v3Tag}>`;
-                                    const openTag = `<${v3Tag}>`;
-                                    let adjustedClose = closeOffset;
-
-                                    // Walk back to find and escape the opening tag
-                                    for (let i = closeOffset - 1; i >= 0; i--) {
-                                        if (patchedContent.slice(i, i + openTag.length) === openTag) {
-                                            patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
-                                            adjustedClose += 3; // '&lt;' is 3 chars longer than '<'
-                                            madeChanges = true;
-                                            break;
-                                        }
-                                    }
-
-                                    // Also escape the closing tag at the (adjusted) known offset
-                                    if (patchedContent.slice(adjustedClose, adjustedClose + closeTag.length) === closeTag) {
-                                        patchedContent = patchedContent.slice(0, adjustedClose) + '&lt;/' + v3Tag + '>' + patchedContent.slice(adjustedClose + closeTag.length);
+                                patchedContent = patchedContent.split('\n').map((line, index) => {
+                                    if (index === start.line - 1) {
+                                        line = line.slice(0, start.column - 1) + '\\' + line.slice(start.column - 1)
                                         madeChanges = true;
                                     }
-                                }
+
+                                    return line
+                                }).join('\n')
                             }
-
+                            
                             break;
-                        }
-                        case 'unexpected-closing-slash': {
-                            // "Unexpected closing slash `/` in tag, expected an open tag first"
-                            // The error offset points to the `/` inside the orphaned closing tag.
-                            // Strategy: walk back to find `<`, forward to find `>`, then remove the entire tag.
-                            const slashOffset = error.place?.offset;
-
-                            if (slashOffset !== undefined) {
-                                let tagStart = slashOffset - 1;
-                                while (tagStart > 0 && patchedContent[tagStart] !== '<') tagStart--;
-                                let tagEnd = slashOffset;
-                                while (tagEnd < patchedContent.length && patchedContent[tagEnd] !== '>') tagEnd++;
-
-                                if (patchedContent[tagStart] === '<' && tagEnd < patchedContent.length) {
-                                    const before = patchedContent.slice(0, tagStart);
-                                    let after = patchedContent.slice(tagEnd + 1);
-                                    if (after.startsWith('\n')) after = after.slice(1);
-                                    patchedContent = before + after;
-                                    madeChanges = true;
-                                }
-                            }
-
-                            if (!madeChanges) {
-                                // Fallback: remove erroneous closing tags via regex
-                                const originalContent = patchedContent;
-                                patchedContent = patchedContent.replace(/<\/(?:content|[\w\d]+)>\s*$/, '');
+                        case 'unexpected-closing-slash':
+                            // For this specific error "Unexpected closing slash `/` in tag, expected an open tag first"
+                            // it typically means there's a stray `</content>` tag or similar erroneous closing tag
+                            // Remove erroneous closing tags at the end of document
+                            const originalContent = patchedContent;
+                            patchedContent = patchedContent.replace(/<\/(?:content|[\w\d]+)>\s*$/, '');
+                            if (originalContent !== patchedContent) {
+                                madeChanges = true;
+                            } else {
+                                // If no match at end, look for the erroneous tag anywhere in the content
+                                // that might be causing the slash error
+                                patchedContent = patchedContent.replace(/<[/](\w+)>/g, (match, tagName) => {
+                                    // If this tag doesn't have a matching opening tag, remove it
+                                    const openingTagCount = (patchedContent.match(new RegExp(`<${tagName}(?:\\s|>|/>)`, 'g')) || []).length;
+                                    const closingTagCount = (patchedContent.match(new RegExp(`<\\/${tagName}>`, 'g')) || []).length;
+                                    
+                                    // If there are more closing tags than opening tags, this closing tag is erroneous
+                                    if (closingTagCount > openingTagCount) {
+                                        return ''; // Remove the erroneous closing tag
+                                    }
+                                    return match;
+                                });
+                                
                                 if (originalContent !== patchedContent) {
                                     madeChanges = true;
-                                } else {
-                                    patchedContent = patchedContent.replace(/<[/](\w+)>/g, (match, tagName) => {
-                                        const openingTagCount = (patchedContent.match(new RegExp(`<${tagName}(?:\\s|>|/>)`, 'g')) || []).length;
-                                        const closingTagCount = (patchedContent.match(new RegExp(`<\\/${tagName}>`, 'g')) || []).length;
-                                        if (closingTagCount > openingTagCount) {
-                                            return '';
-                                        }
-                                        return match;
-                                    });
-                                    if (originalContent !== patchedContent) {
-                                        madeChanges = true;
-                                    }
                                 }
                             }
                             break;
-                        }
                         case 'unexpected-character':
-                            offset = error.place?.offset;
+                            if (error.message.includes('U+002C') || 
+                                error.message.includes('U+002A') || 
+                                error.message.includes('U+3001') || 
+                                error.message.includes('U+003D')) {
+                                offset = error.place.offset;
+                                if (offset !== undefined && offset > 0 && offset < patchedContent.length) {
+                                    for (let i = offset-1; i >= 0; i--) {
+                                        if (patchedContent[i] === '<') {
+                                            patchedContent = patchedContent.slice(0, i) + '\\' + patchedContent.slice(i);
+                                            madeChanges = true;
 
-                            if (
-                                (error.message.includes('U+003D') || /U\+003[0-9]/.test(error.message)) &&
-                                offset !== undefined && offset > 0
-                            ) {
-                                // `=` sign or a digit (0–9) unexpected — typically from `<=` or `<10` where
-                                // `<` was parsed as a JSX tag opener but the following char is not a valid name start.
-                                for (let i = offset - 1; i >= Math.max(0, offset - 10); i--) {
-                                    if (patchedContent[i] === '<') {
-                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
-                                        madeChanges = true;
-                                        break;
-                                    }
-                                }
-                            } else if (
-                                (error.message.includes('U+002C') || error.message.includes('U+002A') || error.message.includes('U+3001')) &&
-                                offset !== undefined && offset > 0 && offset < patchedContent.length
-                            ) {
-                                // Comma, asterisk, or ideographic comma — escape the nearest preceding `<` with backslash
-                                for (let i = offset - 1; i >= 0; i--) {
-                                    if (patchedContent[i] === '<') {
-                                        patchedContent = patchedContent.slice(0, i) + '\\' + patchedContent.slice(i);
-                                        madeChanges = true;
-                                        break;
-                                    }
-                                }
-                            } else if (error.message.includes('U+0026') && offset !== undefined && offset > 0) {
-                                // `&` in JSX tag name — e.g. `<Tag&entity;` from Java generics with HTML-encoded brackets.
-                                // Walk back to find the `<` that opened the invalid tag and replace with `&lt;`.
-                                for (let i = offset - 1; i >= Math.max(0, offset - 30); i--) {
-                                    if (patchedContent[i] === '<') {
-                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
-                                        madeChanges = true;
-                                        break;
-                                    }
-                                }
-                            } else if (error.message.includes('U+003F') && offset !== undefined && offset > 0) {
-                                // `?` as JSX tag name start — e.g. `<?>` from Java wildcard generics.
-                                // Walk back to find the `<` and replace with `&lt;`.
-                                for (let i = offset - 1; i >= Math.max(0, offset - 5); i--) {
-                                    if (patchedContent[i] === '<') {
-                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
-                                        madeChanges = true;
-                                        break;
-                                    }
-                                }
-                            } else if (error.message.includes('U+003C') && offset !== undefined && offset > 0) {
-                                // `<` inside a JSX tag name — nested generics like `<SortedMap<Long, Float>`.
-                                // Walk back to find the `<` that opened the outer tag and escape with `&lt;`.
-                                for (let i = offset - 1; i >= Math.max(0, offset - 50); i--) {
-                                    if (patchedContent[i] === '<') {
-                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
-                                        madeChanges = true;
-                                        break;
-                                    }
-                                }
-                            } else if (error.message.includes('U+005B') && offset !== undefined && offset > 0) {
-                                // `[` inside a JSX tag name — array types like `<SortedMap[Long, Float]`.
-                                // Walk back to find the `<` that opened the tag and escape with `&lt;`.
-                                for (let i = offset - 1; i >= Math.max(0, offset - 50); i--) {
-                                    if (patchedContent[i] === '<') {
-                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
-                                        madeChanges = true;
-                                        break;
+                                            break;
+                                        }
                                     }
                                 }
                             }
