@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState, useRef, useCallback} from 'react';
+import React, {createContext, useContext, useState, useRef, useCallback, useEffect} from 'react';
 import {useLocation} from '@docusaurus/router';
 
 export interface Source {
@@ -15,6 +15,13 @@ export interface ChatMessage {
   feedback?: FeedbackRating;
 }
 
+export interface ChatHistoryEntry {
+  id: string;
+  title: string;
+  messages: ChatMessage[];
+  createdAt: number;
+}
+
 interface ChatContextValue {
   messages: ChatMessage[];
   setMessages: React.Dispatch<React.SetStateAction<ChatMessage[]>>;
@@ -24,6 +31,10 @@ interface ChatContextValue {
   send: (text: string) => Promise<void>;
   newChat: () => void;
   rateFeedback: (messageIndex: number, rating: 'up' | 'down') => void;
+  chatHistory: ChatHistoryEntry[];
+  activeChatId: string | null;
+  loadChat: (id: string) => void;
+  deleteChat: (id: string) => void;
 }
 
 const ChatContext = createContext<ChatContextValue | null>(null);
@@ -44,12 +55,43 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
+  const [chatHistory, setChatHistory] = useState<ChatHistoryEntry[]>([]);
+  const [activeChatId, setActiveChatId] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const sessionIdRef = useRef<string | null>(null);
   // Keep a ref to messages so the send callback never goes stale
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
+  const activeChatIdRef = useRef(activeChatId);
+  activeChatIdRef.current = activeChatId;
   const location = useLocation();
+
+  // Auto-save current chat to history when first assistant message arrives
+  useEffect(() => {
+    if (messages.length < 2) return;
+    const hasAssistant = messages.some(m => m.role === 'assistant' && m.text);
+    if (!hasAssistant) return;
+
+    const firstUserMsg = messages.find(m => m.role === 'user');
+    const title = firstUserMsg ? firstUserMsg.text.slice(0, 50) : 'New chat';
+
+    if (activeChatIdRef.current) {
+      // Update existing history entry
+      setChatHistory(prev =>
+        prev.map(entry =>
+          entry.id === activeChatIdRef.current
+            ? {...entry, title, messages: [...messages]}
+            : entry
+        )
+      );
+    } else {
+      // Create new history entry
+      const id = crypto.randomUUID();
+      setActiveChatId(id);
+      activeChatIdRef.current = id;
+      setChatHistory(prev => [{id, title, messages: [...messages], createdAt: Date.now()}, ...prev]);
+    }
+  }, [messages]);
 
   const send = useCallback(async (text: string) => {
     if (!text.trim() || abortRef.current) return;
@@ -201,11 +243,33 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
     setMessages([]);
     setInput('');
     setIsStreaming(false);
+    setActiveChatId(null);
     sessionIdRef.current = null;
   }, []);
 
+  const loadChat = useCallback((id: string) => {
+    if (abortRef.current) abortRef.current.abort();
+    const entry = chatHistory.find(e => e.id === id);
+    if (!entry) return;
+    setMessages([...entry.messages]);
+    setActiveChatId(id);
+    setInput('');
+    setIsStreaming(false);
+    sessionIdRef.current = null;
+  }, [chatHistory]);
+
+  const deleteChat = useCallback((id: string) => {
+    setChatHistory(prev => prev.filter(e => e.id !== id));
+    if (activeChatIdRef.current === id) {
+      setMessages([]);
+      setActiveChatId(null);
+      setInput('');
+      sessionIdRef.current = null;
+    }
+  }, []);
+
   return (
-    <ChatContext.Provider value={{messages, setMessages, input, setInput, isStreaming, send, newChat, rateFeedback}}>
+    <ChatContext.Provider value={{messages, setMessages, input, setInput, isStreaming, send, newChat, rateFeedback, chatHistory, activeChatId, loadChat, deleteChat}}>
       {children}
     </ChatContext.Provider>
   );

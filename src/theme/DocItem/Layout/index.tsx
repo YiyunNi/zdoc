@@ -87,6 +87,7 @@ export default function DocItemLayout({children}: Props): ReactNode {
               title={tocVisible ? 'Hide table of contents' : 'Show table of contents'}
               aria-label={tocVisible ? 'Hide table of contents' : 'Show table of contents'}>
               <TOCToggleIcon />
+              {tocVisible && <span className={styles.tocToggleLabel}>On this page</span>}
             </button>
             {tocVisible && <DocItemTOCDesktop />}
           </div>

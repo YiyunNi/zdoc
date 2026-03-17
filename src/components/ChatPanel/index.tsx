@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from 'react';
+import React, {useRef, useEffect, useState} from 'react';
 import {useLocation} from '@docusaurus/router';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -11,8 +11,11 @@ import {
   ThumbsUp,
   ThumbsDown,
   ChevronRight,
+  Search,
+  Trash2,
+  MessageSquare,
 } from 'lucide-react';
-import {useChatContext} from './ChatContext';
+import {useChatContext, ChatHistoryEntry} from './ChatContext';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 
@@ -82,9 +85,11 @@ function ChatHeader({onNewChat, onToggle, isExpanded}: {onNewChat: () => void; o
         <span className={styles.chatOnline} aria-hidden="true" />
       </div>
       <div className={styles.chatHeaderActions}>
-        <IconButton onClick={onNewChat} title="New chat" aria-label="New chat">
-          <SquarePen size={15} />
-        </IconButton>
+        {!isExpanded && (
+          <IconButton onClick={onNewChat} title="New chat" aria-label="New chat">
+            <SquarePen size={15} />
+          </IconButton>
+        )}
         <IconButton onClick={onToggle} title={isExpanded ? 'Minimize' : 'Expand'} aria-label={isExpanded ? 'Minimize chat' : 'Expand chat'}>
           {isExpanded ? <Minimize2 size={15} /> : <Maximize2 size={15} />}
         </IconButton>
@@ -107,22 +112,119 @@ const markdownComponents = {
   },
 };
 
+/* ── Chat history grouping helpers ── */
+
+function getDateGroup(timestamp: number): string {
+  const now = Date.now();
+  const diff = now - timestamp;
+  const oneDay = 86400000;
+  if (diff < oneDay) return 'Today';
+  if (diff < 7 * oneDay) return 'Previous 7 days';
+  return 'Older';
+}
+
+function groupHistory(history: ChatHistoryEntry[]): {label: string; items: ChatHistoryEntry[]}[] {
+  const groups: Record<string, ChatHistoryEntry[]> = {};
+  const order = ['Today', 'Previous 7 days', 'Older'];
+  for (const entry of history) {
+    const label = getDateGroup(entry.createdAt);
+    if (!groups[label]) groups[label] = [];
+    groups[label].push(entry);
+  }
+  return order.filter(l => groups[l]).map(label => ({label, items: groups[label]}));
+}
+
+/* ── Chat Sidebar (expanded mode only) ── */
+
+function ChatSidebar({
+  chatHistory,
+  activeChatId,
+  onNewChat,
+  onLoadChat,
+  onDeleteChat,
+}: {
+  chatHistory: ChatHistoryEntry[];
+  activeChatId: string | null;
+  onNewChat: () => void;
+  onLoadChat: (id: string) => void;
+  onDeleteChat: (id: string) => void;
+}) {
+  const [search, setSearch] = useState('');
+  const filtered = search
+    ? chatHistory.filter(e => e.title.toLowerCase().includes(search.toLowerCase()))
+    : chatHistory;
+  const grouped = groupHistory(filtered);
+
+  return (
+    <div className={styles.chatSidebar}>
+      <div className={styles.sidebarHeader}>
+        <button type="button" className={styles.newChatBtn} onClick={onNewChat}>
+          <SquarePen size={14} />
+          <span>New Chat</span>
+        </button>
+        <div className={styles.searchInputWrapper}>
+          <Search size={13} className={styles.searchIcon} />
+          <input
+            type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search chats..."
+            className={styles.searchInput}
+          />
+        </div>
+      </div>
+      <div className={styles.chatHistoryList}>
+        {grouped.length === 0 && (
+          <p className={styles.chatHistoryEmpty}>No chat history yet</p>
+        )}
+        {grouped.map(group => (
+          <div key={group.label} className={styles.chatHistoryGroup}>
+            <span className={styles.chatHistoryGroupLabel}>{group.label}</span>
+            {group.items.map(entry => (
+              <button
+                key={entry.id}
+                type="button"
+                className={`${styles.chatHistoryItem} ${entry.id === activeChatId ? styles.chatHistoryItemActive : ''}`}
+                onClick={() => onLoadChat(entry.id)}
+              >
+                <MessageSquare size={13} className={styles.chatHistoryItemIcon} />
+                <span className={styles.chatHistoryItemTitle}>{entry.title}</span>
+                <span
+                  className={styles.chatHistoryDelete}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Delete chat"
+                  onClick={e => { e.stopPropagation(); onDeleteChat(entry.id); }}
+                  onKeyDown={e => { if (e.key === 'Enter') { e.stopPropagation(); onDeleteChat(entry.id); } }}
+                >
+                  <Trash2 size={12} />
+                </span>
+              </button>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React.ReactElement {
-  const {messages, input, setInput, isStreaming, send, newChat, rateFeedback} = useChatContext();
+  const {messages, input, setInput, isStreaming, send, newChat, rateFeedback, chatHistory, activeChatId, loadChat, deleteChat} = useChatContext();
   const location = useLocation();
   const suggestions = getSuggestions(location.pathname);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({behavior: 'smooth'});
+    const el = messagesContainerRef.current;
+    if (el) {
+      el.scrollTo({top: el.scrollHeight, behavior: 'smooth'});
+    }
   }, [messages]);
 
   const hasMessages = messages.length > 0;
 
-  return (
-    <div className={`${styles.chatInner} ${isExpanded ? styles.chatInnerExpanded : ''}`}>
-      <ChatHeader onNewChat={newChat} onToggle={onToggle} isExpanded={isExpanded} />
-
+  const conversationContent = (
+    <>
       {!hasMessages ? (
         <div className={styles.emptyState}>
           <div className={styles.greetingBlock}>
@@ -164,7 +266,7 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
         </div>
       ) : (
         <div className={styles.conversation}>
-          <div className={styles.messages}>
+          <div className={styles.messages} ref={messagesContainerRef}>
             {messages.map((msg, i) => (
               <div key={i} className={`${styles.messageBubble} ${msg.role === 'user' ? styles.userMessage : styles.assistantMessage}`}>
                 {msg.role === 'assistant' && (
@@ -222,7 +324,6 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                 </div>
               </div>
             ))}
-            <div ref={messagesEndRef} />
           </div>
           <div className={styles.bottomInput}>
             <div className={styles.inputRow}>
@@ -248,6 +349,33 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
           </div>
         </div>
       )}
+    </>
+  );
+
+  if (isExpanded) {
+    return (
+      <div className={styles.chatInnerExpanded}>
+        <ChatHeader onNewChat={newChat} onToggle={onToggle} isExpanded={isExpanded} />
+        <div className={styles.expandedWrapper}>
+          <ChatSidebar
+            chatHistory={chatHistory}
+            activeChatId={activeChatId}
+            onNewChat={newChat}
+            onLoadChat={loadChat}
+            onDeleteChat={deleteChat}
+          />
+          <div className={styles.expandedMain}>
+            {conversationContent}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.chatInner}>
+      <ChatHeader onNewChat={newChat} onToggle={onToggle} isExpanded={isExpanded} />
+      {conversationContent}
     </div>
   );
 }

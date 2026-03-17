@@ -34,27 +34,38 @@
   padding-right: 0;
 }
 
-/* TOC toggle button — matches the tabs segmented control aesthetic */
+/* TOC toggle button */
 .tocToggleBtn {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 36px;
+  gap: 0.375rem;
   height: 36px;
   padding: 0;
-  margin: 0 0 0.25rem 0;
+  margin: 0 0 0.75rem 0;
   border: none;
-  background: var(--zd-gray-100);
+  background: none;
   color: var(--zd-gray-500);
   cursor: pointer;
   line-height: 0;
-  border-radius: 8px;
-  transition: color 0.12s ease, background-color 0.12s ease;
+  border-radius: 0;
+  transition: color 0.12s ease;
+}
+
+.tocToggleLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--zd-gray-400);
+  line-height: 1;
 }
 
 .tocToggleBtn:hover {
-  color: var(--zd-gray-700);
-  background: var(--zd-gray-200);
+  color: var(--ifm-color-primary);
+}
+
+.tocToggleBtn:hover .tocToggleLabel {
+  color: var(--ifm-color-primary);
 }
 
 .tocToggleBtn:focus-visible {
