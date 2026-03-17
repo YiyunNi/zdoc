@@ -249,7 +249,7 @@ BM25 is a widely used text relevance measurement method, specifically designed f
 The BM25 scoring is calculated as follows:
 
 $$
-score(D, Q)=\sum_{i=1}^{n}IDF(q_i)\cdot \{\{TF(q_i,D)\cdot(k_1+1)}\over\{TF(q_i, D)+k_1\cdot(1-b+b\cdot \{\{|D|}\over{avgdl}})}}
+score(D, Q)=\sum_{i=1}^{n}IDF(q_i)\cdot \frac{TF(q_i,D)\cdot(k_1+1)}{TF(q_i, D)+k_1\cdot(1-b+b\cdot \frac{|D|}{avgdl})}
 $$
 
 Parameter description:
@@ -263,7 +263,7 @@ Parameter description:
 - $IDF(q_i)$: Inverse document frequency, calculated as:
 
     $$
-    IDF(q_i)=\log(\{N-n(q_i)+0.5\over n(q_i)+0.5} + 1)
+    IDF(q_i)=\log\left(\frac{N-n(q_i)+0.5}{n(q_i)+0.5} + 1\right)
     $$
 
     where $N$ is the total number of documents in the corpus, and$n(q_i)$ is the number of documents containing term $q_i$.

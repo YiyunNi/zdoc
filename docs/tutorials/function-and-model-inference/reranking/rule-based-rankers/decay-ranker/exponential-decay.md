@@ -123,7 +123,7 @@ $$
 Where:
 
 $$
-\lambda = \frac\{\ln(decay)}{scale}
+\lambda = \frac{\ln(decay)}{scale}
 $$
 
 Breaking this down in plain language:
