@@ -38,15 +38,15 @@ export default function DocRootLayoutSidebar({
   const setHiddenSidebar = setHiddenSidebarProp ?? setHiddenSidebarLocal;
   const toggleSidebar = useCallback(() => {
     if (hiddenSidebar) {
+      // Expanding
       setHiddenSidebar(false);
-    }
-    // onTransitionEnd won't fire when sidebar animation is disabled
-    // fixes https://github.com/facebook/docusaurus/issues/8918
-    if (!hiddenSidebar && prefersReducedMotion()) {
+      setHiddenSidebarContainer(false);
+    } else {
+      // Collapsing — no width transition, so set both immediately
       setHiddenSidebar(true);
+      setHiddenSidebarContainer(true);
     }
-    setHiddenSidebarContainer((value) => !value);
-  }, [setHiddenSidebarContainer, hiddenSidebar]);
+  }, [setHiddenSidebarContainer, setHiddenSidebar, hiddenSidebar]);
 
   return (
     <aside

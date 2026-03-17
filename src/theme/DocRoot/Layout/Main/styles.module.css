@@ -8,16 +8,7 @@
 @media (min-width: 997px) {
   .docMainContainer {
     flex-grow: 1;
-    max-width: calc(100% - var(--doc-sidebar-width));
-  }
-
-  .docMainContainerEnhanced {
+    /* Sidebar aside is always 52px; expanded sidebar floats over content */
     max-width: calc(100% - var(--doc-sidebar-hidden-width));
-  }
-
-  .docItemWrapperEnhanced {
-    max-width: calc(
-      var(--ifm-container-width) + var(--doc-sidebar-width)
-    ) !important;
   }
 }
