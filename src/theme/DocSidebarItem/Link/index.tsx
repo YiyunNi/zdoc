@@ -6,18 +6,14 @@ import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/DocSidebarItem/Link';
+import {Home} from 'lucide-react';
 
 import styles from '../Category/styles.module.css';
 
 // ── Inline icon map ───────────────────────────────────────────────────────────
 
 const LINK_ICONS: Record<string, ReactNode> = {
-  home: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-      <polyline points="9 22 9 12 15 12 15 22"/>
-    </svg>
-  ),
+  home: <Home size={20} />,
 };
 
 export default function DocSidebarItemLink({

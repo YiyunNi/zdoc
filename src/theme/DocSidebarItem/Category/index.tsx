@@ -30,87 +30,84 @@ import type {
   PropSidebarItemLink,
 } from '@docusaurus/plugin-content-docs';
 
-import type IconData from '@lineiconshq/react-lineicons';
-import {LineIcon} from '@site/src/utils/navIcons';
 import {
-  Rocket5Outlined,
-  Database2Outlined,
-  Layers1Outlined,
-  Cloud2Outlined,
-  CloudUploadOutlined,
-  Gear1Outlined,
-  QuestionMarkCircleOutlined,
-  Search1Outlined,
-  // Reference sidebar icons
-  Key1Outlined,
-  Code1Outlined,
-  Gears3Outlined,
-  Slice2Outlined,
-  VectorNodes6Outlined,
-  VectorNodes7Outlined,
-  Upload1Outlined,
-  StorageHdd2Outlined,
-  VectorizeraiOutlined,
-  SortHighToLowOutlined,
-  // REST-specific icons
-  Globe1Outlined,
-  SyncOutlined,
-  Folder1Outlined,
-  RefreshCircle1ClockwiseOutlined,
-  BoxArchive1Outlined,
-  BarChart4Outlined,
-  CalendarDaysOutlined,
-  CreditCardMultipleOutlined,
-  PieChart2Outlined,
-  Shield2Outlined,
-  Link2AngularRightOutlined,
-  User4Outlined,
-  Bookmark1Outlined,
-} from '@lineiconshq/free-icons';
+  Rocket,
+  Database,
+  Layers,
+  Cloud,
+  CloudUpload,
+  Settings,
+  CircleHelp,
+  Search,
+  Key,
+  Code,
+  Settings2,
+  Split,
+  Network,
+  Workflow,
+  Upload,
+  HardDrive,
+  Brain,
+  ArrowDownWideNarrow,
+  Globe,
+  RefreshCw,
+  Folder,
+  RotateCw,
+  Archive,
+  BarChart3,
+  CalendarDays,
+  CreditCard,
+  PieChart,
+  Shield,
+  Link as LinkIcon,
+  User,
+  Bookmark,
+  type LucideProps,
+} from 'lucide-react';
 
 import styles from './styles.module.css';
 
 // ─── Icon map ────────────────────────────────────────────────────────────────
 
-const CATEGORY_ICONS: Record<string, IconData> = {
+const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = {
   // Guides sidebar
-  quickstarts:    Rocket5Outlined,
-  'deploy-byoc':  CloudUploadOutlined,
-  data:           Database2Outlined,
-  indexes:        Layers1Outlined,
-  search:         Search1Outlined,
-  infrastructure: Cloud2Outlined,
-  administration: Gear1Outlined,
-  faqs:           QuestionMarkCircleOutlined,
+  quickstarts:    Rocket,
+  'deploy-byoc':  CloudUpload,
+  data:           Database,
+  indexes:        Layers,
+  search:         Search,
+  infrastructure: Cloud,
+  administration: Settings,
+  faqs:           CircleHelp,
   // Reference sidebar
-  auth:              Key1Outlined,
-  'client-code':     Code1Outlined,
-  'collections-ref': Layers1Outlined,
-  'db-ref':          Database2Outlined,
-  mgmt:              Gears3Outlined,
-  partition:         Slice2Outlined,
-  'vector-ref':      VectorizeraiOutlined,
-  'import-ref':      Upload1Outlined,
-  'storage-ref':     StorageHdd2Outlined,
-  'embed-ref':       VectorizeraiOutlined,
-  'rerank-ref':      SortHighToLowOutlined,
-  'cloud-ctrl':      Cloud2Outlined,
-  'data-plane':      VectorNodes7Outlined,
+  auth:              Key,
+  'client-code':     Code,
+  'collections-ref': Layers,
+  'db-ref':          Database,
+  mgmt:              Settings2,
+  partition:         Split,
+  'vector-ref':      Brain,
+  'import-ref':      Upload,
+  'storage-ref':     HardDrive,
+  'embed-ref':       Brain,
+  'rerank-ref':      ArrowDownWideNarrow,
+  'cloud-ctrl':      Cloud,
+  'data-plane':      Workflow,
   // REST API items
-  'rest-cloud-meta': Globe1Outlined,
-  'rest-elt':        SyncOutlined,
-  'rest-project':    Folder1Outlined,
-  'rest-cluster':    VectorNodes6Outlined,
-  'rest-migrate':    RefreshCircle1ClockwiseOutlined,
-  'rest-backup':     BoxArchive1Outlined,
-  'rest-metrics':    BarChart4Outlined,
-  'rest-job':        CalendarDaysOutlined,
-  'rest-invoices':   CreditCardMultipleOutlined,
-  'rest-usage':      PieChart2Outlined,
-  'rest-role':       Shield2Outlined,
-  'rest-alias':      Link2AngularRightOutlined,
-  'rest-user':       User4Outlined,
-  'rest-index':      Bookmark1Outlined,
+  'rest-cloud-meta': Globe,
+  'rest-elt':        RefreshCw,
+  'rest-project':    Folder,
+  'rest-cluster':    Network,
+  'rest-migrate':    RotateCw,
+  'rest-backup':     Archive,
+  'rest-metrics':    BarChart3,
+  'rest-job':        CalendarDays,
+  'rest-invoices':   CreditCard,
+  'rest-usage':      PieChart,
+  'rest-role':       Shield,
+  'rest-alias':      LinkIcon,
+  'rest-user':       User,
+  'rest-index':      Bookmark,
 };
 
 // ─── Internals (unchanged from Docusaurus source) ────────────────────────────
@@ -191,16 +188,16 @@ function CollapseButton({
 
 function CategoryLinkLabel({
   label,
-  iconData,
+  IconComponent,
 }: {
   label: string;
-  iconData?: IconData;
+  IconComponent?: React.ComponentType<LucideProps>;
 }) {
   return (
     <>
-      {iconData && (
+      {IconComponent && (
         <span className={styles.categoryIcon} aria-hidden="true">
-          <LineIcon icon={iconData} size={20} />
+          <IconComponent size={20} />
         </span>
       )}
       <span title={label} className={styles.categoryLinkLabel}>
@@ -245,7 +242,7 @@ function DocSidebarItemCategoryCollapsible({
 }: Props): ReactNode {
   const {items, label, collapsible, className, href} = item;
   const iconKey = item.customProps?.icon as string | undefined;
-  const iconData: IconData | undefined = iconKey ? CATEGORY_ICONS[iconKey] : undefined;
+  const IconComponent = iconKey ? CATEGORY_ICONS[iconKey] : undefined;
 
   const {
     docs: {
@@ -317,7 +314,7 @@ function DocSidebarItemCategoryCollapsible({
           aria-expanded={collapsible && !href ? !collapsed : undefined}
           href={collapsible ? hrefWithSSRFallback ?? '#' : hrefWithSSRFallback}
           {...props}>
-          <CategoryLinkLabel label={label} iconData={iconData} />
+          <CategoryLinkLabel label={label} IconComponent={IconComponent} />
         </Link>
         {href && collapsible && (
           <CollapseButton
