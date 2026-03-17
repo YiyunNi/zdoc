@@ -1,6 +1,7 @@
 import React, {type ReactNode, useState} from 'react';
 import {useLocation, useHistory} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {useWindowSize} from '@docusaurus/theme-common';
 import DocSidebar from '@theme-original/DocSidebar';
 import type DocSidebarType from '@theme/DocSidebar';
 import type {WrapperProps} from '@docusaurus/types';
@@ -259,13 +260,18 @@ function ProductDropdown({onCollapse}: {onCollapse?: () => void}): ReactNode {
 }
 
 export default function DocSidebarWrapper(props: Props): ReactNode {
-  if (props.isHidden) {
+  const windowSize = useWindowSize();
+  const isMobile = windowSize === 'mobile';
+
+  // On mobile the sidebar renders inside the hamburger menu —
+  // always show the full sidebar items, never the collapsed icon column.
+  if (!isMobile && props.isHidden) {
     return <CollapsedIconColumn onExpand={props.onCollapse!} sidebar={props.sidebar} />;
   }
 
   return (
     <>
-      <ProductDropdown onCollapse={props.onCollapse} />
+      {!isMobile && <ProductDropdown onCollapse={props.onCollapse} />}
       <div className={styles.sidebarScroll}>
         <DocSidebar {...props} />
       </div>

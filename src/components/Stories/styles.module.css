@@ -95,18 +95,49 @@
 
     .dropdownWrapper {
         display: block;
+        position: relative;
         margin-bottom: 20px;
+    }
+
+    /* Custom chevron icon */
+    .dropdownWrapper::after {
+        content: '';
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 7px;
+        height: 7px;
+        border-right: 1.5px solid #175fff;
+        border-bottom: 1.5px solid #175fff;
+        transform: translateY(-60%) rotate(45deg);
+        pointer-events: none;
     }
 
     .dropdown {
         width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #D0D6DF;
-        background-color: #F6F8FA;
-        font-size: 16px;
+        padding: 12px 40px 12px 16px;
+        border-radius: 10px;
+        border: 1.5px solid #d0d6df;
+        background: #ffffff;
+        font-size: 15px;
         font-weight: 600;
-        color: #333;
+        color: #0f172a;
         cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        outline: none;
+    }
+
+    .dropdown:hover {
+        border-color: #a0b4d8;
+        box-shadow: 0 2px 6px rgba(23, 95, 255, 0.08);
+    }
+
+    .dropdown:focus {
+        border-color: #175fff;
+        box-shadow: 0 0 0 3px rgba(23, 95, 255, 0.12);
     }
 }

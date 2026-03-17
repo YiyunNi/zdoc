@@ -281,7 +281,10 @@ export default function Hero({ children }) {
               Slide title → top: 0, right: 0, width: 56% (above right panel)
           */}
           <div className={styles.codePanels}>
-            {/* Description — top-right corner above right panel */}
+            {/* Title + description — top-right corner above right panel */}
+            <div className={styles.slideTitle}>
+              {slide.label}
+            </div>
             <div className={styles.slideDesc}>
               {slide.description}
             </div>
@@ -305,11 +308,6 @@ export default function Hero({ children }) {
                 </button>
               </div>
               <pre className={styles.code}>{slide.json}</pre>
-            </div>
-
-            {/* Slide title — bottom-left, below JSON panel */}
-            <div className={styles.slideTitle}>
-              {slide.label}
             </div>
 
             {/* Right: Search code panel */}

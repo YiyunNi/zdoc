@@ -79,9 +79,8 @@ export default function NavbarContent(): ReactNode {
 
   return (
     <div className={styles.navbarInner}>
-      {/* Left: mobile toggle + logo */}
+      {/* Left: logo */}
       <div className={styles.navbarLeft}>
-        {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
         <NavbarLogo />
       </div>
 
@@ -93,7 +92,7 @@ export default function NavbarContent(): ReactNode {
         </button>
       </div>
 
-      {/* Right: nav items with icons */}
+      {/* Right: nav items with icons + mobile toggle */}
       <div className={styles.navbarRight}>
         <a href="https://support.zilliz.com/hc/en-us" className="navbar-support-link" target="_blank" rel="noopener noreferrer">
           <CircleHelp size={14} aria-hidden="true" />
@@ -107,6 +106,7 @@ export default function NavbarContent(): ReactNode {
           <UserPlus size={14} aria-hidden="true" />
           Sign Up Free
         </a>
+        {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
       </div>
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}

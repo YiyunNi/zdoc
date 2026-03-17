@@ -297,38 +297,36 @@
   box-shadow: none !important;
 }
 
-/* ── Slide description — top-right corner, above right panel ── */
-.slideDesc {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 56%;           /* matches .searchOuter width */
-  height: 100px;        /* matches .searchOuter top offset */
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  padding: 0 8px;
-  font-family: var(--ifm-font-family-base, Inter, sans-serif);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.6;
-  color: #475569;
-  pointer-events: none;
-  transition: opacity 0.15s ease;
-}
-
-/* ── Slide title — bottom-left, below JSON panel ── */
+/* ── Slide title + description — top-right corner, above right panel ──
+   Available space: from right edge of JSON panel (50%) to container right,
+   height = searchOuter top offset (100px). */
 .slideTitle {
   position: absolute;
-  left: 0;
-  top: 308px;           /* = JSON panel height (300px) + 8px gap */
-  width: 50%;           /* matches .jsonPanel width */
+  left: 52%;
+  right: 0;
+  top: 8px;
   z-index: 2;
   font-family: 'Plus Jakarta Sans', var(--ifm-font-family-base, Inter, sans-serif);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: #0f172a;
   white-space: nowrap;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.slideDesc {
+  position: absolute;
+  left: 52%;
+  right: 0;
+  top: 40px;            /* below title with more gap */
+  z-index: 2;
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #475569;
+  pointer-events: none;
   transition: opacity 0.15s ease;
 }
 
@@ -433,19 +431,18 @@
     gap: 16px;
   }
 
+  .slideTitle {
+    position: static;
+    width: 100%;
+    margin: 0 0 -12px;   /* pull description closer via negative bottom margin */
+  }
+
   .slideDesc {
     position: static;
     width: 100%;
     height: auto;
     padding: 0;
-    margin-bottom: 8px;
-  }
-
-  .slideTitle {
-    position: static;
-    width: 100%;
-    order: 2;             /* between JSON and code panels */
-    margin: 4px 0 8px;
+    margin-bottom: 0;
   }
 
   .jsonPanel {
