@@ -275,6 +275,7 @@ async function applyMdxPatches(content) {
     try {
         // Dynamically import the MDX compile function due to ES module restrictions
         const { compile } = await import('@mdx-js/mdx');
+        const remarkMath = (await import('remark-math')).default;
 
         // Pre-process: fix hallucination patterns, then escape problem characters
         let patchedContent = removeTabsHallucinations(content);
@@ -299,7 +300,7 @@ async function applyMdxPatches(content) {
 
             try {
                 // Try to compile the current content
-                await compile(patchedContent, { development: false });
+                await compile(patchedContent, { development: false, remarkPlugins: [remarkMath] });
                 console.log(`MDX compilation succeeded after ${iteration} fixes`);
                 return patchedContent; // If compilation succeeds, return the fixed content
             } catch (error) {

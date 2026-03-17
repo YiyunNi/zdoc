@@ -900,6 +900,7 @@ class larkDocWriter {
         try {
             // Import MDX compiler dynamically as it's an ES module
             const { compile } = await import('@mdx-js/mdx');
+            const remarkMath = (await import('remark-math')).default;
 
             // Pre-process: fix translation/editor artefacts, then escape problem characters
             let patchedContent = removeTabsHallucinations(content);
@@ -924,7 +925,7 @@ class larkDocWriter {
 
                 try {
                     // Try to compile the current content
-                    await compile(patchedContent, { development: false });
+                    await compile(patchedContent, { development: false, remarkPlugins: [remarkMath] });
                     console.log(`MDX compilation succeeded after ${iteration} fixes`);
                     return patchedContent; // If compilation succeeds, return the fixed content
                 } catch (error) {
