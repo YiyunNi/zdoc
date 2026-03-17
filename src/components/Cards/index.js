@@ -1,12 +1,16 @@
 import React from 'react';
 import styles from './styles.module.css';
+import { extractEyebrow } from '@site/src/components/utils/eyebrow';
 
-export default function Cards({ children }) {
+export default function Cards({ children, eyebrow: eyebrowProp }) {
     if (!Array.isArray(children) || children.length === 0) {
         return null;
     }
 
-    const items = React.Children.toArray(children[1].props.children)
+    const { eyebrow, rest } = extractEyebrow(children, eyebrowProp);
+    // rest[0] = section heading, rest[1] = list
+
+    const items = React.Children.toArray(rest[1].props.children)
         .filter(item => typeof item !== 'string' || item.trim() !== '')
         .map(item => {
             if (!React.isValidElement(item)) return null;
@@ -50,7 +54,8 @@ export default function Cards({ children }) {
 
     return (
         <div className={styles.container}>
-            { children[0] }
+            {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
+            { rest[0] }
             <div className={styles.items}>
                 { items.map((item, index) => {
                     if (item.name === 'break') {

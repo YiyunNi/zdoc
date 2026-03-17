@@ -6,6 +6,16 @@
     padding: 0 20px;
 }
 
+.eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #175fff !important;
+    font-weight: 600 !important;
+    margin: 0 0 8px !important;
+    line-height: 1 !important;
+}
+
 .items {
     display: flex;
     flex-wrap: wrap;

@@ -1,17 +1,21 @@
 import React from 'react';
 import Procedures from '@site/src/components/Procedures';
 import styles from './styles.module.css';
+import { extractEyebrow } from '@site/src/components/utils/eyebrow';
 
-export default function Stories({ children }) {
-    children = children.filter(child => child !== '\n');
+export default function Stories({ children, eyebrow: eyebrowProp }) {
+    const { eyebrow, rest } = extractEyebrow(children, eyebrowProp);
+    // rest[0] = section h1, rest[1..] = h2 tabs + ol procedures
     const tabs = []
     const procedures = []
 
-    children.forEach((child, index) => {
-        if (child.type.name && child.type.name === 'h2') {
+    rest.forEach((child) => {
+        if (!React.isValidElement(child)) return;
+        // MDX v3 wraps headings in MDXHeading components; detect via mdxTag
+        const isH2 = child.type === 'h2' || child.type?.mdxTag === 'h2';
+        if (isH2) {
             tabs.push(child.props.children)
         }
-
         if (child.type === 'ol') {
             procedures.push(child)
         }
@@ -29,7 +33,8 @@ export default function Stories({ children }) {
     
     return (
         <div className={styles.stories}>
-            { children[0] }
+            {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
+            { rest[0] }
             <ul className={styles.storiesList}>
                 { tabs.map((tab, index) => {
                     return (

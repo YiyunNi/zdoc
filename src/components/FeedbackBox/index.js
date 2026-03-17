@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import {CircleCheck, ThumbsUp, ThumbsDown} from 'lucide-react';
 import styles from './index.module.css'
 import Translate, {translate} from '@docusaurus/Translate';
 
@@ -19,7 +20,7 @@ export default function FeedbackBox() {
             return (
               <div id="feedback-box" className={styles.feedbackBox} role="status" aria-live="polite">
                 <div className={styles.confirmation}>
-                  <span className="material-symbols-outlined">check_circle</span>
+                  <CircleCheck size={20} />
                   <Translate id="feedbackBox.thanks" description="Feedback confirmation message">
                     Thanks for your feedback!
                   </Translate>
@@ -47,7 +48,7 @@ export default function FeedbackBox() {
                   aria-label={translate({id: 'feedbackBox.thumbsUp', message: 'Yes, this page was helpful'})}
                 >
                   <i className={styles.thumbIcon}>
-                    <span className="material-symbols-outlined">thumb_up</span>
+                    <ThumbsUp size={18} />
                   </i>
                 </button>
                 <button
@@ -56,7 +57,7 @@ export default function FeedbackBox() {
                   aria-label={translate({id: 'feedbackBox.thumbsDown', message: 'No, this page was not helpful'})}
                 >
                   <i className={styles.thumbIcon}>
-                    <span className="material-symbols-outlined">thumb_down</span>
+                    <ThumbsDown size={18} />
                   </i>
                 </button>
               </div>

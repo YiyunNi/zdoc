@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { usePluginData } from '@docusaurus/useGlobalData';
+import { Hourglass, CircleCheck, CircleAlert, Copy, FileCode, Eye, ChevronDown } from 'lucide-react';
 import styles from './styles.module.css';
 
 const CopyPage = () => {
@@ -224,28 +225,11 @@ const CopyPage = () => {
         disabled={isLoading}
       >
         <i className={styles.checkIcon}>
-          <span className="material-symbols-outlined">
-            {isLoading ? 'hourglass_empty' : copySuccess ? 'check_circle' : error ? 'error' : 'file_copy'}
-          </span>
+          {isLoading ? <Hourglass size={16} /> : copySuccess ? <CircleCheck size={16} /> : error ? <CircleAlert size={16} /> : <Copy size={16} />}
         </i>
         <span>{isLoading ? 'Copying...' : copySuccess ? 'Copied!' : error ? 'Failed' : 'Copy page'}</span>
         {!isLoading && (
-          <svg
-            className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`}
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 5L6 8L9 5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <ChevronDown size={12} className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ''}`} />
         )}
       </button>
 
@@ -266,7 +250,7 @@ const CopyPage = () => {
             onKeyDown={(e) => handleMenuKeyDown(e, 0)}
           >
             <i className={styles.menuIcon}>
-              <span className="material-symbols-outlined">markdown</span>
+              <FileCode size={18} />
             </i>
             <div className={styles.menuItemCaption}>
               <div className={styles.menuItemTitle}>Copy page</div>
@@ -283,7 +267,7 @@ const CopyPage = () => {
             onKeyDown={(e) => handleMenuKeyDown(e, 1)}
           >
             <i className={styles.menuIcon}>
-              <span className="material-symbols-outlined">visibility</span>
+              <Eye size={18} />
             </i>
             <div className={styles.menuItemCaption}>
               <div className={styles.menuItemTitle}>View source</div>

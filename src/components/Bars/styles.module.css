@@ -2,8 +2,18 @@
     display: block;
     width: 100%;
     max-width: 996px;
-    margin: 10px auto;
+    margin: 64px auto 10px;
     padding: 0 20px;
+}
+
+.eyebrow {
+    font-size: 11px !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #175fff !important;
+    font-weight: 600 !important;
+    margin: 0 0 10px !important;
+    line-height: 1 !important;
 }
 
 .container .lead {
@@ -18,201 +28,164 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
-    gap: 12px;
+    align-items: stretch;
+    gap: 16px;
     margin-bottom: 0px !important;
+    list-style: none !important;
 }
 
+/* ── Tier card ── */
 .item {
     flex: 1;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     border: 1px solid #D0D6DF;
-    background-color: #F6F8FA;
-    height: 48px;
-    padding: 12px 24px;
-    border-radius: 10px;
+    background-color: #FFFFFF;
+    border-radius: 14px;
     cursor: pointer;
     margin-top: 0 !important;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
+    position: relative;
 }
 
-.item a {
-    flex: 1;
-    display: flex;
-    align-items: center; 
-}
-
-.item a:link,
-.item a:visited {
-    text-decoration: none;
-    color: #000000;
+.item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #175fff;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 14px 0 0 14px;
 }
 
 .item:hover {
-    border: 1px solid #000000;
+    box-shadow: 0 8px 24px rgba(23, 95, 255, 0.10), 0 2px 6px rgba(0, 0, 0, 0.04);
+    transform: translateY(-3px);
+    border-color: rgba(23, 95, 255, 0.3);
 }
 
-.item p {
-    display: inline-block;
-    line-height: 24px !important;
-    margin: 0 !important;
-    font-size: 18px;
-    font-weight: 500;
+.item:hover::before {
+    opacity: 1;
 }
 
-.iconFree {
-    display: inline-block;
-    background-image: url('/icons/plan-free.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px;
+.cardLink {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    text-decoration: none !important;
+    color: inherit !important;
 }
 
-.iconServerless {
-    display: inline-block;
-    background-image: url('/icons/plan-serverless.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px;        
+.cardLink:visited {
+    color: inherit !important;
 }
 
-.iconDedicated {
-    display: inline-block;
-    background-image: url('/icons/plan-dedicated.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px;        
+/* For items without href */
+.item > .iconWrap,
+.item > .cardTitle,
+.item > .cardDesc,
+.item > .arrow {
+    padding: 0 24px;
 }
 
-.iconBYOC {
-    display: inline-block;
-    background-image: url('/icons/plan-byoc.svg');
-    width: 24px;
-    height: 24px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: 10px;
+.item > .iconWrap {
+    padding-top: 24px;
 }
 
-.trail {
-    font-size: 16px;
-    line-height: 22px;
-    margin-top: 4px !important;
-    text-align: center;
+.item > .arrow {
+    padding-bottom: 24px;
 }
 
-.container {
+.iconWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: rgba(23, 95, 255, 0.06);
+    margin-bottom: 16px;
+    flex-shrink: 0;
+}
+
+.cardTitle {
     display: block;
-    width: 100%;
-    max-width: 996px;
-    margin: 10px auto;
-    padding: 0 20px;
-}
-
-.container .lead {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 17px;
     font-weight: 600;
-    margin-bottom: 10px;
+    color: #0a0a0a;
+    line-height: 1.3;
+    margin-bottom: 8px;
 }
 
-.list {
-    padding: 20px 0 5px 0 !important;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 0px !important;
-}
-
-.item {
+.cardDesc {
+    display: block;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: #64748b;
     flex: 1;
-    display: flex;
-    align-items: center;
-    border: 1px solid #D0D6DF;
-    background-color: #F6F8FA;
-    height: 48px;
-    padding: 12px 24px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 0 !important;
+    margin-bottom: 20px;
 }
 
-.item a {
-    flex: 1;
-    display: flex;
-    align-items: center; 
-}
-
-.item a:link,
-.item a:visited {
-    text-decoration: none;
-    color: #000000;
-}
-
-.item:hover {
-    border: 1px solid #000000;
-}
-
-.item p {
-    display: inline-block;
-    line-height: 24px !important;
-    margin: 0 !important;
+.arrow {
+    display: block;
     font-size: 18px;
-    font-weight: 500;
+    color: #175fff;
+    margin-top: auto;
+    opacity: 0.7;
+    transition: opacity 0.15s, transform 0.15s;
 }
 
+.item:hover .arrow {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+/* ── Icons ── */
 .iconFree {
     display: inline-block;
     background-image: url('/icons/plan-free.svg');
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-right: 10px;
 }
 
 .iconServerless {
     display: inline-block;
     background-image: url('/icons/plan-serverless.svg');
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-right: 10px;        
 }
 
 .iconDedicated {
     display: inline-block;
     background-image: url('/icons/plan-dedicated.svg');
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-right: 10px;        
 }
 
 .iconBYOC {
     display: inline-block;
     background-image: url('/icons/plan-byoc.svg');
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-right: 10px;
 }
 
 .trail {
     font-size: 16px;
     line-height: 22px;
-    margin-top: 4px !important;
+    margin-top: 16px !important;
     text-align: center;
 }
 
@@ -226,7 +199,7 @@
 @media (max-width: 768px) {
     .list {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
         padding-top: 10px !important;
     }
 
