@@ -4,6 +4,21 @@ import type * as Preset from '@docusaurus/preset-classic';
 import larkDocsConfig from './config/lark-docs.config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import {visit} from 'unist-util-visit';
+
+// Remark plugin: fix escaped braces inside math nodes.
+// Doc sources use \{ and \} (MDX escapes) inside $...$ blocks.
+// remark-math captures raw text, so KaTeX receives \{ (literal brace char)
+// instead of { (group delimiter). This replaces \{ → { and \} → } in math nodes.
+function remarkMathFix() {
+  return (tree: any) => {
+    visit(tree, (node: any) => {
+      if ((node.type === 'math' || node.type === 'inlineMath') && typeof node.value === 'string') {
+        node.value = node.value.replace(/\\{/g, '{').replace(/\\}/g, '}');
+      }
+    });
+  };
+}
 import 'dotenv/config';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -28,8 +43,8 @@ const config: Config = {
   },
 
   customFields: {
+    chatEndpoint: process.env.CHAT_ENDPOINT || 'http://localhost:8787/chat',
     inkeepApiKey: process.env.INKEEP_API_KEY || '',
-    mcpEndpoint: 'https://agents.inkeep.com/mcp',
     secondaryNavbar: [
       { label: 'Cloud Guides', href: '/docs/home',            prefix: '/docs',       icon: 'cloud'  },
       { label: 'BYOC Guides',  href: '/docs/byoc/byoc-intro', prefix: '/docs/byoc',  icon: 'server' },
@@ -61,7 +76,7 @@ const config: Config = {
         routeBasePath: 'reference',
         sidebarPath: './sidebarsReference.ts',
         breadcrumbs: false,
-        remarkPlugins: [remarkMath],
+        remarkPlugins: [remarkMath, remarkMathFix],
         rehypePlugins: [rehypeKatex],
       },
     ],
@@ -73,7 +88,7 @@ const config: Config = {
         routeBasePath: 'docs/byoc',
         sidebarPath: './sidebarsByoc.ts',
         breadcrumbs: false,
-        remarkPlugins: [remarkMath],
+        remarkPlugins: [remarkMath, remarkMathFix],
         rehypePlugins: [rehypeKatex],
       },
     ],
@@ -111,7 +126,7 @@ const config: Config = {
           routeBasePath: 'docs',
           sidebarPath: './sidebarsTutorial.ts',
           breadcrumbs: false,
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [remarkMath, remarkMathFix],
           rehypePlugins: [rehypeKatex],
         },
         blog: false,
