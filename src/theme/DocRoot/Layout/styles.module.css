@@ -91,7 +91,7 @@
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+  box-shadow: none;
 }
 
 /* Mobile chat FAB — visible only on small screens */

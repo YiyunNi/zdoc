@@ -51,11 +51,22 @@ function getPageContext(): string | undefined {
   return (article.textContent || '').slice(0, 6000);
 }
 
+const HISTORY_KEY = 'zd-chat-history';
+
+function loadHistory(): ChatHistoryEntry[] {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    return raw ? (JSON.parse(raw) as ChatHistoryEntry[]) : [];
+  } catch {
+    return [];
+  }
+}
+
 export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; children: React.ReactNode}) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState('');
   const [isStreaming, setIsStreaming] = useState(false);
-  const [chatHistory, setChatHistory] = useState<ChatHistoryEntry[]>([]);
+  const [chatHistory, setChatHistory] = useState<ChatHistoryEntry[]>(() => loadHistory());
   const [activeChatId, setActiveChatId] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const sessionIdRef = useRef<string | null>(null);
@@ -92,6 +103,13 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       setChatHistory(prev => [{id, title, messages: [...messages], createdAt: Date.now()}, ...prev]);
     }
   }, [messages]);
+
+  // Persist chat history to localStorage for cross-page sharing
+  useEffect(() => {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(chatHistory));
+    } catch { /* quota exceeded — best effort */ }
+  }, [chatHistory]);
 
   const send = useCallback(async (text: string) => {
     if (!text.trim() || abortRef.current) return;
