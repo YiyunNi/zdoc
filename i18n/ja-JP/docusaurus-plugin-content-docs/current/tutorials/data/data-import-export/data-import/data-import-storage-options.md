@@ -132,5 +132,5 @@ import Admonition from '@theme/Admonition';
 
     - 長期認証情報で認証する場合は、詳細について[アカウントアクセスキーを表示する](https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal#view-account-access-keys)をお読みください。
 
-    - 短期認証情報で認証する場合は、[このFAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-imporing-data-from-an-object-storage-service)を参照してください。
+    - 短期認証情報で認証する場合は、[このFAQ](/docs/faq-data-import#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service)を参照してください。
 

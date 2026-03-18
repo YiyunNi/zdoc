@@ -64,8 +64,6 @@ import Admonition from '@theme/Admonition';
 
 - [監査ログ](./audit-logs) をクラウドオブジェクトストレージへ転送
 
-- [ゼロダウンタイム移行](./zero-downtime-migration) によるデータ同期
-
 - [オフライン移行](./offline-migration)
 
 - [リージョン間バックアップ](/docs/backup-to-other-regions)

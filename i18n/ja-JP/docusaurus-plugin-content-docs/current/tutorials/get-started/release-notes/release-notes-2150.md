@@ -4,7 +4,7 @@ slug: /release-notes-2150
 sidebar_label: "2025年4月24日"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz CloudでZero-Downtime Migrationがプライベートプレビューで利用可能になりました！クラスターのアップグレードや、容量最適化済みコンピュートユニット (CU) から別のオプションへの切り替えなど、デプロイメントに変更を加える必要がある場合でも、サービスを中断することなくデータを簡単に移行できます。さらに、Zilliz BYOCにはいくつかの機能強化が導入され、BYOCプロジェクトのインスタンス設定を構成したり、クラスターのAWS PrivateLinkを有効にしたりできるようになりました。 | Cloud"
+description: "Zilliz BYOCにはいくつかの機能強化が導入され、BYOCプロジェクトのインスタンス設定を構成したり、クラスターのAWS PrivateLinkを有効にしたりできるようになりました。 | Cloud"
 type: origin
 token: JPNiwF6rPiNe0pkx460cr321nTc
 sidebar_position: 10
@@ -21,7 +21,7 @@ import Admonition from '@theme/Admonition';
 
 # リリースノート (2025年4月24日)
 
-Zilliz Cloudでゼロダウンタイム移行が**プライベートプレビュー**で利用可能になりました！クラスターのアップグレードが必要な場合でも、容量最適化済みコンピュートユニット (CU) から別のオプションへの切り替えなど、デプロイメントに変更を加える場合でも、サービスを中断することなくデータを簡単に移行できます。さらに、Zilliz BYOCはいくつかの機能強化を導入し、BYOCプロジェクトのインスタンス設定を構成したり、クラスターのAWS プライベートLinkを有効にしたりできるようになりました。
+Zilliz BYOCはいくつかの機能強化を導入し、BYOCプロジェクトのインスタンス設定を構成したり、クラスターのAWS プライベートLinkを有効にしたりできるようになりました。
 
 ## Milvus互換性\{#milvus-compatibility}
 
@@ -34,24 +34,6 @@ Zilliz Cloudでゼロダウンタイム移行が**プライベートプレビュ
 現在、すべてのMilvus v2.5.x機能はまだ**パブリックプレビュー**です。
 
 ![GeJSbANVto14OtxFg6zcPFAYnZz](https://zdoc-images.s3.us-west-2.amazonaws.com/gejsbanvto14otxfg6zcpfaynzz.png "GeJSbANVto14OtxFg6zcPFAYnZz")
-
-## 最小限のサービス中断でシームレスなデータ移行\{#seamless-data-migration-with-minimal-service-interruption}
-
-以前のリリースでは、クラスター間のデータ移行には慎重に計画されたダウンタイムが必要であり、厳格な可用性要件を持つビジネスにとって障害となっていました。ゼロダウンタイム移行により、Zilliz Cloudはこの複雑さを解消し、シームレスで完全に管理された移行エクスペリエンスを提供します。
-
-この機能は、バックアップツールと変更データキャプチャ (CDC) の2つのコンポーネントを組み合わせたデュアルスタック戦略を使用します。バックアップツールはソースクラスターの一貫したスナップショットをキャプチャし、CDCは新しい書き込みをリアルタイムでターゲットクラスターに継続的に追跡およびレプリケートします。
-
-Zilliz Cloudのネイティブ移行フローは以下を保証します。
-
-- 履歴データとリアルタイム更新間の一貫性、
-
-- 正しいイベント順序と堅牢なフォールトトレランス、
-
-- 書き込み競合、競合状態、スキーマの不一致からの保護、および
-
-- 移行プロセス全体におけるソースクラスターとターゲットクラスター間のスムーズな状態遷移。
-
-ゼロダウンタイム移行は、Zilliz Cloudコンソールで**プライベートプレビュー**として利用可能になりました。ログインして最初の移行を開始してください。ダウンタイムは不要です。詳細な操作手順と制限については、[ゼロダウンタイム移行](./zero-downtime-migration)を参照してください。
 
 ## インスタンス設定とAWS プライベートLinkサポートで強化されたBYOC\{#byoc-enhanced-with-instance-settings-and-aws-privatelink-support}
 

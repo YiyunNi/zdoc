@@ -355,8 +355,6 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [🔄  ゼロダウンタイム移行](./zero-downtime-migration) が利用可能になりました
-
         - ⚙️  BYOC プロジェクト向けのインスタンス設定および AWS プライベートLink サポート
 
         - 🔍  [JSON インデックス](./use-json-fields) を使用した JSON フィールド上のきめ細かいフィルタリング

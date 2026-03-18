@@ -27,8 +27,6 @@ import Supademo from '@site/src/components/Supademo';
 
 オフライン移行は、既存のすべてのデータをソースのZilliz CloudクラスターからターゲットのZilliz Cloudクラスターに転送します。この方法は、同じ組織内および異なる組織間の移行をサポートします。計画的なメンテナンスや小規模なデータベース移行など、一時的な書き込み中断が許容されるシナリオに最適です。
 
-中断のない書き込み操作が必要な移行については、[ゼロダウンタイム移行](./zero-downtime-migration)を参照してください。
-
 ## 移行機能\{#migration-capabilities}
 
 ### クラスターの互換性\{#cluster-compatibility}

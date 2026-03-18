@@ -75,8 +75,6 @@ import Admonition from '@theme/Admonition';
 
 - [抽出、変換、ロード (ETL)](/reference/restful/merge-data-v2)
 
-- [ゼロダウンタイム移行](./zero-downtime-migration)
-
 - [バックアップファイルのエクスポート](./export-backup-files)
 
 - [ホスト型モデル](./hosted-models)
