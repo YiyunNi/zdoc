@@ -12,14 +12,14 @@ function ChatButton() {
   if (!apiKey) return null;
 
   const config = {
-    ...inkeepSettings,
     baseSettings: {
       ...inkeepSettings.baseSettings,
       apiKey,
     },
+    aiChatSettings: inkeepSettings.aiChatSettings,
   };
 
-  return <InkeepChatButton {...config} />;
+  return <InkeepChatButton {...config} defaultView="chat" />;
 }
 
 export default function Root({ children }) {
