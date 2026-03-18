@@ -1,7 +1,7 @@
 ---
 title: "Filtering Explained | Cloud"
 slug: /filtering-overview
-sidebar_label: "Filtering Explained"
+sidebar_label: "Overview"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

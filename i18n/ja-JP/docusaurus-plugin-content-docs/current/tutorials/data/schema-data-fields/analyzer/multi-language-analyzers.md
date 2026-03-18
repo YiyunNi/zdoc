@@ -4,22 +4,18 @@ slug: /multi-language-analyzers
 sidebar_label: "多言語アナライザー"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud がテキスト分析を実行する場合、通常、コレクション内のテキストフィールド全体に単一のアナライザーを適用します。このアナライザーが英語に最適化されている場合、中国語、スペイン語、フランス語などの他の言語で必要とされる非常に異なるトークン化およびステミングルールには対応できず、結果としてリコール率が低下します。たとえば、スペイン語の「teléfono」（「電話」の意）を検索すると、英語に特化したアナライザーはアクセントを削除し、スペイン語固有のステミングを適用しないため、関連する結果が見落とされる可能性があります。 | Cloud"
+description: "Zilliz Cloud がテキスト分析を実行する場合、通常、コレクション内のテキストフィールド全体に単一のアナライザーを適用します。そのアナライザーが英語用に最適化されている場合、中国語、スペイン語、フランス語などの他の言語で必要とされる非常に異なるトークン化およびステミングルールに対応できず、リコール率が低下します。たとえば、スペイン語の単語「teléfono」（「電話」を意味する）を検索すると、英語に特化したアナライザーではアクセントが削除され、スペイン語固有のステミングが適用されないため、関連する結果が見落とされる可能性があります。 | Cloud"
 type: origin
 token: BnYLwepruiGNpwkJfBHcdrrOnOh
 sidebar_position: 5
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - コレクション
   - スキーマ
   - アナライザー
   - 多言語
-  - milvus ベクトル DB
-  - Zilliz Cloud
-  - milvus とは
-  - milvus データベース
 
 ---
 
@@ -29,31 +25,31 @@ import TabItem from '@theme/TabItem';
 
 # 多言語アナライザー
 
-Zilliz Cloud がテキスト分析を実行する場合、通常、コレクション内のテキストフィールド全体に単一のアナライザーを適用します。そのアナライザーが英語用に最適化されている場合、中国語、スペイン語、フランス語などの他の言語で必要とされる非常に異なるトークン化およびステミングルールに対応できず、再現率が低下します。たとえば、スペイン語の単語「*teléfono*」（「電話」の意）を検索すると、英語に特化したアナライザーはつまずきます。アクセントを削除したり、スペイン語に特化したステミングを適用しなかったりして、関連する結果が見落とされる可能性があります。
+Zilliz Cloudがテキスト分析を実行する場合、通常、コレクション内のテキストフィールド全体に単一のアナライザーを適用します。このアナライザーが英語に最適化されている場合、中国語、スペイン語、フランス語などの他の言語に必要なトークン化とステミングのルールが大きく異なるため、苦戦し、結果としてリコール率が低下します。例えば、スペイン語の「*teléfono*」（「電話」の意）を検索すると、英語に特化したアナライザーはつまずきます。アクセントを落とし、スペイン語に特化したステミングを適用しないため、関連する結果が見落とされる可能性があります。
 
-多言語アナライザーは、単一のコレクション内のテキストフィールドに複数のアナライザーを設定できるようにすることで、この問題を解決します。これにより、多言語ドキュメントをテキストフィールドに保存でき、Zilliz Cloud は各ドキュメントの適切な言語ルールに従ってテキストを分析します。
+多言語アナライザーは、単一のコレクション内のテキストフィールドに複数のアナライザーを設定できるようにすることで、この問題を解決します。これにより、多言語ドキュメントをテキストフィールドに保存でき、Zilliz Cloudは各ドキュメントの適切な言語ルールに従ってテキストを分析します。
 
-## 制限事項{#limits}
+## 制限事項\{#limits}
 
-- この機能は、BM25 ベースのテキスト検索と疎ベクトルでのみ機能します。詳細については、[全文検索](./full-text-search)を参照してください。
+- この機能は、BM25ベースのテキスト検索と疎ベクトルでのみ機能します。詳細については、[全文検索](./full-text-search)を参照してください。
 
-- 単一のコレクション内の各ドキュメントは、言語識別子フィールドの値によって決定される1つのアナライザーのみを使用できます。
+- 単一のコレクション内の各ドキュメントは、その言語識別子フィールド値によって決定される1つのアナライザーのみを使用できます。
 
 - パフォーマンスは、アナライザーの複雑さとテキストデータのサイズによって異なる場合があります。
 
-## 概要{#overview}
+## 概要\{#overview}
 
-次の図は、Zilliz Cloud で多言語アナライザーを設定および使用するワークフローを示しています。
+次の図は、Zilliz Cloudで多言語アナライザーを設定および使用するワークフローを示しています。
 
 ![ZDYIwC1HwhTrdlbfOgNcOZ4OnWg](https://zdoc-images.s3.us-west-2.amazonaws.com/ZDYIwC1HwhTrdlbfOgNcOZ4OnWg.png)
 
 1. **多言語アナライザーの設定**:
 
-    - `<analyzer_name>: <analyzer_config>` の形式を使用して、複数の言語固有のアナライザーを設定します。ここで、各 `analyzer_config` は、[アナライザーの概要](./analyzer-overview#analyzer-types)で説明されている標準の `analyzer_params` 設定に従います。
+    - `<analyzer_name>: <analyzer_config>`の形式を使用して、複数の言語固有のアナライザーを設定します。ここで、各`analyzer_config`は、[アナライザーの概要](./analyzer-overview#analyzer-types)で説明されている標準の`analyzer_params`設定に従います。
 
     - 各ドキュメントのアナライザー選択を決定する特別な識別子フィールドを定義します。
 
-    - 不明な言語を処理するための `default` アナライザーを設定します。
+    - 不明な言語を処理するための`default`アナライザーを設定します。
 
 1. **コレクションの作成**:
 
@@ -65,25 +61,25 @@ Zilliz Cloud がテキスト分析を実行する場合、通常、コレクシ�
 
         - **identifier_field**: 各ドキュメントに使用するアナライザーを示します。
 
-        - **vector_field**: BM25 関数によって生成される疎埋め込みを保存します。
+        - **vector_field**: BM25関数によって生成される疎ベクトルを保存します。
 
-    - BM25 関数とインデックス作成パラメーターを設定します。
+    - BM25関数とインデックス作成パラメーターを設定します。
 
-1. **言語識別子付きデータの挿入**:
+1. **言語識別子を含むデータの挿入**:
 
     - さまざまな言語のテキストを含むドキュメントを追加します。各ドキュメントには、使用するアナライザーを指定する識別子値が含まれます。
 
-    - Zilliz Cloud は、識別子フィールドに基づいて適切なアナライザーを選択し、不明な識別子を持つドキュメントは `default` アナライザーを使用します。
+    - Zilliz Cloudは、識別子フィールドに基づいて適切なアナライザーを選択し、不明な識別子を持つドキュメントは`default`アナライザーを使用します。
 
 1. **言語固有のアナライザーによる検索**:
 
-    - 指定されたアナライザー名を含むクエリテキストを提供すると、Zilliz Cloud は指定されたアナライザーを使用してクエリを処理します。
+    - アナライザー名を指定してクエリテキストを提供すると、Zilliz Cloudは指定されたアナライザーを使用してクエリを処理します。
 
     - トークン化は言語固有のルールに従って行われ、検索は類似性に基づいて言語に適した結果を返します。
 
-## ステップ 1: multi_analyzer_params の設定{#step-1-configure-multianalyzerparams}
+## ステップ1: multi_analyzer_paramsの設定\{#step-1-configure-multianalyzerparams}
 
-`multi_analyzer_params` は、Zilliz Cloud が各エンティティに適切なアナライザーを選択する方法を決定する単一の JSON オブジェクトです。
+`multi_analyzer_params`は、Zilliz Cloudが各エンティティに適切なアナライザーを選択する方法を決定する単一のJSONオブジェクトです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -131,7 +127,7 @@ analyzerParams.put("alias", new HashMap<String, Object>() {{
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const multi_analyzer_params = {
@@ -152,7 +148,7 @@ const multi_analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 multiAnalyzerParams := map[string]any{
@@ -171,7 +167,7 @@ multiAnalyzerParams := map[string]any{
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -209,36 +205,36 @@ export multi_analyzer_params='{
    <tr>
      <td><p><code>analyzers</code></p></td>
      <td><p>はい</p></td>
-     <td><p>Zilliz Cloudがテキストを処理するために使用できる、言語固有のすべてのアナライザーをリストします。</p><p><code>analyzers</code>内の各アナライザーは、<code>&lt;analyzer_name&gt;: &lt;analyzer_params&gt;</code>の形式に従います。</p></td>
-     <td><ul><li><p>標準の<code>analyzer_params</code>構文で各アナライザーを定義します（<a href="./analyzer-overview#analyzer-types">アナライザーの概要</a>を参照）。</p></li><li><p>キーが<code>default</code>のエントリを追加します。Zilliz Cloudは、<code>by_field</code>に格納されている値が他のアナライザー名と一致しない場合、このアナライザーにフォールバックします。</p></li></ul></td>
+     <td><p>Zilliz Cloudがテキストを処理するために使用できる、言語固有のアナライザーをすべてリストします。</p><p><code>analyzers</code>内の各アナライザーは、<code>&lt;analyzer_name&gt;: &lt;analyzer_params&gt;</code>の形式に従います。</p></td>
+     <td><ul><li><p>標準の<code>analyzer_params</code>構文で各アナライザーを定義します（<a href="./analyzer-overview#analyzer-types">アナライザーの概要</a>を参照）。</p></li><li><p>キーが<code>default</code>のエントリを追加します。<code>by_field</code>に格納されている値が他のアナライザー名と一致しない場合、Zilliz Cloudはこのアナライザーにフォールバックします。</p></li></ul></td>
    </tr>
    <tr>
      <td><p><code>by_field</code></p></td>
      <td><p>はい</p></td>
-     <td><p>すべてのドキュメントについて、Zilliz Cloudが適用すべき言語（つまりアナライザー名）を格納するフィールドの名前。</p></td>
-     <td><ul><li><p>コレクションで定義された<code>VARCHAR</code>フィールドである必要があります。</p></li><li><p>すべての行の値は、<code>analyzers</code>にリストされているアナライザー名（またはエイリアス）のいずれかと完全に一致する必要があります。</p></li><li><p>行の値が欠落しているか見つからない場合、Zilliz Cloudは自動的に<code>default</code>アナライザーを適用します。</p></li></ul></td>
+     <td><p>各ドキュメントの言語（つまり、アナライザー名）を格納するフィールドの名前で、Zilliz Cloudが適用すべき言語を示します。</p></td>
+     <td><ul><li><p>コレクションで定義された<code>VARCHAR</code>フィールドである必要があります。</p></li><li><p>各行の値は、<code>analyzers</code>にリストされているアナライザー名（またはエイリアス）のいずれかと正確に一致する必要があります。</p></li><li><p>行の値が欠落しているか見つからない場合、Zilliz Cloudは自動的に<code>default</code>アナライザーを適用します。</p></li></ul></td>
    </tr>
    <tr>
      <td><p><code>alias</code></p></td>
      <td><p>いいえ</p></td>
      <td><p>アナライザーのショートカットまたは代替名を作成し、コードでの参照を容易にします。各アナライザーは1つ以上のエイリアスを持つことができます。</p></td>
-     <td><p>各エイリアスは既存のアナライザーキーにマッピングする必要があります。</p></td>
+     <td><p>各エイリアスは既存のアナライザーキーにマッピングされている必要があります。</p></td>
    </tr>
 </table>
 
-## ステップ2: コレクションの作成{#step-2-create-collection}
+## ステップ2: コレクションを作成する\{#step-2-create-collection}
 
-多言語サポートを持つコレクションを作成するには、特定のフィールドとインデックスを設定する必要があります。
+多言語サポート付きのコレクションを作成するには、特定のフィールドとインデックスを設定する必要があります。
 
-### ステップ1: フィールドの追加{#step-1-add-fields}
+### ステップ1: フィールドを追加する\{#step-1-add-fields}
 
-このステップでは、4つの必須フィールドを持つコレクションschemaを定義します。
+このステップでは、4つの必須フィールドを持つコレクションスキーマを定義します。
 
-- **主キーフィールド** (`id`): コレクション内の各entityの一意の識別子。`auto_id=True`を設定すると、Zilliz CloudがこれらのIDを自動的に生成します。
+- **主キーフィールド** (`id`): コレクション内の各エンティティの一意の識別子です。`auto_id=True`を設定すると、Zilliz CloudがこれらのIDを自動的に生成します。
 
-- **言語インジケーターフィールド** (`language`): このVARCHARフィールドは、`multi_analyzer_params`で指定された`by_field`に対応します。各entityの言語識別子を格納し、Zilliz Cloudにどのアナライザーを使用すべきかを伝えます。
+- **言語インジケーターフィールド** (`language`): このVARCHARフィールドは、`multi_analyzer_params`で指定された`by_field`に対応します。各エンティティの言語識別子を格納し、Zilliz Cloudにどのアナライザーを使用すべきかを伝えます。
 
-- **テキストコンテンツフィールド** (`text`): このVARCHARフィールドは、分析および検索したい実際のテキストデータを格納します。`enable_analyzer=True`を設定することは、このフィールドのテキスト分析機能を有効にするために不可欠です。`multi_analyzer_params`設定は、このフィールドに直接アタッチされ、テキストデータと言語固有のアナライザー間の接続を確立します。
+- **テキストコンテンツフィールド** (`text`): このVARCHARフィールドは、分析および検索したい実際のテキストデータを格納します。`enable_analyzer=True`を設定することは、このフィールドのテキスト分析機能を有効にするために重要です。`multi_analyzer_params`設定は、このフィールドに直接アタッチされ、テキストデータと言語固有のアナライザー間の接続を確立します。
 
 - **ベクトルフィールド** (`sparse`): このフィールドには、BM25関数によって生成された疎ベクトルが格納されます。これらのベクトルは、テキストデータの分析可能な形式を表し、Zilliz Cloudが実際に検索するものです。
 
@@ -345,7 +341,7 @@ collectionSchema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType, FunctionType } from "@zilliz/milvus2-sdk-node";
@@ -385,7 +381,7 @@ const schema = [
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -432,7 +428,7 @@ schema.WithField(entity.NewField().
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -473,7 +469,7 @@ export sparseField='{
 </TabItem>
 </Tabs>
 
-### ステップ2: BM25関数を定義する{#step-2-define-bm25-function}
+### ステップ2：BM25関数の定義\{#step-2-define-bm25-function}
 
 生のテキストデータから疎なベクトル表現を生成するBM25関数を定義します。
 
@@ -509,7 +505,7 @@ collectionSchema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const functions = [
@@ -526,7 +522,7 @@ const functions = [
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 function := entity.NewFunction()
@@ -538,7 +534,7 @@ schema.WithFunction(function.WithName("text_to_vector").
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -566,9 +562,9 @@ export schema="{
 </TabItem>
 </Tabs>
 
-この関数は、言語識別子に基づいて各テキストエントリに適切なアナライザーを自動的に適用します。BM25ベースのテキスト検索の詳細については、[全文検索](./full-text-search)を参照してください。
+この関数は、言語識別子に基づいて、各テキストエントリに適切なアナライザーを自動的に適用します。BM25ベースのテキスト検索の詳細については、[全文検索](./full-text-search)を参照してください。
 
-### ステップ3: インデックスパラメータの設定{#step-3-configure-index-params}
+### ステップ3：インデックスパラメータの設定\{#step-3-configure-index-params}
 
 効率的な検索を可能にするために、疎ベクトルフィールドにインデックスを作成します。
 
@@ -602,7 +598,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const index_params = [{
@@ -614,7 +610,7 @@ const index_params = [{
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 idx := index.NewAutoIndex(index.MetricType(entity.BM25))
@@ -623,7 +619,7 @@ indexOption := milvusclient.NewCreateIndexOption("multilingual_documents", "spar
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -640,11 +636,11 @@ export IndexParams='[
 </TabItem>
 </Tabs>
 
-このインデックスは、BM25類似度計算を効率化するためにスパースベクトルを整理することで、検索パフォーマンスを向上させます。
+このインデックスは、効率的なBM25類似度計算のために疎ベクトルを整理することで、検索パフォーマンスを向上させます。
 
-### ステップ4: コレクションを作成する{#step-4-create-the-collection}
+### ステップ4: コレクションを作成する\{#step-4-create-the-collection}
 
-この最後の作成ステップでは、以前のすべての設定をまとめます。
+この最終作成ステップでは、以前の設定をすべてまとめます。
 
 - `collection_name="multilang_demo"` は、将来の参照のためにコレクションに名前を付けます。
 
@@ -691,7 +687,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const COLLECTION_NAME = "multilingual_documents";
@@ -708,7 +704,7 @@ await client.createCollection({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx,
@@ -722,7 +718,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -741,11 +737,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-この時点で、Zilliz Cloud は多言語アナライザーをサポートする空の collection を作成し、データを受け入れる準備ができています。
+この時点で、Zilliz Cloud は多言語アナライザーをサポートする空のコレクションを作成し、データを受信する準備が整います。
 
-## ステップ 3: サンプルデータを挿入する{#step-3-insert-example-data}
+## ステップ 3: サンプルデータを挿入する\{#step-3-insert-example-data}
 
-多言語 collection にドキュメントを追加する場合、各ドキュメントにはテキストコンテンツと言語識別子の両方が含まれている必要があります。
+多言語コレクションにドキュメントを追加する場合、各ドキュメントにはテキストコンテンツと言語識別子の両方が含まれている必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -816,7 +812,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // Prepare multilingual documents
@@ -860,7 +856,7 @@ console.log("Documents by language: 2 English, 2 Chinese");
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 column1 := column.NewColumnVarChar("text",
@@ -884,7 +880,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -918,31 +914,31 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-挿入中、Zilliz Cloud は以下を行います。
+挿入中、Zilliz Cloud は以下を実行します。
 
 1. 各ドキュメントの `language` フィールドを読み取ります。
 
 1. 対応するアナライザーを `text` フィールドに適用します。
 
-1. BM25 関数を介して疎ベクトル表現を生成します。
+1. BM25関数を介して疎ベクトル表現を生成します。
 
 1. 元のテキストと生成された疎ベクトルの両方を保存します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>疎ベクトルを直接提供する必要はありません。BM25 関数は、テキストと指定されたアナライザーに基づいて自動的に生成します。</p>
+<p>疎ベクトルを直接提供する必要はありません。BM25関数は、テキストと指定されたアナライザーに基づいて自動的に生成します。</p>
 
 </Admonition>
 
-## ステップ 4: 検索操作を実行する{#step-4-perform-search-operations}
+## ステップ4：検索操作を実行する\{#step-4-perform-search-operations}
 
-### 英語アナライザーを使用する{#use-english-analyzer}
+### 英語アナライザーを使用する\{#use-english-analyzer}
 
 多言語アナライザーで検索する場合、`search_params` には重要な設定が含まれます。
 
 - `metric_type="BM25"` はインデックス設定と一致する必要があります。
 
-- `analyzer_name="english"` は、クエリテキストに適用するアナライザーを指定します。これは、保存されたドキュメントで使用されるアナライザーとは独立しています。
+- `analyzer_name="english"` は、クエリテキストに適用するアナライザーを指定します。これは、保存されたドキュメントに使用されるアナライザーとは独立しています。
 
 - `params={"drop_ratio_search": "0"}` は BM25 固有の動作を制御します。ここでは、検索内のすべての用語を保持します。詳細については、[疎ベクトル](./use-sparse-vector)を参照してください。
 
@@ -1006,7 +1002,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // Execute the search
@@ -1037,7 +1033,7 @@ english_results.results.forEach((hit, i) => {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 annSearchParams := index.NewCustomAnnParam()
@@ -1068,7 +1064,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -1094,9 +1090,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 中国語アナライザーの使用 {#use-chinese-analyzer}
+### 中国語アナライザーを使用する\{#use-chinese-analyzer}
 
-この例では、異なるクエリテキストに対して中国語アナライザー（エイリアス`"cn"`を使用）に切り替える方法を示します。他のすべてのパラメータは同じままですが、クエリテキストは中国語固有のトークン化ルールを使用して処理されます。
+この例では、異なるクエリテキストに対して中国語アナライザー（エイリアス`"cn"`を使用）に切り替える方法を示します。他のすべてのパラメーターは同じままですが、クエリテキストは中国語固有のトークン化ルールを使用して処理されます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -1150,7 +1146,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // Execute the search
@@ -1181,7 +1177,7 @@ cn_results.results.forEach((hit, i) => {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 annSearchParams.WithExtraParam("analyzer_name", "cn")
@@ -1210,7 +1206,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful

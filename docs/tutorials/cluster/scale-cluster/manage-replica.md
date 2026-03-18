@@ -47,7 +47,7 @@ You can configure replicas for an existing Dedicated cluster as long as the foll
 
 - The cluster has 8 query CUs or more
 
-- The product of the cluster query CU count x replica count should not exceed 256.
+- The product of the cluster query CU count x replica count should not exceed 1,024.
 
 <Admonition type="caution" icon="🚧" title="Warning">
 

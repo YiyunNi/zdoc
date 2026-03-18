@@ -1,7 +1,7 @@
 ---
 title: "Add Fields to an Existing Collection | BYOC"
 slug: /add-fields-to-an-existing-collection
-sidebar_label: "Add Fields to an Existing Collection"
+sidebar_label: "Add Fields"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

@@ -1,7 +1,7 @@
 ---
 title: "Manage Aliases | Cloud"
 slug: /manage-aliases
-sidebar_label: "Manage Aliases"
+sidebar_label: "Aliases"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

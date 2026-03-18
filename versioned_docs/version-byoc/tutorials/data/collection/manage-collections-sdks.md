@@ -1,7 +1,7 @@
 ---
 title: "Create Collection | BYOC"
 slug: /manage-collections-sdks
-sidebar_label: "Create Collection"
+sidebar_label: "Create"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

@@ -7,16 +7,12 @@ notebook: FALSE
 description: "最終更新日：2025年10月13日 | Cloud"
 type: origin
 token: HpbSwzS6kiW9gikHpQ0cUZLWnlc
-sidebar_position: 15
+sidebar_position: 17
 keywords: 
   - zilliz
   - ベクトルデータベース
   - クラウド
   - 機能の可用性
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy ベクトル検索
-  - milvus
 
 ---
 
@@ -27,13 +23,13 @@ import Admonition from '@theme/Admonition';
 
 *最終更新日: 2025年10月13日*
 
-機能の**可用性フェーズ**は、Zilliz Cloudにおけるその機能の成熟度、安定性、推奨される使用法を示します。以下に、機能のライフサイクル段階とその意味をユーザーの皆様向けに概説します。
+機能の**利用可能フェーズ**は、Zilliz Cloudにおけるその機能の成熟度、安定性、推奨される使用法を示します。以下は、機能のライフサイクル段階の概要と、ユーザーにとってそれが何を意味するかです。
 
 ![YBh6wiorGhbetoba42DchATjnVm](https://zdoc-images.s3.us-west-2.amazonaws.com/YBh6wiorGhbetoba42DchATjnVm.png)
 
 - **プライベートプレビュー:**
 
-    - **定義:** プライベートプレビューの機能は、現在活発に開発中であり、変更される可能性があります。Zilliz Cloud内で実装およびテストされていますが、完全な使いやすさ、安定性、およびエッジケースの網羅はまだ完了していない場合があります。
+    - **定義:** プライベートプレビューの機能は活発に開発中であり、変更される可能性があります。Zilliz Cloud内で実装およびテストされていますが、完全な使いやすさ、安定性、およびエッジケースの網羅は完了していない場合があります。
 
     - **アクセス**: デフォルトでは利用できません。[Zillizサポート](http://support.zilliz.com)に連絡してアクセスをリクエストしてください。
 
@@ -41,7 +37,7 @@ import Admonition from '@theme/Admonition';
 
 - **パブリックプレビュー:**
 
-    - **定義:** パブリックプレビューの機能は、本番環境に近い状態であり、一般提供（GA）に達するまでに大幅な変更はほとんどありません。
+    - **定義:** パブリックプレビューの機能は、本番環境に近い状態であり、一般提供 (GA) に達するまでに大幅な変更はほとんどありません。
 
     - **アクセス**: クラスターのMilvusバージョンをアップグレードすると、通常はデフォルトで有効になります。クラスターが古いバージョンのMilvusを実行している場合、一部の機能にアクセスできない場合があります。そのような場合は、[サポートに連絡](http://support.zilliz.com)してクラスターをアップグレードしてください。
 
@@ -57,7 +53,7 @@ import Admonition from '@theme/Admonition';
 
 - **非推奨通知:**
 
-    - **定義:** このフェーズの機能は、まだ機能しておりアクセス可能ですが、重大なバグ修正を除いて、活発な開発は行われていません。
+    - **定義:** このフェーズの機能はまだ機能しておりアクセス可能ですが、重要なバグ修正を除いて、活発な開発は行われていません。
 
     - **アクセス**: まだ利用可能ですが、正式な非推奨通知がメールで発行されています。
 
@@ -65,17 +61,17 @@ import Admonition from '@theme/Admonition';
 
 - **非推奨:**
 
-    - **定義:** この機能はZilliz Cloudから完全に削除され、アクセスもサポートもされなくなりました。
+    - **定義:** この機能はZilliz Cloudから完全に削除されており、アクセスもサポートもされなくなりました。
 
     - **アクセス**: 利用不可。
 
-## 機能の可用性フェーズを特定する方法{#how-to-identify-a-features-availability-phase}
+## 機能の利用可能フェーズを特定する方法\{#how-to-identify-a-features-availability-phase}
 
-各機能の可用性フェーズは、Zilliz Cloudドキュメントに該当するラベルで示されています。特に明記されていない限り、機能は一般提供（GA）と見なされます。
+各機能の利用可能フェーズは、Zilliz Cloudドキュメントで対応するラベルによって示されます。特に明記されていない限り、機能は一般提供されていると見なされます。
 
-## 現在の機能の可用性{#current-feature-availability}
+## 現在の機能の可用性\{#current-feature-availability}
 
-### プライベートプレビュー{#private-preview}
+### プライベートプレビュー\{#private-preview}
 
 - [抽出、変換、ロード (ETL)](/reference/restful/merge-data-v2)
 
@@ -85,17 +81,15 @@ import Admonition from '@theme/Admonition';
 
 - [ホスト型モデル](./hosted-models)
 
-- [グローバルクラスター](./global-cluster)
-
 <Admonition type="info" icon="📘" title="Notes">
 
 <p>これらの機能へのアクセスをリクエストするには、<a href="http://support.zilliz.com">Zillizサポート</a>にお問い合わせください。</p>
 
 </Admonition>
 
-### パブリックプレビュー{#public-preview}
+### パブリックプレビュー\{#public-preview}
 
-- [Embedding](./model-based-functions) および [Rerank](./reranking) 関数
+- [埋め込み](./model-based-functions)および[再ランク付け](./reranking)機能
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -103,13 +97,13 @@ import Admonition from '@theme/Admonition';
 
 </Admonition>
 
-### 非推奨通知{#deprecation-notice}
+### 非推奨通知\{#deprecation-notice}
 
 - [NumPyファイルからのデータインポート](./data-import-numpy)
 
 - [RESTful API (V1)](/reference/restful/v1)
 
-### 非推奨{#deprecated}
+### 非推奨\{#deprecated}
 
 - パイプライン
 

@@ -1,10 +1,10 @@
 ---
-title: "Boolean & Number | Cloud"
+title: "ブール値と数値 | Cloud"
 slug: /use-number-field
-sidebar_label: "Boolean & Number"
+sidebar_label: "ブール値と数値"
 beta: FALSE
 notebook: FALSE
-description: "ブール型または数値型フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（整数）および小数（浮動小数点数）のいずれかになります。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。 | Cloud"
+description: "ブール値または数値フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（整数）と小数（浮動小数点数）のいずれかになります。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。 | Cloud"
 type: origin
 token: EwArwXCOPip15hkSvvpciAMJnSe
 sidebar_position: 7
@@ -12,16 +12,12 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
+  - コレクション
+  - スキーマ
   - 数値フィールド
   - int
   - 整数
   - float
-  - 近似最近傍探索
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
 
 ---
 
@@ -31,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 # Boolean & Number
 
-ブール型または数値型フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（**integers**）および小数（**floating-point numbers**）のいずれかになります。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。
+ブール値または数値フィールドは、ブール値または数値を格納するスカラーフィールドです。これらの値は、2つの可能な値のいずれか、または整数（**integers**）と小数（**浮動小数点数**）のいずれかになります。これらは通常、数量、測定値、または論理的または数学的に処理する必要があるデータを表すために使用されます。
 
 以下の表は、Zilliz Cloudクラスターで利用可能な数値フィールドのデータ型について説明しています。
 
@@ -66,31 +62,31 @@ import TabItem from '@theme/TabItem';
    </tr>
    <tr>
      <td><p><code>DOUBLE</code></p></td>
-     <td><p>64ビット倍精度浮動小数点数で、金融情報や科学計算などの高精度データに適しています。</p></td>
+     <td><p>64ビット倍精度浮動小数点数で、財務情報や科学計算などの高精度データに適しています。</p></td>
    </tr>
 </table>
 
-ブール型フィールドを宣言するには、`datatype`を`BOOL`に設定します。数値型フィールドを宣言するには、利用可能な数値データ型のいずれかに設定します。例えば、整数フィールドの場合は`DataType.INT64`、浮動小数点フィールドの場合は`DataType.FLOAT`です。
+ブールフィールドを宣言するには、`datatype`を`BOOL`に設定します。数値フィールドを宣言するには、利用可能な数値データ型のいずれかに設定します。例えば、整数フィールドの場合は`データType.INT64`、浮動小数点フィールドの場合は`データType.FLOAT`です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloudは、ブール型および数値型フィールドのnull値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code>を<code>True</code>に、<code>default_value</code>を数値に設定します。詳細については、<a href="./nullable-and-default">Nullable & Default</a>を参照してください。</p>
+<p>Zilliz Cloudは、ブール値および数値フィールドのNULL許容値とデフォルト値をサポートしています。これらの機能を有効にするには、<code>nullable</code>を<code>True</code>に設定し、<code>default_value</code>を数値に設定します。詳細については、<a href="./nullable-fields">NULL許容とデフォルト</a>を参照してください。</p>
 
 </Admonition>
 
-## ブール型および数値型フィールドの追加{#add-boolean-and-number-fields}
+## ブール値と数値フィールドの追加\{#add-boolean-and-number-fields}
 
-ブール型または数値データを格納するには、コレクションスキーマに対応する型のフィールドを定義します。以下は、2つの数値フィールドを持つコレクションスキーマの例です。
+ブール値または数値データを格納するには、コレクションスキーマで対応するタイプのフィールドを定義します。以下は、2つの数値フィールドを持つコレクションスキーマの例です。
 
-- `age`: 整数データを格納し、null値を許可し、デフォルト値は`18`です。
+- `age`: 整数データを格納し、NULL許容で、デフォルト値は`18`です。
 
-- `broken`: ブールデータを格納し、null値を許可しますが、デフォルト値はありません。
+- `broken`: ブールデータを格納し、NULL許容ですが、デフォルト値はありません。
 
-- `price`: 浮動小数点データを格納し、null値を許可しますが、デフォルト値はありません。
+- `price`: 浮動小数点データを格納し、NULL許容ですが、デフォルト値はありません。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>スキーマ定義時に<code>enable_dynamic_fields=True</code>を設定すると、Zilliz Cloudは事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリと管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">Dynamic Field</a>を参照してください。</p>
+<p>スキーマ定義時に<code>enable_dynamic_fields=True</code>を設定すると、Zilliz Cloudは事前に定義されていないスカラーフィールドの挿入を許可します。ただし、これによりクエリと管理の複雑さが増し、パフォーマンスに影響を与える可能性があります。詳細については、<a href="./enable-dynamic-field">動的フィールド</a>を参照してください。</p>
 
 </Admonition>
 
@@ -175,7 +171,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -208,7 +204,7 @@ const schema = [
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -261,7 +257,7 @@ schema.WithField(entity.NewField().
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export int64Field='{
@@ -308,11 +304,11 @@ export schema="{
 </TabItem>
 </Tabs>
 
-## インデックスパラメータの設定{#set-index-params}
+## インデックスパラメータの設定\{#set-index-params}
 
-インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloudクラスターでは、ベクトルフィールドのインデックス作成は必須ですが、スカラーフィールドのインデックス作成はオプションです。
+インデックス作成は、検索とクエリのパフォーマンスを向上させるのに役立ちます。Zilliz Cloud クラスターでは、ベクトルフィールドにはインデックス作成が必須ですが、スカラーフィールドにはオプションです。
 
-以下の例では、ベクトルフィールド`embedding`とスカラーフィールド`age`の両方に`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプでは、Milvusがデータ型に基づいて最適なインデックスを自動的に選択します。詳細については、[AUTOINDEX Explained](./autoindex-explained)を参照してください。
+以下の例では、ベクトルフィールド`embedding`とスカラーフィールド`age`の両方に`AUTOINDEX`インデックスタイプを使用してインデックスを作成します。このタイプでは、Milvus はデータ型に基づいて最適なインデックスを自動的に選択します。詳細については、[AUTOINDEX の説明](./autoindex-explained)を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -360,7 +356,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { IndexType } from "@zilliz/milvus2-sdk-node";
@@ -380,7 +376,7 @@ const indexParams = [
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 indexOption1 := milvusclient.NewCreateIndexOption("my_collection", "embedding",
@@ -391,7 +387,7 @@ indexOption2 := milvusclient.NewCreateIndexOption("my_collection", "age",
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export indexParams='[
@@ -411,7 +407,7 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-## コレクションの作成{#create-collection}
+## コレクションの作成\{#create-collection}
 
 スキーマとインデックスが定義されたら、数値フィールドを含むコレクションを作成します。
 
@@ -442,7 +438,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 client.create_collection({
@@ -454,7 +450,7 @@ client.create_collection({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx,
@@ -468,7 +464,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 curl --request POST \
@@ -485,7 +481,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## データの挿入{#insert-data}
+## データの挿入\{#insert-data}
 
 コレクションを作成したら、スキーマに一致するエンティティを挿入します。
 
@@ -537,7 +533,7 @@ InsertResp insertR = client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const data = [
@@ -555,7 +551,7 @@ client.insert({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 column1, _ := column.NewNullableColumnFloat("price",
@@ -585,7 +581,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 curl --request POST \
@@ -605,7 +601,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルター式によるクエリ{#query-with-filter-expressions}
+## フィルター式を使用したクエリ\{#query-with-filter-expressions}
 
 エンティティを挿入した後、`query` メソッドを使用して、指定されたフィルター式に一致するエンティティを取得します。
 
@@ -659,7 +655,7 @@ System.out.println(resp.getQueryResults());
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 client.query({
@@ -671,7 +667,7 @@ client.query({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter := "age > 30"
@@ -689,7 +685,7 @@ fmt.Println("price", queryResult.GetColumn("price").FieldData().GetScalars())
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 curl --request POST \
@@ -708,7 +704,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-`price`がnullのエンティティを取得するには：
+`price` が null のエンティティを取得するには、次のようにします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -758,7 +754,7 @@ System.out.println(resp.getQueryResults());
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -781,7 +777,7 @@ console.log(res);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter = "price is null"
@@ -799,7 +795,7 @@ fmt.Println("price", queryResult.GetColumn("price"))
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -863,7 +859,7 @@ System.out.println(resp.getQueryResults());
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // node
@@ -886,7 +882,7 @@ console.log(res);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter = "age == 18"
@@ -904,7 +900,7 @@ fmt.Println("price", queryResult.GetColumn("price"))
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -922,7 +918,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## フィルター式を使用したベクトル検索 {#vector-search-with-filter-expressions}
+## フィルター式を使用したベクトル検索\{#vector-search-with-filter-expressions}
 
 基本的な数値フィールドフィルタリングに加えて、ベクトル類似性検索と数値フィールドフィルタを組み合わせることができます。例えば、以下のコードは、ベクトル検索に数値フィールドフィルタを追加する方法を示しています。
 
@@ -983,7 +979,7 @@ System.out.println(resp.getSearchResults());
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 await client.search({
@@ -997,7 +993,7 @@ await client.search({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.3, -0.6, 0.1}
@@ -1028,7 +1024,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 curl --request POST \

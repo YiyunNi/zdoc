@@ -4,49 +4,45 @@ slug: /import-data-via-restful-api
 sidebar_label: "RESTful API"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、Zilliz Cloud RESTful API を介して準備されたデータをインポートする方法について説明します。 | Cloud"
+description: "このページでは、Zilliz Cloud RESTful API を介して準備されたデータをインポートする方法について説明します。"
 type: origin
 token: ZOikw2pIUiAZj9kuLYRcdhLnnoc
 sidebar_position: 2
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
   - データインポート
   - restful
-  - Elastic ベクターデータベース
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy ベクター検索
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# データのインポート (RESTful API)
+# データインポート (RESTful API)
 
 このページでは、Zilliz Cloud RESTful API を介して準備されたデータをインポートする方法について説明します。
 
-## 始める前に{#before-you-start}
+## 始める前に\{#before-you-start}
 
 以下の条件が満たされていることを確認してください。
 
-- クラスターの API キーを取得していること。詳細については、「[API キーの管理](./manage-api-keys)」を参照してください。
+- クラスターのAPIキーを取得していること。詳細については、[APIキー](./manage-api-keys)を参照してください。
 
 - サポートされているいずれかの形式でデータを準備していること。
 
-    データの準備方法の詳細については、「[ストレージオプション](./data-import-storage-options)」および「[フォーマットオプション](./data-import-format-options)」を参照してください。また、エンドツーエンドのノートブック「[データインポートハンズオン](./data-import-zero-to-hero)」も参照してください。
+    データの準備方法の詳細については、[ストレージオプション](./data-import-storage-options)および[フォーマットオプション](./data-import-format-options)を参照してください。また、エンドツーエンドのノートブック[データインポートハンズオン](./data-import-zero-to-hero)も参照してください。
 
-- 例のデータセットと一致するスキーマを持つコレクションを作成していること。
+- サンプルデータセットと一致するスキーマを持つコレクションを作成していること。
 
-     コレクションの作成の詳細については、「[コレクションの管理 (コンソール)](./manage-collections-console)」を参照してください。
+     コレクションの作成の詳細については、[コレクションの管理 (コンソール)](./manage-collections-console)を参照してください。
 
-## ボリュームを介したデータのインポート{#import-data-via-volume}
+## ボリュームを介したデータインポート\{#import-data-via-volume}
 
-ボリュームを介してファイルからデータをインポートするには、まずボリュームを作成し、そこにファイルをアップロードする必要があります。それが完了したら、ボリューム内のファイルへのパスを取得します。詳細については、「[ボリュームの管理 (SDK)](./manage-stages)」を参照してください。
+ボリュームを介してファイルからデータをインポートするには、まずボリュームを作成し、そこにファイルをアップロードする必要があります。それが完了したら、ボリューム内のファイルへのパスを取得します。詳細については、[ボリュームの管理 (SDK)](./manage-stages)を参照してください。
 
-その後、アップロードされたデータを次のように特定のコレクションにインポートできます。
+その後、アップロードされたデータを特定のコレクションに次のようにインポートできます。
 
 ```bash
 curl --request POST \
@@ -67,9 +63,9 @@ curl --request POST \
 }'
 ```
 
-特定のパーティションにデータをインポートするには、リクエストに`partitionName`を含める必要があります。
+特定のパーティションにデータをインポートするには、リクエストに `partitionName` を含める必要があります。
 
-Zilliz Cloudが上記のリクエストを処理した後、ジョブIDを受け取ります。このジョブIDを使用して、以下のコマンドでインポートの進捗を監視します。
+Zilliz Cloud が上記のリクエストを処理した後、ジョブ ID が返されます。このジョブ ID を使用して、以下のコマンドでインポートの進行状況を監視します。
 
 ```bash
 curl --request POST \
@@ -83,11 +79,11 @@ curl --request POST \
     }'
 ```
 
-## 外部ストレージ経由でデータをインポートする{#import-data-via-external-storage}
+## 外部ストレージを介したデータインポート\{#import-data-via-external-storage}
 
-外部ストレージ経由でファイルからデータをインポートするには、まずファイルをAWS S3やGoogle Cloud Storage (GCS)などのオブジェクトストレージバケットにアップロードする必要があります。アップロード後、リモートバケット内のファイルへのパスと、Zilliz Cloudがバケットからデータをプルするためのバケット認証情報を取得します。サポートされているオブジェクトパスの詳細については、[ストレージオプション](./data-import-storage-options)を参照してください。
+外部ストレージを介してファイルからデータをインポートするには、まずファイルをAWS S3やGoogle Cloud Storage (GCS)などのオブジェクトストレージバケットにアップロードする必要があります。アップロード後、リモートバケット内のファイルへのパスと、Zilliz Cloudがバケットからデータをプルするためのバケット認証情報を取得します。サポートされているオブジェクトパスの詳細については、[ストレージオプション](./data-import-storage-options)を参照してください。
 
-データのセキュリティ要件に基づいて、データインポート中に長期または短期の認証情報のいずれかを使用できます。
+データセキュリティ要件に基づいて、データインポート中に長期または短期の認証情報のいずれかを使用できます。
 
 認証情報の取得に関する詳細については、以下を参照してください。
 
@@ -124,9 +120,9 @@ curl --request POST \
     }'
 ```
 
-特定のパーティションにデータをインポートするには、リクエストに`partitionName`を含める必要があります。
+特定のパーティションにデータをインポートするには、リクエストに `partitionName` を含める必要があります。
 
-Zilliz Cloudが上記のリクエストを処理した後、ジョブIDを受け取ります。このジョブIDを使用して、以下のコマンドでインポートの進捗を監視します。
+Zilliz Cloud が上記のリクエストを処理した後、ジョブ ID が返されます。このジョブ ID を使用して、以下のコマンドでインポートの進行状況を監視します。
 
 ```bash
 curl --request POST \
@@ -142,7 +138,7 @@ curl --request POST \
 
 詳細については、[インポート](/reference/restful/create-import-jobs-v2)と[インポートの進捗状況の取得](/reference/restful/get-import-job-progress-v2)を参照してください。
 
-## 結果の検証{#verify-the-result}
+## 結果の検証\{#verify-the-result}
 
 コマンド出力が以下のようであれば、インポートジョブは正常に送信されています。
 
@@ -155,5 +151,5 @@ curl --request POST \
 }
 ```
 
-現在のインポートジョブの進捗状況を取得したり、すべてのインポートジョブを一覧表示したりするには、RESTful API を呼び出すこともできます。詳細については、[現在のインポートジョブの進捗状況を取得する](/reference/restful/get-import-job-progress-v2) および [すべてのインポートジョブを一覧表示する](/reference/restful/list-import-jobs-v2) を参照してください。または、Zilliz Cloud コンソールの [ジョブセンター](./job-center) にアクセスして、結果とジョブの詳細を表示することもできます。
+RESTful APIを呼び出して、[現在のインポートジョブの進捗状況を取得する](/reference/restful/get-import-job-progress-v2)ことや、[すべてのインポートジョブをリストする](/reference/restful/list-import-jobs-v2)こともできます。あるいは、Zilliz Cloudコンソールの[ジョブセンター](./job-center)にアクセスして、結果とジョブの詳細を表示することもできます。
 

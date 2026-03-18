@@ -53,7 +53,7 @@ This guide explains how to resize a cluster to suit your changing workload.
 
             Dedicated (Enterprise) clusters: Up to 1,024 CUs
 
-        - The product of **Number of Query CU** × **Replica count** must not exceed 1,0240
+        - The product of **Number of Query CU** × **Replica count** must not exceed 1,024
 
         For larger query CU, [contact sales](http://zilliz.com/contact-sales).
 
@@ -101,9 +101,9 @@ curl --request POST \
 
 ## Scheduled scaling\{#scheduled-scaling}
 
-<Admonition type="info" icon="📘" title="说明">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>此功能仅限<strong>企业版</strong>项目中的 <strong>Dedicated</strong> 集群使用。</p>
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -140,11 +140,7 @@ curl --request POST \
 
 ## Dynamic scaling\{#dynamic-scaling}
 
-<Admonition type="info" icon="📘" title="说明">
-
-<p>此功能仅限<strong>企业版</strong>项目中的 <strong>Dedicated</strong> 集群使用。</p>
-
-</Admonition>
+https://zilliverse.feishu.cn/sync/EaQKd6kURsSBc1bD8Loc4RsjnCg
 
 Zilliz Cloud supports dynamic scaling to help you maintain performance while eliminating manual intervention. When enabled, the system automatically adjusts the **query CU** resources based on the real-time **CU capacity** metric, ensuring your workload is served efficiently without service disruption.
 

@@ -1,7 +1,7 @@
 ---
 title: "Standard Analyzer | Cloud"
 slug: /standard-analyzer
-sidebar_label: "Standard Analyzer"
+sidebar_label: "Standard"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

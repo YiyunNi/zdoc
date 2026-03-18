@@ -1,7 +1,7 @@
 ---
 title: "Drop Collection | BYOC"
 slug: /drop-collection
-sidebar_label: "Drop Collection"
+sidebar_label: "Drop"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

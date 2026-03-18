@@ -1,7 +1,7 @@
 ---
 title: "JSON Field | BYOC"
 slug: /use-json-fields
-sidebar_label: "JSON Field"
+sidebar_label: "JSON"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

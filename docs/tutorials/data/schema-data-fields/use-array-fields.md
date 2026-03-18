@@ -1,7 +1,7 @@
 ---
 title: "Array Field | Cloud"
 slug: /use-array-fields
-sidebar_label: "Array Field"
+sidebar_label: "Array"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

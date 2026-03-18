@@ -4,29 +4,26 @@ slug: /analyzer-tokenizers
 sidebar_label: "トークナイザー"
 beta: FALSE
 notebook: FALSE
-description: "このセクションでは、トークナイザーの詳細なリファレンスを提供します。 | BYOC"
+description: "このセクションでは、トークナイザーの詳細なリファレンスを提供します。| BYOC"
 type: origin
 token: Zu6vw6Aifi1gvNkqqO5cDjmtngh
 sidebar_position: 3
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - collection
   - schema
   - analyzer
   - 組み込みトークナイザー
-  - ベクトルインデックス
-  - オープンソースベクトルデータベース
-  - オープンソースベクトルDB
-  - ベクトルデータベースの例
 
+sidebar_key: "data/schema-data-fields/analyzer/analyzer-tokenizers"
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# トークナイザーリファレンス
+# トークナイザー リファレンス
 
 このセクションでは、トークナイザーの詳細なリファレンスを提供します。
 

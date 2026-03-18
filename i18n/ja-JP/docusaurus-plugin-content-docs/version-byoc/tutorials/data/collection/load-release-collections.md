@@ -4,21 +4,17 @@ slug: /load-release-collections
 sidebar_label: "ロードとリリース"
 beta: FALSE
 notebook: FALSE
-description: "コレクションのロードは、類似性検索やクエリを実行するための前提条件です。このページでは、コレクションのロードとリリースの手順について説明します。 | BYOC"
+description: "コレクションのロードは、コレクション内で類似度検索やクエリを実行するための前提条件です。このページでは、コレクションのロードおよびリリースの手順に焦点を当てています。| BYOC"
 type: origin
 token: CemEwKryciMUepkgYWZcOw6wncb
 sidebar_position: 7
 keywords: 
-  - Zilliz
+  - zilliz
   - ベクトルデータベース
   - クラウド
   - コレクション
   - ロード
   - リリース
-  - ベクトルデータベース
-  - IVF
-  - knn
-  - 画像検索
 
 ---
 
@@ -28,11 +24,11 @@ import TabItem from '@theme/TabItem';
 
 # ロードとリリース
 
-コレクションのロードは、コレクション内で類似性検索とクエリを実行するための前提条件です。このページでは、コレクションをロードおよびリリースする手順に焦点を当てます。
+コレクションのロードは、コレクション内で類似性検索やクエリを実行するための前提条件です。このページでは、コレクションのロードとリリースの手順に焦点を当てます。
 
-## コレクションのロード{#load-collection}
+## コレクションのロード\{#load-collection}
 
-コレクションをロードすると、Zilliz Cloud はインデックスファイルとすべてのフィールドの生データをメモリにロードし、検索とクエリに迅速に応答できるようにします。コレクションのロード後に挿入されたエンティティは、自動的にインデックス化されロードされます。
+コレクションをロードすると、Zilliz Cloud はインデックスファイルとすべてのフィールドの生データをメモリに読み込み、検索やクエリに対して迅速に応答できるようにします。コレクションのロード後に挿入されたエンティティは、自動的にインデックス化されロードされます。
 
 以下のコードスニペットは、コレクションをロードする方法を示しています。
 
@@ -107,7 +103,7 @@ System.out.println(res);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -142,7 +138,7 @@ console.log(res.state)
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -187,7 +183,7 @@ fmt.Println(state)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -227,11 +223,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## 特定のフィールドをロードする{#load-specific-fields}
+## 特定のフィールドのロード\{#load-specific-fields}
 
-Zilliz Cloudは、検索とクエリに関わるフィールドのみをロードできるため、メモリ使用量を削減し、検索パフォーマンスを向上させることができます。
+Zilliz Cloud は、検索やクエリに関与するフィールドのみをロードできるため、メモリ使用量を削減し、検索パフォーマンスを向上させることができます。
 
-以下のコードスニペットは、**my_collection**という名前のコレクションを作成し、そのコレクションに**my_id**と**my_vector**という2つのフィールドがあることを前提としています。
+以下のコードスニペットでは、**my_collection** という名前のコレクションが作成されており、そのコレクション内に **my_id** および **my_vector** という 2 つのフィールドが存在することを前提としています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -282,7 +278,7 @@ System.out.println(res);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 await client.load_collection({
@@ -300,7 +296,7 @@ console.log(loadState);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 loadTask, err := client.LoadCollection(ctx, milvusclient.NewLoadCollectionOption("my_collection").
@@ -327,7 +323,7 @@ fmt.Println(state)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # REST
@@ -337,17 +333,17 @@ fmt.Println(state)
 </TabItem>
 </Tabs>
 
-特定のフィールドをロードすることを選択した場合、`load_fields`に含まれるフィールドのみが、検索およびクエリでフィルターおよび出力フィールドとして使用できることに注意してください。プライマリフィールドの名前と少なくとも1つのベクトルフィールドを常に`load_fields`に含める必要があります。
+特定のフィールドをロードすることを選択した場合、`load_fields` に含まれるフィールドのみが検索やクエリでのフィルターおよび出力フィールドとして使用できる点に注意してください。`load_fields` には、必ずプライマリフィールドの名前と少なくとも 1 つのベクトルフィールドの名前を含める必要があります。
 
-また、`skip_load_dynamic_field`を使用して、動的フィールドをロードするかどうかを決定することもできます。動的フィールドは、**$meta**という名前の予約済みJSONフィールドであり、スキーマで定義されていないすべてのフィールドとその値をキーと値のペアで保存します。動的フィールドをロードすると、フィールド内のすべてのキーがロードされ、フィルタリングと出力に利用できます。動的フィールド内のすべてのキーがメタデータフィルタリングと出力に関与しない場合は、`skip_load_dynamic_field`を`True`に設定します。
+また、`skip_load_dynamic_field` を使用して、動的フィールドをロードするかどうかを決定することもできます。動的フィールドは **\&#36;meta** という名前の予約済み JSON フィールドであり、スキーマで定義されていないすべてのフィールドとその値をキーと値のペアとして保存します。動的フィールドをロードすると、そのフィールド内のすべてのキーがロードされ、フィルタリングおよび出力に利用可能になります。動的フィールド内のすべてのキーがメタデータフィルタリングや出力に関与しない場合は、`skip_load_dynamic_field` を `True` に設定してください。
 
-コレクションのロード後にさらにフィールドをロードするには、インデックスの変更によって発生する可能性のあるエラーを回避するために、まずコレクションをリリースする必要があります。
+コレクションのロード後にさらに多くのフィールドをロードするには、インデックスの変更によって発生する可能性のあるエラーを回避するため、まずコレクションをリリースする必要があります。
 
-## コレクションのリリース{#release-collection}
+## コレクションのリリース\{#release-collection}
 
-検索とクエリはメモリを大量に消費する操作です。コストを節約するために、現在使用されていないコレクションをリリースすることをお勧めします。
+検索とクエリはメモリ集約型の操作です。コストを節約するため、現在使用していないコレクションはリリースすることをお勧めします。
 
-次のコードスニペットは、コレクションをリリースする方法を示しています。
+以下のコードスニペットは、コレクションをリリースする方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -397,7 +393,7 @@ System.out.println(res);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 8. Release the collection
@@ -426,7 +422,7 @@ console.log(res.state)
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.ReleaseCollection(ctx, milvusclient.NewReleaseCollectionOption("my_collection"))
@@ -445,7 +441,7 @@ fmt.Println(state)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"

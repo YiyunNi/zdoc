@@ -4,7 +4,7 @@ slug: /cloud-providers-and-regions
 sidebar_label: "クラウドプロバイダーとリージョン"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、パブリッククラウド上でベクトルデータベースクラスターを提供するクラウドベースのサービスです。当社のサービスを利用すると、選択したパブリッククラウドプラットフォーム上に独自のベクトルデータベースクラスターを簡単に作成・管理できます。 | Cloud"
+description: "Zilliz Cloudは、パブリッククラウド上でベクトルデータベースクラスターを提供するクラウドベースのサービスです。このサービスを利用すると、選択したパブリッククラウドプラットフォーム上に独自のベクトルデータベースクラスターを簡単に作成・管理できます。 | Cloud"
 type: origin
 token: CPLrwghdWiSvGBkdeEecGjgLnSb
 sidebar_position: 5
@@ -14,10 +14,6 @@ keywords:
   - クラウド
   - プロバイダー
   - リージョン
-  - LLMs
-  - 機械学習
-  - RAG
-  - NLP
 
 ---
 
@@ -26,7 +22,7 @@ import Admonition from '@theme/Admonition';
 
 # クラウドプロバイダーとリージョン
 
-Zilliz Cloudは、パブリッククラウド上でベクターデータベースクラスターを提供するクラウドベースのサービスです。当社のサービスを利用すると、選択したパブリッククラウドプラットフォーム上で独自のベクターデータベースクラスターを簡単に作成および管理できます。
+Zilliz Cloudは、パブリッククラウド上でベクトルデータベースクラスターを提供するクラウドベースのサービスです。当社のサービスを利用することで、選択したパブリッククラウドプラットフォーム上で独自のベクトルデータベースクラスターを簡単に作成および管理できます。
 
 Zilliz Cloudは、Amazon Web Services (AWS)、Google Cloud Platform (GCP)、およびMicrosoft Azureのさまざまなリージョンでクラスターを提供しています。新しいリージョンをリクエストするには、[お問い合わせ](https://zilliz.com/cloud-region-request?)ください。
 
@@ -38,7 +34,7 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <th><p><strong>大陸</strong></p></th>
      <th><p><strong>リージョン</strong></p></th>
-     <th><p><strong>場所</strong></p></th>
+     <th><p><strong>ロケーション</strong></p></th>
      <th><p><strong>無料クラスター</strong></p></th>
      <th><p><strong>サーバーレスクラスター</strong></p></th>
      <th><p><strong>専用クラスター</strong></p></th>
@@ -46,21 +42,21 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <td rowspan="4"><p>北米</p></td>
      <td><p>us-east-1</p></td>
-     <td><p>N. Virginia, USA</p></td>
+     <td><p>米国バージニア州北部</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
      <td><p>us-east-2</p></td>
-     <td><p>Ohio, USA</p></td>
+     <td><p>米国オハイオ州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
      <td><p>us-west-2</p></td>
-     <td><p>Oregon, USA</p></td>
+     <td><p>米国オレゴン州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
@@ -73,9 +69,16 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
      <td><p>はい</p></td>
    </tr>
    <tr>
-     <td><p>ヨーロッパ</p></td>
+     <td rowspan="2"><p>ヨーロッパ</p></td>
      <td><p>eu-central-1</p></td>
-     <td><p>フランクフルト, ドイツ</p></td>
+     <td><p>ドイツ フランクフルト</p></td>
+     <td><p>はい</p></td>
+     <td><p>はい</p></td>
+     <td><p>はい</p></td>
+   </tr>
+   <tr>
+     <td><p>eu-west-1</p></td>
+     <td><p>アイルランド</p></td>
      <td><p>はい</p></td>
      <td><p>はい</p></td>
      <td><p>はい</p></td>
@@ -83,7 +86,7 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <td rowspan="2"><p>アジア</p></td>
      <td><p>ap-northeast-1</p></td>
-     <td><p>東京, 日本</p></td>
+     <td><p>日本 東京</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
@@ -98,7 +101,7 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <td><p>オセアニア</p></td>
      <td><p>ap-southeast-2</p></td>
-     <td><p>シドニー, オーストラリア</p></td>
+     <td><p>オーストラリア シドニー</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
@@ -115,7 +118,7 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <th><p><strong>大陸</strong></p></th>
      <th><p><strong>リージョン</strong></p></th>
-     <th><p><strong>場所</strong></p></th>
+     <th><p><strong>ロケーション</strong></p></th>
      <th><p><strong>無料クラスター</strong></p></th>
      <th><p><strong>サーバーレスクラスター</strong></p></th>
      <th><p><strong>専用クラスター</strong></p></th>
@@ -123,21 +126,21 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <td rowspan="3"><p>北米</p></td>
      <td><p>us-west1</p></td>
-     <td><p>オレゴン, USA</p></td>
+     <td><p>米国オレゴン州</p></td>
      <td><p>はい</p></td>
      <td><p>はい</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
      <td><p>us-east4</p></td>
-     <td><p>バージニア, USA</p></td>
+     <td><p>米国バージニア州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
      <td><p>us-central1</p></td>
-     <td><p>アイオワ, USA</p></td>
+     <td><p>米国アイオワ州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
@@ -145,7 +148,7 @@ Zilliz Cloudは、AWS上での無料、サーバーレス、および専用ク�
    <tr>
      <td><p>ヨーロッパ</p></td>
      <td><p>europe-west3</p></td>
-     <td><p>フランクフルト, ドイツ</p></td>
+     <td><p>ドイツ フランクフルト</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
@@ -170,43 +173,43 @@ Zilliz Cloudは、Microsoft Azure上での専用クラスターのデプロイ�
    <tr>
      <th><p><strong>大陸</strong></p></th>
      <th><p><strong>リージョン</strong></p></th>
-     <th><p><strong>場所</strong></p></th>
+     <th><p><strong>ロケーション</strong></p></th>
      <th><p><strong>無料クラスター</strong></p></th>
      <th><p><strong>サーバーレスクラスター</strong></p></th>
      <th><p><strong>専用クラスター</strong></p></th>
    </tr>
    <tr>
      <td rowspan="3"><p>北米</p></td>
-     <td><p>East US</p></td>
-     <td><p>バージニア, USA</p></td>
+     <td><p>米国東部</p></td>
+     <td><p>米国バージニア州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
-     <td><p>East US 2</p></td>
-     <td><p>バージニア, USA</p></td>
+     <td><p>米国東部2</p></td>
+     <td><p>米国バージニア州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
-     <td><p>Central US</p></td>
-     <td><p>アイオワ, USA</p></td>
+     <td><p>米国中部</p></td>
+     <td><p>米国アイオワ州</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
      <td rowspan="2"><p>ヨーロッパ</p></td>
-     <td><p>Germany West Central</p></td>
-     <td><p>フランクフルト, ドイツ</p></td>
+     <td><p>ドイツ西部中央</p></td>
+     <td><p>ドイツ フランクフルト</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>
    </tr>
    <tr>
-     <td><p>North Europe</p></td>
+     <td><p>北ヨーロッパ</p></td>
      <td><p>アイルランド</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
@@ -214,8 +217,8 @@ Zilliz Cloudは、Microsoft Azure上での専用クラスターのデプロイ�
    </tr>
    <tr>
      <td><p>アジア</p></td>
-     <td><p>Central India</p></td>
-     <td><p>プネ, インド</p></td>
+     <td><p>インド中部</p></td>
+     <td><p>インド プネ</p></td>
      <td><p>いいえ</p></td>
      <td><p>いいえ</p></td>
      <td><p>はい</p></td>

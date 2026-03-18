@@ -1,7 +1,7 @@
 ---
 title: "Count Entities | Cloud"
 slug: /count-entities
-sidebar_label: "Count Entities"
+sidebar_label: "Count"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

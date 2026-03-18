@@ -1,7 +1,7 @@
 ---
 title: "JSON Indexing | Cloud"
 slug: /json-indexing
-sidebar_label: "JSON Indexing"
+sidebar_label: "Indexing"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

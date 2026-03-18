@@ -4,7 +4,7 @@ slug: /single-vector-search
 sidebar_label: "基本的なベクトル検索"
 beta: FALSE
 notebook: FALSE
-description: "ベクトル埋め込みのソート順を記録したインデックスファイルに基づき、近似最近傍探索（ANN）は、受信した検索リクエストに含まれるクエリベクトルに基づいてベクトル埋め込みのサブセットを特定し、そのサブグループ内のベクトルとクエリベクトルを比較して、最も類似した結果を返します。ANN検索により、Zilliz Cloudは効率的な検索体験を提供します。このページでは、基本的なANN検索の実行方法を学ぶことができます。 | Cloud"
+description: "ベクトル埋め込みのソート順を記録したインデックスファイルに基づき、近似最近傍探索（ANN）は、受信した検索リクエストに含まれるクエリベクトルに基づいてベクトル埋め込みのサブセットを特定し、クエリベクトルをそのサブグループ内のベクトルと比較し、最も類似した結果を返します。ANN検索により、Zilliz Cloudは効率的な検索体験を提供します。このページでは、基本的なANN検索を実行する方法を学びます。 | Cloud"
 type: origin
 token: BaGlwzDmyiyVvVk6NurcFclInCd
 sidebar_position: 1
@@ -12,14 +12,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - ベクトル検索
   - ann
-  - セマンティック検索とは
-  - Embedding model
-  - 画像類似性検索
-  - Context Window
 
 ---
 
@@ -29,41 +25,47 @@ import TabItem from '@theme/TabItem';
 
 # 基本的なベクトル検索
 
-ベクトル埋め込みのソート順を記録したインデックスファイルに基づいて、近似最近傍 (ANN) 検索は、受信した検索リクエストに含まれるクエリベクトルに基づいてベクトル埋め込みのサブセットを特定し、クエリベクトルとサブグループ内のベクトルを比較し、最も類似した結果を返します。ANN検索により、Zilliz Cloudは効率的な検索体験を提供します。このページでは、基本的なANN検索を実行する方法を学びます。
+ベクトル埋め込みのソート順を記録するインデックスファイルに基づいて、近似最近傍 (ANN) 検索は、受信した検索リクエストに含まれるクエリベクトルに基づいてベクトル埋め込みのサブセットを特定し、クエリベクトルをサブグループ内のベクトルと比較し、最も類似した結果を返します。ANN 検索により、Zilliz Cloud は効率的な検索エクスペリエンスを提供します。このページでは、基本的な ANN 検索の実行方法を学習できます。
 
-## 概要{#overview}
+<Admonition type="info" icon="📘" title="Notes">
 
-ANNとk-最近傍 (kNN) 検索は、ベクトル類似性検索における一般的な手法です。kNN検索では、最も類似したものを特定する前に、ベクトル空間内のすべてのベクトルを検索リクエストに含まれるクエリベクトルと比較する必要があり、これは時間とリソースを大量に消費します。
+<p>コレクション作成後に新しいフィールドを動的に追加した場合、これらのフィールドを含む検索では、明示的に値を設定していないエンティティに対しては、定義されたデフォルト値または NULL が返されます。詳細については、<a href="./add-fields-to-an-existing-collection">既存のコレクションにフィールドを追加する</a>を参照してください。</p>
 
-kNN検索とは異なり、ANN検索アルゴリズムは、ベクトル埋め込みのソート順を記録する**インデックス**ファイルを必要とします。検索リクエストが来たとき、インデックスファイルを参考に、クエリベクトルに最も類似している可能性のあるベクトル埋め込みを含むサブグループを素早く特定できます。次に、指定された**メトリックタイプ**を使用して、クエリベクトルとサブグループ内のベクトルとの類似性を測定し、クエリベクトルとの類似性に基づいてグループメンバーをソートし、**トップK**のグループメンバーを特定します。
+</Admonition>
 
-ANN検索は事前に構築されたインデックスに依存し、検索スループット、メモリ使用量、検索の正確性は選択したインデックスタイプによって異なる場合があります。検索パフォーマンスと正確性のバランスを取る必要があります。
+## 概要\{#overview}
 
-学習曲線を減らすために、Zilliz Cloudは**AUTOINDEX**を提供します。**AUTOINDEX**を使用すると、Zilliz Cloudはインデックスを構築しながらコレクション内のデータ分布を分析し、検索パフォーマンスと正確性のバランスを取るために、分析に基づいて最も最適化されたインデックスパラメータを設定します。
+ANN 検索と k-最近傍 (kNN) 検索は、ベクトル類似度検索における一般的な手法です。kNN 検索では、最も類似したベクトルを特定する前に、ベクトル空間内のすべてのベクトルを検索リクエストに含まれるクエリベクトルと比較する必要があり、これは時間とリソースを大量に消費します。
 
-AUTOINDEXと適用可能なメトリックタイプの詳細については、[AUTOINDEXの説明](./autoindex-explained)と[メトリックタイプ](./search-metrics-explained)を参照してください。このセクションでは、以下のトピックに関する詳細情報を見つけることができます。
+kNN 検索とは異なり、ANN 検索アルゴリズムは、ベクトル埋め込みのソート順を記録する**インデックス**ファイルを必要とします。検索リクエストが届くと、インデックスファイルを参考に、クエリベクトルに最も類似している可能性のあるベクトル埋め込みを含むサブグループを迅速に特定できます。次に、指定された**メトリックタイプ**を使用して、クエリベクトルとサブグループ内のベクトルとの類似度を測定し、類似度に基づいてグループメンバーをソートし、**トップ K** のグループメンバーを特定します。
+
+ANN 検索は事前に構築されたインデックスに依存しており、検索スループット、メモリ使用量、検索の正確性は、選択するインデックスタイプによって異なる場合があります。検索パフォーマンスと正確性のバランスを取る必要があります。
+
+学習曲線を減らすために、Zilliz Cloud は **AUTOINDEX** を提供しています。**AUTOINDEX** を使用すると、Zilliz Cloud はインデックスを構築する際にコレクション内のデータ分布を分析し、分析に基づいて最も最適化されたインデックスパラメータを設定して、検索パフォーマンスと正確性のバランスを取ります。
+
+AUTOINDEX と適用可能なメトリックタイプについては、[AUTOINDEX の説明](./autoindex-explained)と[メトリックタイプ](./search-metrics-explained)を参照してください。このセクションでは、以下のトピックに関する詳細情報を見つけることができます。
 
 - [単一ベクトル検索](./single-vector-search#single-vector-search)
 
-- [バルクベクトル検索](./single-vector-search#bulk-vector-search)
+- [一括ベクトル検索](./single-vector-search#bulk-vector-search)
 
-- [パーティション内のANN検索](./single-vector-search#ann-search-in-partition)
+- [パーティション内の ANN 検索](./single-vector-search#ann-search-in-partition)
 
 - [出力フィールドの使用](./single-vector-search#use-output-fields)
 
-- [limitとoffsetの使用](./single-vector-search#use-limit-and-offset)
+- [limit と offset の使用](./single-vector-search#use-limit-and-offset)
 
-- [levelの使用](./single-vector-search#use-level)
+- [level の使用](./single-vector-search#use-level)
 
 - [再現率の取得](./single-vector-search#get-recall-rate)
 
-- [ANN検索の強化](./single-vector-search#enhancing-ann-search)
+- [ANN 検索の強化](./single-vector-search#enhancing-ann-search)
 
-## 単一ベクトル検索{#single-vector-search}
+## 単一ベクトル検索\{#single-vector-search}
 
-ANN検索において、単一ベクトル検索とは、1つのクエリベクトルのみを含む検索を指します。事前に構築されたインデックスと検索リクエストに含まれるメトリックタイプに基づいて、Zilliz Cloudはクエリベクトルに最も類似したトップK個のベクトルを見つけます。
+ANN 検索において、単一ベクトル検索とは、1 つのクエリベクトルのみを含む検索を指します。事前に構築されたインデックスと検索リクエストに含まれるメトリックタイプに基づいて、Zilliz Cloud はクエリベクトルに最も類似したトップ K のベクトルを見つけます。
 
-このセクションでは、単一ベクトル検索を実行する方法を学びます。検索リクエストは単一のクエリベクトルを含み、Zilliz Cloudに内積 (IP) を使用してクエリベクトルとコレクション内のベクトルとの類似性を計算し、最も類似した3つのベクトルを返すように要求します。
+このセクションでは、単一ベクトル検索の実行方法を学習します。検索リクエストには単一のクエリベクトルが含まれており、Zilliz Cloud に内積 (IP) を使用してクエリベクトルとコレクション内のベクトルとの類似度を計算し、最も類似した 3 つのベクトルを返すように要求します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -156,7 +158,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -204,7 +206,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -233,7 +235,7 @@ console.log(res.results)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -274,9 +276,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-Milvusは、クエリベクトルに対する類似度スコアに基づいて検索結果を降順にランク付けします。類似度スコアはクエリベクトルまでの距離とも呼ばれ、その値の範囲は使用するメトリックタイプによって異なります。
+Milvus は、検索結果をクエリベクトルとの類似度スコアに基づいて降順にランク付けします。類似度スコアはクエリベクトルとの距離とも呼ばれ、その値の範囲は使用されるメトリックタイプによって異なります。
 
-次の表は、適用可能なメトリックタイプと対応する距離範囲を示しています。
+次の表に、適用可能なメトリックタイプと対応する距離範囲を示します。
 
 <table>
    <tr>
@@ -311,9 +313,9 @@ Milvusは、クエリベクトルに対する類似度スコアに基づいて�
    </tr>
 </table>
 
-## バルクベクトル検索{#bulk-vector-search}
+## バルクベクトル検索\{#bulk-vector-search}
 
-同様に、検索リクエストに複数のクエリベクトルを含めることができます。Zilliz Cloudは、クエリベクトルに対してANN検索を並行して実行し、2組の結果を返します。
+同様に、検索リクエストに複数のクエリベクトルを含めることができます。Zilliz Cloud は、クエリベクトルに対して ANN 検索を並行して実行し、2 セットの結果を返します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -422,7 +424,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVectors := []entity.Vector{
@@ -449,7 +451,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 7. Search with multiple vectors
@@ -484,7 +486,7 @@ console.log(res.results)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -543,9 +545,79 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## パーティション内のANN検索{#ann-search-in-partition}
+## Primary-キー Search\{#primary-key-search}
 
-コレクション内に複数のパーティションを作成しており、検索スコープを特定の数のパーティションに絞り込むことができる場合、検索リクエストにターゲットパーティション名を含めることで、指定されたパーティション内での検索スコープを制限できます。検索に関与するパーティションの数を減らすことで、検索パフォーマンスが向上します。
+クエリベクトルがターゲットコレクションにすでに存在する場合、クエリベクトルを設定する代わりに、プライマリキーを使用できます。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+res = client.search(
+    collection_name="quick_setup",
+    anns_field="vector",
+    # highlight-start
+    ids=[551, 296, 43],
+    # highlight-end
+    limit=3,
+    search_params={"metric_type": "IP"}
+)
+
+for hits in res:
+    for hit in hits:
+        print(hit)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+// node.js
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_CLUSTER_TOKEN" \
+  -d '{
+    "collectionName": "quick_setup",
+    "annsField": "vector",
+    "ids": [551, 296, 43],
+    "limit": 3,
+    "searchParams": {
+      "metric_type": "IP"
+    }
+  }'
+```
+
+</TabItem>
+</Tabs>
+
+## パーティションでのANN検索\{#ann-search-in-partition}
+
+コレクション内に複数のパーティションを作成しており、検索範囲を特定の数のパーティションに絞り込むことができるとします。その場合、検索リクエストにターゲットパーティション名を含めることで、指定されたパーティション内での検索範囲を制限できます。検索に関与するパーティションの数を減らすことで、検索パフォーマンスが向上します。
 
 以下のコードスニペットは、コレクション内に**PartitionA**という名前のパーティションがあることを前提としています。
 
@@ -625,7 +697,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
@@ -650,7 +722,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 4. Single vector search
@@ -675,7 +747,7 @@ console.log(res.results)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -718,9 +790,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## 出力フィールドの使用方法{#use-output-fields}
+## 出力フィールドの使用方法\{#use-output-fields}
 
-検索結果では、Zilliz Cloud はデフォルトで、上位 K 個のベクトル埋め込みを含むエンティティのプライマリフィールド値と類似度距離/スコアを含みます。検索リクエストで、ベクトルフィールドとスカラーフィールドの両方を含むターゲットフィールドの名前を出力フィールドとして含めることで、検索結果にこれらのエンティティの他のフィールドからの値を含めることができます。
+検索結果において、Zilliz Cloud はデフォルトで、上位 K 個のベクトル埋め込みを含むエンティティのプライマリフィールド値と類似度距離/スコアを含みます。検索リクエストで、ベクトルフィールドとスカラーフィールドの両方を含むターゲットフィールドの名前を出力フィールドとして含めることで、検索結果にこれらのエンティティの他のフィールドの値を運ばせることができます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -803,7 +875,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
@@ -829,7 +901,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 4. Single vector search
@@ -854,7 +926,7 @@ console.log(res.results)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -900,19 +972,19 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## LimitとOffsetの使用{#use-limit-and-offset}
+## 制限 と オフセット の使用\{#use-limit-and-offset}
 
-検索リクエストに含まれる`limit`パラメータは、検索結果に含めるentityの数を決定することにお気づきかもしれません。このパラメータは、1回の検索で返されるentityの最大数を指定し、通常は**top-K**と呼ばれます。
+検索リクエストに含まれるパラメータ `limit` は、検索結果に含めるエンティティの数を決定することにお気づきかもしれません。このパラメータは、単一の検索で返されるエンティティの最大数を指定し、通常は **top-K** と呼ばれます。
 
-ページネーションされたクエリを実行したい場合は、ループを使用して複数の検索リクエストを送信し、各クエリリクエストに**Limit**と**Offset**パラメータを含めることができます。具体的には、**Limit**パラメータを現在のクエリ結果に含めたいentityの数に設定し、**Offset**をすでに返されたentityの総数に設定します。
+ページネーションされたクエリを実行したい場合は、ループを使用して複数の検索リクエストを送信し、各クエリリクエストに **制限** と **オフセット** パラメータを含めることができます。具体的には、**制限** パラメータを現在のクエリ結果に含めたいエンティティの数に設定し、**オフセット** をすでに返されたエンティティの総数に設定します。
 
-以下の表は、一度に100個のentityを返す場合の、ページネーションされたクエリの**Limit**と**Offset**パラメータの設定方法を示しています。
+以下の表は、一度に100エンティティを返す場合のページネーションされたクエリの **制限** と **オフセット** パラメータの設定方法を示しています。
 
 <table>
    <tr>
      <th><p>クエリ</p></th>
-     <th><p>クエリごとに返されるentity</p></th>
-     <th><p>すでに返されたentityの合計</p></th>
+     <th><p>クエリごとに返されるエンティティ</p></th>
+     <th><p>すでに返されたエンティティの合計</p></th>
    </tr>
    <tr>
      <td><p><strong>1番目</strong>のクエリ</p></td>
@@ -936,7 +1008,7 @@ curl --request POST \
    </tr>
 </table>
 
-なお、1回のANN検索における`limit`と`offset`の合計は16,384未満である必要があります。
+なお、単一のANN検索における `limit` と `offset` の合計は16,384未満である必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -993,7 +1065,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
@@ -1018,7 +1090,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 4. Single vector search
@@ -1035,7 +1107,7 @@ res = await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -1059,11 +1131,11 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## 使用レベル{#use-level}
+## Use Level\{#use-level}
 
 ANN検索を最適化するために、Zilliz Cloudは、簡素化された検索最適化で検索精度を制御する`level`というパラメータを提供します。
 
-このパラメータは`1`から`10`の範囲で、デフォルトは`1`です。値を大きくすると、検索パフォーマンスが低下しますが、検索リコール率が向上します。一般的なケースでは、デフォルト値で最大90%のリコール率が得られます。必要に応じて値を増やすことができます。
+このパラメータは`1`から`10`までの範囲で、デフォルトは`1`です。値を大きくすると、検索パフォーマンスが低下する代わりに検索再現率が向上します。一般的なケースでは、デフォルト値で最大90%の再現率が得られます。必要に応じて値を大きくすることができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -1129,7 +1201,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
@@ -1154,7 +1226,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 4. Single vector search
@@ -1173,7 +1245,7 @@ res = await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -1204,13 +1276,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## リコール率の取得{#get-recall-rate}
+## リコール率の取得\{#get-recall-rate}
 
-`level` パラメータを調整する際に `enable_recall_calculation` を `true` に設定すると、異なる `level` 値での検索の精度を評価できます。
+`level` パラメータを調整する際に `enable_recall_calculation` を `true` に設定すると、異なる `level` 値での検索精度を評価できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>enable_recall_calculation</code> パラメータはまだ <strong>Public Preview</strong> 段階であり、互換性の問題により使用できない場合があります。サポートが必要な場合は、<a href="https://zilliz.com/contact-sales">Zilliz Cloud サポート</a>までお問い合わせください。</p>
+<p><code>enable_recall_calculation</code> パラメータはまだ<strong>パブリックプレビュー</strong>段階であり、互換性の問題により使用できない場合があります。ご不明な点がございましたら、<a href="https://zilliz.com/contact-sales">Zilliz Cloud サポート</a>までお問い合わせください。</p>
 
 </Admonition>
 
@@ -1274,7 +1346,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 queryVector := []float32{0.3580376395471989, -0.6023495712049978, 0.18414012509913835, -0.26286205330961354, 0.9029438446296592}
@@ -1299,7 +1371,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 4. Single vector search
@@ -1319,7 +1391,7 @@ res = await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -1351,9 +1423,81 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## ANN検索の強化{#enhancing-ann-search}
+## 検索の一時的なタイムゾーン設定 \{#temporarily-set-a-timezone-for-a-search}
 
-AUTOINDEXは、ANN検索の学習曲線を大幅に平坦化します。しかし、トップKが増加するにつれて、検索結果が常に正しいとは限りません。Zilliz Cloudは、検索範囲の縮小、検索結果の関連性の向上、検索結果の多様化によって、以下の検索強化を実現します。
+コレクションに `TIMESTAMPTZ` フィールドがある場合、検索呼び出しで `timezone` パラメータを設定することにより、単一の操作に対してデータベースまたはコレクションのデフォルトタイムゾーンを一時的に上書きできます。これにより、操作中に `TIMESTAMPTZ` 値が表示および比較される方法が制御されます。
+
+`timezone` の値は、有効な [IANA タイムゾーン識別子](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)である必要があります（例：**Asia/Shanghai**、**America/Chicago**、または **UTC**）。`TIMESTAMPTZ` フィールドの使用方法の詳細については、[TIMESTAMPTZ フィールド](./use-timestamptz-field)を参照してください。
+
+以下の例は、検索操作のタイムゾーンを一時的に設定する方法を示しています。
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+res = client.search(
+    collection_name="quick_setup",
+    anns_field="vector",
+    data=[query_vector],
+    limit=3,
+    search_params={"metric_type": "IP"},
+    # highlight-next-line
+    timezone="America/Havana",
+)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+// js
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+export QUERY_VECTOR='[0.1, 0.2, 0.3, 0.4]'                                                                                                                                                                                                              
+                                                                                                                                                                                                                                                          
+curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \                                                                                                                                                                                     
+-H "Content-Type: application/json" \                                                                                                                                                                                                                 
+-d '{                                                                                                                                                                                                                                                 
+  "collectionName": "quick_setup",                                                                                                                                                                                                                    
+  "annsField": "vector",                                                                                                                                                                                                                              
+  "data": ['"$QUERY_VECTOR"'],                                                                                                                                                                                                                        
+  "limit": 3,                                                                                                                                                                                                                                         
+  "searchParams": {                                                                                                                                                                                                                                   
+    "metric_type": "IP",                                                                                                                                                                                                                              
+    "timezone": "America/Havana"                                                                                                                                                                                                                      
+  }                                                                                                                                                                                                                                                   
+}'
+```
+
+</TabItem>
+</Tabs>
+
+## ANN検索の強化\{#enhancing-ann-search}
+
+AUTOINDEXは、ANN検索の学習曲線を大幅に平坦化します。しかし、Kの値を大きくすると、検索結果が常に正しいとは限りません。Zilliz Cloudは、検索範囲の縮小、検索結果の関連性の向上、検索結果の多様化によって、以下の検索強化を実現します。
 
 - フィルタリング検索
 
@@ -1369,7 +1513,7 @@ AUTOINDEXは、ANN検索の学習曲線を大幅に平坦化します。しか�
 
 - グループ化検索
 
-    返されるエンティティが特定のフィールドで同じ値を持つ場合、検索結果はベクトル空間内のすべてのベクトル埋め込みの分布を表さない可能性があります。検索結果を多様化するには、グループ化検索の使用を検討してください。
+    返されたエンティティが特定のフィールドで同じ値を持つ場合、検索結果はベクトル空間内のすべてのベクトル埋め込みの分布を表さない可能性があります。検索結果を多様化するには、グループ化検索の使用を検討してください。
 
     グループ化検索の詳細については、[グループ化検索](./grouping-search)を参照してください。
 
@@ -1387,15 +1531,15 @@ AUTOINDEXは、ANN検索の学習曲線を大幅に平坦化します。しか�
 
     検索イテレータの詳細については、[検索イテレータ](./with-iterators)を参照してください。
 
-- フルテキスト検索
+- 全文検索
 
-    フルテキスト検索は、テキストデータセット内の特定の用語やフレーズを含むドキュメントを検索し、関連性に基づいて結果をランク付けする機能です。この機能は、正確な用語を見落とす可能性のあるセマンティック検索の制限を克服し、最も正確で文脈に関連する結果を確実に受け取れるようにします。さらに、生のテキスト入力を受け入れることでベクトル検索を簡素化し、手動でベクトル埋め込みを生成する必要なく、テキストデータを自動的にスパース埋め込みに変換します。
+    全文検索は、テキストデータセット内の特定の用語やフレーズを含むドキュメントを検索し、関連性に基づいて結果をランク付けする機能です。この機能は、正確な用語を見落とす可能性のあるセマンティック検索の制限を克服し、最も正確で文脈に関連する結果を確実に受け取れるようにします。さらに、生のテキスト入力を受け入れることでベクトル検索を簡素化し、手動でベクトル埋め込みを生成する必要なく、テキストデータを自動的にスパース埋め込みに変換します。
 
-    フルテキスト検索の詳細については、[フルテキスト検索](./full-text-search)を参照してください。
+    全文検索の詳細については、[全文検索](./full-text-search)を参照してください。
 
 - テキストマッチ
 
-    Zilliz Cloudのキーワードマッチは、特定の用語に基づいて正確なドキュメント検索を可能にします。この機能は、特定の条件を満たすためのフィルタリング検索に主に使用され、スカラーフィルタリングを組み込むことでクエリ結果を絞り込み、スカラー基準を満たすベクトル内で類似性検索を可能にします。
+    Zilliz Cloudのキーワードマッチは、特定の用語に基づいて正確なドキュメント検索を可能にします。この機能は、特定の条件を満たすためのフィルタリング検索に主に使用され、スカラーフィルタリングを組み合わせてクエリ結果を絞り込み、スカラー条件を満たすベクトル内で類似性検索を可能にします。
 
     キーワードマッチの詳細については、[キーワードマッチ](./text-match)を参照してください。
 

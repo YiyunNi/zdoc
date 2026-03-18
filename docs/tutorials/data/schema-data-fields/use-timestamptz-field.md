@@ -1,7 +1,7 @@
 ---
 title: "TIMESTAMPTZ Field | Cloud"
 slug: /use-timestamptz-field
-sidebar_label: "TIMESTAMPTZ Field"
+sidebar_label: "TIMSTAMPTZ"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

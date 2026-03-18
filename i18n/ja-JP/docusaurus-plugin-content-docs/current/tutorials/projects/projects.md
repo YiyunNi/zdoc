@@ -4,20 +4,17 @@ slug: /projects
 sidebar_label: "プロジェクト"
 beta: FALSE
 notebook: FALSE
-description: "この章では、プロジェクトの操作と関連設定について説明します。"
+description: "この章では、プロジェクトの操作と関連設定について説明します。| Cloud"
 type: origin
 token: QHzrwVlEOipspAkPiyucWezqneC
-sidebar_position: 11
+sidebar_position: 12
 keywords: 
   - zilliz
   - ベクトルデータベース
   - cloud
   - プロジェクト
-  - ベクトルデータベースチュートリアル
-  - ベクトルデータベースの仕組み
-  - ベクトルDB比較
-  - openai ベクトルDB
 
+sidebar_key: "projects"
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,7 +1,7 @@
 ---
 title: "Tune Index Build Level | BYOC"
 slug: /tune-index-build-level
-sidebar_label: "Tune Index Build Level"
+sidebar_label: "Tune Build Level"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

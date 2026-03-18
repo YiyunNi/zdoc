@@ -4,7 +4,7 @@ slug: /lindera-tokenizer
 sidebar_label: "Lindera"
 beta: FALSE
 notebook: FALSE
-description: "`lindera` トークナイザーは、辞書ベースの形態素解析を実行します。日本語、韓国語、中国語のように単語がスペースで区切られていない言語に適しています。 | Cloud"
+description: "`lindera` トークナイザーは、辞書ベースの形態素解析を実行します。これは、単語がスペースで区切られず、文法マーカー（助詞）が単語に直接付加される日本語と韓国語のために設計されています。 | Cloud"
 type: origin
 token: PvwZwtu3FiBQNqkPa5VcqH6qnmg
 sidebar_position: 4
@@ -12,15 +12,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みトークナイザー
   - lindera-tokenizer
-  - ハイブリッド検索
-  - 語彙検索
-  - 近傍検索
-  - Agentic RAG
 
 ---
 
@@ -30,17 +26,55 @@ import TabItem from '@theme/TabItem';
 
 # Lindera
 
-`lindera` トークナイザーは、辞書ベースの形態素解析を実行します。これは、日本語、韓国語、中国語など、単語がスペースで区切られていない言語に適しています。
+`lindera` トークナイザーは、辞書ベースの形態素解析を実行します。これは、単語がスペースで区切られておらず、文法マーカー（助詞）が単語に直接付加される日本語と韓国語向けに設計されています。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>lindera</code> トークナイザーは、句読点を個別のトークンとして出力に保持します。例えば、<code>"こんにちは！"</code> は <code>["こんにちは", "！"]</code> になります。これらの独立した句読点トークンを削除するには、<a href="./remove-punct-filter"><code>removepunct</code></a> フィルターを使用します。</p>
+<p><strong>中国語テキストの場合</strong>: <code>lindera</code> は <code>cc-cedict</code> 辞書を介して中国語をサポートしていますが、代わりに <a href="./jieba-tokenizer"><code>jieba</code></a> トークナイザーを使用することをお勧めします。Jieba は中国語の単語分割のために特別に設計されており、より良い結果を提供します。</p>
 
 </Admonition>
 
-## 設定{#configuration}
+## 概要\{#overview}
 
-`lindera` トークナイザーを使用してアナライザーを設定するには、`tokenizer.type` を `lindera` に設定し、`dict_kind` で辞書を選択します。
+日本語と韓国語は膠着語です。助詞と呼ばれる文法マーカーが名詞に直接付加され、多数の組み合わせを形成します。例：
+
+<table>
+   <tr>
+     <th><p>言語</p></th>
+     <th><p>語根</p></th>
+     <th><ul><li>助詞</li></ul></th>
+     <th><p>= 結合形</p></th>
+     <th><p>意味</p></th>
+   </tr>
+   <tr>
+     <td><p>韓国語</p></td>
+     <td><p>서울 (ソウル)</p></td>
+     <td><p>에서</p></td>
+     <td><p>서울에서</p></td>
+     <td><p>ソウルで</p></td>
+   </tr>
+   <tr>
+     <td><p>日本語</p></td>
+     <td><p>東京 (トウキョウ)</p></td>
+     <td><p>に</p></td>
+     <td><p>東京に</p></td>
+     <td><p>東京へ</p></td>
+   </tr>
+</table>
+
+`lindera` トークナイザーは次のことを行います。
+
+1. テキストを個々の形態素（単語と助詞）に**分割**します。
+
+1. 辞書から品詞（POS）情報を使用して、各トークンに**タグ付け**します。
+
+1. 不要なトークン（助詞、句読点など）を削除するために**フィルターを適用**します。
+
+この2段階のプロセス（分割とPOSベースのフィルタリング）により、検索のためにどのトークンをインデックス化するかを正確に制御できます。
+
+## 設定\{#configuration}
+
+`lindera` トークナイザーを使用してアナライザーを設定するには、`tokenizer.type` を `lindera` に設定し、`dict_kind` で辞書を選択し、必要に応じてフィルターを適用します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -48,8 +82,14 @@ import TabItem from '@theme/TabItem';
 ```python
 analyzer_params = {
     "tokenizer": {
-      "type": "lindera",
-      "dict_kind": "ipadic"
+        "type": "lindera",
+        "dict_kind": "ko-dic",
+        "filter": [
+            {
+                "kind": "korean_stop_tags",
+                "tags": ["SP", "SSC", "SSO", "SC", "SE", "SF", "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ", "JX", "JC", "UNK", "EP", "ETM"]
+            }
+        ]
     }
 }
 ```
@@ -59,33 +99,68 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("tokenizer",
-                new HashMap<String, Object>() {{
-                    put("type", "lindera");
-                    put("dict_kind", "ipadic");
-                }});
+Map<String, Object> analyzerParams = new HashMap<>();                                 
+  analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+      put("type", "lindera");                                                           
+      put("dict_kind", "ko-dic");                                 
+      put("filter", Arrays.asList(
+          new HashMap<String, Object>() {{
+              put("kind", "korean_stop_tags");
+              put("tags", Arrays.asList(
+                  "SP", "SSC", "SSO", "SC", "SE", "SF",
+                  "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ",
+                  "JX", "JC", "UNK", "EP", "ETM"
+              ));
+          }}
+      ));
+  }});
 ```
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
-analyzerParams = map[string]any{"tokenizer": map[string]any{"type": "lindera", "dict_kind": "ipadic"}}
+analyzerParams := map[string]interface{}{                                             
+      "tokenizer": map[string]interface{}{     
+          "type":      "lindera",                                                       
+          "dict_kind": "ko-dic",                                  
+          "filter": []interface{}{                                                      
+              map[string]interface{}{                             
+                  "kind": "korean_stop_tags",
+                  "tags": []string{
+                      "SP", "SSC", "SSO", "SC", "SE", "SF",
+                      "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ",
+                      "JX", "JC", "UNK", "EP", "ETM",
+                  },
+              },
+          },
+      },
+  }
 ```
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
-// node.js
+const analyzer_params = {
+    "tokenizer": {
+        "type": "lindera",
+        "dict_kind": "ko-dic",
+        "filter": [
+            {
+                "kind": "korean_stop_tags",
+                "tags": ["SP", "SSC", "SSO", "SC", "SE", "SF", "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ", "JX", "JC", "UNK", "EP", "ETM"]
+            }
+        ]
+    }
+};
 ```
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -107,89 +182,46 @@ analyzerParams = map[string]any{"tokenizer": map[string]any{"type": "lindera", "
      <td><p><code>dict_kind</code></p></td>
      <td><p>語彙を定義するために使用される辞書。可能な値：</p><ul><li><p><code>ko-dic</code>: 韓国語 - 韓国語形態素辞書 (<a href="https://bitbucket.org/eunjeon/mecab-ko-dic">MeCab Ko-dic</a>)</p></li><li><p><code>ipadic</code>: 日本語 - 標準形態素辞書 (<a href="https://taku910.github.io/mecab/">MeCab IPADIC</a>)</p></li></ul></td>
    </tr>
+   <tr>
+     <td><p><code>filter</code></p></td>
+     <td><p>セグメンテーション後に適用するトークナイザーレベルのフィルターのリスト。各フィルターは以下のオブジェクトです。</p><ul><li><p><code>kind</code>: フィルタータイプ。サポートされている値：</p><ul><li><p><code>korean_stop_tags</code>: 指定された韓国語の品詞タグに一致するトークンを削除します。</p></li><li><p><code>japanese_stop_tags</code>: 指定された日本語の品詞タグに一致するトークンを削除します。</p></li></ul></li><li><p><code>tags</code>: フィルタリングする品詞タグのリスト。利用可能なタグは<code>kind</code>によって異なります。</p><ul><li><p><code>korean_stop_tags</code>の場合：正確なタグコード（例：<code>JKS</code>、<code>JKO</code>、<code>SF</code>）を使用します。韓国語のタグは正確な一致が必要です。世宗タグセットに基づく完全なリストについては、<a href="https://docs.rs/lindera/latest/src/lindera/token_filter/korean_stop_tags.rs.html">Lindera Korean stop tags source</a>を参照してください。</p></li><li><p><code>japanese_stop_tags</code>の場合：正確なタグコード（例：<code>助詞,格助詞</code>、<code>助詞,係助詞</code>、<code>助動詞</code>）を使用します。日本語のタグは正確な一致が必要です。完全なリスト（IPADIC）については、<a href="https://github.com/taku910/mecab/blob/master/mecab-ipadic/pos-id.def">Japanese POS tags reference</a>を参照してください。</p></li></ul></li></ul></td>
+   </tr>
 </table>
 
-`analyzer_params`を定義した後、collection schemaを定義する際に`VARCHAR`フィールドに適用できます。これにより、Zilliz Cloudはそのフィールドのテキストを指定されたanalyzerを使用して処理し、効率的なトークン化とフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
+`analyzer_params`を定義した後、コレクションスキーマを定義する際に`VARCHAR`フィールドに適用できます。これにより、Zilliz Cloudはそのフィールドのテキストを、指定されたアナライザーを使用して効率的なトークン化とフィルタリングのために処理できます。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
 
-## 例{#examples}
+## 例\{#examples}
 
-analyzer設定をcollection schemaに適用する前に、`run_analyzer`メソッドを使用してその動作を確認してください。
+アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer`メソッドを使用してその動作を確認してください。
 
-### アナライザー設定{#analyzer-configuration}
+### 韓国語の例\{#korean-example}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
+from pymilvus import MilvusClient
+
+client = MilvusClient(uri="YOUR_CLUSTER_ENDPOINT")
+
 analyzer_params = {
     "tokenizer": {
-      "type": "lindera",
-      "dict_kind": "ipadic"
+        "type": "lindera",
+        "dict_kind": "ko-dic",
+        "filter": [
+            {
+                "kind": "korean_stop_tags",
+                "tags": ["SP", "SSC", "SSO", "SC", "SE", "SF", "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ", "JX", "JC", "UNK", "EP", "ETM"]
+            }
+        ]
     }
 }
-```
 
-</TabItem>
+# Sample Korean text: "서울에서 맛있는 음식을 먹었습니다" (I ate delicious food in Seoul)
+sample_text = "서울에서 맛있는 음식을 먹었습니다"
 
-<TabItem value='java'>
-
-```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("tokenizer",
-                new HashMap<String, Object>() {{
-                    put("type", "lindera");
-                    put("dict_kind", "ipadic");
-                }});
-```
-
-</TabItem>
-
-<TabItem value='go'>
-
-```go
-analyzerParams = map[string]any{"tokenizer": map[string]any{"type": "lindera", "dict_kind": "ipadic"}}
-```
-
-</TabItem>
-
-<TabItem value='javascript'>
-
-```javascript
-// nodejs
-```
-
-</TabItem>
-
-<TabItem value='bash'>
-
-```bash
-# restful
-```
-
-</TabItem>
-</Tabs>
-
-### `run_analyzer` を使用した検証 {#verification-using-runanalyzer}
-
-<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
-<TabItem value='python'>
-
-```python
-from pymilvus import (
-    MilvusClient,
-)
-
-client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
-# Sample text to analyze
-sample_text = "東京スカイツリーの最寄り駅はとうきょうスカイツリー駅で"
-
-# Run the standard analyzer with the defined configuration
 result = client.run_analyzer(sample_text, analyzer_params)
-print("Standard analyzer output:", result)
+print("Analyzer output:", result)
 ```
 
 </TabItem>
@@ -204,12 +236,27 @@ import io.milvus.v2.service.vector.response.RunAnalyzerResp;
 
 ConnectConfig config = ConnectConfig.builder()
         .uri("YOUR_CLUSTER_ENDPOINT")
-        .token("YOUR_CLUSTER_TOKEN")
         .build();
 MilvusClientV2 client = new MilvusClientV2(config);
 
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "lindera");                                                                                                    
+  put("dict_kind", "ko-dic");                                 
+  put("filter", Arrays.asList(
+      new HashMap<String, Object>() {{
+          put("kind", "korean_stop_tags");
+          put("tags", Arrays.asList(
+              "SP", "SSC", "SSO", "SC", "SE", "SF",
+              "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ",
+              "JX", "JC", "UNK", "EP", "ETM"
+          ));
+      }}
+  ));
+}});
+
 List<String> texts = new ArrayList<>();
-texts.add("東京スカイツリーの最寄り駅はとうきょうスカイツリー駅で");
+texts.add("서울에서 맛있는 음식을 먹었습니다");
 
 RunAnalyzerResp resp = client.runAnalyzer(RunAnalyzerReq.builder()
         .texts(texts)
@@ -220,7 +267,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -240,8 +287,25 @@ if err != nil {
     // handle error
 }
 
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type":      "lindera",
+      "dict_kind": "ko-dic",
+      "filter": []interface{}{
+          map[string]interface{}{
+              "kind": "korean_stop_tags",
+              "tags": []string{
+                  "SP", "SSC", "SSO", "SC", "SE", "SF",
+                  "JKS", "JKC", "JKG", "JKO", "JKB", "JKV", "JKQ",
+                  "JX", "JC", "UNK", "EP", "ETM",
+              },
+          },
+      },
+  },
+}
+
 bs, _ := json.Marshal(analyzerParams)
-texts := []string{"東京スカイツリーの最寄り駅はとうきょうスカイツリー駅で"}
+texts := []string{"서울에서 맛있는 음식을 먹었습니다"}
 option := milvusclient.NewRunAnalyzerOption(texts).
     WithAnalyzerParams(string(bs))
 
@@ -254,15 +318,57 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
-// node.js
+import { MilvusClient } from "@zilliz/milvus2-sdk-node";
+
+const client = new MilvusClient({
+  uri: "YOUR_CLUSTER_ENDPOINT",
+});
+
+const analyzer_params = {
+  tokenizer: {
+    type: "lindera",
+    dict_kind: "ko-dic",
+    filter: [
+      {
+        kind: "korean_stop_tags",
+        tags: [
+          "SP",
+          "SSC",
+          "SSO",
+          "SC",
+          "SE",
+          "SF",
+          "JKS",
+          "JKC",
+          "JKG",
+          "JKO",
+          "JKB",
+          "JKV",
+          "JKQ",
+          "JX",
+          "JC",
+          "UNK",
+          "EP",
+          "ETM",
+        ],
+      },
+    ],
+  },
+};
+
+const sample_text = "서울에서 맛있는 음식을 먹었습니다";
+
+const result = await client.run_analyzer(sample_text, analyzer_params);
+console.log("Analyzer output:", result);
+
 ```
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -271,8 +377,107 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-### 期待される出力結果\{#expected-output}
+**期待される出力**:
 
 ```plaintext
-{tokens: ['東京', 'スカイ', 'ツリー', 'の', '最寄り駅', 'は', 'とう', 'きょう', 'スカイ', 'ツリー', '駅', 'で']} 
+['서울', '맛있', '음식', '먹', '습니다']
 ```
+
+`korean_stop_tags` がないと、出力には `에서` (in)、`는` (topic marker)、`을` (object marker) などの助詞が含まれますが、これらは通常、検索には役立ちません。
+
+### 日本語の例\{#japanese-example}
+
+<Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
+<TabItem value='python'>
+
+```python
+from pymilvus import MilvusClient
+
+client = MilvusClient(uri="YOUR_CLUSTER_ENDPOINT")
+
+analyzer_params = {
+    "tokenizer": {
+        "type": "lindera",
+        "dict_kind": "ipadic",
+        "filter": [
+            {
+                "kind": "japanese_stop_tags",
+                "tags": ["接続詞", "助詞,格助詞", "助詞,格助詞,一般", "助詞,格助詞,引用", "助詞,格助詞,連語", "助詞,係助詞", "助詞,終助詞", "助詞,接続助詞", "助詞,特殊", "助詞,副助詞", "助詞,副助詞／並立助詞／終助詞", "助詞,連体化", "助詞,副詞化", "助詞,並立助詞", "助動詞", "記号,一般", "記号,読点", "記号,句点", "記号,空白", "記号,括弧閉", "記号,括弧開", "その他,間投", "フィラー", "非言語音"]
+            }
+        ]
+    }
+}
+
+# Sample Japanese text: "東京スカイツリーの最寄り駅はとうきょうスカイツリー駅です"
+sample_text = "東京スカイツリーの最寄り駅はとうきょうスカイツリー駅です"
+
+result = client.run_analyzer(sample_text, analyzer_params)
+print("Analyzer output:", result)
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```java
+// java
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```go
+// go
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```javascript
+
+import { MilvusClient } from "@zilliz/milvus2-sdk-node";
+
+const client = new MilvusClient({
+  uri: "YOUR_CLUSTER_ENDPOINT",
+});
+
+const analyzer_params = {
+    "tokenizer": {
+        "type": "lindera",
+        "dict_kind": "ipadic",
+        "filter": [
+            {
+                "kind": "japanese_stop_tags",
+                "tags": ["接続詞", "助詞,格助詞", "助詞,格助詞,一般", "助詞,格助詞,引用", "助詞,格助詞,連語", "助詞,係助詞", "助詞,終助詞", "助詞,接続助詞", "助詞,特殊", "助詞,副助詞", "助詞,副助詞／並立助詞／終助詞", "助詞,連体化", "助詞,副詞化", "助詞,並立助詞", "助動詞", "記号,一般", "記号,読点", "記号,句点", "記号,空白", "記号,括弧閉", "記号,括弧開", "その他,間投", "フィラー", "非言語音"]
+            }
+        ]
+    }
+}
+
+// Sample Japanese text: "東京スカイツリーの最寄り駅はとうきょうスカイツリー駅です"
+const sample_text = "東京スカイツリーの最寄り駅はとうきょうスカイツリー駅です"
+
+const result = await client.run_analyzer(sample_text, analyzer_params);
+console.log("Analyzer output:", result);
+```
+
+</TabItem>
+
+<TabItem value='java'>
+
+```bash
+# restful
+```
+
+</TabItem>
+</Tabs>
+
+**期待される出力:**
+
+```plaintext
+['東京', 'スカイ', 'ツリー', '最寄り駅', 'とう', 'きょう', 'スカイ', 'ツリー', '駅']
+```
+
+`japanese_stop_tags` がないと、出力には `の` (所有格)、`は` (主題マーカー)、`です` (コピュラ) のような助詞が含まれます。

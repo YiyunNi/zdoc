@@ -1,7 +1,7 @@
 ---
 title: "Delete Entities | BYOC"
 slug: /delete-entities
-sidebar_label: "Delete Entities"
+sidebar_label: "Delete"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

@@ -33,7 +33,7 @@ The [Zilliz Cloud Terraform Provider](https://registry.terraform.io/providers/zi
 
 ## Authentication\{#authentication}
 
-Before you begin a resource deployment using Terraform, you must authenticate Terraform with the Zilliz Cloud platform. You must use a Zilliz Cloud API key with the appropriate permissions to complete authentication before any operations with this Terraform provider. To create a Zilliz Cloud API key, follow these steps:
+Before you begin a resource deployment using Terraform, you must authenticate Terraform with the Zilliz Cloud platform. You must use a Zilliz Cloud API key with the appropriate permissions to complete authentication before cloud-plane operations with this Terraform provider. To create a Zilliz Cloud API key, follow these steps:
 
 <Procedures>
 
@@ -48,6 +48,10 @@ Before you begin a resource deployment using Terraform, you must authenticate Te
 </Procedures>
 
 For more information about managing API keys, refer to [API Keys](/docs/byoc/manage-api-keys).
+
+To perform data-plane operations, such as collection manipulation, search, and query, you need to use a colon-separated username and password of the target cluster, in the format `username:password`, as the cluster access token.
+
+Among the resources listed below, use Zilliz Cloud APIs for clusters, users & roles, and BYOC projects resources. And use the cluster access token for database, collection & aliases, partition, and index resources.
 
 ## Manageable Resources\{#manageable-resources}
 

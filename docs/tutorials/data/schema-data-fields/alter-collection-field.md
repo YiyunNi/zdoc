@@ -1,7 +1,7 @@
 ---
 title: "Alter Collection Field | Cloud"
 slug: /alter-collection-field
-sidebar_label: "Alter Collection Field"
+sidebar_label: "Alter Field"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

@@ -18,10 +18,6 @@ keywords:
   - テキスト
   - 埋め込み
   - cohere
-  - Annoy ベクトル検索
-  - milvus
-  - Zilliz
-  - milvus ベクトルデータベース
 
 ---
 
@@ -33,14 +29,14 @@ import TabItem from '@theme/TabItem';
 
 このトピックでは、Milvus で Cohere 埋め込み関数を設定して使用する方法について説明します。
 
-## モデルの選択肢{#model-choices}
+## モデルの選択肢\{#model-choices}
 
-Milvus は Cohere が提供する埋め込みモデルをサポートしています。以下は、現在利用可能な埋め込みモデルの簡単なリファレンスです。
+Milvus は Cohere が提供する埋め込みモデルをサポートしています。以下は、すぐに参照できる現在利用可能な埋め込みモデルです。
 
 <table>
    <tr>
      <th><p>モデル名</p></th>
-     <th><p>次元数</p></th>
+     <th><p>次元</p></th>
      <th><p>最大トークン数</p></th>
      <th><p>説明</p></th>
    </tr>
@@ -54,19 +50,19 @@ Milvus は Cohere が提供する埋め込みモデルをサポートしてい�
      <td><p>embed-multilingual-v3.0</p></td>
      <td><p>1,024</p></td>
      <td><p>512</p></td>
-     <td><p>多言語の分類と埋め込みをサポートします。<a href="https://docs.cohere.com/docs/supported-languages">サポートされている言語はこちら</a>。</p></td>
+     <td><p>多言語分類と埋め込みをサポートします。<a href="https://docs.cohere.com/docs/supported-languages">サポートされている言語はこちら</a>。</p></td>
    </tr>
    <tr>
      <td><p>embed-english-light-v3.0</p></td>
      <td><p>384</p></td>
      <td><p>512</p></td>
-     <td><p><code>embed-english-v3.0</code> の小型で高速なバージョン。ほぼ同等の性能を持ちながら、はるかに高速。英語のみ。</p></td>
+     <td><p><code>embed-english-v3.0</code> の小型で高速なバージョン。ほぼ同等の機能を持つが、はるかに高速。英語のみ。</p></td>
    </tr>
    <tr>
      <td><p>embed-multilingual-light-v3.0</p></td>
      <td><p>384</p></td>
      <td><p>512</p></td>
-     <td><p><code>embed-multilingual-v3.0</code> の小型で高速なバージョン。ほぼ同等の性能を持ちながら、はるかに高速。多言語をサポート。</p></td>
+     <td><p><code>embed-multilingual-v3.0</code> の小型で高速なバージョン。ほぼ同等の機能を持つが、はるかに高速。多言語をサポート。</p></td>
    </tr>
    <tr>
      <td><p>embed-english-v2.0</p></td>
@@ -78,29 +74,29 @@ Milvus は Cohere が提供する埋め込みモデルをサポートしてい�
      <td><p>embed-english-light-v2.0</p></td>
      <td><p>1,024</p></td>
      <td><p>512</p></td>
-     <td><p>embed-english-v2.0 の小型で高速なバージョン。ほぼ同等の性能を持ちながら、はるかに高速。英語のみ。</p></td>
+     <td><p>embed-english-v2.0 の小型で高速なバージョン。ほぼ同等の機能を持つが、はるかに高速。英語のみ。</p></td>
    </tr>
    <tr>
      <td><p>embed-multilingual-v2.0</p></td>
      <td><p>768</p></td>
      <td><p>256</p></td>
-     <td><p>多言語の分類と埋め込みをサポートします。<a href="https://docs.cohere.com/docs/supported-languages">サポートされている言語はこちら</a>。</p></td>
+     <td><p>多言語分類と埋め込みをサポートします。<a href="https://docs.cohere.com/docs/supported-languages">サポートされている言語はこちら</a>。</p></td>
    </tr>
 </table>
 
 詳細については、[Cohere の Embed Models](https://docs.cohere.com/docs/cohere-embed) を参照してください。
 
-## 開始する前に{#before-you-start}
+## 開始する前に\{#before-you-start}
 
 テキスト埋め込み関数を使用する前に、以下の前提条件が満たされていることを確認してください。
 
-- **埋め込みモデルを選択する**
+- **埋め込みモデルを選択**
 
-    使用する埋め込みモデルを決定します。この選択によって、埋め込みの動作と出力形式が決まります。詳細については、[埋め込みモデルを選択する](./cohere#model-choices) を参照してください。
+    埋め込みモデルの選択は、埋め込みの動作と出力形式を決定するため、どの埋め込みモデルを使用するかを決定します。詳細については、[埋め込みモデルを選択](./cohere#model-choices) を参照してください。
 
-- **Cohere と統合し、統合 ID を取得する**
+- **Cohere と連携し、統合IDを取得する**
 
-    Cohere が提供する埋め込みモデルを使用する前に、Cohere とモデルプロバイダー統合を作成し、統合 ID を取得する必要があります。詳細については、[モデルプロバイダーとの統合](./integrate-with-model-providers) を参照してください。
+    Cohere が提供する埋め込みモデルを使用する前に、Cohere とモデルプロバイダー連携を作成し、統合IDを取得する必要があります。詳細については、[モデルプロバイダーと連携する](./integrate-with-model-providers) を参照してください。
 
 - **互換性のあるコレクションスキーマを設計する**
 
@@ -108,15 +104,15 @@ Milvus は Cohere が提供する埋め込みモデルをサポートしてい�
 
     - 生の入力テキスト用のテキストフィールド (`VARCHAR`)
 
-    - 選択した埋め込みモデルの出力と一致するデータ型と次元を持つ密ベクトルフィールド
+    - 選択した埋め込みモデルのデータ型と次元に一致する密ベクトルフィールド
 
-- **挿入時と検索時に生のテキストを扱う準備をする**
+- **挿入時および検索時に生のテキストを扱う準備をする**
 
     テキスト埋め込み関数を有効にすると、生のテキストを直接挿入およびクエリできます。埋め込みはシステムによって自動的に生成されます。
 
-## ステップ 1: テキスト埋め込み関数を持つコレクションを作成する{#step-1-create-a-collection-with-a-text-embedding-function}
+## ステップ 1: テキスト埋め込み関数を使用してコレクションを作成する\{#step-1-create-a-collection-with-a-text-embedding-function}
 
-### スキーマフィールドを定義する{#define-schema-fields}
+### スキーマフィールドを定義する\{#define-schema-fields}
 
 埋め込み関数を使用するには、特定のスキーマを持つコレクションを作成します。このスキーマには、少なくとも3つの必要なフィールドを含める必要があります。
 
@@ -126,7 +122,7 @@ Milvus は Cohere が提供する埋め込みモデルをサポートしてい�
 
 - テキスト埋め込み関数が `VARCHAR` フィールドに対して生成する密ベクトル埋め込みを格納するために予約されたベクトルフィールド。
 
-以下の例では、テキストデータを格納するための1つのスカラーフィールド `"document"` と、Function モジュールによって生成される埋め込みを格納するための1つのベクトルフィールド `"dense"` を持つスキーマを定義しています。ベクトル次元 (`dim`) は、選択した埋め込みモデルの出力と一致するように設定することを忘れないでください。
+次の例では、テキストデータを格納するための1つのスカラーフィールド `"document"` と、関数モジュールによって生成される埋め込みを格納するための1つのベクトルフィールド `"dense"` を持つスキーマを定義しています。ベクトル次元 (`dim`) を選択した埋め込みモデルの出力と一致するように設定することを忘れないでください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -199,7 +195,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -207,7 +203,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -215,7 +211,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -224,13 +220,13 @@ schema.addField(AddFieldReq.builder()
 </TabItem>
 </Tabs>
 
-### テキスト埋め込み関数を定義する{#define-the-text-embedding-function}
+### テキスト埋め込み関数を定義する\{#define-the-text-embedding-function}
 
 MilvusのFunctionモジュールは、スカラーフィールドに保存された生データを自動的に埋め込みに変換し、明示的に定義されたベクトルフィールドに保存します。
 
 以下の例では、スカラーフィールド`"document"`を埋め込みに変換し、結果のベクトルを以前に定義した`"dense"`ベクトルフィールドに保存するFunctionモジュール（`cohere_func`）を追加しています。
 
-埋め込み関数を定義したら、それをコレクションスキーマに追加します。これにより、Milvusは指定された埋め込み関数を使用してテキストデータから埋め込みを処理し、保存するよう指示されます。
+埋め込み関数を定義したら、それをコレクションスキーマに追加します。これにより、Milvusは指定された埋め込み関数を使用してテキストデータから埋め込みを処理および保存するように指示されます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -280,7 +276,7 @@ schema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -288,7 +284,7 @@ schema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -296,7 +292,7 @@ schema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -305,9 +301,9 @@ schema.addFunction(function);
 </TabItem>
 </Tabs>
 
-### インデックスの設定 {#configure-the-index}
+### インデックスの設定\{#configure-the-index}
 
-必要なフィールドと組み込み関数でスキーマを定義した後、コレクションのインデックスを設定します。このプロセスを簡素化するために、`index_type`として`AUTOINDEX`を使用します。これは、Zilliz Cloudがデータの構造に基づいて最適なインデックスタイプを選択し、構成できるようにするオプションです。
+必要なフィールドと組み込み関数でスキーマを定義したら、コレクションのインデックスを設定します。このプロセスを簡素化するために、`index_type`として`AUTOINDEX`を使用します。これは、Zilliz Cloudがデータの構造に基づいて最も適切なインデックスタイプを選択し、設定できるようにするオプションです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -341,7 +337,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -349,7 +345,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -357,7 +353,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -368,7 +364,7 @@ indexes.add(IndexParam.builder()
 
 ### コレクションの作成\{#create-the-collection}
 
-定義されたスキーマとインデックスパラメータを使用してコレクションを作成します。
+次に、定義されたスキーマとインデックスパラメータを使用してコレクションを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -399,7 +395,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -407,7 +403,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -415,7 +411,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -424,7 +420,7 @@ client.createCollection(requestCreate);
 </TabItem>
 </Tabs>
 
-## ステップ2: データを挿入する{#step-2-insert-data}
+## ステップ2: データの挿入\{#step-2-insert-data}
 
 コレクションとインデックスを設定したら、生データを挿入する準備が整います。このプロセスでは、生テキストを提供するだけで済みます。以前に定義したFunctionモジュールは、各テキストエントリに対応する疎ベクトルを自動的に生成します。
 
@@ -464,7 +460,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -472,7 +468,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -480,7 +476,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -489,7 +485,7 @@ client.insert(InsertReq.builder()
 </TabItem>
 </Tabs>
 
-## ステップ3: テキストで検索する{#step-3-search-with-text}
+## ステップ3: テキストで検索する\{#step-3-search-with-text}
 
 データ挿入後、生のクエリテキストを使用してセマンティック検索を実行します。Milvusは自動的にクエリを埋め込みベクトルに変換し、類似性に基づいて関連ドキュメントを取得し、最も一致する結果を返します。
 
@@ -534,7 +530,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -542,7 +538,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -550,7 +546,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful

@@ -1,7 +1,7 @@
 ---
 title: "Upsert Entities | Cloud"
 slug: /upsert-entities
-sidebar_label: "Upsert Entities"
+sidebar_label: "Upsert"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

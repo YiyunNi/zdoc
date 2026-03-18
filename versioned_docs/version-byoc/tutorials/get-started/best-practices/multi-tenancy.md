@@ -10,7 +10,7 @@ notebook: FALSE
 description: "In Zilliz Cloud, multi-tenancy means multiple customers or teams—referred to as tenants— share the same cluster while maintaining isolated data environments. | BYOC"
 type: origin
 token: R8amwM1K6iBDLuk0KcEcHJxtnhb
-sidebar_position: 2
+sidebar_position: 3
 keywords: 
   - zilliz
   - vector database

@@ -1,46 +1,42 @@
 ---
-title: "Zilliz Cloud IPアドレス | Cloud"
+title: "Zilliz Cloud IPs | Cloud"
 slug: /zilliz-cloud-ips
-sidebar_label: "Zilliz Cloud IPアドレス"
+sidebar_label: "Zilliz Cloud IP アドレス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、固定IPアドレスのセットを使用して、データソースからデータをプルし、ターゲットクラスターに送信します。Zilliz Cloudがこれを実行できるようにするには、ファイアウォールでこれらのIPアドレスを許可リストに登録する必要があります。"
+description: "Zilliz Cloud は、固定された IP アドレスのセットを使用して、データソースからデータを取得し、ターゲットクラスターに送信します。Zilliz Cloud がこれを実行できるようにするには、ファイアウォールでこれらの IP アドレスをホワイトリストに登録する必要があります | Cloud"
 type: origin
 token: KfgvwJKPDi8uDekl2aHcPOvgnSb
 sidebar_position: 4
 keywords: 
-  - Zilliz
+  - zilliz
   - ベクトルデータベース
-  - クラウド
-  - 移行
-  - IPアドレス
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - cloud
+  - migrations
+  - ips
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Zilliz Cloud IPアドレス
+# Zilliz Cloud IPs
 
-Zilliz Cloudは、固定IPアドレスのセットを使用して、データソースからデータをプルし、ターゲットクラスターに送信します。Zilliz Cloudがこれを実行できるようにするには、ファイアウォールでこれらのIPアドレスをセーフリストに登録する必要があります。
+Zilliz Cloud は、データソースからデータを取得し、固定された IP アドレスのセットを使用してターゲットクラスターに送信します。Zilliz Cloud がこれを実行できるようにするには、ファイアウォールで以下の IP アドレスをセーフリストに登録する必要があります。
 
-- Zilliz CloudサービスIPアドレス
+- Zilliz Cloud サービスの IP アドレス
 
-- ターゲットクラスターが存在するクラウドリージョンのIPアドレス
+- ターゲットクラスターが存在するクラウドリージョンの IP アドレス
 
-## Zilliz CloudサービスIPアドレス{#zilliz-cloud-service-ip-addresses}
+## Zilliz Cloud サービスの IP アドレス\{#zilliz-cloud-service-ip-addresses}
 
-これらのIPアドレスは、Zilliz Cloudがサービスを提供するために使用します。これらがファイアウォールの許可リストに追加されていることを確認してください。
+これらの IP アドレスは、Zilliz Cloud がサービスを提供するために使用されます。これらがファイアウォールの許可リストに追加されていることを確認してください。
 
 <table>
    <tr>
      <th><p>リージョン</p></th>
      <th><p>場所</p></th>
-     <th><p>IPアドレス (CIDR)</p></th>
+     <th><p>IP アドレス (CIDR)</p></th>
    </tr>
    <tr>
      <td><p>us-west-2</p></td>
@@ -49,17 +45,17 @@ Zilliz Cloudは、固定IPアドレスのセットを使用して、データソ
    </tr>
 </table>
 
-## ターゲットクラスターリージョンIPアドレス{#target-cluster-region-ip-addresses}
+## ターゲットクラスターリージョンの IP アドレス\{#target-cluster-region-ip-addresses}
 
-ターゲットのZilliz Cloudクラスターのクラウドサービスプロバイダーとリージョンに対応するIPアドレスをセーフリストに登録します。
+ターゲット Zilliz Cloud クラスターが存在するクラウドサービスプロバイダーおよびリージョンに対応する IP アドレスをセーフリストに登録してください。
 
-### AWS{#aws}
+### AWS\{#aws}
 
 <table>
    <tr>
      <th><p>リージョン</p></th>
      <th><p>場所</p></th>
-     <th><p>IPアドレス (CIDR)</p></th>
+     <th><p>IP アドレス (CIDR)</p></th>
    </tr>
    <tr>
      <td><p>us-west-2</p></td>
@@ -92,6 +88,11 @@ Zilliz Cloudは、固定IPアドレスのセットを使用して、データソ
      <td><p><code>18.158.52.65</code>, <code>3.121.11.160</code></p></td>
    </tr>
    <tr>
+     <td><p>eu-west-1</p></td>
+     <td><p>アイルランド</p></td>
+     <td><p><code>54.76.194.38</code>, <code>99.81.179.135</code>, <code>3.248.62.149</code>, <code>52.16.225.156</code></p></td>
+   </tr>
+   <tr>
      <td><p>ca-central-1</p></td>
      <td><p>カナダ (中央)</p></td>
      <td><p><code>15.157.245.36</code>, <code>52.60.120.239</code>, <code>15.157.14.152</code></p></td>
@@ -103,13 +104,13 @@ Zilliz Cloudは、固定IPアドレスのセットを使用して、データソ
    </tr>
 </table>
 
-### GCP{#gcp}
+### GCP\{#gcp}
 
 <table>
    <tr>
      <th><p>リージョン</p></th>
      <th><p>場所</p></th>
-     <th><p>IPアドレス (CIDR)</p></th>
+     <th><p>IP アドレス (CIDR)</p></th>
    </tr>
    <tr>
      <td><p>us-west1</p></td>
@@ -138,13 +139,13 @@ Zilliz Cloudは、固定IPアドレスのセットを使用して、データソ
    </tr>
 </table>
 
-### Azure{#azure}
+### Azure\{#azure}
 
 <table>
    <tr>
      <th><p>リージョン</p></th>
      <th><p>場所</p></th>
-     <th><p>IPアドレス (CIDR)</p></th>
+     <th><p>IP アドレス (CIDR)</p></th>
    </tr>
    <tr>
      <td><p>East US</p></td>

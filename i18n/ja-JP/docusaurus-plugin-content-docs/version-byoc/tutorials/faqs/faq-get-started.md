@@ -1,51 +1,51 @@
 ---
-title: "FAQ: はじめに | BYOC"
+title: "よくある質問：はじめに | BYOC"
 slug: /faq-get-started
-sidebar_label: "FAQ: はじめに"
+sidebar_label: "よくある質問：はじめに"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloud の利用を開始する際に発生する可能性のある問題と、それに対応する解決策をリストアップしています。 | BYOC"
+description: "このトピックでは、Zilliz Cloud の利用開始時に発生する可能性のある問題と、それらの解決策を一覧で紹介します。| BYOC"
 type: origin
 token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 1
 
 ---
 
-# FAQ: はじめに
+# FAQ: 始め方
 
-このトピックでは、Zilliz Cloud の使用を開始する際に発生する可能性のある問題と、それに対応する解決策をリストアップします。
+このトピックでは、Zilliz Cloud の利用開始時に発生する可能性のある問題と、それに対応する解決策を一覧にしています。
 
 ## 目次
 
-- [Zilliz Cloud と他のベクトル検索ソリューションとのパフォーマンス比較はありますか？](#is-there-any-performance-comparison-between-zilliz-cloud-and-other-vector-search-solutions)
-- [Zilliz Cloud はどのタイプのインデックスをサポートしていますか？](#which-type-of-index-is-supported-by-zilliz-cloud)
-- [Zilliz Cloud の検索レイテンシーはどのくらいですか？](#what-is-the-search-latency-of-zilliz-cloud)
-- [さらに技術的なサポートを受けるにはどうすればよいですか？](#how-can-i-get-further-technical-support)
+- [Zilliz Cloud と他のベクトル検索ソリューションとの間でパフォーマンス比較は可能ですか？](#is-there-any-performance-comparison-between-zilliz-cloud-and-other-vector-search-solutions)
+- [Zilliz Cloud でサポートされているインデックスタイプは何ですか？](#which-type-of-index-is-supported-by-zilliz-cloud)
+- [Zilliz Cloud の検索レイテンシ是多少ですか？](#what-is-the-search-latency-of-zilliz-cloud)
+- [さらに技術サポートを受けるにはどうすればよいですか？](#how-can-i-get-further-technical-support)
 
-## FAQ
-
-
+## よくある質問
 
 
-### Zilliz Cloud と他のベクトル検索ソリューションとのパフォーマンス比較はありますか？{#is-there-any-performance-comparison-between-zilliz-cloud-and-other-vector-search-solutions}
 
-はい、あります。[VectorDBBench](https://zilliz.com/vector-database-benchmark-tool) は、Zilliz Cloud と他の主要なベクトルデータベースおよびクラウドサービスのパフォーマンスを比較するためのベクトルデータベースベンチマークツールです。
 
-### Zilliz Cloud はどのタイプのインデックスをサポートしていますか？{#which-type-of-index-is-supported-by-zilliz-cloud}
+### Zilliz Cloud と他のベクトル検索ソリューションとの間でパフォーマンス比較は可能ですか？\{#is-there-any-performance-comparison-between-zilliz-cloud-and-other-vector-search-solutions}
 
-現在、Zilliz Cloud は AUTOINDEX のみをサポートしています。これは、より優れた検索パフォーマンスを実現できる独自のインデックスタイプです。詳細については、[AUTOINDEX の説明](./autoindex-explained) を参照してください。
+はい。[VectorDBBench](https://zilliz.com/vector-database-benchmark-tool) というベクトルデータベースのベンチマークツールを使用して、Zilliz Cloud と他の主流のベクトルデータベースおよびクラウドサービスのパフォーマンスを比較できます。
 
-ただし、[サポートしているインデックス](https://milvus.io/docs/index.md) の使用に慣れている場合は、[リクエストを送信](https://support.zilliz.com/hc/en-us) してください。お客様のアプリケーションの要件を評価し、インデックスを有効にするお手伝いをいたします。
+### Zilliz Cloud でサポートされているインデックスタイプは何ですか？\{#which-type-of-index-is-supported-by-zilliz-cloud}
 
-### Zilliz Cloud の検索レイテンシーはどのくらいですか？{#what-is-the-search-latency-of-zilliz-cloud}
+現在、Zilliz Cloud は AUTOINDEX のみをサポートしています。これは、より良い検索パフォーマンスを実現するのに役立つ独自のインデックスタイプです。詳細については、[AUTOINDEX の解説](./autoindex-explained) をご覧ください。
 
-検索レイテンシーは、CU タイプとデータ量によって異なります。
+ただし、私たちがサポートしている[いずれかのインデックス](https://milvus.io/docs/index.md) の使用に慣れている場合は、[リクエストを送信](https://support.zilliz.com/hc/en-us) してください。アプリケーションの要件を評価し、インデックスを有効化するお手伝いをいたします。
+
+### Zilliz Cloud の検索レイテンシ是多少ですか？\{#what-is-the-search-latency-of-zilliz-cloud}
+
+検索レイテンシは、CU タイプとデータ量によって異なります。
 
 <table>
    <tr>
      <th><p>top_k</p></th>
-     <th><p>パフォーマンス最適化 CU のレイテンシー (768 次元 1M ベクトル)</p></th>
-     <th><p>容量最適化 CU のレイテンシー (768 次元 5M ベクトル)</p></th>
+     <th><p>パフォーマンス最適化済み CU のレイテンシ（768 次元、100 万ベクトル）</p></th>
+     <th><p>容量最適化済み CU のレイテンシ（768 次元、500 万ベクトル）</p></th>
    </tr>
    <tr>
      <td><p>10</p></td>
@@ -69,8 +69,8 @@ sidebar_position: 1
    </tr>
 </table>
 
-テスト結果の詳細については、[適切な CU の選択](./cu-types-explained) を参照してください。
+テスト結果の詳細については、[適切な CU の選択](./cu-types-explained) をご覧ください。
 
-### さらに技術的なサポートを受けるにはどうすればよいですか？{#how-can-i-get-further-technical-support}
+### さらに技術サポートを受けるにはどうすればよいですか？\{#how-can-i-get-further-technical-support}
 
-Zilliz Cloud の [サポートポータル](https://support.zilliz.com/hc/en-us) からリクエストを送信してください。
+Zilliz Cloud の [サポートポータル](https://support.zilliz.com/hc/en-us) にてリクエストを送信してください。

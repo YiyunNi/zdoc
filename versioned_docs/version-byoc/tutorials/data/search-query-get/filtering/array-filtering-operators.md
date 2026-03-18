@@ -1,7 +1,7 @@
 ---
 title: "ARRAY Operators | BYOC"
 slug: /array-filtering-operators
-sidebar_label: "ARRAY Operators"
+sidebar_label: "Array"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

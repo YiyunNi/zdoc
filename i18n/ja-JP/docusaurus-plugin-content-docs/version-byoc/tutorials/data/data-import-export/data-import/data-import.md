@@ -4,21 +4,18 @@ slug: /data-import
 sidebar_label: "データインポート"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、AWS S3、GCP Storage、Azure Blob Storageなどの様々なストレージオプションからのデータインポート、およびParquet（推奨）、JSON、NumPyファイルなどの形式をサポートしています。この章では、これらのストレージオプションからサポートされている形式でデータをインポートする手順について説明します。 | BYOC"
+description: "Zilliz Cloud は、AWS S3、GCP Storage、Azure Blob Storage などのストレージオプションから、Parquet（推奨）、JSON、NumPy ファイルなどの形式でのデータインポートをサポートしています。この章では、これらのストレージオプションからサポートされている形式のデータをインポートする手順について説明します。 | BYOC"
 type: origin
 token: T5BnwoXuFiwXyekEJ1ZcfaJGnqd
 sidebar_position: 1
 keywords: 
-  - Zilliz
+  - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - データインポート
-  - Milvus
-  - 密な埋め込み
-  - Faiss ベクトルデータベース
-  - Chroma ベクトルデータベース
-  - nlp 検索
+  - milvus
 
+sidebar_key: "data/data-import-export/data-import"
 ---
 
 import Admonition from '@theme/Admonition';
@@ -26,7 +23,7 @@ import Admonition from '@theme/Admonition';
 
 # データインポート
 
-Zilliz Cloud は、AWS S3、GCP Storage、Azure Blob Storage などの様々なストレージオプション、および Parquet (推奨)、JSON、NumPy ファイルなどの形式からのデータインポートをサポートしています。この章では、これらのストレージオプションからサポートされている形式でデータをインポートする手順を説明します。
+Zilliz Cloud は、AWS S3、GCP Storage、Azure Blob Storage などのさまざまなストレージオプションからのデータインポートをサポートしています。また、Parquet（推奨）、JSON、NumPy ファイルなどのフォーマットもサポートしています。この章では、これらのストレージオプションからサポートされているフォーマットでデータをインポートする手順について説明します。
 
 
 

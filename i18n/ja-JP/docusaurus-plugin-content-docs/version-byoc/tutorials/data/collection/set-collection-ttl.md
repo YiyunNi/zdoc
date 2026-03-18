@@ -1,24 +1,20 @@
 ---
-title: "コレクションのTTLを設定する | BYOC"
+title: "コレクション TTL の設定 | BYOC"
 slug: /set-collection-ttl
-sidebar_label: "コレクションのTTLを設定する"
+sidebar_label: "TTL"
 beta: FALSE
 notebook: FALSE
-description: "データは一度コレクションに挿入されると、デフォルトではそこに保持されます。しかし、特定のシナリオでは、一定期間後にデータを削除またはクリーンアップしたい場合があります。そのような場合、コレクションのTime-to-Live (TTL) プロパティを設定することで、TTLの期限が切れるとZilliz Cloudが自動的にデータを削除するようにできます。 | BYOC"
+description: "データはデフォルトではコレクションに挿入されたまま残りますが、特定の期間経過後にデータを削除またはクリーンアップしたい場合があります。そのような場合、コレクションの Time-to-Live（TTL）プロパティを設定することで、TTL が期限切れになると Zilliz Cloud が自動的にデータを削除するようにできます。| BYOC"
 type: origin
 token: GthGwnrpEiGpClkV5JXcgWUgn8c
 sidebar_position: 6
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
-  - collection
-  - コレクションTTL
+  - cloud
+  - コレクション
+  - コレクション ttl
   - time-to-live
-  - 近傍探索
-  - Agentic RAG
-  - rag llm アーキテクチャ
-  - プライベートLLM
 
 ---
 
@@ -26,73 +22,73 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# コレクションのTTLを設定する
+# コレクションの TTL を設定する
 
-データは一度コレクションに挿入されると、デフォルトではそこに残ります。しかし、特定のシナリオでは、一定期間後にデータを削除またはクリーンアップしたい場合があります。そのような場合、コレクションのTime-to-Live (TTL) プロパティを設定することで、TTLの期限が切れるとZilliz Cloudが自動的にデータを削除するようにできます。
+データがコレクションに挿入されると、デフォルトではそのデータはそこに残り続けます。ただし、特定の期間後にデータを削除またはクリーンアップしたいシナリオもあります。このような場合、コレクションの Time-to-Live（TTL）プロパティを設定することで、Zilliz Cloud が TTL の期限切れ時に自動的にデータを削除します。
 
-## 概要{#overview}
+## 概要\{#overview}
 
-Time-to-Live (TTL) は、データが挿入または変更されてから一定期間のみ有効またはアクセス可能であるべきシナリオで、データベースで一般的に使用されます。その後、データは自動的に削除されます。
+Time-to-Live（TTL）は、データベースにおいて、データが挿入または更新された後、一定期間のみ有効またはアクセス可能である必要があるシナリオで一般的に使用されます。その後、データは自動的に削除されます。
 
-例えば、毎日データを取り込んでいるが、14日間だけレコードを保持する必要がある場合、コレクションのTTLを**14 × 24 × 3600 = 1209600**秒に設定することで、Zilliz Cloudがそれより古いデータを自動的に削除するように設定できます。これにより、コレクションには最新の14日分のデータのみが残ることが保証されます。
+たとえば、毎日データを取り込み、14日間だけレコードを保持したい場合、コレクションの TTL を **14 × 24 × 3600 = 1209600** 秒に設定することで、Zilliz Cloud がそれより古いデータを自動的に削除するように構成できます。これにより、コレクション内には最新の14日分のデータのみが保持されます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>期限切れのエンティティは、検索結果やクエリ結果には表示されません。ただし、次のデータ圧縮までストレージに残る可能性があり、これは次の24時間以内に行われるはずです。</p>
+<p>期限切れとなったエンティティは、検索やクエリの結果に表示されません。ただし、次回のデータコンパクションが実行されるまではストレージ内に残る可能性があります。このコンパクションは、通常24時間以内に行われます。</p>
 
 </Admonition>
 
-Zilliz CloudコレクションのTTLプロパティは、秒単位の整数として指定されます。一度設定されると、TTLを超過したデータはコレクションから自動的に削除されます。
+Zilliz Cloud コレクションの TTL プロパティは、秒単位の整数として指定されます。一度設定されると、TTL を超過したデータは自動的にコレクションから削除されます。
 
-削除プロセスは非同期であるため、指定されたTTLが経過した直後に検索結果からデータが削除されない場合があります。代わりに、ガベージコレクション（GC）と圧縮プロセスに依存するため、削除には遅延が生じる可能性があり、これらは非決定的な間隔で発生します。
+削除処理は非同期で行われるため、指定された TTL が経過した直後に検索結果からデータが完全に消えるとは限りません。削除はガベージコレクション（GC）およびコンパクションプロセスに依存しており、これらは不定期に実行されるため、若干の遅延が発生する可能性があります。
 
-## 例{#examples}
+## 例\{#examples}
 
-一般的に、コレクションのTTLは、TTL設定がいつ適用されるか、およびエンティティがいつ挿入または更新されるかと密接に関連しています。TTLメカニズムをよりよく理解するために、以下の例を検討してください。
+一般に、コレクションの TTL は、TTL 設定が適用されるタイミングと、エンティティが挿入または更新されるタイミングと密接に関係しています。TTL の仕組みをよりよく理解するために、以下の例を参照してください。
 
-### 例1：コレクション作成時にTTLを設定する{#example-1-set-ttl-upon-collection-creation}
+### 例 1: コレクション作成時に TTL を設定\{#example-1-set-ttl-upon-collection-creation}
 
-コレクションを作成する際に、**TTL**を**2592000 (30日)**に設定します。
+コレクション作成時に **TTL** を **2592000（30日）** に設定します。
 
-**1月1日**の**00:00**に、**100億エンティティ**を挿入し、その後書き込み操作は行いませんでした。
+**1月1日**の**00:00**に**100億件のエンティティ**を挿入し、その後他の書き込み操作は一切行いません。
 
-**1月31日**の**00:00**以降、**100億エンティティ**は検索不能になり、出力フィールドを`count(*)`に設定したクエリの結果は**0**になります。
+**1月31日**の**00:00**以降、**100億件のエンティティ**は検索不可能となり、出力フィールドを `count(*)` に設定したクエリの結果は **0** になります。
 
-### 例2：既存のコレクションにTTLを設定する{#example-2-set-ttl-for-an-existing-collection}
+### 例 2: 既存のコレクションに TTL を設定\{#example-2-set-ttl-for-an-existing-collection}
 
-TTLなしでコレクションを作成しました。
+TTL を設定せずにコレクションを作成済みです。
 
-**1月1日**の**00:00**に、**100億エンティティ**を挿入します。
+**1月1日**の**00:00**に**100億件のエンティティ**を挿入します。
 
-**1月31日**の**00:00**に、さらに**200億エンティティ**を挿入し、その後書き込み操作は行いませんでした。
+**1月31日**の**00:00**にさらに**200億件のエンティティ**を挿入し、その後他の書き込み操作は一切行いません。
 
-**2月28日**の**10:00**に、コレクションのTTLを**2592000 (30日)**に設定します。
+**2月28日**の**10:00**に、コレクションの TTL を **2592000（30日）** に設定します。
 
-1月1日に挿入された**100億エンティティ**は、TTLが設定された直後に検索不能になり、出力フィールドを`count(*)`に設定したクエリの結果は**200億**になります。
+1月1日に挿入された**100億件のエンティティ**は、TTL 設定直後に検索不可能となり、出力フィールドを `count(*)` に設定したクエリの結果は **200億** になります。
 
-### 例3：エンティティをアップサートする{#example-3-upsert-entities}
+### 例 3: エンティティの upsert\{#example-3-upsert-entities}
 
-コレクションを作成する際に、**TTL**を**2592000 (30日)**に設定します。
+コレクション作成時に **TTL** を **2592000（30日）** に設定します。
 
-**1月1日**の**00:00**に、**200億エンティティ**を挿入し、その後書き込み操作は行いませんでした。
+**1月1日**の**00:00**に**200億件のエンティティ**を挿入し、その後他の書き込み操作は一切行いません。
 
-**1月15日**の**00:00**から**23:59:59**の間に、マージモードで200億エンティティすべてをアップサートし、その後書き込み操作は行いませんでした。
+**1月15日**の**00:00**から**23:59:59**の間に、すべての200億件のエンティティをマージモードで upsert し、その後他の書き込み操作は一切行いません。
 
-**1月31日**から**2月13日**の期間中、200億エンティティは検索可能であり、クエリカウントは200億のままです。
+**1月31日**から**2月13日**の期間中、200億件のエンティティは引き続き検索可能であり、クエリのカウント結果も200億のままです。
 
-**2月14日**の**00:00**以降、クエリカウントは減少し始め、**2月15日**の**00:00**には**0**に達しました。
+**2月14日**の**00:00**以降、クエリのカウント結果は徐々に減少し、**2月15日**の**00:00**には **0** になります。
 
-## TTLを設定する{#set-ttl}
+## TTL の設定\{#set-ttl}
 
-TTLプロパティは、以下の際に設定できます。
+以下のタイミングで TTL プロパティを設定できます。
 
-- [コレクションを作成する際。](./set-collection-ttl#set-ttl-when-creating-a-collection)
+- [コレクション作成時](./set-collection-ttl#set-ttl-when-creating-a-collection)
 
-- [既存のコレクションのTTLプロパティを変更する際。](./set-collection-ttl#set-ttl-for-an-existing-collection)
+- [既存のコレクションの TTL プロパティを変更する場合](./set-collection-ttl#set-ttl-for-an-existing-collection)
 
-### コレクション作成時にTTLを設定する{#set-ttl-when-creating-a-collection}
+### コレクション作成時に TTL を設定\{#set-ttl-when-creating-a-collection}
 
-以下のコードスニペットは、コレクション作成時にTTLプロパティを設定する方法を示しています。
+以下のコードスニペットは、コレクション作成時に TTL プロパティを設定する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -135,7 +131,7 @@ client.createCollection(customizedSetupReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const createCollectionReq = {
@@ -151,7 +147,7 @@ const createCollectionReq = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("my_collection", schema).
@@ -164,7 +160,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export params='{
@@ -188,9 +184,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 既存のコレクションにTTLを設定する{#set-ttl-for-an-existing-collection}
+### 既存のコレクションに TTL を設定する\{#set-ttl-for-an-existing-collection}
 
-以下のコードスニペットは、既存のコレクションのTTLプロパティを変更する方法を示しています。
+以下のコードスニペットは、既存のコレクションの TTL プロパティを変更する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -217,7 +213,7 @@ client.alterCollectionProperties(alterCollectionReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 res = await client.alterCollection({
@@ -230,7 +226,7 @@ res = await client.alterCollection({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.AlterCollectionProperties(ctx, milvusclient.NewAlterCollectionPropertiesOption("my_collection").
@@ -243,7 +239,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 curl --request POST \
@@ -261,9 +257,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## TTL設定の削除{#drop-ttl-setting}
+## TTL設定の削除\{#drop-ttl-setting}
 
-コレクション内のデータを無期限に保持することを決定した場合、そのコレクションからTTL設定を削除するだけです。
+コレクション内のデータを無期限に保持することにした場合は、そのコレクションからTTL設定を簡単に削除できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -288,7 +284,7 @@ client.dropCollectionProperties(DropCollectionPropertiesReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 res = await client.dropCollectionProperties({
@@ -299,7 +295,7 @@ res = await client.dropCollectionProperties({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.DropCollectionProperties(ctx, milvusclient.NewDropCollectionPropertiesOption("my_collection", common.CollectionTTLConfigKey))
@@ -311,7 +307,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 curl --request POST \
@@ -329,19 +325,19 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## よくある質問{#faqs}
+## よくある質問\{#faqs}
 
-### TTL設定によるデータ失効はいつ発生しますか？{#when-does-data-expire-due-to-ttl-settings}
+### TTL設定によりデータはいつ有効期限切れになりますか？\{#when-does-data-expire-due-to-ttl-settings}
 
-現在、データは挿入またはアップサートされた時点に基づいて失効します。失効したデータは検索結果に表示されません。詳細については、[例](./set-collection-ttl#examples)を参照してください。
+現在、データの有効期限は、そのデータが挿入またはアップサートされた時点を基準として計算されます。有効期限が切れたデータは、検索結果に表示されません。詳細については、[例](./set-collection-ttl#examples)を参照してください。
 
-### 失効したデータはいつ物理的に削除されますか？{#when-will-the-expired-data-be-physically-deleted}
+### 有効期限切れのデータはいつ物理的に削除されますか？\{#when-will-the-expired-data-be-physically-deleted}
 
-データが失効すると、検索結果には含まれなくなります。ただし、クラスターの圧縮ポリシーに従って、その後のシステム圧縮後にのみ物理的に削除されます。
+データの有効期限が切れると、それ以降の検索結果には含まれなくなります。ただし、物理的な削除は、クラスターのコンパクションポリシーに従って、その後のシステムコンパクションが実行された後に行われます。
 
-データが失効した直後に削除する必要がある場合は、[お問い合わせください](https://support.zilliz.com/hc/en-us/requests/new)。
+有効期限切れ後すぐにデータを削除したい場合は、[お問い合わせください](https://support.zilliz.com/hc/en-us/requests/new)。
 
-### CU容量はいつ減少しますか？{#when-will-the-cu-capacity-decrease}
+### CU容量はいつ減少しますか？\{#when-will-the-cu-capacity-decrease}
 
-クラスターのCU容量は、メモリ使用量とストレージ使用量のいずれか高い方です。ストレージ使用量が適用される場合、失効したデータが物理的に削除された後、Zilliz CloudコンソールでCU容量の減少を確認できます。
+クラスターのCU容量は、メモリ使用量とストレージ使用量のうち大きい方によって決まります。ストレージ使用量が適用される場合、有効期限切れのデータが物理的に削除された後、Zilliz Cloud コンソール上でCU容量の減少を確認できます。
 

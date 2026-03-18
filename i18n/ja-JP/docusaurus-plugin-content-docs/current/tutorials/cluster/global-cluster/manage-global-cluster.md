@@ -11,13 +11,9 @@ sidebar_position: 3
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - cloud
+  - クラウド
   - milvus
   - グローバルクラスター
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
-  - nn search
 
 ---
 
@@ -26,29 +22,29 @@ import Admonition from '@theme/Admonition';
 
 import Supademo from '@site/src/components/Supademo';
 
-# グローバルクラスターの管理
+# グローバルクラスターを管理する
 
 このガイドでは、グローバルクラスターを管理する方法について説明します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>この機能は、<strong>Business Critical</strong>プロジェクトの<strong>Dedicated</strong>クラスターでのみ利用可能です。</p>
+<p>この機能は、<strong>ビジネスクリティカル</strong>プロジェクトの<strong>Dedicated</strong>クラスターでのみ利用可能です。</p>
 
 </Admonition>
 
-## 開始する前に{#before-you-start}
+## 開始する前に\{#before-you-start}
 
 - プロジェクト管理者であることを確認してください。
 
 - プライマリークラスターとセカンダリークラスターの両方を一時停止することはできません。
 
-## クラスターの状態を監視する{#monitor-cluster-status}
+## クラスターのステータスを監視する\{#monitor-cluster-status}
 
-プライマリークラスターとセカンダリークラスターの状態、およびデータレプリケーションの状態を監視できます。
+プライマリークラスターとセカンダリークラスターのステータス、およびデータレプリケーションのステータスを監視できます。
 
 <table>
    <tr>
-     <th><p><strong>クラスターの状態</strong></p></th>
+     <th><p><strong>クラスターのステータス</strong></p></th>
      <th><p><strong>説明</strong></p></th>
    </tr>
    <tr>
@@ -65,35 +61,35 @@ import Supademo from '@site/src/components/Supademo';
    </tr>
    <tr>
      <td><p><strong>SWITCHING</strong></p></td>
-     <td><p>Zilliz Cloudは、プライマリークラスターとセカンダリークラスターの間でプライマリーの役割を切り替えています。</p></td>
+     <td><p>Zilliz Cloudは、プライマリークラスターとセカンダリークラスター間でプライマリーの役割を切り替えています。</p></td>
    </tr>
    <tr>
      <td><p><strong>FENCED</strong></p></td>
-     <td><p>スイッチオーバーまたはフェイルオーバー後、元のプライマリークラスターは「Fenced」状態になり、すべての書き込みリクエストを拒否します。</p></td>
+     <td><p>スイッチオーバーまたはフェイルオーバー後、元のプライマリークラスターは「Fenced」ステータスになり、すべての書き込みリクエストを拒否します。</p></td>
    </tr>
    <tr>
      <td><p><strong>REBUILDING</strong></p></td>
-     <td><p>グローバルクラスターを復元すると、そのすべての元のセカンダリークラスターは「Rebuilding」状態に移行します。</p></td>
+     <td><p>グローバルクラスターを復元すると、そのすべての元のセカンダリークラスターは「Rebuilding」ステータスに移行します。</p></td>
    </tr>
 </table>
 
-## スイッチオーバー{#switchover}
+## スイッチオーバー\{#switchover}
 
-計画的なリージョンローテーションのために、スイッチオーバーを実行してセカンダリークラスターをプライマリーロールに昇格させることができます。
+計画的なリージョンローテーションのために、セカンダリークラスターをプライマリーロールに昇格させるスイッチオーバーを実行できます。
 
-ボタンをクリックすると、古いプライマリークラスターと新しいプライマリークラスター間のデータが完全に同期されたときにスイッチオーバーが行われます。
+ボタンをクリックすると、古いプライマリークラスターと新しいプライマリークラスター間のデータが完全に同期されたときにスイッチオーバーが実行されます。
 
 以下のデモは、スイッチオーバーを実行する方法を示しています。
 
 <Supademo id="cmkauk6rl1hqrke4xpnketcbq" title=""  />
 
-## セカンダリークラスターの追加{#add-secondary-clusters}
+## セカンダリークラスターを追加する\{#add-secondary-clusters}
 
 リージョンカバレッジを向上させるために、既存のグローバルクラスターに異なるリージョンの追加のセカンダリークラスターを追加できます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>グローバルクラスターは、最大5つのセカンダリークラスターしか持つことができません。</p>
+<p>グローバルクラスターは最大5つのセカンダリークラスターしか持つことができません。</p>
 
 </Admonition>
 
@@ -101,7 +97,19 @@ import Supademo from '@site/src/components/Supademo';
 
 <Supademo id="cmkat4dkp1h55ke4xyc8i7c9y" title=""  />
 
-## セカンダリークラスターの削除{#drop-secondary-cluster}
+## プライマリークラスターをスケーリングする\{#scale-primary-cluster}
 
-グローバルクラスター内のすべてのセカンダリークラスターを削除すると、通常の非グローバルクラスターに戻ります。クラスターを削除する方法の詳細については、「[クラスターの管理](./manage-cluster#drop-cluster)」を参照してください。
+グローバルクラスターの容量を増やすには、そのプライマリークラスターのクエリCUをスケーリングできます。プライマリークラスターのクエリCUへの変更は、すべてのセカンダリークラスターに自動的に同期されます。
+
+プライマリークラスターのクエリCUをスケーリングする方法の詳細については、「[クエリCUをスケーリングする](./scale-query-cu)」を参照してください。
+
+現在、グローバルクラスターのレプリカスケーリングはサポートされていません。
+
+## セカンダリークラスターを削除する\{#drop-secondary-cluster}
+
+クラスターを削除する方法の詳細については、「[クラスターを管理する](./manage-cluster#drop-cluster)」を参照してください。
+
+## グローバルクラスターを削除する\{#drop-global-cluster}
+
+グローバルクラスターを削除するには、まずすべてのセカンダリークラスターを削除し、次にプライマリークラスターを削除します。グローバルクラスターはプライマリークラスターとともに自動的に削除されます。
 

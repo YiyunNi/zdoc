@@ -1,7 +1,7 @@
 ---
 title: "Manage Indexes | BYOC"
 slug: /manage-indexes
-sidebar_label: "Manage Indexes"
+sidebar_label: "Indexes"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

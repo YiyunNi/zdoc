@@ -4,7 +4,7 @@ slug: /enable-dynamic-field
 sidebar_label: "動的フィールド"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudでは、動的フィールドと呼ばれる特別な機能を通じて、柔軟で進化する構造を持つエンティティを挿入できます。このフィールドは、$metaという隠しJSONフィールドとして実装されており、コレクションスキーマで明示的に定義されていないデータ内の任意のフィールドを自動的に保存します。 | Cloud"
+description: "Zilliz Cloudでは、動的フィールドと呼ばれる特別な機能を通じて、柔軟で進化する構造を持つエンティティを挿入できます。このフィールドは、$metaという隠しJSONフィールドとして実装されており、コレクションスキーマで明示的に定義されていないデータ内のフィールドを自動的に保存します。 | Cloud"
 type: origin
 token: OVxRwZWxNi4pYrkdKxCcOuY2nf1
 sidebar_position: 13
@@ -12,13 +12,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - dynamic field
-  - llm eval
-  - 疎 vs 密
-  - 密ベクトル
-  - 階層的ナビゲーション可能な小世界
+  - コレクション
+  - スキーマ
+  - 動的フィールド
 
 ---
 
@@ -26,19 +22,19 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Dynamic Field
+# ダイナミックフィールド
 
-Zilliz Cloud では、**動的フィールド**と呼ばれる特別な機能を通じて、柔軟で進化する構造を持つエンティティを挿入できます。このフィールドは `$meta` という名前の隠し JSON フィールドとして実装されており、コレクションスキーマで**明示的に定義されていない**データ内のすべてのフィールドを自動的に保存します。
+Zilliz Cloudでは、**ダイナミックフィールド**と呼ばれる特別な機能を通じて、柔軟で進化する構造を持つエンティティを挿入できます。このフィールドは、`$meta`という隠しJSONフィールドとして実装されており、コレクションスキーマで**明示的に定義されていない**データ内のすべてのフィールドを自動的に保存します。
 
-## 仕組み{#how-it-works}
+## 仕組み\{#how-it-works}
 
-動的フィールドが有効になっている場合、Zilliz Cloud は各エンティティに隠し `$meta` フィールドを追加します。このフィールドは JSON 型であるため、JSON 互換のデータ構造を保存でき、JSON パス構文を使用してインデックスを作成できます。
+ダイナミックフィールドが有効な場合、Zilliz Cloudは各エンティティに隠しフィールド`$meta`を追加します。このフィールドはJSON型であるため、JSON互換のデータ構造を格納でき、JSONパス構文を使用してインデックスを作成できます。
 
-データ挿入中、スキーマで宣言されていないフィールドはすべて、この動的フィールド内にキーと値のペアとして自動的に保存されます。
+データ挿入中、スキーマで宣言されていないフィールドは、このダイナミックフィールド内にキーと値のペアとして自動的に保存されます。
 
-`$meta` を手動で管理する必要はありません。Zilliz Cloud が透過的に処理します。
+`$meta`を手動で管理する必要はありません。Zilliz Cloudが透過的に処理します。
 
-たとえば、コレクションスキーマが `id` と `vector` のみを定義しており、次のエンティティを挿入する場合：
+たとえば、コレクションスキーマが`id`と`vector`のみを定義しており、次のエンティティを挿入する場合：
 
 ```json
 {
@@ -49,7 +45,7 @@ Zilliz Cloud では、**動的フィールド**と呼ばれる特別な機能を
 }
 ```
 
-動的フィールド機能が有効な場合、Zilliz Cloud はそれを内部的に次のように保存します。
+動的フィールド機能が有効になっている場合、Zilliz Cloud はそれを内部的に次のように保存します。
 
 ```json
 {
@@ -72,11 +68,11 @@ Zilliz Cloud では、**動的フィールド**と呼ばれる特別な機能を
 
 - エンティティによって異なるメタデータのキャプチャ
 
-- 特定のdynamic fieldキーのインデックスを介した柔軟なフィルタリングのサポート
+- 特定の動的フィールドキーのインデックスによる柔軟なフィルタリングのサポート
 
-## サポートされているデータ型{#supported-data-types}
+## サポートされているデータ型\{#supported-data-types}
 
-dynamic fieldは、Zilliz Cloudが提供するすべてのスカラーデータ型をサポートしており、単純な値と複雑な値の両方が含まれます。これらのデータ型は、**$metaに保存されているキーの値**に適用されます。
+動的フィールドは、Zilliz Cloud が提供するすべてのスカラーデータ型をサポートしており、単純な値と複雑な値の両方が含まれます。これらのデータ型は、**$meta に保存されているキーの値**に適用されます。
 
 **サポートされている型は次のとおりです。**
 
@@ -90,7 +86,7 @@ dynamic fieldは、Zilliz Cloudが提供するすべてのスカラーデータ�
 
 - スカラー値の配列 (`ARRAY`)
 
-- JSONオブジェクト (`JSON`)
+- JSON オブジェクト (`JSON`)
 
 **例:**
 
@@ -107,11 +103,11 @@ dynamic fieldは、Zilliz Cloudが提供するすべてのスカラーデータ�
 }
 ```
 
-上記のキーと値はそれぞれ `$meta` フィールド内に保存されます。
+上記のキーと値はそれぞれ`$meta`フィールド内に保存されます。
 
-## 動的フィールドを有効にする {#enable-dynamic-field}
+## 動的フィールドの有効化\{#enable-dynamic-field}
 
-動的フィールド機能を使用するには、コレクションスキーマを作成する際に `enable_dynamic_field=True` を設定します。
+動的フィールド機能を使用するには、コレクションスキーマを作成する際に`enable_dynamic_field=True`を設定します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -177,7 +173,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType, CreateCollectionReq } from '@zilliz/milvus2-sdk-node';
@@ -209,7 +205,7 @@ const res = await client.createCollection({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -248,7 +244,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -293,7 +289,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## コレクションへのエンティティの挿入{#insert-entities-to-the-collection}
+## コレクションへのエンティティの挿入\{#insert-entities-to-the-collection}
 
 動的フィールドを使用すると、スキーマで定義されていない追加のフィールドを挿入できます。これらのフィールドは自動的に `$meta` に保存されます。
 
@@ -355,7 +351,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 
@@ -382,7 +378,7 @@ const res = await client.insert({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 _, err = client.Insert(ctx, milvusclient.NewColumnBasedInsertOption("my_collection").
@@ -409,7 +405,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -440,9 +436,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## 動的フィールド内のインデックスキー{#index-keys-in-the-dynamic-field}
+## 動的フィールドのインデックスキー\{#index-keys-in-the-dynamic-field}
 
-Zilliz Cloudでは、**JSONパスインデックス**を使用して、動的フィールド内の特定のキーにインデックスを作成できます。これらは、JSONオブジェクト内のスカラー値またはネストされた値のいずれかです。
+Zilliz Cloudでは、**JSONパスインデックス**を使用して、動的フィールド内の特定のキーにインデックスを作成できます。これらは、JSONオブジェクト内のスカラー値またはネストされた値にすることができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -450,25 +446,25 @@ Zilliz Cloudでは、**JSONパスインデックス**を使用して、動的フ
 
 </Admonition>
 
-### JSONパスインデックス構文{#json-path-indexing-syntax}
+### JSONパスインデックスの構文\{#json-path-indexing-syntax}
 
 JSONパスインデックスを作成するには、以下を指定します。
 
-- **JSONパス** (`json_path`): インデックスを作成したいJSONオブジェクト内のキーまたはネストされたフィールドへのパス。
+- **JSONパス** (`json_path`): インデックスを作成するJSONオブジェクト内のキーまたはネストされたフィールドへのパス。
 
     - 例: `metadata["category"]`
 
-        これは、インデックスエンジンがJSON構造のどこを探すべきかを定義します。
+        これは、インデックス作成エンジンがJSON構造のどこを探すべきかを定義します。
 
-- **JSONキャストタイプ** (`json_cast_type`): 指定されたパスの値を解釈およびインデックス付けする際にZilliz Cloudが使用すべきデータ型。
+- **JSONキャストタイプ** (`json_cast_type`): 指定されたパスの値を解釈およびインデックス作成する際にZilliz Cloudが使用すべきデータ型。
 
-    - このタイプは、インデックス付けされるフィールドの実際のデータ型と一致する必要があります。
+    - この型は、インデックスを作成するフィールドの実際のデータ型と一致する必要があります。
 
     - 完全なリストについては、[サポートされているJSONキャストタイプ](./use-json-fields)を参照してください。
 
-### JSONパスを使用して動的フィールドキーをインデックス付けする{#use-json-path-to-index-dynamic-field-keys}
+### JSONパスを使用して動的フィールドキーをインデックス作成する\{#use-json-path-to-index-dynamic-field-keys}
 
-動的フィールドはJSONフィールドであるため、JSONパス構文を使用してその中の任意のキーをインデックス付けできます。これは、単純なスカラー値と複雑なネストされた構造の両方で機能します。
+動的フィールドはJSONフィールドであるため、JSONパス構文を使用してその中の任意のキーをインデックス作成できます。これは、単純なスカラー値と複雑なネストされた構造の両方で機能します。
 
 **JSONパスの例:**
 
@@ -589,7 +585,7 @@ indexParams.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const indexParams = [
@@ -642,7 +638,7 @@ const indexParams = [
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -666,7 +662,7 @@ indexOpt4 := milvusclient.NewCreateIndexOption("my_collection", "dynamic_json", 
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export TOKEN="YOUR_CLUSTER_TOKEN"
@@ -716,9 +712,9 @@ export nestedIndex='{
 </TabItem>
 </Tabs>
 
-### 型変換にJSONキャスト関数を使用する {#use-json-cast-functions-for-type-conversion}
+### 型変換にJSONキャスト関数を使用する\{#use-json-cast-functions-for-type-conversion}
 
-動的フィールドのキーに誤った形式の値が含まれている場合（例：数値が文字列として保存されている場合）、キャスト関数を使用して変換できます。
+動的フィールドキーに誤った形式の値が含まれている場合（例：文字列として保存されている数値）、キャスト関数を使用して変換できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -756,7 +752,7 @@ indexParams.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 indexParams.push({
@@ -775,7 +771,7 @@ indexParams.push({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 jsonIndex5 := index.NewJSONPathIndex(index.AUTOINDEX, "double", `dynamic_json['string_price']`)
@@ -785,7 +781,7 @@ indexOpt5 := milvusclient.NewCreateIndexOption("my_collection", "dynamic_json", 
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export TOKEN="YOUR_CLUSTER_TOKEN"
@@ -816,9 +812,9 @@ export stringPriceIndex='{
 
 </Admonition>
 
-### コレクションにインデックスを適用する{#apply-indexes-to-the-collection}
+### コレクションにインデックスを適用する\{#apply-indexes-to-the-collection}
 
-インデックスパラメータを定義した後、`create_index()` を使用してコレクションに適用できます。
+インデックスパラメータを定義したら、`create_index()` を使用してコレクションに適用できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -845,7 +841,7 @@ client.createIndex(CreateIndexReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
   await client.createIndex(indexParams);
@@ -853,7 +849,7 @@ client.createIndex(CreateIndexReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 indexTask1, err := client.CreateIndex(ctx, indexOpt1)
@@ -880,7 +876,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -906,13 +902,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## 動的フィールドキーによるフィルタリング{#filter-by-dynamic-field-keys}
+## 動的フィールドキーによるフィルタリング\{#filter-by-dynamic-field-keys}
 
-動的フィールドキーを持つエンティティを挿入した後、標準のフィルター式を使用してそれらをフィルタリングできます。
+動的フィールドキーを持つエンティティを挿入した後、標準のフィルター式を使用してそれらをフィルターできます。
 
 - 非JSONキー（例：文字列、数値、ブール値）の場合、キー名を直接参照できます。
 
-- JSONオブジェクトを格納するキーの場合、JSONパス構文を使用してネストされた値にアクセスします。
+- JSONオブジェクトを格納するキーの場合、ネストされた値にアクセスするにはJSONパス構文を使用します。
 
 前のセクションの[例のエンティティ](./enable-dynamic-field#insert-entities-to-the-collection)に基づいて、有効なフィルター式は次のとおりです。
 
@@ -937,7 +933,7 @@ String filter = 'dynamic_json["nested"]["value"] < 50';
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 filter = 'overview == "Great product"'                // Non-JSON key
@@ -947,7 +943,7 @@ filter = 'dynamic_json["nested"]["value"] < 50'       // JSON object key
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 filter := 'overview == "Great product"'
@@ -957,7 +953,7 @@ filter := 'dynamic_json["nested"]["value"] < 50'
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -969,7 +965,7 @@ export filter='dynamic_json["nested"]["value"] < 50'
 </TabItem>
 </Tabs>
 
-**動的フィールドキーの取得**: 検索またはクエリ結果で動的フィールドキーを返すには、フィルタリングと同じJSONパス構文を使用して`output_fields`パラメータで明示的に指定する必要があります。
+**動的フィールドキーの取得**: 検索またはクエリ結果で動的フィールドキーを返すには、フィルタリングと同じJSONパス構文を使用して、`output_fields`パラメータで明示的に指定する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -1020,7 +1016,7 @@ SearchResp searchResp = client.search(searchReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -1042,7 +1038,7 @@ const res = await client.search({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -1087,7 +1083,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -1123,9 +1119,9 @@ curl --request POST \
 
 ## まとめ\{#put-it-all-together}
 
-これで、スキーマで定義されていないキーを柔軟に保存およびインデックス化するために動的フィールドを使用する方法を学びました。動的フィールドキーが挿入されると、フィルター式で他のフィールドと同じように使用できます。特別な構文は必要ありません。
+ここまでで、スキーマで定義されていないキーを柔軟に保存およびインデックス化するために動的フィールドを使用する方法を学びました。動的フィールドキーが挿入されると、フィルター式で他のフィールドと同じように使用できます。特別な構文は必要ありません。
 
-実際のアプリケーションでワークフローを完了するには、次のことも必要です。
+実際のアプリケーションでワークフローを完了するには、次のことも行う必要があります。
 
 - **ベクトルフィールドにインデックスを作成する** (各コレクションに必須)
 
@@ -1141,34 +1137,34 @@ curl --request POST \
 
 ## FAQ\{#faq}
 
-### 動的フィールドキーを使用する代わりに、スキーマでフィールドを明示的に定義すべきなのはどのような場合ですか？\{#when-should-i-define-a-field-explicitly-in-the-schema-instead-of-using-a-dynamic-field-key}
+### 動的フィールドキーを使用する代わりに、スキーマでフィールドを明示的に定義する必要があるのはどのような場合ですか？\{#when-should-i-define-a-field-explicitly-in-the-schema-instead-of-using-a-dynamic-field-key}
 
-動的フィールドキーを使用する代わりに、スキーマでフィールドを明示的に定義すべきなのは次の場合です。
+動的フィールドキーを使用する代わりに、スキーマでフィールドを明示的に定義する必要があるのは次の場合です。
 
-- **フィールドが`output_fields`に頻繁に含まれる場合**: 明示的に定義されたフィールドのみが`output_fields`を通じて効率的に取得されることが保証されます。動的フィールドキーは高頻度での取得には最適化されておらず、パフォーマンスのオーバーヘッドが発生する可能性があります。
+- **フィールドが `output_fields` に頻繁に含まれる場合**: 明示的に定義されたフィールドのみが `output_fields` を介して効率的に取得されることが保証されます。動的フィールドキーは高頻度での取得には最適化されておらず、パフォーマンスのオーバーヘッドが発生する可能性があります。
 
-- **フィールドが頻繁にアクセスまたはフィルターされる場合**: 動的フィールドキーのインデックス作成は、固定スキーマフィールドと同様のフィルタリングパフォーマンスを提供できますが、明示的に定義されたフィールドはより明確な構造と優れた保守性を提供します。
+- **フィールドが頻繁にアクセスまたはフィルターされる場合**: 動的フィールドキーのインデックス作成は、固定スキーマフィールドと同様のフィルタリングパフォーマンスを提供できますが、明示的に定義されたフィールドは、より明確な構造と優れた保守性を提供します。
 
 - **フィールドの動作を完全に制御する必要がある場合**: 明示的なフィールドは、スキーマレベルの制約、検証、およびより明確な型付けをサポートしており、データの整合性と一貫性を管理するのに役立ちます。
 
-- **インデックス作成の不整合を避けたい場合**: 動的フィールドキーのデータは、型や構造の不整合が発生しやすいです。固定スキーマを使用すると、特にインデックス作成やキャストを使用する予定がある場合に、データ品質を確保するのに役立ちます。
+- **インデックス作成の不整合を避けたい場合**: 動的フィールドキーのデータは、型や構造の不整合が発生しやすくなります。固定スキーマを使用すると、特にインデックス作成やキャストを使用する予定がある場合に、データの品質を確保するのに役立ちます。
 
-### 同じ動的フィールドキーに異なるデータ型で複数のインデックスを作成できますか？\{#can-i-create-multiple-indexes-on-the-same-dynamic-field-key-with-different-data-types}
+### 異なるデータ型を持つ同じ動的フィールドキーに複数のインデックスを作成できますか？\{#can-i-create-multiple-indexes-on-the-same-dynamic-field-key-with-different-data-types}
 
-いいえ、**JSONパスごとに1つのインデックスのみ**作成できます。動的フィールドキーに混合型の値（例：一部の文字列と一部の数値）が含まれている場合でも、そのパスをインデックス化する際には単一の`json_cast_type`を選択する必要があります。現時点では、異なる型で同じキーに複数のインデックスを作成することはサポートされていません。
+いいえ、**JSONパスごとに1つのインデックスのみ**作成できます。動的フィールドキーに混合型の値 (例: 一部の文字列と一部の数値) が含まれている場合でも、そのパスをインデックス化するときは単一の `json_cast_type` を選択する必要があります。異なる型を持つ同じキーに複数のインデックスを作成することは、現時点ではサポートされていません。
 
 ### 動的フィールドキーをインデックス化する際に、データキャストが失敗した場合はどうなりますか？\{#when-indexing-a-dynamic-field-key-what-if-the-data-casting-fails}
 
-動的フィールドキーにインデックスを作成し、データキャストが失敗した場合（例：`double`にキャストされるべき値が`"abc"`のような非数値文字列である場合）、それらの特定の値は**インデックス作成中にサイレントにスキップされます**。それらはインデックスに表示されず、したがってインデックスに依存するフィルターベースの検索またはクエリ結果には**返されません**。
+動的フィールドキーにインデックスを作成し、データキャストが失敗した場合 (例: `double` にキャストされるはずの値が `"abc"` のような非数値文字列である場合)、それらの特定の値は**インデックス作成中にサイレントにスキップされます**。それらはインデックスに表示されないため、インデックスに依存するフィルターベースの検索またはクエリ結果には**返されません**。
 
 これにはいくつかの重要な意味があります。
 
-- **フルスキャンへのフォールバックなし**: 大多数のエンティティが正常にインデックス化された場合、フィルタリングクエリは完全にインデックスに依存します。キャスト失敗のあるエンティティは、論理的にフィルター条件に一致する場合でも、結果セットから除外されます。
+- **フルスキャンへのフォールバックなし**: ほとんどのエンティティが正常にインデックス化されている場合、フィルタリングクエリは完全にインデックスに依存します。キャストが失敗したエンティティは、論理的にフィルター条件と一致する場合でも、結果セットから除外されます。
 
-- **検索精度のリスク**: データ品質が inconsistent な大規模なデータセット（特に動的フィールドキー）では、この動作により予期しない結果の欠落が発生する可能性があります。インデックス作成前に、一貫性のある有効なデータ形式を確保することが重要です。
+- **検索精度のリスク**: データ品質が一貫していない大規模なデータセット (特に動的フィールドキー) では、この動作により予期しない結果の欠落が発生する可能性があります。インデックスを作成する前に、一貫性のある有効なデータ形式を確保することが重要です。
 
-- **キャスト関数の慎重な使用**: インデックス作成中に文字列を数値に変換するために`json_cast_function`を使用する場合、文字列値が確実に変換可能であることを確認してください。`json_cast_type`と実際の変換された型の不一致は、エラーまたはスキップされたエントリにつながります。
+- **キャスト関数の慎重な使用**: インデックス作成中に文字列を数値に変換するために `json_cast_function` を使用する場合、文字列値が確実に変換可能であることを確認してください。`json_cast_type` と実際の変換された型の不一致は、エラーまたはスキップされたエントリにつながります。
 
 ### クエリがインデックス化されたキャスト型とは異なるデータ型を使用している場合はどうなりますか？\{#what-happens-if-my-query-uses-a-different-data-type-than-the-indexed-cast-type}
 
-クエリが、インデックスで使用されたものとは**異なるデータ型**を使用して動的フィールドキーを比較する場合（例：インデックスが`double`にキャストされたときに文字列比較でクエリする場合）、システムは**インデックスを使用せず**、*可能な場合にのみ*フルスキャンにフォールバックする可能性があります。最高のパフォーマンスと精度を得るには、クエリの型がインデックス作成時に使用された`json_cast_type`と一致していることを確認してください。
+クエリが、インデックスで使用されたものとは**異なるデータ型**を使用して動的フィールドキーを比較する場合 (例: インデックスが `double` にキャストされたときに文字列比較でクエリする場合)、システムは**インデックスを使用しない**ため、*可能な場合にのみ*フルスキャンにフォールバックする可能性があります。最高のパフォーマンスと精度を得るには、クエリの型がインデックス作成時に使用された `json_cast_type` と一致していることを確認してください。

@@ -1,24 +1,20 @@
 ---
 title: "コレクションの作成 | Cloud"
 slug: /manage-collections-sdks
-sidebar_label: "コレクションの作成"
+sidebar_label: "作成"
 beta: FALSE
 notebook: FALSE
-description: "コレクションは、スキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで作成できます。このページでは、コレクションをゼロから作成する方法について説明します。 | Cloud"
+description: "スキーマ、インデックスパラメータ、メトリックタイプ、および作成時のロードの有無を定義してコレクションを作成できます。このページでは、ゼロからコレクションを作成する方法について説明します。 | Cloud"
 type: origin
 token: EmcowmwYpiFbWgkmnqfcMf3knVc
 sidebar_position: 2
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - コレクションの作成
-  - カスタムセットアップ
-  - ハイブリッドベクター検索
-  - 動画の重複排除
-  - 動画類似性検索
-  - ベクター検索
+  - カスタム設定
 
 ---
 
@@ -28,38 +24,38 @@ import TabItem from '@theme/TabItem';
 
 # コレクションの作成
 
-コレクションは、スキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで作成できます。このページでは、コレクションをゼロから作成する方法について説明します。
+コレクションは、そのスキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを定義することで作成できます。このページでは、ゼロからコレクションを作成する方法を紹介します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>強力なデータ分離が必要で、少数のテナントのみを管理する場合は、テナントごとに個別のコレクションを作成できます。</p>
-<p>ただし、<a href="./limits">クラスタープラン</a>によっては、最大16,384個のコレクションしか作成できません。したがって、大規模なマルチテナンシーの場合は、ユースケースに応じて、パーティションベースまたはパーティションキーベースのマルチテナンシーなどの代替戦略を検討してください。詳細については、<a href="./multi-tenancy">マルチテナンシーの実装</a>を参照してください。</p>
+<p>データの強力な分離が必要で、テナント数が少ない場合は、各テナントごとに個別のコレクションを作成できます。</p>
+<p>ただし、<a href="./limits">クラスタープラン</a>によって異なりますが、最大16,384個のコレクションしか作成できません。そのため、大規模なマルチテナンシーの場合は、ユースケースに応じてパーティションベースまたはパーティションキーに基づくマルチテナンシーなどの代替戦略を検討してください。詳細については、<a href="./multi-tenancy">マルチテナンシーの実装</a>を参照してください。</p>
 
 </Admonition>
 
-## 概要{#overview}
+## 概要\{#overview}
 
-コレクションは、固定列と可変行を持つ2次元テーブルです。各列はフィールドを表し、各行はエンティティを表します。このような構造化データ管理を実装するには、スキーマが必要です。挿入するすべてのエンティティは、スキーマで定義された制約を満たす必要があります。
+コレクションは、列が固定され行が可変の二次元テーブルです。各列はフィールドを表し、各行はエンティティを表します。このような構造的データ管理を実現するにはスキーマが必要です。挿入するすべてのエンティティは、スキーマで定義された制約を満たす必要があります。
 
-スキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかを含むコレクションのすべての側面を決定して、コレクションが要件を完全に満たすようにすることができます。
+コレクションのスキーマ、インデックスパラメータ、メトリックタイプ、および作成時にロードするかどうかなど、コレクションのあらゆる側面を決定し、要件を完全に満たすようにできます。
 
-コレクションを作成するには、次の手順を実行する必要があります。
+コレクションを作成するには、以下の手順を実行する必要があります。
 
 - [スキーマの作成](./manage-collections-sdks#create-schema)
 
-- [インデックスパラメータの設定](./manage-collections-sdks#optional-set-index-parameters) (オプション)
+- [インデックスパラメータの設定](./manage-collections-sdks#optional-set-index-parameters)（任意）
 
 - [コレクションの作成](./manage-collections-sdks#create-a-collection)
 
-## スキーマの作成{#create-schema}
+## スキーマの作成\{#create-schema}
 
 スキーマはコレクションのデータ構造を定義します。コレクションを作成する際には、要件に基づいてスキーマを設計する必要があります。詳細については、[スキーマの説明](./schema-explained)を参照してください。
 
-次のコードスニペットは、動的フィールドが有効で、`my_id`、`my_vector`、`my_varchar`という3つの必須フィールドを持つスキーマを作成します。
+以下のコードスニペットは、動的フィールドを有効にし、`my_id`、`my_vector`、`my_varchar` という3つの必須フィールドを持つスキーマを作成します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>任意のスカラーフィールドにデフォルト値を設定し、null許容にすることができます。詳細については、<a href="./nullable-and-default">Null許容とデフォルト</a>を参照してください。</p>
+<p>任意のスカラー型フィールドに対してデフォルト値を設定し、NULL許容にすることもできます。詳細については、<a href="./nullable-fields">NULL許容 & デフォルト値</a>を参照してください。</p>
 
 </Admonition>
 
@@ -137,7 +133,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -170,7 +166,7 @@ const fields = [
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -203,7 +199,7 @@ schema := entity.NewSchema().WithDynamicFieldEnabled(true).
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export schema='{
@@ -236,15 +232,15 @@ export schema='{
 </TabItem>
 </Tabs>
 
-## (オプション) インデックスパラメータの設定{#optional-set-index-parameters}
+## (オプション) インデックスパラメータの設定\{#optional-set-index-parameters}
 
-特定のフィールドにインデックスを作成すると、そのフィールドに対する検索が高速化されます。インデックスは、コレクション内のエンティティの順序を記録します。以下のコードスニペットに示すように、`metric_type`と`index_type`を使用して、Zilliz Cloudがフィールドをインデックス化し、ベクトル埋め込み間の類似性を測定するための適切な方法を選択できます。
+特定のフィールドにインデックスを作成すると、そのフィールドに対する検索が高速化されます。インデックスはコレクション内のエンティティの順序を記録します。以下のコードスニペットに示すように、`metric_type` および `index_type` を使用して、Zilliz Cloud がフィールドをインデックス化し、ベクトル埋め込み間の類似度を測定するための適切な方法を選択できます。
 
-Zilliz Cloudでは、すべてのベクトルフィールドのインデックスタイプとして`AUTOINDEX`を使用でき、必要に応じてメトリックタイプとして`COSINE`、`L2`、`IP`のいずれかを使用できます。
+Zilliz Cloud では、すべてのベクトルフィールドに対してインデックスタイプとして `AUTOINDEX` を使用でき、必要に応じてメトリックタイプとして `COSINE`、`L2`、`IP` のいずれかを使用できます。
 
-上記のコードスニペットで示されているように、ベクトルフィールドにはインデックスタイプとメトリックタイプを設定する必要があり、スカラーフィールドにはインデックスタイプのみを設定します。インデックスはベクトルフィールドには必須であり、フィルタリング条件で頻繁に使用されるスカラーフィールドにはインデックスを作成することをお勧めします。
+上記のコードスニペットで示されているように、ベクトルフィールドにはインデックスタイプとメトリックタイプの両方を設定する必要がありますが、スカラーフィールドにはインデックスタイプのみを設定します。ベクトルフィールドにはインデックスが必須であり、フィルタリング条件で頻繁に使用されるスカラーフィールドにもインデックスを作成することをお勧めします。
 
-詳細については、[インデックスの管理](./manage-indexes)を参照してください。
+詳細については、[インデックスの管理](./manage-indexes) を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -293,7 +289,7 @@ indexParams.add(indexParamForVectorField);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 3.2 Prepare index parameters
@@ -309,7 +305,7 @@ const index_params = [{
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -327,7 +323,7 @@ indexOptions := []milvusclient.CreateIndexOption{
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export indexParams='[
@@ -348,11 +344,11 @@ export indexParams='[
 </TabItem>
 </Tabs>
 
-## コレクションの作成{#create-a-collection}
+## コレクションの作成\{#create-a-collection}
 
-インデックスパラメータを指定してコレクションを作成した場合、Zilliz Cloud は作成時に自動的にコレクションをロードします。この場合、インデックスパラメータで指定されたすべてのフィールドがインデックス化されます。
+インデックスパラメータを指定してコレクションを作成した場合、Zilliz Cloud はそのコレクションを自動的にロードします。この場合、インデックスパラメータで指定されたすべてのフィールドがインデックスされます。
 
-以下のコードスニペットは、インデックスパラメータを指定してコレクションを作成し、そのロードステータスを確認する方法を示しています。
+以下のコードスニペットは、インデックスパラメータ付きでコレクションを作成し、そのロード状態を確認する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -409,7 +405,7 @@ System.out.println(loaded);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 3.3 Create a collection with fields and index parameters
@@ -440,7 +436,7 @@ console.log(res.state)
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_1", schema).
@@ -454,7 +450,7 @@ fmt.Println("collection created")
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -474,9 +470,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-インデックスパラメータなしでコレクションを作成し、後で追加することもできます。この場合、Zilliz Cloudは作成時にコレクションをロードしません。既存のコレクションにインデックスを作成する方法の詳細については、[AUTOINDEX Explained](./autoindex-explained)を参照してください。
+インデックスパラメータを指定せずにコレクションを作成し、後からインデックスを追加することもできます。この場合、Zilliz Cloud はコレクション作成時にそのコレクションをロードしません。既存のコレクションにインデックスを作成する方法の詳細については、[AUTOINDEX Explained](./autoindex-explained) を参照してください。
 
-以下のコードスニペットは、インデックスなしでコレクションを作成する方法を示しており、作成後もコレクションのロードステータスはアンロードされたままです。
+以下のコードスニペットは、インデックスなしでコレクションを作成する方法を示しており、コレクションのロード状態は作成後もアンロードされたままになります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -527,7 +523,7 @@ System.out.println(loaded);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // 3.4 Create a collection and index it seperately
@@ -557,7 +553,7 @@ console.log(res.state)
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_2", schema))
@@ -577,7 +573,7 @@ fmt.Println(state.State)
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -604,19 +600,19 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## コレクションプロパティの設定{#set-collection-properties}
+## Set Collection Properties\{#set-collection-properties}
 
-作成するコレクションのプロパティを設定して、サービスに適合させることができます。適用可能なプロパティは以下の通りです。
+コレクションのプロパティを設定して、サービスに適したコレクションを作成できます。適用可能なプロパティは以下のとおりです。
 
-### シャード数の設定{#set-shard-number}
+### Set Shard Number\{#set-shard-number}
 
-シャードはコレクションの水平スライスであり、各シャードはデータ入力チャネルに対応します。デフォルトでは、すべてのコレクションに1つのシャードがあります。コレクションを作成する際にシャード数を指定することで、データ量とワークロードに合わせて調整できます。
+シャードはコレクションの水平方向への分割であり、各シャードはデータ入力チャネルに対応します。デフォルトでは、すべてのコレクションには1つのシャードがあります。コレクション作成時にシャード数を指定することで、データ量やワークロードにより適した構成にできます。
 
-シャード数を設定する際の一般的なガイドラインは以下の通りです。
+シャード数を設定する際の一般的なガイドラインは次のとおりです。
 
-- **データサイズ:** 一般的な方法として、2億エンティティごとに1つのシャードを設定します。また、総データサイズに基づいて見積もることもできます。例えば、挿入するデータ100GBごとに1つのシャードを追加します。
+- **データ size:** 一般的には、2億エンティティごとに1つのシャードを持つようにします。また、挿入予定のデータの総サイズに基づいて見積もることも可能です。たとえば、100 GBのデータごとに1つのシャードを追加します。
 
-以下のコードスニペットは、コレクションを作成する際にシャード数を設定する方法を示しています。
+以下のコードスニペットは、コレクション作成時にシャード数を設定する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -648,7 +644,7 @@ client.createCollection(customizedSetupReq3);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const createCollectionReq = {
@@ -661,7 +657,7 @@ const createCollectionReq = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_3", schema).WithShardNum(1))
@@ -674,7 +670,7 @@ fmt.Println("collection created")
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export params='{
@@ -698,9 +694,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### mmapを有効にする{#enable-mmap}
+### mmapの有効化\{#enable-mmap}
 
-Zilliz Cloudは、すべてのコレクションでデフォルトでmmapを有効にしており、Zilliz Cloudが生のフィールドデータを完全にロードする代わりにメモリにマッピングできるようにします。これにより、メモリフットプリントが削減され、コレクション容量が増加します。mmapの詳細については、[mmapを使用する](./use-mmap)を参照してください。
+Zilliz Cloudは、すべてのコレクションでデフォルトでmmapを有効にしており、フィールドの生データをメモリにマッピングするため、データを完全にメモリに読み込む必要がなくなります。これにより、メモリ使用量が削減され、コレクションの容量が増加します。mmapの詳細については、[mmapの使用](./use-mmap)を参照してください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"}]}>
 <TabItem value='python'>
@@ -734,7 +730,7 @@ client.createCollection(customizedSetupReq4);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 client.create_collection({
@@ -748,7 +744,7 @@ client.create_collection({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_4", schema).
@@ -782,11 +778,11 @@ curl --request POST \
 }"
 ```
 
-### コレクションTTLの設定{#set-collection-ttl}
+### コレクションのTTLを設定する\{#set-collection-ttl}
 
-コレクション内のデータを特定の期間で削除する必要がある場合は、Time-To-Live (TTL) を秒単位で設定することを検討してください。TTLがタイムアウトすると、Zilliz Cloudはコレクション内のエンティティを削除します。削除は非同期で行われるため、削除が完了する前でも検索やクエリは可能です。
+コレクション内のデータを特定の期間後に削除する必要がある場合は、そのコレクションのTime-To-Live（TTL）を秒単位で設定することを検討してください。TTLがタイムアウトすると、Zilliz Cloudはそのコレクション内のエンティティを削除します。この削除は非同期で行われるため、削除が完了するまでは検索やクエリが引き続き可能です。
 
-以下のコードスニペットは、TTLを1日（86400秒）に設定しています。TTLは最低でも数日に設定することをお勧めします。
+以下のコードスニペットでは、TTLを1日（86400秒）に設定しています。TTLは最低でも数日程度に設定することをお勧めします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -823,7 +819,7 @@ client.createCollection(customizedSetupReq5);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const createCollectionReq = {
@@ -839,7 +835,7 @@ const createCollectionReq = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_5", schema).
@@ -853,7 +849,7 @@ fmt.Println("collection created")
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export params='{
@@ -877,9 +873,9 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-### 一貫性レベルの設定{#set-consistency-level}
+### 一貫性レベルの設定\{#set-consistency-level}
 
-コレクションを作成する際、コレクション内の検索およびクエリの一貫性レベルを設定できます。また、特定の検索またはクエリ中にコレクションの一貫性レベルを変更することもできます。
+コレクションを作成する際に、そのコレクション内の検索およびクエリに対して一貫性レベルを設定できます。また、特定の検索またはクエリ実行時に、コレクションの一貫性レベルを変更することも可能です。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -913,7 +909,7 @@ client.createCollection(customizedSetupReq6);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const createCollectionReq = {
@@ -929,7 +925,7 @@ client.createCollection(createCollectionReq);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("customized_setup_6", schema).
@@ -943,7 +939,7 @@ fmt.Println("collection created")
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export params='{
@@ -967,10 +963,10 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-整合性レベルの詳細については、[整合性レベル](./consistency-level)を参照してください。
+一貫性レベルの詳細については、[一貫性 Level](./consistency-level) を参照してください。
 
-### 動的フィールドを有効にする{#enable-dynamic-field}
+### Enable Dynamic Field\{#enable-dynamic-field}
 
-collection内の動的フィールドは、**$meta**という名前の予約済みJavaScript Object Notation (JSON)フィールドです。このフィールドを有効にすると、Zilliz Cloudは、各entityに含まれるschemaで定義されていないすべてのフィールドとその値を、予約済みフィールドにキーと値のペアとして保存します。
+コレクション内の動的フィールドは、**\$meta** という名前の予約済み JavaScript Object Notation (JSON) フィールドです。このフィールドを有効にすると、Zilliz Cloud は各エンティティに含まれるスキーマで定義されていないすべてのフィールドとその値を、この予約済みフィールド内にキー・バリュー・ペアとして保存します。
 
-動的フィールドの使用方法の詳細については、[動的フィールド](./enable-dynamic-field)を参照してください。
+動的フィールドの使用方法の詳細については、[Dynamic Field](./enable-dynamic-field) を参照してください。

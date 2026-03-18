@@ -1,7 +1,7 @@
 ---
 title: "Schema Explained | Cloud"
 slug: /schema-explained
-sidebar_label: "Schema Explained"
+sidebar_label: "Overview"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

@@ -4,23 +4,19 @@ slug: /reranking-weighted-reranker
 sidebar_label: "Weighted Ranker"
 beta: FALSE
 notebook: FALSE
-description: "Weighted Ranker は、複数の検索パスからの結果に異なる重要度を割り当てることで、それらをインテリジェントに結合し、優先順位を付けます。熟練したシェフが複数の食材のバランスをとって完璧な料理を作るのと同様に、Weighted Ranker は異なる検索結果のバランスをとって、最も関連性の高い結合された結果を提供します。このアプローチは、特定のフィールドが最終的なランキングに他のフィールドよりも大きく貢献すべきである、複数のベクトルフィールドまたはモダリティにわたって検索する場合に理想的です。 | Cloud"
+description: "Weighted Rankerは、複数の検索パスからの結果に異なる重要度ウェイトを割り当てることで、それらをインテリジェントに結合し、優先順位を付けます。熟練したシェフが完璧な料理を作るために複数の材料のバランスを取るのと同様に、Weighted Rankerは異なる検索結果のバランスを取り、最も関連性の高い結合された結果を提供します。このアプローチは、特定のフィールドが最終ランキングに他のフィールドよりも大きく貢献すべきである、複数のベクトルフィールドまたはモダリティにわたって検索する場合に理想的です。 | Cloud"
 type: origin
 token: Oyy6w5DYJiVCMYkdduEc6eD9nZg
 sidebar_position: 1
 keywords: 
-  - zilliz
+  - Zilliz
   - ベクトルデータベース
-  - cloud
-  - collection
+  - クラウド
+  - コレクション
   - データ
   - 検索結果の再ランキング
   - 結果の再ランキング
   - 重み付けされた再ランカー
-  - オープンソースのベクトルデータベース
-  - オープンソースのベクトルDB
-  - ベクトルデータベースの例
-  - RAG ベクトルデータベース
 
 ---
 
@@ -30,11 +26,11 @@ import TabItem from '@theme/TabItem';
 
 # Weighted Ranker
 
-Weighted Ranker は、複数の検索パスからの結果に異なる重要度ウェイトを割り当てることで、それらをインテリジェントに結合し、優先順位を付けます。熟練したシェフが完璧な料理を作るために複数の材料のバランスを取るのと同様に、Weighted Ranker は異なる検索結果のバランスを取り、最も関連性の高い結合された結果を提供します。このアプローチは、特定のフィールドが最終ランキングに他のフィールドよりも大きく貢献すべきである、複数のベクトルフィールドまたはモダリティにわたって検索する場合に理想的です。
+Weighted Ranker は、複数の検索パスからの結果をインテリジェントに結合し、それぞれの重要度に応じて優先順位を付けます。熟練したシェフが複数の食材のバランスをとって完璧な料理を作るように、Weighted Ranker は異なる検索結果のバランスをとって、最も関連性の高い結合された結果を提供します。このアプローチは、特定のフィールドが最終的なランキングに他のフィールドよりも大きく貢献すべきである、複数のベクトルフィールドまたはモダリティにわたって検索する場合に理想的です。
 
-## Weighted Ranker を使用するタイミング{#when-to-use-weighted-ranker}
+## Weighted Ranker を使用するタイミング\{#when-to-use-weighted-ranker}
 
-Weighted Ranker は、複数のベクトル検索パスからの結果を結合する必要があるハイブリッド検索シナリオ向けに特別に設計されています。特に以下の用途で効果的です。
+Weighted Ranker は、複数のベクトル検索パスからの結果を結合する必要があるハイブリッド検索シナリオ向けに特別に設計されています。特に以下の状況で効果的です。
 
 <table>
    <tr>
@@ -44,38 +40,38 @@ Weighted Ranker は、複数のベクトル検索パスからの結果を結合�
    </tr>
    <tr>
      <td><p>Eコマース検索</p></td>
-     <td><p>画像類似性とテキスト記述を組み合わせた商品検索</p></td>
-     <td><p>小売業者がファッションアイテムの視覚的類似性を優先し、技術製品のテキスト記述を強調することを可能にします</p></td>
+     <td><p>画像類似性とテキスト記述を組み合わせた製品検索</p></td>
+     <td><p>小売業者がファッションアイテムの視覚的類似性を優先し、技術製品のテキスト記述を強調することを可能にする</p></td>
    </tr>
    <tr>
      <td><p>メディアコンテンツ検索</p></td>
      <td><p>視覚的特徴と音声トランスクリプトの両方を使用したビデオ検索</p></td>
-     <td><p>クエリの意図に基づいて、視覚的コンテンツと音声対話の重要性のバランスを取ります</p></td>
+     <td><p>クエリの意図に基づいて、視覚的コンテンツと音声対話の重要性のバランスをとる</p></td>
    </tr>
    <tr>
      <td><p>ドキュメント検索</p></td>
      <td><p>異なるセクションに複数の埋め込みを持つエンタープライズドキュメント検索</p></td>
-     <td><p>タイトルと要約の埋め込みにより高いウェイトを与えつつ、全文の埋め込みも考慮します</p></td>
+     <td><p>タイトルと要約の埋め込みにより高い重みを与え、全文の埋め込みも考慮する</p></td>
    </tr>
 </table>
 
-ハイブリッド検索アプリケーションで、複数の検索パスを結合し、それらの相対的な重要度を制御する必要がある場合、Weighted Ranker が理想的な選択肢です。
+ハイブリッド検索アプリケーションで、複数の検索パスを結合し、それらの相対的な重要度を制御する必要がある場合、Weighted Ranker は理想的な選択肢です。
 
-## Weighted Ranker のメカニズム{#mechanism-of-weighted-ranker}
+## Weighted Ranker のメカニズム\{#mechanism-of-weighted-ranker}
 
 WeightedRanker 戦略の主なワークフローは次のとおりです。
 
-1. **検索スコアの収集**: ベクトル検索の各パスから結果とスコア (score_1, score_2) を収集します。
+1. **検索スコアを収集**: 各ベクトル検索パスからの結果とスコア (score_1, score_2) を収集します。
 
-1. **スコアの正規化**: 各検索では異なる類似度メトリックを使用する可能性があり、結果としてスコア分布が異なります。たとえば、類似度タイプとして内積 (IP) を使用すると、スコアは [−∞,+∞] の範囲になる可能性がありますが、ユークリッド距離 (L2) を使用すると、スコアは [0,+∞] の範囲になります。異なる検索からのスコア範囲は異なり、直接比較できないため、各検索パスからのスコアを正規化する必要があります。通常、`arctan` 関数を適用して、スコアを [0, 1] の範囲に変換します (score_1_normalized, score_2_normalized)。1 に近いスコアは、より高い類似度を示します。
+1. **スコアの正規化**: 各検索では異なる類似度メトリックを使用する可能性があり、結果としてスコアの分布が異なります。たとえば、内積 (IP) を類似度タイプとして使用すると、スコアは [−∞,+∞] の範囲になる可能性がありますが、ユークリッド距離 (L2) を使用すると、スコアは [0,+∞] の範囲になります。異なる検索からのスコア範囲は異なり、直接比較できないため、各検索パスからのスコアを正規化する必要があります。通常、`arctan` 関数を適用して、スコアを [0, 1] の範囲に変換します (score_1_normalized, score_2_normalized)。1 に近いスコアは、より高い類似度を示します。
 
-1. **ウェイトの割り当て**: 異なるベクトルフィールドに割り当てられた重要度に基づいて、正規化されたスコア (score_1_normalized, score_2_normalized) にウェイト (**wi**) が割り当てられます。各パスのウェイトは [0,1] の範囲である必要があります。結果として得られる重み付けされたスコアは score_1_weighted と score_2_weighted です。
+1. **重みの割り当て**: 異なるベクトルフィールドに割り当てられた重要度に基づいて、正規化されたスコア (score_1_normalized, score_2_normalized) に重み (**wi**) が割り当てられます。各パスの重みは [0,1] の範囲である必要があります。結果として得られる重み付けされたスコアは score_1_weighted と score_2_weighted です。
 
-1. **スコアのマージ**: 重み付けされたスコア (score_1_weighted, score_2_weighted) は、最終的なスコアセット (score_final) を生成するために、高いものから低いものへとランク付けされます。
+1. **スコアのマージ**: 重み付けされたスコア (score_1_weighted, score_2_weighted) は、最終的なスコアセット (score_final) を生成するために、高い順にランク付けされます。
 
 ![GdmNwbkN8haZO8bpQkOc2NIWnqF](https://zdoc-images.s3.us-west-2.amazonaws.com/GdmNwbkN8haZO8bpQkOc2NIWnqF.png)
 
-## Weighted Ranker の例{#example-of-weighted-ranker}
+## Weighted Ranker の例\{#example-of-weighted-ranker}
 
 この例では、画像とテキストを含むマルチモーダルハイブリッド検索 (topK=5) を示し、WeightedRanker 戦略が 2 つの ANN 検索の結果をどのように再ランク付けするかを説明します。
 
@@ -137,7 +133,7 @@ WeightedRanker 戦略の主なワークフローは次のとおりです。
        </tr>
     </table>
 
-- WeightedRanker を使用して、画像とテキストの検索結果にウェイトを割り当てます。画像 ANN 検索のウェイトが 0.6、テキスト検索のウェイトが 0.4 であると仮定します。
+- WeightedRanker を使用して、画像とテキストの検索結果に重みを割り当てます。画像 ANN 検索の重みが 0.6、テキスト検索の重みが 0.4 であると仮定します。
 
     <table>
        <tr>
@@ -190,7 +186,7 @@ WeightedRanker 戦略の主なワークフローは次のとおりです。
        </tr>
     </table>
 
-- 再ランキング後の最終結果 (topK=5)：
+- 再ランク付け後の最終結果 (topK=5)：
 
     <table>
        <tr>
@@ -225,13 +221,13 @@ WeightedRanker 戦略の主なワークフローは次のとおりです。
        </tr>
     </table>
 
-## Weighted Ranker の使用法{#usage-of-weighted-ranker}
+## Weighted Ranker の使用法\{#usage-of-weighted-ranker}
 
-WeightedRanker 戦略を使用する場合、ウェイト値を入力する必要があります。入力するウェイト値の数は、ハイブリッド検索における基本的な ANN 検索リクエストの数に対応している必要があります。入力するウェイト値は [0,1] の範囲である必要があり、1 に近い値ほど重要度が高いことを示します。
+WeightedRanker 戦略を使用する場合、重み値を入力する必要があります。入力する重み値の数は、ハイブリッド検索における基本的な ANN 検索リクエストの数に対応している必要があります。入力する重み値は [0,1] の範囲である必要があり、1 に近い値ほど重要度が高いことを示します。
 
-### Weighted Ranker の作成{#create-a-weighted-ranker}
+### Weighted Ranker の作成\{#create-a-weighted-ranker}
 
-たとえば、ハイブリッド検索にテキスト検索と画像検索の 2 つの基本的な ANN 検索リクエストがあるとします。テキスト検索がより重要であると見なされる場合、より大きなウェイトを割り当てる必要があります。
+たとえば、ハイブリッド検索にテキスト検索と画像検索という 2 つの基本的な ANN 検索リクエストがあるとします。テキスト検索がより重要であると見なされる場合、より大きな重みを割り当てる必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -270,7 +266,7 @@ CreateCollectionReq.Function rerank = CreateCollectionReq.Function.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { FunctionType } from '@zilliz/milvus2-sdk-node';
@@ -289,7 +285,7 @@ const rerank = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // Go
@@ -297,7 +293,7 @@ const rerank = {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # Restful
@@ -309,7 +305,7 @@ const rerank = {
 <table>
    <tr>
      <th><p>パラメータ</p></th>
-     <th><p>必須？</p></th>
+     <th><p>必須項目</p></th>
      <th><p>説明</p></th>
      <th><p>値/例</p></th>
    </tr>
@@ -322,38 +318,38 @@ const rerank = {
    <tr>
      <td><p><code>input_field_names</code></p></td>
      <td><p>はい</p></td>
-     <td><p>関数を適用するベクトルフィールドのリスト（Weighted Rankerの場合は空である必要があります）</p></td>
+     <td><p>関数を適用するベクトルフィールドのリスト (Weighted Ranker の場合は空である必要があります)</p></td>
      <td><p>[]</p></td>
    </tr>
    <tr>
      <td><p><code>function_type</code></p></td>
      <td><p>はい</p></td>
-     <td><p>呼び出す関数のタイプ。リランキング戦略を指定するには<code>RERANK</code>を使用します。</p></td>
+     <td><p>呼び出す関数のタイプ。リランキング戦略を指定するには <code>RERANK</code> を使用します。</p></td>
      <td><p><code>FunctionType.RERANK</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.reranker</code></p></td>
      <td><p>はい</p></td>
-     <td><p>使用するリランキングメソッドを指定します。</p><p>Weighted Rankerを使用するには<code>weighted</code>に設定する必要があります。</p></td>
+     <td><p>使用するリランキング方法を指定します。</p><p>Weighted Ranker を使用するには <code>weighted</code> に設定する必要があります。</p></td>
      <td><p><code>"weighted"</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.weights</code></p></td>
      <td><p>はい</p></td>
-     <td><p>各検索パスに対応する重みの配列。値は[0,1]の範囲です。</p><p>詳細については、<a href="./reranking-weighted-reranker#mechanism-of-weighted-ranker">Weighted Rankerのメカニズム</a>を参照してください。</p></td>
+     <td><p>各検索パスに対応する重みの配列。値は [0,1] です。</p><p>詳細については、<a href="./reranking-weighted-reranker#mechanism-of-weighted-ranker">Weighted Ranker のメカニズム</a>を参照してください。</p></td>
      <td><p><code>[0.1, 0.9]</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.norm_score</code></p></td>
      <td><p>いいえ</p></td>
-     <td><p>重み付けの前に生スコアを正規化するかどうか（arctanを使用）。</p><p>詳細については、<a href="./reranking-weighted-reranker#mechanism-of-weighted-ranker">Weighted Rankerのメカニズム</a>を参照してください。</p></td>
+     <td><p>重み付けの前に生スコアを (arctan を使用して) 正規化するかどうか。</p><p>詳細については、<a href="./reranking-weighted-reranker#mechanism-of-weighted-ranker">Weighted Ranker のメカニズム</a>を参照してください。</p></td>
      <td><p><code>True</code></p></td>
    </tr>
 </table>
 
-### ハイブリッド検索への適用{#apply-to-hybrid-search}
+### ハイブリッド検索への適用\{#apply-to-hybrid-search}
 
-Weighted Rankerは、複数のベクトルフィールドを組み合わせるハイブリッド検索操作のために特別に設計されています。ハイブリッド検索を実行する場合、各検索パスの重みを指定する必要があります。
+Weighted Ranker は、複数のベクトルフィールドを組み合わせるハイブリッド検索操作のために特別に設計されています。ハイブリッド検索を実行する場合、各検索パスの重みを指定する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -435,7 +431,7 @@ SearchResp searchResp = client.hybridSearch(hybridSearchReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, FunctionType } from "@zilliz/milvus2-sdk-node";
@@ -467,7 +463,7 @@ const search = await milvusClient.search({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -475,7 +471,7 @@ const search = await milvusClient.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -484,4 +480,4 @@ const search = await milvusClient.search({
 </TabItem>
 </Tabs>
 
-ハイブリッド検索の詳細については、[Multi-Vector Hybrid Search](./hybrid-search)を参照してください。
+ハイブリッド検索の詳細については、[マルチベクトルハイブリッド検索](./hybrid-search)を参照してください。

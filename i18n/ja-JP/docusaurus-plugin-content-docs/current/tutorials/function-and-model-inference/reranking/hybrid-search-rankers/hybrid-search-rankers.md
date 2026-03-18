@@ -4,7 +4,7 @@ slug: /hybrid-search-rankers
 sidebar_label: "ハイブリッド検索ランカー"
 beta: FALSE
 notebook: FALSE
-description: "このセクションのランカーはハイブリッド検索で使用する必要があります。 | Cloud"
+description: "このセクションのランカーは、ハイブリッド検索で使用する必要があります。"
 type: origin
 token: BWA2wR1htidZjukxo08cOrj6nvc
 sidebar_position: 1
@@ -12,16 +12,13 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - 検索結果の再ランキング
   - 結果の再ランキング
   - ハイブリッド検索
-  - milvus benchmark
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
 
+sidebar_key: "function-and-model-inference/reranking/hybrid-search-rankers"
 ---
 
 import Admonition from '@theme/Admonition';

@@ -1,125 +1,128 @@
 ---
-title: "FAQ: Collection | BYOC"
+title: "FAQ: コレクション | BYOC"
 slug: /faq-collection
-sidebar_label: "FAQ: Collection"
+sidebar_label: "FAQ: コレクション"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloud collection の使用中に発生する可能性のある問題と、それに対応する解決策をリストアップします。 | BYOC"
+description: "このトピックでは、Zilliz Cloud のコレクションを使用する際に発生する可能性のある問題と、それに対応する解決策を一覧にしています。| BYOC"
 type: origin
 token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 3
 
 ---
 
-# FAQ: Collection
+# FAQ: コレクション
 
-このトピックでは、Zilliz Cloud collection の使用中に発生する可能性のある問題と、それに対応する解決策をリストアップします。
+このトピックでは、Zilliz Cloud のコレクションを使用する際に発生する可能性のある問題と、それに対応する解決策を一覧にします。
 
 ## 目次
 
-- [1つのクラスターで許可されるcollectionの数は？](#how-many-collections-are-allowed-in-a-single-cluster)
-- [collection作成時にdynamic fieldが無効になっていた場合、後から有効にできますか？](#if-dynamic-field-was-disabled-when-the-collection-was-created-can-i-enable-it-later)
-- [Zilliz Cloudがサポートするインデックスメトリックタイプは何ですか？](#what-are-the-indexing-metric-types-supported-by-zilliz-cloud)
-- [作成したcollectionのTTL（time to live）プロパティを設定する方法は？](#how-to-set-the-ttl-time-to-live-property-of-a-created-collection)
-- [collectionのロードリクエストの同時実行数は？同時実行リクエスト数を増やすにはどうすればよいですか？](#what-is-the-concurrency-for-collection-loading-requests-how-can-i-increase-the-number-of-concurrent-requests)
-- [collectionのロードに失敗するのはなぜですか？どうすればよいですか？](#why-do-i-fail-to-load-collections-what-can-i-do)
-- [collectionに追加できるフィールド数に制限はありますか？](#is-there-any-limit-to-the-number-of-fields-i-can-add-in-a-collection)
-- [partitionsとpartition keysの違いは何ですか？](#whats-the-difference-between-partitions-and-partition-keys)
-- [collectionのshard数を変更できますか？](#can-i-modify-the-number-of-shards-in-a-collection)
-- [partition名にルールはありますか？](#is-there-any-rules-for-partition-names)
-- [異なるモデルプロバイダーのカスタムパラメータを設定できますか？](#can-i-configure-custom-parameters-for-different-model-providers)
+- [単一のクラスターで許可されるコレクションの数はいくつですか？](#how-many-collections-are-allowed-in-a-single-cluster)
+- [コレクション作成時に動的フィールドが無効になっていた場合、後から有効にできますか？](#if-dynamic-field-was-disabled-when-the-collection-was-created-can-i-enable-it-later)
+- [Zilliz Cloud でサポートされているインデックスのメトリックタイプは何ですか？](#what-are-the-indexing-metric-types-supported-by-zilliz-cloud)
+- [作成済みコレクションの TTL（生存時間）プロパティを設定するにはどうすればよいですか？](#how-to-set-the-ttl-time-to-live-property-of-a-created-collection)
+- [コレクション読み込みリクエストの同時実行性はどうなっていますか？同時リクエスト数を増やすにはどうすればよいですか？](#what-is-the-concurrency-for-collection-loading-requests-how-can-i-increase-the-number-of-concurrent-requests)
+- [コレクションの読み込みに失敗するのはなぜですか？どうすればよいですか？](#why-do-i-fail-to-load-collections-what-can-i-do)
+- [コレクションに追加できるフィールド数に制限はありますか？](#is-there-any-limit-to-the-number-of-fields-i-can-add-in-a-collection)
+- [パーティションとパーティションキーの違いは何ですか？](#whats-the-difference-between-partitions-and-partition-keys)
+- [コレクションのシャード数を変更できますか？](#can-i-modify-the-number-of-shards-in-a-collection)
+- [パーティション名に関するルールはありますか？](#is-there-any-rules-for-partition-names)
+- [異なるモデルプロバイダーに対してカスタムパラメーターを構成できますか？](#can-i-configure-custom-parameters-for-different-model-providers)
 
 ## よくある質問
 
-### 1つのクラスターで許可されるcollectionの数は？{#how-many-collections-are-allowed-in-a-single-cluster}
 
-1つのクラスターで許可されるcollectionの数は、クラスターのCUサイズによって異なります。詳細については、[Zilliz Cloud Limits](./limits#collections) を参照してください。
 
-クラスターで許可されるcollectionの最大数に達した場合は、次のことができます。
 
-1. クラスターをより大きなCUサイズに[スケール](./manage-cluster)します。
+### 単一のクラスターで許可されるコレクションの数はいくつですか？\{#how-many-collections-are-allowed-in-a-single-cluster}
 
-1. 未使用のcollectionを[ドロップ](./drop-collection)します。
+クラスターで許可されるコレクションの数は、クラスターの CU サイズによって異なります。詳細については、[Zilliz Cloud の制限](./limits#collections) を参照してください。
 
-1. collectionの代わりに[partitions](./manage-partitions)を作成してみてください。
+クラスターで許可される最大コレクション数に達した場合、以下の対応が可能です。
 
-### collection作成時にdynamic fieldが無効になっていた場合、後から有効にできますか？{#if-dynamic-field-was-disabled-when-the-collection-was-created-can-i-enable-it-later}
+1. クラスターをより大きな CU サイズに[スケール](./manage-cluster) します。
 
-はい。collection作成後でもdynamic fieldを有効にできます。詳細については、[Modify Collection](./modify-collections) を参照してください。
+1. 未使用のコレクションを[削除](./drop-collection) します。
 
-### Zilliz Cloudがサポートするインデックスメトリックタイプは何ですか？{#what-are-the-indexing-metric-types-supported-by-zilliz-cloud}
+1. コレクションの代わりに[パーティション](./manage-partitions) の作成を検討します。
 
-Zilliz Cloudは、以下の種類のメトリックをサポートしています。
+### コレクション作成時に動的フィールドが無効になっていた場合、後から有効にできますか？\{#if-dynamic-field-was-disabled-when-the-collection-was-created-can-i-enable-it-later}
 
-1. **Euclidean (L2)** は、平面上の2つのベクトルの距離を測定します。結果が小さいほど、2つのベクトルはより類似しています。
+はい。コレクション作成後でも動的フィールドを有効にすることができます。詳細については、[コレクションの変更](./modify-collections) を参照してください。
 
-1. **Inner Product (IP)** は、2つのベクトルを乗算します。結果がより正であるほど、2つのベクトルはより類似しています。
+### Zilliz Cloud でサポートされているインデックスのメトリックタイプは何ですか？\{#what-are-the-indexing-metric-types-supported-by-zilliz-cloud}
 
-1. **Cosine** は、2つのベクトルの間の角度のコサイン値を測定します。
+Zilliz Cloud は、以下のメトリックタイプをサポートしています。
 
-1. **Jaccard** は、データセット間の非類似度を測定し、JACCARD類似度係数を1から引くことで得られます。
+1. **ユークリッド距離 (L2)** は、平面上の 2 つのベクトル間の距離を測定します。結果が小さいほど、2 つのベクトルは類似しています。
 
-1. **Hamming** は、バイナリデータ文字列を測定します。同じ長さの2つの文字列間の距離は、ビットが異なるビット位置の数です。
+1. **内積 (IP)** は、2 つのベクトルの積を計算します。結果が正の値で大きいほど、2 つのベクトルは類似しています。
 
-### 作成したcollectionのTTL（time to live）プロパティを設定する方法は？{#how-to-set-the-ttl-time-to-live-property-of-a-created-collection}
+1. **コサイン** は、2 つのベクトル間の角度のコサイン値を測定します。
 
-SDKを使用して、パラメータ **collection.ttl.seconds** の値を指定することで、collectionのTTLを設定できます。詳細については、[Set Collection TTL](./set-collection-ttl) を参照してください。
+1. **ジャカード** は、データセット間の非類似度を測定し、ジャカード類似係数を 1 から引くことで得られます。
 
-以下の例では、TTLを1800秒に設定しています。
+1. **ハミング** は、バイナリデータ文字列を測定します。長さが等しい 2 つの文字列間の距離は、ビットが異なるビット位置の数です。
+
+### 作成済みコレクションの TTL（生存時間）プロパティを設定するにはどうすればよいですか？\{#how-to-set-the-ttl-time-to-live-property-of-a-created-collection}
+
+SDK を使用して、パラメーター **collection.ttl.seconds** に値を指定することで、コレクションの TTL を設定できます。詳細については、[コレクション TTL の設定](./set-collection-ttl) を参照してください。
+
+以下の例では、TTL を 1800 秒に設定しています。
 
 ```python
 collection.set_properties(properties={"collection.ttl.seconds": 1800})
 ```
 
-### コレクション読み込みリクエストの同時実行数は？同時リクエスト数を増やすにはどうすればよいですか？{#what-is-the-concurrency-for-collection-loading-requests-how-can-i-increase-the-number-of-concurrent-requests}
+### コレクションのロードリクエストにおける同時実行数とは何ですか？同時実行リクエスト数を増やすにはどうすればよいですか？\{#what-is-the-concurrency-for-collection-loading-requests-how-can-i-increase-the-number-of-concurrent-requests}
 
-現在、Zilliz Cloudでのコレクション読み込みリクエストのレート制限は1秒あたり1です。これは1 CUクラスターの推奨値です。同時リクエスト数を増やす必要がある場合は、[リクエストを送信してください](https://support.zilliz.com/hc/en-us)。
+現在、Zilliz Cloud におけるコレクションのロードリクエストのレート制限は 1 秒あたり 1 リクエストです。これは 1 CU クラスタ向けの推奨値です。同時実行リクエスト数を増やす必要がある場合は、[リクエストを送信](https://support.zilliz.com/hc/en-us)してください。
 
-### コレクションの読み込みに失敗するのはなぜですか？どうすればよいですか？{#why-do-i-fail-to-load-collections-what-can-i-do}
+### なぜコレクションのロードに失敗するのですか？どうすればよいですか？\{#why-do-i-fail-to-load-collections-what-can-i-do}
 
-この失敗は、クラスターのメモリ不足が原因です。クラスターをより大きなCUサイズに[スケールアップ](./scale-query-cu)してみてください。
+この失敗は、クラスタのメモリが不足しているために発生します。クラスタをより大きな CU サイズに[スケールアップ](./scale-query-cu)してみてください。
 
-### コレクションに追加できるフィールド数に制限はありますか？{#is-there-any-limit-to-the-number-of-fields-i-can-add-in-a-collection}
+### コレクションに追加できるフィールド数に制限はありますか？\{#is-there-any-limit-to-the-number-of-fields-i-can-add-in-a-collection}
 
-はい。1つのコレクションには最大64個のフィールドを設定できます。
+はい。1 つのコレクションには最大 64 個のフィールドを含めることができます。
 
-### パーティションとパーティションキーの違いは何ですか？{#whats-the-difference-between-partitions-and-partition-keys}
+### パーティションとパーティションキーの違いは何ですか？\{#whats-the-difference-between-partitions-and-partition-keys}
 
-パーティションはコレクションのサブセットです。各パーティションは親コレクションと同じデータ構造を共有しますが、コレクション内のデータの一部のみを含みます。パーティションは、特定の基準に基づいてデータを整理するために使用されます。
+パーティションはコレクションのサブセットです。各パーティションは親コレクションと同じデータ構造を共有しますが、コレクション内のデータの一部のみを保持します。パーティションは特定の基準に基づいてデータを整理するために使用されます。
 
-パーティションキーは、パーティションに基づく検索最適化ソリューションです。特定のスカラフィールドをパーティションキーとして指定し、検索時にパーティションキーに基づくフィルタリング条件を指定することで、検索範囲をいくつかのパーティションに絞り込み、検索効率を向上させることができます。
+パーティションキーは、パーティションに基づいた検索最適化ソリューションです。特定のスカラー型フィールドをパーティションキーとして指定し、検索時にそのパーティションキーに基づくフィルタリング条件を設定することで、検索範囲をいくつかのパーティションに絞り込むことができ、検索効率が向上します。
 
-違いは、データがパーティション内で物理的に分離されているのに対し、パーティションキーはデータを論理的にグループ化することです。さらに、パーティションは手動で作成および管理する必要がありますが、パーティションキーを有効にすると、16個のパーティションが自動的に作成され、同じパーティションキー値を持つデータは同じパーティションにルーティングされます。
+主な違いは、パーティションではデータが物理的に分離されるのに対し、パーティションキーは論理的にデータをグループ化することです。また、パーティションは手動で作成・管理する必要がありますが、パーティションキーを有効にすると自動的に 16 個のパーティションが作成され、同じパーティションキー値を持つデータは同じパーティションにルーティングされます。
 
-詳細については、[パーティションの管理](./manage-partitions)と[パーティションキーの使用](./use-partition-key)を参照してください。
+詳細については、[パーティションの管理](./manage-partitions)および[パーティションキーの使用](./use-partition-key)をご参照ください。
 
-### コレクションのシャード数を変更できますか？{#can-i-modify-the-number-of-shards-in-a-collection}
+### コレクションのシャード数を変更できますか？\{#can-i-modify-the-number-of-shards-in-a-collection}
 
-はい。「[コレクションのクローン作成](./manage-collections-console#create-collection)」機能を使用して、シャード数を変更できます。
+はい。「[コレクションのクローン](./manage-collections-console#create-collection)」機能を使用してシャード数を変更できます。
 
-1. ターゲットコレクションの**概要**ページに移動します。
+1. 対象コレクションの **Overview** ページに移動します。
 
-1. **アクション**ドロップダウンで、**クローン**を選択します。
+2. **Actions** ドロップダウンメニューから **クローン** を選択します。
 
-1. ダイアログで、
+3. ダイアログで以下を設定します。
 
-    - コレクション名を入力します。
+    - コレクション名を入力
 
-    - **クローンスコープ**を**コレクションスキーマとデータ**に設定します。
+    - **クローン scope** を **コレクションのスキーマとデータ** に設定
 
-    - **設定**を展開し、希望のシャード数を指定します。
+    - **Settings** を展開し、希望するシャード数を指定
 
-    - **クローン**をクリックします。
+    - **クローン** をクリック
 
-1. クローンされたコレクションが作成されたら、アプリケーションコードを更新して、新しくクローンされたコレクションを使用します。
+4. クローンされたコレクションが作成されたら、アプリケーションコードを更新して新しいクローンコレクションを使用するようにしてください。
 
-### パーティション名にルールはありますか？{#is-there-any-rules-for-partition-names}
+### パーティション名に命名ルールはありますか？\{#is-there-any-rules-for-partition-names}
 
-はい。パーティション名には、文字、数字、アンダースコア（「_」）、ハイフン（「-」）のみを含めることができ、数字またはハイフンで始めることはできません。
+はい。パーティション名には英字、数字、アンダースコア（“_”）、ハイフン（“-”）のみを使用でき、数字またはハイフンで始めることはできません。
 
-### 異なるモデルプロバイダーのカスタムパラメータを設定できますか？{#can-i-configure-custom-parameters-for-different-model-providers}
+### 異なるモデルプロバイダーに対してカスタムパラメータを設定できますか？\{#can-i-configure-custom-parameters-for-different-model-providers}
 
-はい、異なるモデルプロバイダーのカスタムパラメータがサポートされています。サポートされているパラメータの完全なリストについては、各プロバイダーの公式ドキュメントを参照してください。
+はい。異なるモデルプロバイダーに対してカスタムパラメータを設定できます。サポートされているパラメータの完全なリストについては、各プロバイダーの公式ドキュメントをご参照ください。
 
 - [OpenAI](https://platform.openai.com/docs/api-reference/embeddings)
 

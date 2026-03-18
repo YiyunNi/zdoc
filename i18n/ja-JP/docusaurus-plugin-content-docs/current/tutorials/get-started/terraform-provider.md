@@ -4,20 +4,16 @@ slug: /terraform-provider
 sidebar_label: "Terraform Provider"
 beta: FALSE
 notebook: FALSE
-description: "Zillizは、セキュリティを考慮したベクトル検索アプリケーションのデプロイとスケーリングを効率化する、フルマネージドのMilvusサービスを提供します。これにより、Zillizが提供するクラウドインフラストラクチャとお客様自身のインフラストラクチャの両方を含む、複雑なインフラストラクチャを構築・維持する必要がなくなります。 | Cloud"
+description: "Zilliz は、セキュリティを考慮したベクトル検索アプリケーションのデプロイとスケーリングを合理化し、Zilliz が提供するクラウドインフラストラクチャおよびお客様ご自身のインフラストラクチャを含む複雑なインフラの構築・維持の必要性を排除する、完全マネージド型の Milvus サービスを提供します。| Cloud"
 type: origin
 token: BX6iwjUzLi7udfksJoxc7jK1nsW
-sidebar_position: 14
+sidebar_position: 16
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - terraform provider
   - terraform
-  - knn
-  - 画像検索
-  - LLM
-  - 機械学習
 
 ---
 
@@ -26,95 +22,95 @@ import Admonition from '@theme/Admonition';
 
 import Procedures from '@site/src/components/Procedures';
 
-# Terraform プロバイダー
+# Terraform Provider
 
-Zilliz は、完全に管理された Milvus サービスを提供し、セキュリティを考慮したベクトル検索アプリケーションのデプロイとスケーリングを合理化し、Zilliz が提供するクラウドインフラストラクチャとお客様自身のインフラストラクチャの両方を含む、複雑なインフラストラクチャの構築と保守の必要性を排除します。
+Zilliz は、セキュリティを考慮したベクトル検索アプリケーションのデプロイとスケーリングを合理化し、Zilliz が提供するクラウドインフラストラクチャとお客様自身のインフラストラクチャの両方を含む複雑なインフラストラクチャの構築および維持の必要性を排除する、完全に管理された Milvus サービスを提供します。
 
-[Zilliz Cloud Terraform プロバイダー](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest)は、Zilliz Cloud リソースを動的に構築、変更、バージョン管理できるオープンソースの Infrastructure as Code (IaC) ソリューションです。使用する前に、適切な権限を持つ Zilliz Cloud API キーなどの適切な認証情報でプロバイダーを設定する必要があります。
+[Zilliz Cloud Terraform Provider](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest) は、Zilliz Cloud リソースを動的に構築、変更、バージョン管理できるオープンソースの Infrastructure as Code (IaC) ソリューションです。使用前に、適切な権限を持つ Zilliz Cloud API キーなどの適切な認証情報でプロバイダーを設定する必要があります。
 
-## 認証{#authentication}
+## Authentication\{#authentication}
 
-Terraform を使用してリソースのデプロイを開始する前に、Terraform を Zilliz Cloud プラットフォームで認証する必要があります。この Terraform プロバイダーでの操作を行う前に、適切な権限を持つ Zilliz Cloud API キーを使用して認証を完了する必要があります。Zilliz Cloud API キーを作成するには、次の手順に従います。
+Terraform を使用してリソースのデプロイを開始する前に、Terraform を Zilliz Cloud プラットフォームで認証する必要があります。この Terraform プロバイダーを使用した操作を行う前に、適切な権限を持つ Zilliz Cloud API キーを使用して認証を完了する必要があります。Zilliz Cloud API キーを作成するには、以下の手順に従ってください：
 
 <Procedures>
 
-1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login)にサインインします。
+1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login) にサインインします。
 
-1. 上部ナビゲーションバーの右側にある **API Keys** をクリックします。
+1. 上部ナビゲーションバーの右側にある **APIキーs** をクリックします。
 
-1. API Keys ページの右上隅にある **+ API Key** をクリックします。
+1. APIキーs ページの右上隅にある **+ APIキー** をクリックします。
 
-1. 表示される **Create API Key** ダイアログボックスで、API キー名を入力し、アクセス権限を設定して、**Create** をクリックして API キーを生成します。
+1. 表示される **Create APIキー** ダイアログボックスで、API キー名を入力し、アクセス権限を設定して、**Create** をクリックして API キーを生成します。
 
 </Procedures>
 
-API キーの管理の詳細については、[API キー](/docs/byoc/manage-api-keys)を参照してください。
+API キーの管理の詳細については、[APIキーs](/docs/byoc/manage-api-keys) を参照してください。
 
-## 管理可能なリソース{#manageable-resources}
+## Manageable リソース\{#manageable-resources}
 
-現在、このプロバイダーを使用して次の種類のリソースを管理できます。
+現在、このプロバイダーを使用して以下のタイプのリソースを管理できます：
 
-### クラスター{#clusters}
+### Clusters\{#clusters}
 
-[Zilliz Cloud クラスター](/docs/manage-cluster)は、Zilliz Cloud 上で動作する Milvus インスタンスです。Zilliz Cloud は、クラスターを **Free**、**Serverless**、**Dedicated (Standard)**、**Dedicated (Enterprise)**、および **Bring Your Own Cloud (BYOC)** などのさまざまなプランに分類しています。これらのプランの詳細については、[詳細なプラン比較](/docs/select-zilliz-cloud-service-plans)を参照してください。
+[Zilliz Cloud クラスター](/docs/manage-cluster) は、Zilliz Cloud で動作する Milvus インスタンスです。Zilliz Cloud では、クラスターを **Free**、**Serverless**、**Dedicated (Standard)**、**Dedicated (Enterprise)**、および **Bring Your Own Cloud (BYOC)** など、さまざまなオファリングに分類しています。これらのオファリングの詳細については、[詳細プラン比較](/docs/select-zilliz-cloud-service-plans) を参照してください。
 
-Zilliz Cloud Terraform プロバイダーを使用して、特定のプランのクラスターを作成および管理できます。詳細については、次のチュートリアルを参照してください。
+Zilliz Cloud Terraform Provider を使用して、特定のオファリングのクラスターを作成および管理できます。詳細については、以下のチュートリアルを参照してください：
 
 - [Free クラスターの作成](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-free-cluster)
 
 - [Serverless クラスターの作成](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-serverless-cluster)
 
-- [Dedicated クラスターの作成](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-standard-cluster)
+- [専用クラスターの作成](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-standard-cluster)
 
 - [クラスターのスケーリング](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/scale-cluster)
 
 - [既存のクラスターを Terraform 管理にインポートする](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/import-cluster)
 
-### データベース{#database}
+### データベース\{#database}
 
-Zilliz Cloud では、[データベース](/docs/database)はデータを整理および管理するための論理単位として機能します。これは専用クラスターでのみ利用可能です。クラスターの作成時に、デフォルトのデータベースが作成されます。Zilliz Cloud Terraform プロバイダーを使用してデータベースを管理する方法の詳細については、以下のリソースとデータソースを参照してください。
+Zilliz Cloud では、[データベース](/docs/database) はデータを整理および管理するための論理ユニットとして機能します。これは専用クラスターでのみ利用可能です。クラスターが作成されると、デフォルトのデータベースが作成されます。Zilliz Cloud Terraform Provider を使用してデータベースを管理する方法の詳細については、以下のリソースとデータソースを参照してください：
 
 - [データベース (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/database)
 
-- [データベース (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/databases)
+- [データベースs (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/databases)
 
-### コレクションとエイリアス{#collection-and-aliases}
+### Collection & エイリアスes\{#collection-and-aliases}
 
-[コレクション](/docs/manage-collections)は、固定列と可変行を持つ2次元テーブルです。各列はフィールドを表し、各行はエンティティを表します。Zilliz Cloud Terraform プロバイダーを使用してコレクションを管理する方法の詳細については、以下のリソースとデータソースを参照してください。
+[コレクション](/docs/manage-collections) は、固定された列と可変の行を持つ 2 次元テーブルです。各列はフィールドを表し、各行はエンティティを表します。Zilliz Cloud Terraform Provider を使用してコレクションを管理する方法の詳細については、以下のリソースとデータソースを参照してください：
 
-- [エイリアス (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/alias)
+- [エイリアスes (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/alias)
 
-- [コレクション (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/collection)
+- [Collection (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/collection)
 
-- [エイリアス (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/aliases)
+- [エイリアスes (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/aliases)
 
-- [コレクション (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/collections)
+- [Collections (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/collections)
 
-### パーティション{#partition}
+### Partition\{#partition}
 
-パーティションはコレクションのサブセットです。各パーティションは親コレクションと同じデータ構造を共有しますが、コレクション内のデータの一部のみを含みます。このページでは、パーティションの管理方法について説明します。Zilliz Cloud Terraform プロバイダーを使用してパーティションを管理する方法の詳細については、以下のリソースとデータソースを参照してください。
+パーティションはコレクションのサブセットです。各パーティションは親コレクションと同じデータ構造を共有しますが、コレクション内のデータのサブセットのみを含みます。このページでは、パーティションを管理する方法を理解するのに役立ちます。Zilliz Cloud Terraform Provider を使用してパーティションを管理する方法の詳細については、以下のリソースとデータソースを参照してください：
 
 - [パーティション (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/partitions)
 
 - [パーティション (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/partitions)
 
-### インデックス{#index}
+### Index\{#index}
 
-Zilliz Cloud は、効率的な類似性検索を可能にするために [AUTOINDEX](/docs/autoindex-explained) を採用しています。また、ベクトル埋め込み間の距離を測定するために、**コサイン類似度** (COSINE)、**ユークリッド距離** (L2)、**内積** (IP)、**JACCARD**、および **HAMMING** の[メトリックタイプ](/docs/search-metrics-explained)も提供しています。AUTOINDEX は、メタデータフィルタリングを高速化するためにスカラーフィールドにも適用されます。Zilliz Cloud Terraform プロバイダーを使用してインデックスを管理する方法の詳細については、以下のリソースとデータソースを参照してください。
+Zilliz Cloud は、効率的な類似度検索を可能にするために [AUTOINDEX](/docs/autoindex-explained) を採用しています。また、ベクトル埋め込み間の距離を測定するために、以下の [メトリックタイプ](/docs/search-metrics-explained) も提供しています：**コサイン類似度** (COSINE)、**ユークリッド距離** (L2)、**内積** (IP)、**JACCARD**、および **HAMMING**。AUTOINDEX はスカラーフィールドにも適用され、メタデータフィルタリングを高速化します。Zilliz Cloud Terraform Provider を使用してインデックスを管理する方法の詳細については、以下のリソースとデータソースを参照してください：
 
-- [インデックス (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/index)
+- [Index (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/index)
 
-- [インデックス (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/indexes)
+- [Indexes (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/indexes)
 
-### ユーザーとロール{#users-and-roles}
+### Users & ロールs\{#users-and-roles}
 
-Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てて権限を定義し、データセキュリティを実現できます。ユーザーは、適切に設定された認証情報を持つデータベースユーザーを表し、一連のロールが割り当てられます。ロールは、一連の権限をカプセル化し、ユーザーに割り当てることができるエンティティです。このセクションのリソースとデータソースを使用して、ロールベースのアクセス制御 (RBAC) を実装できます。詳細については、以下のリソースとデータソースを参照してください。
+Zilliz Cloud では、クラスターユーザーを作成し、クラスターロールを割り当てることで権限を定義し、データセキュリティを実現できます。ユーザーは適切に設定された認証情報を持つデータベースユーザーを表し、一連のロールが割り当てられます。一方、ロールは一連の権限をカプセル化するエンティティであり、ユーザーに割り当てることができます。このセクションのリソースとデータソースを使用して、ロールベースアクセス制御 (RBAC) を実装できます。詳細については、以下のリソースとデータソースを参照してください：
 
-- [ユーザー (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/user)
+- [User (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/user)
 
-- [ユーザー (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/users)
+- [Users (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/users)
 
 - [ロール (リソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/resources/user_role)
 
-- [ロール (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/roles)
+- [ロールs (データソース)](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/data-sources/roles)
 

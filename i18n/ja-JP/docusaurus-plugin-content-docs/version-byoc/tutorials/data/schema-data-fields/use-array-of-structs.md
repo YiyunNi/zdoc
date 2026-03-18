@@ -1,26 +1,22 @@
 ---
 title: "構造体の配列 | BYOC"
 slug: /use-array-of-structs
-sidebar_label: "構造体の配列"
+sidebar_label: "構造体"
 beta: FALSE
 notebook: FALSE
-description: "エンティティ内の構造体の配列フィールドは、順序付けられた構造体要素のセットを格納します。配列内の各構造体は、複数のベクトルフィールドとスカラーフィールドで構成される同じ事前定義されたスキーマを共有します。 | BYOC"
+description: "エンティティ内の構造体の配列フィールドは、順序付けられた構造体要素のセットを格納します。配列内の各構造体は、複数のベクトルとスカラーフィールドで構成される、事前に定義された同一のスキーマを共有します。| BYOC"
 type: origin
 token: LIMbwXk1OiS5SykUyNhc5FtSnPb
 sidebar_position: 10
 keywords: 
-  - Zilliz
-  - ベクトルデータベース
-  - クラウド
-  - コレクション
-  - スキーマ
+  - zilliz
+  - vector database
+  - cloud
+  - collection
+  - schema
   - 配列フィールド
   - 構造体の配列
   - 構造体
-  - オープンソース ベクトル DB
-  - ベクトルデータベースの例
-  - RAG ベクトルデータベース
-  - ベクトル DB とは
 
 ---
 
@@ -30,9 +26,9 @@ import TabItem from '@theme/TabItem';
 
 # 構造体の配列
 
-エンティティ内の構造体の配列フィールドは、構造体要素の順序付けられたセットを格納します。配列内の各構造体は、複数のベクトルフィールドとスカラーフィールドで構成される、同じ事前定義されたスキーマを共有します。
+エンティティ内の構造体の配列フィールドは、構造体要素の順序付きセットを格納します。配列内の各構造体は、事前に定義された同じスキーマを共有し、複数のベクトルとスカラーフィールドで構成されます。
 
-以下は、構造体の配列フィールドを含むコレクションからのエンティティの例です。
+以下は、構造体の配列フィールドを含むコレクションのエンティティの例です。
 
 ```json
 {
@@ -58,31 +54,31 @@ import TabItem from '@theme/TabItem';
 }
 ```
 
-上記の例では、`chunks` フィールドは Structs の配列フィールドであり、各 Struct 要素には `text`、`text_vector`、`chapter` という独自のフィールドが含まれています。
+上記の例では、`chunks` フィールドは 構造体 の配列（配列 of 構造体s）フィールドであり、各 構造体 要素には `text`、`text_vector`、および `chapter` という独自のフィールドが含まれています。
 
-## 使用するタイミング{#when-to-use}
+## 使用するタイミング\{#when-to-use}
 
-自動運転からマルチモーダル検索まで、現代のAIアプリケーションは、ネストされた異種データにますます依存しています。従来のフラットなデータモデルでは、「**多くの注釈付きチャンクを持つ1つのドキュメント**」や「**複数の観測された操作を持つ1つの運転シーン**」のような複雑な関係を表現するのに苦労します。ここで、Zilliz Cloud の Array of Structs データ型が威力を発揮します。
+自動運転からマルチモーダル検索に至るまで、現代の AI アプリケーションはますますネストされた異種データに依存しています。従来のフラットなデータモデルでは、「**1つの文書に多数の注釈付きチャンクが含まれる**」や「**1つの運転シーンに複数の観測されたマニューバーが含まれる**」といった複雑な関係を表現することが困難です。このようなケースにおいて、Zilliz Cloud の 配列 of 構造体s データ型がその真価を発揮します。
 
-Array of Structs がアプリケーションシナリオに適しているかどうかを迅速に判断するには、次の点を考慮してください。
+配列 of 構造体s があなたのアプリケーションシナリオに適しているかどうかを迅速に判断するには、以下の点を考慮してください：
 
-- データが、多くの注釈付きチャンクを持つ1つのドキュメントのように、階層構造になっているか。
+- データが階層構造になっており、例えば 1 つの文書に多数の注釈付きチャンクが含まれている。
 
-- 上記の例のように、検索結果がチャンクではなくドキュメントであるべきか。
+- 検索結果として返すべきはチャンクではなく文書である（上記の例と同様）。
 
-- 検索結果に大量の重複エンティティが含まれており、グループ化、重複排除、再ランキングなどの手法を使用して最終結果を取得するのに苦労しているか。
+- 検索結果に大量の重複エンティティが含まれており、グルーピング、重複排除、リランキングなどの手法を使って最終結果を取得するのが困難である。
 
-上記の質問に対する答えが「はい」の場合、Array of Structs を使用する必要があります。
+上記の質問に対して「はい」と答える場合は、配列 of 構造体s を使用すべきです。
 
-## 制限事項{#limits}
+## 制限\{#limits}
 
 - **データ型**
 
-    コレクションを作成する際、配列フィールドの要素のデータ型として Struct 型を使用できます。ただし、既存のコレクションに Array of Structs を追加することはできず、Zilliz Cloud はコレクションフィールドのデータ型として Struct 型を使用することをサポートしていません。
+    コレクションを作成する際、配列フィールドの要素のデータ型として 構造体 型を使用できます。ただし、既存のコレクションに 配列 of 構造体s を追加することはできず、Zilliz Cloud はコレクションフィールドのデータ型として 構造体 型をサポートしていません。
 
-    配列フィールド内の Structs は同じスキーマを共有し、これは配列フィールドを作成する際に定義する必要があります。
+    配列フィールド内の 構造体 はすべて同じスキーマを共有し、このスキーマは配列フィールド作成時に定義する必要があります。
 
-    Struct スキーマには、次の表に示すように、ベクトルフィールドとスカラーフィールドの両方が含まれます。
+    構造体 スキーマにはベクトルフィールドとスカラーフィールドの両方が含まれます。次の表に示すとおりです：
 
     <table>
        <tr>
@@ -111,21 +107,21 @@ Array of Structs がアプリケーションシナリオに適しているかど
        </tr>
     </table>
 
-    コレクションレベルと Structs 内のベクトルフィールドの合計数が、クラスターの上限以下であることを維持してください。詳細については、[Zilliz Cloud の制限](./limits#fields)を参照してください。
+    コレクションレベルと 構造体 内のベクトルフィールドの合計数が、クラスターの上限を超えないようにしてください。詳細については、[Zilliz Cloud 制限s](./limits#fields) を参照してください。
 
 - **NULL許容とデフォルト値**
 
-    Array of Structs フィールドは NULL を許容せず、デフォルト値を受け入れません。
+    配列 of 構造体s フィールドは NULL 許容ではなく、デフォルト値も受け付けません。
 
 - **関数**
 
-    Struct 内のスカラーフィールドからベクトルフィールドを導出するために関数を使用することはできません。
+    構造体 内のスカラーフィールドからベクトルフィールドを導出する関数は使用できません。
 
 - **インデックスタイプとメトリックタイプ**
 
-    コレクション内のすべてのベクトルフィールドはインデックス付けする必要があります。Array of Structs フィールド内のベクトルフィールドをインデックス付けするために、Zilliz Cloud は各 Struct 要素内のベクトル埋め込みを整理するために埋め込みリストを使用し、埋め込みリスト全体をまとめてインデックス付けします。
+    コレクション内のすべてのベクトルフィールドにはインデックスを付与する必要があります。配列 of 構造体s フィールド内のベクトルフィールドにインデックスを付与する際、Zilliz Cloud は各 構造体 要素内のベクトル埋め込みを埋め込みリスト（embedding list）として整理し、この埋め込みリスト全体に対してインデックスを構築します。
 
-    Array of Structs フィールド内の埋め込みリストのインデックスを構築するために、インデックスタイプとして `AUTOINDEX` を使用し、以下のいずれかのメトリックタイプを使用できます。
+    配列 of 構造体s フィールドの埋め込みリストに対しては、インデックスタイプとして `AUTOINDEX` を使用でき、以下のいずれかのメトリックタイプを指定してインデックスを構築できます。
 
     <table>
        <tr>
@@ -136,7 +132,7 @@ Array of Structs がアプリケーションシナリオに適しているかど
        <tr>
          <td rowspan="3"><p><code>AUTOINDEX</code></p></td>
          <td><p><code>MAX_SIM_COSINE</code></p></td>
-         <td rowspan="3"><p>以下のタイプの埋め込みリストの場合：</p><ul><li>FLOAT_VECTOR</li></ul></td>
+         <td rowspan="3"><p>以下のタイプの埋め込みリスト用：</p><ul><li>FLOAT_VECTOR</li></ul></td>
        </tr>
        <tr>
          <td><p><code>MAX_SIM_IP</code></p></td>
@@ -146,33 +142,33 @@ Array of Structs がアプリケーションシナリオに適しているかど
        </tr>
     </table>
 
-    Zilliz Cloud がクエリと埋め込みリスト間の類似性をどのように計算するかについては、[最大類似度](./search-metrics-explained#maximum-similarity)を参照してください。
+    Zilliz Cloud がクエリと埋め込みリスト間の類似度をどのように計算するかの詳細については、[Maximum Similarity](./search-metrics-explained#maximum-similarity) を参照してください。
 
-    Array of Structs フィールド内のスカラーフィールドはインデックスをサポートしていません。
+    配列 of 構造体s フィールド内のスカラーフィールドにはインデックスを付与できません。
 
-- **データの上書き**
+- **データのアップサート**
 
-    Structs はマージモードでの upsert をサポートしていません。ただし、オーバーライドモードで upsert を実行して Structs のデータを更新することはできます。マージモードとオーバーライドモードでの upsert の違いについては、[エンティティの上書き](./upsert-entities#overview)を参照してください。
+    構造体 はマージモードでのアップサートをサポートしていません。ただし、オーバーライドモードでのアップサートは可能であり、構造体 内のデータを更新できます。マージモードとオーバーライドモードの違いの詳細については、[Upsert Entities](./upsert-entities#overview) を参照してください。
 
 - **スカラーフィルタリング**
 
-    検索およびクエリ内のフィルタリング式で、Array of Structs またはその Struct 要素内のフィールドを使用することはできません。
+    検索およびクエリ内のフィルタリング式で、配列 of 構造体s フィールドまたはその 構造体 要素内の任意のフィールドを使用することはできません。
 
-## Array of Structs の追加{#add-array-of-structs}
+## 配列 of 構造体s の追加\{#add-array-of-structs}
 
-Zilliz Cloud クラスターで Array of Structs を使用するには、コレクションを作成する際に配列フィールドを定義し、その要素のデータ型を Struct に設定する必要があります。手順は次のとおりです。
+Zilliz Cloud クラスターで 配列 of 構造体s を使用するには、コレクション作成時に配列フィールドを定義し、その要素のデータ型を 構造体 に設定する必要があります。手順は以下のとおりです：
 
-1. フィールドをコレクションスキーマに配列フィールドとして追加する際に、フィールドのデータ型を `DataType.ARRAY` に設定します。
+1. コレクションスキーマにフィールドを配列フィールドとして追加する際に、そのデータ型を `データType.ARRAY` に設定します。
 
-1. フィールドの `element_type` 属性を `DataType.STRUCT` に設定して、フィールドを Array of Structs にします。
+1. フィールドの `element_type` 属性を `データType.STRUCT` に設定して、配列 of 構造体s フィールドにします。
 
-1. Struct スキーマを作成し、必要なフィールドを含めます。次に、フィールドの `struct_schema` 属性で Struct スキーマを参照します。
+1. 構造体 スキーマを作成し、必要なフィールドを含めます。その後、フィールドの `struct_schema` 属性でこの 構造体 スキーマを参照します。
 
-1. フィールドの `max_capacity` 属性を適切な値に設定して、このフィールドで各エンティティが含むことができる Struct の最大数を指定します。
+1. フィールドの `max_capacity` 属性に適切な値を設定し、各エンティティがこのフィールドに含めることができる 構造体 の最大数を指定します。
 
-1. (**オプション**) Struct 内のホットデータとコールドデータのバランスを取るために、Struct 要素内の任意のフィールドに対して `mmap.enabled` を設定できます。
+1. （**オプション**）構造体 要素内の任意のフィールドに対して `mmap.enabled` を設定することで、構造体 内のホットデータとコールドデータのバランスを調整できます。
 
-Array of Structs を含むコレクションスキーマを定義する方法を次に示します。
+以下は、配列 of 構造体s を含むコレクションスキーマを定義する方法の例です：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -281,7 +277,7 @@ collectionSchema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -289,7 +285,7 @@ collectionSchema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -353,7 +349,7 @@ const schema = [
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -420,13 +416,13 @@ SCHEMA='{
 </TabItem>
 </Tabs>
 
-上記のコード例のハイライトされた行は、コレクションスキーマに構造体の配列を含める手順を示しています。
+上記のコード例でハイライトされた行は、コレクションスキーマに 構造体 の配列を含める手順を示しています。
 
-## インデックスパラメータの設定{#set-index-params}
+## インデックスパラメータの設定\{#set-index-params}
 
-インデックス作成は、コレクション内のベクトルフィールドと要素構造体で定義されたベクトルフィールドの両方を含む、すべてのベクトルフィールドで必須です。
+ベクトルフィールド（コレクション内のベクトルフィールドおよび要素 構造体 内で定義されたベクトルフィールドを含む）すべてに対して、インデックス作成が必須です。
 
-埋め込みリストにインデックスを付けるには、インデックスタイプを `AUTOINDEX` に設定し、Zilliz Cloudクラスターが埋め込みリスト間の類似性を測定するためのメトリックタイプとして `MAX_SIM_COSINE` を使用する必要があります。
+埋め込みリスト（embedding list）に対してインデックスを作成するには、そのインデックスタイプを `AUTOINDEX` に設定し、Zilliz Cloud クラスターにおいて埋め込みリスト間の類似度を測定するためのメトリックタイプとして `MAX_SIM_COSINE` を使用する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -474,7 +470,7 @@ indexParams.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -482,7 +478,7 @@ indexParams.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 await milvusClient.createCollection({
@@ -508,7 +504,7 @@ const indexParams = [
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -531,9 +527,9 @@ INDEX_PARAMS='[
 </TabItem>
 </Tabs>
 
-## コレクションの作成{#create-a-collection}
+## Create a collection\{#create-a-collection}
 
-スキーマとインデックスの準備ができたら、Array of Structsフィールドを含むコレクションを作成できます。
+スキーマとインデックスの準備が整ったら、構造体 の配列フィールドを含むコレクションを作成できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -551,14 +547,7 @@ client.create_collection(
 <TabItem value='java'>
 
 ```java
-import io.milvus.v2.client.ConnectConfig;
-import io.milvus.v2.client.MilvusClientV2;
 import io.milvus.v2.service.collection.request.CreateCollectionReq;
-
-MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
-        .uri("YOUR_CLUSTER_ENDPOINT")
-        .token("YOUR_CLUSTER_TOKEN")
-        .build());
 
 CreateCollectionReq requestCreate = CreateCollectionReq.builder()
         .collectionName("my_collection")
@@ -570,7 +559,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -578,7 +567,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 await milvusClient.createCollection({
@@ -590,7 +579,7 @@ await milvusClient.createCollection({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -607,9 +596,9 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/create" \
 </TabItem>
 </Tabs>
 
-## データの挿入{#insert-data}
+## Insert data\{#insert-data}
 
-コレクションを作成した後、Structsの配列を含むデータを次のように挿入できます。
+コレクションを作成した後、次のように 構造体 の配列を含むデータを挿入できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -683,7 +672,7 @@ InsertResp insertResp = client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -691,7 +680,7 @@ InsertResp insertResp = client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
   {
@@ -723,7 +712,7 @@ await milvusClient.insert({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -759,7 +748,7 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/insert" \
 
 <details>
 
-<summary>さらにデータが必要ですか？</summary>
+<summary>さらにデータが必要ですか?</summary>
 
 ```python
 import json
@@ -844,16 +833,16 @@ client.insert(collection_name="my_collection", data=data)
 
 </details>
 
-## 構造体配列フィールドに対するベクトル検索{#vector-search-against-an-array-of-structs-field}
+## 配列 of 構造体s フィールドに対するベクトル検索\{#vector-search-against-an-array-of-structs-field}
 
-コレクション内のベクトルフィールド、および構造体配列内のベクトルフィールドに対してベクトル検索を実行できます。
+コレクションのベクトルフィールドおよび 配列 of 構造体s 内のベクトルフィールドに対してベクトル検索を実行できます。
 
-具体的には、検索リクエストの `anns_field` パラメータの値として、構造体配列フィールドの名前と、構造体要素内のターゲットベクトルフィールドの名前を連結し、`EmbeddingList` を使用してクエリベクトルをきれいに整理する必要があります。
+具体的には、検索リクエストの `anns_field` パラメータの値として、配列 of 構造体s フィールド名と 構造体 要素内の対象ベクトルフィールド名を連結し、さらにクエリベクトルを整理するために `EmbeddingList` を使用する必要があります。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>Zilliz Cloud は、構造体配列内の埋め込みリストに対する検索のために、クエリベクトルをよりきれいに整理するのに役立つ <code>EmbeddingList</code> を提供します。各 <code>EmbeddingList</code> には少なくとも1つのベクトル埋め込みが含まれており、多数の topK エンティティが返されることを期待しています。</p>
-<p>ただし、<code>EmbeddingList</code> は、範囲検索やグループ化検索パラメータのない <code>search()</code> リクエストでのみ使用でき、<code>search_iterator()</code> リクエストでは使用できません。</p>
+<p>Zilliz Cloud は、配列 of 構造体s 内の埋め込みリスト（embedding list）に対して検索を行う際、クエリベクトルをより整理して扱えるように <code>EmbeddingList</code> を提供しています。<code>EmbeddingList</code> には少なくとも1つのベクトル埋め込みが含まれ、返されるべき上位K件のエンティティ数を指定します。</p>
+<p>ただし、<code>EmbeddingList</code> は範囲検索やグループ化検索のパラメータを含まない <code>search()</code> リクエストでのみ使用可能であり、<code>search_iterator()</code> リクエストでは使用できません。</p>
 
 </Admonition>
 
@@ -911,7 +900,7 @@ SearchResp searchResp = client.search(SearchReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -919,7 +908,7 @@ SearchResp searchResp = client.search(SearchReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const embeddingList1 = [[0.2, 0.9, 0.4, -0.3, 0.2]];
@@ -940,7 +929,7 @@ const results = await milvusClient.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -961,9 +950,9 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \
 </TabItem>
 </Tabs>
 
-上記の検索リクエストでは、`chunks[text_vector]` を使用して Struct 要素内の `text_vector` フィールドを参照しています。この構文を使用して、`anns_field` および `output_fields` パラメータを設定できます。
+上記の検索リクエストでは、`chunks[text_vector]` を使用して 構造体 要素内の `text_vector` フィールドを参照しています。この構文を使用して、`anns_field` パラメータおよび `output_fields` パラメータを設定できます。
 
-出力は、最も類似した3つのエンティティのリストになります。
+出力は、最も類似した上位3つのエンティティのリストになります。
 
 <details>
 
@@ -1014,7 +1003,7 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \
 
 </details>
 
-`data` パラメータに複数の埋め込みリストを含めることで、それぞれの埋め込みリストの検索結果を取得することもできます。
+`data` パラメータに複数の埋め込みリストを含めることもでき、これらの各埋め込みリストに対する検索結果を取得できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -1061,7 +1050,7 @@ for (int i = 0; i < searchResults.size(); i++) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -1069,7 +1058,7 @@ for (int i = 0; i < searchResults.size(); i++) {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const results2 = await milvusClient.search({
@@ -1084,7 +1073,7 @@ const results2 = await milvusClient.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -1103,7 +1092,7 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \
 </TabItem>
 </Tabs>
 
-出力は、各埋め込みリストに対して最も類似した3つのエンティティのリストになります。
+出力は、各埋め込みリストに対して最も類似した上位3つのエンティティのリストになります。
 
 <details>
 
@@ -1187,9 +1176,9 @@ curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/entities/search" \
 
 </details>
 
-上記のコード例では、`embeddingList1` は1つのベクトルの埋め込みリストであり、`embeddingList2` は2つのベクトルを含んでいます。それぞれが個別の検索リクエストをトリガーし、上位K個の類似エンティティのリストを期待します。
+上記のコード例では、`embeddingList1` は1つのベクトルからなる埋め込みリストであり、一方 `embeddingList2` は2つのベクトルを含んでいます。それぞれが個別の検索リクエストをトリガーし、上位K件の類似エンティティのリストを返します。
 
-## 次のステップ{#next-steps}
+## Next steps\{#next-steps}
 
-ネイティブな構造体配列データ型の開発は、Zilliz Cloudが複雑なデータ構造を処理する能力における大きな進歩を意味します。そのユースケースをよりよく理解し、この新機能を最大限に活用するために、[構造体配列を使用したスキーマ設計](./schema-design-with-structs)を読むことをお勧めします。
+ネイティブな 構造体 の配列（配列 of 構造体s）データ型の開発は、Zilliz Cloud が複雑なデータ構造を扱う能力において大きな進歩を示しています。この新機能のユースケースをより深く理解し、その効果を最大限に引き出すために、[Schema Design Using an 配列 of 構造体s](./schema-design-with-structs) をぜひお読みください。
 

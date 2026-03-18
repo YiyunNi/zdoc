@@ -1,7 +1,7 @@
 ---
 title: "Geometry Operators | BYOC"
 slug: /geometry-operators
-sidebar_label: "Geometry Operators"
+sidebar_label: "Geometry"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

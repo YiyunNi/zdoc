@@ -1,7 +1,7 @@
 ---
 title: "View Collections | BYOC"
 slug: /view-collections
-sidebar_label: "View Collections"
+sidebar_label: "View"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
