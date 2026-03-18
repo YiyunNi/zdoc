@@ -12,10 +12,10 @@ type: docx
 token: IeOWd0yR2onm5Ex6XyqcrGjKnpS
 sidebar_position: 1
 keywords: 
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud
@@ -51,9 +51,9 @@ Constructs a client for common use cases.
 MilvusClientV2(ConnectConfig connectConfig);
 ```
 
-## ConnectConfig\{#connectconfig}
+## [ConnectConfig](./v2-Client-ConnectConfig)\{#connectconfigv2-client-connectconfig}
 
-**ConnectConfig** allows you to configure the connection properties in one place so that **MilvusClientV2** can reference it to create and manage the connection pool.
+**[ConnectConfig](./v2-Client-ConnectConfig)** allows you to configure the connection properties in one place so that **MilvusClientV2** can reference it to create and manage the connection pool.
 
 ```java
 // use either token or username/password
@@ -211,7 +211,7 @@ ConnectConfig.builder()
 
 - `getProxyAddress()`
 
-    Returns the proxy server's address specified in **ConnectConfig**.
+    Returns the proxy server's address specified in **[ConnectConfig](./v2-Client-ConnectConfig)**.
 
 ## Examples\{#examples}
 

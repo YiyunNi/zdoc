@@ -12,10 +12,10 @@ type: docx
 token: Cl5PdhU5jouHnrxyYXLcOQAZneb
 sidebar_position: 8
 keywords: 
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation drops a user.
 
 ```javascript
-deleteUser(data): Promise<ResStatus>
+await milvusClient.deleteUser(data)
 ```
 
 ## Request Syntax\{#request-syntax}
@@ -42,7 +42,7 @@ deleteUser(data): Promise<ResStatus>
 This method has the following alternatives.
 
 ```javascript
-milvusClient.deleteUser({
+await milvusClient.deleteUser({
     username: string,
     timeout?: number
 })
@@ -91,7 +91,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-milvusClient.deleteUser({
+await milvusClient.deleteUser({
     username: 'exampleUser'
 })
 ```

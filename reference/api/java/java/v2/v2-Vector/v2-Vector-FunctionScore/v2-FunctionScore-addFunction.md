@@ -12,10 +12,10 @@ type: docx
 token: HPs6dFV29ovzyBxpgUacXnnjngd
 sidebar_position: 1
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud
@@ -57,7 +57,7 @@ addFunction(
 
 **RETURNS**
 
-A **FunctionScore** builder for chaining up multiple `addFunction()` methods.
+A **[FunctionScore](./v2-Vector-FunctionScore)** builder for chaining up multiple `addFunction()` methods.
 
 ## Example\{#example}
 

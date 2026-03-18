@@ -12,10 +12,10 @@ type: docx
 token: FGO8dhjlTovfOdxpOw0c3wyNntc
 sidebar_position: 1
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud
@@ -45,7 +45,7 @@ public StructFieldSchema addField(AddFieldReq addFieldReq)
 
 **RETURNS:**
 
-*StructFieldSchema*
+*[StructFieldSchema](./v2-Collections-StructFieldSchema)*
 
 **EXCEPTIONS:**
 

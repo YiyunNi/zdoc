@@ -12,10 +12,10 @@ type: docx
 token: Sqoed1lkwo8umixJJO1cvKIxnZc
 sidebar_position: 8
 keywords: 
-  - Vector Dimension
   - ANN Search
   - What are vector embeddings
   - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation releases the partitions in a specified collection from memory.
 
 ```javascript
-releasePartitions(data): Promise<ResStatus>
+await milvusClient.releasePartitions(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.releasePartitions({
+await milvusClient.releasePartitions({
     db_name: string,
     collection_name: string,
     partition_names: string[],
@@ -101,7 +101,10 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-new milvusClient(MILUVS_ADDRESS).releasePartitions({
+new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+}).releasePartitions({
     collection_name: 'my_collection',
     partition_names: ['my_partition'],
  });

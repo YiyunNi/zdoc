@@ -9,13 +9,13 @@ deprecate_since: false
 notebook: false
 description: "This operation lists detailed information about the specified database. | Node.js"
 type: docx
-token: PrZfdbHCHoizSmxxglXctm9FnJf
+token: PzXldcfljoU9rOx9TFUcIoNknt6
 sidebar_position: 8
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud

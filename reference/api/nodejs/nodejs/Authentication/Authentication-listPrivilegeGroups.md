@@ -12,10 +12,10 @@ type: docx
 token: HGpSdc7AOo7AV3xKCmOcWaIEnrd
 sidebar_position: 19
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation lists all privilege groups.
 
 ```javascript
-listPrivilegeGroups(data?): Promise<ListPrivilegeGroupsResponse>
+await milvusClient.listPrivilegeGroups(data?)
 ```
 
 ## Request Syntax\{#request-syntax}

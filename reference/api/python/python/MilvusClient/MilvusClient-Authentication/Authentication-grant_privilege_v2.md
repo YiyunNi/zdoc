@@ -12,10 +12,10 @@ type: docx
 token: EiTMdIbTgoc9vVxDHUQc1zPpnch
 sidebar_position: 11
 keywords: 
-  - What are vector embeddings
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud
@@ -100,36 +100,6 @@ None
     This exception will be raised when this operation fails.
 
 ## Example\{#example}
-
-```python
-from pymilvus import MilvusClient
-
-# 1. Create a milvus client
-client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT",
-    token="YOUR_CLUSTER_TOKEN"
-)
-
-# 1. Prepare a privilege group
-client.create_privilege_group(
-    group_name="my_privilege_group"
-)
-
-client.add_privileges_to_group(
-    group_name="my_privilege_group",
-    privileges=["ListDatabases", "DescribeDatabase"]
-) 
-
-# 2. Create a role
-client.create_role(role_name="read_only")
-
-# 3. Grant privileges
-client.grant_privilege_v2(
-    role_name="db_read_only",
-    privilege="my_privilege_group",
-    collection_name="*"
-)
-```
 
 ```python
 from pymilvus import MilvusClient
