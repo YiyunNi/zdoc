@@ -29,7 +29,7 @@ eコマースシステム、コラボレーションツール、分散型ロギ�
 
 ## TIMESTAMPTZ フィールドとは？\{#what-is-a-timestamptz-field}
 
-`TIMESTAMPTZ` フィールドは、Zilliz Cloud におけるスキーマ定義済みのデータ型（`データType.TIMESTAMPTZ`）であり、タイムゾーンを考慮した入力を処理し、すべての時刻を内部的に UTC の絶対時刻として格納します。
+`TIMESTAMPTZ` フィールドは、Zilliz Cloud におけるスキーマ定義済みのデータ型（`DataType.TIMESTAMPTZ`）であり、タイムゾーンを考慮した入力を処理し、すべての時刻を内部的に UTC の絶対時刻として格納します。
 
 - **許容される入力形式**: `TIMESTAMPTZ` フィールドは [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 互換のタイムスタンプ文字列を受け入れます。例:
 
@@ -71,7 +71,7 @@ eコマースシステム、コラボレーションツール、分散型ロギ�
 
 ### ステップ 1: TIMESTAMPTZ フィールドを定義する\{#step-1-define-a-timestamptz-field}
 
-`TIMESTAMPTZ` フィールドを使用するには、コレクション作成時にスキーマ内で明示的に定義する必要があります。以下の例では、`データType.TIMESTAMPTZ` 型の `tsz` フィールドを持つコレクションを作成する方法を示しています。
+`TIMESTAMPTZ` フィールドを使用するには、コレクション作成時にスキーマ内で明示的に定義する必要があります。以下の例では、`DataType.TIMESTAMPTZ` 型の `tsz` フィールドを持つコレクションを作成する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

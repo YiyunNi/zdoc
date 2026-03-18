@@ -54,7 +54,7 @@ Dedicated クラスターで許可されるコレクションの数は、クラ�
 
 はい。コレクション作成後でも動的フィールドを有効にできます。詳細については、[コレクションの変更](./modify-collections)を参照してください。
 
-### Zilliz Cloud がサポートするインデックス作成メトリックタイプは何ですか？\{#what-are-the-indexing-metric-types-supported-by-Zilliz-Cloud}
+### Zilliz Cloud がサポートするインデックス作成メトリックタイプは何ですか？\{#what-are-the-indexing-metric-types-supported-by-zilliz-cloud}
 
 Zilliz Cloud は以下のメトリックタイプをサポートしています。
 

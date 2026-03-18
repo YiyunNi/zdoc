@@ -42,7 +42,7 @@ import TabItem from '@theme/TabItem';
 
 ## GEOMETRY フィールドとは？\{#what-is-a-geometry-field}
 
-GEOMETRY フィールドは、Zilliz Cloud におけるスキーマ定義済みのデータ型（`データType.GEOMETRY`）で、ジオメトリデータを格納します。ジオメトリフィールドを操作する際には、データの挿入およびクエリの両方で [Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 形式を使用します。これは人間が読みやすい表現形式です。内部的には、Zilliz Cloud が WKT を効率的な保存・処理のために [Well-Known Binary (WKB)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary) に変換しますが、ユーザーが WKB を直接扱う必要はありません。
+GEOMETRY フィールドは、Zilliz Cloud におけるスキーマ定義済みのデータ型（`DataType.GEOMETRY`）で、ジオメトリデータを格納します。ジオメトリフィールドを操作する際には、データの挿入およびクエリの両方で [Well-Known Text (WKT)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry) 形式を使用します。これは人間が読みやすい表現形式です。内部的には、Zilliz Cloud が WKT を効率的な保存・処理のために [Well-Known Binary (WKB)](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary) に変換しますが、ユーザーが WKB を直接扱う必要はありません。
 
 `GEOMETRY` データ型は以下のジオメトリオブジェクトをサポートしています：
 
@@ -66,7 +66,7 @@ GEOMETRY フィールドは、Zilliz Cloud におけるスキーマ定義済み�
 
 ### ステップ 1: GEOMETRY フィールドの定義\{#step-1-define-a-geometry-field}
 
-GEOMETRY フィールドを使用するには、コレクション作成時に明示的にコレクションスキーマ内で定義する必要があります。以下の例では、`geo` フィールドを `データType.GEOMETRY` 型として持つコレクションを作成する方法を示しています。
+GEOMETRY フィールドを使用するには、コレクション作成時に明示的にコレクションスキーマ内で定義する必要があります。以下の例では、`geo` フィールドを `DataType.GEOMETRY` 型として持つコレクションを作成する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

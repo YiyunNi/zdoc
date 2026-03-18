@@ -66,7 +66,7 @@ import TabItem from '@theme/TabItem';
    </tr>
 </table>
 
-ブールフィールドを宣言するには、`datatype` を `BOOL` に設定します。数値フィールドを宣言するには、利用可能な数値データ型のいずれかに設定します。たとえば、整数フィールドの場合は `データType.INT64`、浮動小数点数フィールドの場合は `データType.FLOAT` を使用します。
+ブールフィールドを宣言するには、`datatype` を `BOOL` に設定します。数値フィールドを宣言するには、利用可能な数値データ型のいずれかに設定します。たとえば、整数フィールドの場合は `DataType.INT64`、浮動小数点数フィールドの場合は `DataType.FLOAT` を使用します。
 
 <Admonition type="info" icon="📘" title="Notes">
 

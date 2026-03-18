@@ -18,7 +18,7 @@ sidebar_position: 14
 ## 目次
 
 - [Zilliz Cloudクラスターエンドポイントの認証局は何ですか？](#what-is-the-certificate-authority-for-zilliz-cloud-cluster-endpoints)
-- [Zilliz Cloudクラスターの証明書の有効期間はどのくらいですか？](#what-is-is-the-certificate-validity-period-for-my-zilliz-cloud-cluster)
+- [Zilliz Cloudクラスターの証明書の有効期間はどのくらいですか？](#what-is-the-certificate-validity-period-for-my-zilliz-cloud-cluster)
 - [証明書の有効期限が切れているかどうかを確認するにはどうすればよいですか？](#how-can-i-check-whether-a-certificate-expires)
 - [Zilliz CloudでサポートされているTLSバージョンは何ですか？](#which-tls-versions-are-supported-on-zilliz-cloud)
 - [Zilliz CloudはmTLSをサポートしていますか？](#does-zilliz-cloud-support-mtls)
