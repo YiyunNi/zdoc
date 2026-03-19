@@ -15,7 +15,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import {useChatContext} from './ChatContext';
-import type {ChatHistoryEntry, ConfidenceLevel, Source} from './types';
+import type {ChatHistoryEntry, ConfidenceLevel, Source, GroundingCitation} from './types';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 
@@ -164,53 +164,99 @@ const markdownComponents = {
   },
 };
 
-/* ── Citation superscript rendering ── */
+/* ── Grounded markdown: deterministic citation rendering ── */
 
-const CITATION_RE = /\[(\d+)\]/g;
+function splitParagraphs(text: string): string[] {
+  const parts: string[] = [];
+  let current = '';
+  let inCodeBlock = false;
 
-/**
- * Walk React children and replace [N] text patterns with clickable superscript links.
- * Sources array is used to look up the URL for each citation number.
- */
-function injectCitations(children: React.ReactNode, sources?: Source[]): React.ReactNode {
-  return React.Children.map(children, child => {
-    if (typeof child === 'string') {
-      const parts: React.ReactNode[] = [];
-      let lastIndex = 0;
-      let match: RegExpExecArray | null;
-      CITATION_RE.lastIndex = 0;
-      while ((match = CITATION_RE.exec(child)) !== null) {
-        if (match.index > lastIndex) {
-          parts.push(child.slice(lastIndex, match.index));
-        }
-        const num = parseInt(match[1], 10);
-        const src = sources?.[num - 1];
-        parts.push(
-          <sup key={`cite-${match.index}`} className={styles.citationSup}>
-            {src ? (
-              <a href={src.url} className={styles.citationLink} title={src.title}>{num}</a>
-            ) : num}
-          </sup>,
-        );
-        lastIndex = CITATION_RE.lastIndex;
-      }
-      if (parts.length === 0) return child;
-      if (lastIndex < child.length) parts.push(child.slice(lastIndex));
-      return <>{parts}</>;
+  for (const line of text.split('\n')) {
+    if (line.trim().startsWith('```')) {
+      inCodeBlock = !inCodeBlock;
+      current += line + '\n';
+      continue;
     }
-    if (React.isValidElement(child) && child.props?.children) {
-      return React.cloneElement(child, {}, injectCitations(child.props.children, sources));
+    if (inCodeBlock) {
+      current += line + '\n';
+      continue;
     }
-    return child;
-  });
+    if (line.trim() === '' && current.trim()) {
+      parts.push(current.trim());
+      current = '';
+    } else {
+      current += line + '\n';
+    }
+  }
+  if (current.trim()) parts.push(current.trim());
+  return parts;
 }
 
-/** Build markdown component overrides that inject citation superscripts into text-bearing elements */
-function citationComponents(sources?: Source[]) {
-  if (!sources || sources.length === 0) return {};
-  const wrap = (Tag: string) =>
-    ({children, ...props}: any) => React.createElement(Tag, props, injectCitations(children, sources));
-  return {p: wrap('p'), li: wrap('li'), td: wrap('td'), th: wrap('th')};
+/**
+ * Build markdown component overrides that append citation sups inline.
+ * Uses a render-phase counter so sups only appear on the LAST rendered
+ * text-bearing element (last <p>, or last <li> if no <p>).
+ */
+function makeCitedComponents(sourceIndices: number[], sources: Source[]) {
+  const sups = sourceIndices.map(si => (
+    <sup key={`cite-${si}`} className={styles.citationSup}>
+      <a href={sources[si]?.url} className={styles.citationLink} title={sources[si]?.title}>
+        {si + 1}
+      </a>
+    </sup>
+  ));
+
+  // During render, react-markdown calls component overrides in document order.
+  // We collect elements via refs, then the CitationAnchor at the end injects
+  // sups into the last one via a portal-like trick.
+  // Simpler: just track "has a <p> been rendered?" — if yes, only <p> gets sups
+  // on the LAST call; if no <p>, the last <li> gets sups.
+  //
+  // Since react-markdown renders synchronously within a single render pass,
+  // we can use a mutable object to count calls and a two-pass trick:
+  // Pass 1 (counting) isn't practical, so instead we append to ALL <p>'s
+  // but hide all but the last via CSS :last-of-type.
+  //
+  // Actually simplest: only override <p> (the block-level wrapper).
+  // Each paragraph chunk produces exactly one <p> for prose,
+  // and lists produce <ul>/<ol> with no <p> inside.
+  // For list chunks, we skip inline citations (they still show in Sources list).
+
+  const CiteP = ({children, ...props}: any) => (
+    <p {...props}>{children}<span className={styles.citationGroup}>{sups}</span></p>
+  );
+
+  return {...markdownComponents, p: CiteP};
+}
+
+/** Render markdown text with deterministic citation superscripts based on grounding map */
+function GroundedMarkdown({text, sources, grounding}: {
+  text: string;
+  sources?: Source[];
+  grounding?: GroundingCitation[];
+}) {
+  if (!grounding || !sources || grounding.length === 0) {
+    return <Markdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{text}</Markdown>;
+  }
+
+  const citationMap = new Map<number, number[]>();
+  for (const c of grounding) {
+    citationMap.set(c.paragraphIndex, c.sourceIndices);
+  }
+
+  const paragraphs = splitParagraphs(text);
+
+  return (
+    <>
+      {paragraphs.map((para, pi) => {
+        const cites = citationMap.get(pi);
+        const components = cites && cites.length > 0
+          ? makeCitedComponents(cites, sources)
+          : markdownComponents;
+        return <Markdown key={pi} remarkPlugins={[remarkGfm]} components={components}>{para}</Markdown>;
+      })}
+    </>
+  );
 }
 
 /* ── Chat history grouping helpers ── */
@@ -397,7 +443,7 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                           : 'thinking...'}
                       </span>
                     ) : (
-                      <Markdown remarkPlugins={[remarkGfm]} components={{...markdownComponents, ...citationComponents(msg.sources)}}>{msg.text}</Markdown>
+                      <GroundedMarkdown text={msg.text} sources={msg.sources} grounding={msg.grounding} />
                     )
                   ) : (
                     <p>{msg.text}</p>

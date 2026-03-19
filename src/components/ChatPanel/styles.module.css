@@ -736,7 +736,12 @@
   color: #d97706;
 }
 
-/* Citation superscripts */
+/* Citation group — inline with trailing text */
+.citationGroup {
+  display: inline;
+  margin-left: 1px;
+}
+
 .citationSup {
   font-size: 0.625em;
   font-weight: 600;

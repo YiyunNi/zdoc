@@ -1,8 +1,8 @@
 import React, {createContext, useContext, useState, useRef, useCallback, useEffect} from 'react';
 import {useLocation} from '@docusaurus/router';
-import type {AgentType, ConfidenceLevel} from './types';
+import type {AgentType, ConfidenceLevel, GroundingCitation} from './types';
 
-export type {Source, FeedbackRating, ChatMessage, ChatHistoryEntry, AgentType, ConfidenceLevel} from './types';
+export type {Source, FeedbackRating, ChatMessage, ChatHistoryEntry, AgentType, ConfidenceLevel, GroundingCitation} from './types';
 
 export interface ChatContextValue {
   messages: ChatMessage[];
@@ -159,6 +159,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       let buffer = '';
       let assistantText = '';
       let pendingSources: Source[] | undefined;
+      let pendingGrounding: GroundingCitation[] | undefined;
       let pendingConfidence: ConfidenceLevel | undefined;
       let pendingAgent: {type: AgentType; name: string} | undefined;
 
@@ -232,6 +233,11 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
                 const parsed = JSON.parse(data) as {sources: Source[]};
                 pendingSources = parsed.sources;
               } catch { /* skip */ }
+            } else if (currentEvent === 'grounding') {
+              try {
+                const parsed = JSON.parse(data) as {citations: GroundingCitation[]};
+                pendingGrounding = parsed.citations;
+              } catch { /* skip */ }
             } else if (currentEvent === 'confidence') {
               try {
                 const parsed = JSON.parse(data) as {level: ConfidenceLevel; retrieval_score: number};
@@ -280,6 +286,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
           updated[updated.length - 1] = {
             ...last,
             ...(pendingSources && pendingSources.length > 0 ? {sources: pendingSources} : {}),
+            ...(pendingGrounding && pendingGrounding.length > 0 ? {grounding: pendingGrounding} : {}),
             ...(pendingConfidence ? {confidence: pendingConfidence} : {}),
             ...(pendingAgent ? {agent: pendingAgent.name, agentType: pendingAgent.type} : {}),
           };
