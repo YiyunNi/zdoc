@@ -8,6 +8,7 @@ import {generateSchemaCodeTool} from './generateSchemaCode.js';
 import {estimateResourcesTool} from './estimateResources.js';
 import {compareProductsTool} from './compareProducts.js';
 import {checkFeatureAvailabilityTool} from './checkFeatureAvailability.js';
+import {contactInfoTool} from './contactInfo.js';
 
 // All available tools
 export const allTools = {
@@ -20,6 +21,7 @@ export const allTools = {
   estimateResources: estimateResourcesTool,
   compareProducts: compareProductsTool,
   checkFeatureAvailability: checkFeatureAvailabilityTool,
+  contactInfo: contactInfoTool,
 } as const satisfies Record<string, CoreTool>;
 
 export type ToolName = keyof typeof allTools;
@@ -43,3 +45,4 @@ export {generateSchemaCodeTool} from './generateSchemaCode.js';
 export {estimateResourcesTool} from './estimateResources.js';
 export {compareProductsTool} from './compareProducts.js';
 export {checkFeatureAvailabilityTool} from './checkFeatureAvailability.js';
+export {contactInfoTool} from './contactInfo.js';
