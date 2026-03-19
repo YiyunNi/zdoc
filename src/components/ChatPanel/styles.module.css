@@ -736,6 +736,12 @@
   color: #d97706;
 }
 
+.externalIcon {
+  flex-shrink: 0;
+  opacity: 0.5;
+  margin-left: auto;
+}
+
 /* Citation group — inline with trailing text */
 .citationGroup {
   display: inline;

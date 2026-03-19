@@ -7,6 +7,7 @@ import {
   Minimize2,
   SquarePen,
   Send,
+  ExternalLink,
   ThumbsUp,
   ThumbsDown,
   ChevronRight,
@@ -111,13 +112,25 @@ const SOURCE_TAG_MAP: Record<string, {label: string; className: string}> = {
 function resolveSection(section?: string, url?: string): string {
   // If section is explicitly set and not the default, trust it
   if (section && section !== 'cloud-guides') return section;
-  // Infer from URL
+  // Infer from URL (defense in depth — backend also infers via inferSection())
   if (url) {
+    if (/milvus\.io/i.test(url)) return 'external-web';
+    if (/github\.com/i.test(url)) return 'external-github';
     if (/\/byoc[-/]/.test(url) || /docs-byoc/.test(url)) return 'byoc-guides';
     if (/\/reference\//.test(url)) return 'api-reference';
   }
   // Default: any doc URL is cloud-guides
   return section || 'cloud-guides';
+}
+
+function isExternalUrl(url: string): boolean {
+  if (!url || url.startsWith('/')) return false;
+  try {
+    const host = new URL(url).hostname;
+    return !host.endsWith('zilliz.com');
+  } catch {
+    return false;
+  }
 }
 
 function SourceTag({section, url}: {section?: string; url?: string}) {
@@ -459,10 +472,12 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                               onClick={e => handleSourceClick(e, src.url)}
                               className={styles.sourceLink}
                               title={src.title}
+                              {...(isExternalUrl(src.url) ? {target: '_blank', rel: 'noopener noreferrer'} : {})}
                             >
                               <span className={styles.sourceIndex}>{j + 1}</span>
                               <span>{src.title}</span>
                               <SourceTag section={src.section} url={src.url} />
+                              {isExternalUrl(src.url) && <ExternalLink size={12} className={styles.externalIcon} />}
                             </a>
                           </li>
                         ))}
