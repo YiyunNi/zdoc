@@ -19,8 +19,12 @@ import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.
 import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
 import {findSemanticCacheHit} from './semantic-cache.js';
+import {loadPrompts, getBasePrompt, getTopicPrompt} from './prompts.js';
 
 const promptRules = loadRules(import.meta.url);
+
+// Load topic prompts from disk at startup
+loadPrompts();
 
 // ---------------------------------------------------------------------------
 // Deflection detection: suppress sources when the agent deflects off-topic
@@ -271,7 +275,12 @@ app.post('/chat', async c => {
 
   // Stream response via SSE — open the connection immediately so the
   // client sees activity while routing + RAG run in the background.
-  const ragQuery = lastUserMessage?.content || '';
+  const rawQuery = lastUserMessage?.content || '';
+  // Enrich short follow-up queries with recent conversation context
+  const isFollowUp = rawQuery.length < 40 && windowedMessages.length > 2;
+  const ragQuery = isFollowUp
+    ? windowedMessages.slice(-3).filter(m => m.role === 'user').map(m => m.content).join(' ')
+    : rawQuery;
 
   return c.newResponse(
     new ReadableStream({
@@ -335,7 +344,7 @@ app.post('/chat', async c => {
           setActiveSectionFilter(sectionFilter);
           console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
           const [routeResult, ragResult] = await Promise.all([
-            routeIntent(ragQuery, body.messages, session.id).catch(() => ({agent: 'general' as const, reasoning: 'Router fallback'})),
+            routeIntent(ragQuery, body.messages, session.id).catch(() => ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'})),
             retrieve(ragQuery, sectionFilter),
           ]);
 
@@ -344,7 +353,8 @@ app.post('/chat', async c => {
 
           logEvent(session.id, userId, 'routing', routeResult.agent, {
             reasoning: routeResult.reasoning,
-            message: ragQuery.slice(0, 200),
+            topics: routeResult.topics,
+            message: rawQuery.slice(0, 200),
           });
 
           // Emit agent info
@@ -353,10 +363,25 @@ app.post('/chat', async c => {
             name: agentConfig.name,
           }));
 
-          // Build system prompt
-          let systemPrompt = agentConfig.systemPrompt;
+          // Build system prompt: base + agent role + topic prompts + RAG context
+          let systemPrompt = getBasePrompt() + '\n\n' + agentConfig.systemPrompt;
 
-          if (ragResult.context) {
+          // Inject topic-specific prompts (max 2 to stay within context limits)
+          const topics = routeResult.topics || [];
+          for (const topic of topics.slice(0, 2)) {
+            const topicContent = getTopicPrompt(topic);
+            if (topicContent) {
+              systemPrompt += `\n\n## Topic Reference: ${topic}\n${topicContent}`;
+            }
+          }
+
+          if (ragResult.context && ragResult.sources.length > 0) {
+            // Build numbered source index for inline citation
+            const sourceIndex = ragResult.sources.map((src, i) =>
+              `[${i + 1}] ${src.title} — ${src.url}`
+            ).join('\n');
+            systemPrompt += `\n\n## Retrieved Documentation\nSources:\n${sourceIndex}\n\n${ragResult.context}`;
+          } else if (ragResult.context) {
             systemPrompt += `\n\n${ragResult.context}`;
           }
 
@@ -378,6 +403,7 @@ app.post('/chat', async c => {
           const result = streamText({
             model: provider(AI_MODEL),
             maxTokens: 4096,
+            temperature: 0.2,
             tools: agentTools,
             maxSteps: 5,
             system: systemPrompt,

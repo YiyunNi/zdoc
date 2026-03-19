@@ -9,7 +9,7 @@ import type {AgentType, ChatMessage} from './types.js';
 
 const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
 const AI_API_KEY = process.env.AI_API_KEY || '';
-const AI_MODEL = process.env.AI_MODEL || 'gpt-4o';
+const AI_MODEL = process.env.ROUTER_MODEL || process.env.AI_MODEL || 'gpt-4o';
 
 const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 
@@ -17,8 +17,16 @@ const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 // Intent classification schema
 // ---------------------------------------------------------------------------
 
+const TOPIC_ENUM = [
+  'schema-design', 'search', 'resources', 'cluster-connection',
+  'import', 'migration', 'access-control', 'integrations', 'pricing',
+] as const;
+
+export type TopicName = (typeof TOPIC_ENUM)[number];
+
 const routeSchema = z.object({
   agent: z.enum(['general', 'schema', 'resources', 'product', 'code']),
+  topics: z.array(z.enum(TOPIC_ENUM)).describe('Relevant topic areas (1-2 max)'),
   reasoning: z.string(),
 });
 
@@ -45,7 +53,7 @@ export async function routeIntent(
   latestMessage: string,
   recentMessages: ChatMessage[],
   sessionId?: string,
-): Promise<{agent: AgentType; reasoning: string}> {
+): Promise<{agent: AgentType; topics: TopicName[]; reasoning: string}> {
   // Check sticky route (stay with same agent unless clear topic change)
   const stickyAgent = sessionId ? sessionRoutes.get(sessionId) : undefined;
 
@@ -56,8 +64,8 @@ export async function routeIntent(
     const result = await generateObject({
       model: provider(AI_MODEL),
       schema: routeSchema,
-      maxTokens: 150,
-      prompt: `Classify the user's intent to route to the best specialized agent.
+      maxTokens: 250,
+      prompt: `Classify the user's intent to route to the best specialized agent and identify relevant topics.
 
 Agents:
 - general: General questions about Zilliz Cloud, Milvus, vector databases, documentation navigation
@@ -66,6 +74,17 @@ Agents:
 - product: Product comparison (Serverless vs Dedicated vs BYOC), feature availability, migration
 - code: SDK code generation, code examples, API usage, integration patterns (LangChain, etc.)
 
+Topics (select 1-2 most relevant):
+- schema-design: Collection schema, field types, indexes, BM25 setup, limits
+- search: Vector search, filtered search, BM25 full text search, hybrid search, RRF
+- resources: Plan selection (Free/Serverless/Dedicated/BYOC), CU sizing, limits
+- cluster-connection: Endpoint, auth, SDK connection, global/private endpoints
+- import: Insert/upsert, bulk import, volume import, BulkWriter, data prep
+- migration: Milvus→Zilliz migration, Pinecone/Qdrant/pgvector/ES/OpenSearch migration
+- access-control: RBAC, org/project/cluster roles, API keys, custom roles
+- integrations: LangChain, model providers, Datadog, SDK integrations
+- pricing: Pricing, billing, credits, cost optimization
+
 ${stickyAgent ? `Current agent: ${stickyAgent}. Stay with this agent unless the topic has clearly changed.` : ''}
 
 Recent conversation:
@@ -73,7 +92,7 @@ ${contextMessages}
 
 Latest user message: ${latestMessage}
 
-Route to the most appropriate agent.`,
+Route to the most appropriate agent and select relevant topics.`,
     });
 
     const agentType = result.object.agent;
@@ -83,12 +102,12 @@ Route to the most appropriate agent.`,
       sessionRoutes.set(sessionId, agentType);
     }
 
-    return {agent: agentType, reasoning: result.object.reasoning};
+    return {agent: agentType, topics: result.object.topics || [], reasoning: result.object.reasoning};
   } catch (err) {
     console.error('[Router] Classification error:', err);
     // Fallback: use sticky route or general
     const fallback = stickyAgent || 'general';
-    return {agent: fallback, reasoning: 'Fallback due to classification error'};
+    return {agent: fallback, topics: [], reasoning: 'Fallback due to classification error'};
   }
 }
 
