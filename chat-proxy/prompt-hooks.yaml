@@ -1,0 +1,39 @@
+rules:
+  - name: sales-lead-cta
+    enabled: true
+    priority: 10
+    when:
+      keywords: [pricing, enterprise, sales, quote, buy, cost, plan, subscription]
+      agents: [product, resources]
+      confidence: [low, medium]
+    then:
+      inject: |
+        When the user asks about pricing or purchasing, include this link
+        naturally in your response: [Contact Sales](https://zilliz.com/contact-sales)
+      append: |
+        ---
+        **Want to discuss pricing?** [Talk to our sales team →](https://zilliz.com/contact-sales)
+
+  - name: support-escalation
+    enabled: true
+    priority: 20
+    when:
+      keywords: [bug, broken, error, crash, not working, issue, problem, fail]
+    then:
+      inject: |
+        If the user appears to be experiencing a bug or technical issue that you
+        cannot resolve from documentation alone, suggest they file a support ticket
+        at https://support.zilliz.com or join the community at https://discord.gg/zilliz
+
+  - name: getting-started-guide
+    enabled: false
+    priority: 50
+    when:
+      keywords: [getting started, quickstart, tutorial, beginner, first time, new to]
+      agents: [general, code]
+    then:
+      inject: |
+        Prioritize linking to the quickstart guide:
+        https://docs.zilliz.com/docs/quick-start
+      append: |
+        **New to Zilliz?** Check out the [Quickstart Guide →](https://docs.zilliz.com/docs/quick-start)

@@ -13,6 +13,16 @@ const _ = require('lodash')
 
 const IMAGE_BED_URL = process.env.IMAGE_BED_URL || 'https://zdoc-images.s3.us-west-2.amazonaws.com'
 
+// Known JSX block components that the MDX patcher must never escape.
+// Shared by __escape_non_html_tags (safeUppercaseTags seed) and __mdx_patches
+// (end-tag-mismatch guard). Keep in sync with mdxPatcher.js KNOWN_JSX_TAGS.
+const KNOWN_JSX_TAGS = new Set([
+    'Admonition', 'Tabs', 'TabItem', 'DocCard', 'DocCardList',
+    'Details', 'CodeBlock', 'ThemedImage', 'TOCInline', 'Highlight',
+    'Banner', 'Bars', 'Blocks', 'Cards', 'Grid', 'Hero', 'Procedures',
+    'RestSpecs', 'Stories', 'Supademo',
+]);
+
 class larkDocWriter {
     constructor(
         root_token, 
@@ -932,13 +942,7 @@ class larkDocWriter {
         // A tag is safe if it appears with a close tag, self-closing form, or attributes
         // anywhere in the document. Combined with a KNOWN_JSX fallback whitelist as a
         // safety net for legitimate components that may be orphaned in edge cases.
-        const safeUppercaseTags = new Set([
-            // Docusaurus built-in theme components
-            'Admonition', 'Tabs', 'TabItem', 'DocCard', 'DocCardList',
-            'Details', 'CodeBlock', 'ThemedImage', 'TOCInline', 'Highlight',
-            // Custom site components
-            'Banner', 'Bars', 'Blocks', 'Cards', 'Grid', 'Hero', 'Procedures', 'RestSpecs', 'Stories', 'Supademo',
-        ]);
+        const safeUppercaseTags = new Set(KNOWN_JSX_TAGS);
         const upperScanRegex = /[<]([A-Z][A-Za-z0-9]*)/g;
         let upperMatch;
         while ((upperMatch = upperScanRegex.exec(content)) !== null) {
@@ -971,13 +975,6 @@ class larkDocWriter {
                         part = part.replace(/(?<!\\)<\/?([a-z][a-z0-9]*(?:[_-][a-z0-9]+)*)\s*\/?>/g, (match, tagName) => {
                             return KNOWN_TAGS.has(tagName) ? match : '\\' + match;
                         });
-                        // Escape lowercase dotted-name member expressions (e.g. <gson.JsonObject>),
-                        // which are Java/Kotlin type references that MDX misparses as JSX member
-                        // expressions. Backslash escaping doesn't suppress JSX parsing for dotted
-                        // names, so convert to HTML entities (same as PascalCase dotted names).
-                        part = part.replace(/\\?<\/?([a-z][a-z0-9]*(?:\.[A-Za-z][A-Za-z0-9]*)+)\s*\/?>/g, (match) => {
-                            return match.replace(/^\\/, '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                        });
                         // Escape uppercase/PascalCase tags not identified as real JSX components.
                         // Uses HTML entities so the angle brackets render correctly in the output.
                         part = part.replace(/(?<!\\)<\/?([A-Z][A-Za-z0-9]*)\s*\/?>/g, (match, tagName) => {
@@ -991,17 +988,6 @@ class larkDocWriter {
                         part = part.replace(/\\?<\/?([A-Z][A-Za-z0-9]*(?:\.[A-Za-z][A-Za-z0-9]*)+)\s*\/?>/g, (match) => {
                             return match.replace(/^\\/, '').replace(/</g, '&lt;').replace(/>/g, '&gt;');
                         });
-                        // Escape `<` immediately before a tag-like name that contains an HTML entity (`&`),
-                        // e.g. Java generics like List<List&lt;String&gt;&gt; — invalid JSX tag name.
-                        part = part.replace(/(?<!\\)<([A-Za-z][A-Za-z0-9]*)&/g, '&lt;$1&');
-                        // Escape `<?` which MDX misparses as a JSX tag opener, e.g. Java wildcard `List<?>`.
-                        part = part.replace(/(?<!\\)<\?/g, '&lt;?');
-                        // Escape `<Tag<` — nested generic types like `SortedMap<Long, Float>` where the outer
-                        // `<SortedMap` starts a JSX tag that then hits another `<` (U+003C) in the name.
-                        part = part.replace(/(?<!\\)<([A-Za-z][A-Za-z0-9]*)</g, '&lt;$1<');
-                        // Escape `<Tag[` — array generic types like `SortedMap[Long, Float]` where the outer
-                        // `<SortedMap` starts a JSX tag that then hits `[` (U+005B) in the name.
-                        part = part.replace(/(?<!\\)<([A-Za-z][A-Za-z0-9]*)\[/g, '&lt;$1[');
                         return part;
                     }
                     return part; // Inside inline code — leave unchanged
@@ -1020,7 +1006,11 @@ class larkDocWriter {
             const { compile } = await import('@mdx-js/mdx');
             const remarkMath = (await import('remark-math')).default;
 
-            let patchedContent = content;
+            // Pre-process: fix translation/editor artefacts, then escape problem characters
+            let patchedContent = removeTabsHallucinations(content);
+            patchedContent = unescapeKnownJsxTags(patchedContent);
+            patchedContent = this.__escape_currency_dollars(patchedContent);
+            patchedContent = this.__escape_non_html_tags(patchedContent);
             let maxIterations = 50; // Prevent infinite loops
             let iteration = 0;
             const seenHashes = new Set();
@@ -1067,65 +1057,130 @@ class larkDocWriter {
                                 }
                             }
                             break;
-                        case 'end-tag-mismatch':
-                            let tag = error.message.match(/<(?!\/)([A-Za-z][A-Za-z0-9:_-]*)\b[^>]*>/g)?.[0];
-                            let pos = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
-                            if (tag && pos) {
-                                const start = { line: parseInt(pos[1]), column: parseInt(pos[2]) }
+                        case 'end-tag-mismatch': {
+                            // Error: "Unexpected closing tag `</Y>`, expected corresponding closing tag for `<X>` (line:col-line:col)"
+                            // The position refers to the OPENING tag <X>.
+                            // Strategy: replace the wrong closing tag </Y> with the correct </X>.
+                            // Exception: if <X> is a non-standard tag (contains _ or -) it is a URL/API
+                            // placeholder, not a real element. Replacing the closing tag causes an
+                            // oscillating loop; instead fall through to the fallback (escape opening tag).
+                            const wrongClose = error.message.match(/Unexpected closing tag `<\/([^>]+)>`/)?.[1];
+                            const expectedOpen = error.message.match(/closing tag for `<([A-Za-z][^>/ ]*)(?:\s[^>]*)?>?`/)?.[1];
+                            const posMatch = error.message.match(/(\d+):(\d+)-(\d+):(\d+)/);
+                            const isPlaceholder = expectedOpen && /[_-]/.test(expectedOpen);
 
-                                patchedContent = patchedContent.split('\n').map((line, index) => {
-                                    if (index === start.line - 1) {
-                                        line = line.slice(0, start.column - 1) + '\\' + line.slice(start.column - 1)
+                            if (!isPlaceholder && wrongClose && expectedOpen && wrongClose !== expectedOpen && posMatch) {
+                                const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
+                                const wrongCloseTag = `</${wrongClose}>`;
+                                const correctCloseTag = `</${expectedOpen}>`;
+                                const lines = patchedContent.split('\n');
+
+                                for (let i = openLine; i < lines.length; i++) {
+                                    const idx = lines[i].indexOf(wrongCloseTag);
+                                    if (idx !== -1) {
+                                        lines[i] = lines[i].slice(0, idx) + correctCloseTag + lines[i].slice(idx + wrongCloseTag.length);
                                         madeChanges = true;
+                                        break;
                                     }
+                                }
 
-                                    return line
-                                }).join('\n')
-                            }
-                            
-                            break;
-                        case 'unexpected-closing-slash':
-                            // For this specific error "Unexpected closing slash `/` in tag, expected an open tag first"
-                            // it typically means there's a stray `</content>` tag or similar erroneous closing tag
-                            // Remove erroneous closing tags at the end of document
-                            const originalContent = patchedContent;
-                            patchedContent = patchedContent.replace(/<\/(?:content|[\w\d]+)>\s*$/, '');
-                            if (originalContent !== patchedContent) {
-                                madeChanges = true;
-                            } else {
-                                // If no match at end, look for the erroneous tag anywhere in the content
-                                // that might be causing the slash error
-                                patchedContent = patchedContent.replace(/<[/](\w+)>/g, (match, tagName) => {
-                                    // If this tag doesn't have a matching opening tag, remove it
-                                    const openingTagCount = (patchedContent.match(new RegExp(`<${tagName}(?:\\s|>|/>)`, 'g')) || []).length;
-                                    const closingTagCount = (patchedContent.match(new RegExp(`<\\/${tagName}>`, 'g')) || []).length;
-                                    
-                                    // If there are more closing tags than opening tags, this closing tag is erroneous
-                                    if (closingTagCount > openingTagCount) {
-                                        return ''; // Remove the erroneous closing tag
-                                    }
-                                    return match;
-                                });
-                                
-                                if (originalContent !== patchedContent) {
+                                if (madeChanges) {
+                                    patchedContent = lines.join('\n');
+                                }
+                            } else if (!wrongClose && expectedOpen && posMatch) {
+                                // Variant: "Expected a closing tag for `<X>` (line:col-line:col) before the end of `paragraph`"
+                                // Skip known JSX components — escaping their opening tag causes a
+                                // cascade: the orphaned </X> is then deleted by unexpected-closing-slash,
+                                // destroying the component structure. The real fix is inside the component
+                                // (e.g. unescaped braces) which the acorn handler will address.
+                                if (KNOWN_JSX_TAGS.has(expectedOpen)) {
+                                    break;
+                                }
+                                // The opening tag is not closed within its paragraph. Escape it with &lt; so it
+                                // renders as literal text instead of being treated as a JSX element.
+                                const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
+                                const openCol = parseInt(posMatch[2]) - 1;  // 0-indexed
+                                const lines = patchedContent.split('\n');
+
+                                if (openLine < lines.length && lines[openLine][openCol] === '<') {
+                                    lines[openLine] = lines[openLine].slice(0, openCol) + '&lt;' + lines[openLine].slice(openCol + 1);
+                                    patchedContent = lines.join('\n');
                                     madeChanges = true;
                                 }
                             }
-                            break;
-                        case 'unexpected-character':
-                            if (error.message.includes('U+002C') || 
-                                error.message.includes('U+002A') || 
-                                error.message.includes('U+3001') || 
-                                error.message.includes('U+003D')) {
-                                offset = error.place.offset;
-                                if (offset !== undefined && offset > 0 && offset < patchedContent.length) {
-                                    for (let i = offset-1; i >= 0; i--) {
-                                        if (patchedContent[i] === '<') {
-                                            patchedContent = patchedContent.slice(0, i) + '\\' + patchedContent.slice(i);
-                                            madeChanges = true;
 
-                                            break;
+                            break;
+                        }
+                        case 'unexpected-closing-slash': {
+                            // "Unexpected closing slash `/` in tag, expected an open tag first"
+                            // The error offset points to the `/` inside the orphaned closing tag.
+                            // Strategy: walk back to find `<`, forward to find `>`, then remove the entire tag.
+                            const slashOffset = error.place?.offset;
+
+                            if (slashOffset !== undefined) {
+                                let tagStart = slashOffset - 1;
+                                while (tagStart > 0 && patchedContent[tagStart] !== '<') tagStart--;
+                                let tagEnd = slashOffset;
+                                while (tagEnd < patchedContent.length && patchedContent[tagEnd] !== '>') tagEnd++;
+
+                                if (patchedContent[tagStart] === '<' && tagEnd < patchedContent.length) {
+                                    const before = patchedContent.slice(0, tagStart);
+                                    let after = patchedContent.slice(tagEnd + 1);
+                                    if (after.startsWith('\n')) after = after.slice(1);
+                                    patchedContent = before + after;
+                                    madeChanges = true;
+                                }
+                            }
+
+                            if (!madeChanges) {
+                                // Fallback: remove erroneous closing tags via regex
+                                const originalContent = patchedContent;
+                                patchedContent = patchedContent.replace(/<\/(?:content|[\w\d]+)>\s*$/, '');
+                                if (originalContent !== patchedContent) {
+                                    madeChanges = true;
+                                } else {
+                                    patchedContent = patchedContent.replace(/<[/](\w+)>/g, (match, tagName) => {
+                                        const openingTagCount = (patchedContent.match(new RegExp(`<${tagName}(?:\\s|>|/>)`, 'g')) || []).length;
+                                        const closingTagCount = (patchedContent.match(new RegExp(`<\\/${tagName}>`, 'g')) || []).length;
+                                        if (closingTagCount > openingTagCount) {
+                                            return '';
                                         }
+                                        return match;
+                                    });
+                                    if (originalContent !== patchedContent) {
+                                        madeChanges = true;
+                                    }
+                                }
+                            }
+                            break;
+                        }
+                        case 'unexpected-character':
+                            offset = error.place?.offset;
+
+                            if (
+                                (error.message.includes('U+003D') || /U\+003[0-9]/.test(error.message)) &&
+                                offset !== undefined && offset > 0
+                            ) {
+                                // `=` sign or a digit (0–9) unexpected — typically from `<=` or `<10` where
+                                // `<` was parsed as a JSX tag opener but the following char is not a valid name start.
+                                // Replace `<` with `&lt;` (not `\`) so the entity renders correctly in HTML.
+                                for (let i = offset - 1; i >= Math.max(0, offset - 10); i--) {
+                                    if (patchedContent[i] === '<') {
+                                        patchedContent = patchedContent.slice(0, i) + '&lt;' + patchedContent.slice(i + 1);
+                                        madeChanges = true;
+                                        break;
+                                    }
+                                }
+                            } else if (
+                                (error.message.includes('U+002C') || error.message.includes('U+002A') || error.message.includes('U+3001')) &&
+                                offset !== undefined && offset > 0 && offset < patchedContent.length
+                            ) {
+                                // Comma, asterisk, or ideographic comma — escape the nearest preceding `<` with backslash
+                                for (let i = offset - 1; i >= 0; i--) {
+                                    if (patchedContent[i] === '<') {
+                                        patchedContent = patchedContent.slice(0, i) + '\\' + patchedContent.slice(i);
+                                        madeChanges = true;
+                                        break;
                                     }
                                 }
                             }

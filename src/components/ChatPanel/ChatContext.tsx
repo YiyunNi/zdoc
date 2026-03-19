@@ -1,28 +1,10 @@
 import React, {createContext, useContext, useState, useRef, useCallback, useEffect} from 'react';
 import {useLocation} from '@docusaurus/router';
+import type {AgentType, ConfidenceLevel} from './types';
 
-export interface Source {
-  title: string;
-  url: string;
-}
+export type {Source, FeedbackRating, ChatMessage, ChatHistoryEntry, AgentType, ConfidenceLevel} from './types';
 
-export type FeedbackRating = 'up' | 'down' | null;
-
-export interface ChatMessage {
-  role: 'user' | 'assistant';
-  text: string;
-  sources?: Source[];
-  feedback?: FeedbackRating;
-}
-
-export interface ChatHistoryEntry {
-  id: string;
-  title: string;
-  messages: ChatMessage[];
-  createdAt: number;
-}
-
-interface ChatContextValue {
+export interface ChatContextValue {
   messages: ChatMessage[];
   setMessages: React.Dispatch<React.SetStateAction<ChatMessage[]>>;
   input: string;
@@ -37,6 +19,9 @@ interface ChatContextValue {
   deleteChat: (id: string) => void;
 }
 
+// Import types from local types file
+import type {Source, ChatMessage, ChatHistoryEntry} from './types';
+
 const ChatContext = createContext<ChatContextValue | null>(null);
 
 export function useChatContext(): ChatContextValue {
@@ -49,6 +34,18 @@ function getPageContext(): string | undefined {
   const article = document.querySelector('article');
   if (!article) return undefined;
   return (article.textContent || '').slice(0, 6000);
+}
+
+// Persistent user ID
+const USER_ID_KEY = 'zd-user-id';
+
+function getUserId(): string {
+  let userId = localStorage.getItem(USER_ID_KEY);
+  if (!userId) {
+    userId = crypto.randomUUID();
+    localStorage.setItem(USER_ID_KEY, userId);
+  }
+  return userId;
 }
 
 const HISTORY_KEY = 'zd-chat-history';
@@ -70,7 +67,6 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
   const [activeChatId, setActiveChatId] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const sessionIdRef = useRef<string | null>(null);
-  // Keep a ref to messages so the send callback never goes stale
   const messagesRef = useRef(messages);
   messagesRef.current = messages;
   const activeChatIdRef = useRef(activeChatId);
@@ -87,7 +83,6 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
     const title = firstUserMsg ? firstUserMsg.text.slice(0, 50) : 'New chat';
 
     if (activeChatIdRef.current) {
-      // Update existing history entry
       setChatHistory(prev =>
         prev.map(entry =>
           entry.id === activeChatIdRef.current
@@ -96,7 +91,6 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         )
       );
     } else {
-      // Create new history entry
       const id = crypto.randomUUID();
       setActiveChatId(id);
       activeChatIdRef.current = id;
@@ -104,23 +98,29 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
     }
   }, [messages]);
 
-  // Persist chat history to localStorage for cross-page sharing
+  // Persist chat history to localStorage
   useEffect(() => {
     try {
       localStorage.setItem(HISTORY_KEY, JSON.stringify(chatHistory));
-    } catch { /* quota exceeded — best effort */ }
+    } catch { /* quota exceeded */ }
   }, [chatHistory]);
 
   const send = useCallback(async (text: string) => {
     if (!text.trim() || abortRef.current) return;
 
     const userMessage: ChatMessage = {role: 'user', text};
-    const updatedMessages = [...messagesRef.current, userMessage];
+    const updatedMessages = [...messagesRef.current, userMessage, {role: 'assistant' as const, text: ''}];
     setMessages(updatedMessages);
     setInput('');
     setIsStreaming(true);
 
-    const apiMessages = updatedMessages.map(m => ({role: m.role, content: m.text}));
+    const apiMessages = updatedMessages
+      .filter(m => m.role === 'user' || (m.role === 'assistant' && m.text))
+      .map(m => {
+        // Strip hook-appended content from conversation history
+        const content = m.hookAppend ? m.text.replace(m.hookAppend, '') : m.text;
+        return {role: m.role, content};
+      });
 
     try {
       abortRef.current = new AbortController();
@@ -132,6 +132,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
           pageContext: getPageContext(),
           pageUrl: location.pathname,
           sessionId: sessionIdRef.current,
+          userId: getUserId(),
         }),
         signal: abortRef.current.signal,
       });
@@ -139,7 +140,14 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       if (!res.ok) {
         const errorBody = await res.json().catch(() => ({}));
         const errorText = (errorBody as {error?: string}).error || `Error: ${res.status}`;
-        setMessages(prev => [...prev, {role: 'assistant', text: errorText}]);
+        setMessages(prev => {
+          const updated = [...prev];
+          const last = updated[updated.length - 1];
+          if (last && last.role === 'assistant') {
+            updated[updated.length - 1] = {...last, text: errorText};
+          }
+          return updated;
+        });
         setIsStreaming(false);
         return;
       }
@@ -151,16 +159,21 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       let buffer = '';
       let assistantText = '';
       let pendingSources: Source[] | undefined;
-
-      setMessages(prev => [...prev, {role: 'assistant', text: ''}]);
+      let pendingConfidence: ConfidenceLevel | undefined;
+      let pendingAgent: {type: AgentType; name: string} | undefined;
 
       while (true) {
         const {done, value} = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, {stream: true});
+        if (done) {
+          // Process any remaining data in the buffer
+          if (buffer.trim()) {
+            buffer += '\n';
+          }
+        } else {
+          buffer += decoder.decode(value, {stream: true});
+        }
         const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
+        buffer = done ? '' : (lines.pop() || '');
 
         let currentEvent = '';
         for (const line of lines) {
@@ -173,6 +186,20 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
                 const parsed = JSON.parse(data) as {sessionId: string};
                 sessionIdRef.current = parsed.sessionId;
               } catch { /* skip */ }
+            } else if (currentEvent === 'agent') {
+              try {
+                pendingAgent = JSON.parse(data) as {type: AgentType; name: string};
+                // Update the current assistant message with agent info
+                const agentInfo = pendingAgent;
+                setMessages(prev => {
+                  const updated = [...prev];
+                  const last = updated[updated.length - 1];
+                  if (last && last.role === 'assistant') {
+                    updated[updated.length - 1] = {...last, agent: agentInfo.name, agentType: agentInfo.type};
+                  }
+                  return updated;
+                });
+              } catch { /* skip */ }
             } else if (currentEvent === 'delta') {
               try {
                 const parsed = JSON.parse(data) as {text: string};
@@ -180,7 +207,10 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
                 const captured = assistantText;
                 setMessages(prev => {
                   const updated = [...prev];
-                  updated[updated.length - 1] = {role: 'assistant', text: captured};
+                  const last = updated[updated.length - 1];
+                  if (last && last.role === 'assistant') {
+                    updated[updated.length - 1] = {...last, text: captured};
+                  }
                   return updated;
                 });
               } catch { /* skip malformed chunk */ }
@@ -189,6 +219,25 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
                 const parsed = JSON.parse(data) as {sources: Source[]};
                 pendingSources = parsed.sources;
               } catch { /* skip */ }
+            } else if (currentEvent === 'confidence') {
+              try {
+                const parsed = JSON.parse(data) as {level: ConfidenceLevel; retrieval_score: number};
+                pendingConfidence = parsed.level;
+              } catch { /* skip */ }
+            } else if (currentEvent === 'hook-append') {
+              try {
+                const parsed = JSON.parse(data) as {text: string};
+                assistantText += parsed.text;
+                const captured = assistantText;
+                setMessages(prev => {
+                  const updated = [...prev];
+                  const last = updated[updated.length - 1];
+                  if (last && last.role === 'assistant') {
+                    updated[updated.length - 1] = {...last, text: captured, hookAppend: (last.hookAppend || '') + parsed.text};
+                  }
+                  return updated;
+                });
+              } catch { /* skip */ }
             } else if (currentEvent === 'error') {
               try {
                 const parsed = JSON.parse(data) as {error: string};
@@ -196,27 +245,34 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
                 const captured = assistantText;
                 setMessages(prev => {
                   const updated = [...prev];
-                  updated[updated.length - 1] = {role: 'assistant', text: captured};
+                  const last = updated[updated.length - 1];
+                  if (last && last.role === 'assistant') {
+                    updated[updated.length - 1] = {...last, text: captured};
+                  }
                   return updated;
                 });
               } catch { /* skip */ }
             }
           }
         }
+
+        if (done) break;
       }
 
-      // Attach sources to the last assistant message after stream ends
-      if (pendingSources && pendingSources.length > 0) {
-        const sources = pendingSources;
-        setMessages(prev => {
-          const updated = [...prev];
-          const last = updated[updated.length - 1];
-          if (last && last.role === 'assistant') {
-            updated[updated.length - 1] = {...last, sources};
-          }
-          return updated;
-        });
-      }
+      // Attach sources, confidence, and agent to the last assistant message
+      setMessages(prev => {
+        const updated = [...prev];
+        const last = updated[updated.length - 1];
+        if (last && last.role === 'assistant') {
+          updated[updated.length - 1] = {
+            ...last,
+            ...(pendingSources && pendingSources.length > 0 ? {sources: pendingSources} : {}),
+            ...(pendingConfidence ? {confidence: pendingConfidence} : {}),
+            ...(pendingAgent ? {agent: pendingAgent.name, agentType: pendingAgent.type} : {}),
+          };
+        }
+        return updated;
+      });
     } catch (err: unknown) {
       if (err instanceof DOMException && err.name === 'AbortError') {
         // User cancelled
@@ -235,11 +291,9 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       const updated = [...prev];
       const msg = updated[messageIndex];
       if (!msg || msg.role !== 'assistant') return prev;
-      // Toggle off if same rating clicked again
       const newRating = msg.feedback === rating ? null : rating;
       updated[messageIndex] = {...msg, feedback: newRating};
 
-      // Fire and forget — send to proxy
       const endpoint = chatEndpoint.replace(/\/chat$/, '/feedback');
       fetch(endpoint, {
         method: 'POST',
@@ -247,10 +301,11 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         body: JSON.stringify({
           sessionId: sessionIdRef.current,
           messageIndex,
-          rating: newRating || rating, // send the actual rating even on toggle-off
+          rating: newRating || rating,
           pageUrl: location.pathname,
+          userId: getUserId(),
         }),
-      }).catch(() => { /* best effort */ });
+      }).catch(() => {});
 
       return updated;
     });
