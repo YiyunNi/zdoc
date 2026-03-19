@@ -10,6 +10,11 @@ const EMBEDDING_API_KEY = process.env.EMBEDDING_API_KEY || process.env.AI_API_KE
 const EMBEDDING_BASE_URL = (process.env.EMBEDDING_BASE_URL || process.env.AI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
 const COLLECTION_NAME = 'doc_chunks';
 const TOP_K = 6;
+const EXTERNAL_BOOST_WEIGHT = parseFloat(process.env.EXTERNAL_BOOST_WEIGHT || '1.0');
+
+function getExternalBoostWeight(): number {
+  return EXTERNAL_BOOST_WEIGHT;
+}
 
 // ---------------------------------------------------------------------------
 // Title sanitization — strip markdown heading IDs like {#slug-text}
@@ -91,6 +96,7 @@ export interface SearchResult {
   section: string;
   content: string;
   score: number;
+  weight: number;
 }
 
 export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
@@ -107,15 +113,41 @@ export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: st
       data: [embedding],
       annsField: 'embedding',
       limit: topK,
-      outputFields: ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content'],
+      outputFields: ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content', 'weight'],
     };
     if (sectionFilter) {
       searchBody.filter = sectionFilter;
     }
 
+    // Apply Boost Ranker to demote external sources when weight < 1.0
+    const boostWeight = getExternalBoostWeight();
+    if (boostWeight < 1.0) {
+      searchBody.functionScore = {
+        name: 'external_weight',
+        type: 'RERANK',
+        inputFieldNames: [],
+        params: {
+          reranker: 'boost',
+          filter: 'id like "ext:%"',
+          weight: boostWeight,
+        },
+      };
+    }
+
     const hits = await zillizRequest('/entities/search', searchBody);
 
-    const results: SearchResult[] = (hits || []).map((hit: any) => ({
+    // Cap external results to avoid overwhelming native content
+    const MAX_EXTERNAL_RESULTS = 2;
+    let externalCount = 0;
+    const cappedHits = (hits || []).filter((hit: any) => {
+      if ((hit.id || '').startsWith('ext:')) {
+        externalCount++;
+        return externalCount <= MAX_EXTERNAL_RESULTS;
+      }
+      return true;
+    });
+
+    const results: SearchResult[] = cappedHits.map((hit: any) => ({
       id: hit.id || '',
       doc_url: hit.doc_url || '',
       doc_url_md: hit.doc_url_md || '',
@@ -123,6 +155,7 @@ export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: st
       section: hit.section || '',
       content: hit.content || '',
       score: hit.distance ?? hit.score ?? 0,
+      weight: hit.weight ?? 1.0,
     }));
 
     console.log(`[RAG] Vector search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, sections: [${results.map(r => r.section).join(', ')}], scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
@@ -147,6 +180,56 @@ export function computeRetrievalConfidence(results: SearchResult[]): {level: Con
 }
 
 // ---------------------------------------------------------------------------
+// Language detection from retrieved content
+// ---------------------------------------------------------------------------
+
+const FENCE_TO_LANG: Record<string, string> = {
+  python: 'Python',
+  javascript: 'Node.js',
+  typescript: 'Node.js',
+  java: 'Java',
+  go: 'Go',
+  bash: 'REST/curl',
+  shell: 'REST/curl',
+  curl: 'REST/curl',
+};
+
+const SDK_PATTERNS: [RegExp, string][] = [
+  [/pymilvus/i, 'Python'],
+  [/milvus2-sdk-node|@zilliz/i, 'Node.js'],
+  [/io\.milvus/i, 'Java'],
+  [/milvus-sdk-go/i, 'Go'],
+  [/\bcurl\s+-/i, 'REST/curl'],
+];
+
+const FENCE_RE = /```(python|javascript|typescript|java|go|bash|shell|curl)\b/gi;
+
+export function detectLanguages(results: SearchResult[]): string[] {
+  const langs = new Set<string>();
+  for (const r of results) {
+    for (const m of r.content.matchAll(FENCE_RE)) {
+      const canon = FENCE_TO_LANG[m[1].toLowerCase()];
+      if (canon) langs.add(canon);
+    }
+    for (const [re, lang] of SDK_PATTERNS) {
+      if (re.test(r.content)) langs.add(lang);
+    }
+  }
+  return [...langs].sort();
+}
+
+export function detectLanguagesFromEntries(entries: DocEntry[]): string[] {
+  const langs = new Set<string>();
+  for (const e of entries) {
+    for (const l of e.languages) {
+      const trimmed = l.trim();
+      if (trimmed) langs.add(trimmed);
+    }
+  }
+  return [...langs].sort();
+}
+
+// ---------------------------------------------------------------------------
 // RAG pipeline: search + format context
 // ---------------------------------------------------------------------------
 
@@ -155,6 +238,7 @@ export interface RagResult {
   sources: Source[];
   confidence: {level: ConfidenceLevel; avgScore: number};
   rawResults: SearchResult[];
+  detectedLanguages: string[];
 }
 
 export async function retrieveContext(query: string, sectionFilter?: string): Promise<RagResult> {
@@ -165,6 +249,7 @@ export async function retrieveContext(query: string, sectionFilter?: string): Pr
       sources: [],
       confidence: {level: 'low', avgScore: 0},
       rawResults: [],
+      detectedLanguages: [],
     };
   }
 
@@ -183,12 +268,25 @@ export async function retrieveContext(query: string, sectionFilter?: string): Pr
   // Build context string from top results
   let context = '## Retrieved Documentation\nUse the information below to answer the question. Do NOT list or reference sources in your response — the UI handles source attribution automatically.\n';
   for (const r of results) {
-    const sourceLabel = r.section?.startsWith('external-') ? ' [External]' : '';
+    const sourceLabel = r.doc_url.includes('milvus.io')
+      ? ' [Milvus]'
+      : r.section?.startsWith('external-') ? ' [External]' : '';
     context += `\n### [${r.doc_title}${sourceLabel}](${r.doc_url})\n`;
     context += `${r.content}\n`;
   }
 
-  return {context, sources, confidence, rawResults: results};
+  const hasMilvusContent = results.some(r => r.doc_url.includes('milvus.io'));
+  if (hasMilvusContent) {
+    context += `\n## Adaptation Notice
+Some retrieved content is from the open-source Milvus project (milvus.io). When using it, ADAPT for Zilliz Cloud:
+- Replace \`connections.connect()\` with \`MilvusClient(uri="YOUR_CLUSTER_ENDPOINT", token="YOUR_API_KEY")\`
+- Replace \`localhost:19530\` with the Zilliz Cloud cluster endpoint
+- Skip self-hosted installation/deployment steps — Zilliz Cloud is fully managed
+- Use API key authentication, not username/password
+- Confirm compatibility: "This integration works the same way with Zilliz Cloud"\n`;
+  }
+
+  return {context, sources, confidence, rawResults: results, detectedLanguages: detectLanguages(results)};
 }
 
 // ---------------------------------------------------------------------------
@@ -204,6 +302,21 @@ export async function ensureCollection(): Promise<void> {
   const data = await zillizRequest('/collections/has', {collectionName: COLLECTION_NAME});
   if (data?.has) {
     console.log(`[RAG] Collection ${COLLECTION_NAME} exists`);
+
+    // Migrate: add weight field if not present
+    try {
+      await zillizRequest('/collections/fields/add', {
+        collectionName: COLLECTION_NAME,
+        schema: {fieldName: 'weight', dataType: 'Float', nullable: true},
+      });
+      console.log('[RAG] Added weight field to doc_chunks');
+    } catch (err) {
+      const msg = (err as Error).message || '';
+      if (!msg.includes('already exist') && !msg.includes('duplicate field')) {
+        console.warn('[RAG] Could not add weight field:', msg);
+      }
+    }
+
     return;
   }
 
@@ -219,6 +332,7 @@ export async function ensureCollection(): Promise<void> {
         {fieldName: 'section', dataType: 'VarChar', elementTypeParams: {max_length: '128'}},
         {fieldName: 'content', dataType: 'VarChar', elementTypeParams: {max_length: '16384'}},
         {fieldName: 'content_hash', dataType: 'VarChar', elementTypeParams: {max_length: '64'}},
+        {fieldName: 'weight', dataType: 'Float'},
         {fieldName: 'embedding', dataType: 'FloatVector', elementTypeParams: {dim: String(EMBEDDING_DIM)}},
       ],
     },
@@ -424,7 +538,7 @@ export async function retrieveContextFallback(query: string, sectionFilter?: str
   }
 
   if (entries.length === 0) {
-    return {context: '', sources: [], confidence: {level: 'low', avgScore: 0}, rawResults: []};
+    return {context: '', sources: [], confidence: {level: 'low', avgScore: 0}, rawResults: [], detectedLanguages: []};
   }
 
   const sources: Source[] = entries.map(e => ({
@@ -463,7 +577,7 @@ export async function retrieveContextFallback(query: string, sectionFilter?: str
   const avgScore = matchScores.length > 0 ? matchScores.reduce((a, b) => a + b, 0) / matchScores.length : 0;
   const level: ConfidenceLevel = avgScore >= 0.8 ? 'high' : avgScore >= 0.5 ? 'medium' : 'low';
 
-  return {context, sources, confidence: {level, avgScore}, rawResults: []};
+  return {context, sources, confidence: {level, avgScore}, rawResults: [], detectedLanguages: detectLanguagesFromEntries(entries)};
 }
 
 // ---------------------------------------------------------------------------

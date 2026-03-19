@@ -51,12 +51,6 @@ async function startup() {
     console.warn('[Logger] Collection setup failed:', (err as Error).message)
   );
 
-  // External sources collection setup
-  const {ensureSourcesCollection} = await import('./sources.js');
-  await ensureSourcesCollection().catch(err =>
-    console.warn('[Sources] Collection setup failed:', (err as Error).message)
-  );
-
   console.log(`Chat proxy listening on :${PORT}`);
   serve({fetch: app.fetch, port: PORT});
 }

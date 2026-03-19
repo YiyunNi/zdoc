@@ -1,16 +1,17 @@
 import {describe, it, expect} from 'vitest';
-import {computeRetrievalConfidence, parseLlmsTxt} from './rag.js';
-import type {SearchResult} from './rag.js';
+import {computeRetrievalConfidence, parseLlmsTxt, detectLanguages, detectLanguagesFromEntries} from './rag.js';
+import type {SearchResult, DocEntry} from './rag.js';
 
-function makeResult(score: number): SearchResult {
+function makeResult(score: number, content = 'Test content'): SearchResult {
   return {
     id: '1',
     doc_url: 'https://docs.zilliz.com/test',
     doc_url_md: '/test.md',
     doc_title: 'Test',
     section: 'cloud-guides',
-    content: 'Test content',
+    content,
     score,
+    weight: 1.0,
   };
 }
 
@@ -103,5 +104,59 @@ describe('parseLlmsTxt', () => {
   it('returns empty for empty input', () => {
     const entries = parseLlmsTxt('', 'cloud-guides');
     expect(entries).toHaveLength(0);
+  });
+});
+
+describe('detectLanguages', () => {
+  it('detects a single language from code fences', () => {
+    const results = [makeResult(0.9, 'Here is an example:\n```python\nfrom pymilvus import MilvusClient\n```')];
+    expect(detectLanguages(results)).toEqual(['Python']);
+  });
+
+  it('detects multiple languages from code fences', () => {
+    const results = [
+      makeResult(0.9, '```python\nprint("hello")\n```\n\n```java\nSystem.out.println("hello");\n```'),
+    ];
+    expect(detectLanguages(results)).toEqual(['Java', 'Python']);
+  });
+
+  it('detects language from SDK mentions without fences', () => {
+    const results = [makeResult(0.9, 'Install pymilvus with pip install pymilvus')];
+    expect(detectLanguages(results)).toEqual(['Python']);
+  });
+
+  it('returns empty for pure prose', () => {
+    const results = [makeResult(0.9, 'Zilliz Cloud is a managed vector database service.')];
+    expect(detectLanguages(results)).toEqual([]);
+  });
+
+  it('deduplicates across multiple chunks', () => {
+    const results = [
+      makeResult(0.9, '```python\nfrom pymilvus import MilvusClient\n```'),
+      makeResult(0.8, '```python\nclient = MilvusClient()\n```'),
+    ];
+    expect(detectLanguages(results)).toEqual(['Python']);
+  });
+
+  it('detects REST/curl from bash fences', () => {
+    const results = [makeResult(0.9, '```bash\ncurl -X POST http://example.com\n```')];
+    expect(detectLanguages(results)).toEqual(['REST/curl']);
+  });
+});
+
+describe('detectLanguagesFromEntries', () => {
+  it('collects languages from DocEntry array', () => {
+    const entries: DocEntry[] = [
+      {title: 'A', url: '', type: '', languages: ['Python', 'Java'], description: '', section: '', searchText: ''},
+      {title: 'B', url: '', type: '', languages: ['Python'], description: '', section: '', searchText: ''},
+    ];
+    expect(detectLanguagesFromEntries(entries)).toEqual(['Java', 'Python']);
+  });
+
+  it('skips empty language strings', () => {
+    const entries: DocEntry[] = [
+      {title: 'A', url: '', type: '', languages: ['', 'Go'], description: '', section: '', searchText: ''},
+    ];
+    expect(detectLanguagesFromEntries(entries)).toEqual(['Go']);
   });
 });
