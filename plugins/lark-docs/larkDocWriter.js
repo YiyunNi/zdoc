@@ -13,6 +13,16 @@ const _ = require('lodash')
 
 const IMAGE_BED_URL = process.env.IMAGE_BED_URL || 'https://zdoc-images.s3.us-west-2.amazonaws.com'
 
+// Known JSX block components that the MDX patcher must never escape.
+// Shared by __escape_non_html_tags (safeUppercaseTags seed) and __mdx_patches
+// (end-tag-mismatch guard). Keep in sync with mdxPatcher.js KNOWN_JSX_TAGS.
+const KNOWN_JSX_TAGS = new Set([
+    'Admonition', 'Tabs', 'TabItem', 'DocCard', 'DocCardList',
+    'Details', 'CodeBlock', 'ThemedImage', 'TOCInline', 'Highlight',
+    'Banner', 'Bars', 'Blocks', 'Cards', 'Grid', 'Hero', 'Procedures',
+    'RestSpecs', 'Stories', 'Supademo',
+]);
+
 class larkDocWriter {
     constructor(
         root_token, 
@@ -832,13 +842,7 @@ class larkDocWriter {
         // A tag is safe if it appears with a close tag, self-closing form, or attributes
         // anywhere in the document. Combined with a KNOWN_JSX fallback whitelist as a
         // safety net for legitimate components that may be orphaned in edge cases.
-        const safeUppercaseTags = new Set([
-            // Docusaurus built-in theme components
-            'Admonition', 'Tabs', 'TabItem', 'DocCard', 'DocCardList',
-            'Details', 'CodeBlock', 'ThemedImage', 'TOCInline', 'Highlight',
-            // Custom site components
-            'Banner', 'Bars', 'Blocks', 'Cards', 'Grid', 'Hero', 'Procedures', 'RestSpecs', 'Stories', 'Supademo',
-        ]);
+        const safeUppercaseTags = new Set(KNOWN_JSX_TAGS);
         const upperScanRegex = /[<]([A-Z][A-Za-z0-9]*)/g;
         let upperMatch;
         while ((upperMatch = upperScanRegex.exec(content)) !== null) {
@@ -985,6 +989,13 @@ class larkDocWriter {
                                 }
                             } else if (!wrongClose && expectedOpen && posMatch) {
                                 // Variant: "Expected a closing tag for `<X>` (line:col-line:col) before the end of `paragraph`"
+                                // Skip known JSX components — escaping their opening tag causes a
+                                // cascade: the orphaned </X> is then deleted by unexpected-closing-slash,
+                                // destroying the component structure. The real fix is inside the component
+                                // (e.g. unescaped braces) which the acorn handler will address.
+                                if (KNOWN_JSX_TAGS.has(expectedOpen)) {
+                                    break;
+                                }
                                 // The opening tag is not closed within its paragraph. Escape it with &lt; so it
                                 // renders as literal text instead of being treated as a JSX element.
                                 const openLine = parseInt(posMatch[1]) - 1; // 0-indexed
