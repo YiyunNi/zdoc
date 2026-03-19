@@ -1,5 +1,5 @@
 import React, {useRef, useEffect, useState} from 'react';
-import {useLocation} from '@docusaurus/router';
+import {useLocation, useHistory} from '@docusaurus/router';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
@@ -15,7 +15,8 @@ import {
   Trash2,
   MessageSquare,
 } from 'lucide-react';
-import {useChatContext, ChatHistoryEntry} from './ChatContext';
+import {useChatContext} from './ChatContext';
+import type {ChatHistoryEntry, ConfidenceLevel} from './types';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 
@@ -73,6 +74,58 @@ function ZillizStarIcon() {
   return <img src="/icons/zilliz-star.svg" width="16" height="16" aria-hidden="true" />;
 }
 
+/* ── Confidence dot indicator ── */
+
+function ConfidenceDot({level}: {level?: ConfidenceLevel}) {
+  if (!level) return null;
+  const colorMap: Record<ConfidenceLevel, string> = {
+    high: '#22c55e',
+    medium: '#eab308',
+    low: '#ef4444',
+  };
+  const labelMap: Record<ConfidenceLevel, string> = {
+    high: 'High confidence — answer directly supported by documentation',
+    medium: 'Medium confidence — partially supported by documentation',
+    low: 'Low confidence — limited documentation available',
+  };
+
+  return (
+    <span
+      className={styles.confidenceDot}
+      style={{backgroundColor: colorMap[level]}}
+      title={labelMap[level]}
+      aria-label={labelMap[level]}
+    />
+  );
+}
+
+/* ── Source section tag ── */
+
+const SOURCE_TAG_MAP: Record<string, {label: string; className: string}> = {
+  'byoc-guides': {label: 'BYOC', className: styles.sourceTagByoc},
+  'cloud-guides': {label: 'CLOUD', className: styles.sourceTagCloud},
+  'api-reference': {label: 'API', className: styles.sourceTagApi},
+  'external-web': {label: 'EXT', className: styles.sourceTagExternal},
+  'external-github': {label: 'GITHUB', className: styles.sourceTagExternal},
+};
+
+function resolveSection(section?: string, url?: string): string | undefined {
+  if (section && section !== 'cloud-guides') return section;
+  // Infer from URL when section is missing or defaulted to cloud-guides
+  if (url) {
+    if (/\/byoc[-/]/.test(url) || /docs-byoc/.test(url)) return 'byoc-guides';
+    if (/\/reference\//.test(url)) return 'api-reference';
+  }
+  return section;
+}
+
+function SourceTag({section, url}: {section?: string; url?: string}) {
+  const resolved = resolveSection(section, url);
+  if (!resolved) return null;
+  const tag = SOURCE_TAG_MAP[resolved];
+  if (!tag) return null;
+  return <span className={`${styles.sourceTag} ${tag.className}`}>{tag.label}</span>;
+}
 
 function ChatHeader({onNewChat, onToggle, isExpanded}: {onNewChat: () => void; onToggle: () => void; isExpanded: boolean}) {
   return (
@@ -101,7 +154,6 @@ function ChatHeader({onNewChat, onToggle, isExpanded}: {onNewChat: () => void; o
 // Custom react-markdown components to fix DOM nesting warnings
 const markdownComponents = {
   table: ({children, ...props}: React.HTMLAttributes<HTMLTableElement>) => {
-    // Wrap bare <tr> children in <tbody>, but pass through <thead>/<tbody>/<tfoot> as-is
     const wrapped = React.Children.map(children, child => {
       if (React.isValidElement(child) && (child.type === 'tr')) {
         return <tbody>{child}</tbody>;
@@ -211,6 +263,7 @@ function ChatSidebar({
 export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React.ReactElement {
   const {messages, input, setInput, isStreaming, send, newChat, rateFeedback, chatHistory, activeChatId, loadChat, deleteChat} = useChatContext();
   const location = useLocation();
+  const history = useHistory();
   const suggestions = getSuggestions(location.pathname);
   const messagesContainerRef = useRef<HTMLDivElement>(null);
 
@@ -222,6 +275,16 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
   }, [messages]);
 
   const hasMessages = messages.length > 0;
+
+  // Handle source link click — client-side navigation
+  const handleSourceClick = (e: React.MouseEvent, url: string) => {
+    // Only handle internal doc links
+    if (url.startsWith('/') || url.startsWith(window.location.origin)) {
+      e.preventDefault();
+      const path = url.startsWith('/') ? url : new URL(url).pathname;
+      history.push(path);
+    }
+  };
 
   const conversationContent = (
     <>
@@ -273,6 +336,10 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                   <div className={styles.assistantAvatar}><ZillizStarIcon /></div>
                 )}
                 <div className={msg.role === 'assistant' ? styles.markdownContent : undefined}>
+                  {/* Agent label */}
+                  {msg.role === 'assistant' && msg.agent && (
+                    <span className={isStreaming && i === messages.length - 1 ? styles.agentLabelStreaming : styles.agentLabel}>{msg.agent}</span>
+                  )}
                   {msg.role === 'assistant' ? (
                     isStreaming && i === messages.length - 1 && !msg.text ? (
                       <span className={styles.thinkingText}>thinking...</span>
@@ -283,24 +350,29 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                     <p>{msg.text}</p>
                   )}
                   {msg.sources && msg.sources.length > 0 && (
-                    <div className={styles.sourcesRow}>
-                      {msg.sources.map((src, j) => (
-                        <a
-                          key={j}
-                          href={src.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.sourceChip}
-                          title={src.title}
-                        >
-                          <FileText size={11} />
-                          <span>{src.title}</span>
-                        </a>
-                      ))}
+                    <div className={styles.sourcesSection}>
+                      <span className={styles.sourcesLabel}>Sources</span>
+                      <ul className={styles.sourcesList}>
+                        {msg.sources.map((src, j) => (
+                          <li key={j}>
+                            <a
+                              href={src.url}
+                              onClick={e => handleSourceClick(e, src.url)}
+                              className={styles.sourceLink}
+                              title={src.title}
+                            >
+                              <FileText size={14} />
+                              <span>{src.title}</span>
+                              <SourceTag section={src.section} url={src.url} />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
                   {msg.role === 'assistant' && msg.text && !isStreaming && (
                     <div className={styles.feedbackRow}>
+                      <ConfidenceDot level={msg.confidence} />
                       <button
                         type="button"
                         className={`${styles.feedbackBtn} ${msg.feedback === 'up' ? styles.feedbackBtnActive : ''}`}
