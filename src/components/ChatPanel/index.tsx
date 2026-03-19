@@ -7,7 +7,6 @@ import {
   Minimize2,
   SquarePen,
   Send,
-  FileText,
   ThumbsUp,
   ThumbsDown,
   ChevronRight,
@@ -16,7 +15,7 @@ import {
   MessageSquare,
 } from 'lucide-react';
 import {useChatContext} from './ChatContext';
-import type {ChatHistoryEntry, ConfidenceLevel} from './types';
+import type {ChatHistoryEntry, ConfidenceLevel, Source} from './types';
 import IconButton from '../IconButton';
 import styles from './styles.module.css';
 
@@ -163,6 +162,55 @@ const markdownComponents = {
     return <table {...props}>{wrapped}</table>;
   },
 };
+
+/* ── Citation superscript rendering ── */
+
+const CITATION_RE = /\[(\d+)\]/g;
+
+/**
+ * Walk React children and replace [N] text patterns with clickable superscript links.
+ * Sources array is used to look up the URL for each citation number.
+ */
+function injectCitations(children: React.ReactNode, sources?: Source[]): React.ReactNode {
+  return React.Children.map(children, child => {
+    if (typeof child === 'string') {
+      const parts: React.ReactNode[] = [];
+      let lastIndex = 0;
+      let match: RegExpExecArray | null;
+      CITATION_RE.lastIndex = 0;
+      while ((match = CITATION_RE.exec(child)) !== null) {
+        if (match.index > lastIndex) {
+          parts.push(child.slice(lastIndex, match.index));
+        }
+        const num = parseInt(match[1], 10);
+        const src = sources?.[num - 1];
+        parts.push(
+          <sup key={`cite-${match.index}`} className={styles.citationSup}>
+            {src ? (
+              <a href={src.url} className={styles.citationLink} title={src.title}>{num}</a>
+            ) : num}
+          </sup>,
+        );
+        lastIndex = CITATION_RE.lastIndex;
+      }
+      if (parts.length === 0) return child;
+      if (lastIndex < child.length) parts.push(child.slice(lastIndex));
+      return <>{parts}</>;
+    }
+    if (React.isValidElement(child) && child.props?.children) {
+      return React.cloneElement(child, {}, injectCitations(child.props.children, sources));
+    }
+    return child;
+  });
+}
+
+/** Build markdown component overrides that inject citation superscripts into text-bearing elements */
+function citationComponents(sources?: Source[]) {
+  if (!sources || sources.length === 0) return {};
+  const wrap = (Tag: string) =>
+    ({children, ...props}: any) => React.createElement(Tag, props, injectCitations(children, sources));
+  return {p: wrap('p'), li: wrap('li'), td: wrap('td'), th: wrap('th')};
+}
 
 /* ── Chat history grouping helpers ── */
 
@@ -342,9 +390,13 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                   )}
                   {msg.role === 'assistant' ? (
                     isStreaming && i === messages.length - 1 && !msg.text ? (
-                      <span className={styles.thinkingText}>thinking...</span>
+                      <span className={styles.thinkingText}>
+                        {msg.toolCallCount
+                          ? `searching docs (${msg.toolCallCount} tool call${msg.toolCallCount > 1 ? 's' : ''})...`
+                          : 'thinking...'}
+                      </span>
                     ) : (
-                      <Markdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{msg.text}</Markdown>
+                      <Markdown remarkPlugins={[remarkGfm]} components={{...markdownComponents, ...citationComponents(msg.sources)}}>{msg.text}</Markdown>
                     )
                   ) : (
                     <p>{msg.text}</p>
@@ -361,7 +413,7 @@ export default function ChatPanel({onToggle, isExpanded}: ChatPanelProps): React
                               className={styles.sourceLink}
                               title={src.title}
                             >
-                              <FileText size={14} />
+                              <span className={styles.sourceIndex}>{j + 1}</span>
                               <span>{src.title}</span>
                               <SourceTag section={src.section} url={src.url} />
                             </a>

@@ -200,6 +200,19 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
                   return updated;
                 });
               } catch { /* skip */ }
+            } else if (currentEvent === 'tool-call') {
+              try {
+                const parsed = JSON.parse(data) as {tool: string; count: number};
+                const count = parsed.count;
+                setMessages(prev => {
+                  const updated = [...prev];
+                  const last = updated[updated.length - 1];
+                  if (last && last.role === 'assistant') {
+                    updated[updated.length - 1] = {...last, toolCallCount: count};
+                  }
+                  return updated;
+                });
+              } catch { /* skip */ }
             } else if (currentEvent === 'delta') {
               try {
                 const parsed = JSON.parse(data) as {text: string};

@@ -673,6 +673,21 @@
   transition: color 0.15s ease;
 }
 
+.sourceIndex {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  background: rgba(23, 95, 255, 0.08);
+  border-radius: 3px;
+  line-height: 1;
+}
+
 .sourceLink svg {
   flex-shrink: 0;
   opacity: 0.6;
@@ -719,6 +734,28 @@
 .sourceTagExternal {
   background: rgba(245, 158, 11, 0.1);
   color: #d97706;
+}
+
+/* Citation superscripts */
+.citationSup {
+  font-size: 0.625em;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+.citationLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  padding: 0 1px;
+  border-radius: 2px;
+  transition: background-color 0.12s ease;
+}
+
+.citationLink:hover {
+  background: rgba(23, 95, 255, 0.1);
+  text-decoration: none;
 }
 
 /* Agent label above assistant message */

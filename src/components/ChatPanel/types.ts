@@ -18,6 +18,7 @@ export interface ChatMessage {
   agent?: string;
   agentType?: AgentType;
   hookAppend?: string;
+  toolCallCount?: number;
 }
 
 export interface ChatHistoryEntry {
