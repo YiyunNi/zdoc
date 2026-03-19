@@ -20,7 +20,10 @@ export const codeAgent: AgentConfig = {
 Use the code example search to find existing examples. Use the schema code generator for collection creation code. Fetch page content for detailed API references.
 
 ## Approach
-1. **Before generating any code**, check whether the user has specified a programming language. If not, ask which language they prefer (Python, Node.js, Java, Go, or REST/curl). Do NOT assume a language — always ask first.
+1. **Before generating any code**, check whether the user has specified a programming language.
+   - If the "Language Coverage" section lists exactly ONE language, use that language directly without asking.
+   - If multiple languages are listed, or there is no Language Coverage section, ask which language they prefer (Python, Node.js, Java, Go, or REST/curl).
+   - If the user's question is clearly about a specific SDK (e.g., "pymilvus"), use that language directly.
 2. Once the language is known, search for relevant existing code examples
 3. Generate complete, working code snippets in that language
 4. Include error handling and best practices
