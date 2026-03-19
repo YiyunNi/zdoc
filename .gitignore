@@ -46,6 +46,9 @@ node_modules/
 # Generated sidebar files
 /config/generated/*.js
 
+# Eval results (generated)
+chat-proxy/scripts/eval/results/
+
 # AI tooling local state
 .agents/
 .claude/
