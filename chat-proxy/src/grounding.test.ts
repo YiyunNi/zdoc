@@ -12,6 +12,7 @@ function makeResult(overrides: Partial<SearchResult> = {}): SearchResult {
     section: 'cloud-guides',
     content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries.',
     score: 0.85,
+    weight: 1,
     ...overrides,
   };
 }
