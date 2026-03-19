@@ -108,19 +108,20 @@ const SOURCE_TAG_MAP: Record<string, {label: string; className: string}> = {
   'external-github': {label: 'GITHUB', className: styles.sourceTagExternal},
 };
 
-function resolveSection(section?: string, url?: string): string | undefined {
+function resolveSection(section?: string, url?: string): string {
+  // If section is explicitly set and not the default, trust it
   if (section && section !== 'cloud-guides') return section;
-  // Infer from URL when section is missing or defaulted to cloud-guides
+  // Infer from URL
   if (url) {
     if (/\/byoc[-/]/.test(url) || /docs-byoc/.test(url)) return 'byoc-guides';
     if (/\/reference\//.test(url)) return 'api-reference';
   }
-  return section;
+  // Default: any doc URL is cloud-guides
+  return section || 'cloud-guides';
 }
 
 function SourceTag({section, url}: {section?: string; url?: string}) {
   const resolved = resolveSection(section, url);
-  if (!resolved) return null;
   const tag = SOURCE_TAG_MAP[resolved];
   if (!tag) return null;
   return <span className={`${styles.sourceTag} ${tag.className}`}>{tag.label}</span>;

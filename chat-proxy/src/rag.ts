@@ -169,7 +169,7 @@ export async function retrieveContext(query: string): Promise<RagResult> {
   const urlToIndex = new Map<string, number>();
   sources.forEach((s, i) => urlToIndex.set(s.url, i + 1));
 
-  let context = '## Retrieved Documentation\nUse the information below to answer the question. Add inline citation markers like [1], [2] after statements that use information from a specific source — the number corresponds to the source order below. Do NOT list sources at the end of your response; the UI handles source display automatically.\n';
+  let context = '## Retrieved Documentation\nUse the information below to answer the question.\n\n**Citation rules:**\n- After each claim or fact, add the citation number matching the source it came from, e.g. [1], [2], [3].\n- Use the SPECIFIC number for each source — do not default to [1] for everything.\n- A single sentence may cite multiple sources: "...supports HNSW [2] and IVF [3] indexes."\n- Do NOT list sources at the end — the UI displays them automatically.\n';
   for (const r of results) {
     const idx = urlToIndex.get(r.doc_url) ?? '';
     const sourceLabel = r.section?.startsWith('external-') ? ' [External]' : '';
