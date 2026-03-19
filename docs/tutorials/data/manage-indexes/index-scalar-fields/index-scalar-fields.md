@@ -77,17 +77,20 @@ Zilliz Cloud supports `AUTOINDEX` for the following field types:
    </tr>
 </table>
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
 <p>Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.</p>
 <p>For an array field, the cardinality is the number of <strong>distinct element values</strong> across all arrays in the segment. For example:</p>
-&lt;pre>&lt;code class="plaintext language-plaintext">[1, 2, 3]
+
+```plaintext
+[1, 2, 3]
 [2, 3, 4]
 [1, 4, 5]
+```
 
-<p>The distinct element values are <code>{1, 2, 3, 4, 5}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
+<p>The distinct element values are <code>\{1, 2, 3, 4, 5\}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
 
-
+</Admonition>
 
 ## Preparations\{#preparations}
 
@@ -527,11 +530,11 @@ console.log(JSON.stringify(res.index_descriptions, null, 2))
 
 Use the `drop_index()` method to remove an existing index from a collection.
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
 <p>In your cluster compatible with <strong>Milvus v2.6.x</strong>, you can drop a scalar index directly once it’s no longer needed—no need to release the collection first.</p>
 
-
+</Admonition>
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
 <TabItem value='python'>

@@ -78,17 +78,20 @@ For scalar fields, **AUTOINDEX** provides an efficient mapping between field typ
    </tr>
 </table>
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
 <p>Cardinality (C in the above table) shows the number of unique values in a field across a whole collection. For example, the cardinality of a float field is the number of distinct float values in that field.</p>
 <p>For an array field, the cardinality is the number of <strong>distinct element values</strong> across all arrays in the segment. For example:</p>
-&lt;pre>&lt;code class="plaintext language-plaintext">[1, 2, 3]
+
+```plaintext
+[1, 2, 3]
 [2, 3, 4]
 [1, 4, 5]
+```
 
-<p>The distinct element values are <code>{1, 2, 3, 4, 5}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
+<p>The distinct element values are <code>\{1, 2, 3, 4, 5\}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
 
-
+</Admonition>
 
 **AUTOINDEX** delivers high performance in these aspects:
 
@@ -108,11 +111,11 @@ Approximate nearest neighbor (ANN) algorithms require a trade-off between recall
 
 Choosing query parameters requires a lot of domain-specific knowledge, which greatly increases the learning curve for users. To address this issue, **AUTOINDEX** has developed an intelligent algorithm that facilitates the selection of query parameters. By analyzing the distribution of users' datasets during index building, **AUTOINDEX** achieves a trade-off between recall and performance, powered by a machine learning model for query parameter recommendation. This way, users no longer need to manually set query parameters.
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
 <p>When migrating your Milvus codebase to Zilliz Cloud, you do not need to change the index type used manually. Zilliz Cloud automatically applies AUTOINDEX when creating indexes.</p>
 
-
+</Admonition>
 
 ## Index building and search settings\{#index-building-and-search-settings}
 
@@ -177,11 +180,11 @@ Increasing the `level` parameter will result in a higher recall rate, but may al
 
 You can also set `enable_recall_calculation` to `true`when you tweek the `level` parameter so that you can evaluate the precisions of your search with different `level` values.
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
 <p>The <code>level</code> and <code>enable_recall_calculation</code> parameters are still in <strong>Public Preview</strong>, and you might not be able to fully use them due to compatibility issues. For any assistance, please contact us at support@zilliz.com.</p>
 
-
+</Admonition>
 
 ## Conclusion\{#conclusion}
 

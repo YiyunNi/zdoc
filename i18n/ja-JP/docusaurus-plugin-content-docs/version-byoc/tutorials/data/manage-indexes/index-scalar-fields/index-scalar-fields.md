@@ -75,17 +75,21 @@ Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` を
    </tr>
 </table>
 
-&lt;Admonition type="info" icon="📘" title="注記">
+<Admonition type="info" icon="📘" title="注記">
 
-<p>カーディナリティ（上記表の C）は、コレクション全体におけるフィールド内の一意な値の数を示します。例えば、浮動小数点フィールドのカーディナリティは、そのフィールド内の異なる浮動小数点値の数です。</p>
-<p>配列フィールドの場合、カーディナリティはセグメント内のすべての配列にわたる<strong>固有の要素値</strong>の数です。例えば：</p>
-&lt;pre>&lt;code class="plaintext language-plaintext">[1, 2, 3]
+カーディナリティ（上記表の C）は、コレクション全体におけるフィールド内の一意な値の数を示します。例えば、浮動小数点フィールドのカーディナリティは、そのフィールド内の異なる浮動小数点値の数です。
+
+配列フィールドの場合、カーディナリティはセグメント内のすべての配列にわたる**固有の要素値**の数です。例えば：
+
+```plaintext
+[1, 2, 3]
 [2, 3, 4]
 [1, 4, 5]
+```
 
-<p>固有の要素値は <code>{1, 2, 3, 4, 5}</code> → カーディナリティ = <strong>5</strong> です。これは、すべての配列からすべての要素を平坦化し、一意の値を数えたものであり、異なる配列の数や配列の長さではありません。</p>
+固有の要素値は `\{1, 2, 3, 4, 5\}` → カーディナリティ = **5** です。これは、すべての配列からすべての要素を平坦化し、一意の値を数えたものであり、異なる配列の数や配列の長さではありません。
 
-
+</Admonition>
 
 ## 準備\{#preparations}
 
@@ -525,11 +529,11 @@ console.log(JSON.stringify(res.index_descriptions, null, 2))
 
 `drop_index()` メソッドを使用して、コレクションから既存のインデックスを削除します。
 
-&lt;Admonition type="info" icon="📘" title="注記">
+<Admonition type="info" icon="📘" title="注記">
 
-<p><strong>Milvus v2.6.x</strong> と互換性のあるクラスターでは、不要になったスカラーインデックスを、コレクションを最初にリリースすることなく直接削除できます。</p>
+**Milvus v2.6.x** と互換性のあるクラスターでは、不要になったスカラーインデックスを、コレクションを最初にリリースすることなく直接削除できます。
 
-
+</Admonition>
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"}]}>
 <TabItem value='python'>

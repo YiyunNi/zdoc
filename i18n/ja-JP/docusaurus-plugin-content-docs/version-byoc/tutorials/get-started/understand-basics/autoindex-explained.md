@@ -75,15 +75,21 @@ Zilliz Cloud では、異なる構成で実行されるクラスターを提供�
    </tr>
 </table>
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>基数（上記表の C）は、コレクション全体におけるフィールド内の一意の値の数を示します。例えば、浮動小数点フィールドの基数とは、そのフィールド内の異なる浮動小数点値の数です。</p>
-<p>配列フィールドの場合、基数はセグメント内のすべての配列にわたる<strong>異なる要素値</strong>の数です。例えば：</p>
-&lt;pre>&lt;code class="plaintext language-plaintext">[1, 2, 3]
+基数（上記表の C）は、コレクション全体におけるフィールド内の一意の値の数を示します。例えば、浮動小数点フィールドの基数とは、そのフィールド内の異なる浮動小数点値の数です。
+
+配列フィールドの場合、基数はセグメント内のすべての配列にわたる**異なる要素値**の数です。例えば：
+
+```plaintext
+[1, 2, 3]
 [2, 3, 4]
 [1, 4, 5]
+```
 
-<p>異なる要素値は <code>{1, 2, 3, 4, 5}</code> → 基数 = <strong>5</strong> です。これは、すべての配列からすべての要素を平坦化し、その後一意の値をカウントします。異なる配列の数や配列の長さではありません。</p>
+異なる要素値は `\{1, 2, 3, 4, 5\}` → 基数 = **5** です。これは、すべての配列からすべての要素を平坦化し、その後一意の値をカウントします。異なる配列の数や配列の長さではありません。
+
+</Admonition>
 
 
 
@@ -105,11 +111,11 @@ Zilliz Cloud では、異なる構成で実行されるクラスターを提供�
 
 クエリパラメータを選択するには多くのドメイン固有の知識が必要であり、これによりユーザーの学習曲線が大きく増加します。この問題に対処するため、**AUTOINDEX** はクエリパラメータの選択を容易にするインテリジェントなアルゴリズムを開発しました。インデックス作成中にユーザーのデータセットの分布を分析することで、**AUTOINDEX** はクエリパラメータ推奨のための機械学習モデルを活用し、再現率とパフォーマンスの間のトレードオフを実現します。これにより、ユーザーは手動でクエリパラメータを設定する必要がなくなります。
 
-&lt;Admonition type="info" icon="📘" title="Notes">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>Milvus のコードベースを Zilliz Cloud に移行する際、手動で使用しているインデックスタイプを変更する必要はありません。Zilliz Cloud はインデックス作成時に自動的に AUTOINDEX を適用します。</p>
+Milvus のコードベースを Zilliz Cloud に移行する際、手動で使用しているインデックスタイプを変更する必要はありません。Zilliz Cloud はインデックス作成時に自動的に AUTOINDEX を適用します。
 
-
+</Admonition>
 
 ## インデックス作成と検索設定\{#index-building-and-search-settings}
 
@@ -174,11 +180,11 @@ Zilliz Cloud では、上記のような複雑なパラメータセットを個�
 
 また、`level` パラメータを調整する際に `enable_recall_calculation` を `true` に設定することで、異なる `level` 値における検索の精度を評価できます。
 
-&lt;Admonition type="info" icon="📘" title="注記">
+<Admonition type="info" icon="📘" title="注記">
 
-<p><code>level</code> および <code>enable_recall_calculation</code> パラメータは現在<strong>パブリックプレビュー</strong>段階であり、互換性の問題により完全に使用できない場合があります。サポートが必要な場合は、support@zilliz.com までお問い合わせください。</p>
+`level` および `enable_recall_calculation` パラメータは現在**パブリックプレビュー**段階であり、互換性の問題により完全に使用できない場合があります。サポートが必要な場合は、support@zilliz.com までお問い合わせください。
 
-
+</Admonition>
 
 ## まとめ\{#conclusion}
 
