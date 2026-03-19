@@ -13,12 +13,17 @@ POST /chat
   ├─ [parallel] Route intent ──► Agent selection (sticky per session)
   ├─ [parallel] RAG retrieval ──► Zilliz vector search or keyword fallback
   │
+  ├─ Response cache check (2min TTL, session-scoped) ──► replay on hit
+  │
   ├─ Build system prompt (agent + RAG context + page context + prompt hooks)
   ├─ Stream LLM response via SSE (tool calls up to 5 steps)
   │
   ├─ Compute confidence (5-signal weighted composite score)
-  ├─ Emit: session → agent → deltas → confidence → sources → hook-appends → done
+  ├─ Deterministic source grounding (match response text ↔ RAG chunks)
+  ├─ Deflection detection (suppress sources on off-topic responses)
+  ├─ Emit: session → agent → deltas → confidence → sources → grounding → hook-appends → done
   │
+  ├─ Cache successful response for replay
   └─ Fire-and-forget: log conversation + update user profile
 ```
 
@@ -50,8 +55,26 @@ An intent router classifies each message and selects an agent. Routing is **stic
 
 ### Dual-Mode RAG
 
-1. **Vector search** (primary) — Zilliz Cloud REST API with embedding similarity (COSINE). 5-minute LRU cache.
-2. **Keyword fallback** — Parses `llms.txt` from the docs site, scores by token overlap. Activates automatically if Zilliz is unavailable.
+1. **Vector search** (primary) — Zilliz Cloud REST API with embedding similarity (COSINE). 5-minute LRU cache. Supports section filtering to exclude cross-product docs (Cloud vs BYOC).
+2. **Keyword fallback** — Parses `llms.txt` from the docs site, scores by token overlap. Activates automatically if Zilliz is unavailable. Section filter applied post-query.
+
+### Source Grounding
+
+Deterministic source attribution replaces LLM-dependent citation numbering. After the LLM streams its response:
+
+1. **Text matching** — Each paragraph is compared against RAG chunks using bigram overlap scoring
+2. **Source mapping** — Paragraphs with sufficient overlap (≥15%) are linked to their matching source documents
+3. **Citation emission** — A `grounding` SSE event provides `{paragraphIndex, sourceIndices[]}` tuples for the frontend to render inline citation superscripts
+4. **Deflection suppression** — Regex patterns detect off-topic deflections and suppress sources entirely
+
+### Response Cache
+
+Session-scoped response cache skips routing + RAG + LLM for identical repeated queries:
+
+- **Key**: `${sessionId}:${query}:${sectionFilter}` — prevents cross-session and cross-section leakage
+- **TTL**: 2 minutes, max 200 entries with FIFO eviction
+- **Cached**: All SSE events (agent, deltas, confidence, sources, grounding, done) — replayed in order on hit
+- **Not cached**: Error responses, guard deflections
 
 ### Prompt Hooks
 
@@ -105,7 +128,8 @@ SSE event types:
 | `agent` | `{type, name}` | Selected agent |
 | `delta` | `{text}` | Streaming text chunks |
 | `confidence` | `{level, retrieval_score}` | `high`, `medium`, or `low` |
-| `sources` | `{sources: [{title, url, score?}]}` | Retrieved doc references |
+| `sources` | `{sources: [{title, url, score?}]}` | Grounded doc references |
+| `grounding` | `{citations: [{paragraphIndex, sourceIndices}]}` | Per-paragraph citation map |
 | `hook-append` | `{text}` | Post-response content from prompt hooks |
 | `done` | `{stop_reason}` | `end_turn` or `guard` |
 | `error` | `{error}` | Error message |
@@ -189,6 +213,7 @@ chat-proxy/
     ├── rag.ts                     # Dual-mode retrieval (vector + keyword)
     ├── sources.ts                 # External source registry + indexing pipeline
     ├── confidence.ts              # Multi-signal confidence scoring (5 weighted signals)
+    ├── grounding.ts               # Deterministic source grounding (bigram overlap)
     ├── logger.ts                  # Batched event logging to Zilliz Cloud
     ├── feedback.ts                # Thumbs up/down collection
     ├── admin.ts                   # Admin API routes (+ source management)
@@ -244,3 +269,5 @@ npm start
 - **Multi-signal confidence scoring** — Combines 5 weighted signals into a 0–1 composite score mapped to `high`/`medium`/`low`. Signals: retrieval quality (0.35, calibrated for bge-large-en-v1.5), source agreement (0.20, topic clustering vs scatter), tool success (0.15), response substance (0.15, code/links/hedging), and page context alignment (0.15). Hard overrides force `low` on uncertainty phrases and cap at `medium` when zero sources are found. See `src/confidence.ts`.
 - **Fire-and-forget logging** — Analytics writes never block the response stream.
 - **Graceful degradation** — Vector search falls back to keyword; missing Zilliz disables logging silently; missing YAML disables hooks.
+- **Deterministic grounding** — Source attribution uses text overlap scoring instead of relying on the LLM to emit citation markers, making citations consistent and independent of model behavior.
+- **Response caching** — Identical repeated queries within a session replay cached SSE events instantly, saving 2 LLM calls (router + completion) per cache hit.
