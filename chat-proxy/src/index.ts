@@ -14,6 +14,7 @@ import {logEvent, saveConversation, updateUserProfile} from './logger.js';
 import {adminApp} from './admin.js';
 import type {FeedbackRequest} from './types.js';
 import {recordFeedback, getStats} from './feedback.js';
+import {inferSection} from './sources.js';
 import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
 import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
@@ -36,6 +37,29 @@ const DEFLECTION_PATTERNS = [
 
 function isDeflection(text: string): boolean {
   return DEFLECTION_PATTERNS.some(p => p.test(text));
+}
+
+// ---------------------------------------------------------------------------
+// Self-description detection: suppress sources on capability/meta responses
+// ---------------------------------------------------------------------------
+
+const SELF_DESCRIPTION_PATTERNS = [
+  /what\s+would\s+you\s+like\s+me\s+to\s+code/i,
+  /i\s+can\s+(help|assist)\s+(you\s+)?(with|generate|write|create)\s+(code|examples)/i,
+  /just\s+tell\s+me\s+what\s+you\s+need/i,
+  /here('s|\s+are)\s+(what|some\s+things)\s+i\s+can/i,
+  /i('m|\s+am)\s+(a\s+)?(code|coding|sdk)\s+(assistant|expert|specialist)/i,
+  /for\s+example[,:]\s*\n/i,
+];
+
+function isSelfDescription(text: string): boolean {
+  // Must match at least 2 patterns — a single match could be coincidental
+  let matches = 0;
+  for (const p of SELF_DESCRIPTION_PATTERNS) {
+    if (p.test(text)) matches++;
+    if (matches >= 2) return true;
+  }
+  return false;
 }
 
 // ---------------------------------------------------------------------------
@@ -336,6 +360,10 @@ app.post('/chat', async c => {
             systemPrompt += `\n\n${ragResult.context}`;
           }
 
+          if (agentConfig.type === 'code' && ragResult.detectedLanguages.length > 0) {
+            systemPrompt += `\n\n## Language Coverage\nThe retrieved documentation contains examples in: ${ragResult.detectedLanguages.join(', ')}`;
+          }
+
           if (body.pageContext && shouldInjectPageContext(session, body.pageUrl)) {
             systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext.slice(0, 8000)}`;
           }
@@ -360,7 +388,8 @@ app.post('/chat', async c => {
           });
 
           const toolsCalled: string[] = [];
-          const toolSources: {title: string; url: string; score?: number}[] = [];
+          const toolSources: {title: string; url: string; score?: number; section?: string}[] = [];
+          const toolChunks: {doc_url: string; content: string}[] = [];
           let fullText = '';
 
           for await (const part of result.fullStream) {
@@ -378,9 +407,12 @@ app.post('/chat', async c => {
               // Extract sources from any tool that returns doc URLs
               const toolResult = part.result as Record<string, any>;
               if (toolResult?.results) {
-                // searchDocs returns { results: [{title, url, score, ...}] }
+                // searchDocs returns { results: [{title, url, score, content, ...}] }
                 for (const r of toolResult.results) {
-                  if (r.url) toolSources.push({title: r.title || '', url: r.url, score: r.score});
+                  if (r.url) {
+                    toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
+                    if (r.content) toolChunks.push({doc_url: r.url, content: r.content});
+                  }
                 }
               }
               if (toolResult?.relatedDocs) {
@@ -392,6 +424,7 @@ app.post('/chat', async c => {
               if (toolResult?.url && toolResult?.success) {
                 // getPageContent returns { url, success, content }
                 toolSources.push({title: toolResult.url, url: toolResult.url});
+                if (toolResult.content) toolChunks.push({doc_url: toolResult.url, content: toolResult.content});
               }
             }
           }
@@ -402,7 +435,7 @@ app.post('/chat', async c => {
           for (const src of [...ragResult.sources, ...toolSources]) {
             if (!seenUrls.has(src.url)) {
               seenUrls.add(src.url);
-              allSources.push(src);
+              allSources.push({...src, section: inferSection(src.section, src.url)});
             }
           }
 
@@ -429,12 +462,31 @@ app.post('/chat', async c => {
           }));
 
           // Deterministic source grounding (replaces LLM-dependent citations)
-          // Suppress sources on deflected/off-topic responses
+          // Suppress sources on deflected/off-topic or self-description responses
           const deflected = isDeflection(fullText);
-          if (deflected) {
-            console.log('[Sources] Suppressed — deflection detected');
+          const selfDescribed = isSelfDescription(fullText);
+          if (deflected || selfDescribed) {
+            console.log(`[Sources] Suppressed — ${deflected ? 'deflection' : 'self-description'} detected`);
           } else {
-            const grounding = computeGrounding(fullText, ragResult.rawResults, allSources);
+            // Combine RAG chunks with tool-discovered chunks for grounding
+            const allChunks = [
+              ...ragResult.rawResults,
+              ...toolChunks.map(tc => ({
+                id: '', doc_url: tc.doc_url, doc_url_md: tc.doc_url,
+                doc_title: '', section: '', content: tc.content, score: 0, weight: 1.0,
+              })),
+            ];
+            const grounding = computeGrounding(fullText, allChunks, allSources);
+            // Post-filter: remove grounded sources whose inferred section is excluded
+            if (sectionFilter && grounding.sources.length > 0) {
+              const excludeMatch = sectionFilter.match(/section\s*!=\s*"([^"]+)"/);
+              if (excludeMatch) {
+                const excluded = excludeMatch[1];
+                grounding.sources = grounding.sources.filter(s =>
+                  inferSection(s.section, s.url) !== excluded
+                );
+              }
+            }
             console.log(`[Sources] RAG: ${ragResult.sources.length}, Tools: ${toolSources.length}, Merged: ${allSources.length}, Grounded: ${grounding.sources.length}`);
             if (grounding.sources.length > 0) {
               sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
