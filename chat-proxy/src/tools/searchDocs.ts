@@ -1,6 +1,6 @@
 import {z} from 'zod';
 import {tool} from 'ai';
-import {searchDocs, computeRetrievalConfidence, type SearchResult} from '../rag.js';
+import {searchDocs, computeRetrievalConfidence, getActiveSectionFilter, type SearchResult} from '../rag.js';
 
 export const searchDocsTool = tool({
   description: 'Search the Zilliz Cloud documentation using semantic search. Returns relevant documentation chunks with similarity scores.',
@@ -9,7 +9,7 @@ export const searchDocsTool = tool({
     topK: z.number().optional().default(6).describe('Number of results to return'),
   }),
   execute: async ({query, topK}) => {
-    const results = await searchDocs(query, topK);
+    const results = await searchDocs(query, topK, getActiveSectionFilter());
     const confidence = computeRetrievalConfidence(results);
 
     return {

@@ -12,6 +12,17 @@ const COLLECTION_NAME = 'doc_chunks';
 const TOP_K = 6;
 
 // ---------------------------------------------------------------------------
+// Title sanitization — strip markdown heading IDs like {#slug-text}
+// ---------------------------------------------------------------------------
+
+function cleanTitle(title: string): string {
+  return title
+    .replace(/\\?\{#[^}]*\}?/g, '')  // {#slug} or truncated {#slug-without-closing
+    .replace(/\\+$/, '')
+    .trim();
+}
+
+// ---------------------------------------------------------------------------
 // Embedding generation
 // ---------------------------------------------------------------------------
 
@@ -82,34 +93,39 @@ export interface SearchResult {
   score: number;
 }
 
-export async function searchDocs(query: string, topK = TOP_K): Promise<SearchResult[]> {
+export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
   // Check cache
-  const cacheKey = `${query}:${topK}`;
+  const cacheKey = `${query}:${topK}:${sectionFilter || ''}`;
   const cached = cacheGet(cacheKey);
   if (cached) return cached;
 
   try {
     const embedding = await generateEmbedding(query);
 
-    const hits = await zillizRequest('/entities/search', {
+    const searchBody: Record<string, unknown> = {
       collectionName: COLLECTION_NAME,
       data: [embedding],
       annsField: 'embedding',
       limit: topK,
       outputFields: ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content'],
-    });
+    };
+    if (sectionFilter) {
+      searchBody.filter = sectionFilter;
+    }
+
+    const hits = await zillizRequest('/entities/search', searchBody);
 
     const results: SearchResult[] = (hits || []).map((hit: any) => ({
       id: hit.id || '',
       doc_url: hit.doc_url || '',
       doc_url_md: hit.doc_url_md || '',
-      doc_title: hit.doc_title || '',
+      doc_title: cleanTitle(hit.doc_title || ''),
       section: hit.section || '',
       content: hit.content || '',
       score: hit.distance ?? hit.score ?? 0,
     }));
 
-    console.log(`[RAG] Vector search: ${results.length} results, scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
+    console.log(`[RAG] Vector search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, sections: [${results.map(r => r.section).join(', ')}], scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
 
     cacheSet(cacheKey, results);
     return results;
@@ -141,8 +157,8 @@ export interface RagResult {
   rawResults: SearchResult[];
 }
 
-export async function retrieveContext(query: string): Promise<RagResult> {
-  const results = await searchDocs(query);
+export async function retrieveContext(query: string, sectionFilter?: string): Promise<RagResult> {
+  const results = await searchDocs(query, TOP_K, sectionFilter);
   if (results.length === 0) {
     return {
       context: '',
@@ -164,16 +180,11 @@ export async function retrieveContext(query: string): Promise<RagResult> {
     }
   }
 
-  // Build context string from top results with numbered citations
-  // Map each result to its source index (1-based) for citation
-  const urlToIndex = new Map<string, number>();
-  sources.forEach((s, i) => urlToIndex.set(s.url, i + 1));
-
-  let context = '## Retrieved Documentation\nUse the information below to answer the question.\n\n**Citation rules:**\n- After each claim or fact, add the citation number matching the source it came from, e.g. [1], [2], [3].\n- Use the SPECIFIC number for each source — do not default to [1] for everything.\n- A single sentence may cite multiple sources: "...supports HNSW [2] and IVF [3] indexes."\n- Do NOT list sources at the end — the UI displays them automatically.\n';
+  // Build context string from top results
+  let context = '## Retrieved Documentation\nUse the information below to answer the question. Do NOT list or reference sources in your response — the UI handles source attribution automatically.\n';
   for (const r of results) {
-    const idx = urlToIndex.get(r.doc_url) ?? '';
     const sourceLabel = r.section?.startsWith('external-') ? ' [External]' : '';
-    context += `\n### Source [${idx}]: [${r.doc_title}${sourceLabel}](${r.doc_url})\n`;
+    context += `\n### [${r.doc_title}${sourceLabel}](${r.doc_url})\n`;
     context += `${r.content}\n`;
   }
 
@@ -401,8 +412,17 @@ export async function fetchDocContent(url: string, maxChars = 6000): Promise<str
   }
 }
 
-export async function retrieveContextFallback(query: string): Promise<RagResult> {
-  const entries = keywordSearchDocs(query);
+export async function retrieveContextFallback(query: string, sectionFilter?: string): Promise<RagResult> {
+  let entries = keywordSearchDocs(query);
+
+  // Apply section filter to keyword results
+  if (sectionFilter && entries.length > 0) {
+    const match = sectionFilter.match(/section\s*!=\s*"([^"]+)"/);
+    if (match) {
+      entries = entries.filter(e => e.section !== match[1]);
+    }
+  }
+
   if (entries.length === 0) {
     return {context: '', sources: [], confidence: {level: 'low', avgScore: 0}, rawResults: []};
   }
@@ -460,9 +480,20 @@ export function disableVectorSearch(): void {
   vectorSearchDisabled = true;
 }
 
-export async function retrieve(query: string): Promise<RagResult> {
+// Request-scoped section filter — set before streaming, used by tools
+let activeSectionFilter: string | undefined;
+
+export function setActiveSectionFilter(filter: string | undefined): void {
+  activeSectionFilter = filter;
+}
+
+export function getActiveSectionFilter(): string | undefined {
+  return activeSectionFilter;
+}
+
+export async function retrieve(query: string, sectionFilter?: string): Promise<RagResult> {
   if (isVectorSearchAvailable()) {
-    return retrieveContext(query);
+    return retrieveContext(query, sectionFilter);
   }
-  return retrieveContextFallback(query);
+  return retrieveContextFallback(query, sectionFilter);
 }

@@ -15,6 +15,7 @@ vi.mock('./rag.js', () => ({
     rawResults: [],
   }),
   isVectorSearchAvailable: vi.fn(() => false),
+  setActiveSectionFilter: vi.fn(),
 }));
 vi.mock('./router.js', () => ({
   routeIntent: vi.fn().mockResolvedValue({agent: 'general', reasoning: 'test'}),
@@ -58,7 +59,7 @@ vi.mock('./admin.js', () => {
   return {adminApp: new Hono()};
 });
 
-import {app} from './index.js';
+import {app, clearResponseCache} from './index.js';
 import {streamText} from 'ai';
 import {checkGuard} from './guard.js';
 import {recordFeedback} from './feedback.js';
@@ -81,6 +82,7 @@ function parseSSE(text: string): Array<{event: string; data: any}> {
 
 describe('HTTP Endpoints', () => {
   beforeEach(() => {
+    clearResponseCache();
     vi.mocked(checkGuard).mockReturnValue({allowed: true});
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {

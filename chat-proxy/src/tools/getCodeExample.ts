@@ -1,6 +1,6 @@
 import {z} from 'zod';
 import {tool} from 'ai';
-import {searchDocs} from '../rag.js';
+import {searchDocs, getActiveSectionFilter} from '../rag.js';
 
 export const getCodeExampleTool = tool({
   description: 'Search for code examples in the documentation for a specific topic and programming language.',
@@ -10,7 +10,7 @@ export const getCodeExampleTool = tool({
   }),
   execute: async ({topic, language}) => {
     const query = `${topic} ${language} code example`;
-    const results = await searchDocs(query, 4);
+    const results = await searchDocs(query, 4, getActiveSectionFilter());
 
     // Extract code blocks from results
     const codeBlocks: Array<{title: string; url: string; code: string}> = [];

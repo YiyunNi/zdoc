@@ -5,7 +5,8 @@ import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {retrieve, isVectorSearchAvailable} from './rag.js';
+import {retrieve, isVectorSearchAvailable, setActiveSectionFilter} from './rag.js';
+import {computeGrounding} from './grounding.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
 import {getToolsForAgent, type ToolName} from './tools/index.js';
@@ -18,6 +19,72 @@ import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
 
 const promptRules = loadRules(import.meta.url);
+
+// ---------------------------------------------------------------------------
+// Deflection detection: suppress sources when the agent deflects off-topic
+// ---------------------------------------------------------------------------
+
+const DEFLECTION_PATTERNS = [
+  /outside\s+(my|of\s+my)\s+(area\s+of\s+)?expertise/i,
+  /i('m|\s+am)\s+(here\s+to\s+help\s+)?(specifically\s+)?with\s+questions\s+about/i,
+  /i\s+can('t|\s+only)\s+help\s+with/i,
+  /not\s+the\s+right\s+resource/i,
+  /beyond\s+(my|the)\s+scope/i,
+  /i('m|\s+am)\s+the\s+zilliz.*documentation\s+assistant/i,
+];
+
+function isDeflection(text: string): boolean {
+  return DEFLECTION_PATTERNS.some(p => p.test(text));
+}
+
+// ---------------------------------------------------------------------------
+// Section filter: exclude the opposite product's docs based on current page
+// ---------------------------------------------------------------------------
+
+function deriveSectionFilter(pageUrl?: string): string | undefined {
+  if (!pageUrl) return undefined;
+  if (pageUrl.startsWith('/docs/byoc')) return 'section != "cloud-guides"';
+  if (pageUrl.startsWith('/reference')) return undefined; // reference sees all
+  if (pageUrl.startsWith('/docs')) return 'section != "byoc-guides"';
+  return undefined;
+}
+
+// ---------------------------------------------------------------------------
+// Response cache: skip routing + LLM for identical repeated queries
+// ---------------------------------------------------------------------------
+
+interface CachedResponse {
+  events: Array<{event: string; data: string}>;
+  timestamp: number;
+}
+
+const responseCache = new Map<string, CachedResponse>();
+const RESPONSE_CACHE_TTL_MS = 2 * 60 * 1000; // 2 minutes
+const RESPONSE_CACHE_MAX = 200;
+
+function responseCacheGet(key: string): Array<{event: string; data: string}> | null {
+  const entry = responseCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.timestamp > RESPONSE_CACHE_TTL_MS) {
+    responseCache.delete(key);
+    return null;
+  }
+  return entry.events;
+}
+
+/** Clear the response cache (exposed for testing) */
+export function clearResponseCache(): void {
+  responseCache.clear();
+}
+
+function responseCacheSet(key: string, events: Array<{event: string; data: string}>): void {
+  // Evict oldest entries if at capacity
+  if (responseCache.size >= RESPONSE_CACHE_MAX) {
+    const oldest = responseCache.keys().next().value!;
+    responseCache.delete(oldest);
+  }
+  responseCache.set(key, {events, timestamp: Date.now()});
+}
 
 export const app = new Hono();
 
@@ -192,11 +259,33 @@ app.post('/chat', async c => {
         // Emit session ID immediately so the client knows the connection is live
         send('session', JSON.stringify({sessionId: session.id}));
 
+        // Check response cache for identical repeated queries
+        const sectionFilter = deriveSectionFilter(body.pageUrl);
+        const responseCacheKey = `${session.id}:${ragQuery}:${sectionFilter || ''}`;
+        const cachedEvents = responseCacheGet(responseCacheKey);
+        if (cachedEvents) {
+          console.log(`[Cache] Response cache hit for: ${ragQuery.slice(0, 60)}`);
+          for (const evt of cachedEvents) {
+            send(evt.event, evt.data);
+          }
+          controller.close();
+          return;
+        }
+
+        // Track events for caching on successful response
+        const recordedEvents: Array<{event: string; data: string}> = [];
+        const sendAndRecord = (event: string, data: string) => {
+          send(event, data);
+          recordedEvents.push({event, data});
+        };
+
         try {
           // Route intent and retrieve docs (runs while client is connected)
+          setActiveSectionFilter(sectionFilter);
+          console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
           const [routeResult, ragResult] = await Promise.all([
             routeIntent(ragQuery, body.messages, session.id).catch(() => ({agent: 'general' as const, reasoning: 'Router fallback'})),
-            retrieve(ragQuery),
+            retrieve(ragQuery, sectionFilter),
           ]);
 
           const agentConfig = getAgent(routeResult.agent as any);
@@ -208,7 +297,7 @@ app.post('/chat', async c => {
           });
 
           // Emit agent info
-          send('agent', JSON.stringify({
+          sendAndRecord('agent', JSON.stringify({
             type: agentConfig.type,
             name: agentConfig.name,
           }));
@@ -250,10 +339,10 @@ app.post('/chat', async c => {
           for await (const part of result.fullStream) {
             if (part.type === 'text-delta') {
               fullText += part.textDelta;
-              send('delta', JSON.stringify({text: part.textDelta}));
+              sendAndRecord('delta', JSON.stringify({text: part.textDelta}));
             } else if (part.type === 'tool-call') {
               toolsCalled.push(part.toolName);
-              send('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
+              sendAndRecord('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
                 tool: part.toolName,
                 args: part.args,
@@ -307,27 +396,38 @@ app.post('/chat', async c => {
             JSON.stringify(confidenceResult.breakdown));
 
           // Emit confidence
-          send('confidence', JSON.stringify({
+          sendAndRecord('confidence', JSON.stringify({
             level: confidence,
             retrieval_score: ragResult.confidence.avgScore,
           }));
 
-          // Emit sources — suppress when response doesn't cite any (e.g. deflections)
-          const hasCitations = /\[\d+\]/.test(fullText);
-          const shouldEmitSources = allSources.length > 0 && (hasCitations || confidence !== 'low');
-          console.log(`[Sources] RAG: ${ragResult.sources.length}, Tools: ${toolSources.length}, Merged: ${allSources.length}, emit: ${shouldEmitSources}`);
-          if (shouldEmitSources) {
-            send('sources', JSON.stringify({sources: allSources}));
+          // Deterministic source grounding (replaces LLM-dependent citations)
+          // Suppress sources on deflected/off-topic responses
+          const deflected = isDeflection(fullText);
+          if (deflected) {
+            console.log('[Sources] Suppressed — deflection detected');
+          } else {
+            const grounding = computeGrounding(fullText, ragResult.rawResults, allSources);
+            console.log(`[Sources] RAG: ${ragResult.sources.length}, Tools: ${toolSources.length}, Merged: ${allSources.length}, Grounded: ${grounding.sources.length}`);
+            if (grounding.sources.length > 0) {
+              sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
+            }
+            if (grounding.citations.length > 0) {
+              sendAndRecord('grounding', JSON.stringify({citations: grounding.citations}));
+            }
           }
 
           // Evaluate post-response hooks (confidence now known)
           const postCtx = {message: ragQuery, agentType: agentConfig.type as AgentType, confidence};
           const appends = evaluatePostResponse(promptRules, postCtx);
           for (const text of appends) {
-            send('hook-append', JSON.stringify({text: '\n\n' + text.trim()}));
+            sendAndRecord('hook-append', JSON.stringify({text: '\n\n' + text.trim()}));
           }
 
-          send('done', JSON.stringify({stop_reason: 'end_turn'}));
+          sendAndRecord('done', JSON.stringify({stop_reason: 'end_turn'}));
+
+          // Cache the successful response for replay
+          responseCacheSet(responseCacheKey, recordedEvents);
 
           // Log the message (fire-and-forget)
           logEvent(session.id, userId, 'message', agentConfig.type, {
