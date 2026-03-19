@@ -253,6 +253,7 @@ app.post('/chat', async c => {
               send('delta', JSON.stringify({text: part.textDelta}));
             } else if (part.type === 'tool-call') {
               toolsCalled.push(part.toolName);
+              send('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
                 tool: part.toolName,
                 args: part.args,

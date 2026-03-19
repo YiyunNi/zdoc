@@ -164,11 +164,16 @@ export async function retrieveContext(query: string): Promise<RagResult> {
     }
   }
 
-  // Build context string from top results
-  let context = '## Retrieved Documentation\nUse the information below to answer the question. Do NOT list sources in your response — the UI handles source display automatically.\n';
+  // Build context string from top results with numbered citations
+  // Map each result to its source index (1-based) for citation
+  const urlToIndex = new Map<string, number>();
+  sources.forEach((s, i) => urlToIndex.set(s.url, i + 1));
+
+  let context = '## Retrieved Documentation\nUse the information below to answer the question. Add inline citation markers like [1], [2] after statements that use information from a specific source — the number corresponds to the source order below. Do NOT list sources at the end of your response; the UI handles source display automatically.\n';
   for (const r of results) {
+    const idx = urlToIndex.get(r.doc_url) ?? '';
     const sourceLabel = r.section?.startsWith('external-') ? ' [External]' : '';
-    context += `\n### [${r.doc_title}${sourceLabel}](${r.doc_url})\n`;
+    context += `\n### Source [${idx}]: [${r.doc_title}${sourceLabel}](${r.doc_url})\n`;
     context += `${r.content}\n`;
   }
 
