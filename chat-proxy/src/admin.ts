@@ -1,8 +1,6 @@
 import {Hono} from 'hono';
 import {MilvusClient} from '@zilliz/milvus2-sdk-node';
 import {generateEmbedding} from './rag.js';
-import {addSource, listSources, getSource, deleteSource, indexSource} from './sources.js';
-import type {SourceType} from './types.js';
 
 const ZILLIZ_ENDPOINT = process.env.ZILLIZ_ENDPOINT || '';
 const ZILLIZ_TOKEN = process.env.ZILLIZ_TOKEN || '';
@@ -139,68 +137,3 @@ adminApp.get('/stats', async c => {
   }
 });
 
-// ---------------------------------------------------------------------------
-// External source management
-// ---------------------------------------------------------------------------
-
-// POST /admin/sources — register new source
-adminApp.post('/sources', async c => {
-  try {
-    const body = await c.req.json<{url: string; source_type: SourceType; label: string}>();
-    if (!body.url || !body.source_type || !body.label) {
-      return c.json({error: 'url, source_type, and label are required'}, 400);
-    }
-    if (!['external-web', 'external-github'].includes(body.source_type)) {
-      return c.json({error: 'source_type must be "external-web" or "external-github"'}, 400);
-    }
-    const source = await addSource(body.url, body.source_type, body.label);
-    return c.json({source}, 201);
-  } catch (err) {
-    return c.json({error: String(err)}, 500);
-  }
-});
-
-// GET /admin/sources — list all sources
-adminApp.get('/sources', async c => {
-  try {
-    const sources = await listSources();
-    return c.json({sources});
-  } catch (err) {
-    return c.json({error: String(err)}, 500);
-  }
-});
-
-// GET /admin/sources/:id — get single source
-adminApp.get('/sources/:id', async c => {
-  try {
-    const source = await getSource(c.req.param('id'));
-    if (!source) return c.json({error: 'Source not found'}, 404);
-    return c.json({source});
-  } catch (err) {
-    return c.json({error: String(err)}, 500);
-  }
-});
-
-// POST /admin/sources/:id/index — trigger (re-)indexing
-adminApp.post('/sources/:id/index', async c => {
-  try {
-    const source = await getSource(c.req.param('id'));
-    if (!source) return c.json({error: 'Source not found'}, 404);
-    const result = await indexSource(c.req.param('id'));
-    return c.json({ok: true, chunkCount: result.chunkCount});
-  } catch (err) {
-    return c.json({error: String(err)}, 500);
-  }
-});
-
-// DELETE /admin/sources/:id — remove source + chunks
-adminApp.delete('/sources/:id', async c => {
-  try {
-    const source = await getSource(c.req.param('id'));
-    if (!source) return c.json({error: 'Source not found'}, 404);
-    await deleteSource(c.req.param('id'));
-    return c.json({ok: true});
-  } catch (err) {
-    return c.json({error: String(err)}, 500);
-  }
-});

@@ -20,20 +20,6 @@ export interface Source {
   section?: string;
 }
 
-export type SourceType = 'internal' | 'external-web' | 'external-github';
-
-export interface ExternalSource {
-  id: string;
-  url: string;
-  source_type: SourceType;
-  label: string;
-  status: 'pending' | 'indexing' | 'indexed' | 'error';
-  chunk_count: number;
-  last_indexed: string;
-  error_message: string;
-  created_at: string;
-}
-
 export interface FeedbackRequest {
   sessionId: string;
   messageIndex: number;

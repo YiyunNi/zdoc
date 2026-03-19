@@ -1,5 +1,5 @@
 import {describe, it, expect, vi, beforeEach} from 'vitest';
-import {chunkText, fetchWebContent, parseGitHubUrl} from './sources.js';
+import {chunkText, fetchWebContent, parseGitHubUrl, inferSection} from './sources.js';
 
 // ---------------------------------------------------------------------------
 // chunkText
@@ -140,97 +140,40 @@ describe('parseGitHubUrl', () => {
 });
 
 // ---------------------------------------------------------------------------
-// indexSource (integration-style with mocked fetch)
+// inferSection
 // ---------------------------------------------------------------------------
 
-describe('indexSource', () => {
-  beforeEach(() => {
-    vi.unstubAllGlobals();
+describe('inferSection', () => {
+  it('returns external-web for milvus.io URL regardless of DB section', () => {
+    expect(inferSection('cloud-guides', 'https://milvus.io/docs/quickstart.md')).toBe('external-web');
   });
 
-  it('generates chunk IDs with ext: prefix', async () => {
-    const insertedData: any[] = [];
+  it('overrides cloud-guides with external-web for milvus.io URL', () => {
+    expect(inferSection('cloud-guides', 'https://milvus.io/docs/integrate_with_openai.md')).toBe('external-web');
+  });
 
-    // Mock fetch to handle both Zilliz API calls and web content fetching
-    const mockFetch = vi.fn().mockImplementation((url: string, opts?: any) => {
-      const urlStr = String(url);
+  it('returns external-github for github.com URL', () => {
+    expect(inferSection(undefined, 'https://github.com/milvus-io/pymilvus')).toBe('external-github');
+  });
 
-      // Embedding API
-      if (urlStr.includes('/embeddings')) {
-        return Promise.resolve({
-          ok: true,
-          json: () => Promise.resolve({data: [{embedding: new Array(1024).fill(0.1)}]}),
-        });
-      }
+  it('returns byoc-guides for BYOC URL with cloud-guides section', () => {
+    expect(inferSection('cloud-guides', 'https://docs.zilliz.com/docs/byoc-guides/deploy-aws')).toBe('byoc-guides');
+  });
 
-      // Zilliz API calls
-      if (urlStr.includes('/v2/vectordb')) {
-        const body = JSON.parse(opts?.body || '{}');
+  it('returns api-reference for /reference/ URL with no section', () => {
+    expect(inferSection(undefined, 'https://docs.zilliz.com/reference/python/collection')).toBe('api-reference');
+  });
 
-        // Query for getSource
-        if (urlStr.includes('/entities/query')) {
-          if (body.collectionName === 'external_sources') {
-            return Promise.resolve({
-              json: () => Promise.resolve({
-                code: 0,
-                data: [{
-                  id: 'test-source-id',
-                  url: 'https://example.com/docs',
-                  source_type: 'external-web',
-                  label: 'Test Docs',
-                  status: 'pending',
-                  chunk_count: 0,
-                  last_indexed: '',
-                  error_message: '',
-                  created_at: '2024-01-01T00:00:00.000Z',
-                }],
-              }),
-            });
-          }
-        }
+  it('preserves cloud-guides for normal zilliz.com URL', () => {
+    expect(inferSection('cloud-guides', 'https://docs.zilliz.com/docs/quick-start')).toBe('cloud-guides');
+  });
 
-        // Upsert (status update)
-        if (urlStr.includes('/entities/upsert')) {
-          return Promise.resolve({json: () => Promise.resolve({code: 0, data: {}})});
-        }
+  it('preserves explicit non-default section even without URL match', () => {
+    expect(inferSection('external-web', 'https://some-other-site.com/page')).toBe('external-web');
+  });
 
-        // Delete (old chunks)
-        if (urlStr.includes('/entities/delete')) {
-          return Promise.resolve({json: () => Promise.resolve({code: 0, data: {}})});
-        }
-
-        // Insert (new chunks)
-        if (urlStr.includes('/entities/insert')) {
-          if (body.collectionName === 'doc_chunks') {
-            insertedData.push(...body.data);
-          }
-          return Promise.resolve({json: () => Promise.resolve({code: 0, data: {}})});
-        }
-
-        return Promise.resolve({json: () => Promise.resolve({code: 0, data: {}})});
-      }
-
-      // Web content fetch
-      return Promise.resolve({
-        ok: true,
-        text: () => Promise.resolve('<html><head><title>Test</title></head><body><main><p>Some test content for indexing.</p></main></body></html>'),
-      });
-    });
-
-    vi.stubGlobal('fetch', mockFetch);
-
-    // Need to set env vars before importing
-    process.env.ZILLIZ_ENDPOINT = 'https://test.zilliz.cloud';
-    process.env.ZILLIZ_TOKEN = 'test-token';
-
-    const {indexSource} = await import('./sources.js');
-    const result = await indexSource('test-source-id');
-
-    expect(result.chunkCount).toBeGreaterThan(0);
-    // Verify chunk IDs have ext: prefix
-    for (const chunk of insertedData) {
-      expect(chunk.id).toMatch(/^ext:test-source-id:\d+#\d+$/);
-      expect(chunk.section).toBe('external-web');
-    }
+  it('defaults to cloud-guides when no section and no URL', () => {
+    expect(inferSection(undefined, undefined)).toBe('cloud-guides');
   });
 });
+

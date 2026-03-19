@@ -1,14 +1,26 @@
-import {randomUUID} from 'crypto';
-import type {SourceType, ExternalSource} from './types.js';
-import {zillizRequest, isZillizConfigured, EMBEDDING_DIM} from './zilliz-client.js';
-import {generateEmbedding} from './rag.js';
-
 // ---------------------------------------------------------------------------
-// Constants
+// Shared utilities for text chunking, content fetching, and section inference
 // ---------------------------------------------------------------------------
 
-const SOURCES_COLLECTION = 'external_sources';
-const CHUNKS_COLLECTION = 'doc_chunks';
+/**
+ * Infer the correct section from a URL, overriding DB section when clearly wrong.
+ * External URLs always override; path-based inference kicks in when section is
+ * missing or set to the default 'cloud-guides'.
+ */
+export function inferSection(section?: string, url?: string): string {
+  if (url) {
+    // External URLs always override — DB section is unreliable for these
+    if (/milvus\.io/i.test(url)) return 'external-web';
+    if (/github\.com/i.test(url)) return 'external-github';
+    // Path-based inference when DB section is default/missing
+    if (!section || section === 'cloud-guides') {
+      if (/\/byoc[-/]/.test(url) || /docs-byoc/.test(url)) return 'byoc-guides';
+      if (/\/reference\//.test(url)) return 'api-reference';
+    }
+  }
+  return section || 'cloud-guides';
+}
+
 const CHUNK_SIZE = 500;
 const CHUNK_OVERLAP = 50;
 const CHARS_PER_TOKEN = 4;
@@ -57,163 +69,6 @@ export function chunkText(text: string): string[] {
 function extractTitle(text: string): string {
   const match = text.match(/^#\s+(.+)/m);
   return match ? match[1].trim() : '';
-}
-
-// ---------------------------------------------------------------------------
-// Collection management
-// ---------------------------------------------------------------------------
-
-export async function ensureSourcesCollection(): Promise<void> {
-  if (!isZillizConfigured()) {
-    console.warn('[Sources] Zilliz not configured — external sources disabled');
-    return;
-  }
-
-  const data = await zillizRequest('/collections/has', {collectionName: SOURCES_COLLECTION});
-  if (data?.has) {
-    console.log(`[Sources] Collection ${SOURCES_COLLECTION} exists`);
-    return;
-  }
-
-  console.log(`[Sources] Creating collection: ${SOURCES_COLLECTION}`);
-  await zillizRequest('/collections/create', {
-    collectionName: SOURCES_COLLECTION,
-    schema: {
-      fields: [
-        {fieldName: 'id', dataType: 'VarChar', isPrimary: true, elementTypeParams: {max_length: '64'}},
-        {fieldName: 'url', dataType: 'VarChar', elementTypeParams: {max_length: '512'}},
-        {fieldName: 'source_type', dataType: 'VarChar', elementTypeParams: {max_length: '32'}},
-        {fieldName: 'label', dataType: 'VarChar', elementTypeParams: {max_length: '256'}},
-        {fieldName: 'status', dataType: 'VarChar', elementTypeParams: {max_length: '16'}},
-        {fieldName: 'chunk_count', dataType: 'Int32'},
-        {fieldName: 'last_indexed', dataType: 'VarChar', elementTypeParams: {max_length: '32'}},
-        {fieldName: 'error_message', dataType: 'VarChar', elementTypeParams: {max_length: '1024'}},
-        {fieldName: 'created_at', dataType: 'VarChar', elementTypeParams: {max_length: '32'}},
-        {fieldName: 'embedding', dataType: 'FloatVector', elementTypeParams: {dim: String(EMBEDDING_DIM)}},
-      ],
-    },
-    indexParams: [
-      {fieldName: 'embedding', indexType: 'AUTOINDEX', metricType: 'COSINE'},
-    ],
-  });
-  console.log(`[Sources] Collection ${SOURCES_COLLECTION} created`);
-}
-
-// ---------------------------------------------------------------------------
-// Registry CRUD
-// ---------------------------------------------------------------------------
-
-export async function addSource(url: string, sourceType: SourceType, label: string): Promise<ExternalSource> {
-  const id = randomUUID();
-  const now = new Date().toISOString();
-  const dummyEmbedding = new Array(EMBEDDING_DIM).fill(0);
-
-  const source: ExternalSource = {
-    id,
-    url,
-    source_type: sourceType,
-    label,
-    status: 'pending',
-    chunk_count: 0,
-    last_indexed: '',
-    error_message: '',
-    created_at: now,
-  };
-
-  await zillizRequest('/entities/insert', {
-    collectionName: SOURCES_COLLECTION,
-    data: [{...source, embedding: dummyEmbedding}],
-  });
-
-  return source;
-}
-
-export async function listSources(): Promise<ExternalSource[]> {
-  const data = await zillizRequest('/entities/query', {
-    collectionName: SOURCES_COLLECTION,
-    filter: 'id != ""',
-    outputFields: ['id', 'url', 'source_type', 'label', 'status', 'chunk_count', 'last_indexed', 'error_message', 'created_at'],
-    limit: 100,
-  });
-
-  return (data || []).map((row: any) => ({
-    id: row.id,
-    url: row.url,
-    source_type: row.source_type as SourceType,
-    label: row.label,
-    status: row.status,
-    chunk_count: row.chunk_count || 0,
-    last_indexed: row.last_indexed || '',
-    error_message: row.error_message || '',
-    created_at: row.created_at || '',
-  }));
-}
-
-export async function getSource(id: string): Promise<ExternalSource | null> {
-  const data = await zillizRequest('/entities/query', {
-    collectionName: SOURCES_COLLECTION,
-    filter: `id == "${id}"`,
-    outputFields: ['id', 'url', 'source_type', 'label', 'status', 'chunk_count', 'last_indexed', 'error_message', 'created_at'],
-    limit: 1,
-  });
-
-  if (!data || data.length === 0) return null;
-
-  const row = data[0];
-  return {
-    id: row.id,
-    url: row.url,
-    source_type: row.source_type as SourceType,
-    label: row.label,
-    status: row.status,
-    chunk_count: row.chunk_count || 0,
-    last_indexed: row.last_indexed || '',
-    error_message: row.error_message || '',
-    created_at: row.created_at || '',
-  };
-}
-
-async function updateSourceStatus(
-  id: string,
-  updates: Partial<Pick<ExternalSource, 'status' | 'chunk_count' | 'last_indexed' | 'error_message'>>,
-): Promise<void> {
-  const existing = await getSource(id);
-  if (!existing) throw new Error(`Source not found: ${id}`);
-
-  const dummyEmbedding = new Array(EMBEDDING_DIM).fill(0);
-  await zillizRequest('/entities/upsert', {
-    collectionName: SOURCES_COLLECTION,
-    data: [{
-      id: existing.id,
-      url: existing.url,
-      source_type: existing.source_type,
-      label: existing.label,
-      status: updates.status ?? existing.status,
-      chunk_count: updates.chunk_count ?? existing.chunk_count,
-      last_indexed: updates.last_indexed ?? existing.last_indexed,
-      error_message: updates.error_message ?? existing.error_message,
-      created_at: existing.created_at,
-      embedding: dummyEmbedding,
-    }],
-  });
-}
-
-export async function deleteSource(id: string): Promise<void> {
-  // Delete chunks from doc_chunks first
-  await deleteChunksForSource(id);
-
-  // Delete registry entry
-  await zillizRequest('/entities/delete', {
-    collectionName: SOURCES_COLLECTION,
-    filter: `id == "${id}"`,
-  });
-}
-
-async function deleteChunksForSource(sourceId: string): Promise<void> {
-  await zillizRequest('/entities/delete', {
-    collectionName: CHUNKS_COLLECTION,
-    filter: `id like "ext:${sourceId}:%"`,
-  });
 }
 
 // ---------------------------------------------------------------------------
@@ -342,82 +197,4 @@ export async function fetchGitHubContent(
   }
 
   return results;
-}
-
-// ---------------------------------------------------------------------------
-// Indexing pipeline
-// ---------------------------------------------------------------------------
-
-export async function indexSource(id: string): Promise<{chunkCount: number}> {
-  const source = await getSource(id);
-  if (!source) throw new Error(`Source not found: ${id}`);
-
-  await updateSourceStatus(id, {status: 'indexing', error_message: ''});
-
-  try {
-    // Delete old chunks
-    await deleteChunksForSource(id);
-
-    // Fetch content
-    let documents: Array<{title: string; content: string; url: string}>;
-
-    if (source.source_type === 'external-github') {
-      const {owner, repo} = parseGitHubUrl(source.url);
-      const files = await fetchGitHubContent(owner, repo);
-      documents = files.map(f => ({
-        title: f.title,
-        content: f.content,
-        url: `https://github.com/${owner}/${repo}/blob/HEAD/${f.path}`,
-      }));
-    } else {
-      // external-web
-      const {title, content} = await fetchWebContent(source.url);
-      documents = [{title, content, url: source.url}];
-    }
-
-    // Chunk and embed
-    let totalChunks = 0;
-    for (let docIdx = 0; docIdx < documents.length; docIdx++) {
-      const doc = documents[docIdx];
-      const chunks = chunkText(doc.content);
-
-      // Process chunks in batches
-      const chunkData: Array<Record<string, unknown>> = [];
-      for (let chunkIdx = 0; chunkIdx < chunks.length; chunkIdx++) {
-        const chunk = chunks[chunkIdx];
-        const embedding = await generateEmbedding(chunk);
-        chunkData.push({
-          id: `ext:${id}:${docIdx}#${chunkIdx}`,
-          doc_url: doc.url,
-          doc_url_md: doc.url,
-          doc_title: doc.title,
-          section: source.source_type,
-          content: chunk.slice(0, 16000),
-          content_hash: '',
-          embedding,
-        });
-      }
-
-      if (chunkData.length > 0) {
-        await zillizRequest('/entities/insert', {
-          collectionName: CHUNKS_COLLECTION,
-          data: chunkData,
-        });
-        totalChunks += chunkData.length;
-      }
-    }
-
-    await updateSourceStatus(id, {
-      status: 'indexed',
-      chunk_count: totalChunks,
-      last_indexed: new Date().toISOString(),
-    });
-
-    console.log(`[Sources] Indexed source ${id} (${source.label}): ${totalChunks} chunks`);
-    return {chunkCount: totalChunks};
-  } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    await updateSourceStatus(id, {status: 'error', error_message: message}).catch(() => {});
-    throw err;
-  }
 }
