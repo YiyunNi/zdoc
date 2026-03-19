@@ -17,6 +17,7 @@ import {recordFeedback, getStats} from './feedback.js';
 import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
 import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
+import {findSemanticCacheHit} from './semantic-cache.js';
 
 const promptRules = loadRules(import.meta.url);
 
@@ -278,6 +279,32 @@ app.post('/chat', async c => {
           send(event, data);
           recordedEvents.push({event, data});
         };
+
+        // L2: Semantic answer cache (cross-session)
+        if (isVectorSearchAvailable()) {
+          try {
+            const semanticHit = await findSemanticCacheHit(ragQuery, sectionFilter);
+            if (semanticHit) {
+              console.log(`[Cache] Semantic hit (sim=${semanticHit.similarity.toFixed(3)}): ${ragQuery.slice(0, 60)}`);
+              sendAndRecord('agent', JSON.stringify({type: semanticHit.agentType, name: semanticHit.agentName}));
+              sendAndRecord('delta', JSON.stringify({text: semanticHit.text}));
+              sendAndRecord('confidence', JSON.stringify({level: semanticHit.confidence, retrieval_score: 0}));
+              if (semanticHit.sources.length > 0) {
+                sendAndRecord('sources', JSON.stringify({sources: semanticHit.sources}));
+              }
+              sendAndRecord('done', JSON.stringify({stop_reason: 'semantic_cache'}));
+              responseCacheSet(responseCacheKey, recordedEvents);
+              logEvent(session.id, userId, 'message', semanticHit.agentType, {
+                role: 'assistant', content: semanticHit.text.slice(0, 500),
+                confidence: semanticHit.confidence, semanticCacheHit: true, similarity: semanticHit.similarity,
+              });
+              controller.close();
+              return;
+            }
+          } catch (err) {
+            console.warn('[Cache] Semantic cache error:', (err as Error).message);
+          }
+        }
 
         try {
           // Route intent and retrieve docs (runs while client is connected)

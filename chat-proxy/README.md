@@ -67,14 +67,26 @@ Deterministic source attribution replaces LLM-dependent citation numbering. Afte
 3. **Citation emission** — A `grounding` SSE event provides `{paragraphIndex, sourceIndices[]}` tuples for the frontend to render inline citation superscripts
 4. **Deflection suppression** — Regex patterns detect off-topic deflections and suppress sources entirely
 
-### Response Cache
+### Response Cache (Two Layers)
 
-Session-scoped response cache skips routing + RAG + LLM for identical repeated queries:
+**L1 — Session-scoped exact match** skips routing + RAG + LLM for identical repeated queries within the same session:
 
 - **Key**: `${sessionId}:${query}:${sectionFilter}` — prevents cross-session and cross-section leakage
 - **TTL**: 2 minutes, max 200 entries with FIFO eviction
 - **Cached**: All SSE events (agent, deltas, confidence, sources, grounding, done) — replayed in order on hit
 - **Not cached**: Error responses, guard deflections
+
+**L2 — Semantic answer cache** (cross-session) searches the `chat_conversations` collection for a previously answered similar question when L1 misses:
+
+- **Vector search**: Embeds the query and runs a COSINE similarity search against past conversation embeddings
+- **Quality gates**: similarity ≥ 0.92, confidence = `high` only, age ≤ 7 days, no negative feedback (`down > 0` → reject), section-aware (Cloud answer won't serve BYOC page)
+- **On hit**: Replays stored answer as a single delta event with `stop_reason: 'semantic_cache'`, backfills L1 cache
+- **Non-fatal**: Any error silently falls through to the normal routing + LLM flow
+- **Cost**: ~0.001¢ per check (1 embedding + 1 vector search) vs ~1-5¢ per avoided LLM call
+
+```
+request → L1 exact cache → [miss] → L2 semantic cache → [miss] → route + RAG + LLM
+```
 
 ### Prompt Hooks
 
@@ -131,7 +143,7 @@ SSE event types:
 | `sources` | `{sources: [{title, url, score?}]}` | Grounded doc references |
 | `grounding` | `{citations: [{paragraphIndex, sourceIndices}]}` | Per-paragraph citation map |
 | `hook-append` | `{text}` | Post-response content from prompt hooks |
-| `done` | `{stop_reason}` | `end_turn` or `guard` |
+| `done` | `{stop_reason}` | `end_turn`, `guard`, or `semantic_cache` |
 | `error` | `{error}` | Error message |
 
 ### `POST /feedback`
@@ -190,6 +202,9 @@ GitHub URLs: `github:owner/repo` or `https://github.com/owner/repo` (max 50 file
 | `EMBEDDING_DIM` | `1024` | Embedding vector dimension |
 | `DOCS_SITE_URL` | `https://docs.zilliz.com` | Docs site for keyword fallback |
 | `ADMIN_API_KEY` | — | Protects admin routes (disabled if unset) |
+| `SEMANTIC_CACHE_ENABLED` | `true` | Set to `false` to disable L2 semantic cache |
+| `SEMANTIC_CACHE_THRESHOLD` | `0.92` | Minimum COSINE similarity for a semantic cache hit |
+| `SEMANTIC_CACHE_MAX_AGE_DAYS` | `7` | Maximum age (days) for cached answers |
 | `GITHUB_TOKEN` | — | Optional GitHub token for higher API rate limits (external source indexing) |
 | `PORT` | `8787` | Server port |
 | `ALLOWED_ORIGINS` | `http://localhost:3000` | CORS origins (comma-separated) |
@@ -214,6 +229,7 @@ chat-proxy/
     ├── sources.ts                 # External source registry + indexing pipeline
     ├── confidence.ts              # Multi-signal confidence scoring (5 weighted signals)
     ├── grounding.ts               # Deterministic source grounding (bigram overlap)
+    ├── semantic-cache.ts          # L2 cross-session semantic answer cache
     ├── logger.ts                  # Batched event logging to Zilliz Cloud
     ├── feedback.ts                # Thumbs up/down collection
     ├── admin.ts                   # Admin API routes (+ source management)
@@ -270,4 +286,4 @@ npm start
 - **Fire-and-forget logging** — Analytics writes never block the response stream.
 - **Graceful degradation** — Vector search falls back to keyword; missing Zilliz disables logging silently; missing YAML disables hooks.
 - **Deterministic grounding** — Source attribution uses text overlap scoring instead of relying on the LLM to emit citation markers, making citations consistent and independent of model behavior.
-- **Response caching** — Identical repeated queries within a session replay cached SSE events instantly, saving 2 LLM calls (router + completion) per cache hit.
+- **Two-layer caching** — L1 (in-memory, session-scoped, exact match, 2min TTL) handles immediate repeats. L2 (semantic vector search against `chat_conversations`) serves cross-session cache hits for paraphrased common questions, with 5 quality gates to prevent stale or bad answers from being replayed.
