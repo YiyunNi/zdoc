@@ -253,12 +253,35 @@ export async function retrieveContext(query: string, sectionFilter?: string): Pr
     };
   }
 
-  const confidence = computeRetrievalConfidence(results);
+  // Score threshold filtering — remove low-relevance results
+  const MIN_RELEVANCE_SCORE = 0.55;
+  const filtered = results.filter(r => r.score >= MIN_RELEVANCE_SCORE);
+
+  // Document type weighting — demote release notes and boost primary content
+  const SECTION_WEIGHTS: Record<string, number> = {
+    'cloud-guides': 1.0,
+    'byoc-guides': 1.0,
+    'api-reference': 1.0,
+    'external-web': 0.7,
+  };
+  const DEMOTE_PATTERNS = [
+    /release\s*notes?/i, /changelog/i, /what's\s*new/i, /v\d+\.\d+\.\d+/,
+  ];
+  for (const r of filtered) {
+    r.score *= SECTION_WEIGHTS[r.section] ?? 0.8;
+    if (DEMOTE_PATTERNS.some(p => p.test(r.doc_title))) r.score *= 0.5;
+  }
+  filtered.sort((a, b) => b.score - a.score);
+
+  // Use filtered results for the rest of the pipeline
+  const scoredResults = filtered.length > 0 ? filtered : results;
+
+  const confidence = computeRetrievalConfidence(scoredResults);
 
   // Deduplicate sources by doc_url
   const seenUrls = new Set<string>();
   const sources: Source[] = [];
-  for (const r of results) {
+  for (const r of scoredResults) {
     if (r.doc_url && !seenUrls.has(r.doc_url)) {
       seenUrls.add(r.doc_url);
       sources.push({title: r.doc_title, url: r.doc_url, score: r.score, section: r.section});
@@ -266,8 +289,8 @@ export async function retrieveContext(query: string, sectionFilter?: string): Pr
   }
 
   // Build context string from top results
-  let context = '## Retrieved Documentation\nUse the information below to answer the question. Do NOT list or reference sources in your response — the UI handles source attribution automatically.\n';
-  for (const r of results) {
+  let context = 'Use the information below to answer the question. Cite sources inline using [(N)](url) format.\n';
+  for (const r of scoredResults) {
     const sourceLabel = r.doc_url.includes('milvus.io')
       ? ' [Milvus]'
       : r.section?.startsWith('external-') ? ' [External]' : '';
@@ -275,7 +298,7 @@ export async function retrieveContext(query: string, sectionFilter?: string): Pr
     context += `${r.content}\n`;
   }
 
-  const hasMilvusContent = results.some(r => r.doc_url.includes('milvus.io'));
+  const hasMilvusContent = scoredResults.some(r => r.doc_url.includes('milvus.io'));
   if (hasMilvusContent) {
     context += `\n## Adaptation Notice
 Some retrieved content is from the open-source Milvus project (milvus.io). When using it, ADAPT for Zilliz Cloud:
@@ -286,7 +309,7 @@ Some retrieved content is from the open-source Milvus project (milvus.io). When 
 - Confirm compatibility: "This integration works the same way with Zilliz Cloud"\n`;
   }
 
-  return {context, sources, confidence, rawResults: results, detectedLanguages: detectLanguages(results)};
+  return {context, sources, confidence, rawResults: scoredResults, detectedLanguages: detectLanguages(scoredResults)};
 }
 
 // ---------------------------------------------------------------------------

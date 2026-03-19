@@ -105,7 +105,7 @@ function splitParagraphs(text: string): string[] {
 // Core: computeGrounding
 // ---------------------------------------------------------------------------
 
-const MIN_OVERLAP = 0.15;
+const MIN_OVERLAP = 0.25;
 const MAX_SOURCES_PER_PARAGRAPH = 2;
 
 /**

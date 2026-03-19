@@ -105,7 +105,6 @@ function scoreResponseSubstance(text: string): {score: number; forcelow: boolean
   // Positive signals
   if (/```/.test(text)) score += 0.15;           // code blocks
   if (/\[.*?\]\(.*?\)/.test(text)) score += 0.1; // markdown links
-  if (text.length > 300) score += 0.1;
 
   // Negative signals
   const hedges = text.match(HEDGE_PATTERN);
@@ -186,12 +185,26 @@ export function computeConfidence(input: ConfidenceInput): ConfidenceResult {
   // Hard overrides
   if (substance.forcelow) level = 'low';
 
+  // Source-relevance penalty: if tool sources have low avg score, reduce confidence
+  const toolScores = input.toolSources.map(s => s.score).filter((s): s is number => s != null);
+  if (toolScores.length > 0) {
+    const avgToolScore = toolScores.reduce((a, b) => a + b, 0) / toolScores.length;
+    if (avgToolScore < 0.6 && level === 'high') {
+      level = 'medium';
+    }
+  }
+
   const totalSources = input.ragResults.length + input.toolSources.length;
   if (input.ragResults.length === 0 && input.toolSources.length === 0 && level === 'high') {
     level = 'medium';
   }
   if (totalSources === 0 && substance.score < 0.5) {
     level = 'low';
+  }
+
+  // Force medium max if long text but 0 sources
+  if (input.fullText.length > 200 && totalSources === 0 && level === 'high') {
+    level = 'medium';
   }
 
   return {
