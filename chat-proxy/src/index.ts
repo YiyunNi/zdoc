@@ -312,9 +312,11 @@ app.post('/chat', async c => {
             retrieval_score: ragResult.confidence.avgScore,
           }));
 
-          // Emit sources
-          console.log(`[Sources] RAG: ${ragResult.sources.length}, Tools: ${toolSources.length}, Merged: ${allSources.length}`);
-          if (allSources.length > 0) {
+          // Emit sources — suppress when response doesn't cite any (e.g. deflections)
+          const hasCitations = /\[\d+\]/.test(fullText);
+          const shouldEmitSources = allSources.length > 0 && (hasCitations || confidence !== 'low');
+          console.log(`[Sources] RAG: ${ragResult.sources.length}, Tools: ${toolSources.length}, Merged: ${allSources.length}, emit: ${shouldEmitSources}`);
+          if (shouldEmitSources) {
             send('sources', JSON.stringify({sources: allSources}));
           }
 

@@ -193,7 +193,7 @@ describe('SSE Stream Format', () => {
   it('emits sources when available', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Answer'};
+        yield {type: 'text-delta', textDelta: 'Answer from docs [1].'};
       })(),
     } as any);
 
@@ -251,7 +251,7 @@ describe('SSE Stream Format', () => {
   it('emits events in correct order: session → agent → delta(s) → confidence → sources → done', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Hello'};
+        yield {type: 'text-delta', textDelta: 'Hello [1].'};
       })(),
     } as any);
 
