@@ -43,7 +43,7 @@ function tokenize(text: string): Set<string> {
   const words = text
     .toLowerCase()
     .split(/[\s.,;:!?'"()\[\]{}<>\/\\|@#$%^&*+=~`\-_]+/)
-    .filter(w => w.length > 3 && !STOP_WORDS.has(w));
+    .filter(w => w.length > 2 && !STOP_WORDS.has(w));
   return new Set(words);
 }
 
@@ -58,15 +58,13 @@ function isSkippable(para: string): boolean {
   const trimmed = para.trim();
   if (!trimmed) return true;
 
-  // Headings
-  if (HEADING_RE.test(trimmed)) return true;
-
-  // Code blocks
+  // Code blocks (multi-source synthesized content, poor grounding signal)
   if (CODE_BLOCK_RE.test(trimmed)) return true;
 
-  // Short paragraphs (greetings, transitions)
+  // Very short paragraphs (greetings, transitions) — but keep headings and
+  // short technical instructions which carry distinctive keywords
   const wordCount = trimmed.split(/\s+/).length;
-  if (wordCount < 10) return true;
+  if (wordCount < 5) return true;
 
   return false;
 }
@@ -113,6 +111,9 @@ const MAX_SOURCES_PER_PARAGRAPH = 2;
 /**
  * Deterministically match response paragraphs to RAG source chunks
  * using keyword overlap. Returns filtered sources + citation map.
+ *
+ * Sources are reranked by cumulative overlap so that the most relevant
+ * sources appear first, regardless of whether they came from RAG or tools.
  */
 export function computeGrounding(
   responseText: string,
@@ -134,8 +135,9 @@ export function computeGrounding(
     url: r.doc_url,
   }));
 
-  // Track which source URLs are actually used
+  // Track which source URLs are actually used + cumulative overlap scores
   const usedUrls = new Set<string>();
+  const urlOverlapScore = new Map<string, number>();
   const rawCitations: Array<{paragraphIndex: number; urls: string[]}> = [];
 
   for (let pi = 0; pi < paragraphs.length; pi++) {
@@ -168,6 +170,11 @@ export function computeGrounding(
       }
     }
 
+    // Accumulate overlap scores for reranking
+    for (const [url, overlap] of urlBest) {
+      urlOverlapScore.set(url, (urlOverlapScore.get(url) ?? 0) + overlap);
+    }
+
     // Sort by overlap, take top N
     const sorted = [...urlBest.entries()]
       .sort((a, b) => b[1] - a[1])
@@ -178,19 +185,49 @@ export function computeGrounding(
     rawCitations.push({paragraphIndex: pi, urls});
   }
 
+  // Whole-response fallback: when paragraph-level matching yields ≤ 1 source
+  // (e.g. most content was code blocks or short lines), match the entire
+  // response text against all chunks.
+  if (usedUrls.size <= 1) {
+    const fullTokens = tokenize(responseText);
+    if (fullTokens.size > 0) {
+      for (const chunk of chunkTokens) {
+        let matchCount = 0;
+        for (const word of fullTokens) {
+          if (chunk.tokens.has(word)) matchCount++;
+        }
+        const overlap = matchCount / fullTokens.size;
+        if (overlap >= MIN_OVERLAP) {
+          usedUrls.add(chunk.url);
+          urlOverlapScore.set(chunk.url,
+            (urlOverlapScore.get(chunk.url) ?? 0) + overlap);
+        }
+      }
+    }
+  }
+
   if (usedUrls.size === 0) {
     return {sources: [], citations: []};
   }
 
-  // Build filtered, re-indexed source list
+  // Build filtered source list from used URLs
   const filteredSources: Source[] = [];
-  const urlToNewIndex = new Map<string, number>();
-
   for (const src of allSources) {
     if (usedUrls.has(src.url)) {
-      urlToNewIndex.set(src.url, filteredSources.length);
       filteredSources.push(src);
     }
+  }
+
+  // Rerank by cumulative overlap (highest first) so the most relevant
+  // sources appear first regardless of RAG vs tool origin
+  filteredSources.sort((a, b) =>
+    (urlOverlapScore.get(b.url) ?? 0) - (urlOverlapScore.get(a.url) ?? 0),
+  );
+
+  // Build URL→index map after sorting
+  const urlToNewIndex = new Map<string, number>();
+  for (let i = 0; i < filteredSources.length; i++) {
+    urlToNewIndex.set(filteredSources[i].url, i);
   }
 
   // Build citation map using new indices
@@ -204,6 +241,30 @@ export function computeGrounding(
     if (sourceIndices.length > 0) {
       citations.push({paragraphIndex: raw.paragraphIndex, sourceIndices});
     }
+  }
+
+  // Prune sources that aren't cited by any paragraph (e.g. whole-response
+  // fallback matched them but no paragraph actually cites them)
+  const citedIndices = new Set<number>();
+  for (const c of citations) {
+    for (const idx of c.sourceIndices) citedIndices.add(idx);
+  }
+  if (citedIndices.size < filteredSources.length) {
+    const reindex = new Map<number, number>();
+    const prunedSources: Source[] = [];
+    for (let i = 0; i < filteredSources.length; i++) {
+      if (citedIndices.has(i)) {
+        reindex.set(i, prunedSources.length);
+        prunedSources.push(filteredSources[i]);
+      }
+    }
+    for (const c of citations) {
+      c.sourceIndices = c.sourceIndices
+        .map(i => reindex.get(i)!)
+        .filter(i => i !== undefined);
+    }
+    filteredSources.length = 0;
+    filteredSources.push(...prunedSources);
   }
 
   return {sources: filteredSources, citations};

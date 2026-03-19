@@ -57,8 +57,8 @@ Milvus supports vector similarity search using HNSW and IVF_FLAT index types for
     expect(firstParaCitation).toBeUndefined();
   });
 
-  it('skips headings', () => {
-    const response = `## Vector Search
+  it('includes headings in grounding (they carry topic keywords)', () => {
+    const response = `## Vector Similarity Search with Milvus HNSW Index
 
 Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries in large datasets.`;
 
@@ -67,8 +67,8 @@ Milvus supports vector similarity search using HNSW and IVF_FLAT index types for
 
     const result = computeGrounding(response, rawResults, sources);
 
-    const headingCitation = result.citations.find(c => c.paragraphIndex === 0);
-    expect(headingCitation).toBeUndefined();
+    // Heading should now participate in grounding
+    expect(result.sources.length).toBeGreaterThan(0);
   });
 
   it('filters out sources with no overlap', () => {
@@ -212,5 +212,211 @@ Zilliz Cloud provides serverless deployment options with automatic scaling, mana
     const para1Sources = result.citations.find(c => c.paragraphIndex === 1)?.sourceIndices;
     expect(para0Sources).toBeDefined();
     expect(para1Sources).toBeDefined();
+  });
+
+  it('reranks sources by cumulative overlap (most relevant first)', () => {
+    // Response is about Mem0 integration — high overlap with mem0 doc
+    const response = `To integrate Mem0 with Zilliz Cloud, configure the Mem0 client to use your Zilliz Cloud endpoint and API key for persistent memory storage.
+
+Mem0 uses Milvus as the vector backend. Set the connection URI to your Zilliz Cloud cluster endpoint and provide your authentication token.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'faq',
+        doc_url: 'https://docs.zilliz.com/faq-cluster',
+        content: 'FAQ about Zilliz Cloud clusters. How to create a cluster, manage resources, and configure endpoints.',
+      }),
+      makeResult({
+        id: 'mem0',
+        doc_url: 'https://docs.zilliz.com/mem0-integration',
+        content: 'Mem0 integrates with Zilliz Cloud for persistent memory storage. Configure the Mem0 client with your Zilliz Cloud endpoint and API key. Mem0 uses Milvus as the vector backend.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: 'https://docs.zilliz.com/faq-cluster', title: 'FAQ: Cluster'}),
+      makeSource({url: 'https://docs.zilliz.com/mem0-integration', title: 'Mem0 Integration'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // Mem0 doc should be ranked first (highest overlap), not FAQ
+    expect(result.sources.length).toBeGreaterThanOrEqual(1);
+    expect(result.sources[0].url).toBe('https://docs.zilliz.com/mem0-integration');
+  });
+
+  it('grounds tool-discovered chunks that are not in RAG results', () => {
+    const response = `Mem0 provides a memory layer for AI applications. Configure it with your Zilliz Cloud endpoint to enable persistent vector storage for conversation memory.`;
+
+    // Tool chunk has the relevant content; RAG chunk does not
+    const rawResults = [
+      makeResult({
+        id: 'rag-generic',
+        doc_url: 'https://docs.zilliz.com/getting-started',
+        content: 'Getting started with Zilliz Cloud. Create your first cluster and begin building applications.',
+      }),
+      makeResult({
+        id: 'tool-mem0',
+        doc_url: 'https://docs.zilliz.com/mem0-quickstart',
+        content: 'Mem0 provides a memory layer for AI applications. Configure Mem0 with your Zilliz Cloud endpoint for persistent vector storage and conversation memory.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: 'https://docs.zilliz.com/getting-started', title: 'Getting Started'}),
+      makeSource({url: 'https://docs.zilliz.com/mem0-quickstart', title: 'Mem0 Quickstart'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // The tool-discovered Mem0 doc should appear in grounded sources
+    const mem0Source = result.sources.find(s => s.url === 'https://docs.zilliz.com/mem0-quickstart');
+    expect(mem0Source).toBeDefined();
+    // And it should be ranked first
+    expect(result.sources[0].url).toBe('https://docs.zilliz.com/mem0-quickstart');
+  });
+
+  it('returns no sources when response is mostly code with no citable paragraphs', () => {
+    const response = `Here is how:
+
+\`\`\`python
+from pymilvus import connections
+connections.connect(uri="https://your-endpoint.zillizcloud.com", token="your-token")
+from mem0 import Memory
+m = Memory()
+m.add("User prefers dark mode", user_id="alice")
+\`\`\`
+
+Done!`;
+
+    const rawResults = [
+      makeResult({
+        doc_url: 'https://docs.zilliz.com/mem0-quickstart',
+        content: 'Connect to Zilliz Cloud using pymilvus connections. Use mem0 Memory class to add and retrieve user memories with Milvus vector backend.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: 'https://docs.zilliz.com/mem0-quickstart', title: 'Mem0 Quickstart'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // Whole-response fallback may match the URL, but since no paragraph
+    // actually cites the source, it gets pruned — no ghost sources
+    expect(result.sources).toHaveLength(0);
+    expect(result.citations).toHaveLength(0);
+  });
+
+  it('excludes sources matched by whole-response fallback but not cited by any paragraph', () => {
+    // Response is mostly code blocks + short lines → paragraph matching yields 0 sources
+    // Fallback matches two chunks against whole response, but only one has paragraph citation
+    const response = `Connect to your cluster first.
+
+\`\`\`python
+from pymilvus import connections
+connections.connect(uri="https://endpoint.zillizcloud.com", token="token")
+col = Collection("test")
+results = col.search(vectors, "embedding", params, limit=10)
+\`\`\`
+
+The search function returns nearest neighbors using the configured HNSW index type for approximate similarity queries.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'chunk-search',
+        doc_url: 'https://docs.zilliz.com/search-guide',
+        content: 'The search function returns nearest neighbors using the configured HNSW index type for approximate similarity queries in large datasets.',
+      }),
+      makeResult({
+        id: 'chunk-boost',
+        doc_url: 'https://docs.zilliz.com/boost-ranker',
+        content: 'Boost ranker configuration for pymilvus connections and Collection search results with vector embedding parameters and token authentication.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: 'https://docs.zilliz.com/search-guide', title: 'Search Guide'}),
+      makeSource({url: 'https://docs.zilliz.com/boost-ranker', title: 'Boost Ranker'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // Search Guide should be cited (last paragraph matches)
+    const searchSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/search-guide');
+    expect(searchSource).toBeDefined();
+
+    // Boost Ranker may match whole-response fallback keywords but should be pruned
+    // because no paragraph actually cites it
+    for (const c of result.citations) {
+      const citedUrls = c.sourceIndices.map(i => result.sources[i]?.url);
+      expect(citedUrls).not.toContain('https://docs.zilliz.com/boost-ranker');
+    }
+  });
+
+  it('matches short technical terms like API, SDK, RAG', () => {
+    const response = `The Zilliz Cloud SDK provides API access for RAG pipelines. Use the SDK client to build retrieval-augmented generation workflows.`;
+
+    const rawResults = [
+      makeResult({
+        doc_url: 'https://docs.zilliz.com/sdk-guide',
+        content: 'The Zilliz Cloud SDK provides API access for building RAG pipelines and retrieval-augmented generation workflows.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: 'https://docs.zilliz.com/sdk-guide', title: 'SDK Guide'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // "API", "SDK", "RAG" (3 chars) should participate in matching
+    expect(result.sources.length).toBeGreaterThan(0);
+    expect(result.sources[0].url).toBe('https://docs.zilliz.com/sdk-guide');
+  });
+
+  it('tutorial-style response grounds to correct source over generic docs', () => {
+    const response = `## Using Mem0 with Zilliz Cloud
+
+Mem0 is an open-source memory layer for AI applications that uses Milvus as its vector backend.
+
+To get started, install the Mem0 package and configure your Zilliz Cloud credentials:
+
+\`\`\`python
+from mem0 import Memory
+config = {"vector_store": {"provider": "milvus", "config": {"url": "https://your-cluster.zillizcloud.com"}}}
+m = Memory.from_config(config)
+\`\`\`
+
+Once configured, you can store and retrieve memories for your users through the Mem0 interface connected to Zilliz Cloud.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'faq',
+        doc_url: 'https://docs.zilliz.com/faq-cluster',
+        content: 'Frequently asked questions about billing, invoicing, payment methods, and resource allocation for enterprise accounts.',
+      }),
+      makeResult({
+        id: 'release',
+        doc_url: 'https://docs.zilliz.com/release-notes',
+        content: 'Release notes for version updates, changelog entries, deprecation notices, and migration warnings.',
+      }),
+      makeResult({
+        id: 'mem0',
+        doc_url: 'https://docs.zilliz.com/mem0-integration',
+        content: 'Mem0 is an open-source memory layer for AI applications. It uses Milvus as the vector backend. Configure Mem0 with your Zilliz Cloud credentials to store and retrieve memories.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: 'https://docs.zilliz.com/faq-cluster', title: 'FAQ: Cluster'}),
+      makeSource({url: 'https://docs.zilliz.com/release-notes', title: 'Release Notes'}),
+      makeSource({url: 'https://docs.zilliz.com/mem0-integration', title: 'Mem0 Integration'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // Mem0 doc should be in results AND ranked first
+    expect(result.sources.length).toBeGreaterThanOrEqual(1);
+    expect(result.sources[0].url).toBe('https://docs.zilliz.com/mem0-integration');
+    // FAQ and release notes should NOT appear (no overlap with response)
+    const faqSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/faq-cluster');
+    const releaseSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/release-notes');
+    expect(faqSource).toBeUndefined();
+    expect(releaseSource).toBeUndefined();
   });
 });
