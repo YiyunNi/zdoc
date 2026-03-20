@@ -32866,80 +32866,128 @@
 											}
 										},
 										"properties": {
-											"name": {
-												"type": "string",
-												"description": "The name of the function to apply.",
-												"x-i18n": {
-													"zh-CN": {
-														"description": "待应用的 Function 名称。"
-													}
-												}
-											},
-											"description": {
-												"type": "string",
-												"description": "The description of the function to apply.",
-												"x-i18n": {
-													"zh-CN": {
-														"description": "待应用的 Function 描述。"
-													}
-												}
-											},
-											"type": {
-												"type": "string",
-												"description": "The type of the function to apply.",
-												"x-i18n": {
-													"zh-CN": {
-														"description": "待应用的 Function 类型。"
-													}
-												},
-												"enum": [
-													"BM25",
-													"TEXTEMBEDDING",
-													"RERANK"
-												]
-											},
-											"inputFieldNames": {
+											"functions": {
 												"type": "array",
-												"description": "A list of scalar fields to use as input for the function.",
+												"description": "Functions to include in the function score.",
 												"x-i18n": {
 													"zh-CN": {
-														"description": "作为 Function 输入的标量字段名称列表。"
+														"description": "当前 FunctionScore 中包含的所有 Function。"
 													}
 												},
 												"items": {
-													"type": "string",
-													"description": "A scalar field to use as input for the function.",
-													"x-i18n": {
-														"zh-CN": {
-															"description": "作为 Function 输入的一个标量字段名称。"
+													"type": "object",
+													"properties": {
+														"name": {
+															"type": "string",
+															"description": "The name of the function to apply.",
+															"x-i18n": {
+																"zh-CN": {
+																	"description": "待应用的 Function 名称。"
+																}
+															}
+														},
+														"description": {
+															"type": "string",
+															"description": "The description of the function to apply.",
+															"x-i18n": {
+																"zh-CN": {
+																	"description": "待应用的 Function 描述。"
+																}
+															}
+														},
+														"type": {
+															"type": "string",
+															"description": "The type of the function to apply.",
+															"x-i18n": {
+																"zh-CN": {
+																	"description": "待应用的 Function 类型。"
+																}
+															},
+															"enum": [
+																"BM25",
+																"TEXTEMBEDDING",
+																"Rerank"
+															]
+														},
+														"inputFieldNames": {
+															"type": "array",
+															"description": "A list of scalar fields to use as input for the function.",
+															"x-i18n": {
+																"zh-CN": {
+																	"description": "作为 Function 输入的标量字段名称列表。"
+																}
+															},
+															"items": {
+																"type": "string",
+																"description": "A scalar field to use as input for the function.",
+																"x-i18n": {
+																	"zh-CN": {
+																		"description": "作为 Function 输入的一个标量字段名称。"
+																	}
+																}
+															}
+														},
+														"outputFieldNames": {
+															"type": "array",
+															"description": "A list of vector fields to use as output for the function.",
+															"x-i18n": {
+																"zh-CN": {
+																	"description": "作为 Function 输出的向量字段名称列表。"
+																}
+															},
+															"items": {
+																"type": "string",
+																"description": "A vector field to use as output for the function.",
+																"x-i18n": {
+																	"zh-CN": {
+																		"description": "作为 Function 输出的一个向量字段名称。"
+																	}
+																}
+															}											
+														},
+														"params": {
+															"type": "object",
+															"description": "Extra parameters for the function in key-value pairs.",
+															"x-i18n": {
+																"zh-CN": {
+																	"description": "Function 附加参数，以键值对形式提供。"
+																}
+															},
+															"properties": {
+																"reranker": {
+																	"type": "string",
+																	"description": "Reranker type.",
+																	"enum": [
+																		"boost"
+																	],
+																	"x-i18n": {
+																		"zh-CN": {
+																			"description": "Rerank 类型。"
+																		}
+																	}
+																},
+																"filter": {
+																	"type": "string",
+																	"description": "A post-search filtering to determine the entities to which the weight should apply.",
+																	"x-i18n": {
+																		"zh-CN": {
+																			"description": "搜索后过滤，用于确定搜索结果中需要应用 Boost 权重的 Entity。"
+																		}
+																	}
+																},
+																"weight": {
+																	"type": "string",
+																	"description": "Weight to apply.",
+																	"x-i18n": {
+																		"zh-CN": {
+																			"description": "需要应用的权重。"
+																		}
+																	}
+																}
+															}
 														}
 													}
-												}
-											},
-											"outputFieldNames": {
-												"type": "array",
-												"description": "A list of vector fields to use as output for the function.",
-												"x-i18n": {
-													"zh-CN": {
-														"description": "作为 Function 输出的向量字段名称列表。"
-													}
-												},
-												"items": {
-													"type": "string",
-													"description": "A vector field to use as output for the function.",
-													"x-i18n": {
-														"zh-CN": {
-															"description": "作为 Function 输出的一个向量字段名称。"
-														}
-													}
-												}											},
-											"params": {
-												"type": "object",
-												"description": "Extra parameters for the function in key-value pairs.",
-												"x-i18n": {
-													"zh-CN": {
-														"description": "Function 附加参数，以键值对形式提供。"
-													}
+													
 												}
 											}
 										}
@@ -32950,6 +32998,35 @@
 										"x-i18n": {
 											"zh-CN": {
 												"description": "搜索附加参数，以键值对形式提供。"
+											}
+										},
+										"properties": {
+											"boost_mode": {
+												"type": "string",
+												"description": "How the weight is applied to the entities that match the spcified post-search filter.",
+												"x-i18n": {
+													"zh-CN": {
+														"description": "确定满足指定搜索后过滤条件的搜索结果应用权重的方式。"
+													}
+												},
+												"enum": [
+													"multiply",
+													"sum"
+												],
+												"default": "multiply"
+											},
+											"function_mode": {
+												"type": "string",
+												"description": "How the weights from all boost functions are contatenated.",
+												"x-i18n": {
+													"zh-CN": {
+														"description": "确定来自所有指定的 Boost Function 的权重加权方式。"
+													}
+												},
+												"enum": [
+													"multiply",
+													"sum"
+												]
 											}
 										}
 									} 
