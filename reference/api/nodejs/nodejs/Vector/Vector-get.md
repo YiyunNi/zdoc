@@ -12,10 +12,10 @@ type: docx
 token: IbxXdvdZlonJk9xnlk2cZlIinCh
 sidebar_position: 3
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
+  - vector database example
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation gets specific entities by their IDs.
 
 ```javascript
-get(data): Promise<QueryResults>
+await milvusClient.get(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.get({
+await milvusClient.get({
    db_name: string,
    collection_name: string,
    consistency_level?: ConsistencyLevelEnum,
@@ -141,7 +141,10 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const getResults = await milvusClient.get({
    collection_name: 'my_collection',
    ids: ['1','2','3','4','5','6','7','8'],

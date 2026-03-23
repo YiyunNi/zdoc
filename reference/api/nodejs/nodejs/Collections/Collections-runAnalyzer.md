@@ -12,10 +12,10 @@ type: docx
 token: LsMldPd8GodoVqxCAZUcWYjdnwh
 sidebar_position: 18
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation runs an analyzer on the provided text for test purposes.
 
 ```javascript
-runAnalyzer(data): Promise<RunAnalyzerResponse>
+await milvusClient.runAnalyzer(data)
 ```
 
 ## Request Syntax\{#request-syntax}

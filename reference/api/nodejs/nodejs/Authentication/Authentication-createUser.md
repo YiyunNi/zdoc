@@ -12,10 +12,10 @@ type: docx
 token: JNZxdKEX3ohBl2xud7Wckhq7nVh
 sidebar_position: 7
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - NLP
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation creates a user.
 
 ```javascript
-createUser(data): Promise<ResStatus>
+await milvusClient.createUser(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.createUser({
+await milvusClient.createUser({
    username: string,
    password: string,
    timeout?: number
@@ -96,7 +96,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-milvusClient.createUser({
+await milvusClient.createUser({
    username: 'exampleUser',
    password: 'examplePassword',
  })

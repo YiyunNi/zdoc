@@ -12,10 +12,10 @@ type: docx
 token: FIzIdKrRNooFttxaf3Pc1vOlnnc
 sidebar_position: 5
 keywords: 
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
+  - llm hallucinations
+  - hybrid search
+  - lexical search
+  - nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
@@ -45,7 +45,7 @@ getFields()
 
 **RETURN TYPE:**
 
-*List\<CreateCollectionReq.FieldSchema>*
+*List&lt;CreateCollectionReq.FieldSchema&gt;*
 
 **RETURNS:**
 

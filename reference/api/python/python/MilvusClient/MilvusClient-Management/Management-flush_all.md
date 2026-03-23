@@ -12,10 +12,10 @@ type: docx
 token: QejKdv2qKo97mQxEV0CcaSM5nLh
 sidebar_position: 16
 keywords: 
-  - approximate nearest neighbor search
-  - DiskANN
-  - Sparse vector
-  - Vector Dimension
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud

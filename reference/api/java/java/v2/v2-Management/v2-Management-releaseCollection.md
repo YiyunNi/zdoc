@@ -12,10 +12,10 @@ type: docx
 token: K5t2dl0XloN4VHx1lcpc6Uq3nye
 sidebar_position: 16
 keywords: 
-  - Natural language search
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
+  - milvus database
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
   - zilliz
   - zilliz cloud
   - cloud

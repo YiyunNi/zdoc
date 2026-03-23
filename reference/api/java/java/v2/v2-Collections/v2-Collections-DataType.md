@@ -12,10 +12,10 @@ type: docx
 token: RZ8idPxaho5yMoxJzGdc7QAcnNf
 sidebar_position: 10
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - Embedding model
+  - image similarity search
+  - Context Window
+  - Natural language search
   - zilliz
   - zilliz cloud
   - cloud
@@ -105,7 +105,7 @@ This is an enumeration that provides the following constants.
 
 - SparseFloatVector(104)
 
-      Sets the data type to **Sparse Vector**.
+Sets the data type to **Sparse Vector**.
 
 - Inv8Vector(105)
 

@@ -12,10 +12,10 @@ type: docx
 token: PePIdiq9po6cplxAoF6ca5C2ntb
 sidebar_position: 4
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
+  - cosine distance
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation describes a specific index.
 
 ```javascript
-describeIndex(data): Promise<DescribeIndexResponse>
+await milvusClient.describeIndex(data)
 ```
 
 ## Request Syntax\{#request-syntax}

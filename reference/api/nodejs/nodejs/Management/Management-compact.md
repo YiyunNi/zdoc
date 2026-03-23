@@ -12,10 +12,10 @@ type: docx
 token: DCK5d56UZop0kGxpQu8cLqlvndg
 sidebar_position: 2
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation compacts and merges small segments into a larger one to save memory usage and improve search performance.
 
 ```javascript
-compact(data): Promise<CompactionResponse>
+await milvusClient.compact(data)
 ```
 
 ## Request Syntax\{#request-syntax}
@@ -95,7 +95,10 @@ This method returns a promise that resolves to a *CompactionResponse* object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const resStatus = await milvusClient.compact({
       collection_name: 'my_collection',
  });

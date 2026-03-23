@@ -12,10 +12,10 @@ type: docx
 token: TuyKdaa1SoOstTx9DglcWfzknTh
 sidebar_position: 3
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Vector store
+  - open source vector database
+  - Vector index
+  - vector database open source
   - zilliz
   - zilliz cloud
   - cloud

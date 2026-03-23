@@ -12,10 +12,10 @@ type: docx
 token: QH3hdlzwDoxHjTxPj39c6qMSnbg
 sidebar_position: 7
 keywords: 
-  - Vector index
-  - vector database open source
-  - open source vector db
-  - vector database example
+  - knn
+  - Image Search
+  - LLMs
+  - Machine Learning
   - zilliz
   - zilliz cloud
   - cloud

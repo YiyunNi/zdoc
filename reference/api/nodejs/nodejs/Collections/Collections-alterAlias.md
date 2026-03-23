@@ -12,10 +12,10 @@ type: docx
 token: DXTLdtFCso7fo6xJHShc7XLpngh
 sidebar_position: 1
 keywords: 
-  - nn search
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation reassigns the alias of one collection to another.
 
 ```javascript
-alterAlias(data): Promise<ResStatus>
+await milvusClient.alterAlias(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.alterAlias({
+await milvusClient.alterAlias({
    alias: string,
    db_name: string
    collection_name: string,
@@ -119,7 +119,10 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const resStatus = await milvusClient.alterAlias({
    alias: 'my_collection_alias',
    collection_name: 'my_collection',

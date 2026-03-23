@@ -12,10 +12,10 @@ type: docx
 token: Z0EOd1PXooNeowx4SQgcq3synBc
 sidebar_position: 21
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
+  - Chroma vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation lists currently available users.
 
 ```javascript
-listUsers(data): Promise<ListCredUsersResponse>
+await milvusClient.listUsers(data)
 ```
 
 ## Request Syntax\{#request-syntax}

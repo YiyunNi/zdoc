@@ -12,10 +12,10 @@ type: docx
 token: LSwVdMg4SorzZ5xSHHVcQeVDnfh
 sidebar_position: 16
 keywords: 
-  - Audio similarity search
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
+  - what is semantic search
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation renames an existing collection.
 
 ```javascript
-renameCollection(data): Promise<ResStatus>
+await milvusClient.renameCollection(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.renameCollection({
+await milvusClient.renameCollection({
    db_name: string,
    collection_name: string,
    new_collection_name: string,
@@ -101,7 +101,10 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const resStatus = await milvusClient.renameCollection({
    collection_name: 'my_collection',
    new_collection_name: 'my_new_collection'

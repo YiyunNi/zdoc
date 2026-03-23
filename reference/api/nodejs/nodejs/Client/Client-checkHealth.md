@@ -12,10 +12,10 @@ type: docx
 token: DDvudeY20o6tV5xwwo4cKovjnHf
 sidebar_position: 2
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
+  - vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation checks the health status of the Milvus server.
 
 ```javascript
-checkHealth(): Promise<CheckHealthResponse>
+await milvusClient.checkHealth()
 ```
 
 ## Request Syntax\{#request-syntax}

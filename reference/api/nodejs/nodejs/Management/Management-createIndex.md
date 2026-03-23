@@ -12,10 +12,10 @@ type: docx
 token: Nu0Id3wzGoJIFyxkC7IcmjAznNf
 sidebar_position: 3
 keywords: 
-  - vector db comparison
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
+  - Vector Dimension
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation creates an index for a specific collection.
 
 ```javascript
-createIndex(data): Promise<ResStatus>
+await milvusClient.createIndex(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.createIndex([
+await milvusClient.createIndex([
     {
        db_name?: string,
        collection_name: string,
@@ -132,7 +132,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-milvusClient._createIndex({
+await milvusClient._createIndex({
    collection_name: "my_collection",
    field_name: "vector_field",
    index_name: "vector_index"

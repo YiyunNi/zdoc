@@ -12,10 +12,10 @@ type: docx
 token: QI87dhVnioL9JLxnNKxcM8jWnkh
 sidebar_position: 3
 keywords: 
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
   - zilliz
   - zilliz cloud
   - cloud
@@ -190,16 +190,4 @@ res = client.insert(
 
 # {'insert_count': 2}
 ```
-
-## Related methods\{#related-methods}
-
-- [delete()](./Vector-delete)
-
-- [get()](./Vector-get)
-
-- [query()](./Vector-query)
-
-- [search()](./Vector-search)
-
-- [upsert()](./Vector-upsert)
 

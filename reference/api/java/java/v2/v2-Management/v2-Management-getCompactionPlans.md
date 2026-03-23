@@ -12,10 +12,10 @@ type: docx
 token: BDNBdbEOioqnlKxRd3DcY7wRncg
 sidebar_position: 22
 keywords: 
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
+  - Faiss vector database
+  - Chroma vector database
+  - nlp search
+  - hallucinations llm
   - zilliz
   - zilliz cloud
   - cloud

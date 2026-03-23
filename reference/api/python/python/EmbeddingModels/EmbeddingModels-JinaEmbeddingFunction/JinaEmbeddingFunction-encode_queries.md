@@ -12,10 +12,10 @@ type: docx
 token: FgbjdQHBEoITxgxk7NMc1NzpnAc
 sidebar_position: 2
 keywords: 
+  - What is unstructured data
+  - Vector embeddings
+  - Vector store
   - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud

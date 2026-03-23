@@ -12,10 +12,10 @@ type: docx
 token: JRNidzqX4o6VtkxVB5RcNvmHnnb
 sidebar_position: 2
 keywords: 
-  - Unstructured Data
-  - vector database
-  - IVF
-  - knn
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
+  - Faiss vector database
   - zilliz
   - zilliz cloud
   - cloud

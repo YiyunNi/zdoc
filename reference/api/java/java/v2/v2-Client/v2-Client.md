@@ -12,10 +12,10 @@ token: LxHMfE9RNlOtvOdHs9wcrGnWnGg
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
+  - rag vector database
+  - what is vector db
+  - what are vector databases
+  - vector databases comparison
   - zilliz
   - zilliz cloud
   - cloud

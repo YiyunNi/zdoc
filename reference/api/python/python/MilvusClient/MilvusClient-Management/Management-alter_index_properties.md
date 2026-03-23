@@ -12,10 +12,10 @@ type: docx
 token: QvyHdbEHholEqXxypKNcHHD5n0c
 sidebar_position: 14
 keywords: 
-  - Vector store
-  - open source vector database
-  - Vector index
-  - vector database open source
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud

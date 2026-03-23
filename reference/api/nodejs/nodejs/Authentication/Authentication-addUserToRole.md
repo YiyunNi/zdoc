@@ -12,10 +12,10 @@ type: docx
 token: Qc72dTKgroNdHjxIG2xcwNdmnHb
 sidebar_position: 2
 keywords: 
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation adds a user to a specific role.
 
 ```javascript
-addUserToRole(data): Promise<ResStatus>
+await milvusClient.addUserToRole(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.addUserToRole({
+await milvusClient.addUserToRole({
    username: string,
    rolename: string,
    timeout?: number
@@ -96,7 +96,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-milvusClient.addUserToRole({
+await milvusClient.addUserToRole({
     username: 'myUser',
     roleName: 'myRole'
 });

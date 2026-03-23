@@ -12,10 +12,10 @@ type: docx
 token: BCGKdCttdotF32xUJTec8UFlndg
 sidebar_position: 28
 keywords: 
-  - Large language model
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation updates the password of a specific user.
 
 ```javascript
-updateUser(data): Promise<ResStatus>
+await milvusClient.updateUser(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.updateUser({
+await milvusClient.updateUser({
    username: string,
    newPassword: string,
    oldPassword: string,
@@ -103,7 +103,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-milvusClient.updateUser({
+await milvusClient.updateUser({
    username: 'exampleUser',
    newPassword: 'newPassword',
    oldPassword: 'oldPassword',

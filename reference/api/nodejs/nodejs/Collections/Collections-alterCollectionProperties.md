@@ -12,10 +12,10 @@ type: docx
 token: EHPGdbCP5o7UzCxlDnRc6y5Pn1c
 sidebar_position: 3
 keywords: 
-  - Faiss
-  - Video search
-  - AI Hallucination
-  - AI Agent
+  - what is milvus
+  - milvus database
+  - milvus lite
+  - milvus benchmark
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation modifies the properties of a specified collection.
 
 ```javascript
-alterCollectionProperties(data): Promise<ResStatus>
+await milvusClient.alterCollectionProperties(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.alterCollectionProperties({
+await milvusClient.alterCollectionProperties({
    db_name?: string
    collection_name: string,
    delete_keys?: string[],
@@ -114,7 +114,10 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const resStatus = await milvusClient.alterCollection({
     collection_name: 'my-collection',
     properties: {"collection.ttl.seconds": 18000}

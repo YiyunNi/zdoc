@@ -12,10 +12,10 @@ type: docx
 token: MPJ0dxzDIoNKYPxGA5PcD2F8nRb
 sidebar_position: 2
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud
@@ -45,7 +45,7 @@ getDataType()
 
 **RETURN TYPE:**
 
-*DataType*
+*[DataType](./v2-Collections-DataType)*
 
 **RETURNS:**
 

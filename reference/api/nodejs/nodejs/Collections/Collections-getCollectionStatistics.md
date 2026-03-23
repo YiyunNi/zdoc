@@ -12,10 +12,10 @@ type: docx
 token: LQMGdRHjKogdeMxekCtcdBLqnNf
 sidebar_position: 12
 keywords: 
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
-  - Annoy vector search
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation lists the statistics collected on a specific collection.
 
 ```javascript
-getCollectionStatistics(data): Promise<StatisticsResponse>
+await milvusClient.getCollectionStatistics(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getCollectionStatistics({ 
+await milvusClient.getCollectionStatistics({ 
     db_name: string,
     collection_name: string,
     timeout?: number 
@@ -100,7 +100,10 @@ This method returns a promise that resolves to a **StatisticsResponse** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const res = await milvusClient.getCollectionStatistics({ collection_name: 'my_collection' });
 ```
 

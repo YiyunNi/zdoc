@@ -12,10 +12,10 @@ type: docx
 token: WR4qdjFUXog2JHxuJpMcWcVlnEf
 sidebar_position: 18
 keywords: 
-  - sentence transformers
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

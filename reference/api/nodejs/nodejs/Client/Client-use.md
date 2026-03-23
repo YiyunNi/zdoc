@@ -9,13 +9,13 @@ deprecate_since: false
 notebook: false
 description: "This operation sets the active database for the gRPC client. After calling this method, all subsequent operations will target the specified database. | Node.js"
 type: docx
-token: BIdXdCDCDookQDxtxzdcOEPInmw
+token: Dc3JdXF5dogLOLxqUPGclM6jn6f
 sidebar_position: 7
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
@@ -33,8 +33,16 @@ import Admonition from '@theme/Admonition';
 
 This operation sets the active database for the gRPC client. After calling this method, all subsequent operations will target the specified database.
 
-```typescript
+```javascript
 await milvusClient.use({ db_name: string })
+```
+
+## Request Syntax\{#request-syntax}
+
+```javascript
+await milvusClient.use({
+    db_name: string,
+})
 ```
 
 **PARAMETERS:**
@@ -55,9 +63,12 @@ await milvusClient.use({ db_name: string })
 
 ## Example\{#example}
 
-```typescript
+```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-const client = new MilvusClient({ address: 'YOUR_CLUSTER_ENDPOINT' });
+const client = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 await client.use({ db_name: 'my_database' });
 ```

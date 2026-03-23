@@ -12,10 +12,10 @@ type: docx
 token: Tq1Md4GuIoNbfuxK03ncIa7onMc
 sidebar_position: 1
 keywords: 
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation checks the compatibility of the SDK with the Milvus server.
 
 ```javascript
-checkCompatibility(data?): Promise<any>
+await milvusClient.checkCompatibility(data?)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.checkCompatibility({
+await milvusClient.checkCompatibility({
     checker?: Function,
     message?: string
 })
@@ -67,7 +67,7 @@ A promise that resolves to the result of the specified checker function.
 ## Examples\{#examples}
 
 ```javascript
-milvusClient.checkCompatibility({
+await milvusClient.checkCompatibility({
    checker: () => { console.log("compatible") },
    message: "incompatible"
 });

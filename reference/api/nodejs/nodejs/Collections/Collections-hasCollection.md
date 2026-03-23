@@ -12,10 +12,10 @@ type: docx
 token: FhbbdNrlNouBXJxHIdKctXVKnmf
 sidebar_position: 13
 keywords: 
+  - how do vector databases work
+  - vector db comparison
   - openai vector db
   - natural language processing database
-  - cheap vector database
-  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation checks whether a specific collection exists.
 
 ```javascript
-hasCollection(data): Promise<BoolResponse>
+await milvusClient.hasCollection(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.hasCollection({ 
+await milvusClient.hasCollection({ 
     db_name: string,
     collection_name: string,
     timeout?: number
@@ -99,7 +99,10 @@ This method returns a promise that resolves to a **BoolResponse** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const res = await milvusClient.hasCollection({ collection_name: 'my_collection' });
 ```
 

@@ -12,10 +12,10 @@ type: docx
 token: BDqGdp4uqo3XRexslRNcts9knmd
 sidebar_position: 11
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

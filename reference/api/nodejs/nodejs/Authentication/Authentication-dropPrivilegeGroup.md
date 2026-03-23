@@ -12,10 +12,10 @@ type: docx
 token: I63tdWAY2ok8V1xrK4tcrkwjncd
 sidebar_position: 12
 keywords: 
-  - Machine Learning
-  - RAG
-  - NLP
-  - Neural Network
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation adds a user to a specific role.
 
 ```javascript
-dropPrivilegeGroup(data): Promise<ResStatus>
+await milvusClient.dropPrivilegeGroup(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.dropPrivilegeGroup({
+await milvusClient.dropPrivilegeGroup({
    timeout?: number
 })
 ```

@@ -12,10 +12,10 @@ type: docx
 token: ItZPd1o4uoodqtx1sxIcq38hn7e
 sidebar_position: 9
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation describes a specific role.
 
 ```javascript
-describeRole(data): Promise<SelectRoleResponse>
+await milvusClient.describeRole(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.describeRole({
+await milvusClient.describeRole({
     includeUserInfo?: boolean,
     roleName: string,
     timeout?: number

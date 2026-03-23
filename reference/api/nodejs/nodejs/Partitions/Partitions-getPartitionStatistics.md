@@ -12,10 +12,10 @@ type: docx
 token: XDXid6aZ8oCHnVxxFpPcKAB9n0c
 sidebar_position: 3
 keywords: 
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
+  - vector database
+  - IVF
+  - knn
+  - Image Search
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation displays the statistics collected on a specific partition.
 
 ```javascript
-getPartitionStatistics(data): Promise<StatisticsResponse>
+await milvusClient.getPartitionStatistics(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getPartitionStatistics({
+await milvusClient.getPartitionStatistics({
     db_name: string,
     collection_name: string,
     partition_name: string,
@@ -111,7 +111,10 @@ This method returns a promise that resolves to a **StatisticsResponse** object.
 ## Example\{#example}
 
 ```java
-new milvusClient(MILUVS_ADDRESS).getPartitionStatistics({
+new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+}).getPartitionStatistics({
     collection_name: 'my_collection',
     partition_name: "_default",
  });

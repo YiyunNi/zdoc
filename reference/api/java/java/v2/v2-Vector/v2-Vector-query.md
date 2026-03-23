@@ -12,10 +12,10 @@ type: docx
 token: VXCddqVY5oholaxUlRNcYhOjndh
 sidebar_position: 5
 keywords: 
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
-  - Pinecone vector database
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - milvus vector db
   - zilliz
   - zilliz cloud
   - cloud

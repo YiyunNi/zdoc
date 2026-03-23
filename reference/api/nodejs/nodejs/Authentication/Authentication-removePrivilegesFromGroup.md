@@ -12,10 +12,10 @@ type: docx
 token: EeAfdukBNoIIgCxX248c6VULnOb
 sidebar_position: 22
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation removes privileges from a specific privilege group in Milvus.
 
 ```javascript
-removePrivilegesFromGroup(data): Promise<ResStatus>
+await milvusClient.removePrivilegesFromGroup(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.removePrivilegesFromGroup({
+await milvusClient.removePrivilegesFromGroup({
    group_name: string,
    privileges: string[],
    timeout?: number

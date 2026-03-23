@@ -12,10 +12,10 @@ type: docx
 token: CJ9DdmU1ooquOnxcK5AciA3sn3g
 sidebar_position: 18
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - Annoy vector search
+  - milvus
+  - Zilliz
+  - milvus vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation lists the privileges granted to the specified role.
 
 ```javascript
-listGrants(data): Promise<SelectGrantResponse>
+await milvusClient.listGrants(data)
 ```
 
 ## Request Syntax\{#request-syntax}

@@ -12,10 +12,10 @@ type: docx
 token: R618dfeMYo9GdmxMwe9cQLclncs
 sidebar_position: 15
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation assigns a privilege or a privilege group to a role.
 
 ```javascript
-grantPrivilegeV2(data): Promise<ResStatus>
+await milvusClient.grantPrivilegeV2(data)
 ```
 
 ## Request Syntax\{#request-syntax}

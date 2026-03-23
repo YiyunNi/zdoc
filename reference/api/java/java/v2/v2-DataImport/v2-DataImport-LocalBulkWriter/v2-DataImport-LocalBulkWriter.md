@@ -12,10 +12,10 @@ type: docx
 token: G7F9dQ8DwoZsaVxExdnc7K6an3g
 sidebar_position: 5
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -75,7 +75,7 @@ LocalBulkWriterParam.newBuilder()
 
 - `withCollectionSchema(CreateCollectionReq.CollectionSchema collectionSchema)`
 
-    The schema of the target collection that is defined by instantiating **[CreateCollectionReq.CollectionSchema](./v2-Collections-CollectionSchema)**.
+    The schema of the target collection that is defined by instantiating **CreateCollectionReq.CollectionSchema**.
 
 - `withLocalPath(String localPath)`
 

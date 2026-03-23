@@ -12,10 +12,10 @@ type: docx
 token: Y3q1d5FzmoSiNkxsWDLcHnAlnQf
 sidebar_position: 13
 keywords: 
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
-  - open source vector database
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud

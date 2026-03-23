@@ -12,10 +12,10 @@ type: docx
 token: HqE5d2jOroEuObxIjkZcHkX4nWX
 sidebar_position: 12
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - how do vector databases work
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation gets the status of the specified index.
 
 ```javascript
-getIndexState(data): Promise<GetIndexStateResponse>
+await milvusClient.getIndexState(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getIndexState({
+await milvusClient.getIndexState({
       db_name?: string,
       collection_name: string,
       field_name?: string,

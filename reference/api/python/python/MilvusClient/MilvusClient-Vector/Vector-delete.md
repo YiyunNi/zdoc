@@ -12,10 +12,10 @@ type: docx
 token: DWLXdSCYnoPT4ExktRKceEqLnAd
 sidebar_position: 1
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - natural language processing
+  - AI chatbots
+  - cosine distance
+  - what is a vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -167,16 +167,4 @@ client.delete(
 
 # {'delete_count': 2}
 ```
-
-## Related methods\{#related-methods}
-
-- [get()](./Vector-get)
-
-- [insert()](./Vector-insert)
-
-- [query()](./Vector-query)
-
-- [search()](./Vector-search)
-
-- [upsert()](./Vector-upsert)
 

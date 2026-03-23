@@ -12,10 +12,10 @@ type: docx
 token: AXt2dvFmQoP04wx9zlVciuitnQf
 sidebar_position: 10
 keywords: 
-  - what is milvus
-  - milvus database
-  - milvus lite
-  - milvus benchmark
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud

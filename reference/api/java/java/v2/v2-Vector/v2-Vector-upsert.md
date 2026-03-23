@@ -12,10 +12,10 @@ type: docx
 token: Dlw6dmlcIocK94xkMK3cv0ppnJd
 sidebar_position: 9
 keywords: 
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
-  - hybrid vector search
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ type: docx
 token: QIpldgpB1oP5IYxNSSdcyRNcn1c
 sidebar_position: 2
 keywords: 
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
-  - Agentic RAG
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud
@@ -110,7 +110,7 @@ DecayRanker.builder()
 
 **RETURNS:**
 
- A decay ranker instance.
+A decay ranker instance.
 
 ## Examples:\{#examples}
 

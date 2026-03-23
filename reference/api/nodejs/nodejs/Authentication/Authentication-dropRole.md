@@ -12,10 +12,10 @@ type: docx
 token: AnkUdEHXmob3Vwx9GIWcDOQanng
 sidebar_position: 13
 keywords: 
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
-  - Vector store
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation drops a custom role.
 
 ```javascript
-dropRole(data): Promise<ResStatus>
+await milvusClient.dropRole(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.dropRole({
+await milvusClient.dropRole({
    roleName: string,
    timeout?: number
  })
@@ -89,7 +89,7 @@ This method returns a promise that resolves to a **ResStatus** object.
 ## Example\{#example}
 
 ```java
-milvusClient.dropRole({
+await milvusClient.dropRole({
    roleName: 'exampleRole',
  })
 ```

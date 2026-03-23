@@ -12,10 +12,10 @@ type: docx
 token: JqOJdOA6Dooy2cxAXTkcQpBEnyk
 sidebar_position: 19
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation adds a new scalar field to an existing collection without recreating it. The field becomes available almost immediately with minimal delay due to internal schema synchronization.
 
 ```javascript
-addCollectionField(data: AddCollectionFieldReq): Promise<ResStatus>
+await milvusClient.addCollectionField(data: AddCollectionFieldReq)
 ```
 
 <Admonition type="info" icon="📘" title="Notes">
@@ -46,7 +46,7 @@ addCollectionField(data: AddCollectionFieldReq): Promise<ResStatus>
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.addCollectionField({
+await milvusClient.addCollectionField({
     collection_name: string,
     db_name?: string,
     field: FieldType,

@@ -12,10 +12,10 @@ type: docx
 token: SRI6dEn82oNe4Uxro8hcyFV3n1d
 sidebar_position: 32
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - open source vector database
+  - Vector index
+  - vector database open source
+  - open source vector db
   - zilliz
   - zilliz cloud
   - cloud
@@ -121,7 +121,7 @@ A **DescribeCollectionResp** object that contains detailed information about the
 
     The time when the collection was created in UTC.
 
-- **consistencyLevel** (*ConsistencyLevel*) -
+- **[consistencyLevel](./v2-Collections-ConsistencyLevel)** (*[ConsistencyLevel](./v2-Collections-ConsistencyLevel)*) -
 
     The consistency level of the collection.
 

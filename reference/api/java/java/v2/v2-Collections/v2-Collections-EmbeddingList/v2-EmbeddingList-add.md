@@ -12,10 +12,10 @@ type: docx
 token: PUOBd229uoQGUIxnHLWcMSidnQh
 sidebar_position: 1
 keywords: 
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
   - zilliz
   - zilliz cloud
   - cloud
@@ -31,7 +31,7 @@ import Admonition from '@theme/Admonition';
 
 # add()
 
-This operation adds vector embeddings to an **EmbeddingList** instance.
+This operation adds vector embeddings to an **[EmbeddingList](./v2-Collections-EmbeddingList)** instance.
 
 ```java
 public void add(BaseVector vector)
@@ -45,7 +45,7 @@ public void add(BaseVector vector)
 
 **RETURN TYPE:**
 
-*EmbeddingList*
+*[EmbeddingList](./v2-Collections-EmbeddingList)*
 
 **RETURNS:**
 

@@ -12,10 +12,10 @@ type: docx
 token: FuDHdadxHoX9qSxe4aac4wzNnRh
 sidebar_position: 23
 keywords: 
-  - multimodal vector database retrieval
-  - Retrieval Augmented Generation
-  - Large language model
-  - Vectorization
+  - image similarity search
+  - Context Window
+  - Natural language search
+  - Similarity Search
   - zilliz
   - zilliz cloud
   - cloud

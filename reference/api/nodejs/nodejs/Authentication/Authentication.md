@@ -12,10 +12,10 @@ token: KWn3ff3dRlg3zndqerbcW0QXn1c
 sidebar_position: 1
 sidebar_label: "Authentication"
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
+  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud

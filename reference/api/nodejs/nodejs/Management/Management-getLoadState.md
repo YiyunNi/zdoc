@@ -12,10 +12,10 @@ type: docx
 token: J17ZdPNwqo4nt3x5b8pc0H5Nnph
 sidebar_position: 14
 keywords: 
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
-  - Zilliz vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
+  - what is milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,13 +34,13 @@ import Admonition from '@theme/Admonition';
 This operation displays whether a specified collection or partition is loaded or not.
 
 ```javascript
-getLoadState(data): Promise<GetLoadStateResponse>
+await milvusClient.getLoadState(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getLoadState({
+await milvusClient.getLoadState({
    db_name: string,
    collection_name: string,
    partition_names?: string[],
@@ -110,7 +110,10 @@ This method returns a promise that resolves to a **GetLoadStateResponse** object
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const resStatus = await milvusClient.getLoadState({
    collection_name: 'my_collection',
  });

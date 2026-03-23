@@ -12,10 +12,10 @@ type: docx
 token: HSIDdxQGEoPdyaxkMDjcAWGQnpd
 sidebar_position: 17
 keywords: 
-  - Image Search
-  - LLMs
-  - Machine Learning
-  - RAG
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation lists the privileges granted to the specified role.
 
 ```javascript
-listGrant(data): Promise<SelectGrantResponse>
+await milvusClient.listGrant(data)
 ```
 
 ## Request Syntax\{#request-syntax}

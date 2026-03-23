@@ -12,10 +12,10 @@ type: docx
 token: V9YUdnfxDoc5Gmx80Wec9P6Sn2d
 sidebar_position: 7
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - Zilliz Cloud
+  - what is milvus
+  - milvus database
+  - milvus lite
   - zilliz
   - zilliz cloud
   - cloud
@@ -73,7 +73,7 @@ WeightedRanker.builder()
 
 **RETURNS:**
 
- A weighted ranker instance.
+A weighted ranker instance.
 
 ## Examples:\{#examples}
 

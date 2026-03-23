@@ -12,10 +12,10 @@ type: docx
 token: HSYzdg59FoBzeIxymrLc0EbBnyd
 sidebar_position: 5
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - ANNS
+  - Vector search
+  - knn algorithm
+  - HNSW
   - zilliz
   - zilliz cloud
   - cloud

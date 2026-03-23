@@ -12,10 +12,10 @@ type: docx
 token: UrjHd9KZKo1Rlfxfj8AcmXNinlg
 sidebar_position: 2
 keywords: 
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
+  - milvus lite
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -149,9 +149,9 @@ PoolConfig poolConfig = PoolConfig.builder()
 
     If this flag is set to true, the pool will check if the grpc connection of a client is terminated or closed each time the returnClient() is called.
 
-## ConnectConfig\{#connectconfig}
+## [ConnectConfig](./v2-Client-ConnectConfig)\{#connectconfigv2-client-connectconfig}
 
-Read the description on the **[MilvusClientV2](./v2-Client-MilvusClientV2)** page.
+Read the description on the **[MilvusClientV2](./v2-Client-MilvusClientV2#connectconfigv2-client-connectconfig)** page.
 
 ## Examples\{#examples}
 

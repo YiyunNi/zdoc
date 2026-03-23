@@ -12,10 +12,10 @@ type: docx
 token: PvRGdribPou7PHxcoSWcRK3unUc
 sidebar_position: 4
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - Vector search
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
   - zilliz
   - zilliz cloud
   - cloud
@@ -45,7 +45,7 @@ getElementType()
 
 **RETURN TYPE:**
 
-*DataType*
+*[DataType](./v2-Collections-DataType)*
 
 **RETURNS:**
 

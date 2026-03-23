@@ -9,13 +9,13 @@ deprecate_since: false
 notebook: false
 description: "This operation loads collection data into query nodes, then you can do vector search on this collection. This is an async function — use `getLoadState()` or `getLoadingProgress()` to check loading status. | Node.js"
 type: docx
-token: KHSXdU30ZouTe4xcPbechcMPn9d
+token: SqSZdmSoVoBuiSxe1a1cdOuZnDd
 sidebar_position: 27
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - Video search
+  - AI Hallucination
+  - AI Agent
+  - semantic search
   - zilliz
   - zilliz cloud
   - cloud
@@ -33,8 +33,23 @@ import Admonition from '@theme/Admonition';
 
 This operation loads collection data into query nodes, then you can do vector search on this collection. This is an async function — use `getLoadState()` or `getLoadingProgress()` to check loading status.
 
-```typescript
+```javascript
 await milvusClient.loadCollectionAsync(data: LoadCollectionReq)
+```
+
+## Request Syntax\{#request-syntax}
+
+```javascript
+await milvusClient.loadCollectionAsync({
+    collection_name: string,
+    db_name?: string,
+    replica_number?: number,
+    resource_groups?: string[],
+    refresh?: boolean,
+    load_fields?: string[],
+    skip_load_dynamic_field?: boolean,
+    timeout?: number,
+})
 ```
 
 **PARAMETERS:**
@@ -85,10 +100,13 @@ await milvusClient.loadCollectionAsync(data: LoadCollectionReq)
 
 ## Example\{#example}
 
-```typescript
+```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-const client = new MilvusClient({ address: 'YOUR_CLUSTER_ENDPOINT' });
+const client = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 await client.loadCollectionAsync({
     collection_name: 'my_collection',
 });

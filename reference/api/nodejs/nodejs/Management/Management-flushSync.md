@@ -12,10 +12,10 @@ type: docx
 token: QsTwdUbgyoZPV1xzCBxchX8Fnid
 sidebar_position: 8
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud
@@ -34,7 +34,7 @@ import Admonition from '@theme/Admonition';
 This operation manually seals a segment and persists the data on disk. It is recommended that this operation be called after all the data has been inserted into a collection. This is the synchronous function that ensures the flush operation is complete before the function returns.
 
 ```javascript
-flushSync(data): Promise<GetFlushStateResponse>
+await milvusClient.flushSync(data)
 ```
 
 <Admonition type="info" icon="📘" title="Notes">
@@ -46,7 +46,7 @@ flushSync(data): Promise<GetFlushStateResponse>
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.flushSync({
+await milvusClient.flushSync({
     db_name?: string,
     collection_names: string[],
     timeout?: number
@@ -109,7 +109,10 @@ This method returns a promise that resolves to a **GetFlushStateResponse** objec
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const flushSyncStatus = await milvusClient.flushSync({
     collection_names: ['my_collection'],
 });

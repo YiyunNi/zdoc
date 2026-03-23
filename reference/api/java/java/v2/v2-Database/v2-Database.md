@@ -12,10 +12,10 @@ token: GKUCfGIFEluyMgdvioDc9sH7nzh
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
-  - milvus lite
+  - k nearest neighbor algorithm
+  - ANNS
+  - Vector search
+  - knn algorithm
   - zilliz
   - zilliz cloud
   - cloud

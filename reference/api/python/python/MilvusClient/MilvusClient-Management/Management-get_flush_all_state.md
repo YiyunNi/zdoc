@@ -12,10 +12,10 @@ type: docx
 token: G31wdmzVFo687JxZTAGctQlKnir
 sidebar_position: 19
 keywords: 
-  - Chroma vs Milvus
-  - Annoy vector search
-  - milvus
-  - Zilliz
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud
