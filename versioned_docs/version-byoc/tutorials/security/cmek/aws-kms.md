@@ -113,7 +113,7 @@ If the drop-down list in the **Select AWS IAM Role** step is empty, you need to 
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>When you use a KMS key to encrypt a Zilliz Cloud cluster, the cluster checks the key's availability every 10 minutes and becomes available only after it detects that the key is available.</p>
+<p>When you use a KMS key to encrypt a Zilliz Cloud cluster, the cluster checks the key's availability every 10 minutes. It becomes available only after it detects that the key is available.</p>
 
 </Admonition>
 

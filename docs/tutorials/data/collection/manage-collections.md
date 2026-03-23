@@ -1,7 +1,7 @@
 ---
 title: "Collection Explained | Cloud"
 slug: /manage-collections
-sidebar_label: "Collection Explained"
+sidebar_label: "Overview"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

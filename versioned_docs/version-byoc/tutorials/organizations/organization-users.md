@@ -54,6 +54,12 @@ The following table lists the corresponding UI and API privileges of this organi
    </tr>
 </table>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
+
 ### Organization Billing Admin\{#organization-billing-admin}
 
 An Organization Billing Admin role has the privileges to manage billing in an organization. This role does not have privileges to other data in the organization.

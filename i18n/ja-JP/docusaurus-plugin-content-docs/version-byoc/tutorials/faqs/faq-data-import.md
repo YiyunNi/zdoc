@@ -4,7 +4,7 @@ slug: /faq-data-import
 sidebar_label: "FAQ: データインポート"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloudでデータをインポートする際に発生する可能性のある問題と、それに対応する解決策をリストアップします。 | BYOC"
+description: "このトピックでは、Zilliz Cloud でデータをインポートする際に発生する可能性のある問題と、それに対応する解決策を一覧にしています。| BYOC"
 type: origin
 token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 4
@@ -13,50 +13,50 @@ sidebar_position: 4
 
 # FAQ: データインポート
 
-このトピックでは、Zilliz Cloudでデータをインポートする際に発生する可能性のある問題と、それに対応する解決策をリストアップします。
+このトピックでは、Zilliz Cloud にデータをインポートする際に発生する可能性のある問題とその対処方法を紹介します。
 
 ## 目次
 
-- [オブジェクトストレージサービスからデータをインポートする際に、短期的な認証情報を使用できますか？](#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service)
-- [Zilliz Cloudベクターデータベースにデータを一括挿入できますか？](#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases)
-- [Node.js SDKを使用してZilliz Cloudクラスターにデータをインポートまたはクエリする際に、ECONNRESETエラーが発生した場合、どうすればよいですか？](#what-can-i-do-if-i-receive-econnreset-errors-when-impo rting-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk)
+- [オブジェクトストレージサービスからデータをインポートする際に短期間有効な認証情報を使用できますか？](#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service)
+- [Zilliz Cloud ベクトルデータベースに一括でデータを挿入できますか？](#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases)
+- [Node.js SDK を使用して Zilliz Cloud クラスターにデータをインポートまたはクエリ実行中に ECONNRESET エラーが発生した場合はどうすればよいですか？](#what-can-i-do-if-i-receive-econnreset-errors-when-importing-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk)
 
-## FAQ
-
-
+## よくある質問
 
 
-### オブジェクトストレージサービスからデータをインポートする際に、短期的な認証情報を使用できますか？{#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service}
 
-はい。データセキュリティ要件に基づいて、オブジェクトストレージサービスからデータをインポートする際にセッショントークンを使用できます。
+
+### オブジェクトストレージサービスからデータをインポートする際に短期間有効な認証情報を使用できますか？\{#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service}
+
+はい。データセキュリティ要件に基づき、オブジェクトストレージサービスからデータをインポートする際にセッショントークンを使用できます。
 
 1. セッショントークンを生成します。
 
-    - Amazon S3: [AWSリソースでの一時的な認証情報の使用](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)。
+    - Amazon S3: [Using temporary credentials with AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)
 
-    - Google Cloud Storage: [サービスアカウントの短期間の認証情報を作成する](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct)
+    - Google Cloud Storage: [Create short-lived credentials for a service account](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct)
 
-    - Azure Blob Storage: [ストレージコンテナーのSASトークンを作成する](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/create-sas-tokens?view=doc-intel-4.0.0)
+    - Azure Blog Storage: [Create SAS tokens for storage containers](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/create-sas-tokens?view=doc-intel-4.0.0)
 
-1. データインポート中に以下のセッショントークン情報を入力します。
+1. データインポート時に以下のセッショントークン情報を入力します。
 
-    - Amazon S3: `accessKeyId`、`secretAccessKey`、`sessionToken`
+    - Amazon S3: `accessキーId`, `secretAccessキー`, `sessionToken`
 
     - Google Cloud Storage: `accessToken`
 
-    - Azure Blob Storage: `sasToken`
+    - Azure Blog Storage: `sasToken`
 
-### Zilliz Cloudベクターデータベースにデータを一括挿入できますか？{#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases}
+### Zilliz Cloud ベクトルデータベースに一括でデータを挿入できますか？\{#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases}
 
-はい。詳細については、[データインポート](./data-import)を参照してください。
+はい。詳細については、[データインポート](./data-import) を参照してください。
 
-### Node.js SDKを使用してZilliz Cloudクラスターにデータをインポートまたはクエリする際に、ECONNRESETエラーが発生した場合、どうすればよいですか？{#what-can-i-do-if-i-receive-econnreset-errors-when-importing-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk}
+### Node.js SDK を使用して Zilliz Cloud クラスターにデータをインポートまたはクエリ実行中に ECONNRESET エラーが発生した場合はどうすればよいですか？\{#what-can-i-do-if-i-receive-econnreset-errors-when-importing-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk}
 
 この問題を解決するには、以下の手順に従ってください。
 
-1. **channelOptions**をサポートするMilvus NodeJS SDKの最新バージョンにアップグレードします。
+1. **channelOptions** をサポートする最新バージョンの Milvus NodeJS SDK にアップグレードします。
 
-1. channelOptionsを手動で追加します。
+1. channelOptions を手動で追加します。
 
     ```javascript
     const channelOptions: ChannelOptions = {

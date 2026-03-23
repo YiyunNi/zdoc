@@ -229,7 +229,7 @@ curl --request GET \
 
 <TabItem value="Cloud Console">
 
-![view-invoice-detail](https://zdoc-images.s3.us-west-2.amazonaws.com/view-invoice-detail.png "view-invoice-detail")
+undefined
 
 <Procedures>
 

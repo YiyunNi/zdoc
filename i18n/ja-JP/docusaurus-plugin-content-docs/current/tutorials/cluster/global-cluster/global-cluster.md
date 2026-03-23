@@ -4,21 +4,18 @@ slug: /global-cluster
 sidebar_label: "グローバルクラスター"
 beta: FALSE
 notebook: FALSE
-description: "グローバルクラスターは、回復力の向上と読み取りレイテンシーの低減のために、複数のリージョンにデプロイされたクラスターです。"
+description: "グローバルクラスターは、耐障害性の向上と読み取りレイテンシーの低減のために、複数のリージョンにデプロイされたクラスターです。"
 type: origin
 token: VKMNwpMl0idY2nkEntncL9hTncb
 sidebar_position: 6
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - milvus
   - グローバルクラスター
-  - NLP
-  - ニューラルネットワーク
-  - ディープラーニング
-  - ナレッジベース
 
+sidebar_key: "cluster/global-cluster"
 ---
 
 import Admonition from '@theme/Admonition';

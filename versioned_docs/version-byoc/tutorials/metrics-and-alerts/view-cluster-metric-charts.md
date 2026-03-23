@@ -74,19 +74,19 @@ Zilliz Cloud offers metric charts for monitoring cluster performance from variou
 
 ### Pod resources\{#pod-resources}
 
-To effectively track pod resource consumption, select the **Metrics** tab and refer to the **Pod Resources** area. Here, you'll find succinct graphs that display CPU, storage, and network usage for each pod. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics).
+To effectively track pod resource consumption, select the **Metrics** tab and refer to the **Pod Resources** area. Here, you'll find succinct graphs that display CPU, storage, and network usage for each pod. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#cluster-and-collection-metrics).
 
 ### Resources\{#resources}
 
-To view metric charts for resource usage, select the **Metrics** tab and refer to the **Resources** area. These charts provide a snapshot of the cluster's resource usage, including computation, capacity, and storage. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics).
+To view metric charts for resource usage, select the **Metrics** tab and refer to the **Resources** area. These charts provide a snapshot of the cluster's resource usage, including computation, capacity, and storage. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#cluster-and-collection-metrics).
 
 ### Performance\{#performance}
 
-To view metric charts for performance, select the **Metrics** tab and refer to the **Performance** area. These charts provide a snapshot of cluster performance, including QPS, VPS, latency, and request. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics).
+To view metric charts for performance, select the **Metrics** tab and refer to the **Performance** area. These charts provide a snapshot of cluster performance, including QPS, VPS, latency, and request. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#cluster-and-collection-metrics).
 
 ### Data\{#data}
 
-To view metric charts for business data, select the **Metrics** tab and refer to the **Data** area. These charts provide a snapshot of the cluster's entity data by indicating the number of collections, entities, and loaded entities in the cluster. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#project-level-metrics-cluster-metrics).
+To view metric charts for business data, select the **Metrics** tab and refer to the **Data** area. These charts provide a snapshot of the cluster's entity data by indicating the number of collections, entities, and loaded entities in the cluster. For a quick overview of available metrics, refer to [Metrics & Alerts Reference](./metrics-alerts-reference#cluster-and-collection-metrics).
 
 ## Related topics\{#related-topics}
 

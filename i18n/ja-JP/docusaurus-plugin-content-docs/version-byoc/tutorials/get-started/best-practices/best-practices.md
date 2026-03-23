@@ -4,21 +4,18 @@ slug: /best-practices
 sidebar_label: "ベストプラクティス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud を使用する際のベストプラクティスに関する記事をご覧いただけます。 | BYOC"
+description: "Zilliz Cloud を使用する際のベストプラクティスに関する記事をご覧ください。| BYOC"
 type: origin
 token: HWzCwbjfci51HHk4BvTcfbiHn1d
-sidebar_position: 10
+sidebar_position: 12
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - milvus
   - ベストプラクティス
-  - サーバーレスベクトルデータベース
-  - milvus オープンソース
-  - milvus の仕組み
-  - Zilliz ベクトルデータベース
 
+sidebar_key: "get-started/best-practices"
 ---
 
 import Admonition from '@theme/Admonition';

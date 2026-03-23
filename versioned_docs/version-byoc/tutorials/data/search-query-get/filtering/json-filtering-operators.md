@@ -1,7 +1,7 @@
 ---
 title: "JSON Operators | BYOC"
 slug: /json-filtering-operators
-sidebar_label: "JSON Operators"
+sidebar_label: "JSON"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

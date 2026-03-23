@@ -4,65 +4,61 @@ slug: /free-trials
 sidebar_label: "Zilliz Cloud を無料で試す"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、強力なベクトルデータベース機能を評価またはテストし、Zilliz Cloud の使用コストを見積もるのに役立つ無料クラスターと無料トライアルの両方を提供しています。開始するには、Zilliz Cloud でアカウントを登録するだけです。支払い情報は必要ありません。 | Cloud"
+description: "Zilliz Cloud は、強力なベクトルデータベース機能を評価またはテストし、Zilliz Cloud の使用コストを見積もるのに役立つフリークラスターと無料トライアルの両方を提供しています。開始するには、Zilliz Cloud でアカウントを登録するだけです。支払い情報は必要ありません。 | Cloud"
 type: origin
 token: LMfdwRwKIiJtywkwbHVcGnOFnRf
-sidebar_position: 8
+sidebar_position: 10
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - 無料トライアル
   - milvus
-  - knnアルゴリズム
-  - HNSW
-  - 非構造化データとは
-  - ベクトル埋め込み
 
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# Zilliz Cloud を無料で試す
+# Zilliz Cloudを無料で試す
 
-Zilliz Cloud は、強力なベクトルデータベース機能を評価またはテストし、Zilliz Cloud の使用コストを見積もるのに役立つ**無料クラスター**と**無料トライアル**の両方を提供しています。開始するには、Zilliz Cloud で[アカウントを登録する](./register-with-zilliz-cloud)だけです。支払い情報は必要ありません。
+Zilliz Cloudは、強力なベクトルデータベース機能を評価またはテストし、Zilliz Cloudの使用コストを見積もるのに役立つ**フリークラスター**と**無料トライアル**の両方を提供しています。開始するには、Zilliz Cloudに[アカウントを登録する](./register-with-zilliz-cloud)だけです。支払い情報は必要ありません。
 
-## 無料クラスター{#free-cluster}
+## フリークラスター\{#free-cluster}
 
-Zilliz Cloud は、基本的なベクトルデータベース機能を無料で利用できる無料クラスターを提供しています。無料クラスターでは、以下が提供されます。
+Zilliz Cloudは、基本的なベクトルデータベース機能を無料で利用できるフリークラスターを提供しています。フリークラスターは以下を提供します。
 
-- 5 GB のストレージ (100万個の768次元ベクトルに十分な容量)
+- 5 GBのストレージ（1Mの768次元ベクトルに十分な容量）
 
-- 月あたり250万 vCU
+- 月あたり2.5M vCU
 
 - 最大5つのコレクション
 
-より多くのリソースが必要な場合や、高度な機能にアクセスしたい場合は、Serverless および Dedicated クラスターの[無料トライアル](./free-trials#free-trial)をご利用ください。
+より多くのリソースが必要な場合、または高度な機能にアクセスしたい場合は、ServerlessおよびDedicatedクラスターの[無料トライアル](./free-trials#free-trial)をご利用ください。
 
-## 無料トライアル{#free-trial}
+## 無料トライアル\{#free-trial}
 
-Zilliz Cloud は、クラスターとベクトルデータベース機能の無料トライアルを提供しています。以下のセクションでは、クラスターのクレジットベースの無料トライアルについて説明します。構造化テーブルまたは非構造化データファイルのコレクションを保持するオブジェクトストレージであるボリューム機能を試したい場合は、[ボリュームの説明](./volume-explained#free-trial-volume)を参照してください。
+Zilliz Cloudは、クラスターとベクトルデータベース機能の無料トライアルを提供しています。以下のセクションでは、クラスターのクレジットベースの無料トライアルについて説明します。構造化テーブルまたは非構造化データファイルのコレクションを保持するオブジェクトストアであるボリューム機能を試したい場合は、[ボリュームの説明](./volume-explained#free-trial-volume)を参照してください。
 
-### 無料トライアルを利用する{#use-free-trial}
+### 無料トライアルを使用する\{#use-free-trial}
 
-仕事用メールアドレスで Zilliz Cloud にサインアップすると、組織の請求アカウントに**100ドル**の無料クレジットが追加されます。これらのクレジットは**30日**後に期限切れとなり、Serverless および Dedicated クラスターを探索するために使用できます。クレジットが使い果たされるか期限切れになると、無料トライアルは終了します。
+Zilliz Cloudに仕事用メールでサインアップすると、組織の請求アカウントに**100ドル**の無料クレジットが追加されます。これらのクレジットは**30日**後に失効し、ServerlessおよびDedicatedクラスターを探索するために使用できます。クレジットが使い果たされるか失効すると、無料トライアルは終了します。
 
-トライアル終了後、組織は凍結されます。この間、Serverless および Dedicated クラスターは[ごみ箱](./use-recycle-bin)に移動され、これらのクラスターに固有の機能 (例: バックアップと復元、アラートなど) にアクセスできなくなります。
+トライアル後、組織は凍結されます。この間、ServerlessおよびDedicatedクラスターは[ごみ箱](./use-recycle-bin)に移動され、これらのクラスターに固有の機能（例：バックアップと復元、アラートなど）にはアクセスできなくなります。
 
-組織の凍結を解除するには、[支払い方法を追加する](./payment-billing)だけです。これにより、ごみ箱から削除されたデータを復元できるようになります。凍結から30日以内に支払い方法を追加しない場合、Serverless および Dedicated クラスターは永久に削除されますが、組織は保持されます。
+組織の凍結を解除するには、[支払い方法を追加する](./payment-billing)だけです。これにより、ごみ箱から削除されたデータを復元できるようになります。凍結から30日以内に支払い方法を追加しない場合、ServerlessおよびDedicatedクラスターは永久に削除されますが、組織は保持されます。
 
-### クレジットを獲得し、クレジットの有効期限を延長する{#earn-credits-and-extend-credit-expiration}
+### クレジットを獲得し、クレジットの有効期限を延長する\{#earn-credits-and-extend-credit-expiration}
 
-仕事用メールアドレスで登録すると、100ドルの無料クレジットを受け取ります。Zilliz Cloud で[支払い方法を追加する](./payment-billing)ことで、さらに100ドルを獲得できます。さらに、支払い方法を追加すると、クレジットの有効期限が**1年間**に延長されます。
+仕事用メールで登録すると、100ドルの無料クレジットを受け取ります。Zilliz Cloudで[支払い方法を追加する](./payment-billing)ことで、さらに100ドルを獲得できます。さらに、支払い方法を追加すると、クレジットの有効期限が**1年間**に延長されます。
 
-追加のクレジットが必要な場合や、トライアル期間を延長したい場合は、[営業担当者にお問い合わせください](https://zilliz.com/contact-sales)。
+追加のクレジットが必要な場合、またはトライアル期間を延長したい場合は、[営業担当者にお問い合わせください](https://zilliz.com/contact-sales)。
 
-### クレジット残高を表示する{#view-credit-balance}
+### クレジット残高を表示する\{#view-credit-balance}
 
 左側のナビゲーションペインの下部で、残りのクレジットとその有効期限をすばやく確認できます。
 
-または、**Billing Overview** ページの**Credits**セクションに移動します。
+または、**請求概要**ページの**クレジット**セクションに移動します。
 
 ![view-credit-balance](https://zdoc-images.s3.us-west-2.amazonaws.com/view-credit-balance.png "view-credit-balance")
 
@@ -72,9 +68,9 @@ Zilliz Cloud は、クラスターとベクトルデータベース機能の無�
 
 </Admonition>
 
-### 無料トライアル通知{#free-trial-notifications}
+### 無料トライアルの通知\{#free-trial-notifications}
 
-無料トライアル期間中、Zilliz Cloud からそのステータスに関するいくつかのメール通知が届きます。これらのメールは組織の所有者に送信され、以下のイベントによってトリガーされます。
+無料トライアル中、Zilliz Cloudからそのステータスに関するいくつかのメール通知が届きます。これらのメールは組織オーナーに送信され、以下のイベントによってトリガーされます。
 
 - クレジットが付与されてから最初の3日以内にクレジットが消費されない場合。
 
@@ -82,17 +78,17 @@ Zilliz Cloud は、クラスターとベクトルデータベース機能の無�
 
 - クレジットの有効期限が3日未満の場合。
 
-- 有効な支払い方法がないため、トライアルの期限切れにより組織が凍結された場合。
+- 有効な支払い方法がないため、トライアルの有効期限切れにより組織が凍結された場合。
 
-- トライアル終了に伴い、Serverless および Dedicated クラスターがまもなく削除される場合。
+- トライアル終了に伴い、ServerlessおよびDedicatedクラスターの削除が近づいている場合。
 
-- トライアル終了後、Serverless および Dedicated クラスターがごみ箱に移動された場合。
+- トライアル終了後、ServerlessおよびDedicatedクラスターがごみ箱に移動された場合。
 
 - すべてのクレジットが使い果たされた場合。
 
-## 関連トピック{#related-topics}
+## 関連トピック\{#related-topics}
 
-- [Zilliz Cloud に登録する](./register-with-zilliz-cloud)
+- [Zilliz Cloudに登録する](./register-with-zilliz-cloud)
 
 - [クラスターを作成する](./create-cluster)
 

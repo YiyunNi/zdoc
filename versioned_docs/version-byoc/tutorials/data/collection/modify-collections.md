@@ -1,7 +1,7 @@
 ---
 title: "Modify Collection | BYOC"
 slug: /modify-collections
-sidebar_label: "Modify Collection"
+sidebar_label: "Modify"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

@@ -12,15 +12,12 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みアナライザー
-  - ベクトルストア
-  - オープンソースベクトルデータベース
-  - ベクトルインデックス
-  - ベクトルデータベースオープンソース
 
+sidebar_key: "data/schema-data-fields/analyzer/built-in-analyzer"
 ---
 
 import Admonition from '@theme/Admonition';

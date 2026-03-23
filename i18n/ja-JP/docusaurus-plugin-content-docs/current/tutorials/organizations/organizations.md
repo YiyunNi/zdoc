@@ -4,20 +4,17 @@ slug: /organizations
 sidebar_label: "組織"
 beta: FALSE
 notebook: FALSE
-description: "この章では、組織の操作と関連設定について説明します。"
+description: "この章では、組織の操作と関連設定について説明します。| Cloud"
 type: origin
 token: Dh6vwCrzYimC7skvDRUcvPi4n2c
-sidebar_position: 10
+sidebar_position: 11
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
   - 組織
-  - Deep Learning
-  - ナレッジベース
-  - 自然言語処理
-  - AIチャットボット
 
+sidebar_key: "organizations"
 ---
 
 import Admonition from '@theme/Admonition';

@@ -4,20 +4,17 @@ slug: /integrate-with-third-parties
 sidebar_label: "サードパーティとの統合"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud プロジェクトをサードパーティサービスと統合する方法を学びます。 | Cloud"
+description: "Zilliz Cloud プロジェクトをサードパーティサービスと統合する方法を学びます。| Cloud"
 type: origin
 token: LykvwFyJCiloeQk2WmGce2s8nZg
 sidebar_position: 4
 keywords: 
   - zilliz
-  - ベクターデータベース
-  - クラウド
+  - ベクトルデータベース
+  - cloud
   - プロジェクト サードパーティ
-  - ディープラーニング
-  - ナレッジベース
-  - 自然言語処理
-  - AIチャットボット
 
+sidebar_key: "projects/integrate-with-third-parties"
 ---
 
 import Admonition from '@theme/Admonition';
@@ -25,7 +22,7 @@ import Admonition from '@theme/Admonition';
 
 # サードパーティとの統合
 
-Zilliz Cloud プロジェクトをサードパーティサービスと統合する方法を学びます。
+Zilliz Cloud プロジェクトをサードパーティサービスと統合する方法について学びます。
 
 import DocCardList from '@theme/DocCardList';
 

@@ -176,11 +176,14 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("customDictionary"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("customDictionary"));             
+  put("mode", "exact");
+  put("hmm", false);
+}});
+
 ```
 
 </TabItem>
@@ -196,7 +199,14 @@ analyzerParams.put("hmm", false);
 <TabItem value='go'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"customDictionary"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"customDictionary"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>
@@ -265,11 +275,13 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("结巴分词器"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("结巴分词器"));                   
+  put("mode", "exact");
+  put("hmm", false);
+}});
 ```
 
 </TabItem>
@@ -285,7 +297,14 @@ analyzerParams.put("hmm", false);
 <TabItem value='go'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"结巴分词器"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"结巴分词器"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>

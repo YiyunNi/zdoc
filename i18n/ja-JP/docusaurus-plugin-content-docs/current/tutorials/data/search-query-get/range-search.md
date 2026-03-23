@@ -12,13 +12,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - 範囲検索
-  - 類似性検索
-  - マルチモーダルRAG
-  - LLMの幻覚
-  - ハイブリッド検索
 
 ---
 
@@ -30,9 +26,9 @@ import TabItem from '@theme/TabItem';
 
 レンジ検索は、返されるエンティティの距離またはスコアを特定の範囲内に制限することで、検索結果の関連性を向上させます。このページでは、レンジ検索とは何か、およびレンジ検索を実行する手順について説明します。
 
-## 概要{#overview}
+## 概要\{#overview}
 
-レンジ検索リクエストを実行すると、Zilliz CloudはANN検索結果からクエリベクトルに最も類似したベクトルを中心として使用し、検索リクエストで指定された**radius**を外円の半径として、**range_filter**を内円の半径として2つの同心円を描画します。これら2つの同心円によって形成される環状領域内に類似度スコアが収まるすべてのベクトルが返されます。ここで、**range_filter**は**0**に設定でき、これは指定された類似度スコア（radius）内のすべてのエンティティが返されることを示します。
+レンジ検索リクエストを実行すると、Zilliz CloudはANN検索結果からクエリベクトルに最も類似したベクトルを中央として使用し、検索リクエストで指定された**radius**を外円の半径として、**range_filter**を内円の半径として2つの同心円を描画します。これら2つの同心円によって形成される環状領域内に類似度スコアが収まるすべてのベクトルが返されます。ここで、**range_filter**は**0**に設定でき、指定された類似度スコア（radius）内のすべてのエンティティが返されることを示します。
 
 ![Sewjwp5DShFgKAbC1Mwcrr7enOD](https://zdoc-images.s3.us-west-2.amazonaws.com/Sewjwp5DShFgKAbC1Mwcrr7enOD.png)
 
@@ -42,7 +38,7 @@ import TabItem from '@theme/TabItem';
 
 - クエリベクトルに対する**距離**または**スコア**が**radius**と**range_filter**パラメータで指定された範囲内に収まるベクトル埋め込みをフィルタリングします。
 
-- フィルタリングされたエンティティの中から**top-K**個のエンティティを返します。
+- フィルタリングされたエンティティから**上位K**個のエンティティを返します。
 
 **radius**と**range_filter**の設定方法は、検索のメトリックタイプによって異なります。次の表は、異なるメトリックタイプでこれら2つのパラメータを設定するための要件を示しています。
 
@@ -55,33 +51,33 @@ import TabItem from '@theme/TabItem';
    <tr>
      <td><p><code>L2</code></p></td>
      <td><p>L2距離が小さいほど類似度が高いことを示します。</p></td>
-     <td><p>最も類似したベクトル埋め込みを無視するには、</p><p><code>range_filter</code> &lt;= 距離 &lt; <code>radius</code></p><p>であることを確認してください。</p></td>
+     <td><p>最も類似したベクトル埋め込みを無視するには、以下を確認してください。</p><p><code>range_filter</code> &lt;= 距離 &lt; <code>radius</code></p></td>
    </tr>
    <tr>
      <td><p><code>IP</code></p></td>
      <td><p>IP距離が大きいほど類似度が高いことを示します。</p></td>
-     <td><p>最も類似したベクトル埋め込みを無視するには、</p><p><code>radius</code> &lt; 距離 &lt;= <code>range_filter</code></p><p>であることを確認してください。</p></td>
+     <td><p>最も類似したベクトル埋め込みを無視するには、以下を確認してください。</p><p><code>radius</code> &lt; 距離 &lt;= <code>range_filter</code></p></td>
    </tr>
    <tr>
      <td><p><code>COSINE</code></p></td>
      <td><p>COSINE距離が大きいほど類似度が高いことを示します。</p></td>
-     <td><p>最も類似したベクトル埋め込みを無視するには、</p><p><code>radius</code> &lt; 距離 &lt;= <code>range_filter</code></p><p>であることを確認してください。</p></td>
+     <td><p>最も類似したベクトル埋め込みを無視するには、以下を確認してください。</p><p><code>radius</code> &lt; 距離 &lt;= <code>range_filter</code></p></td>
    </tr>
    <tr>
      <td><p><code>JACCARD</code></p></td>
      <td><p>Jaccard距離が小さいほど類似度が高いことを示します。</p></td>
-     <td><p>最も類似したベクトル埋め込みを無視するには、</p><p><code>range_filter</code> &lt;= 距離 &lt; <code>radius</code></p><p>であることを確認してください。</p></td>
+     <td><p>最も類似したベクトル埋め込みを無視するには、以下を確認してください。</p><p><code>range_filter</code> &lt;= 距離 &lt; <code>radius</code></p></td>
    </tr>
    <tr>
      <td><p><code>HAMMING</code></p></td>
-     <td><p>Hamming距離が小さいほど類似度が高いことを示します。</p></td>
-     <td><p>最も類似したベクトル埋め込みを無視するには、</p><p><code>range_filter</code> &lt;= 距離 &lt; <code>radius</code></p><p>であることを確認してください。</p></td>
+     <td><p>ハミング距離が小さいほど類似度が高いことを示します。</p></td>
+     <td><p>最も類似したベクトル埋め込みを無視するには、以下を確認してください。</p><p><code>range_filter</code> &lt;= 距離 &lt; <code>radius</code></p></td>
    </tr>
 </table>
 
-## 例{#examples}
+## 例\{#examples}
 
-このセクションでは、レンジ検索を実行する方法を示します。以下のコードスニペットの検索リクエストにはメトリックタイプが含まれていませんが、これはデフォルトのメトリックタイプ**COSINE**が適用されることを示しています。この場合、**radius**の値が**range_filter**の値よりも小さいことを確認してください。
+このセクションでは、レンジ検索を実行する方法を示します。以下のコードスニペットの検索リクエストにはメトリックタイプが含まれていないため、デフォルトのメトリックタイプ**COSINE**が適用されます。この場合、**radius**の値が**range_filter**の値よりも小さいことを確認してください。
 
 以下のコードスニペットでは、`radius`を`0.4`に、`range_filter`を`0.6`に設定し、Zilliz Cloudがクエリベクトルに対する距離またはスコアが**0.4**から**0.6**の範囲内にあるすべてのエンティティを返すようにします。
 
@@ -163,7 +159,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -213,7 +209,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -239,7 +235,7 @@ res = await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -269,3 +265,8 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>クエリベクトルがターゲットコレクションにすでに存在する場合は、検索前に取得する代わりに<code>ids</code>を使用することを検討してください。詳細については、<a href="./primary-key-search">主キー検索</a>を参照してください。</p>
+
+</Admonition>

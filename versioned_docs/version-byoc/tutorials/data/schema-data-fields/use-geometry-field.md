@@ -1,7 +1,7 @@
 ---
 title: "Geometry Field | BYOC"
 slug: /use-geometry-field
-sidebar_label: "Geometry Field"
+sidebar_label: "Geometry"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

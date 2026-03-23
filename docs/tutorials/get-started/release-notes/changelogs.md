@@ -358,8 +358,6 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - [🔄  Zero-downtime migration](./zero-downtime-migration) becomes available
-
         - ⚙️  Instance settings and AWS PrivateLink support for BYOC projects
 
         - 🔍  Fine-granular filtering on a JSON field using [JSON index](./use-json-fields)

@@ -1,7 +1,7 @@
 ---
 title: "Manage Partitions | Cloud"
 slug: /manage-partitions
-sidebar_label: "Manage Partitions"
+sidebar_label: "Partitions"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

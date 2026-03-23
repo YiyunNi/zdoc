@@ -1,22 +1,18 @@
 ---
-title: "ボリュームの管理 (コンソール) | Cloud"
+title: "ボリュームの管理（コンソール） | Cloud"
 slug: /manage-volumes-via-console
-sidebar_label: "ボリュームの管理 (コンソール)"
+sidebar_label: "ボリュームの管理（コンソール）"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、Webコンソールを使用してボリュームを管理する方法について説明します。 | Cloud"
+description: "このページでは、Web コンソールを使用してボリュームを管理する方法について説明します。 | Cloud"
 type: origin
 token: JwYYw2v0yi2eHBkFZuJcM7pXnnc
 sidebar_position: 3
 keywords: 
   - zilliz
-  - ベクターデータベース
-  - クラウド
+  - ベクトルデータベース
+  - cloud
   - ボリューム
-  - Zilliz Cloud
-  - milvusとは
-  - milvusデータベース
-  - milvus lite
 
 ---
 
@@ -27,21 +23,21 @@ import Supademo from '@site/src/components/Supademo';
 
 # ボリュームの管理 (コンソール)
 
-このページでは、ウェブコンソールを使用してボリュームを管理する方法について説明します。
+このページでは、Web コンソールを使用してボリュームを管理する方法について説明します。
 
 <Admonition type="info" icon="📘" title="Note">
 
-<p>ボリュームはAWSとGoogle Cloudでのみ作成できます。Azureでボリュームを使用する必要がある場合は、<a href="http://support.zilliz.com">サポートにお問い合わせください</a>。</p>
+<p>ボリュームは AWS および Google Cloud でのみ作成できます。Azure でボリュームを使用する必要がある場合は、<a href="http://support.zilliz.com">サポートにお問い合わせください</a>。</p>
 
 </Admonition>
 
-## ボリュームの作成{#create-a-volume}
+## ボリュームの作成\{#create-a-volume}
 
-ボリューム機能を試したいだけであれば、**無料トライアルボリューム**を作成してください。無料トライアルボリュームは、**組織ごとに1回のみ**作成でき、容量とファイルアップロードに制限があります。詳細については、[ボリュームの説明](./volume-explained#billing)を参照してください。
+ボリューム機能を試すだけであれば、**無料トライアルボリューム**を作成してください。無料トライアルボリュームは**組織ごとに 1 回**のみ作成でき、容量とファイルアップロードに制限があります。詳細については、[ボリュームの説明](./volume-explained#billing) をご覧ください。
 
-本番ワークロードの場合は、**従量課金制ボリューム**を作成してください。
+本番ワークロードの場合は、**従量課金ボリューム**を作成してください。
 
-以下の表は、ボリューム作成時に使用される各パラメータについて説明しています。
+以下の表は、ボリューム作成時に使用する各パラメータについて説明しています。
 
 <table>
    <tr>
@@ -49,62 +45,62 @@ import Supademo from '@site/src/components/Supademo';
      <th><p><strong>説明</strong></p></th>
    </tr>
    <tr>
-     <td><p>名前</p></td>
-     <td><p>ボリューム名は組織全体で一意である必要があり、64文字以内、文字またはアンダースコアで始まり、文字、数字、ハイフン、アンダースコアのみを含めることができます。</p></td>
+     <td><p>Name</p></td>
+     <td><p>ボリューム名は組織全体で一意である必要があり、64 文字以下で、文字またはアンダースコアで始まり、文字、数字、ハイフン、アンダースコアのみを含めることができます。</p></td>
    </tr>
    <tr>
-     <td><p>説明</p></td>
+     <td><p>Description</p></td>
      <td><p>このパラメータはオプションです。</p></td>
    </tr>
    <tr>
      <td><p>クラウドプロバイダーとリージョン</p></td>
-     <td><p>ボリュームのクラウドプロバイダーとリージョンは、データのインポートまたは移行を計画しているターゲットクラスターのクラウドプロバイダーとリージョンと一致している必要があります。</p></td>
+     <td><p>ボリュームのクラウドプロバイダーとリージョンは、データのインポートまたは移行先となるターゲットクラスターのクラウドプロバイダーおよびリージョンと一致している必要があります。</p></td>
    </tr>
 </table>
 
 <Supademo id="cmi76tseu4ok8b7b4l5nods0s?utm_source=link" title=""  />
 
-## ボリュームの表示{#view-volumes}
+## ボリュームの表示\{#view-volumes}
 
-プロジェクト内のボリュームのリストを表示し、ボリューム名をクリックして特定のボリュームの詳細を検査できます。
+プロジェクト内のボリューム一覧を表示し、ボリューム名をクリックして特定のボリュームの詳細を確認できます。
 
 ![Ar8zbXfHQoQCaQxnKU4c34ednSh](https://zdoc-images.s3.us-west-2.amazonaws.com/ar8zbxfhqoqcaqxnku4c34ednsh.png "Ar8zbXfHQoQCaQxnKU4c34ednSh")
 
-## ボリューム内のファイルまたはフォルダの管理{#manage-files-or-folders-in-a-volume}
+## ボリューム内のファイルまたはフォルダーの管理\{#manage-files-or-folders-in-a-volume}
 
-ボリュームに保存されているファイルやフォルダをアップロード、表示、削除できます。
+ボリュームに保存されているファイルまたはフォルダーのアップロード、表示、削除が可能です。
 
-### ファイルまたはフォルダのアップロード{#upload-a-file-or-folder}
+### ファイルまたはフォルダーのアップロード\{#upload-a-file-or-folder}
 
-ウェブコンソールからのボリュームへのファイルまたはフォルダのアップロードは、現在**サポートされていません**。代わりにSDKを使用してください。[ボリュームの管理 (SDK)](./manage-stages#upload-data-into-a-volume)を参照してください。
+Web コンソールからボリュームへのファイルまたはフォルダーのアップロードは現在**サポートされていません**。代わりに SDK を使用してください。詳細は [ボリュームの管理 (SDK)](./manage-stages#upload-data-into-a-volume) を参照してください。
 
-### ファイルとフォルダの表示{#view-files-and-folders}
+### ファイルとフォルダーの表示\{#view-files-and-folders}
 
-ボリューム内の既存のファイルとフォルダを閲覧できます。
+ボリューム内の既存のファイルとフォルダーを閲覧できます。
 
 ![UOT3bP88no57f8xNqmYcjFwXnFh](https://zdoc-images.s3.us-west-2.amazonaws.com/uot3bp88no57f8xnqmycjfwxnfh.png "UOT3bP88no57f8xNqmYcjFwXnFh")
 
-### ファイルまたはフォルダの削除{#delete-a-file-or-folder}
+### ファイルまたはフォルダーの削除\{#delete-a-file-or-folder}
 
-不要になったファイルやフォルダは、ボリュームから削除できます。削除には、ファイルやフォルダのサイズに応じて数分かかる場合があります。
+ファイルまたはフォルダーが不要になった場合、ボリュームから削除できます。削除には、ファイルまたはフォルダーのサイズに応じて数分かかる場合があります。
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-<p>削除されたファイルとフォルダは**復元できません**。慎重に進めてください。</p>
+<p>削除されたファイルおよびフォルダーは<strong>復元できません</strong>。慎重に進めてください。</p>
 
 </Admonition>
 
 <Supademo id="cmidzfkoqad9sb7b44vnbfzyd?utm_source=link" title=""  />
 
-## ボリュームの削除{#delete-a-volume}
+## ボリュームの削除\{#delete-a-volume}
 
-不要になったボリュームはいつでも削除できます。無料トライアルボリュームは、組織ごとに1回しか作成できないことに注意してください。一度削除すると、無料トライアルボリュームを再度作成することはできません。
+不要になったボリュームはいつでも削除できます。なお、無料トライアルボリュームは組織ごとに 1 回のみ作成可能です。一度削除すると、二度と無料トライアルボリュームを作成することはできません。
 
-ボリュームを削除すると、**そのすべてのファイルとフォルダ**も削除されます。
+ボリュームを削除すると、その中に含まれる**すべてのファイルとフォルダー**も削除されます。
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-<p>削除されたボリュームは**復元できません**。慎重に進めてください。</p>
+<p>削除されたボリュームは<strong>復元できません</strong>。慎重に進めてください。</p>
 
 </Admonition>
 

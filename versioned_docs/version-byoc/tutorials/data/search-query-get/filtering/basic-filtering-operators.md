@@ -1,7 +1,7 @@
 ---
 title: "Basic Operators | BYOC"
 slug: /basic-filtering-operators
-sidebar_label: "Basic Operators"
+sidebar_label: "Basic"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

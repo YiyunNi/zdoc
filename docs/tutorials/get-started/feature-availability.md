@@ -78,8 +78,6 @@ The availability phase of each feature is indicated in the Zilliz Cloud document
 
 - [Extract, Transform & Load (ETL)](/reference/restful/merge-data-v2)
 
-- [Zero downtime migration](./zero-downtime-migration)
-
 - [Export backup files](./export-backup-files)
 
 - [Hosted models](./hosted-models)

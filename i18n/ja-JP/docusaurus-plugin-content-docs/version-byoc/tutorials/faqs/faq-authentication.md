@@ -4,7 +4,7 @@ slug: /faq-authentication
 sidebar_label: "FAQ: 認証"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloud で認証を行う際に発生する可能性のある問題と、それに対応する解決策をリストアップします。 | BYOC"
+description: "このトピックでは、Zilliz Cloud での本人確認中に発生する可能性のある問題と、それらの解決策を一覧にしています。| BYOC"
 type: origin
 token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 10
@@ -13,17 +13,19 @@ sidebar_position: 10
 
 # FAQ: 認証
 
-このトピックでは、Zilliz Cloud での認証時に発生する可能性のある問題と、それに対応する解決策をリストアップします。
+このトピックでは、Zilliz Cloud での本人確認中に発生する可能性のある問題と、それに対応する解決策を一覧にしています。
 
 ## 目次
 
-- [Zilliz Cloud クラスターへの接続に使用したパスワードを忘れた場合、どうすればよいですか？](#what-can-i-do-if-i-forget-the-password-used-to-connect-to-my-zilliz-cloud-cluster)
+- [Zilliz Cloud クラスタへの接続に使用したパスワードを忘れた場合はどうすればよいですか？](#what-can-i-do-if-i-forget-the-password-used-to-connect-to-my-zilliz-cloud-cluster)
 
 ## よくある質問
 
 
 
 
-### Zilliz Cloud クラスターへの接続に使用したパスワードを忘れた場合、どうすればよいですか？{#what-can-i-do-if-i-forget-the-password-used-to-connect-to-my-zilliz-cloud-cluster}
+BYOC デプロイメントでは、データプレーンの RESTful API エンドポイントを呼び出す際に、ターゲットクラスタのユーザー名とパスワードをコロンで区切った文字列（例：`username:password`）を認証トークンとして使用します。
 
-パスワードを忘れた場合は、パスワードをリセットできます。ただし、デフォルトユーザーのパスワードを忘れた場合は、新しいパスワードで新しいユーザーを作成できます。詳細については、[クラスター認証情報 (コンソール)](./cluster-credentials) およびクラスター認証情報 (SDK) を参照してください。
+### Zilliz Cloud クラスタへの接続に使用したパスワードを忘れた場合はどうすればよいですか？\{#what-can-i-do-if-i-forget-the-password-used-to-connect-to-my-zilliz-cloud-cluster}
+
+パスワードを忘れた場合は、パスワードをリセットできます。ただし、デフォルトユーザーのパスワードを忘れた場合は、新しいパスワードを持つ新しいユーザーを作成できます。詳細については、[クラスタ資格情報 (コンソール)](./cluster-credentials) およびクラスタ資格情報 (SDK) を参照してください。

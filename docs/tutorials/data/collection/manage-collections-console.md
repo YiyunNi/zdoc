@@ -1,7 +1,7 @@
 ---
 title: "Manage Collections (Console) | Cloud"
 slug: /manage-collections-console
-sidebar_label: "Manage Collections (Console)"
+sidebar_label: "Manage on Console"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

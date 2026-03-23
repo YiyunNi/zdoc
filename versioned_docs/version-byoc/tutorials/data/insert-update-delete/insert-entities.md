@@ -1,7 +1,7 @@
 ---
 title: "Insert Entities | BYOC"
 slug: /insert-entities
-sidebar_label: "Insert Entities"
+sidebar_label: "Insert"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

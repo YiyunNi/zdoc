@@ -1,7 +1,7 @@
 ---
 title: "トークナイザーリファレンス | Cloud"
 slug: /analyzer-tokenizers
-sidebar_label: "トークナイザー"
+sidebar_label: "Tokenizer"
 beta: FALSE
 notebook: FALSE
 description: "このセクションでは、トークナイザーの詳細なリファレンスを提供します。 | Cloud"
@@ -10,17 +10,14 @@ token: Zu6vw6Aifi1gvNkqqO5cDjmtngh
 sidebar_position: 3
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みトークナイザー
-  - 近似最近傍探索
-  - DiskANN
-  - 疎ベクトル
-  - ベクター次元
 
+sidebar_key: "data/schema-data-fields/analyzer/analyzer-tokenizers"
 ---
 
 import Admonition from '@theme/Admonition';

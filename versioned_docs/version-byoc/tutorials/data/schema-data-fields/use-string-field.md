@@ -1,7 +1,7 @@
 ---
 title: "String Field | BYOC"
 slug: /use-string-field
-sidebar_label: "String Field"
+sidebar_label: "String"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

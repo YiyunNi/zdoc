@@ -12,15 +12,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みトークナイザー
   - jieba-tokenizer
-  - ベクトル検索アルゴリズム
-  - 質問応答システム
-  - llm-as-a-judge
-  - ハイブリッドベクトル検索
 
 ---
 
@@ -34,17 +30,17 @@ import TabItem from '@theme/TabItem';
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>jieba</code> トークナイザーは、句読点を個別のトークンとして出力に保持します。例えば、<code>"你好！世界。"</code> は <code>["你好", "！", "世界", "。"]</code> となります。これらの独立した句読点トークンを削除するには、<a href="./remove-punct-filter"><code>removepunct</code></a> フィルターを使用します。</p>
+<p><code>jieba</code> トークナイザーは、句読点を個別のトークンとして出力に保持します。例えば、<code>"你好！世界。"</code> は <code>["你好", "！", "世界", "。"]</code> になります。これらの独立した句読点トークンを削除するには、<a href="./remove-punct-filter"><code>removepunct</code></a> フィルターを使用します。</p>
 
 </Admonition>
 
-## 設定{#configuration}
+## 設定\{#configuration}
 
-Milvus は、`jieba` トークナイザーに対して、シンプル設定とカスタム設定の2つの設定アプローチをサポートしています。
+Milvus は、`jieba` トークナイザーに対して、シンプルな設定とカスタム設定の2つの設定アプローチをサポートしています。
 
-### シンプル設定{#simple-configuration}
+### シンプルな設定\{#simple-configuration}
 
-シンプル設定では、トークナイザーを `"jieba"` に設定するだけで済みます。例：
+シンプルな設定では、トークナイザーを `"jieba"` に設定するだけで済みます。例：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -67,7 +63,7 @@ analyzerParams.put("tokenizer", "jieba");
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const analyzer_params = {
@@ -77,7 +73,7 @@ const analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "jieba"}
@@ -85,7 +81,7 @@ analyzerParams = map[string]any{"tokenizer": "jieba"}
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -97,7 +93,7 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-この単純な設定は、以下のカスタム設定と同等です。
+このシンプルな設定は、以下のカスタム設定と同等です。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -126,7 +122,7 @@ analyzerParams.put("hmm", true);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -134,7 +130,7 @@ analyzerParams.put("hmm", true);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"type": "jieba", "dict": []any{"_default_"}, "mode": "search", "hmm": true}
@@ -142,7 +138,7 @@ analyzerParams = map[string]any{"type": "jieba", "dict": []any{"_default_"}, "mo
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -153,7 +149,7 @@ analyzerParams = map[string]any{"type": "jieba", "dict": []any{"_default_"}, "mo
 
 パラメータの詳細については、[カスタム設定](./jieba-tokenizer#custom-configuration)を参照してください。
 
-### カスタム設定{#custom-configuration}
+### カスタム設定\{#custom-configuration}
 
 より詳細な制御のために、カスタム辞書を指定したり、セグメンテーションモードを選択したり、隠れマルコフモデル (HMM) を有効または無効にしたりできるカスタム設定を提供できます。例：
 
@@ -177,16 +173,19 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("customDictionary"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("customDictionary"));             
+  put("mode", "exact");
+  put("hmm", false);
+}});
+
 ```
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -194,15 +193,22 @@ analyzerParams.put("hmm", false);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"customDictionary"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"customDictionary"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -224,28 +230,28 @@ analyzerParams = map[string]any{"type": "jieba", "dict": []any{"customDictionary
    </tr>
    <tr>
      <td><p><code>dict</code></p></td>
-     <td><p>アナライザーが語彙ソースとしてロードする辞書のリスト。組み込みオプション:</p><ul><li><p><code>"_default_"</code>: エンジンの組み込み簡体字中国語辞書をロードします。詳細については、<a href="https://github.com/messense/jieba-rs/blob/v0.6.8/src/data/dict.txt">dict.txt</a>を参照してください。</p></li><li><p><code>"_extend_default_"</code>: <code>"_default_"</code>のすべてに加えて、追加の繁体字中国語補足辞書をロードします。詳細については、<a href="https://github.com/milvus-io/milvus/blob/v2.5.11/internal/core/thirdparty/tantivy/tantivy-binding/src/analyzer/data/jieba/dict.txt.big">dict.txt.big</a>を参照してください。</p><p>組み込み辞書と任意の数のカスタム辞書を組み合わせることもできます。例: <code>["_default_", "結巴分詞器"]</code>。</p></li></ul></td>
+     <td><p>アナライザーが語彙ソースとしてロードする辞書のリスト。組み込みオプション：</p><ul><li><p><code>"_default_"</code>: エンジンの組み込みの簡体字中国語辞書をロードします。詳細については、<a href="https://github.com/messense/jieba-rs/blob/v0.6.8/src/data/dict.txt">dict.txt</a>を参照してください。</p></li><li><p><code>"_extend_default_"</code>: <code>"_default_"</code>のすべてに加えて、追加の繁体字中国語の補足辞書をロードします。詳細については、<a href="https://github.com/milvus-io/milvus/blob/v2.5.11/internal/core/thirdparty/tantivy/tantivy-binding/src/analyzer/data/jieba/dict.txt.big">dict.txt.big</a>を参照してください。</p><p>組み込み辞書と任意の数のカスタム辞書を組み合わせることもできます。例：<code>["_default_", "结巴分词器"]</code>。</p></li></ul></td>
      <td><p><code>["_default_"]</code></p></td>
    </tr>
    <tr>
      <td><p><code>mode</code></p></td>
-     <td><p>セグメンテーションモード。可能な値:</p><ul><li><p><code>"exact"</code>: 最も正確な方法で文をセグメント化しようとします。テキスト分析に最適です。</p></li><li><p><code>"search"</code>: 検索エンジンでのトークン化に適しており、再現率を向上させるために長い単語をさらに分解することで、exactモードを基盤としています。</p><p>詳細については、<a href="https://github.com/fxsjy/jieba">Jieba GitHub Project</a>を参照してください。</p></li></ul></td>
+     <td><p>セグメンテーションモード。可能な値：</p><ul><li><p><code>"exact"</code>: 最も正確な方法で文をセグメント化しようとし、テキスト分析に最適です。</p></li><li><p><code>"search"</code>: 検索エンジンでのトークン化に適した、長い単語をさらに分解してリコールを改善することで、exactモードを基盤としています。</p><p>詳細については、<a href="https://github.com/fxsjy/jieba">Jieba GitHubプロジェクト</a>を参照してください。</p></li></ul></td>
      <td><p><code>"search"</code></p></td>
    </tr>
    <tr>
      <td><p><code>hmm</code></p></td>
-     <td><p>辞書にない単語の確率的セグメンテーションのために、隠れマルコフモデル (HMM) を有効にするかどうかを示すブール値フラグ。</p></td>
+     <td><p>辞書にない単語の確率的セグメンテーションのために、隠れマルコフモデル（HMM）を有効にするかどうかを示すブールフラグ。</p></td>
      <td><p><code>true</code></p></td>
    </tr>
 </table>
 
-`analyzer_params`を定義した後、collection schemaを定義する際に`VARCHAR`フィールドに適用できます。これにより、Zilliz Cloudは指定されたアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを行います。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
+`analyzer_params`を定義した後、コレクションスキーマを定義する際に`VARCHAR`フィールドに適用できます。これにより、Zilliz Cloudはそのフィールドのテキストを、指定されたアナライザーを使用して効率的なトークン化とフィルタリングのために処理できます。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
 
-## 例{#examples}
+## 例\{#examples}
 
-アナライザー設定をcollection schemaに適用する前に、`run_analyzer`メソッドを使用してその動作を確認してください。
+アナライザー構成をコレクションスキーマに適用する前に、`run_analyzer`メソッドを使用してその動作を確認してください。
 
-### アナライザー設定{#analyzer-configuration}
+### アナライザー構成\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -266,16 +272,18 @@ analyzer_params = {
 <TabItem value='java'>
 
 ```java
-Map<String, Object> analyzerParams = new HashMap<>();
-analyzerParams.put("type", "jieba");
-analyzerParams.put("dict", Collections.singletonList("结巴分词器"));
-analyzerParams.put("mode", "exact");
-analyzerParams.put("hmm", false);
+Map<String, Object> analyzerParams = new HashMap<>();                                                                          
+analyzerParams.put("tokenizer", new HashMap<String, Object>() {{
+  put("type", "jieba");                                                                                                      
+  put("dict", Arrays.asList("结巴分词器"));                   
+  put("mode", "exact");
+  put("hmm", false);
+}});
 ```
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -283,15 +291,22 @@ analyzerParams.put("hmm", false);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
-analyzerParams = map[string]any{"type": "jieba", "dict": []any{"结巴分词器"}, "mode": "exact", "hmm": false}
+analyzerParams := map[string]interface{}{
+  "tokenizer": map[string]interface{}{
+      "type": "jieba",
+      "dict": []string{"结巴分词器"},
+      "mode": "exact",
+      "hmm":  false,
+  },
+}
 ```
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -300,7 +315,7 @@ analyzerParams = map[string]any{"type": "jieba", "dict": []any{"结巴分词器"
 </TabItem>
 </Tabs>
 
-### `run_analyzer` を使用した検証 {#verification-using-runanalyzer}
+### `run_analyzer` を使用した検証\{#verification-using-runanalyzer}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -351,7 +366,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -359,7 +374,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -393,7 +408,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -402,7 +417,7 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-### 期待される出力結果\{#expected-output}
+### 期待される出力\{#expected-output}
 
 ```python
 ['milvus', '结巴分词器', '中', '文', '测', '试']

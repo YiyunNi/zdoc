@@ -1,7 +1,7 @@
 ---
 title: "Primary Field & AutoID | Cloud"
 slug: /primary-field-auto-id
-sidebar_label: "Primary Field & AutoID"
+sidebar_label: "Primary Field"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

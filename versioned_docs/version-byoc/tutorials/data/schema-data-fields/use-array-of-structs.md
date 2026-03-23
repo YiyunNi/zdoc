@@ -1,7 +1,7 @@
 ---
 title: "Array of Structs | BYOC"
 slug: /use-array-of-structs
-sidebar_label: "Array of Structs"
+sidebar_label: "Structs"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

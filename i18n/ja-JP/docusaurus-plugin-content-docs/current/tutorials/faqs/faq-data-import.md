@@ -4,7 +4,7 @@ slug: /faq-data-import
 sidebar_label: "FAQ: データインポート"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Zilliz Cloud でデータをインポートする際に発生する可能性のある問題と、それに対応する解決策をリストアップします。"
+description: "このトピックでは、Zilliz Cloud でデータをインポートする際に発生する可能性のある問題と、それに対応する解決策をリストアップしています。 | CLOUD"
 type: origin
 token: EV41wG08BiOWW8kbo9xcTGoPnKd
 sidebar_position: 4
@@ -13,50 +13,50 @@ sidebar_position: 4
 
 # FAQ: データインポート
 
-このトピックでは、Zilliz Cloudでデータをインポートする際に発生する可能性のある問題と、それに対応する解決策をリストアップします。
+このトピックでは、Zilliz Cloud でデータをインポートする際に発生する可能性のある問題と、それに対応する解決策をリストアップします。
 
 ## 目次
 
 - [オブジェクトストレージサービスからデータをインポートする際に、短期的な認証情報を使用できますか？](#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service)
-- [Zilliz Cloudベクターデータベースにデータを一括挿入できますか？](#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases)
-- [Node.js SDKを使用してZilliz Cloudクラスターにデータをインポートまたはクエリする際に、ECONNRESETエラーが発生した場合、どうすればよいですか？](#what-can-i-do-if-i-receive-econnreset-errors-when-impo rting-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk)
+- [Zilliz Cloud ベクトルデータベースにデータを一括挿入できますか？](#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases)
+- [Node.js SDK を使用して Zilliz Cloud クラスターにデータをインポートまたはクエリする際に ECONNRESET エラーが発生した場合、どうすればよいですか？](#what-can-i-do-if-i-receive-econnreset-errors-when-importing-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk)
 
-## FAQ
-
-
+## よくある質問
 
 
-### オブジェクトストレージサービスからデータをインポートする際に、短期的な認証情報を使用できますか？{#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service}
+
+
+### オブジェクトストレージサービスからデータをインポートする際に、短期的な認証情報を使用できますか？\{#can-i-use-short-term-credentials-when-importing-data-from-an-object-storage-service}
 
 はい。データセキュリティ要件に基づいて、オブジェクトストレージサービスからデータをインポートする際にセッショントークンを使用できます。
 
 1. セッショントークンを生成します。
 
-    - Amazon S3: [AWSリソースでの一時的な認証情報の使用](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)。
+    - Amazon S3: [AWS リソースでの一時的な認証情報の使用](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)。
 
     - Google Cloud Storage: [サービスアカウントの短期間の認証情報を作成する](https://cloud.google.com/iam/docs/create-short-lived-credentials-direct)
 
-    - Azure Blog Storage: [ストレージコンテナのSASトークンを作成する](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/create-sas-tokens?view=doc-intel-4.0.0)
+    - Azure Blog Storage: [ストレージコンテナの SAS トークンを作成する](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/create-sas-tokens?view=doc-intel-4.0.0)
 
 1. データインポート中に以下のセッショントークン情報を入力します。
 
-    - Amazon S3: `accessKeyId`, `secretAccessKey`, `sessionToken`
+    - Amazon S3: `accessキーId`, `secretAccessキー`, `sessionToken`
 
     - Google Cloud Storage: `accessToken`
 
     - Azure Blog Storage: `sasToken`
 
-### Zilliz Cloudベクターデータベースにデータを一括挿入できますか？{#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases}
+### Zilliz Cloud ベクトルデータベースにデータを一括挿入できますか？\{#can-i-bulk-insert-data-into-the-zilliz-cloud-vector-databases}
 
-はい。詳細については、[データインポート](./data-import)を参照してください。
+はい。詳細については、[データインポート](./data-import) を参照してください。
 
-### Node.js SDKを使用してZilliz Cloudクラスターにデータをインポートまたはクエリする際に、ECONNRESETエラーが発生した場合、どうすればよいですか？{#what-can-i-do-if-i-receive-econnreset-errors-when-importing-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk}
+### Node.js SDK を使用して Zilliz Cloud クラスターにデータをインポートまたはクエリする際に ECONNRESET エラーが発生した場合、どうすればよいですか？\{#what-can-i-do-if-i-receive-econnreset-errors-when-importing-data-to-or-querying-zilliz-cloud-clusters-with-nodejs-sdk}
 
 この問題を解決するには、以下の手順に従ってください。
 
-1. **channelOptions**をサポートするMilvus NodeJS SDKの最新バージョンにアップグレードします。
+1. **channelOptions** をサポートする Milvus NodeJS SDK の最新バージョンにアップグレードします。
 
-1. channelOptionsを手動で追加します。
+1. channelOptions を手動で追加します。
 
     ```javascript
     const channelOptions: ChannelOptions = {
@@ -76,7 +76,7 @@ sidebar_position: 4
     };
     ```
 
-1. `channelOptions` を使用してクライアントを初期化します。
+1. channelOptions を使用してクライアントを初期化します。
 
     ```javascript
     import { MilvusClient, DataType } from '@zilliz/milvus2-sdk-node';

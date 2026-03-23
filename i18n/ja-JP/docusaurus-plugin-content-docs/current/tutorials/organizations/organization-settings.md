@@ -4,20 +4,16 @@ slug: /organization-settings
 sidebar_label: "組織設定"
 beta: FALSE
 notebook: FALSE
-description: "組織のオーナーである場合、組織設定を管理する権限があります。"
+description: "組織オーナーであれば、組織設定を管理する権限があります。 | Cloud"
 type: origin
 token: AAqUwQW3qia3akkjfDNc0kwanlh
 sidebar_position: 2
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
-  - 組織
-  - 設定
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - cloud
+  - organizations
+  - settings
 
 ---
 
@@ -28,89 +24,89 @@ import Procedures from '@site/src/components/Procedures';
 
 # 組織設定の管理
 
-組織の所有者である場合、組織設定を管理する権限があります。
+組織オーナーである場合、組織設定を管理する権限があります。
 
-このガイドでは、組織設定を管理する手順を説明します。
+このガイドでは、組織設定を管理する手順について説明します。
 
-## 組織の表示{#view-organizations}
+## 組織の表示\{#view-organizations}
 
-Zilliz Cloud にサインアップすると、デフォルトの組織が作成されます。新しい組織を作成することはできませんが、招待によって他のユーザーの組織に参加することはできます。
+Zilliz Cloud にサインアップすると、デフォルトの組織が作成されます。新しい組織を作成することはできませんが、招待を通じて他のユーザーの組織に参加することができます。
 
-[Zilliz Cloud コンソール](https://cloud.zilliz.com/login)にログインすると、参加している組織を一覧表示するページが表示されます。これらの組織を確認して入ることができます。
+[Zilliz Cloud コンソール](https://cloud.zilliz.com/login) にログインすると、参加している組織の一覧ページが表示されます。これらの組織を確認して進入することができます。
 
-参加しているすべての組織をすばやく表示するには、左上隅の **All Organizations** をクリックします。
+参加したすべての組織をすばやく表示するには、左上隅にある **すべての組織** をクリックしてください。
 
 ![view-organizations](https://zdoc-images.s3.us-west-2.amazonaws.com/view-organizations.png "view-organizations")
 
-## 組織名の変更{#rename-an-organization}
+## 組織の名前変更\{#rename-an-organization}
 
-組織名を変更するには、[組織の所有者](./organization-users)である必要があります。
+組織の名前を変更するには、[組織オーナー](./organization-users) である必要があります。
 
-組織名を変更するには、次のいずれかの方法があります。
+組織の名前変更は、以下のいずれかの方法で行えます。
 
-- 組織リストページで組織名を変更する:
+- 組織一覧ページで組織の名前を変更する：
 
     ![rename-organization](https://zdoc-images.s3.us-west-2.amazonaws.com/rename-organization.png "rename-organization")
 
-- 組織に入り、**System Settings** ページで組織名を変更する:
+- 組織に入り、**システム設定** ページで名前を変更する：
 
     ![edit-organization-name](https://zdoc-images.s3.us-west-2.amazonaws.com/edit-organization-name.png "edit-organization-name")
 
-## タイムゾーンの管理{#manage-timezone}
+## タイムゾーンの設定\{#manage-timezone}
 
-システムタイムゾーンは、最初のログインが発生した場所に設定され、Zilliz Cloud に表示されるすべての時刻文字列に適用されます。
+システムのタイムゾーンは、最初のログイン時に設定され、Zilliz Cloud に表示されるすべての時刻文字列に適用されます。
 
-現在のタイムゾーンを表示するには、組織の所有者または組織のメンバーである必要があります。組織内の役割の詳細については、[組織ユーザーの管理](./organization-users)を参照してください。
+現在のタイムゾーンを表示するには、組織オーナーまたは組織メンバーである必要があります。組織内の役割の詳細については、[組織ユーザーの管理](./organization-users) を参照してください。
 
 ![timezone-settings](https://zdoc-images.s3.us-west-2.amazonaws.com/timezone-settings.png "timezone-settings")
 
-システムタイムゾーンを変更するには、[組織の所有者](./organization-users)である必要があります。**Edit** をクリックして **Time Zone Settings** ダイアログボックスを開き、ドロップダウンリストからタイムゾーンを選択します。タイムゾーンの名前を入力して、目的のタイムゾーンをすばやくフィルタリングすることもできます。
+システムのタイムゾーンを変更するには、[組織オーナー](./organization-users) である必要があります。**編集** をクリックして **タイムゾーン設定** ダイアログボックスを開き、ドロップダウンリストからタイムゾーンを選択します。また、タイムゾーンの名前を入力して、目的のタイムゾーンをすばやくフィルターすることもできます。
 
-## メンテナンスウィンドウの設定{#set-up-maintenance-window}
+## メンテナンス期間の設定\{#set-up-maintenance-window}
 
-Zilliz Cloud がホストされているクラスターのメンテナンスをスケジュールできるように、メンテナンスウィンドウを設定できます。これにより、影響の大きいメンテナンスイベントがより予測可能になり、ワークロードへの影響が少なくなります。
+メンテナンス期間を設定することで、Zilliz Cloud がホストされたクラスターのメンテナンスをスケジュールできるようにできます。これにより、影響の大きいメンテナンスイベントをより予測可能にし、ワークロードへの混乱を軽減できます。
 
-現在、メンテナンスウィンドウの設定はグローバルであり、Zilliz Cloud でホストされているすべてのクラスターに適用されます。
+現在、メンテナンス期間の設定はグローバルであり、Zilliz Cloud でホストされているすべてのクラスターに適用されます。
 
-デフォルトでは、Zilliz Cloud は、ピーク時のビジネス時間中の混乱を避けるため、毎日午前0時から午後2時までのほとんどの影響の大きい更新をブロックします。特定の日の今後のメンテナンスイベントについては、事前に通知が届きます。その日、Zilliz Cloud は優先ウィンドウ時間中にアクションを実行します。
+デフォルトでは、Zilliz Cloud はビジネスピーク時の混乱を避けるため、毎日現地時間の午前 0 時から午後 2 時まで、最も影響の大きい更新をブロックします。特定の日に行われる今後のメンテナンスイベントについては、事前に通知が届きます。その日、Zilliz Cloud は希望する期間中にアクションを実行します。
 
-メンテナンスイベントは通常2時間続き、サービスの中断を引き起こす可能性があります。デフォルトのメンテナンスウィンドウは現地時間の午前2時から午前4時です。ニーズに合わせて「System Maintenance Window」のオプションを選択することで、メンテナンスウィンドウを調整できます。
+メンテナンスイベントは通常 2 時間続き、サービス中断を引き起こす可能性があります。デフォルトのメンテナンス期間は、現地時間の午前 2 時から午前 4 時の間です。「システムメンテナンス期間」でオプションを選択し、ニーズに合わせてメンテナンス期間を調整できます。
 
-メンテナンスイベントが終了すると、別の通知が届きます。Zilliz Cloud は、通知を見逃した場合に備えて、すべてのメンテナンスイベントの開始と終了を「Activities」にリストアップし、さらに確認できるようにします。
+メンテナンスイベントが完了した後、再度通知が届きます。また、Zilliz Cloud は、「アクティビティ」に各メンテナンスイベントの開始時刻と終了時刻を一覧表示するため、通知を見逃した場合でも後で確認できます。
 
-現在のタイムゾーンを表示するには、左側のナビゲーションペインから **Settings** を選択し、**System Maintenance Window** エリアで現在適用されているメンテナンスウィンドウ時間を見つけます。
+現在のタイムゾーンを表示するには、左側のナビゲーションペインから **設定** を選択し、**システムメンテナンス期間** エリアで現在適用されているメンテナンス期間を確認します。
 
-システムメンテナンスウィンドウ時間を変更するには、**Edit** をクリックして Edit System Maintenance Window ダイアログボックスを開き、**System Maintenance Window** ドロップダウンリストから時間ウィンドウを選択します。
+システムのメンテナンス期間を変更するには、**編集** をクリックして「システムメンテナンス期間の編集」ダイアログボックスを開き、**システムメンテナンス期間** のドロップダウンリストから時間枠を選択します。
 
 ![maintenance-window](https://zdoc-images.s3.us-west-2.amazonaws.com/maintenance-window.png "maintenance-window")
 
-## 組織の削除{#delete-organization}
+## 組織の削除\{#delete-organization}
 
-開始する前に、次の条件が満たされていることを確認してください。
+開始する前に、以下の条件が満たされていることを確認してください。
 
-- 現在の組織内のすべてのクラスターが[削除されている](./manage-cluster)。
+- 現在の組織内のすべてのクラスターが [削除](./manage-cluster) されていること。
 
-- 現在の組織内のすべてのボリュームが[削除されている](./manage-volumes-via-console#delete-a-volume)。
+- 現在の組織内のすべてのボリュームが [削除](./manage-volumes-via-console#delete-a-volume) されていること。
 
-- すべての組織の[請求書](./view-invoice)が支払われている。
+- 組織のすべての [請求書](./view-invoice) が支払済みであること。
 
-- ターゲット組織で[組織の所有者](./organization-users)の役割が付与されている。
+- 対象組織で [組織オーナー](./organization-users) の役割が付与されていること。
 
-- 残りの前払い資金はすべて返金する必要がある。
+- 残っている前払い資金はすべて返金される必要があること。
 
-- サードパーティの[マーケットプレイスサブスクリプションをキャンセルする必要がある](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription)。
+- サードパーティの [マーケットプレイスサブスクリプションがキャンセル](./subscribe-on-aws-marketplace#cancel-aws-marketplace-subscription) されていること。
 
 組織を削除するには：
 
 <Procedures>
 
-1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login)にログインします。
+1. [Zilliz Cloud コンソール](https://cloud.zilliz.com/login) にログインします。
 
 1. 削除したい組織に入ります。
 
-1. 左側のナビゲーションペインで、**Settings** をクリックします。
+1. 左側のナビゲーションペインで、**設定** をクリックします。
 
-1. **System Settings** ページで、**Delete Organization** エリアを見つけてボタンをクリックします。
+1. **システム設定** ページで、**組織の削除** エリアを見つけ、ボタンをクリックします。
 
 1. ポップアップウィンドウの指示に従い、ボタンをクリックして組織の削除を完了します。
 
@@ -118,7 +114,7 @@ Zilliz Cloud がホストされているクラスターのメンテナンスを�
 
 <Admonition type="caution" icon="🚧" title="Warning">
 
-<p>組織を削除する操作は元に戻せません。この操作には細心の注意を払ってください。</p>
+<p>組織を削除する操作は元に戻せません。この操作には十分ご注意ください。</p>
 
 </Admonition>
 

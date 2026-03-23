@@ -29,6 +29,7 @@ This topic lists the possible issues that you may encounter while you use Zilliz
 - [What happens to my inactive clusters?](#what-happens-to-my-inactive-clusters)
 - [Will I be charged if I suspend my cluster?](#will-i-be-charged-if-i-suspend-my-cluster)
 - [How to obtain a cluster URI?](#how-to-obtain-a-cluster-uri)
+- [Can I connect Zilliz Cloud to Attu?](#can-i-connect-zilliz-cloud-to-attu)
 
 ## FAQs
 
@@ -191,3 +192,7 @@ When your cluster is suspended, you will only be charged for storage, not comput
 A cluster URI refers to your cluster endpoint which can be used for connection.
 
 You can obtain the URI from the Zilliz Cloud web console. For details, refer to [Connect to Cluster](./connect-to-cluster#connect-to-a-cluster).
+
+### Can I connect Zilliz Cloud to Attu?{#can-i-connect-zilliz-cloud-to-attu}
+
+Yes. [Attu](https://github.com/zilliztech/attu) is an open-source visual management tool for Milvus and Zilliz Cloud. You can run it as a Docker container or desktop app. To connect, provide your Zilliz Cloud **public endpoint** and **API key** (or cluster credentials in username:password format) on the Attu login page.

@@ -55,11 +55,17 @@ The following table lists the corresponding UI and API privileges of each projec
      <th><p><strong>Data Plane RESTful API (V2) Privileges</strong></p></th>
    </tr>
    <tr>
-     <td><ul><li><p>Manage <a href="./collection">collections</a> & <a href="./manage-indexes">indexes</a></p></li><li><p>Manage <a href="./project-users">project users</a></p></li><li><p>Manage <a href="./network-and-security">IP access list and private links</a></p></li><li><p>Manage <a href="./manage-project-alerts">project alerts</a></p></li><li><p>Manage <a href="./backup-and-restore">backups</a></p></li><li><p>Manage data <a href="./migrations">migrations</a></p></li><li><p>Manage <a href="./job-center">project jobs</a></p></li><li><p>Manage integrations</p></li><li><p>Plus all <a href="./cluster-roles#built-in-cluster-roles">Cluster Admin</a> privileges </p></li></ul></td>
+     <td><ul><li><p>Manage <a href="./collection">collections</a> & <a href="./manage-indexes">indexes</a></p></li><li><p>Manage <a href="./project-users">project users</a></p></li><li><p>Manage <a href="./setup-console-ip-allowlist">Console IP access list</a></p></li><li><p>Manage <a href="./manage-project-alerts">project alerts</a></p></li><li><p>Manage <a href="./backup-and-restore">backups</a></p></li><li><p>Manage data <a href="./migrations">migrations</a></p></li><li><p>Manage <a href="./job-center">project jobs</a></p></li><li><p>Manage integrations</p></li><li><p>Plus all <a href="./cluster-roles#built-in-cluster-roles">Cluster Admin</a> privileges </p></li></ul></td>
      <td><ul><li><p><a href="/reference/restful/cloud-meta-v2">All cloud meta operations</a></p></li><li><p><a href="/reference/restful/cluster-operations-v2">All cluster operations</a></p></li><li><p><a href="/reference/restful/volume-operations-v2">All volume operations</a></p></li><li><p><a href="/reference/restful/import-operations-v2">All import operations</a></p></li><li><p><a href="/reference/restful/backup-and-restore-v2">All backup & restore operations</a></p></li><li><p><a href="/reference/restful/cloud-migration-v2">All cloud migration operations</a></p></li><li><p><a href="/reference/restful/cloud-job-v2">All cloud job operations</a></p></li></ul></td>
      <td><ul><li><p><a href="/reference/restful/collection-operations-v2">All collection operations</a></p></li><li><p><a href="/reference/restful/index-operations-v2">All index operations</a></p></li><li><p><a href="/reference/restful/partition-operations-v2">All partition operations</a></p></li><li><p><a href="/reference/restful/vector-operations-v2">All vector operations</a></p></li><li><p><a href="/reference/restful/alias-operations-v2">All alias operations</a></p></li><li><p><a href="/reference/restful/role-operations-v2">All role operations</a></p></li><li><p><a href="/reference/restful/user-operations-v2">All user operations</a></p></li></ul></td>
    </tr>
 </table>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 ### Project Access\{#project-access}
 
@@ -92,6 +98,12 @@ A Read-Write role has the privileges to view a project and manage its resources 
    </tr>
 </table>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
+
 #### Read-Only\{#read-only}
 
 A Read-Only role has the privileges to view a project and its resources (clusters, databases, collections). The following table lists the corresponding UI and API privileges of each project role.
@@ -108,6 +120,12 @@ A Read-Only role has the privileges to view a project and its resources (cluster
      <td><ul><li><p>Part of collection operations</p><ul><li><p><a href="/reference/restful/describe-collection-v2">Describe Collection</a></p></li><li><p><a href="/reference/restful/get-collection-load-state-v2">Get Collection Load State</a></p></li><li><p><a href="/reference/restful/get-collection-stats-v2">Get Collection Stats</a></p></li><li><p><a href="/reference/restful/has-collection-v2">Has Collection</a></p></li><li><p><a href="/reference/restful/list-collections-v2">List Collections</a></p></li></ul></li><li><p>Part of index operations</p><ul><li><p><a href="/reference/restful/describe-index-v2">Describe Index</a></p></li><li><p><a href="/reference/restful/list-indexes-v2">List Indexes</a></p></li></ul></li><li><p>Part of partition operations</p><ul><li><p><a href="/reference/restful/get-partition-statistics-v2">Get Partition Statistics</a></p></li><li><p><a href="/reference/restful/has-partition-v2">Has Partition</a></p></li><li><p><a href="/reference/restful/list-partitions-v2">List Partitions</a></p></li></ul></li><li><p>Part of alias operations</p><ul><li><p><a href="/reference/restful/describe-alias-v2">Describe Alias</a></p></li><li><p><a href="/reference/restful/list-aliases-v2">List Aliases</a></p></li></ul></li><li><p>Part of vector operations</p><ul><li><p><a href="/reference/restful/get-v2">Get</a></p></li><li><p><a href="/reference/restful/hybrid-search-v2">Hybrid Search</a></p></li><li><p><a href="/reference/restful/query-v2">Query</a></p></li><li><p><a href="/reference/restful/search-v2">Search</a></p></li></ul></li></ul></td>
    </tr>
 </table>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 Invitation recipients will receive an email invitation that must be accepted within 48 hours to join the project. Alternatively, you can also copy the invitation link from the web console and share it with the invitees.
 

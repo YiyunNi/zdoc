@@ -70,9 +70,9 @@ A connection timeout error may occur in the following scenarios:
 
     Zilliz Cloud clusters come with TLS enabled, so to connect successfully to your cluster, ensure that you include `secure` in the connect parameters and set it to `true` as shown in the above example. Failure to do so may result in a connection failure and a timeout error prompt.
 
-- Non-whitelisted local IP addresses
+- VPC security group rules
 
-    If you are attempting to connect to your cluster, you also need to ensure that you have turned off any VPN/Proxy connections, obtained your public IP address (private IP addresses simply do not work), and added that IP address to the whitelist for the clusters you want to connect to.
+    If you experience connection timeouts, check your VPC security group rules to ensure the source IP is allowed.
 
 ### Why can’t I connect to the cluster after the cluster is created?{#why-cant-i-connect-to-the-cluster-after-the-cluster-is-created}
 

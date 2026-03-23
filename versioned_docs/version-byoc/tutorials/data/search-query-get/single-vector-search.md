@@ -52,7 +52,7 @@ For details on AUTOINDEX and applicable metric types, refer to [AUTOINDEX Explai
 
 - [Bulk-vector search](./single-vector-search#bulk-vector-search)
 
-- [ANN search in partition](./single-vector-search#ann-search-in-partition)
+- [ANN search in partitions](./single-vector-search#ann-search-in-partition)
 
 - [Use output fields](./single-vector-search#use-output-fields)
 
@@ -69,6 +69,12 @@ For details on AUTOINDEX and applicable metric types, refer to [AUTOINDEX Explai
 In ANN searches, a single-vector search refers to a search that involves only one query vector. Based on the pre-built index and the metric type carried in the search request, Zilliz Cloud will find the top-K vectors most similar to the query vector.
 
 In this section, you will learn how to conduct a single-vector search. The search request carries a single query vector and asks Zilliz Cloud to use Inner Product (IP) to calculate the similarity between query vectors and vectors in the collection and returns the three most similar ones.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

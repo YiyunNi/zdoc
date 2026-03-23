@@ -4,21 +4,17 @@ slug: /analyzer-overview
 sidebar_label: "概要"
 beta: FALSE
 notebook: FALSE
-description: "テキスト処理において、アナライザーは生のテキストを構造化された検索可能な形式に変換する重要なコンポーネントです。各アナライザーは通常、トークナイザーとフィルターという2つの主要な要素で構成されています。これらが連携して入力テキストをトークンに変換し、これらのトークンを洗練させ、効率的なインデックス作成と検索のために準備します。 | Cloud"
+description: "テキスト処理において、アナライザーは生テキストを構造化された検索可能な形式に変換する重要なコンポーネントです。各アナライザーは通常、トークナイザーとフィルターという 2 つのコア要素で構成されています。これらが連携して入力テキストをトークンに変換し、これらのトークンを精査することで、効率的なインデックス作成と検索の準備を行います。 | Cloud"
 type: origin
 token: H8MVwnjdgihp0hkRHHKcjBe9n5e
 sidebar_position: 1
-keywords: 
+keywords:
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - collection
   - schema
-  - アナライザー
-  - マルチモーダルベクトルデータベース検索
-  - Retrieval Augmented Generation
-  - 大規模言語モデル
-  - ベクトル化
+  - analyzer の解説
 
 ---
 
@@ -30,27 +26,27 @@ import Supademo from '@site/src/components/Supademo';
 
 # アナライザーの概要
 
-テキスト処理において、**アナライザー**は、生のテキストを構造化された検索可能な形式に変換する上で重要なコンポーネントです。各アナライザーは通常、**トークナイザー**と**フィルター**という2つのコア要素で構成されています。これらが連携して、入力テキストをトークンに変換し、これらのトークンを洗練し、効率的なインデックス作成と検索のために準備します。
+テキスト処理において、**アナライザー**は生のテキストを構造化された検索可能な形式に変換するための重要なコンポーネントです。各アナライザーは通常、**トークナイザー**と**フィルター**という2つのコア要素で構成されています。これらが協調して入力テキストをトークンに変換し、それらのトークンを洗練させて、効率的なインデックス作成および検索の準備を行います。
 
-Zilliz Cloudでは、コレクションスキーマに`VARCHAR`フィールドを追加する際に、コレクション作成時にアナライザーが設定されます。アナライザーによって生成されたトークンは、キーワードマッチングのインデックスを構築したり、フルテキスト検索用のスパース埋め込みに変換したりするために使用できます。詳細については、[フルテキスト検索](./full-text-search)または[テキストマッチ](./text-match)を参照してください。
+Zilliz Cloudでは、コレクションスキーマに`VARCHAR`フィールドを追加する際に、コレクション作成時にアナライザーを設定します。アナライザーによって生成されたトークンは、キーワードマッチング用のインデックス構築に使用することも、全文検索用のスパース埋め込みに変換することもできます。詳細については、[Full Text Search](./full-text-search) または [Text Match](./text-match) を参照してください。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>アナライザーの使用はパフォーマンスに影響を与える可能性があります。</p>
+<p>アナライザーの使用はパフォーマンスに影響を与える可能性があります:</p>
 <ul>
-<li><p><strong>フルテキスト検索:</strong> フルテキスト検索の場合、<strong>DataNode</strong>と<strong>QueryNode</strong>チャネルは、トークン化が完了するのを待つ必要があるため、データの消費が遅くなります。その結果、新しく取り込まれたデータが検索可能になるまでに時間がかかります。</p></li>
-<li><p><strong>キーワードマッチ:</strong> キーワードマッチングの場合、インデックスの作成も遅くなります。これは、インデックスを構築する前にトークン化を完了する必要があるためです。</p></li>
+<li><p><strong>全文検索:</strong> 全文検索の場合、<strong>DataNode</strong>および<strong>QueryNode</strong>チャネルはトークン化が完了するまで待機しなければならないため、データの消費速度が遅くなります。その結果、新しく取り込まれたデータが検索可能になるまでに時間がかかります。</p></li>
+<li><p><strong>キーワードマッチ:</strong> キーワードマッチの場合も、トークン化が完了してからでないとインデックスを作成できないため、インデックス作成が遅くなります。</p></li>
 </ul>
 
 </Admonition>
 
-## アナライザーの構成要素{#anatomy-of-an-analyzer}
+## アナライザーの構成\{#anatomy-of-an-analyzer}
 
-Zilliz Cloudのアナライザーは、1つの**トークナイザー**と**0個以上の**フィルターで構成されています。
+Zilliz Cloudにおけるアナライザーは、**ちょうど1つ**の**トークナイザー**と**ゼロ個以上**のフィルターで構成されます。
 
-- **トークナイザー**: トークナイザーは、入力テキストをトークンと呼ばれる個別の単位に分割します。これらのトークンは、トークナイザーの種類に応じて、単語またはフレーズになります。
+- **トークナイザー**: トークナイザーは入力テキストを「トークン」と呼ばれる個別の単位に分割します。これらのトークンは、トークナイザーの種類に応じて単語やフレーズになります。
 
-- **フィルター**: フィルターは、トークンをさらに洗練するために適用できます。たとえば、小文字に変換したり、一般的な単語を削除したりします。
+- **フィルター**: フィルターはトークンに適用され、小文字化や一般的な単語の除去など、トークンをさらに洗練させるために使用されます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -62,36 +58,36 @@ Zilliz Cloudのアナライザーは、1つの**トークナイザー**と**0個
 
 ![Ke6jw8437hjR8hbZCvEcQtIIn1e](https://zdoc-images.s3.us-west-2.amazonaws.com/Ke6jw8437hjR8hbZCvEcQtIIn1e.png)
 
-## アナライザーの種類{#analyzer-types}
+## アナライザーの種類\{#analyzer-types}
 
-Zilliz Cloudは、さまざまなテキスト処理のニーズに対応するために、2種類のアナライザーを提供しています。
+Zilliz Cloudでは、さまざまなテキスト処理ニーズに対応するために、次の2種類のアナライザーを提供しています。
 
-- **組み込みアナライザー**: これらは、一般的なテキスト処理タスクを最小限の設定でカバーする事前定義された構成です。組み込みアナライザーは、複雑な設定が不要なため、汎用的な検索に最適です。
+- **組み込みアナライザー**: これらは事前定義された設定で、最小限のセットアップで一般的なテキスト処理タスクをカバーします。組み込みアナライザーは汎用的な検索に最適で、複雑な設定が不要です。
 
-- **カスタムアナライザー**: より高度な要件の場合、カスタムアナライザーを使用すると、トークナイザーと0個以上のフィルターの両方を指定して独自の構成を定義できます。このレベルのカスタマイズは、テキスト処理を正確に制御する必要がある特殊なユースケースで特に役立ちます。
+- **カスタムアナライザー**: より高度な要件に対しては、カスタムアナライザーを使用することで、トークナイザーとゼロ個以上のフィルターを自分で指定した独自の設定を定義できます。このレベルのカスタマイズは、テキスト処理をきめ細かく制御する必要がある特殊なユースケースに特に役立ちます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
 <ul>
-<li><p>コレクション作成時にアナライザーの設定を省略した場合、Zilliz Cloudはデフォルトですべてのテキスト処理に<code>standard</code>アナライザーを使用します。詳細については、<a href="./standard-analyzer">Standard</a>を参照してください。</p></li>
-<li><p>最適な検索およびクエリパフォーマンスを得るには、テキストデータの言語に一致するアナライザーを選択してください。たとえば、<code>standard</code>アナライザーは汎用性がありますが、中国語、日本語、韓国語などの独自の文法構造を持つ言語には最適ではない場合があります。そのような場合は、<a href="./chinese-analyzer"><code>chinese</code></a>のような言語固有のアナライザーや、特殊なトークナイザー（<a href="./lindera-tokenizer"><code>lindera</code></a>、<a href="./icu-tokenizer"><code>icu</code></a>など）とフィルターを備えたカスタムアナライザーを使用することを強くお勧めします。これにより、正確なトークン化とより良い検索結果が保証されます。</p></li>
+<li><p>コレクション作成時にアナライザーの設定を省略した場合、Zilliz Cloudはすべてのテキスト処理にデフォルトで<code>standard</code>アナライザーを使用します。詳細については、<a href="./standard-analyzer">Standard</a>を参照してください。</p></li>
+<li><p>検索およびクエリのパフォーマンスを最適化するには、テキストデータの言語に合ったアナライザーを選択してください。たとえば、<code>standard</code>アナライザーは汎用性が高いものの、中国語、日本語、韓国語など、独自の文法構造を持つ言語には必ずしも最適ではありません。このような場合には、<a href="./chinese-analyzer"><code>chinese</code></a>のような言語固有のアナライザーや、<a href="./lindera-tokenizer"><code>lindera</code></a>や<a href="./icu-tokenizer"><code>icu</code></a>などの特殊なトークナイザーとフィルターを組み合わせたカスタムアナライザーを使用することを強く推奨します。これにより、正確なトークン化とより良い検索結果が得られます。</p></li>
 </ul>
 
 </Admonition>
 
-### 組み込みアナライザー{#built-in-analyzer}
+### 組み込みアナライザー\{#built-in-analyzer}
 
-Zilliz Cloudクラスターの組み込みアナライザーは、特定のトークナイザーとフィルターで事前に構成されており、これらのコンポーネントを自分で定義することなくすぐに使用できます。各組み込みアナライザーは、プリセットのトークナイザーとフィルター、およびカスタマイズ用のオプションパラメーターを含むテンプレートとして機能します。
+Zilliz Cloudクラスター内の組み込みアナライザーは、特定のトークナイザーとフィルターが事前設定されており、これらのコンポーネントを自分で定義せずにすぐに使用できます。各組み込みアナライザーはテンプレートとして機能し、プリセットされたトークナイザーとフィルターを含み、必要に応じてカスタマイズ可能なオプションのパラメーターも備えています。
 
-たとえば、`standard`組み込みアナライザーを使用するには、その名前`standard`を`type`として指定し、オプションで`stop_words`など、このアナライザータイプに固有の追加設定を含めます。
+たとえば、`standard`組み込みアナライザーを使用するには、その名前`standard`を`type`として指定し、必要に応じてこのアナライザー固有の追加設定（例: `stop_words`）を含めるだけです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
 analyzer_params = {
-    "type": "standard", # Uses the standard built-in analyzer
-    "stop_words": ["a", "an", "for"] # Defines a list of common words (stop words) to exclude from tokenization
+    "type": "standard", # standard 組み込みアナライザーを使用
+    "stop_words": ["a", "an", "for"] # トークン化から除外する一般的な単語（ストップワード）のリストを定義
 }
 ```
 
@@ -111,8 +107,8 @@ analyzerParams.put("stop_words", Arrays.asList("a", "an", "for"));
 
 ```javascript
 const analyzer_params = {
-    "type": "standard", // Uses the standard built-in analyzer
-    "stop_words": ["a", "an", "for"] // Defines a list of common words (stop words) to exclude from tokenization
+    "type": "standard", // standard 組み込みアナライザーを使用
+    "stop_words": ["a", "an", "for"] // トークン化から除外する一般的な単語（ストップワード）のリストを定義
 };
 ```
 
@@ -138,16 +134,16 @@ export analyzerParams='{
 </TabItem>
 </Tabs>
 
-アナライザーの実行結果を確認するには、`run_analyzer` メソッドを使用します。
+アナライザーの実行結果を確認するには、`run_analyzer` メソッドを使用します：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-# Sample text to analyze
+# 分析するサンプルテキスト
 text = "An efficient system relies on a robust analyzer to correctly process text for various applications."
 
-# Run analyzer
+# アナライザーを実行
 result = client.run_analyzer(
     text,
     analyzer_params
@@ -177,10 +173,10 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 <TabItem value='javascript'>
 
 ```javascript
-// javascrip# Sample text to analyze
+// 分析するサンプルテキスト
 const text = "An efficient system relies on a robust analyzer to correctly process text for various applications."
 
-// Run analyzer
+// アナライザーを実行
 const result = await client.run_analyzer({
     text,
     analyzer_params
@@ -231,15 +227,15 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/common/run_analyzer" \
 </TabItem>
 </Tabs>
 
-出力は次のとおりです。
+出力は次のようになります。
 
 ```plaintext
 ['efficient', 'system', 'relies', 'on', 'robust', 'analyzer', 'to', 'correctly', 'process', 'text', 'various', 'applications']
 ```
 
-これは、アナライザーがストップワードである「a」、「an」、「for」を除外することで入力テキストを適切にトークン化し、残りの意味のあるトークンを返すことを示しています。
+これは、アナライザーが入力テキストを適切にトークン化し、ストップワード `"a"`、`"an"`、および `"for"` をフィルタリングしつつ、残りの意味のあるトークンを返すことを示しています。
 
-上記の `standard` 組み込みアナライザーの設定は、次のパラメーターを持つ [カスタムアナライザー](./analyzer-overview#custom-analyzer) をセットアップすることと同じです。ここでは、同様の機能を実現するために `tokenizer` および `filter` オプションが明示的に定義されています。
+上記の組み込みアナライザー `standard` の設定は、以下のパラメータで[カスタムアナライザー](./analyzer-overview#custom-analyzer)を設定することと同等です。この場合、同様の機能を実現するために `tokenizer` および `filter` オプションが明示的に定義されています：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -307,7 +303,7 @@ analyzerParams = map[string]any{"tokenizer": "standard",
 
 ```bash
 export analyzerParams='{
-       "type": "standard",
+       "tokenizer": "standard",
        "filter":  [
        "lowercase",
        {
@@ -321,29 +317,29 @@ export analyzerParams='{
 </TabItem>
 </Tabs>
 
-Zilliz Cloud は、特定のテキスト処理ニーズに合わせて設計された以下の組み込みアナライザーを提供します。
+Zilliz Cloud には、特定のテキスト処理ニーズに合わせて設計された以下の組み込みアナライザーが用意されています。
 
-- `standard`: 標準的なトークン化と小文字フィルタリングを適用する、汎用テキスト処理に適しています。
+- `standard`: 汎用的なテキスト処理に適しており、標準的なトークン化と小文字フィルタリングを適用します。
 
-- `english`: 英語のストップワードをサポートし、英語のテキスト用に最適化されています。
+- `english`: 英語テキスト向けに最適化されており、英語のストップワードに対応しています。
 
-- `chinese`: 中国語の言語構造に適応したトークン化を含め、中国語のテキスト処理に特化しています。
+- `chinese`: 中国語テキストの処理に特化しており、中国語の言語構造に合わせたトークン化を含みます。
 
-### カスタムアナライザー{#custom-analyzer}
+### カスタムアナライザー\{#custom-analyzer}
 
-より高度なテキスト処理のために、Zilliz Cloud のカスタムアナライザーを使用すると、**トークナイザー**と**フィルター**の両方を指定することで、カスタマイズされたテキスト処理パイプラインを構築できます。この設定は、正確な制御が必要な特殊なユースケースに最適です。
+より高度なテキスト処理を行うには、Zilliz Cloud のカスタムアナライザーを使用して、**トークナイザー**と**フィルター**を指定することで、用途に合わせたテキスト処理パイプラインを構築できます。この設定は、細やかな制御が必要な特殊なユースケースに最適です。
 
-#### トークナイザー{#tokenizer}
+#### トークナイザー\{#tokenizer}
 
-**トークナイザー**は、カスタムアナライザーの**必須**コンポーネントであり、入力テキストを個別の単位または**トークン**に分解することでアナライザーパイプラインを開始します。トークン化は、トークナイザーの種類に応じて、空白や句読点による分割などの特定のルールに従います。このプロセスにより、各単語やフレーズをより正確かつ独立して処理できます。
+**トークナイザー**はカスタムアナライザーに**必須**のコンポーネントであり、入力テキストを個別の単位（**トークン**）に分割することでアナライザーパイプラインを開始します。トークン化は、ホワイトスペースや句読点による分割など、トークナイザーの種類に応じた特定のルールに従って行われます。これにより、各単語やフレーズをより正確かつ独立的に処理できます。
 
-たとえば、トークナイザーはテキスト`"Vector Database Built for Scale"`を個別のトークンに変換します。
+例えば、トークナイザーはテキスト `"Vector Database Built for Scale"` を以下のような個別のトークンに変換します：
 
 ```plaintext
 ["Vector", "Database", "Built", "for", "Scale"]
 ```
 
-**トークナイザーの指定例**:
+**トークナイザーを指定する例**:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -387,34 +383,34 @@ analyzerParams = map[string]any{"tokenizer": "whitespace"}
 
 ```bash
 export analyzerParams='{
-       "type": "whitespace"
+       "tokenizer": "whitespace"
     }'
 ```
 
 </TabItem>
 </Tabs>
 
-#### フィルター{#filter}
+#### Filter\{#filter}
 
-**フィルター**は、トークナイザーによって生成されたトークンに対して機能する**オプション**のコンポーネントであり、必要に応じてそれらを変換または洗練します。たとえば、トークン化された用語 `["Vector", "Database", "Built", "for", "Scale"]` に `lowercase` フィルターを適用すると、結果は次のようになります。
+**フィルター**はトークナイザーによって生成されたトークンに対して機能する**オプション**のコンポーネントであり、必要に応じてそれらを変換または精製します。たとえば、トークン化された語 `["Vector", "Database", "Built", "for", "Scale"]` に `lowercase` フィルターを適用すると、結果は次のようになります:
 
 ```sql
 ["vector", "database", "built", "for", "scale"]
 ```
 
-カスタムアナライザーのフィルターは、設定の必要性に応じて、**組み込み**または**カスタム**のいずれかになります。
+カスタムアナライザーのフィルターは、設定の必要に応じて**組み込み**または**カスタム**のいずれかになります。
 
-- **組み込みフィルター**: Zilliz Cloudによって事前設定されており、最小限のセットアップで済みます。これらのフィルターは、名前を指定するだけでそのまま使用できます。以下のフィルターは、直接使用できる組み込みフィルターです。
+- **組み込みフィルター**: Zilliz Cloud によって事前設定されており、最小限のセットアップで使用できます。これらのフィルターは名前を指定するだけでそのまま利用可能です。以下のフィルターは組み込みフィルターとして直接使用できます：
 
-    - `lowercase`: テキストを小文字に変換し、大文字と小文字を区別しないマッチングを保証します。詳細については、[Lowercase](./lowercase-filter)を参照してください。
+    - `lowercase`: テキストを小文字に変換し、大文字・小文字を区別しないマッチングを実現します。詳細については、[Lowercase](./lowercase-filter) を参照してください。
 
-    - `asciifolding`: 非ASCII文字をASCII文字に変換し、多言語テキストの処理を簡素化します。詳細については、[ASCII folding](./ascii-folding-filter)を参照してください。
+    - `asciifolding`: 非 ASCII 文字を ASCII の同等文字に変換し、多言語テキストの処理を簡素化します。詳細については、[ASCII folding](./ascii-folding-filter) を参照してください。
 
-    - `alphanumonly`: 英数字以外の文字を削除して、英数字のみを保持します。詳細については、[Alphanumonly](./alphanumonly-filter)を参照してください。
+    - `alphanumonly`: 英数字以外の文字を削除し、英数字のみを保持します。詳細については、[Alphanumonly](./alphanumonly-filter) を参照してください。
 
-    - `cnalphanumonly`: 中国語、英語の文字、または数字以外の文字を含むトークンを削除します。詳細については、[Cnalphanumonly](./cnalphanumonly-filter)を参照してください。
+    - `cnalphanumonly`: 中国語文字、英字、数字以外の文字を含むトークンを削除します。詳細については、[Cnalphanumonly](./cnalphanumonly-filter) を参照してください。
 
-    - `cncharonly`: 中国語以外の文字を含むトークンを削除します。詳細については、[Cncharonly](./cncharonly-filter)を参照してください。
+    - `cncharonly`: 非中国語文字を含むトークンを削除します。詳細については、[Cncharonly](./cncharonly-filter) を参照してください。
 
     **組み込みフィルターの使用例:**
 
@@ -423,8 +419,8 @@ export analyzerParams='{
 
     ```python
     analyzer_params = {
-        "tokenizer": "standard", # Mandatory: Specifies tokenizer
-        "filter": ["lowercase"], # Optional: Built-in filter that converts text to lowercase
+        "tokenizer": "standard", # 必須: トークナイザーを指定
+        "filter": ["lowercase"], # オプション: テキストを小文字に変換する組み込みフィルター
     }
     ```
 
@@ -444,8 +440,8 @@ export analyzerParams='{
 
     ```javascript
     const analyzer_params = {
-        "tokenizer": "standard", // Mandatory: Specifies tokenizer
-        "filter": ["lowercase"], // Optional: Built-in filter that converts text to lowercase
+        "tokenizer": "standard", // 必須: トークナイザーを指定
+        "filter": ["lowercase"], // オプション: テキストを小文字に変換する組み込みフィルター
     }
     ```
 
@@ -464,7 +460,7 @@ export analyzerParams='{
 
     ```bash
     export analyzerParams='{
-           "type": "standard",
+           "tokenizer": "standard",
            "filter":  ["lowercase"]
         }'
     ```
@@ -472,13 +468,13 @@ export analyzerParams='{
     </TabItem>
     </Tabs>
 
-- **カスタムフィルター**: カスタムフィルターを使用すると、特殊な設定が可能です。有効なフィルタータイプ (`filter.type`) を選択し、各フィルタータイプに固有の設定を追加することで、カスタムフィルターを定義できます。カスタマイズをサポートするフィルタータイプの例を次に示します。
+- **カスタムフィルター**: カスタムフィルターを使用すると、特殊な設定が可能になります。有効なフィルターの種別（`filter.type`）を選択し、各フィルターの種別に応じた具体的な設定を追加することで、カスタムフィルターを定義できます。カスタマイズをサポートするフィルターの種別の例を以下に示します。
 
-    - `stop`: ストップワードのリストを設定することで、指定された一般的な単語を削除します (例: `"stop_words": ["of", "to"]`)。詳細については、[Stop](./stop-filter) を参照してください。
+    - `stop`: ストップワードのリストを指定して、特定の一般的な単語を削除します（例: `"stop_words": ["of", "to"]`）。詳細については、[Stop](./stop-filter) を参照してください。
 
-    - `length`: 最大トークン長を設定するなど、長さの基準に基づいてトークンを除外します。詳細については、[Length](./length-filter) を参照してください。
+    - `length`: トークンの長さに基づいて除外を行います（例: 最大トークン長を設定するなど）。詳細については、[Length](./length-filter) を参照してください。
 
-    - `stemmer`: より柔軟なマッチングのために、単語を語根形式に還元します。詳細については、[Stemmer](./stemmer-filter) を参照してください。
+    - `stemmer`: 単語をその語幹（ルート形）に還元することで、より柔軟なマッチングを実現します。詳細については、[Stemmer](./stemmer-filter) を参照してください。
 
     **カスタムフィルターの設定例:**
 
@@ -487,11 +483,11 @@ export analyzerParams='{
 
     ```python
     analyzer_params = {
-        "tokenizer": "standard", # Mandatory: Specifies tokenizer
+        "tokenizer": "standard", # 必須: トークナイザーを指定
         "filter": [
             {
-                "type": "stop", # Specifies 'stop' as the filter type
-                "stop_words": ["of", "to"], # Customizes stop words for this filter type
+                "type": "stop", # フィルターの種別として 'stop' を指定
+                "stop_words": ["of", "to"], # このフィルターの種別用にストップワードをカスタマイズ
             }
         ]
     }
@@ -507,7 +503,7 @@ export analyzerParams='{
     analyzerParams.put("filter",
             Collections.singletonList(new HashMap<String, Object>() {{
                 put("type", "stop");
-                put("stop_words", Arrays.asList("a", "an", "for"));
+                put("stop_words", Arrays.asList("of", "to"));
             }}));
     ```
 
@@ -517,11 +513,11 @@ export analyzerParams='{
 
     ```javascript
     const analyzer_params = {
-        "tokenizer": "standard", // Mandatory: Specifies tokenizer
+        "tokenizer": "standard", // 必須: トークナイザーを指定
         "filter": [
             {
-                "type": "stop", // Specifies 'stop' as the filter type
-                "stop_words": ["of", "to"], // Customizes stop words for this filter type
+                "type": "stop", // フィルターの種別として 'stop' を指定
+                "stop_words": ["of", "to"], // このフィルターの種別用にストップワードをカスタマイズ
             }
         ]
     };
@@ -545,11 +541,11 @@ export analyzerParams='{
 
     ```bash
     export analyzerParams='{
-           "type": "standard",
+           "tokenizer": "standard",
            "filter":  [
            {
                 "type": "stop",
-                "stop_words": ["a", "an", "for"]
+                "stop_words": ["of", "to"]
            }
         ]
     }'
@@ -560,28 +556,25 @@ export analyzerParams='{
 
 ```java
 nlohmann::json analyzer_params = {
-    {"type", "standard"},
-    {"filter", {{{"type", "stop"}, {"stop_words", {"a", "an", "for"}}}}},
+    {"tokenizer", "standard"},
+    {"filter", {{{"type", "stop"}, {"stop_words", {"of", "to"}}}}},
 };
 ```
 
-## 使用例{#example-use}
+## 使用例\{#example-use}
 
-この例では、以下を含むコレクションスキーマを作成します。
+この例では、以下の要素を含むコレクションスキーマを作成します。
 
-- 埋め込み用のベクトルフィールド。
-
-- テキスト処理用の2つの`VARCHAR`フィールド：
-
+- 埋め込み（embeddings）用のベクトルフィールド。
+- テキスト処理用の2つの `VARCHAR` フィールド：
     - 1つのフィールドは組み込みアナライザーを使用します。
-
     - もう1つのフィールドはカスタムアナライザーを使用します。
 
-これらの設定をコレクションに組み込む前に、`run_analyzer`メソッドを使用して各アナライザーを検証します。
+これらの設定をコレクションに組み込む前に、`run_analyzer` メソッドを使って各アナライザーを検証します。
 
-### ステップ1：MilvusClientを初期化し、スキーマを作成する{#step-1-initialize-milvusclient-and-create-schema}
+### ステップ 1: MilvusClient の初期化とスキーマの作成\{#step-1-initialize-milvusclient-and-create-schema}
 
-まず、Milvusクライアントをセットアップし、新しいスキーマを作成します。
+まず、Milvus クライアントをセットアップし、新しいスキーマを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -589,13 +582,13 @@ nlohmann::json analyzer_params = {
 ```python
 from pymilvus import MilvusClient, DataType
 
-# Set up a Milvus client
+# Milvus クライアントをセットアップ
 client = MilvusClient(
-    uri="YOUR_CLUSTER_ENDPOINT"，
+    uri="YOUR_CLUSTER_ENDPOINT",
     token="YOUR_CLUSTER_TOKEN"
 )
 
-# Create a new schema
+# 新しいスキーマを作成
 schema = client.create_schema(auto_id=True, enable_dynamic_field=False)
 ```
 
@@ -611,14 +604,14 @@ import io.milvus.v2.common.IndexParam;
 import io.milvus.v2.service.collection.request.AddFieldReq;
 import io.milvus.v2.service.collection.request.CreateCollectionReq;
 
-// Set up a Milvus client
+// Milvus クライアントをセットアップ
 ConnectConfig config = ConnectConfig.builder()
         .uri("YOUR_CLUSTER_ENDPOINT")
         .token("YOUR_CLUSTER_TOKEN")
         .build();
 MilvusClientV2 client = new MilvusClientV2(config);
 
-// Create schema
+// スキーマを作成
 CreateCollectionReq.CollectionSchema schema = CreateCollectionReq.CollectionSchema.builder()
         .enableDynamicField(false)
         .build();
@@ -631,11 +624,11 @@ CreateCollectionReq.CollectionSchema schema = CreateCollectionReq.CollectionSche
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
 
-// Set up a Milvus client
+// Milvus クライアントをセットアップ
 const client = new MilvusClient({
     address: "YOUR_CLUSTER_ENDPOINT",
     token: "YOUR_CLUSTER_TOKEN"
-);
+});
 ```
 
 </TabItem>
@@ -651,7 +644,7 @@ import (
     "github.com/milvus-io/milvus/client/v2/entity"
     "github.com/milvus-io/milvus/client/v2/index"
     "github.com/milvus-io/milvus/client/v2/milvusclient"
-)  
+)
 
 ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
@@ -693,28 +686,28 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
 </TabItem>
 </Tabs>
 
-### ステップ2: アナライザー設定の定義と検証{#step-2-define-and-verify-analyzer-configurations}
+### ステップ 2: アナライザーの設定を定義および検証する\{#step-2-define-and-verify-analyzer-configurations}
 
-1. **組み込みアナライザー（`english`）の設定と検証:**
+1. **組み込みアナライザー**（`english`）**の設定と検証**:
 
-    - **設定:** 組み込みの英語アナライザーのパラメーターを定義します。
+    - **設定:** 組み込みの英語アナライザー用にアナライザーのパラメータを定義します。
 
-    - **検証:** `run_analyzer` を使用して、設定が期待されるトークン化を生成するかどうかを確認します。
+    - **検証:** `run_analyzer` を使用して、設定が期待されるトークン化を生成することを確認します。
 
     <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>
 
     ```python
-    # Built-in analyzer configuration for English text processing
+    # 英語テキスト処理用の組み込みアナライザー設定
     analyzer_params_built_in = {
         "type": "english"
     }
-    # Verify built-in analyzer configuration
+    # 組み込みアナライザー設定を検証
     sample_text = "Milvus simplifies text analysis for search."
     result = client.run_analyzer(sample_text, analyzer_params_built_in)
     print("Built-in analyzer output:", result)
-    
-    # Expected output:
+
+    # 期待される出力:
     # Built-in analyzer output: ['milvus', 'simplifi', 'text', 'analysi', 'search']
     ```
 
@@ -725,10 +718,10 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     ```java
     Map<String, Object> analyzerParamsBuiltin = new HashMap<>();
     analyzerParamsBuiltin.put("type", "english");
-    
+
     List<String> texts = new ArrayList<>();
     texts.add("Milvus simplifies text analysis for search.");
-    
+
     RunAnalyzerResp resp = client.runAnalyzer(RunAnalyzerReq.builder()
             .texts(texts)
             .analyzerParams(analyzerParamsBuiltin)
@@ -741,14 +734,14 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='javascript'>
 
     ```javascript
-    // Use a built-in analyzer for VARCHAR field `title_en`
+    // VARCHAR フィールド `title_en` 用の組み込みアナライザーを使用
     const analyzer_params_built_in = {
       type: "english",
     };
-    
+
     const sample_text = "Milvus simplifies text analysis for search.";
     const result = await client.run_analyzer({
-        text: sample_text, 
+        text: sample_text,
         analyzer_params: analyzer_params_built_in
     });
     ```
@@ -759,12 +752,12 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
 
     ```go
     analyzerParamsBuiltin := map[string]any{"type": "english"}
-    
+
     bs, _ := json.Marshal(analyzerParamsBuiltin)
     texts := []string{"Milvus simplifies text analysis for search."}
     option := milvusclient.NewRunAnalyzerOption(texts).
         WithAnalyzerParams(string(bs))
-    
+
     result, err := client.RunAnalyzer(ctx, option)
     if err != nil {
         fmt.Println(err.Error())
@@ -793,36 +786,36 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
 
 1. **カスタムアナライザーの設定と検証:**
 
-    - **設定:** 標準のトークナイザーと、組み込みの小文字フィルター、トークン長およびストップワード用のカスタムフィルターを使用するカスタムアナライザーを定義します。
+    - **設定:** 標準のトークナイザーと組み込みの lowercase フィルター、およびトークン長とストップワード用のカスタムフィルターを使用するカスタムアナライザーを定義します。
 
-    - **検証:** `run_analyzer` を使用して、カスタム設定が意図したとおりにテキストを処理することを確認します。
+    - **検証:** `run_analyzer` を使用して、カスタム設定が意図通りにテキストを処理することを確認します。
 
     <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
     <TabItem value='python'>
 
     ```python
-    # Custom analyzer configuration with a standard tokenizer and custom filters
+    # 標準トークナイザーとカスタムフィルターを使用したカスタムアナライザー設定
     analyzer_params_custom = {
         "tokenizer": "standard",
         "filter": [
-            "lowercase",  # Built-in filter: convert tokens to lowercase
+            "lowercase",  # 組み込みフィルター: トークンを小文字に変換
             {
-                "type": "length",  # Custom filter: restrict token length
+                "type": "length",  # カスタムフィルター: トークン長を制限
                 "max": 40
             },
             {
-                "type": "stop",  # Custom filter: remove specified stop words
+                "type": "stop",  # カスタムフィルター: 指定されたストップワードを削除
                 "stop_words": ["of", "for"]
             }
         ]
     }
-    
-    # Verify custom analyzer configuration
+
+    # カスタムアナライザー設定を検証
     sample_text = "Milvus provides flexible, customizable analyzers for robust text processing."
     result = client.run_analyzer(sample_text, analyzer_params_custom)
     print("Custom analyzer output:", result)
-    
-    # Expected output:
+
+    # 期待される出力:
     # Custom analyzer output: ['milvus', 'provides', 'flexible', 'customizable', 'analyzers', 'robust', 'text', 'processing']
     ```
 
@@ -831,7 +824,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='java'>
 
     ```java
-    // Configure a custom analyzer
+    // カスタムアナライザーを設定
     Map<String, Object> analyzerParamsCustom = new HashMap<>();
     analyzerParamsCustom.put("tokenizer", "standard");
     analyzerParamsCustom.put("filter",
@@ -846,10 +839,10 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
                     }}
             )
     );
-    
+
     List<String> texts = new ArrayList<>();
     texts.add("Milvus provides flexible, customizable analyzers for robust text processing.");
-    
+
     RunAnalyzerResp resp = client.runAnalyzer(RunAnalyzerReq.builder()
             .texts(texts)
             .analyzerParams(analyzerParamsCustom)
@@ -862,7 +855,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='javascript'>
 
     ```javascript
-    // Configure a custom analyzer for VARCHAR field `title`
+    // VARCHAR フィールド `title` 用のカスタムアナライザーを設定
     const analyzer_params_custom = {
       tokenizer: "standard",
       filter: [
@@ -873,13 +866,13 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
         },
         {
           type: "stop",
-          stop_words: ["of", "to"],
+          stop_words: ["of", "for"],
         },
       ],
     };
     const sample_text = "Milvus provides flexible, customizable analyzers for robust text processing.";
     const result = await client.run_analyzer({
-        text: sample_text, 
+        text: sample_text,
         analyzer_params: analyzer_params_custom
     });
     ```
@@ -889,21 +882,22 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='go'>
 
     ```go
-    analyzerParamsCustom = map[string]any{"tokenizer": "standard",
-        "filter": []any{"lowercase", 
-        map[string]any{
-            "type": "length",
-            "max":  40,
-        map[string]any{
-            "type": "stop",
-            "stop_words": []string{"of", "to"},
-        }}}
-        
+    analyzerParamsCustom := map[string]any{"tokenizer": "standard",
+        "filter": []any{"lowercase",
+            map[string]any{
+                "type": "length",
+                "max":  40,
+            },
+            map[string]any{
+                "type": "stop",
+                "stop_words": []string{"of", "for"},
+            }}}
+
     bs, _ := json.Marshal(analyzerParamsCustom)
     texts := []string{"Milvus provides flexible, customizable analyzers for robust text processing."}
     option := milvusclient.NewRunAnalyzerOption(texts).
         WithAnalyzerParams(string(bs))
-    
+
     result, err := client.RunAnalyzer(ctx, option)
     if err != nil {
         fmt.Println(err.Error())
@@ -916,55 +910,47 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='bash'>
 
     ```bash
-    # curl
+    # restful
     export MILVUS_HOST="YOUR_CLUSTER_ENDPOINT"
     export SAMPLE_TEXT="Milvus provides flexible, customizable analyzers for robust text processing."
-    
-    # 使用自定义分析器配置
+    export ANALYZER_PARAMS='{"tokenizer":"standard","filter":["lowercase",{"type":"length","max":40},{"type":"stop","stop_words":["of","for"]}]}'
     curl -X POST "http://${MILVUS_HOST}/v2/vectordb/common/run_analyzer" \
       -H "Content-Type: application/json" \
       -d '{
         "text": ["'"${SAMPLE_TEXT}"'"],
-        "analyzerParams": "{\"tokenizer\":\"standard\",\"filter\":[\"lowercase\",{\"type\":\"length\",\"max\":40},{\"type\":\"stop\",\"stop_words\":[\"of\",\"for\"]}]}"
+        "analyzerParams": "'"${ANALYZER_PARAMS}"'"
       }'
     ```
 
     </TabItem>
     </Tabs>
 
-### ステップ3：スキーマフィールドにアナライザーを追加する{#step-3-add-analyzer-to-schema-field}
+### ステップ 3: フィールドをスキーマに追加する\{#step-3-add-fields-to-schema}
 
-アナライザーの設定を確認したら、スキーマフィールドに追加します。
+アナライザー設定を検証したら、スキーマにフィールドを追加します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-# Add VARCHAR field 'title_en' using the built-in analyzer configuration
+# ベクトルフィールドを追加
+schema.add_field(field_name="embedding", datatype=DataType.FLOAT_VECTOR, dim=768)
+
+# 組み込みアナライザーを使用する VARCHAR フィールドを追加
 schema.add_field(
-    field_name='title_en',
+    field_name="title_en",
     datatype=DataType.VARCHAR,
-    max_length=1000,
-    enable_analyzer=True,
-    analyzer_params=analyzer_params_built_in,
-    enable_match=True,
+    max_length=65535,
+    analyzer_params=analyzer_params_built_in
 )
 
-# Add VARCHAR field 'title' using the custom analyzer configuration
+# カスタムアナライザーを使用する VARCHAR フィールドを追加
 schema.add_field(
-    field_name='title',
+    field_name="title",
     datatype=DataType.VARCHAR,
-    max_length=1000,
-    enable_analyzer=True,
-    analyzer_params=analyzer_params_custom,
-    enable_match=True,
+    max_length=65535,
+    analyzer_params=analyzer_params_custom
 )
-
-# Add a vector field for embeddings
-schema.add_field(field_name="embedding", datatype=DataType.FLOAT_VECTOR, dim=3)
-
-# Add a primary key field
-schema.add_field(field_name="id", datatype=DataType.INT64, is_primary=True)
 ```
 
 </TabItem>
@@ -972,36 +958,27 @@ schema.add_field(field_name="id", datatype=DataType.INT64, is_primary=True)
 <TabItem value='java'>
 
 ```java
-schema.addField(AddFieldReq.builder()
-        .fieldName("title_en")
-        .dataType(DataType.VarChar)
-        .maxLength(1000)
-        .enableAnalyzer(true)
-        .analyzerParams(analyzerParamsBuiltin)
-        .enableMatch(true) // must enable this if you use TextMatch
-        .build());
-
-schema.addField(AddFieldReq.builder()
-        .fieldName("title")
-        .dataType(DataType.VarChar)
-        .maxLength(1000)
-        .enableAnalyzer(true)
-        .analyzerParams(analyzerParamsCustom)
-        .enableMatch(true) // must enable this if you use TextMatch
-        .build());
-        
-// Add vector field
+// ベクトルフィールドを追加
 schema.addField(AddFieldReq.builder()
         .fieldName("embedding")
         .dataType(DataType.FloatVector)
-        .dimension(3)
+        .dimension(768)
         .build());
-// Add primary field
+
+// 組み込みアナライザーを使用する VARCHAR フィールドを追加
 schema.addField(AddFieldReq.builder()
-        .fieldName("id")
-        .dataType(DataType.Int64)
-        .isPrimaryKey(true)
-        .autoID(true)
+        .fieldName("title_en")
+        .dataType(DataType.VarChar)
+        .maxLength(65535L)
+        .analyzerParams(analyzerParamsBuiltin)
+        .build());
+
+// カスタムアナライザーを使用する VARCHAR フィールドを追加
+schema.addField(AddFieldReq.builder()
+        .fieldName("title")
+        .dataType(DataType.VarChar)
+        .maxLength(65535L)
+        .analyzerParams(analyzerParamsCustom)
         .build());
 ```
 
@@ -1010,38 +987,31 @@ schema.addField(AddFieldReq.builder()
 <TabItem value='javascript'>
 
 ```javascript
-// Create schema
-const schema = {
-  auto_id: true,
-  fields: [
-    {
-      name: "id",
-      type: DataType.INT64,
-      is_primary: true,
-    },
-    {
-      name: "title_en",
-      data_type: DataType.VARCHAR,
-      max_length: 1000,
-      enable_analyzer: true,
-      analyzer_params: analyzerParamsBuiltIn,
-      enable_match: true,
-    },
-    {
-      name: "title",
-      data_type: DataType.VARCHAR,
-      max_length: 1000,
-      enable_analyzer: true,
-      analyzer_params: analyzerParamsCustom,
-      enable_match: true,
-    },
-    {
-      name: "embedding",
-      data_type: DataType.FLOAT_VECTOR,
-      dim: 4,
-    },
-  ],
-};
+// ベクトルフィールドを追加
+await client.createCollection({
+  collectionName: "my_collection",
+  schema: {
+    fields: [
+      {
+        name: "embedding",
+        dataType: DataType.FloatVector,
+        dim: 768,
+      },
+      {
+        name: "title_en",
+        dataType: DataType.VarChar,
+        maxLength: 65535,
+        analyzer_params: analyzer_params_built_in,
+      },
+      {
+        name: "title",
+        dataType: DataType.VarChar,
+        maxLength: 65535,
+        analyzer_params: analyzer_params_custom,
+      },
+    ],
+  },
+});
 ```
 
 </TabItem>
@@ -1049,30 +1019,14 @@ const schema = {
 <TabItem value='go'>
 
 ```go
-schema.WithField(entity.NewField().
-    WithName("id").
-    WithDataType(entity.FieldTypeInt64).
-    WithIsPrimaryKey(true).
-    WithIsAutoID(true),
-).WithField(entity.NewField().
-    WithName("embedding").
-    WithDataType(entity.FieldTypeFloatVector).
-    WithDim(3),
-).WithField(entity.NewField().
-    WithName("title_en").
-    WithDataType(entity.FieldTypeVarChar).
-    WithMaxLength(1000).
-    WithEnableAnalyzer(true).
-    WithAnalyzerParams(analyzerParamsBuiltin).
-    WithEnableMatch(true),
-).WithField(entity.NewField().
-    WithName("title").
-    WithDataType(entity.FieldTypeVarChar).
-    WithMaxLength(1000).
-    WithEnableAnalyzer(true).
-    WithAnalyzerParams(analyzerParamsCustom).
-    WithEnableMatch(true),
-)
+// ベクトルフィールドを追加
+schema.AddField(entity.NewField().WithName("embedding").WithDataType(entity.FieldTypeFloatVector).WithDim(768))
+
+// 組み込みアナライザーを使用する VARCHAR フィールドを追加
+schema.AddField(entity.NewField().WithName("title_en").WithDataType(entity.FieldTypeVarChar).WithMaxLength(65535).WithAnalyzerParams(analyzerParamsBuiltin))
+
+// カスタムアナライザーを使用する VARCHAR フィールドを追加
+schema.AddField(entity.NewField().WithName("title").WithDataType(entity.FieldTypeVarChar).WithMaxLength(65535).WithAnalyzerParams(analyzerParamsCustom))
 ```
 
 </TabItem>
@@ -1081,66 +1035,63 @@ schema.WithField(entity.NewField().
 
 ```bash
 # restful
-export SCHEMA_CONFIG='{
-  "autoId": false,
-  "enableDynamicField": false,
-  "fields": [
-    {
-      "fieldName": "id",
-      "dataType": "Int64",
-      "isPrimary": true
-    },
-    {
-      "fieldName": "title_en",
-      "dataType": "VarChar",
-      "elementTypeParams": {
-        "max_length": "1000",
-        "enable_analyzer": true,
-        "analyzer_params": "{\"type\":\"english\"}",
-        "enable_match": true
+export MILVUS_HOST="YOUR_CLUSTER_ENDPOINT"
+export MILVUS_TOKEN="YOUR_CLUSTER_TOKEN"
+curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${MILVUS_TOKEN}" \
+  -d '{
+    "collectionName": "my_collection",
+    "fields": [
+      {
+        "name": "embedding",
+        "dataType": "FloatVector",
+        "dim": 768
+      },
+      {
+        "name": "title_en",
+        "dataType": "VarChar",
+        "maxLength": 65535,
+        "analyzerParams": {
+          "type": "english"
+        }
+      },
+      {
+        "name": "title",
+        "dataType": "VarChar",
+        "maxLength": 65535,
+        "analyzerParams": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            {
+              "type": "length",
+              "max": 40
+            },
+            {
+              "type": "stop",
+              "stop_words": ["of", "for"]
+            }
+          ]
+        }
       }
-    },
-    {
-      "fieldName": "title",
-      "dataType": "VarChar",
-      "elementTypeParams": {
-        "max_length": "1000",
-        "enable_analyzer": true,
-        "analyzer_params": "{\"tokenizer\":\"standard\",\"filter\":[\"lowercase\",{\"type\":\"length\",\"max\":40},{\"type\":\"stop\",\"stop_words\":[\"of\",\"for\"]}]}",
-        "enable_match": true
-      }
-    },
-    {
-      "fieldName": "embedding",
-      "dataType": "FloatVector",
-      "elementTypeParams": {
-        "dim": "3"
-      }
-    }
-  ]
-}'
-
+    ]
+  }'
 ```
 
 </TabItem>
 </Tabs>
 
-### ステップ4: インデックスパラメータを準備し、コレクションを作成する {#step-4-prepare-index-parameters-and-create-the-collection}
+### ステップ 4: コレクションを作成する\{#step-4-create-collection}
+
+最後に、スキーマを使用してコレクションを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
 
 ```python
-# Set up index parameters for the vector field
-index_params = client.prepare_index_params()
-index_params.add_index(field_name="embedding", metric_type="COSINE", index_type="AUTOINDEX")
-
-# Create the collection with the defined schema and index parameters
-client.create_collection(
-    collection_name="my_collection",
-    schema=schema,
-    index_params=index_params
-)
+# コレクションを作成
+client.create_collection(collection_name="my_collection", schema=schema)
 ```
 
 </TabItem>
@@ -1148,21 +1099,11 @@ client.create_collection(
 <TabItem value='java'>
 
 ```java
-// Set up index params for vector field
-List<IndexParam> indexes = new ArrayList<>();
-indexes.add(IndexParam.builder()
-        .fieldName("embedding")
-        .indexType(IndexParam.IndexType.AUTOINDEX)
-        .metricType(IndexParam.MetricType.COSINE)
-        .build());
-
-// Create collection with defined schema
-CreateCollectionReq requestCreate = CreateCollectionReq.builder()
+// コレクションを作成
+client.createCollection(CreateCollectionReq.builder()
         .collectionName("my_collection")
         .collectionSchema(schema)
-        .indexParams(indexes)
-        .build();
-client.createCollection(requestCreate);
+        .build());
 ```
 
 </TabItem>
@@ -1170,23 +1111,7 @@ client.createCollection(requestCreate);
 <TabItem value='javascript'>
 
 ```javascript
-// Set up index params for vector field
-const indexParams = [
-  {
-    name: "embedding",
-    metric_type: "COSINE",
-    index_type: "AUTOINDEX",
-  },
-];
-
-// Create collection with defined schema
-await client.createCollection({
-  collection_name: "my_collection",
-  schema: schema,
-  index_params: indexParams,
-});
-
-console.log("Collection created successfully!");
+// 上記のステップ3でコレクションが作成されるため、このステップは不要です
 ```
 
 </TabItem>
@@ -1194,12 +1119,8 @@ console.log("Collection created successfully!");
 <TabItem value='go'>
 
 ```go
-idx := index.NewAutoIndex(index.MetricType(entity.COSINE))
-indexOption := milvusclient.NewCreateIndexOption("my_collection", "embedding", idx)
-
-err = client.CreateCollection(ctx,
-    milvusclient.NewCreateCollectionOption("my_collection", schema).
-        WithIndexOptions(indexOption))
+// コレクションを作成
+err = client.CreateCollection(ctx, milvusclient.NewCreateCollectionOption("my_collection").WithSchema(schema))
 if err != nil {
     fmt.Println(err.Error())
     // handle error
@@ -1211,35 +1132,8 @@ if err != nil {
 <TabItem value='bash'>
 
 ```bash
-export INDEX_PARAMS='[{"fieldName": "embedding", "metricType": "COSINE", "indexType": "AUTOINDEX"}]'
-# restful
-curl -X POST "YOUR_CLUSTER_ENDPOINT/v2/vectordb/collections/create" \
-  -H "Content-Type: application/json" \
-  -d "{
-    \"collectionName\": \"my_collection\",
-    \"schema\": ${SCHEMA_CONFIG},
-    \"indexParams\": ${INDEX_PARAMS}
-  }"
+# 上記のステップ3でコレクションが作成されるため、このステップは不要です
 ```
 
 </TabItem>
 </Tabs>
-
-## Zilliz Cloud コンソールでの使用例{#example-use-on-the-zilliz-cloud-console}
-
-Zilliz Cloud コンソールを使用して、上記の操作を実行することもできます。詳細については、以下のデモを再生してください。
-
-<Supademo id="cmfxfue5c41ld10k86la66x1v" title=""  />
-
-## 次のステップ{#whats-next}
-
-analyzer を設定する際は、ユースケースに最適な設定を決定するために、以下のベストプラクティス記事を読むことをお勧めします。
-
-- [ユースケースに適したアナライザーを選択する](./choose-the-right-analyzer-for-your-use-case)
-
-analyzer を設定した後、Zilliz Cloud が提供するテキスト検索機能と統合できます。詳細については、以下を参照してください。
-
-- [Full Text Search](./full-text-search)
-
-- [Text Match](./text-match)
-

@@ -1,7 +1,7 @@
 ---
 title: "JSON Field Overview | Cloud"
 slug: /json-field-overview
-sidebar_label: "JSON Field Overview"
+sidebar_label: "Overview"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

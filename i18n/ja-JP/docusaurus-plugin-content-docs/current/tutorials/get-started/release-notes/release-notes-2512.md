@@ -4,19 +4,15 @@ slug: /release-notes-2512
 sidebar_label: "2025年12月"
 beta: FALSE
 notebook: FALSE
-description: "2025年12月 リリースノート | Cloud"
+description: "2025年12月のZilliz Cloudリリースノートです。"
 type: origin
 token: LX0RwtoEEihhNukmt1DcSQGfnjb
-sidebar_position: 3
+sidebar_position: 4
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - cloud
+  - クラウド
   - リリースノート
-  - コサイン距離
-  - ベクトルデータベースとは
-  - vectordb
-  - マルチモーダルベクトルデータベース検索
 
 ---
 
@@ -39,9 +35,9 @@ import Grid from '@site/src/components/Grid';
 
         ## Milvus v2.6 GA\{#milvus-v26-ga}
 
-        このリリースはMilvus v2.6.xのGAマイルストーンであり、Zilliz Cloudで本番環境に対応した安定性と完全な機能サポートを提供します。これには、Geometry、Struct、TimestampTzデータ型、ダウンタイムなしのフィールド追加、強化されたfull text search、高速化されたJSONフィルタリング、新しい再ランキング関数、INT8ベクターサポート、部分的なupsert、およびMINHASH_LSHインデックスが含まれます。
+        このリリースはMilvus v2.6.xのGAマイルストーンを記念するもので、Zilliz Cloud上で本番環境に対応した安定性と完全な機能サポートを提供します。これには、ジオメトリ、構造体、TimestampTzデータ型、ダウンタイムなしのフィールド追加、強化された全文検索、高速化されたJSONフィルタリング、新しい再ランキング機能、INT8ベクトルサポート、部分的なアップサート、およびMINHASH_LSHインデックスが含まれます。
 
-        階層型ストレージもGAに達し、アップグレードされたホット/ウォーム/コールドアーキテクチャが導入され、コールドデータアクセス課金が開始されます。詳細については、[ストレージコスト](./storage-cost#cold-data-access)を参照してください。
+        階層型ストレージもGAに達し、アップグレードされたホット/ウォーム/コールドアーキテクチャが導入され、コールドデータアクセスに対する課金が開始されます。詳細については、[ストレージコスト](./storage-cost#cold-data-access)を参照してください。
 
     </div>
 
@@ -57,15 +53,15 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        ## 強化\{#enhancements}
+        ## 強化点\{#enhancements}
 
-        - Milvus Endpointの移行がGeometryおよびStructデータ型をサポートするようになり、空間形状と深くネストされた属性を持つcollectionのシームレスな移行が可能になりました。
+        - Milvus Endpointの移行がジオメトリおよび構造体データ型をサポートするようになり、空間形状や深くネストされた属性を持つコレクションのシームレスな移行が可能になりました。
 
         - 請求コンソールにAdvance残高が表示されるようになり、前払い使用量と残高がより明確に確認できるようになりました。
 
-        - RESTful APIがAuto Scaling設定をサポートするようになり、クラスターの弾力性ポリシーをプログラムで管理できるようになりました。
+        - RESTful APIがオートスケーリング設定をサポートするようになり、クラスターの弾力性ポリシーをプログラムで管理できるようになりました。
 
-        - ジョブセンターがより詳細な進捗状況の更新を提供するようになり、ユーザーはジョブのステータスと実行段階をより明確に把握できるようになりました。
+        - ジョブセンターがより詳細な進捗状況の更新を提供するようになり、ユーザーはジョブのステータスと実行ステージをより明確に把握できるようになりました。
 
         - 登録フローが簡素化されたフォームで最適化され、オンボーディングの効率と全体的なユーザーエクスペリエンスが向上しました。
 
@@ -83,35 +79,35 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        ## Volume GA (旧称 Stage)\{#volume-ga-formerly-stage}
+        ## ボリューム GA (旧ステージ)\{#volume-ga-formerly-stage}
 
-        **StageがGAに達し**、正式に**Volume**に名称変更されたことをお知らせいたします。Volumeは、構造化されたテーブルまたは非構造化データファイルのcollectionを保持するマネージドオブジェクトストアであり、Zilliz CloudにおけるスケーラブルなデータオンボーディングとETLワークフローのための統合データレイヤーとして機能します。
+        **ステージがGAに到達しました**し、正式に**ボリューム**に名称変更されたことをお知らせします。ボリュームは、構造化されたテーブルまたは非構造化データファイルのコレクションを保持するマネージドオブジェクトストアであり、Zilliz CloudにおけるスケーラブルなデータオンボーディングおよびETLワークフローのための統合データレイヤーとして機能します。
 
         このGAリリースにおける新機能：
 
-        - **VolumeレベルのRBAC**
+        - **ボリュームレベルRBAC**
 
-            読み取り/書き込み権限に対するきめ細かなロールベースのアクセス制御。
+            読み取り/書き込み権限に対するきめ細かいロールベースのアクセス制御。
 
         - **コンソールサポート**
 
-            Zilliz CloudコンソールでVolumeを直接作成、管理、監視できます。
+            Zilliz Cloudコンソールで直接ボリュームを作成、管理、監視できます。
 
         - **GCPサポート**
 
-            Volumeが**AWSとGCP**をサポートするようになり、マルチクラウドの柔軟性が可能になりました。
+            ボリュームは**AWSとGCP**をサポートし、マルチクラウドの柔軟性を実現します。
 
-        GAにより、VolumeはFree Trial VolumeとPay-as-you-go Volumeの2つの課金モードをサポートするようになりました。Pay-as-you-go Volumeは、ストレージ使用量に基づいて課金が開始されます。
+        GAに伴い、ボリュームはFree Trial ボリュームとPay-as-you-go ボリュームの2つの課金モードをサポートします。Pay-as-you-go ボリュームはストレージ使用量に基づいて課金が開始されます。
 
-        詳細については、[Volumeの概要](./volume-explained)、[Volumeの管理 (SDK)](./manage-stages)、および[Volumeの管理 (コンソール)](./manage-volumes-via-console)を参照してください。
+        詳細については、[ボリュームの概要](./volume-explained)、[ボリュームの管理 (SDK)](./manage-stages)、および[ボリュームの管理 (コンソール)](./manage-volumes-via-console)を参照してください。
 
         ## 組織レベルのIPアクセス許可リスト\{#organization-level-ip-access-allowlist}
 
-        セキュリティを強化し、企業のコンプライアンス要件を満たすため、Zilliz CloudはEnterpriseおよびBusiness Criticalプラン向けに組織レベルのIPアクセス許可リストをサポートするようになりました。
+        セキュリティを強化し、企業のコンプライアンス要件を満たすため、Zilliz CloudはEnterpriseおよびビジネスクリティカルプラン向けに組織レベルのIPアクセス許可リストをサポートするようになりました。
 
         - **きめ細かなアクセス制御**
 
-            組織の所有者は、コンソールアクセス用の信頼できるIPv4アドレスまたはCIDR範囲を定義できます。承認されていないソースからのトラフィックはブロックされます。
+            組織の所有者は、コンソールアクセス用の信頼できるIPv4アドレスまたはCIDR範囲を定義できます。未承認のソースからのトラフィックはブロックされます。
 
         - **包括的な監査**
 
@@ -121,11 +117,11 @@ import Grid from '@site/src/components/Grid';
 
         ## MFAセキュリティアップグレード:\{#mfa-security-upgrade}
 
-        Zilliz Cloudは、メールベースの認証よりも強力な保護を提供する**TOTPベースのMFA**（例：Google/Microsoft Authenticator）をサポートするようになりました。
+        Zilliz Cloudは**TOTPベースのMFA**（例：Google/Microsoft Authenticator）をサポートするようになり、Eメールベースの認証よりも強力な保護を提供します。
 
-        - **組織レベルの強制**: Enterpriseプランの管理者は、コンプライアンス基準を確保するために、すべての組織メンバーに対してMFAポリシーを強制できるようになりました。
+        - **組織レベルでの適用**: Enterpriseプランの管理者は、コンプライアンス基準を確保するために、すべての組織メンバーに対してMFAポリシーを強制できるようになりました。
 
-        - **レガシー移行**: メールのみのMFAは非推奨になります。既存のユーザーには、認証アプリへの移行を促すプロンプトが表示されます。
+        - **レガシー移行**: EメールのみのMFAは非推奨になります。既存のユーザーは認証アプリへの移行を促されます。
 
         詳細については、[MFA](./multi-factor-auth)を参照してください。
 

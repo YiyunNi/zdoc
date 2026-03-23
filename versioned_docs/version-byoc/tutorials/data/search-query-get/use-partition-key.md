@@ -1,7 +1,7 @@
 ---
 title: "Use Partition Key | BYOC"
 slug: /use-partition-key
-sidebar_label: "Use Partition Key"
+sidebar_label: "Partition Key"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

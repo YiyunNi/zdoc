@@ -10,7 +10,7 @@ notebook: FALSE
 description: "VectorDBBench is an open-source benchmarking tool designed specifically for vector databases. | BYOC"
 type: origin
 token: Za3QwAcfjiSSvxk8UzUcTPmfnmb
-sidebar_position: 1
+sidebar_position: 2
 keywords: 
   - zilliz
   - vector database
