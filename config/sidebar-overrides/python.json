@@ -1,4 +1,5 @@
 {
+  "linkSameNameChildren": true,
   "overrideCategories": {
     "DataImport":      { "customProps": { "icon": "import-ref"      } },
     "EmbeddingModels": { "customProps": { "icon": "embed-ref"        } },

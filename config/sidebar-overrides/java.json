@@ -1,4 +1,5 @@
 {
+  "linkSameNameChildren": true,
   "overrideCategories": {
     "Authentication": { "customProps": { "icon": "auth"            } },
     "Client":         { "customProps": { "icon": "client-code"     } },

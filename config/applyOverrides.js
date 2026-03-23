@@ -160,6 +160,32 @@ function removeEmptyCategories(items) {
     .filter(item => !item.items || item.items.length > 0)
 }
 
+/** Recursively promote same-name child docs to category links. */
+function promoteSameNameLinks(items) {
+  return items.map(item => {
+    if (item.type !== 'category' || !item.items) return item
+    // Recurse into children first (bottom-up)
+    const children = promoteSameNameLinks(item.items)
+    // Find a direct child doc whose label matches this category's label
+    const matchIdx = children.findIndex(
+      c => c.type === 'doc' && c.label === item.label
+    )
+    if (matchIdx === -1) return { ...item, items: children }
+    // Don't override an existing link
+    if (item.link) return { ...item, items: children }
+    const matchedDoc = children[matchIdx]
+    const newChildren = [
+      ...children.slice(0, matchIdx),
+      ...children.slice(matchIdx + 1),
+    ]
+    return {
+      ...item,
+      link: { type: 'doc', id: matchedDoc.id },
+      items: newChildren,
+    }
+  })
+}
+
 // ── Main export ───────────────────────────────────────────────────────────────
 
 /**
@@ -168,6 +194,7 @@ function removeEmptyCategories(items) {
  * Override JSON supports these keys (processed in this order):
  *   override           — { [docId]: { label?, className?, ... } }
  *   overrideCategories — { [categoryLabel]: { collapsed?, collapsible?, className?, ... } }
+ *   linkSameNameChildren — true  (auto-link categories to same-name child docs)
  *   group              — [{ label, categories[], afterDoc? | afterCategory? | beforeCategory? | prepend? | append? }]
  *   moveCategory       — [{ label, into, position? }]
  *   move               — [{ id, before? | after? | into?, position? }]
@@ -212,6 +239,11 @@ function applyOverrides(items, overridePath) {
       return item
     })
     items = apply(items)
+  }
+
+  // 2.5. linkSameNameChildren — promote same-name child docs to category links
+  if (overrides.linkSameNameChildren) {
+    items = promoteSameNameLinks(items)
   }
 
   // 3. group — extract existing categories and wrap them under a new parent category
