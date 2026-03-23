@@ -4,7 +4,7 @@ slug: /view-invoice
 sidebar_label: "請求書"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud の料金は組織レベルで課金されます。請求書にアクセスするには、組織オーナーまたは請求管理者の権限が必要です。"
+description: "Zilliz Cloud の料金は組織レベルで課金されます。請求書にアクセスするには、組織オーナーまたは請求管理者の権限が必要です。 | Cloud"
 type: origin
 token: PBEbwjRu9iyyaFkZnuzcINHCnke
 sidebar_position: 7
@@ -212,7 +212,7 @@ curl --request GET \
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>API から返される結果では、すべての金額はセント単位です。</p>
+<p>API が返す結果では、すべての金額はセント単位です。</p>
 
 </Admonition>
 
@@ -226,7 +226,7 @@ curl --request GET \
 
 <TabItem value="Cloud Console">
 
-![view-invoice-detail](https://zdoc-images.s3.us-west-2.amazonaws.com/view-invoice-detail.png "view-invoice-detail")
+undefined
 
 <Procedures>
 
