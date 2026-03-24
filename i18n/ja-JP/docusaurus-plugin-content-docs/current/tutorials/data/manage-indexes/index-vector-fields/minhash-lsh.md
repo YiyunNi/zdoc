@@ -41,7 +41,7 @@ Zilliz Cloudの**MINHASH_LSH**インデックスは、2つの強力な技術を�
 Jaccard類似度は、2つの集合AとBの重なりを測定し、次のように正式に定義されます。
 
 $$
-J(A, B) = \frac\{|A \cap B|}\{|A \cup B|}
+J(A, B) = \frac{|A \cap B|}{|A \cup B|}
 $$
 
 その値は0（完全に分離）から1（同一）の範囲です。

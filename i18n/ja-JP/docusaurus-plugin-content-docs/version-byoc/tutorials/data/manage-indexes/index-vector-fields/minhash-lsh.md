@@ -41,7 +41,7 @@ Zilliz Cloud の **MINHASH_LSH** インデックスは、以下の2つの強力�
 Jaccard類似度は、2つの集合 A と B の重複度合いを測定する指標で、次のように定義されます。
 
 $$
-J(A, B) = \frac\{|A \cap B|}\{|A \cup B|}
+J(A, B) = \frac{|A \cap B|}{|A \cup B|}
 $$
 
 その値は 0（完全に互いに素）から 1（同一）の範囲を取ります。

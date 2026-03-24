@@ -116,7 +116,7 @@ $$
 ここで、
 
 $$
-\lambda = \frac\{\ln(decay)}{scale}
+\lambda = \frac{\ln(decay)}{scale}
 $$
 
 これを平易な言葉で分解すると、次のようになります。
