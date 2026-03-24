@@ -429,9 +429,9 @@ app.post('/chat', async c => {
                 tool: part.toolName,
                 args: part.args,
               });
-            } else if (part.type === 'tool-result') {
+            } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
-              const toolResult = part.result as Record<string, any>;
+              const toolResult = (part as any).result as Record<string, any>;
               if (toolResult?.results) {
                 // searchDocs returns { results: [{title, url, score, content, ...}] }
                 for (const r of toolResult.results) {
@@ -499,7 +499,7 @@ app.post('/chat', async c => {
               ...ragResult.rawResults,
               ...toolChunks.map(tc => ({
                 id: '', doc_url: tc.doc_url, doc_url_md: tc.doc_url,
-                doc_title: '', section: '', content: tc.content, score: 0, weight: 1.0,
+                doc_title: '', section: '', content: tc.content, score: 0, weight: 1.0, contextScore: 0,
               })),
             ];
             const grounding = computeGrounding(fullText, allChunks, allSources);

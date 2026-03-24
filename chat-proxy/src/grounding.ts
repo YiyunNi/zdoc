@@ -1,5 +1,6 @@
 import type {SearchResult} from './rag.js';
 import type {Source} from './types.js';
+import {isDemotedSource} from './demotion.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -108,6 +109,10 @@ function splitParagraphs(text: string): string[] {
 const MIN_OVERLAP = 0.25;
 const MAX_SOURCES_PER_PARAGRAPH = 2;
 
+// Low-value source demotion — patterns shared from demotion.ts
+const DEMOTE_FACTOR = 0.3; // aggressive demotion (needs ~83% raw overlap to pass MIN_OVERLAP)
+const MAX_GROUNDED_SOURCES = 5; // cap total sources to avoid noisy attribution
+
 /**
  * Deterministically match response paragraphs to RAG source chunks
  * using keyword overlap. Returns filtered sources + citation map.
@@ -129,11 +134,26 @@ export function computeGrounding(
     return {sources: [], citations: []};
   }
 
-  // Pre-tokenize all RAG chunks
-  const chunkTokens = rawResults.map(r => ({
-    tokens: tokenize(r.content),
-    url: r.doc_url,
-  }));
+  // Pre-tokenize all RAG chunks; flag release-note chunks for demotion
+  const chunkTokens = rawResults.map(r => {
+    const isDemoted = isDemotedSource(r.doc_title, r.doc_url);
+    return {
+      tokens: tokenize(r.content),
+      url: r.doc_url,
+      demoted: isDemoted,
+    };
+  });
+
+  // Compute IDF weights across all chunks for this query — words appearing
+  // in many chunks (e.g. "account", "configure") get low weight, while
+  // topic-specific words (e.g. "payment", "okta") get high weight.
+  const docFreq = new Map<string, number>();
+  for (const chunk of chunkTokens) {
+    for (const word of chunk.tokens) {
+      docFreq.set(word, (docFreq.get(word) ?? 0) + 1);
+    }
+  }
+  const numDocs = chunkTokens.length;
 
   // Track which source URLs are actually used + cumulative overlap scores
   const usedUrls = new Set<string>();
@@ -146,14 +166,20 @@ export function computeGrounding(
     const paraTokens = tokenize(paragraphs[pi]);
     if (paraTokens.size === 0) continue;
 
-    // Score each chunk against this paragraph
+    // Score each chunk against this paragraph (IDF-weighted)
     const scores: Array<{url: string; overlap: number}> = [];
     for (const chunk of chunkTokens) {
-      let matchCount = 0;
+      let weightedMatch = 0;
+      let totalWeight = 0;
       for (const word of paraTokens) {
-        if (chunk.tokens.has(word)) matchCount++;
+        const df = docFreq.get(word) ?? 0;
+        const idf = df > 0 ? Math.log(1 + numDocs / df) : 0;
+        totalWeight += idf;
+        if (chunk.tokens.has(word)) weightedMatch += idf;
       }
-      const overlap = matchCount / paraTokens.size;
+      let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
+      // Demote release notes so they don't beat real documentation sources
+      if (chunk.demoted) overlap *= DEMOTE_FACTOR;
       if (overlap >= MIN_OVERLAP) {
         scores.push({url: chunk.url, overlap});
       }
@@ -192,11 +218,16 @@ export function computeGrounding(
     const fullTokens = tokenize(responseText);
     if (fullTokens.size > 0) {
       for (const chunk of chunkTokens) {
-        let matchCount = 0;
+        let weightedMatch = 0;
+        let totalWeight = 0;
         for (const word of fullTokens) {
-          if (chunk.tokens.has(word)) matchCount++;
+          const df = docFreq.get(word) ?? 0;
+          const idf = df > 0 ? Math.log(1 + numDocs / df) : 0;
+          totalWeight += idf;
+          if (chunk.tokens.has(word)) weightedMatch += idf;
         }
-        const overlap = matchCount / fullTokens.size;
+        let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
+        if (chunk.demoted) overlap *= DEMOTE_FACTOR;
         if (overlap >= MIN_OVERLAP) {
           usedUrls.add(chunk.url);
           urlOverlapScore.set(chunk.url,
@@ -223,6 +254,18 @@ export function computeGrounding(
   filteredSources.sort((a, b) =>
     (urlOverlapScore.get(b.url) ?? 0) - (urlOverlapScore.get(a.url) ?? 0),
   );
+
+  // Cap total sources to avoid noisy attribution
+  if (filteredSources.length > MAX_GROUNDED_SOURCES) {
+    const droppedUrls = new Set(
+      filteredSources.slice(MAX_GROUNDED_SOURCES).map(s => s.url),
+    );
+    filteredSources.length = MAX_GROUNDED_SOURCES;
+    // Remove citations pointing to dropped sources
+    for (const raw of rawCitations) {
+      raw.urls = raw.urls.filter(u => !droppedUrls.has(u));
+    }
+  }
 
   // Build URL→index map after sorting
   const urlToNewIndex = new Map<string, number>();

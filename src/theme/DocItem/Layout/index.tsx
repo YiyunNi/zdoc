@@ -14,6 +14,9 @@ import ContentVisibility from '@theme/ContentVisibility';
 import type {Props} from '@theme/DocItem/Layout';
 import styles from './styles.module.css';
 
+// Track whether the TOC has ever been expanded (persists across remounts)
+let hasEverExpandedTOC = false;
+
 /** Recursively walks the sidebar tree and returns the label of the category
  *  that directly contains the given pathname. */
 function findParentLabel(
@@ -60,8 +63,18 @@ export default function DocItemLayout({children}: Props): ReactNode {
   const hasTOC = toc.length > 0 && frontMatter.hide_table_of_contents !== true;
   const showDesktopTOC = hasTOC && windowSize !== 'mobile';
 
-  const [tocVisible, setTocVisible] = useState(true);
-  const toggleTOC = useCallback(() => setTocVisible(v => !v), []);
+  const [tocVisible, setTocVisible] = useState(false);
+  const [showTocToast, setShowTocToast] = useState(!hasEverExpandedTOC);
+  const toggleTOC = useCallback(() => {
+    setTocVisible(v => {
+      if (!v) {
+        // Expanding TOC — dismiss toast permanently
+        hasEverExpandedTOC = true;
+        setShowTocToast(false);
+      }
+      return !v;
+    });
+  }, []);
 
   return (
     <div className={styles.docItemContainer}>
@@ -80,15 +93,20 @@ export default function DocItemLayout({children}: Props): ReactNode {
         </div>
         {showDesktopTOC && (
           <div className={`${styles.tocCol} ${!tocVisible ? styles.tocColCollapsed : ''}`}>
-            <button
-              type="button"
-              className={styles.tocToggleBtn}
-              onClick={toggleTOC}
-              title={tocVisible ? 'Hide table of contents' : 'Show table of contents'}
-              aria-label={tocVisible ? 'Hide table of contents' : 'Show table of contents'}>
-              <TOCToggleIcon />
-              {tocVisible && <span className={styles.tocToggleLabel}>On this page</span>}
-            </button>
+            <div style={{position: 'relative', display: 'inline-flex'}}>
+              <button
+                type="button"
+                className={styles.tocToggleBtn}
+                onClick={toggleTOC}
+                title={tocVisible ? 'Hide table of contents' : 'Show table of contents'}
+                aria-label={tocVisible ? 'Hide table of contents' : 'Show table of contents'}>
+                <TOCToggleIcon />
+                {tocVisible && <span className={styles.tocToggleLabel}>On this page</span>}
+              </button>
+              {showTocToast && !tocVisible && (
+                <span className={styles.tocToast}>On this page</span>
+              )}
+            </div>
             {tocVisible && <DocItemTOCDesktop />}
           </div>
         )}

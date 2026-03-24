@@ -10,5 +10,7 @@
     flex-grow: 1;
     /* Sidebar aside is always 52px; expanded sidebar floats over content */
     max-width: calc(100% - var(--doc-sidebar-hidden-width));
+    /* Right margin to match content left padding */
+    padding-right: 2.5rem;
   }
 }

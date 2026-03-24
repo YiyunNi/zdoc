@@ -13,6 +13,7 @@ function makeResult(overrides: Partial<SearchResult> = {}): SearchResult {
     content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries.',
     score: 0.85,
     weight: 1,
+    contextScore: 0.85,
     ...overrides,
   };
 }
@@ -419,5 +420,153 @@ Once configured, you can store and retrieve memories for your users through the 
     const releaseSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/release-notes');
     expect(faqSource).toBeUndefined();
     expect(releaseSource).toBeUndefined();
+  });
+
+  it('demotes release notes even when they have high keyword overlap', () => {
+    // This tests the core bug: release notes contain generic feature vocabulary
+    // (e.g. "hybrid search", "sparse vector") that spuriously matches responses
+    const response = `Zilliz Cloud supports hybrid search combining dense and sparse vectors for improved retrieval accuracy.
+
+You can use the RRF (Reciprocal Rank Fusion) ranker to merge results from multiple ANN searches into a single ranked list.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'release',
+        doc_url: '/docs/release-notes-2100',
+        doc_title: 'Release Notes (Sept 4, 2024)',
+        // Release notes mention the same features — high keyword overlap
+        content: 'Added support for hybrid search combining dense and sparse vectors. New RRF ranker for merging multiple ANN search results with improved retrieval accuracy.',
+      }),
+      makeResult({
+        id: 'hybrid-search',
+        doc_url: '/docs/hybrid-search',
+        doc_title: 'Hybrid Search',
+        content: 'Zilliz Cloud hybrid search lets you combine dense and sparse vector searches using the RRF ranker for improved retrieval accuracy across multiple ANN queries.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: '/docs/release-notes-2100', title: 'Release Notes (Sept 4, 2024)'}),
+      makeSource({url: '/docs/hybrid-search', title: 'Hybrid Search'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // The real doc should be grounded, not the release notes
+    expect(result.sources.length).toBeGreaterThanOrEqual(1);
+    expect(result.sources[0].url).toBe('/docs/hybrid-search');
+    // Release notes should be excluded due to demotion
+    const releaseSource = result.sources.find(s => s.url.includes('release-notes'));
+    expect(releaseSource).toBeUndefined();
+  });
+
+  it('demotes release notes in URL even without title match', () => {
+    const response = `You can create collections with dynamic fields enabled for flexible schema design in Zilliz Cloud.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'release',
+        doc_url: '/docs/release-notes-2130',
+        doc_title: '', // no title available (e.g. tool-discovered chunk)
+        content: 'Added dynamic fields support for flexible schema design, allowing collections to store varied field structures.',
+      }),
+      makeResult({
+        id: 'schema',
+        doc_url: '/docs/manage-collections',
+        doc_title: 'Manage Collections',
+        content: 'Create collections with dynamic fields enabled for flexible schema design in Zilliz Cloud.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: '/docs/release-notes-2130', title: ''}),
+      makeSource({url: '/docs/manage-collections', title: 'Manage Collections'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    expect(result.sources.length).toBeGreaterThanOrEqual(1);
+    expect(result.sources[0].url).toBe('/docs/manage-collections');
+    const releaseSource = result.sources.find(s => s.url.includes('release-notes'));
+    expect(releaseSource).toBeUndefined();
+  });
+
+  it('caps total grounded sources at 5', () => {
+    // Generate a response that matches many different sources
+    const response = `Zilliz Cloud offers vector search, hybrid search, schema design, data migration, cost optimization, serverless clusters, and advanced indexing capabilities for production workloads.`;
+
+    const rawResults = Array.from({length: 8}, (_, i) => makeResult({
+      id: `chunk-${i}`,
+      doc_url: `/docs/topic-${i}`,
+      doc_title: `Topic ${i}`,
+      content: `Zilliz Cloud offers vector search, hybrid search, schema design, data migration, cost optimization, serverless clusters, and advanced indexing capabilities for production workloads topic ${i}.`,
+    }));
+    const sources = Array.from({length: 8}, (_, i) => makeSource({
+      url: `/docs/topic-${i}`,
+      title: `Topic ${i}`,
+    }));
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    expect(result.sources.length).toBeLessThanOrEqual(5);
+  });
+
+  it('does not ground payment paragraph to SSO doc sharing only generic words', () => {
+    const response = `To use the Pay-as-you-go option, set up a Zilliz Cloud account online and add your payment method in the billing dashboard.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'sso',
+        doc_url: '/docs/openid-connect',
+        doc_title: 'Okta (OIDC)',
+        content: 'Configure single sign-on for your enterprise account using Okta as the identity provider. Set up OIDC authentication for organization members.',
+      }),
+      makeResult({
+        id: 'billing',
+        doc_url: '/docs/payment-billing',
+        doc_title: 'Payment & Billing',
+        content: 'Set up your Zilliz Cloud payment method. Pay-as-you-go billing charges based on actual usage. Add a credit card in the billing dashboard.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: '/docs/openid-connect', title: 'Okta (OIDC)'}),
+      makeSource({url: '/docs/payment-billing', title: 'Payment & Billing'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    // Billing doc should be grounded, NOT the SSO doc
+    expect(result.sources.length).toBeGreaterThanOrEqual(1);
+    expect(result.sources[0].url).toBe('/docs/payment-billing');
+    const ssoSource = result.sources.find(s => s.url === '/docs/openid-connect');
+    expect(ssoSource).toBeUndefined();
+  });
+
+  it('does not ground field update paragraph to password utility doc', () => {
+    const response = `You can update fields in your Milvus collection using the upsert operation to modify existing vector entries.`;
+
+    const rawResults = [
+      makeResult({
+        id: 'password',
+        doc_url: '/reference/python/update_password',
+        doc_title: 'update_password()',
+        content: 'Update the password for a Milvus user account. Requires the old password and new password parameters.',
+      }),
+      makeResult({
+        id: 'upsert',
+        doc_url: '/reference/python/upsert',
+        doc_title: 'upsert()',
+        content: 'Upsert operation to update existing vector entries or insert new ones into a Milvus collection with modified fields.',
+      }),
+    ];
+    const sources = [
+      makeSource({url: '/reference/python/update_password', title: 'update_password()'}),
+      makeSource({url: '/reference/python/upsert', title: 'upsert()'}),
+    ];
+
+    const result = computeGrounding(response, rawResults, sources);
+
+    expect(result.sources.length).toBeGreaterThanOrEqual(1);
+    expect(result.sources[0].url).toBe('/reference/python/upsert');
+    const passwordSource = result.sources.find(s => s.url.includes('update_password'));
+    expect(passwordSource).toBeUndefined();
   });
 });

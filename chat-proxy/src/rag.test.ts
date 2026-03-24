@@ -12,6 +12,7 @@ function makeResult(score: number, content = 'Test content'): SearchResult {
     content,
     score,
     weight: 1.0,
+    contextScore: score,
   };
 }
 

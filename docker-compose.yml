@@ -1,0 +1,16 @@
+services:
+  site:
+    build:
+      context: .
+      args:
+        CHAT_ENDPOINT: /api/chat
+    ports:
+      - "3000:80"
+
+  chat-proxy:
+    build: ./chat-proxy
+    ports:
+      - "8787:8787"
+    env_file: .env
+    environment:
+      - ALLOWED_ORIGINS=http://localhost:3000

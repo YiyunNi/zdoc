@@ -1,5 +1,6 @@
 import type {Source, ConfidenceLevel} from './types.js';
 import {zillizRequest, ZILLIZ_ENDPOINT, ZILLIZ_TOKEN, isZillizConfigured, EMBEDDING_DIM} from './zilliz-client.js';
+import {isDemotedSource, buildDemotionFunctionScore} from './demotion.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -8,13 +9,11 @@ import {zillizRequest, ZILLIZ_ENDPOINT, ZILLIZ_TOKEN, isZillizConfigured, EMBEDD
 const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || 'baai/bge-large-en-v1.5';
 const EMBEDDING_API_KEY = process.env.EMBEDDING_API_KEY || process.env.AI_API_KEY || '';
 const EMBEDDING_BASE_URL = (process.env.EMBEDDING_BASE_URL || process.env.AI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-const COLLECTION_NAME = 'doc_chunks';
+const COLLECTION_NAME = 'doc_chunks_v2';
 const TOP_K = 6;
-const EXTERNAL_BOOST_WEIGHT = parseFloat(process.env.EXTERNAL_BOOST_WEIGHT || '1.0');
 
-function getExternalBoostWeight(): number {
-  return EXTERNAL_BOOST_WEIGHT;
-}
+// Set to true when the collection has the content_sparse field for BM25 hybrid search
+let hybridSearchAvailable = false;
 
 // ---------------------------------------------------------------------------
 // Title sanitization — strip markdown heading IDs like {#slug-text}
@@ -97,6 +96,7 @@ export interface SearchResult {
   content: string;
   score: number;
   weight: number;
+  contextScore: number;
 }
 
 export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
@@ -108,33 +108,52 @@ export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: st
   try {
     const embedding = await generateEmbedding(query);
 
-    const searchBody: Record<string, unknown> = {
-      collectionName: COLLECTION_NAME,
-      data: [embedding],
-      annsField: 'embedding',
-      limit: topK,
-      outputFields: ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content', 'weight'],
-    };
-    if (sectionFilter) {
-      searchBody.filter = sectionFilter;
-    }
+    // Exclude generic landing pages at query level so they don't waste result slots
+    const baseFilter = 'doc_url != "/docs/home"';
+    const filter = sectionFilter ? `${baseFilter} and ${sectionFilter}` : baseFilter;
 
-    // Apply Boost Ranker to demote external sources when weight < 1.0
-    const boostWeight = getExternalBoostWeight();
-    if (boostWeight < 1.0) {
-      searchBody.functionScore = {
-        name: 'external_weight',
-        type: 'RERANK',
-        inputFieldNames: [],
-        params: {
-          reranker: 'boost',
-          filter: 'id like "ext:%"',
-          weight: boostWeight,
-        },
+    const outputFields = ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content', 'weight'];
+    let hits: any[];
+
+    if (hybridSearchAvailable) {
+      // Hybrid search: vector (cosine) 70% + BM25 (full-text) 30% via weighted ranker.
+      // norm_score required since cosine (0-1) and BM25 (unbounded) have different scales.
+      // functionScore (boost ranker) is incompatible with rerank in advanced_search,
+      // so demotion is handled at grounding level instead.
+      const searchBody: Record<string, unknown> = {
+        collectionName: COLLECTION_NAME,
+        search: [
+          {
+            data: [embedding],
+            annsField: 'embedding',
+            limit: topK * 2,
+            filter,
+          },
+          {
+            data: [query],
+            annsField: 'content_sparse',
+            limit: topK * 2,
+            filter,
+          },
+        ],
+        rerank: {strategy: 'weighted', params: {weights: [0.7, 0.3], norm_score: true}},
+        limit: topK,
+        outputFields,
       };
+      hits = await zillizRequest('/entities/advanced_search', searchBody);
+    } else {
+      // Vector-only search (legacy collection without BM25)
+      const searchBody: Record<string, unknown> = {
+        collectionName: COLLECTION_NAME,
+        data: [embedding],
+        annsField: 'embedding',
+        limit: topK,
+        outputFields,
+        filter,
+        functionScore: buildDemotionFunctionScore(),
+      };
+      hits = await zillizRequest('/entities/search', searchBody);
     }
-
-    const hits = await zillizRequest('/entities/search', searchBody);
 
     // Cap external results to avoid overwhelming native content
     const MAX_EXTERNAL_RESULTS = 2;
@@ -156,9 +175,11 @@ export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: st
       content: hit.content || '',
       score: hit.distance ?? hit.score ?? 0,
       weight: hit.weight ?? 1.0,
+      contextScore: hit.distance ?? hit.score ?? 0,
     }));
 
-    console.log(`[RAG] Vector search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, sections: [${results.map(r => r.section).join(', ')}], scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
+    const mode = hybridSearchAvailable ? 'hybrid' : 'vector';
+    console.log(`[RAG] ${mode} search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, sections: [${results.map(r => r.section).join(', ')}], scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
 
     cacheSet(cacheKey, results);
     return results;
@@ -257,21 +278,19 @@ export async function retrieveContext(query: string, sectionFilter?: string): Pr
   const MIN_RELEVANCE_SCORE = 0.55;
   const filtered = results.filter(r => r.score >= MIN_RELEVANCE_SCORE);
 
-  // Document type weighting — demote release notes and boost primary content
+  // Document type weighting — compute contextScore without mutating raw score
   const SECTION_WEIGHTS: Record<string, number> = {
     'cloud-guides': 1.0,
     'byoc-guides': 1.0,
     'api-reference': 1.0,
     'external-web': 0.7,
   };
-  const DEMOTE_PATTERNS = [
-    /release\s*notes?/i, /changelog/i, /what's\s*new/i, /v\d+\.\d+\.\d+/,
-  ];
   for (const r of filtered) {
-    r.score *= SECTION_WEIGHTS[r.section] ?? 0.8;
-    if (DEMOTE_PATTERNS.some(p => p.test(r.doc_title))) r.score *= 0.5;
+    const sectionWeight = SECTION_WEIGHTS[r.section] ?? 0.8;
+    const releaseNoteFactor = isDemotedSource(r.doc_title, r.doc_url) ? 0.5 : 1.0;
+    r.contextScore = r.score * sectionWeight * releaseNoteFactor;
   }
-  filtered.sort((a, b) => b.score - a.score);
+  filtered.sort((a, b) => b.contextScore - a.contextScore);
 
   // Use filtered results for the rest of the pipeline
   const scoredResults = filtered.length > 0 ? filtered : results;
@@ -340,10 +359,24 @@ export async function ensureCollection(): Promise<void> {
       }
     }
 
+    // Detect BM25 hybrid search capability
+    try {
+      const desc = await zillizRequest('/collections/describe', {collectionName: COLLECTION_NAME});
+      const fields = desc?.fields || [];
+      if (fields.some((f: any) => f.name === 'content_sparse')) {
+        hybridSearchAvailable = true;
+        console.log('[RAG] BM25 hybrid search available');
+      } else {
+        console.log('[RAG] BM25 not available — using vector-only search (re-index to enable)');
+      }
+    } catch {
+      // Non-fatal — continue with vector-only search
+    }
+
     return;
   }
 
-  console.log(`[RAG] Creating collection: ${COLLECTION_NAME}`);
+  console.log(`[RAG] Creating collection: ${COLLECTION_NAME} (with BM25 hybrid search)`);
   await zillizRequest('/collections/create', {
     collectionName: COLLECTION_NAME,
     schema: {
@@ -353,17 +386,26 @@ export async function ensureCollection(): Promise<void> {
         {fieldName: 'doc_url_md', dataType: 'VarChar', elementTypeParams: {max_length: '512'}},
         {fieldName: 'doc_title', dataType: 'VarChar', elementTypeParams: {max_length: '256'}},
         {fieldName: 'section', dataType: 'VarChar', elementTypeParams: {max_length: '128'}},
-        {fieldName: 'content', dataType: 'VarChar', elementTypeParams: {max_length: '16384'}},
+        {fieldName: 'content', dataType: 'VarChar', elementTypeParams: {max_length: '16384', enable_analyzer: 'true'}},
         {fieldName: 'content_hash', dataType: 'VarChar', elementTypeParams: {max_length: '64'}},
         {fieldName: 'weight', dataType: 'Float'},
+        {fieldName: 'content_sparse', dataType: 'SparseFloatVector'},
         {fieldName: 'embedding', dataType: 'FloatVector', elementTypeParams: {dim: String(EMBEDDING_DIM)}},
       ],
+      functions: [{
+        name: 'bm25_content',
+        type: 'BM25',
+        inputFieldNames: ['content'],
+        outputFieldNames: ['content_sparse'],
+      }],
     },
     indexParams: [
       {fieldName: 'embedding', indexType: 'AUTOINDEX', metricType: 'COSINE'},
+      {fieldName: 'content_sparse', indexType: 'AUTOINDEX', metricType: 'BM25'},
     ],
   });
-  console.log(`[RAG] Collection ${COLLECTION_NAME} created`);
+  hybridSearchAvailable = true;
+  console.log(`[RAG] Collection ${COLLECTION_NAME} created with BM25 hybrid search`);
 }
 
 // ---------------------------------------------------------------------------

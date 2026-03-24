@@ -1,0 +1,13 @@
+node_modules
+.docusaurus
+build
+.env
+.git
+chat-proxy
+.vercel
+.claude
+.superpower
+.agents
+.qwen
+test-results
+playwright-report
