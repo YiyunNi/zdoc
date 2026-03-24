@@ -1,14 +1,83 @@
 const nunjucks = require("nunjucks")
 const fs = require('node:fs')
 
+const CONFIG = {
+  controlPlaneKeywords: {
+    zilliz: ['cloud', 'cluster', 'import', 'pipeline', 'backup', 'restore', 'invoices', 'usage', 'metrics', 'extract', 'volume', 'project'],
+    milvus: ['cloud', 'cluster', 'pipeline', 'backup', 'restore', 'invoices', 'usage', 'metrics', 'extract', 'volume', 'project'],
+  },
+  betaDefaults: { v1: 'NEAR DEPRECATE', v2: 'FALSE' },
+  betaOverrides: { extract: 'PRIVATE', merge: 'PRIVATE' },
+  maxRefDepth: 20,
+}
+
 class refGen {
   constructor(options) {
     this.options = options
     this.options.parents = []
 
-    for ( const x of Object.keys(this.options.specifications.tags)) {
+    this.validateSpec(options.specifications)
+
+    for (const x of Object.keys(this.options.specifications.tags)) {
       this.options.parents.push(this.options.specifications.tags[x].name)
     }
+
+    this.descriptions = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/descriptions.json', 'utf-8'))
+  }
+
+  validateSpec(spec) {
+    if (!spec.tags || !Array.isArray(spec.tags) || spec.tags.length === 0) {
+      throw new Error('OpenAPI spec must have a non-empty "tags" array')
+    }
+    for (let i = 0; i < spec.tags.length; i++) {
+      if (!spec.tags[i].name || typeof spec.tags[i].name !== 'string') {
+        throw new Error(`Tag at index ${i} is missing a "name" string`)
+      }
+    }
+    if (!spec.paths || typeof spec.paths !== 'object' || Object.keys(spec.paths).length === 0) {
+      throw new Error('OpenAPI spec must have a non-empty "paths" object')
+    }
+    for (const [path, methods] of Object.entries(spec.paths)) {
+      const httpMethods = Object.keys(methods).filter(m => ['get', 'post', 'put', 'delete', 'patch'].includes(m))
+      if (httpMethods.length === 0) {
+        console.warn(`Warning: Path "${path}" has no HTTP methods`)
+      }
+      for (const method of httpMethods) {
+        if (!methods[method].summary) {
+          console.warn(`Warning: ${method.toUpperCase()} ${path} is missing a "summary"`)
+        }
+      }
+    }
+  }
+
+  getPlane(slug, target) {
+    const keywords = CONFIG.controlPlaneKeywords[target] || CONFIG.controlPlaneKeywords.zilliz
+    return keywords.some(k => slug.includes(k)) ? 'control-plane' : 'data-plane'
+  }
+
+  getBetaTag(slug, version) {
+    for (const [keyword, tag] of Object.entries(CONFIG.betaOverrides)) {
+      if (slug.includes(keyword)) return tag
+    }
+    return CONFIG.betaDefaults[version] || 'FALSE'
+  }
+
+  lookupDescription(slug, specDescription) {
+    const entry = this.descriptions.find(x => x.name === slug)
+    if (!entry) {
+      console.warn(`Warning: No description entry for slug "${slug}", falling back to spec description`)
+      return specDescription || ''
+    }
+    return entry.description
+  }
+
+  lookupMilvusName(slug) {
+    const entry = this.descriptions.find(x => x.name === slug)
+    return entry?.milvus?.name || null
+  }
+
+  toSlug(name) {
+    return name.replace("&", "and").split(' ').join('-').replace(/\(|\)|,/g, '').toLowerCase()
   }
 
   async write_refs() {
@@ -30,15 +99,19 @@ class refGen {
         if (specification?.["x-include-target"] && !specification["x-include-target"].includes(target)) {
           continue
         }
-        
+
         const sidebar_position = idx; idx++;
 
         const page_title = lang === "zh-CN" ? specification["x-i18n"][lang].summary : specification.summary
         const page_excerpt = this.__filter_content(lang === "zh-CN" ? specification["x-i18n"][lang].description : specification.description, target).split('<')[0]
-        var page_parent = parents.filter(x => x === specification.tags[0])[0].replace("&", "and").split(' ').join('-').replace(/\(|\)|,/g, '').toLowerCase()
+        var page_parent = parents.filter(x => x === specification.tags[0])[0]
+        if (!page_parent) {
+          console.warn(`Warning: No matching parent tag for "${specification.tags?.[0]}" in ${method.toUpperCase()} ${page_url}, skipping`)
+          continue
+        }
+        page_parent = this.toSlug(page_parent)
         if (target === 'milvus') {
-          const descriptions = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/descriptions.json', 'utf-8'))
-          const name = descriptions.filter(x => x.name === page_parent)[0]?.milvus?.name
+          const name = this.lookupMilvusName(page_parent)
           if (name) {
             page_parent = name
           }
@@ -48,17 +121,11 @@ class refGen {
         if (target === 'milvus') {
           slug_suffix = ''
         }
-        var upper_folder = this.__get_plane_for_cloud(page_parent)
+        var upper_folder = this.getPlane(page_parent, target)
 
-        if (target === 'milvus') {
-          upper_folder = this.__get_plane_for_milvus(page_parent)
-        }
         var page_slug = (this.get_slug(page_title, target)) + slug_suffix
-        var beta_tag = version === 'v2' ? 'FALSE' : 'NEAR DEPRECATE'
+        var beta_tag = this.getBetaTag(page_slug, version)
 
-        // add beta tags
-        // beta_tag = page_slug.includes('invoice') || page_slug.includes('usage') ? 'PUBLIC' : beta_tag
-        beta_tag = page_slug.includes('merge') ? 'PRIVATE' : beta_tag
         const page_method = method.toLowerCase()
         const specs = JSON.stringify(specification)
 
@@ -74,11 +141,11 @@ class refGen {
           target,
           lang,
         }).replaceAll(/<br>/g, '<br/>')
-        
+
         fs.writeFileSync(`${this.options.target_path}/${version}/${upper_folder}/${page_parent}/${page_slug}.mdx`, t)
       }
     }
-  }  
+  }
 
   make_groups() {
     const { specifications, target, target_path } = this.options
@@ -92,21 +159,16 @@ class refGen {
     for (const group of Object.keys(specifications.tags)) {
       if (specifications.tags[group]['x-include-target'] && !(specifications.tags[group]['x-include-target']?.includes(target))) continue;
 
-      const slug = specifications.tags[group].name.replace("&", "and").split(' ').join('-').replace(/\(|\)|,/g, '').toLowerCase()
+      const slug = this.toSlug(specifications.tags[group].name)
       const version = slug.includes('v2') ? 'v2' : 'v1'
-      var upper_folder = slug.startsWith('cloud') || slug.startsWith('cluster') || slug.startsWith('import') || slug.startsWith('pipeline') || slug.includes('backup') || slug.includes('restore') || slug.includes('invoices') || slug.includes('usage') || slug.includes('metrics') || slug.includes('extract') || slug.includes('volume') || slug.includes('project') ? 'control-plane' : 'data-plane'
-      if (target === 'milvus') {
-        upper_folder = slug.startsWith('cloud') || slug.startsWith('cluster') || slug.startsWith('pipeline') || slug.includes('backup') || slug.includes('restore') || slug.includes('invoices') || slug.includes('usage') || slug.includes('metrics') || slug.includes('extract') || slug.includes('volume') || slug.includes('project') ? 'control-plane' : 'data-plane'
-      }
+      var upper_folder = this.getPlane(slug, target)
 
       console.log(slug)
       const group_name = version === 'v2' ? specifications.tags[group].name.slice(0, -5) : specifications.tags[group].name
-      const descriptions = JSON.parse(fs.readFileSync('plugins/apifox-docs/meta/descriptions.json', 'utf-8'))
-      const description = descriptions.filter(x => x.name === slug)[0].description
+      const description = this.lookupDescription(slug, specifications.tags[group].description)
       const position = specifications.tags.map(x => x.name).indexOf(specifications.tags[group].name)
-      var beta_tag = version === 'v2' ? 'FALSE' : 'NEAR DEPRECATE'
-      // beta_tag = slug.includes('invoice') || slug.includes('usage') ? 'PUBLIC' : beta_tag
-      beta_tag = slug.includes('extract') ? 'PRIVATE' : beta_tag
+      var beta_tag = this.getBetaTag(slug, version)
+
       const t = template.render({
         group_name: group_name + (version === 'v2' ? ' (V2)' : ' (V1)'),
         position,
@@ -118,7 +180,7 @@ class refGen {
       var folder_path = `${target_path}/${version}/${upper_folder}/${slug}`
 
       if (target === 'milvus') {
-        const name = descriptions.filter(x => x.name === slug)[0]?.milvus?.name
+        const name = this.lookupMilvusName(slug)
         if (name) {
           folder_path = `${target_path}/${version}/${upper_folder}/${name}`
         }
@@ -134,25 +196,25 @@ class refGen {
             group_name: version === 'v2' ? 'V2' : 'V1',
             position: version === 'v2' ? 1 : 2,
             slug: version,
-            beta_tag: version === 'v2' ? 'FALSE' : 'NEAR DEPRECATE',
+            beta_tag: CONFIG.betaDefaults[version],
             description: ''
           }))
         }
-  
+
         if (!fs.existsSync(`${target_path}/${version}/${upper_folder}/${upper_folder}.mdx`)) {
           const title = upper_folder.startsWith('control') ? 'Control Plane' : 'Data Plane'
           const pos = upper_folder.startsWith('control') ? 1 : 2
           const desc = upper_folder.startsWith('control') ? 'This provide API endpoints for managing Zilliz Cloud clusters and resources.' : 'This provide API endpoints for managing data stored in Zilliz Cloud clusters.'
-  
+
           fs.writeFileSync(`${target_path}/${version}/${upper_folder}/${upper_folder}.mdx`, template.render({
             group_name: title + (version === 'v2' ? ' (V2)' : ' (V1)'),
             position: pos,
             slug: `${upper_folder}-${version}`,
-            beta_tag: version === 'v2' ? 'FALSE' : 'NEAR DEPRECATE',
+            beta_tag: CONFIG.betaDefaults[version],
             description: desc
           }))
-        }      
-  
+        }
+
         fs.writeFileSync(`${folder_path}/${slug}.mdx`, t)
       }
     }
@@ -165,6 +227,9 @@ class refGen {
     if (lang == 'zh-CN') {
       const titles = JSON.parse(fs.readFileSync(`plugins/apifox-docs/meta/titles.json`, 'utf-8'))
       page_slug = titles[page_title]
+      if (!page_slug) {
+        throw new Error(`Missing Chinese title mapping for: "${page_title}" in titles.json`)
+      }
     } else {
       page_slug = page_title.replace("&", "and").split(' ').join('-').replace(/\(|\)/g, '').toLowerCase()
     }
@@ -239,67 +304,43 @@ class refGen {
       matches.forEach(match => {
           var tag = match[1]
           var rest = markdown.slice(match.index)
-          
+
           var closeTagRegex = new RegExp(`</${tag}>`, 'gm')
           var closeTagMatch = [... rest.matchAll(closeTagRegex)]
-          
+
           var startIndex = match.index
           var endIndex = 0
-          
+
           for (let i = 0; i < closeTagMatch.length; i++) {
               var t = markdown.slice(startIndex, startIndex+closeTagMatch[i].index+closeTagMatch[i][0].length)
-          
+
               var startCount = t.match(startTagRegex) ? t.match(startTagRegex).length : 0
               var endCount = t.match(endTagRegex) ? t.match(endTagRegex).length : 0
-      
+
               if (startCount === endCount) {
                   endIndex = startIndex + closeTagMatch[i].index + closeTagMatch[i][0].length
                   break
               }
           }
-          
+
           returns.push({
               tag: tag,
               target: match[2],
               startIndex: startIndex,
               endIndex: endIndex
-          })           
+          })
       })
 
       return returns
   }
 
-  __get_plane_for_cloud(target) {
-    return target.startsWith('cloud') || 
-      target.startsWith('cluster') || 
-      target.startsWith('import') || 
-      target.startsWith('pipeline') || 
-      target.includes('backup') || 
-      target.includes('restore') || 
-      target.includes('invoices') || 
-      target.includes('usage') || 
-      target.includes('metrics') || 
-      target.includes('extract') || 
-      target.includes('volume') || 
-      target.includes('project') ? 'control-plane' : 'data-plane'    
-  }
-
-  __get_plane_for_milvus(target) {
-    return target.startsWith('cloud') ||
-      target.startsWith('cluster') ||
-      target.startsWith('pipeline') ||
-      target.includes('backup') ||
-      target.includes('restore') ||
-      target.includes('invoices') ||
-      target.includes('usage') ||
-      target.includes('metrics') ||
-      target.includes('extract') ||
-      target.includes('volume') ||
-      target.includes('project') ? 'control-plane' : 'data-plane'
-  }
-
-  resolveRefs(obj, spec, visited = new Set()) {
+  resolveRefs(obj, spec, visited = new Set(), depth = 0) {
     if (!obj || typeof obj !== 'object') {
+      return obj
+    }
+
+    if (depth > CONFIG.maxRefDepth) {
+      console.warn(`Warning: Max $ref resolution depth (${CONFIG.maxRefDepth}) exceeded, returning as-is`)
       return obj
     }
 
@@ -309,13 +350,13 @@ class refGen {
     visited.add(obj)
 
     if (Array.isArray(obj)) {
-      return obj.map(item => this.resolveRefs(item, spec, visited))
+      return obj.map(item => this.resolveRefs(item, spec, visited, depth))
     }
 
     if (obj.$ref) {
       const refPath = obj.$ref
       if (refPath.startsWith('#/')) {
-        const pathParts = refPath.substring(2).split('/')
+        const pathParts = refPath.substring(2).split('/').map(p => p.replace(/~1/g, '/').replace(/~0/g, '~'))
         let resolved = spec
 
         for (const part of pathParts) {
@@ -327,7 +368,7 @@ class refGen {
           }
         }
 
-        return this.resolveRefs(resolved, spec, new Set())
+        return this.resolveRefs(resolved, spec, new Set(), depth + 1)
       }
       return obj
     }
@@ -350,7 +391,7 @@ class refGen {
           resolved[key] = value
         }
       } else {
-        resolved[key] = this.resolveRefs(value, spec, visited)
+        resolved[key] = this.resolveRefs(value, spec, visited, depth)
       }
     }
 

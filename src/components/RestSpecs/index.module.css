@@ -112,3 +112,19 @@ input[type=radio]:checked + .tabLabel + .tabPanel {
 .description p {
     line-height: 1.5;
 }
+
+.specLayout {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 60% 40%;
+}
+
+@media (max-width: 768px) {
+    .specLayout {
+        grid-template-columns: 1fr;
+    }
+
+    .exampleContainer {
+        margin-top: 1rem;
+    }
+}
