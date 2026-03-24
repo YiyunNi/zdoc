@@ -118,7 +118,7 @@ Breaking this down in plain language:
 
 1. Square this adjusted distance: $(adjusted\_distance)^2$
 
-1. Divide by &#36;2\sigma^2$, which is calculated from your scale and decay parameters
+1. Divide by $2\sigma^2$, which is calculated from your scale and decay parameters
 
 1. Take the negative exponent, which gives you a value between 0 and 1: $\exp(-value)$
 

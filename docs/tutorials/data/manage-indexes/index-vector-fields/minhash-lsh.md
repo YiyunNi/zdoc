@@ -108,7 +108,7 @@ The process involves:
 <ul>
 <li><p>The probability they are identical in one row (hash position) is $s$</p></li>
 <li><p>The probability they match in all $r$ rows of a band is $s^r$</p></li>
-<li><p>The probability that they match in <strong>at least one band</strong> is &#36;1 - (1 - s^r)^b$</p></li>
+<li><p>The probability that they match in <strong>at least one band</strong> is $1 - (1 - s^r)^b$</p></li>
 </ul>
 <p>For details, refer to <a href="https://en.wikipedia.org/wiki/Locality-sensitive_hashing">Locality-sensitive hashing</a>.</p>
 
