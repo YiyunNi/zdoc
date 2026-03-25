@@ -56,5 +56,8 @@ chat-proxy/scripts/eval/results/
 .superpower/
 skills-lock.json
 
+# Worktrees
+.worktrees/
+
 # Vercel
 .vercel
