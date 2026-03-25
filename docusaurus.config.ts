@@ -53,7 +53,7 @@ const config: Config = {
         prefix: '/reference',
         icon: 'code',
         items: [
-          { label: 'Python SDK',  href: '/reference/python/python/DataImport-BulkFileType',      prefix: '/reference/python',   icon: 'python'  },
+          { label: 'Python SDK',  href: '/reference/python/guides/quickstart',                   prefix: '/reference/python',   icon: 'python'  },
           { label: 'Java SDK',    href: '/reference/java/java/v2-Authentication-createRole',     prefix: '/reference/java',     icon: 'java'    },
           { label: 'Node.js SDK', href: '/reference/node/node/Authentication-addUserToRole',     prefix: '/reference/node',     icon: 'nodejs'  },
           { label: 'Go SDK',      href: '/reference/go/v2-Authentication-CreateRole',            prefix: '/reference/go',       icon: 'go'      },
@@ -68,6 +68,8 @@ const config: Config = {
   plugins: [
     // Watch sidebar override files so `docusaurus start` rebuilds on changes
     () => ({ name: 'watch-sidebar-overrides', getPathsToWatch: () => ['config/sidebar-overrides'] }),
+    // Generate SDK guides from Cloud Guide templates before docs plugins scan
+    './plugins/sdk-guide-generator',
     [
       '@docusaurus/plugin-content-docs',
       {

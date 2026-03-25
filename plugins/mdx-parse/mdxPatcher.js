@@ -109,6 +109,67 @@ function escapeCurrencyDollars(content) {
 }
 
 /**
+ * Pre-processing: escape unescaped { and } inside math blocks ($...$ and $$...$$)
+ * so MDX does not try to parse them as JSX expressions.
+ *
+ * The remarkMathFix remark plugin (in docusaurus.config.ts) later converts \{ → {
+ * and \} → } inside math AST nodes, restoring the original LaTeX for KaTeX.
+ *
+ * Only escapes braces that are NOT already preceded by a backslash.
+ */
+function escapeMathBraces(content) {
+    const lines = content.split('\n');
+    const result = [];
+    let inCodeBlock = false;
+    let inDisplayMath = false;
+
+    for (let line of lines) {
+        const stripped = line.trim();
+
+        // Track fenced code blocks
+        if (stripped.startsWith('```') || stripped.startsWith('~~~')) {
+            inCodeBlock = !inCodeBlock;
+        }
+
+        if (inCodeBlock) {
+            result.push(line);
+            continue;
+        }
+
+        // Track display math blocks ($$...$$)
+        if (stripped === '$$') {
+            inDisplayMath = !inDisplayMath;
+            result.push(line);
+            continue;
+        }
+
+        if (inDisplayMath) {
+            // Escape unescaped braces inside display math
+            line = line.replace(/(?<!\\)([{}])/g, '\\$1');
+            result.push(line);
+            continue;
+        }
+
+        // Handle inline math ($...$) — escape braces inside $ delimiters
+        // Split by inline code spans first (odd-indexed segments are inside backticks)
+        const codeParts = line.split(/(`+[^`]+`+)/);
+        line = codeParts.map((part, i) => {
+            if (i % 2 !== 0) return part; // Inside inline code — leave unchanged
+
+            // Find inline math spans: $...$ (not $$, not inside code)
+            return part.replace(/(?<!\$)\$(?!\$)((?:[^$\\]|\\.)+)\$/g, (match, mathContent) => {
+                const escaped = mathContent.replace(/(?<!\\)([{}])/g, '\\$1');
+                return '$' + escaped + '$';
+            });
+        }).join('');
+
+        result.push(line);
+    }
+
+    return result.join('\n');
+}
+
+/**
  * Pre-processing: escape any lowercase tag whose name is not a known HTML element or
  * content-filter tag, outside fenced code blocks and inline code spans.
  * Such tags are URL/API placeholder patterns (e.g. <bucket_name>, <region-code>,
@@ -282,6 +343,7 @@ async function applyMdxPatches(content) {
         patchedContent = unescapeKnownJsxTags(patchedContent);
         patchedContent = escapeCurrencyDollars(patchedContent);
         patchedContent = escapeNonHtmlTags(patchedContent);
+        patchedContent = escapeMathBraces(patchedContent);
         let maxIterations = 50; // Prevent infinite loops
         let iteration = 0;
         const seenHashes = new Set();
@@ -438,4 +500,5 @@ module.exports = {
     validateMdxStructure,
     removeTabsHallucinations,
     unescapeKnownJsxTags,
+    escapeMathBraces,
 };
