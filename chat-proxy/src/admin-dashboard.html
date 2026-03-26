@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat-Proxy Dashboard</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f8f9fa;
+  --card-bg: #fff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --text-muted: #718096;
+  --green: #38a169;
+  --blue: #3182ce;
+  --purple: #805ad5;
+  --red: #e53e3e;
+  --amber: #d69e2e;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-hover: 0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ---- Header ---- */
+.header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+.connection-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  margin-left: 8px;
+  vertical-align: middle;
+  transition: background 0.3s;
+}
+.connection-dot.ok { background: var(--green); }
+
+.api-key-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.api-key-group input {
+  font-size: 13px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.api-key-group input:focus { border-color: var(--blue); }
+.api-key-group button {
+  font-size: 13px;
+  padding: 6px 14px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.api-key-group button:hover { opacity: 0.9; }
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter-bar label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-right: 2px;
+}
+.filter-bar select {
+  font-size: 13px;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  outline: none;
+  cursor: pointer;
+}
+.filter-bar select:focus { border-color: var(--blue); }
+
+/* ---- Board ---- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 16px 24px 24px;
+  min-height: calc(100vh - 170px);
+  align-items: start;
+}
+
+.column {
+  background: var(--bg);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  max-height: calc(100vh - 190px);
+}
+
+.column-header {
+  padding: 10px 14px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+.column-header .count {
+  background: rgba(255,255,255,0.25);
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.col-live .column-header { background: var(--green); }
+.col-perf .column-header { background: var(--blue); }
+.col-feedback .column-header { background: var(--purple); }
+.col-errors .column-header { background: var(--red); }
+.col-lowconf .column-header { background: var(--amber); }
+
+.column-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.column-body::-webkit-scrollbar { width: 5px; }
+.column-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+/* ---- Cards ---- */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s;
+  font-size: 13px;
+}
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.card-row + .card-row { margin-top: 6px; }
+
+.card-question {
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.card-meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.badge-green { background: #c6f6d5; color: #22543d; }
+.badge-blue { background: #bee3f8; color: #2a4365; }
+.badge-purple { background: #e9d8fd; color: #44337a; }
+.badge-red { background: #fed7d7; color: #742a2a; }
+.badge-amber { background: #fefcbf; color: #744210; }
+.badge-gray { background: #edf2f7; color: #4a5568; }
+
+/* Feedback cards */
+.card-feedback-up { border-left: 3px solid var(--green); }
+.card-feedback-down { border-left: 3px solid var(--red); }
+
+/* Error cards */
+.card-error { background: #fff5f5; border-color: #feb2b2; }
+
+/* Mini confidence bar */
+.conf-bar {
+  display: flex;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 120px;
+  background: #edf2f7;
+}
+.conf-bar .seg-high { background: var(--green); }
+.conf-bar .seg-med { background: var(--amber); }
+.conf-bar .seg-low { background: var(--red); }
+
+.thumb-icon { font-size: 16px; }
+
+/* No data */
+.no-data {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+/* ---- Modal ---- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.hidden { display: none; }
+
+.modal {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  padding: 24px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.modal-close:hover { background: #edf2f7; }
+
+.modal h3 { font-size: 16px; margin-bottom: 12px; }
+.modal-section { margin-top: 16px; }
+.modal-section h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.modal-section pre {
+  background: #f7fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.modal-section p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.modal-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .board { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .board { grid-template-columns: 1fr; }
+  .header { padding: 12px 16px; }
+  .board { padding: 12px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div style="display:flex;align-items:center;">
+      <span class="header-title">Chat-Proxy Dashboard</span>
+      <span class="connection-dot" id="connDot" title="Disconnected"></span>
+    </div>
+    <div class="api-key-group">
+      <input type="password" id="apiKeyInput" placeholder="Admin API key" autocomplete="off">
+      <button id="apiKeySave">Save Key</button>
+    </div>
+  </div>
+  <div class="stats-row" id="statsRow">
+    <div class="stat-item"><span class="stat-value" id="statQueries">-</span><span class="stat-label">Total Queries</span></div>
+    <div class="stat-item"><span class="stat-value" id="statLatency">-</span><span class="stat-label">Avg Latency</span></div>
+    <div class="stat-item"><span class="stat-value" id="statFeedback">-</span><span class="stat-label">Feedback Rate</span></div>
+    <div class="stat-item"><span class="stat-value" id="statErrors">-</span><span class="stat-label">Error Rate</span></div>
+    <div class="stat-item"><span class="stat-value" id="statSessions">-</span><span class="stat-label">Active Sessions</span></div>
+  </div>
+  <div class="filter-bar">
+    <label for="filterTime">Time</label>
+    <select id="filterTime">
+      <option value="1h">Last 1h</option>
+      <option value="6h">Last 6h</option>
+      <option value="24h" selected>Last 24h</option>
+      <option value="all">All</option>
+    </select>
+    <label for="filterAgent">Agent</label>
+    <select id="filterAgent"><option value="">All Agents</option></select>
+    <label for="filterModel">Model</label>
+    <select id="filterModel"><option value="">All Models</option></select>
+  </div>
+</div>
+
+<div class="board">
+  <div class="column col-live">
+    <div class="column-header"><span>Live Sessions</span><span class="count" id="countLive">0</span></div>
+    <div class="column-body" id="colLive"></div>
+  </div>
+  <div class="column col-perf">
+    <div class="column-header"><span>Performance</span><span class="count" id="countPerf">0</span></div>
+    <div class="column-body" id="colPerf"></div>
+  </div>
+  <div class="column col-feedback">
+    <div class="column-header"><span>Feedback</span><span class="count" id="countFeedback">0</span></div>
+    <div class="column-body" id="colFeedback"></div>
+  </div>
+  <div class="column col-errors">
+    <div class="column-header"><span>Errors</span><span class="count" id="countErrors">0</span></div>
+    <div class="column-body" id="colErrors"></div>
+  </div>
+  <div class="column col-lowconf">
+    <div class="column-header"><span>Low Confidence</span><span class="count" id="countLowConf">0</span></div>
+    <div class="column-body" id="colLowConf"></div>
+  </div>
+</div>
+
+<div class="modal-overlay hidden" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ---- State ----
+  const LS_KEY = 'chatproxy_admin_key';
+  let apiKey = localStorage.getItem(LS_KEY) || '';
+  let pollTimer = null;
+  let allData = { live: [], performance: [], feedback: [], errors: [], lowConfidence: [] };
+  let knownAgents = new Set();
+  let knownModels = new Set();
+
+  // ---- DOM refs ----
+  const $ = id => document.getElementById(id);
+  const apiKeyInput = $('apiKeyInput');
+  const apiKeySave = $('apiKeySave');
+  const connDot = $('connDot');
+  const filterTime = $('filterTime');
+  const filterAgent = $('filterAgent');
+  const filterModel = $('filterModel');
+  const modalOverlay = $('modalOverlay');
+  const modalContent = $('modalContent');
+  const modalClose = $('modalClose');
+
+  // ---- Init ----
+  apiKeyInput.value = apiKey;
+  apiKeySave.addEventListener('click', () => {
+    apiKey = apiKeyInput.value.trim();
+    localStorage.setItem(LS_KEY, apiKey);
+    fetchAll();
+  });
+  apiKeyInput.addEventListener('keydown', e => { if (e.key === 'Enter') apiKeySave.click(); });
+
+  filterTime.addEventListener('change', render);
+  filterAgent.addEventListener('change', render);
+  filterModel.addEventListener('change', render);
+
+  modalClose.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  if (!apiKey) {
+    apiKeyInput.focus();
+  }
+  fetchAll();
+  pollTimer = setInterval(fetchAll, 10000);
+
+  // ---- Fetch ----
+  async function apiFetch(path) {
+    const resp = await fetch(path, {
+      headers: { 'Authorization': 'Bearer ' + apiKey }
+    });
+    if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
+    return resp.json();
+  }
+
+  async function fetchAll() {
+    if (!apiKey) {
+      setConnected(false);
+      return;
+    }
+    try {
+      const [live, performance, feedback, errors, lowConfidence] = await Promise.all([
+        apiFetch('/admin/api/live'),
+        apiFetch('/admin/api/performance'),
+        apiFetch('/admin/api/feedback'),
+        apiFetch('/admin/api/errors'),
+        apiFetch('/admin/api/low-confidence'),
+      ]);
+      allData = { live: arr(live), performance: arr(performance), feedback: arr(feedback), errors: arr(errors), lowConfidence: arr(lowConfidence) };
+      collectFilters();
+      updateStats();
+      render();
+      setConnected(true);
+    } catch (e) {
+      console.error('Fetch error:', e);
+      setConnected(false);
+    }
+  }
+
+  function arr(v) {
+    if (Array.isArray(v)) return v;
+    if (!v || typeof v !== 'object') return [];
+    // Unwrap any single-key array response ({sessions: [...]}, {agents: [...]}, {entries: [...]})
+    const keys = Object.keys(v);
+    for (const k of keys) {
+      if (Array.isArray(v[k])) return v[k];
+    }
+    return [];
+  }
+
+  function setConnected(ok) {
+    connDot.classList.toggle('ok', ok);
+    connDot.title = ok ? 'Connected' : 'Disconnected';
+  }
+
+  // ---- Filters ----
+  function collectFilters() {
+    const all = [...allData.live, ...allData.feedback, ...allData.errors, ...allData.lowConfidence, ...allData.performance];
+    all.forEach(d => {
+      if (d.agent || d.agent_type) knownAgents.add(d.agent || d.agent_type);
+      if (d.model || d.model_name) knownModels.add(d.model || d.model_name);
+    });
+    rebuildSelect(filterAgent, knownAgents, 'All Agents');
+    rebuildSelect(filterModel, knownModels, 'All Models');
+  }
+
+  function rebuildSelect(sel, items, allLabel) {
+    const cur = sel.value;
+    const opts = ['<option value="">' + esc(allLabel) + '</option>'];
+    [...items].sort().forEach(v => {
+      opts.push('<option value="' + esc(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(v) + '</option>');
+    });
+    sel.innerHTML = opts.join('');
+    if (cur && !items.has(cur)) sel.value = '';
+  }
+
+  function timeFilter(items) {
+    const range = filterTime.value;
+    if (range === 'all') return items;
+    const hours = { '1h': 1, '6h': 6, '24h': 24 }[range] || 24;
+    const cutoff = Date.now() - hours * 3600_000;
+    return items.filter(d => {
+      const ts = d.timestamp || d.created_at || d.last_active || d.time;
+      if (!ts) return true;
+      return new Date(ts).getTime() >= cutoff;
+    });
+  }
+
+  function agentModelFilter(items) {
+    const agent = filterAgent.value;
+    const model = filterModel.value;
+    return items.filter(d => {
+      if (agent && (d.agent || d.agent_type) !== agent) return false;
+      if (model && (d.model || d.model_name) !== model) return false;
+      return true;
+    });
+  }
+
+  function applyFilters(items, skipTime) {
+    let r = skipTime ? items : timeFilter(items);
+    return agentModelFilter(r);
+  }
+
+  // ---- Stats ----
+  function updateStats() {
+    const perf = allData.performance;
+    const totalQueries = perf.reduce((s, d) => s + (d.query_count || d.count || 0), 0);
+    const avgLat = perf.length ? (perf.reduce((s, d) => s + (d.avg_latency || d.latency || 0), 0) / perf.length) : 0;
+    const fbTotal = allData.feedback.length;
+    const errTotal = allData.errors.length;
+    const liveSessions = allData.live.length;
+    const fbRate = totalQueries > 0 ? ((fbTotal / totalQueries) * 100).toFixed(1) + '%' : '-';
+    const errRate = totalQueries > 0 ? ((errTotal / totalQueries) * 100).toFixed(1) + '%' : '-';
+
+    $('statQueries').textContent = totalQueries.toLocaleString();
+    $('statLatency').textContent = avgLat ? avgLat.toFixed(0) + 'ms' : '-';
+    $('statFeedback').textContent = fbRate;
+    $('statErrors').textContent = errRate;
+    $('statSessions').textContent = liveSessions;
+  }
+
+  // ---- Render ----
+  function render() {
+    renderLive(applyFilters(allData.live, false));
+    renderPerf(applyFilters(allData.performance, true));
+    renderFeedback(applyFilters(allData.feedback, false));
+    renderErrors(applyFilters(allData.errors, false));
+    renderLowConf(applyFilters(allData.lowConfidence, false));
+  }
+
+  function renderLive(items) {
+    items.sort((a, b) => ts(b) - ts(a));
+    $('countLive').textContent = items.length;
+    $('colLive').innerHTML = items.length ? items.map(d => {
+      const sid = shortId(d.session_id || d.id || '');
+      return card([
+        row([badge(sid, 'gray'), tag(d.agent || d.agent_type)]),
+        '<div class="card-question">' + esc(trunc(d.last_question || d.question || '-', 80)) + '</div>',
+        row([meta(d.user_id || d.user || ''), meta(shortModel(d.model)), meta(timeAgo(d.last_active || d.timestamp))])
+      ], d);
+    }).join('') : noData();
+  }
+
+  function renderPerf(items) {
+    $('countPerf').textContent = items.length;
+    $('colPerf').innerHTML = items.length ? items.map(d => {
+      const conf = d.confidence_distribution || d.confidence || {};
+      const total = (conf.high || 0) + (conf.medium || 0) + (conf.low || 0) || 1;
+      return card([
+        row([tag(d.agent || d.agent_type), badge(shortModel(d.model || d.model_name), 'blue')]),
+        row([meta('Queries: ' + (d.query_count || d.count || 0)), meta('Avg: ' + ((d.avg_latency || d.latency || 0)).toFixed(0) + 'ms')]),
+        '<div class="conf-bar">' +
+          '<div class="seg-high" style="width:' + pct(conf.high, total) + '%"></div>' +
+          '<div class="seg-med" style="width:' + pct(conf.medium, total) + '%"></div>' +
+          '<div class="seg-low" style="width:' + pct(conf.low, total) + '%"></div>' +
+        '</div>',
+        row([meta('Sources avg: ' + (d.source_avg != null ? d.source_avg.toFixed(1) : d.avg_sources != null ? d.avg_sources.toFixed(1) : '-')), meta('Err: ' + (d.error_rate != null ? (d.error_rate * 100).toFixed(1) + '%' : '-'))])
+      ], d);
+    }).join('') : noData();
+  }
+
+  function renderFeedback(items) {
+    items.sort((a, b) => ts(b) - ts(a));
+    $('countFeedback').textContent = items.length;
+    $('colFeedback').innerHTML = items.length ? items.map(d => {
+      const up = d.vote === 'up' || d.thumbs === 'up' || d.positive === true || d.rating > 0;
+      return '<div class="card ' + (up ? 'card-feedback-up' : 'card-feedback-down') + '" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
+        row(['<span class="thumb-icon">' + (up ? '\u{1F44D}' : '\u{1F44E}') + '</span>', confBadge(d.confidence)]) +
+        '<div class="card-question">' + esc(trunc(d.question || d.query || '-', 80)) + '</div>' +
+        row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))]) +
+      '</div>';
+    }).join('') : noData();
+  }
+
+  function renderErrors(items) {
+    items.sort((a, b) => ts(b) - ts(a));
+    $('countErrors').textContent = items.length;
+    $('colErrors').innerHTML = items.length ? items.map(d => {
+      const errType = d.error_type || d.type || 'ERROR';
+      const badgeClass = errType === 'GUARD' ? 'amber' : errType === 'EMPTY' ? 'gray' : 'red';
+      return '<div class="card card-error" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
+        row([badge(errType, badgeClass)]) +
+        '<div class="card-question">' + esc(trunc(d.message || d.error || d.question || '-', 100)) + '</div>' +
+        row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))]) +
+      '</div>';
+    }).join('') : noData();
+  }
+
+  function renderLowConf(items) {
+    items.sort((a, b) => ts(b) - ts(a));
+    $('countLowConf').textContent = items.length;
+    $('colLowConf').innerHTML = items.length ? items.map(d => {
+      return card([
+        row([confBadge(d.confidence), meta('Sources: ' + (d.sources_count != null ? d.sources_count : d.sources ? d.sources.length : '-'))]),
+        '<div class="card-question">' + esc(trunc(d.question || d.query || '-', 80)) + '</div>',
+        row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))])
+      ], d);
+    }).join('') : noData();
+  }
+
+  // ---- Card helpers ----
+  function card(lines, data) {
+    return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(data)) + '\'>' + lines.join('') + '</div>';
+  }
+  function row(items) { return '<div class="card-row">' + items.join('') + '</div>'; }
+  function meta(t) { return '<span class="card-meta">' + esc(t || '') + '</span>'; }
+  function tag(t) { return t ? '<span class="badge badge-gray">' + esc(t) + '</span>' : ''; }
+  function badge(t, color) { return '<span class="badge badge-' + (color || 'gray') + '">' + esc(t || '') + '</span>'; }
+  function confBadge(c) {
+    if (!c) return '';
+    const cl = c === 'high' ? 'green' : c === 'medium' ? 'amber' : 'red';
+    return badge(c, cl);
+  }
+  function noData() { return '<div class="no-data">No data</div>'; }
+  function pct(v, total) { return ((v || 0) / total * 100).toFixed(1); }
+
+  // ---- Util ----
+  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function escAttr(s) { return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function trunc(s, n) { return s && s.length > n ? s.slice(0, n) + '...' : (s || ''); }
+  function shortId(id) { return id ? id.slice(0, 8) : '-'; }
+  function shortModel(m) { if (!m) return ''; return m.replace(/^(anthropic|openai|google)[./]/, '').replace(/-\d{8}$/, ''); }
+
+  function ts(d) {
+    const v = d.timestamp || d.created_at || d.last_active || d.time;
+    return v ? new Date(v).getTime() : 0;
+  }
+
+  function timeAgo(t) {
+    if (!t) return '';
+    const diff = Date.now() - new Date(t).getTime();
+    if (diff < 0) return 'just now';
+    const s = Math.floor(diff / 1000);
+    if (s < 60) return s + 's ago';
+    const m = Math.floor(s / 60);
+    if (m < 60) return m + 'm ago';
+    const h = Math.floor(m / 60);
+    if (h < 24) return h + 'h ago';
+    const d = Math.floor(h / 24);
+    return d + 'd ago';
+  }
+
+  // ---- Modal ----
+  window.__modal = function(el) {
+    try {
+      const data = JSON.parse(el.dataset.detail);
+      openModal(data);
+    } catch(e) { /* ignore */ }
+  };
+
+  function openModal(d) {
+    let html = '<h3>' + esc(d.question || d.query || d.message || d.error || 'Details') + '</h3>';
+    html += '<div class="modal-badges">';
+    if (d.agent || d.agent_type) html += badge(d.agent || d.agent_type, 'gray');
+    if (d.model || d.model_name) html += badge(shortModel(d.model || d.model_name), 'blue');
+    if (d.confidence) html += confBadge(d.confidence);
+    if (d.error_type || d.type) html += badge(d.error_type || d.type, 'red');
+    const t = d.timestamp || d.created_at || d.last_active;
+    if (t) html += '<span class="card-meta">' + esc(new Date(t).toLocaleString()) + '</span>';
+    html += '</div>';
+
+    if (d.question || d.query) {
+      html += section('Question', '<p>' + esc(d.question || d.query) + '</p>');
+    }
+    if (d.answer || d.response) {
+      html += section('Answer', '<pre>' + esc(d.answer || d.response) + '</pre>');
+    }
+    if (d.message || d.error) {
+      html += section('Message', '<pre>' + esc(d.message || d.error) + '</pre>');
+    }
+    if (d.sources && d.sources.length) {
+      const srcHtml = d.sources.map(s => '<li>' + esc(typeof s === 'string' ? s : s.title || s.url || JSON.stringify(s)) + '</li>').join('');
+      html += section('Sources', '<ul style="font-size:13px;padding-left:18px;">' + srcHtml + '</ul>');
+    }
+    if (d.tool_calls && d.tool_calls.length) {
+      html += section('Tool Calls', '<pre>' + esc(JSON.stringify(d.tool_calls, null, 2)) + '</pre>');
+    }
+    // Fallback: show raw JSON for any extra fields
+    const shown = new Set(['question','query','answer','response','message','error','sources','tool_calls','agent','agent_type','model','model_name','confidence','error_type','type','timestamp','created_at','last_active','time']);
+    const extra = {};
+    Object.keys(d).forEach(k => { if (!shown.has(k)) extra[k] = d[k]; });
+    if (Object.keys(extra).length) {
+      html += section('Details', '<pre>' + esc(JSON.stringify(extra, null, 2)) + '</pre>');
+    }
+
+    modalContent.innerHTML = html;
+    modalOverlay.classList.remove('hidden');
+  }
+
+  function section(title, body) {
+    return '<div class="modal-section"><h4>' + esc(title) + '</h4>' + body + '</div>';
+  }
+
+  function closeModal() {
+    modalOverlay.classList.add('hidden');
+  }
+})();
+</script>
+</body>
+</html>
