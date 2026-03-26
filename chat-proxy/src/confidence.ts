@@ -5,9 +5,6 @@ import type {ConfidenceLevel} from './types.js';
 // ---------------------------------------------------------------------------
 
 export interface ConfidenceInput {
-  ragResults: {score: number; doc_url: string}[];
-  ragSources: {title: string; url: string; score?: number}[];
-  ragAvgScore: number;
   toolsCalled: string[];
   toolSources: {title: string; url: string; score?: number}[];
   fullText: string;
@@ -19,35 +16,52 @@ export interface ConfidenceResult {
   level: ConfidenceLevel;
   score: number;
   breakdown: {
-    retrievalQuality: number;
-    sourceAgreement: number;
     toolSuccess: number;
+    sourceAgreement: number;
     responseSubstance: number;
     pageContextAlignment: number;
   };
 }
 
 // ---------------------------------------------------------------------------
-// Signal 1: Retrieval Quality (weight 0.35)
-// Re-calibrated for BAAI/bge-large-en-v1.5 cosine similarity distribution
+// Signal 1: Tool Success (weight 0.35)
+// Primary signal in agentic mode — did the LLM search and find relevant docs?
 // ---------------------------------------------------------------------------
 
-function scoreRetrievalQuality(avgScore: number): number {
-  if (avgScore >= 0.72) return 1.0;
-  if (avgScore >= 0.55) return lerp(0.4, 1.0, (avgScore - 0.55) / (0.72 - 0.55));
-  if (avgScore > 0) return lerp(0.0, 0.4, avgScore / 0.55);
-  return 0.0;
+function scoreToolSuccess(
+  toolsCalled: string[],
+  toolSources: {title: string; url: string; score?: number}[],
+): number {
+  const searchCalls = toolsCalled.filter(t => t === 'searchDocs' || t === 'listPages');
+  if (searchCalls.length === 0 && toolsCalled.length === 0) return 0.5; // no tools needed (greeting)
+
+  // Called search but got nothing — near-zero confidence
+  if (searchCalls.length > 0 && toolSources.length === 0) return 0.05;
+
+  // Got sources
+  let score = 0.6;
+  if (toolSources.length >= 2) score += 0.15;
+  if (toolSources.length >= 4) score += 0.1;
+
+  // Multiple search calls = thorough research
+  if (searchCalls.length >= 2) score += 0.15;
+
+  return clamp(score);
 }
 
 // ---------------------------------------------------------------------------
-// Signal 2: Source Agreement (weight 0.20)
+// Signal 2: Source Agreement (weight 0.25)
 // ---------------------------------------------------------------------------
 
-function scoreSourceAgreement(results: {score: number; doc_url: string}[]): number {
-  if (results.length === 0) return 0.0;
-  if (results.length === 1) return 0.7;
+function scoreSourceAgreement(
+  sources: {title: string; url: string; score?: number}[],
+): number {
+  if (sources.length === 0) return 0.0;
+  if (sources.length === 1) return 0.7;
 
-  const scores = results.map(r => r.score);
+  const scores = sources.map(s => s.score).filter((s): s is number => s != null);
+  if (scores.length === 0) return 0.5;
+
   const topScore = Math.max(...scores);
   const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
   const spread = topScore - Math.min(...scores);
@@ -59,8 +73,8 @@ function scoreSourceAgreement(results: {score: number; doc_url: string}[]): numb
   if (spread < 0.15) signal = Math.min(signal + 0.2, 1.0);
 
   // Penalty for scattered URLs (all different docs)
-  const uniqueUrls = new Set(results.map(r => r.doc_url)).size;
-  if (uniqueUrls === results.length && results.length >= 3) {
+  const uniqueUrls = new Set(sources.map(s => s.url)).size;
+  if (uniqueUrls === sources.length && sources.length >= 3) {
     signal = Math.max(signal - 0.2, 0);
   }
 
@@ -68,37 +82,19 @@ function scoreSourceAgreement(results: {score: number; doc_url: string}[]): numb
 }
 
 // ---------------------------------------------------------------------------
-// Signal 3: Tool Success (weight 0.15)
+// Signal 3: Response Substance (weight 0.25)
 // ---------------------------------------------------------------------------
 
-function scoreToolSuccess(
-  toolsCalled: string[],
-  toolSources: {title: string; url: string; score?: number}[],
-): number {
-  if (toolsCalled.length === 0) return 0.5; // neutral
-
-  if (toolSources.length === 0) return 0.2;
-
-  let score = 0.6;
-  const scoredSources = toolSources.map(s => s.score).filter((s): s is number => s != null);
-  if (scoredSources.length > 0) {
-    const avg = scoredSources.reduce((a, b) => a + b, 0) / scoredSources.length;
-    if (avg > 0.6) score += 0.2;
-  }
-  if (toolSources.length >= 2) score += 0.2;
-
-  return clamp(score);
-}
-
-// ---------------------------------------------------------------------------
-// Signal 4: Response Substance (weight 0.15)
-// ---------------------------------------------------------------------------
-
-const UNCERTAINTY_PATTERNS = /\b(i'm not sure|i don't have|uncertain|unclear|cannot find|no documentation)\b/i;
+const UNCERTAINTY_PATTERNS = /\b(i'm not sure|i don't have|uncertain|unclear|cannot find|no documentation|i couldn't find|i was unable)\b/i;
 const HEDGE_PATTERN = /\b(might|perhaps|possibly)\b/gi;
+const APOLOGY_PATTERNS = /\b(i apologize|sorry|unfortunately i|i'm unable to)\b/i;
 
 function scoreResponseSubstance(text: string): {score: number; forcelow: boolean} {
+  // Empty or near-empty response — always low
+  if (text.trim().length < 50) return {score: 0.0, forcelow: true};
+
   if (UNCERTAINTY_PATTERNS.test(text)) return {score: 0.0, forcelow: true};
+  if (APOLOGY_PATTERNS.test(text) && text.length < 300) return {score: 0.0, forcelow: true};
 
   let score = 0.5;
 
@@ -108,28 +104,28 @@ function scoreResponseSubstance(text: string): {score: number; forcelow: boolean
 
   // Negative signals
   const hedges = text.match(HEDGE_PATTERN);
-  if (hedges && hedges.length >= 3) score -= 0.15;
+  if (hedges && hedges.length >= 2) score -= 0.15;
   if (text.length < 80) score -= 0.2;
 
   return {score: clamp(score), forcelow: false};
 }
 
 // ---------------------------------------------------------------------------
-// Signal 5: Page Context Alignment (weight 0.15)
+// Signal 4: Page Context Alignment (weight 0.15)
 // ---------------------------------------------------------------------------
 
 function scorePageContextAlignment(
   pageUrl: string | undefined,
   pageContext: string | undefined,
-  ragResults: {score: number; doc_url: string}[],
+  sources: {title: string; url: string}[],
   fullText: string,
 ): number {
   if (!pageContext) return 0.5; // neutral
 
   let score = 0.6;
 
-  // Check if any RAG source matches current page URL
-  if (pageUrl && ragResults.some(r => r.doc_url === pageUrl || r.doc_url.includes(pageUrl))) {
+  // Check if any source matches current page URL
+  if (pageUrl && sources.some(s => s.url === pageUrl || s.url.includes(pageUrl))) {
     score += 0.2;
   }
 
@@ -162,19 +158,17 @@ function extractSignificantTerms(text: string): string[] {
 // ---------------------------------------------------------------------------
 
 export function computeConfidence(input: ConfidenceInput): ConfidenceResult {
-  const retrieval = scoreRetrievalQuality(input.ragAvgScore);
-  const agreement = scoreSourceAgreement(input.ragResults);
   const tools = scoreToolSuccess(input.toolsCalled, input.toolSources);
+  const agreement = scoreSourceAgreement(input.toolSources);
   const substance = scoreResponseSubstance(input.fullText);
   const pageCtx = scorePageContextAlignment(
-    input.pageUrl, input.pageContext, input.ragResults, input.fullText,
+    input.pageUrl, input.pageContext, input.toolSources, input.fullText,
   );
 
   const composite =
-    0.35 * retrieval +
-    0.20 * agreement +
-    0.15 * tools +
-    0.15 * substance.score +
+    0.35 * tools +
+    0.25 * agreement +
+    0.25 * substance.score +
     0.15 * pageCtx;
 
   let level: ConfidenceLevel;
@@ -185,25 +179,16 @@ export function computeConfidence(input: ConfidenceInput): ConfidenceResult {
   // Hard overrides
   if (substance.forcelow) level = 'low';
 
-  // Source-relevance penalty: if tool sources have low avg score, reduce confidence
-  const toolScores = input.toolSources.map(s => s.score).filter((s): s is number => s != null);
-  if (toolScores.length > 0) {
-    const avgToolScore = toolScores.reduce((a, b) => a + b, 0) / toolScores.length;
-    if (avgToolScore < 0.6 && level === 'high') {
-      level = 'medium';
-    }
-  }
-
-  const totalSources = input.ragResults.length + input.toolSources.length;
-  if (input.ragResults.length === 0 && input.toolSources.length === 0 && level === 'high') {
+  // No sources at all — cap at medium
+  if (input.toolSources.length === 0 && level === 'high') {
     level = 'medium';
   }
-  if (totalSources === 0 && substance.score < 0.5) {
+  if (input.toolSources.length === 0 && substance.score < 0.5) {
     level = 'low';
   }
 
   // Force medium max if long text but 0 sources
-  if (input.fullText.length > 200 && totalSources === 0 && level === 'high') {
+  if (input.fullText.length > 200 && input.toolSources.length === 0 && level === 'high') {
     level = 'medium';
   }
 
@@ -211,9 +196,8 @@ export function computeConfidence(input: ConfidenceInput): ConfidenceResult {
     level,
     score: composite,
     breakdown: {
-      retrievalQuality: retrieval,
-      sourceAgreement: agreement,
       toolSuccess: tools,
+      sourceAgreement: agreement,
       responseSubstance: substance.score,
       pageContextAlignment: pageCtx,
     },
@@ -223,10 +207,6 @@ export function computeConfidence(input: ConfidenceInput): ConfidenceResult {
 // ---------------------------------------------------------------------------
 // Utilities
 // ---------------------------------------------------------------------------
-
-function lerp(a: number, b: number, t: number): number {
-  return a + (b - a) * clamp(t);
-}
 
 function clamp(v: number, min = 0, max = 1): number {
   return Math.min(max, Math.max(min, v));
