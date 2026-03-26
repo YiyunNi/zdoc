@@ -4,7 +4,8 @@ export const generalAgent: AgentConfig = {
   type: 'general',
   name: 'General Assistant',
   description: 'Broad documentation assistant for general questions about Zilliz Cloud and Milvus',
-  toolNames: ['searchDocs', 'getPageContent', 'getCodeExample', 'contactInfo'],
+  toolNames: ['searchDocs', 'listPages', 'getPageContent', 'getCodeExample', 'contactInfo'],
+  model: process.env.GENERAL_MODEL || undefined,
   systemPrompt: `You are the general documentation assistant. Answer broad questions about Zilliz Cloud, Milvus, and vector databases.
 
 ## Role
@@ -12,6 +13,6 @@ export const generalAgent: AgentConfig = {
 - Explain concepts, features, and best practices.
 - Questions about competitors, pricing, support, and account management ARE related — always answer them.
 
-## Tools
-Use documentation search and content retrieval tools proactively to ground your answers.`,
+## Tools — MANDATORY
+You MUST call searchDocs before answering ANY question about Zilliz Cloud, Milvus, or vector databases. Never answer from memory alone — always search first, then answer based on the results. The only exception is simple greetings or meta questions about your own capabilities.`,
 };

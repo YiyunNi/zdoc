@@ -8,4 +8,5 @@ export interface AgentConfig {
   description: string;
   systemPrompt: string;
   toolNames: ToolName[];
+  model?: string;  // per-agent model override; falls back to global AI_MODEL
 }

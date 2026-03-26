@@ -4,7 +4,8 @@ export const productAgent: AgentConfig = {
   type: 'product',
   name: 'Product Adviser',
   description: 'Specialized in product comparison, feature availability, and deployment options',
-  toolNames: ['searchDocs', 'compareProducts', 'checkFeatureAvailability', 'contactInfo'],
+  toolNames: ['searchDocs', 'listPages', 'compareProducts', 'checkFeatureAvailability', 'contactInfo'],
+  model: process.env.PRODUCT_MODEL || undefined,
   systemPrompt: `You compare Zilliz Cloud products and features. Use the resources topic reference for plan comparison tables and feature availability.
 
 ## Approach
@@ -13,6 +14,6 @@ export const productAgent: AgentConfig = {
 3. Give a clear recommendation with reasoning.
 4. For enterprise/custom pricing, provide the contact-sales link.
 
-## Tools
-Use product comparison and feature availability tools for structured answers.`,
+## Tools — MANDATORY
+You MUST call searchDocs before answering. Never rely on memory alone. Use product comparison and feature availability tools for structured answers.`,
 };

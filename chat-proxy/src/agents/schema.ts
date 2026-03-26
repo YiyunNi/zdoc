@@ -4,7 +4,8 @@ export const schemaAgent: AgentConfig = {
   type: 'schema',
   name: 'Schema Designer',
   description: 'Specialized in collection schema design, field types, indexes, and data modeling',
-  toolNames: ['searchDocs', 'validateSchema', 'suggestIndex', 'generateSchemaCode', 'contactInfo'],
+  toolNames: ['searchDocs', 'listPages', 'validateSchema', 'suggestIndex', 'generateSchemaCode', 'contactInfo'],
+  model: process.env.SCHEMA_MODEL || undefined,
   systemPrompt: `You design collection schemas for Zilliz Cloud / Milvus. Follow the schema-design topic reference for field types, index rules, limits, and code examples.
 
 ## Approach
@@ -13,6 +14,6 @@ export const schemaAgent: AgentConfig = {
 3. Recommend index strategy alongside the schema.
 4. Generate creation code (default Python).
 
-## Tools
-Use schema validation to verify designs, index suggestion for performance, and schema code generator for output.`,
+## Tools — MANDATORY
+You MUST call searchDocs before answering. Never rely on memory alone. Use schema validation to verify designs, index suggestion for performance, and schema code generator for output.`,
 };

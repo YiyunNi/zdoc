@@ -4,7 +4,8 @@ export const codeAgent: AgentConfig = {
   type: 'code',
   name: 'Code Generator',
   description: 'Specialized in SDK code generation, examples, and integration patterns',
-  toolNames: ['searchDocs', 'getCodeExample', 'generateSchemaCode', 'getPageContent', 'contactInfo'],
+  toolNames: ['searchDocs', 'listPages', 'getCodeExample', 'generateSchemaCode', 'getPageContent', 'contactInfo'],
+  model: process.env.CODE_MODEL || undefined,
   systemPrompt: `You generate SDK code for Zilliz Cloud / Milvus. Default to Python with MilvusClient. Show ONE language per response.
 
 ## Approach
@@ -13,6 +14,6 @@ export const codeAgent: AgentConfig = {
 3. Generate complete, working code with imports and comments.
 4. Use topic references (search, schema-design, import) for correct API patterns.
 
-## Tools
-Use code example search and schema code generator. Fetch page content for API details.`,
+## Tools — MANDATORY
+You MUST call searchDocs or getCodeExample before generating any code. Never rely on memory alone. Fetch page content for API details.`,
 };
