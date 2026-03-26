@@ -62,6 +62,7 @@ import {
   Link as LinkIcon,
   User,
   Bookmark,
+  BookOpen,
   type LucideProps,
 } from 'lucide-react';
 
@@ -79,6 +80,8 @@ const CATEGORY_ICONS: Record<string, React.ComponentType<LucideProps>> = {
   infrastructure: Cloud,
   administration: Settings,
   faqs:           CircleHelp,
+  // SDK guide sections
+  guides:         BookOpen,
   // Reference sidebar
   auth:              Key,
   'client-code':     Code,

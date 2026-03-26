@@ -24,6 +24,14 @@
           { "type": "doc", "id": "api/python/guides/embeddings",        "label": "Embedding Models" }
         ]
       }
+    },
+    {
+      "afterCategory": "Guides",
+      "item": {
+        "type": "html",
+        "value": "<span class='sidebar-section-label'>API Reference</span>",
+        "defaultStyle": false
+      }
     }
   ],
   "overrideCategories": {
