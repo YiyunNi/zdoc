@@ -59,7 +59,7 @@ function isSkippable(para: string): boolean {
   const trimmed = para.trim();
   if (!trimmed) return true;
 
-  // Code blocks (multi-source synthesized content, poor grounding signal)
+  // Code blocks — skip for paragraph-level matching (included in whole-response fallback)
   if (CODE_BLOCK_RE.test(trimmed)) return true;
 
   // Very short paragraphs (greetings, transitions) — but keep headings and
@@ -106,7 +106,7 @@ function splitParagraphs(text: string): string[] {
 // Core: computeGrounding
 // ---------------------------------------------------------------------------
 
-const MIN_OVERLAP = 0.25;
+const MIN_OVERLAP = 0.20;
 const MAX_SOURCES_PER_PARAGRAPH = 2;
 
 // Low-value source demotion — patterns shared from demotion.ts
@@ -211,10 +211,10 @@ export function computeGrounding(
     rawCitations.push({paragraphIndex: pi, urls});
   }
 
-  // Whole-response fallback: when paragraph-level matching yields ≤ 1 source
+  // Whole-response fallback: when paragraph-level matching yields few sources
   // (e.g. most content was code blocks or short lines), match the entire
-  // response text against all chunks.
-  if (usedUrls.size <= 1) {
+  // response text against all chunks for broader coverage.
+  if (usedUrls.size <= 2) {
     const fullTokens = tokenize(responseText);
     if (fullTokens.size > 0) {
       for (const chunk of chunkTokens) {

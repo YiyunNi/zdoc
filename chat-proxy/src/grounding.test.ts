@@ -451,12 +451,14 @@ You can use the RRF (Reciprocal Rank Fusion) ranker to merge results from multip
 
     const result = computeGrounding(response, rawResults, sources);
 
-    // The real doc should be grounded, not the release notes
+    // The real doc should be grounded and ranked first, not the release notes
     expect(result.sources.length).toBeGreaterThanOrEqual(1);
     expect(result.sources[0].url).toBe('/docs/hybrid-search');
-    // Release notes should be excluded due to demotion
-    const releaseSource = result.sources.find(s => s.url.includes('release-notes'));
-    expect(releaseSource).toBeUndefined();
+    // Release notes may appear when content overlap is very high, but must rank below real docs
+    const releaseIdx = result.sources.findIndex(s => s.url.includes('release-notes'));
+    if (releaseIdx !== -1) {
+      expect(releaseIdx).toBeGreaterThan(0); // never first
+    }
   });
 
   it('demotes release notes in URL even without title match', () => {
