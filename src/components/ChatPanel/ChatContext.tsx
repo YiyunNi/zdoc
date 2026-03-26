@@ -351,6 +351,20 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
     sessionIdRef.current = null;
   }, [chatHistory]);
 
+  // Listen for chat-send events from the search bar / DocRoot
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const query = (e as CustomEvent).detail?.query;
+      if (query) {
+        setInput(query);
+        // Send on next tick after input is set
+        setTimeout(() => send(query), 0);
+      }
+    };
+    document.addEventListener('chat-send', handler);
+    return () => document.removeEventListener('chat-send', handler);
+  }, [setInput, send]);
+
   const deleteChat = useCallback((id: string) => {
     setChatHistory(prev => prev.filter(e => e.id !== id));
     if (activeChatIdRef.current === id) {

@@ -1,56 +1,42 @@
 // @ts-check
 /**
- * Docusaurus plugin to vectorize documentation into Zilliz Cloud on postBuild.
- * Uses the Zilliz Cloud REST API (v2) — no SDK dependency needed.
+ * Docusaurus plugin to index documentation into a local SQLite database on postBuild.
+ * Uses better-sqlite3 for FTS5-powered full-text search.
  *
  * Environment variables:
- * - ZILLIZ_ENDPOINT          — e.g. https://in03-xxx.serverless.gcp-us-west1.cloud.zilliz.com
- * - ZILLIZ_TOKEN
- * - EMBEDDING_MODEL          — default: baai/bge-large-en-v1.5
- * - EMBEDDING_API_KEY         (falls back to AI_API_KEY)
- * - EMBEDDING_BASE_URL        (falls back to AI_BASE_URL)
- * - EMBEDDING_DIM             — default: 1024
- * - DOCS_SITE_URL             — default: https://docs.zilliz.com
+ * - DOCS_SITE_URL — default: https://docs.zilliz.com
  */
 
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const Database = require('better-sqlite3');
 
 const {extractTitle, chunkText} = require('./utils');
-
-const COLLECTION_NAME = 'doc_chunks';
 
 module.exports = function vectorizeDocsPlugin(context, options) {
   return {
     name: 'vectorize-docs',
 
     async postBuild({outDir}) {
-      const endpoint = (process.env.ZILLIZ_ENDPOINT || '').replace(/\/$/, '');
-      const token = process.env.ZILLIZ_TOKEN;
-      const embeddingApiKey = process.env.EMBEDDING_API_KEY || process.env.AI_API_KEY;
-      const embeddingModel = process.env.EMBEDDING_MODEL || 'baai/bge-large-en-v1.5';
-      const embeddingBaseUrl = (process.env.EMBEDDING_BASE_URL || process.env.AI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-      const embeddingDim = Number(process.env.EMBEDDING_DIM) || 1024;
+      const siteDir = context.siteDir;
       const docsSiteUrl = (process.env.DOCS_SITE_URL || 'https://docs.zilliz.com').replace(/\/$/, '');
 
-      if (!endpoint || !token) {
-        console.log('[vectorize-docs] Skipping — ZILLIZ_ENDPOINT and ZILLIZ_TOKEN not set');
-        return;
-      }
+      // Ensure data directory exists
+      const dataDir = path.resolve(siteDir, 'data');
+      fs.mkdirSync(dataDir, {recursive: true});
 
-      if (!embeddingApiKey) {
-        console.log('[vectorize-docs] Skipping — EMBEDDING_API_KEY not set');
-        return;
-      }
+      const dbPath = path.resolve(dataDir, 'docs.db');
+      const db = new Database(dbPath);
 
-      // Derive REST base URL from the gRPC endpoint
-      // e.g. https://in03-xxx.serverless.gcp-us-west1.cloud.zilliz.com
-      const restBase = endpoint.startsWith('https://') ? endpoint : `https://${endpoint}`;
+      // Enable WAL mode for better write performance
+      db.pragma('journal_mode = WAL');
 
-      const zilliz = createZillizClient(restBase, token);
+      // Create tables (inline from db-schema.ts)
+      ensureTables(db);
 
-      console.log('[vectorize-docs] Starting documentation vectorization...');
+      console.log('[vectorize-docs] Starting documentation indexing...');
+      console.log(`[vectorize-docs] Database: ${dbPath}`);
 
       // 1. Collect all markdown files from build output
       const docDirs = ['docs', 'docs-byoc', 'reference'].map(d => path.join(outDir, d));
@@ -78,208 +64,150 @@ module.exports = function vectorizeDocsPlugin(context, options) {
         return {filePath, content, hash, docUrlMd, docUrl, title, section};
       });
 
-      // 3. Ensure collection exists
-      const hasCollection = await zilliz.hasCollection(COLLECTION_NAME);
-      if (!hasCollection) {
-        await zilliz.createCollection(COLLECTION_NAME, embeddingDim);
-        console.log(`[vectorize-docs] Created collection: ${COLLECTION_NAME}`);
+      // 3. Fetch existing hashes for incremental sync
+      const existingHashes = new Map();
+      for (const row of db.prepare('SELECT doc_url_md, content_hash FROM doc_chunks').all()) {
+        existingHashes.set(row.doc_url_md, row.content_hash);
       }
+      console.log(`[vectorize-docs] Found ${existingHashes.size} existing docs in database`);
 
-      // 4. Fetch existing hashes for incremental sync
-      let existingHashes = new Map();
-      try {
-        const rows = await zilliz.query(COLLECTION_NAME, '', ['doc_url_md', 'content_hash'], 16384);
-        for (const row of rows) {
-          existingHashes.set(row.doc_url_md, row.content_hash);
-        }
-        console.log(`[vectorize-docs] Found ${existingHashes.size} existing docs in collection`);
-      } catch (err) {
-        console.warn('[vectorize-docs] Could not fetch existing hashes:', err.message);
-      }
-
-      // 5. Determine what needs updating
+      // 4. Determine what needs updating
       const newDocUrlMds = new Set(fileData.map(f => f.docUrlMd));
       const toUpsert = fileData.filter(f => existingHashes.get(f.docUrlMd) !== f.hash);
       const toDelete = [...existingHashes.keys()].filter(url => !newDocUrlMds.has(url));
 
       console.log(`[vectorize-docs] Changes: ${toUpsert.length} new/modified, ${toDelete.length} deleted, ${fileData.length - toUpsert.length} unchanged`);
 
-      // 6. Delete removed docs
+      // 5. Delete removed docs
       if (toDelete.length > 0) {
-        for (const docUrlMd of toDelete) {
-          try {
-            await zilliz.deleteByFilter(COLLECTION_NAME, `doc_url_md == "${docUrlMd}"`);
-          } catch (err) {
-            console.warn(`[vectorize-docs] Failed to delete ${docUrlMd}:`, err.message);
+        const deleteStmt = db.prepare('DELETE FROM doc_chunks WHERE doc_url_md = ?');
+        const deleteMany = db.transaction((urls) => {
+          for (const url of urls) {
+            deleteStmt.run(url);
           }
-        }
+        });
+        deleteMany(toDelete);
         console.log(`[vectorize-docs] Deleted ${toDelete.length} removed docs`);
       }
 
-      // 7. Chunk, embed, and upsert changed docs
+      // 6. Chunk and insert changed docs
       if (toUpsert.length === 0) {
         console.log('[vectorize-docs] No changes to index');
+        db.close();
         return;
       }
 
-      let totalChunks = 0;
-      const batchSize = 10; // docs per batch
+      const allChunks = [];
 
-      for (let i = 0; i < toUpsert.length; i += batchSize) {
-        const batch = toUpsert.slice(i, i + batchSize);
-        const allChunks = [];
-
-        for (const doc of batch) {
-          // Delete old chunks for this doc
-          try {
-            await zilliz.deleteByFilter(COLLECTION_NAME, `doc_url_md == "${doc.docUrlMd}"`);
-          } catch { /* might not exist yet */ }
-
-          // Chunk the content
-          const chunks = chunkText(doc.content);
-
-          for (let j = 0; j < chunks.length; j++) {
-            allChunks.push({
-              id: `${doc.docUrlMd}#${j}`,
-              doc_url: doc.docUrl,
-              doc_url_md: doc.docUrlMd,
-              doc_title: doc.title.slice(0, 255),
-              section: doc.section,
-              content: chunks[j].slice(0, 4000),
-              content_hash: doc.hash,
-              _text: chunks[j], // temp field for embedding
-            });
-          }
+      // First, delete old chunks for docs that will be re-indexed
+      const deleteByDoc = db.prepare('DELETE FROM doc_chunks WHERE doc_url_md = ?');
+      const deleteOld = db.transaction((docs) => {
+        for (const doc of docs) {
+          deleteByDoc.run(doc.docUrlMd);
         }
+      });
+      deleteOld(toUpsert);
 
-        // Generate embeddings in batches
-        const embeddingBatchSize = 20;
-        for (let j = 0; j < allChunks.length; j += embeddingBatchSize) {
-          const embBatch = allChunks.slice(j, j + embeddingBatchSize);
-          const texts = embBatch.map(c => c._text.slice(0, 2000));
+      // Build chunk list
+      for (const doc of toUpsert) {
+        const chunks = chunkText(doc.content);
 
-          try {
-            await retry(async () => {
-              const embeddings = await generateEmbeddings(texts, embeddingBaseUrl, embeddingApiKey, embeddingModel);
-
-              const insertData = embBatch.map((chunk, idx) => ({
-                id: chunk.id,
-                doc_url: chunk.doc_url,
-                doc_url_md: chunk.doc_url_md,
-                doc_title: chunk.doc_title,
-                section: chunk.section,
-                content: chunk.content,
-                content_hash: chunk.content_hash,
-                embedding: embeddings[idx],
-              }));
-
-              await zilliz.insert(COLLECTION_NAME, insertData);
-              totalChunks += insertData.length;
-            });
-          } catch (err) {
-            console.error(`[vectorize-docs] Embedding/insert error (gave up):`, err.message);
-          }
+        for (let j = 0; j < chunks.length; j++) {
+          allChunks.push({
+            id: `${doc.docUrlMd}#${j}`,
+            doc_url: doc.docUrl,
+            doc_url_md: doc.docUrlMd,
+            doc_title: doc.title.slice(0, 255),
+            section: doc.section,
+            content: chunks[j].slice(0, 4000),
+            content_hash: doc.hash,
+            weight: 1.0,
+          });
         }
-
-        console.log(`[vectorize-docs] Progress: ${Math.min(i + batchSize, toUpsert.length)}/${toUpsert.length} docs processed`);
       }
 
-      console.log(`[vectorize-docs] Done! Indexed ${totalChunks} chunks from ${toUpsert.length} docs`);
+      // Bulk insert in a transaction
+      const insert = db.prepare(
+        'INSERT OR REPLACE INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, content_hash, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+      );
+      const insertMany = db.transaction((chunks) => {
+        for (const chunk of chunks) {
+          insert.run(
+            chunk.id,
+            chunk.doc_url,
+            chunk.doc_url_md,
+            chunk.doc_title,
+            chunk.section,
+            chunk.content,
+            chunk.content_hash,
+            chunk.weight
+          );
+        }
+      });
+      insertMany(allChunks);
+
+      console.log(`[vectorize-docs] Done! Indexed ${allChunks.length} chunks from ${toUpsert.length} docs`);
+
+      db.close();
     },
   };
 };
 
 // ---------------------------------------------------------------------------
-// Zilliz Cloud REST API client (v2)
+// SQLite schema (mirrors chat-proxy/src/db-schema.ts for doc_chunks tables)
 // ---------------------------------------------------------------------------
 
-function createZillizClient(baseUrl, token) {
-  async function request(method, path, body) {
-    const res = await fetch(`${baseUrl}/v2/vectordb${path}`, {
-      method,
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${token}`,
-      },
-      body: body ? JSON.stringify(body) : undefined,
-    });
+function ensureTables(db) {
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS doc_chunks (
+      id TEXT PRIMARY KEY,
+      doc_url TEXT NOT NULL,
+      doc_url_md TEXT NOT NULL,
+      doc_title TEXT NOT NULL,
+      section TEXT NOT NULL,
+      content TEXT NOT NULL,
+      content_hash TEXT NOT NULL,
+      weight REAL DEFAULT 1.0
+    )
+  `);
 
-    const json = await res.json();
-    if (json.code !== 0 && json.code !== 200) {
-      throw new Error(`Zilliz API error (${path}): ${json.code} ${json.message}`);
-    }
-    return json.data;
-  }
+  db.exec(`
+    CREATE VIRTUAL TABLE IF NOT EXISTS doc_chunks_fts USING fts5(
+      content,
+      doc_title,
+      content='doc_chunks',
+      content_rowid='rowid',
+      tokenize='porter unicode61'
+    )
+  `);
 
-  return {
-    async hasCollection(collectionName) {
-      const data = await request('POST', '/collections/has', {collectionName});
-      return data?.has === true;
-    },
+  // Triggers to keep FTS index in sync with doc_chunks
+  db.exec(`
+    CREATE TRIGGER IF NOT EXISTS doc_chunks_ai AFTER INSERT ON doc_chunks BEGIN
+      INSERT INTO doc_chunks_fts(rowid, content, doc_title) VALUES (new.rowid, new.content, new.doc_title);
+    END
+  `);
+  db.exec(`
+    CREATE TRIGGER IF NOT EXISTS doc_chunks_ad AFTER DELETE ON doc_chunks BEGIN
+      INSERT INTO doc_chunks_fts(doc_chunks_fts, rowid, content, doc_title) VALUES ('delete', old.rowid, old.content, old.doc_title);
+    END
+  `);
+  db.exec(`
+    CREATE TRIGGER IF NOT EXISTS doc_chunks_au AFTER UPDATE ON doc_chunks BEGIN
+      INSERT INTO doc_chunks_fts(doc_chunks_fts, rowid, content, doc_title) VALUES ('delete', old.rowid, old.content, old.doc_title);
+      INSERT INTO doc_chunks_fts(rowid, content, doc_title) VALUES (new.rowid, new.content, new.doc_title);
+    END
+  `);
 
-    async createCollection(collectionName, dim) {
-      await request('POST', '/collections/create', {
-        collectionName,
-        schema: {
-          fields: [
-            {fieldName: 'id', dataType: 'VarChar', isPrimary: true, elementTypeParams: {max_length: '512'}},
-            {fieldName: 'doc_url', dataType: 'VarChar', elementTypeParams: {max_length: '512'}},
-            {fieldName: 'doc_url_md', dataType: 'VarChar', elementTypeParams: {max_length: '512'}},
-            {fieldName: 'doc_title', dataType: 'VarChar', elementTypeParams: {max_length: '256'}},
-            {fieldName: 'section', dataType: 'VarChar', elementTypeParams: {max_length: '128'}},
-            {fieldName: 'content', dataType: 'VarChar', elementTypeParams: {max_length: '16384'}},
-            {fieldName: 'content_hash', dataType: 'VarChar', elementTypeParams: {max_length: '64'}},
-            {fieldName: 'embedding', dataType: 'FloatVector', elementTypeParams: {dim: String(dim)}},
-          ],
-        },
-        indexParams: [
-          {fieldName: 'embedding', indexType: 'AUTOINDEX', metricType: 'COSINE'},
-        ],
-      });
-    },
-
-    async query(collectionName, filter, outputFields, limit) {
-      const data = await request('POST', '/entities/query', {
-        collectionName,
-        filter: filter || '',
-        outputFields,
-        limit,
-      });
-      return data || [];
-    },
-
-    async deleteByFilter(collectionName, filter) {
-      await request('POST', '/entities/delete', {
-        collectionName,
-        filter,
-      });
-    },
-
-    async insert(collectionName, data) {
-      await request('POST', '/entities/insert', {
-        collectionName,
-        data,
-      });
-    },
-  };
+  // Indexes for filtering
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_doc_chunks_section ON doc_chunks(section)`);
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_doc_chunks_url ON doc_chunks(doc_url)`);
+  db.exec(`CREATE INDEX IF NOT EXISTS idx_doc_chunks_hash ON doc_chunks(content_hash)`);
 }
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
-
-async function retry(fn, maxAttempts = 3, baseDelayMs = 2000) {
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      return await fn();
-    } catch (err) {
-      if (attempt === maxAttempts) throw err;
-      const delay = baseDelayMs * Math.pow(2, attempt - 1);
-      console.warn(`[vectorize-docs] Attempt ${attempt}/${maxAttempts} failed: ${err.message}. Retrying in ${delay}ms...`);
-      await new Promise(r => setTimeout(r, delay));
-    }
-  }
-}
 
 function collectMarkdownFiles(dir, files) {
   const entries = fs.readdirSync(dir, {withFileTypes: true});
@@ -291,23 +219,4 @@ function collectMarkdownFiles(dir, files) {
       files.push(fullPath);
     }
   }
-}
-
-async function generateEmbeddings(texts, baseUrl, apiKey, model) {
-  const res = await fetch(`${baseUrl}/embeddings`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({model, input: texts}),
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Embedding API error: ${res.status} ${err}`);
-  }
-
-  const data = await res.json();
-  return data.data.map(d => d.embedding);
 }
