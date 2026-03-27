@@ -60,7 +60,7 @@ const config: Config = {
           { label: 'REST API',    href: '/reference/restful/list-cloud-providers-v2',            prefix: '/reference/restful',  icon: 'rest'    },
         ],
       },
-      { label: 'CLI',      href: '/docs',            prefix: null,                icon: 'terminal', hidden: true },
+      { label: 'CLI',      href: '/reference/cli/cli/overview', prefix: '/reference/cli', icon: 'terminal' },
       { label: 'Releases', href: '/docs/changelogs', prefix: '/docs/changelogs', icon: 'tag'      },
     ],
   },
@@ -117,7 +117,6 @@ const config: Config = {
         { folder: 'reference', route: '/reference' },
       ],
     }],
-    './plugins/vectorize-docs',
   ],
 
   presets: [
