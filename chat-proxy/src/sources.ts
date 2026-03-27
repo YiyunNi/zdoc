@@ -27,7 +27,7 @@ const CHARS_PER_TOKEN = 4;
 const MAX_GITHUB_FILES = 50;
 
 // ---------------------------------------------------------------------------
-// Text chunking (copied from plugins/vectorize-docs/utils.js)
+// Text chunking
 // ---------------------------------------------------------------------------
 
 export function chunkText(text: string): string[] {

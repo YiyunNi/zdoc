@@ -100,3 +100,14 @@ adminApp.get('/api/low-confidence', c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
   return c.json({entries: eventStore.getLowConfidence(limit)});
 });
+
+// GET /admin/api/session/:id — get all events for a session
+adminApp.get('/api/session/:id', c => {
+  const sessionId = c.req.param('id');
+  const allEvents = eventStore.getAll();
+  const sessionEvents = allEvents.filter(e => e.sessionId === sessionId);
+  if (sessionEvents.length === 0) {
+    return c.json({error: 'Session not found', sessionId}, 404);
+  }
+  return c.json({sessionId, events: sessionEvents});
+});

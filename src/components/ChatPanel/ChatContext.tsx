@@ -163,6 +163,9 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       let pendingConfidence: ConfidenceLevel | undefined;
       let pendingAgent: {type: AgentType; name: string} | undefined;
 
+      // Track current event type across buffer chunks
+      let currentEvent = '';
+
       while (true) {
         const {done, value} = await reader.read();
         if (done) {
@@ -176,7 +179,6 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         const lines = buffer.split('\n');
         buffer = done ? '' : (lines.pop() || '');
 
-        let currentEvent = '';
         for (const line of lines) {
           if (line.startsWith('event: ')) {
             currentEvent = line.slice(7);
