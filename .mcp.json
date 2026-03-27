@@ -3,6 +3,14 @@
     "inkeep-agents": {
       "type": "http",
       "url": "https://agents.inkeep.com/mcp"
+    },
+    "ddg-search": {
+      "command": "uvx",
+      "args": ["duckduckgo-mcp-server"],
+      "env": {
+        "DDG_SAFE_SEARCH": "STRICT",
+        "DDG_REGION": "cn-zh"
+      }
     }
   }
 }
