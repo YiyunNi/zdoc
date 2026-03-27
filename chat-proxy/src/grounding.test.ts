@@ -1,5 +1,5 @@
 import {describe, it, expect} from 'vitest';
-import {computeGrounding} from './grounding.js';
+import {computeGrounding, scoreChunksPerParagraph, PRE_FILTER_OVERLAP} from './grounding.js';
 import type {SearchResult} from './rag.js';
 import type {Source} from './types.js';
 
@@ -570,5 +570,196 @@ You can use the RRF (Reciprocal Rank Fusion) ranker to merge results from multip
     expect(result.sources[0].url).toBe('/reference/python/upsert');
     const passwordSource = result.sources.find(s => s.url.includes('update_password'));
     expect(passwordSource).toBeUndefined();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// scoreChunksPerParagraph tests
+// ---------------------------------------------------------------------------
+
+function makeChunk(overrides: Partial<SearchResult> = {}): SearchResult {
+  return {
+    id: 'chunk-1',
+    doc_url: 'https://docs.zilliz.com/test',
+    doc_url_md: 'https://docs.zilliz.com/test.md',
+    doc_title: 'Test Doc',
+    section: 'cloud-guides',
+    content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries.',
+    score: 0.85,
+    weight: 1,
+    contextScore: 0.85,
+    ...overrides,
+  };
+}
+
+describe('scoreChunksPerParagraph', () => {
+  it('returns empty map for empty paragraphs', () => {
+    const result = scoreChunksPerParagraph([], [makeChunk()]);
+    expect(result.size).toBe(0);
+  });
+
+  it('returns empty map for empty chunks', () => {
+    const result = scoreChunksPerParagraph(['Some paragraph with enough words to be counted.'], []);
+    expect(result.size).toBe(0);
+  });
+
+  it('skips short paragraphs (< 5 words)', () => {
+    const result = scoreChunksPerParagraph(['Sure!', 'Ok.'], [makeChunk()]);
+    expect(result.size).toBe(0);
+  });
+
+  it('skips code block paragraphs', () => {
+    const result = scoreChunksPerParagraph([
+      '```python\nfrom pymilvus import Collection\ncollection = Collection("test")\n```',
+    ], [makeChunk()]);
+    expect(result.size).toBe(0);
+  });
+
+  it('returns candidates above PRE_FILTER_OVERLAP threshold for matching paragraph', () => {
+    const paragraphs = [
+      'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries.',
+    ];
+    const chunks = [makeChunk()];
+    const result = scoreChunksPerParagraph(paragraphs, chunks);
+
+    expect(result.size).toBe(1);
+    const candidates = result.get(0)!;
+    expect(candidates.length).toBe(1);
+    expect(candidates[0].url).toBe('https://docs.zilliz.com/test');
+    expect(candidates[0].score).toBeGreaterThan(PRE_FILTER_OVERLAP);
+  });
+
+  it('excludes chunks below PRE_FILTER_OVERLAP threshold', () => {
+    const paragraphs = [
+      'Zilliz Cloud offers enterprise vector database solutions for production workloads.',
+    ];
+    const chunks = [
+      makeChunk({
+        doc_url: 'https://docs.zilliz.com/unrelated',
+        content: 'Python pandas numpy scikit machine learning regression classification clustering algorithm.',
+      }),
+    ];
+    const result = scoreChunksPerParagraph(paragraphs, chunks);
+    expect(result.size).toBe(0);
+  });
+
+  it('deduplicates by URL, keeping max score across multiple chunks', () => {
+    const paragraphs = [
+      'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries in production.',
+    ];
+    const url = 'https://docs.zilliz.com/indexes';
+    const chunks = [
+      makeChunk({
+        id: 'chunk-a',
+        doc_url: url,
+        content: 'Milvus HNSW index type for vector similarity search queries.',
+      }),
+      makeChunk({
+        id: 'chunk-b',
+        doc_url: url,
+        content: 'IVF_FLAT index supports approximate nearest neighbor search in Milvus for production workloads.',
+      }),
+    ];
+
+    const result = scoreChunksPerParagraph(paragraphs, chunks);
+    expect(result.size).toBe(1);
+
+    const candidates = result.get(0)!;
+    // Only one entry per URL
+    const urlEntries = candidates.filter(c => c.url === url);
+    expect(urlEntries).toHaveLength(1);
+  });
+
+  it('returns candidates sorted by score descending', () => {
+    const paragraphs = [
+      'Milvus supports vector similarity search using HNSW IVF_FLAT index types for approximate nearest neighbor queries in production Zilliz.',
+    ];
+    const chunks = [
+      makeChunk({
+        id: 'weak',
+        doc_url: 'https://docs.zilliz.com/weak',
+        content: 'Milvus vector search overview introduction.',
+      }),
+      makeChunk({
+        id: 'strong',
+        doc_url: 'https://docs.zilliz.com/strong',
+        content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries in production Zilliz Cloud environments.',
+      }),
+    ];
+
+    const result = scoreChunksPerParagraph(paragraphs, chunks);
+    const candidates = result.get(0);
+    expect(candidates).toBeDefined();
+    expect(candidates!.length).toBeGreaterThanOrEqual(1);
+    // Scores must be in descending order
+    for (let i = 1; i < candidates!.length; i++) {
+      expect(candidates![i - 1].score).toBeGreaterThanOrEqual(candidates![i].score);
+    }
+    // Strong match should rank first
+    expect(candidates![0].url).toBe('https://docs.zilliz.com/strong');
+  });
+
+  it('applies demotion factor to release note URLs', () => {
+    const paragraphs = [
+      'Zilliz Cloud supports hybrid search combining dense and sparse vectors for improved retrieval accuracy using RRF ranker.',
+    ];
+    const chunks = [
+      makeChunk({
+        id: 'release',
+        doc_url: '/docs/release-notes-2100',
+        doc_title: 'Release Notes',
+        content: 'Added hybrid search combining dense and sparse vectors. New RRF ranker for improved retrieval accuracy.',
+      }),
+      makeChunk({
+        id: 'guide',
+        doc_url: '/docs/hybrid-search',
+        doc_title: 'Hybrid Search',
+        content: 'Zilliz Cloud hybrid search lets you combine dense and sparse vector searches using the RRF ranker for improved retrieval accuracy.',
+      }),
+    ];
+
+    const result = scoreChunksPerParagraph(paragraphs, chunks);
+    const candidates = result.get(0);
+    expect(candidates).toBeDefined();
+
+    const guideEntry = candidates!.find(c => c.url === '/docs/hybrid-search');
+    const releaseEntry = candidates!.find(c => c.url === '/docs/release-notes-2100');
+
+    // Guide should score higher than release notes (demotion applied)
+    expect(guideEntry).toBeDefined();
+    if (releaseEntry) {
+      expect(guideEntry!.score).toBeGreaterThan(releaseEntry.score);
+    }
+  });
+
+  it('handles multiple paragraphs independently', () => {
+    const paragraphs = [
+      'Milvus supports vector similarity search using HNSW index types for approximate nearest neighbor queries.',
+      'Zilliz Cloud provides serverless deployment with automatic scaling and managed infrastructure.',
+    ];
+    const chunks = [
+      makeChunk({
+        id: 'search',
+        doc_url: 'https://docs.zilliz.com/search',
+        content: 'Milvus vector similarity search using HNSW index for approximate nearest neighbor queries.',
+      }),
+      makeChunk({
+        id: 'serverless',
+        doc_url: 'https://docs.zilliz.com/serverless',
+        content: 'Zilliz Cloud serverless deployment with automatic scaling and managed infrastructure for production.',
+      }),
+    ];
+
+    const result = scoreChunksPerParagraph(paragraphs, chunks);
+
+    const para0 = result.get(0);
+    const para1 = result.get(1);
+    expect(para0).toBeDefined();
+    expect(para1).toBeDefined();
+
+    // Paragraph 0 should match the search doc
+    expect(para0![0].url).toBe('https://docs.zilliz.com/search');
+    // Paragraph 1 should match the serverless doc
+    expect(para1![0].url).toBe('https://docs.zilliz.com/serverless');
   });
 });

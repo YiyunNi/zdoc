@@ -1,7 +1,7 @@
 import {generateObject} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
 import {z} from 'zod';
-import {computeGrounding, type GroundingResult} from './grounding.js';
+import {computeGrounding, splitParagraphs, type GroundingResult} from './grounding.js';
 import type {SearchResult} from './rag.js';
 import type {Source} from './types.js';
 
@@ -19,107 +19,120 @@ const groundingSchema = z.object({
 });
 
 /**
- * Split response into non-empty paragraphs (matching grounding.ts logic).
+ * Aggregate all chunks for a given source URL into a single snippet.
+ * Uses filter (not find) to collect all matching chunks, fixing the
+ * single-chunk-per-source bug in the previous implementation.
  */
-function splitParagraphs(text: string): string[] {
-  const parts: string[] = [];
-  let current = '';
-  let inCodeBlock = false;
-
-  for (const line of text.split('\n')) {
-    if (line.trim().startsWith('```')) {
-      inCodeBlock = !inCodeBlock;
-      current += line + '\n';
-      continue;
-    }
-    if (inCodeBlock) {
-      current += line + '\n';
-      continue;
-    }
-    if (line.trim() === '' && current.trim()) {
-      parts.push(current.trim());
-      current = '';
-    } else {
-      current += line + '\n';
-    }
-  }
-  if (current.trim()) parts.push(current.trim());
-  return parts;
+function aggregateChunks(url: string, allChunks: SearchResult[]): string {
+  const matching = allChunks.filter(c => c.doc_url === url);
+  if (matching.length === 0) return '';
+  // Take up to 3 chunks, 400 chars each, join with separator
+  return matching
+    .slice(0, 3)
+    .map(c => c.content.slice(0, 400))
+    .join(' … ');
 }
 
 /**
- * Use an LLM to determine which candidate sources genuinely support the response.
- * Falls back to deterministic keyword-overlap grounding on failure.
+ * Atomic source attribution: IDF pre-filter → LLM re-rank.
+ *
+ * Pass 1 (done by caller): IDF scoring via scoreChunksPerParagraph() produces
+ * pre-ranked candidate URLs per paragraph with relevance scores.
+ *
+ * Pass 2 (this function): LLM re-ranks those pre-filtered candidates using
+ * enriched multi-chunk snippets and longer paragraph context.
+ *
+ * Paragraph-level fallback: if LLM returns 0 citations for a paragraph that
+ * had IDF candidates, inject the top IDF candidate for that paragraph.
+ *
+ * Falls back to deterministic keyword-overlap grounding on LLM failure.
  */
-export async function groundWithLLM(
+export async function groundAtomically(
   fullText: string,
   candidateSources: Source[],
   allChunks: SearchResult[],
+  idfScores: Map<number, Array<{url: string; score: number}>>,
 ): Promise<GroundingResult> {
   if (!fullText.trim() || candidateSources.length === 0) {
-    return {sources: [], citations: []};
+    return {sources: [], citations: [], method: 'fallback'};
   }
 
   const paragraphs = splitParagraphs(fullText);
   if (paragraphs.length === 0) {
-    return {sources: [], citations: []};
+    return {sources: [], citations: [], method: 'fallback'};
   }
 
-  // Build content snippets for each candidate source from chunks
-  const sourceSnippets = candidateSources.map(src => {
-    const chunk = allChunks.find(c => c.doc_url === src.url);
-    const snippet = chunk?.content?.slice(0, 200) || '';
-    return `"${src.title}" — ${snippet}`;
+  // Compute max IDF score per source URL across all paragraphs for pre-sorting
+  const maxIdfPerUrl = new Map<string, number>();
+  for (const candidates of idfScores.values()) {
+    for (const {url, score} of candidates) {
+      const existing = maxIdfPerUrl.get(url) ?? 0;
+      if (score > existing) maxIdfPerUrl.set(url, score);
+    }
+  }
+
+  // Sort candidates by max IDF score (best candidates first)
+  const sortedCandidates = [...candidateSources].sort(
+    (a, b) => (maxIdfPerUrl.get(b.url) ?? 0) - (maxIdfPerUrl.get(a.url) ?? 0),
+  );
+
+  // Build enriched source descriptions with multi-chunk snippets and IDF score
+  const sourceDescriptions = sortedCandidates.map((src, i) => {
+    const idfScore = maxIdfPerUrl.get(src.url) ?? 0;
+    const section = src.section || 'docs';
+    const combinedSnippet = aggregateChunks(src.url, allChunks);
+    const snippet = combinedSnippet.slice(0, 600);
+    return `[${i}] "${src.title}" (${section}) idf=${idfScore.toFixed(2)} — ${snippet}`;
   });
 
   try {
     const numberedParagraphs = paragraphs
-      .map((p, i) => `[${i}] ${p.slice(0, 300)}`)
+      .map((p, i) => `[${i}] ${p.slice(0, 500)}`)
       .join('\n\n');
 
-    const numberedSources = sourceSnippets
-      .map((s, i) => `[${i}] ${s}`)
-      .join('\n');
+    const numberedSources = sourceDescriptions.join('\n');
 
     const result = await generateObject({
       model: provider(GROUNDING_MODEL),
       schema: groundingSchema,
-      maxTokens: 300,
+      maxTokens: 400,
       prompt: `You are a source attribution agent for Zilliz Cloud documentation. Given a response and candidate sources, select ONLY the sources that genuinely support claims in the response.
 
 Rules:
+- Sources are pre-ranked by keyword overlap (idf= score). Higher idf = more keyword overlap with the response.
 - An API reference doc (e.g., "Modify Cluster API") is NOT relevant to conceptual advice (e.g., "what cluster size do I need")
 - A source must directly relate to the topic discussed, not just share keywords
-- Select 0-5 sources maximum. It's better to return fewer, highly relevant sources than many loosely related ones
-- For each selected source, list which paragraph indices it supports
+- Select 0-5 sources maximum. Fewer highly relevant sources is better than many loosely related ones
+- For each selected source, list which paragraph indices [0..${paragraphs.length - 1}] it supports
 
 ## Response (${paragraphs.length} paragraphs)
 ${numberedParagraphs}
 
-## Candidate Sources (${candidateSources.length})
+## Candidate Sources (${sortedCandidates.length}, pre-ranked by keyword overlap)
 ${numberedSources}
 
 Select genuinely relevant sources and map them to paragraphs.`,
     });
 
-    // Convert LLM output to GroundingResult format
     const selected = result.object.selectedSources;
+
     if (selected.length === 0) {
-      return {sources: [], citations: []};
+      // LLM found nothing — still try paragraph-level IDF fallback before full deterministic
+      console.log('[Grounding] LLM selected 0 sources, applying paragraph-level IDF fallback');
     }
 
-    // Filter and reindex sources
+    // Build index map from sorted candidate positions back to original source objects
     const filteredSources: Source[] = [];
-    const indexMap = new Map<number, number>(); // old index → new index
+    const indexMap = new Map<number, number>(); // sorted index → new index in filteredSources
 
     for (const s of selected) {
-      if (s.index >= 0 && s.index < candidateSources.length) {
+      if (s.index >= 0 && s.index < sortedCandidates.length) {
         indexMap.set(s.index, filteredSources.length);
-        filteredSources.push(candidateSources[s.index]);
+        filteredSources.push(sortedCandidates[s.index]);
       }
     }
 
-    // Build citations with remapped indices
+    // Build citations from LLM output
     const citations: {paragraphIndex: number; sourceIndices: number[]}[] = [];
     for (const s of selected) {
       const newIdx = indexMap.get(s.index);
@@ -137,10 +150,40 @@ Select genuinely relevant sources and map them to paragraphs.`,
       }
     }
 
+    // Paragraph-level IDF fallback: for paragraphs with IDF candidates but no LLM citation,
+    // inject the top IDF-scored candidate (if it exists in filteredSources)
+    let usedIdfFallback = false;
+    const citedParas = new Set(citations.map(c => c.paragraphIndex));
+
+    for (const [pi, candidates] of idfScores.entries()) {
+      if (citedParas.has(pi)) continue; // LLM already cited this paragraph
+      // Find the top IDF candidate that is already in filteredSources
+      for (const {url} of candidates) {
+        const srcIdx = filteredSources.findIndex(s => s.url === url);
+        if (srcIdx !== -1) {
+          citations.push({paragraphIndex: pi, sourceIndices: [srcIdx]});
+          usedIdfFallback = true;
+          break;
+        }
+        // Candidate not yet in filteredSources — add it from sortedCandidates
+        const src = sortedCandidates.find(s => s.url === url);
+        if (src) {
+          const newIdx = filteredSources.length;
+          filteredSources.push(src);
+          citations.push({paragraphIndex: pi, sourceIndices: [newIdx]});
+          usedIdfFallback = true;
+          break;
+        }
+      }
+    }
+
     citations.sort((a, b) => a.paragraphIndex - b.paragraphIndex);
 
-    console.log(`[Grounding] LLM selected ${filteredSources.length}/${candidateSources.length} sources, ${citations.length} citations`);
-    return {sources: filteredSources, citations};
+    const method = usedIdfFallback ? 'llm+idf-fallback' : 'llm';
+    console.log(
+      `[Grounding] method=${method} selected=${filteredSources.length}/${sortedCandidates.length} citations=${citations.length}`,
+    );
+    return {sources: filteredSources, citations, method};
   } catch (err) {
     console.warn('[Grounding] LLM failed, falling back to keyword overlap:', err instanceof Error ? err.message : err);
     return computeGrounding(fullText, allChunks, candidateSources);

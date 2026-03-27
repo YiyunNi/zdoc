@@ -6,8 +6,8 @@ import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
 import {checkGuard} from './guard.js';
 import {setActiveSectionFilter, searchDocsBM25, getIndexStatus, getTitleByUrl} from './rag.js';
-import {computeGrounding} from './grounding.js';
-import {groundWithLLM} from './grounding-agent.js';
+import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
+import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
 import {getToolsForAgent, type ToolName} from './tools/index.js';
@@ -25,6 +25,12 @@ const promptRules = loadRules(import.meta.url);
 
 // Load topic prompts from disk at startup
 loadPrompts();
+
+// ---------------------------------------------------------------------------
+// Config
+// ---------------------------------------------------------------------------
+
+const MAX_FALLBACK_SOURCES = 5;  // Max sources to show when grounding returns empty
 
 // ---------------------------------------------------------------------------
 // Deflection detection: suppress sources when the agent deflects off-topic
@@ -493,7 +499,7 @@ app.post('/chat', async c => {
             retrieval_score: 0,
           }));
 
-          // Deterministic source grounding (replaces LLM-dependent citations)
+          // Atomic source attribution: IDF pre-filter → LLM re-rank
           // Suppress sources on deflected/off-topic or self-description responses
           const deflected = isDeflection(fullText);
           const selfDescribed = isSelfDescription(fullText);
@@ -506,23 +512,49 @@ app.post('/chat', async c => {
               doc_title: tc.doc_title, section: tc.section, content: tc.content,
               score: 0, weight: 1.0, contextScore: 0,
             }));
-            const grounding = await groundWithLLM(fullText, allSources, allChunks);
-            // Post-filter: remove grounded sources whose inferred section is excluded
-            if (sectionFilter && grounding.sources.length > 0) {
+
+            // Pre-LLM section filter: exclude sources the LLM shouldn't even consider
+            let filteredCandidates = allSources;
+            if (sectionFilter) {
               const excludeMatch = sectionFilter.match(/section\s*!=\s*"([^"]+)"/);
               if (excludeMatch) {
                 const excluded = excludeMatch[1];
-                grounding.sources = grounding.sources.filter(s =>
+                filteredCandidates = allSources.filter(s =>
                   inferSection(s.section, s.url) !== excluded
                 );
               }
             }
-            console.log(`[Sources] Tools: ${toolSources.length}, Deduped: ${allSources.length}, Grounded: ${grounding.sources.length}`);
-            if (grounding.sources.length > 0) {
-              sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
+
+            // IDF pre-filter pass: score chunks per paragraph
+            const paragraphs = splitParagraphs(fullText);
+            const idfScores = scoreChunksPerParagraph(paragraphs, allChunks);
+
+            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks, idfScores);
+
+            console.log(
+              `[Sources] method=${grounding.method} Tools: ${toolSources.length}, Deduped: ${allSources.length}, Filtered: ${filteredCandidates.length}, Grounded: ${grounding.sources.length}`,
+            );
+
+            if (process.env.DEBUG_GROUNDING === 'true') {
+              sendAndRecord('attribution_debug', JSON.stringify({
+                method: grounding.method,
+                candidateCount: filteredCandidates.length,
+                idfCandidateParagraphs: idfScores.size,
+                selectedCount: grounding.sources.length,
+              }));
             }
-            if (grounding.citations.length > 0) {
+
+            // Always send sources - prefer over-attribution to under-attribution (industry standard)
+            if (grounding.sources.length > 0) {
+              // Grounding succeeded — send with paragraph-level citations
+              sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
               sendAndRecord('grounding', JSON.stringify({citations: grounding.citations}));
+            } else if (allSources.length > 0) {
+              // Grounding found no matches, but tools retrieved relevant docs - show them as fallback
+              console.log(`[Sources] Grounding returned empty, showing ${allSources.length} tool sources as fallback`);
+              sendAndRecord('sources', JSON.stringify({
+                sources: allSources.slice(0, MAX_FALLBACK_SOURCES),
+              }));
             }
           }
 

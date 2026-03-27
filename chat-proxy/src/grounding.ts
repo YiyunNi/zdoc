@@ -16,6 +16,8 @@ export interface GroundingResult {
   sources: Source[];
   /** Maps paragraph index → array of source indices (into sources array above) */
   citations: GroundingCitation[];
+  /** Which attribution method produced this result */
+  method?: 'llm' | 'llm+idf-fallback' | 'deterministic' | 'fallback';
 }
 
 // ---------------------------------------------------------------------------
@@ -71,10 +73,12 @@ function isSkippable(para: string): boolean {
 }
 
 // ---------------------------------------------------------------------------
-// Split response into paragraphs
+// Split response into paragraphs (canonical — shared with grounding-agent.ts)
+// NOTE: The frontend (src/components/ChatPanel/index.tsx) contains an identical
+// copy. Any change here must be mirrored there to keep paragraph indices aligned.
 // ---------------------------------------------------------------------------
 
-function splitParagraphs(text: string): string[] {
+export function splitParagraphs(text: string): string[] {
   // Split on double newlines but keep code blocks together
   const parts: string[] = [];
   let current = '';
@@ -106,8 +110,11 @@ function splitParagraphs(text: string): string[] {
 // Core: computeGrounding
 // ---------------------------------------------------------------------------
 
-const MIN_OVERLAP = 0.20;
+const MIN_OVERLAP = 0.20;  // IDF-weighted overlap threshold for deterministic grounding
 const MAX_SOURCES_PER_PARAGRAPH = 2;
+
+/** Broader pre-filter threshold for IDF pre-pass feeding into LLM re-rank */
+export const PRE_FILTER_OVERLAP = 0.08;
 
 // Low-value source demotion — patterns shared from demotion.ts
 const DEMOTE_FACTOR = 0.3; // aggressive demotion (needs ~83% raw overlap to pass MIN_OVERLAP)
@@ -126,12 +133,12 @@ export function computeGrounding(
   allSources: Source[],
 ): GroundingResult {
   if (!responseText.trim() || rawResults.length === 0) {
-    return {sources: [], citations: []};
+    return {sources: [], citations: [], method: 'deterministic'};
   }
 
   const paragraphs = splitParagraphs(responseText);
   if (paragraphs.length === 0) {
-    return {sources: [], citations: []};
+    return {sources: [], citations: [], method: 'deterministic'};
   }
 
   // Pre-tokenize all RAG chunks; flag release-note chunks for demotion
@@ -238,7 +245,7 @@ export function computeGrounding(
   }
 
   if (usedUrls.size === 0) {
-    return {sources: [], citations: []};
+    return {sources: [], citations: [], method: 'deterministic'};
   }
 
   // Build filtered source list from used URLs
@@ -310,5 +317,79 @@ export function computeGrounding(
     filteredSources.push(...prunedSources);
   }
 
-  return {sources: filteredSources, citations};
+  return {sources: filteredSources, citations, method: 'deterministic'};
+}
+
+// ---------------------------------------------------------------------------
+// IDF Pre-filter: score chunks per paragraph for the atomic attribution pass
+// ---------------------------------------------------------------------------
+
+/**
+ * For each non-skippable paragraph, compute IDF-weighted overlap against every
+ * chunk and return a sorted candidate list per paragraph index.
+ *
+ * Used as Pass 1 of the atomic attribution pipeline in grounding-agent.ts:
+ * results are fed into groundAtomically() to pre-rank candidates before the
+ * LLM re-rank pass.
+ */
+export function scoreChunksPerParagraph(
+  paragraphs: string[],
+  chunks: SearchResult[],
+): Map<number, Array<{url: string; score: number}>> {
+  const result = new Map<number, Array<{url: string; score: number}>>();
+  if (paragraphs.length === 0 || chunks.length === 0) return result;
+
+  // Pre-tokenize all chunks
+  const chunkTokens = chunks.map(c => ({
+    tokens: tokenize(c.content),
+    url: c.doc_url,
+    demoted: isDemotedSource(c.doc_title, c.doc_url),
+  }));
+
+  // Document-frequency map for IDF
+  const docFreq = new Map<string, number>();
+  for (const chunk of chunkTokens) {
+    for (const word of chunk.tokens) {
+      docFreq.set(word, (docFreq.get(word) ?? 0) + 1);
+    }
+  }
+  const numDocs = chunkTokens.length;
+
+  for (let pi = 0; pi < paragraphs.length; pi++) {
+    if (isSkippable(paragraphs[pi])) continue;
+
+    const paraTokens = tokenize(paragraphs[pi]);
+    if (paraTokens.size === 0) continue;
+
+    // Score each chunk against this paragraph
+    const urlBest = new Map<string, number>();
+    for (const chunk of chunkTokens) {
+      let weightedMatch = 0;
+      let totalWeight = 0;
+      for (const word of paraTokens) {
+        const df = docFreq.get(word) ?? 0;
+        const idf = df > 0 ? Math.log(1 + numDocs / df) : 0;
+        totalWeight += idf;
+        if (chunk.tokens.has(word)) weightedMatch += idf;
+      }
+      let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
+      if (chunk.demoted) overlap *= DEMOTE_FACTOR;
+      if (overlap < PRE_FILTER_OVERLAP) continue;
+
+      const existing = urlBest.get(chunk.url);
+      if (!existing || overlap > existing) {
+        urlBest.set(chunk.url, overlap);
+      }
+    }
+
+    if (urlBest.size === 0) continue;
+
+    const sorted = [...urlBest.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([url, score]) => ({url, score}));
+
+    result.set(pi, sorted);
+  }
+
+  return result;
 }
