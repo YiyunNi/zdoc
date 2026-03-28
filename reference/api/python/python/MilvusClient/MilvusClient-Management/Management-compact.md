@@ -1,0 +1,112 @@
+---
+title: "compact() | Python | MilvusClient"
+slug: /python/python/Management-compact
+sidebar_label: "compact()"
+beta: false
+added_since: v2.4.x
+last_modified: v2.6.x
+deprecate_since: false
+notebook: false
+description: "This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection. | Python | MilvusClient"
+type: docx
+token: JRNidzqX4o6VtkxVB5RcNvmHnnb
+sidebar_position: 2
+keywords: 
+  - lexical search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - compact()
+  - pymilvus26
+displayed_sidebar: pythonSidebar
+
+displayed_sidbar: pythonSidebar
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# compact()
+
+This operation compacts the collection by merging small segments into larger ones. It is recommended to call this operation after inserting a large amount of data into a collection.
+
+## Request Syntax\{#request-syntax}
+
+```python
+compact(
+    collection_name: str,
+    is_clustering: Optional[bool] = False,
+    is_l0: Optional[bool] = False,
+    timeout: Optional[float] = None,
+    **kwargs,
+) -> int
+```
+
+**PARAMETERS:**
+
+- **collection_name** (*str*) -
+
+    **[REQUIRED]**
+
+    The name of the target collection.
+
+- **is_clustering** (*bool*) -
+
+    Whether to perform a clustering compaction. Defaults to **False**.
+
+- **is_l0** (*bool*) -
+
+    Whether to perform an L0 compaction, which specifically handles L0 segments by merging delete operations into existing data segments. Defaults to **False**.
+
+- **timeout** (*Optional[float]*) -
+
+    The timeout duration for this operation. Setting this to **None** indicates that this operation timeouts when any response arrives or any error occurs.
+
+**RETURN TYPE:**
+
+*int*
+
+**RETURNS:**
+
+A compaction job ID, which can be used to get the compaction status.
+
+**EXCEPTIONS:**
+
+- **MilvusException**
+
+    This exception will be raised when any error occurs during this operation.
+
+## Examples\{#examples}
+
+```python
+from pymilvus import MilvusClient
+
+client = MilvusClient(
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
+)
+
+# Standard compaction
+job_id = client.compact(
+    collection_name="my_collection"
+)
+
+# Clustering compaction
+job_id = client.compact(
+    collection_name="my_collection",
+    is_clustering=True
+)
+
+# L0 compaction
+job_id = client.compact(
+    collection_name="my_collection",
+    is_l0=True
+)
+
+# Check compaction status
+state = client.get_compaction_state(job_id)
+print(state)
+```

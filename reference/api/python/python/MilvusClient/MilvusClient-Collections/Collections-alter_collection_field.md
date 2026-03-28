@@ -1,0 +1,113 @@
+---
+title: "alter_collection_field() | Python | MilvusClient"
+slug: /python/python/Collections-alter_collection_field
+sidebar_label: "alter_collection_field()"
+beta: false
+added_since: v2.4.x
+last_modified: false
+deprecate_since: false
+notebook: false
+description: "This operation changes the specified collection field parameters. | Python | MilvusClient"
+type: docx
+token: JdR3dVpCaoq6s2xSFmsc0e13nnh
+sidebar_position: 2
+keywords: 
+  - Vector index
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - alter_collection_field()
+  - pymilvus26
+displayed_sidebar: pythonSidebar
+
+displayed_sidbar: pythonSidebar
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# alter_collection_field()
+
+This operation changes the specified collection field parameters.
+
+## Request Syntax\{#request-syntax}
+
+```python
+alter_collection_field(
+    collection_name: str, 
+    field_name: str, 
+    field_params: Dict,
+    db_name="",
+    timeout: Optional[float] = None,
+    **kwargs,
+)
+```
+
+**PARAMETERS:**
+
+- **collection_name** (*str*) -
+
+    The name of the target collection.
+
+- **field_name** (*str*) -
+
+    The name of the target field.
+
+- **field_params** (*dict*) -
+
+    The field parameters to change. The properties not mentioned remain unchanged. Possible parameters vary with the field type. 
+
+    - **mmap_enabled** (*bool*) -
+
+        Whether Milvus maps the field data into memory instead of fully loading it. For details, refer to MMap-enabled Data Storage.
+
+- **timeout** (*Optional[float]*) - 
+
+    The timeout duration for this operation.
+
+    Setting this to None indicates that this operation timeouts when any response arrives or any error occurs.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>You must alter field settings before loading the collection. Altering a field on a loaded collection returns an error. To change settings on a loaded collection, release the collection first, alter the field, then reload.</p>
+
+</Admonition>
+
+**RETURN TYPE:**
+
+*NoneType*
+
+**RETURNS:**
+
+*None*
+
+**EXCEPTIONS:**
+
+- **MilvusException**
+
+    This exception will be raised when any error occurs during this operation, especially when the specified alias does not exist.
+
+## Example\{#example}
+
+```python
+from pymilvus import MilvusClient
+
+# 1. Create a milvus client
+client = MilvusClient(
+    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
+    token="user:password"
+)
+
+# upsert properties
+field_params = {"max_length": 1500}
+
+client.alter_collection_field(
+    collection_name="collection_name", 
+    field_name="my_varchar",
+    field_params=field_params
+)
+```
+

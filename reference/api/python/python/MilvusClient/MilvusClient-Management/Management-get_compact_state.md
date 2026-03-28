@@ -1,0 +1,102 @@
+---
+title: "get_compact_state() | Python | MilvusClient"
+slug: /python/python/Management-get_compact_state
+sidebar_label: "get_compact_state()"
+beta: false
+added_since: v2.4.x
+last_modified: false
+deprecate_since: v2.6.x
+notebook: false
+description: "This operation returns the status of the specified compaction job. | Python | MilvusClient"
+type: docx
+token: WEsjdspGLokueRxggM1cNFgknze
+sidebar_position: 7
+keywords: 
+  - milvus
+  - Zilliz
+  - milvus vector database
+  - milvus db
+  - zilliz
+  - zilliz cloud
+  - cloud
+  - get_compact_state()
+  - pymilvus26
+displayed_sidebar: pythonSidebar
+
+displayed_sidbar: pythonSidebar
+---
+
+import Admonition from '@theme/Admonition';
+
+
+# get_compact_state()
+
+This operation returns the status of the specified compaction job.
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>This method is deprecated. For the latest equivalent, refer to <a href="./Management-get_compaction_state">get<em>compaction</em>state()</a>.</p>
+
+</Admonition>
+
+## Request Syntax\{#request-syntax}
+
+```python
+get_compaction_state(
+    self,
+    job_id: int,
+    timeout: Optional[float] = None,
+    **kwargs,
+) -> str
+```
+
+**PARAMETERS:**
+
+- **job_id** (*int*) -
+
+    The compaction job ID.
+
+- **timeout** (*Optional[float]*) - 
+
+    The timeout duration for this operation.
+
+    Setting this to None indicates that this operation timeouts when any response arrives or any error occurs.
+
+**RETURN TYPE:**
+
+*str*
+
+**RETURNS:**
+
+The state of the specified compaction job. Possible values are
+
+- `UndefinedState`
+
+- `Executing`
+
+- `Completed`
+
+**EXCEPTIONS:**
+
+- **MilvusException**
+
+    This exception will be raised when any error occurs during this operation, especially when the specified alias does not exist.
+
+## Example\{#example}
+
+```python
+from pymilvus import MilvusClient
+
+# 1. Create a milvus client
+client = MilvusClient(
+    uri="https://inxx-xxxxxxxxxxxx.api.gcp-us-west1.zillizcloud.com:19530",
+    token="user:password"
+)
+
+client.get_compact_state(
+    job_id=45389273892800
+)
+
+# Completed
+```
+
