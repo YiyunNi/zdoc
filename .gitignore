@@ -39,11 +39,6 @@ node_modules/
 # Lark-docs pre-fetched source JSON (generated build artifacts)
 /plugins/lark-docs/meta/sources/
 
-# Lark-docs generated doc output (populated by fetch-lark-docs at build time)
-/docs/tutorials/
-/docs-byoc/tutorials/
-/reference/api/
-
 # Generated sidebar files
 /config/generated/*.js
 
