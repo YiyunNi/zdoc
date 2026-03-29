@@ -443,6 +443,14 @@ function applyOverrides(items, overridePath) {
         items = insertInto(items, injection.into, injection.item, injection.position ?? 'last')
         continue
       }
+      if (injection.afterCategory) {
+        items = insertAfterCategory(items, injection.afterCategory, injection.item)
+        continue
+      }
+      if (injection.beforeCategory) {
+        items = insertBeforeCategory(items, injection.beforeCategory, injection.item)
+        continue
+      }
       if (injection.after) {
         const idx = items.findIndex(i => i.type === 'doc' && i.id === injection.after)
         if (idx !== -1) items.splice(idx + 1, 0, injection.item)

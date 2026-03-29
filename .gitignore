@@ -34,6 +34,7 @@ node_modules/
 # Environment variables
 .env
 .env.development
+.venv/
 
 # Lark-docs pre-fetched source JSON (generated build artifacts)
 /plugins/lark-docs/meta/sources/
@@ -56,5 +57,10 @@ chat-proxy/scripts/eval/results/
 .superpower/
 skills-lock.json
 
+# Worktrees
+.worktrees/
+
 # Vercel
 .vercel
+
+dist/

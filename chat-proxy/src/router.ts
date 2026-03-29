@@ -9,7 +9,9 @@ import type {AgentType, ChatMessage} from './types.js';
 
 const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
 const AI_API_KEY = process.env.AI_API_KEY || '';
-const AI_MODEL = process.env.ROUTER_MODEL || process.env.AI_MODEL || 'gpt-4o';
+// Router needs structured output reliability — use a dedicated small model
+// rather than falling back to the generation model which may not support it.
+const AI_MODEL = process.env.ROUTER_MODEL || 'openai/gpt-4o-mini';
 
 const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 
@@ -68,11 +70,11 @@ export async function routeIntent(
       prompt: `Classify the user's intent to route to the best specialized agent and identify relevant topics.
 
 Agents:
-- general: General questions about Zilliz Cloud, Milvus, vector databases, documentation navigation
+- general: Conceptual explanations, "what is X", product overview, account/org questions, greetings, off-topic
 - schema: Collection schema design, field types, index selection, data modeling, partition keys
 - resources: Cluster sizing, CU estimation, storage planning, pricing, deployment tier selection
 - product: Product comparison (Serverless vs Dedicated vs BYOC), feature availability, migration
-- code: SDK code generation, code examples, API usage, integration patterns (LangChain, etc.)
+- code: ANY "how to" or "how do I" question, SDK code, API usage, search/insert/query operations, integration patterns, troubleshooting code errors. When in doubt between general and code, choose code.
 
 Topics (select 1-2 most relevant):
 - schema-design: Collection schema, field types, indexes, BM25 setup, limits

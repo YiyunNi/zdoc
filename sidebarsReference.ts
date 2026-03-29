@@ -16,6 +16,7 @@ const sidebars: SidebarsConfig = {
   javaSidebar:    applyOverrides(tryRequire('./config/generated/java.sidebar'),   require.resolve('./config/sidebar-overrides/java.json')),
   nodeSidebar:    applyOverrides(tryRequire('./config/generated/node.sidebar'),   require.resolve('./config/sidebar-overrides/node.json')),
   goSidebar:      applyOverrides(tryRequire('./config/generated/go.sidebar'),     require.resolve('./config/sidebar-overrides/go.json')),
+  cliSidebar:     applyOverrides(tryRequire('./config/generated/cli.sidebar'),    require.resolve('./config/sidebar-overrides/cli.json')),
   // REST API reference sidebar — generated from Apifox specifications
   restfulSidebar: applyOverrides(tryRequire('./config/generated/restful.sidebar'), require.resolve('./config/sidebar-overrides/restful.json')),
 };

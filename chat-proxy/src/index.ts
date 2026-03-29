@@ -5,8 +5,9 @@ import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {retrieve, isVectorSearchAvailable, setActiveSectionFilter} from './rag.js';
-import {computeGrounding} from './grounding.js';
+import {setActiveSectionFilter, searchDocs, searchDocsBM25, getIndexStatus, getTitleByUrl} from './rag.js';
+import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
+import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
 import {getAgent} from './agents/index.js';
 import {getToolsForAgent, type ToolName} from './tools/index.js';
@@ -18,13 +19,18 @@ import {inferSection} from './sources.js';
 import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
 import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
-import {findSemanticCacheHit} from './semantic-cache.js';
 import {loadPrompts, getBasePrompt, getTopicPrompt} from './prompts.js';
 
 const promptRules = loadRules(import.meta.url);
 
 // Load topic prompts from disk at startup
 loadPrompts();
+
+// ---------------------------------------------------------------------------
+// Config
+// ---------------------------------------------------------------------------
+
+const MAX_FALLBACK_SOURCES = 5;  // Max sources to show when grounding returns empty
 
 // ---------------------------------------------------------------------------
 // Deflection detection: suppress sources when the agent deflects off-topic
@@ -167,6 +173,15 @@ setInterval(() => {
 // ---------------------------------------------------------------------------
 
 app.use(
+  '/search',
+  cors({
+    origin: ALLOWED_ORIGINS,
+    allowMethods: ['GET', 'OPTIONS'],
+    allowHeaders: ['Content-Type'],
+  }),
+);
+
+app.use(
   '/chat',
   cors({
     origin: ALLOWED_ORIGINS,
@@ -197,13 +212,39 @@ app.use(
 // Health check
 // ---------------------------------------------------------------------------
 
-app.get('/health', c =>
-  c.json({
+app.get('/health', c => {
+  const index = getIndexStatus();
+  return c.json({
     ok: true,
     sessions: getSessionCount(),
-    vectorSearch: isVectorSearchAvailable(),
-  }),
-);
+    index,
+  });
+});
+
+// ---------------------------------------------------------------------------
+// GET /search — lightweight BM25 search for the search bar (no LLM)
+// ---------------------------------------------------------------------------
+
+app.get('/search', async c => {
+  const q = c.req.query('q');
+  if (!q || q.length < 2) return c.json({results: []});
+  const section = c.req.query('section') || undefined;
+
+  try {
+    const results = await searchDocs(q, 8, section);
+    return c.json({
+      results: results.map(r => ({
+        title: r.doc_title,
+        url: r.doc_url,
+        section: r.section,
+        snippet: r.content.slice(0, 150).replace(/\n/g, ' '),
+        score: r.score,
+      })),
+    });
+  } catch {
+    return c.json({results: []});
+  }
+});
 
 // ---------------------------------------------------------------------------
 // POST /chat — streaming SSE with agent routing
@@ -294,6 +335,7 @@ app.post('/chat', async c => {
         send('session', JSON.stringify({sessionId: session.id}));
 
         // Check response cache for identical repeated queries
+        const tChatStart = Date.now();
         const sectionFilter = deriveSectionFilter(body.pageUrl);
         const responseCacheKey = `${session.id}:${ragQuery}:${sectionFilter || ''}`;
         const cachedEvents = responseCacheGet(responseCacheKey);
@@ -313,54 +355,33 @@ app.post('/chat', async c => {
           recordedEvents.push({event, data});
         };
 
-        // L2: Semantic answer cache (cross-session)
-        if (isVectorSearchAvailable()) {
-          try {
-            const semanticHit = await findSemanticCacheHit(ragQuery, sectionFilter);
-            if (semanticHit) {
-              console.log(`[Cache] Semantic hit (sim=${semanticHit.similarity.toFixed(3)}): ${ragQuery.slice(0, 60)}`);
-              sendAndRecord('agent', JSON.stringify({type: semanticHit.agentType, name: semanticHit.agentName}));
-              sendAndRecord('delta', JSON.stringify({text: semanticHit.text}));
-              sendAndRecord('confidence', JSON.stringify({level: semanticHit.confidence, retrieval_score: 0}));
-              if (semanticHit.sources.length > 0) {
-                sendAndRecord('sources', JSON.stringify({sources: semanticHit.sources}));
-              }
-              sendAndRecord('done', JSON.stringify({stop_reason: 'semantic_cache'}));
-              responseCacheSet(responseCacheKey, recordedEvents);
-              logEvent(session.id, userId, 'message', semanticHit.agentType, {
-                role: 'assistant', content: semanticHit.text.slice(0, 500),
-                confidence: semanticHit.confidence, semanticCacheHit: true, similarity: semanticHit.similarity,
-              });
-              controller.close();
-              return;
-            }
-          } catch (err) {
-            console.warn('[Cache] Semantic cache error:', (err as Error).message);
-          }
-        }
-
         try {
-          // Route intent and retrieve docs (runs while client is connected)
+          // Route intent (agentic mode — no upfront RAG, LLM searches via tools)
           setActiveSectionFilter(sectionFilter);
           console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
-          const [routeResult, ragResult] = await Promise.all([
-            routeIntent(ragQuery, body.messages, session.id).catch(() => ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'})),
-            retrieve(ragQuery, sectionFilter),
-          ]);
+          const tRouteStart = Date.now();
+          const routeResult = await routeIntent(ragQuery, body.messages, session.id)
+            .catch(() => ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}));
+          const tRoute = Date.now() - tRouteStart;
 
           const agentConfig = getAgent(routeResult.agent as any);
           const agentTools = getToolsForAgent(agentConfig.toolNames);
 
+          // Resolve model: per-agent override → global AI_MODEL
+          const activeModel = agentConfig.model || AI_MODEL;
+
           logEvent(session.id, userId, 'routing', routeResult.agent, {
             reasoning: routeResult.reasoning,
             topics: routeResult.topics,
+            model: activeModel,
             message: rawQuery.slice(0, 200),
           });
 
-          // Emit agent info
+          // Emit agent info (including model for observability)
           sendAndRecord('agent', JSON.stringify({
             type: agentConfig.type,
             name: agentConfig.name,
+            model: activeModel,
           }));
 
           // Build system prompt: base + agent role + topic prompts + RAG context
@@ -375,20 +396,6 @@ app.post('/chat', async c => {
             }
           }
 
-          if (ragResult.context && ragResult.sources.length > 0) {
-            // Build numbered source index for inline citation
-            const sourceIndex = ragResult.sources.map((src, i) =>
-              `[${i + 1}] ${src.title} — ${src.url}`
-            ).join('\n');
-            systemPrompt += `\n\n## Retrieved Documentation\nSources:\n${sourceIndex}\n\n${ragResult.context}`;
-          } else if (ragResult.context) {
-            systemPrompt += `\n\n${ragResult.context}`;
-          }
-
-          if (agentConfig.type === 'code' && ragResult.detectedLanguages.length > 0) {
-            systemPrompt += `\n\n## Language Coverage\nThe retrieved documentation contains examples in: ${ragResult.detectedLanguages.join(', ')}`;
-          }
-
           if (body.pageContext && shouldInjectPageContext(session, body.pageUrl)) {
             systemPrompt += `\n\n## Current Page Content (HIGHEST PRIORITY)\nThe user is currently viewing the page below. When their question relates to this page, answer from this content FIRST before using other sources.\n\n${body.pageContext.slice(0, 8000)}`;
           }
@@ -400,12 +407,13 @@ app.post('/chat', async c => {
             systemPrompt += '\n\n## Additional Instructions\n' + injections.join('\n\n');
           }
 
+          const tLlmStart = Date.now();
           const result = streamText({
-            model: provider(AI_MODEL),
+            model: provider(activeModel),
             maxTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
-            maxSteps: 5,
+            maxSteps: 8,
             system: systemPrompt,
             messages: windowedMessages.map(m => ({
               role: m.role as 'user' | 'assistant',
@@ -415,7 +423,7 @@ app.post('/chat', async c => {
 
           const toolsCalled: string[] = [];
           const toolSources: {title: string; url: string; score?: number; section?: string}[] = [];
-          const toolChunks: {doc_url: string; content: string}[] = [];
+          const toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[] = [];
           let fullText = '';
 
           for await (const part of result.fullStream) {
@@ -433,11 +441,16 @@ app.post('/chat', async c => {
               // Extract sources from any tool that returns doc URLs
               const toolResult = (part as any).result as Record<string, any>;
               if (toolResult?.results) {
-                // searchDocs returns { results: [{title, url, score, content, ...}] }
+                // searchDocs returns { results: [{title, url, score, content, section, ...}] }
                 for (const r of toolResult.results) {
                   if (r.url) {
                     toolSources.push({title: r.title || '', url: r.url, score: r.score, section: r.section});
-                    if (r.content) toolChunks.push({doc_url: r.url, content: r.content});
+                    if (r.content) toolChunks.push({
+                      doc_url: r.url,
+                      doc_title: r.title || '',
+                      section: r.section || '',
+                      content: r.content,
+                    });
                   }
                 }
               }
@@ -448,28 +461,33 @@ app.post('/chat', async c => {
                 }
               }
               if (toolResult?.url && toolResult?.success) {
-                // getPageContent returns { url, success, content }
-                toolSources.push({title: toolResult.url, url: toolResult.url});
-                if (toolResult.content) toolChunks.push({doc_url: toolResult.url, content: toolResult.content});
+                // getPageContent returns { url, success, content } — look up real title from index
+                const pageTitle = toolResult.title || getTitleByUrl(toolResult.url) || toolResult.url;
+                toolSources.push({title: pageTitle, url: toolResult.url});
+                if (toolResult.content) toolChunks.push({
+                  doc_url: toolResult.url,
+                  doc_title: pageTitle,
+                  section: '',
+                  content: toolResult.content,
+                });
               }
             }
           }
 
-          // Merge RAG sources with tool-extracted sources, deduplicating by URL
+          // Deduplicate tool sources by URL
           const seenUrls = new Set<string>();
           const allSources: {title: string; url: string; score?: number; section?: string}[] = [];
-          for (const src of [...ragResult.sources, ...toolSources]) {
+          for (const src of toolSources) {
             if (!seenUrls.has(src.url)) {
               seenUrls.add(src.url);
               allSources.push({...src, section: inferSection(src.section, src.url)});
             }
           }
 
-          // Compute confidence
+          const tLlm = Date.now() - tLlmStart;
+
+          // Compute confidence (agentic mode — tool-based signals only)
           const confidenceResult = computeConfidence({
-            ragResults: ragResult.rawResults.map(r => ({score: r.score, doc_url: r.doc_url})),
-            ragSources: ragResult.sources,
-            ragAvgScore: ragResult.confidence.avgScore,
             toolsCalled,
             toolSources,
             fullText,
@@ -484,41 +502,66 @@ app.post('/chat', async c => {
           // Emit confidence
           sendAndRecord('confidence', JSON.stringify({
             level: confidence,
-            retrieval_score: ragResult.confidence.avgScore,
+            retrieval_score: 0,
           }));
 
-          // Deterministic source grounding (replaces LLM-dependent citations)
+          // Atomic source attribution: IDF pre-filter → LLM re-rank
+          const tGroundStart = Date.now();
           // Suppress sources on deflected/off-topic or self-description responses
           const deflected = isDeflection(fullText);
           const selfDescribed = isSelfDescription(fullText);
           if (deflected || selfDescribed) {
             console.log(`[Sources] Suppressed — ${deflected ? 'deflection' : 'self-description'} detected`);
           } else {
-            // Combine RAG chunks with tool-discovered chunks for grounding
-            const allChunks = [
-              ...ragResult.rawResults,
-              ...toolChunks.map(tc => ({
-                id: '', doc_url: tc.doc_url, doc_url_md: tc.doc_url,
-                doc_title: '', section: '', content: tc.content, score: 0, weight: 1.0, contextScore: 0,
-              })),
-            ];
-            const grounding = computeGrounding(fullText, allChunks, allSources);
-            // Post-filter: remove grounded sources whose inferred section is excluded
-            if (sectionFilter && grounding.sources.length > 0) {
+            // Build grounding chunks from tool results
+            const allChunks = toolChunks.map(tc => ({
+              id: '', doc_url: tc.doc_url, doc_url_md: tc.doc_url,
+              doc_title: tc.doc_title, section: tc.section, content: tc.content,
+              score: 0, weight: 1.0, contextScore: 0,
+            }));
+
+            // Pre-LLM section filter: exclude sources the LLM shouldn't even consider
+            let filteredCandidates = allSources;
+            if (sectionFilter) {
               const excludeMatch = sectionFilter.match(/section\s*!=\s*"([^"]+)"/);
               if (excludeMatch) {
                 const excluded = excludeMatch[1];
-                grounding.sources = grounding.sources.filter(s =>
+                filteredCandidates = allSources.filter(s =>
                   inferSection(s.section, s.url) !== excluded
                 );
               }
             }
-            console.log(`[Sources] RAG: ${ragResult.sources.length}, Tools: ${toolSources.length}, Merged: ${allSources.length}, Grounded: ${grounding.sources.length}`);
-            if (grounding.sources.length > 0) {
-              sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
+
+            // IDF pre-filter pass: score chunks per paragraph
+            const paragraphs = splitParagraphs(fullText);
+            const idfScores = scoreChunksPerParagraph(paragraphs, allChunks);
+
+            const grounding = await groundAtomically(fullText, filteredCandidates, allChunks, idfScores);
+
+            console.log(
+              `[Sources] method=${grounding.method} Tools: ${toolSources.length}, Deduped: ${allSources.length}, Filtered: ${filteredCandidates.length}, Grounded: ${grounding.sources.length}`,
+            );
+
+            if (process.env.DEBUG_GROUNDING === 'true') {
+              sendAndRecord('attribution_debug', JSON.stringify({
+                method: grounding.method,
+                candidateCount: filteredCandidates.length,
+                idfCandidateParagraphs: idfScores.size,
+                selectedCount: grounding.sources.length,
+              }));
             }
-            if (grounding.citations.length > 0) {
+
+            // Always send sources - prefer over-attribution to under-attribution (industry standard)
+            if (grounding.sources.length > 0) {
+              // Grounding succeeded — send with paragraph-level citations
+              sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
               sendAndRecord('grounding', JSON.stringify({citations: grounding.citations}));
+            } else if (allSources.length > 0) {
+              // Grounding found no matches, but tools retrieved relevant docs - show them as fallback
+              console.log(`[Sources] Grounding returned empty, showing ${allSources.length} tool sources as fallback`);
+              sendAndRecord('sources', JSON.stringify({
+                sources: allSources.slice(0, MAX_FALLBACK_SOURCES),
+              }));
             }
           }
 
@@ -538,10 +581,17 @@ app.post('/chat', async c => {
           logEvent(session.id, userId, 'message', agentConfig.type, {
             role: 'assistant',
             content: fullText.slice(0, 500),
+            question: ragQuery.slice(0, 200),
+            model: activeModel,
             confidence,
             toolsCalled,
             sourceCount: allSources.length,
+            sources: allSources.map(s => s.url),
+            pageUrl: body.pageUrl,
           });
+
+          const tGround = Date.now() - tGroundStart;
+          console.log(`[timing] route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
 
           // Save conversation (fire-and-forget)
           saveConversation({
@@ -555,14 +605,14 @@ app.post('/chat', async c => {
             confidenceLevels: [confidence],
             pageUrls: body.pageUrl ? [body.pageUrl] : [],
             feedbackSummary: {up: 0, down: 0},
-          }).catch(() => {});
+          });
 
           // Update user profile (fire-and-forget)
           updateUserProfile(userId, {
             agentsUsed: {[agentConfig.type]: 1},
             topicsDiscussed: [ragQuery.slice(0, 64)],
             pagesVisited: body.pageUrl ? [body.pageUrl] : [],
-          }).catch(() => {});
+          });
         } catch (err: unknown) {
           const message = err instanceof Error ? err.message : 'Internal server error';
           send('error', JSON.stringify({error: message}));

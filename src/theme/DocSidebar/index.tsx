@@ -43,6 +43,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Home,
+  BookOpen,
 } from 'lucide-react';
 import ICONS from '../../utils/navIcons';
 import {useDropdownClose} from '../../utils/useDropdownClose';
@@ -89,6 +90,8 @@ const SIDEBAR_ICON_MAP: Record<string, React.ReactNode> = {
   infrastructure: <Cloud size={18} />,
   administration: <Settings size={18} />,
   faqs:           <CircleHelp size={18} />,
+  // SDK guide section icons
+  guides:          <BookOpen size={18} />,
   // Reference doc section icons
   auth:            <Key size={18} />,
   'client-code':   <Code size={18} />,

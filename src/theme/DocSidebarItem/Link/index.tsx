@@ -6,7 +6,7 @@ import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/DocSidebarItem/Link';
-import {Home} from 'lucide-react';
+import {Home, Rocket} from 'lucide-react';
 
 import styles from '../Category/styles.module.css';
 
@@ -14,6 +14,7 @@ import styles from '../Category/styles.module.css';
 
 const LINK_ICONS: Record<string, ReactNode> = {
   home: <Home size={20} />,
+  quickstarts: <Rocket size={20} />,
 };
 
 export default function DocSidebarItemLink({

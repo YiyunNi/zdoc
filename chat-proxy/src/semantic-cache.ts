@@ -1,4 +1,4 @@
-import {generateEmbedding} from './rag.js';
+import {generateEmbedding} from './zilliz-client.js';
 import {zillizRequest, isZillizConfigured} from './zilliz-client.js';
 import {getAgent} from './agents/index.js';
 import type {ConfidenceLevel, AgentType} from './types.js';
@@ -57,11 +57,12 @@ function sectionFromUrl(url: string): string | undefined {
 export async function findSemanticCacheHit(
   query: string,
   sectionFilter?: string,
+  precomputedEmbedding?: number[],
 ): Promise<SemanticCacheHit | null> {
   if (!isZillizConfigured()) return null;
   if (process.env.SEMANTIC_CACHE_ENABLED === 'false') return null;
 
-  const embedding = await generateEmbedding(query);
+  const embedding = precomputedEmbedding ?? await generateEmbedding(query);
 
   const cutoff = new Date();
   cutoff.setDate(cutoff.getDate() - MAX_AGE_DAYS);

@@ -1,15 +1,22 @@
 import {z} from 'zod';
 import {tool} from 'ai';
-import {searchDocs, computeRetrievalConfidence, getActiveSectionFilter, type SearchResult} from '../rag.js';
+import {searchDocs, computeRetrievalConfidence, getActiveSectionFilter} from '../rag.js';
+import {rewriteQuery} from '../query-rewrite.js';
 
 export const searchDocsTool = tool({
-  description: 'Search the Zilliz Cloud documentation using semantic search. Returns relevant documentation chunks with similarity scores.',
+  description:
+    'Search Zilliz Cloud / Milvus documentation using hybrid (keyword + semantic) search. ' +
+    'Call this BEFORE answering any technical question — do NOT guess from training data. ' +
+    'Use focused, specific queries rather than copying the full user question. ' +
+    'Call multiple times with different queries for complex or multi-part questions.',
   parameters: z.object({
-    query: z.string().describe('The search query to find relevant documentation'),
+    query: z.string().describe('A focused keyword search query'),
     topK: z.number().optional().default(6).describe('Number of results to return'),
   }),
   execute: async ({query, topK}) => {
-    const results = await searchDocs(query, topK, getActiveSectionFilter());
+    // Rewrite query for better retrieval
+    const optimizedQuery = await rewriteQuery(query);
+    const results = await searchDocs(optimizedQuery, topK, getActiveSectionFilter());
     const confidence = computeRetrievalConfidence(results);
 
     return {

@@ -125,6 +125,43 @@ export default function DocRootLayout({children}: Props): ReactNode {
     };
   }, []);
 
+  // Listen for open-chat events from search bar
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const query = (e as CustomEvent).detail?.query;
+      // Show the chat panel
+      setHiddenSidebarContainer(false);
+      setHiddenSidebar(false);
+      // Tell the chat to send this query
+      if (query) {
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent('chat-send', {detail: {query}}));
+        }, 100);
+      }
+    };
+    document.addEventListener('open-chat', handler);
+    return () => document.removeEventListener('open-chat', handler);
+  }, []);
+
+  // Handle ?chat= URL parameter on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('chat')) {
+      setHiddenSidebarContainer(false);
+      setHiddenSidebar(false);
+      const query = params.get('chat');
+      if (query && query !== '1') {
+        setTimeout(() => {
+          document.dispatchEvent(new CustomEvent('chat-send', {detail: {query}}));
+        }, 300);
+      }
+      // Clean up URL
+      const url = new URL(window.location.href);
+      url.searchParams.delete('chat');
+      window.history.replaceState({}, '', url.toString());
+    }
+  }, []);
+
   const {siteConfig} = useDocusaurusContext();
   const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || 'http://localhost:8787/chat';
 

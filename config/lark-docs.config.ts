@@ -310,6 +310,24 @@ const gov226: Manual = {
     },
 }
 
+const cli01: Manual = {
+    root: 'PPuBfnEIWltim9dw8hxcC3EDnwb',
+    base: 'OAK4bJaNuac501sX6Y1cS3OGnzf',
+    sourceType: 'drive',
+    version: 'v0.1.x',
+    displayedSidebar: 'cliSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/cli/v0.1.x',
+    sidebarPath: './config/generated/cli.sidebar.js',
+    overridePath: './config/sidebar-overrides/cli.json',
+    contentRoot: 'reference',
+    targets: {
+        zilliz: {
+            outputDir: 'reference/api/cli/cli',
+            imageDir: 'static/img',
+        },
+    },
+}
+
 export default {
     guides,
     python,
@@ -325,4 +343,5 @@ export default {
     gov1,
     gov2,
     gov226,
+    cli01
 }

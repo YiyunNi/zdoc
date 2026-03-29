@@ -163,6 +163,9 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
       let pendingConfidence: ConfidenceLevel | undefined;
       let pendingAgent: {type: AgentType; name: string} | undefined;
 
+      // Track current event type across buffer chunks
+      let currentEvent = '';
+
       while (true) {
         const {done, value} = await reader.read();
         if (done) {
@@ -176,7 +179,6 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         const lines = buffer.split('\n');
         buffer = done ? '' : (lines.pop() || '');
 
-        let currentEvent = '';
         for (const line of lines) {
           if (line.startsWith('event: ')) {
             currentEvent = line.slice(7);
@@ -350,6 +352,20 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
     setIsStreaming(false);
     sessionIdRef.current = null;
   }, [chatHistory]);
+
+  // Listen for chat-send events from the search bar / DocRoot
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const query = (e as CustomEvent).detail?.query;
+      if (query) {
+        setInput(query);
+        // Send on next tick after input is set
+        setTimeout(() => send(query), 0);
+      }
+    };
+    document.addEventListener('chat-send', handler);
+    return () => document.removeEventListener('chat-send', handler);
+  }, [setInput, send]);
 
   const deleteChat = useCallback((id: string) => {
     setChatHistory(prev => prev.filter(e => e.id !== id));

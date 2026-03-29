@@ -9,10 +9,12 @@ import {estimateResourcesTool} from './estimateResources.js';
 import {compareProductsTool} from './compareProducts.js';
 import {checkFeatureAvailabilityTool} from './checkFeatureAvailability.js';
 import {contactInfoTool} from './contactInfo.js';
+import {listPagesTool} from './listPages.js';
 
 // All available tools
 export const allTools = {
   searchDocs: searchDocsTool,
+  listPages: listPagesTool,
   getPageContent: getPageContentTool,
   getCodeExample: getCodeExampleTool,
   validateSchema: validateSchemaTool,
@@ -46,3 +48,4 @@ export {estimateResourcesTool} from './estimateResources.js';
 export {compareProductsTool} from './compareProducts.js';
 export {checkFeatureAvailabilityTool} from './checkFeatureAvailability.js';
 export {contactInfoTool} from './contactInfo.js';
+export {listPagesTool} from './listPages.js';

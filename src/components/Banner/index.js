@@ -1,41 +1,18 @@
-import React, { useState, useCallback } from 'react';
-import {
-    InkeepModalChat,
-} from "@inkeep/cxkit-react";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { inkeepSettings } from '../../../config/inkeep.config';
+import React from 'react';
 import styles from './styles.module.css';
 
 export default function Banner({ bannerText, bannerLinkText }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const { siteConfig } = useDocusaurusContext();
-
-    const handleOpenChange = useCallback((isOpen) => {
-        setIsOpen(isOpen);
-    }, []);
-
-    const config = inkeepSettings;
-
-    config.baseSettings.apiKey = siteConfig.customFields.inkeepApiKey;
-
-    config.modalSettings = {
-        isOpen,
-        onOpenChange: handleOpenChange,
-    };
-
     return (
         <div className={styles.container}>
             <div className={styles.banner}>
                 <span className={styles.bannerText}>
                     { bannerText }
                 </span>
-                <button type="button" className={styles.bannerLink} onClick={() => setIsOpen(true)}>
+                <a href="/docs/home?chat=1" className={styles.bannerLink}>
                     <span>{ bannerLinkText }</span>
                     <i className={styles.zillizStar} />
-                </button>
-            </div> 
-
-            <InkeepModalChat {...config} />
+                </a>
+            </div>
         </div>
     )
 }
