@@ -1,10 +1,13 @@
 import type {ConfidenceLevel} from './types.js';
+import {generateEmbedding, zillizRequest, isZillizConfigured} from './zilliz-client.js';
+import {isDemotedSource} from './demotion.js';
 
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
 
 const TOP_K = 6;
+const SEARCH_MODE = (process.env.SEARCH_MODE || 'hybrid').toLowerCase(); // hybrid, bm25, vector
 const DOCS_SITE_URL = (process.env.DOCS_SITE_URL || 'https://docs.zilliz.com').replace(/\/$/, '');
 // INDEX_BASE_URL: base URL containing the llms index .txt files.
 // In production, point to S3 (e.g. https://bucket.s3.region.amazonaws.com/llms-index).
@@ -293,6 +296,149 @@ function scoreBM25(chunk: IndexedChunk, queryTokens: WeightedToken[]): number {
   }
 
   return score * (chunk.weight || 1.0);
+}
+
+const ZILLIZ_COLLECTION = process.env.ZILLIZ_COLLECTION || 'doc_chunks_v2';
+
+// ---------------------------------------------------------------------------
+// Vector search via Zilliz Cloud
+// ---------------------------------------------------------------------------
+
+/**
+ * Search docs using vector embeddings via Zilliz Cloud.
+ * Falls back to empty array on any error (non-fatal by design).
+ */
+export async function searchDocsVector(query: string, topK = TOP_K, sectionFilter?: string, precomputedEmbedding?: number[]): Promise<SearchResult[]> {
+  if (!isZillizConfigured()) return [];
+
+  const t0 = Date.now();
+  try {
+    const embedding = precomputedEmbedding ?? await generateEmbedding(query);
+
+    // Exclude generic landing pages at query level
+    const baseFilter = 'doc_url != "/docs/home"';
+    const filter = sectionFilter ? `${baseFilter} and ${sectionFilter}` : baseFilter;
+
+    const outputFields = ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content', 'weight'];
+
+    const searchBody: Record<string, unknown> = {
+      collectionName: ZILLIZ_COLLECTION,
+      data: [embedding],
+      annsField: 'embedding',
+      limit: topK,
+      outputFields,
+      filter,
+    };
+
+    const hits = await zillizRequest('/entities/search', searchBody);
+
+    const MAX_EXTERNAL_RESULTS = 2;
+    let externalCount = 0;
+    const results: SearchResult[] = [];
+
+    for (const hit of hits || []) {
+      if ((hit.id || '').startsWith('ext:')) {
+        externalCount++;
+        if (externalCount > MAX_EXTERNAL_RESULTS) continue;
+      }
+      results.push({
+        id: hit.id || '',
+        doc_url: hit.doc_url || '',
+        doc_url_md: hit.doc_url_md || '',
+        doc_title: cleanTitle(hit.doc_title || ''),
+        section: hit.section || '',
+        content: hit.content || '',
+        score: hit.distance ?? hit.score ?? 0,
+        weight: hit.weight ?? 1.0,
+        contextScore: hit.distance ?? hit.score ?? 0,
+      });
+    }
+
+    console.log(`[RAG] Vector search (${Date.now() - t0}ms): ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
+    return results;
+  } catch (err) {
+    console.warn(`[RAG] Vector search error (${Date.now() - t0}ms):`, (err as Error).message);
+    return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Hybrid search: BM25 + Vector (RRF fusion)
+// ---------------------------------------------------------------------------
+
+/**
+ * Fuse results using Reciprocal Rank Fusion (RRF).
+ * RRF = sum(1 / (k + rank)) where k=60 is the default.
+ * Robust to outliers and requires no parameter tuning.
+ */
+export function fuseWithRRF(bm25Results: SearchResult[], vectorResults: SearchResult[], topK: number): SearchResult[] {
+  const fusedScores = new Map<string, {score: number; result: SearchResult}>();
+
+  // RRF constant (default 60 per SIGIR paper, configurable via env)
+  const k = Number(process.env.RRF_K) || 60;
+
+  // Score BM25 results: rank 1 gets 1/(60+1), rank 2 gets 1/(60+2), etc.
+  for (let i = 0; i < bm25Results.length; i++) {
+    const result = bm25Results[i];
+    const rrfScore = 1 / (k + i + 1);
+    fusedScores.set(result.id, {score: rrfScore, result});
+  }
+
+  // Score vector results and merge
+  for (let i = 0; i < vectorResults.length; i++) {
+    const result = vectorResults[i];
+    const rrfScore = 1 / (k + i + 1);
+    const existing = fusedScores.get(result.id);
+    if (existing) {
+      existing.score += rrfScore;
+    } else {
+      fusedScores.set(result.id, {score: rrfScore, result});
+    }
+  }
+
+  // Sort by fused score and deduplicate by URL (keep highest score)
+  const urlBest = new Map<string, {score: number; result: SearchResult}>();
+  for (const [id, {score, result}] of fusedScores) {
+    const existing = urlBest.get(result.doc_url);
+    if (!existing || score > existing.score) {
+      urlBest.set(result.doc_url, {score, result});
+    }
+  }
+
+  const sorted = [...urlBest.values()]
+    .sort((a, b) => b.score - a.score)
+    .map(({result}) => result);
+
+  return sorted.slice(0, topK);
+}
+
+/**
+ * Hybrid search combining BM25 (keyword) and vector (semantic) results.
+ * Uses RRF fusion for robustness. Falls back to BM25 if vector search fails.
+ */
+export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, precomputedEmbedding?: number[]): Promise<SearchResult[]> {
+  // Respect SEARCH_MODE environment variable
+  if (SEARCH_MODE === 'bm25') {
+    return searchDocsBM25(query, topK, sectionFilter);
+  }
+  if (SEARCH_MODE === 'vector') {
+    return await searchDocsVector(query, topK, sectionFilter, precomputedEmbedding);
+  }
+
+  // Default: hybrid search
+  const [bm25Results, vectorResults] = await Promise.all([
+    searchDocsBM25(query, topK * 2, sectionFilter),
+    searchDocsVector(query, topK * 2, sectionFilter, precomputedEmbedding),
+  ]);
+
+  if (vectorResults.length === 0) {
+    console.log('[RAG] Hybrid fallback: Vector search returned 0 results, using BM25 only');
+    return bm25Results.slice(0, topK);
+  }
+
+  const fused = fuseWithRRF(bm25Results, vectorResults, topK);
+  console.log(`[RAG] Hybrid search: BM25=${bm25Results.length}, Vector=${vectorResults.length}, Fused=${fused.length}`);
+  return fused;
 }
 
 // ---------------------------------------------------------------------------

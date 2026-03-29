@@ -5,7 +5,7 @@ import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {setActiveSectionFilter, searchDocsBM25, getIndexStatus, getTitleByUrl} from './rag.js';
+import {setActiveSectionFilter, searchDocs, searchDocsBM25, getIndexStatus, getTitleByUrl} from './rag.js';
 import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
 import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
@@ -231,7 +231,7 @@ app.get('/search', async c => {
   const section = c.req.query('section') || undefined;
 
   try {
-    const results = await searchDocsBM25(q, 8, section);
+    const results = await searchDocs(q, 8, section);
     return c.json({
       results: results.map(r => ({
         title: r.doc_title,
@@ -335,6 +335,7 @@ app.post('/chat', async c => {
         send('session', JSON.stringify({sessionId: session.id}));
 
         // Check response cache for identical repeated queries
+        const tChatStart = Date.now();
         const sectionFilter = deriveSectionFilter(body.pageUrl);
         const responseCacheKey = `${session.id}:${ragQuery}:${sectionFilter || ''}`;
         const cachedEvents = responseCacheGet(responseCacheKey);
@@ -358,8 +359,10 @@ app.post('/chat', async c => {
           // Route intent (agentic mode — no upfront RAG, LLM searches via tools)
           setActiveSectionFilter(sectionFilter);
           console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
+          const tRouteStart = Date.now();
           const routeResult = await routeIntent(ragQuery, body.messages, session.id)
             .catch(() => ({agent: 'general' as const, topics: [] as string[], reasoning: 'Router fallback'}));
+          const tRoute = Date.now() - tRouteStart;
 
           const agentConfig = getAgent(routeResult.agent as any);
           const agentTools = getToolsForAgent(agentConfig.toolNames);
@@ -404,6 +407,7 @@ app.post('/chat', async c => {
             systemPrompt += '\n\n## Additional Instructions\n' + injections.join('\n\n');
           }
 
+          const tLlmStart = Date.now();
           const result = streamText({
             model: provider(activeModel),
             maxTokens: 4096,
@@ -480,6 +484,8 @@ app.post('/chat', async c => {
             }
           }
 
+          const tLlm = Date.now() - tLlmStart;
+
           // Compute confidence (agentic mode — tool-based signals only)
           const confidenceResult = computeConfidence({
             toolsCalled,
@@ -500,6 +506,7 @@ app.post('/chat', async c => {
           }));
 
           // Atomic source attribution: IDF pre-filter → LLM re-rank
+          const tGroundStart = Date.now();
           // Suppress sources on deflected/off-topic or self-description responses
           const deflected = isDeflection(fullText);
           const selfDescribed = isSelfDescription(fullText);
@@ -582,6 +589,9 @@ app.post('/chat', async c => {
             sources: allSources.map(s => s.url),
             pageUrl: body.pageUrl,
           });
+
+          const tGround = Date.now() - tGroundStart;
+          console.log(`[timing] route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
 
           // Save conversation (fire-and-forget)
           saveConversation({

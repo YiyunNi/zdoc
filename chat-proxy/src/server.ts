@@ -11,11 +11,15 @@ const {serve} = await import('@hono/node-server');
 const {app} = await import('./index.js');
 const {loadIndex} = await import('./rag.js');
 const {startSink} = await import('./log-sink.js');
+const {ensureCollections} = await import('./init-collections.js');
 
 const PORT = Number(process.env.PORT) || 8787;
 const INDEX_REFRESH_INTERVAL = Number(process.env.INDEX_REFRESH_INTERVAL) || 30 * 60 * 1000; // 30 min
 
 async function startup() {
+  // Ensure Zilliz collections exist
+  await ensureCollections();
+
   // Load doc index from live site
   await loadIndex();
 
