@@ -1,6 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Copy } from 'lucide-react';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-python.min';
+import 'prismjs/components/prism-java.min';
+import 'prismjs/components/prism-go.min';
+import 'prismjs/components/prism-bash.min';
+import 'prismjs/components/prism-json.min';
 import styles from './styles.module.css';
+
+const PRISM_LANG_MAP = {
+  Python: 'python',
+  Java: 'java',
+  Go: 'go',
+  NodeJS: 'javascript',
+  cURL: 'bash',
+};
+
+function highlight(code, lang) {
+  const prismLang = PRISM_LANG_MAP[lang] || lang || 'plain';
+
+  console.log('Available languages:', Object.keys(Prism.languages));
+  console.log('Trying to highlight with:', prismLang);
+
+  if (Prism.languages[prismLang]) {
+    const highlighted = Prism.highlight(code, Prism.languages[prismLang], prismLang);
+    console.log('Highlighted', lang, '- has tokens:', highlighted.includes('token'));
+    return highlighted;
+  }
+  console.log('No language found for:', prismLang);
+  return code;
+}
 
 const LANG_ORDER = ['Python', 'Java', 'NodeJS', 'Go', 'cURL'];
 
@@ -42,11 +71,8 @@ function parseSlidesFromChildren(children) {
       current = { id: label.toLowerCase().replace(/\s+/g, '-'), label, json: '', snippets: {} };
 
     } else if ((child.type === 'p' || child.type?.mdxTag === 'p') && current && !current.description) {
-      // Extract description text from paragraph following h2
-      const text = React.Children.toArray(child.props.children)
-        .filter(c => typeof c === 'string')
-        .join('');
-      if (text) current.description = text;
+      // Extract description from paragraph following h2, preserving links
+      current.description = child.props.children;
 
     } else if ((child.type === 'pre' || child.type?.mdxTag === 'pre') && current) {
       const codeEl = child.props.children;
@@ -178,6 +204,17 @@ export default function Hero({ children }) {
   const [copiedCode, setCopiedCode] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [topPanel, setTopPanel] = useState('right'); // 'left' or 'right'
+  const [highlightedJson, setHighlightedJson] = useState('');
+  const [highlightedCode, setHighlightedCode] = useState('');
+
+  // Highlight code when slide or tab changes
+  useEffect(() => {
+    if (activeSlides.length === 0) return;
+    const slide = activeSlides[activeSlide];
+    setHighlightedJson(highlight(slide.json, 'json'));
+    setHighlightedCode(highlight(slide.snippets[activeTab], activeTab));
+  }, [activeSlide, activeTab, activeSlides]);
 
   useEffect(() => {
     setProgress(0);
@@ -290,7 +327,11 @@ export default function Hero({ children }) {
             </div>
 
             {/* Left: JSON document panel */}
-            <div className={styles.jsonPanel}>
+            <div
+              className={styles.jsonPanel}
+              style={{ zIndex: topPanel === 'left' ? 2 : 1 }}
+              onClick={() => setTopPanel('left')}
+            >
               <div className={styles.panelHeader}>
                 <div className={styles.dots}>
                   <span className={`${styles.dot} ${styles.dotRed}`} />
@@ -307,11 +348,18 @@ export default function Hero({ children }) {
                   {copiedJson ? '✓' : <Copy size={16} />}
                 </button>
               </div>
-              <pre className={styles.code}>{slide.json}</pre>
+              <pre
+                className={`${styles.code} language-json`}
+                dangerouslySetInnerHTML={{ __html: highlightedJson }}
+              />
             </div>
 
             {/* Right: Search code panel */}
-            <div className={styles.searchOuter}>
+            <div
+              className={styles.searchOuter}
+              style={{ zIndex: topPanel === 'right' ? 2 : 1 }}
+              onClick={() => setTopPanel('right')}
+            >
               <div className={styles.tabs}>
                 {slideLanguages.map((lang) => (
                   <button
@@ -340,7 +388,10 @@ export default function Hero({ children }) {
                     {copiedCode ? '✓' : <Copy size={16} />}
                   </button>
                 </div>
-                <pre className={styles.code}>{slide.snippets[activeTab]}</pre>
+                <pre
+                  className={`${styles.code} language-${PRISM_LANG_MAP[activeTab] || 'plain'}`}
+                  dangerouslySetInnerHTML={{ __html: highlightedCode }}
+                />
               </div>
             </div>
           </div>

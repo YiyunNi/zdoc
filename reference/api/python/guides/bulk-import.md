@@ -66,9 +66,7 @@ Once your data and collection are ready, you can import your data into a specifi
 
 ### Import data via volume
 
-To import data via volume, you need to create a storage and upload your data into the volume beforehand. For details, refer to [Merge Data](./merge-data).
-
-Once the volume is ready and the source data file is in place, you can import data from a volume as follows:
+To import data from a volume, first create a [managed or external volume](./volume-explained). For a managed volume, upload your data files to the volume. For an external volume, ensure the data files are in the mapped cloud storage bucket. Then import the data as follows:
 
 ```python
 from pymilvus.bulk_writer import bulk_import

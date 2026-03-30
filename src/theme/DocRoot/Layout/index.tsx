@@ -14,7 +14,7 @@ import styles from './styles.module.css';
 
 const CHAT_MIN_WIDTH = 260;
 const CHAT_MAX_WIDTH = 560;
-const CHAT_DEFAULT_WIDTH = 560;
+const CHAT_DEFAULT_WIDTH = 500;
 // Collapse sidebar when chat is dragged past this width; restore with hysteresis
 const SIDEBAR_COLLAPSE_THRESHOLD = 520;
 const SIDEBAR_RESTORE_THRESHOLD = 480;

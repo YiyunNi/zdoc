@@ -39,9 +39,6 @@ node_modules/
 # Lark-docs pre-fetched source JSON (generated build artifacts)
 /plugins/lark-docs/meta/sources/
 
-# Generated sidebar files
-/config/generated/*.js
-
 # Eval results (generated)
 chat-proxy/scripts/eval/results/
 

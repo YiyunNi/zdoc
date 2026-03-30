@@ -95,6 +95,7 @@
 
 .inputArea {
   width: 100%;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
@@ -481,12 +482,12 @@
 
 .chatInnerExpanded .inputArea {
   width: 100%;
-  max-width: 640px;
+  max-width: 560px;
 }
 
 .chatInnerExpanded .greetingBlock {
   width: 100%;
-  max-width: 640px;
+  max-width: 560px;
 }
 
 .chatInnerExpanded .conversation {
@@ -495,13 +496,13 @@
 
 .chatInnerExpanded .messages {
   width: 100%;
-  max-width: 800px;
+  max-width: 680px;
   align-self: center;
 }
 
 .chatInnerExpanded .bottomInput {
   width: 100%;
-  max-width: 800px;
+  max-width: 680px;
   align-self: center;
   border-top: none;
   padding: 0.75rem 0;

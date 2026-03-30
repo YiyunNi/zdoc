@@ -2,6 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import larkDocsConfig from './config/lark-docs.config';
+import i18nTranslatorConfig from './config/i18n-translator.config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import {visit} from 'unist-util-visit';
@@ -26,7 +27,8 @@ import 'dotenv/config';
 const config: Config = {
   title: 'Zilliz Cloud Developer Hub',
   tagline: 'Find what you need to work with Zilliz Cloud',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
+  trailingSlash: false,
 
   future: {
     v4: true,
@@ -37,9 +39,17 @@ const config: Config = {
 
   onBrokenLinks: 'warn',
 
+  markdown: {
+    mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
+    }
+  },
+
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja-JP'],
   },
 
   customFields: {
