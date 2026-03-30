@@ -1,13 +1,17 @@
 FROM node:22-alpine AS build
+
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
 COPY . .
 ARG CHAT_ENDPOINT
 ARG INKEEP_API_KEY
 ENV CHAT_ENDPOINT=${CHAT_ENDPOINT}
 ENV INKEEP_API_KEY=${INKEEP_API_KEY}
-RUN npm run build
+RUN pnpm run build
 
 FROM nginx:alpine
 COPY --from=build /app/build /usr/share/nginx/html
