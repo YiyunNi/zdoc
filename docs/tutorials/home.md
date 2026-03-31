@@ -50,9 +50,138 @@ import Banner from '@site/src/components/Banner';
 
 # Welcome to Zilliz Cloud Docs\{#welcome-to-zilliz-cloud-docs}
 
-Zilliz Cloud provides a fully managed Milvus service, simplifying the deployment and scaling of vector search applications with security in mind, eliminating the need to construct and maintain complex infrastructure. [Learn more](./get-started).
+Zilliz Cloud provides a fully managed Milvus service, simplifying the deployment and scaling of Milvus-backup vector search applications with security in mind.
 
 ![H1i9wA7f9huNQDbDat4cf813nig](https://zdoc-images.s3.us-west-2.amazonaws.com/H1i9wA7f9huNQDbDat4cf813nig.png)
+
+## Basic Vector Search\{#basic-vector-search}
+
+Perform approximate nearest neighbor (ANN) searches to find the most similar vectors to your query vector. [Learn more](./single-vector-search).
+
+```json
+// Dataset: 3 items with vectors and color metadata
+// Search target: Find top 3 most similar items to query vector
+[
+    {
+        "id": 0,
+        "vector": [0.358, -0.602, 0.184, -0.263, 0.903],
+        "color": "pink_8682"
+    },
+    {
+        "id": 1,
+        "vector": [0.199, 0.060, 0.698, 0.261, 0.839],
+        "color": "red_7025"
+    },
+    {
+        "id": 2,
+        "vector": [0.437, -0.560, 0.646, 0.789, 0.208],
+        "color": "orange_6781"
+    }
+]
+```
+
+```python
+from pymilvus import MilvusClient
+
+client = MilvusClient(
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
+)
+
+# Query vector to search for similar items
+query_vector = [0.358, -0.602, 0.184, -0.263, 0.903]
+
+res = client.search(
+    collection_name="my_collection",
+    data=[query_vector],
+    anns_field="vector",  # Field to search on
+    limit=3,  # Return top 3 results
+    search_params={"metric_type": "IP"}  # Inner Product similarity
+)
+
+for hits in res:
+    for hit in hits:
+        print(f"ID: {hit['id']}, Distance: {hit['distance']}")
+```
+
+```java
+import io.milvus.v2.client.ConnectConfig;
+import io.milvus.v2.client.MilvusClientV2;
+import io.milvus.v2.service.vector.request.SearchReq;
+import io.milvus.v2.service.vector.request.data.FloatVec;
+
+MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
+    .uri("YOUR_CLUSTER_ENDPOINT")
+    .token("YOUR_CLUSTER_TOKEN")
+    .build());
+
+FloatVec queryVector = new FloatVec(new float[]{0.358f, -0.602f, 0.184f, -0.263f, 0.903f});
+SearchReq searchReq = SearchReq.builder()
+    .collectionName("my_collection")
+    .data(Collections.singletonList(queryVector))
+    .annsField("vector")
+    .topK(3)
+    .build();
+
+SearchResp searchResp = client.search(searchReq);
+```
+
+```go
+import (
+    "context"
+    "github.com/milvus-io/milvus/client/v2/entity"
+    "github.com/milvus-io/milvus/client/v2/milvusclient"
+)
+
+ctx := context.Background()
+client, _ := milvusclient.New(ctx, &milvusclient.ClientConfig{
+    Address: "YOUR_CLUSTER_ENDPOINT",
+    APIKey:  "YOUR_CLUSTER_TOKEN",
+})
+
+queryVector := []float32{0.358, -0.602, 0.184, -0.263, 0.903}
+resultSets, _ := client.Search(ctx, milvusclient.NewSearchOption(
+    "my_collection",
+    3,
+    []entity.Vector{entity.FloatVector(queryVector)},
+).WithANNSField("vector"))
+```
+
+```javascript
+import { MilvusClient } from "@zilliz/milvus2-sdk-node";
+
+const client = new MilvusClient({
+address: "YOUR_CLUSTER_ENDPOINT",
+token: "YOUR_CLUSTER_TOKEN",
+});
+
+const query_vector = [0.358, -0.602, 0.184, -0.263, 0.903];
+
+const res = await client.search({
+collection_name: "my_collection",
+data: [query_vector],
+anns_field: "vector",
+limit: 3,
+});
+
+console.log(res.results);
+```
+
+```shell
+export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
+export TOKEN="YOUR_CLUSTER_TOKEN"
+
+curl --request POST \
+--url "${CLUSTER_ENDPOINT}/v2/vectordb/entities/search" \
+--header "Authorization: Bearer ${TOKEN}" \
+--header "Content-Type: application/json" \
+-d '{
+    "collectionName": "my_collection",
+    "data": [[0.358, -0.602, 0.184, -0.263, 0.903]],
+    "annsField": "vector",
+    "limit": 3
+}'
+```
 
 </Hero>
 
