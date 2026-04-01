@@ -1,74 +1,587 @@
-.container {
-    width: 100%;
-    max-width: 996px;
-    margin: 20px auto;
-    padding: 0 20px;
+/* ── Full-bleed wrapper: fills from sidebar right edge to viewport right edge ── */
+.heroWrapper {
+  /* Break out of .container max-width by stretching to the full <main> width.
+     The Hero sits inside: <main> → .container (max-width:1140px, centered) → .col → <article>.
+     We use the 50%/-50% trick relative to the content column, then clamp to
+     viewport width minus the sidebar so we never overlap the sidebar. */
+  width: calc(100vw - var(--doc-sidebar-width, 300px));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(160deg, #b8d0ff 0%, #d0e0ff 25%, #e4edff 50%, #f2f6ff 75%, #ffffff 100%);
+  overflow: hidden;
+  padding-bottom: 80px;
+  margin-top: -1.5rem;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+/* Decorative SVG – positioned to fill the wrapper */
+.bgDecor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.subtract {
-    flex: 0 0 50%;
-    min-width: 0;
-    padding: 60px 0;
-    animation: fadeInUp 0.5s ease both;
+/* Gentle drift animation for decorative curves */
+@keyframes gentleDrift {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(12px, -8px); }
+  66% { transform: translate(-8px, 6px); }
 }
 
-.subtract p {
-    font-size: 16px !important;
-    line-height: 22px !important;
-    font-weight: 400;
-    margin: 10px 0 0;
+@keyframes gentleDrift2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-10px, 10px); }
+  66% { transform: translate(8px, -6px); }
 }
 
-.heroImg {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 1 1 auto;
-    min-width: 0;
-    animation: fadeInUp 0.5s ease 0.15s both;
+.driftGroup1 {
+  animation: gentleDrift 18s ease-in-out infinite;
 }
 
-.heroImg p {
-    margin: 0 !important;
+.driftGroup2 {
+  animation: gentleDrift2 22s ease-in-out infinite;
 }
 
-.heroImg img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-}
-
+/* ── Entrance animations ── */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Inner max-width container ── */
+.hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 168px 40px 0;
+}
+
+/* ── Text area ── */
+.textArea {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.textArea .eyebrow {
+  font-family: var(--ifm-font-family-base, Inter, sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #175fff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin: 0 0 12px !important;
+  animation: fadeInUp 0.6s ease-out both;
+  display: block !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+.textArea h1 {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(32px, 4.5vw, 48px) !important;
+  font-weight: 800 !important;
+  color: #0a0a0a !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px !important;
+  animation: fadeInUp 0.6s ease-out both;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* ── Install command widget ── */
+.installWidget {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28px;
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.installTabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 12px;
+}
+
+.installTab {
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #9ca3af;
+  background: none;
+  border: none;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.installTab:hover {
+  color: #374151;
+}
+
+.installTabActive {
+  color: #0f172a;
+}
+
+.installDivider {
+  width: 1px;
+  height: 16px;
+  background: #d1d5db;
+}
+
+.installCmd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.installPrompt {
+  font-family: var(--ifm-font-family-monospace, 'SFMono-Regular', Consolas, monospace);
+  font-size: 14px;
+  color: #9ca3af;
+  user-select: none;
+}
+
+.installText {
+  font-family: var(--ifm-font-family-monospace, 'SFMono-Regular', Consolas, monospace);
+  font-size: 14px;
+  color: #1e293b;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.installCopy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.installCopy:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #374151;
+}
+
+.textArea p {
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+  color: #374151 !important;
+  letter-spacing: -0.01em;
+  margin: 0 !important;
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+/* ── Panel layout constants ──
+   Left panel height  = 300px  (JSON_H)
+   Right panel offset = 300/3 = 100px  (one-third of left panel height)
+   Container height   = 100px + right panel visual height
+                      = 100 + (tabs ~40px + card ~260px) ≈ 400px
+   We set 420px for breathing room.
+*/
+.codePanels {
+  position: relative;
+  max-width: 1000px;
+  height: 456px;        /* 420px + 36px for bottom title */
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease-out 0.35s both;
+}
+
+/* ── Left: JSON panel ── */
+.jsonPanel {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 300px;   /* JSON_H — right panel offset = 300/3 = 100px */
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(23, 95, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(23, 95, 255, 0.1), 0 2px 4px rgba(0,0,0,0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Right: Search outer (tabs above + card below) ── */
+.searchOuter {
+  position: absolute;
+  right: 0;
+  top: 100px;   /* = JSON_H / 3 = 300 / 3 */
+  width: 56%;
+  z-index: 1;
+}
+
+/* ── Language tab strip ── */
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  padding: 0 2px;
+  justify-content: flex-end;
+}
+
+.tab {
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(180, 200, 255, 0.5);
+  border-radius: 20px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e293b;
+}
+
+.tabActive {
+  background: #175fff;
+  color: #ffffff;
+  border-color: #175fff;
+  box-shadow: 0 2px 12px rgba(23, 95, 255, 0.3);
+}
+
+/* ── Search panel card ── */
+.searchPanel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(23, 95, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(23, 95, 255, 0.1), 0 2px 4px rgba(0,0,0,0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 272px;
+}
+
+/* ── Shared panel header ── */
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(238, 243, 255, 0.95);
+  border-bottom: 1px solid rgba(200, 215, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.dotRed    { background: #ff5f57; }
+.dotYellow { background: #ffbd2e; }
+.dotGreen  { background: #28c840; }
+
+.panelLabel {
+  flex: 1;
+  font-family: var(--ifm-font-family-monospace, monospace);
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* ── Copy button ── */
+.copyBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #9aa1ad;
+  font-size: 12px;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.copyBtn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* ── Code body ── */
+.code {
+  font-family: var(--ifm-font-family-monospace, 'SFMono-Regular', Consolas, monospace) !important;
+  font-size: 12.5px !important;
+  line-height: 1.75 !important;
+  color: #1e293b !important;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 16px 20px !important;
+  overflow: auto;
+  flex: 1;
+  white-space: pre;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Slide title + description — top-right corner, above right panel ──
+   Available space: from right edge of JSON panel (50%) to container right,
+   height = searchOuter top offset (100px). */
+.slideTitle {
+  position: absolute;
+  left: 52%;
+  right: 0;
+  top: 8px;
+  z-index: 2;
+  font-family: 'Plus Jakarta Sans', var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.slideDesc {
+  position: absolute;
+  left: 52%;
+  right: 0;
+  top: 40px;            /* below title with more gap */
+  z-index: 2;
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #475569;
+  pointer-events: auto;
+  transition: opacity 0.15s ease;
+}
+
+.slideDesc a {
+  color: #175fff;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.slideDesc a:hover {
+  color: #0e4de6;
+}
+
+/* ── Progress bars ── */
+.progressBars {
+  display: flex;
+  gap: 6px;
+  max-width: 1000px;
+  margin: 20px auto 0;
+  animation: fadeInUp 0.6s ease-out 0.55s both;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 2px;
+  background: rgba(23, 95, 255, 0.12);
+  border-radius: 2px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: height 0.2s ease, background 0.2s ease;
+}
+
+.progressTrack::before {
+  content: '';
+  position: absolute;
+  inset: -8px 0;
+}
+
+.progressTrack:hover {
+  height: 4px;
+  background: rgba(23, 95, 255, 0.2);
+}
+
+.progressLabel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.progressTrack:hover .progressLabel {
+  opacity: 1;
+}
+
+.progressFill {
+  height: 100%;
+  max-width: 100%;
+  background: #175fff;
+  border-radius: 2px;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 6px rgba(23, 95, 255, 0.35);
+}
+
+/* ── Prism syntax highlighting tokens ── */
+.code :global(.token.comment),
+.code :global(.token.prolog),
+.code :global(.token.doctype),
+.code :global(.token.cdata) {
+  color: #6b7ea4 !important;
+  font-style: italic;
+}
+
+.code :global(.token.string),
+.code :global(.token.attr-value) {
+  color: #22863a !important;
+}
+
+.code :global(.token.number),
+.code :global(.token.boolean),
+.code :global(.token.constant) {
+  color: #005cc5 !important;
+}
+
+.code :global(.token.keyword),
+.code :global(.token.operator) {
+  color: #d73a49 !important;
+}
+
+.code :global(.token.function),
+.code :global(.token.class-name) {
+  color: #6f42c1 !important;
+}
+
+.code :global(.token.property),
+.code :global(.token.attr-name) {
+  color: #005cc5 !important;
+}
+
+.code :global(.token.punctuation) {
+  color: #586069 !important;
+}
+
+.code :global(.token.builtin),
+.code :global(.token.tag) {
+  color: #22863a !important;
+}
+
+.code :global(.token.namespace) {
+  color: #6f42c1 !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 996px) {
+  /* Below 997px Docusaurus hides the sidebar, so use full viewport width */
+  .heroWrapper {
+    width: 100vw;
+  }
 }
 
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 20px;
-    }
+  .heroWrapper {
+    padding-bottom: 56px;
+  }
 
-    .subtract {
-        flex: 1;
-        padding: 20px 0;
-        text-align: center;
-    }
+  .hero {
+    padding: 64px 20px 0;
+  }
 
-    .heroImg {
-        justify-content: center;
-    }
+  .textArea {
+    margin-bottom: 36px;
+  }
+
+  .textArea h1 {
+    font-size: 32px !important;
+    font-family: 'Plus Jakarta Sans', var(--ifm-font-family-base, Inter, sans-serif) !important;
+  }
+
+  .textArea p {
+    font-size: 16px !important;
+  }
+
+  .installWidget {
+    max-width: 100%;
+    padding: 16px 20px 18px;
+    margin-top: 20px;
+  }
+
+  .installTab {
+    font-size: 14px;
+  }
+
+  .installText {
+    font-size: 13px;
+  }
+
+  .codePanels {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .slideTitle {
+    position: static;
+    width: 100%;
+    margin: 0 0 -12px;   /* pull description closer via negative bottom margin */
+  }
+
+  .slideDesc {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .jsonPanel {
+    position: static;
+    width: 100%;
+    height: 240px;
+  }
+
+  .searchOuter {
+    position: static;
+    width: 100%;
+    top: auto;
+  }
 }

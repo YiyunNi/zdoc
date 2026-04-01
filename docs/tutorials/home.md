@@ -48,11 +48,9 @@ import Banner from '@site/src/components/Banner';
 
 <Hero>
 
-# Welcome to Zilliz Cloud Docs\{#welcome-to-zilliz-cloud-docs}
+# Build with confidence and supercharge your AI applications\{#build-with-confidence-and-supercharge-your-ai-applications}
 
-Zilliz Cloud provides a fully managed Milvus service, simplifying the deployment and scaling of Milvus-backup vector search applications with security in mind.
-
-![H1i9wA7f9huNQDbDat4cf813nig](https://zdoc-images.s3.us-west-2.amazonaws.com/H1i9wA7f9huNQDbDat4cf813nig.png)
+Zilliz Cloud provides a fully managed Milvus service, simplifying the deployment and scaling of vector search applications with security in mind.
 
 ## Basic Vector Search\{#basic-vector-search}
 
