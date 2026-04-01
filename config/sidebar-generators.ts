@@ -274,6 +274,37 @@ export async function ReferenceItemsGenerator ({
             }) 
         }
 
+        // cli
+        if (item.label === 'cli') {
+            item.label = 'Zilliz CLI Reference'
+            item.collapsed = false;
+
+            item.items = item.items.map(subItem => {
+                if (subItem.type === 'category') {
+                    subItem.collapsed = false;
+                    subItem.items = iterate(subItem.items)
+                }
+
+                return subItem                
+            })
+        }
+
+        return item;
+    })
+
+    return sidebarItems;
+}
+
+export async function AgentsItemsGenerator ({
+    defaultSidebarItemsGenerator, ...args
+}) {
+    var sidebarItems = defaultSidebarItemsGenerator(args)
+
+    sidebarItems = sidebarItems.map(item => {
+        if (item.type === 'category') {
+            item.collapsed = false;
+        }
+
         return item;
     })
 

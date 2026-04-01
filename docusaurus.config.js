@@ -2,7 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import larkDocsConfig from './config/lark-docs.config';
-import { tutorialsItemsGenerator, ReferenceItemsGenerator } from './config/sidebar-generators';
+import { tutorialsItemsGenerator, ReferenceItemsGenerator, AgentsItemsGenerator } from './config/sidebar-generators';
 import i18nTranslatorConfig from './config/i18n-translator.config';
 
 import 'dotenv/config';
@@ -100,7 +100,7 @@ const config = {
       {
         id: 'reference',
         path: 'reference',
-        breadcrumbs: true,
+        breadcrumbs: false,
         routeBasePath: 'reference',
         sidebarPath: require.resolve('./sidebarsReference.js'),
         remarkPlugins: [remarkMath],
@@ -118,6 +118,7 @@ const config = {
         breadcrumbs: false,
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
+        sidebarItemsGenerator: AgentsItemsGenerator,
       }
     ],
     [
@@ -295,7 +296,7 @@ const config = {
               },
               {
                 label: 'Zilliz CLI',
-                to: '/reference/zilliz-cli',
+                to: '/reference/cli/overview',
               },
             ]
           },
