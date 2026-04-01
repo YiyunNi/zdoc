@@ -12,10 +12,10 @@ token: KVy0fojDTl01lHdWSFWcVflBnSf
 sidebar_position: 7
 sidebar_label: "User"
 keywords: 
-  - Video similarity search
-  - Vector retrieval
-  - Audio similarity search
-  - Elastic vector database
+  - Sparse vector
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
   - zilliz
   - zilliz cloud
   - cloud

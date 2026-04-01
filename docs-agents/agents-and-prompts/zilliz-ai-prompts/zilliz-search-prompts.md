@@ -78,12 +78,12 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ## You must follow these Zilliz Cloud rules:
   - For dense vector search, use the correct vector field and metric type for the collection index.
-  - For filtered search, apply metadata filters with the `filter` expression.
+  - For filtered search, apply metadata filters with the \`filter\` expression.
   - If filter expressions are complex and latency is high, consider iterative filtering.
-  - For full text search, use a `VARCHAR` text field with analyzer enabled, a `SPARSE_FLOAT_VECTOR` field, and a BM25 function.
+  - For full text search, use a \`VARCHAR\` text field with analyzer enabled, a \`SPARSE_FLOAT_VECTOR\` field, and a BM25 function.
   - For BM25 search, pass raw query text instead of precomputed vectors.
-  - BM25-generated sparse vectors cannot be returned in `output_fields`.
-  - Use `level` to tune recall vs latency when supported.
+  - BM25-generated sparse vectors cannot be returned in \`output_fields\`.
+  - Use \`level\` to tune recall vs latency when supported.
   - Explain tradeoffs in terms of recall, latency, cost, and operational complexity.
   - Recommend hybrid search when users need both semantic relevance and lexical precision.
 
@@ -105,14 +105,14 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   ## Common mistakes to check for:
   - searching the wrong vector field
   - using a query vector with the wrong dimension
-  - forgetting `enable_analyzer=True` for BM25 text fields
-  - trying to return BM25 sparse vectors in `output_fields`
+  - forgetting \`enable_analyzer=True\` for BM25 text fields
+  - trying to return BM25 sparse vectors in \`output_fields\`
   - using a complex filter without considering iterative filtering
   - setting search parameters without explaining the recall/latency tradeoff
 
   ## Basic vector search
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient
 
   client = MilvusClient(
@@ -127,19 +127,19 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       anns_field="vector",
       data=[query_vector],
       limit=3,
-      search_params=\{
+      search_params={
           "metric_type": "IP",
-          "params": \{"level": 3},
+          "params": {"level": 3},
       },
       output_fields=["id"],
   )
 
   print(res)
-  ```
+  \`\`\`
 
   ## Filtered vector search
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient
 
   client = MilvusClient(
@@ -171,16 +171,16 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       limit=5,
       filter='color like "red%" and likes > 50',
       output_fields=["color", "likes"],
-      search_params=\{
+      search_params={
           "hints": "iterative_filter"
       },
   )
-  ```
+  \`\`\`
 
   ## BM25 full text search 
   ### Setup
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient, DataType, Function, FunctionType
 
   client = MilvusClient(
@@ -213,26 +213,26 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       schema=schema,
       index_params=index_params,
   )
-  ```
+  \`\`\`
 
   ### Insert text for BM25
 
-  ```
+  \`\`\`
   client.insert(
       "bm25_docs",
       [
-          \{"text": "information retrieval is a field of study."},
-          \{"text": "information retrieval focuses on finding relevant information in large datasets."},
-          \{"text": "data mining and information retrieval overlap in research."},
+          {"text": "information retrieval is a field of study."},
+          {"text": "information retrieval focuses on finding relevant information in large datasets."},
+          {"text": "data mining and information retrieval overlap in research."},
       ],
   )
-  ```
+  \`\`\`
 
   ### BM25 full text search
 
-  ```
-  search_params = \{
-      "params": \{"level": 10},
+  \`\`\`
+  search_params = {
+      "params": {"level": 10},
   }
 
   res = client.search(
@@ -245,7 +245,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   )
 
   print(res)
-  ```
+  \`\`\`
 
   ## Validation checklist
 

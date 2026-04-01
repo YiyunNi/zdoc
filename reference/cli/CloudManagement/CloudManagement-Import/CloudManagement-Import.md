@@ -12,10 +12,10 @@ token: DTaCf9lEKlW82HdbjMMcMTR0nYF
 sidebar_position: 4
 sidebar_label: "Import"
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - Vector Dimension
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
   - zilliz
   - zilliz cloud
   - cloud

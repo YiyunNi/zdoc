@@ -12,10 +12,10 @@ token: PXh2fHhrulidp6dvqn2cORWSnwe
 sidebar_position: 2
 sidebar_label: "Auth"
 keywords: 
-  - llm-as-a-judge
-  - hybrid vector search
-  - Video deduplication
-  - Video similarity search
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud

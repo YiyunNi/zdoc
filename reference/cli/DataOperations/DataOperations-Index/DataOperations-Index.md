@@ -12,10 +12,10 @@ token: SSAIfziL4leZFodS2geclHkLn9f
 sidebar_position: 4
 sidebar_label: "Index"
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

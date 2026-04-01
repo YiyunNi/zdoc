@@ -12,10 +12,10 @@ token: ZgAkf2bMOligiLdACQrcEBgpn7b
 sidebar_position: 3
 sidebar_label: "Cluster"
 keywords: 
-  - vector database example
-  - rag vector database
-  - what is vector db
-  - what are vector databases
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud

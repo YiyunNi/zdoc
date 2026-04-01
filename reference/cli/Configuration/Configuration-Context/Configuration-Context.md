@@ -12,10 +12,10 @@ token: XwnjfvziYljpWjdb1IacbEnVnhb
 sidebar_position: 5
 sidebar_label: "Context"
 keywords: 
-  - NLP
-  - Neural Network
-  - Deep Learning
-  - Knowledge base
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

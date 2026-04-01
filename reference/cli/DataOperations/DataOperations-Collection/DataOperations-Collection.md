@@ -12,10 +12,10 @@ token: OGWXfrqcVlYSC9da251c3WT9nXe
 sidebar_position: 2
 sidebar_label: "Collection"
 keywords: 
-  - cosine distance
-  - what is a vector database
-  - vectordb
-  - multimodal vector database retrieval
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
+  - how does milvus work
   - zilliz
   - zilliz cloud
   - cloud

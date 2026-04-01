@@ -12,10 +12,10 @@ token: NCdLfrAg5lUS2DdG0QOcGGMFnHh
 sidebar_position: 3
 sidebar_label: "Data Operations"
 keywords: 
+  - open source vector database
+  - Vector index
   - vector database open source
   - open source vector db
-  - vector database example
-  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud

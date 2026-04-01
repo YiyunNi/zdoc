@@ -12,10 +12,10 @@ token: Wqpcf6ygDlCZofdoUszcZNfxn5g
 sidebar_position: 4
 sidebar_label: "Configure"
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud

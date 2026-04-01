@@ -12,10 +12,10 @@ token: BVzmfEnBBlvSvXd5k5ScIQQPnOw
 sidebar_position: 6
 sidebar_label: "Role"
 keywords: 
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
+  - Multimodal search
+  - vector search algorithms
+  - Question answering system
+  - llm-as-a-judge
   - zilliz
   - zilliz cloud
   - cloud

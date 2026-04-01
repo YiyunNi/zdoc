@@ -118,7 +118,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ### Dense vector retrieval schema
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient, DataType
 
   client = MilvusClient(
@@ -174,7 +174,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ### Hybrid search schema with BM25
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient, DataType, Function, FunctionType
 
   client = MilvusClient(
@@ -238,7 +238,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ### Schema with multiple vector fields
 
-  ```
+  \`\`\`
   from pymilvus import DataType
 
   schema = client.create_schema(auto_id=False, enable_dynamic_field=True)
@@ -259,14 +259,14 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       index_type="AUTOINDEX",
       metric_type="COSINE",
   )
-  ```
+  \`\`\`
   ### Insert example matching the schema
 
-  ```
+  \`\`\`
   client.insert(
       collection_name="documents",
       data=[
-          \{
+          {
               "id": "doc-1",
               "tenant_id": "acme",
               "title": "Getting Started",
@@ -274,7 +274,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
               "embedding": [0.01] * 1536,
               "source": "docs",  # stored in dynamic field because enable_dynamic_field=True
           },
-          \{
+          {
               "id": "doc-2",
               "tenant_id": "acme",
               "title": "Billing FAQ",
@@ -284,7 +284,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
           },
       ],
   )
-  ```
+  \`\`\`
 
   ## Validation checklist
 

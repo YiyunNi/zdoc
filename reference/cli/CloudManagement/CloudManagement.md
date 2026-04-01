@@ -12,10 +12,10 @@ token: XxzIf86n5lHZJPdaeTqcRm6Gnhe
 sidebar_position: 1
 sidebar_label: "Cloud Management"
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - vector database open source
+  - open source vector db
+  - vector database example
+  - rag vector database
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ token: BYCBfRYr4lcSD2dra3NcFxronVd
 sidebar_position: 5
 sidebar_label: "Job"
 keywords: 
-  - Pinecone vector database
-  - Audio search
-  - what is semantic search
-  - Embedding model
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

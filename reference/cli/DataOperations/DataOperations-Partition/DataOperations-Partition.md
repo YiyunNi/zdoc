@@ -12,10 +12,10 @@ token: Vh1yfsLKOliEvPdk4hzc9EdSncj
 sidebar_position: 5
 sidebar_label: "Partition"
 keywords: 
-  - vector database
-  - IVF
-  - knn
-  - Image Search
+  - nearest neighbor search
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
   - zilliz
   - zilliz cloud
   - cloud

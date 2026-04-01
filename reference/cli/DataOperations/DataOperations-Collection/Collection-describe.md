@@ -12,10 +12,10 @@ type: docx
 token: WlZmd3WDBod9ITxabYocPQuYn0e
 sidebar_position: 3
 keywords: 
-  - private llms
-  - nn search
   - llm eval
   - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - cliv01
 displayed_sidebar: cliSidebar
 
-displayed_sidbar: cliSidebar
 ---
 
 import Admonition from '@theme/Admonition';

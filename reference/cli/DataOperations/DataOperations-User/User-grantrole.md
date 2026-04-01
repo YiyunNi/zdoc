@@ -12,10 +12,10 @@ type: docx
 token: Fz3JdZ0rSoNxuDxvR0TcIXl5nhh
 sidebar_position: 4
 keywords: 
+  - sentence transformers
+  - Recommender systems
   - information retrieval
   - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - cliv01
 displayed_sidebar: cliSidebar
 
-displayed_sidbar: cliSidebar
 ---
 
 import Admonition from '@theme/Admonition';

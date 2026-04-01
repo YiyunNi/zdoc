@@ -12,10 +12,10 @@ token: WTZ1fyvHZlctXqdIbubcF8jCndf
 sidebar_position: 7
 sidebar_label: "Volume"
 keywords: 
-  - private llms
-  - nn search
-  - llm eval
-  - Sparse vs Dense
+  - information retrieval
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
   - zilliz
   - zilliz cloud
   - cloud

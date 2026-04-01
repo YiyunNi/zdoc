@@ -12,10 +12,10 @@ token: Q8jzfSMtAlSUEYd8Ilfc2NP2nQd
 sidebar_position: 1
 sidebar_label: "Backup"
 keywords: 
-  - llm eval
-  - Sparse vs Dense
-  - Dense vector
-  - Hierarchical Navigable Small Worlds
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
+  - Managed vector database
   - zilliz
   - zilliz cloud
   - cloud

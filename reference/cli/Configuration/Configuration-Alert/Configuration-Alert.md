@@ -12,10 +12,10 @@ token: KckdfroNnlfPlZd6GLuc2Zsrnqh
 sidebar_position: 1
 sidebar_label: "Alert"
 keywords: 
-  - what is semantic search
-  - Embedding model
-  - image similarity search
-  - Context Window
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud

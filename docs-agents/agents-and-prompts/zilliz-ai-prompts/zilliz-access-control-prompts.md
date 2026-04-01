@@ -76,7 +76,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   - Control plane access is typically authenticated with API keys.
   - Data plane access can use API keys or username:password.
   - Cluster users and cluster roles are available only for Dedicated clusters.
-  - Each cluster has a default `db_admin` user that cannot be dropped.
+  - Each cluster has a default \`db_admin\` user that cannot be dropped.
   - Cluster roles can be built-in or custom.
   - Built-in cluster roles cannot be edited or deleted.
   - Project and cluster access should follow least privilege.
@@ -104,7 +104,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   - granting Organization Owner when Project Admin is enough
   - using a personal API key for production service access
   - assuming cluster users exist on Free or Serverless
-  - forgetting that `db_admin` cannot be deleted
+  - forgetting that \`db_admin\` cannot be deleted
   - granting project-wide access when cluster-specific access is enough
   - assuming cluster-level privileges cascade automatically across databases and collections
   - removing or rotating a key without checking which services depend on it

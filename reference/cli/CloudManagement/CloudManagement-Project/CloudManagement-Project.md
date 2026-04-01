@@ -12,10 +12,10 @@ token: RWFvfrzqEl1BB3d3rkgctazrnqb
 sidebar_position: 6
 sidebar_label: "Project"
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
+  - Audio similarity search
   - zilliz
   - zilliz cloud
   - cloud

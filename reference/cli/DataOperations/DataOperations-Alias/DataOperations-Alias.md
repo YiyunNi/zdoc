@@ -12,10 +12,10 @@ token: PNMKfl6RdlfEzzdg6zycDTQHnGw
 sidebar_position: 1
 sidebar_label: "Alias"
 keywords: 
-  - Multimodal search
-  - vector search algorithms
-  - Question answering system
-  - llm-as-a-judge
+  - LLMs
+  - Machine Learning
+  - RAG
+  - NLP
   - zilliz
   - zilliz cloud
   - cloud

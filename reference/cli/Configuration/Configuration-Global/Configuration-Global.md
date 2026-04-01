@@ -12,10 +12,10 @@ token: HQ85fH0pflAopvdTHUWc1hhHnzc
 sidebar_position: 6
 sidebar_label: "Global"
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud

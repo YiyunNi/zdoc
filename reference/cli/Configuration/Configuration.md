@@ -12,10 +12,10 @@ token: FsZhfuntQlHRRQdBeXEcosCEnzf
 sidebar_position: 2
 sidebar_label: "Configuration"
 keywords: 
-  - nlp search
-  - hallucinations llm
-  - Multimodal search
-  - vector search algorithms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ type: docx
 token: YVendfgHUotdoxxNTkcc8XUMnxf
 sidebar_position: 3
 keywords: 
-  - hnsw algorithm
   - vector similarity search
   - approximate nearest neighbor search
   - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - cliv01
 displayed_sidebar: cliSidebar
 
-displayed_sidbar: cliSidebar
 ---
 
 import Admonition from '@theme/Admonition';
