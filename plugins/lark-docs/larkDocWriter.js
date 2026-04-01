@@ -591,6 +591,8 @@ class larkDocWriter {
 
         if (displayed_sidebar === 'default') {
             displayed_sidebar = ''
+        } else if (displayed_sidebar === 'agentsSidebar' ) {
+            displayed_sidebar = `displayed_sidebar: ${displayed_sidebar}\n`
         } else {
             slug = `${displayed_sidebar.replace('Sidebar', '').trim()}/${slug}`
             displayed_sidebar = `displayed_sidebar: ${displayed_sidebar}\n`
