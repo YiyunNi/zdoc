@@ -42,26 +42,16 @@ const guides : Manual = {
     }
 }
 
-const guidesJapanese : Manual = {
-    root: 'KSvxw0h8LiXtIdkpAnCcrl7cnio',
-    base: 'LkxfbrY6sa5jQ4sHquEcMqOsnCe',
+const agents: Manual = {
+    root: 'R8ZwwvHrJivIAyk8JkQchM0Anng',
+    base: 'YxSibAMZ4aDqhjs5Ru4clmrun4f',
     sourceType: 'wiki',
-    displayedSidebar: 'default',
-    docSourceDir: './plugins/lark-docs/meta/sources/guidesJapanese',
+    displayedSidebar: 'agentsSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/agents-and-prompts',
     targets: {
-        milvus: {
-            outputDir: 'milvus/guides/docs',
-            imageDir: 'milvus/guides/images'
-        },
         zilliz: {
-            saas: {
-                outputDir: 'i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials',
-                imageDir: 'static/img',
-            },
-            paas: {
-                outputDir: 'i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials',
-                imageDir: 'static/img'
-            } 
+            outputDir: 'docs-agents',
+            imageDir: 'static/img',
         }
     }
 }
@@ -332,9 +322,26 @@ const gov226 : Manual = {
     }
 }
 
+// cli =================================
+
+const cliv01 : Manual = {
+    root: 'PPuBfnEIWltim9dw8hxcC3EDnwb',
+    base: 'OAK4bJaNuac501sX6Y1cS3OGnzf',
+    sourceType: 'drive',
+    version: '0.1.x',
+    displayedSidebar: 'cliSidebar',
+    docSourceDir: './plugins/lark-docs/meta/sources/cli',
+    targets: {
+        zilliz: {
+            outputDir: 'reference/cli',
+            imageDir: 'static/img',
+        }
+    }
+}
+
 export default {
     guides,
-    guidesJapanese,
+    agents,
     python,
     pymilvus25,
     pymilvus26,
@@ -347,5 +354,6 @@ export default {
     nodejs26,
     gov1,
     gov2,
-    gov226
+    gov226,
+    cliv01
 }

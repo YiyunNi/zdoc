@@ -109,6 +109,18 @@ const config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'agents',
+        path: 'docs-agents',
+        routeBasePath: 'docs/agents',
+        sidebarPath: require.resolve('./sidebarsAgents.js'),
+        breadcrumbs: false,
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      }
+    ],
+    [
       '@inkeep/cxkit-docusaurus', { 
         SearchBar: {
           baseSettings: {
@@ -274,6 +286,21 @@ const config = {
           },
           {
             type: 'dropdown',
+            label: 'Agents & CLI',
+            position: 'left',
+            items: [
+              {
+                label: 'Agent & Prompts',
+                to: '/docs/agents/agents-and-prompts',
+              },
+              {
+                label: 'Zilliz CLI',
+                to: '/reference/zilliz-cli',
+              },
+            ]
+          },
+          {
+            type: 'dropdown',
             label: 'Releases',
             position: 'left',
             items: [
@@ -287,18 +314,6 @@ const config = {
               }
             ],
           },
-          {
-            href: 'https://zilliz.com/use-cases',
-            label: 'Use Cases',
-            position: 'left',
-            className: 'header-link',
-          },
-          {
-            href: 'https://zilliz.com/pricing',
-            label: 'Pricing',
-            position: 'left',
-            className: 'header-link',
-          }
         ],
       },
       footer: {
