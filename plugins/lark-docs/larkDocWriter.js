@@ -1300,7 +1300,7 @@ class larkDocWriter {
     }
 
     __code_block_split(elements, indent, lang, position, values=null) {
-        elements = elements.split('\n');
+        elements = elements.split('\n').map(line => line.replaceAll('`', '\\`'));
         var divider = elements.indexOf(elements.filter(x => x.match(/^[#\/]\/* ==*/))[0]);
         var tab_item_start = `${' '.repeat(indent)}<TabItem value='${lang.toLowerCase()}'>\n`;
         var tab_item_end = `${' '.repeat(indent)}</TabItem>`

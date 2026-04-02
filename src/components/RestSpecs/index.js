@@ -262,7 +262,7 @@ const Tab = ({ name, id, content, lang, target, selected, setSelected, optionVal
             <div className={styles.tabPanel}>
                 { content?.type === 'object' && <Properties description={translatedDescription} properties={content.properties} requiredFields={content.required} lang={lang} target={target} /> }
                 { content?.type === 'array' && <Items description={translatedDescription} obj={content.items} required={content.items.required} lang={lang} target={target} /> }
-                { content?.type === 'string' || content?.type === 'number' || content?.type === 'integer' || content?.type === 'boolean' && <Primitive obj={{...content, description: translatedDescription}} lang={lang} target={target} /> }
+                { (content?.type === 'string' || content?.type === 'number' || content?.type === 'integer' || content?.type === 'boolean') && <Primitive obj={{...content, description: translatedDescription}} lang={lang} target={target} /> }
                 { content?.type === 'code' && <CodeBlock className="language-json" children={JSON.stringify(content.value, null, 4)} /> }
                 { content?.type === 'reqs' && <CodeBlock className="language-bash" children={content.value} /> }
             </div>
@@ -542,16 +542,16 @@ export default function RestSpecs(props) {
     return (
         <>
             <div>
-                <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: '60% 40%' }}>
+                <div className={styles.specLayout}>
                     <div>
                         <div style={{ marginBottom: '1rem' }} dangerouslySetInnerHTML={{__html: short}} />
-                        <RestHeader 
+                        <RestHeader
                             method={props.method}
                             endpoint={props.endpoint}
                         />
                     </div>
                 </div>
-                <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: '60% 40%' }}>
+                <div className={styles.specLayout}>
                     <BaseURL endpoint={props.endpoint} lang={lang} target={target} />
                     { (parameters.length > 0 || requestBody) && <>
                         <section>
@@ -662,7 +662,7 @@ export default function RestSpecs(props) {
                     </>}
                 </div>
                 
-                { responses && <div  style={{ display: 'grid', gap: '2rem', gridTemplateColumns: '60% 40%' }}>
+                { responses && <div className={styles.specLayout}>
                     <section>
                         <div className={styles.sectionHeader} style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
                             <span>{i18n[lang]['section.responses']}</span>

@@ -73,8 +73,8 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   - To connect to a cluster, use the cluster endpoint from the Zilliz Cloud console.
   - Authenticate with either:
     - an API key, or
-    - cluster credentials in the form `username:password`
-  - The default cluster user is `db_admin`.
+    - cluster credentials in the form \`username:password\`
+  - The default cluster user is \`db_admin\`.
   - The initial cluster password is shown only once during cluster creation, so tell me to save it if I have not done so.
   - Separate connection setup from data operations.
   - If I mention REST, explain that REST can call APIs but does not create a persistent SDK connection.
@@ -95,7 +95,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ## Common mistakes to check for:
   - wrong endpoint
-  - missing `https://`
+  - missing \`https://\`
   - wrong token format
   - using the wrong SDK version for the cluster
   - forgetting that the cluster password was only shown once
@@ -103,7 +103,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ## Python example with API key
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient
 
   client = MilvusClient(
@@ -112,11 +112,11 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   )
 
   print(client.list_collections())
-  ```
+  \`\`\`
 
   ## Python example with cluster credentials
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient
 
   client = MilvusClient(
@@ -128,7 +128,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ## Node.js example
 
-  ```
+  \`\`\`
   const { MilvusClient } = require("@zilliz/milvus2-sdk-node");
 
   const client = new MilvusClient({
@@ -142,10 +142,10 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   }
 
   main().catch(console.error);
-  ```
+  \`\`\`
   
   ## Java example
-  ```
+  \`\`\`
   import io.milvus.v2.client.MilvusClientV2;
   import io.milvus.v2.client.ConnectConfig;
 
@@ -159,7 +159,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       .build();
 
   MilvusClientV2 client = new MilvusClientV2(connectConfig);
-```
+\`\`\`
 
   ## Cluster credentials format
 

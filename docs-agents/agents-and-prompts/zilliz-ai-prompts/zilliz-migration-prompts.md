@@ -122,14 +122,14 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   ## Example Code
   ### Migrate from Milvus via backup tool
   Step 1: Install the backup tool                                                                                                                                                                           
-  ```                                                                                                                                                                                                         
+  \`\`\`                                                                                                                                                                                                         
   # Download the latest release                                                                                                                                                                             
   wget https://github.com/zilliztech/milvus-backup/releases/latest/download/milvus-backup_Linux_x86_64.tar.gz
   tar -xzf milvus-backup_Linux_x86_64.tar.gz                                                                                                                                                                
   chmod +x milvus-backup   
-  ```                                                                                                                                                                                                                                                                                                                                                                                         
+  \`\`\`                                                                                                                                                                                                                                                                                                                                                                                         
   Step 2: Configure source Milvus (backup.yaml)                                                                                                                                                             
-  ```                
+  \`\`\`                
   # backup.yaml
   milvus:
     address: localhost                                                                                                                                                                                      
@@ -153,9 +153,9 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
     maxSegmentGroupSize: 2G
     backupBucketName: milvus-bucket                                                                                                                                                                         
     backupRootPath: backup                                                                                                                                                                                  
-  ```                                                                                                                                                                                                          
+  \`\`\`                                                                                                                                                                                                          
   Step 3: Create backup from source Milvus                                                                                                                                                                  
-  ```                
+  \`\`\`                
   # Backup a specific collection
   ./milvus-backup create \                                                                                                                                                                                  
     --name my_backup \                                                                                                                                                                                      
@@ -169,16 +169,16 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   # List backups                                                                                                                                                                                            
   ./milvus-backup list --config backup.yaml
-  ```                                                                                                                                                                                                          
+  \`\`\`                                                                                                                                                                                                          
   Step 4: Copy backup files to Zilliz Cloud accessible storage
-  ```
+  \`\`\`
   # Copy backup from source MinIO/S3 to your S3 bucket
   aws s3 sync \                                                                                                                                                                                             
     s3://milvus-bucket/backup/my_backup/ \
     s3://my-migration-bucket/backup/my_backup/                                                                                                                                                              
-  ```                                                                                                                                                                                                          
+  \`\`\`                                                                                                                                                                                                          
   Step 5: Configure target Zilliz Cloud (restore.yaml)                                                                                                                                                      
-  ```                                                                                                                                                                                                          
+  \`\`\`                                                                                                                                                                                                          
   # restore.yaml  
   milvus:
     address: YOUR_ZILLIZ_CLOUD_ENDPOINT  # e.g., in01-xxx.aws-us-west-2.vectordb.zillizcloud.com
@@ -203,9 +203,9 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
     maxSegmentGroupSize: 2G
     backupBucketName: my-migration-bucket
     backupRootPath: backup                                                                                                                                                                                  
-  ``` 
+  \`\`\` 
   Step 6: Restore to Zilliz Cloud                                                                                                                                                                           
-  ```                
+  \`\`\`                
   # Restore specific collection                                                                                                                                                                             
   ./milvus-backup restore \
     --name my_backup \                                                                                                                                                                                      
@@ -223,9 +223,9 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   ./milvus-backup restore \                                                                                                                                                                                 
     --name full_backup \
     --config restore.yaml
-  ```
+  \`\`\`
   Step 7: Validate in Python                                                                                                                                                                                
-  ``` 
+  \`\`\` 
   from pymilvus import MilvusClient                                                                                                                                                                         
                                                                                                                                                                                                             
   client = MilvusClient(
@@ -250,7 +250,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       output_fields=["text"],                                                                                                                                                                               
   )                                                                                                                                                                                                         
   print(res)                                                                                                                                                                                                
-  ```                
+  \`\`\`                
     
   ## Source-specific guidance the AI should apply
 

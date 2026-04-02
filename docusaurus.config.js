@@ -2,7 +2,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import larkDocsConfig from './config/lark-docs.config';
-import { tutorialsItemsGenerator, ReferenceItemsGenerator } from './config/sidebar-generators';
+import { tutorialsItemsGenerator, ReferenceItemsGenerator, AgentsItemsGenerator } from './config/sidebar-generators';
 import i18nTranslatorConfig from './config/i18n-translator.config';
 
 import 'dotenv/config';
@@ -100,7 +100,7 @@ const config = {
       {
         id: 'reference',
         path: 'reference',
-        breadcrumbs: true,
+        breadcrumbs: false,
         routeBasePath: 'reference',
         sidebarPath: require.resolve('./sidebarsReference.js'),
         remarkPlugins: [remarkMath],
@@ -118,6 +118,7 @@ const config = {
         breadcrumbs: false,
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
+        sidebarItemsGenerator: AgentsItemsGenerator,
       }
     ],
     [
@@ -161,13 +162,15 @@ const config = {
         outputDir: 'llms',
         outputPaths: ['llms.txt', 'docs/llms.txt'],
         sources: [
-          { folder: 'docs/tutorials',                           route: '/docs',             outputFile: 'tutorials', label: 'Tutorials' },
-          { folder: 'versioned_docs/version-byoc/tutorials',    route: '/docs/byoc',        outputFile: 'byoc',      label: 'BYOC Tutorials' },
+          { folder: 'docs/tutorials',                           route: '/docs',              outputFile: 'tutorials', label: 'Tutorials' },
+          { folder: 'versioned_docs/version-byoc/tutorials',    route: '/docs/byoc',         outputFile: 'byoc',      label: 'BYOC Tutorials' },
+          { folder: 'docs-agents/agents-and-prompts',           route: '/docs/agents',       outputFile: 'agents',    label: 'Agents & Prompts' },
           { folder: 'reference/api/python/python',              route: '/reference/python',  outputFile: 'python',    label: 'Python SDK Reference',  optional: true },
           { folder: 'reference/api/go/go',                      route: '/reference/go',      outputFile: 'go',        label: 'Go SDK Reference',      optional: true },
           { folder: 'reference/api/java/java',                  route: '/reference/java',    outputFile: 'java',      label: 'Java SDK Reference',    optional: true },
           { folder: 'reference/api/nodejs/nodejs',              route: '/reference/nodejs',  outputFile: 'nodejs',    label: 'Node.js SDK Reference', optional: true },
           { folder: 'reference/api/restful/restful',            route: '/reference/restful', outputFile: 'restful',   label: 'RESTful API Reference', optional: true },
+          { folder: 'reference/cli/cli',                        route: '/reference/cli',     outputFile: 'cli',       label: 'CLI Reference',         optional: true },
         ],
       },
     ],
@@ -195,7 +198,9 @@ const config = {
           { folder: 'versioned_docs/version-byoc/tutorials', route: '/docs/byoc' },
           { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/current/tutorials', route: '/ja-JP/docs' },
           { folder: 'i18n/ja-JP/docusaurus-plugin-content-docs/version-byoc/tutorials', route: '/ja-JP/docs/byoc' },
-          { folder: 'reference/api', route: '/reference' }
+          { folder: 'reference/api', route: '/reference' },
+          { folder: 'reference/cli', route: '/reference' },
+          { folder: 'docs-agents/agents-and-prompts', route: '/docs/agents' },
         ]
       }
     ],
@@ -288,6 +293,7 @@ const config = {
             type: 'dropdown',
             label: 'Agents & CLI',
             position: 'left',
+            className: 'navbar__item--new-badge',
             items: [
               {
                 label: 'Agent & Prompts',
@@ -295,7 +301,7 @@ const config = {
               },
               {
                 label: 'Zilliz CLI',
-                to: '/reference/zilliz-cli',
+                to: '/reference/cli/overview',
               },
             ]
           },

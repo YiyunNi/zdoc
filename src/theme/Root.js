@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { InkeepChatButton } from '@inkeep/cxkit-react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { inkeepSettings } from '../../config/inkeep.config';
@@ -23,6 +23,18 @@ function ChatButton() {
 }
 
 export default function Root({ children }) {
+  useEffect(() => {
+    const badge = document.querySelector('.navbar__item--new-badge');
+    if (!badge) return;
+
+    const handleClick = () => {
+      badge.classList.add('badge-dismissed');
+    };
+
+    badge.addEventListener('click', handleClick);
+    return () => badge.removeEventListener('click', handleClick);
+  }, []);
+
   return (
     <>
       <div

@@ -330,10 +330,10 @@ const cliv01 : Manual = {
     sourceType: 'drive',
     version: '0.1.x',
     displayedSidebar: 'cliSidebar',
-    docSourceDir: './plugins/lark-docs/meta/sources/cli',
+    docSourceDir: './plugins/lark-docs/meta/sources/cli/v0.1.x',
     targets: {
         zilliz: {
-            outputDir: 'reference/cli',
+            outputDir: 'reference/cli/cli',
             imageDir: 'static/img',
         }
     }

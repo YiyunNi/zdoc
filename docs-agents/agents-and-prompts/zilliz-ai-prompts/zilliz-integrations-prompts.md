@@ -82,7 +82,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   - Local BM25, hybrid rankers, and rule-based rankers do not require a model provider integration.
   - Creating a model provider integration does not itself incur charges, but executing model-based functions can create provider and data transfer costs.
   - Datadog integration is available only for Dedicated clusters in an Enterprise project.
-  - Some integrations are configured in the console first, then referenced in code by `integration_id`.
+  - Some integrations are configured in the console first, then referenced in code by \`integration_id\`.
   - If an integration becomes invalid or is removed, dependent functions or searches may fail.
 
   ## You should also scan the contents in https://zilliz.com/product/integrations.
@@ -106,7 +106,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   ## Common mistakes to check for:
   - using the wrong cluster endpoint
   - wrong token format
-  - forgetting to create the model provider integration before using `integration_id`
+  - forgetting to create the model provider integration before using \`integration_id\`
   - mismatching vector dimension with the embedding model output
   - assuming Datadog is available on non-Enterprise Dedicated projects
   - removing an integration that is still referenced by collections or search code
@@ -115,13 +115,13 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
 
   ### LangChain with Zilliz Cloud
 
-  ```
+  \`\`\`
   from langchain_openai import OpenAIEmbeddings
   from langchain_milvus import Milvus
 
   vectorstore = Milvus(
       embedding_function=OpenAIEmbeddings(model="text-embedding-3-small"),
-      connection_args=\{
+      connection_args={
           "uri": "https://YOUR_CLUSTER_ENDPOINT",
           "token": "YOUR_ZILLIZ_CLOUD_API_KEY",
       },
@@ -136,11 +136,11 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   results = vectorstore.similarity_search("How does LangChain use Zilliz Cloud?", k=2)
   for doc in results:
       print(doc.page_content)
-  ```
+  \`\`\`
 
   ### OpenAI model provider embedding function
 
-  ```
+  \`\`\`
   from pymilvus import MilvusClient, DataType, Function, FunctionType
 
   client = MilvusClient(
@@ -158,7 +158,7 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       function_type=FunctionType.TEXTEMBEDDING,
       input_field_names=["document"],
       output_field_names=["dense"],
-      params=\{
+      params={
           "provider": "openai",
           "model_name": "text-embedding-3-small",
           "integration_id": "YOUR_INTEGRATION_ID",
@@ -183,15 +183,15 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   client.insert(
       collection_name="openai_docs",
       data=[
-          \{"id": 1, "document": "Zilliz Cloud supports text embedding functions."},
-          \{"id": 2, "document": "Model provider integrations are configured in the console."},
+          {"id": 1, "document": "Zilliz Cloud supports text embedding functions."},
+          {"id": 2, "document": "Model provider integrations are configured in the console."},
       ],
   )
-  ```
+  \`\`\`
 
   ### Voyage AI embedding function
 
-  ```
+  \`\`\`
   from pymilvus import Function, FunctionType
 
   voyage_func = Function(
@@ -199,24 +199,24 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
       function_type=FunctionType.TEXTEMBEDDING,
       input_field_names=["document"],
       output_field_names=["dense"],
-      params=\{
+      params={
           "provider": "voyageai",
           "model_name": "voyage-3-large",
           "integration_id": "YOUR_INTEGRATION_ID",
       },
   )
-  ```
+  \`\`\`
 
   ### Cohere reranker at search time
 
-  ```
+  \`\`\`
   from pymilvus import Function, FunctionType
 
   cohere_ranker = Function(
       name="cohere_semantic_ranker",
       input_field_names=["document"],
       function_type=FunctionType.RERANK,
-      params=\{
+      params={
           "reranker": "model",
           "provider": "cohere",
           "model_name": "rerank-english-v3.0",
@@ -235,11 +235,11 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   )
 
   print(results)
-  ```
+  \`\`\`
 
   ### Local embedding with PyMilvus model helper
 
-  ```
+  \`\`\`
   from pymilvus import model
 
   openai_ef = model.dense.OpenAIEmbeddingFunction(
@@ -254,14 +254,14 @@ Save the Zilliz Cloud prompt to a file in your repo, then include it in your AI 
   ])
 
   print(len(vectors), len(vectors[0]))
-  ```
+  \`\`\`
 
   ## Verification checklist
 
   After setup, verify:
   - the cluster connection works
   - the integration status is valid in the Zilliz Cloud console
-  - the `integration_id` matches the provider you intended to use
+  - the \`integration_id\` matches the provider you intended to use
   - the vector dimension matches the model output
   - insert or search succeeds end to end
 ```

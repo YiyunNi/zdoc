@@ -533,6 +533,47 @@ pre {
    MOBILE IMPROVEMENTS
    ============================================ */
 
+/* ============================================
+   NEW BADGE FOR NAVBAR ITEMS
+   ============================================ */
+
+.navbar__link.navbar__item--new-badge {
+  position: relative;
+}
+
+/* Badge on the parent div wrapper to preserve the caret on the link */
+.navbar__item.dropdown:has(.navbar__item--new-badge)::after {
+  content: 'NEW';
+  position: absolute;
+  top: -2px;
+  right: 0px;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  line-height: 1;
+  padding: 2px 4px;
+  color: #fff;
+  background-color: var(--ifm-color-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 2px;
+  animation: badge-bounce-super 2s ease-in-out infinite;
+}
+
+.navbar__item.dropdown:has(.navbar__item--new-badge.badge-dismissed)::after {
+  display: none;
+}
+
+@keyframes badge-bounce-super {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 @media (max-width: 996px) {
   /* Minimum 44px touch targets for interactive elements */
   .menu__link {

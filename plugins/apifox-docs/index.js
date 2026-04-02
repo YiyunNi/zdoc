@@ -26,7 +26,12 @@ module.exports = function (context, options) {
                         console.log('Please provide specifications')
                         return
                     } else {
-                        specifications = JSON.parse(fs.readFileSync(opts.specifications, 'utf-8'))
+                        try {
+                            specifications = JSON.parse(fs.readFileSync(opts.specifications, 'utf-8'))
+                        } catch (err) {
+                            console.error(`Failed to read OpenAPI spec from "${opts.specifications}": ${err.message}`)
+                            return
+                        }
                     }
 
                     if (opts.lang === 'zh-CN' && opts.strings === undefined) {
@@ -35,7 +40,12 @@ module.exports = function (context, options) {
                     } 
 
                     if (opts.lang === 'zh-CN') {
-                        strings = fs.readFileSync(opts.strings, 'utf-8').split('\n')
+                        try {
+                            strings = fs.readFileSync(opts.strings, 'utf-8').split('\n')
+                        } catch (err) {
+                            console.error(`Failed to read localization strings from "${opts.strings}": ${err.message}`)
+                            return
+                        }
                     }
 
                     const refGen = new RefGen({

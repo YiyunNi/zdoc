@@ -46,7 +46,7 @@ export async function tutorialsItemsGenerator({
 
         if (item.label === '始める') {
             item.items = item.items.map(subItem => {
-                if (subItem.label === 'API と SDK') {
+                if (subItem.label === 'APIとSDK') {
                     subItem.items.push(...[
                         {
                             type: 'link',
@@ -111,12 +111,12 @@ export async function tutorialsItemsGenerator({
                     {
                         type: 'link',
                         label: '組織の役割',
-                        href: '/docs/organization-users#invite-a-user-to-your-organization'
+                        href: '/ja-JP/docs/organization-users#invite-a-user-to-your-organization'
                     },
                     {
                         type: 'link',
                         label: 'プロジェクトの役割',
-                        href: '/docs/project-users#invite-a-user-to-a-project'
+                        href: '/ja-JP/docs/project-users#invite-a-user-to-a-project'
                     },
                 ])
 
@@ -272,6 +272,37 @@ export async function ReferenceItemsGenerator ({
 
             return subItem;
             }) 
+        }
+
+        // cli
+        if (item.label === 'cli') {
+            item.label = 'Zilliz CLI Reference'
+            item.collapsed = false;
+
+            item.items = item.items.map(subItem => {
+                if (subItem.type === 'category') {
+                    subItem.collapsed = false;
+                    subItem.items = iterate(subItem.items)
+                }
+
+                return subItem                
+            })
+        }
+
+        return item;
+    })
+
+    return sidebarItems;
+}
+
+export async function AgentsItemsGenerator ({
+    defaultSidebarItemsGenerator, ...args
+}) {
+    var sidebarItems = defaultSidebarItemsGenerator(args)
+
+    sidebarItems = sidebarItems.map(item => {
+        if (item.type === 'category') {
+            item.collapsed = false;
         }
 
         return item;

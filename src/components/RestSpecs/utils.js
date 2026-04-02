@@ -58,7 +58,7 @@ export const textFilter =  (text, targets) => {
     const converter = new Showdown.Converter();
     text = converter.makeHtml(text);
 
-    return text
+    return text;
 }
 
 const matchFilterTags = (text) => {
@@ -100,14 +100,9 @@ const matchFilterTags = (text) => {
     return returns
 }
 
-export const getRandomString = (length) => {
-    var result = '';
-    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < length; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
+let _tabIdCounter = 0;
+export const getRandomString = () => {
+    return `tid${++_tabIdCounter}`;
 }
 
 export const chooseParamExample = (param, lang, target) => {
