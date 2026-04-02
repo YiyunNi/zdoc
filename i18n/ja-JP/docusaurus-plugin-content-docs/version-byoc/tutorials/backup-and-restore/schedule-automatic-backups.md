@@ -4,7 +4,7 @@ slug: /schedule-automatic-backups
 sidebar_label: "自動バックアップのスケジュール設定"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、クラスター全体に対して自動バックアップを有効にでき、予期せぬ問題が発生した場合でもデータ復旧を支援します。個別のコレクションに対する自動バックアップはサポートされていません。 | BYOC"
+description: "Zilliz Cloud では、クラスター全体の自動バックアップを有効にでき、予期せぬ問題が発生した場合でもデータ復旧を支援します。自動バックアップはクラスター全体に適用され、個別のコレクションの自動バックアップはサポートされていません。| BYOC"
 type: origin
 token: HDmKwGeGLi2P67kGdNXcigXDn3e
 sidebar_position: 2
@@ -85,33 +85,6 @@ curl --request POST \
     "startTime": "02:00-04:00",
     "retentionDays": 7,
     "enabled": true
-}'
-```
-
-上記のポリシーを使用して作成されたバックアップについてもクロスリージョンコピーを作成するには、以下のようにします。
-
-```bash
-curl --request POST \
---url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "frequency": "1,2,3,5",
-    "startTime": "02:00-04:00",
-    "retentionDays": 7,
-    "enabled": true,
-    "crossRegionPolicies": [
-        {
-            "regionId": "aws-us-west-2",
-            "retentionDays": 7,
-            "region": "us-west-2"
-        },
-        {
-            "regionId": "aws-us-east-1",
-            "retentionDays": 7,
-            "region": "us-east-1"
-        }
-    ]
 }'
 ```
 

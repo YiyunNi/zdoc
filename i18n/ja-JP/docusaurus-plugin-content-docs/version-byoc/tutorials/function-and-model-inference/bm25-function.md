@@ -4,7 +4,7 @@ slug: /bm25-function
 sidebar_label: "BM25 関数"
 beta: FALSE
 notebook: FALSE
-description: "BM25 関数は、生テキストを疎ベクトルに変換し、語彙的な関連性に基づいてドキュメントをスコアリングすることで、全文検索を実現します。この関数は、タームベースのマッチングと頻度を考慮した重み付けを適用し、クエリ用語に密接に一致するテキストドキュメントの効率的な検索をサポートします。| BYOC"
+description: "BM25 関数は、生のテキストを疎ベクトルに変換し、語彙的な関連性に基づいてドキュメントをスコアリングすることで、全文検索を可能にします。この関数は、クエリ用語と密接に一致するテキストドキュメントの効率的な検索をサポートするために、用語ベースのマッチングと頻度を考慮した重み付けを適用します。| BYOC"
 type: origin
 token: YbChwcPMBim5ryk1EQocEbDenDd
 sidebar_position: 2
@@ -239,8 +239,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())

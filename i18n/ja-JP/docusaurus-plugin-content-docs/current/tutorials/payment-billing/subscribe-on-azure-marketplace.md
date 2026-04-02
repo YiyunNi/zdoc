@@ -4,7 +4,7 @@ slug: /subscribe-on-azure-marketplace
 sidebar_label: "Azure Marketplace"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、サブスクリプションプロセスの手順を段階的に説明し、Azure Marketplace における Zilliz Cloud の料金条件について概説します。| Cloud"
+description: "このガイドでは、サブスクリプションプロセスのステップバイステップの説明と、Azure Marketplace における Zilliz Cloud の料金条件について解説します。| Cloud"
 type: origin
 token: LbFXwpruviFWWokwtkhcVmnhnFh
 sidebar_position: 5

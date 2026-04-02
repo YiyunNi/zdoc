@@ -472,8 +472,6 @@ schema.add_field("tenant_id", DataType.VARCHAR, max_length=128, is_partition_key
 
 - **Multi-tenant SaaS:** Using `tenant_id` as the partition key ensures each tenant's queries scan only their own data partition, significantly improving both QPS and latency.
 
-- **Time series:** Using a date field as the partition key allows queries for the most recent 7 days to automatically skip historical partitions.
-
 - **Category filtering:** Using `category` as the partition key eliminates the need to scan the full dataset when searching within a specific category.
 
 **Performance gain:** Assuming 100 tenants with evenly distributed data, using a partition key reduces the scan volume per query by approximately 99%. Even with uneven distribution, scan volume is typically reduced by 50–90%.

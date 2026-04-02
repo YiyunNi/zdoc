@@ -4,7 +4,7 @@ slug: /reranking-weighted-reranker
 sidebar_label: "Weighted Ranker"
 beta: FALSE
 notebook: FALSE
-description: "Weighted Ranker は、複数の検索パスから得られた結果に異なる重要度の重みを割り当てることで、それらをインテリジェントに統合し優先順位付けします。熟練のシェフが複数の食材を絶妙にバランスさせて完璧な料理を作り上げるのと同様に、Weighted Ranker も異なる検索結果を調整し、最も関連性の高い統合された成果を提供します。このアプローチは、複数のベクトルフィールドやモダリティにまたがって検索を行う際に理想的であり、特定のフィールドが最終的なランキングに対して他のフィールドよりも大きく貢献すべき場合に適しています。 | BYOC"
+description: "Weighted Ranker は、複数の検索パスに対して異なる重要度ウェイトを割り当てることで、結果をインテリジェントに統合し優先順位付けします。熟練のシェフが複数の食材をバランスよく調合して完璧な料理を作り上げるのと同様に、Weighted Ranker も異なる検索結果を調整し、最も関連性の高い統合された成果を提供します。このアプローチは、複数のベクトルフィールドやモダリティにまたがって検索を行う場合で、特定のフィールドが最終的なランキングにより大きく寄与すべき場合に最適です。| BYOC"
 type: origin
 token: Oyy6w5DYJiVCMYkdduEc6eD9nZg
 sidebar_position: 1
@@ -358,7 +358,10 @@ Weighted Rankerは、複数のベクトルフィールドを組み合わせた�
 from pymilvus import MilvusClient, AnnSearchRequest
 
 # Connect to Milvus server
-milvus_client = MilvusClient(uri="YOUR_CLUSTER_ENDPOINT")
+milvus_client = MilvusClient(
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
+)
 
 # Assume you have a collection setup
 
@@ -405,6 +408,7 @@ import io.milvus.v2.service.vector.request.data.FloatVec;
 
 MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
         .uri("YOUR_CLUSTER_ENDPOINT")
+        .token("YOUR_CLUSTER_TOKEN")
         .build());
         
 List<AnnSearchReq> searchRequests = new ArrayList<>();
@@ -436,7 +440,10 @@ SearchResp searchResp = client.hybridSearch(hybridSearchReq);
 ```javascript
 import { MilvusClient, FunctionType } from "@zilliz/milvus2-sdk-node";
 
-const milvusClient = new MilvusClient({ address: "YOUR_CLUSTER_ENDPOINT" });
+const milvusClient = new MilvusClient({ 
+    address: "YOUR_CLUSTER_ENDPOINT",
+    token: "YOUR_CLUSTER_TOKEN"
+});
 
 const text_search = {
   data: ["modern dining table"],

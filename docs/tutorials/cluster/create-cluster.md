@@ -288,3 +288,8 @@ Once you have added a KMS key, you can create an encrypted cluster as follows:
 
 </Procedures>
 
+## FAQ\{#faq}
+
+**Can I specify the Milvus version when creating a cluster?**
+
+No. Zilliz Cloud automatically provisions clusters on the latest supported Milvus version and keeps them up to date through managed rolling upgrades. If you need a specific version, [contact support](https://support.zilliz.com/hc/en-us/requests/new) and explain your use case.

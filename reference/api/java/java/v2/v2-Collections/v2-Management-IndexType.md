@@ -12,10 +12,10 @@ type: docx
 token: RcJhdfB29okLpcx3w8KcvcL7nU9
 sidebar_position: 36
 keywords: 
-  - natural language processing
-  - AI chatbots
-  - cosine distance
-  - what is a vector database
+  - ANN Search
+  - What are vector embeddings
+  - vector database tutorial
+  - how do vector databases work
   - zilliz
   - zilliz cloud
   - cloud

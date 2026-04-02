@@ -185,8 +185,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())
@@ -234,6 +237,12 @@ export schema='{
 
 </TabItem>
 </Tabs>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 ## (Optional) Set Index Parameters\{#optional-set-index-parameters}
 

@@ -21,7 +21,7 @@ import Admonition from '@theme/Admonition';
 
 # プロジェクトジョブの管理
 
-Zilliz Cloud は、同一プロジェクト内のすべての履歴および非同期データタスクを統合する直感的な ジョブ ページを提供します。
+Zilliz Cloud は、同一プロジェクト内のすべての履歴データタスクと非同期データタスクを統合した直感的な ジョブ ページを提供します。
 
 ## プロジェクトジョブの表示\{#view-project-jobs}
 
@@ -51,7 +51,7 @@ Zilliz Cloud は、同一プロジェクト内のすべての履歴および非�
          <td><p>バックアップファイルからクラスターを復元します</p></td>
        </tr>
        <tr>
-         <td><p>バックアップファイルからコレクションまたは複数のコレクションを復元します</p></td>
+         <td><p>バックアップファイルから 1 つまたは複数のコレクションを復元します</p></td>
        </tr>
        <tr>
          <td><p><a href="./export-backup-files">Export Backup File</a></p></td>
@@ -59,11 +59,11 @@ Zilliz Cloud は、同一プロジェクト内のすべての履歴および非�
        </tr>
        <tr>
          <td><p><a href="./migrations">Migration</a></p></td>
-         <td><p>データをクラスターに移行します。</p><ul><li><p>外部データ移行： </p><ul><li><p>Milvus から</p></li><li><p>Pinecone から</p></li><li><p>Qdrant から</p></li><li><p>Elasticsearch から</p></li><li><p>OpenSearch から</p></li><li><p>PostgreSQL から</p></li><li><p>Tencent Cloud VectorDB から</p></li></ul></li><li><p>Zilliz Cloud クラスター間移行：</p><ul><li><p>同一組織内でのクラスター間移行</p></li><li><p>組織を跨ぐクラスター間の移行</p></li></ul></li></ul></td>
+         <td><p>データをクラスターに移行します。</p><ul><li><p>Zilliz Cloud クラスター間移行：</p><ul><li><p>同一組織内でのクラスター間移行</p></li><li><p>組織を跨ぐクラスター間の移行</p></li></ul></li></ul></td>
        </tr>
        <tr>
          <td><p><a href="./data-import">Import</a></p></td>
-         <td><p>コレクションにデータをインポートします</p></td>
+         <td><p>データをコレクションにインポートします</p></td>
        </tr>
        <tr>
          <td><p><a href="./manage-collections-console#create-collection">クローン Collection</a></p></td>
@@ -101,13 +101,13 @@ Zilliz Cloud は、同一プロジェクト内のすべての履歴および非�
 
 ## ジョブ詳細の表示\{#view-job-details}
 
-ジョブの詳細を表示するには、**Actions**列にある**...**をクリックし、**View Details**を選択します。あるいは、[Describe Job](/reference/restful/describe-job-v2) API を使用してプログラム的に詳細を取得することもできます。
+ジョブの詳細を表示するには、**Actions**列の**...**をクリックし、**View Details**を選択します。あるいは、[Describe Job](/reference/restful/describe-job-v2) API を使用してプログラム的に詳細を取得することもできます。
 
 ![view_job_details](https://zdoc-images.s3.us-west-2.amazonaws.com/view_job_details.png "view_job_details")
 
 ## ジョブのキャンセル\{#cancel-job}
 
-現在、以下の種類のジョブのみが**Pending**または**進行中**の状態にある場合にキャンセルできます：
+現在、以下の種類のジョブで、ステータスが**Pending**または**進行中**の場合のみキャンセルできます：
 
 - バックアップ作成ジョブ（他のクラウドリージョンへのバックアップコピーを除く）
 
@@ -132,7 +132,7 @@ Zilliz Cloud は、同一プロジェクト内のすべての履歴および非�
 
 </Admonition>
 
-失敗したインポートジョブについては、ステータスの横にある情報アイコンをクリックし、そのジョブが失敗した理由を確認できます。
+失敗したインポートジョブについては、ステータスの横にある情報アイコンをクリックして、ジョブが失敗した理由を確認できます。
 
 インポートに失敗したファイルに対して調整を行った場合、そのジョブを再試行できます。
 

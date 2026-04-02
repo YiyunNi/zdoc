@@ -4,7 +4,7 @@ slug: /index-scalar-fields
 sidebar_label: "スカラーインデックス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud は、スカラーフィールド（非ベクトルフィールド）でのインデックス作成をサポートしており、特に大規模なデータセットにおいてフィルタリングと検索のパフォーマンスを大幅に向上させます。| BYOC"
+description: "Zilliz Cloud は、スカラーフィールド（非ベクトルフィールド）のインデックス作成をサポートしており、特に大規模なデータセットにおいてフィルタリングと検索のパフォーマンスを大幅に向上させます。| BYOC"
 type: origin
 token: XCCwwOLqKi2nYGkfy5Gc0Vnfnpb
 sidebar_position: 2
@@ -28,14 +28,14 @@ Zilliz Cloud は、スカラーフィールド（非ベクトルフィールド�
 
 ## 概要\{#overview}
 
-スカラーフィールドのインデックス作成は必須ではありませんが、特定のスカラフィールドをフィルタ条件で頻繁にアクセスする場合は推奨されます。
+スカラーフィールドのインデックス作成は任意ですが、フィルタ条件で特定のスカラフィールドに頻繁にアクセスする場合は推奨されます。
 
 Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` をサポートしています：
 
 <table>
    <tr>
      <th><p>フィールドタイプ</p></th>
-     <th><p>AUTOINDEX の解決結果</p></th>
+     <th><p>AUTOINDEX の解決先</p></th>
      <th><p>説明</p></th>
    </tr>
    <tr>
@@ -71,15 +71,14 @@ Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` を
    <tr>
      <td><p><code>TIMESTAMPTZ</code></p></td>
      <td><p><strong>STL_SORT</strong></p></td>
-     <td><p>タイムゾーン対応の ISO 8601 入力。UTC として保存され、タイムゾーン間での一貫したフィルタリングと順序付けが可能になります。詳細については、<a href="./use-timestamptz-field">TIMESTAMPTZ Field</a> を参照してください。</p></td>
+     <td><p>タイムゾーン対応の ISO 8601 入力。UTC として保存され、タイムゾーン間で一貫したフィルタリングと順序付けが可能になります。詳細については、<a href="./use-timestamptz-field">TIMESTAMPTZ Field</a> を参照してください。</p></td>
    </tr>
 </table>
 
-<Admonition type="info" icon="📘" title="注記">
+<Admonition type="info" icon="📘" title="Notes">
 
-カーディナリティ（上記表の C）は、コレクション全体におけるフィールド内の一意な値の数を示します。例えば、浮動小数点フィールドのカーディナリティは、そのフィールド内の異なる浮動小数点値の数です。
-
-配列フィールドの場合、カーディナリティはセグメント内のすべての配列にわたる**固有の要素値**の数です。例えば：
+<p>基数（上記表の C）は、コレクション全体におけるフィールド内の一意の値の数を示します。例えば、浮動小数点フィールドの基数は、そのフィールド内の異なる浮動小数点値の数です。</p>
+<p>配列フィールドの場合、基数はセグメント内のすべての配列にわたる<strong>固有の要素値</strong>の数です。例えば：</p>
 
 ```plaintext
 [1, 2, 3]
@@ -87,15 +86,15 @@ Zilliz Cloud は、以下のフィールドタイプに対して `AUTOINDEX` を
 [1, 4, 5]
 ```
 
-固有の要素値は `\{1, 2, 3, 4, 5\}` → カーディナリティ = **5** です。これは、すべての配列からすべての要素を平坦化し、一意の値を数えたものであり、異なる配列の数や配列の長さではありません。
+<p>異なる要素値は <code>{1, 2, 3, 4, 5}</code> → カーディナリティ = <strong>5</strong> です。これは、すべての配列からすべての要素を平坦化し、一意の値の数をカウントします。異なる配列の数や配列の長さではありません。</p>
 
 </Admonition>
 
-## 準備\{#preparations}
+## Preparations\{#preparations}
 
-インデックスを作成する前に、ベクトルフィールドとスカラーフィールドの両方を含むコレクションを定義する必要があります。Zilliz Cloud では、すべてのコレクションにベクトルフィールドが必要です。
+インデックスを作成する前に、ベクトルフィールドとスカラーフィールドの両方を含むコレクションを定義します。Zilliz Cloud では、すべてのコレクションにベクトルフィールドが必要です。
 
-この例では、必須のベクトルフィールド（`vector`）と `DOUBLE` タイプのスカラーフィールド（`price`）を含む製品カタログのスキーマを定義します：
+この例では、必須のベクトルフィールド（`vector`）と `DOUBLE` 型のスカラーフィールド（`price`）を含む製品カタログのスキーマを定義します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -531,7 +530,7 @@ console.log(JSON.stringify(res.index_descriptions, null, 2))
 
 <Admonition type="info" icon="📘" title="注記">
 
-**Milvus v2.6.x** と互換性のあるクラスターでは、不要になったスカラーインデックスを、コレクションを最初にリリースすることなく直接削除できます。
+<p><strong>Milvus v2.6.x</strong> と互換性のあるクラスターでは、スカラーインデックスが不要になった時点で直接削除できます。コレクションを事前にリリースする必要はありません。</p>
 
 </Admonition>
 

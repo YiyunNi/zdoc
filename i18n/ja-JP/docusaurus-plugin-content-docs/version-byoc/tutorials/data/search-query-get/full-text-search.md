@@ -4,7 +4,7 @@ slug: /full-text-search
 sidebar_label: "全文検索"
 beta: FALSE
 notebook: FALSE
-description: "全文検索は、テキストデータセットから特定の用語やフレーズを含むドキュメントを取得し、関連性に基づいて結果をランク付けする機能です。この機能は、正確な用語を見落とす可能性があるセマンティック検索の限界を克服し、最も正確で文脈に適した結果を提供します。さらに、生のテキスト入力を受け付けて自動的にスパース埋め込みへ変換するため、ベクトル埋め込みを手動で生成する必要がなく、ベクトル検索を簡素化します。| BYOC"
+description: "全文検索は、テキストデータセットから特定の用語やフレーズを含むドキュメントを取得し、関連性に基づいて結果をランク付けする機能です。この機能は、正確な用語を見落とす可能性があるセマンティック検索の限界を克服し、最も正確で文脈に適した結果を提供します。さらに、生のテキスト入力を受け付けて自動的にスパース埋め込みへ変換するため、ベクトル埋め込みを手動で生成する必要がなく、ベクトル検索を簡素化します。 | BYOC"
 type: origin
 token: RQTRwhOVPiwnwokqr4scAtyfnBf
 sidebar_position: 10
@@ -148,8 +148,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())

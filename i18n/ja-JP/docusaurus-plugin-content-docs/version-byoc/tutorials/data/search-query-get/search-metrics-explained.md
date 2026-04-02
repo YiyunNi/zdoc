@@ -242,7 +242,7 @@ BM25 は広く使用されているテキスト関連性測定手法であり、
 BM25 スコアリングは以下のように計算されます：
 
 $$
-score(D, Q)=\sum_{i=1}^{n}IDF(q_i)\cdot \{\{TF(q_i,D)\cdot(k_1+1)}\over\{TF(q_i, D)+k_1\cdot(1-b+b\cdot \{\{|D|}\over{avgdl}})}}
+score(D, Q)=\sum_{i=1}^{n}IDF(q_i)\cdot {{TF(q_i,D)\cdot(k_1+1)}\over{TF(q_i, D)+k_1\cdot(1-b+b\cdot {{|D|}\over{avgdl}})}}
 $$
 
 パラメータの説明：
@@ -256,7 +256,7 @@ $$
 - $IDF(q_i)$: 逆文書頻度。以下のように計算されます：
 
     $$
-    IDF(q_i)=\log(\{N-n(q_i)+0.5\over n(q_i)+0.5} + 1)
+    IDF(q_i)=\log({N-n(q_i)+0.5\over n(q_i)+0.5} + 1)
     $$
 
     ここで、$N$ はコーパス内の文書の総数であり、$n(q_i)$ は項 $q_i$ を含む文書の数です。

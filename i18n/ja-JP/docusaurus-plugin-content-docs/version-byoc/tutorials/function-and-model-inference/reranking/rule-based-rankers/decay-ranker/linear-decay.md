@@ -105,7 +105,7 @@ import TabItem from '@theme/TabItem';
 線形減衰スコアを計算するための数式は次のとおりです：
 
 $$
-S(doc) = \max\left( \frac\{s - \max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \right)
+S(doc) = \max\left( \frac{s - \max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \right)
 $$
 
 ここで：

@@ -53,7 +53,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
           credentials: {{apiKey}}
         
         static_configs:
-            - targets: ["api.cloud.zilliz.com"]
+            - targets: ["YOUR-PROMETHEUS-TARGET"]
     ```
 
     <table>
@@ -75,7 +75,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
        </tr>
        <tr>
          <td><p><code>authorization.type</code></p></td>
-         <td><p>Zilliz Cloud メトリクスへのアクセスに使用される認証タイプ。値を <code>Bearer</code> に設定します。</p></td>
+         <td><p>Zilliz Cloud メトリクスへのアクセスに使用される認証タイプ。値は <code>Bearer</code> に設定してください。</p></td>
        </tr>
        <tr>
          <td><p><code>authorization.credentials</code></p></td>
@@ -83,11 +83,11 @@ Prometheus で Zilliz Cloud クラスターを監視するには、次の手順�
        </tr>
        <tr>
          <td><p><code>static_configs.targets</code></p></td>
-         <td><p>Prometheus がスクレイプする静的ターゲットで、Zilliz Cloud RESTful API のホストアドレスである <code>api.cloud.zilliz.com</code> である必要があります。</p></td>
+         <td><p>Prometheus がスクレイプする静的ターゲットで、Zilliz Cloud RESTful API のホストアドレスである <code>api.cloud.zilliz.com</code> である必要があります。これはリクエストに応じて Zilliz Cloud によって設定されます。詳細については、<a href="https://support.zilliz.com/hc/en-us">Zilliz テクニカルサポート</a> にお問い合わせください。</p></td>
        </tr>
     </table>
 
-1. `Prometheus.yml` ファイルへの変更を保存します。
+1. `Prometheus.yml` ファイルに変更を保存します。
 
 </Procedures>
 

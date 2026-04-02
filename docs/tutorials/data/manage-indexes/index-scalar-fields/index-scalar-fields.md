@@ -88,7 +88,7 @@ Zilliz Cloud supports `AUTOINDEX` for the following field types:
 [1, 4, 5]
 ```
 
-<p>The distinct element values are <code>\{1, 2, 3, 4, 5\}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
+<p>The distinct element values are <code>{1, 2, 3, 4, 5}</code> → cardinality = <strong>5</strong>. It flattens all elements from all arrays, then counts unique values — not the number of distinct arrays, nor the array lengths.</p>
 
 </Admonition>
 

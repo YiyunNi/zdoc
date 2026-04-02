@@ -94,14 +94,14 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
-APIKey := "YOUR_CLUSTER_TOKEN"
+token := "YOUR_CLUSTER_TOKEN"
 // A valid token could be either
 // - An API key, or 
 // - A colon-joined cluster username and password, as in `user:pass`
 
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
-    APIKey: APIKey
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())

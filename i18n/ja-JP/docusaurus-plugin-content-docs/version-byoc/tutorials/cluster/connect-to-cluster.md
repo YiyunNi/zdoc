@@ -48,6 +48,9 @@ import TabItem from '@theme/TabItem';
 <Admonition type="info" icon="📘" title="Note">
 
 <p>SDK よりも RESTful API の利用を検討している場合、継続的な接続を確立できないことを理解することが重要です。これは、HTTP プロトコルが単方向通信モードであることに起因します。</p>
+<p></p>
+<p>BYOC デプロイメントでは、クラスター認証情報 (<code>username:password</code>) を使用してクラスターに接続します。API キーはプラットフォーム API 操作用のみであり、データプレーン (Milvus SDK/クライアント) 接続には使用できません。</p>
+<p></p>
 
 </Admonition>
 
@@ -55,11 +58,11 @@ import TabItem from '@theme/TabItem';
 
 クラスターが稼働したら、そのパブリックエンドポイントと認証トークンを使用して接続します。
 
-- **クラスターのパブリックエンドポイント:** これは Zilliz Cloud Web コンソールで取得できます。対象クラスの**クラスターの詳細**ページに移動し、**接続**カードからクラスターのパブリックエンドポイントをコピーできます。
+- **クラスターのパブリックエンドポイント:** これは Zilliz Cloud Web コンソールで取得できます。対象のクラスターの**クラスターの詳細**ページに移動します。**接続**カードで、クラスターのパブリックエンドポイントをコピーできます。
 
     ![connection-info](https://zdoc-images.s3.us-west-2.amazonaws.com/connection-info.png "connection-info")
 
-- **トークン:** このトークンは、ユーザー名とパスワードのペアで構成される [クラスター資格情報](./cluster-credentials) です。
+- **トークン:** このトークンは、ユーザー名とパスワードのペアで構成される [クラスター認証情報](./cluster-credentials) です。
 
 以下の例は、クラスターに接続する方法を示しています。
 

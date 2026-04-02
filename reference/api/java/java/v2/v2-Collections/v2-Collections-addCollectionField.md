@@ -12,10 +12,10 @@ type: docx
 token: V9rBdJEGzoCybDx9FIfcpqJbnlc
 sidebar_position: 23
 keywords: 
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
-  - lexical search
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud

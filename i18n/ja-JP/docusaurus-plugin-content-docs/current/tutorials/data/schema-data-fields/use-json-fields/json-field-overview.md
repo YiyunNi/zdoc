@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
 
 ## JSON フィールドとは？\{#what-is-a-json-field}
 
-JSON フィールドとは、Zilliz Cloud におけるスキーマ定義済みのデータ型（`DataType.JSON`）であり、構造化されたキー・バリュー形式のデータを格納します。従来の固定されたデータベースカラムとは異なり、JSON フィールドは入れ子になったオブジェクトや配列、複合データ型をサポートしながら、高速なクエリを実現するための複数のインデックスオプションを提供します。
+JSON フィールドとは、Zilliz Cloud におけるスキーマ定義済みのデータ型（`データType.JSON`）であり、構造化されたキー・バリュー形式のデータを格納します。従来の固定されたデータベースカラムとは異なり、JSON フィールドは入れ子になったオブジェクトや配列、複合データ型をサポートしながら、高速なクエリを実現するための複数のインデックスオプションを提供します。
 
 JSON フィールドの構造例：
 
@@ -76,7 +76,7 @@ JSON フィールドの構造例：
    </tr>
    <tr>
      <td><p>スキーマ定義</p></td>
-     <td><p><code>DataType.JSON</code> 型でコレクションスキーマに明示的に宣言する必要のあるスカラーフィールド。</p></td>
+     <td><p><code>データType.JSON</code> 型でコレクションスキーマに明示的に宣言する必要のあるスカラーフィールド。</p></td>
      <td><p>未宣言フィールドを自動的に格納する非表示の JSON フィールド（<code>$meta</code> という名前）。</p></td>
    </tr>
    <tr>
@@ -102,7 +102,7 @@ JSON フィールドを使用する基本的なワークフローは、スキー
 
 ### JSON フィールドの定義\{#define-a-json-field}
 
-JSON フィールドを使用するには、コレクション作成時にコレクションスキーマで明示的に定義します。以下の例は、`DataType.JSON` 型の `metadata` フィールドを持つコレクションを作成する方法を示しています：
+JSON フィールドを使用するには、コレクション作成時にコレクションスキーマで明示的に定義します。以下の例は、`データType.JSON` 型の `metadata` フィールドを持つコレクションを作成する方法を示しています：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

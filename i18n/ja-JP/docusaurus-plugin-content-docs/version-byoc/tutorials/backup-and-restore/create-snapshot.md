@@ -66,9 +66,13 @@ Zilliz Cloud において、バックアップとは、データ損失やシス�
 以下の例では、クラスター `in01-xxxxxxxxxxxxxx` のバックアップを作成します。RESTful API の詳細については、[バックアップの作成](/reference/restful/create-backup-v2) をご覧ください。
 
 ```bash
+export API_KEY="YOUR_API_KEY"
+export BASE_URL="https://api.cloud.zilliz.com"
+export CLUSTER_ID="your-cluster-id"
+
 curl --request POST \
      --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/create" \
-     --header "Authorization: Bearer ${TOKEN}" \
+     --header "Authorization: Bearer ${API_KEY}" \
      --header "Content-Type: application/json" \
      --data-raw '{
             "backupType": "CLUSTER"
@@ -105,7 +109,7 @@ curl --request POST \
 ```bash
 curl --request POST \
 --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/create" \
---header "Authorization: Bearer ${TOKEN}" \
+--header "Authorization: Bearer ${API_KEY}" \
 --header "Content-Type: application/json" \
 -d '{
     "backupType": "COLLECTION",

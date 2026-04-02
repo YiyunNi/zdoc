@@ -12,10 +12,10 @@ type: docx
 token: Beq1d1hDUoTzIsxJ6WTcVtlpnah
 sidebar_position: 29
 keywords: 
-  - vector databases comparison
-  - Faiss
-  - Video search
-  - AI Hallucination
+  - milvus benchmark
+  - managed milvus
+  - Serverless vector database
+  - milvus open source
   - zilliz
   - zilliz cloud
   - cloud

@@ -40,6 +40,7 @@ Audit logging allows administrators to track and monitor user-driven operations 
 <li><p>Audit logging can be forwarded to <a href="./integrate-with-aws-s3">AWS S3</a>, <a href="./integrate-with-azure-blob-storage">Azure Blob Storage</a>, or <a href="./integrate-with-gcp">Google Cloud Storage</a>.</p></li>
 <li><p>Enabling audit logging incur charges. For details, see <a href="./audit-log-cost">Audit Log</a>.</p></li>
 </ul>
+<p>e</p>
 
 </Admonition>
 

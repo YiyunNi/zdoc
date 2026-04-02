@@ -4,7 +4,7 @@ slug: /prometheus-monitoring
 sidebar_label: "Prometheus"
 beta: FALSE
 notebook: FALSE
-description: "Prometheus は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示するとともに、特定の条件に基づいてアラートをトリガーできる監視システムです。| Cloud"
+description: "Prometheus は、設定されたターゲットから指定された間隔でメトリクスを収集し、ルール式を評価して結果を表示し、特定の条件に基づいてアラートをトリガーできる監視システムです。| Cloud"
 type: origin
 token: Ex99woZlsico4FkfwxGckjRRnqf
 sidebar_position: 5
@@ -89,7 +89,7 @@ Prometheus で Zilliz Cloud クラスターを監視するには、以下の手�
        </tr>
        <tr>
          <td><p><code>static_configs.targets</code></p></td>
-         <td><p>Prometheus がスクレイプする静的ターゲットで、Zilliz Cloud RESTful API のホストアドレスである <code>api.cloud.zilliz.com</code> である必要があります。</p></td>
+         <td><p>Prometheus がスクレイプする静的ターゲットで、以下である必要があります。</p></td>
        </tr>
     </table>
 

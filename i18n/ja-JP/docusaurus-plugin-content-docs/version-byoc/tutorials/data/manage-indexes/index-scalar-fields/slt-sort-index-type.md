@@ -28,7 +28,7 @@ import Admonition from '@theme/Admonition';
 
 # STL_SORT
 
-`STL_SORT` インデックスは、データをソートされた順序で整理することで、Zilliz Cloud 内の数値フィールド（INT8、INT16 など）、`VARCHAR` フィールド、または `TIMESTAMPTZ` フィールドに対するクエリパフォーマンスを向上させるために特別に設計されたインデックスタイプです。
+`STL_SORT` インデックスは、Zilliz Cloud 内の数値フィールド（INT8、INT16 など）、`VARCHAR` フィールド、または `TIMESTAMPTZ` フィールドのクエリパフォーマンスを向上させるために特別に設計されたインデックスタイプであり、データをソートされた順序で整理します。
 
 以下の条件でクエリを頻繁に実行する場合は、`STL_SORT` インデックスを使用してください：
 
@@ -64,15 +64,15 @@ Zilliz Cloud は `STL_SORT` を 2 つのフェーズで実装します：
 
     - 範囲検索の場合、Zilliz Cloud は開始位置と終了位置を特定し、その間のすべての値を返します。
 
-    - 一致したエンティティ ID は、最終的な結果の組み立てのためにクエリ実行エンジンに渡されます。
+    - 一致したエンティティ ID は、最終的な結果を組み立てるためにクエリ実行エンジンに渡されます。
 
-これにより、クエリの計算量が **O(n)**（フルスキャン）から **O(log n + m)** に削減されます。ここで、*m* は一致数です。
+これにより、クエリの計算量が **O(n)**（フルスキャン）から **O(log n + m)** に削減されます。ここで、*m* は一致件数です。
 
 ## Create an STL_SORT index\{#create-an-stlsort-index}
 
-数値フィールドまたは `TIMESTAMPTZ` フィールドに対して `STL_SORT` インデックスを作成できます。追加のパラメータは不要です。
+数値、`VARCHAR`、または `TIMESTAMPTZ` フィールドに対して `STL_SORT` インデックスを作成できます。追加のパラメータは不要です。
 
-以下の例では、`TIMESTAMPTZ` フィールドに対して `STL_SORT` インデックスを作成する方法を示しています：
+以下の例では、`TIMESTAMPTZ` フィールドに `STL_SORT` インデックスを作成する方法を示しています：
 
 ```python
 from pymilvus import MilvusClient
@@ -120,7 +120,7 @@ client.drop_index(
 
 ## Usage notes\{#usage-notes}
 
-- **フィールド型:** 数値フィールドおよび `TIMESTAMPTZ` フィールドで動作します。データ型の詳細については、[Boolean & Number](./use-number-field) および [TIMESTAMPTZ Field](./use-timestamptz-field) を参照してください。
+- **フィールド型:** 数値、`VARCHAR`、および `TIMESTAMPTZ` フィールドで動作します。データ型の詳細については、[Boolean & Number](./use-number-field) および [TIMESTAMPTZ Field](./use-timestamptz-field) を参照してください。
 
 - **Parameters:** インデックスパラメータは不要です。
 

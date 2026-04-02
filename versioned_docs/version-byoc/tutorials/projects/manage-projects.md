@@ -26,6 +26,8 @@ import Admonition from '@theme/Admonition';
 
 In Zilliz Cloud, a project serves as a logical container within an organization, grouping clusters and related resources. You can create multiple projects tailored to different aspects of your business. For example, if your company offers multimedia recommendation services, you can create one project for video recommendations and another for music recommendations.
 
+In BYOC deployments, each project maps to a single Kubernetes cluster in one region. Cross-region operations are not supported. To operate in multiple regions, create separate BYOC projects.
+
 This guide will walk you through the steps of managing projects.
 
 ## View all projects\{#view-all-projects}

@@ -4,7 +4,7 @@ slug: /audit-logs
 sidebar_label: "VectorDB 監査ログ"
 beta: FALSE
 notebook: FALSE
-description: "監査ログ機能により、管理者は Zilliz Cloud クラスターにおけるユーザー操作や API コールを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作など、ベクトルデータベースのアクティビティの詳細な記録を提供します。| BYOC"
+description: "監査ログ機能により、管理者は Zilliz Cloud クラスター上でのユーザー操作や API コールを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作など、ベクトルデータベースのアクティビティの詳細な記録を提供します。| BYOC"
 type: origin
 token: M5dXwsGOOiPdAjkWLZUc2Pxonuh
 sidebar_position: 1
@@ -23,15 +23,14 @@ import Admonition from '@theme/Admonition';
 
 # VectorDB 監査ログ
 
-監査ログにより、管理者は Zilliz Cloud クラスターにおけるユーザー駆動型の運用および API コールを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作を含む、vector db アクティビティの詳細な記録を提供します。
+監査ログにより、管理者は Zilliz Cloud クラスターにおけるユーザー主導の運用および API コールを追跡・監視できます。この機能は、ベクトル検索、クエリ実行、インデックス管理、その他のデータ操作など、VectorDB 活動の詳細な記録を提供します。
 
 <Admonition type="info" icon="📘" title="Notes">
 
 <ul>
-<li><p>監査ログは、<strong>Enterprise</strong> プロジェクト以上のプラン階層にある<strong>Dedicated</strong> クラスターでのみ利用可能です。</p></li>
+<li><p>監査ログは、<strong>Enterprise</strong> プロジェクト以上のプランティアにおける<strong>Dedicated</strong> クラスターでのみ利用可能です。</p></li>
 <li><p>監査ログは、Milvus 2.5.x を実行している Zilliz Cloud クラスターでのみサポートされています。</p></li>
-<li><p>監査ログは、<a href="./integrate-with-aws-s3">AWS S3</a>、<a href="./integrate-with-azure-blob-storage">Azure Blob Storage</a>、または <a href="./integrate-with-gcp">Google Cloud Storage</a> に転送できます。</p></li>
-<li><p>監査ログを有効にすると料金が発生します。詳細については、<a href="./audit-log-cost">監査ログ</a>をご覧ください。</p></li>
+<li><p>BYOC デプロイメントでは、VDB 監査ログはデータプレーンのローカルオブジェクトストレージ（S3/Azure Blob Storage/GCS）に構成されたログバケットに直接書き込まれ、データがインフラストラクチャから外部に出ることはありません。監査ログを有効化し構成するには、<a href="https://support.zilliz.com/hc/en-us">お問い合わせ</a>ください。</p></li>
 </ul>
 
 </Admonition>
@@ -40,15 +39,15 @@ import Admonition from '@theme/Admonition';
 
 監査ログは、データプレーン上の幅広い運用を追跡します。これには以下が含まれます：
 
-- **検索およびクエリ運用**: ベクトル検索、ハイブリッド検索、およびクエリ操作。
+- **検索およびクエリ運用**: ベクトル検索、ハイブリッド検索、およびクエリ運用。
 
-- **データ管理**: インデックス作成、コレクション作成、パーティション管理、および挿入、削除、アップサートなどのエンティティ操作。
+- **データ管理**: インデックス作成、コレクション作成、パーティション管理、および挿入、削除、アップサートなどのエンティティ運用。
 
 - **システムイベント**: ユーザーアクセス試行、認証チェック、およびその他の事前定義されたアクション。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>移行、バックアップ、リストアなどのクラスターレベルのデータジョブは、監査ログを生成しません。これらのアクティビティ記録を確認するには、<a href="./view-activities">アクティビティの表示</a> を参照してください。</p>
+<p>移行、バックアップ、リストアなどのクラスターレベルのデータジョブは、監査ログを生成しません。これらの活動記録を表示するには、「<a href="./view-activities">アクティビティの表示</a>」を参照してください。</p>
 
 </Admonition>
 
@@ -56,7 +55,7 @@ import Admonition from '@theme/Admonition';
 
 - **ファイルパス**: `/<クラスターID>/<Log type>/<Date>`
 
-- **ファイル命名規則**: *HH:MM:SS-&#36;UUID* 形式の `<File name><File name suffix>`。ここで、*HH:MM:SS* は UTC 時間の時刻を表し、*&#36;UUID* は固有のランダム文字列です。例：`09:16:53-jz5l7D8Q`。
+- **ファイル命名規則**: `<File name><File name suffix>`（形式：*HH:MM:SS-&#36;UUID*）。ここで、*HH:MM:SS* は UTC 時間の時刻を表し、*&#36;UUID* は固有のランダム文字列です。例：`09:16:53-jz5l7D8Q`。
 
 以下は、バケットに転送された監査ログエントリーの例です：
 

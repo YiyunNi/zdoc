@@ -119,8 +119,7 @@ await client.createDatabase({
 ```go
 cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: "YOUR_CLUSTER_ENDPOINT",
-    Username: "root",
-    Password: "Milvus",
+    APIKey: "YOUR_CLUSTER_TOKEN"
 })
 if err != nil {
     // handle err

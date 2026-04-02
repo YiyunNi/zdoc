@@ -127,14 +127,14 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
-APIKey := "YOUR_CLUSTER_TOKEN"
+token := "YOUR_CLUSTER_TOKEN"
 // A valid token could be 
 // 
 // - A colon-joined cluster username and password, as in `user:pass`
 
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
-    APIKey: APIKey
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())
@@ -175,11 +175,17 @@ export CLUSTER_TOKEN="YOUR_CLUSTER_TOKEN"
 </TabItem>
 </Tabs>
 
-## Create Collection\{#create-collection}
+<Admonition type="info" icon="📘" title="Notes">
 
-Zilliz Cloud では、ベクトル埋め込みをコレクション内に保存する必要があります。1つのコレクションに保存されるすべてのベクトル埋め込みは、同じ次元数と類似性測定のための距離メトリックを共有します。
+<p>データプレーンの RESTful API エンドポイントを呼び出す際は、ターゲットクラスタのユーザー名とパスワードをコロンで区切った文字列（例：<code>username:password</code>）を認証トークンとして使用してください。</p>
 
-コレクションを作成するには、そのコレクション内の各フィールドの属性（名前、データ型、および特定のフィールドに必要な追加属性）を定義する必要があります。さらに、検索パフォーマンスを高速化する必要のあるフィールドに対してインデックスを作成する必要があります。ベクトルフィールドにはインデックスが必須であることに注意してください。
+</Admonition>
+
+## コレクションの作成\{#create-collection}
+
+Zilliz Cloud では、ベクトル埋め込みをコレクションに保存する必要があります。1 つのコレクションに保存されるすべてのベクトル埋め込みは、同じ次元数と類似性を測定するための距離計量を共有します。
+
+コレクションを作成するには、コレクション内の各フィールドの属性（名前、データ型、および特定のフィールドの追加属性など）を定義する必要があります。さらに、検索パフォーマンスの高速化が必要なフィールドにはインデックスを作成する必要があります。なお、ベクトルフィールドにはインデックスが必須です。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

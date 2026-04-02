@@ -185,8 +185,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())
@@ -970,6 +973,6 @@ For more on consistency levels, see [Consistency Level](./consistency-level).
 
 ### Enable Dynamic Field\{#enable-dynamic-field}
 
-The dynamic field in a collection is a reserved JavaScript Object Notation (JSON) field named **\&#36;meta**. Once you have enabled this field, Zilliz Cloud saves all non-schema-defined fields carried in each entity and their values as key-value pairs in the reserved field.
+The dynamic field in a collection is a reserved JavaScript Object Notation (JSON) field named **&#36;meta**. Once you have enabled this field, Zilliz Cloud saves all non-schema-defined fields carried in each entity and their values as key-value pairs in the reserved field.
 
 For details on how to use the dynamic field, refer to [Dynamic Field](./enable-dynamic-field).

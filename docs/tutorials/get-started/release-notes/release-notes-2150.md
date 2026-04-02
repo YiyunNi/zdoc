@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "We’re thrilled to share that Zero-Downtime Migration is now available in Private Preview on Zilliz Cloud! Whether you need to upgrade your cluster or make a change to your deployment, such as switching from Capacity-optimized Compute Units (CU) to another option, you can effortlessly migrate your data without any service interruptions. Additionally, Zilliz BYOC has introduced several enhancements, allowing you to configure instance settings for your BYOC project and enable AWS PrivateLink for your cluster. | Cloud"
+description: "We’re thrilled to share that Zilliz BYOC has introduced several enhancements, allowing you to configure instance settings for your BYOC project and enable AWS PrivateLink for your cluster. | Cloud"
 type: origin
 token: JPNiwF6rPiNe0pkx460cr321nTc
 sidebar_position: 10

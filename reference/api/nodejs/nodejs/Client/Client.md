@@ -12,10 +12,10 @@ token: WlKqf2dXKljRPDdiiUIcdsh5nxd
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - LLMs
-  - Machine Learning
-  - RAG
-  - NLP
+  - Audio similarity search
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ type: docx
 token: OvF4dFxpGoTSgkx68KQc9AdYnAf
 sidebar_position: 11
 keywords: 
-  - Embedding model
-  - image similarity search
-  - Context Window
-  - Natural language search
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud

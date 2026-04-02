@@ -12,10 +12,10 @@ type: docx
 token: AKpldMJPTo6MfuxxrpicBKRInCh
 sidebar_position: 26
 keywords: 
-  - Recommender systems
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
+  - llm eval
+  - Sparse vs Dense
+  - Dense vector
+  - Hierarchical Navigable Small Worlds
   - zilliz
   - zilliz cloud
   - cloud

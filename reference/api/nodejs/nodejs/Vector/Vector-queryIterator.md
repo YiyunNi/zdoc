@@ -12,10 +12,10 @@ type: docx
 token: MGCNdwG7RoaKHrxJZ5zcLLksnue
 sidebar_position: 13
 keywords: 
-  - Annoy vector search
-  - milvus
-  - Zilliz
-  - milvus vector database
+  - private llms
+  - nn search
+  - llm eval
+  - Sparse vs Dense
   - zilliz
   - zilliz cloud
   - cloud

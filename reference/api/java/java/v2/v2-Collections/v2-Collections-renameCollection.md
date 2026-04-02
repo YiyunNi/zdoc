@@ -12,10 +12,10 @@ type: docx
 token: EZw8dwHXzoggBsxB0SWc0MANnud
 sidebar_position: 21
 keywords: 
-  - Deep Learning
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
+  - cheap vector database
+  - Managed vector database
+  - Pinecone vector database
+  - Audio search
   - zilliz
   - zilliz cloud
   - cloud

@@ -12,10 +12,10 @@ type: docx
 token: XhcVd1JXvoAgUfxSEpQcL2H6nVg
 sidebar_position: 1
 keywords: 
+  - nn search
+  - llm eval
   - Sparse vs Dense
   - Dense vector
-  - Hierarchical Navigable Small Worlds
-  - Dense embedding
   - zilliz
   - zilliz cloud
   - cloud

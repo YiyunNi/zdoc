@@ -11,7 +11,7 @@ sidebar_position: 1
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - cloud
+  - クラウド
   - cmek
   - aws kms
 
@@ -100,7 +100,7 @@ AWS キー Management Service (KMS) は、データの暗号化や署名に使�
             }
             ```
 
-        - 上記の Zilliz Cloud のダイアログボックスのステップ 3。
+        - 上記の Zilliz Cloud 上のダイアログボックスのステップ 3。
 
     1. ダイアログボックスの下部にある **Validate KMS キー** をクリックします。
 
@@ -110,25 +110,25 @@ AWS キー Management Service (KMS) は、データの暗号化や署名に使�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性をチェックし、キーが利用可能であることを検出してから利用可能になります。</p>
+<p>KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性を確認します。キーが利用可能であると検出されて初めて、クラスターは利用可能になります。</p>
 
 </Admonition>
 
 ## AWS KMS キーの管理\{#manage-aws-kms-keys}
 
-追加した AWS KMS キーは、Zilliz Cloud コンソールで確認できます。
+Zilliz Cloud コンソールで追加された AWS KMS キーを表示できます。
 
 ![OyNQwDHFhhUIXDbRMjac08Xdn1g](https://zdoc-images.s3.us-west-2.amazonaws.com/OyNQwDHFhhUIXDbRMjac08Xdn1g.png)
 
-KMS キーが不要になった場合、そのキーを使用しているクラスターがない限り、削除できます。
+KMS キーが不要になった場合、どのクラスターもそのキーを使用していない限り、削除できます。
 
 ## AWS KMS キーの使用\{#use-aws-kms-keys}
 
-KMS キーを Zilliz Cloud に追加した後、それを使用して暗号化されたクラスターを作成したり、バックアップおよびリストアを行ったりできます。
+KMS キーを Zilliz Cloud に追加すると、それを使用して暗号化されたクラスターを作成したり、バックアップおよび復元を行ったりできます。
 
 ### 暗号化されたクラスターの作成\{#create-an-encrypted-cluster}
 
-クラスターを作成するリージョンで利用可能な KMS キーを選択して、それを暗号化できます。
+クラスターを作成するリージョンで利用可能な KMS キーを選択して、クラスターを暗号化できます。
 
 ![RGUrbElsSoc61JxikfWcoTCrnHe](https://zdoc-images.s3.us-west-2.amazonaws.com/rgurbelssoc61jxikfwcotcrnhe.png "RGUrbElsSoc61JxikfWcoTCrnHe")
 
@@ -146,21 +146,21 @@ KMS キーを追加した後、以下の手順で暗号化されたクラスタ�
 
     ![Iy8JbR19eoBQ4YxV1PjcLfUinl7](https://zdoc-images.s3.us-west-2.amazonaws.com/iy8jbr19eobq4yxv1pjclfuinl7.png "Iy8JbR19eoBQ4YxV1PjcLfUinl7")
 
-    暗号化されたクラスターの **Overview** ページには、上記の図に示すように、クラスター名の右側にキーのアイコンが表示されます。暗号化されたクラスターで作成されたすべてのコレクションは、デフォルトで暗号化されます。
+    暗号化されたクラスターの **Overview** ページには、上記の図に示すように、クラスター名の右側にキーのアイコンが表示されます。暗号化されたクラスター内で作成されたすべてのコレクションは、デフォルトで暗号化されます。
 
 </Procedures>
 
-### 暗号化されたバックアップファイルからのリストア\{#restore-from-an-encrypted-backup-file}
+### 暗号化されたバックアップファイルからの復元\{#restore-from-an-encrypted-backup-file}
 
-暗号化されたバックアップを新しいクラスターにリストアする場合、Zilliz Cloud はリストア前にバックアップファイルに関連付けられた KMS キーを使用してデータを復号化します。したがって、バックアップを暗号化ありまたはなしで新しいクラスターにリストアできます。
+暗号化されたバックアップを新しいクラスターに復元する場合、Zilliz Cloud は復元前にバックアップファイルに関連付けられた KMS キーを使用してデータを復号します。したがって、バックアップを暗号化ありまたはなしの新しいクラスターに復元できます。
 
 ![WaApbDlaYoywaMxxUMxcQLAOnDe](https://zdoc-images.s3.us-west-2.amazonaws.com/waapbdlayoywamxxumxcqlaonde.png "WaApbDlaYoywaMxxUMxcQLAOnDe")
 
-暗号化されたバックアップからのリストア手順は、**Encryption at Rest with CMEK** を有効にするかどうかを除き、通常のリストアとほぼ同じです。
+暗号化されたバックアップからの復元手順は、**Encryption at Rest with CMEK** を有効にするかどうかを除き、通常の復元とほぼ同じです。
 
 ![V1QJb3SK1oGa11xLljhcxKQEnkc](https://zdoc-images.s3.us-west-2.amazonaws.com/v1qjb3sk1oga11xlljhcxkqenkc.png "V1QJb3SK1oGa11xLljhcxKQEnkc")
 
-- このオプションを有効にした場合、リストア後に作成されるクラスターは、以下で指定された KMS キーを使用して暗号化されます。
+- このオプションを有効にした場合、復元後に作成されたクラスターは、以下で指定された KMS キーを使用して暗号化されます。
 
-- このオプションを無効にした場合、リストア後に作成されるクラスターは暗号化されません。
+- このオプションを無効にした場合、復元後に作成されたクラスターは暗号化されません。
 

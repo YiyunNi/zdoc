@@ -74,7 +74,7 @@ curl --request POST \
 
 In the command above,
 
-- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own.
+- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own. Note that API keys authenticate Platform API (Control Plane) requests. For data plan connections, use cluster credentials (`username:password`) instead.
 
 - `{CLUSTER_ID}`: The ID of the Dedicated cluster to suspend.
 
@@ -137,7 +137,7 @@ curl --request POST \
 
 In the command above,
 
-- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own.
+- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own. Note that API keys authenticate Platform API (Control Plane) requests. For data plan connections, use cluster credentials (`username:password`) instead.
 
 - `{CLUSTER_ID}`: The ID of the cluster to resume.
 
@@ -187,7 +187,7 @@ curl --request POST \
 
 In the command above,
 
-- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own.
+- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own. Note that API keys authenticate Platform API (Control Plane) requests. For data plan connections, use cluster credentials (`username:password`) instead.
 
 - `{CLUSTER_ID}`: The ID of the Dedicated cluster to drop.
 

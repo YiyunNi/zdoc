@@ -12,10 +12,10 @@ type: docx
 token: WA81dokeYotwt9xAiKKcaaIpnxc
 sidebar_position: 6
 keywords: 
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
-  - hallucinations llm
+  - llm-as-a-judge
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
   - zilliz
   - zilliz cloud
   - cloud

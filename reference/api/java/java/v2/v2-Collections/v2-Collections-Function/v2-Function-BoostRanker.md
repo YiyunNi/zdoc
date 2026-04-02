@@ -12,10 +12,10 @@ type: docx
 token: QO5ldltYOoo5uFxS4ZJc24JWnUh
 sidebar_position: 1
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Large language model
+  - Vectorization
+  - k nearest neighbor algorithm
+  - ANNS
   - zilliz
   - zilliz cloud
   - cloud
@@ -108,7 +108,7 @@ BoostRanker.builder()
 
 **RETURNS:**
 
- A boost ranker instance.
+A boost ranker instance.
 
 ## Examples:\{#examples}
 

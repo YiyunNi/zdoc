@@ -52,7 +52,7 @@ For details on AUTOINDEX and applicable metric types, refer to [AUTOINDEX Explai
 
 - [Bulk-vector search](./single-vector-search#bulk-vector-search)
 
-- [ANN search in partition](./single-vector-search#ann-search-in-partition)
+- [ANN search in partitions](./single-vector-search#ann-search-in-partition)
 
 - [Use output fields](./single-vector-search#use-output-fields)
 

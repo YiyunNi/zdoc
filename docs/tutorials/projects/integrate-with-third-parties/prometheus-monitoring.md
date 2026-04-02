@@ -92,7 +92,7 @@ To monitor Zilliz Cloud clusters with Prometheus, follow these steps:
        </tr>
        <tr>
          <td><p><code>static_configs.targets</code></p></td>
-         <td><p>The static target that Prometheus will scrape, which should be <code>api.cloud.zilliz.com</code>, the host address of the Zilliz Cloud RESTful API.</p></td>
+         <td><p>The static target that Prometheus will scrape, which should be .</p></td>
        </tr>
     </table>
 

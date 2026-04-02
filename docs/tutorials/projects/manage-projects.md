@@ -226,3 +226,9 @@ You can delete a project via the web console.
 
 <Supademo id="cmhiwf80b5zoufatic4p14w7m?utm_source=link" title=""  />
 
+## FAQ\{#faq}
+
+**Can I downgrade my project plan?**
+
+Direct plan downgrades are not supported. To switch to a lower plan, create a new project on the desired plan and [migrate](./offline-migration) your data to it.
+

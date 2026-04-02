@@ -12,10 +12,10 @@ type: docx
 token: WiVnd8VXooFQ9PxVgiyc7FkqnAg
 sidebar_position: 25
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - Elastic vector database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
   - zilliz
   - zilliz cloud
   - cloud

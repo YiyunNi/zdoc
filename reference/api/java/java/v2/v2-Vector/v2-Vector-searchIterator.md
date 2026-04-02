@@ -12,10 +12,10 @@ type: docx
 token: NYIqdKnfWobgPrxOmxFcbi3JnSd
 sidebar_position: 8
 keywords: 
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - AI chatbots
-  - cosine distance
-  - what is a vector database
-  - vectordb
   - zilliz
   - zilliz cloud
   - cloud

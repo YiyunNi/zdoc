@@ -11,7 +11,7 @@ sidebar_position: 1
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - milvus
   - 制限
 
@@ -37,7 +37,7 @@ import Admonition from '@theme/Admonition';
    <tr>
      <td><p>Organization</p></td>
      <td><p>1</p></td>
-     <td><p>Zilliz Cloud は、アカウント登録が完了すると自動的に 1 つの組織を作成します。さらに組織が必要な場合は、<a href="http://support.zilliz.com">サポートチケットを作成</a>してください。ユーザーは複数の組織に参加できます。</p></td>
+     <td><p>Zilliz Cloud は、アカウント登録が完了すると自動的に 1 つの組織を作成します。さらに多くの組織が必要な場合は、<a href="http://support.zilliz.com">サポートチケットを作成</a>してください。ユーザーは複数の組織に参加できます。</p></td>
    </tr>
    <tr>
      <td><p>Project</p></td>
@@ -59,17 +59,17 @@ import Admonition from '@theme/Admonition';
    <tr>
      <td><p>Organization User</p></td>
      <td><p>100</p></td>
-     <td><p>組織全体で最大 100 人の組織ユーザーを持つことができます。</p></td>
+     <td><p>組織には、合計で最大 100 人の組織ユーザーを含めることができます。</p></td>
    </tr>
    <tr>
      <td><p>Cluster User</p></td>
      <td><p>100</p></td>
-     <td><p>クラスター全体で最大 100 人のユーザーを持つことができます。</p></td>
+     <td><p>クラスターには、合計で最大 100 人のユーザーを含めることができます。</p></td>
    </tr>
    <tr>
      <td><p>Cluster Custom ロール</p></td>
      <td><p>20</p></td>
-     <td><p>クラスター全体で最大 20 のカスタムロールを持つことができます。この制限を解除するには、<a href="http://support.zilliz.com">お問い合わせ</a>ください。</p></td>
+     <td><p>クラスターには、合計で最大 20 個のカスタムロールを含めることができます。この制限を解除するには、<a href="http://support.zilliz.com">お問い合わせ</a>ください。</p></td>
    </tr>
 </table>
 
@@ -84,7 +84,7 @@ import Admonition from '@theme/Admonition';
    <tr>
      <td><p>APIキー</p></td>
      <td><p>100</p></td>
-     <td><p>最適なリソース活用とセキュリティのため、各組織には最大 100 個のカスタマイズされた API キーを含めることができます。</p></td>
+     <td><p>最適なリソース活用とセキュリティのため、各組織に含めることができるカスタマイズされた API キーの最大数は 100 です。</p></td>
    </tr>
 </table>
 
@@ -97,7 +97,7 @@ import Admonition from '@theme/Admonition';
      <th><p><strong>備考</strong></p></th>
    </tr>
    <tr>
-     <td><p>組織コンソールの IP 許可リスト内の IP アドレス</p></td>
+     <td><p>組織コンソールの IP 許可リスト内の IP</p></td>
      <td><p>100</p></td>
      <td><p>各組織コンソールの IP 許可リストには、最大 100 個の IP アドレスまたは CIDR ブロックを含めることができます。</p></td>
    </tr>
@@ -114,7 +114,7 @@ import Admonition from '@theme/Admonition';
    <tr>
      <td><p>ボリューム</p></td>
      <td><p>100</p></td>
-     <td><p>各組織には、最大 100 個のボリュームを含めることができます。</p></td>
+     <td><p>各組織に含めることができるボリュームの最大数は 100 です。</p></td>
    </tr>
 </table>
 
@@ -164,7 +164,7 @@ import Admonition from '@theme/Admonition';
        </tr>
        <tr>
          <td><p>Dedicated</p></td>
-         <td><p>合計 CU サイズ &lt; 320</p></td>
+         <td><p>Total CU size &lt; 320</p></td>
          <td><p>組織内のクラスターの最大数は、クラスター CU の総量に依存します。組織内のすべての Dedicated クラスターの CU 数の累積値は 320 を超えてはいけません。</p></td>
        </tr>
     </table>
@@ -175,40 +175,40 @@ CU は、データの並列処理に使用される計算リソースの基本�
 
 <table>
    <tr>
-     <th><p><strong>プロジェクトプランと クラスターデプロイオプション</strong></p></th>
+     <th><p><strong>Project Plan & クラスターデプロイオプション</strong></p></th>
      <th><p><strong>制限</strong></p></th>
      <th><p><strong>備考</strong></p></th>
    </tr>
    <tr>
-     <td><p>Standard プロジェクト内の 専用クラスター</p></td>
-     <td><p>CU サイズ x レプリカ数 &lt;=32</p></td>
-     <td><p>コンソールでは、単一のクラスターに対して最大 32 CU を作成できます。</p><p>ただし、レプリカを追加する場合、制限は CU サイズ x レプリカ数 &lt;=32 となります。</p></td>
+     <td><p>Standard プロジェクト内の Dedicated cluster</p></td>
+     <td><p>CU size x Replica Count &lt;=32</p></td>
+     <td><p>コンソールでは、単一のクラスターに対して最大 32 CUs を作成できます。</p><p>ただし、レプリカを追加する場合、制限は CU size x Replica Count &lt;=32 となります。</p></td>
    </tr>
    <tr>
-     <td><p>Enterprise プロジェクト内の 専用クラスター</p></td>
-     <td><p>CU サイズ x レプリカ数 &lt;=1,024</p></td>
-     <td><p>コンソールでは、単一のクラスターに対して最大 1,024 CU を作成できます。</p><p>ただし、レプリカを追加する場合、制限は CU サイズ x レプリカ数 &lt;=1,024 となります。</p></td>
+     <td><p>Enterprise プロジェクト内の Dedicated cluster</p></td>
+     <td><p>CU size x Replica Count &lt;=1,024</p></td>
+     <td><p>コンソールでは、単一のクラスターに対して最大 1,024 CUs を作成できます。</p><p>ただし、レプリカを追加する場合、制限は CU size x Replica Count &lt;=1,024 となります。</p></td>
    </tr>
 </table>
 
-以下の場合には、[お問い合わせ](https://support.zilliz.com/hc/en-us) ください。
+以下の場合、[お問い合わせ](https://support.zilliz.com/hc/en-us) ください。
 
-- Standard プロジェクト内の Dedicated クラスターで 32 CU 以上が必要な場合
+- Standard プロジェクト内の Dedicated クラスターで 32 CUs 以上が必要な場合
 
-- Enterprise プロジェクト内の Dedicated クラスターで 1,024 CU 以上が必要な場合
+- Enterprise プロジェクト内の Dedicated クラスターで 1,024 CUs 以上が必要な場合
 
 ### vCUs\{#vcus}
 
-仮想計算ユニット (vCU) は、読み取り操作（検索やクエリなど）および書き込み操作（挿入、アップサート、削除など）によって消費されるリソースを測定するために使用されます。vCU の概念は、Free および Serverless クラスターにのみ適用されます。
+仮想コンピューティングユニット (vCU) は、読み取り操作（検索やクエリなど）および書き込み操作（挿入、アップサート、削除など）によって消費されるリソースを測定するために使用されます。vCU の概念は Free および Serverless クラスターにのみ適用されます。
 
 <table>
    <tr>
-     <th><p><strong>クラスタープラン</strong></p></th>
+     <th><p><strong>Cluster Plan</strong></p></th>
      <th><p><strong>制限</strong></p></th>
    </tr>
    <tr>
      <td><p>Free</p></td>
-     <td><p>月間 250 万 vCU</p></td>
+     <td><p>月間 250 万 vCUs</p></td>
    </tr>
    <tr>
      <td><p>Serverless</p></td>
@@ -222,7 +222,7 @@ CU は、データの並列処理に使用される計算リソースの基本�
 
 <table>
    <tr>
-     <th><p><strong>クラスタープラン</strong></p></th>
+     <th><p><strong>Cluster Plan</strong></p></th>
      <th><p><strong>制限</strong></p></th>
    </tr>
    <tr>
@@ -235,7 +235,7 @@ CU は、データの並列処理に使用される計算リソースの基本�
    </tr>
    <tr>
      <td><p>Dedicated (per CU)</p></td>
-     <td><p>Zilliz Cloud の Dedicated クラスターには容量制限はありません。</p></td>
+     <td><p>Zilliz Cloud の Dedicated クラスターには容量制限がありません。</p></td>
    </tr>
 </table>
 
@@ -247,7 +247,7 @@ CU は、データの並列処理に使用される計算リソースの基本�
 
 ## Replicas\{#replicas}
 
-レプリカを追加するには、クラスターに**8 CU 以上**が必要です。以下の制限も適用されます。
+レプリカを追加するには、クラスターに**8 CUs 以上**が必要です。以下の制限も適用されます。
 
 <table>
    <tr>
@@ -261,7 +261,7 @@ CU は、データの並列処理に使用される計算リソースの基本�
      <td><p>最大 10 個のレプリカを作成できます。</p></td>
    </tr>
    <tr>
-     <td><p>レプリカ数 x CU サイズ</p></td>
+     <td><p>レプリカ数 x CU size</p></td>
      <td><p>&lt;= 256</p></td>
      <td><p>クラスターの CU サイズ x レプリカ数は 256 を超えてはいけません。</p></td>
    </tr>
@@ -271,15 +271,15 @@ CU は、データの並列処理に使用される計算リソースの基本�
 
 - データベースは Dedicated クラスターでのみ作成できます。
 
-- 各 Dedicated クラスターには、最大 1024 個のデータベースを持つことができます。
+- 各 Dedicated クラスターには、最大 1024 個のデータベースを含めることができます。
 
 - デフォルトのデータベースは削除できません。
 
 ## Collections\{#collections}
 
-Zilliz Cloud クラスター内のコレクションとパーティションの最大数は、割り当てられた CU 数と互換性のある Milvus バージョンによって異なります。以下の説明を参照し、クラスター内のコレクションとパーティションの最大数を計算できます。
+Zilliz Cloud クラスター内のコレクションとパーティションの最大数は、割り当てられた CU 数と互換性のある Milvus バージョンによって異なります。以下の説明を参照して、クラスター内のコレクションとパーティションの最大数を計算できます。
 
-CU あたり最大**1,024**個のコレクションまたは**4,096**個のパーティションを作成でき、コレクションあたりのパーティション数は最大**1,024**個まで許可されます。以下の式を使用して、クラスター内のコレクション数とパーティション数の上限を計算できます。
+CU あたり最大**1,024**個のコレクションまたは**4,096**個のパーティションを作成でき、コレクションあたりのパーティション数は最大**1,024**個まで許可されています。以下の式を使用して、クラスター内のコレクション数とパーティション数の上限を計算できます。
 
 ![I1aJwA2LShihxQbyG30cFm14ngf](https://zdoc-images.s3.us-west-2.amazonaws.com/I1aJwA2LShihxQbyG30cFm14ngf.png)
 
@@ -291,9 +291,9 @@ CU あたり最大**1,024**個のコレクションまたは**4,096**個のパ�
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><strong>Free</strong>および<strong>Serverless</strong>クラスターの場合、代わりに以下の制限が適用されます：</p>
+<p><strong>Free</strong>および<strong>Serverless</strong>クラスターの場合、代わりに以下の制限が適用されます。</p>
 <ul>
-<li><p><strong>Free</strong>クラスターでは、最大<strong>5</strong>個のコレクションが許可されます。一方、</p></li>
+<li><p><strong>Free</strong>クラスターでは、最大<strong>5</strong>個のコレクションが許可されます。</p></li>
 <li><p><strong>Serverless</strong>クラスターでは、最大<strong>100</strong>個のコレクションがサポートされます。</p></li>
 </ul>
 
@@ -311,7 +311,7 @@ CU あたり最大**1,024**個のコレクションまたは**4,096**個のパ�
      <td><p>64</p></td>
    </tr>
    <tr>
-     <td><p>コレクションあたりの ベクトルフィールド 数</p></td>
+     <td><p>コレクションあたりの Vector fields</p></td>
      <td><ul><li><p>Free & Serverless: 4</p></li><li><p>Dedicated: 10</p></li></ul></td>
    </tr>
 </table>
@@ -326,11 +326,11 @@ CU あたり最大**1,024**個のコレクションまたは**4,096**個のパ�
 
 ### Shards\{#shards}
 
-許可されるシャードの最大数は、クラスタープランとクラスターの CU サイズに依存します。
+許可されるシャードの最大数は、クラスタープランとクラスターの CU サイズによって異なります。
 
 <table>
    <tr>
-     <th colspan="2"><p><strong>クラスタープランと CU サイズ</strong></p></th>
+     <th colspan="2"><p><strong>Cluster Plan & CU Size</strong></p></th>
      <th><p><strong>最大数</strong></p></th>
    </tr>
    <tr>
@@ -367,7 +367,7 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
 <table>
    <tr>
      <th></th>
-     <th><p><strong>レート制限</strong></p></th>
+     <th><p><strong>Rate 制限</strong></p></th>
    </tr>
    <tr>
      <td><p>Collection DDL Operation </p><p>(create, load, release, drop)</p></td>
@@ -395,39 +395,39 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
      <th><p>最大挿入レート制限</p></th>
    </tr>
    <tr>
-     <td><p>Free クラスター</p></td>
+     <td><p>Free cluster</p></td>
      <td><p>2 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Serverless クラスター</p></td>
+     <td><p>Serverless cluster</p></td>
      <td><p>10 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [1 CU, 2 CUs]</p></td>
+     <td><p>Dedicated cluster [1 CU, 2 CUs]</p></td>
      <td><p>8 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [4 CUs,  8 CUs]</p></td>
+     <td><p>Dedicated cluster [4 CUs,  8 CUs]</p></td>
      <td><p>12 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [12 CUs, 20 CUs]</p></td>
+     <td><p>Dedicated cluster [12 CUs, 20 CUs]</p></td>
      <td><p>16 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [24 CUs, 64 CUs)</p></td>
+     <td><p>Dedicated cluster [24 CUs, 64 CUs)</p></td>
      <td><p>24 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [64 CUs, 128CUs)</p></td>
+     <td><p>Dedicated cluster [64 CUs, 128CUs)</p></td>
      <td><p>36 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [128 CUs, 256CUs)</p></td>
+     <td><p>Dedicated cluster [128 CUs, 256CUs)</p></td>
      <td><p>48 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター &gt;= 256 CUs</p></td>
+     <td><p>Dedicated cluster &gt;= 256 CUs</p></td>
      <td><p>64 MB/s</p></td>
    </tr>
 </table>
@@ -448,39 +448,39 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
      <th><p>最大アップサートレート制限</p></th>
    </tr>
    <tr>
-     <td><p>Free クラスター</p></td>
+     <td><p>Free cluster</p></td>
      <td><p>2 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Serverless クラスター</p></td>
+     <td><p>Serverless cluster</p></td>
      <td><p>10 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [1 CU, 2 CUs]</p></td>
+     <td><p>Dedicated cluster [1 CU, 2 CUs]</p></td>
      <td><p>8 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [4 CUs,  8 CUs]</p></td>
+     <td><p>Dedicated cluster [4 CUs,  8 CUs]</p></td>
      <td><p>12 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [12 CUs, 20 CUs]</p></td>
+     <td><p>Dedicated cluster [12 CUs, 20 CUs]</p></td>
      <td><p>16 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [24 CUs, 64 CUs)</p></td>
+     <td><p>Dedicated cluster [24 CUs, 64 CUs)</p></td>
      <td><p>24 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [64 CUs, 128CUs)</p></td>
+     <td><p>Dedicated cluster [64 CUs, 128CUs)</p></td>
      <td><p>36 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター [128 CUs, 256CUs)</p></td>
+     <td><p>Dedicated cluster [128 CUs, 256CUs)</p></td>
      <td><p>48 MB/s</p></td>
    </tr>
    <tr>
-     <td><p>Dedicated クラスター &gt;= 256 CUs</p></td>
+     <td><p>Dedicated cluster &gt;= 256 CUs</p></td>
      <td><p>64 MB/s</p></td>
    </tr>
 </table>
@@ -495,8 +495,8 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
 
 <table>
    <tr>
-     <th><p><strong>フィールドタイプ</strong></p></th>
-     <th><p><strong>インデックスタイプ</strong></p></th>
+     <th><p><strong>Field Type</strong></p></th>
+     <th><p><strong>Index Type</strong></p></th>
      <th><p><strong>メトリックタイプ</strong></p></th>
    </tr>
    <tr>
@@ -523,7 +523,7 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
 
 ### Flush\{#flush}
 
-フラッシュリクエストのレート制限は 0.1 req/s で、特定のクラスタイプに対してコレクションレベルで課されます。このレート制限は以下に適用されます：
+フラッシュリクエストのレート制限は 0.1 req/s で、特定のクラスタイプにおいてコレクションレベルで課されます。このレート制限は以下に適用されます。
 
 - Milvus v2.4.x 以降と互換性のある Serverless クラスター。
 
@@ -549,13 +549,13 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
 
 各検索リクエスト/レスポンスは**64**MB を超えてはいけません。
 
-各検索リクエストが運ぶクエリベクトルの数（通常**nq**として知られています）は、サブスクリプションプランによって異なります：
+各検索リクエストが運ぶクエリベクトルの数（通常**nq**として知られています）は、サブスクリプションプランによって異なります。
 
 - Free および Serverless クラスターの場合、**nq**は**10**以下です。
 
 - Dedicated クラスターの場合、**nq**は**16,384**以下です。
 
-各検索レスポンスが運ぶ数（通常**topK**として知られています）は、サブスクリプションプランによって異なります：
+各検索レスポンスが運ぶ数（通常**topK**として知られています）は、サブスクリプションプランによって異なります。
 
 - Free および Serverless クラスターの場合、**topK**は返されるエンティティ数が**1,024**以下です。
 
@@ -565,7 +565,7 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
 
 各クエリリクエスト/レスポンスは**64**MB を超えてはいけません。
 
-各クエリレスポンスは、返されるエンティティ数が最大 16,384 個（通常**topK**として知られています）です。
+各クエリレスポンスは、返されるエンティティ数が 16,384 以下（通常**topK**として知られています）です。
 
 ### Delete\{#delete}
 
@@ -579,30 +579,30 @@ Zilliz Cloud は、コレクションおよびパーティションのデータ�
 
 ### データ import\{#data-import}
 
-コレクション内で実行中または保留中のインポートジョブは最大**10,000**件まで持つことができます。
+コレクション内で実行中または保留中のインポートジョブは最大**10,000**件まで可能です。
 
 Zilliz Cloud は、Web コンソールでのインポートファイルにも制限を課しています。
 
 <table>
    <tr>
-     <th><p>ファイルタイプ</p></th>
+     <th><p>File Type</p></th>
      <th><p>ローカルアップロード</p></th>
      <th><p>オブジェクトストレージから</p></th>
    </tr>
    <tr>
      <td><p>JSON</p></td>
      <td><p>1 GB</p></td>
-     <td><p><strong>Free</strong>: 各インポートリクエストでは最大 1 GB のデータをインポートでき、ファイルあたりの最大サイズは 1 GB、インポートあたりのファイル数は 1,000 以下です。</p><p><strong>Serverless & Dedicated</strong>: インポートの最大合計サイズは 1 TB、各ファイルの最大サイズは 10 GB、ファイル数は最大 1,000 個です。</p></td>
+     <td><p><strong>Free</strong>: 各インポートリクエストで最大 1 GB のデータをインポートでき、ファイルあたりの最大サイズは 1 GB、インポートあたりのファイル数は最大 1,000 件です。</p><p><strong>Serverless & Dedicated</strong>: インポートサイズの合計最大値は 1 TB、ファイルあたりの最大サイズは 10 GB、ファイル数は最大 1,000 件です。</p></td>
    </tr>
    <tr>
      <td><p>Parquet</p></td>
      <td><p>1 GB</p></td>
-     <td><p><strong>Free</strong>: 各インポートリクエストでは最大 1 GB のデータをインポートでき、ファイルあたりの最大サイズは 1 GB、インポートあたりのファイル数は 1,000 以下です。</p><p><strong>Serverless & Dedicated</strong>: インポートの最大合計サイズは 1 TB、各ファイルの最大サイズは 10 GB、ファイル数は最大 1,000 個です。</p></td>
+     <td><p><strong>Free</strong>: 各インポートリクエストで最大 1 GB のデータをインポートでき、ファイルあたりの最大サイズは 1 GB、インポートあたりのファイル数は最大 1,000 件です。</p><p><strong>Serverless & Dedicated</strong>: インポートサイズの合計最大値は 1 TB、ファイルあたりの最大サイズは 10 GB、ファイル数は最大 1,000 件です。</p></td>
    </tr>
    <tr>
      <td><p>Numpy</p></td>
-     <td><p>非対応</p></td>
-     <td><p><strong>Free</strong>: 各インポートリクエストでは最大 1 GB のデータをインポートでき、サブディレクトリあたりの最大サイズは 1 GB、インポートあたりのサブディレクトリ数は 1,000 以下です。</p><p><strong>Serverless & Dedicated</strong>: インポートの最大合計サイズは 1 TB、各サブディレクトリの最大サイズは 10 GB、サブディレクトリ数は最大 1,000 個です。</p></td>
+     <td><p>Not support</p></td>
+     <td><p><strong>Free</strong>: 各インポートリクエストで最大 1 GB のデータをインポートでき、サブディレクトリあたりの最大サイズは 1 GB、インポートあたりのサブディレクトリ数は最大 1,000 件です。</p><p><strong>Serverless & Dedicated</strong>: インポートサイズの合計最大値は 1 TB、サブディレクトリあたりの最大サイズは 10 GB、サブディレクトリ数は最大 1,000 件です。</p></td>
    </tr>
 </table>
 
@@ -627,9 +627,14 @@ Zilliz Cloud は、Web コンソールでのインポートファイルにも制
      <th><p><strong>備考</strong></p></th>
    </tr>
    <tr>
-     <td><p>IP Address (CIDR)</p></td>
+     <td><p>Console IP Access</p></td>
      <td><p>100</p></td>
-     <td><p>許可リストに追加できる IP アドレスは最大 100 個です。</p></td>
+     <td><p>コンソールの IP 許可リストに追加できる IP アドレスは最大 100 個です。</p></td>
+   </tr>
+   <tr>
+     <td><p>Cluster IP Access</p></td>
+     <td><p>100</p></td>
+     <td><p>クラスターの IP 許可リストに追加できる IP アドレスは最大 100 個です。</p></td>
    </tr>
 </table>
 

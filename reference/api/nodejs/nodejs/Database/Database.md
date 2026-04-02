@@ -12,10 +12,10 @@ token: F0ZXfs6XSlspHxdg7DwcYb84nMf
 sidebar_position: 4
 sidebar_label: "Database"
 keywords: 
-  - Knowledge base
-  - natural language processing
-  - AI chatbots
-  - cosine distance
+  - Vector embeddings
+  - Vector store
+  - open source vector database
+  - Vector index
   - zilliz
   - zilliz cloud
   - cloud

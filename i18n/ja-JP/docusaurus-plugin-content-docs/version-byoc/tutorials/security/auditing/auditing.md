@@ -23,7 +23,13 @@ import Admonition from '@theme/Admonition';
 
 # 監査ログ
 
-Zilliz Cloud クラスターの監査を構成する方法について学びます。
+Zilliz Cloud クラスターの監査を設定する方法について学びます。
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>BYOC デプロイメントでは、VDB 監査ログはデータプレーンのローカルオブジェクトストレージ（S3/Azure Blob Storage/GCS）で構成されたログバケットに直接書き込まれ、データがインフラストラクチャから外部に出ることはありません。監査ログを有効にして設定するには、<a href="https://support.zilliz.com/hc/en-us">お問い合わせください</a>。</p>
+
+</Admonition>
 
 import DocCardList from '@theme/DocCardList';
 

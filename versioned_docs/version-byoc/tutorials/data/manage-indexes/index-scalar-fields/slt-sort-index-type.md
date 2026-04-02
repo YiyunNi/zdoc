@@ -73,7 +73,7 @@ This reduces query complexity from **O(n)** (full scan) to **O(log n + m)**, whe
 
 ## Create an STL_SORT index\{#create-an-stlsort-index}
 
-You can create an `STL_SORT` index on a numeric or `TIMESTAMPTZ` field. No extra parameters are required.
+You can create an `STL_SORT` index on a numeric, `VARCHAR`, or `TIMESTAMPTZ` field. No extra parameters are required.
 
 The example below shows how to create an `STL_SORT` index on a `TIMESTAMPTZ` field:
 
@@ -123,7 +123,7 @@ client.drop_index(
 
 ## Usage notes\{#usage-notes}
 
-- **Field types:** Works with numeric and `TIMESTAMPTZ` fields. For more information on data types, refer to [Boolean & Number](./use-number-field) and [TIMESTAMPTZ Field](./use-timestamptz-field).
+- **Field types:** Works with numeric, `VARCHAR`, and `TIMESTAMPTZ` fields. For more information on data types, refer to [Boolean & Number](./use-number-field) and [TIMESTAMPTZ Field](./use-timestamptz-field).
 
 - **Parameters:** No index parameters are needed.
 

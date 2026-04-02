@@ -94,13 +94,13 @@ import TabItem from '@theme/TabItem';
 ガウス減衰スコアを計算するための数式は次のとおりです：
 
 $$
-S(doc) = \exp\left( -\frac\{\left( \max\left(0, \left|fieldvalue_{doc} - origin\right| - offset \right) \right)^2}\{2\sigma^2} \right)
+S(doc) = \exp\left( -\frac{\left( \max\left(0, \left|fieldvalue_{doc} - origin\right| - offset \right) \right)^2}{2\sigma^2} \right)
 $$
 
 ここで：
 
 $$
-\sigma^2 = -\frac{scale^2}\{2 \cdot \ln(decay)}
+\sigma^2 = -\frac{scale^2}{2 \cdot \ln(decay)}
 $$
 
 これを平易な言葉で分解すると：

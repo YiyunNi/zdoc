@@ -12,10 +12,10 @@ type: docx
 token: IW5SdBOhUop0P8xBslCc6OHLnse
 sidebar_position: 5
 keywords: 
-  - image similarity search
-  - Context Window
-  - Natural language search
-  - Similarity Search
+  - Zilliz database
+  - Unstructured Data
+  - vector database
+  - IVF
   - zilliz
   - zilliz cloud
   - cloud
@@ -91,7 +91,7 @@ ModelRanker.builder()
 
 **RETURNS:**
 
- A model ranker instance.
+A model ranker instance.
 
 ## Examples:\{#examples}
 

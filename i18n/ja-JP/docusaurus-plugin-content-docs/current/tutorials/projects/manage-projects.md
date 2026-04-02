@@ -4,7 +4,7 @@ slug: /manage-projects
 sidebar_label: "プロジェクト"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナとして機能し、クラスターと関連リソースをグループ化します。ビジネスのさまざまな側面に合わせて複数のプロジェクトを作成できます。たとえば、会社がマルチメディア推奨サービスを提供している場合、動画推薦用のプロジェクトと音楽推薦用のプロジェクトをそれぞれ作成できます。 | Cloud"
+description: "Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナとして機能し、クラスターと関連リソースをグループ化します。ビジネスのさまざまな側面に合わせて複数のプロジェクトを作成できます。たとえば、会社がマルチメディア推奨サービスを提供している場合、動画推奨用のプロジェクトと音楽推奨用のプロジェクトをそれぞれ作成できます。 | Cloud"
 type: origin
 token: NXypwJ2ySiv7RAkyKb5cZ9SKnvf
 sidebar_position: 1
@@ -201,7 +201,7 @@ Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナ�
 
 ## プロジェクトの名前を変更する\{#rename-a-project}
 
-プロジェクトの名前を変更するには、[組織オーナー](./organization-users) である必要があります。Web コンソールからプロジェクトの名前を変更できます。
+プロジェクトの名前を変更するには、[組織オーナー](./organization-users) である必要があります。ウェブコンソールからプロジェクトの名前を変更できます。
 
 <Supademo id="cmhiwa69y5zk2fatiw4ou24k6?utm_source=link" title=""  />
 
@@ -211,7 +211,7 @@ Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナ�
 
 プロジェクトを削除する前に、そのプロジェクト内のすべての [クラスター](./manage-cluster#drop-cluster) と [ボリューム](./manage-volumes-via-console#delete-a-volume) を削除する必要があります。
 
-プロジェクトが削除されると、関連するすべてのデータとリソースも取り消し不能にクリーンアップされます。
+プロジェクトが削除されると、関連するすべてのデータとリソースも取り消し不可能にクリーンアップされます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
@@ -219,7 +219,13 @@ Zilliz Cloud では、プロジェクトは組織内の論理的なコンテナ�
 
 </Admonition>
 
-Web コンソールからプロジェクトを削除できます。
+ウェブコンソールからプロジェクトを削除できます。
 
 <Supademo id="cmhiwf80b5zoufatic4p14w7m?utm_source=link" title=""  />
+
+## よくある質問\{#faq}
+
+**プロジェクトプランをダウングレードできますか？**
+
+プランの直接ダウングレードはサポートされていません。より低いプランに切り替えるには、希望するプランで新しいプロジェクトを作成し、データをそこに [移行](./offline-migration) してください。
 

@@ -361,7 +361,10 @@ Weighted Ranker is designed specifically for hybrid search operations that combi
 from pymilvus import MilvusClient, AnnSearchRequest
 
 # Connect to Milvus server
-milvus_client = MilvusClient(uri="YOUR_CLUSTER_ENDPOINT")
+milvus_client = MilvusClient(
+    uri="YOUR_CLUSTER_ENDPOINT",
+    token="YOUR_CLUSTER_TOKEN"
+)
 
 # Assume you have a collection setup
 
@@ -408,6 +411,7 @@ import io.milvus.v2.service.vector.request.data.FloatVec;
 
 MilvusClientV2 client = new MilvusClientV2(ConnectConfig.builder()
         .uri("YOUR_CLUSTER_ENDPOINT")
+        .token("YOUR_CLUSTER_TOKEN")
         .build());
         
 List<AnnSearchReq> searchRequests = new ArrayList<>();
@@ -439,7 +443,10 @@ SearchResp searchResp = client.hybridSearch(hybridSearchReq);
 ```javascript
 import { MilvusClient, FunctionType } from "@zilliz/milvus2-sdk-node";
 
-const milvusClient = new MilvusClient({ address: "YOUR_CLUSTER_ENDPOINT" });
+const milvusClient = new MilvusClient({ 
+    address: "YOUR_CLUSTER_ENDPOINT",
+    token: "YOUR_CLUSTER_TOKEN"
+});
 
 const text_search = {
   data: ["modern dining table"],

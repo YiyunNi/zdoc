@@ -4,7 +4,7 @@ slug: /manage-collections-sdks
 sidebar_label: "作成"
 beta: FALSE
 notebook: FALSE
-description: "スキーマ、インデックスパラメータ、メトリックタイプ、および作成時のロードの有無を定義してコレクションを作成できます。このページでは、ゼロからコレクションを作成する方法について説明します。 | Cloud"
+description: "スキーマ、インデックスパラメータ、メトリックタイプ、および作成時のロードの有無を定義してコレクションを作成できます。このページでは、ゼロからコレクションを作成する方法について説明します。| Cloud"
 type: origin
 token: EmcowmwYpiFbWgkmnqfcMf3knVc
 sidebar_position: 2
@@ -182,8 +182,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())

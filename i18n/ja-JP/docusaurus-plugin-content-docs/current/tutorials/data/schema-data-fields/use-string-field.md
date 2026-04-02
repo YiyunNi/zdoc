@@ -29,7 +29,7 @@ Zilliz Cloud クラスターでは、文字列データの保存に `VARCHAR` �
 
 `VARCHAR` フィールドを定義する際、以下の 2 つのパラメータが必須です：
 
-- `datatype` を `DataType.VARCHAR` に設定します。
+- `datatype` を `データType.VARCHAR` に設定します。
 
 - `max_length` を指定します。これは `VARCHAR` フィールドが格納できる最大バイト数を定義します。`max_length` の有効範囲は 1 から 65,535 です。
 

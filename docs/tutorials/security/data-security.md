@@ -75,7 +75,9 @@ For details, refer to [Access Control](./access-control).
 
 Zilliz Cloud secures your network interactions through:
 
-- **IP Allowlisting:** Define allowed IP ranges (CIDR blocks) to restrict access.
+- **Console IP Allowlisting:** Restrict console access by allowed IP ranges (CIDR blocks).
+
+- **Cluster IP Allowlisting**: Restrict cluster data plane network access by IP ranges.
 
 - **Private Links:** Establish secure, private connections between your VPC and Zilliz Cloud control plane.
 

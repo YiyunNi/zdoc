@@ -4,7 +4,7 @@ slug: /aws-kms
 sidebar_label: "AWS KMS"
 beta: FALSE
 notebook: FALSE
-description: "AWS Key Management Service (KMS) は、データの暗号化や署名に使用するキーの作成と管理を容易にする AWS 管理型サービスです。| Cloud"
+description: "AWS Key Management Service (KMS) は、データの暗号化や署名に使用するキーの作成と制御を容易にする AWS 管理型サービスです。| Cloud"
 type: origin
 token: FOamwIi07ia7kpkBPW8cEuIpniu
 sidebar_position: 1
@@ -178,7 +178,7 @@ AWS キー Management Service (KMS) は、データの暗号化や署名に使�
 
     1. **次へ**をクリックします。
 
-1. KMS キーを IAM ロールに関連付ける。
+1. KMS キーを IAM ロールに関連付ける
 
     <Supademo id="cmkxdx8eu00szs50igvo0f2ti" title=""  />
 
@@ -188,15 +188,15 @@ AWS キー Management Service (KMS) は、データの暗号化や署名に使�
 
     1. **Enter** キーを押してコマンドを実行します。
 
-    1. コマンドの実行が完了したら、ダイアログボックス下部の **KMS キーを検証**をクリックします。
+    1. コマンドの実行が完了したら、ダイアログボックス下部の **KMS キーを検証** をクリックします。
 
-    1. 検証が成功したら、**追加**をクリックします。
+    1. 検証が成功したら、**追加** をクリックします。
 
 </Procedures>
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性をチェックし、キーが利用可能であることを検出してから利用可能になります。</p>
+<p>KMS キーを使用して Zilliz Cloud クラスターを暗号化する場合、クラスターは 10 分ごとにキーの可用性を確認します。キーが利用可能であると検出されて初めて、クラスターは利用可能になります。</p>
 
 </Admonition>
 
@@ -206,7 +206,7 @@ Zilliz Cloud コンソールで追加された AWS KMS キーを表示できま�
 
 ![S3NKwZYR7hj6ocbkpIQcB66Unyg](https://zdoc-images.s3.us-west-2.amazonaws.com/S3NKwZYR7hj6ocbkpIQcB66Unyg.png)
 
-Zilliz Cloud は、リストされているキーの可用性を 10 分ごとにスキャンします。また、リストされている KMS キーのステータスに関するプロジェクトアラートを作成することもできます。詳細については、[プロジェクトアラートの管理](./manage-project-alerts#create-a-project-alert) を参照してください。
+Zilliz Cloud は、リストされたキーの可用性を 10 分ごとにスキャンします。また、リストされた KMS キーのステータスに関するプロジェクトアラートを作成することもできます。詳細については、[プロジェクトアラートの管理](./manage-project-alerts#create-a-project-alert) を参照してください。
 
 KMS キーが不要になった場合、どのクラスターもそのキーを使用していない限り、削除できます。
 
@@ -216,7 +216,7 @@ KMS キーを Zilliz Cloud に追加すると、それを使用して暗号化�
 
 ### 暗号化されたクラスターの作成\{#create-an-encrypted-cluster}
 
-クラスターを作成するリージョンで利用可能な KMS キーを選択して、そのクラスターを暗号化できます。
+クラスターを作成したいリージョンで利用可能な KMS キーを選択して、そのクラスターを暗号化できます。
 
 ![RGUrbElsSoc61JxikfWcoTCrnHe](https://zdoc-images.s3.us-west-2.amazonaws.com/rgurbelssoc61jxikfwcotcrnhe.png "RGUrbElsSoc61JxikfWcoTCrnHe")
 
@@ -224,17 +224,17 @@ KMS キーを追加した後、以下の手順で暗号化されたクラスタ�
 
 <Procedures>
 
-1. **デプロイオプションの選択**セクションで**専用**をクリックします。
+1. **デプロイオプションの選択** セクションで **専用** をクリックします。
 
 1. クラスターのクラウドプロバイダーとリージョンを選択します。
 
-1. **CMEK による保存時の暗号化**を有効にし、既存の KMS キーを選択します。作成するクラスターと同じリージョンにある KMS キーのみを選択できます。
+1. **CMEK による保存時の暗号化** を有効にし、既存の KMS キーを選択します。選択できるのは、作成するクラスターと同じリージョンにある KMS キーのみです。
 
-1. 概要を確認し、**クラスターの作成**をクリックします。
+1. 概要を確認し、**クラスターの作成** をクリックします。
 
     ![Iy8JbR19eoBQ4YxV1PjcLfUinl7](https://zdoc-images.s3.us-west-2.amazonaws.com/iy8jbr19eobq4yxv1pjclfuinl7.png "Iy8JbR19eoBQ4YxV1PjcLfUinl7")
 
-    暗号化されたクラスターの**概要**ページでは、上記の図に示すように、クラスター名の右側にキーのアイコンが表示されます。暗号化されたクラスターで作成されたすべてのコレクションは、デフォルトで暗号化されます。
+    暗号化されたクラスターの **概要** ページには、上記の図に示すように、クラスター名の右側にキーのアイコンが表示されます。暗号化されたクラスター内で作成されたすべてのコレクションは、デフォルトで暗号化されます。
 
 </Procedures>
 
@@ -244,11 +244,11 @@ KMS キーを追加した後、以下の手順で暗号化されたクラスタ�
 
 ![WaApbDlaYoywaMxxUMxcQLAOnDe](https://zdoc-images.s3.us-west-2.amazonaws.com/waapbdlayoywamxxumxcqlaonde.png "WaApbDlaYoywaMxxUMxcQLAOnDe")
 
-暗号化されたバックアップからの復元手順は、**CMEK による保存時の暗号化**を有効にするかどうかを除き、通常の復元とほぼ同じです。
+暗号化されたバックアップからの復元手順は、**CMEK による保存時の暗号化** を有効にするかどうかを除き、通常の復元とほぼ同じです。
 
 ![V1QJb3SK1oGa11xLljhcxKQEnkc](https://zdoc-images.s3.us-west-2.amazonaws.com/v1qjb3sk1oga11xlljhcxkqenkc.png "V1QJb3SK1oGa11xLljhcxKQEnkc")
 
-- このオプションを有効にした場合、復元後に作成されるクラスターは、以下で指定された KMS キーを使用して暗号化されます。
+- このオプションを有効にした場合、復元後に作成されたクラスターは、以下で指定された KMS キーを使用して暗号化されます。
 
-- このオプションを無効にした場合、復元後に作成されるクラスターは暗号化されません。
+- このオプションを無効にした場合、復元後に作成されたクラスターは暗号化されません。
 

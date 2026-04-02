@@ -4,17 +4,17 @@ slug: /manage-collections-sdks
 sidebar_label: "作成"
 beta: FALSE
 notebook: FALSE
-description: "スキーマ、インデックスパラメータ、メトリックタイプ、および作成時のロードの有無を定義することで、コレクションを作成できます。このページでは、ゼロからコレクションを作成する方法について説明します。 | BYOC"
+description: "スキーマ、インデックスパラメータ、メトリックタイプ、および作成時のロードの有無を定義してコレクションを作成できます。このページでは、ゼロからコレクションを作成する方法について説明します。 | BYOC"
 type: origin
 token: EmcowmwYpiFbWgkmnqfcMf3knVc
 sidebar_position: 2
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - cloud
-  - collection
-  - create collection
-  - custom setup
+  - クラウド
+  - コレクション
+  - コレクションの作成
+  - カスタムセットアップ
 
 ---
 
@@ -182,8 +182,11 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
+token := "YOUR_CLUSTER_TOKEN"
+
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())
@@ -232,13 +235,19 @@ export schema='{
 </TabItem>
 </Tabs>
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>データプレーンの RESTful API エンドポイントを呼び出す際は、ターゲットクラスタのユーザー名とパスワードをコロンで区切った文字列（例：<code>username:password</code>）を認証トークンとして使用してください。</p>
+
+</Admonition>
+
 ## (オプション) インデックスパラメータの設定\{#optional-set-index-parameters}
 
-特定のフィールドにインデックスを作成すると、そのフィールドに対する検索が高速化されます。インデックスはコレクション内のエンティティの順序を記録します。以下のコードスニペットに示すように、`metric_type` および `index_type` を使用して、Zilliz Cloud がフィールドをインデックス化し、ベクトル埋め込み間の類似度を測定するための適切な方法を選択できます。
+特定のフィールドにインデックスを作成すると、そのフィールドに対する検索が高速化されます。インデックスはコレクション内のエンティティの順序を記録します。以下のコードスニペットに示すように、`metric_type` と `index_type` を使用して、Zilliz Cloud によるフィールドのインデックス作成方法やベクトル埋め込み間の類似性の測定方法を適切に選択できます。
 
-Zilliz Cloud では、すべてのベクトルフィールドに対してインデックスタイプとして `AUTOINDEX` を使用でき、必要に応じてメトリックタイプとして `COSINE`、`L2`、`IP` のいずれかを使用できます。
+Zilliz Cloud では、すべてのベクトルフィールドに対してインデックスタイプとして `AUTOINDEX` を使用でき、ニーズに応じて `COSINE`、`L2`、`IP` のいずれかをメトリックタイプとして使用できます。
 
-上記のコードスニペットで示されているように、ベクトルフィールドにはインデックスタイプとメトリックタイプの両方を設定する必要がありますが、スカラーフィールドにはインデックスタイプのみを設定します。ベクトルフィールドにはインデックスが必須であり、フィルタリング条件で頻繁に使用されるスカラーフィールドにもインデックスを作成することをお勧めします。
+上記のコードスニペットで示されているように、ベクトルフィールドにはインデックスタイプとメトリックタイプの両方を設定する必要があり、スカラーフィールドにはインデックスタイプのみを設定する必要があります。ベクトルフィールドにはインデックスが必須であり、フィルタリング条件で頻繁に使用されるスカラーフィールドにもインデックスを作成することをお勧めします。
 
 詳細については、[インデックスの管理](./manage-indexes) を参照してください。
 

@@ -130,14 +130,14 @@ ctx, cancel := context.WithCancel(context.Background())
 defer cancel()
 
 milvusAddr := "YOUR_CLUSTER_ENDPOINT"
-APIKey := "YOUR_CLUSTER_TOKEN"
+token := "YOUR_CLUSTER_TOKEN"
 // A valid token could be 
 // 
 // - A colon-joined cluster username and password, as in `user:pass`
 
 client, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
-    APIKey: APIKey
+    APIKey: token
 })
 if err != nil {
     fmt.Println(err.Error())
@@ -177,6 +177,12 @@ export CLUSTER_TOKEN="YOUR_CLUSTER_TOKEN"
 
 </TabItem>
 </Tabs>
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Use a colon-separated username and password of the target cluster, like <code>username:password</code>, as the authentication token when calling data-plane RESTful API endpoints.</p>
+
+</Admonition>
 
 ## Create Collection\{#create-collection}
 

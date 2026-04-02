@@ -11,9 +11,9 @@ sidebar_position: 1
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - cloud
-  - cluster
-  - create
+  - クラウド
+  - クラスター
+  - 作成
 
 ---
 
@@ -123,17 +123,17 @@ curl --request POST \
 # }
 ```
 
-上記のコマンドでは、
+上記のコマンドにおいて、
 
 - `{API_KEY}`: API リクエストの認証に使用される資格情報。この値を独自の値に置き換えてください。
 
 - `clusterName`: 作成するクラスターの名前。
 
-- `projectId`: クラスターを作成するプロジェクトの ID。プロジェクト ID を一覧表示するには、[プロジェクトの一覧表示](/reference/restful/list-projects-v2) 操作を呼び出します。
+- `projectId`: クラスターを作成するプロジェクトの ID。プロジェクト ID を一覧表示するには、[プロジェクトの一覧表示](/reference/restful/list-projects-v2) オペレーションを呼び出します。
 
-- `regionId`: クラスターを作成するクラウドリージョンの ID。利用可能なクラウドリージョン ID を取得するには、[クラウドリージョンの一覧表示](/reference/restful/list-cloud-regions-v2) 操作を呼び出します。
+- `regionId`: クラスターを作成するクラウドリージョンの ID。利用可能なクラウドリージョン ID を取得するには、[クラウドリージョンの一覧表示](/reference/restful/list-cloud-regions-v2) オペレーションを呼び出します。
 
-- `cuType`: クラスターのタイプ。有効な値: パフォーマンス最適化済み、容量最適化済み。
+- `cuType`: クラスターのタイプ。有効な値: パフォーマンス最適化済み, 容量最適化済み。
 
 - `cuSize`: クラスターに使用されるクエリ CU の数。値の範囲: 1 から 256。
 
@@ -143,3 +143,8 @@ curl --request POST \
 
 </Tabs>
 
+## FAQ\{#faq}
+
+**クラスター作成時に Milvus のバージョンを指定できますか？**
+
+いいえ。Zilliz Cloud は、サポートされている最新の Milvus バージョンでクラスターを自動的にプロビジョニングし、管理されたローリングアップグレードを通じて最新の状態に保ちます。特定のバージョンが必要な場合は、[サポートにお問い合わせ](https://support.zilliz.com/hc/en-us/requests/new) いただき、ユースケースをご説明ください。

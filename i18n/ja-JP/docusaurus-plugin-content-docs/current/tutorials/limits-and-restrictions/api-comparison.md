@@ -22,19 +22,19 @@ import Admonition from '@theme/Admonition';
 
 # API の可用性
 
-Zilliz Cloud は、より優れたユーザーエクスペリエンスを提供するために、Milvus とはわずかに異なる動作をします。この記事では、両プラットフォーム間の API に関する違いを明確にすることを目的としています。
+Zilliz Cloud は、より優れたユーザー体験を提供するために Milvus とはわずかに異なる動作をします。この記事では、両プラットフォーム間の API に関する違いを明確にすることを目的としています。
 
-Milvus から Zilliz Cloud への移行を検討している場合、既存のコードに対して必要な変更を加える必要があるかもしれません。
+Milvus から Zilliz Cloud への移行を検討している場合、既存のコードにいくつかの変更を加える必要があるかもしれません。
 
 ## シナリオ固有の権限\{#scenario-specific-privileges}
 
-以下の表は、さまざまなサービスティアにおける API の可用性を比較したものです。[Bring Your Own Cloud (BYOC)](/docs/byoc/byoc-intro) ソリューションにおける API の可用性は、**Standard および Enterprise** ティアと一致することに注意してください。
+以下の表は、サービスティアごとの API 可用性を比較したものです。[Bring Your Own Cloud (BYOC)](/docs/byoc/byoc-intro) ソリューションの API 可用性は、**Standard および Enterprise** ティアと一致することに注意してください。
 
 <table>
    <tr>
      <th><p><strong>カテゴリ</strong></p></th>
      <th><p><strong>API</strong></p></th>
-     <th><p><strong>コンソール</strong></p></th>
+     <th><p><strong>Console</strong></p></th>
      <th><p><strong>Free</strong></p></th>
      <th><p><strong>Serverless</strong></p></th>
      <th><p><strong>Dedicated / BYOC</strong></p></th>

@@ -12,10 +12,10 @@ type: docx
 token: OdaQdSJeuofH1vxC8P2cZ2s8nDh
 sidebar_position: 10
 keywords: 
-  - Vectorization
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
+  - AI chatbots
   - zilliz
   - zilliz cloud
   - cloud

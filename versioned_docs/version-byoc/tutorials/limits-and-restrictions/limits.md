@@ -361,9 +361,9 @@ You can restore a snapshot in the same region as the original cluster of the sna
      <th><p><strong>Remarks</strong></p></th>
    </tr>
    <tr>
-     <td><p>IP Address (CIDR)</p></td>
+     <td><p>Console IP Access</p></td>
      <td><p>100</p></td>
-     <td><p>You can add up to 100 IP addresses to the allow list.</p></td>
+     <td><p>You can add up to 100 IP addresses to the console IP allowlist.</p></td>
    </tr>
 </table>
 

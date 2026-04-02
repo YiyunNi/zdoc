@@ -4,7 +4,7 @@ slug: /database
 sidebar_label: "データベース"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloudは、クラスターとコレクションの間にデータベース層を導入し、マルチテナンシーをサポートしながら、データを管理および整理するより効率的な方法を提供します。"
+description: "Zilliz Cloud は、クラスターとコレクションの間にデータベース層を導入し、マルチテナンシーをサポートしながら、データをより効率的に管理・整理する方法を提供します。| Cloud"
 type: origin
 token: Z0oiwVpsliiW1zksnlFc3ZsVnxf
 sidebar_position: 5
@@ -22,39 +22,39 @@ import TabItem from '@theme/TabItem';
 
 # データベース
 
-Zilliz Cloudは、クラスターとコレクションの間に**データベース**層を導入し、マルチテナンシーをサポートしながらデータを管理および整理するより効率的な方法を提供します。
+Zilliz Cloud では、クラスターとコレクションの間に **データベース**（データベース）レイヤーを導入しており、データの管理と整理をより効率的に行えるとともに、マルチテナントをサポートしています。
 
-## データベースとは\{#what-is-a-database}
+## What is a database\{#what-is-a-database}
 
-Zilliz Cloudでは、データベースはデータを整理および管理するための論理的な単位として機能します。データセキュリティを強化し、マルチテナンシーを実現するために、複数のデータベースを作成して、異なるアプリケーションまたはテナントのデータを論理的に分離できます。たとえば、ユーザーAのデータを保存するデータベースと、ユーザーBのデータを保存する別のデータベースを作成します。
+Zilliz Cloud におけるデータベースは、データを整理・管理するための論理的な単位です。データのセキュリティを強化し、マルチテナントを実現するために、異なるアプリケーションやテナントごとに複数のデータベースを作成して、論理的にデータを分離できます。たとえば、ユーザー A のデータを格納するデータベースと、ユーザー B のデータを格納する別のデータベースを作成できます。
 
-Zilliz Cloudでは、リソースは次の階層順に構造化されています。
+Zilliz Cloud では、リソースは以下のような階層構造になっています。
 
 ![KkS9wtS5IhcP9obYvc1cK10snfg](https://zdoc-images.s3.us-west-2.amazonaws.com/KkS9wtS5IhcP9obYvc1cK10snfg.png)
 
-データベースの概念は、Dedicatedクラスターでのみ利用可能です。ServerlessおよびFreeクラスターにはデータベースがありません。
+なお、データベースという概念は Dedicated クラスターでのみ利用可能です。Serverless クラスターや Free クラスターにはデータベースが存在しません。
 
-## 前提条件\{#prerequisites}
+## Prerequisites\{#prerequisites}
 
-データベースを管理するには、**組織オーナー**または**プロジェクト管理者**のアクセス権が必要です。
+データベースを管理するには、**組織オーナー** または **プロジェクト管理者** のアクセス権が必要です。
 
-## データベースの作成\{#create-database}
+## Create database\{#create-database}
 
-データベースはDedicatedクラスターでのみ作成できます。クラスターの作成時に、デフォルトのデータベースが作成されます。
+データベースは Dedicated クラスターでのみ作成できます。クラスター作成時に、デフォルトのデータベースが自動的に作成されます。
 
-Dedicatedクラスターでは、コンソールで手動で、またはプログラムで、最大1,024個のデータベースを作成できます。
+Dedicated クラスター内では、最大 1,024 個のデータベースをコンソール上で手動で、またはプログラムによって作成できます。
 
-### コンソールでデータベースを作成する\{#create-a-database-on-the-console}
+### Create a database on the console\{#create-a-database-on-the-console}
 
-次の図に示すように、コンソールでデータベースを作成できます。
+次の図のように、コンソール上でデータベースを作成できます。
 
 ![create-database](https://zdoc-images.s3.us-west-2.amazonaws.com/create-database.png "create-database")
 
-作成したコレクションをあるデータベースから別のデータベースに移動することもできます。詳細については、[コレクションの管理 (コンソール)](./manage-collections-console#manage-collection)を参照してください。
+また、既存のコレクションをあるデータベースから別のデータベースへ移動することも可能です。詳細については、[Manage Collections (Console)](./manage-collections-console#manage-collection) を参照してください。
 
-### プログラムでデータベースを作成する\{#create-a-database-programmatically}
+### Create a database programmatically\{#create-a-database-programmatically}
 
-Milvus RESTful APIまたはSDKを使用して、プログラムでデータを作成できます。
+Milvus RESTful API や SDK を使用して、プログラムでデータベースを作成できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -116,8 +116,7 @@ await client.createDatabase({
 ```go
 cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: "YOUR_CLUSTER_ENDPOINT",
-    Username: "root",
-    Password: "Milvus",
+    APIKey: "YOUR_CLUSTER_TOKEN"
 })
 if err != nil {
     // handle err
@@ -149,7 +148,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-データベースの作成時に、データベースのプロパティを設定することもできます。次の例では、データベースのレプリカ数を設定しています。
+データベース作成時に、そのプロパティを設定することもできます。以下の例では、データベースのレプリカ数を設定しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -226,7 +225,7 @@ curl --request POST \
 
 ## データベースの表示\{#view-databases}
 
-Milvus RESTful API または SDK を使用して、既存のすべてのデータベースを一覧表示し、その詳細を表示できます。
+Milvus RESTful API または SDK を使用して、既存のすべてのデータベースを一覧表示し、その詳細を確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -312,9 +311,9 @@ curl --request POST \
 
 ## データベースプロパティの管理\{#manage-database-properties}
 
-各データベースには独自のプロパティがあり、[プログラムによるデータベースの作成](./database#create-a-database-programmatically)で説明されているようにデータベースを作成する際にデータベースのプロパティを設定したり、既存のデータベースのプロパティを変更したり削除したりできます。
+各データベースには独自のプロパティがあります。データベース作成時にプロパティを設定できます（詳細は [プログラムによるデータベースの作成](./database#create-a-database-programmatically) を参照）し、既存のデータベースのプロパティを変更または削除することも可能です。
 
-次の表は、可能なデータベースプロパティを示しています。
+以下の表に、設定可能なデータベースプロパティを示します。
 
 <table>
    <tr>
@@ -334,19 +333,19 @@ curl --request POST \
    </tr>
    <tr>
      <td><p><code>database.force.deny.writing</code></p></td>
-     <td><p>ブール値</p></td>
-     <td><p>指定されたデータベースが書き込み操作を拒否するように強制するかどうか。</p></td>
+     <td><p>boolean</p></td>
+     <td><p>指定されたデータベースに対して書き込み操作を強制的に拒否するかどうか。</p></td>
    </tr>
    <tr>
      <td><p><code>database.force.deny.reading</code></p></td>
-     <td><p>ブール値</p></td>
-     <td><p>指定されたデータベースが読み取り操作を拒否するように強制するかどうか。</p></td>
+     <td><p>boolean</p></td>
+     <td><p>指定されたデータベースに対して読み取り操作を強制的に拒否するかどうか。</p></td>
    </tr>
 </table>
 
 ### データベースプロパティの変更\{#alter-database-properties}
 
-既存のデータベースのプロパティは次のように変更できます。次の例では、データベースで作成できるコレクションの数を制限しています。
+既存のデータベースのプロパティは次のように変更できます。以下の例では、データベース内で作成可能なコレクション数を制限しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -419,7 +418,7 @@ curl --request POST \
 
 ### データベースプロパティの削除\{#drop-database-properties}
 
-データベースプロパティを削除してリセットすることもできます。以下の例では、データベースで作成できるコレクション数の制限を削除します。
+以下のようにプロパティを削除することで、データベースのプロパティをリセットすることもできます。次の例では、データベース内で作成可能なコレクション数の制限を解除しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -489,13 +488,13 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-## データベースの使用方法\{#use-database}
+## データベースの使用\{#use-database}
 
-Zilliz Cloudから切断することなく、あるデータベースから別のデータベースに切り替えることができます。
+Zilliz Cloud から切断することなく、あるデータベースから別のデータベースに切り替えることができます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>RESTful APIはこの操作をサポートしていません。</p>
+<p>RESTful API はこの操作をサポートしていません。</p>
 
 </Admonition>
 
@@ -551,21 +550,21 @@ if err != nil {
 
 ## データベースの削除\{#drop-database}
 
-データベースが不要になったら、データベースを削除できます。以下の点に注意してください。
+データベースが不要になった場合は、そのデータベースを削除できます。ただし、以下の点に注意してください。
 
 - デフォルトのデータベースは削除できません。
 
-- データベースを削除する前に、そのデータベース内のすべてのコレクションを削除する必要があります。
+- データベースを削除する前に、そのデータベース内のすべてのコレクションを先に削除する必要があります。
 
-### コンソールでデータベースを削除する\{#drop-a-database-on-the-console}
+### コンソール上でデータベースを削除する\{#drop-a-database-on-the-console}
 
-以下の図の手順に従って、コンソールでデータベースを削除できます。
+下図の手順に従って、コンソール上でデータベースを削除できます。
 
 ![drop-database](https://zdoc-images.s3.us-west-2.amazonaws.com/drop-database.png "drop-database")
 
 ### プログラムでデータベースを削除する\{#drop-a-database-programmatically}
 
-Milvus RESTful API または SDK を使用して、プログラムでデータを作成できます。
+Milvus RESTful API または SDK を使用して、プログラムからデータベースを削除できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
