@@ -146,5 +146,3 @@ import Supademo from '@site/src/components/Supademo';
 <p>移行されたコレクションは、検索またはクエリ操作のために直ちに利用可能にはなりません。検索およびクエリ機能を有効にするには、Zilliz Cloud でコレクションを手動でロードする必要があります。詳細については、<a href="./load-release-collections">Load & Release</a> を参照してください。</p>
 
 </Admonition>
-
-</Admonition>
