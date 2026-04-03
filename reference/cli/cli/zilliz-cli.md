@@ -8,6 +8,8 @@ sidebar_position: 0
 ---
 
 import Admonition from '@theme/Admonition';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
 # Zilliz CLI Reference
@@ -24,9 +26,22 @@ The Zilliz Command Line Interface () provides a command-line tool for managing y
 
 ### Install
 
+<Tabs groupId="cli-install" defaultValue='linux' values={[{"label":"macOS / Linux","value":"linux"},{"label":"Windows","value":"windows"}]}>
+<TabItem value="linux">
+
 ```bash
-pip install zilliz-cli
+curl -fsSL https://raw.githubusercontent.com/zilliztech/zilliz-cli/master/install.sh | bash
 ```
+
+</TabItem>
+<TabItem value="windows">
+
+```bash
+irm https://raw.githubusercontent.com/zilliztech/zilliz-cli/master/install.ps1 | iex
+```
+
+</TabItem>
+</Tabs>
 
 ### Authenticate
 
