@@ -105,7 +105,7 @@ If you need to upgrade a project to the **Business Critical** or **BYOC** plan, 
     export projectId="proj-xx"
     
     curl --request PATCH \
-    --url "${BASE_URL}/v2/projects/${projectId}" \
+    --url "${BASE_URL}/v2/projects/${projectId}/plan" \
     --header "Authorization: Bearer ${TOKEN}" \
     --header "Content-Type: application/json" \
     -d '{

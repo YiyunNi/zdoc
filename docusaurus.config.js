@@ -14,7 +14,7 @@ import 'dotenv/config';
 const config = {
   title: 'Zilliz Cloud Developer Hub',
   tagline: 'Find what you need to work with Zilliz Cloud',
-  favicon: 'img/favicon.svg',
+  favicon: 'icons/favicon.svg',
   trailingSlash: false,
 
   // Set the production url of your site here

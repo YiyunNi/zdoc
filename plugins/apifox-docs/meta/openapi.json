@@ -20069,7 +20069,9 @@
 					}
 				}
 
-			},
+			}
+		},
+		"/v2/projects/{projectId}/plan": {
 			"patch": {
 				"summary": "Upgrade Project",
 				"deprecated": false,
