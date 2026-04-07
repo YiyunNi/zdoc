@@ -8,9 +8,7 @@ COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 COPY . .
 ARG CHAT_ENDPOINT
-ARG INKEEP_API_KEY
 ENV CHAT_ENDPOINT=${CHAT_ENDPOINT}
-ENV INKEEP_API_KEY=${INKEEP_API_KEY}
 RUN pnpm run build
 
 FROM nginx:alpine
