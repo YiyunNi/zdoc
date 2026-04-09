@@ -136,6 +136,12 @@ If a user no longer belongs to your organization, you can remove the user.
 
 To remove an organization user, you must be an **Organization Owner**.
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>Upon removing a member, the corresponding personal API key will be immediately revoked and access will be denied. To prevent service disruption, please ensure that any personal keys utilized in your environments are replaced prior to removal. This action cannot be undone.</p>
+
+</Admonition>
+
 ![C6O0wzlfRhmxQwbt7yccX3VHn3g](https://zdoc-images.s3.us-west-2.amazonaws.com/C6O0wzlfRhmxQwbt7yccX3VHn3g.png)
 
 ## Leave an organization\{#leave-an-organization}

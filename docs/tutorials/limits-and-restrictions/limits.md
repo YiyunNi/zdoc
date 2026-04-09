@@ -619,7 +619,7 @@ The maximum retention period for automatically created backups is 30 days.
 
 ## Restore on Console\{#restore-on-console}
 
-You can restore a snapshot in the same region as the original cluster of the snapshot. The target cluster of the restoration should use the same CU type as the original one.
+You can restore a backup file in the same region as the original cluster of the backup file. The target cluster of the restoration should use the same CU type as the original one.
 
 ## IP Access List\{#ip-access-list}
 
