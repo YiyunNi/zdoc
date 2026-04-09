@@ -12,6 +12,7 @@ export function initDb(): void {
   db = new Database(SQLITE_PATH);
 
   db.pragma('journal_mode = WAL');
+  db.pragma('synchronous = NORMAL');
 
   db.exec(`
     CREATE TABLE IF NOT EXISTS doc_chunks (
