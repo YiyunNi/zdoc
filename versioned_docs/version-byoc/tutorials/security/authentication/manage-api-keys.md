@@ -41,6 +41,12 @@ Zilliz Cloud offers two types of API keys to meet diverse user requirements:
 
 - **Customized API keys**: Manually created by **Organization Owners** and **Project Admins** for applications or external users without Zilliz Cloud accounts. These keys are ideal for long-term access needs, ensuring service continuity even if the initial creator of the API key leaves the organization.
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>For production environments, please use customized keys instead. Personal API keys will be deleted alongside the user account.</p>
+
+</Admonition>
+
 The following diagram illustrates API Key roles and resource access.
 
 ![Ec7wwrAnFhGIZFbJTWwc57bVn0f](https://zdoc-images.s3.us-west-2.amazonaws.com/Ec7wwrAnFhGIZFbJTWwc57bVn0f.png)
@@ -337,4 +343,12 @@ The following screenshots demonstrate how to delete a customized API key.
 </Admonition>
 
 ![delete-customized-api-keys](https://zdoc-images.s3.us-west-2.amazonaws.com/delete-customized-api-keys.png "delete-customized-api-keys")
+
+## FAQ\{#faq}
+
+**Should I use my personal API key in production?**  
+
+No. **Personal API keys** are tied to individual user accounts and are automatically deleted when the user leaves the organization. If the key owner's account is removed, any application or service relying on that key will immediately lose access to Zilliz Cloud resources. 
+
+For production environments, use **customized API keys** instead. Customized keys are independent of any individual user account, ensuring service continuity even if team members leave the organization.    
 
