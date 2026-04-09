@@ -1,6 +1,7 @@
 import type {ConfidenceLevel} from './types.js';
 import {generateEmbedding, zillizRequest, isZillizConfigured} from './zilliz-client.js';
 import {isDemotedSource} from './demotion.js';
+import {getDb, resetDb} from './db.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -204,6 +205,16 @@ interface IndexedChunk {
   titleTf: Map<string, number>;  // title-only term frequencies for boost
 }
 
+interface ParsedChunk {
+  id: string;
+  doc_url: string;
+  doc_url_md: string;
+  doc_title: string;
+  section: string;
+  content: string;
+  weight: number;
+}
+
 let indexChunks: IndexedChunk[] = [];
 let idf: Map<string, number> = new Map();
 let avgDocLen = 0;
@@ -211,7 +222,11 @@ let indexReady = false;
 let lastRefreshedAt: string | null = null;
 
 export function getIndexSize(): number {
-  return indexChunks.length;
+  try {
+    const db = getDb();
+    const row = db.prepare('SELECT COUNT(*) as n FROM doc_chunks').get() as any;
+    return row?.n ?? 0;
+  } catch { return 0; }
 }
 
 /** Look up a doc title by URL from the BM25 index. Handles both full and relative URLs. */
@@ -236,7 +251,16 @@ export function getTitleByUrl(url: string): string | null {
 }
 
 export function getIndexStatus(): {ready: boolean; chunks: number; lastRefreshed: string | null} {
-  return {ready: indexReady, chunks: indexChunks.length, lastRefreshed: lastRefreshedAt};
+  // Try to get chunk count from SQLite if ready
+  let chunks = 0;
+  if (indexReady) {
+    try {
+      const db = getDb();
+      const row = db.prepare('SELECT COUNT(*) as n FROM doc_chunks').get() as any;
+      chunks = row?.n ?? 0;
+    } catch { /* db not ready yet */ }
+  }
+  return {ready: indexReady, chunks, lastRefreshed: lastRefreshedAt};
 }
 
 function buildBM25Index(chunks: IndexedChunk[]): void {
@@ -569,11 +593,11 @@ function chunkContent(content: string): string[] {
   return chunks;
 }
 
-/** Parse an llms.txt file into chunks for BM25 indexing.
+/** Parse an llms.txt file into chunks for SQLite indexing.
  *  Handles both summary format (title + URL + description) and full-content format.
  *  Each ## heading becomes a doc; long docs are further chunked. */
-function parseLlmsFullText(text: string, section: string): IndexedChunk[] {
-  const chunks: IndexedChunk[] = [];
+function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
+  const chunks: ParsedChunk[] = [];
   const blocks = text.split(/^## /m).filter(Boolean);
 
   for (const block of blocks) {
@@ -607,17 +631,9 @@ function parseLlmsFullText(text: string, section: string): IndexedChunk[] {
     // Allow entries with just a title and URL (no content body)
     const searchContent = content || title;
 
-    // Pre-compute title term frequencies for title boost
-    const titleTokens = tokenize(title);
-    const titleTf = new Map<string, number>();
-    for (const t of titleTokens) titleTf.set(t, (titleTf.get(t) || 0) + 1);
-
     const contentChunks = chunkContent(searchContent);
     for (let i = 0; i < contentChunks.length; i++) {
       const chunkText = contentChunks[i];
-      const tokens = tokenize(`${title} ${chunkText}`);
-      const tf = new Map<string, number>();
-      for (const t of tokens) tf.set(t, (tf.get(t) || 0) + 1);
 
       chunks.push({
         id: `${url}#${i}`,
@@ -627,10 +643,6 @@ function parseLlmsFullText(text: string, section: string): IndexedChunk[] {
         section,
         content: chunkText,
         weight: 1.0,
-        tokens,
-        tokenLen: tokens.length,
-        tf,
-        titleTf,
       });
     }
   }
@@ -660,7 +672,7 @@ export async function loadIndex(force = false): Promise<void> {
   indexLoading = true;
 
   console.log('[RAG] Loading doc index from', INDEX_BASE_URL);
-  const allChunks: IndexedChunk[] = [];
+  const allChunks: ParsedChunk[] = [];
 
   for (const {path, section} of FULL_INDEX_PATHS) {
     try {
@@ -668,15 +680,40 @@ export async function loadIndex(force = false): Promise<void> {
       const text = await res.text();
       const chunks = parseLlmsFullText(text, section);
       allChunks.push(...chunks);
-      console.log(`[RAG] Loaded ${chunks.length} chunks from ${path} (${(text.length / 1024).toFixed(0)} KB)`);
+      console.log(`[RAG] Loaded ${chunks.length} chunks from ${path}`);
     } catch (err) {
       console.warn(`[RAG] Skipping ${path}:`, (err as Error).message);
     }
   }
 
   if (allChunks.length > 0) {
-    buildBM25Index(allChunks);
-    console.log(`[RAG] BM25 index ready: ${allChunks.length} chunks, avgDocLen=${avgDocLen.toFixed(0)} tokens`);
+    const db = getDb();
+    resetDb();
+
+    const insert = db.prepare(`
+      INSERT INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `);
+    const insertMany = db.transaction((chunks: ParsedChunk[]) => {
+      for (const c of chunks) {
+        insert.run(c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight);
+      }
+    });
+    insertMany(allChunks);
+
+    // Optimize FTS5 index segments
+    db.exec("INSERT INTO doc_chunks_fts(doc_chunks_fts) VALUES('optimize')");
+
+    // Write metadata
+    const upsert = db.prepare("INSERT OR REPLACE INTO metadata(key, value) VALUES(?, ?)");
+    upsert.run('schema_version', '1');
+    upsert.run('last_build', new Date().toISOString());
+    upsert.run('total_chunks', String(allChunks.length));
+    upsert.run('source', INDEX_BASE_URL);
+
+    indexReady = true;
+    lastRefreshedAt = new Date().toISOString();
+    console.log(`[RAG] SQLite index ready: ${allChunks.length} chunks`);
   } else {
     console.warn('[RAG] No chunks loaded — search will return empty results');
   }
