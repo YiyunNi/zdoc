@@ -127,7 +127,6 @@ const config: Config = {
         { folder: 'reference', route: '/reference' },
       ],
     }],
-    './plugins/vectorize-docs',
   ],
 
   presets: [

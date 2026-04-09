@@ -194,17 +194,9 @@ GitHub URLs: `github:owner/repo` or `https://github.com/owner/repo` (max 50 file
 | `AI_API_KEY` | — | **Required.** LLM API key |
 | `AI_BASE_URL` | `https://api.openai.com/v1` | LLM endpoint |
 | `AI_MODEL` | `gpt-4o` | Model name |
-| `ZILLIZ_ENDPOINT` | — | Zilliz Cloud endpoint (enables vector search + logging) |
-| `ZILLIZ_TOKEN` | — | Zilliz Cloud API token |
-| `EMBEDDING_MODEL` | `baai/bge-large-en-v1.5` | Embedding model |
-| `EMBEDDING_API_KEY` | falls back to `AI_API_KEY` | Embedding API key |
-| `EMBEDDING_BASE_URL` | falls back to `AI_BASE_URL` | Embedding endpoint |
-| `EMBEDDING_DIM` | `1024` | Embedding vector dimension |
+| `SQLITE_PATH` | `./data/chat-proxy.db` | Path to the SQLite database file |
 | `DOCS_SITE_URL` | `https://docs.zilliz.com` | Docs site for keyword fallback |
 | `ADMIN_API_KEY` | — | Protects admin routes (disabled if unset) |
-| `SEMANTIC_CACHE_ENABLED` | `true` | Set to `false` to disable L2 semantic cache |
-| `SEMANTIC_CACHE_THRESHOLD` | `0.92` | Minimum COSINE similarity for a semantic cache hit |
-| `SEMANTIC_CACHE_MAX_AGE_DAYS` | `7` | Maximum age (days) for cached answers |
 | `GITHUB_TOKEN` | — | Optional GitHub token for higher API rate limits (external source indexing) |
 | `PORT` | `8787` | Server port |
 | `ALLOWED_ORIGINS` | `http://localhost:3000` | CORS origins (comma-separated) |
