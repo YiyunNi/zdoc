@@ -5,7 +5,7 @@ import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {setActiveSectionFilter, searchDocs, searchDocsBM25, getIndexStatus, getTitleByUrl} from './rag.js';
+import {setActiveSectionFilter, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
 import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
 import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';

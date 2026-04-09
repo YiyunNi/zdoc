@@ -1,5 +1,4 @@
 import type {ConfidenceLevel} from './types.js';
-import {generateEmbedding, zillizRequest, isZillizConfigured} from './zilliz-client.js';
 import {isDemotedSource} from './demotion.js';
 import {getDb, resetDb} from './db.js';
 
@@ -8,16 +7,11 @@ import {getDb, resetDb} from './db.js';
 // ---------------------------------------------------------------------------
 
 const TOP_K = 6;
-const SEARCH_MODE = (process.env.SEARCH_MODE || 'hybrid').toLowerCase(); // hybrid, bm25, vector
 const DOCS_SITE_URL = (process.env.DOCS_SITE_URL || 'https://docs.zilliz.com').replace(/\/$/, '');
 // INDEX_BASE_URL: base URL containing the llms index .txt files.
 // In production, point to S3 (e.g. https://bucket.s3.region.amazonaws.com/llms-index).
 // Falls back to the docs site's /llms/ directory.
 const INDEX_BASE_URL = (process.env.INDEX_BASE_URL || `${DOCS_SITE_URL}/llms`).replace(/\/$/, '');
-
-// BM25 parameters
-const BM25_K1 = 1.2;   // term frequency saturation
-const BM25_B = 0.75;    // document length normalization
 
 // ---------------------------------------------------------------------------
 // Title sanitization — strip markdown heading IDs like {#slug-text}
@@ -105,105 +99,8 @@ export function detectLanguagesFromEntries(entries: DocEntry[]): string[] {
 }
 
 // ---------------------------------------------------------------------------
-// Tokenization & stop words
+// Index state
 // ---------------------------------------------------------------------------
-
-const STOP_WORDS = new Set([
-  'a', 'an', 'the', 'is', 'it', 'to', 'in', 'for', 'of', 'on', 'at', 'by',
-  'and', 'or', 'but', 'not', 'with', 'from', 'as', 'this', 'that', 'be',
-  'are', 'was', 'were', 'been', 'has', 'have', 'had', 'do', 'does', 'did',
-  'will', 'would', 'could', 'should', 'can', 'may', 'might', 'shall',
-  'i', 'me', 'my', 'we', 'us', 'you', 'your', 'he', 'she', 'they', 'them',
-  'if', 'then', 'so', 'because', 'about', 'up', 'out', 'just', 'also',
-]);
-
-// Intent-bearing words kept but with reduced weight in scoring
-const SOFT_STOP_WORDS = new Set([
-  'what', 'which', 'who', 'whom', 'how', 'when', 'where', 'why',
-]);
-
-// Synonym expansion: map common user terms to documentation terms
-const SYNONYMS: Record<string, string[]> = {
-  frozen: ['suspended', 'deactivated', 'paused', 'inactive', 'locked'],
-  freeze: ['suspended', 'deactivated', 'paused', 'inactive'],
-  sales: ['contact', 'pricing', 'enterprise', 'demo'],
-  support: ['help', 'ticket', 'assistance', 'troubleshoot'],
-  broken: ['error', 'failed', 'issue', 'troubleshoot'],
-  slow: ['latency', 'performance', 'optimization', 'throughput'],
-  cost: ['pricing', 'billing', 'credits', 'payment'],
-  price: ['pricing', 'billing', 'credits', 'cost'],
-  gpu: ['cpu', 'hardware', 'compute', 'accelerator'],
-  store: ['storage', 'capacity', 'logical', 'disk'],
-  connect: ['connection', 'endpoint', 'sdk', 'client'],
-  login: ['authentication', 'sign-in', 'credentials', 'access'],
-  signup: ['register', 'account', 'create', 'sign-up'],
-  upgrade: ['migrate', 'scale', 'tier', 'plan'],
-  delete: ['drop', 'remove', 'truncate', 'purge'],
-  update: ['upsert', 'modify', 'alter', 'patch'],
-};
-
-export interface WeightedToken {
-  token: string;
-  weight: number;
-}
-
-function tokenize(text: string): string[] {
-  return text
-    .toLowerCase()
-    .split(/[\s.,;:!?'"()\[\]{}<>\/\\|@#$%^&*+=~`]+/)
-    .filter(t => t.length > 1 && !STOP_WORDS.has(t) && !SOFT_STOP_WORDS.has(t));
-}
-
-/** Tokenize a search query with synonym expansion. Returns weighted tokens. */
-function tokenizeQuery(text: string): WeightedToken[] {
-  const raw = text
-    .toLowerCase()
-    .split(/[\s.,;:!?'"()\[\]{}<>\/\\|@#$%^&*+=~`]+/)
-    .filter(t => t.length > 1 && !STOP_WORDS.has(t));
-
-  const result: WeightedToken[] = [];
-  const seen = new Set<string>();
-
-  for (const t of raw) {
-    if (seen.has(t)) continue;
-    seen.add(t);
-
-    // Soft stop words get reduced weight
-    const weight = SOFT_STOP_WORDS.has(t) ? 0.3 : 1.0;
-    result.push({token: t, weight});
-
-    // Add synonyms with reduced weight
-    const syns = SYNONYMS[t];
-    if (syns) {
-      for (const s of syns) {
-        if (!seen.has(s)) {
-          seen.add(s);
-          result.push({token: s, weight: 0.5});
-        }
-      }
-    }
-  }
-
-  return result;
-}
-
-// ---------------------------------------------------------------------------
-// In-memory BM25 index
-// ---------------------------------------------------------------------------
-
-interface IndexedChunk {
-  id: string;
-  doc_url: string;
-  doc_url_md: string;
-  doc_title: string;
-  section: string;
-  content: string;
-  weight: number;
-  tokens: string[];
-  tokenLen: number;
-  tf: Map<string, number>;
-  titleTf: Map<string, number>;  // title-only term frequencies for boost
-}
 
 interface ParsedChunk {
   id: string;
@@ -215,9 +112,6 @@ interface ParsedChunk {
   weight: number;
 }
 
-let indexChunks: IndexedChunk[] = [];
-let idf: Map<string, number> = new Map();
-let avgDocLen = 0;
 let indexReady = false;
 let lastRefreshedAt: string | null = null;
 
@@ -229,29 +123,7 @@ export function getIndexSize(): number {
   } catch { return 0; }
 }
 
-/** Look up a doc title by URL from the BM25 index. Handles both full and relative URLs. */
-export function getTitleByUrl(url: string): string | null {
-  const normalized = url.replace(/\.md$/, '');
-  // Extract path portion for matching (e.g., "/docs/single-vector-search")
-  let path = normalized;
-  try {
-    path = new URL(normalized, 'https://docs.zilliz.com').pathname;
-  } catch { /* keep as-is */ }
-
-  for (const chunk of indexChunks) {
-    // Match by full URL, or by path suffix
-    if (chunk.doc_url === normalized || chunk.doc_url === url) {
-      return cleanTitle(chunk.doc_title);
-    }
-    if (chunk.doc_url.endsWith(path)) {
-      return cleanTitle(chunk.doc_title);
-    }
-  }
-  return null;
-}
-
 export function getIndexStatus(): {ready: boolean; chunks: number; lastRefreshed: string | null} {
-  // Try to get chunk count from SQLite if ready
   let chunks = 0;
   if (indexReady) {
     try {
@@ -263,267 +135,83 @@ export function getIndexStatus(): {ready: boolean; chunks: number; lastRefreshed
   return {ready: indexReady, chunks, lastRefreshed: lastRefreshedAt};
 }
 
-function buildBM25Index(chunks: IndexedChunk[]): void {
-  // Compute document frequency for each term
-  const df = new Map<string, number>();
-  let totalLen = 0;
+// ---------------------------------------------------------------------------
+// FTS5 query builder
+// ---------------------------------------------------------------------------
 
-  for (const chunk of chunks) {
-    totalLen += chunk.tokenLen;
-    const seen = new Set<string>();
-    for (const t of chunk.tokens) {
-      if (!seen.has(t)) {
-        seen.add(t);
-        df.set(t, (df.get(t) || 0) + 1);
-      }
+function queryToFTS(query: string): string {
+  const tokens = query
+    .split(/\s+/)
+    .map(t => t.trim())
+    .filter(t => t.length > 1);
+  if (tokens.length === 0) return '""';
+  return tokens.map(t => `"${t.replace(/"/g, '')}"`).join(' OR ');
+}
+
+// ---------------------------------------------------------------------------
+// FTS5 search
+// ---------------------------------------------------------------------------
+
+export function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: string): SearchResult[] {
+  if (!indexReady) return [];
+
+  const ftsQuery = queryToFTS(query);
+  const db = getDb();
+
+  let sql = `
+    SELECT c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section,
+           c.content, c.weight,
+           bm25(doc_chunks_fts, 2.0, 1.0) AS rank
+    FROM doc_chunks_fts f
+    JOIN doc_chunks c ON c.rowid = f.rowid
+    WHERE f.doc_chunks_fts MATCH ?
+      AND c.doc_url != '/docs/home'`;
+
+  const params: unknown[] = [ftsQuery];
+
+  if (sectionFilter) {
+    const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
+    if (m) {
+      sql += m[1] === '!=' ? ' AND c.section != ?' : ' AND c.section = ?';
+      params.push(m[2]);
     }
   }
 
-  avgDocLen = chunks.length > 0 ? totalLen / chunks.length : 1;
+  sql += ' ORDER BY rank LIMIT ?';
+  params.push(topK);
 
-  // Compute IDF: log((N - df + 0.5) / (df + 0.5) + 1)
-  const N = chunks.length;
-  const newIdf = new Map<string, number>();
-  for (const [term, freq] of df) {
-    newIdf.set(term, Math.log((N - freq + 0.5) / (freq + 0.5) + 1));
-  }
-
-  // Atomic swap
-  indexChunks = chunks;
-  idf = newIdf;
-  indexReady = true;
-  lastRefreshedAt = new Date().toISOString();
-}
-
-const TITLE_BOOST = 2.0; // title matches worth 2x body matches
-
-function scoreBM25(chunk: IndexedChunk, queryTokens: WeightedToken[]): number {
-  let score = 0;
-  const dl = chunk.tokenLen;
-  const k1 = BM25_K1;
-  const b = BM25_B;
-
-  for (const {token: qt, weight: qw} of queryTokens) {
-    const termIdf = idf.get(qt);
-    if (!termIdf) continue;
-    const tf = chunk.tf.get(qt) || 0;
-    if (tf === 0) continue;
-
-    let termScore = termIdf * ((tf * (k1 + 1)) / (tf + k1 * (1 - b + b * dl / avgDocLen)));
-
-    // Title boost: if the term appears in the title, amplify score
-    if (chunk.titleTf.has(qt)) {
-      termScore *= TITLE_BOOST;
-    }
-
-    score += termScore * qw;
-  }
-
-  return score * (chunk.weight || 1.0);
-}
-
-const ZILLIZ_COLLECTION = process.env.ZILLIZ_COLLECTION || 'doc_chunks_v2';
-
-// ---------------------------------------------------------------------------
-// Vector search via Zilliz Cloud
-// ---------------------------------------------------------------------------
-
-/**
- * Search docs using vector embeddings via Zilliz Cloud.
- * Falls back to empty array on any error (non-fatal by design).
- */
-export async function searchDocsVector(query: string, topK = TOP_K, sectionFilter?: string, precomputedEmbedding?: number[]): Promise<SearchResult[]> {
-  if (!isZillizConfigured()) return [];
-
-  const t0 = Date.now();
   try {
-    const embedding = precomputedEmbedding ?? await generateEmbedding(query);
-
-    // Exclude generic landing pages at query level
-    const baseFilter = 'doc_url != "/docs/home"';
-    const filter = sectionFilter ? `${baseFilter} and ${sectionFilter}` : baseFilter;
-
-    const outputFields = ['doc_url', 'doc_url_md', 'doc_title', 'section', 'content', 'weight'];
-
-    const searchBody: Record<string, unknown> = {
-      collectionName: ZILLIZ_COLLECTION,
-      data: [embedding],
-      annsField: 'embedding',
-      limit: topK,
-      outputFields,
-      filter,
-    };
-
-    const hits = await zillizRequest('/entities/search', searchBody);
-
-    const MAX_EXTERNAL_RESULTS = 2;
-    let externalCount = 0;
+    const rows = db.prepare(sql).all(...params) as any[];
+    const MAX_EXTERNAL = 2;
+    let extCount = 0;
     const results: SearchResult[] = [];
-
-    for (const hit of hits || []) {
-      if ((hit.id || '').startsWith('ext:')) {
-        externalCount++;
-        if (externalCount > MAX_EXTERNAL_RESULTS) continue;
+    for (const r of rows) {
+      if (r.id.startsWith('ext:')) {
+        extCount++;
+        if (extCount > MAX_EXTERNAL) continue;
       }
       results.push({
-        id: hit.id || '',
-        doc_url: hit.doc_url || '',
-        doc_url_md: hit.doc_url_md || '',
-        doc_title: cleanTitle(hit.doc_title || ''),
-        section: hit.section || '',
-        content: hit.content || '',
-        score: hit.distance ?? hit.score ?? 0,
-        weight: hit.weight ?? 1.0,
-        contextScore: hit.distance ?? hit.score ?? 0,
+        id: r.id,
+        doc_url: r.doc_url,
+        doc_url_md: r.doc_url_md,
+        doc_title: cleanTitle(r.doc_title),
+        section: r.section,
+        content: r.content,
+        score: -r.rank,
+        weight: r.weight,
+        contextScore: -r.rank,
       });
     }
-
-    console.log(`[RAG] Vector search (${Date.now() - t0}ms): ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
+    console.log(`[RAG] FTS5 search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}`);
     return results;
   } catch (err) {
-    console.warn(`[RAG] Vector search error (${Date.now() - t0}ms):`, (err as Error).message);
+    console.warn('[RAG] FTS5 search error:', (err as Error).message);
     return [];
   }
 }
 
-// ---------------------------------------------------------------------------
-// Hybrid search: BM25 + Vector (RRF fusion)
-// ---------------------------------------------------------------------------
-
-/**
- * Fuse results using Reciprocal Rank Fusion (RRF).
- * RRF = sum(1 / (k + rank)) where k=60 is the default.
- * Robust to outliers and requires no parameter tuning.
- */
-export function fuseWithRRF(bm25Results: SearchResult[], vectorResults: SearchResult[], topK: number): SearchResult[] {
-  const fusedScores = new Map<string, {score: number; result: SearchResult}>();
-
-  // RRF constant (default 60 per SIGIR paper, configurable via env)
-  const k = Number(process.env.RRF_K) || 60;
-
-  // Score BM25 results: rank 1 gets 1/(60+1), rank 2 gets 1/(60+2), etc.
-  for (let i = 0; i < bm25Results.length; i++) {
-    const result = bm25Results[i];
-    const rrfScore = 1 / (k + i + 1);
-    fusedScores.set(result.id, {score: rrfScore, result});
-  }
-
-  // Score vector results and merge
-  for (let i = 0; i < vectorResults.length; i++) {
-    const result = vectorResults[i];
-    const rrfScore = 1 / (k + i + 1);
-    const existing = fusedScores.get(result.id);
-    if (existing) {
-      existing.score += rrfScore;
-    } else {
-      fusedScores.set(result.id, {score: rrfScore, result});
-    }
-  }
-
-  // Sort by fused score and deduplicate by URL (keep highest score)
-  const urlBest = new Map<string, {score: number; result: SearchResult}>();
-  for (const [id, {score, result}] of fusedScores) {
-    const existing = urlBest.get(result.doc_url);
-    if (!existing || score > existing.score) {
-      urlBest.set(result.doc_url, {score, result});
-    }
-  }
-
-  const sorted = [...urlBest.values()]
-    .sort((a, b) => b.score - a.score)
-    .map(({result}) => result);
-
-  return sorted.slice(0, topK);
-}
-
-/**
- * Hybrid search combining BM25 (keyword) and vector (semantic) results.
- * Uses RRF fusion for robustness. Falls back to BM25 if vector search fails.
- */
-export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string, precomputedEmbedding?: number[]): Promise<SearchResult[]> {
-  // Respect SEARCH_MODE environment variable
-  if (SEARCH_MODE === 'bm25') {
-    return searchDocsBM25(query, topK, sectionFilter);
-  }
-  if (SEARCH_MODE === 'vector') {
-    return await searchDocsVector(query, topK, sectionFilter, precomputedEmbedding);
-  }
-
-  // Default: hybrid search
-  const [bm25Results, vectorResults] = await Promise.all([
-    searchDocsBM25(query, topK * 2, sectionFilter),
-    searchDocsVector(query, topK * 2, sectionFilter, precomputedEmbedding),
-  ]);
-
-  if (vectorResults.length === 0) {
-    console.log('[RAG] Hybrid fallback: Vector search returned 0 results, using BM25 only');
-    return bm25Results.slice(0, topK);
-  }
-
-  const fused = fuseWithRRF(bm25Results, vectorResults, topK);
-  console.log(`[RAG] Hybrid search: BM25=${bm25Results.length}, Vector=${vectorResults.length}, Fused=${fused.length}`);
-  return fused;
-}
-
-// ---------------------------------------------------------------------------
-// BM25 search over in-memory index
-// ---------------------------------------------------------------------------
-
-export function searchDocsBM25(query: string, topK = TOP_K, sectionFilter?: string): SearchResult[] {
-  if (!indexReady || indexChunks.length === 0) return [];
-
-  const queryTokens = tokenizeQuery(query);
-  if (queryTokens.length === 0) return [];
-
-  // Parse section filter
-  let sectionOp: string | null = null;
-  let sectionVal: string | null = null;
-  if (sectionFilter) {
-    const match = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
-    if (match) { sectionOp = match[1]; sectionVal = match[2]; }
-  }
-
-  // Score all chunks
-  const scored: {chunk: IndexedChunk; score: number}[] = [];
-  for (const chunk of indexChunks) {
-    // Apply section filter
-    if (sectionOp && sectionVal) {
-      if (sectionOp === '!=' && chunk.section === sectionVal) continue;
-      if (sectionOp === '==' && chunk.section !== sectionVal) continue;
-    }
-    if (chunk.doc_url === '/docs/home') continue;
-
-    const score = scoreBM25(chunk, queryTokens);
-    if (score > 0) scored.push({chunk, score});
-  }
-
-  scored.sort((a, b) => b.score - a.score);
-
-  // Cap external results
-  const MAX_EXTERNAL = 2;
-  let extCount = 0;
-  const results: SearchResult[] = [];
-  for (const {chunk, score} of scored) {
-    if (chunk.id.startsWith('ext:')) {
-      extCount++;
-      if (extCount > MAX_EXTERNAL) continue;
-    }
-    results.push({
-      id: chunk.id,
-      doc_url: chunk.doc_url,
-      doc_url_md: chunk.doc_url_md,
-      doc_title: cleanTitle(chunk.doc_title),
-      section: chunk.section,
-      content: chunk.content,
-      score,
-      weight: chunk.weight,
-      contextScore: score,
-    });
-    if (results.length >= topK) break;
-  }
-
-  console.log(`[RAG] BM25 search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}, scores: [${results.map(r => r.score.toFixed(3)).join(', ')}]`);
-  return results;
+export function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): SearchResult[] {
+  return searchDocsFTS5(query, topK, sectionFilter);
 }
 
 // ---------------------------------------------------------------------------
@@ -531,46 +219,66 @@ export function searchDocsBM25(query: string, topK = TOP_K, sectionFilter?: stri
 // ---------------------------------------------------------------------------
 
 export function listPages(sectionFilter?: string, titleContains?: string): {title: string; url: string; section: string}[] {
-  const seen = new Set<string>();
-  const results: {title: string; url: string; section: string}[] = [];
+  if (!indexReady) return [];
+  const db = getDb();
 
-  let sectionOp: string | null = null;
-  let sectionVal: string | null = null;
+  let sql = `SELECT DISTINCT doc_url, doc_title, section FROM doc_chunks WHERE doc_url != '/docs/home'`;
+  const params: unknown[] = [];
+
   if (sectionFilter) {
-    const match = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
-    if (match) { sectionOp = match[1]; sectionVal = match[2]; }
-  }
-
-  const titleLower = titleContains?.toLowerCase();
-
-  for (const chunk of indexChunks) {
-    if (seen.has(chunk.doc_url)) continue;
-    if (chunk.doc_url === '/docs/home') continue;
-    if (sectionOp && sectionVal) {
-      if (sectionOp === '!=' && chunk.section === sectionVal) continue;
-      if (sectionOp === '==' && chunk.section !== sectionVal) continue;
+    const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
+    if (m) {
+      sql += m[1] === '!=' ? ' AND section != ?' : ' AND section = ?';
+      params.push(m[2]);
     }
-    if (titleLower && !chunk.doc_title.toLowerCase().includes(titleLower)) continue;
-
-    seen.add(chunk.doc_url);
-    results.push({title: cleanTitle(chunk.doc_title), url: chunk.doc_url, section: chunk.section});
-    if (results.length >= 200) break;
   }
+  if (titleContains) {
+    sql += ' AND doc_title LIKE ?';
+    params.push(`%${titleContains}%`);
+  }
+  sql += ' LIMIT 200';
 
-  return results;
+  try {
+    return (db.prepare(sql).all(...params) as any[]).map(r => ({
+      title: cleanTitle(r.doc_title),
+      url: r.doc_url,
+      section: r.section,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Title lookup
+// ---------------------------------------------------------------------------
+
+export function getTitleByUrl(url: string): string | null {
+  if (!indexReady) return null;
+  const normalized = url.replace(/\.md$/, '');
+  try {
+    const db = getDb();
+    const row = db.prepare(
+      `SELECT doc_title FROM doc_chunks WHERE doc_url = ? LIMIT 1`
+    ).get(normalized) as any;
+    if (row) return cleanTitle(row.doc_title);
+    // Try suffix match
+    const path = normalized.startsWith('http')
+      ? new URL(normalized).pathname
+      : normalized;
+    const row2 = db.prepare(
+      `SELECT doc_title FROM doc_chunks WHERE doc_url LIKE ? LIMIT 1`
+    ).get(`%${path}`) as any;
+    return row2 ? cleanTitle(row2.doc_title) : null;
+  } catch {
+    return null;
+  }
 }
 
 // ---------------------------------------------------------------------------
 // Index loading from llms.txt files
 // ---------------------------------------------------------------------------
 
-// Index files generated by the llms-txt plugin during site build.
-// These are uploaded to S3 (INDEX_BASE_URL) by the CI pipeline.
-// Configure via docusaurus.config.ts plugin options → sources[].outputFile.
-// Paths are relative to INDEX_BASE_URL.
-// When INDEX_BASE_URL points to S3 (e.g. https://bucket.s3.region.amazonaws.com/llms-index),
-// the files are at /cloud-guides.txt directly.
-// When falling back to the docs site, INDEX_BASE_URL is the site root and files are at /llms/*.txt.
 const FULL_INDEX_PATHS = [
   {path: '/cloud-guides.txt', section: 'cloud-guides'},
   {path: '/byoc-guides.txt', section: 'byoc-guides'},
@@ -581,7 +289,7 @@ const FULL_INDEX_PATHS = [
 const CHUNK_SIZE = 2000;
 const CHUNK_OVERLAP = 200;
 
-function chunkContent(content: string): string[] {
+export function chunkContent(content: string): string[] {
   if (content.length <= CHUNK_SIZE) return [content];
   const chunks: string[] = [];
   let start = 0;
@@ -769,9 +477,8 @@ export function parseLlmsTxt(text: string, section: string): DocEntry[] {
   return entries;
 }
 
-export function keywordSearchDocs(query: string, topK = 3, minScore = 0.3): DocEntry[] {
-  // Use BM25 search over indexed chunks and convert to DocEntry format
-  const results = searchDocsBM25(query, topK);
+export function keywordSearchDocs(query: string, topK = 3): DocEntry[] {
+  const results = searchDocsFTS5(query, topK);
   return results.map(r => ({
     title: r.doc_title,
     url: r.doc_url,
