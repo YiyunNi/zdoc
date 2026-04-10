@@ -5,7 +5,7 @@ const fetch = require('node-fetch')
 const Bottleneck = require('bottleneck')
 const process = require('node:process')
 const crypto = require('node:crypto')
-const { S3Client, PutObjectCommand, GetObjectCommand } = require('@aws-sdk/client-s3');
+const { S3Client, PutObjectCommand, HeadObjectCommand } = require('@aws-sdk/client-s3');
 
 require('dotenv/config')
 
@@ -43,9 +43,9 @@ class larkImageDownloader {
         }
 
         try {
-            const getObjectCommand = new GetObjectCommand(get_params);
-            console.log(`S3 GET: ${key}`)
-            const response = await this.s3.send(getObjectCommand);
+            const headObjectCommand = new HeadObjectCommand(get_params);
+            console.log(`S3 HEAD: ${key}`)
+            const response = await this.s3.send(headObjectCommand);
             if (response.Metadata.hash === crypto.createHash('md5').update(buffer).digest('hex')) {
                 console.log(`Image already exists in S3: ${key}`);
                 return
