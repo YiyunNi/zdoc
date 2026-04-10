@@ -5,7 +5,10 @@ import {resolve, dirname} from 'path';
 import {fileURLToPath} from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-config({path: resolve(__dirname, '../../.env')});
+const envDir = resolve(__dirname, '../../');
+config({path: resolve(envDir, '.env')});
+// Load .env.development overrides when running locally
+config({path: resolve(envDir, '.env.development'), override: true});
 
 const {serve} = await import('@hono/node-server');
 const {app} = await import('./index.js');

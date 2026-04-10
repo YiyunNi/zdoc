@@ -279,11 +279,34 @@ export function getTitleByUrl(url: string): string | null {
 // Index loading from llms.txt files
 // ---------------------------------------------------------------------------
 
-const FULL_INDEX_PATHS = [
-  {path: '/cloud-guides.txt', section: 'cloud-guides'},
-  {path: '/byoc-guides.txt', section: 'byoc-guides'},
-  {path: '/api-reference.txt', section: 'api-reference'},
-];
+/** Parse /llms.txt to discover index files dynamically.
+ *  Each `- [Title](url)` line under any heading is treated as a sub-index.
+ *  Section name is derived from the filename (e.g. cloud-guides.txt → cloud-guides).
+ *  Absolute URLs pointing to the canonical docs site are rewritten to INDEX_BASE_URL
+ *  so that local dev loads from the local server instead. */
+async function fetchIndexPaths(): Promise<{url: string; section: string}[]> {
+  const res = await fetchWithRetry(`${DOCS_SITE_URL}/llms.txt`);
+  const text = await res.text();
+  const results: {url: string; section: string}[] = [];
+  for (const line of text.split('\n')) {
+    const m = line.match(/^-\s*\[.*?\]\(([^)]+)\)/);
+    if (!m) continue;
+    let url = m[1];
+    const filename = url.split('/').pop() ?? '';
+    const section = filename.replace(/\.txt$/, '');
+    if (!section) continue;
+    // Rewrite absolute URLs to use INDEX_BASE_URL so local dev loads from local server
+    if (url.startsWith('http')) {
+      url = `${INDEX_BASE_URL}/${filename}`;
+    } else if (!url.startsWith('/')) {
+      url = `${INDEX_BASE_URL}/${url}`;
+    } else {
+      url = `${DOCS_SITE_URL}${url}`;
+    }
+    results.push({url, section});
+  }
+  return results;
+}
 
 // Chunk size in characters (~500 tokens ≈ 2000 chars)
 const CHUNK_SIZE = 2000;
@@ -327,6 +350,12 @@ function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
       url = `${DOCS_SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
     }
 
+    // Normalize to path-only so URLs are consistent regardless of which host served the index
+    try {
+      const parsed = new URL(url);
+      url = parsed.pathname + (parsed.search || '');
+    } catch { /* keep as-is if not a valid URL */ }
+
     // Build searchable content: include metadata lines and description
     const contentLines = lines.slice(1).filter(l => {
       // Keep description lines (starting with >) and all non-metadata content
@@ -344,7 +373,7 @@ function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
       const chunkText = contentChunks[i];
 
       chunks.push({
-        id: `${url}#${i}`,
+        id: `${section}:${url}#${i}`,
         doc_url: url.replace(/\.md$/, ''),
         doc_url_md: url,
         doc_title: title,
@@ -382,15 +411,25 @@ export async function loadIndex(force = false): Promise<void> {
   console.log('[RAG] Loading doc index from', INDEX_BASE_URL);
   const allChunks: ParsedChunk[] = [];
 
-  for (const {path, section} of FULL_INDEX_PATHS) {
+  let indexPaths: {url: string; section: string}[];
+  try {
+    indexPaths = await fetchIndexPaths();
+    console.log(`[RAG] Discovered ${indexPaths.length} index files from llms.txt`);
+  } catch (err) {
+    console.warn('[RAG] Failed to fetch llms.txt, aborting index load:', (err as Error).message);
+    indexLoading = false;
+    return;
+  }
+
+  for (const {url, section} of indexPaths) {
     try {
-      const res = await fetchWithRetry(`${INDEX_BASE_URL}${path}`);
+      const res = await fetchWithRetry(url);
       const text = await res.text();
       const chunks = parseLlmsFullText(text, section);
       allChunks.push(...chunks);
-      console.log(`[RAG] Loaded ${chunks.length} chunks from ${path}`);
+      console.log(`[RAG] Loaded ${chunks.length} chunks from ${url}`);
     } catch (err) {
-      console.warn(`[RAG] Skipping ${path}:`, (err as Error).message);
+      console.warn(`[RAG] Skipping ${url}:`, (err as Error).message);
     }
   }
 
@@ -399,7 +438,7 @@ export async function loadIndex(force = false): Promise<void> {
     resetDb();
 
     const insert = db.prepare(`
-      INSERT INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
+      INSERT OR REPLACE INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
     const insertMany = db.transaction((chunks: ParsedChunk[]) => {
