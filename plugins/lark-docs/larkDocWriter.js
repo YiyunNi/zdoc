@@ -1444,7 +1444,7 @@ class larkDocWriter {
                 fs.writeFileSync(`${this.downloader.target_path}/${slug}.png`, buffer);
             }
         } catch (error) {
-            console.error(`Failed to download image ${image.token}:`, error)
+            console.error(`Image ${image.token} error [${error.constructor.name}]: ${error.message}`)
         }
 
         return `![${caption}](${root}/${slug}.png "${caption}")`;
@@ -1459,15 +1459,20 @@ class larkDocWriter {
 
         try {
             const result = await this.downloader.__downloadBoardPreview(board.token)
-            const buffer = await result.buffer()
-            const trimmedBuffer = await this.__trim_white_borders(buffer);
-            if (this.upload_to_s3) {
-                await this.downloader.__uploadToS3(trimmedBuffer, `${board["token"]}.png`);
+            if (!result.ok) {
+                console.error(`Board ${board.token} download failed: HTTP ${result.status} ${result.statusText}`)
             } else {
-                fs.writeFileSync(`${this.downloader.target_path}/${board["token"]}.png`, trimmedBuffer);
+                const buffer = await result.buffer()
+                console.log(`Board ${board.token} buffer size: ${buffer.length} bytes`)
+                const trimmedBuffer = await this.__trim_white_borders(buffer);
+                if (this.upload_to_s3) {
+                    await this.downloader.__uploadToS3(trimmedBuffer, `${board["token"]}.png`);
+                } else {
+                    fs.writeFileSync(`${this.downloader.target_path}/${board["token"]}.png`, trimmedBuffer);
+                }
             }
         } catch (error) {
-            console.error(`Failed to download board ${board.token}:`, error)
+            console.error(`Board ${board.token} error [${error.constructor.name}]: ${error.message}`)
         }
 
         return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;

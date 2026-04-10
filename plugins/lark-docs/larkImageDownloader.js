@@ -79,7 +79,9 @@ class larkImageDownloader {
         for (let attempt = 1; attempt <= retries; attempt++) {
             try {
                 const res = await fetch(`${process.env.FEISHU_HOST}/open-apis/drive/v1/medias/${image_token}/download`, req)
+                console.log(`ImageToken: ${image_token} HTTP ${res.status}`)
                 const buffer = await res.buffer()
+                console.log(`ImageToken: ${image_token} buffer size: ${buffer.length} bytes`)
                 return { buffer }
             } catch (err) {
                 if (attempt === retries) throw err
@@ -104,6 +106,7 @@ class larkImageDownloader {
         }
 
         let res = await fetch(`${process.env.FEISHU_HOST}/open-apis/board/v1/whiteboards/${board_token}/download_as_image`, req)
+        console.log(`BoardToken: ${board_token} HTTP ${res.status}`)
 
         return res
     }
