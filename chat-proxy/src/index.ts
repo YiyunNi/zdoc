@@ -1,6 +1,6 @@
 import {Hono} from 'hono';
 import {cors} from 'hono/cors';
-import {streamText} from 'ai';
+import {streamText, stepCountIs} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
@@ -128,9 +128,10 @@ export const app = new Hono();
 // ---------------------------------------------------------------------------
 
 const PORT = Number(process.env.PORT) || 8787;
-const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:3000')
-  .split(',')
-  .map(s => s.trim());
+const ALLOWED_ORIGINS = [
+  ...(process.env.ALLOWED_ORIGINS || 'http://localhost:3000').split(',').map(s => s.trim()),
+  ...(process.env.DEV_SERVER ? [process.env.DEV_SERVER.trim()] : []),
+].filter((v, i, a) => a.indexOf(v) === i); // deduplicate
 const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
 const AI_API_KEY = process.env.AI_API_KEY || '';
 const AI_MODEL = process.env.AI_MODEL || 'gpt-4o';
@@ -409,11 +410,11 @@ app.post('/chat', async c => {
 
           const tLlmStart = Date.now();
           const result = streamText({
-            model: provider(activeModel),
-            maxTokens: 4096,
+            model: provider.chat(activeModel),
+            maxOutputTokens: 4096,
             temperature: 0.2,
             tools: agentTools,
-            maxSteps: 8,
+            stopWhen: stepCountIs(8),
             system: systemPrompt,
             messages: windowedMessages.map(m => ({
               role: m.role as 'user' | 'assistant',
@@ -428,18 +429,19 @@ app.post('/chat', async c => {
 
           for await (const part of result.fullStream) {
             if (part.type === 'text-delta') {
-              fullText += part.textDelta;
-              sendAndRecord('delta', JSON.stringify({text: part.textDelta}));
+              fullText += part.text;
+              sendAndRecord('delta', JSON.stringify({text: part.text}));
             } else if (part.type === 'tool-call') {
               toolsCalled.push(part.toolName);
               sendAndRecord('tool-call', JSON.stringify({tool: part.toolName, count: toolsCalled.length}));
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
                 tool: part.toolName,
-                args: part.args,
+                args: (part as any).input ?? (part as any).args,
               });
             } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
-              const toolResult = (part as any).result as Record<string, any>;
+              // AI SDK v6 fullStream uses .output for tool-result events
+              const toolResult = (part as any).output as Record<string, any>;
               if (toolResult?.results) {
                 // searchDocs returns { results: [{title, url, score, content, section, ...}] }
                 for (const r of toolResult.results) {

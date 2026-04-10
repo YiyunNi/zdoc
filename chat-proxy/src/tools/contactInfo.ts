@@ -3,7 +3,7 @@ import {z} from 'zod';
 
 export const contactInfoTool = tool({
   description: 'Get Zilliz Cloud sales contact URLs, support portal links, and booking pages. Use when users ask about pricing, enterprise plans, custom requirements, or need support.',
-  parameters: z.object({
+  inputSchema: z.object({
     type: z.enum(['sales', 'support', 'both']).describe('Type of contact information needed'),
   }),
   execute: async ({type}) => {

@@ -1,4 +1,4 @@
-import type {CoreTool} from 'ai';
+import type {Tool} from 'ai';
 import type {AgentType} from '../types.js';
 import type {ToolName} from '../tools/index.js';
 

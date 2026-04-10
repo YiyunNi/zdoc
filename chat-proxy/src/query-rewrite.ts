@@ -23,9 +23,9 @@ export async function rewriteQuery(question: string): Promise<string> {
 
   try {
     const result = await generateObject({
-      model: provider(REWRITE_MODEL),
+      model: provider.chat(REWRITE_MODEL),
       schema: rewriteSchema,
-      maxTokens: 100,
+      maxOutputTokens: 100,
       prompt: `You are a search query optimizer for Zilliz Cloud / Milvus documentation.
 
 Rewrite the user's question into a keyword search query that will find the most relevant documentation pages. Add technical synonyms, expand abbreviations, and include terms that documentation would use. Keep the rewritten query under 20 words.

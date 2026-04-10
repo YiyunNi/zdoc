@@ -6,7 +6,7 @@ const DOCS_SITE_URL = (process.env.DOCS_SITE_URL || 'https://docs.zilliz.com').r
 
 export const getPageContentTool = tool({
   description: 'Fetch the full content of a specific documentation page by its URL path. Use this when you need detailed information from a specific page.',
-  parameters: z.object({
+  inputSchema: z.object({
     url: z.string().describe('The documentation page URL path (e.g., /docs/tutorials/get-started/quickstart)'),
     maxChars: z.number().optional().default(8000).describe('Maximum characters to return'),
   }),

@@ -6,7 +6,7 @@ export const listPagesTool = tool({
   description:
     'List documentation pages by title keyword. Use this to discover what pages exist ' +
     'about a topic before searching for specific content. Returns titles and URLs only (no content).',
-  parameters: z.object({
+  inputSchema: z.object({
     titleContains: z.string().optional().describe('Filter pages whose title contains this keyword'),
     section: z.string().optional().describe('Filter by doc section: "cloud-guides", "byoc-guides", or "api-reference"'),
   }),

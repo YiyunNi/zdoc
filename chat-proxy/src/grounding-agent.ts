@@ -93,9 +93,9 @@ export async function groundAtomically(
     const numberedSources = sourceDescriptions.join('\n');
 
     const result = await generateObject({
-      model: provider(GROUNDING_MODEL),
+      model: provider.chat(GROUNDING_MODEL),
       schema: groundingSchema,
-      maxTokens: 400,
+      maxOutputTokens: 400,
       prompt: `You are a source attribution agent for Zilliz Cloud documentation. Given a response and candidate sources, select ONLY the sources that genuinely support claims in the response.
 
 Rules:

@@ -27,7 +27,7 @@ const FEATURES: Record<string, {serverless: boolean; dedicated: boolean; byoc: b
 
 export const checkFeatureAvailabilityTool = tool({
   description: 'Check if a specific Zilliz Cloud feature is available on Serverless, Dedicated, or BYOC tiers.',
-  parameters: z.object({
+  inputSchema: z.object({
     feature: z.string().describe('Feature name to check (e.g., "vpc-peering", "hybrid-search", "gpu-index")'),
   }),
   execute: async ({feature}) => {

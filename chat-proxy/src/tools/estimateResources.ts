@@ -3,7 +3,7 @@ import {tool} from 'ai';
 
 export const estimateResourcesTool = tool({
   description: 'Estimate Zilliz Cloud resource requirements (CUs, storage) based on workload parameters.',
-  parameters: z.object({
+  inputSchema: z.object({
     vectorCount: z.number().describe('Number of vectors/entities'),
     dimension: z.number().describe('Vector dimension'),
     scalarFieldBytes: z.number().optional().default(200).describe('Average bytes per entity for scalar fields'),

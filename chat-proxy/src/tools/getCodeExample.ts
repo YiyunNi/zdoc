@@ -4,7 +4,7 @@ import {searchDocsFTS5, getActiveSectionFilter} from '../rag.js';
 
 export const getCodeExampleTool = tool({
   description: 'Search for code examples in the documentation for a specific topic and programming language.',
-  parameters: z.object({
+  inputSchema: z.object({
     topic: z.string().describe('The topic to find code examples for (e.g., "create collection", "vector search")'),
     language: z.enum(['python', 'node', 'java', 'go', 'rest']).describe('The programming language'),
   }),

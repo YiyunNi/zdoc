@@ -9,7 +9,7 @@ export const searchDocsTool = tool({
     'Call this BEFORE answering any technical question — do NOT guess from training data. ' +
     'Use focused, specific queries rather than copying the full user question. ' +
     'Call multiple times with different queries for complex or multi-part questions.',
-  parameters: z.object({
+  inputSchema: z.object({
     query: z.string().describe('A focused keyword search query'),
     topK: z.number().optional().default(6).describe('Number of results to return'),
   }),

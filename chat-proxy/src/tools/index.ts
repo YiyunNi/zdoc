@@ -1,4 +1,4 @@
-import type {CoreTool} from 'ai';
+import type {Tool} from 'ai';
 import {searchDocsTool} from './searchDocs.js';
 import {getPageContentTool} from './getPageContent.js';
 import {getCodeExampleTool} from './getCodeExample.js';
@@ -24,13 +24,13 @@ export const allTools = {
   compareProducts: compareProductsTool,
   checkFeatureAvailability: checkFeatureAvailabilityTool,
   contactInfo: contactInfoTool,
-} as const satisfies Record<string, CoreTool>;
+} as const satisfies Record<string, Tool>;
 
 export type ToolName = keyof typeof allTools;
 
 // Tool subsets for each agent
-export function getToolsForAgent(toolNames: ToolName[]): Record<string, CoreTool> {
-  const tools: Record<string, CoreTool> = {};
+export function getToolsForAgent(toolNames: ToolName[]): Record<string, Tool> {
+  const tools: Record<string, Tool> = {};
   for (const name of toolNames) {
     tools[name] = allTools[name];
   }

@@ -17,7 +17,7 @@ const VALID_METRIC_TYPES = ['L2', 'IP', 'COSINE', 'HAMMING', 'JACCARD'];
 
 export const validateSchemaTool = tool({
   description: 'Validate a Milvus/Zilliz Cloud collection schema definition. Checks field types, index types, and best practices.',
-  parameters: z.object({
+  inputSchema: z.object({
     fields: z.array(z.object({
       name: z.string(),
       dataType: z.string(),

@@ -64,9 +64,9 @@ export async function routeIntent(
     const contextMessages = recentMessages.slice(-4).map(m => `${m.role}: ${m.content}`).join('\n');
 
     const result = await generateObject({
-      model: provider(AI_MODEL),
+      model: provider.chat(AI_MODEL),
       schema: routeSchema,
-      maxTokens: 250,
+      maxOutputTokens: 250,
       prompt: `Classify the user's intent to route to the best specialized agent and identify relevant topics.
 
 Agents:

@@ -3,7 +3,7 @@ import {tool} from 'ai';
 
 export const suggestIndexTool = tool({
   description: 'Recommend the best index type based on dataset characteristics and query requirements.',
-  parameters: z.object({
+  inputSchema: z.object({
     vectorCount: z.number().describe('Approximate number of vectors in the collection'),
     dimension: z.number().describe('Vector dimension'),
     queryLatencyMs: z.number().optional().describe('Target query latency in milliseconds'),

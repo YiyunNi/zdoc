@@ -3,7 +3,7 @@ import {tool} from 'ai';
 
 export const generateSchemaCodeTool = tool({
   description: 'Generate SDK code for creating a Milvus/Zilliz Cloud collection with the specified schema.',
-  parameters: z.object({
+  inputSchema: z.object({
     collectionName: z.string().describe('Name of the collection'),
     fields: z.array(z.object({
       name: z.string(),

@@ -3,7 +3,7 @@ import {tool} from 'ai';
 
 export const compareProductsTool = tool({
   description: 'Compare Zilliz Cloud deployment options: Serverless, Dedicated, and BYOC (Bring Your Own Cloud).',
-  parameters: z.object({
+  inputSchema: z.object({
     focus: z.enum(['pricing', 'performance', 'security', 'features', 'all']).optional().default('all').describe('Comparison focus area'),
   }),
   execute: async ({focus}) => {
