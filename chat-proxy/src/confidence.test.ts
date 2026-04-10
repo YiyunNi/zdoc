@@ -35,7 +35,9 @@ describe('computeConfidence', () => {
     expect(result.level).toBe('low');
   });
 
-  it('returns medium for scattered sources + hedging', () => {
+  it('returns high for 4 diverse sources with tight scores despite hedging', () => {
+    // Diverse sources (4 different URLs) no longer penalized — tight score cluster
+    // and good toolSuccess outweigh hedge words
     const result = computeConfidence(makeInput({
       toolsCalled: ['searchDocs'],
       toolSources: [
@@ -46,7 +48,7 @@ describe('computeConfidence', () => {
       ],
       fullText: 'This might work. Perhaps you could try using the SDK. It possibly supports this, though it might depend on your version.',
     }));
-    expect(result.level).toBe('medium');
+    expect(result.level).toBe('high');
   });
 
   it('returns low for no sources and short/empty response', () => {

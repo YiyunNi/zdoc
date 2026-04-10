@@ -4,7 +4,7 @@ vi.mock('ai', () => ({
   generateObject: vi.fn(),
 }));
 vi.mock('@ai-sdk/openai', () => ({
-  createOpenAI: vi.fn(() => vi.fn()),
+  createOpenAI: vi.fn(() => { const m = vi.fn(); m.chat = vi.fn(); return m; }),
 }));
 
 import {routeIntent, clearSessionRoute} from './router.js';

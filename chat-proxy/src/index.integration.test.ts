@@ -3,9 +3,10 @@ import {describe, it, expect, vi, beforeEach} from 'vitest';
 // Mock all external dependencies
 vi.mock('ai', () => ({
   streamText: vi.fn(),
+  stepCountIs: vi.fn((n: number) => n),
 }));
 vi.mock('@ai-sdk/openai', () => ({
-  createOpenAI: vi.fn(() => vi.fn()),
+  createOpenAI: vi.fn(() => { const m = vi.fn(); m.chat = vi.fn(); return m; }),
 }));
 vi.mock('./rag.js', () => ({
   retrieve: vi.fn().mockResolvedValue({
@@ -87,7 +88,7 @@ describe('HTTP Endpoints', () => {
     vi.mocked(checkGuard).mockReturnValue({allowed: true});
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'OK'};
+        yield {type: 'text-delta', text: 'OK'};
       })(),
     } as any);
   });

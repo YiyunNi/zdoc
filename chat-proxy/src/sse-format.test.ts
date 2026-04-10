@@ -3,14 +3,15 @@ import {describe, it, expect, vi, beforeEach} from 'vitest';
 // Mock all external dependencies before importing
 vi.mock('ai', () => ({
   streamText: vi.fn(),
+  stepCountIs: vi.fn((n: number) => n),
 }));
 vi.mock('@ai-sdk/openai', () => ({
-  createOpenAI: vi.fn(() => vi.fn()),
+  createOpenAI: vi.fn(() => { const m = vi.fn(); m.chat = vi.fn(); return m; }),
 }));
 vi.mock('./rag.js', () => ({
   retrieve: vi.fn().mockResolvedValue({
     context: '## Docs\nSome context',
-    sources: [{title: 'Test Doc', url: 'https://docs.zilliz.com/test', score: 0.9}],
+    sources: [{title: 'Test Doc', url: 'http://localhost:3000/test', score: 0.9}],
     confidence: {level: 'high', avgScore: 0.9},
     rawResults: [],
   }),
@@ -95,7 +96,7 @@ describe('SSE Stream Format', () => {
   it('emits correct SSE wire format: event + data + double newline', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Hello'};
+        yield {type: 'text-delta', text: 'Hello'};
       })(),
     } as any);
 
@@ -116,7 +117,7 @@ describe('SSE Stream Format', () => {
   it('emits session event with sessionId', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Hi'};
+        yield {type: 'text-delta', text: 'Hi'};
       })(),
     } as any);
 
@@ -135,7 +136,7 @@ describe('SSE Stream Format', () => {
   it('emits agent event with type and name', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Hi'};
+        yield {type: 'text-delta', text: 'Hi'};
       })(),
     } as any);
 
@@ -155,8 +156,8 @@ describe('SSE Stream Format', () => {
   it('emits delta events with text', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Hello'};
-        yield {type: 'text-delta', textDelta: ' world'};
+        yield {type: 'text-delta', text: 'Hello'};
+        yield {type: 'text-delta', text: ' world'};
       })(),
     } as any);
 
@@ -176,7 +177,7 @@ describe('SSE Stream Format', () => {
   it('emits confidence with level and retrieval_score', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Answer'};
+        yield {type: 'text-delta', text: 'Answer'};
       })(),
     } as any);
 
@@ -199,7 +200,7 @@ describe('SSE Stream Format', () => {
     // This test verifies the SSE events are correctly structured.
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Answer from the documentation about testing features and capabilities.'};
+        yield {type: 'text-delta', text: 'Answer from the documentation about testing features and capabilities.'};
       })(),
     } as any);
 
@@ -219,7 +220,7 @@ describe('SSE Stream Format', () => {
   it('emits done with stop_reason', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Done'};
+        yield {type: 'text-delta', text: 'Done'};
       })(),
     } as any);
 
@@ -257,7 +258,7 @@ describe('SSE Stream Format', () => {
   it('emits events in correct order: session → agent → delta(s) → confidence → done', async () => {
     vi.mocked(streamText).mockReturnValue({
       fullStream: (async function* () {
-        yield {type: 'text-delta', textDelta: 'Hello world.'};
+        yield {type: 'text-delta', text: 'Hello world.'};
       })(),
     } as any);
 

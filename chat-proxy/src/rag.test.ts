@@ -5,7 +5,7 @@ import type {SearchResult, DocEntry} from './rag.js';
 function makeResult(score: number, content = 'Test content'): SearchResult {
   return {
     id: '1',
-    doc_url: 'https://docs.zilliz.com/test',
+    doc_url: 'http://localhost:3000/test',
     doc_url_md: '/test.md',
     doc_title: 'Test',
     section: 'cloud-guides',
@@ -62,18 +62,18 @@ describe('computeRetrievalConfidence', () => {
 
 describe('parseLlmsTxt', () => {
   it('parses entries with link format', () => {
-    const input = `## [Create Collection](https://docs.zilliz.com/docs/create-collection)
+    const input = `## [Create Collection](http://localhost:3000/docs/create-collection)
 - Type: Guide
 - Description: Learn how to create a collection
 
-## [Search](https://docs.zilliz.com/docs/search)
+## [Search](http://localhost:3000/docs/search)
 - Type: Guide
 - Description: Perform vector search`;
 
     const entries = parseLlmsTxt(input, 'cloud-guides');
     expect(entries).toHaveLength(2);
     expect(entries[0].title).toBe('Create Collection');
-    expect(entries[0].url).toBe('https://docs.zilliz.com/docs/create-collection');
+    expect(entries[0].url).toBe('http://localhost:3000/docs/create-collection');
     expect(entries[0].section).toBe('cloud-guides');
     expect(entries[0].type).toBe('Guide');
     expect(entries[0].description).toBe('Learn how to create a collection');

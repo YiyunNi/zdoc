@@ -6,8 +6,8 @@ import type {Source} from './types.js';
 function makeResult(overrides: Partial<SearchResult> = {}): SearchResult {
   return {
     id: 'chunk-1',
-    doc_url: 'https://docs.zilliz.com/test',
-    doc_url_md: 'https://docs.zilliz.com/test.md',
+    doc_url: 'http://localhost:3000/test',
+    doc_url_md: 'http://localhost:3000/test.md',
     doc_title: 'Test Doc',
     section: 'cloud-guides',
     content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries.',
@@ -21,7 +21,7 @@ function makeResult(overrides: Partial<SearchResult> = {}): SearchResult {
 function makeSource(overrides: Partial<Source> = {}): Source {
   return {
     title: 'Test Doc',
-    url: 'https://docs.zilliz.com/test',
+    url: 'http://localhost:3000/test',
     score: 0.85,
     ...overrides,
   };
@@ -80,9 +80,9 @@ It provides excellent libraries for scientific computing and numerical analysis.
 
     const rawResults = [makeResult({
       content: 'Milvus supports HNSW and IVF_FLAT index types for vector similarity search.',
-      doc_url: 'https://docs.zilliz.com/indexes',
+      doc_url: 'http://localhost:3000/indexes',
     })];
-    const sources = [makeSource({url: 'https://docs.zilliz.com/indexes', title: 'Index Types'})];
+    const sources = [makeSource({url: 'http://localhost:3000/indexes', title: 'Index Types'})];
 
     const result = computeGrounding(response, rawResults, sources);
 
@@ -96,20 +96,20 @@ It provides excellent libraries for scientific computing and numerical analysis.
     const rawResults = [
       makeResult({
         id: 'chunk-1',
-        doc_url: 'https://docs.zilliz.com/indexes',
+        doc_url: 'http://localhost:3000/indexes',
         doc_title: 'Index Types',
         content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries.',
       }),
       makeResult({
         id: 'chunk-2',
-        doc_url: 'https://docs.zilliz.com/schema',
+        doc_url: 'http://localhost:3000/schema',
         doc_title: 'Schema Design',
         content: 'Configure collection schemas with dynamic fields for flexible data modeling in your Milvus deployment.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/indexes', title: 'Index Types'}),
-      makeSource({url: 'https://docs.zilliz.com/schema', title: 'Schema Design'}),
+      makeSource({url: 'http://localhost:3000/indexes', title: 'Index Types'}),
+      makeSource({url: 'http://localhost:3000/schema', title: 'Schema Design'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
@@ -165,21 +165,21 @@ The search function returns the nearest neighbors based on the configured index 
 
     const rawResults = [
       makeResult({
-        doc_url: 'https://docs.zilliz.com/indexes',
+        doc_url: 'http://localhost:3000/indexes',
         content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/unrelated', title: 'Unrelated Doc'}),
-      makeSource({url: 'https://docs.zilliz.com/indexes', title: 'Index Types'}),
-      makeSource({url: 'https://docs.zilliz.com/also-unrelated', title: 'Also Unrelated'}),
+      makeSource({url: 'http://localhost:3000/unrelated', title: 'Unrelated Doc'}),
+      makeSource({url: 'http://localhost:3000/indexes', title: 'Index Types'}),
+      makeSource({url: 'http://localhost:3000/also-unrelated', title: 'Also Unrelated'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
 
     // Only the matching source should be in the filtered list
     expect(result.sources).toHaveLength(1);
-    expect(result.sources[0].url).toBe('https://docs.zilliz.com/indexes');
+    expect(result.sources[0].url).toBe('http://localhost:3000/indexes');
     // Citations should reference index 0 (re-indexed)
     expect(result.citations[0].sourceIndices).toContain(0);
   });
@@ -191,17 +191,17 @@ Zilliz Cloud provides serverless deployment options with automatic scaling, mana
 
     const rawResults = [
       makeResult({
-        doc_url: 'https://docs.zilliz.com/indexes',
+        doc_url: 'http://localhost:3000/indexes',
         content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries.',
       }),
       makeResult({
-        doc_url: 'https://docs.zilliz.com/serverless',
+        doc_url: 'http://localhost:3000/serverless',
         content: 'Zilliz Cloud provides serverless deployment options with automatic scaling and built-in monitoring for production workloads.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/indexes', title: 'Index Types'}),
-      makeSource({url: 'https://docs.zilliz.com/serverless', title: 'Serverless'}),
+      makeSource({url: 'http://localhost:3000/indexes', title: 'Index Types'}),
+      makeSource({url: 'http://localhost:3000/serverless', title: 'Serverless'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
@@ -225,25 +225,25 @@ Mem0 uses Milvus as the vector backend. Set the connection URI to your Zilliz Cl
     const rawResults = [
       makeResult({
         id: 'faq',
-        doc_url: 'https://docs.zilliz.com/faq-cluster',
+        doc_url: 'http://localhost:3000/faq-cluster',
         content: 'FAQ about Zilliz Cloud clusters. How to create a cluster, manage resources, and configure endpoints.',
       }),
       makeResult({
         id: 'mem0',
-        doc_url: 'https://docs.zilliz.com/mem0-integration',
+        doc_url: 'http://localhost:3000/mem0-integration',
         content: 'Mem0 integrates with Zilliz Cloud for persistent memory storage. Configure the Mem0 client with your Zilliz Cloud endpoint and API key. Mem0 uses Milvus as the vector backend.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/faq-cluster', title: 'FAQ: Cluster'}),
-      makeSource({url: 'https://docs.zilliz.com/mem0-integration', title: 'Mem0 Integration'}),
+      makeSource({url: 'http://localhost:3000/faq-cluster', title: 'FAQ: Cluster'}),
+      makeSource({url: 'http://localhost:3000/mem0-integration', title: 'Mem0 Integration'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
 
     // Mem0 doc should be ranked first (highest overlap), not FAQ
     expect(result.sources.length).toBeGreaterThanOrEqual(1);
-    expect(result.sources[0].url).toBe('https://docs.zilliz.com/mem0-integration');
+    expect(result.sources[0].url).toBe('http://localhost:3000/mem0-integration');
   });
 
   it('grounds tool-discovered chunks that are not in RAG results', () => {
@@ -253,27 +253,27 @@ Mem0 uses Milvus as the vector backend. Set the connection URI to your Zilliz Cl
     const rawResults = [
       makeResult({
         id: 'rag-generic',
-        doc_url: 'https://docs.zilliz.com/getting-started',
+        doc_url: 'http://localhost:3000/getting-started',
         content: 'Getting started with Zilliz Cloud. Create your first cluster and begin building applications.',
       }),
       makeResult({
         id: 'tool-mem0',
-        doc_url: 'https://docs.zilliz.com/mem0-quickstart',
+        doc_url: 'http://localhost:3000/mem0-quickstart',
         content: 'Mem0 provides a memory layer for AI applications. Configure Mem0 with your Zilliz Cloud endpoint for persistent vector storage and conversation memory.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/getting-started', title: 'Getting Started'}),
-      makeSource({url: 'https://docs.zilliz.com/mem0-quickstart', title: 'Mem0 Quickstart'}),
+      makeSource({url: 'http://localhost:3000/getting-started', title: 'Getting Started'}),
+      makeSource({url: 'http://localhost:3000/mem0-quickstart', title: 'Mem0 Quickstart'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
 
     // The tool-discovered Mem0 doc should appear in grounded sources
-    const mem0Source = result.sources.find(s => s.url === 'https://docs.zilliz.com/mem0-quickstart');
+    const mem0Source = result.sources.find(s => s.url === 'http://localhost:3000/mem0-quickstart');
     expect(mem0Source).toBeDefined();
     // And it should be ranked first
-    expect(result.sources[0].url).toBe('https://docs.zilliz.com/mem0-quickstart');
+    expect(result.sources[0].url).toBe('http://localhost:3000/mem0-quickstart');
   });
 
   it('returns no sources when response is mostly code with no citable paragraphs', () => {
@@ -291,12 +291,12 @@ Done!`;
 
     const rawResults = [
       makeResult({
-        doc_url: 'https://docs.zilliz.com/mem0-quickstart',
+        doc_url: 'http://localhost:3000/mem0-quickstart',
         content: 'Connect to Zilliz Cloud using pymilvus connections. Use mem0 Memory class to add and retrieve user memories with Milvus vector backend.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/mem0-quickstart', title: 'Mem0 Quickstart'}),
+      makeSource({url: 'http://localhost:3000/mem0-quickstart', title: 'Mem0 Quickstart'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
@@ -324,31 +324,31 @@ The search function returns nearest neighbors using the configured HNSW index ty
     const rawResults = [
       makeResult({
         id: 'chunk-search',
-        doc_url: 'https://docs.zilliz.com/search-guide',
+        doc_url: 'http://localhost:3000/search-guide',
         content: 'The search function returns nearest neighbors using the configured HNSW index type for approximate similarity queries in large datasets.',
       }),
       makeResult({
         id: 'chunk-boost',
-        doc_url: 'https://docs.zilliz.com/boost-ranker',
+        doc_url: 'http://localhost:3000/boost-ranker',
         content: 'Boost ranker configuration for pymilvus connections and Collection search results with vector embedding parameters and token authentication.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/search-guide', title: 'Search Guide'}),
-      makeSource({url: 'https://docs.zilliz.com/boost-ranker', title: 'Boost Ranker'}),
+      makeSource({url: 'http://localhost:3000/search-guide', title: 'Search Guide'}),
+      makeSource({url: 'http://localhost:3000/boost-ranker', title: 'Boost Ranker'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
 
     // Search Guide should be cited (last paragraph matches)
-    const searchSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/search-guide');
+    const searchSource = result.sources.find(s => s.url === 'http://localhost:3000/search-guide');
     expect(searchSource).toBeDefined();
 
     // Boost Ranker may match whole-response fallback keywords but should be pruned
     // because no paragraph actually cites it
     for (const c of result.citations) {
       const citedUrls = c.sourceIndices.map(i => result.sources[i]?.url);
-      expect(citedUrls).not.toContain('https://docs.zilliz.com/boost-ranker');
+      expect(citedUrls).not.toContain('http://localhost:3000/boost-ranker');
     }
   });
 
@@ -357,19 +357,19 @@ The search function returns nearest neighbors using the configured HNSW index ty
 
     const rawResults = [
       makeResult({
-        doc_url: 'https://docs.zilliz.com/sdk-guide',
+        doc_url: 'http://localhost:3000/sdk-guide',
         content: 'The Zilliz Cloud SDK provides API access for building RAG pipelines and retrieval-augmented generation workflows.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/sdk-guide', title: 'SDK Guide'}),
+      makeSource({url: 'http://localhost:3000/sdk-guide', title: 'SDK Guide'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
 
     // "API", "SDK", "RAG" (3 chars) should participate in matching
     expect(result.sources.length).toBeGreaterThan(0);
-    expect(result.sources[0].url).toBe('https://docs.zilliz.com/sdk-guide');
+    expect(result.sources[0].url).toBe('http://localhost:3000/sdk-guide');
   });
 
   it('tutorial-style response grounds to correct source over generic docs', () => {
@@ -390,34 +390,34 @@ Once configured, you can store and retrieve memories for your users through the 
     const rawResults = [
       makeResult({
         id: 'faq',
-        doc_url: 'https://docs.zilliz.com/faq-cluster',
+        doc_url: 'http://localhost:3000/faq-cluster',
         content: 'Frequently asked questions about billing, invoicing, payment methods, and resource allocation for enterprise accounts.',
       }),
       makeResult({
         id: 'release',
-        doc_url: 'https://docs.zilliz.com/release-notes',
+        doc_url: 'http://localhost:3000/release-notes',
         content: 'Release notes for version updates, changelog entries, deprecation notices, and migration warnings.',
       }),
       makeResult({
         id: 'mem0',
-        doc_url: 'https://docs.zilliz.com/mem0-integration',
+        doc_url: 'http://localhost:3000/mem0-integration',
         content: 'Mem0 is an open-source memory layer for AI applications. It uses Milvus as the vector backend. Configure Mem0 with your Zilliz Cloud credentials to store and retrieve memories.',
       }),
     ];
     const sources = [
-      makeSource({url: 'https://docs.zilliz.com/faq-cluster', title: 'FAQ: Cluster'}),
-      makeSource({url: 'https://docs.zilliz.com/release-notes', title: 'Release Notes'}),
-      makeSource({url: 'https://docs.zilliz.com/mem0-integration', title: 'Mem0 Integration'}),
+      makeSource({url: 'http://localhost:3000/faq-cluster', title: 'FAQ: Cluster'}),
+      makeSource({url: 'http://localhost:3000/release-notes', title: 'Release Notes'}),
+      makeSource({url: 'http://localhost:3000/mem0-integration', title: 'Mem0 Integration'}),
     ];
 
     const result = computeGrounding(response, rawResults, sources);
 
     // Mem0 doc should be in results AND ranked first
     expect(result.sources.length).toBeGreaterThanOrEqual(1);
-    expect(result.sources[0].url).toBe('https://docs.zilliz.com/mem0-integration');
+    expect(result.sources[0].url).toBe('http://localhost:3000/mem0-integration');
     // FAQ and release notes should NOT appear (no overlap with response)
-    const faqSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/faq-cluster');
-    const releaseSource = result.sources.find(s => s.url === 'https://docs.zilliz.com/release-notes');
+    const faqSource = result.sources.find(s => s.url === 'http://localhost:3000/faq-cluster');
+    const releaseSource = result.sources.find(s => s.url === 'http://localhost:3000/release-notes');
     expect(faqSource).toBeUndefined();
     expect(releaseSource).toBeUndefined();
   });
@@ -580,8 +580,8 @@ You can use the RRF (Reciprocal Rank Fusion) ranker to merge results from multip
 function makeChunk(overrides: Partial<SearchResult> = {}): SearchResult {
   return {
     id: 'chunk-1',
-    doc_url: 'https://docs.zilliz.com/test',
-    doc_url_md: 'https://docs.zilliz.com/test.md',
+    doc_url: 'http://localhost:3000/test',
+    doc_url_md: 'http://localhost:3000/test.md',
     doc_title: 'Test Doc',
     section: 'cloud-guides',
     content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for high-performance approximate nearest neighbor queries.',
@@ -625,7 +625,7 @@ describe('scoreChunksPerParagraph', () => {
     expect(result.size).toBe(1);
     const candidates = result.get(0)!;
     expect(candidates.length).toBe(1);
-    expect(candidates[0].url).toBe('https://docs.zilliz.com/test');
+    expect(candidates[0].url).toBe('http://localhost:3000/test');
     expect(candidates[0].score).toBeGreaterThan(PRE_FILTER_OVERLAP);
   });
 
@@ -635,7 +635,7 @@ describe('scoreChunksPerParagraph', () => {
     ];
     const chunks = [
       makeChunk({
-        doc_url: 'https://docs.zilliz.com/unrelated',
+        doc_url: 'http://localhost:3000/unrelated',
         content: 'Python pandas numpy scikit machine learning regression classification clustering algorithm.',
       }),
     ];
@@ -647,7 +647,7 @@ describe('scoreChunksPerParagraph', () => {
     const paragraphs = [
       'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries in production.',
     ];
-    const url = 'https://docs.zilliz.com/indexes';
+    const url = 'http://localhost:3000/indexes';
     const chunks = [
       makeChunk({
         id: 'chunk-a',
@@ -677,12 +677,12 @@ describe('scoreChunksPerParagraph', () => {
     const chunks = [
       makeChunk({
         id: 'weak',
-        doc_url: 'https://docs.zilliz.com/weak',
+        doc_url: 'http://localhost:3000/weak',
         content: 'Milvus vector search overview introduction.',
       }),
       makeChunk({
         id: 'strong',
-        doc_url: 'https://docs.zilliz.com/strong',
+        doc_url: 'http://localhost:3000/strong',
         content: 'Milvus supports vector similarity search using HNSW and IVF_FLAT index types for approximate nearest neighbor queries in production Zilliz Cloud environments.',
       }),
     ];
@@ -696,7 +696,7 @@ describe('scoreChunksPerParagraph', () => {
       expect(candidates![i - 1].score).toBeGreaterThanOrEqual(candidates![i].score);
     }
     // Strong match should rank first
-    expect(candidates![0].url).toBe('https://docs.zilliz.com/strong');
+    expect(candidates![0].url).toBe('http://localhost:3000/strong');
   });
 
   it('applies demotion factor to release note URLs', () => {
@@ -740,12 +740,12 @@ describe('scoreChunksPerParagraph', () => {
     const chunks = [
       makeChunk({
         id: 'search',
-        doc_url: 'https://docs.zilliz.com/search',
+        doc_url: 'http://localhost:3000/search',
         content: 'Milvus vector similarity search using HNSW index for approximate nearest neighbor queries.',
       }),
       makeChunk({
         id: 'serverless',
-        doc_url: 'https://docs.zilliz.com/serverless',
+        doc_url: 'http://localhost:3000/serverless',
         content: 'Zilliz Cloud serverless deployment with automatic scaling and managed infrastructure for production.',
       }),
     ];
@@ -758,8 +758,8 @@ describe('scoreChunksPerParagraph', () => {
     expect(para1).toBeDefined();
 
     // Paragraph 0 should match the search doc
-    expect(para0![0].url).toBe('https://docs.zilliz.com/search');
+    expect(para0![0].url).toBe('http://localhost:3000/search');
     // Paragraph 1 should match the serverless doc
-    expect(para1![0].url).toBe('https://docs.zilliz.com/serverless');
+    expect(para1![0].url).toBe('http://localhost:3000/serverless');
   });
 });

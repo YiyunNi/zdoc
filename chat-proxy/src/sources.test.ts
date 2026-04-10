@@ -157,15 +157,15 @@ describe('inferSection', () => {
   });
 
   it('returns byoc-guides for BYOC URL with cloud-guides section', () => {
-    expect(inferSection('cloud-guides', 'https://docs.zilliz.com/docs/byoc-guides/deploy-aws')).toBe('byoc-guides');
+    expect(inferSection('cloud-guides', 'http://localhost:3000/docs/byoc-guides/deploy-aws')).toBe('byoc-guides');
   });
 
   it('returns api-reference for /reference/ URL with no section', () => {
-    expect(inferSection(undefined, 'https://docs.zilliz.com/reference/python/collection')).toBe('api-reference');
+    expect(inferSection(undefined, 'http://localhost:3000/reference/python/collection')).toBe('api-reference');
   });
 
   it('preserves cloud-guides for normal zilliz.com URL', () => {
-    expect(inferSection('cloud-guides', 'https://docs.zilliz.com/docs/quick-start')).toBe('cloud-guides');
+    expect(inferSection('cloud-guides', 'http://localhost:3000/docs/quick-start')).toBe('cloud-guides');
   });
 
   it('preserves explicit non-default section even without URL match', () => {
