@@ -27,8 +27,8 @@ class larkImageDownloader {
             },
             region: process.env.AWS_REGION,
             requestHandler: new NodeHttpHandler({
-                connectionTimeout: 10000,
-                requestTimeout: 30000,
+                connectionTimeout: 30000,
+                requestTimeout: 120000,
             }),
         })
     }    
