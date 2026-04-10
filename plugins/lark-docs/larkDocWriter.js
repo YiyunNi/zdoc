@@ -1457,20 +1457,18 @@ class larkDocWriter {
             return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;
         }
 
-        const result = await this.downloader.__downloadBoardPreview(board.token)
-        var buffers = [];
-        result.body.on('data', (chunk) => {
-            buffers.push(chunk);
-        });
-        result.body.on('end', async () => {
-            const buffer = Buffer.concat(buffers);
+        try {
+            const result = await this.downloader.__downloadBoardPreview(board.token)
+            const buffer = await result.buffer()
             const trimmedBuffer = await this.__trim_white_borders(buffer);
             if (this.upload_to_s3) {
                 await this.downloader.__uploadToS3(trimmedBuffer, `${board["token"]}.png`);
             } else {
                 fs.writeFileSync(`${this.downloader.target_path}/${board["token"]}.png`, trimmedBuffer);
             }
-        });           
+        } catch (error) {
+            console.error(`Failed to download board ${board.token}:`, error)
+        }
 
         return ' '.repeat(indent) + `![${board.token}](${root}/${board["token"]}.png)`;
     }
