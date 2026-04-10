@@ -106,7 +106,7 @@ class larkImageDownloader {
         }
 
         let res = await fetch(`${process.env.FEISHU_HOST}/open-apis/board/v1/whiteboards/${board_token}/download_as_image`, req)
-        console.log(`BoardToken: ${board_token} HTTP ${res.status}`)
+        console.log(`BoardToken: ${board_token} HTTP ${res.status} content-type: ${res.headers.get('content-type')}`)
 
         return res
     }

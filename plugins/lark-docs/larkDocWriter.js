@@ -1481,15 +1481,19 @@ class larkDocWriter {
     async __trim_white_borders(image) {
         const sharp = require('sharp');
 
+        const timeout = new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('sharp toBuffer() timed out after 30s')), 30000)
+        );
+
         try {
-            // Let Sharp auto-detect background from top-left pixel (likely white)
+            console.log(`sharp trim: input ${image.length} bytes, magic ${image.slice(0,4).toString('hex')}`)
             const trimmedImage = await sharp(image)
                 .trim({
                   background: { r: 255, g: 255, b: 255 },
-                  threshold: 10                    
+                  threshold: 10
                 }).png()
 
-            // Add a 10-pixel white border around the trimmed image
+            console.log(`sharp trim: pipeline built, calling toBuffer()`)
             const borderedImage = trimmedImage.extend({
                 top: 20,
                 bottom: 20,
@@ -1498,7 +1502,8 @@ class larkDocWriter {
                 background: { r: 255, g: 255, b: 255 }
             });
 
-            const buffer = await borderedImage.toBuffer();
+            const buffer = await Promise.race([borderedImage.toBuffer(), timeout]);
+            console.log(`sharp trim: output ${buffer.length} bytes`)
             return buffer;
 
         } catch (error) {
