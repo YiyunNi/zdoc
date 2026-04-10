@@ -111,6 +111,7 @@ export function splitParagraphs(text: string): string[] {
 // ---------------------------------------------------------------------------
 
 const MIN_OVERLAP = 0.20;  // IDF-weighted overlap threshold for deterministic grounding
+const MIN_OVERLAP_SHORT = 0.15; // Lower threshold for short paragraphs (< 15 tokens)
 const MAX_SOURCES_PER_PARAGRAPH = 2;
 
 /** Broader pre-filter threshold for IDF pre-pass feeding into LLM re-rank */
@@ -166,12 +167,24 @@ export function computeGrounding(
   const usedUrls = new Set<string>();
   const urlOverlapScore = new Map<string, number>();
   const rawCitations: Array<{paragraphIndex: number; urls: string[]}> = [];
+  let lastCitedUrls: string[] = []; // for code block citation inheritance
 
   for (let pi = 0; pi < paragraphs.length; pi++) {
+    // Code blocks: inherit citations from the preceding prose paragraph
+    if (CODE_BLOCK_RE.test(paragraphs[pi].trim())) {
+      if (lastCitedUrls.length > 0) {
+        rawCitations.push({paragraphIndex: pi, urls: lastCitedUrls});
+        for (const url of lastCitedUrls) usedUrls.add(url);
+      }
+      continue;
+    }
     if (isSkippable(paragraphs[pi])) continue;
 
     const paraTokens = tokenize(paragraphs[pi]);
     if (paraTokens.size === 0) continue;
+
+    // Use a lower threshold for very short paragraphs (< 8 tokens) to avoid missing relevant sources
+    const threshold = paraTokens.size < 8 ? MIN_OVERLAP_SHORT : MIN_OVERLAP;
 
     // Score each chunk against this paragraph (IDF-weighted)
     const scores: Array<{url: string; overlap: number}> = [];
@@ -187,7 +200,7 @@ export function computeGrounding(
       let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
       // Demote release notes so they don't beat real documentation sources
       if (chunk.demoted) overlap *= DEMOTE_FACTOR;
-      if (overlap >= MIN_OVERLAP) {
+      if (overlap >= threshold) {
         scores.push({url: chunk.url, overlap});
       }
     }
@@ -216,12 +229,13 @@ export function computeGrounding(
     const urls = sorted.map(([url]) => url);
     for (const url of urls) usedUrls.add(url);
     rawCitations.push({paragraphIndex: pi, urls});
+    lastCitedUrls = urls; // update for code block inheritance
   }
 
-  // Whole-response fallback: when paragraph-level matching yields few sources
+  // Whole-response fallback: when paragraph-level matching yields 0 or 1 sources
   // (e.g. most content was code blocks or short lines), match the entire
   // response text against all chunks for broader coverage.
-  if (usedUrls.size <= 2) {
+  if (usedUrls.size < 2) {
     const fullTokens = tokenize(responseText);
     if (fullTokens.size > 0) {
       for (const chunk of chunkTokens) {

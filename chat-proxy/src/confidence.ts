@@ -39,7 +39,7 @@ function scoreToolSuccess(
   if (searchCalls.length > 0 && toolSources.length === 0) return 0.05;
 
   // Got sources
-  let score = 0.6;
+  let score = 0.65;
   if (toolSources.length >= 2) score += 0.15;
   if (toolSources.length >= 4) score += 0.1;
 
@@ -72,10 +72,10 @@ function scoreSourceAgreement(
   // Tight score cluster = consistent topic
   if (spread < 0.15) signal = Math.min(signal + 0.2, 1.0);
 
-  // Penalty for scattered URLs (all different docs)
+  // Slight penalty for scattered URLs (all different docs) — diverse sources is normal, not bad
   const uniqueUrls = new Set(sources.map(s => s.url)).size;
-  if (uniqueUrls === sources.length && sources.length >= 3) {
-    signal = Math.max(signal - 0.2, 0);
+  if (uniqueUrls === sources.length && sources.length >= 5) {
+    signal = Math.max(signal - 0.05, 0);
   }
 
   return clamp(signal);
@@ -85,7 +85,7 @@ function scoreSourceAgreement(
 // Signal 3: Response Substance (weight 0.25)
 // ---------------------------------------------------------------------------
 
-const UNCERTAINTY_PATTERNS = /\b(i'm not sure|i don't have|uncertain|unclear|cannot find|no documentation|i couldn't find|i was unable)\b/i;
+const UNCERTAINTY_PATTERNS = /\b(i'm not sure|i don't have (any|enough|specific) information|uncertain|unclear|cannot find|no documentation|i couldn't find|i was unable)\b/i;
 const HEDGE_PATTERN = /\b(might|perhaps|possibly)\b/gi;
 const APOLOGY_PATTERNS = /\b(i apologize|sorry|unfortunately i|i'm unable to)\b/i;
 
@@ -104,7 +104,7 @@ function scoreResponseSubstance(text: string): {score: number; forcelow: boolean
 
   // Negative signals
   const hedges = text.match(HEDGE_PATTERN);
-  if (hedges && hedges.length >= 2) score -= 0.15;
+  if (hedges && hedges.length >= 3) score -= 0.15;
   if (text.length < 80) score -= 0.2;
 
   return {score: clamp(score), forcelow: false};
