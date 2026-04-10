@@ -1,7 +1,7 @@
 ---
 title: "Count Entities | Cloud"
 slug: /count-entities
-sidebar_label: "Count Entities"
+sidebar_label: "Count"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -344,19 +344,19 @@ Instead of counting the entities programmatically, you can also access the Zilli
 
 You can find **Entity Count** and **Loaded Entities (Approx.)** of a cluster on its **Metrics** tab. Both values are estimates. Values in the curve are obtained [using ](./count-entities#use-getcollectionstats)[`get_collection_stats()`](./count-entities#use-getcollectionstats). If there are no further data insertions and deletions, the **Entity Count** curve will eventually reflect the actual number of entities in the current collection.
 
-![UGT3bXxnjordXpxhTZUcMYK6nQg](https://zdoc-images.s3.us-west-2.amazonaws.com/ugt3bxxnjordxpxhtzucmyk6nqg.png "UGT3bXxnjordXpxhTZUcMYK6nQg")
+![FQsPbirxJoTVkqxImLLcF7IAnhc](https://zdoc-images.s3.us-west-2.amazonaws.com/fqspbirxjotvkqximllcf7ianhc.png "FQsPbirxJoTVkqxImLLcF7IAnhc")
 
 ### Collection Details\{#collection-details}
 
 You can find the actual entity count of a collection on its details tab. This value is obtained by using [queries with ](./count-entities)[`count(*)`](./count-entities)[ as the output field](./count-entities).
 
-![L8ImbqFLIonMTxx47WBcF5IbnTf](https://zdoc-images.s3.us-west-2.amazonaws.com/l8imbqflionmtxx47wbcf5ibntf.png "L8ImbqFLIonMTxx47WBcF5IbnTf")
+![NYNvbVD9tolEKKxuQ27cnYZcn9t](https://zdoc-images.s3.us-west-2.amazonaws.com/nynvbvd9tolekkxuq27cnyzcn9t.png "NYNvbVD9tolEKKxuQ27cnYZcn9t")
 
 ### Partitions\{#partitions}
 
 You can also use the **Partitions** tab of a collection to find the estimated number of loaded entities in its child partitions. This value is obtained by using `get_partition_stats()`.
 
-![Y4Etb0AITotVQNxvzs4cZCHsn9d](https://zdoc-images.s3.us-west-2.amazonaws.com/y4etb0aitotvqnxvzs4czchsn9d.png "Y4Etb0AITotVQNxvzs4cZCHsn9d")
+![OyDRb3N4zosDJexXomacHBZpngh](https://zdoc-images.s3.us-west-2.amazonaws.com/oydrb3n4zosdjexxomachbzpngh.png "OyDRb3N4zosDJexXomacHBZpngh")
 
 ## FAQs\{#faqs}
 

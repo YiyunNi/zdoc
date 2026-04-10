@@ -1437,19 +1437,14 @@ class larkDocWriter {
         }
 
         try {
-            const result = await this.downloader.__downloadImage(image.token)
-            const buffer = await result.buffer();
+            const { buffer } = await this.downloader.__downloadImage(image.token)
             if (this.upload_to_s3) {
                 await this.downloader.__uploadToS3(buffer, `${slug}.png`);
             } else {
-                result.body.pipe(fs.createWriteStream(`${this.downloader.target_path}/${slug}.png`));
+                fs.writeFileSync(`${this.downloader.target_path}/${slug}.png`, buffer);
             }
         } catch (error) {
-            console.log(error)
-            console.log("-------------- A retry is needed -----------------");
-            console.log("Sleeping for 5 seconds")
-            await new Promise(resolve => setTimeout(resolve, 5000));
-            this.__image(image)
+            console.error(`Failed to download image ${image.token}:`, error)
         }
 
         return `![${caption}](${root}/${slug}.png "${caption}")`;

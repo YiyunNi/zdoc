@@ -63,11 +63,11 @@ class larkImageDownloader {
         }
     }
 
-    async __downloadImage(image_token) {
+    async __downloadImage(image_token, retries=3) {
         console.log(`ImageToken: ${image_token}`)
         const fetcher = new tokenFetcher()
         await fetcher.fetchToken()
-        const token = await fetcher.token() 
+        const token = await fetcher.token()
 
         const req = {
             method: 'GET',
@@ -76,9 +76,18 @@ class larkImageDownloader {
             },
         }
 
-        let res = await fetch(`${process.env.FEISHU_HOST}/open-apis/drive/v1/medias/${image_token}/download`, req)
-
-        return res
+        for (let attempt = 1; attempt <= retries; attempt++) {
+            try {
+                const res = await fetch(`${process.env.FEISHU_HOST}/open-apis/drive/v1/medias/${image_token}/download`, req)
+                const buffer = await res.buffer()
+                return { buffer }
+            } catch (err) {
+                if (attempt === retries) throw err
+                const delay = attempt * 5000
+                console.log(`ImageToken ${image_token} download failed (attempt ${attempt}/${retries}), retrying in ${delay/1000}s: ${err.message}`)
+                await new Promise(resolve => setTimeout(resolve, delay))
+            }
+        }
     }
 
     async __downloadBoardPreview(board_token) {
