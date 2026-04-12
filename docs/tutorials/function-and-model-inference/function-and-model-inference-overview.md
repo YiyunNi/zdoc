@@ -247,3 +247,4 @@ Zilliz Cloud integrates with leading model providers that offer different capabi
      <td><p><a href="https://docs.cohere.com/docs/rerank">Yes</a></p></td>
    </tr>
 </table>
+

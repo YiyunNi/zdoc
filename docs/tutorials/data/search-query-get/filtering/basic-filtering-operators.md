@@ -1,7 +1,7 @@
 ---
 title: "Basic Operators | Cloud"
 slug: /basic-filtering-operators
-sidebar_label: "Basic Operators"
+sidebar_label: "Basic"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -297,7 +297,7 @@ data = [
       "pk": 2,
       "embedding": [0.56, 0.78, 0.90]
   },
-  {  # JSON field `metadata` is completely missing
+  {  # JSON field \`metadata\` is completely missing
       "pk": 3,
       "embedding": [0.91, 0.18, 0.23]
   },

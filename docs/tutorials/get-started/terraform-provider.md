@@ -59,6 +59,12 @@ A [Zilliz Cloud cluster](/docs/manage-cluster) is a Milvus instance that operate
 
 You can use the Zilliz Cloud Terraform Provider to create and manage clusters of any specific offering. For details, refer to the following tutorials:
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>When using the Terraform Provider with BYOC, only dedicated and BYOC cluster types are supported. Free and Serverless cluster creation is not available in BYOC projects.</p>
+
+</Admonition>
+
 - [Create a Free Cluster](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-free-cluster)
 
 - [Create a Serverless Cluster](https://registry.terraform.io/providers/zilliztech/zillizcloud/latest/docs/guides/create-a-serverless-cluster)

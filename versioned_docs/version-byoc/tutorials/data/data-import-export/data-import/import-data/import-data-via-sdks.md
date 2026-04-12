@@ -361,6 +361,16 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
+## FAQ\{#faq}
+
+**What is the difference between an external volume and importing directly from external storage?**
+
+Both allow you to import data from your own S3 or GCS bucket. The key differences are:
+
+- External volume uses a [storage integration](./integrate-with-aws-s3) for credential management. Credentials are set up once and reused across multiple volumes and operations. Data engineers do not need direct access to cloud storage keys.
+
+- Direct [external storage import](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) requires you to provide credentials (access key, secret key) inline with each import request. This is simpler for one-time imports but does not offer credential separation or reusability.
+
 ## Related topics\{#related-topics}
 
 - [Storage Options](./data-import-storage-options)

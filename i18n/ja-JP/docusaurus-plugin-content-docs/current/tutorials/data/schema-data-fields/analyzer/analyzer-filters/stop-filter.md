@@ -4,7 +4,7 @@ slug: /stop-filter
 sidebar_label: "Stop"
 beta: FALSE
 notebook: FALSE
-description: "`stop`フィルターは、トークン化されたテキストから指定されたストップワードを削除し、一般的で意味の薄い単語を除去するのに役立ちます。`stopwords`パラメーターを使用してストップワードのリストを設定できます。 | Cloud"
+description: "`stop` フィルターは、トークン化されたテキストから指定されたストップワードを削除し、一般的で意味の薄い単語を除去するのに役立ちます。ストップワードのリストは、`stopwords` パラメーターを使用して設定できます。 | Cloud"
 type: origin
 token: ScncwBnDBiVoLjksXAwcUgrgnod
 sidebar_position: 7
@@ -12,15 +12,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みフィルター
   - stop
-  - 疎ベクトル
-  - ベクトル次元
-  - ANN検索
-  - ベクトル埋め込みとは
 
 ---
 
@@ -30,11 +26,11 @@ import TabItem from '@theme/TabItem';
 
 # Stop
 
-`stop` フィルターは、トークン化されたテキストから指定されたストップワードを削除し、一般的で意味の薄い単語を排除するのに役立ちます。`stop_words` パラメーターを使用してストップワードのリストを設定できます。
+`stop` フィルターは、トークン化されたテキストから指定されたストップワードを削除し、一般的で意味の薄い単語を排除するのに役立ちます。`stop_words` パラメータを使用して、ストップワードのリストを構成できます。
 
-## 設定{#configuration}
+## 設定\{#configuration}
 
-`stop` フィルターは Zilliz Cloud のカスタムフィルターです。これを使用するには、フィルター設定で`"type": "stop"`を指定し、ストップワードのリストを提供する`stop_words`パラメーターを指定します。
+`stop` フィルターは Zilliz Cloud のカスタムフィルターです。これを使用するには、フィルター設定で `"type": "stop"` を指定し、ストップワードのリストを提供する `stop_words` パラメータを指定します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -68,7 +64,7 @@ analyzerParams.put("filter",
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const analyzer_params = {
@@ -82,7 +78,7 @@ const analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "standard",
@@ -94,7 +90,7 @@ analyzerParams = map[string]any{"tokenizer": "standard",
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -117,28 +113,28 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-`stop` フィルターは、以下の設定可能なパラメーターを受け入れます。
+`stop` フィルターは、以下の設定可能なパラメータを受け入れます。
 
 <table>
    <tr>
-     <th><p>パラメーター</p></th>
+     <th><p>パラメータ</p></th>
      <th><p>説明</p></th>
    </tr>
    <tr>
      <td><p><code>stop_words</code></p></td>
-     <td><p>トークン化から削除される単語のリスト。デフォルトでは、フィルターは組み込みの <code>_english_</code> 辞書を使用します。これをオーバーライドまたは拡張するには、3つの方法があります。</p><ul><li><p><strong>組み込み辞書</strong> – 事前定義された辞書を使用するには、以下の言語エイリアスのいずれかを指定します。</p><p><code>"_english_"</code>, <code>"_danish_"</code>, <code>"_dutch_"</code>, <code>"_finnish_"</code>, <code>"_french_"</code>, <code>"_german_"</code>, <code>"_hungarian_"</code>, <code>"_italian_"</code>, <code>"_norwegian_"</code>, <code>"_portuguese_"</code>, <code>"_russian_"</code>, <code>"_spanish_"</code>, <code>"_swedish_"</code></p></li><li><p><strong>カスタムリスト</strong> – 独自の用語の配列を渡します。例: <code>["foo", "bar", "baz"]</code>。</p></li><li><p><strong>混合リスト</strong> – エイリアスとカスタム用語を組み合わせます。例: <code>["of", "to", "_english_"]</code>。</p><p>各事前定義辞書の正確な内容については、<a href="https://github.com/milvus-io/milvus/blob/master/internal/core/thirdparty/tantivy/tantivy-binding/src/analyzer/filter/stop_words.rs">stop_words</a> を参照してください。</p></li></ul></td>
+     <td><p>トークン化から除外する単語のリスト。デフォルトでは、このフィルターは組み込みの <code>_english_</code> 辞書を使用します。これをオーバーライドまたは拡張するには、次の3つの方法があります。</p><ul><li><p><strong>組み込み辞書</strong> – 事前定義された辞書を使用するには、これらの言語エイリアスのいずれかを指定します。</p><p><code>"_english_"</code>, <code>"_danish_"</code>, <code>"_dutch_"</code>, <code>"_finnish_"</code>, <code>"_french_"</code>, <code>"_german_"</code>, <code>"_hungarian_"</code>, <code>"_italian_"</code>, <code>"_norwegian_"</code>, <code>"_portuguese_"</code>, <code>"_russian_"</code>, <code>"_spanish_"</code>, <code>"_swedish_"</code></p></li><li><p><strong>カスタムリスト</strong> – 独自の用語の配列を渡します。例: <code>["foo", "bar", "baz"]</code>。</p></li><li><p><strong>混合リスト</strong> – エイリアスとカスタム用語を組み合わせます。例: <code>["of", "to", "_english_"]</code>。</p><p>各事前定義辞書の正確な内容については、<a href="https://github.com/milvus-io/milvus/blob/master/internal/core/thirdparty/tantivy/tantivy-binding/src/analyzer/filter/stop_words.rs">stop_words</a> を参照してください。</p></li></ul></td>
    </tr>
 </table>
 
-`stop` フィルターは、tokenizer によって生成された用語に対して動作するため、tokenizer と組み合わせて使用する必要があります。Zilliz Cloud で利用可能な tokenizer のリストについては、[Tokenizer Reference](./analyzer-tokenizers) を参照してください。
+`stop` フィルターはトークナイザーによって生成された用語に対して動作するため、トークナイザーと組み合わせて使用する必要があります。Zilliz Cloudで利用可能なトークナイザーのリストについては、[トークナイザー Reference](./analyzer-tokenizers) を参照してください。
 
-`analyzer_params` を定義した後、collection schema を定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は、指定された analyzer を使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを行います。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloudはそのフィールドのテキストを指定されたアナライザーを使用して処理し、効率的なトークン化とフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
-## 例{#examples}
+## 例\{#examples}
 
-analyzer の設定を collection schema に適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
+アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
 
-### アナライザー設定{#analyzer-configuration}
+### アナライザー設定\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -172,7 +168,7 @@ analyzerParams.put("filter",
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -180,7 +176,7 @@ analyzerParams.put("filter",
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "standard",
@@ -192,7 +188,7 @@ analyzerParams = map[string]any{"tokenizer": "standard",
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -201,7 +197,7 @@ analyzerParams = map[string]any{"tokenizer": "standard",
 </TabItem>
 </Tabs>
 
-### `run_analyzer` を使用した検証 {#verification-using-runanalyzer}
+### `run_analyzer` を使用した検証\{#verification-using-runanalyzer}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -248,7 +244,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -256,7 +252,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -290,7 +286,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -299,7 +295,7 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-### 期待される出力結果\{#expected-output}
+### 期待される出力\{#expected-output}
 
 ```python
 ['The', 'stop', 'filter', 'allows', 'control', 'over', 'common', 'stop', 'words', 'text', 'processing']

@@ -41,7 +41,7 @@ If you need more resources or want to access advanced features, please use the [
 
 ## Free trial\{#free-trial}
 
-Zilliz Cloud offers free trial for clusters and vector database features. The following sections introduces the credit-based free trial for clusters. If you want to try the volume feature, an object store that holds either structured tables or collections of unstructured data files, please refer to [Volume Explained](./volume-explained#free-trial-volume).
+Zilliz Cloud offers free trial for clusters and vector database features. The following sections introduces the credit-based free trial for clusters. If you want to try the volume feature, an object store that holds either structured tables or collections of unstructured data files, please refer to [Volume Explained](./volume-explained).
 
 ### Use free trial\{#use-free-trial}
 

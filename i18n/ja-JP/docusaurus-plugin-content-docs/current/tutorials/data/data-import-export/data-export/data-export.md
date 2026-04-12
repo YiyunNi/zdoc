@@ -4,7 +4,7 @@ slug: /data-export
 sidebar_label: "データのエクスポート"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、さまざまな方法を使用してZilliz Cloudからデータをエクスポートする方法の例を紹介します。 | Cloud"
+description: "このガイドでは、さまざまな方法でZilliz Cloudからデータをエクスポートする方法の例を紹介します。"
 type: origin
 token: CeH9wPtUfiOdDckoPszcAuLonce
 sidebar_position: 2
@@ -12,12 +12,9 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - データエクスポート
-  - openai vector db
-  - 自然言語処理データベース
-  - 安価なベクトルデータベース
-  - マネージドベクトルデータベース
+  - データのエクスポート
 
+sidebar_key: "data/data-import-export/data-export"
 ---
 
 import Admonition from '@theme/Admonition';
@@ -25,7 +22,7 @@ import Admonition from '@theme/Admonition';
 
 # データのエクスポート
 
-このガイドでは、さまざまな方法を使用してZilliz Cloudからデータをエクスポートする方法の例を紹介します。
+このガイドでは、さまざまな方法でZilliz Cloudからデータをエクスポートする方法の例を紹介します。
 
 
 

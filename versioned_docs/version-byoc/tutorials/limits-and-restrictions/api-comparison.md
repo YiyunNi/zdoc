@@ -31,7 +31,7 @@ If you are planning to migrate from Milvus to Zilliz Cloud, you may need to make
 
 ## Scenario-specific privileges\{#scenario-specific-privileges}
 
-The table below provides a comparison of API availability across various service tiers. Note that the availability of the API for the [Bring Your Own Cloud (BYOC)](/docs/byoc/byoc-intro) solution is consistent with that of the **Standard and Enterprise** tiers.
+The table below compares API availability across service tiers. Note that the API availability for the [Bring Your Own Cloud (BYOC)](/docs/byoc/byoc-intro) solution is consistent with that of the **Standard and Enterprise** tiers, with certain exceptions. See [Zilliz Cloud Limits](./limits) for details.
 
 <table>
    <tr>

@@ -105,7 +105,7 @@ If you need to upgrade a project to the **Business Critical** or **BYOC** plan, 
     export projectId="proj-xx"
     
     curl --request PATCH \
-    --url "${BASE_URL}/v2/projects/${projectId}" \
+    --url "${BASE_URL}/v2/projects/${projectId}/plan" \
     --header "Authorization: Bearer ${TOKEN}" \
     --header "Content-Type: application/json" \
     -d '{
@@ -225,4 +225,10 @@ Once a project is deleted, all its associated data and resources will be irrever
 You can delete a project via the web console.
 
 <Supademo id="cmhiwf80b5zoufatic4p14w7m?utm_source=link" title=""  />
+
+## FAQ\{#faq}
+
+**Can I downgrade my project plan?**
+
+Direct plan downgrades are not supported. To switch to a lower plan, create a new project on the desired plan and [migrate](./offline-migration) your data to it.
 

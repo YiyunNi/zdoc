@@ -1,10 +1,10 @@
 ---
-title: "バックアップと復元 | BYOC"
+title: "バックアップとリストア | BYOC"
 slug: /backup-and-restore
-sidebar_label: "バックアップと復元"
+sidebar_label: "バックアップとリストア"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud クラスターに保存されているデータのバックアップと復元。| BYOC"
+description: "Zilliz Cloud クラスターに保存されたデータのバックアップとリストア。| BYOC"
 type: origin
 token: VvikwOKc9iZ5vBkgMnycrXKmnId
 sidebar_position: 9
@@ -13,20 +13,17 @@ keywords:
   - ベクトルデータベース
   - クラウド
   - バックアップ
-  - 復元
-  - 階層型ナビゲーション可能スモールワールド
-  - 密な埋め込み
-  - Faiss ベクトルデータベース
-  - Chroma ベクトルデータベース
+  - リストア
 
+sidebar_key: "backup-and-restore"
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# バックアップと復元
+# バックアップとリストア
 
-Zilliz Cloudクラスターに保存されているデータのバックアップと復元。
+Zilliz Cloud クラスターに保存されたデータのバックアップとリストア。
 
 
 

@@ -4,23 +4,19 @@ slug: /ascii-folding-filter
 sidebar_label: "ASCII folding"
 beta: FALSE
 notebook: FALSE
-description: "`asciifolding` フィルターは、Basic Latin Unicode ブロック外の文字を ASCII 相当の文字に変換します。例えば、`í` のような文字を `i` に変換し、特に多言語コンテンツのテキスト処理をよりシンプルかつ一貫性のあるものにします。 | Cloud"
+description: "`asciifolding` フィルターは、Basic Latin Unicode ブロック外の文字を対応する ASCII 文字に変換します。例えば、`í` のような文字を `i` に変換し、特に多言語コンテンツにおいてテキスト処理をよりシンプルかつ一貫性のあるものにします。 | Cloud"
 type: origin
 token: SFLCweOuaiChuVkjazqcqyE7neb
 sidebar_position: 2
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
-  - collection
-  - schema
-  - analyzer
+  - コレクション
+  - スキーマ
+  - アナライザー
   - 組み込みフィルター
-  - ascii folding
-  - openai ベクター DB
-  - 自然言語処理データベース
-  - 安価なベクターデータベース
-  - マネージドベクターデータベース
+  - ASCII folding
 
 ---
 
@@ -30,9 +26,9 @@ import TabItem from '@theme/TabItem';
 
 # ASCII folding
 
-`asciifolding` フィルターは、[Basic Latin Unicode block](https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)) (最初の 127 ASCII 文字) 外の文字を ASCII 相当の文字に変換します。例えば、`í` のような文字を `i` に変換し、特に多言語コンテンツのテキスト処理をよりシンプルで一貫性のあるものにします。
+`asciifolding` フィルターは、[Basic Latin Unicode block](https://en.wikipedia.org/wiki/Basic_Latin_(Unicode_block)) (最初の 127 ASCII 文字) 外の文字を ASCII 相当の文字に変換します。たとえば、`í` のような文字を `i` に変換し、特に多言語コンテンツのテキスト処理をよりシンプルかつ一貫性のあるものにします。
 
-## 設定{#configuration}
+## 設定\{#configuration}
 
 `asciifolding` フィルターは Zilliz Cloud に組み込まれています。これを使用するには、`analyzer_params` 内の `filter` セクションでその名前を指定するだけです。
 
@@ -58,7 +54,7 @@ analyzerParams.put("filter", Collections.singletonList("asciifolding"));
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const analyzer_params = {
@@ -69,7 +65,7 @@ const analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "standard", "filter": []any{"asciifolding"}}
@@ -77,7 +73,7 @@ analyzerParams = map[string]any{"tokenizer": "standard", "filter": []any{"asciif
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -93,15 +89,15 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-`asciifolding` フィルターは、トークナイザーによって生成された用語に対して動作するため、トークナイザーと組み合わせて使用する必要があります。Zilliz Cloud で利用可能なトークナイザーのリストについては、[トークナイザーリファレンス](./analyzer-tokenizers)を参照してください。
+`asciifolding` フィルターは、トークナイザーによって生成された用語に対して動作するため、トークナイザーと組み合わせて使用する必要があります。Zilliz Cloud で利用可能なトークナイザーのリストについては、[トークナイザー Reference](./analyzer-tokenizers) を参照してください。
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は、指定されたアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
-## 例{#examples}
+## 例\{#examples}
 
 アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
 
-### アナライザー設定{#analyzer-configuration}
+### アナライザー設定\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -125,7 +121,7 @@ analyzerParams.put("filter", Collections.singletonList("asciifolding"));
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -133,7 +129,7 @@ analyzerParams.put("filter", Collections.singletonList("asciifolding"));
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "standard", "filter": []any{"asciifolding"}}
@@ -141,7 +137,7 @@ analyzerParams = map[string]any{"tokenizer": "standard", "filter": []any{"asciif
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -150,7 +146,7 @@ analyzerParams = map[string]any{"tokenizer": "standard", "filter": []any{"asciif
 </TabItem>
 </Tabs>
 
-### `run_analyzer` を使用した検証 {#verification-using-runanalyzer}
+### `run_analyzer` を使用した検証\{#verification-using-runanalyzer}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -201,7 +197,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -209,7 +205,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -243,7 +239,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -252,7 +248,7 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-### 期待される出力結果\{#expected-output}
+### 期待される出力\{#expected-output}
 
 ```python
 ['Cafe', 'Moller', 'serves', 'creme', 'brulee', 'and', 'pinatas']

@@ -1,10 +1,10 @@
 ---
-title: "Rerank 関数 | BYOC"
+title: "リランク関数 | BYOC"
 slug: /reranking
-sidebar_label: "Rerank 関数"
+sidebar_label: "リランク関数"
 beta: FALSE
 notebook: FALSE
-description: "ハイブリッド検索は、複数のANN検索を同時に実行することで、より正確な検索結果を実現します。複数の検索はいくつかの結果セットを返しますが、これらの結果をマージして並べ替え、単一の結果セットを返すためには、rerank戦略が必要です。このガイドでは、Zilliz Cloudがサポートするrerank戦略を紹介し、適切なrerank戦略を選択するためのヒントを提供します。 | BYOC"
+description: "ハイブリッド検索は、複数の ANN 検索を同時に実行することで、より精度の高い検索結果を実現します。複数の検索により複数の結果セットが返されるため、それらを統合して並べ替え、単一の結果セットとして返すためのリランク戦略が必要です。このガイドでは、Zilliz Cloud でサポートされているリランク戦略を紹介し、適切なリランク戦略を選択するためのヒントを提供します。 | BYOC"
 type: origin
 token: M4IYwThFKiatBkk0Cp3c9p4QnZc
 sidebar_position: 5
@@ -12,24 +12,21 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - クラウド
-  - collection
+  - コレクション
   - データ
-  - 検索結果のrerank
-  - 結果のrerank
-  - マネージド Milvus
-  - サーバーレスベクトルデータベース
-  - Milvus オープンソース
-  - Milvus の仕組み
+  - 検索結果のリランキング
+  - 結果のリランキング
 
+sidebar_key: "function-and-model-inference/reranking"
 ---
 
 import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# リランキング関数
+# リランク関数
 
-ハイブリッド検索は、複数のANN検索を同時に実行することで、より正確な検索結果を実現します。複数の検索はいくつかの結果セットを返すため、結果をマージして並べ替え、単一の結果セットを返すためのリランキング戦略が必要です。このガイドでは、Zilliz Cloudがサポートするリランキング戦略を紹介し、適切なリランキング戦略を選択するためのヒントを提供します。
+ハイブリッド検索は、複数の ANN 検索を同時に実行することで、より精度の高い検索結果を実現します。複数の検索により複数の結果セットが得られますが、それらを統合・並べ替えて単一の結果セットとして返すためには、リランキング戦略が必要です。本ガイドでは、Zilliz Cloud でサポートされているリランキング戦略を紹介し、適切なリランキング戦略を選択するためのヒントを提供します。
 
 
 

@@ -17,18 +17,18 @@ sidebar_position: 5
 
 ## 目次
 
-- [Elasticsearch から Zilliz Cloud へデータを移行する方法は？](#how-to-migrate-data-from-elasticsearch-to-zilliz-cloud)
-- [無料クラスターを Serverless または Dedicated クラスターにアップグレードできますか？](#can-i-upgrade-a-free-cluster-to-a-serverless-or-dedicated-cluster)
+- [Elasticsearch から Zilliz Cloud にデータを移行する方法は？](#how-to-migrate-data-from-elasticsearch-to-zilliz-cloud)
+- [フリークラスターを Serverless または Dedicated クラスターにアップグレードできますか？](#can-i-upgrade-a-free-cluster-to-a-serverless-or-dedicated-cluster)
 
-## FAQ
-
-
+## よくある質問
 
 
-### Elasticsearch から Zilliz Cloud へデータを移行する方法は？{#how-to-migrate-data-from-elasticsearch-to-zilliz-cloud}
 
-Zilliz Cloud の Web コンソールから、Elasticsearch のデータを Zilliz Cloud に簡単に移行できます。詳細については、[Elasticsearch からの移行](./migrate-from-elasticsearch) を参照してください。
 
-### 無料クラスターを Serverless または Dedicated クラスターにアップグレードできますか？{#can-i-upgrade-a-free-cluster-to-a-serverless-or-dedicated-cluster}
+### Elasticsearch から Zilliz Cloud にデータを移行する方法は？\{#how-to-migrate-data-from-elasticsearch-to-zilliz-cloud}
+
+Zilliz Cloud のウェブコンソールから、Elasticsearch のデータを Zilliz Cloud に簡単に移行できます。詳細については、[Elasticsearch からの移行](./migrate-from-elasticsearch) を参照してください。
+
+### フリークラスターを Serverless または Dedicated クラスターにアップグレードできますか？\{#can-i-upgrade-a-free-cluster-to-a-serverless-or-dedicated-cluster}
 
 はい、できます。詳細については、[クラスターの管理](./manage-cluster) を参照してください。

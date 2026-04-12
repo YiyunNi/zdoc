@@ -36,7 +36,7 @@ Audit logging allows administrators to track and monitor user-driven operations 
 
 <ul>
 <li><p>Audit logging is available only for <strong>Dedicated</strong> clusters in <strong>Enterprise</strong> projects or higher plan tiers.</p></li>
-<li><p>Audit logging is supported only for Zilliz Cloud clusters running Milvus 2.5.x.</p></li>
+<li><p>Audit logging is supported only for Zilliz Cloud clusters running Milvus 2.5.x or later.</p></li>
 <li><p>Audit logging can be forwarded to <a href="./integrate-with-aws-s3">AWS S3</a>, <a href="./integrate-with-azure-blob-storage">Azure Blob Storage</a>, or <a href="./integrate-with-gcp">Google Cloud Storage</a>.</p></li>
 <li><p>Enabling audit logging incur charges. For details, see <a href="./audit-log-cost">Audit Log</a>.</p></li>
 </ul>

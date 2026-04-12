@@ -4,7 +4,7 @@ slug: /rule-based-rankers
 sidebar_label: "ルールベースのランカー"
 beta: FALSE
 notebook: FALSE
-description: "このセクションのランカーは、ハイブリッド検索ではなく、セマンティック検索で使用する必要があります。 | BYOC"
+description: "このセクションのランカーは、ハイブリッド検索ではなくセマンティック検索で使用してください。| BYOC"
 type: origin
 token: LZ5zwVuJ6iXRvhki0yWcnefTnVg
 sidebar_position: 2
@@ -13,17 +13,14 @@ keywords:
   - ベクトルデータベース
   - cloud
   - collection
-  - データ
+  - data
   - 検索結果の再ランキング
   - 結果の再ランキング
   - ルールベース
   - ブーストランカー
   - ディケイランカー
-  - 大規模言語モデル
-  - ベクトル化
-  - k近傍法
-  - ANNS
 
+sidebar_key: "function-and-model-inference/reranking/rule-based-rankers"
 ---
 
 import Admonition from '@theme/Admonition';
@@ -31,7 +28,7 @@ import Admonition from '@theme/Admonition';
 
 # ルールベースのランカー
 
-このセクションのランカーは、セマンティック検索で使用する必要がありますが、ハイブリッド検索では使用しません。
+このセクションのランカーは、セマンティック検索では使用できますが、ハイブリッド検索では使用できません。
 
 import DocCardList from '@theme/DocCardList';
 

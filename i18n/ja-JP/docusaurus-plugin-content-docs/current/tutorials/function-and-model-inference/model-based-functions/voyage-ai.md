@@ -4,14 +4,14 @@ slug: /voyage-ai
 sidebar_label: "Voyage AI"
 beta: FALSE
 notebook: FALSE
-description: "このトピックでは、Milvus で Voyage AI 埋め込み関数を設定して使用する方法について説明します。 | Cloud"
+description: "このトピックでは、MilvusでVoyage AI埋め込み関数を設定して使用する方法について説明します。 | Cloud"
 type: origin
 token: P4KNwDdqaivEZFk7RpOcYeyhn2N
 sidebar_position: 7
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - 関数
   - モデル
   - 推論
@@ -19,10 +19,6 @@ keywords:
   - 埋め込み
   - voyage
   - ai
-  - hnsw アルゴリズム
-  - ベクトル類似性検索
-  - 近似最近傍検索
-  - DiskANN
 
 ---
 
@@ -34,16 +30,34 @@ import TabItem from '@theme/TabItem';
 
 このトピックでは、Milvus で Voyage AI 埋め込み関数を設定して使用する方法について説明します。
 
-## モデルの選択肢{#model-choices}
+## モデルの選択肢\{#model-choices}
 
 Milvus は Voyage AI が提供する埋め込みモデルをサポートしています。以下に、現在利用可能な埋め込みモデルを簡単に参照できるように示します。
 
 <table>
    <tr>
      <th><p>モデル名</p></th>
-     <th><p>次元数</p></th>
+     <th><p>次元</p></th>
      <th><p>最大トークン数</p></th>
      <th><p>説明</p></th>
+   </tr>
+   <tr>
+     <td><p><code>voyage-4-large</code></p></td>
+     <td><p>1024 (デフォルト), 256, 512, 2048</p></td>
+     <td><p>32,000</p></td>
+     <td><p>最高の汎用および多言語検索品質。4シリーズで作成されたすべての埋め込みは互換性があります。詳細は<a href="https://blog.voyageai.com/2026/01/15/voyage-4/">ブログ記事</a>を参照してください。</p></td>
+   </tr>
+   <tr>
+     <td><p><code>voyage-4</code></p></td>
+     <td><p>1024 (デフォルト), 256, 512, 2048</p></td>
+     <td><p>32,000</p></td>
+     <td><p>汎用および多言語検索品質に最適化されています。4シリーズで作成されたすべての埋め込みは互換性があります。詳細は<a href="https://blog.voyageai.com/2026/01/15/voyage-4/">ブログ記事</a>を参照してください。</p></td>
+   </tr>
+   <tr>
+     <td><p><code>voyage-4-lite</code></p></td>
+     <td><p>1024 (デフォルト), 256, 512, 2048</p></td>
+     <td><p>32,000</p></td>
+     <td><p>レイテンシとコストに最適化されています。4シリーズで作成されたすべての埋め込みは互換性があります。詳細は<a href="https://blog.voyageai.com/2026/01/15/voyage-4/">ブログ記事</a>を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>voyage-3-large</p></td>
@@ -79,45 +93,45 @@ Milvus は Voyage AI が提供する埋め込みモデルをサポートして�
      <td><p>voyage-law-2</p></td>
      <td><p>1,024</p></td>
      <td><p>16,000</p></td>
-     <td><p>法律検索とRAGに最適化されています。また、すべてのドメインでパフォーマンスが向上しています。詳細は<a href="https://blog.voyageai.com/2024/04/15/domain-specific-embeddings-and-retrieval-legal-edition-voyage-law-2/">ブログ記事</a>を参照してください。</p></td>
+     <td><p>法務検索とRAGに最適化されています。また、すべてのドメインでパフォーマンスが向上しています。詳細は<a href="https://blog.voyageai.com/2024/04/15/domain-specific-embeddings-and-retrieval-legal-edition-voyage-law-2/">ブログ記事</a>を参照してください。</p></td>
    </tr>
    <tr>
      <td><p>voyage-code-2</p></td>
      <td><p>1,536</p></td>
      <td><p>16,000</p></td>
-     <td><p>コード検索に最適化されています (代替よりも17%優れています) / 前世代のコード埋め込み。詳細は<a href="https://blog.voyageai.com/2024/01/23/voyage-code-2-elevate-your-code-retrieval/">ブログ記事</a>を参照してください。</p></td>
+     <td><p>コード検索に最適化されています（代替案より17%優れています）/前世代のコード埋め込み。詳細は<a href="https://blog.voyageai.com/2024/01/23/voyage-code-2-elevate-your-code-retrieval/">ブログ記事</a>を参照してください。</p></td>
    </tr>
 </table>
 
-詳細については、[テキスト埋め込みモデル](https://docs.voyageai.com/reference/embeddings-api)を参照してください。
+詳細については、[Text embedding models](https://docs.voyageai.com/reference/embeddings-api) を参照してください。
 
-## 開始する前に{#before-you-start}
+## 開始する前に\{#before-you-start}
 
 テキスト埋め込み関数を使用する前に、以下の前提条件が満たされていることを確認してください。
 
-- **埋め込みモデルを選択する**
+- **埋め込みモデルを選択**
 
-    埋め込みモデルの選択は、埋め込みの動作と出力形式を決定するため、どの埋め込みモデルを使用するかを決定します。詳細については、[埋め込みモデルを選択する](./voyage-ai#model-choices)を参照してください。
+    使用する埋め込みモデルを決定します。この選択により、埋め込みの動作と出力形式が決まります。詳細については、[埋め込みモデルを選択](./voyage-ai#model-choices) を参照してください。
 
-- **Voyage AI と統合し、統合 ID を取得する**
+- **Voyage AI と統合し、統合IDを取得**
 
-    Voyage AI が提供する埋め込みモデルを使用する前に、Voyage AI とのモデルプロバイダー統合を作成し、統合 ID を取得する必要があります。詳細については、[モデルプロバイダーとの統合](./integrate-with-model-providers)を参照してください。
+    Voyage AI とモデルプロバイダー連携を作成し、その埋め込みモデルを使用する前に統合IDを取得する必要があります。詳細については、[モデルプロバイダーと統合](./integrate-with-model-providers) を参照してください。
 
-- **互換性のあるコレクションスキーマを設計する**
+- **互換性のあるコレクションスキーマを設計**
 
-    コレクションスキーマには、以下を含めるように計画してください。
+    コレクションスキーマには以下を含めるように計画してください。
 
     - 生の入力テキスト用のテキストフィールド (`VARCHAR`)
 
-    - 選択した埋め込みモデルのデータ型と次元数に一致する密ベクトルフィールド
+    - 選択した埋め込みモデルのデータ型と次元に一致する密ベクトルフィールド
 
-- **挿入時と検索時に生のテキストを扱う準備をする**
+- **挿入時と検索時に生のテキストを扱う準備**
 
-    テキスト埋め込み関数を有効にすると、生のテキストを直接挿入およびクエリできます。埋め込みはシステムによって自動的に生成されます。
+    テキスト埋め込み関数が有効になっている場合、生のテキストを直接挿入およびクエリします。埋め込みはシステムによって自動的に生成されます。
 
-## ステップ 1: テキスト埋め込み関数を使用してコレクションを作成する{#step-1-create-a-collection-with-a-text-embedding-function}
+## ステップ1：テキスト埋め込み関数を持つコレクションを作成する\{#step-1-create-a-collection-with-a-text-embedding-function}
 
-### スキーマフィールドを定義する{#define-schema-fields}
+### スキーマフィールドの定義\{#define-schema-fields}
 
 埋め込み関数を使用するには、特定のスキーマを持つコレクションを作成します。このスキーマには、少なくとも3つの必要なフィールドを含める必要があります。
 
@@ -125,9 +139,9 @@ Milvus は Voyage AI が提供する埋め込みモデルをサポートして�
 
 - 埋め込む生のデータを保存する `VARCHAR` フィールド。
 
-- テキスト埋め込み関数が `VARCHAR` フィールドに対して生成する密ベクトル埋め込みを保存するために予約されたベクトルフィールド。
+- テキスト埋め込み関数が `VARCHAR` フィールド用に生成する密ベクトル埋め込みを保存するために予約されたベクトルフィールド。
 
-次の例では、テキストデータを保存するための `VARCHAR` フィールド `"document"` と、テキスト埋め込み関数によって生成される密埋め込みを保存するためのベクトルフィールド `"dense"` を持つスキーマを定義しています。ベクトル次元 (`dim`) を選択した埋め込みモデルの出力に一致させることを忘れないでください。
+以下の例では、テキストデータを保存するための `VARCHAR` フィールド `"document"` と、テキスト埋め込み関数によって生成される密埋め込みを保存するためのベクトルフィールド `"dense"` を持つスキーマを定義しています。ベクトル次元 (`dim`) を選択した埋め込みモデルの出力に一致するように設定することを忘れないでください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -200,7 +214,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -208,7 +222,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -216,7 +230,7 @@ schema.addField(AddFieldReq.builder()
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -225,13 +239,13 @@ schema.addField(AddFieldReq.builder()
 </TabItem>
 </Tabs>
 
-### テキスト埋め込み関数を定義する{#define-the-text-embedding-function}
+### テキスト埋め込み関数を定義する\{#define-the-text-embedding-function}
 
 テキスト埋め込み関数は、`VARCHAR`フィールドに保存された生データを自動的に埋め込みに変換し、明示的に定義されたベクトルフィールドに保存します。
 
-以下の例では、スカラーフィールド`"document"`を埋め込みに変換し、結果のベクトルを以前に定義した`"dense"`ベクトルフィールドに保存するFunctionモジュール（`voya`）を追加しています。
+以下の例では、スカラーフィールド`"document"`を埋め込みに変換し、結果のベクトルを以前に定義した`"dense"`ベクトルフィールドに保存する関数モジュール（`voya`）を追加します。
 
-埋め込み関数を定義したら、それをコレクションスキーマに追加します。これにより、Milvusは指定された埋め込み関数を使用してテキストデータから埋め込みを処理および保存するように指示されます。
+埋め込み関数を定義したら、それをコレクションスキーマに追加します。これにより、Milvusは指定された埋め込み関数を使用して、テキストデータから埋め込みを処理および保存するように指示されます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -282,7 +296,7 @@ schema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -290,7 +304,7 @@ schema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -298,7 +312,7 @@ schema.addFunction(function);
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -307,9 +321,9 @@ schema.addFunction(function);
 </TabItem>
 </Tabs>
 
-### インデックスの設定 {#configure-the-index}
+### インデックスの設定\{#configure-the-index}
 
-必要なフィールドと組み込み関数でスキーマを定義した後、コレクションのインデックスを設定します。このプロセスを簡素化するために、`index_type`として`AUTOINDEX`を使用します。これは、Zilliz Cloudがデータの構造に基づいて最適なインデックスタイプを選択して設定できるオプションです。
+必要なフィールドと組み込み関数でスキーマを定義したら、コレクションのインデックスを設定します。このプロセスを簡素化するために、`index_type`として`AUTOINDEX`を使用します。これは、Zilliz Cloudがデータの構造に基づいて最も適切なインデックスタイプを選択し、設定できるようにするオプションです。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -343,7 +357,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -351,7 +365,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -359,7 +373,7 @@ indexes.add(IndexParam.builder()
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -368,9 +382,9 @@ indexes.add(IndexParam.builder()
 </TabItem>
 </Tabs>
 
-### collection の作成{#create-the-collection}
+### コレクションの作成\{#create-the-collection}
 
-定義されたスキーマとインデックスパラメータを使用して collection を作成します。
+次に、定義されたスキーマとインデックスパラメータを使用してコレクションを作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -401,7 +415,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -409,7 +423,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -417,7 +431,7 @@ client.createCollection(requestCreate);
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -426,9 +440,9 @@ client.createCollection(requestCreate);
 </TabItem>
 </Tabs>
 
-## ステップ2：データを挿入する{#step-2-insert-data}
+## ステップ2: データの挿入\{#step-2-insert-data}
 
-コレクションとインデックスを設定したら、生データを挿入する準備が整います。このプロセスでは、生テキストを提供するだけで済みます。以前に定義したFunctionモジュールは、各テキストエントリに対応する疎ベクトルを自動的に生成します。
+コレクションとインデックスの設定が完了したら、生データを挿入する準備が整います。このプロセスでは、生テキストを提供するだけで済みます。以前に定義したFunctionモジュールは、各テキストエントリに対応する疎ベクトルを自動的に生成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -466,7 +480,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -474,7 +488,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -482,7 +496,7 @@ client.insert(InsertReq.builder()
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -491,7 +505,7 @@ client.insert(InsertReq.builder()
 </TabItem>
 </Tabs>
 
-## ステップ3：テキストで検索する{#step-3-search-with-text}
+## ステップ3: テキストで検索する\{#step-3-search-with-text}
 
 データ挿入後、生のクエリテキストを使用してセマンティック検索を実行します。Milvusは自動的にクエリを埋め込みベクトルに変換し、類似性に基づいて関連ドキュメントを取得し、最も一致する結果を返します。
 
@@ -536,7 +550,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // nodejs
@@ -544,7 +558,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -552,7 +566,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful

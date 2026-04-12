@@ -1,22 +1,18 @@
 ---
-title: "2025年11月 リリースノート | Cloud"
+title: "2025 年 11 月リリースノート | Cloud"
 slug: /release-notes-2511
-sidebar_label: "2025年11月"
+sidebar_label: "2025 年 11 月"
 beta: FALSE
 notebook: FALSE
-description: "2025年11月 リリースノート | Cloud"
+description: "2025 年 11 月の Zilliz Cloud リリースノートです。"
 type: origin
 token: CK0ewQWC2iz6lakP0kscqogbnGh
-sidebar_position: 4
+sidebar_position: 6
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - リリースノート
-  - マルチモーダル検索
-  - ベクトル検索アルゴリズム
-  - 質問応答システム
-  - llm-as-a-judge
 
 ---
 
@@ -37,35 +33,35 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        ## Business Criticalプランの提供開始\{#business-critical-plan-availability}
+        ## ビジネスクリティカルプランの提供開始\{#business-critical-plan-availability}
 
-        Zilliz Cloudは、最高のセキュリティ、コンプライアンス、可用性要件を持つ組織向けに設計された**Business Critical**プランの提供を開始しました。既存のHIPAAおよびSOC 2 Type IIへの対応に加え、このプランは、グローバルクラスター、自動フェイルオーバーによるマルチリージョンレプリケーション、ポイントインタイムリカバリ（PITR）などの高度な機能を提供し、グローバル規模でより強力なデータ保護、規制への適合、運用回復力を実現します。詳細については、またはこのプランがお客様の環境に適しているかどうかを評価するには、[お問い合わせください](https://zilliz.com/contact-sales)。
+        Zilliz Cloudでは、最高レベルのセキュリティ、コンプライアンス、可用性を必要とする組織向けに、**ビジネスクリティカル**プランを新たに提供しています。既存のHIPAAおよびSOC 2 Type II対応に加え、このプランではグローバルクラスター、自動フェイルオーバー付きマルチリージョンレプリケーション、ポイントインタイムリカバリ（PITR）などの高度な機能を提供し、グローバル規模での強固なデータ保護、規制要件への適合、運用レジリエンスを実現します。詳細情報や、このプランがお客様の環境に適しているかどうかの評価については、[お問い合わせ](https://zilliz.com/contact-sales)ください。
 
         ## Milvus v2.6.xの新機能\{#milvus-v26x-new-features}
 
-        - **Geometryデータ型のサポート** — 地理空間検索、ジオフェンシング、ルーティング、マップベースのアプリケーション向けに、複雑な空間形状（POINT、LINESTRING、POLYGON）を保存およびクエリできます。詳細については、[Geometry Field](./use-geometry-field)を参照してください。
+        - **ジオメトリデータ型サポート** — ジオスペーシャル検索、ジオフェンシング、ルーティング、地図ベースアプリケーション向けに、複雑な空間形状（POINT、LINESTRING、POLYGON）を保存・検索できます。詳細は、[ジオメトリ Field](./use-geometry-field)をご参照ください。
 
-        - **Structデータ型のサポート** — ネストされた多属性レコードをより自然にモデル化し、スキーマ設計を簡素化し、メタデータが豊富なAIワークロードでのクエリを改善します。詳細については、[Array of Structs](./use-array-of-structs)を参照してください。
+        - **構造体データ型サポート** — ネストされた多属性レコードをより自然にモデリングすることで、スキーマ設計を簡素化し、メタデータが豊富なAIワークロードにおけるクエリ性能を向上させます。詳細は、[配列 of 構造体s](./use-array-of-structs)をご参照ください。
 
-        - **既存のcollectionでのDynamic Fieldの有効化** — collectionを再作成することなくdynamic fieldサポートを有効にでき、ビジネス属性の進化に合わせてスキーマの柔軟性を可能にします。詳細については、[Modify Collection](./modify-collections#example-4-enable-dynamic-field)を参照してください。
+        - **既存コレクションでのDynamic Fieldの有効化** — コレクションを再作成せずにDynamic Fieldサポートを有効化でき、ビジネス属性の進化に合わせてスキーマの柔軟性を確保できます。詳細は、[Modify Collection](./modify-collections#example-4-enable-dynamic-field)をご参照ください。
 
-        - **ロード中のScalar Indexの削除をサポート** — collectionがロード中の状態でも、scalar indexの削除と再構築を許可します。
+        - **ロード中ステータス下でのスカラーインデックス削除サポート** — コレクションがロード中の状態でも、スカラーインデックスの削除および再構築が可能になりました。
 
-        ## プランがプロジェクトレベルに移動\{#plan-moved-to-the-project-level}
+        ## プランがプロジェクトレベルに移行\{#plan-moved-to-the-project-level}
 
-        今回のリリースにより、サブスクリプションプランはクラスターレベルではなく**プロジェクト**レベルで管理されるようになり、特に複数のクラスターを運用する組織にとって、構成の一貫性が向上し、機能のガバナンスが簡素化されます。
+        今回のリリースにより、サブスクリプションプランの管理が**Cluster**レベルから**Project**レベルに変更されました。これにより、特に複数のクラスターを運用する組織において、設定の一貫性が向上し、機能ガバナンスが簡素化されます。
 
-        既存のワークロード、機能、請求に変更はなく、構成の更新は不要です。
+        既存のワークロード、機能、課金には一切影響なく、設定の更新も不要です。
 
-        今後、**新しいプロジェクト**ではプランの選択（Standard、Enterprise、またはBusiness Critical）が必要となり、**クラスター**ではデプロイオプション（Free、Serverless、またはDedicated）を選択することになります。
+        今後、**新規プロジェクト**を作成する際にはプラン（Standard、Enterprise、またはビジネスクリティカル）を選択する必要があり、一方で**Cluster**ではデプロイメントオプション（Free、Serverless、またはDedicated）を選択することになります。
 
-        詳細については、[Detailed Plan Comparison](./select-zilliz-cloud-service-plans)を参照してください。
+        詳細については、[Detailed Plan Comparison](./select-zilliz-cloud-service-plans)をご参照ください。
 
-        ## 強化\{#enhancements}
+        ## 機能強化\{#enhancements}
 
-        - **フルテキスト検索を有効にする移行サポート** - 人気のあるベクトルデータベースから移行する際に、Milvusが提供するフルテキスト検索機能を最大限に活用するためにBM25機能を有効にできるようになりました。詳細については、[MilvusからZilliz Cloudへのエンドポイント経由の移行](./via-endpoint#getting-started)および[外部移行の基本](./external-migration-basics#configure-full-text-search-for-text-data)を参照してください。
+        - **フルテキスト検索を有効化するマイグレーションサポート** — 人気のあるベクトルデータベースから移行する際に、Milvusが提供するフルテキスト検索機能を最大限活用できるよう、BM25関数を有効化できるようになりました。詳細は、[Migrate from Milvus to Zilliz Cloud Via Endpoint](./via-endpoint#getting-started)および[External Migration 基本](./external-migration-basics#configure-full-text-search-for-text-data)をご参照ください。
 
-        - **アラートサポート間隔設定** - 進行中のアラートの通知間隔をカスタマイズして、邪魔にならずに目立つようにすることができます。新しいアラートはデフォルトで1時間間隔です。詳細については、[プロジェクトアラートの管理](./manage-project-alerts#alert-settings)を参照してください。
+        - **アラート通知間隔のカスタマイズ** — 継続中のアラートについて通知間隔をカスタマイズできるようになり、通知が目立つ一方で過剰に煩わしくならないように調整できます。新規アラートのデフォルト通知間隔は1時間です。詳細は、[Manage プロジェクトアラート](./manage-project-alerts#alert-settings)をご参照ください。
 
     </div>
 

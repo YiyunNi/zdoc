@@ -31,6 +31,12 @@ Zilliz to Zilliz migration allows you to transfer data between Zilliz Cloud clus
 
 - Reorganizing infrastructure for performance optimization.
 
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>You can migrate between clusters deployed within the same Kubernetes cluster or within the same cloud region.</p>
+
+</Admonition>
+
 
 
 import DocCardList from '@theme/DocCardList';

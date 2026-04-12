@@ -39,9 +39,9 @@ This guide outlines the procedures of configuring replicas for a cluster in Zill
 
 You can configure replicas for an existing Dedicated cluster as long as the following conditions are met:
 
-- The cluster has 8 query CUs or more
+- The cluster has 12 query CUs or more
 
-- The product of the cluster query CU count x replica count should not exceed 256.
+- The product of the cluster query CU count x replica count should not exceed 10,240.
 
 <Admonition type="caution" icon="🚧" title="Warning">
 

@@ -1,26 +1,23 @@
 ---
-title: "スキーマのベストプラクティス | Cloud"
+title: "ベストプラクティス | Cloud"
 slug: /schema-best-practices
-sidebar_label: "スキーマのベストプラクティス"
+sidebar_label: "ベストプラクティス"
 beta: FALSE
 notebook: FALSE
 description: "この章では、データセットに関連するスキーマ設計のベストプラクティスについて説明します。 | Cloud"
 type: origin
 token: Gi6KwjOlKiBhdOkxlL3cdobBnLe
-sidebar_position: 18
+sidebar_position: 19
 keywords: 
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
-  - schema
+  - コレクション
+  - スキーマ
   - ベストプラクティス
   - スキーマ設計
-  - LLMのハルシネーション
-  - マルチモーダル検索
-  - ベクトル検索アルゴリズム
-  - 質問応答システム
 
+sidebar_key: "data/schema-data-fields/schema-best-practices"
 ---
 
 import Admonition from '@theme/Admonition';

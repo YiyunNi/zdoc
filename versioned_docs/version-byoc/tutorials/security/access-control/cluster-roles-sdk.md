@@ -416,7 +416,7 @@ Below is an example output.
 {
      "role": "role_a",
      "privileges": [
-         "COLL_ADMIN"
+         "Search"
      ]
 }
 ```

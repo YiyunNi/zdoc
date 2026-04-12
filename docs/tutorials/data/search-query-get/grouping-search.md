@@ -101,7 +101,7 @@ res = client.search(
     output_fields=["docId"]
 )
 
-# Retrieve the values in the `docId` column
+# Retrieve the values in the \`docId\` column
 doc_ids = [result['entity']['docId'] for result in res[0]]
 ```
 
@@ -216,7 +216,7 @@ res = await client.search({
     // highlight-end
 })
 
-// Retrieve the values in the `docId` column
+// Retrieve the values in the \`docId\` column
 var docIds = res.results.map(result => result.entity.docId)
 ```
 
@@ -379,7 +379,7 @@ res = await client.search({
     // highlight-end
 })
 
-// Retrieve the values in the `docId` column
+// Retrieve the values in the \`docId\` column
 var docIds = res.results.map(result => result.entity.docId)
 ```
 

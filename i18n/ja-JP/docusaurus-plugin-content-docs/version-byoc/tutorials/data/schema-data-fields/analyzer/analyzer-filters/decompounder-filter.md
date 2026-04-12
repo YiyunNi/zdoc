@@ -4,23 +4,19 @@ slug: /decompounder-filter
 sidebar_label: "Decompounder"
 beta: FALSE
 notebook: FALSE
-description: "`decompounder`フィルターは、指定された辞書に基づいて複合語を個々の構成要素に分割し、複合語の一部を検索しやすくします。このフィルターは、ドイツ語のように複合語を頻繁に使用する言語で特に役立ちます。 | BYOC"
+description: "`decompounder` フィルターは、指定された辞書に基づいて複合語を個々の構成要素に分割し、複合語の一部を検索しやすくします。このフィルターは、ドイツ語のように複合語を頻繁に使用する言語で特に役立ちます。| BYOC"
 type: origin
 token: DDrHwdsb7idJa9kVU6zc2VwInBf
 sidebar_position: 8
 keywords: 
   - zilliz
-  - vector database
+  - ベクトルデータベース
   - cloud
   - collection
   - schema
   - analyzer
-  - 組み込みフィルター
+  - built-in filters
   - decompounder
-  - 音声類似性検索
-  - Elastic vector database
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
 
 ---
 
@@ -30,11 +26,11 @@ import TabItem from '@theme/TabItem';
 
 # Decompounder
 
-`decompounder` フィルターは、指定された辞書に基づいて複合語を個々のコンポーネントに分割し、複合語の一部を検索しやすくします。このフィルターは、ドイツ語のように複合語を頻繁に使用する言語に特に役立ちます。
+`decompounder` フィルターは、指定された辞書に基づいて複合語を個々の構成要素に分割し、複合語の一部を検索しやすくします。このフィルターは、ドイツ語など複合語を頻繁に使用する言語において特に有用です。
 
-## 設定{#configuration}
+## 設定\{#configuration}
 
-`decompounder` フィルターは、Zilliz Cloud のカスタムフィルターです。これを使用するには、フィルター設定で `"type": "decompounder"` を指定し、認識する単語コンポーネントの辞書を提供する `word_list` パラメーターを指定します。
+`decompounder` フィルターは Zilliz Cloud におけるカスタムフィルターです。これを使用するには、フィルター設定で `"type": "decompounder"` を指定し、認識する単語構成要素の辞書を提供する `word_list` パラメーターを併記します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -68,7 +64,7 @@ analyzerParams.put("filter",
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const analyzer_params = {
@@ -82,7 +78,7 @@ const analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "standard",
@@ -94,7 +90,7 @@ analyzerParams = map[string]any{"tokenizer": "standard",
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -129,19 +125,19 @@ analyzerParams='{
    </tr>
    <tr>
      <td><p><code>word_list</code></p></td>
-     <td><p>複合語を分割するために使用される単語コンポーネントのリスト。この辞書は、複合語が個々の単語にどのように分解されるかを決定します。</p></td>
+     <td><p>複合語を分割する際に使用される単語コンポーネントのリスト。この辞書により、複合語が個々の語にどのように分解されるかが決まります。</p></td>
    </tr>
 </table>
 
-`decompounder` フィルターは、トークナイザーによって生成された用語に対して動作するため、トークナイザーと組み合わせて使用する必要があります。Zilliz Cloud で利用可能なトークナイザーのリストについては、[トークナイザーリファレンス](./analyzer-tokenizers)を参照してください。
+`decompounder` フィルターはトークナイザーによって生成された語に対して動作するため、トークナイザーと組み合わせて使用する必要があります。Zilliz Cloud で利用可能なトークナイザーの一覧については、[トークナイザー Reference](./analyzer-tokenizers) を参照してください。
 
-`analyzer_params` を定義した後、collection schema を定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は、効率的なトークン化とフィルタリングのために、指定されたアナライザーを使用してそのフィールドのテキストを処理できます。詳細については、[使用例](./analyzer-overview#example-use)を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` 型フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールド内のテキストを処理し、効率的なトークン化とフィルタリングを実現します。詳細については、[Example use](./analyzer-overview#example-use) を参照してください。
 
-## 例{#examples}
+## 例\{#examples}
 
-アナライザー設定を collection schema に適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
+コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使用してその動作を検証してください。
 
-### アナライザー設定{#analyzer-configuration}
+### アナライザー設定\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -175,7 +171,7 @@ analyzerParams.put("filter",
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -183,7 +179,7 @@ analyzerParams.put("filter",
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"tokenizer": "standard",
@@ -195,7 +191,7 @@ analyzerParams = map[string]any{"tokenizer": "standard",
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -220,7 +216,7 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-### `run_analyzer` を使用した検証 {#verification-using-runanalyzer}
+### `run_analyzer` を使用した検証\{#verification-using-runanalyzer}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -267,7 +263,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -275,7 +271,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -309,7 +305,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -318,7 +314,7 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-### 期待される出力結果\{#expected-output}
+### 期待される出力\{#expected-output}
 
 ```python
 ['dampf', 'schiff', 'fahrt', 'brotbackautomat']

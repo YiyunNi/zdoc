@@ -392,13 +392,13 @@ _, err = client.Insert(ctx, milvusclient.NewColumnBasedInsertOption("my_collecti
     column.NewColumnVarChar("overview", []string{"Great product"}),
     column.NewColumnInt32("words", []int32{150}),
     column.NewColumnJSONBytes("dynamic_json", [][]byte{
-        []byte(`{
+        []byte(\`{
             varchar: 'some text',
             nested: {
                 value: 42.5,
             },
             string_price: '99.99',
-        }`),
+        }\`),
     }),
 ))
 if err != nil {
@@ -652,9 +652,9 @@ jsonIndex1 := index.NewJSONPathIndex(index.AUTOINDEX, "varchar", "overview")
     .WithIndexName("overview_index")
 jsonIndex2 := index.NewJSONPathIndex(index.AUTOINDEX, "double", "words")
     .WithIndexName("words_index")
-jsonIndex3 := index.NewJSONPathIndex(index.AUTOINDEX, "varchar", `dynamic_json['varchar']`)
+jsonIndex3 := index.NewJSONPathIndex(index.AUTOINDEX, "varchar", \`dynamic_json['varchar']\`)
     .WithIndexName("json_varchar_index")
-jsonIndex4 := index.NewJSONPathIndex(index.AUTOINDEX, "double", `dynamic_json['nested']['value']`)
+jsonIndex4 := index.NewJSONPathIndex(index.AUTOINDEX, "double", \`dynamic_json['nested']['value']\`)
     .WithIndexName("json_nested_index")
 
 indexOpt1 := milvusclient.NewCreateIndexOption("my_collection", "overview", jsonIndex1)
@@ -777,7 +777,7 @@ indexParams.push({
 <TabItem value='go'>
 
 ```go
-jsonIndex5 := index.NewJSONPathIndex(index.AUTOINDEX, "double", `dynamic_json['string_price']`)
+jsonIndex5 := index.NewJSONPathIndex(index.AUTOINDEX, "double", \`dynamic_json['string_price']\`)
     .WithIndexName("json_string_price_index")
 indexOpt5 := milvusclient.NewCreateIndexOption("my_collection", "dynamic_json", jsonIndex5)
 ```

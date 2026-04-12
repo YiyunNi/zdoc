@@ -1,7 +1,7 @@
 ---
 title: "Geometry Field | BYOC"
 slug: /use-geometry-field
-sidebar_label: "Geometry Field"
+sidebar_label: "Geometry"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -604,12 +604,12 @@ const top_left_lon = 13.403683;
 const top_left_lat = 52.520711;
 const bottom_right_lon = 13.455868;
 const bottom_right_lat = 52.495862;
-const bounding_box_wkt = `POLYGON((${top_left_lon} ${top_left_lat}, ${bottom_right_lon} ${top_left_lat}, ${bottom_right_lon} ${bottom_right_lat}, ${top_left_lon} ${bottom_right_lat}, ${top_left_lon} ${top_left_lat}))`;
+const bounding_box_wkt = \`POLYGON((${top_left_lon} ${top_left_lat}, ${bottom_right_lon} ${top_left_lat}, ${bottom_right_lon} ${bottom_right_lat}, ${top_left_lon} ${bottom_right_lat}, ${top_left_lon} ${top_left_lat}))\`;
 
 const query_results = await milvusClient.query({
   collection_name: 'geo_collection',
   // highlight-next-line
-  filter: `st_within(geo, '${bounding_box_wkt}')`,
+  filter: \`st_within(geo, '${bounding_box_wkt}')\`,
   output_fields: ['name', 'geo'],
 });
 for (const ret of query_results.data) {
@@ -701,12 +701,12 @@ for (QueryResp.QueryResult result : queryResults) {
 const center_point_lon = 13.403683;
 const center_point_lat = 52.520711;
 const radius_meters = 1000.0;
-const central_point_wkt = `POINT(${center_point_lon} ${center_point_lat})`;
+const central_point_wkt = \`POINT(${center_point_lon} ${center_point_lat})\`;
 
 const query_results_dwithin = await milvusClient.query({
   collection_name: 'geo_collection',
   // highlight-next-line
-  filter: `st_dwithin(geo, '${central_point_wkt}', ${radius_meters})`,
+  filter: \`st_dwithin(geo, '${central_point_wkt}', ${radius_meters})\`,
   output_fields: ['name', 'geo'],
 });
 for (const ret of query_results_dwithin.data) {
@@ -808,11 +808,11 @@ const search_results = await milvusClient.search({
   limit: 3,
   output_fields: ["name", "geo"],
   // highlight-next-line
-  filter: `st_within(geo, '${bounding_box_wkt}')`,
+  filter: \`st_within(geo, '${bounding_box_wkt}')\`,
 });
 for (const hits of search_results.results) {
   for (const hit of hits) {
-    console.log(`hit: ${JSON.stringify(hit)}`);
+    console.log(\`hit: ${JSON.stringify(hit)}\`);
   }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 title: "Primary Field & AutoID | BYOC"
 slug: /primary-field-auto-id
-sidebar_label: "Primary Field & AutoID"
+sidebar_label: "Primary Field"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -567,7 +567,7 @@ You must include the primary field column in every insert operation.
 <TabItem value='python'>
 
 ```python
-# Each entity must contain the primary field `product_id`
+# Each entity must contain the primary field \`product_id\`
 data = [
     {"product_id": "PROD-001", "embedding": [0.1, 0.2, 0.3, 0.4], "category": "book"},
     {"product_id": "PROD-002", "embedding": [0.2, 0.3, 0.4, 0.5], "category": "toy"},

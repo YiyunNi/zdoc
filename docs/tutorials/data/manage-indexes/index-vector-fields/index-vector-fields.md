@@ -1,7 +1,7 @@
 ---
 title: "Index Vector Fields | Cloud"
 slug: /index-vector-fields
-sidebar_label: "Index Vector Fields"
+sidebar_label: "Vector Indexes"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

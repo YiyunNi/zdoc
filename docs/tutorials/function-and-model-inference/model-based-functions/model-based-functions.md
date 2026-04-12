@@ -1,7 +1,7 @@
 ---
 title: "Model-based Embedding Functions | Cloud"
 slug: /model-based-functions
-sidebar_label: "Model-based Embedding Functions"
+sidebar_label: "Embedding Models"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

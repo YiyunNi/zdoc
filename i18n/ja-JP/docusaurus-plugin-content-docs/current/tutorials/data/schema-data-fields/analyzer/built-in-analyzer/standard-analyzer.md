@@ -1,10 +1,10 @@
 ---
-title: "Standard Analyzer | Cloud"
+title: "標準アナライザー | Cloud"
 slug: /standard-analyzer
-sidebar_label: "Standard Analyzer"
+sidebar_label: "標準"
 beta: FALSE
 notebook: FALSE
-description: "`standard` analyzerはZilliz Cloudのデフォルトのアナライザーであり、アナライザーが指定されていない場合、テキストフィールドに自動的に適用されます。文法ベースのトークン化を使用するため、ほとんどの言語で効果的です。 | Cloud"
+description: "`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていない場合にテキストフィールドに自動的に適用されます。文法ベースのトークン化を使用するため、ほとんどの言語で効果的です。 | Cloud"
 type: origin
 token: WMSvwXXz4iR7mZkGmUscF3Y1nxs
 sidebar_position: 1
@@ -13,14 +13,10 @@ keywords:
   - ベクトルデータベース
   - cloud
   - collection
-  - schema
-  - analyzer
+  - スキーマ
+  - アナライザー
   - 組み込みアナライザー
   - standard-analyzer
-  - ベクトルデータベースチュートリアル
-  - ベクトルデータベースの仕組み
-  - ベクトルDB比較
-  - openai ベクトルDB
 
 ---
 
@@ -30,23 +26,23 @@ import TabItem from '@theme/TabItem';
 
 # Standard Analyzer
 
-`standard` analyzerはZilliz Cloudのデフォルトアナライザーであり、アナライザーが指定されていない場合にテキストフィールドに自動的に適用されます。文法ベースのトークン化を使用するため、ほとんどの言語で効果的です。
+`standard` アナライザーは Zilliz Cloud のデフォルトアナライザーであり、アナライザーが指定されていないテキストフィールドに自動的に適用されます。文法に基づくトークン化（tokenization）を使用するため、ほとんどの言語で効果的です。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p><code>standard</code> analyzerは、単語の区切りに区切り文字（スペース、句読点など）を使用する言語に適しています。ただし、中国語、日本語、韓国語のような言語では、辞書ベースのトークン化が必要です。このような場合、正確なトークン化とより良い検索結果を保証するために、<a href="./chinese-analyzer"><code>chinese</code></a>のような言語固有のアナライザーや、特殊なトークナイザー（<a href="./lindera-tokenizer"><code>lindera</code></a>、<a href="./icu-tokenizer"><code>icu</code></a>など）とフィルターを備えたカスタムアナライザーを使用することを強くお勧めします。</p>
+<p><code>standard</code> アナライザーは、単語の境界を区切るためのセパレーター（スペースや句読点など）に依存する言語に適しています。ただし、中国語、日本語、韓国語などの言語では辞書ベースのトークン化が必要です。このような場合、<a href="./chinese-analyzer"><code>chinese</code></a> のような言語固有のアナライザーや、専用のトークナイザー（<a href="./lindera-tokenizer"><code>lindera</code></a> や <a href="./icu-tokenizer"><code>icu</code></a> など）およびフィルターを組み込んだカスタムアナライザーの使用を強く推奨します。これにより、正確なトークン化とより良い検索結果が得られます。</p>
 
 </Admonition>
 
-## 定義{#definition}
+## Definition\{#definition}
 
-`standard` analyzerは以下で構成されます。
+`standard` アナライザーは以下の要素で構成されています：
 
-- **Tokenizer**: 文法ルールに基づいてテキストを個別の単語単位に分割するために`standard` tokenizerを使用します。詳細については、[Standard Tokenizer](./standard-tokenizer)を参照してください。
+- **トークナイザー**： `standard` トークナイザーを使用して、文法規則に基づきテキストを個別の単語単位に分割します。詳細については、[Standard トークナイザー](./standard-tokenizer) を参照してください。
 
-- **Filter**: すべてのトークンを小文字に変換するために`lowercase` filterを使用し、大文字と小文字を区別しない検索を可能にします。詳細については、[Lowercase](./lowercase-filter)を参照してください。
+- **Filter**： `lowercase` フィルターを使用して、すべてのトークンを小文字に変換し、大文字・小文字を区別しない検索を可能にします。詳細については、[Lowercase](./lowercase-filter) を参照してください。
 
-`standard` analyzerの機能は、以下のカスタムアナライザー設定と同等です。
+`standard` アナライザーの機能は、以下のカスタムアナライザー設定と同等です：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -70,7 +66,7 @@ analyzerParams.put("filter", Collections.singletonList("lowercase"));
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const analyzer_params = {
@@ -81,7 +77,7 @@ const analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams := map[string]any{"tokenizer": "standard", "filter": []any{"lowercase"}}
@@ -89,7 +85,7 @@ analyzerParams := map[string]any{"tokenizer": "standard", "filter": []any{"lower
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -104,9 +100,9 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-## 設定 {#configuration}
+## 設定\{#configuration}
 
-フィールドに `standard` アナライザーを適用するには、`analyzer_params` で `type` を `standard` に設定し、必要に応じてオプションパラメーターを含めます。
+フィールドに `standard` アナライザーを適用するには、`analyzer_params` 内で `type` を `standard` に設定し、必要に応じてオプションのパラメータを含めてください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -128,7 +124,7 @@ analyzerParams.put("type", "standard");
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 const analyzer_params = {
@@ -138,7 +134,7 @@ const analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"type": "standard"}
@@ -146,7 +142,7 @@ analyzerParams = map[string]any{"type": "standard"}
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -158,7 +154,7 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-`standard` アナライザーは、以下のオプションパラメータを受け入れます。
+`standard` アナライザーは、以下のオプションパラメータを受け付けます：
 
 <table>
    <tr>
@@ -195,7 +191,7 @@ analyzerParams.put("stop_words", Collections.singletonList("of"));
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 analyzer_params = {
@@ -206,7 +202,7 @@ analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"type": "standard", "stop_words": []string{"of"}}
@@ -214,7 +210,7 @@ analyzerParams = map[string]any{"type": "standard", "stop_words": []string{"of"}
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -229,13 +225,13 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールドのテキストを処理し、効率的なトークン化とフィルタリングを行うことができます。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
+`analyzer_params` を定義した後、コレクションスキーマを定義する際に `VARCHAR` フィールドに適用できます。これにより、Zilliz Cloud は指定されたアナライザーを使用してそのフィールド内のテキストを処理し、効率的なトークン化とフィルタリングを実現します。詳細については、[使用例](./analyzer-overview#example-use) を参照してください。
 
-## 例{#examples}
+## 例\{#examples}
 
-アナライザー設定をコレクションスキーマに適用する前に、`run_analyzer` メソッドを使用してその動作を確認してください。
+コレクションスキーマにアナライザー設定を適用する前に、`run_analyzer` メソッドを使用してその動作を検証してください。
 
-### アナライザー設定{#analyzer-configuration}
+### アナライザー設定\{#analyzer-configuration}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -259,7 +255,7 @@ analyzerParams.put("stop_words", Collections.singletonList("for"));
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -271,7 +267,7 @@ analyzer_params = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 analyzerParams = map[string]any{"type": "standard", "stop_words": []string{"for"}}
@@ -279,7 +275,7 @@ analyzerParams = map[string]any{"type": "standard", "stop_words": []string{"for"
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -294,7 +290,7 @@ analyzerParams='{
 </TabItem>
 </Tabs>
 
-### `run_analyzer` を使用した検証 {#verification-using-runanalyzer}
+### `run_analyzer` を使用した検証\{#verification-using-runanalyzer}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -345,7 +341,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 // javascript
@@ -353,7 +349,7 @@ List<RunAnalyzerResp.AnalyzerResult> results = resp.getResults();
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -387,7 +383,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -396,7 +392,7 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-### 期待される出力結果\{#expected-output}
+### 期待される出力\{#expected-output}
 
 ```plaintext
 Standard analyzer output: ['the', 'milvus', 'vector', 'database', 'is', 'built', 'scale']

@@ -74,7 +74,7 @@ curl --request POST \
 
 In the command above,
 
-- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own.
+- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own. Note that API keys authenticate Platform API (Control Plane) requests. For data plan connections, use cluster credentials (`username:password`) instead.
 
 - `{CLUSTER_ID}`: The ID of the Dedicated cluster to suspend.
 
@@ -137,7 +137,7 @@ curl --request POST \
 
 In the command above,
 
-- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own.
+- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own. Note that API keys authenticate Platform API (Control Plane) requests. For data plan connections, use cluster credentials (`username:password`) instead.
 
 - `{CLUSTER_ID}`: The ID of the cluster to resume.
 
@@ -148,12 +148,6 @@ For details, refer to [Resume Cluster](/reference/restful/resume-cluster-v2).
 </Tabs>
 
 Once the resume operation is successful, a job record will be generated. You can check the progress on the [Jobs](./job-center) page.
-
-## Convert to a global cluster\{#convert-to-a-global-cluster}
-
-If you need to convert an existing Dedicated cluster to a [global cluster](./global-cluster-explained), follow the steps below.
-
-<Supademo id="cmm5p53sh3hogdtfhemesjhv0" title=""  />
 
 ## Drop cluster\{#drop-cluster}
 
@@ -193,7 +187,7 @@ curl --request POST \
 
 In the command above,
 
-- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own.
+- `{API_KEY}`: The credential used to authenticate API requests. Replace the value with your own. Note that API keys authenticate Platform API (Control Plane) requests. For data plan connections, use cluster credentials (`username:password`) instead.
 
 - `{CLUSTER_ID}`: The ID of the Dedicated cluster to drop.
 

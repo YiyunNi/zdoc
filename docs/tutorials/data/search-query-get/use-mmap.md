@@ -145,7 +145,7 @@ schema.add_field(
 client.create_collection(collection_name="my_collection", schema=schema)
 
 # Disable mmap on an existing field
-# The following assumes that you have a collection named `my_collection`
+# The following assumes that you have a collection named \`my_collection\`
 client.alter_collection_field(
     collection_name="my_collection",
     field_name="doc_chunk",
@@ -407,7 +407,7 @@ index_params.add_index(
 )
 
 # Change mmap settings for an index
-# The following assumes that you have a collection named `my_collection`
+# The following assumes that you have a collection named \`my_collection\`
 client.alter_index_properties(
     collection_name="my_collection",
     index_name="title",
@@ -456,7 +456,7 @@ await client.createIndex({
 });
 
 // Change mmap settings for an index
-// The following assumes that you have a collection named `my_collection`
+// The following assumes that you have a collection named \`my_collection\`
 await client.alterIndexProperties({
     collection_name: "my_collection",
     index_name: "title",

@@ -469,7 +469,7 @@ Once the schema is ready, you can use the schema to create a **RemoteBulkWriter*
 ```python
 
 from pymilvus.bulk_writer import RemoteBulkWriter, BulkFileType
-# Use `from pymilvus import RemoteBulkWriter, BulkFileType`
+# Use \`from pymilvus import RemoteBulkWriter, BulkFileType\`
 # if your pymilvus version is earlier than 2.4.2 
 
 # Connections parameters to access the remote bucket
@@ -964,7 +964,7 @@ from pymilvus.bulk_writer import bulk_import
 
 # Publicly accessible URL for the prepared data in the remote bucket
 object_url = "s3://{0}/{1}/".format(BUCKET_NAME, str(writer.data_path)[1:])
-# Change `s3` to `gs` for Google Cloud Storage
+# Change \`s3\` to \`gs\` for Google Cloud Storage
 
 resp = bulk_import(
     api_key=API_KEY,

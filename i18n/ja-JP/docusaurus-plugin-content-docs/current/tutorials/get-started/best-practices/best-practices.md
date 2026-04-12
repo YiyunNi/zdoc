@@ -4,21 +4,18 @@ slug: /best-practices
 sidebar_label: "ベストプラクティス"
 beta: FALSE
 notebook: FALSE
-description: "Zilliz Cloud を使用する際のベストプラクティスに関する記事をご覧いただけます。"
+description: "Zilliz Cloud を使用する際のベストプラクティスに関する記事を見つけることができます。"
 type: origin
 token: HWzCwbjfci51HHk4BvTcfbiHn1d
-sidebar_position: 10
+sidebar_position: 12
 keywords: 
   - zilliz
   - ベクトルデータベース
   - cloud
   - milvus
   - ベストプラクティス
-  - プライベートLLM
-  - NN検索
-  - LLM評価
-  - 疎 vs 密
 
+sidebar_key: "get-started/best-practices"
 ---
 
 import Admonition from '@theme/Admonition';
@@ -26,7 +23,7 @@ import Admonition from '@theme/Admonition';
 
 # ベストプラクティス
 
-Zilliz Cloudを使用する際のベストプラクティスに関する記事をご覧いただけます。
+Zilliz Cloud を使用する際のベストプラクティスに関する記事を掲載しています。
 
 import DocCardList from '@theme/DocCardList';
 

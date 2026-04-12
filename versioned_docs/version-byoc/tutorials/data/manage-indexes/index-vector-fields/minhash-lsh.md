@@ -44,7 +44,7 @@ This guide walks you through the concepts, prerequisites, setup, and best practi
 Jaccard similarity measures the overlap between two sets A and B, formally defined as:
 
 $$
-J(A, B) = \frac\{|A \cap B|}\{|A \cup B|}
+J(A, B) = \frac{|A \cap B|}{|A \cup B|}
 $$
 
 Where its value ranges from 0 (completely disjoint) to 1 (identical).
@@ -154,7 +154,7 @@ For more information about this metric type, refer to [MHJACCARD](./search-metri
 
 The deduplication process powered by MinHash LSH allows Zilliz Cloud to efficiently identify and filter out near-duplicate text or structured records before inserting them into the collection.
 
-![NuokbSgbroyVPQx14fKcm37bnoh](https://zdoc-images.s3.us-west-2.amazonaws.com/nuokbsgbroyvpqx14fkcm37bnoh.png "NuokbSgbroyVPQx14fKcm37bnoh")
+![It9wwbCFwhfT0RbwosAcGltZneb](https://zdoc-images.s3.us-west-2.amazonaws.com/It9wwbCFwhfT0RbwosAcGltZneb.png)
 
 1. **Chunk & preprocess**: Split incoming text data or structured data (e.g., records, fields) into chunks; normalize text (lowercasing, punctuation removal), and remove stopwords as needed.
 

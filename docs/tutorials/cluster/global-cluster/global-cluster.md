@@ -17,6 +17,10 @@ keywords:
   - cloud
   - milvus
   - global cluster
+  - switchover
+  - failover
+  - disaster recovery
+  - high availability
 
 ---
 

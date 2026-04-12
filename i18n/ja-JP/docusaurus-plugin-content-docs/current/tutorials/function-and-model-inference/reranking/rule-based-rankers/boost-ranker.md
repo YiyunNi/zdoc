@@ -4,7 +4,7 @@ slug: /boost-ranker
 sidebar_label: "Boost Ranker"
 beta: FALSE
 notebook: FALSE
-description: "Boost Ranker を使用すると、ベクトル距離に基づいて計算されたセマンティック類似性のみに依存するのではなく、検索結果に意味のある影響を与えることができます。これは、メタデータフィルタリングを使用して検索結果を迅速に調整するのに理想的です。 | Cloud"
+description: "ベクトル距離に基づいて計算された意味的類似性のみに依存するのではなく、Boost Ranker を使用することで、検索結果に有意義な影響を与えることができます。これは、メタデータフィルタリングを使用して検索結果を迅速に調整する場合に最適です。| Cloud"
 type: origin
 token: Qa60w2vDuiqNk0kclKLcZ0uQnkg
 sidebar_position: 1
@@ -13,15 +13,11 @@ keywords:
   - ベクトルデータベース
   - cloud
   - collection
-  - データ
-  - 検索結果の再ランキング
-  - 結果の再ランキング
-  - ブースト
+  - data
+  - search result reranking
+  - result reranking
+  - boost
   - boost ranker
-  - ベクトル次元
-  - ANN Search
-  - ベクトル埋め込みとは
-  - ベクトルデータベースチュートリアル
 
 ---
 
@@ -29,62 +25,62 @@ import Admonition from '@theme/Admonition';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# ブーストランカー
+# Boost Ranker
 
-ベクトル距離に基づいて計算されるセマンティック類似性だけに頼るのではなく、ブーストランカーを使用すると、検索結果に意味のある影響を与えることができます。これは、メタデータフィルタリングを使用して検索結果を迅速に調整するのに理想的です。
+ベクトル距離に基づいて計算された意味的類似性のみに依存するのではなく、Boost Ranker を使用することで、検索結果に有意義な影響を与えることができます。これは、メタデータフィルタリングを使用して検索結果を迅速に調整する場合に理想的です。
 
-検索リクエストにブーストランカー関数が含まれている場合、Milvus は関数内のオプションのフィルタリング条件を使用して検索結果候補の中から一致するものを見つけ、指定された重みを適用してそれらの一致のスコアをブーストし、最終結果における一致したエンティティのランキングを促進または降格するのに役立ちます。
+検索リクエストに Boost Ranker 関数が含まれている場合、Milvus は関数内のオプションのフィルタリング条件を使用して検索結果候補の中から一致するものを見つけ、指定された重みを適用してそれらのスコアを引き上げます。これにより、最終結果において一致したエンティティのランキングを促進または降格させることができます。
 
-## ブーストランカーを使用するタイミング{#when-to-use-boost-ranker}
+## Boost Ranker の使用時期\{#when-to-use-boost-ranker}
 
-クロスエンコーダーモデルや融合アルゴリズムに依存する他のランカーとは異なり、ブーストランカーはオプションのメタデータ駆動型ルールをランキングプロセスに直接注入するため、以下のシナリオにより適しています。
+クロスエンコーダーモデルや融合アルゴリズムに依存する他のランカーとは異なり、Boost Ranker はランキングプロセスにオプションのメタデータ駆動型ルールを直接注入するため、以下のシナリオにより適しています。
 
 <table>
    <tr>
      <th><p>ユースケース</p></th>
      <th><p>例</p></th>
-     <th><p>ブーストランカーがうまく機能する理由</p></th>
+     <th><p>Boost Ranker が効果的な理由</p></th>
    </tr>
    <tr>
      <td><p>ビジネス主導のコンテンツ優先順位付け</p></td>
-     <td><ul><li><p>Eコマース検索結果でプレミアム商品を強調表示する</p></li><li><p>高いユーザーエンゲージメント指標（ビュー、いいね、シェアなど）を持つコンテンツの可視性を高める</p></li><li><p>時間制約のある検索アプリケーションで最近のコンテンツを上位表示する</p></li><li><p>検証済みまたは信頼できるソースからのコンテンツを優先する</p></li><li><p>正確なフレーズや関連性の高いキーワードに一致する結果をブーストする</p></li></ul></td>
-     <td rowspan="2"><p>インデックスを再構築したり、ベクトル埋め込みモデルを変更したりする必要なく（これらは時間のかかる操作です）、オプションのメタデータフィルターをリアルタイムで適用することで、検索結果内の特定のアイテムを即座に昇格または降格できます。このメカニズムにより、進化するビジネス要件に容易に適応できる、柔軟で動的な検索ランキングが可能になります。</p></td>
+     <td><ul><li><p>E コマースの検索結果でプレミアム製品を強調表示する</p></li><li><p>ユーザーエンゲージメント指標（閲覧数、いいね、シェアなど）が高いコンテンツの可視性を高める</p></li><li><p>時間制約のある検索アプリケーションで最新のコンテンツを上位に表示する</p></li><li><p>認証済みまたは信頼できるソースからのコンテンツを優先する</p></li><li><p>正確なフレーズや関連性の高いキーワードに一致する結果を促進する</p></li></ul></td>
+     <td rowspan="2"><p>インデックスの再構築やベクトル埋め込みモデルの変更（これらは時間のかかる作業です）を行う必要なく、リアルタイムでオプションのメタデータフィルタを適用することにより、検索結果内の特定のアイテムを即座に促進または降格させることができます。この仕組みにより、変化するビジネス要件に容易に適応できる柔軟で動的な検索ランキングが可能になります。</p></td>
    </tr>
    <tr>
      <td><p>戦略的なコンテンツの降格</p></td>
-     <td><ul><li><p>在庫の少ないアイテムを完全に削除せずに目立たなくする</p></li><li><p>検閲なしで、不快な可能性のある用語を含むコンテンツのランクを下げる</p></li><li><p>古いドキュメントを技術検索でアクセス可能に保ちながら降格する</p></li><li><p>マーケットプレイス検索で競合製品の可視性を微妙に下げる</p></li><li><p>品質が低いと判断されるコンテンツ（書式設定の問題、短い長さなど）の関連性を低下させる</p></li></ul></td>
+     <td><ul><li><p>在庫が少ないアイテムの目立たせ方を減らす（ただし完全に削除はしない）</p></li><li><p>検閲を行わずに、問題のある用語を含む可能性のあるコンテンツのランクを下げる</p></li><li><p>技術検索ではアクセス可能にしたまま、古いドキュメントのランクを下げる</p></li><li><p>マーケットプレイス検索において競合他社の製品の可視性を微妙に下げる</p></li><li><p>品質が低いことを示す指標（フォーマットの問題、長さ不足など）を持つコンテンツの関連性を低下させる</p></li></ul></td>
    </tr>
 </table>
 
-複数のブーストランカーを組み合わせて、より動的で堅牢な重みベースのランキング戦略を実装することもできます。
+また、複数の Boost Ranker を組み合わせて、より動的で堅牢な重みベースのランキング戦略を実装することもできます。
 
-## ブーストランカーのメカニズム{#mechanism-of-boost-ranker}
+## Boost Ranker の仕組み\{#mechanism-of-boost-ranker}
 
-次の図は、ブーストランカーの主要なワークフローを示しています。
+以下の図は、Boost Ranker の主なワークフローを示しています。
 
 ![Hq0awfjC7h0Ty3bvsUEcasOHncb](https://zdoc-images.s3.us-west-2.amazonaws.com/Hq0awfjC7h0Ty3bvsUEcasOHncb.png)
 
-データを挿入すると、Zilliz Cloud はそれをセグメントに分散します。検索中、各セグメントは一連の候補を返し、Zilliz Cloud はすべてのセグメントからのこれらの候補をランク付けして最終結果を生成します。検索リクエストにブーストランカーが含まれている場合、Zilliz Cloud は潜在的な精度損失を防ぎ、リコールを改善するために、各セグメントからの候補結果にそれを適用します。
+データを挿入すると、Zilliz Cloud はそれをセグメントに分散します。検索時には、各セグメントが一連の候補を返し、Zilliz Cloud はすべてのセグメントからこれらの候補をランキングして最終結果を生成します。検索リクエストに Boost Ranker が含まれている場合、Zilliz Cloud は精度の低下を防ぎ、再現率を向上させるために、各セグメントからの候補結果にそれを適用します。
 
-結果を確定する前に、Milvus はこれらの候補をブーストランカーで次のように処理します。
+結果を確定する前に、Milvus は Boost Ranker を使用してこれらの候補を以下のように処理します。
 
-1. ブーストランカーで指定されたオプションのフィルタリング式を適用して、式に一致するエンティティを識別します。
+1. Boost Ranker で指定されたオプションのフィルタリング式を適用して、式に一致するエンティティを特定します。
 
-1. ブーストランカーで指定された重みを適用して、識別されたエンティティのスコアをブーストします。
+1. Boost Ranker で指定された重みを適用して、特定されたエンティティのスコアを引き上げます。
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>ブーストランカーは、マルチベクトルハイブリッド検索では使用できません。</p>
+<p>Boost Ranker はマルチベクトルハイブリッド検索では使用できません。</p>
 
 </Admonition>
 
-## ブーストランカーの例{#examples-of-boost-ranker}
+## Boost Ranker の例\{#examples-of-boost-ranker}
 
-次の例は、最も関連性の高い上位5つのエンティティを返し、抽象ドキュメントタイプのエンティティのスコアに重みを追加する必要がある単一ベクトル検索でのブーストランカーの使用法を示しています。
+以下の例は、最も関連性の高い 5 つのエンティティを返す必要があり、abstract ドキュメントタイプのエンティティのスコアに重みを追加する単一ベクトル検索における Boost Ranker の使用を示しています。
 
-1. **セグメント内の検索結果候補を収集します。**
+1. **セグメント内で検索結果候補を収集します。** 
 
-    次の表は、Milvus がエンティティを2つのセグメント（**0001**と**0002**）に分散し、各セグメントが5つの候補を返すことを想定しています。
+    以下の表は、Milvus がエンティティを 2 つのセグメント（**0001** および **0002**）に分散し、各セグメントが 5 つの候補を返すと仮定しています。
 
     <table>
        <tr>
@@ -166,9 +162,9 @@ import TabItem from '@theme/TabItem';
        </tr>
     </table>
 
-1. **ブーストランカーで指定されたフィルタリング式を適用します** (`doctype='abstract'`)。
+1. **Boost Ranker で指定されたフィルタリング式を適用します** (`doctype='abstract'`)。
 
-    次の表の`DocType`フィールドで示されているように、Milvus は`doctype`が`abstract`に設定されているすべてのエンティティをさらに処理するためにマークします。
+    以下の表の `DocType` フィールドに示されているように、Milvus は `doctype` が `abstract` に設定されているすべてのエンティティをマークし、さらなる処理を行います。
 
     <table>
        <tr>
@@ -250,9 +246,9 @@ import TabItem from '@theme/TabItem';
        </tr>
     </table>
 
-1. **ブーストランカーで指定された重みを適用します** (`weight=0.5`)。
+1. **Boost Ranker で指定された重みを適用します** (`weight=0.5`)。
 
-    前のステップで識別されたすべてのエンティティは、ブーストランカーで指定された重みで乗算され、その結果、ランクが変更されます。
+    前のステップで特定されたすべてのエンティティは、Boost Ranker で指定された重数を乗算され、その結果としてランクが変更されます。
 
     <table>
        <tr>
@@ -347,11 +343,11 @@ import TabItem from '@theme/TabItem';
 
     <Admonition type="info" icon="📘" title="Notes">
 
-    <p>重みは、選択する浮動小数点数でなければなりません。上記の例のように、スコアが小さいほど関連性が高いことを示す場合は、<strong>1</strong>未満の重みを使用します。それ以外の場合は、<strong>1</strong>より大きい重みを使用します。</p>
+    <p>重みは任意に選択する浮動小数点数である必要があります。上記の例のように、スコアが小さいほど関連性が高い場合は、**1** より小さい重みを使用してください。それ以外の場合は、**1** より大きい重みを使用してください。</p>
 
     </Admonition>
 
-1. **重み付けされたスコアに基づいて、すべてのセグメントからの候補を集約して結果を確定します。**
+1. **重み付きスコアに基づいて、すべてのセグメントからの候補を集約し、結果を確定します。**
 
     <table>
        <tr>
@@ -404,13 +400,13 @@ import TabItem from '@theme/TabItem';
        </tr>
     </table>
 
-## ブーストランカーの使用法{#usage-of-boost-ranker}
+## Boost Ranker の使用方法\{#usage-of-boost-ranker}
 
-このセクションでは、ブーストランカーを使用して単一ベクトル検索の結果に影響を与える方法の例を示します。
+このセクションでは、Boost Ranker を使用して単一ベクトル検索の結果に影響を与える方法の例を示します。
 
-### ブーストランカーを作成する{#create-a-boost-ranker}
+### Boost Ranker の作成\{#create-a-boost-ranker}
 
-検索リクエストのリランカーとしてブーストランカーを渡す前に、ブーストランカーを次のようにリランキング関数として適切に定義する必要があります。
+検索リクエストの reranker として Boost Ranker を渡す前に、以下のように Boost Ranker をランキング関数として適切に定義する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -452,7 +448,7 @@ BoostRanker rerank = BoostRanker.builder()
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -460,7 +456,7 @@ BoostRanker rerank = BoostRanker.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import {FunctionType} from '@zilliz/milvus2-sdk-node';
@@ -484,7 +480,7 @@ const rerank = {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -496,57 +492,57 @@ const rerank = {
 <table>
    <tr>
      <th><p>パラメーター</p></th>
-     <th><p>必須？</p></th>
+     <th><p>必須ですか？</p></th>
      <th><p>説明</p></th>
      <th><p>値/例</p></th>
    </tr>
    <tr>
      <td><p><code>name</code></p></td>
      <td><p>はい</p></td>
-     <td><p>この関数のユニークな識別子</p></td>
+     <td><p>この関数の一意の識別子</p></td>
      <td><p><code>"boost"</code></p></td>
    </tr>
    <tr>
      <td><p><code>input_field_names</code></p></td>
      <td><p>はい</p></td>
-     <td><p>関数を適用するベクトルフィールドのリスト（Boost Rankerの場合は空である必要があります）</p></td>
+     <td><p>関数を適用するベクトルフィールドのリスト（Boost Ranker の場合は空である必要があります）</p></td>
      <td><p><code>[]</code></p></td>
    </tr>
    <tr>
      <td><p><code>function_type</code></p></td>
      <td><p>はい</p></td>
-     <td><p>呼び出す関数のタイプ。リランキング戦略を指定するには<code>RERANK</code>を使用します</p></td>
+     <td><p>呼び出す関数のタイプ。再ランキング戦略を指定するには <code>RERANK</code> を使用します</p></td>
      <td><p><code>FunctionType.RERANK</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.reranker</code></p></td>
      <td><p>はい</p></td>
-     <td><p>リランカーのタイプを指定します。</p><p>Boost Rankerを使用するには<code>boost</code>に設定する必要があります。</p></td>
+     <td><p>リランカーのタイプを指定します。</p><p>Boost Ranker を使用するには、<code>boost</code> に設定する必要があります。</p></td>
      <td><p><code>"boost"</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.weight</code></p></td>
      <td><p>はい</p></td>
-     <td><p>生の検索結果で一致するエンティティのスコアに乗算される重みを指定します。</p><p>値は浮動小数点数である必要があります。</p><ul><li><p>一致するエンティティの重要性を強調するには、スコアをブーストする値を設定します。</p></li><li><p>一致するエンティティの重要性を下げるには、このパラメーターにスコアを下げる値を割り当てます。</p></li></ul></td>
+     <td><p>生の検索結果内の一致するエンティティのスコアに乗算される重みを指定します。</p><p>値は浮動小数点数である必要があります。</p><ul><li><p>一致するエンティティの重要性を強調するには、スコアをブーストする値に設定します。</p></li><li><p>一致するエンティティを降格させるには、このパラメーターにスコアを下げる値を割り当てます。</p></li></ul></td>
      <td><p><code>1</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.filter</code></p></td>
      <td><p>いいえ</p></td>
-     <td><p>検索結果のエンティティの中からエンティティを照合するために使用されるフィルター式を指定します。<a href="./filtering-overview">フィルタリングの説明</a>で言及されている有効な基本フィルター式であれば何でも構いません。</p><p><strong>注</strong>: <code>==</code>、<code>&gt;</code>、<code>&lt;</code>などの基本的な演算子のみを使用してください。<code>text_match</code>や<code>phrase_match</code>などの高度な演算子を使用すると、検索パフォーマンスが低下します。</p></td>
+     <td><p>検索結果のエンティティの中からエンティティをマッチさせるために使用されるフィルター式を指定します。<a href="./filtering-overview">フィルタリングの説明</a>に記載されている任意の有効な基本フィルター式を使用できます。</p><p><strong>注</strong>：<code>==</code>、<code>&gt;</code>、または <code>&lt;</code> などの基本演算子のみを使用してください。<code>text_match</code> や <code>phrase_match</code> などの高度な演算子を使用すると、検索パフォーマンスが低下します。</p></td>
      <td><p><code>"doctype == 'abstract'"</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.random_score</code></p></td>
      <td><p>いいえ</p></td>
-     <td><p><code>0</code>から<code>1</code>の間の値をランダムに生成するランダム関数を指定します。以下の2つのオプション引数があります。</p><ul><li><p><code>seed</code> (数値) 擬似乱数生成器 (PRNG) を開始するために使用される初期値を指定します。</p></li><li><p><code>field</code> (文字列) 乱数生成におけるランダムな要因として使用される値を持つフィールドの名前を指定します。一意の値を持つフィールドで十分です。</p><p>同じシードとフィールド値を使用することで、世代間の整合性を確保するために、<code>seed</code>と<code>field</code>の両方を設定することをお勧めします。</p></li></ul></td>
+     <td><p><code>0</code> から <code>1</code> の間の値をランダムに生成するランダム関数を指定します。次の 2 つのオプション引数があります：</p><ul><li><p><code>seed</code> (数値) 擬似乱数生成器 (PRNG) を開始するために使用される初期値を指定します。</p></li><li><p><code>field</code> (文字列) 乱数生成におけるランダム因子として使用される値を持つフィールドの名前を指定します。一意の値を持つフィールドで十分です。</p><p>同じシード値とフィールド値を使用して世代間の一貫性を確保するため、<code>seed</code> と <code>field</code> の両方を設定することを推奨します。</p></li></ul></td>
      <td><p><code>\{"seed": 126, "field": "id"}</code></p></td>
    </tr>
 </table>
 
-### 単一のBoost Rankerによる検索{#search-with-a-single-boost-ranker}
+### 単一の Boost Ranker を使用した検索\{#search-with-a-single-boost-ranker}
 
-Boost Ranker関数が準備できたら、検索リクエストでそれを参照できます。以下の例では、**id**、**vector**、**doctype**のフィールドを持つcollectionをすでに作成していることを前提としています。
+Boost Ranker 関数の準備が整ったら、検索リクエストでそれを参照できます。以下の例では、**id**、**vector**、および **doctype** というフィールドを持つコレクションがすでに作成されていることを前提としています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -603,7 +599,7 @@ SearchResp searchResp = client.search(searchReq);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -611,7 +607,7 @@ SearchResp searchResp = client.search(searchReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
@@ -638,7 +634,7 @@ console.log('Search results:', searchResults);
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -647,11 +643,11 @@ console.log('Search results:', searchResults);
 </TabItem>
 </Tabs>
 
-### 複数のブーストランカーで検索する{#search-with-multiple-boost-rankers}
+### Search with multiple Boost Rankers\{#search-with-multiple-boost-rankers}
 
-複数のブーストランカーを単一の検索で組み合わせて、検索結果に影響を与えることができます。これを行うには、いくつかのブーストランカーを作成し、それらを**FunctionScore**インスタンスで参照し、その**FunctionScore**インスタンスを検索リクエストのランカーとして使用します。
+単一の検索で複数の Boost Ranker を組み合わせて、検索結果に影響を与えることができます。これを行うには、複数の Boost Ranker を作成し、**FunctionScore** インスタンスでそれらを参照して、検索リクエストのランカーとして **FunctionScore** インスタンスを使用します。
 
-次の例は、**0.8**から**1.2**の間の重みを適用して、識別されたすべてのエンティティのスコアを変更する方法を示しています。
+以下の例では、**0.8** から **1.2** の間の重みを適用することで、特定されたすべてのエンティティのスコアを変更する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -751,7 +747,7 @@ SearchResp searchResp = client.search(searchReq);
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -759,7 +755,7 @@ SearchResp searchResp = client.search(searchReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import {FunctionType} from '@zilliz/milvus2-sdk-node';
@@ -808,7 +804,7 @@ await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -817,33 +813,33 @@ await client.search({
 </TabItem>
 </Tabs>
 
-具体的には、2つのBoost Rankerがあります。1つは、見つかったすべてのエンティティに固定の重みを適用し、もう1つは、それらにランダムな重みを割り当てます。次に、これらの2つのランカーを**FunctionScore**で参照し、重みが見つかったエンティティのスコアにどのように影響するかを定義します。
+具体的には、2 つの Boost Ranker があります。一方は検出されたすべてのエンティティに固定の重みを適用し、もう一方はランダムな重みを割り当てます。その後、これらの 2 つのランカーを **FunctionScore** で参照し、重みが検出されたエンティティのスコアにどのように影響するかを定義します。
 
-次の表に、**FunctionScore**インスタンスを作成するために必要なパラメータを示します。
+以下の表は、**FunctionScore** インスタンスを作成するために必要なパラメータの一覧です。
 
 <table>
    <tr>
      <th><p>パラメータ</p></th>
-     <th><p>必須？</p></th>
+     <th><p>必須ですか？</p></th>
      <th><p>説明</p></th>
      <th><p>値/例</p></th>
    </tr>
    <tr>
      <td><p><code>functions</code></p></td>
      <td><p>はい</p></td>
-     <td><p>ターゲットランカーの名前をリストで指定します。</p></td>
+     <td><p>対象となるランカーの名前をリストで指定します。</p></td>
      <td><p><code>["fix_weight_ranker", "random_weight_ranker"]</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.boost_mode</code></p></td>
      <td><p>いいえ</p></td>
-     <td><p>指定された重みが、一致するエンティティのスコアにどのように影響するかを指定します。</p><p>可能な値は次のとおりです。</p><ul><li><p><code>Multiply</code></p><p>重み付けされた値が、一致するエンティティの元のスコアに指定された重みを乗算したものと等しいことを示します。</p><p>これがデフォルト値です。</p></li><li><p><code>Sum</code></p><p>重み付けされた値が、一致するエンティティの元のスコアと指定された重みの合計と等しいことを示します。</p></li></ul></td>
+     <td><p>指定された重みが一致するエンティティのスコアにどのように影響するかを指定します。</p><p>可能な値は次のとおりです。</p><ul><li><p><code>Multiply</code></p><p>重み付きの値が、一致するエンティティの元のスコアに指定された重みを掛けたものに等しいことを示します。</p><p>これがデフォルト値です。</p></li><li><p><code>Sum</code></p><p>重み付きの値が、一致するエンティティの元のスコアと指定された重みの和に等しいことを示します。</p></li></ul></td>
      <td><p><code>"Sum"</code></p></td>
    </tr>
    <tr>
      <td><p><code>params.function_mode</code></p></td>
      <td><p>いいえ</p></td>
-     <td><p>さまざまなBoost Rankerからの重み付けされた値がどのように処理されるかを指定します。</p><p>可能な値は次のとおりです。</p><ul><li><p><code>Multiply</code></p><p>一致するエンティティの最終スコアが、すべてのBoost Rankerからの重み付けされた値の積と等しいことを示します。</p><p>これがデフォルト値です。</p></li><li><p><code>Sum</code></p><p>一致するエンティティの最終スコアが、すべてのBoost Rankerからの重み付けされた値の合計と等しいことを示します。</p></li></ul></td>
+     <td><p>さまざまな Boost Ranker からの重み付き値をどのように処理するかを指定します。</p><p>可能な値は次のとおりです。</p><ul><li><p><code>Multiply</code></p><p>一致するエンティティの最終スコアが、すべての Boost Ranker からの重み付き値の積に等しいことを示します。</p><p>これがデフォルト値です。</p></li><li><p><code>Sum</code></p><p>一致するエンティティの最終スコアが、すべての Boost Ranker からの重み付き値の和に等しいことを示します。</p></li></ul></td>
      <td><p><code>"Sum"</code></p></td>
    </tr>
 </table>

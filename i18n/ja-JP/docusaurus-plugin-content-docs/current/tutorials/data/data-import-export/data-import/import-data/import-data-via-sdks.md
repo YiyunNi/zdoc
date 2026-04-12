@@ -4,7 +4,7 @@ slug: /import-data-via-sdks
 sidebar_label: "SDK"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、bulk-writer および bulk-import API を使用して、SDK を使ってデータをコレクションにインポートする方法を説明します。 | Cloud"
+description: "このガイドでは、bulk-writer および bulk-import API を使用して SDK でコレクションにデータをインポートする方法を説明します。| Cloud"
 type: origin
 token: MvgAwL4HIiuRRJkH0FwcJhxSnld
 sidebar_position: 3
@@ -14,10 +14,6 @@ keywords:
   - cloud
   - データインポート
   - sdk
-  - オープンソース ベクトル DB
-  - ベクトルデータベースの例
-  - rag ベクトルデータベース
-  - ベクトル DB とは
 
 ---
 
@@ -27,17 +23,17 @@ import TabItem from '@theme/TabItem';
 
 # データのインポート (SDK)
 
-このガイドでは、SDK を使用して bulk-writer および bulk-import API でデータをコレクションにインポートする方法を説明します。
+このガイドでは、SDK を使用してバルクライターおよびバルクインポート API でコレクションにデータをインポートする方法を学ぶことができます。
 
-または、データ準備と Zilliz Cloud コレクションへのデータインポートの両方をカバーする[当社のファストトラックエンドツーエンドコース](./data-import-zero-to-hero)も参照できます。
+また、[エンドツーエンドの高速トラック コース](./data-import-zero-to-hero)も参照できます。このコースでは、Zilliz Cloud のコレクションへのデータ準備とデータインポートの両方をカバーしています。
 
-## 依存関係のインストール{#install-dependencies}
+## 依存関係のインストール\{#install-dependencies}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 
 <TabItem value='python'>
 
-ターミナルで次のコマンドを実行して、**pymilvus** と **minio** をインストールするか、最新バージョンにアップグレードします。
+ターミナルで次のコマンドを実行し、**pymilvus** および **minio** をインストールするか、最新バージョンにアップグレードしてください。
 
 ```shell
 python3 -m pip install --upgrade pymilvus minio
@@ -47,7 +43,7 @@ python3 -m pip install --upgrade pymilvus minio
 
 <TabItem value='java'>
 
-- Apache Maven の場合、**pom.xml** の依存関係に以下を追加します。
+- Apache Maven の場合、**pom.xml** の dependencies に以下を追加します。
 
 ```java
 <dependency>
@@ -63,7 +59,7 @@ python3 -m pip install --upgrade pymilvus minio
 </dependency>
 ```
 
-- Gradle/Grails の場合、以下を実行します。
+- Gradle/Grails の場合は、以下を実行します。
 
 ```shell
 compile 'io.milvus:milvus-sdk-java:2.4.8'
@@ -74,9 +70,9 @@ compile 'io.minio:minio:8.5.9'
 
 </Tabs>
 
-## 準備されたデータの確認{#check-prepared-data}
+## 準備済みデータの確認\{#check-prepared-data}
 
-[BulkWriter ツール](./use-bulkwriter)を使用してデータを準備し、準備されたファイルへのパスを取得したら、それらを Zilliz Cloud collection にインポートする準備が整います。準備が整っているかどうかを確認するには、次のようにします。
+[ BulkWriter ツール](./use-bulkwriter) を使用してデータを準備し、準備済みファイルへのパスを取得したら、Zilliz Cloud のコレクションにインポートする準備が整います。準備が完了しているかを確認するには、以下の手順に従ってください。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -158,15 +154,13 @@ while (results.hasNext()) {
 </TabItem>
 </Tabs>
 
-## データのインポート{#import-data}
+## データのインポート\{#import-data}
 
-データとコレクションの準備ができたら、ボリューム経由またはオブジェクトストレージバケットやブロックストレージブロブコンテナなどの外部ストレージ経由で、特定のコレクションにデータをインポートできます。
+データとコレクションの準備が整ったら、ボリューム経由またはオブジェクトストレージバケットやブロックストレージブロブコンテナなどの外部ストレージ経由で、特定のコレクションにデータをインポートできます。
 
-### ボリューム経由でデータをインポート{#import-data-via-volume}
+### ボリューム経由でのデータインポート\{#import-data-via-volume}
 
-ボリューム経由でデータをインポートするには、事前にストレージを作成し、データをボリュームにアップロードする必要があります。詳細については、[データのマージ](./merge-data)を参照してください。
-
-ボリュームの準備が整い、ソースデータファイルが配置されたら、次のようにボリュームからデータをインポートできます。
+ボリュームからデータをインポートするには、まず[マネージドボリュームまたは外部ボリューム](./volume-explained) を作成します。マネージドボリュームの場合、データファイルをボリュームにアップロードします。外部ボリュームの場合、データファイルがマップされたクラウドストレージバケット内にあることを確認します。その後、以下の手順でデータをインポートします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -176,8 +170,6 @@ from pymilvus.bulk_writer import bulk_import
 
 def cloud_bulkinsert():
     # The value of the URL is fixed.
-    # For overseas regions, it is: https://api.cloud.zilliz.com
-    # For regions in China, it is: https://api.cloud.zilliz.com.cn
     url = "https://api.cloud.zilliz.com"
     api_key = ""
     cluster_id = "inxx-xxxxxxxxxxxxxxx"
@@ -241,9 +233,9 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-### 外部ストレージを介したデータインポート{#import-data-via-external-storage}
+### 外部ストレージ経由でデータをインポートする\{#import-data-via-external-storage}
 
-外部ストレージを介してデータをインポートする場合は、次のようにします。
+外部ストレージ経由でデータをインポートすることを希望する場合は、以下の手順に従ってください:
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -326,13 +318,13 @@ public static void main(String[] args) throws Exception {
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>データインポートを成功させるには、ターゲットコレクションの実行中または保留中のインポートジョブが10,000未満であることを確認してください。</p>
+<p>データのインポートを成功させるには、対象のコレクションに実行中または保留中のインポートジョブが10,000件未満であることを確認してください。</p>
 
 </Admonition>
 
-### インポートの進捗状況を確認する{#check-import-progress}
+### インポートの進行状況を確認する\{#check-import-progress}
 
-指定された一括インポートジョブの進捗状況を確認できます。
+指定した一括インポートジョブの進行状況を確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -387,9 +379,9 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-### すべてのインポートジョブをリストする{#list-all-import-jobs}
+### すべてのインポートジョブを一覧表示する\{#list-all-import-jobs}
 
-すべてのバルクインポートタスクについて知りたい場合は、次のようにlist-import-jobs APIを呼び出すことができます。
+すべてのバルクインポートタスクについても知りたい場合は、以下のように list-import-jobs API を呼び出せます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -441,13 +433,23 @@ public static void main(String[] args) throws Exception {
 </TabItem>
 </Tabs>
 
-## 関連トピック{#related-topics}
+## FAQ\{#faq}
+
+**外部ボリュームと外部ストレージからの直接インポートの違いは何ですか？**
+
+どちらも、ご自身の S3 または GCS バケットからデータをインポートできます。主な違いは以下の通りです。
+
+- 外部ボリュームでは、認証情報の管理に [ストレージ統合](./integrate-with-aws-s3) を使用します。認証情報は一度設定すれば、複数のボリュームや操作で再利用可能です。データエンジニアはクラウドストレージのキーに直接アクセスする必要がありません。
+
+- 直接の [外部ストレージインポート](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) では、各インポートリクエストとともに認証情報（アクセスキー、シークレットキー）をインラインで提供する必要があります。これは一回限りのインポートには簡単ですが、認証情報の分離や再利用性は提供されません。
+
+## 関連トピック\{#related-topics}
 
 - [ストレージオプション](./data-import-storage-options)
 
 - [フォーマットオプション](./data-import-format-options)
 
-- [RESTful API を介したデータインポート](./import-data-via-restful-api)
+- [RESTful API 経由でのデータインポート](./import-data-via-restful-api)
 
-- [ゼロからヒーローへ：データインポート](./data-import-zero-to-hero) 
+- [データインポート from Zero to Hero](./data-import-zero-to-hero) 
 

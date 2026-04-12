@@ -33,7 +33,7 @@ As your workload grows and more data is written, the cluster may reach its capac
 
 To proactively manage this, you can monitor **Query** **CU Capacity** on the [metrics](./metrics-alerts-reference) page to determine when query CU scaling is needed. Based on your business needs and patterns, you can increase the number of query CUs to expand cluster capacity or reduce it when demand decreases to save on costs.
 
-Please note that for clusters with 1 - 8 CUs, you can directly scale query CU. For clusters with more than 8 CUs, please increase [replicas](./manage-replica).
+Please note that for clusters with 1 - 12 CUs, you can directly scale query CU. For clusters with more than 12 CUs, please increase [replicas](./manage-replica).
 
 This guide explains how to resize a cluster to suit your changing workload.
 
@@ -53,13 +53,13 @@ This guide explains how to resize a cluster to suit your changing workload.
 
             Dedicated (Enterprise) clusters: Up to 1,024 CUs
 
-        - The product of **Number of Query CU** × **Replica count** must not exceed 1,0240
+        - The product of **Number of Query CU** × **Replica count** must not exceed 10,240
 
         For larger query CU, [contact sales](http://zilliz.com/contact-sales).
 
     - **Scale down**
 
-        - Clusters with replicas cannot scale down to less than 8 CUs
+        - Clusters with replicas cannot scale down to less than 12 CUs
 
         - A scale-down request only succeeds if:
 
@@ -101,9 +101,9 @@ curl --request POST \
 
 ## Scheduled scaling\{#scheduled-scaling}
 
-<Admonition type="info" icon="📘" title="说明">
+<Admonition type="info" icon="📘" title="Notes">
 
-<p>此功能仅限<strong>企业版</strong>项目中的 <strong>Dedicated</strong> 集群使用。</p>
+<p>This feature is available only to <strong>Dedicated</strong> clusters in an <strong>Enterprise</strong> project.</p>
 
 </Admonition>
 
@@ -140,11 +140,7 @@ curl --request POST \
 
 ## Dynamic scaling\{#dynamic-scaling}
 
-<Admonition type="info" icon="📘" title="说明">
-
-<p>此功能仅限<strong>企业版</strong>项目中的 <strong>Dedicated</strong> 集群使用。</p>
-
-</Admonition>
+https://zilliverse.feishu.cn/sync/EaQKd6kURsSBc1bD8Loc4RsjnCg
 
 Zilliz Cloud supports dynamic scaling to help you maintain performance while eliminating manual intervention. When enabled, the system automatically adjusts the **query CU** resources based on the real-time **CU capacity** metric, ensuring your workload is served efficiently without service disruption.
 

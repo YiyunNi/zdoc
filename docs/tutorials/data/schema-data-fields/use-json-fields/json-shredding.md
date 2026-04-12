@@ -1,7 +1,7 @@
 ---
 title: "JSON Shredding | Cloud"
 slug: /json-shredding
-sidebar_label: "JSON Shredding"
+sidebar_label: "Shredding"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

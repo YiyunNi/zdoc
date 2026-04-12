@@ -67,8 +67,6 @@ You will be billed for data transfer in the following scenarios:
 
 - Forwarding [audit logs](./audit-logs) to cloud object storage
 
-- [Zero downtime migration](./zero-downtime-migration) data sync
-
 - [Offline migration](./offline-migration)
 
 - [Cross-region backup](/docs/backup-to-other-regions)

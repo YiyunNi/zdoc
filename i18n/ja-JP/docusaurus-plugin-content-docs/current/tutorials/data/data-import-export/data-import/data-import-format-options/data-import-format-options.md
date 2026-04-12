@@ -9,17 +9,14 @@ type: origin
 token: MtGywZwmXiHg0AkJMavcWAtxnCg
 sidebar_position: 2
 keywords: 
-  - Zilliz
+  - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - データインポート
-  - Milvus
+  - milvus
   - フォーマットオプション
-  - NLP検索
-  - LLMの幻覚
-  - マルチモーダル検索
-  - ベクトル検索アルゴリズム
 
+sidebar_key: "data/data-import-export/data-import/data-import-format-options"
 ---
 
 import Admonition from '@theme/Admonition';

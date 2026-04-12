@@ -108,7 +108,7 @@ Before starting your offline migration, ensure you meet these requirements:
 
 The following demo walks you through the complete offline migration process:
 
-<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title="Zilliz Cloud - Offline Migration Demo" />
+<Supademo id="cmb91ow5v0me4sn1rzlbzqi8x" title=""  />
 
 <Admonition type="info" icon="📘" title="Notes">
 

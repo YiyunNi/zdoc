@@ -13,11 +13,8 @@ keywords:
   - ベクトルデータベース
   - 始める
   - milvus
-  - 密な埋め込み
-  - Faiss ベクトルデータベース
-  - Chroma ベクトルデータベース
-  - nlp 検索
 
+sidebar_key: "get-started"
 ---
 
 import Admonition from '@theme/Admonition';

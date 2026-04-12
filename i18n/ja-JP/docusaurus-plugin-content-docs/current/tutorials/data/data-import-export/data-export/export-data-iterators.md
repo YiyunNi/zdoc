@@ -4,20 +4,16 @@ slug: /export-data-iterators
 sidebar_label: "イテレータの使用"
 beta: FALSE
 notebook: FALSE
-description: "このガイドでは、Zilliz Cloud collection からデータをエクスポートする方法の例を説明します。"
+description: "このガイドでは、Zilliz Cloud コレクションからデータをエクスポートする方法の例を説明します。 | Cloud"
 type: origin
 token: N6fZwCUXqiqoJEkFiVNcvDJEnnc
 sidebar_position: 1
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
   - データエクスポート
   - イテレータ
-  - Zilliz ベクターデータベース
-  - Zilliz データベース
-  - 非構造化データ
-  - ベクターデータベース
 
 ---
 
@@ -29,13 +25,13 @@ import TabItem from '@theme/TabItem';
 
 このガイドでは、Zilliz Cloudコレクションからデータをエクスポートする方法の例を示します。
 
-## 概要{#overview}
+## 概要\{#overview}
 
-MilvusのPythonおよびJava SDKはどちらも、コレクション内のエンティティをメモリ効率の良い方法で反復処理するための一連のイテレーターAPIを提供します。詳細については、[Search Iterator](./with-iterators)を参照してください。
+MilvusのPythonおよびJava SDKはどちらも、コレクション内のエンティティをメモリ効率の良い方法で反復処理するための一連のイテレーターAPIを提供します。詳細については、[検索イテレーター](./with-iterators)を参照してください。
 
 イテレーターを使用すると、次の利点があります。
 
-- **シンプルさ**: 複雑な**オフセット**と**リミット**の設定が不要になります。
+- **シンプルさ**: 複雑な**オフセット**と**リミット**の設定を排除します。
 
 - **効率性**: 必要なデータのみをフェッチすることで、スケーラブルなデータ取得を提供します。
 
@@ -49,11 +45,11 @@ MilvusのPythonおよびJava SDKはどちらも、コレクション内のエン
 
 </Admonition>
 
-## 準備{#preparations}
+## 準備\{#preparations}
 
-以下の手順では、Zilliz Cloudクラスターに接続し、コレクションを迅速にセットアップし、10,000を超えるランダムに生成されたエンティティをコレクションに挿入するためのコードを再利用します。
+以下の手順では、Zilliz Cloudクラスターに接続し、コレクションを迅速にセットアップし、10,000を超えるランダムに生成されたエンティティをコレクションに挿入するコードを再利用します。
 
-### ステップ1: コレクションを作成する{#step-1-create-a-collection}
+### ステップ1: コレクションを作成する\{#step-1-create-a-collection}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -109,7 +105,7 @@ client.createCollection(createCollectionParam);
 </TabItem>
 </Tabs>
 
-### ステップ2：ランダムに生成されたエンティティを挿入する{#step-2-insert-randomly-generated-entities}
+### ステップ2: ランダムに生成されたエンティティを挿入する\{#step-2-insert-randomly-generated-entities}
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -224,21 +220,21 @@ System.out.println(wrapper.getInsertCount());
 </TabItem>
 </Tabs>
 
-## イテレータを使用したデータのエクスポート{#export-data-using-iterators}
+## イテレータを使用したデータのエクスポート\{#export-data-using-iterators}
 
 イテレータを使用してデータをエクスポートするには、次のようにします。
 
-1. 検索イテレータを初期化して、検索パラメータと出力フィールドを定義します。`batch_size` パラメータを設定することで、イテレーションごとにエクスポートするエンティティの数を制限できます。
+1. 検索イテレータを初期化して、検索パラメータと出力フィールドを定義します。`batch_size`パラメータを設定することで、イテレーションごとにエクスポートするエンティティの数を制限できます。
 
-1. ループ内で `next()` メソッドを使用して、検索結果をページ分割します。
+1. ループ内で`next()`メソッドを使用して、検索結果をページ分割します。
 
     - メソッドが空の配列を返した場合、ループは終了します。
 
-    - それ以外の場合は、返されたデータを任意の形式で保存します。たとえば、返されたデータをファイルに追加したり、データベースに保存したり、他のコンシューマプログラムに供給したりできます。
+    - それ以外の場合は、返されたデータを適切な方法で保存します。たとえば、返されたデータをファイルに追加したり、データベースに保存したり、他のコンシューマプログラムに供給したりできます。
 
-1. すべてのデータが取得されたら、`close()` メソッドを呼び出してイテレータを閉じます。
+1. すべてのデータが取得されたら、`close()`メソッドを呼び出してイテレータを閉じます。
 
-次のコードスニペットは、**QueryIterator** API を使用してエクスポートされたデータをファイルに追加する方法を示しています。
+次のコードスニペットは、**QueryIterator** APIを使用してエクスポートされたデータをファイルに追加する方法を示しています。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>

@@ -4,7 +4,7 @@ slug: /filtered-search
 sidebar_label: "フィルター検索"
 beta: FALSE
 notebook: FALSE
-description: "ANN検索は、指定されたベクトル埋め込みに最も類似したベクトル埋め込みを検索します。しかし、検索結果が常に正しいとは限りません。検索リクエストにフィルタリング条件を含めることで、Zilliz CloudはANN検索を実行する前にメタデータフィルタリングを行い、検索範囲をコレクション全体から指定されたフィルタリング条件に一致するエンティティのみに絞り込むことができます。"
+description: "ANN検索は、指定されたベクトル埋め込みに最も類似したベクトル埋め込みを見つけます。しかし、検索結果が常に正しいとは限りません。検索リクエストにフィルタリング条件を含めることで、Zilliz CloudはANN検索を実行する前にメタデータフィルタリングを実行し、検索範囲をコレクション全体から指定されたフィルタリング条件に一致するエンティティのみに絞り込むことができます。"
 type: origin
 token: CpBbwcJ87irHp0k9oCSc2RNIn3d
 sidebar_position: 3
@@ -12,14 +12,10 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - フィルター検索
   - フィルタリング
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
 
 ---
 
@@ -29,19 +25,19 @@ import TabItem from '@theme/TabItem';
 
 # フィルタリングされた検索
 
-ANN 検索は、指定されたベクトル埋め込みに最も類似したベクトル埋め込みを検索します。ただし、検索結果が常に正しいとは限りません。検索リクエストにフィルタリング条件を含めることで、Zilliz Cloud は ANN 検索を実行する前にメタデータフィルタリングを実行し、検索範囲をコレクション全体から指定されたフィルタリング条件に一致するエンティティのみに絞り込むことができます。
+ANN 検索は、指定されたベクトル埋め込みに最も類似したベクトル埋め込みを見つけます。ただし、検索結果が常に正しいとは限りません。検索リクエストにフィルタリング条件を含めることで、Zilliz Cloud は ANN 検索を実行する前にメタデータフィルタリングを実行し、検索範囲をコレクション全体から指定されたフィルタリング条件に一致するエンティティのみに絞り込むことができます。
 
-## 概要{#overview}
+## 概要\{#overview}
 
 Zilliz Cloud では、フィルタリングが適用される段階に応じて、フィルタリングされた検索は**標準フィルタリング**と**反復フィルタリング**の2つのタイプに分類されます。
 
-### 標準フィルタリング{#standard-filtering}
+### 標準フィルタリング\{#standard-filtering}
 
-コレクションにベクトル埋め込みとそのメタデータの両方が含まれている場合、ANN 検索の前にメタデータをフィルタリングすることで、検索結果の関連性を向上させることができます。Zilliz Cloud は、フィルタリング条件を含む検索リクエストを受信すると、指定されたフィルタリング条件に一致するエンティティ内で検索範囲を制限します。
+コレクションにベクトル埋め込みとそのメタデータの両方が含まれている場合、ANN 検索の前にメタデータをフィルタリングすることで、検索結果の関連性を向上させることができます。Zilliz Cloud は、フィルタリング条件を含む検索リクエストを受信すると、指定されたフィルタリング条件に一致するエンティティ内に検索範囲を制限します。
 
 ![QIeKwvDN1h7lTnb9iJ7cPubknrb](https://zdoc-images.s3.us-west-2.amazonaws.com/QIeKwvDN1h7lTnb9iJ7cPubknrb.png)
 
-上記の図に示すように、検索リクエストはフィルタリング条件として `chunk like "%red%"` を含んでいます。これは、Zilliz Cloud が `chunk` フィールドに `red` という単語を含むすべてのエンティティ内で ANN 検索を実行する必要があることを示しています。具体的には、Zilliz Cloud は次のことを行います。
+上記の図に示すように、検索リクエストはフィルタリング条件として `chunk like "%red%"` を含んでおり、Zilliz Cloud が `chunk` フィールドに `red` という単語を含むすべてのエンティティ内で ANN 検索を実行することを示しています。具体的には、Zilliz Cloud は次のことを行います。
 
 - 検索リクエストに含まれるフィルタリング条件に一致するエンティティをフィルタリングします。
 
@@ -49,9 +45,9 @@ Zilliz Cloud では、フィルタリングが適用される段階に応じて�
 
 - 上位 K 個のエンティティを返します。
 
-### 反復フィルタリング{#iterative-filtering}
+### 反復フィルタリング\{#iterative-filtering}
 
-標準フィルタリングプロセスは、検索範囲を小さな範囲に効果的に絞り込みます。しかし、過度に複雑なフィルタリング式は、非常に高い検索レイテンシを引き起こす可能性があります。このような場合、反復フィルタリングが代替手段として機能し、スカラーフィルタリングのワークロードを軽減するのに役立ちます。
+標準フィルタリングプロセスは、検索範囲を狭い範囲に効果的に絞り込みます。ただし、過度に複雑なフィルタリング式は、非常に高い検索レイテンシを引き起こす可能性があります。このような場合、反復フィルタリングが代替手段として機能し、スカラーフィルタリングのワークロードを軽減するのに役立ちます。
 
 ![AOJ0wZxInhw0z8bZJtWcHMpfnCh](https://zdoc-images.s3.us-west-2.amazonaws.com/AOJ0wZxInhw0z8bZJtWcHMpfnCh.png)
 
@@ -59,9 +55,9 @@ Zilliz Cloud では、フィルタリングが適用される段階に応じて�
 
 この方法は、スカラーフィルタリングの対象となるエンティティの数を大幅に削減するため、特に非常に複雑なフィルタリング式を処理する場合に非常に有益です。
 
-ただし、イテレータはエンティティを一度に1つずつ処理することに注意することが重要です。このシーケンシャルなアプローチは、特に多数のエンティティがスカラーフィルタリングの対象となる場合に、処理時間の延長や潜在的なパフォーマンスの問題につながる可能性があります。
+ただし、イテレータはエンティティを一度に1つずつ処理することに注意することが重要です。このシーケンシャルなアプローチは、特に多数のエンティティがスカラーフィルタリングの対象となる場合、処理時間の延長や潜在的なパフォーマンスの問題につながる可能性があります。
 
-## 例{#examples}
+## 例\{#examples}
 
 このセクションでは、フィルタリングされた検索を実行する方法を示します。このセクションのコードスニペットは、コレクションにすでに次のエンティティがあることを前提としています。各エンティティには、**id**、**vector**、**color**、**likes** の4つのフィールドがあります。
 
@@ -79,6 +75,12 @@ Zilliz Cloud では、フィルタリングが適用される段階に応じて�
     {"id": 9, "vector": [0.5718280481994695, 0.24070317428066512, -0.3737913482606834, -0.06726932177492717, -0.6980531615588608], "color": "purple_4976", "likes": 765}
 ]
 ```
+
+<Admonition type="info" icon="📘" title="Notes">
+
+<p>クエリベクトルがターゲットコレクションにすでに存在する場合は、検索前に取得する代わりに<code>ids</code>を使用することを検討してください。詳細については、<a href="./primary-key-search">プライマリキー検索</a>を参照してください。</p>
+
+</Admonition>
 
 ### 標準フィルタリングによる検索\{#search-with-standard-filtering}
 
@@ -156,7 +158,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -209,7 +211,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -233,7 +235,7 @@ const res = await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"
@@ -259,7 +261,7 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-検索リクエストに含まれるフィルタリング条件は `color like "red%" and likes > 50` です。これはand演算子を使用して2つの条件を含んでいます。最初の条件は、`color`フィールドに`red`で始まる値を持つエンティティを要求し、もう1つの条件は、`likes`フィールドに`50`より大きい値を持つエンティティを要求します。これらの要件を満たすエンティティは2つだけです。top-Kを`3`に設定すると、Zilliz Cloudはこれら2つのエンティティとクエリベクトルの間の距離を計算し、それらを検索結果として返します。
+検索リクエストに含まれるフィルタリング条件は `color like "red%" and likes > 50` です。これは and 演算子を使用して2つの条件を含んでいます。最初の条件は `color` フィールドに `red` で始まる値を持つエンティティを要求し、もう1つの条件は `likes` フィールドに `50` より大きい値を持つエンティティを要求します。これらの要件を満たすエンティティは2つだけです。トップKを `3` に設定すると、Zilliz Cloud はこれら2つのエンティティとクエリベクトルの間の距離を計算し、それらを検索結果として返します。
 
 ```json
 [
@@ -286,7 +288,7 @@ curl --request POST \
 
 メタデータフィルタリングで使用できる演算子の詳細については、[フィルタリング](./filtering)を参照してください。
 
-### 反復フィルタリングによる検索{#search-with-iterative-filtering}
+### 反復フィルタリングによる検索\{#search-with-iterative-filtering}
 
 反復フィルタリングを使用してフィルタリングされた検索を実行するには、次のようにします。
 
@@ -366,7 +368,7 @@ for (List<SearchResp.SearchResult> results : searchResults) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -420,7 +422,7 @@ for _, resultSet := range resultSets {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, DataType } from "@zilliz/milvus2-sdk-node";
@@ -445,7 +447,7 @@ const res = await client.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export CLUSTER_ENDPOINT="YOUR_CLUSTER_ENDPOINT"

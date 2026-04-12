@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This page describes how to manage volumes using the web console. | Cloud"
 type: origin
 token: JwYYw2v0yi2eHBkFZuJcM7pXnnc
-sidebar_position: 3
+sidebar_position: 5
 keywords: 
   - zilliz
   - vector database

@@ -4,19 +4,15 @@ slug: /manage-stages
 sidebar_label: "ボリュームの管理 (SDK)"
 beta: FALSE
 notebook: FALSE
-description: "このページでは、Zilliz Cloud でデータを管理する際にボリュームを使用する方法について説明します。Web コンソールを介したボリュームの管理の詳細については、「ボリュームの管理 (コンソール)」を参照してください。"
+description: "このページでは、Zilliz Cloud でデータを管理する際にボリュームを使用する方法について説明します。Web コンソール経由でボリュームを管理する詳細については、「ボリュームの管理 (コンソール)」をご覧ください。 | Cloud"
 type: origin
 token: VCL7wmP6oieCkJkHEcicCsKQnxc
-sidebar_position: 2
+sidebar_position: 4
 keywords: 
   - zilliz
-  - ベクターデータベース
+  - ベクトルデータベース
   - cloud
   - ボリューム
-  - ディープラーニング
-  - ナレッジベース
-  - 自然言語処理
-  - AIチャットボット
 
 ---
 
@@ -26,20 +22,20 @@ import TabItem from '@theme/TabItem';
 
 # ボリュームの管理 (SDK)
 
-このページでは、Zilliz Cloud でデータを管理する際にボリュームを使用する方法について説明します。Web コンソールを介したボリュームの管理の詳細については、「[ボリュームの管理 (コンソール)](./manage-volumes-via-console)」を参照してください。
+このページでは、Zilliz Cloud でデータを管理する際にボリュームを使用する方法について説明します。Web コンソール経由でボリュームを管理する方法の詳細については、[ボリュームの管理 (コンソール)](./manage-volumes-via-console) をご覧ください。
 
 <Admonition type="info" icon="📘" title="Note">
 
 <p>ボリュームは AWS および Google Cloud でのみ作成できます。Azure でボリュームを使用する必要がある場合は、<a href="http://support.zilliz.com">サポートにお問い合わせください</a>。</p>
-<p>ボリュームからクラスターにデータをインポート、マージ、または移行するには、ボリュームとクラスターが同じクラウドリージョン内にあることを確認してください。</p>
+<p>ボリュームからクラスターへデータをインポート、マージ、または移行するには、ボリュームとクラスターが同じクラウドリージョン内にあることを確認してください。</p>
 
 </Admonition>
 
-## ボリュームの作成、一覧表示、削除{#create-list-and-delete-volumes}
+## ボリュームの作成、一覧表示、および削除\{#create-list-and-delete-volumes}
 
-サービス要件に応じて、ボリュームを作成したり、利用可能なすべてのボリュームを一覧表示したり、不要なボリュームを削除したりすることで、ボリュームのライフサイクルを管理できます。
+サービス要件に応じて、ボリュームの作成、利用可能なすべてのボリュームの一覧表示、不要なボリュームの削除を行うことで、ボリュームのライフサイクルを管理できます。
 
-### ボリュームマネージャーの初期化{#initiate-a-volume-manager}
+### ボリュームマネージャーの初期化\{#initiate-a-volume-manager}
 
 ボリュームマネージャーは、Zilliz Cloud のボリュームサービスへの接続を維持します。ボリュームを管理する前に、ボリュームマネージャーを初期化する必要があります。
 
@@ -73,7 +69,7 @@ VolumeManager volumeManager = new VolumeManager(volumeManagerParam);
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export BASE_URL="https://api.cloud.zilliz.com"
@@ -83,9 +79,9 @@ export TOKEN="YOUR_API_KEY"
 </TabItem>
 </Tabs>
 
-### ボリュームの作成{#create-a-volume}
+### ボリュームの作成\{#create-a-volume}
 
-ボリュームはZilliz Cloudプロジェクトに固有のものです。ボリュームを作成する際には、プロジェクトID、リージョンID、およびボリュームの名前を指定する必要があります。
+ボリュームは Zilliz Cloud プロジェクト固有です。ボリュームを作成する際は、プロジェクト ID、リージョン ID、およびボリューム名を以下のように指定する必要があります：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -124,7 +120,7 @@ System.out.printf("\nVolume %s created%n", "my_volume");
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export BASE_URL="https://api.cloud.zilliz.com"
@@ -151,15 +147,15 @@ curl --request POST \
 </TabItem>
 </Tabs>
 
-上記のコマンドでは、
+上記のコマンドにおいて、
 
-- `regionId`: 作成するボリュームのリージョンは、データのインポートまたは移行を計画しているターゲットクラスターのクラウドプロバイダーとリージョンと一致する必要があります。
+- `regionId`: 作成するボリュームのリージョンは、データのインポートまたは移行先となるターゲットクラスターのクラウドプロバイダーおよびリージョンと一致している必要があります。
 
-- `volumeName`: 作成するボリュームの名前は、組織全体で一意である必要があり、64文字以内、文字またはアンダースコアで始まり、文字、数字、ハイフン、アンダースコアのみを含めることができます。
+- `volumeName`: 作成するボリュームの名前は、組織全体で一意である必要があり、64 文字以下で、文字またはアンダースコアで始まり、文字、数字、ハイフン、アンダースコアのみを含めることができます。
 
-### ボリュームを一覧表示する{#list-volumes}
+### ボリュームの一覧表示\{#list-volumes}
 
-特定のZilliz Cloudプロジェクト内に既に作成されているボリュームは、次のように確認できます。
+特定の Zilliz Cloud プロジェクト内で既に作成されているボリュームは、以下のように確認できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -221,7 +217,7 @@ System.out.println("\nlistVolumes results: " + new Gson().toJson(listVolumesResp
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export BASE_URL="https://api.cloud.zilliz.com"
@@ -250,9 +246,9 @@ curl --request GET \
 </TabItem>
 </Tabs>
 
-### ボリュームの削除{#delete-a-volume}
+### ボリュームの削除\{#delete-a-volume}
 
-不要になったボリュームは削除できます。ボリュームを削除するには、次のようにします。
+ボリュームが不要になったら削除できます。ボリュームを削除するには、次の手順に従ってください：
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -287,7 +283,7 @@ System.out.printf("\nVolume %s deleted%n", "my_volume");
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 export BASE_URL="https://api.cloud.zilliz.com"
@@ -310,13 +306,13 @@ curl --request DELETE \
 </TabItem>
 </Tabs>
 
-## ボリュームへのデータのアップロード{#upload-data-into-a-volume}
+## データをボリュームにアップロードする\{#upload-data-into-a-volume}
 
-ボリュームの準備ができたら、ボリュームにデータをアップロードします。
+ボリュームの準備が整ったら、そのボリュームにデータをアップロードします。
 
-### ボリュームファイルマネージャーの初期化{#initiate-a-volume-file-manager}
+### ボリュームファイルマネージャーを初期化する\{#initiate-a-volume-file-manager}
 
-ボリュームファイルマネージャーは、Zilliz Cloudのボリュームサービス上の特定のボリュームへの接続を維持します。ファイルをボリュームにアップロードする前に、ボリュームファイルマネージャーを初期化する必要があります。
+ボリュームファイルマネージャーは、Zilliz Cloud のボリュームサービス上の特定のボリュームへの接続を維持します。ファイルをボリュームにアップロードする前に、ボリュームファイルマネージャーを初期化する必要があります。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>
@@ -351,9 +347,9 @@ VolumeFileManager volumeFileManager = new VolumeFileManager(volumeFileManagerPar
 </TabItem>
 </Tabs>
 
-### ファイルのアップロード{#upload-files}
+### ファイルのアップロード\{#upload-files}
 
-ボリュームファイルマネージャーの準備ができたら、それを使用して指定されたボリュームにファイルをアップロードします。次の例では、ソースファイルパスにあるローカルファイルを、ボリューム内のターゲットファイルパスにアップロードします。
+ボリュームファイルマネージャーの準備が整ったら、それを使用して指定されたボリュームにファイルをアップロードします。次の例では、ソースファイルパスにあるローカルファイルを、ボリューム内のターゲットファイルパスにアップロードします。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"}]}>
 <TabItem value='python'>

@@ -10,7 +10,7 @@ notebook: FALSE
 description: " November 2025 Release Notes  | Cloud"
 type: origin
 token: CK0ewQWC2iz6lakP0kscqogbnGh
-sidebar_position: 5
+sidebar_position: 6
 keywords: 
   - zilliz
   - vector database

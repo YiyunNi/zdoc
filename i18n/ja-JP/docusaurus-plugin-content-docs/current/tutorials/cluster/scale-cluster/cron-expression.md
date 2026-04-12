@@ -9,16 +9,12 @@ type: origin
 token: UwfQwgneji2a7tkPa1rcQ7Rhnwc
 sidebar_position: 3
 keywords: 
-  - Zilliz
+  - zilliz
   - ベクトルデータベース
   - cloud
   - クラスター
   - 管理
   - cron式
-  - 音声類似性検索
-  - エラスティック ベクトルデータベース
-  - Pinecone vs Milvus
-  - Chroma vs Milvus
 
 ---
 
@@ -29,11 +25,11 @@ import Admonition from '@theme/Admonition';
 
 cron式は、特定の時間にスケーリングタスクを実行するためのスケジュールを定義します。
 
-このガイドでは、**Unix cron**形式（標準の**5フィールド**構文）について、**分単位**の粒度で説明します。スケジュールは、**すべてのフィールドが**現在の時刻と一致したときにトリガーされます。cronスケジュールは、選択したタイムゾーンで評価されます。
+このガイドでは、**Unix cron**形式（標準の**5フィールド**構文）について、**分単位**の粒度で説明します。スケジュールは、**すべてのフィールドが一致**したときにトリガーされます。cronスケジュールは、選択したタイムゾーンで評価されます。
 
-## 式の形式とフィールド値{#expression-format-and-field-values}
+## 式の形式とフィールド値\{#expression-format-and-field-values}
 
-cron式は、空白で区切られた5つの時間と日付のフィールドを持ちます。 
+cron式は、空白で区切られた5つの時間と日付のフィールドで構成されます。 
 
 ```bash
 * * * * *
@@ -48,7 +44,7 @@ cron式は、空白で区切られた5つの時間と日付のフィールドを
    <tr>
      <th><p><strong>フィールド</strong></p></th>
      <th><p><strong>有効な値の範囲</strong></p></th>
-     <th><p><strong>備考</strong></p></th>
+     <th><p><strong>注釈</strong></p></th>
    </tr>
    <tr>
      <td><p><code>minute</code></p></td>
@@ -77,7 +73,7 @@ cron式は、空白で区切られた5つの時間と日付のフィールドを
    </tr>
 </table>
 
-## 特殊文字と演算子{#special-characters-and-operators}
+## 特殊文字と演算子\{#special-characters-and-operators}
 
 これらの演算子は、ほとんどのフィールドで使用できます。
 
@@ -109,11 +105,11 @@ cron式は、空白で区切られた5つの時間と日付のフィールドを
    </tr>
 </table>
 
-## 例{#examples}
+## 例\{#examples}
 
 このセクションでは、直接使用できる[シンプルなテンプレート](./cron-expression#simple-templates)をいくつか紹介します。演算子の組み合わせを使用する複雑な式が必要な場合は、[こちら](./cron-expression#common-scenarios)の例を参照してください。
 
-### シンプルなテンプレート{#simple-templates}
+### シンプルなテンプレート\{#simple-templates}
 
 <table>
    <tr>
@@ -144,15 +140,15 @@ cron式は、空白で区切られた5つの時間と日付のフィールドを
    <tr>
      <td><p>平日09:00</p></td>
      <td><p><code>0 9 &ast; &ast; 1-5</code></p></td>
-     <td><p>月～金曜日の09:00に実行</p></td>
+     <td><p>月曜日から金曜日の09:00に実行</p></td>
    </tr>
    <tr>
-     <td><p>毎月1日09:00</p></td>
+     <td><p>毎月1日の09:00</p></td>
      <td><p><code>0 9 1 &ast; &ast;</code></p></td>
      <td><p>毎月1日の09:00に実行</p></td>
    </tr>
    <tr>
-     <td><p>毎週日曜日09:00</p></td>
+     <td><p>毎週日曜日の09:00</p></td>
      <td><p><code>0 9 &ast; &ast; 0</code></p></td>
      <td><p>毎週日曜日の09:00に実行</p></td>
    </tr>
@@ -163,7 +159,7 @@ cron式は、空白で区切られた5つの時間と日付のフィールドを
    </tr>
 </table>
 
-### 一般的なシナリオ{#common-scenarios}
+### 一般的なシナリオ\{#common-scenarios}
 
 以下の例は、一般的なワークロードパターンに基づいて、スケジュールされたスケーリングタスクのUnix cron式を記述する方法を示しています。
 

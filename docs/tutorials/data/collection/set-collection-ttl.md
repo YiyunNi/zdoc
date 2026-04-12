@@ -1,7 +1,7 @@
 ---
 title: "Set Collection TTL | Cloud"
 slug: /set-collection-ttl
-sidebar_label: "Set Collection TTL"
+sidebar_label: "TTL"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

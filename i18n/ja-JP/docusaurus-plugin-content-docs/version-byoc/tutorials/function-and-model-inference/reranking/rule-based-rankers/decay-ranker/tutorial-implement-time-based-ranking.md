@@ -1,10 +1,10 @@
 ---
-title: "チュートリアル: 時間ベースのランキングを実装する | BYOC"
+title: "チュートリアル：時間ベースのランキングの実装 | BYOC"
 slug: /tutorial-implement-time-based-ranking
-sidebar_label: "チュートリアル: 時間ベースのランキングを実装する"
+sidebar_label: "チュートリアル：時間ベースのランキングの実装"
 beta: FALSE
 notebook: FALSE
-description: "多くの検索アプリケーションでは、コンテンツの鮮度はその関連性と同じくらい重要です。ニュース記事、製品リスト、ソーシャルメディアの投稿、研究論文はすべて、セマンティックな関連性と新しさを両立させるランキングシステムから恩恵を受けます。このチュートリアルでは、Zilliz Cloudでディケイランカーを使用して時間ベースのランキングを実装する方法を説明します。 | BYOC"
+description: "多くの検索アプリケーションにおいて、コンテンツの新しさは関連性と同様に重要です。ニュース記事、商品リスト、ソーシャルメディアの投稿、研究論文などはすべて、意味的な関連性と新しさをバランスよく考慮したランキングシステムから恩恵を受けます。このチュートリアルでは、Zilliz Cloud でデケイランカーを使用して時間ベースのランキングを実装する方法を示します。 | BYOC"
 type: origin
 token: Dj2NwrlqTiYlmDkwfAbcJNWSntd
 sidebar_position: 5
@@ -13,17 +13,13 @@ keywords:
   - ベクトルデータベース
   - cloud
   - collection
-  - データ
+  - data
   - 検索結果の再ランキング
   - 結果の再ランキング
-  - ディケイ
-  - ディケイランカー
+  - decay
+  - decay ranker
   - チュートリアル
   - 時間ベースのランキング
-  - 非構造化データ
-  - ベクトルデータベース
-  - IVF
-  - knn
 
 ---
 
@@ -32,25 +28,25 @@ import Admonition from '@theme/Admonition';
 
 # チュートリアル: 時間ベースのランキングを実装する
 
-多くの検索アプリケーションでは、コンテンツの鮮度はその関連性と同じくらい重要です。ニュース記事、製品リスト、ソーシャルメディアの投稿、研究論文はすべて、意味的な関連性と新しさを両立させるランキングシステムから恩恵を受けます。このチュートリアルでは、減衰ランカーを使用してZilliz Cloudで時間ベースのランキングを実装する方法を説明します。
+多くの検索アプリケーションにおいて、コンテンツの新鮮さはその関連性と同様に重要です。ニュース記事、商品リスト、ソーシャルメディア投稿、研究論文などはすべて、意味的関連性と新しさのバランスを取るランキングシステムからメリットを得られます。このチュートリアルでは、decay ranker（減衰ランカー）を使用して Zilliz Cloud で時間ベースのランキングを実装する方法を紹介します。
 
-## 減衰ランカーを理解する{#understand-decay-rankers}
+## decay ranker の理解\{#understand-decay-rankers}
 
-減衰ランカーを使用すると、参照点に対する数値（タイムスタンプなど）に基づいてドキュメントをブーストまたはペナルティを課すことができます。時間ベースのランキングの場合、これは、意味的な関連性が類似している場合でも、新しいドキュメントが古いドキュメントよりも高いスコアを受け取ることを意味します。
+decay ranker を使用すると、数値（タイムスタンプなど）に基づいてドキュメントをブーストまたはペナルティとして調整できます。基準点からの相対的な値によってスコアが変化します。時間ベースのランキングの場合、意味的関連性が同等であっても、新しいドキュメントの方が古いドキュメントよりも高いスコアを獲得できるようになります。
 
-Zilliz Cloudは、3種類の減衰ランカーをサポートしています。
+Zilliz Cloud は以下の3種類の decay ranker をサポートしています:
 
-- **ガウス** (`gauss`): 滑らかで緩やかな減衰を提供するベル型の曲線
+- **ガウス** (`gauss`): 滑らかで緩やかな減衰を提供するベル型カーブ
 
-- **指数** (`exp`): 最近のコンテンツを強く強調するために、より急な初期の落ち込みを作成します
+- **指数** (`exp`): 最近のコンテンツを強く強調するために急激な初期減衰を生じさせる
 
 - **線形** (`linear`): 予測可能で理解しやすい直線的な減衰
 
-各ランカーには、さまざまなユースケースに適した異なる特性があります。詳細については、[減衰ランカーの概要](./decay-ranker-oveview)を参照してください。
+各ランカーは異なる特性を持ち、さまざまなユースケースに適しています。詳細については、[Decay Ranker Overview](./decay-ranker-oveview) を参照してください。
 
-## 時間認識型検索システムを構築する{#build-a-time-aware-search-system}
+## 時間を意識した検索システムの構築\{#build-a-time-aware-search-system}
 
-関連性と時間の両方に基づいてコンテンツを効果的にランク付けする方法を示すニュース記事検索システムを作成します。実装から始めましょう。
+ここでは、関連性と時間の両方に基づいてコンテンツを効果的にランキングするニュース記事検索システムを作成します。実装から始めましょう:
 
 ```python
 import datetime
@@ -74,9 +70,9 @@ collection_name = "news_articles_tutorial"
 milvus_client.drop_collection(collection_name)
 ```
 
-## ステップ1: スキーマの設計{#step-1-design-the-schema}
+## ステップ 1: スキーマの設計\{#step-1-design-the-schema}
 
-時間ベースの検索では、コンテンツとともに公開タイムスタンプを保存する必要があります。
+時系列検索を行うには、コンテンツとともに公開タイムスタンプを保存する必要があります。
 
 ```python
 # Create schema with fields for content and temporal information
@@ -89,9 +85,9 @@ schema.add_field("sparse_vector", DataType.SPARSE_FLOAT_VECTOR)  # For sparse (B
 schema.add_field("publish_date", DataType.INT64)  # Timestamp for decay ranking
 ```
 
-## ステップ2: 埋め込み関数の設定{#step-2-set-up-embedding-functions}
+## Step 2: 埋め込み関数の設定\{#step-2-set-up-embedding-functions}
 
-ここでは、密（セマンティック）と疎（キーワード）の両方の埋め込み関数を設定します。
+密（セマンティック）埋め込み関数と疎（キーワード）埋め込み関数の両方を設定します。
 
 ```python
 # Create embedding function for semantic search
@@ -118,9 +114,9 @@ bm25_function = Function(
 schema.add_function(bm25_function)
 ```
 
-## ステップ3：インデックスパラメータの設定{#step-3-configure-index-parameters}
+## Step 3: Configure index parameters\{#step-3-configure-index-parameters}
 
-高速なベクトル検索のために、適切なインデックスパラメータを設定しましょう。
+高速なベクトル検索のための適切なインデックスパラメータを設定しましょう。
 
 ```python
 # Set up indexes for fast search
@@ -146,9 +142,9 @@ milvus_client.create_collection(
 )
 ```
 
-## ステップ4：サンプルデータを準備する{#step-4-prepare-sample-data}
+## ステップ 4: サンプルデータの準備\{#step-4-prepare-sample-data}
 
-このチュートリアルでは、異なる発行日のニュース記事のセットを作成します。ここでは、減衰ランキング効果を明確に示すために、ほぼ同じ内容で日付が異なる記事のペアを含めていることに注目してください。
+このチュートリアルでは、異なる公開日を持つ一連のニュース記事を作成します。ほぼ同一の内容を持ちながら公開日だけが異なる記事のペアを含めることで、減衰ランキング効果を明確に示します。
 
 ```python
 # Get current time
@@ -201,9 +197,9 @@ milvus_client.insert(collection_name, articles)
 print(f"Inserted {len(articles)} articles into the collection")
 ```
 
-## Step 5: さまざまなディケイランカーを設定する{#step-5-configure-different-decay-rankers}
+## ステップ 5: 異なる減衰ランカーを設定する\{#step-5-configure-different-decay-rankers}
 
-次に、3つの異なるディケイランカーを作成し、それぞれの違いを強調するために異なるパラメータを設定します。
+次に、それぞれ異なるパラメータを持つ3つの減衰ランカーを作成し、その違いを明確にします。
 
 ```python
 # Use current time as reference point
@@ -255,25 +251,25 @@ linear_ranker = Function(
 )
 ```
 
-上記のコードでは、以下を設定しています。
+前述のコードにおいて：
 
-- `reranker`: 時間ベースの減衰関数には`decay`を設定します。
+- `reranker`: 時間ベースの減衰関数には `decay` を設定します。
 
-- `function`: 減衰関数のタイプ（gauss、exp、またはlinear）
+- `function`: 減衰関数のタイプ（`gauss`、`exp`、または `linear`）
 
-- `origin`: 参照点（通常は現在時刻）
+- `origin`: 基準点（通常は現在時刻）
 
 - `offset`: ドキュメントが完全な関連性を維持する期間
 
-- `scale`: オフセットを超えて関連性が低下する速度を制御します。
+- `scale`: `offset` を超えた後の関連性がどれだけ速く低下するかを制御します。
 
-- `decay`: offset+scaleでの減衰係数（例：0.5は半分の関連性を意味します）
+- `decay`: `offset + scale` における減衰係数（例：0.5 は関連性が半分になることを意味します）
 
-異なる動作のためにこれらの関数をどのように調整できるかを示すために、異なるパラメータで指数ランク付けを設定したことに注目してください。
+ここでは、指数関数的ランカー（exponential ranker）を異なるパラメータで設定し、これらの関数をさまざまな動作に調整できることを示しています。
 
-## ステップ6：減衰ランク付けを視覚化する{#step-6-visualize-the-decay-rankers}
+## Step 6: 減衰ランカーの可視化\{#step-6-visualize-the-decay-rankers}
 
-検索を実行する前に、これらの異なる設定の減衰ランク付けがどのように動作するかを視覚的に比較してみましょう。
+検索を実行する前に、設定の異なる減衰ランカーがどのように動作するかを視覚的に比較してみましょう。
 
 ```python
 # Visualize the decay functions with different parameters
@@ -311,57 +307,7 @@ for days in [0, 3, 7, 10, 14, 21, 30, 60, 90]:
     print(f"{days:2d} days | {gaussian_decay:.4f}   | {exponential_decay:.4f}     | {linear_decay:.4f}")
 ```
 
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-Zilliz Cloud は、オープンソースのベクトルデータベースである Milvus をベースに構築されています。Zilliz Cloud は、Milvus のすべての機能と、クラウドネイティブなスケーラビリティ、信頼性、セキュリティを提供します。
-
-Zilliz Cloud は、以下のような様々なユースケースで利用できます。
-
-- 類似画像検索
-- レコメンデーションシステム
-- 自然言語処理
-- 異常検知
-- ゲノム解析
-
-Zilliz Cloud の詳細については、[Zilliz Cloud のドキュメント](https://zilliz.com/cloud/doc) を参照してください。
-
-## Zilliz Cloud の機能
-
-Zilliz Cloud は、以下のような主要な機能を提供します。
-
-- **フルマネージドサービス**: Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。インフラストラクチャの管理やメンテナンスについて心配する必要はありません。
-- **スケーラビリティ**: Zilliz Cloud は、クラウドネイティブなスケーラビリティを提供します。必要に応じて、データベースを簡単にスケールアップまたはスケールダウンできます。
-- **信頼性**: Zilliz Cloud は、高い信頼性を提供します。データは複数のアベイラビリティゾーンに複製され、自動的にバックアップされます。
-- **セキュリティ**: Zilliz Cloud は、強力なセキュリティ機能を提供します。データは暗号化され、アクセス制御が適用されます。
-- **Milvus 互換**: Zilliz Cloud は、オープンソースのベクトルデータベースである Milvus と互換性があります。既存の Milvus アプリケーションを Zilliz Cloud に簡単に移行できます。
-- **RESTful API**: Zilliz Cloud は、RESTful API を提供します。任意のプログラミング言語からデータベースにアクセスできます。
-- **SDK**: Zilliz Cloud は、Python、Java、Go などのプログラミング言語用の SDK を提供します。
-
-## Zilliz Cloud のアーキテクチャ
-
-Zilliz Cloud は、以下のようなコンポーネントで構成されています。
-
-- **Milvus**: Zilliz Cloud のコアとなるベクトルデータベースです。
-- **Kubernetes**: Milvus をデプロイおよび管理するためのコンテナオーケストレーションプラットフォームです。
-- **オブジェクトストレージ**: ベクトルデータを保存するためのストレージサービスです。
-- **メッセージキュー**: Milvus のコンポーネント間でメッセージを送信するためのサービスです。
-- **ロードバランサー**: クライアントからのリクエストを Milvus のインスタンスに分散するためのサービスです。
-
-## Zilliz Cloud の料金
-
-Zilliz Cloud の料金は、使用量に基づいて課金されます。詳細については、[Zilliz Cloud の料金ページ](https://zilliz.com/cloud/pricing) を参照してください。
-
-## Zilliz Cloud の始め方
-
-Zilliz Cloud を始めるには、以下の手順に従います。
-
-1. Zilliz Cloud のアカウントを作成します。
-2. Zilliz Cloud のコンソールにログインします。
-3. 新しいクラスターを作成します。
-4. クラスターにデータをインポートします。
-5. ベクトル検索アプリケーションを構築します。
-
-詳細については、[Zilliz Cloud のクイックスタートガイド](https://zilliz.com/cloud/doc/quickstart) を参照してください。
+期待される出力:
 
 ```python
 === TIME DECAY EFFECT VISUALIZATION ===
@@ -378,7 +324,7 @@ Days ago | Gaussian | Exponential | Linear
 90 days | 0.0164   | 0.0000     | 0.0000
 ```
 
-## ステップ7: 結果表示のためのヘルパー関数{#step-7-helper-function-for-results-display}
+## ステップ 7: 結果表示のためのヘルパー関数\{#step-7-helper-function-for-results-display}
 
 ```python
 # Helper function to format search results with dates and scores
@@ -394,9 +340,9 @@ def print_search_results(results, title):
         print()
 ```
 
-## ステップ8: 標準検索と減衰ベース検索の比較{#step-8-compare-standard-vs-decay-based-search}
+## ステップ 8: 標準検索と減衰ベースの検索を比較する\{#step-8-compare-standard-vs-decay-based-search}
 
-それでは、検索クエリを実行し、減衰ランキングの有無による結果を比較してみましょう。
+では、検索クエリを実行し、減衰ランキングありとなしで結果を比較してみましょう。
 
 ```python
 # Define our search query
@@ -456,97 +402,7 @@ linear_results = milvus_client.search(
 print_search_results(linear_results, "SEARCH RESULTS WITH LINEAR DECAY RANKING")
 ```
 
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-Zilliz Cloud は、オープンソースのベクトルデータベースである Milvus をベースに構築されています。Milvus は、大規模なベクトル検索アプリケーション向けに設計された、高性能でスケーラブルなベクトルデータベースです。
-
-Zilliz Cloud は、Milvus のすべての機能を提供し、さらに多くの機能を提供します。Zilliz Cloud は、以下のような機能を提供します。
-
-- フルマネージドサービス: Zilliz Cloud は、データベースの管理、スケーリング、バックアップ、リカバリをすべて処理します。
-- 高可用性: Zilliz Cloud は、高可用性アーキテクチャで設計されており、データベースが常に利用可能であることを保証します。
-- スケーラビリティ: Zilliz Cloud は、必要に応じてデータベースを簡単にスケーリングできます。
-- セキュリティ: Zilliz Cloud は、データのセキュリティを確保するために、さまざまなセキュリティ機能を提供します。
-- 監視とアラート: Zilliz Cloud は、データベースのパフォーマンスを監視し、問題が発生したときにアラートを送信します。
-
-Zilliz Cloud は、以下のようなさまざまなアプリケーションで使用できます。
-
-- 類似画像検索
-- 類似動画検索
-- 類似音声検索
-- 類似テキスト検索
-- レコメンデーションシステム
-- 不正検出
-- 異常検出
-
-Zilliz Cloud は、ベクトル検索アプリケーションを構築するための強力なプラットフォームです。
-
-## Zilliz Cloud の機能 {#zilliz-cloud-features}
-
-Zilliz Cloud は、ベクトル検索アプリケーションを構築するためのさまざまな機能を提供します。
-
-### スケーラブルなベクトルデータベース {#scalable-vector-database}
-
-Zilliz Cloud は、オープンソースのベクトルデータベースである Milvus をベースに構築されています。Milvus は、大規模なベクトル検索アプリケーション向けに設計された、高性能でスケーラブルなベクトルデータベースです。
-
-Zilliz Cloud は、Milvus のすべての機能を提供し、さらに多くの機能を提供します。Zilliz Cloud は、以下のような機能を提供します。
-
-- フルマネージドサービス: Zilliz Cloud は、データベースの管理、スケーリング、バックアップ、リカバリをすべて処理します。
-- 高可用性: Zilliz Cloud は、高可用性アーキテクチャで設計されており、データベースが常に利用可能であることを保証します。
-- スケーラビリティ: Zilliz Cloud は、必要に応じてデータベースを簡単にスケーリングできます。
-- セキュリティ: Zilliz Cloud は、データのセキュリティを確保するために、さまざまなセキュリティ機能を提供します。
-- 監視とアラート: Zilliz Cloud は、データベースのパフォーマンスを監視し、問題が発生したときにアラートを送信します。
-
-### 開発者ツール {#developer-tools}
-
-Zilliz Cloud は、ベクトル検索アプリケーションを構築するためのさまざまな開発者ツールを提供します。
-
-- SDK: Zilliz Cloud は、Python、Java、Go、Node.js などのさまざまな言語の SDK を提供します。
-- RESTful API: Zilliz Cloud は、RESTful API を提供しており、任意の言語からデータベースにアクセスできます。
-- CLI: Zilliz Cloud は、データベースを管理するための CLI ツールを提供します。
-- コンソール: Zilliz Cloud は、データベースを管理するための Web ベースのコンソールを提供します。
-
-### セキュリティとコンプライアンス {#security-and-compliance}
-
-Zilliz Cloud は、データのセキュリティとコンプライアンスを確保するために、さまざまなセキュリティ機能を提供します。
-
-- 認証と認可: Zilliz Cloud は、認証と認可をサポートしており、データベースへのアクセスを制御できます。
-- 暗号化: Zilliz Cloud は、保存中および転送中のデータを暗号化します。
-- 監査ログ: Zilliz Cloud は、データベースへのすべてのアクセスを監査ログに記録します。
-- コンプライアンス: Zilliz Cloud は、GDPR、HIPAA、SOC 2 などのさまざまなコンプライアンス標準に準拠しています。
-
-## Zilliz Cloud の料金 {#zilliz-cloud-pricing}
-
-Zilliz Cloud は、従量課金制の料金モデルを提供しています。使用したリソースに対してのみ料金を支払います。
-
-Zilliz Cloud の料金は、以下の要素によって決まります。
-
-- ストレージ: データベースに保存するデータの量
-- コンピューティング: データベースが実行するクエリの数と複雑さ
-- ネットワーク: データベースとの間で転送されるデータの量
-
-Zilliz Cloud の料金の詳細については、[Zilliz Cloud の料金ページ](https://zilliz.com/cloud/pricing)を参照してください。
-
-## Zilliz Cloud の開始方法 {#get-started-with-zilliz-cloud}
-
-Zilliz Cloud の開始方法は簡単です。
-
-1. Zilliz Cloud アカウントを作成します。
-2. Zilliz Cloud コンソールにログインします。
-3. 新しいクラスターを作成します。
-4. データをクラスターにインポートします。
-5. ベクトル検索アプリケーションを構築します。
-
-Zilliz Cloud の開始方法の詳細については、[Zilliz Cloud のドキュメント](https://zilliz.com/cloud/docs)を参照してください。
-
-## Zilliz Cloud のサポート {#zilliz-cloud-support}
-
-Zilliz Cloud は、さまざまなサポートオプションを提供しています。
-
-- ドキュメント: Zilliz Cloud は、詳細なドキュメントを提供しており、データベースの使用方法を学ぶことができます。
-- フォーラム: Zilliz Cloud は、コミュニティフォーラムを提供しており、他のユーザーと質問したり、回答したりできます。
-- サポートチケット: Zilliz Cloud は、サポートチケットシステムを提供しており、Zilliz Cloud サポートチームに直接連絡できます。
-
-Zilliz Cloud のサポートの詳細については、[Zilliz Cloud のサポートページ](https://zilliz.com/cloud/support)を参照してください。
+期待される出力:
 
 ```python
 === SEARCH RESULTS WITHOUT DECAY RANKING ===
@@ -666,9 +522,9 @@ Zilliz Cloud のサポートの詳細については、[Zilliz Cloud のサポ�
    Score: 0.2158
 ```
 
-## ステップ9：スコア計算を理解する{#step-9-understand-score-calculation}
+## ステップ 9: スコア計算の理解\{#step-9-understand-score-calculation}
 
-元の関連性と減衰係数を組み合わせて最終スコアがどのように計算されるかを詳しく見ていきましょう。
+最終スコアが、元の関連性と減衰係数を組み合わせてどのように計算されるかを詳しく見ていきましょう。
 
 ```python
 # Add a detailed breakdown for the first 3 results from Gaussian decay
@@ -694,46 +550,7 @@ for item in gaussian_results[0][:3]:
     print()
 ```
 
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-Zilliz Cloud は、オープンソースのベクトルデータベースである Milvus をベースに構築されています。Zilliz Cloud は、Milvus のすべての機能に加えて、スケーラビリティ、信頼性、セキュリティなどのエンタープライズグレードの機能を提供します。
-
-Zilliz Cloud は、以下のような様々なユースケースで利用できます。
-
-- 類似画像検索
-- レコメンデーションシステム
-- 自然言語処理
-- 異常検知
-- ゲノム解析
-
-Zilliz Cloud の詳細については、[Zilliz Cloud のドキュメント](https://zilliz.com/cloud/doc) を参照してください。
-
-## Zilliz Cloud の機能
-
-Zilliz Cloud は、以下のような主要な機能を提供します。
-
-- **フルマネージドサービス**: Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。ユーザーは、インフラストラクチャの管理やメンテナンスについて心配する必要はありません。
-- **スケーラビリティ**: Zilliz Cloud は、水平スケーリングをサポートしており、大量のデータを処理できます。
-- **信頼性**: Zilliz Cloud は、データの耐久性と可用性を保証するために、複数のアベイラビリティゾーンにデータを複製します。
-- **セキュリティ**: Zilliz Cloud は、データの暗号化、アクセス制御、監査ログなどのセキュリティ機能を提供します。
-- **RESTful API**: Zilliz Cloud は、RESTful API を提供しており、様々なプログラミング言語からアクセスできます。
-- **SDK**: Zilliz Cloud は、Python、Java、Go などのプログラミング言語向けの SDK を提供しています。
-
-## Zilliz Cloud の料金
-
-Zilliz Cloud の料金は、使用量に基づいて課金されます。詳細については、[Zilliz Cloud の料金ページ](https://zilliz.com/cloud/pricing) を参照してください。
-
-## Zilliz Cloud の始め方
-
-Zilliz Cloud を始めるには、以下の手順に従います。
-
-1. Zilliz Cloud のアカウントを作成します。
-2. Zilliz Cloud のコンソールにログインします。
-3. クラスターを作成します。
-4. コレクションを作成し、データをインポートします。
-5. ベクトル検索を実行します。
-
-詳細については、[Zilliz Cloud のクイックスタートガイド](https://zilliz.com/cloud/doc/quickstart) を参照してください。
+期待される出力:
 
 ```python
 === SCORE CALCULATION BREAKDOWN (GAUSSIAN DECAY) ===
@@ -759,7 +576,7 @@ Item: AI Development Updates Released Yesterday
   Actual final score: 0.3670
 ```
 
-## ステップ10：時間減衰を伴うハイブリッド検索{#step-10-hybrid-search-with-time-decay}
+## ステップ 10: 時間減衰を伴うハイブリッド検索\{#step-10-hybrid-search-with-time-decay}
 
 より複雑なシナリオでは、ハイブリッド検索を使用して、密（セマンティック）ベクトルと疎（キーワード）ベクトルを組み合わせることができます。
 
@@ -801,83 +618,7 @@ hybrid_exponential_results = milvus_client.hybrid_search(
 print_search_results(hybrid_exponential_results, "HYBRID SEARCH RESULTS WITH EXPONENTIAL DECAY RANKING")
 ```
 
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-Zilliz Cloud は、オープンソースのベクトルデータベースである Milvus をベースに構築されています。Milvus は、大規模なベクトル検索アプリケーション向けに設計された、高性能でスケーラブルなベクトルデータベースです。
-
-Zilliz Cloud は、Milvus のすべての機能を提供し、さらに多くの機能を提供します。Zilliz Cloud は、次のような機能を提供します。
-
-- フルマネージドサービス: Zilliz Cloud は、Milvus のデプロイ、管理、スケーリングを自動的に行います。
-- 高可用性: Zilliz Cloud は、高可用性を提供するために、複数のアベイラビリティーゾーンにデプロイされます。
-- スケーラビリティ: Zilliz Cloud は、必要に応じて自動的にスケーリングされます。
-- セキュリティ: Zilliz Cloud は、データのセキュリティを保護するために、さまざまなセキュリティ機能を提供します。
-- 監視とアラート: Zilliz Cloud は、監視とアラート機能を提供し、システムの健全性を監視できます。
-
-Zilliz Cloud は、次のようなさまざまなアプリケーションで使用できます。
-
-- 類似画像検索
-- レコメンデーションシステム
-- 自然言語処理
-- 異常検出
-- ゲノム配列解析
-
-Zilliz Cloud の詳細については、[Zilliz Cloud のドキュメント](https://zilliz.com/cloud/doc) を参照してください。
-
-## Zilliz Cloud の機能
-
-Zilliz Cloud は、ベクトル検索アプリケーションを構築するためのさまざまな機能を提供します。
-
-### ベクトルデータベース
-
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-### スケーラビリティ
-
-Zilliz Cloud は、必要に応じて自動的にスケーリングされます。これにより、アプリケーションの成長に合わせて、データベースを簡単に拡張できます。
-
-### 高可用性
-
-Zilliz Cloud は、高可用性を提供するために、複数のアベイラビリティーゾーンにデプロイされます。これにより、データベースが常に利用可能であることが保証されます。
-
-### セキュリティ
-
-Zilliz Cloud は、データのセキュリティを保護するために、さまざまなセキュリティ機能を提供します。これには、暗号化、アクセス制御、ネットワークセキュリティが含まれます。
-
-### 監視とアラート
-
-Zilliz Cloud は、監視とアラート機能を提供し、システムの健全性を監視できます。これにより、問題が発生した場合に迅速に対応できます。
-
-## Zilliz Cloud のユースケース
-
-Zilliz Cloud は、次のようなさまざまなアプリケーションで使用できます。
-
-### 類似画像検索
-
-Zilliz Cloud を使用すると、類似画像検索アプリケーションを構築できます。これにより、ユーザーは画像に基づいて類似画像を検索できます。
-
-### レコメンデーションシステム
-
-Zilliz Cloud を使用すると、レコメンデーションシステムを構築できます。これにより、ユーザーの行動に基づいて、関連するアイテムを推奨できます。
-
-### 自然言語処理
-
-Zilliz Cloud を使用すると、自然言語処理アプリケーションを構築できます。これにより、テキストに基づいて、関連する情報を検索できます。
-
-### 異常検出
-
-Zilliz Cloud を使用すると、異常検出アプリケーションを構築できます。これにより、データ内の異常を検出できます。
-
-### ゲノム配列解析
-
-Zilliz Cloud を使用すると、ゲノム配列解析アプリケーションを構築できます。これにより、ゲノム配列に基づいて、関連する情報を検索できます。
-
-## Zilliz Cloud の料金
-
-Zilliz Cloud は、使用量に基づいて課金されます。料金の詳細については、[Zilliz Cloud の料金ページ](https://zilliz.com/cloud/pricing) を参照してください。
-
-## Zilliz Cloud の開始方法
-
-Zilliz Cloud の開始方法については、[Zilliz Cloud のドキュメント](https://zilliz.com/cloud/doc) を参照してください。
+期待される出力:
 
 ```python
 === HYBRID SEARCH RESULTS WITH GAUSSIAN DECAY RANKING ===
@@ -939,9 +680,9 @@ Zilliz Cloud の開始方法については、[Zilliz Cloud のドキュメン�
    Score: 0.0000
 ```
 
-## ステップ11：異なるパラメータ値で実験する{#step-11-experiment-with-different-parameter-values}
+## Step 11: Experiment with different parameter values\{#step-11-experiment-with-different-parameter-values}
 
-スケールパラメータを調整すると、ガウス減衰関数がどのように影響を受けるかを見てみましょう。
+スケールパラメータを調整すると、ガウス減衰関数にどのような影響を与えるかを見てみましょう。
 
 ```python
 # Create variations of the Gaussian decay function with different scale parameters
@@ -975,115 +716,7 @@ for scale_days in [7, 14, 30]:
     print_search_results(scale_results, f"SEARCH WITH GAUSSIAN DECAY (SCALE = {scale_days} DAYS)")
 ```
 
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-このドキュメントでは、Zilliz Cloud の RESTful API V2 を使用して、Zilliz Cloud のコレクションを管理する方法について説明します。
-
-## コレクションの作成 {#create-a-collection}
-
-コレクションを作成するには、`POST /v2/collections` エンドポイントを使用します。
-
-```http
-POST /v2/collections
-```
-
-### リクエストの本文 {#request-body}
-
-| フィールド名 | 型 | 必須 | 説明 |
-|---|---|---|---|
-| `collectionName` | 文字列 | はい | 作成するコレクションの名前。 |
-| `dimension` | 整数 | はい | コレクションのベクトルの次元。 |
-| `primaryFieldName` | 文字列 | はい | 主キーフィールドの名前。 |
-| `vectorFieldName` | 文字列 | はい | ベクトルフィールドの名前。 |
-| `metricType` | 文字列 | いいえ | ベクトル検索に使用する距離計算方法。デフォルトは `COSINE`。 |
-| `description` | 文字列 | いいえ | コレクションの説明。 |
-
-### 例 {#example}
-
-```json
-{
-    "collectionName": "my_collection",
-    "dimension": 128,
-    "primaryFieldName": "id",
-    "vectorFieldName": "vector",
-    "metricType": "COSINE",
-    "description": "My first collection"
-}
-```
-
-## コレクションの記述 {#describe-a-collection}
-
-コレクションを記述するには、`GET /v2/collections/{collectionName}` エンドポイントを使用します。
-
-```http
-GET /v2/collections/{collectionName}
-```
-
-### パスパラメータ {#path-parameters}
-
-| フィールド名 | 型 | 必須 | 説明 |
-|---|---|---|---|
-| `collectionName` | 文字列 | はい | 記述するコレクションの名前。 |
-
-### 例 {#example-1}
-
-```json
-{
-    "collectionName": "my_collection",
-    "dimension": 128,
-    "primaryFieldName": "id",
-    "vectorFieldName": "vector",
-    "metricType": "COSINE",
-    "description": "My first collection",
-    "rowCount": 0,
-    "autoID": false
-}
-```
-
-## コレクションの削除 {#delete-a-collection}
-
-コレクションを削除するには、`DELETE /v2/collections/{collectionName}` エンドポイントを使用します。
-
-```http
-DELETE /v2/collections/{collectionName}
-```
-
-### パスパラメータ {#path-parameters-1}
-
-| フィールド名 | 型 | 必須 | 説明 |
-|---|---|---|---|
-| `collectionName` | 文字列 | はい | 削除するコレクションの名前。 |
-
-### 例 {#example-2}
-
-```json
-{}
-```
-
-## コレクションのリスト表示 {#list-collections}
-
-コレクションをリスト表示するには、`GET /v2/collections` エンドポイントを使用します。
-
-```http
-GET /v2/collections
-```
-
-### 例 {#example-3}
-
-```json
-[
-    {
-        "collectionName": "my_collection",
-        "dimension": 128,
-        "primaryFieldName": "id",
-        "vectorFieldName": "vector",
-        "metricType": "COSINE",
-        "description": "My first collection",
-        "rowCount": 0,
-        "autoID": false
-    }
-]
-```
+期待される出力:
 
 ```python
 === PARAMETER VARIATION EXPERIMENT: SCALE ===
@@ -1176,9 +809,9 @@ GET /v2/collections
    Score: 0.0000
 ```
 
-## ステップ12：異なるクエリでのテスト{#step-12-testing-with-different-queries}
+## ステップ 12: 異なるクエリでのテスト\{#step-12-testing-with-different-queries}
 
-減衰ランキングが異なる検索クエリでどのように機能するかを見てみましょう。
+さまざまな検索クエリで、減衰ランキング（decay ranking）がどのように動作するかを確認してみましょう。
 
 ```python
 # Try different queries with Gaussian decay
@@ -1196,82 +829,7 @@ for test_query in ["machine learning", "neural networks", "ethics in AI"]:
     print_search_results(test_results, f"TOP 4 RESULTS FOR '{test_query}'")
 ```
 
-Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。Zilliz Cloud を使用すると、ベクトル検索アプリケーションを簡単に構築できます。
-
-Zilliz Cloud は、[Milvus](https://milvus.io/) をベースに構築されています。Milvus は、オープンソースのベクトルデータベースであり、大規模なベクトル検索アプリケーションを構築するための基盤を提供します。Zilliz Cloud は、Milvus のすべての機能を提供し、さらに、スケーラビリティ、信頼性、セキュリティなどのエンタープライズグレードの機能を追加しています。
-
-Zilliz Cloud は、以下のような様々なユースケースで利用できます。
-
-- **AI を活用した検索**: 関連性の高い検索結果を返すことで、ユーザーエクスペリエンスを向上させます。
-- **レコメンデーションエンジン**: ユーザーの行動に基づいて、パーソナライズされたレコメンデーションを提供します。
-- **異常検知**: 異常なパターンを特定し、潜在的な脅威を検出します。
-- **画像検索**: 類似の画像を検索し、視覚的な検索エクスペリエンスを向上させます。
-- **動画検索**: 動画コンテンツを検索し、関連性の高い動画を特定します。
-- **音声検索**: 音声コンテンツを検索し、関連性の高い音声を特定します。
-- **自然言語処理**: テキストデータを分析し、意味のある情報を抽出します。
-
-Zilliz Cloud は、開発者がベクトル検索アプリケーションを簡単に構築できるように、様々なツールとサービスを提供しています。
-
-- **Zilliz Cloud コンソール**: Zilliz Cloud のリソースを管理するためのウェブベースのインターフェースです。
-- **Zilliz Cloud SDK**: Zilliz Cloud の API を操作するためのプログラミングライブラリです。
-- **Zilliz Cloud CLI**: Zilliz Cloud のリソースをコマンドラインから管理するためのツールです。
-
-Zilliz Cloud は、ベクトル検索アプリケーションを構築するための強力なプラットフォームです。Zilliz Cloud を使用すると、開発者は、スケーラブルで信頼性の高いベクトル検索アプリケーションを簡単に構築できます。
-
-## Zilliz Cloud の機能 {#zilliz-cloud-features}
-
-Zilliz Cloud は、ベクトル検索アプリケーションを構築するための様々な機能を提供しています。
-
-- **フルマネージドサービス**: Zilliz Cloud は、ベクトルデータベースのフルマネージドサービスです。これにより、インフラストラクチャの管理に時間を費やすことなく、アプリケーションの構築に集中できます。
-- **スケーラビリティ**: Zilliz Cloud は、大規模なデータセットと高負荷のワークロードに対応できるように設計されています。必要に応じて、リソースを簡単にスケールアップまたはスケールダウンできます。
-- **信頼性**: Zilliz Cloud は、高可用性と耐久性を提供します。データは複数のアベイラビリティゾーンに複製され、自動フェイルオーバーがサポートされています。
-- **セキュリティ**: Zilliz Cloud は、データのセキュリティを保護するための様々な機能を提供します。これには、暗号化、アクセス制御、ネットワークセキュリティが含まれます。
-- **RESTful API**: Zilliz Cloud は、RESTful API を提供しており、様々なプログラミング言語からアクセスできます。
-- **SDK**: Zilliz Cloud は、Python、Java、Go などのプログラミング言語用の SDK を提供しています。
-- **CLI**: Zilliz Cloud は、コマンドラインインターフェース (CLI) を提供しており、Zilliz Cloud のリソースを管理できます。
-- **コンソール**: Zilliz Cloud は、ウェブベースのコンソールを提供しており、Zilliz Cloud のリソースを管理できます。
-
-## Zilliz Cloud のアーキテクチャ {#zilliz-cloud-architecture}
-
-Zilliz Cloud は、Milvus をベースに構築されています。Milvus は、オープンソースのベクトルデータベースであり、大規模なベクトル検索アプリケーションを構築するための基盤を提供します。Zilliz Cloud は、Milvus のすべての機能を提供し、さらに、スケーラビリティ、信頼性、セキュリティなどのエンタープライズグレードの機能を追加しています。
-
-Zilliz Cloud のアーキテクチャは、以下の主要なコンポーネントで構成されています。
-
-- **プロキシ**: プロキシは、クライアントからのリクエストを受け取り、適切なコンポーネントにルーティングします。
-- **クエリノード**: クエリノードは、ベクトル検索クエリを実行します。
-- **データノード**: データノードは、ベクトルデータを保存および管理します。
-- **インデックスノード**: インデックスノードは、ベクトルデータにインデックスを作成します。
-- **ルートコーディネーター**: ルートコーディネーターは、Zilliz Cloud クラスター全体の調整を担当します。
-- **クエリコーディネーター**: クエリコーディネーターは、クエリノードの調整を担当します。
-- **データコーディネーター**: データコーディネーターは、データノードの調整を担当します。
-- **インデックスコーディネーター**: インデックスコーディネーターは、インデックスノードの調整を担当します。
-- **メタデータサービス**: メタデータサービスは、Zilliz Cloud クラスターのメタデータを保存および管理します。
-- **メッセージキュー**: メッセージキューは、Zilliz Cloud クラスター内のコンポーネント間の通信を可能にします。
-- **オブジェクトストレージ**: オブジェクトストレージは、ベクトルデータを保存します。
-
-Zilliz Cloud のアーキテクチャは、スケーラビリティ、信頼性、セキュリティを考慮して設計されています。各コンポーネントは独立してスケールでき、障害が発生した場合でもシステム全体の可用性を維持できます。
-
-## Zilliz Cloud の概念 {#zilliz-cloud-concepts}
-
-Zilliz Cloud を使用する前に、いくつかの重要な概念を理解しておく必要があります。
-
-- **クラスター**: クラスターは、Zilliz Cloud のリソースの論理的なグループです。クラスターは、複数のノードで構成され、ベクトル検索アプリケーションをサポートします。
-- **コレクション**: コレクションは、ベクトルデータの論理的なグループです。コレクションは、スキーマを定義し、ベクトルデータを保存します。
-- **スキーマ**: スキーマは、コレクション内のフィールドの構造を定義します。スキーマは、フィールド名、データ型、およびその他のプロパティを指定します。
-- **エンティティ**: エンティティは、コレクション内の個々のデータレコードです。エンティティは、ベクトルデータとその他の属性で構成されます。
-- **ベクトル**: ベクトルは、数値の配列であり、オブジェクトの特徴を表します。ベクトルは、類似性検索に使用されます。
-- **インデックス**: インデックスは、ベクトル検索のパフォーマンスを向上させるために使用されます。インデックスは、ベクトルデータを効率的に検索できるように整理します。
-- **パーティション**: パーティションは、コレクションを論理的なサブグループに分割します。パーティションは、データの管理と検索のパフォーマンスを向上させるために使用されます。
-- **レプリカ**: レプリカは、コレクションのコピーです。レプリカは、データの可用性と耐久性を向上させるために使用されます。
-- **シャード**: シャードは、コレクションの物理的なサブグループです。シャードは、データの分散と検索のパフォーマンスを向上させるために使用されます。
-- **動的フィールド**: 動的フィールドは、スキーマで事前に定義されていないフィールドです。動的フィールドは、柔軟なデータモデルをサポートするために使用されます。
-- **mmap**: mmap は、メモリマップドファイルです。mmap は、ディスク上のファイルをメモリに直接マッピングすることで、I/O パフォーマンスを向上させます。
-- **アナライザー**: アナライザーは、テキストデータを処理し、検索可能なトークンに変換します。アナライザーは、フルテキスト検索に使用されます。
-- **フルテキスト検索**: フルテキスト検索は、テキストデータ内のキーワードを検索します。フルテキスト検索は、関連性の高い検索結果を返すために使用されます。
-- **ロード**: ロードは、コレクションをメモリにロードする操作です。ロードは、検索のパフォーマンスを向上させるために使用されます。
-- **リリース**: リリースは、コレクションをメモリから解放する操作です。リリースは、メモリリソースを解放するために使用されます。
-
-これらの概念を理解することで、Zilliz Cloud を効果的に使用し、ベクトル検索アプリケーションを構築できます。
+期待される出力:
 
 ```python
 === TESTING QUERY: 'machine learning' WITH GAUSSIAN DECAY ===
@@ -1332,20 +890,16 @@ Zilliz Cloud を使用する前に、いくつかの重要な概念を理解し�
    Score: 0.0000
 ```
 
-## 結論{#conclusion}
+## まとめ\{#conclusion}
 
-Milvusで減衰関数を使用して時間ベースのランキングを行うと、セマンティックな関連性と新しさを強力に両立させることができます。適切な減衰関数とパラメータを設定することで、セマンティックな関連性を尊重しつつ、新しいコンテンツを強調する検索エクスペリエンスを作成できます。
+Milvus における減衰関数を用いた時系列ランキングは、意味的関連性と新鮮さ（recency）のバランスを取るための強力な手法です。適切な減衰関数とパラメータを設定することで、意味的関連性を尊重しつつ新しいコンテンツを優先する検索体験を実現できます。
 
-このアプローチは、特に以下の分野で価値があります。
+このアプローチは、特に以下の分野で有効です：
 
 - ニュースおよびメディアプラットフォーム
-
-- Eコマース製品リスト
-
-- ソーシャルメディアコンテンツフィード
-
+- ECサイトの商品一覧
+- ソーシャルメディアのコンテンツフィード
 - ナレッジベースおよびドキュメントシステム
+- 学術論文リポジトリ
 
-- 研究論文リポジトリ
-
-減衰関数の背後にある数学を理解し、さまざまなパラメータを試すことで、特定のユースケースに合わせて関連性と鮮度の最適なバランスを提供するように検索システムを微調整できます。
+減衰関数の背後にある数理を理解し、さまざまなパラメータを試行錯誤することで、特定のユースケースに最適な「関連性」と「新鮮さ」のバランスを実現する検索システムを構築できます。

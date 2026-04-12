@@ -66,9 +66,13 @@ The following demo shows how to restore a full cluster on the Zilliz Cloud web c
 The following example restores a full cluster for an existing backup file to a new cluster named `Dedicated-01-backup`. For details about the RESTful API, see [Restore Cluster Backup](/reference/restful/restore-cluster-backup-v2).
 
 ```bash
+export API_KEY="YOUR_API_KEY"
+export BASE_URL="https://api.cloud.zilliz.com"
+export CLUSTER_ID="your-cluster-id"
+
 curl --request POST \
      --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/${BACKUP_ID}/restoreCluster" \
-     --header "Authorization: Bearer ${TOKEN}" \
+     --header "Authorization: Bearer ${API_KEY}" \
      --header "Accept: application/json" \
      --header "Content-type: application/json" \
      --data-raw '{
@@ -110,7 +114,7 @@ The following example restores a collection from backup file to an existing clus
 ```bash
 curl --request POST \
 --url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/${BACKUP_ID}/restoreCollection" \
---header "Authorization: Bearer ${TOKEN}" \
+--header "Authorization: Bearer ${API_KEY}" \
 --header "Content-Type: application/json" \
 -d '{
     "destClusterId": "in01-xxxxxxxxxxxxxx",
@@ -159,3 +163,8 @@ The restoration procedure from an encrypted backup is almost the same as a norma
 
 - When this option is disabled, the cluster created after the restoration is unencrypted.
 
+## FAQ\{#faq}
+
+**What Milvus version will a restored cluster run?**
+
+The restored cluster runs the latest Milvus version supported by Zilliz Cloud at the time of restoration, regardless of the version used when the backup was created. For example, if you back up a Milvus 2.5.x cluster and restore it after the platform has upgraded to 2.6.x, the restored cluster will run Milvus 2.6.x. Backup files contain data only — the cluster version is determined by the platform.           

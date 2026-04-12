@@ -1,7 +1,7 @@
 ---
 title: "Manage Collections (Console) | Cloud"
 slug: /manage-collections-console
-sidebar_label: "Manage Collections (Console)"
+sidebar_label: "Manage on Console"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -236,3 +236,12 @@ Zilliz Cloud supports the following management operations on created collections
 
 - **Drop collection:** To reduce resource overhead, you can drop collections that are no longer needed. Dropping a collection irreversibly deletes all data within it.
 
+## Preview collection data\{#preview-collection-data}
+
+Use the **Data** tab to preview entities in a collection directly from the Zilliz Cloud console. 
+
+You can define a filter expression, configure the `limit` parameter to control the number of entities displayed in preview (100 by default, up to 16,384), and query matching entities to inspect field values in a table.
+
+You can also use **Order By** to sort the data preview in ascending or descending order by a primary key field, numeric fields, or scalar fields.
+
+![WHDsw55d9hAOZeboD3Fc7yTwnSg](https://zdoc-images.s3.us-west-2.amazonaws.com/WHDsw55d9hAOZeboD3Fc7yTwnSg.png)

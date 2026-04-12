@@ -235,7 +235,7 @@ There are two types of **BulkWriter**s available.
 
     ```python
     from pymilvus.bulk_writer import LocalBulkWriter, BulkFileType
-    # Use `from pymilvus import LocalBulkWriter, BulkFileType` 
+    # Use \`from pymilvus import LocalBulkWriter, BulkFileType\` 
     # when you use pymilvus earlier than 2.4.2 
     
     writer = LocalBulkWriter(
@@ -317,7 +317,7 @@ There are two types of **BulkWriter**s available.
     ```python
     
     from pymilvus.bulk_writer import RemoteBulkWriter
-    # Use `from pymilvus import RemoteBulkWriter` 
+    # Use \`from pymilvus import RemoteBulkWriter\` 
     # when you use pymilvus earlier than 2.4.2 
     
     # Third-party constants
@@ -337,7 +337,7 @@ There are two types of **BulkWriter**s available.
     )
     
     from pymilvus.bulk_writer import BulkFileType
-    # Use `from pymilvus import BulkFileType` 
+    # Use \`from pymilvus import BulkFileType\` 
     # when you use pymilvus earlier than 2.4.2 
     
     writer = RemoteBulkWriter(
@@ -356,7 +356,7 @@ There are two types of **BulkWriter**s available.
 
     ```python
     from pymilvus.bulk_writer import RemoteBulkWriter
-    # Use `from pymilvus import RemoteBulkWriter` 
+    # Use \`from pymilvus import RemoteBulkWriter\` 
     # when you use pymilvus earlier than 2.4.2 
     
     # Third-party constants
@@ -443,7 +443,7 @@ There are two types of **BulkWriter**s available.
 
     ```python
     from pymilvus.bulk_writer import RemoteBulkWriter
-    # Use `from pymilvus import RemoteBulkWriter` 
+    # Use \`from pymilvus import RemoteBulkWriter\` 
     # when you use pymilvus earlier than 2.4.2 
     
     writer = RemoteBulkWriter(

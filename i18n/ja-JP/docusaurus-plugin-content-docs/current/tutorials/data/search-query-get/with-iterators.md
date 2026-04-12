@@ -7,18 +7,14 @@ notebook: FALSE
 description: "ANN検索には、単一のクエリで呼び出せるエンティティの最大数に制限があり、基本的なANN検索を単純に使用するだけでは、大規模な検索の要求を満たせない場合があります。topKが16,384を超えるANN検索リクエストの場合、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項について説明します。 | Cloud"
 type: origin
 token: QVTnwVz2aifvSAkgomAc9KWRnHb
-sidebar_position: 16
+sidebar_position: 17
 keywords: 
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - 検索イテレータ
-  - 大規模言語モデル
-  - ベクトル化
-  - k近傍探索アルゴリズム
-  - ANNS
 
 ---
 
@@ -28,21 +24,21 @@ import TabItem from '@theme/TabItem';
 
 # 検索イテレータ
 
-ANN検索には、単一のクエリで呼び出せるエンティティの最大数に制限があり、単純に基本的なANN検索を使用するだけでは、大規模な検索の要求を満たせない場合があります。topKが16,384を超えるANN検索リクエストの場合、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項について説明します。
+ANN検索には、単一のクエリで呼び出せるエンティティの最大数に制限があり、基本的なANN検索を単純に使用するだけでは、大規模な検索の要求を満たせない場合があります。topKが16,384を超えるANN検索リクエストの場合、SearchIteratorの使用を検討することをお勧めします。このセクションでは、SearchIteratorの使用方法と関連する考慮事項について説明します。
 
-## 概要{#overview}
+## 概要\{#overview}
 
-検索リクエストは検索結果を返しますが、SearchIteratorはイテレータを返します。このイテレータの**next()**メソッドを呼び出すことで、検索結果を取得できます。
+Searchリクエストは検索結果を返しますが、SearchIteratorはイテレータを返します。このイテレータの**next()**メソッドを呼び出すことで、検索結果を取得できます。
 
 具体的には、SearchIteratorを次のように使用できます。
 
 1. SearchIteratorを作成し、**検索リクエストごとに返すエンティティの数**と**返すエンティティの総数**を設定します。
 
-1. SearchIteratorの**next()**メソッドをループで呼び出し、ページネーションされた形式で検索結果を取得します。
+1. SearchIteratorの**next()**メソッドをループで呼び出し、ページネーションされた方法で検索結果を取得します。
 
 1. **next()**メソッドが空の結果を返した場合、イテレータの**close()**メソッドを呼び出してループを終了します。
 
-## SearchIteratorの作成{#create-searchiterator}
+## SearchIteratorの作成\{#create-searchiterator}
 
 次のコードスニペットは、SearchIteratorを作成する方法を示しています。
 
@@ -106,7 +102,7 @@ SearchIterator searchIterator = client.searchIterator(SearchIteratorReq.builder(
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 import (
@@ -145,7 +141,7 @@ if err != nil {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
@@ -174,7 +170,7 @@ const iterator = milvusClient.searchIterator({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -185,9 +181,9 @@ const iterator = milvusClient.searchIterator({
 
 上記の例では、検索ごとに返されるエンティティの数（**batch_size**/**batchSize**）を50に、返されるエンティティの総数（**topK**）を20,000に設定しています。
 
-## SearchIteratorを使用する{#use-searchiterator}
+## SearchIteratorを使用する\{#use-searchiterator}
 
-SearchIteratorの準備ができたら、そのnext()メソッドを呼び出して、検索結果をページネーションされた方法で取得できます。
+SearchIteratorの準備ができたら、そのnext()メソッドを呼び出して、ページネーションされた方法で検索結果を取得できます。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -227,7 +223,7 @@ while (true) {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 for {
@@ -245,7 +241,7 @@ for {
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 for await (const result of iterator) {
@@ -255,7 +251,7 @@ for await (const result of iterator) {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -264,4 +260,4 @@ for await (const result of iterator) {
 </TabItem>
 </Tabs>
 
-上記のコード例では、無限ループを作成し、ループ内で **next()** メソッドを呼び出して検索結果を変数に格納し、**next()** が何も返さなくなったときにイテレータを閉じました。
+上記のコード例では、無限ループを作成し、ループ内で **next()** メソッドを呼び出して検索結果を変数に格納し、**next()** が何も返さないときにイテレータを閉じました。

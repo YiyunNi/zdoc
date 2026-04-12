@@ -1,7 +1,7 @@
 ---
 title: "Filter Templating | Cloud"
 slug: /filtering-templating
-sidebar_label: "Filter Templating"
+sidebar_label: "Template"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

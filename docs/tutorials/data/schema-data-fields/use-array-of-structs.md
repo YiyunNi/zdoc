@@ -1,7 +1,7 @@
 ---
 title: "Array of Structs | Cloud"
 slug: /use-array-of-structs
-sidebar_label: "Array of Structs"
+sidebar_label: "Structs"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -209,7 +209,7 @@ struct_schema.add_field("chapter", DataType.VARCHAR, max_length=512)
 struct_schema.add_field("text_vector", DataType.FLOAT_VECTOR, mmap_enabled=True, dim=5)
 
 # reference the struct schema in an Array field with its 
-# element type set to `DataType.STRUCT`
+# element type set to \`DataType.STRUCT\`
 schema.add_field("chunks", datatype=DataType.ARRAY, element_type=DataType.STRUCT, 
                     struct_schema=struct_schema, max_capacity=1000)
 # highlight-end

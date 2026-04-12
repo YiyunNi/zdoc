@@ -44,6 +44,118 @@ The following table lists the limits on the maximum number of orgsanizations and
    </tr>
 </table>
 
+## Users & Roles\{#users-and-roles}
+
+The following table lists the limits on the maximum number of users allowed in Zilliz Cloud.
+
+<table>
+   <tr>
+     <th><p><strong>Item</strong></p></th>
+     <th><p><strong>Max Number</strong></p></th>
+     <th><p><strong>Remarks</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>Cluster User</p></td>
+     <td><p>100</p></td>
+     <td><p>A cluster can have up to 100 users in total.</p></td>
+   </tr>
+   <tr>
+     <td><p>Cluster Custom Role</p></td>
+     <td><p>20</p></td>
+     <td><p>A cluster can have up to 20 custom roles in total. <a href="http://support.zilliz.com">Contact us</a> to remove this limit.</p></td>
+   </tr>
+</table>
+
+## API Keys\{#api-keys}
+
+<table>
+   <tr>
+     <th><p><strong>Item</strong></p></th>
+     <th><p><strong>Max Number</strong></p></th>
+     <th><p><strong>Remarks</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>API Key</p></td>
+     <td><p>100</p></td>
+     <td><p>Each organization can contain a maximum of 100 customized API keys for optimal resource utilization and security.</p></td>
+   </tr>
+</table>
+
+## Console IP Allowlist\{#console-ip-allowlist}
+
+<table>
+   <tr>
+     <th><p><strong>Item</strong></p></th>
+     <th><p><strong>Max Number</strong></p></th>
+     <th><p><strong>Remarks</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>IPs in the organization console IP allowlist</p></td>
+     <td><p>100</p></td>
+     <td><p>Each organization console IP allowlist can contain a maximum of 100 IPs or CIDR blocks.</p></td>
+   </tr>
+</table>
+
+## Clusters\{#clusters}
+
+### CUs\{#cus}
+
+A CU is the basic unit of compute resources used for parallel processing of data, and different CU types comprise varying combinations of CPU, memory, and storage. The concept of CU only applies to Dedicated clusters.
+
+<table>
+   <tr>
+     <th><p><strong>Project Plan & Cluster Deployment Option</strong></p></th>
+     <th><p><strong>Limits</strong></p></th>
+     <th><p><strong>Remarks</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>Dedicated cluster in a Standard project</p></td>
+     <td><p>CU size &lt;=32</p></td>
+     <td><p>On the console, you can create up to 32 CUs for a single cluster.</p></td>
+   </tr>
+   <tr>
+     <td><p>Dedicated cluster in an Enterprise project</p></td>
+     <td><p>CU size x Replica Count &lt;=10,240</p></td>
+     <td><p>On the console, you can create up to 1,024 CUs for a single cluster.</p><p>However, the limit is CU size x Replica Count &lt;=10,240 if replicas are added.</p></td>
+   </tr>
+</table>
+
+You are welcome to [contact us](https://support.zilliz.com/hc/en-us) 
+
+- If your Dedicated clusters in a Standard project require more than 32 CUs
+
+- If your Dedicated clusters in an Enterprise project require more than 1,024 CUs
+
+## Replicas\{#replicas}
+
+To add replicas, the cluster needs to have **12 CUs or more**. The following limit applies as well.
+
+<table>
+   <tr>
+     <th><p><strong>Item</strong></p></th>
+     <th><p><strong>Limits</strong></p></th>
+     <th><p><strong>Remarks</strong></p></th>
+   </tr>
+   <tr>
+     <td><p>Replica</p></td>
+     <td><p>10</p></td>
+     <td><p>You can create a maximum of 10 replicas.</p></td>
+   </tr>
+   <tr>
+     <td><p>Query CU x Replica Count</p></td>
+     <td><p>10,240</p></td>
+     <td><p>The cluster replica x query CU should not exceed 10,240.</p></td>
+   </tr>
+</table>
+
+## Databases\{#databases}
+
+- Databases can only be created in Dedicated clusters.
+
+- Each Dedicated cluster can have up to 1024 databases.
+
+- Default database cannot be dropped.
+
 ## Collections\{#collections}
 
 The maximum number of collections and partitions in a Zilliz Cloud cluster varies with the number of CUs allocated to it and its compatible Milvus version. You can refer to the following descriptions and calculate the maximum number of collections and partitions in your cluster.
@@ -361,9 +473,9 @@ You can restore a backup file in the same region as the original cluster of the 
      <th><p><strong>Remarks</strong></p></th>
    </tr>
    <tr>
-     <td><p>IP Address (CIDR)</p></td>
+     <td><p>Console IP Access</p></td>
      <td><p>100</p></td>
-     <td><p>You can add up to 100 IP addresses to the allow list.</p></td>
+     <td><p>You can add up to 100 IP addresses to the console IP allowlist.</p></td>
    </tr>
 </table>
 

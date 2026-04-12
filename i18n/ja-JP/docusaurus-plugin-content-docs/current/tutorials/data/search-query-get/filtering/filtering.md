@@ -12,16 +12,13 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - フィルター
   - フィルタリング式
   - フィルタリング
-  - milvus vector database
-  - milvus db
-  - milvus vector db
-  - Zilliz Cloud
 
+sidebar_key: "data/search-query-get/filtering"
 ---
 
 import Admonition from '@theme/Admonition';

@@ -171,8 +171,8 @@ For both `whatlang` and `lingua`, use the language names as shown in their respe
 ```python
 analyzer_params = {
     "tokenizer": {
-        "type": "language_identifier",  # Must be `language_identifier`
-        "identifier": "whatlang",  # or `lingua`
+        "type": "language_identifier",  # Must be \`language_identifier\`
+        "identifier": "whatlang",  # or \`lingua\`
         "analyzers": {  # A set of analyzer configs
             "default": {
                 "tokenizer": "standard"  # fallback if language detection fails

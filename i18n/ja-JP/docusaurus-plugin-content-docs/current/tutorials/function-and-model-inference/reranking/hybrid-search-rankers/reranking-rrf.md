@@ -4,7 +4,7 @@ slug: /reranking-rrf
 sidebar_label: "RRF Ranker"
 beta: FALSE
 notebook: FALSE
-description: "Reciprocal Rank Fusion (RRF) Ranker は、Zilliz Cloud ハイブリッド検索のリランキング戦略であり、生の類似度スコアではなく、ランキング位置に基づいて複数のベクトル検索パスからの結果のバランスを取ります。個々の統計ではなくプレイヤーのランキングを考慮するスポーツトーナメントのように、RRF Ranker は、各アイテムが異なる検索パスでどの程度上位にランク付けされているかに基づいて検索結果を組み合わせ、公平でバランスの取れた最終ランキングを作成します。 | Cloud"
+description: "Reciprocal Rank Fusion (RRF) Ranker は、Zilliz Cloud ハイブリッド検索のためのリランキング戦略です。これは、生の類似度スコアではなく、ランキング位置に基づいて複数のベクトル検索パスからの結果のバランスを取ります。個々の統計ではなくプレイヤーのランキングを考慮するスポーツトーナメントのように、RRF Ranker は、各アイテムが異なる検索パスでどの程度上位にランク付けされているかに基づいて検索結果を組み合わせ、公平でバランスの取れた最終ランキングを作成します。 | Cloud"
 type: origin
 token: Nqguwf6ikiKrHEkGKgAc8g7Lnnh
 sidebar_position: 2
@@ -12,15 +12,11 @@ keywords:
   - zilliz
   - ベクトルデータベース
   - cloud
-  - collection
+  - コレクション
   - データ
   - 検索結果のリランキング
   - 結果のリランキング
   - rrf
-  - Embedding model
-  - 画像類似性検索
-  - Context Window
-  - 自然言語検索
 
 ---
 
@@ -30,9 +26,9 @@ import TabItem from '@theme/TabItem';
 
 # RRF Ranker
 
-Reciprocal Rank Fusion (RRF) Ranker は、Zilliz Cloud ハイブリッド検索のリランキング戦略であり、複数のベクトル検索パスからの結果を、生の類似度スコアではなくランキング位置に基づいてバランスさせます。個々の統計ではなくプレイヤーのランキングを考慮するスポーツトーナメントのように、RRF Ranker は、各アイテムが異なる検索パスでどれだけ上位にランク付けされているかに基づいて検索結果を組み合わせ、公平でバランスの取れた最終ランキングを作成します。
+Reciprocal Rank Fusion (RRF) Ranker は、Zilliz Cloud ハイブリッド検索のリランキング戦略であり、生の類似度スコアではなく、ランキング位置に基づいて複数のベクトル検索パスからの結果のバランスを取ります。個々の統計ではなくプレーヤーのランキングを考慮するスポーツトーナメントのように、RRF Ranker は、各アイテムが異なる検索パスでどれだけ上位にランク付けされているかに基づいて検索結果を組み合わせ、公平でバランスの取れた最終ランキングを作成します。
 
-## RRF Ranker を使用するタイミング{#when-to-use-rrf-ranker}
+## RRF Ranker を使用するタイミング\{#when-to-use-rrf-ranker}
 
 RRF Ranker は、明示的な重要度重みを割り当てることなく、複数のベクトル検索パスからの結果のバランスを取りたいハイブリッド検索シナリオ向けに特別に設計されています。特に次の場合に効果的です。
 
@@ -44,13 +40,13 @@ RRF Ranker は、明示的な重要度重みを割り当てることなく、複
    </tr>
    <tr>
      <td><p>重要度が等しいマルチモーダル検索</p></td>
-     <td><p>両方のモダリティが等しく重要な画像-テキスト検索</p></td>
-     <td><p>任意の重み付けを必要とせずに結果のバランスを取る</p></td>
+     <td><p>両方のモダリティが等しく重要である画像-テキスト検索</p></td>
+     <td><p>任意の重み割り当てを必要とせずに結果のバランスを取る</p></td>
    </tr>
    <tr>
      <td><p>アンサンブルベクトル検索</p></td>
-     <td><p>異なる埋め込みモデルからの結果の組み合わせ</p></td>
-     <td><p>特定のモデルのスコアリング分布を優先することなく、ランキングを民主的に統合する</p></td>
+     <td><p>異なる埋め込みモデルからの結果を組み合わせる</p></td>
+     <td><p>特定のモデルのスコアリング分布を優先することなく、ランキングを民主的にマージする</p></td>
    </tr>
    <tr>
      <td><p>多言語検索</p></td>
@@ -59,37 +55,37 @@ RRF Ranker は、明示的な重要度重みを割り当てることなく、複
    </tr>
    <tr>
      <td><p>専門家による推奨</p></td>
-     <td><p>複数の専門家システムからの推奨の組み合わせ</p></td>
+     <td><p>複数の専門家システムからの推奨を組み合わせる</p></td>
      <td><p>異なるシステムが比較できないスコアリング方法を使用する場合に、コンセンサスランキングを作成する</p></td>
    </tr>
 </table>
 
-ハイブリッド検索アプリケーションで、明示的な重みを割り当てることなく複数の検索パスを民主的にバランスさせる必要がある場合、RRF Ranker は理想的な選択肢です。
+ハイブリッド検索アプリケーションで、明示的な重みを割り当てることなく複数の検索パスのバランスを民主的に取る必要がある場合、RRF Ranker は理想的な選択肢です。
 
-## RRF Ranker のメカニズム{#mechanism-of-rrf-ranker}
+## RRF Ranker のメカニズム\{#mechanism-of-rrf-ranker}
 
 RRFRanker 戦略の主なワークフローは次のとおりです。
 
-1. **検索ランキングの収集**: ベクトル検索の各パスからの結果のランキング (rank_1、rank_2) を収集します。
+1. **検索ランキングを収集**: ベクトル検索の各パスからの結果のランキング (rank_1, rank_2) を収集します。
 
-1. **ランキングのマージ**: 各パスからのランキング (rank_rrf_1、rank_rrf_2) を式に従って変換します。
+1. **ランキングをマージ**: 各パスからのランキング (rank_rrf_1, rank_rrf_2) を式に従って変換します。
 
     計算式には、検索数を表す *N* が含まれます。*ranki*(*d*) は、*i* 番目のリトリーバーによって生成されたドキュメント *d* のランキング位置です。*k* は、通常 60 に設定される平滑化パラメーターです。
 
-1. **ランキングの集計**: 結合されたランキングに基づいて検索結果を再ランク付けし、最終結果を生成します。
+1. **ランキングを集計**: 結合されたランキングに基づいて検索結果を再ランク付けし、最終結果を生成します。
 
 ![M2SawupkSh2NZxbX7SAcwqZZnxd](https://zdoc-images.s3.us-west-2.amazonaws.com/M2SawupkSh2NZxbX7SAcwqZZnxd.png)
 
-## RRF Ranker の例{#example-of-rrf-ranker}
+## RRF Ranker の例\{#example-of-rrf-ranker}
 
-この例では、スパース-密ベクトルに対するハイブリッド検索 (topK=5) を示し、RRFRanker 戦略が 2 つの ANN 検索からの結果をどのように再ランク付けするかを示します。
+この例では、疎密ベクトルに対するハイブリッド検索 (topK=5) を示し、RRFRanker 戦略が 2 つの ANN 検索からの結果をどのように再ランク付けするかを示します。
 
-- テキストのスパースベクトルに対する ANN 検索の結果 (topK=5)：
+- テキストの疎ベクトルに対する ANN 検索の結果 (topK=5)：
 
     <table>
        <tr>
          <th><p><strong>ID</strong></p></th>
-         <th><p><strong>ランク (スパース)</strong></p></th>
+         <th><p><strong>ランク (疎)</strong></p></th>
        </tr>
        <tr>
          <td><p>101</p></td>
@@ -147,7 +143,7 @@ RRFRanker 戦略の主なワークフローは次のとおりです。
     <table>
        <tr>
          <th><p><strong>ID</strong></p></th>
-         <th><p><strong>スコア (スパース)</strong></p></th>
+         <th><p><strong>スコア (疎)</strong></p></th>
          <th><p><strong>スコア (密)</strong></p></th>
          <th><p><strong>最終スコア</strong></p></th>
        </tr>
@@ -235,13 +231,13 @@ RRFRanker 戦略の主なワークフローは次のとおりです。
        </tr>
     </table>
 
-## RRF Ranker の使用法{#usage-of-rrf-ranker}
+## RRF Ranker の使用法\{#usage-of-rrf-ranker}
 
-RRF リランキング戦略を使用する場合、パラメーター `k` を設定する必要があります。これは、フルテキスト検索とベクトル検索の相対的な重みを効果的に変更できる平滑化パラメーターです。このパラメーターのデフォルト値は 60 で、(0, 16384) の範囲で調整できます。値は浮動小数点数である必要があります。推奨値は [10, 100] の間です。`k=60` は一般的な選択ですが、最適な `k` の値は特定のアプリケーションとデータセットによって異なります。最高のパフォーマンスを達成するために、特定のユースケースに基づいてこのパラメーターをテストおよび調整することをお勧めします。
+RRF リランキング戦略を使用する場合、パラメーター `k` を設定する必要があります。これは、全文検索とベクトル検索の相対的な重みを効果的に変更できる平滑化パラメーターです。このパラメーターのデフォルト値は 60 で、(0, 16384) の範囲で調整できます。値は浮動小数点数である必要があります。推奨値は [10, 100] の間です。`k=60` は一般的な選択ですが、最適な `k` の値は特定のアプリケーションとデータセットによって異なります。最適なパフォーマンスを達成するために、特定のユースケースに基づいてこのパラメーターをテストおよび調整することをお勧めします。
 
-### RRF Ranker の作成{#create-an-rrf-ranker}
+### RRF Ranker の作成\{#create-an-rrf-ranker}
 
-コレクションが複数のベクトルフィールドで設定されたら、適切な平滑化パラメーターで RRF Ranker を作成します。
+コレクションが複数のベクトルフィールドで設定されたら、適切な平滑化パラメーターを使用して RRF Ranker を作成します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"NodeJS","value":"javascript"},{"label":"Go","value":"go"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>
@@ -278,7 +274,7 @@ CreateCollectionReq.Function rerank = CreateCollectionReq.Function.builder()
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { FunctionType } from "@zilliz/milvus2-sdk-node";
@@ -297,7 +293,7 @@ const rerank = {
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // Go
@@ -305,7 +301,7 @@ const rerank = {
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # Restful
@@ -336,7 +332,7 @@ const rerank = {
    <tr>
      <td><p><code>function_type</code></p></td>
      <td><p>はい</p></td>
-     <td><p>呼び出す関数のタイプ。リランキング戦略を指定するには<code>RERANK</code>を使用します。</p></td>
+     <td><p>呼び出す関数のタイプ。リランキング戦略を指定するには<code>RERANK</code>を使用します</p></td>
      <td><p><code>FunctionType.RERANK</code></p></td>
    </tr>
    <tr>
@@ -353,7 +349,7 @@ const rerank = {
    </tr>
 </table>
 
-### ハイブリッド検索への適用{#apply-to-hybrid-search}
+### ハイブリッド検索への適用\{#apply-to-hybrid-search}
 
 RRF Rankerは、複数のベクトルフィールドを組み合わせるハイブリッド検索操作のために特別に設計されています。ハイブリッド検索でこれを使用する方法は次のとおりです。
 
@@ -437,7 +433,7 @@ SearchResp searchResp = client.hybridSearch(hybridSearchReq);
 
 </TabItem>
 
-<TabItem value='javascript'>
+<TabItem value='java'>
 
 ```javascript
 import { MilvusClient, FunctionType } from "@zilliz/milvus2-sdk-node";
@@ -469,7 +465,7 @@ const search = await milvusClient.search({
 
 </TabItem>
 
-<TabItem value='go'>
+<TabItem value='java'>
 
 ```go
 // go
@@ -477,7 +473,7 @@ const search = await milvusClient.search({
 
 </TabItem>
 
-<TabItem value='bash'>
+<TabItem value='java'>
 
 ```bash
 # restful
@@ -486,4 +482,4 @@ const search = await milvusClient.search({
 </TabItem>
 </Tabs>
 
-ハイブリッド検索の詳細については、[Multi-Vector Hybrid Search](./hybrid-search)を参照してください。
+ハイブリッド検索の詳細については、[マルチベクトルハイブリッド検索](./hybrid-search)を参照してください。

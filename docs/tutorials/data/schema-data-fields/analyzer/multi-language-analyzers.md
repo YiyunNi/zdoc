@@ -848,7 +848,7 @@ const result = await client.insert({
 
 // Print results
 const inserted = result.insert_count;
-console.log(`Successfully inserted ${inserted} documents`);
+console.log(\`Successfully inserted ${inserted} documents\`);
 console.log("Documents by language: 2 English, 2 Chinese");
 
 // Expected output:
@@ -1027,8 +1027,8 @@ const english_results = await client.search({
 console.log("\n=== English Search Results ===");
 english_results.results.forEach((hit, i) => {
   console.log(
-    `${i + 1}. [${hit.score.toFixed(4)}] ${hit.entity.text} ` +
-      `(Language: ${hit.entity.language})`
+    \`${i + 1}. [${hit.score.toFixed(4)}] ${hit.entity.text} \` +
+      \`(Language: ${hit.entity.language})\`
   );
 });
 
@@ -1171,8 +1171,8 @@ const cn_results = await client.search({
 console.log("\n=== Chinese Search Results ===");
 cn_results.results.forEach((hit, i) => {
   console.log(
-    `${i + 1}. [${hit.score.toFixed(4)}] ${hit.entity.text} ` +
-      `(Language: ${hit.entity.language})`
+    \`${i + 1}. [${hit.score.toFixed(4)}] ${hit.entity.text} \` +
+      \`(Language: ${hit.entity.language})\`
   );
 });
 

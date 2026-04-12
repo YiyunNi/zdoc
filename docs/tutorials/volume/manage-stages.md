@@ -10,7 +10,7 @@ notebook: FALSE
 description: "This page explains how you can use a volume when managing your data on Zilliz Cloud. For details about managing volumes via web console, see Manage Volumes (Console). | Cloud"
 type: origin
 token: VCL7wmP6oieCkJkHEcicCsKQnxc
-sidebar_position: 2
+sidebar_position: 4
 keywords: 
   - zilliz
   - vector database

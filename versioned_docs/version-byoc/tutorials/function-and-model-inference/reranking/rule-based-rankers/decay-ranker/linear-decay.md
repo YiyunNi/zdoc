@@ -115,7 +115,7 @@ This behavior mirrors how event planning typically works—imminent events are m
 The mathematical formula for calculating a linear decay score is:
 
 $$
-S(doc) = \max\left( \frac\{s - \max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \right)
+S(doc) = \max\left( \frac{s - \max(0, |fieldvalue_{doc} - origin| - offset)}{s}, 0 \right)
 $$
 
 Where:

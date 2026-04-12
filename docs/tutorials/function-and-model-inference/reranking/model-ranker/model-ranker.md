@@ -1,7 +1,7 @@
 ---
 title: "Model-based Rankers | Cloud"
 slug: /model-ranker
-sidebar_label: "Model-based Rankers"
+sidebar_label: "Reranking Models"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

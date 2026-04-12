@@ -11,21 +11,18 @@ sidebar_position: 6
 keywords: 
   - zilliz
   - ベクトルデータベース
-  - クラウド
+  - cloud
   - データインポート
   - エクスポート
   - milvus
-  - マネージドベクトルデータベース
-  - Pinecone ベクトルデータベース
-  - 音声検索
-  - セマンティック検索とは
 
+sidebar_key: "data/data-import-export"
 ---
 
 import Admonition from '@theme/Admonition';
 
 
-# データのインポートとエクスポート
+# インポートとエクスポート
 
 この章では、Zilliz Cloud クラスターへのデータのインポートとエクスポートに関する一般的な手順について説明します。
 

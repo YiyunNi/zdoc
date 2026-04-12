@@ -1,7 +1,7 @@
 ---
 title: "TIMESTAMPTZ Field | Cloud"
 slug: /use-timestamptz-field
-sidebar_label: "TIMESTAMPTZ Field"
+sidebar_label: "TIMSTAMPTZ"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -332,7 +332,7 @@ const dayStr = String(day).padStart(2, '0');
 const hourStr = String(hour).padStart(2, '0');
 const minuteStr = String(minute).padStart(2, '0');
 const secondStr = String(second).padStart(2, '0');
-return `${year}-${monthStr}-${dayStr}T${hourStr}:${minuteStr}:${secondStr}${timezoneOffset}`;
+return \`${year}-${monthStr}-${dayStr}T${hourStr}:${minuteStr}:${secondStr}${timezoneOffset}\`;
 };
 
 const data = [];

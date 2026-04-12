@@ -238,6 +238,8 @@ curl --request POST \
 
 ## Use Query\{#use-query}
 
+### Basic Query\{#basic-query}
+
 When you need to find entities by custom filtering conditions, use the **Query** method. The following code examples assume there are three fields named `id`, `vector`, and `color` and return the specified number of entities that hold a `color` value starting with `red`.
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
@@ -763,7 +765,7 @@ if err != nil {
 </TabItem>
 </Tabs>
 
-## Temporarily set a timezone for a query\{#temporarily-set-a-timezone-for-a-query}
+## Temporarily Set a Timezone for a Query\{#temporarily-set-a-timezone-for-a-query}
 
 If your collection has a `TIMESTAMPTZ` field, you can temporarily override the database or collection default timezone for a single operation by setting the `timezone` parameter in the query call. This controls how `TIMESTAMPTZ` values are displayed and compared during the operation.
 

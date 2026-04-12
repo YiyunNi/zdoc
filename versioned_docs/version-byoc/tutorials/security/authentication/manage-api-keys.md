@@ -83,6 +83,8 @@ The table below details the access scope of API keys based on assigned roles. Fo
 
 ### Limits and restrictions\{#limits-and-restrictions}
 
+- To perform data manipulation operations, use your cluster token instead. A valid cluster token is a colon-separated cluster username and password, as in `user:pass`.
+
 - Each organization can contain a maximum of 100 customized API keys.
 
 - The management permissions for API keys are influenced by the user's roles within the organization and project. Specific permissions are outlined as follows:

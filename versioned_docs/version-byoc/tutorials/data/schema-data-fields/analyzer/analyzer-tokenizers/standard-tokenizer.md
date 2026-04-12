@@ -1,7 +1,7 @@
 ---
 title: "Standard Tokenizer | BYOC"
 slug: /standard-tokenizer
-sidebar_label: "Standard Tokenizer"
+sidebar_label: "Standard"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE

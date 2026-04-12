@@ -740,7 +740,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='javascript'>
 
     ```javascript
-    // Use a built-in analyzer for VARCHAR field `title_en`
+    // Use a built-in analyzer for VARCHAR field \`title_en\`
     const analyzer_params_built_in = {
       type: "english",
     };
@@ -861,7 +861,7 @@ curl -X POST "http://${MILVUS_HOST}/v2/vectordb/collections/create" \
     <TabItem value='javascript'>
 
     ```javascript
-    // Configure a custom analyzer for VARCHAR field `title`
+    // Configure a custom analyzer for VARCHAR field \`title\`
     const analyzer_params_custom = {
       tokenizer: "standard",
       filter: [

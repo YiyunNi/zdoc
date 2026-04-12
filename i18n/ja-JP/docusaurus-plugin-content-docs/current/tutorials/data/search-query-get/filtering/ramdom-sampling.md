@@ -33,7 +33,7 @@ import TabItem from '@theme/TabItem';
 
 **主なユースケース:**
 
-- **データ探索**: 最小限のリソース使用量でコレクションの構造とコンテンツを素早くプレビュー
+- **データ探索**: 最小限のリソース使用量でコレクションの構造と内容を素早くプレビュー
 
 - **開発テスト**: 完全なデプロイメントの前に、管理しやすいデータサンプルで複雑なフィルタリングロジックをテスト
 
@@ -96,7 +96,7 @@ export filterRandomSample='RANDOM_SAMPLE(sampling_factor)'
 
 ## 他のフィルターとの組み合わせ\{#combine-with-other-filters}
 
-ランダムサンプリング演算子は、論理 `AND` を使用して他のフィルタリング式と組み合わせる必要があります。フィルターを組み合わせる場合、Milvus はまず他の条件を適用し、次に結果セットに対してランダムサンプリングを実行します。
+ランダムサンプリング演算子は、論理 `AND` を使用して他のフィルタリング式と組み合わせる必要があります。フィルターを組み合わせる際、Milvus はまず他の条件を適用し、次に結果セットに対してランダムサンプリングを実行します。
 
 <Tabs groupId="code" defaultValue='python' values={[{"label":"Python","value":"python"},{"label":"Java","value":"java"},{"label":"Go","value":"go"},{"label":"NodeJS","value":"javascript"},{"label":"cURL","value":"bash"}]}>
 <TabItem value='python'>

@@ -91,33 +91,6 @@ curl --request POST \
 }'
 ```
 
-To also create cross-region copies for any backups created using the above policy, do as follows:
-
-```bash
-curl --request POST \
---url "${BASE_URL}/v2/clusters/${CLUSTER_ID}/backups/policy" \
---header "Authorization: Bearer ${TOKEN}" \
---header "Content-Type: application/json" \
--d '{
-    "frequency": "1,2,3,5",
-    "startTime": "02:00-04:00",
-    "retentionDays": 7,
-    "enabled": true,
-    "crossRegionPolicies": [
-        {
-            "regionId": "aws-us-west-2",
-            "retentionDays": 7,
-            "region": "us-west-2"
-        },
-        {
-            "regionId": "aws-us-east-1",
-            "retentionDays": 7,
-            "region": "us-east-1"
-        }
-    ]
-}'
-```
-
 The following is an example output. A backup job is immediately generated once automatic backup is enabled. You can check the progress in the [project job center](/docs/job-center).
 
 ```bash
