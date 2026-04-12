@@ -90,7 +90,7 @@ Null
 ## Example\{#example}
 
 ```go
-dbName := `test_db`
+dbName := \`test_db\`
 err = cli.DropDatabaseProperties(ctx, milvusclient.NewDropDatabasePropertiesOption(dbName, "database.replica.number"))
 if err != nil {
     // handle err

@@ -12,10 +12,10 @@ type: docx
 token: Da9KdvvWroKX9cxOwsmcLRBxnVb
 sidebar_position: 10
 keywords: 
-  - information retrieval
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
+  - nlp search
+  - hallucinations llm
+  - Multimodal search
+  - vector search algorithms
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +33,13 @@ import Admonition from '@theme/Admonition';
 This is a method template.
 
 ```javascript
-describeUser(data): Promise<SelectUserResponse>
+await milvusClient.describeUser(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.describeUser({
+await milvusClient.describeUser({
     includeRoleInfo?: boolean,
     timeout?: number,
     username: string

@@ -12,10 +12,10 @@ token: LxHMfE9RNlOtvOdHs9wcrGnWnGg
 sidebar_position: 2
 sidebar_label: "Client"
 keywords: 
-  - dimension reduction
-  - hnsw algorithm
-  - vector similarity search
-  - approximate nearest neighbor search
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
+  - Zilliz
   - zilliz
   - zilliz cloud
   - cloud

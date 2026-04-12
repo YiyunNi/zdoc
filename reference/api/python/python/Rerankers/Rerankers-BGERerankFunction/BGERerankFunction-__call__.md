@@ -12,10 +12,10 @@ type: docx
 token: C2AbdIReZos7HwxiZXIcyW8nnm1
 sidebar_position: 2
 keywords: 
-  - open source vector database
-  - Vector index
-  - vector database open source
-  - open source vector db
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -97,7 +96,7 @@ from pymilvus.model.reranker import BGERerankFunction
 
 # Define the rerank function
 bge_rf = BGERerankFunction(
-    model_name="BAAI/bge-reranker-v2-m3",  # Specify the model name. Defaults to `BAAI/bge-reranker-v2-m3`.
+    model_name="BAAI/bge-reranker-v2-m3",  # Specify the model name. Defaults to \`BAAI/bge-reranker-v2-m3\`.
     device="cpu" # Specify the device to use, e.g., 'cpu' or 'cuda:0'
 )
 

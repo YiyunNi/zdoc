@@ -12,10 +12,10 @@ type: docx
 token: MVLRdU9nPonUeExs7ogctwZ1n4c
 sidebar_position: 3
 keywords: 
-  - Dense embedding
-  - Faiss vector database
-  - Chroma vector database
-  - nlp search
+  - milvus vector database
+  - milvus db
+  - milvus vector db
+  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -64,7 +63,7 @@ OnnxEmbeddingFunction(
 from pymilvus.model.dense import OnnxEmbeddingFunction
 
 onnx_ef = OnnxEmbeddingFunction(
-    model_name="GPTCache/paraphrase-albert-onnx", # Defaults to `GPTCache/paraphrase-albert-onnx`
-    tokenizer_name="GPTCache/paraphrase-albert-small-v2" # Defaults to `GPTCache/paraphrase-albert-small-v2`
+    model_name="GPTCache/paraphrase-albert-onnx", # Defaults to \`GPTCache/paraphrase-albert-onnx\`
+    tokenizer_name="GPTCache/paraphrase-albert-small-v2" # Defaults to \`GPTCache/paraphrase-albert-small-v2\`
 )
 ```

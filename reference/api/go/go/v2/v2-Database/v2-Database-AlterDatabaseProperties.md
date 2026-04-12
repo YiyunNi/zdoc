@@ -85,7 +85,7 @@ Null
 ## Example\{#example}
 
 ```go
-dbName := `test_db`
+dbName := \`test_db\`
 err = cli.AlterDatabaseProperties(ctx, milvusclient.NewAlterDatabasePropertiesOption(dbName).WithProperty("database.replica.number", 2))
 if err != nil {
     // handle err

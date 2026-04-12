@@ -12,10 +12,10 @@ type: docx
 token: A6dgdXJdRoxwKAxGB1hctKXvnZg
 sidebar_position: 33
 keywords: 
+  - Zilliz
   - milvus vector database
   - milvus db
   - milvus vector db
-  - Zilliz Cloud
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - javaV226
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';

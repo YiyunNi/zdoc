@@ -12,10 +12,10 @@ type: docx
 token: Smobd2lIho2yQPxtRhLcLcKznCf
 sidebar_position: 1
 keywords: 
-  - knn algorithm
-  - HNSW
-  - What is unstructured data
-  - Vector embeddings
+  - vector similarity search
+  - approximate nearest neighbor search
+  - DiskANN
+  - Sparse vector
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -65,7 +64,7 @@ from pymilvus.model.reranker import VoyageRerankFunction
 
 # Define the rerank function
 voyage_rf = VoyageRerankFunction(
-    model_name="rerank-lite-1",  # Specify the model name. Defaults to `rerank-lite-1`.
+    model_name="rerank-lite-1",  # Specify the model name. Defaults to \`rerank-lite-1\`.
     api_key=VOYAGE_API_KEY # Replace with your Voyage API key
 )
 ```

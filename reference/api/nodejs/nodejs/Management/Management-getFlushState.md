@@ -12,10 +12,10 @@ type: docx
 token: X8qWdMHg5oQQK6xZdBYcGNOnn3c
 sidebar_position: 10
 keywords: 
-  - what are vector databases
-  - vector databases comparison
-  - Faiss
-  - Video search
+  - multimodal RAG
+  - llm hallucinations
+  - hybrid search
+  - lexical search
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +33,7 @@ import Admonition from '@theme/Admonition';
 This operation returns the flush status of a specific segment.
 
 ```javascript
-getFlushState(data): Promise<GetFlushStateResponse>
+await milvusClient.getFlushState(data)
 ```
 
 <Admonition type="info" icon="📘" title="Notes">
@@ -46,7 +45,7 @@ getFlushState(data): Promise<GetFlushStateResponse>
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.getFlushState({
+await milvusClient.getFlushState({
     segment_ids: number[],
     timeout?: number
 })
@@ -104,7 +103,10 @@ This method returns a promise that resolves to a **GetFlushStateResponse** objec
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const flushState = await milvusClient.getFlushState({
     segmentIDs: [1,2,3,4],
 });

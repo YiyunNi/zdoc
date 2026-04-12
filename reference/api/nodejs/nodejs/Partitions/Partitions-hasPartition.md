@@ -12,10 +12,10 @@ type: docx
 token: TVWPdTw2WoPAJYxsbGMc7MX6nEf
 sidebar_position: 4
 keywords: 
-  - nearest neighbor search
-  - Agentic RAG
-  - rag llm architecture
-  - private llms
+  - sentence transformers
+  - Recommender systems
+  - information retrieval
+  - dimension reduction
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +33,13 @@ import Admonition from '@theme/Admonition';
 This operation checks whether the specified partition exists in the specified collection.
 
 ```javascript
-hasPartition(data): Promise<BoolResponse>
+await milvusClient.hasPartition(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.hasPartition({
+await milvusClient.hasPartition({
     db_name: string,
     collection_name: string,
     partition_name: string,
@@ -106,7 +105,10 @@ This method returns a promise that resolves to a BoolResponse object.
 ## Example\{#example}
 
 ```java
-new milvusClient(MILUVS_ADDRESS).hasPartition({
+new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+}).hasPartition({
     collection_name: 'my_collection',
     partition_name: 'my_partition',
  });

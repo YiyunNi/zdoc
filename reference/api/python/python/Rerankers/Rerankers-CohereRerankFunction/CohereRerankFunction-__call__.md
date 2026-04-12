@@ -12,10 +12,10 @@ type: docx
 token: M7pWdbu8foKkJAxY3uBcMfHrnrh
 sidebar_position: 2
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - how does milvus work
+  - Zilliz vector database
+  - Zilliz database
+  - Unstructured Data
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -97,7 +96,7 @@ from pymilvus.model.reranker import CohereRerankFunction
 
 # Define the rerank function
 cohere_rf = CohereRerankFunction(
-    model_name="rerank-english-v3.0",  # Specify the model name. Defaults to `rerank-english-v2.0`.
+    model_name="rerank-english-v3.0",  # Specify the model name. Defaults to \`rerank-english-v2.0\`.
     api_key=COHERE_API_KEY # Replace with your Cohere API key
 )
 

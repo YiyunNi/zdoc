@@ -85,7 +85,7 @@ Null
 ## Example\{#example}
 
 ```plaintext
-dbName := `test_db`
+dbName := \`test_db\`
 cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
     Address: milvusAddr,
 })

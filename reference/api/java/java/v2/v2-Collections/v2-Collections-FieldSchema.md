@@ -12,10 +12,10 @@ type: docx
 token: WeXmdv8bioJ7AEx9sEtct6kgnUd
 sidebar_position: 16
 keywords: 
-  - knn
-  - Image Search
-  - LLMs
-  - Machine Learning
+  - dimension reduction
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - javaV226
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -81,13 +80,13 @@ CreateCollectionReq.FieldSchema.builder()
 
     The maximum number of characters a value should contain.
 
-    This is required if **dataType** of this field is set to **DataType.VarChar.**
+    This is required if **[dataType](./v2-Collections-DataType)** of this field is set to **DataType.VarChar.**
 
 - `dimension(int dimension)`
 
     The number of dimensions a value should have.
 
-    This is required if **dataType** of this field is set to **DataType.FloatVector**.
+    This is required if **[dataType](./v2-Collections-DataType)** of this field is set to **DataType.FloatVector**.
 
 - `isPrimaryKey(boolean isPrimaryKey)`
 

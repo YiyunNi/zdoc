@@ -12,10 +12,10 @@ type: docx
 token: N2aHdla1Uohk1HxGyPHcdG4lnnb
 sidebar_position: 2
 keywords: 
-  - ANNS
-  - Vector search
-  - knn algorithm
-  - HNSW
+  - vector db comparison
+  - openai vector db
+  - natural language processing database
+  - cheap vector database
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -97,7 +96,7 @@ from pymilvus.model.reranker import VoyageRerankFunction
 
 # Define the rerank function
 voyage_rf = VoyageRerankFunction(
-    model_name="rerank-lite-1",  # Specify the model name. Defaults to `rerank-lite-1`.
+    model_name="rerank-lite-1",  # Specify the model name. Defaults to \`rerank-lite-1\`.
     api_key=VOYAGE_API_KEY # Replace with your Voyage API key
 )
 

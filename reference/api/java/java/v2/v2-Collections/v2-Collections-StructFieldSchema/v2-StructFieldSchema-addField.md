@@ -12,10 +12,10 @@ type: docx
 token: FGO8dhjlTovfOdxpOw0c3wyNntc
 sidebar_position: 1
 keywords: 
-  - rag vector database
-  - what is vector db
-  - what are vector databases
-  - vector databases comparison
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
+  - Large language model
+  - Vectorization
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - javaV226
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -45,7 +44,7 @@ public StructFieldSchema addField(AddFieldReq addFieldReq)
 
 **RETURNS:**
 
-*StructFieldSchema*
+*[StructFieldSchema](./v2-Collections-StructFieldSchema)*
 
 **EXCEPTIONS:**
 

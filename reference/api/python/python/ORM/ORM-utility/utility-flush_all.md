@@ -12,10 +12,10 @@ type: docx
 token: Uwsfd443boKKgyx2zZTcYDqKnCe
 sidebar_position: 12
 keywords: 
-  - milvus database
-  - milvus lite
-  - milvus benchmark
-  - managed milvus
+  - cosine distance
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -95,7 +94,7 @@ collection = Collection(
 collection.insert([[1, 2], [[1.0, 2.0], [3.0, 4.0]]])
 
 utility.flush_all(_async=False) # synchronized flush_all
-# or use `future` to flush_all asynchronously
+# or use \`future\` to flush_all asynchronously
 
 future = utility.flush_all(_async=True)
 future.done() # flush_all finished

@@ -1280,7 +1280,7 @@ Null
     ctx, cancel := context.WithCancel(context.Background())
     defer cancel()
     
-    collectionName := `quick_setup_1`
+    collectionName := \`quick_setup_1\`
     cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
         Address: milvusAddr,
     })
@@ -1300,7 +1300,7 @@ Null
     ctx, cancel := context.WithCancel(context.Background())
     defer cancel()
     
-    collectionName := `quick_setup_2`
+    collectionName := \`quick_setup_2\`
     cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
         Address: milvusAddr,
     })
@@ -1323,7 +1323,7 @@ Null
     ctx, cancel := context.WithCancel(context.Background())
     defer cancel()
     
-    collectionName := `quick_setup_3`
+    collectionName := \`quick_setup_3\`
     cli, err := milvusclient.New(ctx, &milvusclient.ClientConfig{
         Address: milvusAddr,
     })

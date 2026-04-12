@@ -12,10 +12,10 @@ type: docx
 token: GxAZd9O9gozzhExhMHWcMnXPngh
 sidebar_position: 1
 keywords: 
-  - managed milvus
-  - Serverless vector database
-  - milvus open source
-  - how does milvus work
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -80,7 +79,7 @@ from pymilvus.model.reranker import BGERerankFunction
 
 # Define the rerank function
 bge_rf = BGERerankFunction(
-    model_name="BAAI/bge-reranker-v2-m3",  # Specify the model name. Defaults to `BAAI/bge-reranker-v2-m3`.
+    model_name="BAAI/bge-reranker-v2-m3",  # Specify the model name. Defaults to \`BAAI/bge-reranker-v2-m3\`.
     device="cpu" # Specify the device to use, e.g., 'cpu' or 'cuda:0'
 )
 ```

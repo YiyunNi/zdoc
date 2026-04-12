@@ -10,12 +10,12 @@ notebook: false
 description: "This operation gets the complete primary field schema of a collection. This is a convenient method that describes the collection and extracts the primary key field. | Node.js"
 type: docx
 token: LmnudtyV5owY2zx5D9WcENcsnFg
-sidebar_position: 21
+sidebar_position: 24
 keywords: 
-  - llm hallucinations
-  - hybrid search
-  - lexical search
-  - nearest neighbor search
+  - what is a vector database
+  - vectordb
+  - multimodal vector database retrieval
+  - Retrieval Augmented Generation
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -33,8 +32,17 @@ import Admonition from '@theme/Admonition';
 
 This operation gets the complete primary field schema of a collection. This is a convenient method that describes the collection and extracts the primary key field.
 
-```typescript
+```javascript
 await milvusClient.getPkField(data: DescribeCollectionReq)
+```
+
+## Request Syntax\{#request-syntax}
+
+```javascript
+getPkField({
+    collection_name: string,
+    timeout: number
+})
 ```
 
 **PARAMETERS:**
@@ -57,10 +65,13 @@ The complete field schema object for the primary key, including name, data type,
 
 ## Example\{#example}
 
-```typescript
+```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-const client = new MilvusClient({ address: 'YOUR_CLUSTER_ENDPOINT' });
+const client = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const pkField = await client.getPkField({
     collection_name: 'my_collection',
 });

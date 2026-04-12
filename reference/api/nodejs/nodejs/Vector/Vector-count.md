@@ -12,10 +12,10 @@ type: docx
 token: NaOadUNSpo1EsIxPMSfc0R4Hnfb
 sidebar_position: 1
 keywords: 
-  - Similarity Search
-  - multimodal RAG
-  - llm hallucinations
-  - hybrid search
+  - Unstructured Data
+  - vector database
+  - IVF
+  - knn
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,13 +33,13 @@ import Admonition from '@theme/Admonition';
 This operation counts the number of entities that match the specified filtering expression.
 
 ```javascript
-count(data): Promise<CountResult>
+await milvusClient.count(data)
 ```
 
 ## Request Syntax\{#request-syntax}
 
 ```javascript
-milvusClient.count({
+await milvusClient.count({
     db_name?: string,
     collection_name: string,
     expr?: string,
@@ -108,7 +107,10 @@ This method returns a promise that resolves to a **CountResult** object.
 ## Examples\{#examples}
 
 ```javascript
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const num_entities = await milvusClient.count({
    collection_name: 'my_collection',
    expr: "age in [1,2,3,4,5,6,7,8]",

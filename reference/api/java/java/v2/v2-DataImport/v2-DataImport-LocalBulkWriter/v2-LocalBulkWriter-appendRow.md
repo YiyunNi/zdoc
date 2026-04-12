@@ -12,10 +12,10 @@ type: docx
 token: OgXWdeRGhoxMYqxzNSrcSZAknIb
 sidebar_position: 6
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - vector database example
+  - rag vector database
+  - what is vector db
+  - what are vector databases
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - javaV226
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -48,6 +47,14 @@ public void appendRow(JsonObject rowData) throws IOException, InterruptedExcepti
 *void*
 
 **EXCEPTIONS:**
+
+- **IOException**
+
+    This is a checked exception thrown when any data-read or data-write errors occur during this operation.
+
+- **InterruptedException**
+
+    This is a checked exception thrown when a thread that is currently "blocking" (waiting, sleeping, or otherwise occupied) is interrupted by another thread using the `Thread.interrupt()` method.
 
 - **MilvusClientException**
 

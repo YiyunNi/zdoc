@@ -12,10 +12,10 @@ type: docx
 token: WA81dokeYotwt9xAiKKcaaIpnxc
 sidebar_position: 6
 keywords: 
-  - openai vector db
-  - natural language processing database
-  - cheap vector database
-  - Managed vector database
+  - Agentic RAG
+  - rag llm architecture
+  - private llms
+  - nn search
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -33,7 +32,7 @@ import Admonition from '@theme/Admonition';
 
 This operation returns version information for the Milvus server.
 
-```typescript
+```javascript
 await milvusClient.getVersion()
 ```
 
@@ -51,10 +50,13 @@ The response contains the version string of the connected server.
 
 ## Example\{#example}
 
-```typescript
+```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-const client = new MilvusClient({ address: 'YOUR_CLUSTER_ENDPOINT' });
+const client = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const res = await client.getVersion();
 console.log(res.version); // "2.6.9"
 ```

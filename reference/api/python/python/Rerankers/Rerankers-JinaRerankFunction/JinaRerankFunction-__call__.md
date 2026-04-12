@@ -12,10 +12,10 @@ type: docx
 token: R3gEdUOSfo6JzMxwUsTcevNHn9g
 sidebar_position: 2
 keywords: 
+  - RAG
+  - NLP
   - Neural Network
   - Deep Learning
-  - Knowledge base
-  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -96,7 +95,7 @@ Each `RerankResult` object contains:
 from pymilvus.model.reranker import JinaRerankFunction
 
 jina_rf = JinaRerankFunction(
-    model_name="jina-reranker-v1-base-en", # Defaults to `jina-reranker-v1-base-en`
+    model_name="jina-reranker-v1-base-en", # Defaults to \`jina-reranker-v1-base-en\`
     api_key="YOUR_JINAAI_API_KEY"
 )
 

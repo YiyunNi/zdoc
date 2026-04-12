@@ -10,12 +10,12 @@ notebook: false
 description: "This operation returns the primary key field's data type for a collection. This is a convenient method that describes the collection and extracts the primary key field type. | Node.js"
 type: docx
 token: AKpldMJPTo6MfuxxrpicBKRInCh
-sidebar_position: 23
+sidebar_position: 26
 keywords: 
-  - milvus vector db
-  - Zilliz Cloud
-  - what is milvus
-  - milvus database
+  - Pinecone vs Milvus
+  - Chroma vs Milvus
+  - Annoy vector search
+  - milvus
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -33,8 +32,17 @@ import Admonition from '@theme/Admonition';
 
 This operation returns the primary key field's data type for a collection. This is a convenient method that describes the collection and extracts the primary key field type.
 
-```typescript
+```javascript
 await milvusClient.getPkFieldType(data: DescribeCollectionReq)
+```
+
+## Request Syntax\{#request-syntax}
+
+```javascript
+getPkFieldType({
+    collection_name: string,
+    timeout: number
+})
 ```
 
 **PARAMETERS:**
@@ -57,12 +65,16 @@ The data type of the primary key field (e.g., `"Int64"`, `"VarChar"`).
 
 ## Example\{#example}
 
-```typescript
+```javascript
 import { MilvusClient } from '@zilliz/milvus2-sdk-node';
 
-const client = new MilvusClient({ address: 'YOUR_CLUSTER_ENDPOINT' });
+const client = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
 const pkType = await client.getPkFieldType({
     collection_name: 'my_collection',
 });
 console.log(pkType); // e.g., "Int64"
 ```
+

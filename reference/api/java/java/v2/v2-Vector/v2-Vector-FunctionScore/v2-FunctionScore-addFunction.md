@@ -12,10 +12,10 @@ type: docx
 token: HPs6dFV29ovzyBxpgUacXnnjngd
 sidebar_position: 1
 keywords: 
-  - Zilliz vector database
-  - Zilliz database
-  - Unstructured Data
-  - vector database
+  - hybrid vector search
+  - Video deduplication
+  - Video similarity search
+  - Vector retrieval
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - javaV226
 displayed_sidebar: javaSidebar
 
-displayed_sidbar: javaSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -57,7 +56,7 @@ addFunction(
 
 **RETURNS**
 
-A **FunctionScore** builder for chaining up multiple `addFunction()` methods.
+A **[FunctionScore](./v2-Vector-FunctionScore)** builder for chaining up multiple `addFunction()` methods.
 
 ## Example\{#example}
 

@@ -12,10 +12,10 @@ type: docx
 token: P66Mdx2aaooL9px9CnQcS2eTnng
 sidebar_position: 6
 keywords: 
-  - rag llm architecture
-  - private llms
-  - nn search
-  - llm eval
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - nodejs26
 displayed_sidebar: nodeSidebar
 
-displayed_sidbar: nodeSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -34,7 +33,7 @@ import Admonition from '@theme/Admonition';
 This operation conducts a scalar filtering with a specified boolean expression.
 
 ```javascript
-query(data): Promise<ResStatus>
+await milvusClient.query(data)
 ```
 
 ## Request Syntax\{#request-syntax}
@@ -156,7 +155,10 @@ This method returns a promise that resolves to a **QueryResults** object.
 ## Example\{#example}
 
 ```java
-const milvusClient = new milvusClient(MILUVS_ADDRESS);
+const milvusClient = new MilvusClient({
+    address: 'YOUR_CLUSTER_ENDPOINT',
+    token: 'YOUR_CLUSTER_TOKEN',
+});
  const queryResults = await milvusClient.query({
    collection_name: 'my_collection',
    filter: "age in [1,2,3,4,5,6,7,8]",

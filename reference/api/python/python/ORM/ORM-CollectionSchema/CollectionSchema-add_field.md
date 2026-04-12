@@ -12,10 +12,10 @@ type: docx
 token: H9IFdpWWUouzXOxKlx9cImP8nnd
 sidebar_position: 1
 keywords: 
+  - vector databases comparison
+  - Faiss
+  - Video search
   - AI Hallucination
-  - AI Agent
-  - semantic search
-  - Anomaly Detection
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

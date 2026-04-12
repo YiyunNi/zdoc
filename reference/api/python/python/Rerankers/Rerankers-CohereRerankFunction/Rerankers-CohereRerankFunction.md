@@ -12,10 +12,10 @@ type: docx
 token: GAWOdft83oZPvHxtxzZcjrQunGg
 sidebar_position: 1
 keywords: 
-  - k nearest neighbor algorithm
-  - ANNS
-  - Vector search
-  - knn algorithm
+  - Neural Network
+  - Deep Learning
+  - Knowledge base
+  - natural language processing
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -65,7 +64,7 @@ from pymilvus.model.reranker import CohereRerankFunction
 
 # Define the rerank function
 cohere_rf = CohereRerankFunction(
-    model_name="rerank-english-v3.0",  # Specify the model name. Defaults to `rerank-english-v2.0`.
+    model_name="rerank-english-v3.0",  # Specify the model name. Defaults to \`rerank-english-v2.0\`.
     api_key=COHERE_API_KEY # Replace with your Cohere API key
 )
 ```

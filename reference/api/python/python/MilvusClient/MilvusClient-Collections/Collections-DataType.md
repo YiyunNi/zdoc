@@ -12,10 +12,10 @@ type: docx
 token: KvNsd3aV4ocRNJxrZN2cg1zenqb
 sidebar_position: 7
 keywords: 
-  - vector database tutorial
-  - how do vector databases work
-  - vector db comparison
-  - openai vector db
+  - knn algorithm
+  - HNSW
+  - What is unstructured data
+  - Vector embeddings
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';
@@ -78,6 +77,10 @@ This is an enumeration that provides the following constants.
 - GEOMETRY
 
     Sets the datatype to **Geometry**.
+
+- TIMESTAMPTZ
+
+    Sets the datatype to **TIMESTAMPTZ**.
 
 - STRUCT
 

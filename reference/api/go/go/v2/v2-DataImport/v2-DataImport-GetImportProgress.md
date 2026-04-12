@@ -126,9 +126,9 @@ The `GetImportProgressResponse` struct type is as follows:
 
 ```go
 type GetImportProgressResponse struct {
-    Status  int    `json:"status"`
-    Message string `json:"message"`     
-    Data *ImportProgressData `json:"data"`
+    Status  int    \`json:"status"\`
+    Message string \`json:"message"\`     
+    Data *ImportProgressData \`json:"data"\`
 }
 ```
 
@@ -142,16 +142,16 @@ The `ImportProgressData` struct type is as follows:
 
 ```go
 type ImportProgressData struct {
-    CollectionName string                  `json:"collectionName"`
-    JobID          string                  `json:"jobId"`
-    CompleteTime   string                  `json:"completeTime"`
-    State          string                  `json:"state"`
-    Progress       int64                   `json:"progress"`
-    ImportedRows   int64                   `json:"importedRows"`
-    TotalRows      int64                   `json:"totalRows"`
-    Reason         string                  `json:"reason"`
-    FileSize       int64                   `json:"fileSize"`
-    Details        []*ImportProgressDetail `json:"details"`
+    CollectionName string                  \`json:"collectionName"\`
+    JobID          string                  \`json:"jobId"\`
+    CompleteTime   string                  \`json:"completeTime"\`
+    State          string                  \`json:"state"\`
+    Progress       int64                   \`json:"progress"\`
+    ImportedRows   int64                   \`json:"importedRows"\`
+    TotalRows      int64                   \`json:"totalRows"\`
+    Reason         string                  \`json:"reason"\`
+    FileSize       int64                   \`json:"fileSize"\`
+    Details        []*ImportProgressDetail \`json:"details"\`
 }
 ```
 
@@ -165,13 +165,13 @@ The `ImportProgressDetail` struct type is as follows:
 
 ```go
 type ImportProgressDetail struct {
-    FileName     string `json:"fileName"`
-    FileSize     int64  `json:"fileSize"`
-    Progress     int64  `json:"progress"`
-    CompleteTime string `json:"completeTime"`
-    State        string `json:"state"`
-    ImportedRows int64  `json:"importedRows"`
-    TotalRows    int64  `json:"totalRows"`
+    FileName     string \`json:"fileName"\`
+    FileSize     int64  \`json:"fileSize"\`
+    Progress     int64  \`json:"progress"\`
+    CompleteTime string \`json:"completeTime"\`
+    State        string \`json:"state"\`
+    ImportedRows int64  \`json:"importedRows"\`
+    TotalRows    int64  \`json:"totalRows"\`
 }
 ```
 

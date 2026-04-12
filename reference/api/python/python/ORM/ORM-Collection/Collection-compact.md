@@ -12,10 +12,10 @@ type: docx
 token: BHx6dnSmPoaqHAxKCvncbuk9nWb
 sidebar_position: 2
 keywords: 
+  - hnsw algorithm
+  - vector similarity search
+  - approximate nearest neighbor search
   - DiskANN
-  - Sparse vector
-  - Vector Dimension
-  - ANN Search
   - zilliz
   - zilliz cloud
   - cloud
@@ -23,7 +23,6 @@ keywords:
   - pymilvus26
 displayed_sidebar: pythonSidebar
 
-displayed_sidbar: pythonSidebar
 ---
 
 import Admonition from '@theme/Admonition';

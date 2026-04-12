@@ -192,11 +192,11 @@ The `BulkImportResponse` struct type is as follows:
 
 ```go
 type BulkImportResponse struct {
-    Status  int    `json:"status"`
-    Message string `json:"message"`      
+    Status  int    \`json:"status"\`
+    Message string \`json:"message"\`      
     Data struct {
-        JobID string `json:"jobId"`
-    } `json:"data"`
+        JobID string \`json:"jobId"\`
+    } \`json:"data"\`
 }
 ```
 

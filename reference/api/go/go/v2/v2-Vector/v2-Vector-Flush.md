@@ -137,7 +137,7 @@ This method does not take any input parameters. The following table lists the va
 ## Example\{#example}
 
 ```plaintext
-collectionName := `customized_setup_1`
+collectionName := \`customized_setup_1\`
 
 task, err := cli.Flush(ctx, milvusclient.NewFlushOption(collectionName))
 if err != nil {
