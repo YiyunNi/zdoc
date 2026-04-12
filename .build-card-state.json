@@ -1,23 +1,20 @@
 {
-  "title": "Global Docs Build",
+  "title": "Japanese Translation",
   "stages": [
-    "Fetch EN docs",
-    "Build EN docs",
-    "Check EN links",
-    "Fetch SDK refs",
-    "Build SDK docs",
-    "Check SDK links"
+    "Translate JA",
+    "Agent Repair",
+    "Commit"
   ],
   "statuses": [
     "done",
     "done",
-    "done",
-    "done",
-    "done",
-    "done"
+    "running"
   ],
-  "currentIndex": 5,
-  "notes": [],
-  "startedAt": "2026-04-12T18:21:01.423Z",
-  "messageId": "om_x100b528a66177534b1074a343f5aae0"
+  "currentIndex": 2,
+  "notes": [
+    "0 translated this run / 599 total",
+    "No repairs needed"
+  ],
+  "startedAt": "2026-04-12T19:16:54.388Z",
+  "messageId": "om_x100b528ab4a7a4a4c435aab792c6f7d"
 }
