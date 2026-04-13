@@ -273,20 +273,12 @@ export default function Hero({ children }) {
   const [topPanel, setTopPanel] = useState('right'); // 'left' or 'right'
   const [highlightedJson, setHighlightedJson] = useState('');
   const [highlightedCode, setHighlightedCode] = useState('');
-  const [installTab, setInstallTab] = useState('humans');
   const [copiedInstall, setCopiedInstall] = useState(false);
 
   const INSTALL_COMMANDS = {
     humans: 'pip install pymilvus',
     agents: 'npx skills add zilliztech/zilliz-skill',
   };
-
-  function handleCopyInstall() {
-    navigator.clipboard.writeText(INSTALL_COMMANDS[installTab]).then(() => {
-      setCopiedInstall(true);
-      setTimeout(() => setCopiedInstall(false), 1500);
-    });
-  }
 
   // Highlight code when slide or tab changes
   useEffect(() => {
@@ -374,32 +366,45 @@ export default function Hero({ children }) {
           </div>
           {subtitle}
           <div className={styles.installWidget}>
-            <div className={styles.installTabs}>
-              <button
-                className={`${styles.installTab} ${installTab === 'humans' ? styles.installTabActive : ''}`}
-                onClick={() => setInstallTab('humans')}
-              >
-                For humans
-              </button>
-              <span className={styles.installDivider} />
-              <button
-                className={`${styles.installTab} ${installTab === 'agents' ? styles.installTabActive : ''}`}
-                onClick={() => setInstallTab('agents')}
-              >
-                For agents
-              </button>
+            <div className={styles.installWidgetItem}>
+              <div className={styles.installWidgetLabel}>For Humans</div>
+              <div className={styles.installCmd}>
+                <span className={styles.installPrompt}>$</span>
+                <span className={styles.installText}>{INSTALL_COMMANDS.humans}</span>
+                <button
+                  className={styles.installCopy}
+                  onClick={() => {
+                    navigator.clipboard.writeText(INSTALL_COMMANDS.humans).then(() => {
+                      setCopiedInstall(true);
+                      setTimeout(() => setCopiedInstall(false), 1500);
+                    });
+                  }}
+                  title="Copy command"
+                  aria-label="Copy command"
+                >
+                  {copiedInstall ? '✓' : <Copy size={14} />}
+                </button>
+              </div>
             </div>
-            <div className={styles.installCmd}>
-              <span className={styles.installPrompt}>$</span>
-              <span className={styles.installText}>{INSTALL_COMMANDS[installTab]}</span>
-              <button
-                className={styles.installCopy}
-                onClick={handleCopyInstall}
-                title="Copy command"
-                aria-label="Copy command"
-              >
-                {copiedInstall ? '✓' : <Copy size={14} />}
-              </button>
+            <div className={styles.installWidgetItem}>
+              <div className={styles.installWidgetLabel}>For Agents</div>
+              <div className={styles.installCmd}>
+                <span className={styles.installPrompt}>$</span>
+                <span className={styles.installText}>{INSTALL_COMMANDS.agents}</span>
+                <button
+                  className={styles.installCopy}
+                  onClick={() => {
+                    navigator.clipboard.writeText(INSTALL_COMMANDS.agents).then(() => {
+                      setCopiedInstall(true);
+                      setTimeout(() => setCopiedInstall(false), 1500);
+                    });
+                  }}
+                  title="Copy command"
+                  aria-label="Copy command"
+                >
+                  {copiedInstall ? '✓' : <Copy size={14} />}
+                </button>
+              </div>
             </div>
           </div>
         </div>
