@@ -76,6 +76,12 @@ The following table offers a quick comparison of the three cluster types in diff
 
 - Ideal for large-scale unstructured data search, copyright detection, and identity verification.
 
+### Tiered-storage cluster\{#tiered-storage-cluster}
+
+- Best for ultra-large-scale, cost-sensitive workloads with clear hot and cold data patterns.
+
+- Ideal for applications that need to store massive volumes of data at a low cost. The capacity of a Tiered-storage cluster is 4 times that of a Capacity-optimized cluster.
+
 ## Select an optimal cluster type\{#select-an-optimal-cluster-type}
 
 Factor in data volume, performance expectations, and budgets while selecting the cluster type. Your vector data's magnitude, both in terms of vector count and dimensions, plays a pivotal role in determining cluster resource allocation.

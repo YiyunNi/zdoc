@@ -92,7 +92,7 @@ JSON フィールドの構造例：
    <tr>
      <td><p>クエリ</p></td>
      <td><p>フィールド名または JSON フィールド内のターゲットキーを使用してクエリ：<code>metadata["key"]</code>。</p></td>
-     <td><p>動的フィールドキーを直接使用してクエリ：<code>"dynamic_key"</code>、または <code>$meta</code> 経由でクエリ：<code>$meta["dynamic_key"]</code></p></td>
+     <td><p>動的フィールドキーを直接使用してクエリ：<code>"dynamic_key"</code>、または <code>&#36;meta</code> 経由でクエリ：<code>&#36;meta["dynamic_key"]</code></p></td>
    </tr>
 </table>
 

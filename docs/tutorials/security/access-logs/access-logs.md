@@ -2,7 +2,7 @@
 title: "Access Logs | Cloud"
 slug: /access-logs
 sidebar_label: "Access Logs"
-beta: FALSE
+beta: PUBLIC
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE

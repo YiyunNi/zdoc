@@ -40,7 +40,7 @@ This guide covers the full lifecycle of access logs on Zilliz Cloud: enabling, a
 
 ## Before you start\{#before-you-start}
 
-- An object storage integration (AWS S3, Google Cloud Storage, or Azure Blob Storage) configured in the same region as your target cluster. For setup instructions, refer to [Integrate with AWS S3](./integrate-with-aws-s3), [Integrate with Google Cloud Storage](./integrate-with-gcp), or [Integrate with Azure Blob Storage](./integrate-with-azure-blob-storage).
+- An object storage integration (AWS S3, Google Cloud Storage, or Azure Blob Storage) configured in the same region as your target cluster.
 
 - **Organization Owner** or **Project Admin** permissions for the project. If you do not have the required permissions, contact your Zilliz Cloud administrator.
 

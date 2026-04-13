@@ -7,7 +7,7 @@ added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "Last updated Feb 9, 2026 | Cloud"
+description: "Last updated April 11, 2026 | Cloud"
 type: origin
 token: MUL3wkn7Yi3YoFkYk59csf8bnNc
 sidebar_position: 1
@@ -26,7 +26,7 @@ import Grid from '@site/src/components/Grid';
 
 # Changelogs
 
-**Last updated:** Feb 9, 2026
+**Last updated:** April 11, 2026
 
 <Grid columnSize="2" widthRatios="25,74">
 
@@ -38,15 +38,39 @@ import Grid from '@site/src/components/Grid';
 
     <div>
 
-        - Global cluster with many more enhancements.
-
-        - External volume will become available soon.
+        - Lakebase is on the way.
 
     </div>
 
 </Grid>
 
 ## 2026\{#2026}
+
+<Grid columnSize="2" widthRatios="25,74">
+
+    <div>
+
+        **[April](./release-notes-2604)[ 11, 2026](./release-notes-2604)**
+
+    </div>
+
+    <div>
+
+        - [🌎 Global cluster](./global-cluster-explained) now fully supports regional disaster recovery failure with refined platform capabilities.
+
+        - 📈 More fine-grained [metrics are available at the collection level](./metrics-alerts-reference#cluster-and-collection-metrics).
+
+        - 📋 [Access logs](./access-logs) are available in Public Preview.
+
+        - ⚙️ The [maintenance window](./organization-settings#set-up-preferred-maintenance-window) has been redesigned to provide more predictable upgrade scheduling and proactive notifications.
+
+        - 👥 A new [cluster admin](./project-users) role grants team members operational access to specific clusters without full project-level admin privileges.
+
+        - 💾 Tiered storage becomes available to clusters in BYOC projects.
+
+    </div>
+
+</Grid>
 
 <Grid columnSize="2" widthRatios="25,74">
 

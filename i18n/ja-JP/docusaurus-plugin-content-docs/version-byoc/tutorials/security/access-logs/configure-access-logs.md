@@ -37,7 +37,7 @@ import Procedures from '@site/src/components/Procedures';
 
 ## 始める前に\{#before-you-start}
 
-- ターゲットクラスターと同じリージョンで構成されたオブジェクトストレージ統合（AWS S3、Google Cloud Storage、または Azure Blob Storage）。セットアップ手順については、[AWS S3 との統合](./integrate-with-aws-s3)、[Google Cloud Storage との統合](./integrate-with-gcp)、または [Azure Blob Storage との統合](./integrate-with-azure-blob-storage) を参照してください。
+- ターゲットクラスターと同じリージョンで構成されたオブジェクトストレージ統合（AWS S3、Google Cloud Storage、または Azure Blob Storage）。
 
 - プロジェクトに対する**組織オーナー**または**プロジェクト管理者**の権限。必要な権限をお持ちでない場合は、Zilliz Cloud 管理者にお問い合わせください。
 

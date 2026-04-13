@@ -73,16 +73,6 @@ import Supademo from '@site/src/components/Supademo';
 
 適用可能なオブジェクトパスについては、[ストレージオプション](./data-import-storage-options) および [フォーマットオプション](./data-import-format-options) を参照してください。
 
-## FAQ\{#faq}
-
-**外部ボリュームと外部ストレージからの直接インポートの違いは何ですか？**
-
-どちらも独自の S3 または GCS バケットからデータをインポートできます。主な違いは以下の通りです：
-
-- 外部ボリュームは、認証情報管理のために [ストレージ統合](./integrate-with-aws-s3) を使用します。認証情報は一度設定すれば、複数のボリュームや操作で再利用できます。データエンジニアはクラウドストレージキーに直接アクセスする必要がありません。
-
-- 直接 [外部ストレージインポート](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) では、各インポートリクエストとともに認証情報（アクセスキー、シークレットキー）をインラインで提供する必要があります。これは一回限りのインポートにはシンプルですが、認証情報の分離や再利用性は提供されません。
-
 ## 関連トピック\{#related-topics}
 
 - [ストレージオプション](./data-import-storage-options)

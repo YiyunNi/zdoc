@@ -172,7 +172,7 @@ Curated prompt library for AI-powered IDEs to help AI assistants implement Zilli
 
     - [Golang](/reference/go)
 
-    - [Node.js](/reference/node)
+    - [Node.js](/reference/nodejs)
 
     - [RESTful API](/reference/restful)
 

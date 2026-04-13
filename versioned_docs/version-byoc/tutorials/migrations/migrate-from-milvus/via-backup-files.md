@@ -42,12 +42,6 @@ Make sure the following prerequisites are met:
 
     - **From Object Storage**: The public URL and access credentials for the Milvus object storage. You can choose long-term or temporary credentials. For detailed examples of an object storage URL, see [FAQ](./via-backup-files#faq).
 
-    - **From Volume**: 
-
-        - **Managed volume**: For very large local backup files, upload the file to a Zilliz Cloud [managed volume](./volume-explained#types-of-volume) first, then specify the file path in that volume.
-
-        - **External volume**: If your backup files are in a cloud object storage bucket, create an [external volume](./volume-explained#types-of-volume) that maps to that bucket. You can then migrate data directly from the external volume without providing credentials each time.
-
 - You have been granted the **Organization Owner** or **Project Admin** role. If you do not have the necessary permissions, contact your Zilliz Cloud Organization Owner.
 
 - Make sure the CU size of the target cluster can accommodate your source data. To estimate the required CU size, use the [calculator](https://zilliz.com/pricing?_gl=1*qro801*_ga*MzkzNTY1NDM0LjE3Mjk1MDExNzQ.*_ga_Q1F8R2NWDP*MTc0NTQ4MzY1Ni4zMDEuMS4xNzQ1NDg0MTEzLjAuMC4w*_ga_KKMVYG8YF2*MTc0NTQ4MzY1Ni4yNTIuMS4xNzQ1NDg0MTEzLjAuMC4w#calculator).
@@ -146,7 +140,7 @@ To prepare migration data for Milvus 2.x,
 
 ## Migrate data to Zilliz Cloud\{#migrate-data-to-zilliz-cloud}
 
-With backup files ready, you can migrate the data from local files, an object storage, or a volume.
+With backup files ready, you can migrate the data from local files.
 
 <Supademo id="cmbhd2wj85jktsn1rnjmi4t5o" title="Zilliz Cloud - Migrate from Milvus via Backup File Demo" />
 

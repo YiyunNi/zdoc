@@ -115,13 +115,3 @@ If the command output is similar as follows, the import job is successfully subm
 
 You can also call RESTful APIs to [get the progress of the current import job](/reference/restful/get-import-job-progress-v2) and [list all import jobs](/reference/restful/list-import-jobs-v2) to get more. As an alternative, you can also go to the [job center](./job-center) on the Zilliz Cloud console to view the result and job details.
 
-## FAQ\{#faq}
-
-**What is the difference between an external volume and importing directly from external storage?**
-
-Both allow you to import data from your own S3 or GCS bucket. The key differences are:
-
-- External volume uses a [storage integration](./integrate-with-aws-s3) for credential management. Credentials are set up once and reused across multiple volumes and operations. Data engineers do not need direct access to cloud storage keys.
-
-- Direct [external storage import](./import-data-on-web-ui#remote-files-from-an-object-storage-bucket) requires you to provide credentials (access key, secret key) inline with each import request. This is simpler for one-time imports but does not offer credential separation or reusability.
-

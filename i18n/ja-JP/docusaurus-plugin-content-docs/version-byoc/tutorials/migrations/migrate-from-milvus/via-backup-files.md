@@ -39,12 +39,6 @@ Zilliz Cloudは、Milvus ベクトルデータベースを、インフラスト�
 
     - **オブジェクトストレージから**: Milvusオブジェクトストレージの公開URLとアクセス認証情報。長期または一時的な認証情報を選択できます。オブジェクトストレージURLの詳細な例については、「[FAQ](./via-backup-files#faq)」を参照してください。
 
-    - **ボリュームから**:
-
-        - **マネージドボリューム**: 非常に大きなローカルバックアップファイルの場合、まずファイルをZilliz Cloud [マネージドボリューム](./volume-explained#types-of-volume)にアップロードし、そのボリューム内のファイルパスを指定します。
-
-        - **外部ボリューム**: バックアップファイルがクラウドオブジェクトストレージバケットにある場合、そのバケットにマッピングする[外部ボリューム](./volume-explained#types-of-volume)を作成します。その後、認証情報を毎回提供することなく、外部ボリュームから直接データを移行できます。
-
 - **組織オーナー**または**プロジェクト管理者**のロールが付与されていること。必要な権限がない場合は、Zilliz Cloudの組織オーナーに連絡してください。
 
 - ターゲットクラスターのCUサイズがソースデータを収容できることを確認してください。必要なCUサイズを見積もるには、[計算ツール](https://zilliz.com/pricing?_gl=1*qro801*_ga*MzkzNTY1NDM0LjE3Mjk1MDExNzQ.*_ga_Q1F8R2NWDP*MTc0NTQ4MzY1Ni4zMDEuMS4xNzQ1NDg0MTEzLjAuMC4w*_ga_KKMVYG8YF2*MTc0NTQ4MzY1Ni4yNTIuMS4xNzQ5NDg0MTEzLjAuMC4w#calculator)を使用してください。
@@ -143,7 +137,7 @@ Milvus 2.xの移行データを準備するには、
 
 ## Zilliz Cloudへのデータ移行\{#migrate-data-to-zilliz-cloud}
 
-バックアップファイルが準備できたら、ローカルファイル、オブジェクトストレージ、またはボリュームからデータを移行できます。
+バックアップファイルが準備できたら、ローカルファイル、またオブジェクトストレージからデータを移行できます。
 
 <Supademo id="cmbhd2wj85jktsn1rnjmi4t5o" title="Zilliz Cloud - Migrate from Milvus via Backup File Demo" />
 
