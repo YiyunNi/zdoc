@@ -9,6 +9,11 @@ export interface StoreEvent {
   agent: string;
   model?: string;
   data: Record<string, unknown>;
+  // Token usage fields (populated when type === 'message')
+  inputTokens?: number;
+  outputTokens?: number;
+  totalTokens?: number;
+  cachedInputTokens?: number;
 }
 
 export interface LiveSession {
@@ -30,6 +35,15 @@ export interface PerformanceRow {
   confidenceDist: { high: number; medium: number; low: number };
   avgSources: number;
   errorRate: number;
+}
+
+export interface TokenUsageRow {
+  model: string;
+  requestCount: number;
+  totalInputTokens: number;
+  totalOutputTokens: number;
+  totalTokens: number;
+  totalCachedInputTokens: number;
 }
 
 class EventStore {
@@ -228,6 +242,40 @@ class EventStore {
 
   size(): number {
     return this.count;
+  }
+
+  /** Aggregate token usage by model from message events. */
+  getTokenUsage(): TokenUsageRow[] {
+    const buckets = new Map<string, {
+      model: string;
+      requestCount: number;
+      totalInputTokens: number;
+      totalOutputTokens: number;
+      totalTokens: number;
+      totalCachedInputTokens: number;
+    }>();
+
+    for (let i = 0; i < this.count; i++) {
+      const idx = (this.head - 1 - i + this.maxSize) % this.maxSize;
+      const ev = this.buffer[idx];
+      if (ev.type !== 'message') continue;
+      if (ev.totalTokens == null) continue; // no token data for this event
+
+      const model = ev.model ?? 'unknown';
+      let bucket = buckets.get(model);
+      if (!bucket) {
+        bucket = { model, requestCount: 0, totalInputTokens: 0, totalOutputTokens: 0, totalTokens: 0, totalCachedInputTokens: 0 };
+        buckets.set(model, bucket);
+      }
+
+      bucket.requestCount++;
+      bucket.totalInputTokens += ev.inputTokens ?? 0;
+      bucket.totalOutputTokens += ev.outputTokens ?? 0;
+      bucket.totalTokens += ev.totalTokens ?? 0;
+      bucket.totalCachedInputTokens += ev.cachedInputTokens ?? 0;
+    }
+
+    return Array.from(buckets.values()).sort((a, b) => b.totalTokens - a.totalTokens);
   }
 }
 

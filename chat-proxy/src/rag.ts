@@ -435,6 +435,30 @@ export async function loadIndex(force = false): Promise<void> {
 
   if (allChunks.length > 0) {
     const db = getDb();
+
+    // Check if existing index in DB is fresh (same source, built within 30 min)
+    // This avoids unnecessary rebuild on pod restart when the PVC still has recent data
+    if (!force && !indexReady) {
+      try {
+        const metaRows = db.prepare(
+          "SELECT key, value FROM metadata WHERE key IN ('last_build', 'source')"
+        ).all() as { key: string; value: string }[];
+        const metaMap = Object.fromEntries(metaRows.map(r => [r.key, r.value]));
+        if (metaMap.last_build && metaMap.source) {
+          const lastBuild = new Date(metaMap.last_build).getTime();
+          const ageMin = (Date.now() - lastBuild) / 60000;
+          if (ageMin < 30 && metaMap.source === INDEX_BASE_URL) {
+            console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source) — using existing`);
+            db.exec("INSERT INTO doc_chunks_fts(doc_chunks_fts) VALUES('optimize')");
+            indexReady = true;
+            lastRefreshedAt = metaMap.last_build;
+            indexLoading = false;
+            return;
+          }
+        }
+      } catch { /* DB not ready or empty — proceed with build */ }
+    }
+
     resetDb();
 
     const insert = db.prepare(`

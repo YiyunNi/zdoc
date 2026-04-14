@@ -30,3 +30,12 @@ export interface FeedbackRequest {
 
 export type AgentType = 'general' | 'schema' | 'resources' | 'product' | 'code';
 export type ConfidenceLevel = 'high' | 'medium' | 'low';
+
+export interface TokenUsage {
+  inputTokens: number;
+  outputTokens: number;
+  totalTokens: number;
+  cachedInputTokens?: number;
+  model: string;
+  agentType: string;
+}

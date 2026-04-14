@@ -2,6 +2,7 @@ import {generateObject} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
 import {z} from 'zod';
 import type {AgentType, ChatMessage} from './types.js';
+import {saveTokenUsage} from './db.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -98,6 +99,22 @@ Route to the most appropriate agent and select relevant topics.`,
     });
 
     const agentType = result.object.agent;
+
+    // Persist router LLM token usage
+    try {
+      const u = result.usage;
+      if (u.inputTokens != null && u.outputTokens != null) {
+        saveTokenUsage({
+          sessionId: sessionId,
+          model: AI_MODEL,
+          agentType: 'router',
+          inputTokens: u.inputTokens,
+          outputTokens: u.outputTokens,
+          totalTokens: u.totalTokens ?? u.inputTokens + u.outputTokens,
+          cachedInputTokens: u.cachedInputTokens ?? 0,
+        });
+      }
+    } catch { /* fire-and-forget */ }
 
     // Update sticky route
     if (sessionId) {

@@ -4,6 +4,7 @@
 
 import {eventStore} from './event-store.js';
 import type {StoreEvent} from './event-store.js';
+import type {TokenUsage} from './types.js';
 
 export function logEvent(
   sessionId: string,
@@ -33,6 +34,10 @@ export function logEvent(
       agent,
       model: typeof data.model === 'string' ? data.model : undefined,
       data,
+      inputTokens: typeof data.inputTokens === 'number' ? data.inputTokens : undefined,
+      outputTokens: typeof data.outputTokens === 'number' ? data.outputTokens : undefined,
+      totalTokens: typeof data.totalTokens === 'number' ? data.totalTokens : undefined,
+      cachedInputTokens: typeof data.cachedInputTokens === 'number' ? data.cachedInputTokens : undefined,
     });
   } catch {
     // Fire and forget
@@ -50,12 +55,13 @@ export interface ConversationData {
   confidenceLevels: string[];
   pageUrls: string[];
   feedbackSummary: {up: number; down: number};
+  tokenUsage?: TokenUsage;
 }
 
 export function saveConversation(conv: ConversationData): void {
   try {
     const timestamp = new Date().toISOString();
-    console.log(JSON.stringify({
+    const logData: Record<string, unknown> = {
       type: 'conversation',
       timestamp,
       id: conv.id,
@@ -68,7 +74,25 @@ export function saveConversation(conv: ConversationData): void {
       confidenceLevels: conv.confidenceLevels,
       pageUrls: conv.pageUrls,
       feedbackSummary: conv.feedbackSummary,
-    }));
+    };
+    if (conv.tokenUsage) {
+      logData.tokenUsage = conv.tokenUsage;
+    }
+    console.log(JSON.stringify(logData));
+
+    const storeData: Record<string, unknown> = {
+      messageCount: conv.messages.length,
+      agentTypesUsed: conv.agentTypesUsed,
+      toolsCalled: conv.toolsCalled,
+      sourcesCount: conv.sourcesReturned.length,
+      confidenceLevels: conv.confidenceLevels,
+    };
+    if (conv.tokenUsage) {
+      storeData.inputTokens = conv.tokenUsage.inputTokens;
+      storeData.outputTokens = conv.tokenUsage.outputTokens;
+      storeData.totalTokens = conv.tokenUsage.totalTokens;
+      storeData.cachedInputTokens = conv.tokenUsage.cachedInputTokens ?? 0;
+    }
 
     eventStore.push({
       timestamp,
@@ -76,13 +100,7 @@ export function saveConversation(conv: ConversationData): void {
       sessionId: conv.sessionId,
       userId: conv.userId,
       agent: conv.agentTypesUsed[0] || 'unknown',
-      data: {
-        messageCount: conv.messages.length,
-        agentTypesUsed: conv.agentTypesUsed,
-        toolsCalled: conv.toolsCalled,
-        sourcesCount: conv.sourcesReturned.length,
-        confidenceLevels: conv.confidenceLevels,
-      },
+      data: storeData,
     });
   } catch {
     // Fire and forget

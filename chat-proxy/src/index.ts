@@ -20,6 +20,15 @@ import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.
 import type {AgentType} from './types.js';
 import {computeConfidence} from './confidence.js';
 import {loadPrompts, getBasePrompt, getTopicPrompt} from './prompts.js';
+import {
+  semanticCacheLookup,
+  semanticCacheWrite,
+  computeEmbedding,
+  getSemanticCacheConfig,
+} from './semantic-cache.js';
+import type {TokenUsage} from './types.js';
+import {saveTokenUsage} from './db.js';
+import {handlePostAction} from './post-action-handler.js';
 
 const promptRules = loadRules(import.meta.url);
 
@@ -342,7 +351,21 @@ app.post('/chat', async c => {
         const cachedEvents = responseCacheGet(responseCacheKey);
         if (cachedEvents) {
           console.log(`[Cache] Response cache hit for: ${ragQuery.slice(0, 60)}`);
+          send('cache', JSON.stringify({type: 'session'}));
           for (const evt of cachedEvents) {
+            send(evt.event, evt.data);
+          }
+          controller.close();
+          return;
+        }
+
+        // Check semantic cache for similar queries across sessions
+        const semanticHit = await semanticCacheLookup(ragQuery, sectionFilter);
+        if (semanticHit) {
+          console.log(`[SemanticCache] Replay cached response: ${ragQuery.slice(0, 60)}`);
+          send('cache', JSON.stringify({type: 'semantic', similarity: semanticHit.similarity}));
+          const events = JSON.parse(semanticHit.entry.sse_events) as Array<{event: string; data: string}>;
+          for (const evt of events) {
             send(evt.event, evt.data);
           }
           controller.close();
@@ -426,6 +449,7 @@ app.post('/chat', async c => {
           const toolSources: {title: string; url: string; score?: number; section?: string}[] = [];
           const toolChunks: {doc_url: string; doc_title: string; section: string; content: string}[] = [];
           let fullText = '';
+          let groundedSourceCount = 0;
 
           for await (const part of result.fullStream) {
             if (part.type === 'text-delta') {
@@ -474,6 +498,24 @@ app.post('/chat', async c => {
                 });
               }
             }
+          }
+
+          // Capture total token usage across all LLM steps (important with tool calls)
+          let tokenUsage: TokenUsage | null = null;
+          try {
+            const usage = await result.totalUsage;
+            if (usage.inputTokens != null && usage.outputTokens != null) {
+              tokenUsage = {
+                inputTokens: usage.inputTokens,
+                outputTokens: usage.outputTokens,
+                totalTokens: usage.totalTokens ?? usage.inputTokens + usage.outputTokens,
+                cachedInputTokens: usage.cachedInputTokens ?? 0,
+                model: activeModel,
+                agentType: agentConfig.type,
+              };
+            }
+          } catch (err) {
+            console.warn('[Usage] Failed to read totalUsage:', (err as Error).message);
           }
 
           // Deduplicate tool sources by URL
@@ -555,6 +597,7 @@ app.post('/chat', async c => {
 
             // Always send sources - prefer over-attribution to under-attribution (industry standard)
             if (grounding.sources.length > 0) {
+              groundedSourceCount = grounding.sources.length;
               // Grounding succeeded — send with paragraph-level citations
               sendAndRecord('sources', JSON.stringify({sources: grounding.sources}));
               sendAndRecord('grounding', JSON.stringify({citations: grounding.citations}));
@@ -576,8 +619,42 @@ app.post('/chat', async c => {
 
           sendAndRecord('done', JSON.stringify({stop_reason: 'end_turn'}));
 
-          // Cache the successful response for replay
+          // Emit token usage event (before caching, fire-and-forget)
+          if (tokenUsage) {
+            sendAndRecord('usage', JSON.stringify({
+              inputTokens: tokenUsage.inputTokens,
+              outputTokens: tokenUsage.outputTokens,
+              totalTokens: tokenUsage.totalTokens,
+              cachedInputTokens: tokenUsage.cachedInputTokens,
+              model: tokenUsage.model,
+            }));
+          }
+
+          // Cache the successful response for replay (session-scoped exact match)
           responseCacheSet(responseCacheKey, recordedEvents);
+
+          // Store in semantic cache (cross-session, similarity-based) — fire-and-forget
+          // Compute embedding asynchronously after response is sent
+          const queryEmbeddingPromise = computeEmbedding(ragQuery);
+          queryEmbeddingPromise.then(queryEmbedding => {
+            // Build chunk hashes from tool source URLs (use doc_chunks.id as hash)
+            const sourceChunkHashes = toolChunks.map(tc => tc.doc_url + '#' + (tc.section ? tc.section + ':' : '') + tc.content.slice(0, 100));
+            const sourceEntries = allSources.map(s => ({url: s.url}));
+            const confidenceJson = JSON.stringify({level: confidence, score: 0});
+
+            semanticCacheWrite({
+              queryText: ragQuery,
+              queryEmbedding,
+              agent: agentConfig.type,
+              sectionFilter,
+              sseEvents: recordedEvents,
+              sources: sourceEntries,
+              chunkHashes: sourceChunkHashes.slice(0, 20), // cap at 20 for storage
+              confidence: confidenceJson,
+            });
+          }).catch(err => {
+            console.warn('[SemanticCache] Failed to compute embedding:', (err as Error).message);
+          });
 
           // Log the message (fire-and-forget)
           logEvent(session.id, userId, 'message', agentConfig.type, {
@@ -590,6 +667,10 @@ app.post('/chat', async c => {
             sourceCount: allSources.length,
             sources: allSources.map(s => s.url),
             pageUrl: body.pageUrl,
+            inputTokens: tokenUsage?.inputTokens,
+            outputTokens: tokenUsage?.outputTokens,
+            totalTokens: tokenUsage?.totalTokens,
+            cachedInputTokens: tokenUsage?.cachedInputTokens,
           });
 
           const tGround = Date.now() - tGroundStart;
@@ -607,7 +688,26 @@ app.post('/chat', async c => {
             confidenceLevels: [confidence],
             pageUrls: body.pageUrl ? [body.pageUrl] : [],
             feedbackSummary: {up: 0, down: 0},
+            tokenUsage: tokenUsage ?? undefined,
           });
+
+          // Persist token usage to SQLite (fire-and-forget)
+          if (tokenUsage) {
+            try {
+              saveTokenUsage({
+                sessionId: session.id,
+                userId,
+                model: tokenUsage.model,
+                agentType: tokenUsage.agentType,
+                inputTokens: tokenUsage.inputTokens,
+                outputTokens: tokenUsage.outputTokens,
+                totalTokens: tokenUsage.totalTokens,
+                cachedInputTokens: tokenUsage.cachedInputTokens,
+              });
+            } catch (err) {
+              console.warn('[Usage] Failed to persist token usage:', (err as Error).message);
+            }
+          }
 
           // Update user profile (fire-and-forget)
           updateUserProfile(userId, {
@@ -615,10 +715,44 @@ app.post('/chat', async c => {
             topicsDiscussed: [ragQuery.slice(0, 64)],
             pagesVisited: body.pageUrl ? [body.pageUrl] : [],
           });
+
+          // Post-action handler: diagnose and act on low-confidence/error responses (fire-and-forget)
+          handlePostAction({
+            confidenceLevel: confidence,
+            confidenceBreakdown: confidenceResult.breakdown,
+            toolsCalled,
+            sourceCount: allSources.length,
+            groundedSourceCount,
+            fullText,
+            query: ragQuery,
+            agentType: agentConfig.type,
+            model: activeModel,
+            sectionFilter,
+            sessionId: session.id,
+            isDeflected: deflected,
+            isSelfDescribed: selfDescribed,
+          });
         } catch (err: unknown) {
           const message = err instanceof Error ? err.message : 'Internal server error';
           send('error', JSON.stringify({error: message}));
           logEvent(session.id, userId, 'error', 'unknown', {error: message});
+
+          // Post-action for hard errors
+          handlePostAction({
+            confidenceLevel: 'low',
+            toolsCalled: [],
+            sourceCount: 0,
+            groundedSourceCount: 0,
+            fullText: '',
+            query: ragQuery,
+            agentType: 'unknown',
+            model: '',
+            sectionFilter,
+            sessionId: session.id,
+            isDeflected: false,
+            isSelfDescribed: false,
+            error: message,
+          });
         } finally {
           controller.close();
         }

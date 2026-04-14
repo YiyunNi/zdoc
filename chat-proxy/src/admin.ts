@@ -4,6 +4,8 @@ import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 import {loadIndex, getIndexSize} from './rag.js';
 import {eventStore} from './event-store.js';
+import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
+import {getDb, getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage, getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality} from './db.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -56,6 +58,8 @@ adminApp.post('/refresh-index', async c => {
   try {
     const start = Date.now();
     await loadIndex(true);
+    // Invalidate semantic cache when doc index refreshes (sources may have changed)
+    invalidateSemanticCache();
     const took = ((Date.now() - start) / 1000).toFixed(1);
     console.log(`[Admin] Index refreshed: ${getIndexSize()} chunks in ${took}s`);
     return c.json({ok: true, chunks: getIndexSize(), took: `${took}s`, updated: new Date().toISOString()});
@@ -64,9 +68,20 @@ adminApp.post('/refresh-index', async c => {
   }
 });
 
-// GET /admin/stats — index size
+// GET /admin/stats — index size, cache stats, and token usage summary
 adminApp.get('/stats', async c => {
-  return c.json({doc_chunks: getIndexSize()});
+  const cacheStats = getCacheStats();
+  const cacheConfig = getSemanticCacheConfig();
+  const tokenSummary = getTokenUsageSummary();
+  return c.json({
+    doc_chunks: getIndexSize(),
+    semantic_cache: {
+      ...cacheStats,
+      entries: getCacheEntriesCount(),
+      config: cacheConfig,
+    },
+    token_usage: tokenSummary,
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -110,4 +125,76 @@ adminApp.get('/api/session/:id', c => {
     return c.json({error: 'Session not found', sessionId}, 404);
   }
   return c.json({sessionId, events: sessionEvents});
+});
+
+// ---------------------------------------------------------------------------
+// Semantic cache management
+// ---------------------------------------------------------------------------
+
+// GET /admin/api/cache/entries — list cached entries
+adminApp.get('/api/cache/entries', c => {
+  const limit = parseInt(c.req.query('limit') || '100', 10);
+  const db = getDb();
+  const rows = db.prepare(
+    `SELECT id, query_text, agent, section_filter, confidence, created_at, hits, length(sse_events) as event_size
+     FROM answer_cache ORDER BY created_at DESC LIMIT ?`
+  ).all(limit);
+  return c.json({entries: rows});
+});
+
+// DELETE /admin/api/cache/:id — invalidate a specific cache entry
+adminApp.delete('/api/cache/:id', c => {
+  const id = parseInt(c.req.param('id'), 10);
+  invalidateCacheEntry(id);
+  return c.json({ok: true, id});
+});
+
+// ---------------------------------------------------------------------------
+// Token usage endpoints
+// ---------------------------------------------------------------------------
+
+// GET /admin/api/token-usage/by-model — aggregate tokens by model
+adminApp.get('/api/token-usage/by-model', c => {
+  return c.json({byModel: getTokenUsageByModel()});
+});
+
+// GET /admin/api/token-usage/recent — recent token usage entries
+adminApp.get('/api/token-usage/recent', c => {
+  const limit = parseInt(c.req.query('limit') || '50', 10);
+  return c.json({entries: getRecentTokenUsage(limit)});
+});
+
+// GET /admin/api/token-usage/live — in-memory buffer aggregation
+adminApp.get('/api/token-usage/live', c => {
+  return c.json({byModel: eventStore.getTokenUsage()});
+});
+
+// ---------------------------------------------------------------------------
+// Content gaps and quality
+// ---------------------------------------------------------------------------
+
+// GET /admin/api/doc-gaps — unresolved content gaps
+adminApp.get('/api/doc-gaps', c => {
+  const limit = parseInt(c.req.query('limit') || '100', 10);
+  return c.json({gaps: getDocGaps(limit)});
+});
+
+// PATCH /admin/api/doc-gaps/:id — mark resolved or dismissed
+adminApp.patch('/api/doc-gaps/:id', async c => {
+  const id = parseInt(c.req.param('id'), 10);
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+  const status = body.status === 'dismissed' ? 2 : 1;
+  resolveDocGap(id, status);
+  return c.json({ok: true, id, resolved: status});
+});
+
+// GET /admin/api/content-quality — content quality issues
+adminApp.get('/api/content-quality', c => {
+  const limit = parseInt(c.req.query('limit') || '50', 10);
+  return c.json({issues: getContentQuality(limit)});
 });

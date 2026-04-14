@@ -1,15 +1,17 @@
 /* ── Full-bleed wrapper with gradient background ── */
 .heroWrapper {
-  /* Break out of Docusaurus content padding to fill viewport width */
-  width: 100vw;
+  /* Break out of .container max-width by stretching to the full <main> width.
+     The Hero sits inside: <main> → .container (max-width:1140px, centered) → .col → <article>.
+     We use the 50%/-50% trick relative to the content column, then clamp to
+     viewport width minus the sidebar so we never overlap the sidebar. */
+  width: calc(100vw - var(--doc-sidebar-width, 300px));
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  /* Cancel docItemCol top padding + DocBreadcrumbs height so hero sits flush under the navbar */
-  margin-top: -4rem;
-  background: linear-gradient(160deg, #b8d0ff 0%, #d0e0ff 25%, #e4edff 50%, #f2f6ff 75%, #ffffff 100%);
+  background: linear-gradient(160deg, #d6e4ff 0%, #e4edff 25%, #eef3ff 50%, #f6f8ff 75%, #ffffff 100%);
   overflow: hidden;
   padding-bottom: 80px;
+  margin-top: -4rem;
 }
 
 /* Decorative SVG – positioned to fill the wrapper */
@@ -52,7 +54,7 @@
 .hero {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 96px 40px 0;
+  padding: 100px 40px 0;
 }
 
 /* ── Text area ── */
@@ -63,63 +65,111 @@
 }
 
 .textArea h1 {
-  font-family: 'Plus Jakarta Sans', var(--ifm-font-family-base, Inter, sans-serif) !important;
-  font-size: clamp(56px, 8vw, 100px) !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: clamp(32px, 4.5vw, 48px) !important;
   font-weight: 800 !important;
   color: #0a0a0a !important;
   line-height: 1.05 !important;
   letter-spacing: -0.03em;
   margin: 0 0 20px !important;
   animation: fadeInUp 0.6s ease-out both;
+  display: block !important;
+  text-align: center !important;
 }
 
-/* ── Hero quick-actions row ── */
-.quickActions {
+.textArea .eyebrow {
+  font-family: var(--ifm-font-family-base, Inter, sans-serif) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #175fff !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin: 0 0 12px !important;
+  animation: fadeInUp 0.6s ease-out both;
+  display: block !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+
+/* ── Install command widget ── */
+.installWidget {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
   margin-top: 28px;
-  flex-wrap: wrap;
   animation: fadeInUp 0.6s ease-out 0.2s both;
 }
 
-.quickActionPrimary {
+.installWidgetItem {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.installWidgetLabel {
+  font-family: var(--ifm-font-family-base, Inter, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.installCmd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 12px 16px;
+  min-width: 280px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.installCmd:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.installPrompt {
+  font-family: var(--ifm-font-family-monospace, 'SFMono-Regular', Consolas, monospace);
   font-size: 14px;
-  font-weight: 600;
-  color: #fff !important;
-  background: #175fff;
-  border: 1.5px solid #175fff;
-  border-radius: 100px;
-  padding: 10px 22px;
-  text-decoration: none !important;
-  transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+  color: #9ca3af;
+  user-select: none;
+}
+
+.installText {
+  font-family: var(--ifm-font-family-monospace, 'SFMono-Regular', Consolas, monospace);
+  font-size: 14px;
+  color: #374151;
+  flex: 1;
   white-space: nowrap;
-  box-shadow: 0 4px 16px rgba(23, 95, 255, 0.25);
-}
-
-.quickActionPrimary:hover {
-  background: #0e4de6;
-  border-color: #0e4de6;
-  text-decoration: none !important;
-  box-shadow: 0 6px 24px rgba(23, 95, 255, 0.35);
-}
-
-.quickAction {
-  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 500;
-  color: #175fff !important;
-  background: transparent;
-  border: 1.5px solid rgba(23, 95, 255, 0.4);
-  border-radius: 100px;
-  padding: 10px 22px;
-  text-decoration: none !important;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-  white-space: nowrap;
 }
 
-.quickAction:hover {
-  background: rgba(23, 95, 255, 0.06);
-  text-decoration: none !important;
+.installCopy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.installCopy:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: #374151;
 }
 
 .textArea p {
@@ -451,6 +501,13 @@
 }
 
 /* ── Mobile ── */
+@media (max-width: 996px) {
+  /* Below 997px Docusaurus hides the sidebar, so use full viewport width */
+  .heroWrapper {
+    width: 100vw;
+  }
+}
+
 @media (max-width: 768px) {
   .heroWrapper {
     padding-bottom: 56px;
@@ -473,15 +530,24 @@
     font-size: 16px !important;
   }
 
-  .quickActions {
-    gap: 8px;
+  .installWidget {
+    gap: 12px;
+    max-width: 100%;
     margin-top: 20px;
   }
 
-  .quickActionPrimary,
-  .quickAction {
+  .installCmd {
+    min-width: unset;
+    padding: 10px 14px;
+  }
+
+  .installWidgetLabel {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .installText {
     font-size: 13px;
-    padding: 9px 16px;
   }
 
   .codePanels {

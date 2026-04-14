@@ -1,6 +1,6 @@
 import type {SearchResult} from './rag.js';
 import type {Source} from './types.js';
-import {isDemotedSource} from './demotion.js';
+import {isDemotedSource, isApiRefSource} from './demotion.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -110,12 +110,12 @@ export function splitParagraphs(text: string): string[] {
 // Core: computeGrounding
 // ---------------------------------------------------------------------------
 
-const MIN_OVERLAP = 0.20;  // IDF-weighted overlap threshold for deterministic grounding
-const MIN_OVERLAP_SHORT = 0.15; // Lower threshold for short paragraphs (< 15 tokens)
+const MIN_OVERLAP = 0.25;  // IDF-weighted overlap threshold for deterministic grounding
+const MIN_OVERLAP_SHORT = 0.18; // Lower threshold for short paragraphs (< 15 tokens)
 const MAX_SOURCES_PER_PARAGRAPH = 2;
 
 /** Broader pre-filter threshold for IDF pre-pass feeding into LLM re-rank */
-export const PRE_FILTER_OVERLAP = 0.08;
+export const PRE_FILTER_OVERLAP = 0.10;
 
 // Low-value source demotion — patterns shared from demotion.ts
 const DEMOTE_FACTOR = 0.3; // aggressive demotion (needs ~83% raw overlap to pass MIN_OVERLAP)
@@ -142,13 +142,15 @@ export function computeGrounding(
     return {sources: [], citations: [], method: 'deterministic'};
   }
 
-  // Pre-tokenize all RAG chunks; flag release-note chunks for demotion
+  // Pre-tokenize all RAG chunks; flag release-note chunks and API refs for demotion
   const chunkTokens = rawResults.map(r => {
     const isDemoted = isDemotedSource(r.doc_title, r.doc_url);
+    const isApiRef = isApiRefSource(r.doc_url);
     return {
       tokens: tokenize(r.content),
       url: r.doc_url,
       demoted: isDemoted,
+      apiRef: isApiRef,
     };
   });
 
@@ -200,6 +202,8 @@ export function computeGrounding(
       let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
       // Demote release notes so they don't beat real documentation sources
       if (chunk.demoted) overlap *= DEMOTE_FACTOR;
+      // Demote API reference docs for conceptual questions
+      if (chunk.apiRef) overlap *= DEMOTE_FACTOR;
       if (overlap >= threshold) {
         scores.push({url: chunk.url, overlap});
       }
@@ -249,6 +253,7 @@ export function computeGrounding(
         }
         let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
         if (chunk.demoted) overlap *= DEMOTE_FACTOR;
+        if (chunk.apiRef) overlap *= DEMOTE_FACTOR;
         if (overlap >= MIN_OVERLAP) {
           usedUrls.add(chunk.url);
           urlOverlapScore.set(chunk.url,
@@ -358,6 +363,7 @@ export function scoreChunksPerParagraph(
     tokens: tokenize(c.content),
     url: c.doc_url,
     demoted: isDemotedSource(c.doc_title, c.doc_url),
+    apiRef: isApiRefSource(c.doc_url),
   }));
 
   // Document-frequency map for IDF
@@ -388,6 +394,7 @@ export function scoreChunksPerParagraph(
       }
       let overlap = totalWeight > 0 ? weightedMatch / totalWeight : 0;
       if (chunk.demoted) overlap *= DEMOTE_FACTOR;
+      if (chunk.apiRef) overlap *= DEMOTE_FACTOR;
       if (overlap < PRE_FILTER_OVERLAP) continue;
 
       const existing = urlBest.get(chunk.url);

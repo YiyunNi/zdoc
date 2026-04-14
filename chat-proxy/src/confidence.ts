@@ -89,11 +89,17 @@ const UNCERTAINTY_PATTERNS = /\b(i'm not sure|i don't have (any|enough|specific)
 const HEDGE_PATTERN = /\b(might|perhaps|possibly)\b/gi;
 const APOLOGY_PATTERNS = /\b(i apologize|sorry|unfortunately i|i'm unable to)\b/i;
 
+/** Detect clarifying questions — asking for workload parameters is good behavior, not uncertainty */
+const CLARIFYING_QUESTION_PATTERNS = /\b(could you (share|provide|tell me)|can you (share|provide|tell)|please (share|provide|tell)|i need (a few|some|more) (details|information)|could you let me know|what (is|are|was|were) your|how many|how much|what (size|scale|type|kind|format))/i;
+
 function scoreResponseSubstance(text: string): {score: number; forcelow: boolean} {
   // Empty or near-empty response — always low
   if (text.trim().length < 50) return {score: 0.0, forcelow: true};
 
-  if (UNCERTAINTY_PATTERNS.test(text)) return {score: 0.0, forcelow: true};
+  // Clarifying questions are constructive — don't flag them as uncertainty
+  const isClarifyingQuestion = CLARIFYING_QUESTION_PATTERNS.test(text);
+
+  if (!isClarifyingQuestion && UNCERTAINTY_PATTERNS.test(text)) return {score: 0.0, forcelow: true};
   if (APOLOGY_PATTERNS.test(text) && text.length < 300) return {score: 0.0, forcelow: true};
 
   let score = 0.5;
@@ -101,10 +107,15 @@ function scoreResponseSubstance(text: string): {score: number; forcelow: boolean
   // Positive signals
   if (/```/.test(text)) score += 0.15;           // code blocks
   if (/\[.*?\]\(.*?\)/.test(text)) score += 0.1; // markdown links
+  if (/\|.*\|/.test(text)) score += 0.1;         // tables (structured content)
+  if (/## /.test(text)) score += 0.05;           // headings (organized content)
+  if (/\d+\.\s+\*\*/.test(text)) score += 0.1;   // numbered lists with bold
 
   // Negative signals
-  const hedges = text.match(HEDGE_PATTERN);
-  if (hedges && hedges.length >= 3) score -= 0.15;
+  if (!isClarifyingQuestion) {
+    const hedges = text.match(HEDGE_PATTERN);
+    if (hedges && hedges.length >= 3) score -= 0.15;
+  }
   if (text.length < 80) score -= 0.2;
 
   return {score: clamp(score), forcelow: false};

@@ -11,11 +11,28 @@ export const DEMOTE_URL_PATTERNS = [
   /release-notes/i, /changelog/i, /whats-new/i, /feature-availability/i,
 ];
 
+// ---------------------------------------------------------------------------
+// API reference demotion — applied when the question is conceptual
+// (not asking for a specific API endpoint or code sample).
+// These patterns match /reference/ paths so they can be down-weighted
+// for non-API questions like "What cluster size do I need?"
+// ---------------------------------------------------------------------------
+
+export const API_REF_URL_PATTERNS = [
+  /^\/reference\//i,
+  /^\/docs\/reference\//i,
+];
+
 export function isDemotedSource(title: string, url: string): boolean {
   return (
     DEMOTE_TITLE_PATTERNS.some(p => p.test(title)) ||
     DEMOTE_URL_PATTERNS.some(p => p.test(url))
   );
+}
+
+/** Check if a source is an API reference document */
+export function isApiRefSource(url: string): boolean {
+  return API_REF_URL_PATTERNS.some(p => p.test(url));
 }
 
 export function buildDemotionFunctionScore(): Record<string, unknown> {

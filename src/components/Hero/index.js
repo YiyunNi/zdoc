@@ -18,17 +18,84 @@ const PRISM_LANG_MAP = {
 
 function highlight(code, lang) {
   const prismLang = PRISM_LANG_MAP[lang] || lang || 'plain';
-
-  console.log('Available languages:', Object.keys(Prism.languages));
-  console.log('Trying to highlight with:', prismLang);
-
   if (Prism.languages[prismLang]) {
-    const highlighted = Prism.highlight(code, Prism.languages[prismLang], prismLang);
-    console.log('Highlighted', lang, '- has tokens:', highlighted.includes('token'));
-    return highlighted;
+    return Prism.highlight(code, Prism.languages[prismLang], prismLang);
   }
-  console.log('No language found for:', prismLang);
   return code;
+}
+
+// Detect element types in Docusaurus v3 MDX v2.
+// Standard HTML tags are mapped to custom components via the MDX provider:
+//   h2 → (props) => <Heading as="h2" {...props} />  (anonymous wrapper)
+//   pre → MDXPre, code → MDXCode, ul → MDXUl, etc.
+// The `as` prop is added inside the wrapper during render, NOT on the element's
+// own props. So we cannot rely on child.type or child.props.as for detection.
+// Instead we use structural heuristics:
+//   - Headings: Docusaurus adds an `id` prop via rehype-slug
+//   - Code blocks: nested child has className containing 'language-'
+//   - Paragraphs: `p` is NOT remapped by Docusaurus, so type stays 'p'
+
+function isHeading(child) {
+  if (!React.isValidElement(child)) return false;
+  if (child.type === 'h2') return true;
+  if (child.props?.as === 'h2' || child.props?.mdxType === 'h2') return true;
+  // Docusaurus MDX v2: headings are function components with auto-generated id
+  if (typeof child.type === 'function' && typeof child.props?.id === 'string') return true;
+  return false;
+}
+
+function isParagraph(child) {
+  if (!React.isValidElement(child)) return false;
+  // `p` is not remapped by Docusaurus MDXComponents, so type stays 'p'
+  if (child.type === 'p') return true;
+  if (child.props?.mdxType === 'p') return true;
+  return false;
+}
+
+// Extract the code element from a pre/CodeBlock child tree.
+// Docusaurus wraps pre → MDXPre → MDXCode, so the code element with
+// className="language-*" may be nested one or two levels deep.
+function extractCodeEl(preChild) {
+  if (!React.isValidElement(preChild)) return null;
+  // Check the element itself first
+  const selfCls = preChild.props?.className || '';
+  if (selfCls.includes('language-')) return preChild;
+  // Walk up to 3 levels deep to find a code element with a language className
+  let el = preChild.props?.children;
+  for (let i = 0; i < 3 && React.isValidElement(el); i++) {
+    const cls = el.props?.className || '';
+    if (cls.includes('language-')) return el;
+    el = el.props?.children;
+  }
+  return null;
+}
+
+function isCodeBlock(child) {
+  if (!React.isValidElement(child)) return false;
+  if (child.type === 'pre') return true;
+  // Docusaurus MDXPre/CodeBlock — check if children contain a language class
+  if (extractCodeEl(child)) return true;
+  return false;
+}
+
+function isList(child) {
+  if (!React.isValidElement(child)) return false;
+  if (child.type === 'ul') return true;
+  if (child.props?.mdxType === 'ul') return true;
+  // Docusaurus MDXUl: function component whose children are li-like elements
+  if (typeof child.type === 'function' && !isHeading(child) && !isCodeBlock(child)) {
+    const arr = React.Children.toArray(child.props?.children);
+    if (arr.length > 0 && arr.every(c => React.isValidElement(c) && c.props?.children !== undefined)) {
+      // Check if first child looks like a list item (has nested content)
+      const first = arr[0];
+      if (React.isValidElement(first)) {
+        const inner = React.Children.toArray(first.props.children);
+        const hasLink = inner.some(c => React.isValidElement(c) && (c.type === 'a' || c.props?.href !== undefined));
+        if (hasLink) return true;
+      }
+    }
+  }
+  return false;
 }
 
 const LANG_ORDER = ['Python', 'Java', 'NodeJS', 'Go', 'cURL'];
@@ -62,7 +129,7 @@ function parseSlidesFromChildren(children) {
   React.Children.forEach(children, (child) => {
     if (!React.isValidElement(child)) return;
 
-    if (child.type === 'h2' || child.type?.mdxTag === 'h2') {
+    if (isHeading(child)) {
       if (current) slides.push(current);
       const raw = child.props.children;
       const label = Array.isArray(raw)
@@ -70,12 +137,11 @@ function parseSlidesFromChildren(children) {
         : String(raw || '');
       current = { id: label.toLowerCase().replace(/\s+/g, '-'), label, json: '', snippets: {} };
 
-    } else if ((child.type === 'p' || child.type?.mdxTag === 'p') && current && !current.description) {
-      // Extract description from paragraph following h2, preserving links
+    } else if (isParagraph(child) && current && !current.description) {
       current.description = child.props.children;
 
-    } else if ((child.type === 'pre' || child.type?.mdxTag === 'pre') && current) {
-      const codeEl = child.props.children;
+    } else if (isCodeBlock(child) && current) {
+      const codeEl = extractCodeEl(child) || child.props.children;
       if (!React.isValidElement(codeEl)) return;
       const lang = (codeEl.props.className || '').replace('language-', '').toLowerCase();
       if (!lang) return;
@@ -99,15 +165,15 @@ function parseSlidesFromChildren(children) {
 function parseCtasFromChildren(children) {
   for (const child of React.Children.toArray(children)) {
     if (!React.isValidElement(child)) continue;
-    if (child.type === 'h2' || child.type?.mdxTag === 'h2') break; // reached slides — stop
-    if (child.type === 'ul') {
+    if (isHeading(child)) break; // reached slides — stop
+    if (isList(child)) {
       return React.Children.toArray(child.props.children)
         .filter(c => React.isValidElement(c))
         .map(li => {
           let el = React.Children.toArray(li.props.children)
             .filter(c => typeof c !== 'string' || c.trim() !== '')[0];
           // unwrap p > a
-          if (React.isValidElement(el) && el.type === 'p') {
+          if (React.isValidElement(el) && (el.type === 'p' || el.props?.as === 'p')) {
             el = React.Children.toArray(el.props.children)
               .find(c => React.isValidElement(c));
           }
@@ -207,6 +273,12 @@ export default function Hero({ children }) {
   const [topPanel, setTopPanel] = useState('right'); // 'left' or 'right'
   const [highlightedJson, setHighlightedJson] = useState('');
   const [highlightedCode, setHighlightedCode] = useState('');
+  const [copiedInstall, setCopiedInstall] = useState(false);
+
+  const INSTALL_COMMANDS = {
+    humans: 'pip install pymilvus',
+    agents: 'npx skills add zilliztech/zilliz-skill',
+  };
 
   // Highlight code when slide or tab changes
   useEffect(() => {
@@ -288,22 +360,52 @@ export default function Hero({ children }) {
       <BgDecor />
       <div className={styles.hero}>
         <div className={styles.textArea}>
-          {title}
+          <div style={{ display: 'inline-block', textAlign: 'left' }}>
+            <p className={styles.eyebrow}>Welcome to Zilliz Cloud Docs</p>
+            {title}
+          </div>
           {subtitle}
-          <div className={styles.quickActions}>
-            {(parsedCtas.length > 0 ? parsedCtas : [
-              { label: 'Free Trial →', href: './get-started' },
-              { label: 'Quickstart',   href: './create-cluster' },
-              { label: 'API Reference', href: '/reference/restful' },
-            ]).map((cta, i) => (
-              <a
-                key={i}
-                href={cta.href}
-                className={i === 0 ? styles.quickActionPrimary : styles.quickAction}
-              >
-                {cta.label}
-              </a>
-            ))}
+          <div className={styles.installWidget}>
+            <div className={styles.installWidgetItem}>
+              <div className={styles.installWidgetLabel}>For Humans</div>
+              <div className={styles.installCmd}>
+                <span className={styles.installPrompt}>$</span>
+                <span className={styles.installText}>{INSTALL_COMMANDS.humans}</span>
+                <button
+                  className={styles.installCopy}
+                  onClick={() => {
+                    navigator.clipboard.writeText(INSTALL_COMMANDS.humans).then(() => {
+                      setCopiedInstall(true);
+                      setTimeout(() => setCopiedInstall(false), 1500);
+                    });
+                  }}
+                  title="Copy command"
+                  aria-label="Copy command"
+                >
+                  {copiedInstall ? '✓' : <Copy size={14} />}
+                </button>
+              </div>
+            </div>
+            <div className={styles.installWidgetItem}>
+              <div className={styles.installWidgetLabel}>For Agents</div>
+              <div className={styles.installCmd}>
+                <span className={styles.installPrompt}>$</span>
+                <span className={styles.installText}>{INSTALL_COMMANDS.agents}</span>
+                <button
+                  className={styles.installCopy}
+                  onClick={() => {
+                    navigator.clipboard.writeText(INSTALL_COMMANDS.agents).then(() => {
+                      setCopiedInstall(true);
+                      setTimeout(() => setCopiedInstall(false), 1500);
+                    });
+                  }}
+                  title="Copy command"
+                  aria-label="Copy command"
+                >
+                  {copiedInstall ? '✓' : <Copy size={14} />}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 

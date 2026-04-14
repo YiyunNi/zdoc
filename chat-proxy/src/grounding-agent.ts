@@ -4,6 +4,8 @@ import {z} from 'zod';
 import {computeGrounding, splitParagraphs, type GroundingResult} from './grounding.js';
 import type {SearchResult} from './rag.js';
 import type {Source} from './types.js';
+import {isApiRefSource} from './demotion.js';
+import {saveTokenUsage} from './db.js';
 
 const AI_BASE_URL = process.env.AI_BASE_URL || 'https://api.openai.com/v1';
 const AI_API_KEY = process.env.AI_API_KEY || '';
@@ -80,9 +82,11 @@ export async function groundAtomically(
   const sourceDescriptions = sortedCandidates.map((src, i) => {
     const idfScore = maxIdfPerUrl.get(src.url) ?? 0;
     const section = src.section || 'docs';
+    const isApiRef = isApiRefSource(src.url);
     const combinedSnippet = aggregateChunks(src.url, allChunks);
     const snippet = combinedSnippet.slice(0, 600);
-    return `[${i}] "${src.title}" (${section}) idf=${idfScore.toFixed(2)} — ${snippet}`;
+    const tag = isApiRef ? ' [API REF]' : '';
+    return `[${i}] "${src.title}" (${section})${tag} idf=${idfScore.toFixed(2)} — ${snippet}`;
   });
 
   try {
@@ -100,7 +104,7 @@ export async function groundAtomically(
 
 Rules:
 - Sources are pre-ranked by keyword overlap (idf= score). Higher idf = more keyword overlap with the response.
-- An API reference doc (e.g., "Modify Cluster API") is NOT relevant to conceptual advice (e.g., "what cluster size do I need")
+- Sources marked [API REF] are API endpoint references. Do NOT select them for conceptual questions (e.g., "what cluster size do I need?", "how does X work?", pricing, sizing, planning). Only select API refs if the response paragraph specifically describes an API call or endpoint.
 - A source must directly relate to the topic discussed, not just share keywords
 - Select 0-5 sources maximum. Fewer highly relevant sources is better than many loosely related ones
 - For each selected source, list which paragraph indices [0..${paragraphs.length - 1}] it supports
@@ -115,6 +119,21 @@ Select genuinely relevant sources and map them to paragraphs.`,
     });
 
     const selected = result.object.selectedSources;
+
+    // Persist grounding LLM token usage
+    try {
+      const u = result.usage;
+      if (u.inputTokens != null && u.outputTokens != null) {
+        saveTokenUsage({
+          model: GROUNDING_MODEL,
+          agentType: 'grounding',
+          inputTokens: u.inputTokens,
+          outputTokens: u.outputTokens,
+          totalTokens: u.totalTokens ?? u.inputTokens + u.outputTokens,
+          cachedInputTokens: u.cachedInputTokens ?? 0,
+        });
+      }
+    } catch { /* fire-and-forget */ }
 
     if (selected.length === 0) {
       // LLM found nothing — still try paragraph-level IDF fallback before full deterministic

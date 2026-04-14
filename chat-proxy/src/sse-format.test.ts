@@ -6,7 +6,10 @@ vi.mock('ai', () => ({
   stepCountIs: vi.fn((n: number) => n),
 }));
 vi.mock('@ai-sdk/openai', () => ({
-  createOpenAI: vi.fn(() => { const m = vi.fn(); m.chat = vi.fn(); return m; }),
+  createOpenAI: vi.fn(() => ({
+    chat: vi.fn(),
+    textEmbeddingModel: vi.fn(() => ({doEmbed: vi.fn().mockResolvedValue({embeddings: [[0.1, 0.2, 0.3]]})})),
+  })),
 }));
 vi.mock('./rag.js', () => ({
   retrieve: vi.fn().mockResolvedValue({

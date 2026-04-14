@@ -189,6 +189,9 @@ html, body {
 .col-feedback .column-header { background: var(--purple); }
 .col-errors .column-header { background: var(--red); }
 .col-lowconf .column-header { background: var(--amber); }
+.col-cache .column-header { background: #319795; }
+.col-tokens .column-header { background: #6b46c1; }
+.col-gaps .column-header { background: #e53e3e; }
 
 .column-body {
   flex: 1;
@@ -353,8 +356,14 @@ html, body {
 .modal-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 1800px) {
+  .board { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 1400px) {
   .board { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1000px) {
+  .board { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .board { grid-template-columns: 1fr; }
@@ -382,6 +391,11 @@ html, body {
     <div class="stat-item"><span class="stat-value" id="statFeedback">-</span><span class="stat-label">Feedback Rate</span></div>
     <div class="stat-item"><span class="stat-value" id="statErrors">-</span><span class="stat-label">Error Rate</span></div>
     <div class="stat-item"><span class="stat-value" id="statSessions">-</span><span class="stat-label">Active Sessions</span></div>
+    <div class="stat-item"><span class="stat-value" id="statCacheHits">-</span><span class="stat-label">Cache Hits</span></div>
+    <div class="stat-item"><span class="stat-value" id="statCacheEntries">-</span><span class="stat-label">Cache Entries</span></div>
+    <div class="stat-item"><span class="stat-value" id="statTotalTokens">-</span><span class="stat-label">Total Tokens</span></div>
+    <div class="stat-item"><span class="stat-value" id="statCachedPct">-</span><span class="stat-label">Cached %</span></div>
+    <div class="stat-item"><span class="stat-value" id="statGaps">-</span><span class="stat-label">Unresolved Gaps</span></div>
   </div>
   <div class="filter-bar">
     <label for="filterTime">Time</label>
@@ -419,6 +433,18 @@ html, body {
     <div class="column-header"><span>Low Confidence</span><span class="count" id="countLowConf">0</span></div>
     <div class="column-body" id="colLowConf"></div>
   </div>
+  <div class="column col-cache">
+    <div class="column-header"><span>Semantic Cache</span><span class="count" id="countCache">0</span></div>
+    <div class="column-body" id="colCache"></div>
+  </div>
+  <div class="column col-tokens">
+    <div class="column-header"><span>Token Usage</span><span class="count" id="countTokens">0</span></div>
+    <div class="column-body" id="colTokens"></div>
+  </div>
+  <div class="column col-gaps">
+    <div class="column-header"><span>Content Gaps</span><span class="count" id="countGaps">0</span></div>
+    <div class="column-body" id="colGaps"></div>
+  </div>
 </div>
 
 <div class="modal-overlay hidden" id="modalOverlay">
@@ -436,7 +462,7 @@ html, body {
   const LS_KEY = 'chatproxy_admin_key';
   let apiKey = localStorage.getItem(LS_KEY) || '';
   let pollTimer = null;
-  let allData = { live: [], performance: [], feedback: [], errors: [], lowConfidence: [] };
+  let allData = { live: [], performance: [], feedback: [], errors: [], lowConfidence: [], cache: [], tokenUsage: [], docGaps: [], cacheStats: null, tokenSummary: null };
   let knownAgents = new Set();
   let knownModels = new Set();
 
@@ -490,14 +516,29 @@ html, body {
       return;
     }
     try {
-      const [live, performance, feedback, errors, lowConfidence] = await Promise.all([
+      const [live, performance, feedback, errors, lowConfidence, cacheEntries, stats, tokenUsage, docGaps] = await Promise.all([
         apiFetch('/admin/api/live'),
         apiFetch('/admin/api/performance'),
         apiFetch('/admin/api/feedback'),
         apiFetch('/admin/api/errors'),
         apiFetch('/admin/api/low-confidence'),
+        apiFetch('/admin/api/cache/entries'),
+        apiFetch('/admin/stats'),
+        apiFetch('/admin/api/token-usage/by-model'),
+        apiFetch('/admin/api/doc-gaps'),
       ]);
-      allData = { live: arr(live), performance: arr(performance), feedback: arr(feedback), errors: arr(errors), lowConfidence: arr(lowConfidence) };
+      allData = {
+        live: arr(live),
+        performance: arr(performance),
+        feedback: arr(feedback),
+        errors: arr(errors),
+        lowConfidence: arr(lowConfidence),
+        cache: arr(cacheEntries),
+        tokenUsage: arr(tokenUsage),
+        docGaps: arr(docGaps),
+        cacheStats: stats?.semantic_cache || null,
+        tokenSummary: stats?.token_usage || null,
+      };
       collectFilters();
       updateStats();
       render();
@@ -588,6 +629,29 @@ html, body {
     $('statFeedback').textContent = fbRate;
     $('statErrors').textContent = errRate;
     $('statSessions').textContent = liveSessions;
+
+    // Cache stats
+    const cs = allData.cacheStats;
+    if (cs) {
+      $('statCacheHits').textContent = (cs.totalHits || 0).toLocaleString();
+      $('statCacheEntries').textContent = (cs.entries || cs.totalEntries || 0).toLocaleString();
+    } else {
+      $('statCacheHits').textContent = '-';
+      $('statCacheEntries').textContent = '-';
+    }
+
+    // Token usage summary
+    const ts = allData.tokenSummary;
+    if (ts) {
+      $('statTotalTokens').textContent = (ts.totalTokens || 0).toLocaleString();
+      $('statCachedPct').textContent = ts.cachedPercentage != null ? ts.cachedPercentage.toFixed(1) + '%' : '-';
+    } else {
+      $('statTotalTokens').textContent = '-';
+      $('statCachedPct').textContent = '-';
+    }
+
+    // Unresolved gaps
+    $('statGaps').textContent = allData.docGaps.length.toLocaleString();
   }
 
   // ---- Render ----
@@ -597,6 +661,9 @@ html, body {
     renderFeedback(applyFilters(allData.feedback, false));
     renderErrors(applyFilters(allData.errors, false));
     renderLowConf(applyFilters(allData.lowConfidence, false));
+    renderCache(allData.cache);
+    renderTokens(allData.tokenUsage);
+    renderGaps(allData.docGaps);
   }
 
   function renderLive(items) {
@@ -666,6 +733,62 @@ html, body {
         '<div class="card-question">' + esc(trunc(d.question || d.query || '-', 80)) + '</div>',
         row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))])
       ], d);
+    }).join('') : noData();
+  }
+
+  function renderCache(items) {
+    $('countCache').textContent = items.length;
+    $('colCache').innerHTML = items.length ? items.map(d => {
+      const conf = d.confidence ? JSON.parse(d.confidence) : null;
+      const confLevel = conf ? conf.level : '-';
+      const confClass = confLevel === 'high' ? 'green' : confLevel === 'medium' ? 'amber' : 'red';
+      return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
+        row([badge(d.agent || '-', 'gray'), confLevel !== '-' ? badge(confLevel, confClass) : '', meta('Hits: ' + (d.hits || 0))]) +
+        '<div class="card-question">' + esc(trunc(d.query_text || '-', 80)) + '</div>' +
+        row([meta('Size: ' + ((d.event_size || 0) / 1024).toFixed(1) + 'KB'), meta(timeAgo(d.created_at))]) +
+      '</div>';
+    }).join('') : noData();
+  }
+
+  function renderTokens(items) {
+    $('countTokens').textContent = items.length;
+    $('colTokens').innerHTML = items.length ? items.map(d => {
+      const inputFmt = formatTokens(d.totalInputTokens || d.totalinputTokens || 0);
+      const outputFmt = formatTokens(d.totalOutputTokens || d.totaloutputTokens || 0);
+      const totalFmt = formatTokens(d.totalTokens || d.totaltokens || 0);
+      const cached = d.totalCachedInputTokens || d.totalcachedinputTokens || 0;
+      const cachedPct = (d.totalInputTokens || d.totalinputTokens || 0) > 0
+        ? ((cached / (d.totalInputTokens || d.totalinputTokens || 0)) * 100).toFixed(0) + '%'
+        : '-';
+      return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
+        row([badge(shortModelName(d.model), 'blue'), meta('Requests: ' + (d.requestCount || 0))]) +
+        row([meta('In: ' + inputFmt), meta('Out: ' + outputFmt), meta('Total: ' + totalFmt)]) +
+        row([meta('Cached: ' + cachedPct)]) +
+      '</div>';
+    }).join('') : noData();
+  }
+
+  function formatTokens(n) {
+    if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+    return n.toString();
+  }
+
+  function shortModelName(m) {
+    if (!m) return '-';
+    return m.replace(/^(openai|anthropic|google|meta|mistral)\//, '');
+  }
+
+  function renderGaps(items) {
+    $('countGaps').textContent = items.length;
+    $('colGaps').innerHTML = items.length ? items.map(d => {
+      const intent = d.detected_intent ? badge(d.detected_intent, 'blue') : '';
+      const conf = d.confidence_level ? badge(d.confidence_level, d.confidence_level === 'low' ? 'red' : 'amber') : '';
+      return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
+        row([intent, conf, meta('Tools: ' + (d.tools_called ? JSON.parse(d.tools_called).length : 0))]) +
+        '<div class="card-question">' + esc(trunc(d.query || '-', 80)) + '</div>' +
+        row([meta(timeAgo(d.created_at)), meta(d.session_id ? shortId(d.session_id) : '')]) +
+      '</div>';
     }).join('') : noData();
   }
 
