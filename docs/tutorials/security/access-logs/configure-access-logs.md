@@ -34,7 +34,10 @@ This guide covers the full lifecycle of access logs on Zilliz Cloud: enabling, a
 
 <Admonition type="info" icon="📘" title="Notes">
 
-<p>This release logs search- or query-class actions only: Search, HybridSearch, and Query. Support for the full action list is planned for a future release.</p>
+<ul>
+<li><p>This release logs search- or query-class actions only: Search, HybridSearch, and Query. Support for the full action list is planned for a future release.</p></li>
+<li><p>Audit log and access log are mutually exclusive in this release — only one can be enabled at a time.</p></li>
+</ul>
 
 </Admonition>
 
@@ -58,7 +61,7 @@ This guide covers the full lifecycle of access logs on Zilliz Cloud: enabling, a
 
     - **Storage Integration**: Select the integrated storage bucket where log files will be delivered.
 
-    - **Directory**: Specify a directory within the bucket to store audit logs.
+    - **Directory**: Specify a directory within the bucket to store access logs.
 
     - **Sampling Rate**: Set the percentage of queries to log. A rate of 100% captures every operation. For high-volume workloads, a lower rate (such as 1%) reduces storage costs while preserving statistical significance.
 
