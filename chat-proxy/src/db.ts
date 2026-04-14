@@ -2,7 +2,7 @@ import Database from 'better-sqlite3';
 import { mkdirSync } from 'fs';
 import { dirname, resolve } from 'path';
 
-const SQLITE_PATH = resolve(process.cwd(), process.env.SQLITE_PATH ?? '/data/chat-proxy.db');
+const SQLITE_PATH = resolve(process.cwd(), process.env.SQLITE_PATH ?? './data/chat-proxy.db');
 
 let db: Database.Database | null = null;
 
