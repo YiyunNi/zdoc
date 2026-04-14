@@ -50,29 +50,29 @@ import Grid from '@site/src/components/Grid';
 
         ## Collection-Level Metrics\{#collection-level-metrics}
 
-        The following metrics now support collection-level breakdown, helping you pinpoint performance issues and plan capacity for individual collections: 
+        The following metrics now support collection-level breakdown, helping you pinpoint performance issues and plan capacity for individual collections:
 
-        - QPS (Read/Write),
+        - QPS (Read/Write)
 
-        - Latency (Read/Write, Average and P99),
+        - Latency (Read/Write, Average and P99)
 
-        - Entity Count, and
+        - Entity Count
 
-        - Loaded Entities.
+        - Loaded Entities
 
-        You can access collection-level metrics from the Console UI, Prometheus endpoint, or RESTful API. For details, refer to [Metrics Reference](./metrics-alerts-reference) and [Integrate with Prometheus](./prometheus-monitoring).
+        You can access collection-level metrics from the Console UI, Prometheus endpoint, or RESTful API.For details, refer to [Metrics Reference](./metrics-alerts-reference) and [Integrate with Prometheus](./prometheus-monitoring).
 
-        ## Performance Log (Access logs)  | PUBLIC\{#performance-log-access-logs}
+        ## Access Logs | PUBLIC\{#access-logs}
 
-        Zilliz Cloud now supports **Access Logs**, a new observability feature that captures detailed query-level activity on your clusters. Access Log records every Search, Hybrid Search, and Query operation.Unlike Audit Log, which provides a complete compliance record of all operations, Access Log is designed for**performance analysis and business insights**. It uses asynchronous, non-blocking logging with configurable sampling rates, so you can monitor query patterns at scale with minimal impact on latency.Key capabilities include:
+        Zilliz Cloud now supports Access Logs for capturing query-level activity (Search, Hybrid Search, Query) on your clusters, designed for performance analysis and business insights. Key capabilities:
 
-        - **Configurable sampling** — Set a sampling rate (e.g., 1%) to balance statistical accuracy against storage cost for high-throughput workloads.
+        - **Configurable sampling** — balance accuracy vs. storage cost (e.g., 1% sampling rate).
 
-        - **Customizable output fields** — Choose which parameters to include in each log entry to control verbosity and cost.
+        - **Customizable output fields** — control log verbosity per entry.
 
-        - **Hot data identification** — Analyze returned primary keys (`params.result_pks`) to discover which records are accessed most frequently, informing caching and tiering strategies.
+        - **Hot data identification** — analyze returned primary keys to find frequently accessed records.
 
-        - **Structured JSON Lines format** — Each log entry is a self-contained JSON object, ready for ingestion into any data warehouse or analytics pipeline.For details, refer to [Access Logs](./access-logs).
+        - **Structured JSON Lines format** — ready for any analytics pipeline.For details, refer to [Access Logs](./access-logs).
 
         ## Maintenance Window\{#maintenance-window}
 
@@ -86,7 +86,7 @@ import Grid from '@site/src/components/Grid';
 
         - Per-Cluster Scoping: The role can be assigned to specific clusters, enabling fine-grained separation of duties across environments and workloads.
 
-        - Note: Customized API Keys do not currently support the Cluster Admin role.For details, refer to [Manage Project Users](./project-users).
+        - Note: Customized API Keys do not currently support the Cluster Admin role. For details, refer to [Manage Project Users](./project-users).
 
         ## Zilliz Cloud BYOC supports Tiered-Storage Cluster\{#zilliz-cloud-byoc-supports-tiered-storage-cluster}
 

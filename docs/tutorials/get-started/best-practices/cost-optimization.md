@@ -10,7 +10,7 @@ notebook: FALSE
 description: "As data scales and query volumes rise, cost control becomes critical. This guide systematically outlines cost optimization strategies for Zilliz Cloud across five dimensions deployment selection, index tuning, elastic scaling, discounts, and billing analysis. | Cloud"
 type: origin
 token: MYHwwhKtri4MMJku6BbcMjF4n1d
-sidebar_position: 1
+sidebar_position: 0
 keywords: 
   - zilliz
   - vector database
@@ -514,13 +514,13 @@ For details, see [Manual Scaling](./scale-query-cu#manual-scaling).
 
 ### Scaling constraints\{#scaling-constraints}
 
-- Query CU × Replica ≤ 256
+- Query CU × Replica ≤ 10,240
 
-- When Replica > 1, the cluster cannot scale below 8 CU
+- When Replica > 1, the cluster cannot scale below 12 CU
 
 - When scaling down, data volume must be below 80% of the new CU capacity
 
-- Below 8 CU, only Query CU can be adjusted; above 8 CU, Query CU and Replicas can be adjusted independently
+- Below 12 CU, only Query CU can be adjusted; above 12 CU, Query CU and Replicas can be adjusted independently
 
 **Recommendation:** Use dynamic scaling for unpredictable traffic; use scheduled scaling for regular traffic patterns. The two can be combined.
 
