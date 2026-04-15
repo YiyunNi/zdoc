@@ -60,7 +60,7 @@ zilliz cluster create --name my-cluster --type serverless
 ### Cloud Management
 - [Backup](/reference/cli/CloudManagement-Backup) - Create, restore, and manage backups
 - [Cluster](/reference/cli/CloudManagement-Cluster) - Create, suspend, resume, and delete clusters
-- [Import](/reference/cli/CloudManagement-Cluster) - Import data
+- [Import](/reference/cli/CloudManagement-Import) - Import data
 - [Job](/reference/cli/CloudManagement-Job) - Manage jobs
 - [Project](/reference/cli/CloudManagement-Project) - Manage projects
 - [Volume](/reference/cli/CloudManagement-Volume) - Manage storage volumes
