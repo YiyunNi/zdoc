@@ -30,14 +30,14 @@ The Zilliz Command Line Interface () provides a command-line tool for managing y
 <TabItem value="linux">
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zilliztech/zilliz-cli/master/install.sh | bash
+curl -fsSL https://zilliz.com/cli/install.sh | bash
 ```
 
 </TabItem>
 <TabItem value="windows">
 
 ```bash
-irm https://raw.githubusercontent.com/zilliztech/zilliz-cli/master/install.ps1 | iex
+irm https://zilliz.com/cli/install.ps1 | iex
 ```
 
 </TabItem>

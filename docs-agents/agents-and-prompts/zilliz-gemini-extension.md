@@ -1,25 +1,24 @@
 ---
-title: "Zilliz Claude Code Plugin Setup | Cloud"
-slug: /zilliz-plugin-setup
-sidebar_label: "Setup"
+title: "Zilliz Gemini CLI Extension | Cloud"
+slug: /zilliz-gemini-extension
+sidebar_label: "Gemini CLI Extension"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
 deprecate_since: FALSE
 notebook: FALSE
-description: "This guide provides multiple methods for integrating Zilliz Plugins into your LLM Agent-powered workflows. | Cloud"
+description: "The Zilliz Cloud extension for Gemini CLI is a natural language interface that brings Zilliz Cloud operations directly into your IDE. Instead of memorizing CLI commands or switching to the web console, describe what you want in plain language and the plugin handles it. | Cloud"
 type: origin
-token: UDxnwONhSidaQikY6NGcRdmOnUh
-sidebar_position: 1
+token: FDwgwyDbMi98nckzPxkc2qWynW4
+sidebar_position: 3
 keywords: 
   - zilliz
   - vector database
   - ai-agents
   - decision matrix
   - skill
-  - claude
+  - gemini
   - zilliz cli
-  - setup
 displayed_sidebar: agentsSidebar
 
 ---
@@ -30,37 +29,35 @@ import TabItem from '@theme/TabItem';
 
 import Procedures from '@site/src/components/Procedures';
 
-# Zilliz Claude Code Plugin Setup
+# Zilliz Gemini CLI Extension
 
-This guide provides multiple methods for integrating Zilliz Plugins into your LLM Agent-powered workflows.
+The Zilliz Cloud extension for Gemini CLI is a natural language interface that brings Zilliz Cloud operations directly into your IDE. Instead of memorizing CLI commands or switching to the web console, describe what you want in plain language and the plugin handles it.
+
+## What it does\{#what-it-does}
+
+- Translates natural-language requests into `zilliz-cli` commands
+
+- Covers all major Zilliz Cloud operations: clusters, databases, collections, partitions, indexes, vectors, imports, backups, users/roles, monitoring, projects, and billing
+
+- Embeds live `--help` output at invocation time so the assistant always has up-to-date flag information
+
+- Requires explicit user confirmation before any destructive operation
 
 ## Prerequisites\{#prerequisites}
 
-- You have already installed [Claude Code](https://code.claude.com/).
+- You have installed Gemini CLI.
 
 ## Setup Procedure\{#setup-procedure}
 
-<Procedures>
+```bash
+gemini extensions install https://github.com/zilliztech/gemini-cli-extension
+```
 
-1. Run Claude Code
+Alternatively, you can first clone [this repo](https://github.com/zilliztech/gemini-cli-extension.git) locally, and run the following command:
 
-    ```bash
-    > claude
-    ```
-
-1. Add the Zilliz Plugin marketplace.
-
-    ```bash
-    /plugin marketplace add zilliztech/zilliz-plugin
-    ```
-
-1. Install the plugin
-
-    ```bash
-    /plugin install zilliz@zilliztech/zilliz-plugin
-    ```
-
-</Procedures>
+```bash
+gemini extensions link /path/to/gemini-cli-extension
+```
 
 ## Initial Setup\{#initial-setup}
 
@@ -185,9 +182,6 @@ The plugin should display your Zilliz Cloud clusters.
     zilliz context set --cluster-id <cluster-id>
     ```
 
-## Next Steps\{#next-steps}
+## Next Step\{#next-step}
 
-- [Capabilities Reference](./zilliz-plugin-capabilities)
-
-- [Examples](./zilliz-plugin-examples)
-
+Both Zilliz Claude Code Plugin and Zilliz Gemini CLI Extension share Zilliz CLI at the bottom. You can read [Zilliz Claude Code Plugin Capabilities](./zilliz-plugin-capabilities) and [Zilliz Claude Code Plugin Examples](./zilliz-plugin-examples) to learn how to write prompts.

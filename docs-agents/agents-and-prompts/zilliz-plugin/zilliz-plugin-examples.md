@@ -1,5 +1,5 @@
 ---
-title: "Zilliz Plugin Examples | Cloud"
+title: "Zilliz Claude Code Plugin Examples | Cloud"
 slug: /zilliz-plugin-examples
 sidebar_label: "More Examples"
 beta: FALSE
@@ -29,7 +29,7 @@ displayed_sidebar: agentsSidebar
 import Admonition from '@theme/Admonition';
 
 
-# Zilliz Plugin Examples
+# Zilliz Claude Code Plugin Examples
 
 In this guide, you will find more examples that use natural language to provision infrastructure, perform data operations, back up and restore your data across clusters, and implement access control for the sake of cluster security.
 
