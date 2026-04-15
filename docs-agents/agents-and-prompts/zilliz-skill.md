@@ -33,14 +33,14 @@ Zilliz Skills are reusable skill modules for Claude Code that provide specialize
 
 ## What are Zilliz Skills?\{#what-are-zilliz-skills}
 
-Skills are modular capabilities that extend Claude Code's functionality. The Zilliz Skills repository (https://github.com/zilliztech/zilliz-skill) contains pre-built skills for common Zilliz Cloud operations.
+Skills are modular capabilities that extend Claude Code's functionality. The [Zilliz Skills repository](https://github.com/zilliztech/zilliz-skill) contains pre-built skills for common Zilliz Cloud operations.
 
 ## Setup\{#setup}
 
 Run the following command to install the Zilliz skill. Ensure that you have Node.js installed.
 
 ```bash
-npx skills add https://github.com/zilliztech/zilliz-skill
+npx skills add zilliztech/zilliz-skill
 ```
 
 This command will guide you in choosing the target tools and determining the installation scope.

@@ -1,7 +1,7 @@
 ---
-title: "Zilliz Plugin | Cloud"
+title: "Zilliz Claude Code Plugin | Cloud"
 slug: /zilliz-plugin
-sidebar_label: "Zilliz Plugin"
+sidebar_label: "Claude Code Plugin"
 beta: FALSE
 added_since: FALSE
 last_modified: FALSE
@@ -26,7 +26,7 @@ displayed_sidebar: agentsSidebar
 import Admonition from '@theme/Admonition';
 
 
-# Zilliz Plugin
+# Zilliz Claude Code Plugin
 
 The Zilliz Cloud plugin for Claude Code is a natural language interface that brings Zilliz Cloud operations directly into your IDE. Instead of memorizing CLI commands or switching to the web console, describe what you want in plain language and the plugin handles it.
 
