@@ -427,12 +427,7 @@ zilliz vector hybrid-search
                         "description": "A list of scalar fields to use as input for the function.",
                         "items": {
                             "type": "string",
-                            "description": "A scalar field to use as input for the function.",
-                            "x-i18n": {
-                                "zh-CN": {
-                                    "description": "作为 Function 输入的一个标量字段名称。"
-                                }
-                            }
+                            "description": "A scalar field to use as input for the function."
                         }
                     },
                     "outputFieldNames": {

@@ -53,6 +53,10 @@ To perform a merge, set `partial_update` to `True` in the `upsert` request along
 
 Upon receiving such a request, Zilliz Cloud performs a query with strong consistency to retrieve the entity, updates the field values based on the data in the request, inserts the modified data, and then deletes the existing entity with the original primary key carried in the request.
 
+### Update field values\{#update-field-values}
+
+To update the field values of an existing entity, use [upsert in merge mode](./upsert-entities#upsert-entities-in-merge-mode). In this mode, only the fields included in the request are updated — all other fields retain their existing values.
+
 ### Upsert behaviors: special notes\{#upsert-behaviors-special-notes}
 
 There are several special notes you should consider before using the merge feature. The following cases assume that you have a collection with two scalar fields named `title` and `issue`, along with a primary key `id` and a vector field called `vector`. 
