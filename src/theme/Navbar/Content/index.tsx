@@ -62,7 +62,7 @@ function SearchModal({onClose}: {onClose: () => void}) {
   const {siteConfig} = useDocusaurusContext();
   const location = useLocation();
 
-  const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || 'http://localhost:8787';
+  const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || '/api/chat';
   const searchEndpoint = chatEndpoint.replace(/\/chat$/, '') + '/search';
 
   // Focus input and handle Escape

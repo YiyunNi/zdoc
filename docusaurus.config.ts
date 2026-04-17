@@ -53,7 +53,7 @@ const config: Config = {
   },
 
   customFields: {
-    chatEndpoint: process.env.CHAT_ENDPOINT || 'http://localhost:8787/chat',
+    chatEndpoint: process.env.CHAT_ENDPOINT || '/api/chat',
     inkeepApiKey: process.env.INKEEP_API_KEY || '',
     secondaryNavbar: [
       { label: 'Cloud Guides', href: '/docs/home',            prefix: '/docs',       icon: 'cloud'  },

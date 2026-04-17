@@ -163,7 +163,7 @@ export default function DocRootLayout({children}: Props): ReactNode {
   }, []);
 
   const {siteConfig} = useDocusaurusContext();
-  const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || 'http://localhost:8787/chat';
+  const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || '/api/chat';
 
   return (
     <BrowserOnly fallback={<div className={styles.docsWrapper} />}>
