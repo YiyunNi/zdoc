@@ -27,7 +27,7 @@ import {
   getSemanticCacheConfig,
 } from './semantic-cache.js';
 import type {TokenUsage} from './types.js';
-import {saveTokenUsage} from './db.js';
+import {saveTokenUsage, isDbReady, getCacheStats, getTokenUsageSummary, getDocGapsCount} from './db.js';
 import {handlePostAction} from './post-action-handler.js';
 
 const promptRules = loadRules(import.meta.url);
@@ -154,6 +154,31 @@ const RATE_LIMIT_WINDOW_MS = 60_000;
 const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 
 // ---------------------------------------------------------------------------
+// LLM health tracking
+// ---------------------------------------------------------------------------
+
+const startedAt = new Date().toISOString();
+const llmHealth = {
+  lastSuccessAt: null as string | null,
+  lastErrorAt: null as string | null,
+  lastError: null as string | null,
+  totalCalls: 0,
+  totalErrors: 0,
+};
+
+export function recordLlmSuccess(): void {
+  llmHealth.lastSuccessAt = new Date().toISOString();
+  llmHealth.totalCalls++;
+}
+
+export function recordLlmError(message: string): void {
+  llmHealth.lastErrorAt = new Date().toISOString();
+  llmHealth.lastError = message;
+  llmHealth.totalCalls++;
+  llmHealth.totalErrors++;
+}
+
+// ---------------------------------------------------------------------------
 // Rate limiter (in-memory, per IP)
 // ---------------------------------------------------------------------------
 
@@ -218,17 +243,94 @@ app.use(
   }),
 );
 
+app.use(
+  '/health/*',
+  cors({
+    origin: '*',
+    allowMethods: ['GET', 'OPTIONS'],
+  }),
+);
+
 // ---------------------------------------------------------------------------
 // Health check
 // ---------------------------------------------------------------------------
 
 app.get('/health', c => {
+  const now = Date.now();
   const index = getIndexStatus();
+  const dbOk = isDbReady();
+  let cacheStats = {totalEntries: 0, totalHits: 0};
+  let tokenSummary = {totalRequests: 0, totalInputTokens: 0, totalOutputTokens: 0, totalTokens: 0, totalCachedInputTokens: 0, cachedPercentage: 0};
+  let gapsCount = 0;
+
+  if (dbOk) {
+    try {
+      cacheStats = getCacheStats();
+      tokenSummary = getTokenUsageSummary();
+      gapsCount = getDocGapsCount();
+    } catch { /* db may be locked */ }
+  }
+
+  // LLM is considered "ready" if we've had at least one successful call
+  // and no errors in the last 5 minutes
+  const llmReady = llmHealth.lastSuccessAt !== null &&
+    (llmHealth.lastErrorAt === null || new Date(llmHealth.lastSuccessAt) > new Date(llmHealth.lastErrorAt));
+
+  // Index freshness
+  const indexAgeMs = index.lastRefreshed ? now - new Date(index.lastRefreshed).getTime() : null;
+
   return c.json({
-    ok: true,
+    ok: dbOk && (index.ready || index.chunks === 0), // ok if DB is up; index may still be loading
+    startedAt,
+    uptime: Math.round((now - new Date(startedAt).getTime()) / 1000),
+    db: {ready: dbOk},
+    llm: {
+      ready: llmReady,
+      provider: AI_BASE_URL.replace(/\/v\d+$/, '').replace(/^https?:\/\//, ''),
+      model: AI_MODEL,
+      lastSuccessAt: llmHealth.lastSuccessAt,
+      lastErrorAt: llmHealth.lastErrorAt,
+      lastError: llmHealth.lastError,
+      totalCalls: llmHealth.totalCalls,
+      totalErrors: llmHealth.totalErrors,
+    },
+    index: {
+      ...index,
+      ageMs: indexAgeMs,
+      ageHuman: indexAgeMs !== null ? `${Math.round(indexAgeMs / 60000)}m` : null,
+    },
     sessions: getSessionCount(),
-    index,
+    cache: cacheStats,
+    tokens: tokenSummary,
+    gaps: gapsCount,
   });
+});
+
+// Live LLM connectivity check (makes a real API call)
+app.get('/health/llm', async c => {
+  const t0 = Date.now();
+  try {
+    // Lightweight embedding call to verify API key + connectivity
+    const embeddingProvider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
+    const model = embeddingProvider.textEmbeddingModel(
+      process.env.SEMANTIC_EMBEDDING_MODEL || 'text-embedding-3-small'
+    );
+    await model.doEmbed({values: ['ping']});
+    return c.json({
+      ok: true,
+      provider: AI_BASE_URL,
+      model: AI_MODEL,
+      latencyMs: Date.now() - t0,
+    });
+  } catch (err) {
+    return c.json({
+      ok: false,
+      provider: AI_BASE_URL,
+      model: AI_MODEL,
+      latencyMs: Date.now() - t0,
+      error: (err as Error).message,
+    }, 502);
+  }
 });
 
 // ---------------------------------------------------------------------------
@@ -453,6 +555,7 @@ app.post('/chat', async c => {
 
           for await (const part of result.fullStream) {
             if (part.type === 'text-delta') {
+              if (fullText.length === 0) recordLlmSuccess(); // first token = LLM is reachable
               fullText += part.text;
               sendAndRecord('delta', JSON.stringify({text: part.text}));
             } else if (part.type === 'tool-call') {
@@ -736,6 +839,7 @@ app.post('/chat', async c => {
           const message = err instanceof Error ? err.message : 'Internal server error';
           send('error', JSON.stringify({error: message}));
           logEvent(session.id, userId, 'error', 'unknown', {error: message});
+          recordLlmError(message);
 
           // Post-action for hard errors
           handlePostAction({
