@@ -1,18 +1,18 @@
-import Database from 'better-sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 import { mkdirSync } from 'fs';
 import { dirname, resolve } from 'path';
 
 const SQLITE_PATH = resolve(process.cwd(), process.env.SQLITE_PATH ?? './data/chat-proxy.db');
 
-let db: Database.Database | null = null;
+let db: DatabaseSync | null = null;
 
 export function initDb(): void {
   mkdirSync(dirname(SQLITE_PATH), { recursive: true });
 
-  db = new Database(SQLITE_PATH);
+  db = new DatabaseSync(SQLITE_PATH);
 
-  db.pragma('journal_mode = WAL');
-  db.pragma('synchronous = NORMAL');
+  db.exec('PRAGMA journal_mode = WAL');
+  db.exec('PRAGMA synchronous = NORMAL');
 
   db.exec(`
     CREATE TABLE IF NOT EXISTS doc_chunks (
@@ -126,7 +126,7 @@ export function initDb(): void {
   `);
 }
 
-export function getDb(): Database.Database {
+export function getDb(): DatabaseSync {
   if (!db) {
     throw new Error('Database not initialized. Call initDb() first.');
   }
@@ -262,7 +262,7 @@ export function getTokenUsageByModel(): TokenUsageByModel[] {
     FROM token_usage
     GROUP BY model
     ORDER BY totalTokens DESC
-  `).all() as TokenUsageByModel[];
+  `).all() as unknown as TokenUsageByModel[];
   return rows;
 }
 

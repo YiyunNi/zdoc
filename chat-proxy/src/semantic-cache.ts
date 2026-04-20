@@ -69,7 +69,7 @@ export async function semanticCacheLookup(
   const cutoff = new Date(Date.now() - SEMANTIC_CACHE_TTL_MS).toISOString();
   const rows = db.prepare(
     `SELECT * FROM answer_cache WHERE created_at >= ? ORDER BY created_at DESC LIMIT 2000`
-  ).all(cutoff) as CacheEntry[];
+  ).all(cutoff) as unknown as CacheEntry[];
 
   if (rows.length === 0) return null;
 

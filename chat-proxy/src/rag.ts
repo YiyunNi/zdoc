@@ -167,7 +167,7 @@ export function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: stri
     WHERE f.doc_chunks_fts MATCH ?
       AND c.doc_url != '/docs/home'`;
 
-  const params: unknown[] = [ftsQuery];
+  const params: (string | number)[] = [ftsQuery];
 
   if (sectionFilter) {
     const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
@@ -223,7 +223,7 @@ export function listPages(sectionFilter?: string, titleContains?: string): {titl
   const db = getDb();
 
   let sql = `SELECT DISTINCT doc_url, doc_title, section FROM doc_chunks WHERE doc_url != '/docs/home'`;
-  const params: unknown[] = [];
+  const params: (string | number)[] = [];
 
   if (sectionFilter) {
     const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
@@ -465,12 +465,16 @@ export async function loadIndex(force = false): Promise<void> {
       INSERT OR REPLACE INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
       VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
-    const insertMany = db.transaction((chunks: ParsedChunk[]) => {
-      for (const c of chunks) {
+    db.exec('BEGIN');
+    try {
+      for (const c of allChunks) {
         insert.run(c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight);
       }
-    });
-    insertMany(allChunks);
+      db.exec('COMMIT');
+    } catch (err) {
+      db.exec('ROLLBACK');
+      throw err;
+    }
 
     // Optimize FTS5 index segments
     db.exec("INSERT INTO doc_chunks_fts(doc_chunks_fts) VALUES('optimize')");
