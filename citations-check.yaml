@@ -1,0 +1,416 @@
+- generic [ref=e2]:
+  - region "Skip to main content":
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#__docusaurus_skipToContent_fallback"
+  - navigation "Main" [ref=e4]:
+    - generic [ref=e5]:
+      - link "Zilliz Logo" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Zilliz Logo" [ref=e9]
+      - button "Search documentation..." [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+        - generic [ref=e15]: Search documentation...
+      - generic [ref=e16]:
+        - link "Support" [ref=e17] [cursor=pointer]:
+          - /url: https://support.zilliz.com/hc/en-us
+          - img [ref=e18]
+          - text: Support
+        - link "Log In" [ref=e21] [cursor=pointer]:
+          - /url: https://cloud.zilliz.com/login
+          - img [ref=e22]
+          - text: Log In
+        - link "Sign Up Free" [ref=e25] [cursor=pointer]:
+          - /url: https://cloud.zilliz.com/signup
+          - img [ref=e26]
+          - text: Sign Up Free
+  - generic [ref=e30]:
+    - generic [ref=e32]:
+      - link "Cloud Guides" [ref=e33] [cursor=pointer]:
+        - /url: /docs/home
+        - img [ref=e34]
+        - text: Cloud Guides
+      - link "BYOC Guides" [ref=e36] [cursor=pointer]:
+        - /url: /docs/byoc/byoc-intro
+        - img [ref=e37]
+        - text: BYOC Guides
+      - button "API & SDK" [ref=e41] [cursor=pointer]:
+        - img [ref=e42]
+        - text: API & SDK
+        - img [ref=e46]
+      - link "CLI" [ref=e48] [cursor=pointer]:
+        - /url: /reference/cli/cli/overview
+        - img [ref=e49]
+        - text: CLI
+      - link "Releases" [ref=e51] [cursor=pointer]:
+        - /url: /docs/changelogs
+        - img [ref=e52]
+        - text: Releases
+    - generic [ref=e55]:
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e59]:
+            - img [ref=e61]
+            - generic [ref=e62]: Zilliz Copilot
+          - generic [ref=e64]:
+            - button "New chat" [ref=e65] [cursor=pointer]:
+              - img [ref=e66]
+            - button "Expand chat" [ref=e69] [cursor=pointer]:
+              - img [ref=e70]
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - paragraph [ref=e375]: What is hybrid search?
+            - generic [ref=e376]:
+              - img [ref=e378]
+              - generic [ref=e379]:
+                - generic [ref=e380]: General Assistant
+                - paragraph [ref=e381]:
+                  - strong [ref=e382]: Hybrid search
+                  - text: in Zilliz Cloud combines multiple search methods across different vector fields in a single query, then merges and reranks the results. Instead of relying on just one retrieval strategy, hybrid search lets you leverage the strengths of multiple approaches simultaneously.
+                  - superscript [ref=e384]:
+                    - link "1" [ref=e385] [cursor=pointer]:
+                      - /url: /docs/hybrid-search
+                - heading "Why Hybrid Search?" [level=2] [ref=e386]
+                - paragraph [ref=e387]:
+                  - text: "No single search method is perfect for every query. Hybrid search addresses this by combining complementary approaches:"
+                  - superscript [ref=e389]:
+                    - link "1" [ref=e390] [cursor=pointer]:
+                      - /url: /docs/hybrid-search
+                - table [ref=e391]:
+                  - rowgroup [ref=e392]:
+                    - row "Pattern Combines Benefit" [ref=e393]:
+                      - columnheader "Pattern" [ref=e394]
+                      - columnheader "Combines" [ref=e395]
+                      - columnheader "Benefit" [ref=e396]
+                  - rowgroup [ref=e397]:
+                    - row "Sparse + Dense Dense vectors (semantic meaning) + Sparse vectors/BM25 (keyword matching) Captures both conceptual relevance and exact term matches" [ref=e398]:
+                      - cell "Sparse + Dense" [ref=e399]:
+                        - strong [ref=e400]: Sparse + Dense
+                      - cell "Dense vectors (semantic meaning) + Sparse vectors/BM25 (keyword matching)" [ref=e401]
+                      - cell "Captures both conceptual relevance and exact term matches" [ref=e402]
+                    - row "Multimodal Text embeddings + Image embeddings Search across text and images in one query" [ref=e403]:
+                      - cell "Multimodal" [ref=e404]:
+                        - strong [ref=e405]: Multimodal
+                      - cell "Text embeddings + Image embeddings" [ref=e406]
+                      - cell "Search across text and images in one query" [ref=e407]
+                    - row "Multi-text fields Title embeddings + Description embeddings Search across different text fields describing the same object" [ref=e408]:
+                      - cell "Multi-text fields" [ref=e409]:
+                        - strong [ref=e410]: Multi-text fields
+                      - cell "Title embeddings + Description embeddings" [ref=e411]
+                      - cell "Search across different text fields describing the same object" [ref=e412]
+                - heading "How It Works" [level=2] [ref=e413]
+                - list [ref=e414]:
+                  - listitem [ref=e415]:
+                    - strong [ref=e416]: Multiple ANN searches
+                    - text: run simultaneously across different vector fields
+                  - listitem [ref=e417]:
+                    - strong [ref=e418]: Results are merged
+                    - text: using a ranker strategy
+                  - listitem [ref=e419]:
+                    - strong [ref=e420]: A single reranked result set
+                    - text: is returned
+                - heading "Available Rankers" [level=2] [ref=e421]
+                - paragraph [ref=e422]:
+                  - text: "Zilliz Cloud provides several reranking strategies to combine results from different vector fields:"
+                  - generic [ref=e423]:
+                    - superscript [ref=e424]:
+                      - link "1" [ref=e425] [cursor=pointer]:
+                        - /url: /docs/hybrid-search
+                    - superscript [ref=e426]:
+                      - link "2" [ref=e427] [cursor=pointer]:
+                        - /url: /docs/hybrid-search-rankers
+                - table [ref=e428]:
+                  - rowgroup [ref=e429]:
+                    - row "Ranker How It Works Best For" [ref=e430]:
+                      - columnheader "Ranker" [ref=e431]
+                      - columnheader "How It Works" [ref=e432]
+                      - columnheader "Best For" [ref=e433]
+                  - rowgroup [ref=e434]:
+                    - row "RRF (Reciprocal Rank Fusion) Combines rankings based on position, not raw scores When vector fields use different metrics or score scales" [ref=e435]:
+                      - cell "RRF (Reciprocal Rank Fusion)" [ref=e436]:
+                        - strong [ref=e437]: RRF (Reciprocal Rank Fusion)
+                      - cell "Combines rankings based on position, not raw scores" [ref=e438]
+                      - cell "When vector fields use different metrics or score scales" [ref=e439]
+                    - row "Weighted Ranker Applies custom weights to each vector field's scores When you want to prioritize one field over another" [ref=e440]:
+                      - cell "Weighted Ranker" [ref=e441]:
+                        - strong [ref=e442]: Weighted Ranker
+                      - cell "Applies custom weights to each vector field's scores" [ref=e443]
+                      - cell "When you want to prioritize one field over another" [ref=e444]
+                    - row "Boost/Decay Rankers Adjust scores based on scalar field values When recency, popularity, or other metadata should influence ranking" [ref=e445]:
+                      - cell "Boost/Decay Rankers" [ref=e446]:
+                        - strong [ref=e447]: Boost/Decay Rankers
+                      - cell "Adjust scores based on scalar field values" [ref=e448]
+                      - cell "When recency, popularity, or other metadata should influence ranking" [ref=e449]
+                    - row "Model-based Rankers (Cohere, Voyage AI) Uses a cross-encoder model to rerank When you need the highest relevance quality" [ref=e450]:
+                      - cell "Model-based Rankers (Cohere, Voyage AI)" [ref=e451]:
+                        - strong [ref=e452]: Model-based Rankers
+                        - text: (Cohere, Voyage AI)
+                      - cell "Uses a cross-encoder model to rerank" [ref=e453]
+                      - cell "When you need the highest relevance quality" [ref=e454]
+                - 'heading "Example: Sparse + Dense Hybrid Search" [level=2] [ref=e455]'
+                - code [ref=e457]: "from pymilvus import MilvusClient client = MilvusClient( uri=\"YOUR_CLUSTER_ENDPOINT\", token=\"YOUR_CLUSTER_TOKEN\", ) # Dense query vector (semantic search) dense_vector = [0.358, -0.602, 0.184, -0.263, 0.903] # Sparse query vector (keyword/BM25 search) sparse_vector = {1: 0.5, 10: 0.3, 42: 0.8} res = client.hybrid_search( collection_name=\"my_collection\", reqs=[ # Dense vector search { \"anns_field\": \"dense_vector\", \"data\": [dense_vector], \"limit\": 10, \"params\": {\"metric_type\": \"IP\"}, }, # Sparse vector search { \"anns_field\": \"sparse_vector\", \"data\": [sparse_vector], \"limit\": 10, \"params\": {\"metric_type\": \"IP\"}, }, ], rerank={ \"strategy\": \"rrf\", # Reciprocal Rank Fusion \"params\": {\"k\": 60}, }, limit=5, output_fields=[\"text\", \"product_id\"], ) for hits in res: for hit in hits: print(f\"ID: {hit['id']}, Distance: {hit['distance']}\")"
+                - heading "When to Use Hybrid Search" [level=2] [ref=e458]
+                - list [ref=e459]:
+                  - listitem [ref=e460]:
+                    - strong [ref=e461]: Product search
+                    - text: — combine semantic understanding with exact keyword matching
+                  - listitem [ref=e462]:
+                    - strong [ref=e463]: Document retrieval
+                    - text: — blend topic-level relevance with precise term matching
+                  - listitem [ref=e464]:
+                    - strong [ref=e465]: Multimodal applications
+                    - text: — search across text, images, and audio simultaneously
+                  - listitem [ref=e466]:
+                    - strong [ref=e467]: When single-method recall is insufficient
+                    - text: — hybrid typically improves recall over any single approach
+                - heading "Tradeoffs" [level=2] [ref=e468]
+                - list [ref=e469]:
+                  - listitem [ref=e470]:
+                    - strong [ref=e471]: Latency
+                    - text: ": Higher than single-vector search since multiple ANN searches run in parallel"
+                  - listitem [ref=e472]:
+                    - strong [ref=e473]: Cost
+                    - text: ": More compute units consumed per query"
+                  - listitem [ref=e474]:
+                    - strong [ref=e475]: Complexity
+                    - text: ": Requires managing multiple vector fields and choosing the right ranker"
+                - paragraph [ref=e476]:
+                  - text: Would you like help setting up hybrid search for a specific use case, or do you want to know more about a particular ranker strategy?
+                  - superscript [ref=e478]:
+                    - link "1" [ref=e479] [cursor=pointer]:
+                      - /url: /docs/hybrid-search
+                - generic [ref=e480]:
+                  - generic [ref=e481]: Sources
+                  - list [ref=e482]:
+                    - listitem [ref=e483]:
+                      - link "1 Hybrid Search CLOUD" [ref=e484] [cursor=pointer]:
+                        - /url: /docs/hybrid-search
+                        - generic [ref=e485]: "1"
+                        - generic [ref=e486]: Hybrid Search
+                        - generic [ref=e487]: CLOUD
+                    - listitem [ref=e488]:
+                      - link "2 Hybrid Search Rankers CLOUD" [ref=e489] [cursor=pointer]:
+                        - /url: /docs/hybrid-search-rankers
+                        - generic [ref=e490]: "2"
+                        - generic [ref=e491]: Hybrid Search Rankers
+                        - generic [ref=e492]: CLOUD
+                - generic [ref=e493]:
+                  - generic "High confidence — answer directly supported by documentation" [ref=e494]
+                  - button "Helpful" [ref=e495] [cursor=pointer]:
+                    - img [ref=e496]
+                  - button "Not helpful" [ref=e498] [cursor=pointer]:
+                    - img [ref=e499]
+          - generic [ref=e80]:
+            - textbox "Chat message" [ref=e81]:
+              - /placeholder: Ask a question...
+            - button "Send" [disabled] [ref=e82]:
+              - img [ref=e83]
+      - separator "Resize chat panel" [ref=e104]
+      - complementary [ref=e105] [cursor=pointer]:
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - button "Expand sidebar" [ref=e109]:
+              - img [ref=e110]
+            - generic: Sidebar
+          - generic [ref=e112]:
+            - button "Home" [ref=e113]:
+              - img [ref=e114]
+            - button "Quickstarts" [ref=e117]:
+              - img [ref=e118]
+            - button "Collection" [ref=e123]:
+              - img [ref=e124]
+            - button "Indexes" [ref=e128]:
+              - img [ref=e129]
+            - button "Search" [ref=e133]:
+              - img [ref=e134]
+            - button "Infrastructure" [ref=e137]:
+              - img [ref=e138]
+            - button "Administration" [ref=e140]:
+              - img [ref=e141]
+            - button "FAQs" [ref=e144]:
+              - img [ref=e145]
+      - main [ref=e149]:
+        - article [ref=e154]:
+          - generic [ref=e155]:
+            - generic [ref=e156]:
+              - img
+              - generic [ref=e157]:
+                - generic [ref=e158]:
+                  - generic [ref=e159]:
+                    - paragraph [ref=e160]: Welcome to Zilliz Cloud Docs
+                    - heading "Welcome to Zilliz Cloud Docs" [level=1] [ref=e164]
+                  - paragraph [ref=e165]: Zilliz Cloud provides a fully managed Milvus service, simplifying the deployment and scaling of vector search applications with security in mind.
+                  - generic [ref=e166]:
+                    - generic [ref=e167]:
+                      - generic [ref=e168]: For Humans
+                      - generic [ref=e169]:
+                        - generic [ref=e170]: $
+                        - generic [ref=e171]: pip install pymilvus
+                        - button "Copy command" [ref=e172] [cursor=pointer]:
+                          - img [ref=e173]
+                    - generic [ref=e176]:
+                      - generic [ref=e177]: For Agents
+                      - generic [ref=e178]:
+                        - generic [ref=e179]: $
+                        - generic [ref=e180]: npx skills add zilliztech/zilliz-skill
+                        - button "Copy command" [ref=e181] [cursor=pointer]:
+                          - img [ref=e182]
+                - generic [ref=e185]:
+                  - generic [ref=e186]:
+                    - generic: Query
+                    - generic [ref=e187]:
+                      - text: Retrieve entities by filtering on scalar fields or primary keys without vector search.
+                      - link "Learn more" [ref=e188] [cursor=pointer]:
+                        - /url: /docs/get-and-scalar-query
+                    - generic [ref=e189]:
+                      - button "Copy JSON" [ref=e195] [cursor=pointer]:
+                        - img [ref=e196]
+                      - generic [ref=e199]: "// Dataset: 3 items with vectors and color metadata // Search target: Query items where color starts with \"red\" (no vector search) [ { \"id\": 0, \"vector\": [0.358, -0.602, 0.184, -0.263, 0.903], \"color\": \"pink_8682\" }, { \"id\": 1, \"vector\": [0.199, 0.060, 0.698, 0.261, 0.839], \"color\": \"red_7025\" }, { \"id\": 2, \"vector\": [0.437, -0.560, 0.646, 0.789, 0.208], \"color\": \"orange_6781\" } ]"
+                    - generic [ref=e200]:
+                      - generic [ref=e201]:
+                        - button "Python" [ref=e202] [cursor=pointer]
+                        - button "Java" [ref=e203] [cursor=pointer]
+                        - button "NodeJS" [ref=e204] [cursor=pointer]
+                        - button "Go" [ref=e205] [cursor=pointer]
+                        - button "cURL" [ref=e206] [cursor=pointer]
+                      - generic [ref=e207]:
+                        - generic [ref=e208]:
+                          - generic [ref=e213]: Python
+                          - button "Copy code" [ref=e214] [cursor=pointer]:
+                            - img [ref=e215]
+                        - generic [ref=e218]: "from pymilvus import MilvusClient client = MilvusClient( uri=\"YOUR_CLUSTER_ENDPOINT\", token=\"YOUR_CLUSTER_TOKEN\" ) # Query entities by scalar field filter (no vector search) res = client.query( collection_name=\"my_collection\", filter='color like \"red%\"', # Filter condition on scalar field output_fields=[\"id\", \"color\"] # Fields to return )"
+                  - generic [ref=e222]:
+                    - button "Go to Basic Vector Search" [ref=e223] [cursor=pointer]:
+                      - generic: Basic Vector Search
+                    - button "Go to Filtered Search" [ref=e225] [cursor=pointer]:
+                      - generic: Filtered Search
+                    - button "Go to Grouping Search" [ref=e226] [cursor=pointer]:
+                      - generic: Grouping Search
+                    - button "Go to Hybrid Search" [ref=e227] [cursor=pointer]:
+                      - generic: Hybrid Search
+                    - button "Go to Full Text Search" [ref=e228] [cursor=pointer]:
+                      - generic: Full Text Search
+                    - button "Go to Search Iterator" [ref=e229] [cursor=pointer]:
+                      - generic: Search Iterator
+                    - button "Go to Query" [ref=e230] [cursor=pointer]:
+                      - generic: Query
+            - generic [ref=e231]:
+              - paragraph [ref=e232]:
+                - text: Select a project
+                - link "plan" [ref=e233] [cursor=pointer]:
+                  - /url: /docs/select-zilliz-cloud-service-plans
+                - text: and create clusters of different deployment options in the project.
+              - list [ref=e234]:
+                - listitem [ref=e235] [cursor=pointer]:
+                  - link "Free Start for free with generous limits, no credit card required." [ref=e236]:
+                    - /url: ./create-cluster#create-a-free-cluster
+                    - generic [ref=e239]: Free
+                    - generic [ref=e240]: Start for free with generous limits, no credit card required.
+                    - generic [ref=e241]: →
+                - listitem [ref=e242] [cursor=pointer]:
+                  - link "Serverless Pay only for what you use, scales automatically to zero." [ref=e243]:
+                    - /url: ./create-cluster#create-a-serverless-cluster
+                    - generic [ref=e246]: Serverless
+                    - generic [ref=e247]: Pay only for what you use, scales automatically to zero.
+                    - generic [ref=e248]: →
+                - listitem [ref=e249] [cursor=pointer]:
+                  - link "Dedicated High-performance clusters with dedicated resources." [ref=e250]:
+                    - /url: ./create-cluster#create-a-dedicated-cluster
+                    - generic [ref=e253]: Dedicated
+                    - generic [ref=e254]: High-performance clusters with dedicated resources.
+                    - generic [ref=e255]: →
+              - paragraph [ref=e256]:
+                - link "Not sure which deployment option to choose?" [ref=e257] [cursor=pointer]:
+                  - /url: https://zilliz.com/pricing
+            - generic [ref=e258]:
+              - heading "Work with Your Data in Zilliz Cloud" [level=1] [ref=e261]
+              - list [ref=e262]:
+                - listitem [ref=e263] [cursor=pointer]: Bring Your Own Vectors
+                - listitem [ref=e264] [cursor=pointer]: Integrated Embedding
+                - listitem [ref=e265] [cursor=pointer]: Migrate From Other Data Infra
+                - listitem [ref=e266] [cursor=pointer]: Backup & Restore
+              - generic [ref=e267]:
+                - generic [ref=e268]:
+                  - generic [ref=e270]: "1"
+                  - generic [ref=e272]:
+                    - heading "Create and connect to your cluster." [level=3] [ref=e273]
+                    - paragraph [ref=e275]:
+                      - link "Create a cluster" [ref=e276] [cursor=pointer]:
+                        - /url: /docs/create-cluster
+                      - text: with your desired compute and storage resources and then
+                      - link "connect" [ref=e277] [cursor=pointer]:
+                        - /url: /docs/connect-to-cluster
+                      - text: to it.
+                - generic [ref=e278]:
+                  - generic [ref=e280]: "2"
+                  - generic [ref=e282]:
+                    - heading "Create a collection." [level=3] [ref=e283]
+                    - paragraph [ref=e285]:
+                      - text: A collection is a two-dimensional table with fixed columns and variable rows.
+                      - link "Create a collection" [ref=e286] [cursor=pointer]:
+                        - /url: /docs/manage-collections-sdks
+                      - text: to work with your data.
+                - generic [ref=e287]:
+                  - generic [ref=e289]: "3"
+                  - generic [ref=e291]:
+                    - heading "Import data." [level=3] [ref=e292]
+                    - paragraph [ref=e294]:
+                      - link "Import data" [ref=e295] [cursor=pointer]:
+                        - /url: /docs/data-import
+                      - text: from a local file or an object storage bucket.
+                - generic [ref=e296]:
+                  - generic [ref=e298]: "4"
+                  - generic [ref=e300]:
+                    - heading "Conduct a vector similarity search." [level=3] [ref=e301]
+                    - paragraph [ref=e303]:
+                      - text: A
+                      - link "basic vector similarity search" [ref=e304] [cursor=pointer]:
+                        - /url: /docs/single-vector-search
+                      - text: helps you find the most similar results.
+            - generic [ref=e305]:
+              - heading "Go Further with Zilliz Cloud" [level=1] [ref=e308]
+              - generic [ref=e309]:
+                - link "Monitoring & Alerts Monitor your clusters and get alerts on time." [ref=e310] [cursor=pointer]:
+                  - /url: ./metrics-and-alerts
+                  - heading "Monitoring & Alerts" [level=3] [ref=e313]
+                  - paragraph [ref=e314]: Monitor your clusters and get alerts on time.
+                - link "Access Control Secure your data with fine-grained access control." [ref=e315] [cursor=pointer]:
+                  - /url: ./access-control
+                  - heading "Access Control" [level=3] [ref=e318]
+                  - paragraph [ref=e319]: Secure your data with fine-grained access control.
+                - link "Private Networking Connect your clusters to your private network." [ref=e320] [cursor=pointer]:
+                  - /url: ./setup-a-private-link
+                  - heading "Private Networking" [level=3] [ref=e323]
+                  - paragraph [ref=e324]: Connect your clusters to your private network.
+                - link "Billing Pay only for what you use, with no upfront costs." [ref=e325] [cursor=pointer]:
+                  - /url: ./payment-billing
+                  - heading "Billing" [level=3] [ref=e328]
+                  - paragraph [ref=e329]: Pay only for what you use, with no upfront costs.
+                - link "Integrations Integrate with your existing tools and workflows." [ref=e330] [cursor=pointer]:
+                  - /url: ./integrate-with-third-parties
+                  - heading "Integrations" [level=3] [ref=e333]
+                  - paragraph [ref=e334]: Integrate with your existing tools and workflows.
+            - generic [ref=e335]:
+              - heading "Start Building with Your Preferred Language" [level=1] [ref=e338]
+              - generic [ref=e339]:
+                - link "Python" [ref=e340] [cursor=pointer]:
+                  - /url: /reference/python
+                  - heading "Python" [level=3] [ref=e342]
+                - link "Java" [ref=e343] [cursor=pointer]:
+                  - /url: /reference/java
+                  - heading "Java" [level=3] [ref=e345]
+                - link "Go" [ref=e346] [cursor=pointer]:
+                  - /url: /reference/go
+                  - heading "Go" [level=3] [ref=e348]
+                - link "Node.js" [ref=e349] [cursor=pointer]:
+                  - /url: /reference/nodejs
+                  - heading "Node.js" [level=3] [ref=e351]
+                - link "RESTful API" [ref=e352] [cursor=pointer]:
+                  - /url: /reference/restful
+                  - heading "RESTful API" [level=3] [ref=e354]
+            - generic [ref=e356]:
+              - generic [ref=e357]: Can't find what you're looking for?
+              - link "Try Ask AI" [ref=e358] [cursor=pointer]:
+                - /url: /docs/home?chat=1
+                - generic [ref=e359]: Try Ask AI
+  - contentinfo [ref=e361]:
+    - generic [ref=e364]: © Zilliz 2026 All rights reserved.
