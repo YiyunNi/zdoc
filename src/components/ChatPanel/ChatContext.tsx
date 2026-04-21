@@ -39,10 +39,22 @@ function getPageContext(): string | undefined {
 // Persistent user ID
 const USER_ID_KEY = 'zd-user-id';
 
+function uuid(): string {
+  // crypto.randomUUID() requires a secure context (HTTPS / localhost).
+  // Fall back to crypto.getRandomValues() for plain HTTP origins.
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = (crypto.getRandomValues(new Uint8Array(1))[0] & 15) >> (c === 'x' ? 0 : 2);
+    return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
+
 function getUserId(): string {
   let userId = localStorage.getItem(USER_ID_KEY);
   if (!userId) {
-    userId = crypto.randomUUID();
+    userId = uuid();
     localStorage.setItem(USER_ID_KEY, userId);
   }
   return userId;
@@ -91,7 +103,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
         )
       );
     } else {
-      const id = crypto.randomUUID();
+      const id = uuid();
       setActiveChatId(id);
       activeChatIdRef.current = id;
       setChatHistory(prev => [{id, title, messages: [...messages], createdAt: Date.now()}, ...prev]);
