@@ -36,6 +36,9 @@ node_modules/
 .env.development
 .venv/
 
+# K8s secrets (use secret.yaml.example as template)
+k8s/**/secret.yaml
+
 # Lark-docs pre-fetched source JSON (generated build artifacts)
 /plugins/lark-docs/meta/sources/
 
