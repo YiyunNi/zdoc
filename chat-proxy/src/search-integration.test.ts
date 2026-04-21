@@ -7,16 +7,13 @@ describe('searchDocs', () => {
     vi.restoreAllMocks();
   });
 
-  it('is a synchronous function', () => {
-    // searchDocs is now sync (FTS5 via better-sqlite3)
+  it('is an async function', () => {
+    // searchDocs is now async (PostgreSQL)
     expect(typeof searchDocs).toBe('function');
-    // Returns an array (not a Promise) when index is not loaded
-    const result = searchDocs('test query');
-    expect(Array.isArray(result)).toBe(true);
   });
 
-  it('returns empty array when index is not ready', () => {
-    const results = searchDocs('test query', 5);
+  it('returns empty array when index is not ready', async () => {
+    const results = await searchDocs('test query', 5);
     expect(results).toEqual([]);
   });
 });

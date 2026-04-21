@@ -20,7 +20,11 @@ vi.mock('./rag.js', () => ({
   }),
   isVectorSearchAvailable: vi.fn(() => false),
   setActiveSectionFilter: vi.fn(),
+  setQueryEmbedding: vi.fn(),
+  getQueryEmbedding: vi.fn(() => null),
+  searchDocs: vi.fn().mockResolvedValue([]),
   getIndexStatus: vi.fn(() => ({ready: true, chunks: 100, lastRefreshed: new Date().toISOString()})),
+  getTitleByUrl: vi.fn().mockResolvedValue(null),
 }));
 vi.mock('./router.js', () => ({
   routeIntent: vi.fn().mockResolvedValue({agent: 'general', reasoning: 'test'}),
