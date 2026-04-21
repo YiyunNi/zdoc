@@ -5,7 +5,7 @@ import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
 import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
 import {checkGuard} from './guard.js';
-import {setActiveSectionFilter, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
+import {setActiveSectionFilter, setQueryEmbedding, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
 import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
 import {groundAtomically} from './grounding-agent.js';
 import {routeIntent} from './router.js';
@@ -255,9 +255,9 @@ app.use(
 // Health check
 // ---------------------------------------------------------------------------
 
-app.get('/health', c => {
+app.get('/health', async c => {
   const now = Date.now();
-  const index = getIndexStatus();
+  const index = await getIndexStatus();
   const dbOk = isDbReady();
   let cacheStats = {totalEntries: 0, totalHits: 0};
   let tokenSummary = {totalRequests: 0, totalInputTokens: 0, totalOutputTokens: 0, totalTokens: 0, totalCachedInputTokens: 0, cachedPercentage: 0};
@@ -265,9 +265,9 @@ app.get('/health', c => {
 
   if (dbOk) {
     try {
-      cacheStats = getCacheStats();
-      tokenSummary = getTokenUsageSummary();
-      gapsCount = getDocGapsCount();
+      cacheStats = await getCacheStats();
+      tokenSummary = await getTokenUsageSummary();
+      gapsCount = await getDocGapsCount();
     } catch { /* db may be locked */ }
   }
 
@@ -461,8 +461,16 @@ app.post('/chat', async c => {
           return;
         }
 
+        // Compute query embedding ONCE — reused for semantic cache, hybrid search, and cache write
+        let queryEmbedding: number[] | null = null;
+        try {
+          queryEmbedding = await computeEmbedding(ragQuery);
+        } catch (err) {
+          console.warn('[Embedding] Failed to compute query embedding:', (err as Error).message);
+        }
+
         // Check semantic cache for similar queries across sessions
-        const semanticHit = await semanticCacheLookup(ragQuery, sectionFilter);
+        const semanticHit = await semanticCacheLookup(ragQuery, sectionFilter, queryEmbedding ?? undefined);
         if (semanticHit) {
           console.log(`[SemanticCache] Replay cached response: ${ragQuery.slice(0, 60)}`);
           send('cache', JSON.stringify({type: 'semantic', similarity: semanticHit.similarity}));
@@ -484,6 +492,7 @@ app.post('/chat', async c => {
         try {
           // Route intent (agentic mode — no upfront RAG, LLM searches via tools)
           setActiveSectionFilter(sectionFilter);
+          setQueryEmbedding(queryEmbedding);
           console.log(`[Section] pageUrl=${body.pageUrl} filter=${sectionFilter || 'none'}`);
           const tRouteStart = Date.now();
           const routeResult = await routeIntent(ragQuery, body.messages, session.id)
@@ -591,7 +600,8 @@ app.post('/chat', async c => {
               }
               if (toolResult?.url && toolResult?.success) {
                 // getPageContent returns { url, success, content } — look up real title from index
-                const pageTitle = toolResult.title || getTitleByUrl(toolResult.url) || toolResult.url;
+                const titleFromIndex = await getTitleByUrl(toolResult.url);
+                const pageTitle = toolResult.title || titleFromIndex || toolResult.url;
                 toolSources.push({title: pageTitle, url: toolResult.url});
                 if (toolResult.content) toolChunks.push({
                   doc_url: toolResult.url,
@@ -737,10 +747,8 @@ app.post('/chat', async c => {
           responseCacheSet(responseCacheKey, recordedEvents);
 
           // Store in semantic cache (cross-session, similarity-based) — fire-and-forget
-          // Compute embedding asynchronously after response is sent
-          const queryEmbeddingPromise = computeEmbedding(ragQuery);
-          queryEmbeddingPromise.then(queryEmbedding => {
-            // Build chunk hashes from tool source URLs (use doc_chunks.id as hash)
+          // Reuse the pre-computed embedding from the beginning of the request
+          if (queryEmbedding) {
             const sourceChunkHashes = toolChunks.map(tc => tc.doc_url + '#' + (tc.section ? tc.section + ':' : '') + tc.content.slice(0, 100));
             const sourceEntries = allSources.map(s => ({url: s.url}));
             const confidenceJson = JSON.stringify({level: confidence, score: 0});
@@ -752,12 +760,10 @@ app.post('/chat', async c => {
               sectionFilter,
               sseEvents: recordedEvents,
               sources: sourceEntries,
-              chunkHashes: sourceChunkHashes.slice(0, 20), // cap at 20 for storage
+              chunkHashes: sourceChunkHashes.slice(0, 20),
               confidence: confidenceJson,
-            });
-          }).catch(err => {
-            console.warn('[SemanticCache] Failed to compute embedding:', (err as Error).message);
-          });
+            }).catch(() => {});
+          }
 
           // Log the message (fire-and-forget)
           logEvent(session.id, userId, 'message', agentConfig.type, {
@@ -794,22 +800,18 @@ app.post('/chat', async c => {
             tokenUsage: tokenUsage ?? undefined,
           });
 
-          // Persist token usage to SQLite (fire-and-forget)
+          // Persist token usage to PostgreSQL (fire-and-forget)
           if (tokenUsage) {
-            try {
-              saveTokenUsage({
-                sessionId: session.id,
-                userId,
-                model: tokenUsage.model,
-                agentType: tokenUsage.agentType,
-                inputTokens: tokenUsage.inputTokens,
-                outputTokens: tokenUsage.outputTokens,
-                totalTokens: tokenUsage.totalTokens,
-                cachedInputTokens: tokenUsage.cachedInputTokens,
-              });
-            } catch (err) {
-              console.warn('[Usage] Failed to persist token usage:', (err as Error).message);
-            }
+            saveTokenUsage({
+              sessionId: session.id,
+              userId,
+              model: tokenUsage.model,
+              agentType: tokenUsage.agentType,
+              inputTokens: tokenUsage.inputTokens,
+              outputTokens: tokenUsage.outputTokens,
+              totalTokens: tokenUsage.totalTokens,
+              cachedInputTokens: tokenUsage.cachedInputTokens,
+            }).catch(() => {});
           }
 
           // Update user profile (fire-and-forget)

@@ -120,10 +120,10 @@ Select genuinely relevant sources and map them to paragraphs.`,
 
     const selected = result.object.selectedSources;
 
-    // Persist grounding LLM token usage
+    // Persist grounding LLM token usage (fire-and-forget)
     try {
       const u = result.usage;
-      if (u.inputTokens != null && u.outputTokens != null) {
+      if (u?.inputTokens != null && u?.outputTokens != null) {
         saveTokenUsage({
           model: GROUNDING_MODEL,
           agentType: 'grounding',
@@ -131,7 +131,7 @@ Select genuinely relevant sources and map them to paragraphs.`,
           outputTokens: u.outputTokens,
           totalTokens: u.totalTokens ?? u.inputTokens + u.outputTokens,
           cachedInputTokens: u.cachedInputTokens ?? 0,
-        });
+        }).catch(() => {});
       }
     } catch { /* fire-and-forget */ }
 

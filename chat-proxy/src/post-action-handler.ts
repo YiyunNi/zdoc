@@ -270,64 +270,50 @@ export function handlePostAction(ctx: FailureContext): void {
 
   switch (diagnosis.action) {
     case 'log_gap':
-      try {
-        insertDocGap({
-          query: ctx.query.slice(0, 500),
-          sessionId: ctx.sessionId,
-          detectedIntent: diagnosis.detectedIntent,
-          toolsCalled: ctx.toolsCalled,
-          confidenceLevel: ctx.confidenceLevel,
-          responseText: ctx.fullText.slice(0, 500),
-        });
-      } catch (err) {
-        console.warn('[PostAction] Failed to insert doc gap:', (err as Error).message);
-      }
+      insertDocGap({
+        query: ctx.query.slice(0, 500),
+        sessionId: ctx.sessionId,
+        detectedIntent: diagnosis.detectedIntent,
+        toolsCalled: ctx.toolsCalled,
+        confidenceLevel: ctx.confidenceLevel,
+        responseText: ctx.fullText.slice(0, 500),
+      }).catch(() => {});
       break;
 
     case 'clear_sticky_route':
       // Clear the sticky route so next request can re-route correctly
-      try {
-        if (ctx.sessionId) {
-          clearSessionRoute(ctx.sessionId);
-        }
-        // Also log the gap for visibility
-        insertDocGap({
-          query: ctx.query.slice(0, 500),
-          sessionId: ctx.sessionId,
-          detectedIntent: diagnosis.detectedIntent,
-          toolsCalled: ctx.toolsCalled,
-          confidenceLevel: ctx.confidenceLevel,
-          responseText: ctx.fullText.slice(0, 500),
-        });
-      } catch (err) {
-        console.warn('[PostAction] Failed to clear route or log gap:', (err as Error).message);
+      if (ctx.sessionId) {
+        clearSessionRoute(ctx.sessionId);
       }
+      // Also log the gap for visibility
+      insertDocGap({
+        query: ctx.query.slice(0, 500),
+        sessionId: ctx.sessionId,
+        detectedIntent: diagnosis.detectedIntent,
+        toolsCalled: ctx.toolsCalled,
+        confidenceLevel: ctx.confidenceLevel,
+        responseText: ctx.fullText.slice(0, 500),
+      }).catch(() => {});
       break;
 
     case 'log_content_quality':
-      try {
-        upsertContentQuality({
-          url: ctx.sectionFilter || 'unknown',
-          issueType: 'demoted',
-          suggestion: diagnosis.suggestion,
-        });
-      } catch (err) {
-        console.warn('[PostAction] Failed to upsert content quality:', (err as Error).message);
-      }
+      upsertContentQuality({
+        url: ctx.sectionFilter || 'unknown',
+        issueType: 'demoted',
+        suggestion: diagnosis.suggestion,
+      }).catch(() => {});
       break;
 
     case 'log_error_and_alert':
       // Error already logged via logEvent — additional gap logging for visibility
-      try {
-        insertDocGap({
-          query: ctx.query.slice(0, 500),
-          sessionId: ctx.sessionId,
-          detectedIntent: 'error',
-          toolsCalled: ctx.toolsCalled,
-          confidenceLevel: 'error',
-          responseText: ctx.error ? `Error: ${ctx.error}` : ctx.fullText.slice(0, 500),
-        });
-      } catch { /* ignore */ }
+      insertDocGap({
+        query: ctx.query.slice(0, 500),
+        sessionId: ctx.sessionId,
+        detectedIntent: 'error',
+        toolsCalled: ctx.toolsCalled,
+        confidenceLevel: 'error',
+        responseText: ctx.error ? `Error: ${ctx.error}` : ctx.fullText.slice(0, 500),
+      }).catch(() => {});
       break;
   }
 }

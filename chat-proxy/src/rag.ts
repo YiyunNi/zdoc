@@ -1,6 +1,7 @@
 import type {ConfidenceLevel} from './types.js';
 import {isDemotedSource} from './demotion.js';
-import {getDb, resetDb} from './db.js';
+import {getPool, resetDb} from './db.js';
+import {computeEmbedding} from './semantic-cache.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -38,6 +39,54 @@ export interface SearchResult {
   score: number;
   weight: number;
   contextScore: number;
+}
+
+// ---------------------------------------------------------------------------
+// Reciprocal Rank Fusion (RRF)
+// ---------------------------------------------------------------------------
+
+const RRF_K = 60; // standard RRF constant
+
+export function fuseWithRRF(
+  ftsResults: SearchResult[],
+  vectorResults: SearchResult[],
+  topK: number,
+): SearchResult[] {
+  const scores = new Map<string, {score: number; result: SearchResult}>();
+
+  // Score FTS results by rank
+  for (let i = 0; i < ftsResults.length; i++) {
+    const r = ftsResults[i];
+    const rrfScore = 1 / (RRF_K + i + 1); // rank is 1-based
+    const existing = scores.get(r.id);
+    if (existing) {
+      existing.score += rrfScore;
+    } else {
+      scores.set(r.id, {score: rrfScore, result: r});
+    }
+  }
+
+  // Score vector results by rank, merging with FTS scores
+  for (let i = 0; i < vectorResults.length; i++) {
+    const r = vectorResults[i];
+    const rrfScore = 1 / (RRF_K + i + 1);
+    const existing = scores.get(r.id);
+    if (existing) {
+      existing.score += rrfScore;
+    } else {
+      scores.set(r.id, {score: rrfScore, result: r});
+    }
+  }
+
+  // Sort by combined RRF score descending, take topK
+  return [...scores.values()]
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK)
+    .map(({score, result}) => ({
+      ...result,
+      score,
+      contextScore: score,
+    }));
 }
 
 export function computeRetrievalConfidence(results: SearchResult[]): {level: ConfidenceLevel; avgScore: number} {
@@ -115,73 +164,60 @@ interface ParsedChunk {
 let indexReady = false;
 let lastRefreshedAt: string | null = null;
 
-export function getIndexSize(): number {
+export async function getIndexSize(): Promise<number> {
   try {
-    const db = getDb();
-    const row = db.prepare('SELECT COUNT(*) as n FROM doc_chunks').get() as any;
-    return row?.n ?? 0;
+    const pool = getPool();
+    const { rows } = await pool.query('SELECT COUNT(*)::int as n FROM doc_chunks');
+    return rows[0]?.n ?? 0;
   } catch { return 0; }
 }
 
-export function getIndexStatus(): {ready: boolean; chunks: number; lastRefreshed: string | null} {
+export async function getIndexStatus(): Promise<{ready: boolean; chunks: number; lastRefreshed: string | null}> {
   let chunks = 0;
   if (indexReady) {
     try {
-      const db = getDb();
-      const row = db.prepare('SELECT COUNT(*) as n FROM doc_chunks').get() as any;
-      chunks = row?.n ?? 0;
+      const pool = getPool();
+      const { rows } = await pool.query('SELECT COUNT(*)::int as n FROM doc_chunks');
+      chunks = rows[0]?.n ?? 0;
     } catch { /* db not ready yet */ }
   }
   return {ready: indexReady, chunks, lastRefreshed: lastRefreshedAt};
 }
 
 // ---------------------------------------------------------------------------
-// FTS5 query builder
+// Full-text search (PostgreSQL tsvector)
 // ---------------------------------------------------------------------------
 
-function queryToFTS(query: string): string {
-  const tokens = query
-    .split(/\s+/)
-    .map(t => t.trim())
-    .filter(t => t.length > 1);
-  if (tokens.length === 0) return '""';
-  return tokens.map(t => `"${t.replace(/"/g, '')}"`).join(' OR ');
-}
-
-// ---------------------------------------------------------------------------
-// FTS5 search
-// ---------------------------------------------------------------------------
-
-export function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: string): SearchResult[] {
+export async function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
   if (!indexReady) return [];
 
-  const ftsQuery = queryToFTS(query);
-  const db = getDb();
+  const pool = getPool();
 
   let sql = `
     SELECT c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section,
            c.content, c.weight,
-           bm25(doc_chunks_fts, 2.0, 1.0) AS rank
-    FROM doc_chunks_fts f
-    JOIN doc_chunks c ON c.rowid = f.rowid
-    WHERE f.doc_chunks_fts MATCH ?
+           ts_rank_cd(c.search_vector, query) AS rank
+    FROM doc_chunks c, plainto_tsquery('english', $1) query
+    WHERE c.search_vector @@ query
       AND c.doc_url != '/docs/home'`;
 
-  const params: (string | number)[] = [ftsQuery];
+  const params: (string | number)[] = [query];
+  let paramIdx = 2;
 
   if (sectionFilter) {
     const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
     if (m) {
-      sql += m[1] === '!=' ? ' AND c.section != ?' : ' AND c.section = ?';
+      sql += m[1] === '!=' ? ` AND c.section != $${paramIdx}` : ` AND c.section = $${paramIdx}`;
       params.push(m[2]);
+      paramIdx++;
     }
   }
 
-  sql += ' ORDER BY rank LIMIT ?';
+  sql += ` ORDER BY rank DESC LIMIT $${paramIdx}`;
   params.push(topK);
 
   try {
-    const rows = db.prepare(sql).all(...params) as any[];
+    const { rows } = await pool.query(sql, params);
     const MAX_EXTERNAL = 2;
     let extCount = 0;
     const results: SearchResult[] = [];
@@ -197,49 +233,150 @@ export function searchDocsFTS5(query: string, topK = TOP_K, sectionFilter?: stri
         doc_title: cleanTitle(r.doc_title),
         section: r.section,
         content: r.content,
-        score: -r.rank,
+        score: r.rank,
         weight: r.weight,
-        contextScore: -r.rank,
+        contextScore: r.rank,
       });
     }
-    console.log(`[RAG] FTS5 search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}`);
+    console.log(`[RAG] FTS search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}`);
     return results;
   } catch (err) {
-    console.warn('[RAG] FTS5 search error:', (err as Error).message);
+    console.warn('[RAG] FTS search error:', (err as Error).message);
     return [];
   }
 }
 
-export function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): SearchResult[] {
-  return searchDocsFTS5(query, topK, sectionFilter);
+// ---------------------------------------------------------------------------
+// Vector similarity search (pgvector cosine distance)
+// ---------------------------------------------------------------------------
+
+export async function searchDocsVector(
+  queryEmbedding: number[],
+  topK = TOP_K,
+  sectionFilter?: string,
+): Promise<SearchResult[]> {
+  if (!indexReady) return [];
+
+  const pool = getPool();
+  const embeddingStr = JSON.stringify(queryEmbedding);
+
+  let sql = `
+    SELECT c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section,
+           c.content, c.weight,
+           1 - (c.embedding <=> $1::vector) AS similarity
+    FROM doc_chunks c
+    WHERE c.embedding IS NOT NULL
+      AND c.doc_url != '/docs/home'`;
+
+  const params: (string | number)[] = [embeddingStr];
+  let paramIdx = 2;
+
+  if (sectionFilter) {
+    const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
+    if (m) {
+      sql += m[1] === '!=' ? ` AND c.section != $${paramIdx}` : ` AND c.section = $${paramIdx}`;
+      params.push(m[2]);
+      paramIdx++;
+    }
+  }
+
+  sql += ` ORDER BY c.embedding <=> $1::vector LIMIT $${paramIdx}`;
+  params.push(topK);
+
+  try {
+    const { rows } = await pool.query(sql, params);
+    const MAX_EXTERNAL = 2;
+    let extCount = 0;
+    const results: SearchResult[] = [];
+    for (const r of rows) {
+      if (r.id.startsWith('ext:')) {
+        extCount++;
+        if (extCount > MAX_EXTERNAL) continue;
+      }
+      results.push({
+        id: r.id,
+        doc_url: r.doc_url,
+        doc_url_md: r.doc_url_md,
+        doc_title: cleanTitle(r.doc_title),
+        section: r.section,
+        content: r.content,
+        score: r.similarity,
+        weight: r.weight,
+        contextScore: r.similarity,
+      });
+    }
+    console.log(`[RAG] Vector search: ${results.length} results${sectionFilter ? ` (filter: ${sectionFilter})` : ''}`);
+    return results;
+  } catch (err) {
+    console.warn('[RAG] Vector search error:', (err as Error).message);
+    return [];
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Hybrid search: parallel FTS + vector, fused with RRF
+// ---------------------------------------------------------------------------
+
+export async function searchDocsHybrid(
+  query: string,
+  topK = TOP_K,
+  sectionFilter?: string,
+): Promise<SearchResult[]> {
+  const queryEmbedding = getQueryEmbedding();
+
+  if (!queryEmbedding) {
+    return searchDocsFTS5(query, topK, sectionFilter);
+  }
+
+  const [ftsResults, vectorResults] = await Promise.all([
+    searchDocsFTS5(query, topK * 2, sectionFilter),
+    searchDocsVector(queryEmbedding, topK * 2, sectionFilter),
+  ]);
+
+  if (vectorResults.length === 0) {
+    console.log('[RAG] Hybrid: vector search empty, using FTS-only results');
+    return ftsResults.slice(0, topK);
+  }
+
+  const fused = fuseWithRRF(ftsResults, vectorResults, topK);
+  console.log(`[RAG] Hybrid search: FTS=${ftsResults.length}, Vec=${vectorResults.length}, Fused=${fused.length}`);
+  return fused;
+}
+
+export async function searchDocs(query: string, topK = TOP_K, sectionFilter?: string): Promise<SearchResult[]> {
+  return searchDocsHybrid(query, topK, sectionFilter);
 }
 
 // ---------------------------------------------------------------------------
 // List pages — structural browse
 // ---------------------------------------------------------------------------
 
-export function listPages(sectionFilter?: string, titleContains?: string): {title: string; url: string; section: string}[] {
+export async function listPages(sectionFilter?: string, titleContains?: string): Promise<{title: string; url: string; section: string}[]> {
   if (!indexReady) return [];
-  const db = getDb();
+  const pool = getPool();
 
   let sql = `SELECT DISTINCT doc_url, doc_title, section FROM doc_chunks WHERE doc_url != '/docs/home'`;
   const params: (string | number)[] = [];
+  let paramIdx = 1;
 
   if (sectionFilter) {
     const m = sectionFilter.match(/section\s*(!=|==)\s*"([^"]+)"/);
     if (m) {
-      sql += m[1] === '!=' ? ' AND section != ?' : ' AND section = ?';
+      sql += m[1] === '!=' ? ` AND section != $${paramIdx}` : ` AND section = $${paramIdx}`;
       params.push(m[2]);
+      paramIdx++;
     }
   }
   if (titleContains) {
-    sql += ' AND doc_title LIKE ?';
+    sql += ` AND doc_title ILIKE $${paramIdx}`;
     params.push(`%${titleContains}%`);
+    paramIdx++;
   }
   sql += ' LIMIT 200';
 
   try {
-    return (db.prepare(sql).all(...params) as any[]).map(r => ({
+    const { rows } = await pool.query(sql, params);
+    return rows.map((r: any) => ({
       title: cleanTitle(r.doc_title),
       url: r.doc_url,
       section: r.section,
@@ -253,23 +390,25 @@ export function listPages(sectionFilter?: string, titleContains?: string): {titl
 // Title lookup
 // ---------------------------------------------------------------------------
 
-export function getTitleByUrl(url: string): string | null {
+export async function getTitleByUrl(url: string): Promise<string | null> {
   if (!indexReady) return null;
   const normalized = url.replace(/\.md$/, '');
   try {
-    const db = getDb();
-    const row = db.prepare(
-      `SELECT doc_title FROM doc_chunks WHERE doc_url = ? LIMIT 1`
-    ).get(normalized) as any;
-    if (row) return cleanTitle(row.doc_title);
+    const pool = getPool();
+    const { rows } = await pool.query(
+      `SELECT doc_title FROM doc_chunks WHERE doc_url = $1 LIMIT 1`,
+      [normalized]
+    );
+    if (rows.length > 0) return cleanTitle(rows[0].doc_title);
     // Try suffix match
     const path = normalized.startsWith('http')
       ? new URL(normalized).pathname
       : normalized;
-    const row2 = db.prepare(
-      `SELECT doc_title FROM doc_chunks WHERE doc_url LIKE ? LIMIT 1`
-    ).get(`%${path}`) as any;
-    return row2 ? cleanTitle(row2.doc_title) : null;
+    const { rows: rows2 } = await pool.query(
+      `SELECT doc_title FROM doc_chunks WHERE doc_url ILIKE $1 LIMIT 1`,
+      [`%${path}`]
+    );
+    return rows2.length > 0 ? cleanTitle(rows2[0].doc_title) : null;
   } catch {
     return null;
   }
@@ -324,7 +463,7 @@ export function chunkContent(content: string): string[] {
   return chunks;
 }
 
-/** Parse an llms.txt file into chunks for SQLite indexing.
+/** Parse an llms.txt file into chunks for indexing.
  *  Handles both summary format (title + URL + description) and full-content format.
  *  Each ## heading becomes a doc; long docs are further chunked. */
 function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
@@ -387,6 +526,67 @@ function parseLlmsFullText(text: string, section: string): ParsedChunk[] {
   return chunks;
 }
 
+// ---------------------------------------------------------------------------
+// Batch embedding: populate doc_chunks.embedding during index load
+// ---------------------------------------------------------------------------
+
+const EMBEDDING_BATCH_SIZE = 20;
+
+async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
+  const pool = getPool();
+  const totalChunks = allChunks.length;
+  let embedded = 0;
+  let failed = 0;
+
+  console.log(`[RAG] Starting embedding backfill for ${totalChunks} chunks (batch size: ${EMBEDDING_BATCH_SIZE})`);
+
+  for (let i = 0; i < totalChunks; i += EMBEDDING_BATCH_SIZE) {
+    const batch = allChunks.slice(i, i + EMBEDDING_BATCH_SIZE);
+
+    const texts = batch.map(c => `${c.doc_title}\n${c.content}`);
+
+    try {
+      const embeddings: number[][] = [];
+      for (const text of texts) {
+        try {
+          const emb = await computeEmbedding(text);
+          embeddings.push(emb);
+        } catch {
+          embeddings.push([]); // empty = failure for this chunk
+        }
+      }
+
+      // Update chunks with embeddings
+      for (let j = 0; j < batch.length; j++) {
+        if (embeddings[j].length > 0) {
+          try {
+            await pool.query(
+              `UPDATE doc_chunks SET embedding = $1::vector WHERE id = $2`,
+              [JSON.stringify(embeddings[j]), batch[j].id]
+            );
+            embedded++;
+          } catch (err) {
+            failed++;
+            console.warn(`[RAG] Failed to store embedding for ${batch[j].id}:`, (err as Error).message);
+          }
+        } else {
+          failed++;
+        }
+      }
+
+      // Progress log every 200 chunks
+      if ((i + batch.length) % 200 === 0 || i + batch.length >= totalChunks) {
+        console.log(`[RAG] Embedding progress: ${Math.min(i + batch.length, totalChunks)}/${totalChunks} (embedded: ${embedded}, failed: ${failed})`);
+      }
+    } catch (err) {
+      failed += batch.length;
+      console.warn(`[RAG] Embedding batch failed at chunk ${i}:`, (err as Error).message);
+    }
+  }
+
+  console.log(`[RAG] Embedding backfill complete: ${embedded} embedded, ${failed} failed out of ${totalChunks}`);
+}
+
 let indexLoading = false;
 
 async function fetchWithRetry(url: string, retries = 3): Promise<Response> {
@@ -434,22 +634,21 @@ export async function loadIndex(force = false): Promise<void> {
   }
 
   if (allChunks.length > 0) {
-    const db = getDb();
+    const pool = getPool();
 
     // Check if existing index in DB is fresh (same source, built within 30 min)
     // This avoids unnecessary rebuild on pod restart when the PVC still has recent data
     if (!force && !indexReady) {
       try {
-        const metaRows = db.prepare(
+        const { rows: metaRows } = await pool.query(
           "SELECT key, value FROM metadata WHERE key IN ('last_build', 'source')"
-        ).all() as { key: string; value: string }[];
-        const metaMap = Object.fromEntries(metaRows.map(r => [r.key, r.value]));
+        );
+        const metaMap = Object.fromEntries(metaRows.map((r: any) => [r.key, r.value]));
         if (metaMap.last_build && metaMap.source) {
           const lastBuild = new Date(metaMap.last_build).getTime();
           const ageMin = (Date.now() - lastBuild) / 60000;
           if (ageMin < 30 && metaMap.source === INDEX_BASE_URL) {
             console.log(`[RAG] Index in DB is fresh (${ageMin.toFixed(0)}min old, same source) — using existing`);
-            db.exec("INSERT INTO doc_chunks_fts(doc_chunks_fts) VALUES('optimize')");
             indexReady = true;
             lastRefreshedAt = metaMap.last_build;
             indexLoading = false;
@@ -459,36 +658,63 @@ export async function loadIndex(force = false): Promise<void> {
       } catch { /* DB not ready or empty — proceed with build */ }
     }
 
-    resetDb();
+    await resetDb();
 
-    const insert = db.prepare(`
-      INSERT OR REPLACE INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
-      VALUES (?, ?, ?, ?, ?, ?, ?)
-    `);
-    db.exec('BEGIN');
+    const client = await pool.connect();
     try {
+      await client.query('BEGIN');
       for (const c of allChunks) {
-        insert.run(c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight);
+        await client.query(
+          `INSERT INTO doc_chunks (id, doc_url, doc_url_md, doc_title, section, content, weight)
+           VALUES ($1, $2, $3, $4, $5, $6, $7)
+           ON CONFLICT (id) DO UPDATE SET
+             doc_url = EXCLUDED.doc_url, doc_url_md = EXCLUDED.doc_url_md,
+             doc_title = EXCLUDED.doc_title, section = EXCLUDED.section,
+             content = EXCLUDED.content, weight = EXCLUDED.weight`,
+          [c.id, c.doc_url, c.doc_url_md, c.doc_title, c.section, c.content, c.weight]
+        );
       }
-      db.exec('COMMIT');
+      await client.query('COMMIT');
     } catch (err) {
-      db.exec('ROLLBACK');
+      await client.query('ROLLBACK');
       throw err;
+    } finally {
+      client.release();
     }
 
-    // Optimize FTS5 index segments
-    db.exec("INSERT INTO doc_chunks_fts(doc_chunks_fts) VALUES('optimize')");
+    // Backfill embeddings in the background — do NOT block index readiness
+    const embeddingPromise = backfillEmbeddings(allChunks)
+      .catch(err => console.warn('[RAG] Embedding backfill failed:', (err as Error).message));
+
+    // Do NOT await — embeddings are populated asynchronously
+    // The index is usable immediately with FTS; vector search degrades gracefully
+    void embeddingPromise;
 
     // Write metadata
-    const upsert = db.prepare("INSERT OR REPLACE INTO metadata(key, value) VALUES(?, ?)");
-    upsert.run('schema_version', '1');
-    upsert.run('last_build', new Date().toISOString());
-    upsert.run('total_chunks', String(allChunks.length));
-    upsert.run('source', INDEX_BASE_URL);
+    await pool.query(
+      `INSERT INTO metadata(key, value) VALUES($1, $2)
+       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+      ['schema_version', '1']
+    );
+    await pool.query(
+      `INSERT INTO metadata(key, value) VALUES($1, $2)
+       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+      ['last_build', new Date().toISOString()]
+    );
+    await pool.query(
+      `INSERT INTO metadata(key, value) VALUES($1, $2)
+       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+      ['total_chunks', String(allChunks.length)]
+    );
+    await pool.query(
+      `INSERT INTO metadata(key, value) VALUES($1, $2)
+       ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value`,
+      ['source', INDEX_BASE_URL]
+    );
 
     indexReady = true;
     lastRefreshedAt = new Date().toISOString();
-    console.log(`[RAG] SQLite index ready: ${allChunks.length} chunks`);
+    console.log(`[RAG] PostgreSQL index ready: ${allChunks.length} chunks`);
   } else {
     console.warn('[RAG] No chunks loaded — search will return empty results');
   }
@@ -544,8 +770,8 @@ export function parseLlmsTxt(text: string, section: string): DocEntry[] {
   return entries;
 }
 
-export function keywordSearchDocs(query: string, topK = 3): DocEntry[] {
-  const results = searchDocsFTS5(query, topK);
+export async function keywordSearchDocs(query: string, topK = 3): Promise<DocEntry[]> {
+  const results = await searchDocsFTS5(query, topK);
   return results.map(r => ({
     title: r.doc_title,
     url: r.doc_url,
@@ -613,4 +839,18 @@ export function setActiveSectionFilter(filter: string | undefined): void {
 
 export function getActiveSectionFilter(): string | undefined {
   return activeSectionFilter;
+}
+
+// ---------------------------------------------------------------------------
+// Request-scoped query embedding — set before search, reused across tools
+// ---------------------------------------------------------------------------
+
+let activeQueryEmbedding: number[] | null = null;
+
+export function setQueryEmbedding(embedding: number[] | null): void {
+  activeQueryEmbedding = embedding;
+}
+
+export function getQueryEmbedding(): number[] | null {
+  return activeQueryEmbedding;
 }

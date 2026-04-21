@@ -10,7 +10,7 @@ export const getCodeExampleTool = tool({
   }),
   execute: async ({topic, language}) => {
     const query = `${topic} ${language} code example`;
-    const results = searchDocsFTS5(query, 4, getActiveSectionFilter());
+    const results = await searchDocsFTS5(query, 4, getActiveSectionFilter());
 
     // Extract code blocks from results
     const codeBlocks: Array<{title: string; url: string; code: string}> = [];

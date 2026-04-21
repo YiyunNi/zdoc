@@ -1,5 +1,5 @@
 import {createOpenAI} from '@ai-sdk/openai';
-import {getDb, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCount, isDbReady, type CacheEntry} from './db.js';
+import {getPool, invalidateCacheByChunkHashes, getCacheStats, getCacheEntriesCount, isDbReady, type CacheEntry} from './db.js';
 
 // ---------------------------------------------------------------------------
 // Config
@@ -27,7 +27,7 @@ export async function computeEmbedding(text: string): Promise<number[]> {
 }
 
 // ---------------------------------------------------------------------------
-// Cosine similarity (pure JS — no sqlite-vec dependency)
+// Cosine similarity (pure JS — kept for local comparisons)
 // ---------------------------------------------------------------------------
 
 export function cosineSimilarity(a: number[], b: number[]): number {
@@ -45,7 +45,7 @@ export function cosineSimilarity(a: number[], b: number[]): number {
 }
 
 // ---------------------------------------------------------------------------
-// Cache lookup: find semantically similar queries
+// Cache lookup: find semantically similar queries via pgvector
 // ---------------------------------------------------------------------------
 
 export interface SemanticCacheHit {
@@ -56,49 +56,76 @@ export interface SemanticCacheHit {
 export async function semanticCacheLookup(
   query: string,
   sectionFilter?: string,
+  queryEmbedding?: number[],
 ): Promise<SemanticCacheHit | null> {
   if (!SEMANTIC_CACHE_ENABLED || !isDbReady()) return null;
 
-  const db = getDb();
+  const pool = getPool();
 
-  // Compute embedding for the query
-  const queryEmbedding = await computeEmbedding(query);
-  const queryEmbeddingJson = JSON.stringify(queryEmbedding);
+  // Use pre-computed embedding if provided, otherwise compute it
+  const embedding = queryEmbedding ?? await computeEmbedding(query);
+  const queryEmbeddingStr = JSON.stringify(embedding);
 
-  // Fetch candidates from the last N hours (TTL window) to limit brute-force work
+  // Use pgvector to find nearest neighbours within the TTL window
   const cutoff = new Date(Date.now() - SEMANTIC_CACHE_TTL_MS).toISOString();
-  const rows = db.prepare(
-    `SELECT * FROM answer_cache WHERE created_at >= ? ORDER BY created_at DESC LIMIT 2000`
-  ).all(cutoff) as unknown as CacheEntry[];
+
+  let rows: any[];
+  if (sectionFilter) {
+    const result = await pool.query(
+      `SELECT *, 1 - (query_embedding <=> $1::vector) AS similarity
+       FROM answer_cache
+       WHERE created_at >= $2 AND section_filter = $3
+       ORDER BY query_embedding <=> $1::vector LIMIT 20`,
+      [queryEmbeddingStr, cutoff, sectionFilter],
+    );
+    rows = result.rows;
+  } else {
+    const result = await pool.query(
+      `SELECT *, 1 - (query_embedding <=> $1::vector) AS similarity
+       FROM answer_cache
+       WHERE created_at >= $2 AND section_filter IS NULL
+       ORDER BY query_embedding <=> $1::vector LIMIT 20`,
+      [queryEmbeddingStr, cutoff],
+    );
+    rows = result.rows;
+  }
 
   if (rows.length === 0) return null;
 
-  // Brute-force cosine similarity — fine for <= 2K entries
+  // Pick the best match above threshold
   let bestHit: SemanticCacheHit | null = null;
 
   for (const row of rows) {
-    // Section filter: if the cached entry has a section_filter, it must match the current one
-    if (sectionFilter && row.section_filter && row.section_filter !== sectionFilter) continue;
-    if (!sectionFilter && row.section_filter) continue; // current has no filter but cached does
-
-    const cachedEmbedding = JSON.parse(row.query_embedding) as number[];
-    const similarity = cosineSimilarity(queryEmbedding, cachedEmbedding);
-
+    const similarity = Number(row.similarity);
     if (similarity >= SEMANTIC_CACHE_THRESHOLD && (!bestHit || similarity > bestHit.similarity)) {
-      bestHit = {entry: row, similarity};
+      // Build a CacheEntry from the pg row, normalising JSONB columns
+      const entry: CacheEntry = {
+        id: row.id,
+        query_text: row.query_text,
+        query_embedding: typeof row.query_embedding === 'string' ? row.query_embedding : JSON.stringify(row.query_embedding),
+        agent: row.agent,
+        section_filter: row.section_filter,
+        sse_events: typeof row.sse_events === 'string' ? row.sse_events : JSON.stringify(row.sse_events),
+        sources: typeof row.sources === 'string' ? row.sources : JSON.stringify(row.sources),
+        chunk_hashes: typeof row.chunk_hashes === 'string' ? row.chunk_hashes : JSON.stringify(row.chunk_hashes),
+        confidence: typeof row.confidence === 'string' ? row.confidence : JSON.stringify(row.confidence),
+        created_at: row.created_at,
+        hits: row.hits,
+      };
+      bestHit = {entry, similarity};
     }
   }
 
   if (!bestHit) return null;
 
   // Validate sources: check that all cached chunk hashes still exist in doc_chunks
-  if (!validateSources(bestHit.entry.chunk_hashes)) {
+  if (!await validateSources(bestHit.entry.chunk_hashes)) {
     console.log(`[SemanticCache] Source validation failed for cached query: ${query.slice(0, 60)}`);
     return null;
   }
 
   // Increment hit counter
-  db.prepare('UPDATE answer_cache SET hits = hits + 1 WHERE id = ?').run(bestHit.entry.id);
+  await pool.query('UPDATE answer_cache SET hits = hits + 1 WHERE id = $1', [bestHit.entry.id]);
 
   console.log(
     `[SemanticCache] HIT (similarity=${bestHit.similarity.toFixed(3)}): ${query.slice(0, 60)}`
@@ -111,18 +138,19 @@ export async function semanticCacheLookup(
 // Source validation: verify cached chunk hashes still exist in the index
 // ---------------------------------------------------------------------------
 
-function validateSources(chunkHashesJson: string): boolean {
-  const hashes: string[] = JSON.parse(chunkHashesJson);
+async function validateSources(chunkHashesJson: string): Promise<boolean> {
+  const hashes: string[] = typeof chunkHashesJson === 'string' ? JSON.parse(chunkHashesJson) : chunkHashesJson;
   if (hashes.length === 0) return false; // no sources to validate
 
-  const db = getDb();
+  const pool = getPool();
   // Check that all chunk hashes still exist in doc_chunks
-  const placeholders = hashes.map(() => '?').join(',');
-  const found = db.prepare(
-    `SELECT COUNT(DISTINCT id) as count FROM doc_chunks WHERE id IN (${placeholders})`
-  ).get(...hashes) as { count: number };
+  const placeholders = hashes.map((_, i) => `$${i + 1}`).join(',');
+  const {rows: [found]} = await pool.query(
+    `SELECT COUNT(DISTINCT id) as count FROM doc_chunks WHERE id IN (${placeholders})`,
+    hashes,
+  );
 
-  return found.count === hashes.length;
+  return Number(found.count) === hashes.length;
 }
 
 // ---------------------------------------------------------------------------
@@ -140,38 +168,38 @@ export interface CacheWriteInput {
   confidence: string; // JSON {level, score}
 }
 
-export function semanticCacheWrite(input: CacheWriteInput): void {
+export async function semanticCacheWrite(input: CacheWriteInput): Promise<void> {
   if (!SEMANTIC_CACHE_ENABLED || !isDbReady()) return;
 
-  const db = getDb();
+  const pool = getPool();
 
   // Evict oldest entries if at capacity
-  const currentCount = getCacheEntriesCount();
+  const currentCount = await getCacheEntriesCount();
   if (currentCount >= SEMANTIC_CACHE_MAX_ENTRIES) {
     const toDelete = Math.max(100, Math.floor(SEMANTIC_CACHE_MAX_ENTRIES * 0.1));
-    db.prepare(
-      `DELETE FROM answer_cache WHERE id IN (SELECT id FROM answer_cache ORDER BY created_at ASC LIMIT ?)`
-    ).run(toDelete);
+    await pool.query(
+      `DELETE FROM answer_cache WHERE id IN (SELECT id FROM answer_cache ORDER BY created_at ASC LIMIT $1)`,
+      [toDelete],
+    );
     console.log(`[SemanticCache] Evicted ${toDelete} oldest entries (capacity: ${SEMANTIC_CACHE_MAX_ENTRIES})`);
   }
 
   // Clean up old entries past TTL
-  cleanupExpired();
+  await cleanupExpired();
 
-  const insert = db.prepare(`
-    INSERT INTO answer_cache (query_text, query_embedding, agent, section_filter, sse_events, sources, chunk_hashes, confidence)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-
-  insert.run(
-    input.queryText,
-    JSON.stringify(input.queryEmbedding),
-    input.agent,
-    input.sectionFilter || null,
-    JSON.stringify(input.sseEvents),
-    JSON.stringify(input.sources),
-    JSON.stringify(input.chunkHashes),
-    input.confidence,
+  await pool.query(
+    `INSERT INTO answer_cache (query_text, query_embedding, agent, section_filter, sse_events, sources, chunk_hashes, confidence)
+     VALUES ($1, $2::vector, $3, $4, $5, $6, $7, $8)`,
+    [
+      input.queryText,
+      JSON.stringify(input.queryEmbedding),
+      input.agent,
+      input.sectionFilter || null,
+      JSON.stringify(input.sseEvents),
+      JSON.stringify(input.sources),
+      JSON.stringify(input.chunkHashes),
+      input.confidence,
+    ],
   );
 
   console.log(`[SemanticCache] Stored: ${input.queryText.slice(0, 60)}`);
@@ -181,12 +209,12 @@ export function semanticCacheWrite(input: CacheWriteInput): void {
 // Expiration cleanup
 // ---------------------------------------------------------------------------
 
-function cleanupExpired(): void {
-  const db = getDb();
+async function cleanupExpired(): Promise<void> {
+  const pool = getPool();
   const cutoff = new Date(Date.now() - SEMANTIC_CACHE_TTL_MS).toISOString();
-  const result = db.prepare('DELETE FROM answer_cache WHERE created_at < ?').run(cutoff);
-  if (result.changes > 0) {
-    console.log(`[SemanticCache] Cleaned up ${result.changes} expired entries`);
+  const result = await pool.query('DELETE FROM answer_cache WHERE created_at < $1', [cutoff]);
+  if (result.rowCount && result.rowCount > 0) {
+    console.log(`[SemanticCache] Cleaned up ${result.rowCount} expired entries`);
   }
 }
 
@@ -194,21 +222,21 @@ function cleanupExpired(): void {
 // Index-wide invalidation: invalidate all entries when doc index refreshes
 // ---------------------------------------------------------------------------
 
-export function invalidateSemanticCache(): void {
+export async function invalidateSemanticCache(): Promise<void> {
   if (!SEMANTIC_CACHE_ENABLED) return;
-  const db = getDb();
-  const result = db.prepare('DELETE FROM answer_cache').run();
-  console.log(`[SemanticCache] Full invalidation: ${result.changes} entries removed`);
+  const pool = getPool();
+  const result = await pool.query('DELETE FROM answer_cache');
+  console.log(`[SemanticCache] Full invalidation: ${result.rowCount ?? 0} entries removed`);
 }
 
 // ---------------------------------------------------------------------------
 // Invalidated by feedback (thumbs-down on a cached answer)
 // ---------------------------------------------------------------------------
 
-export function invalidateCacheEntry(id: number): void {
+export async function invalidateCacheEntry(id: number): Promise<void> {
   if (!SEMANTIC_CACHE_ENABLED) return;
-  const db = getDb();
-  db.prepare('DELETE FROM answer_cache WHERE id = ?').run(id);
+  const pool = getPool();
+  await pool.query('DELETE FROM answer_cache WHERE id = $1', [id]);
   console.log(`[SemanticCache] Invalidated entry ${id} (feedback)`);
 }
 

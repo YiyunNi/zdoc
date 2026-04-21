@@ -20,8 +20,8 @@ const PORT = Number(process.env.PORT) || 8787;
 const INDEX_REFRESH_INTERVAL = Number(process.env.INDEX_REFRESH_INTERVAL) || 30 * 60 * 1000; // 30 min
 
 async function startup() {
-  // Initialize SQLite database
-  initDb();
+  // Initialize PostgreSQL database
+  await initDb();
 
   // Load doc index from live site
   await loadIndex();

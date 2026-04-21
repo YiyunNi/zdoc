@@ -1,162 +1,177 @@
-import { DatabaseSync } from 'node:sqlite';
-import { mkdirSync } from 'fs';
-import { dirname, resolve } from 'path';
+import { Pool } from 'pg';
+import type { PoolConfig } from 'pg';
 
-const SQLITE_PATH = resolve(process.cwd(), process.env.SQLITE_PATH ?? './data/chat-proxy.db');
+// ---------------------------------------------------------------------------
+// PostgreSQL schema DDL
+// ---------------------------------------------------------------------------
 
-let db: DatabaseSync | null = null;
+const SCHEMA_DDL = `
+  -- doc_chunks: indexed document chunks with full-text search + vector embedding
+  CREATE TABLE IF NOT EXISTS doc_chunks (
+    id          TEXT PRIMARY KEY,
+    doc_url     TEXT NOT NULL,
+    doc_url_md  TEXT NOT NULL,
+    doc_title   TEXT NOT NULL,
+    section     TEXT NOT NULL,
+    content     TEXT NOT NULL,
+    weight      DOUBLE PRECISION NOT NULL DEFAULT 1.0,
+    embedding   vector(1536),
+    created_at  TIMESTAMPTZ DEFAULT NOW(),
+    search_vector tsvector GENERATED ALWAYS AS (
+      setweight(to_tsvector('english', coalesce(doc_title, '')), 'A') ||
+      setweight(to_tsvector('english', coalesce(content, '')), 'B')
+    ) STORED
+  );
 
-export function initDb(): void {
-  mkdirSync(dirname(SQLITE_PATH), { recursive: true });
+  CREATE INDEX IF NOT EXISTS idx_chunks_url ON doc_chunks(doc_url);
+  CREATE INDEX IF NOT EXISTS idx_chunks_section ON doc_chunks(section);
+  CREATE INDEX IF NOT EXISTS idx_chunks_search ON doc_chunks USING GIN(search_vector);
+  CREATE INDEX IF NOT EXISTS idx_chunks_embedding ON doc_chunks USING hnsw (embedding vector_cosine_ops);
 
-  db = new DatabaseSync(SQLITE_PATH);
+  -- metadata: key-value store for index build info
+  CREATE TABLE IF NOT EXISTS metadata (
+    key   TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  );
 
-  db.exec('PRAGMA journal_mode = WAL');
-  db.exec('PRAGMA synchronous = NORMAL');
+  -- answer_cache: semantic answer cache with vector embeddings
+  CREATE TABLE IF NOT EXISTS answer_cache (
+    id              SERIAL PRIMARY KEY,
+    query_text      TEXT NOT NULL,
+    query_embedding vector(1536),
+    agent           TEXT NOT NULL,
+    section_filter  TEXT,
+    sse_events      JSONB NOT NULL,
+    sources         JSONB NOT NULL,
+    chunk_hashes    JSONB NOT NULL,
+    confidence      JSONB NOT NULL,
+    created_at      TIMESTAMPTZ DEFAULT NOW(),
+    hits            INTEGER NOT NULL DEFAULT 0
+  );
 
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS doc_chunks (
-      id          TEXT PRIMARY KEY,
-      doc_url     TEXT NOT NULL,
-      doc_url_md  TEXT NOT NULL,
-      doc_title   TEXT NOT NULL,
-      section     TEXT NOT NULL,
-      content     TEXT NOT NULL,
-      weight      REAL NOT NULL DEFAULT 1.0,
-      created_at  TEXT DEFAULT (datetime('now'))
-    );
+  CREATE INDEX IF NOT EXISTS idx_cache_agent ON answer_cache(agent);
+  CREATE INDEX IF NOT EXISTS idx_cache_created ON answer_cache(created_at);
 
-    CREATE INDEX IF NOT EXISTS idx_chunks_url ON doc_chunks(doc_url);
-    CREATE INDEX IF NOT EXISTS idx_chunks_section ON doc_chunks(section);
+  -- token_usage: per-request token consumption tracking
+  CREATE TABLE IF NOT EXISTS token_usage (
+    id                  SERIAL PRIMARY KEY,
+    session_id          TEXT,
+    user_id             TEXT,
+    model               TEXT NOT NULL,
+    agent_type          TEXT,
+    input_tokens        INTEGER NOT NULL,
+    output_tokens       INTEGER NOT NULL,
+    total_tokens        INTEGER NOT NULL,
+    cached_input_tokens INTEGER NOT NULL DEFAULT 0,
+    created_at          TIMESTAMPTZ DEFAULT NOW()
+  );
 
-    CREATE TABLE IF NOT EXISTS metadata (
-      key   TEXT PRIMARY KEY,
-      value TEXT NOT NULL
-    );
+  CREATE INDEX IF NOT EXISTS idx_token_usage_model ON token_usage(model);
+  CREATE INDEX IF NOT EXISTS idx_token_usage_session ON token_usage(session_id);
+  CREATE INDEX IF NOT EXISTS idx_token_usage_created ON token_usage(created_at);
 
-    -- Semantic answer cache: stores embeddings + full SSE event sequences
-    CREATE TABLE IF NOT EXISTS answer_cache (
-      id              INTEGER PRIMARY KEY AUTOINCREMENT,
-      query_text      TEXT NOT NULL,
-      query_embedding TEXT NOT NULL,        -- JSON array of floats
-      agent           TEXT NOT NULL,        -- which agent handled it (general, schema, etc.)
-      section_filter  TEXT,                 -- section filter at time of caching
-      sse_events      TEXT NOT NULL,        -- JSON array of {event, data} objects
-      sources         TEXT NOT NULL,        -- JSON array of {url, chunk_hash} for validation
-      chunk_hashes    TEXT NOT NULL,        -- JSON array of source chunk hashes for fast lookup
-      confidence      TEXT NOT NULL,        -- JSON {level, score}
-      created_at      TEXT DEFAULT (datetime('now')),
-      hits            INTEGER NOT NULL DEFAULT 0
-    );
+  -- doc_gaps: content gap tracking
+  CREATE TABLE IF NOT EXISTS doc_gaps (
+    id               SERIAL PRIMARY KEY,
+    query            TEXT NOT NULL,
+    session_id       TEXT,
+    detected_intent  TEXT,
+    tools_called     JSONB,
+    confidence_level TEXT,
+    response_text    TEXT,
+    created_at       TIMESTAMPTZ DEFAULT NOW(),
+    resolved         INTEGER NOT NULL DEFAULT 0
+  );
 
-    CREATE INDEX IF NOT EXISTS idx_cache_agent ON answer_cache(agent);
-    CREATE INDEX IF NOT EXISTS idx_cache_created ON answer_cache(created_at);
+  CREATE INDEX IF NOT EXISTS idx_gaps_resolved ON doc_gaps(resolved);
+  CREATE INDEX IF NOT EXISTS idx_gaps_created ON doc_gaps(created_at);
 
-    -- Token usage tracking: persists per-request token consumption by model
-    CREATE TABLE IF NOT EXISTS token_usage (
-      id                  INTEGER PRIMARY KEY AUTOINCREMENT,
-      session_id          TEXT,
-      user_id             TEXT,
-      model               TEXT NOT NULL,
-      agent_type          TEXT,
-      input_tokens        INTEGER NOT NULL,
-      output_tokens       INTEGER NOT NULL,
-      total_tokens        INTEGER NOT NULL,
-      cached_input_tokens INTEGER NOT NULL DEFAULT 0,
-      created_at          TEXT DEFAULT (datetime('now'))
-    );
+  -- content_quality: source quality issues
+  CREATE TABLE IF NOT EXISTS content_quality (
+    id               SERIAL PRIMARY KEY,
+    url              TEXT NOT NULL,
+    issue_type       TEXT NOT NULL,
+    suggestion       TEXT,
+    occurrence_count INTEGER NOT NULL DEFAULT 1,
+    created_at       TIMESTAMPTZ DEFAULT NOW(),
+    updated_at       TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE(url, issue_type)
+  );
+`;
 
-    CREATE INDEX IF NOT EXISTS idx_token_usage_model ON token_usage(model);
-    CREATE INDEX IF NOT EXISTS idx_token_usage_session ON token_usage(session_id);
-    CREATE INDEX IF NOT EXISTS idx_token_usage_created ON token_usage(created_at);
+// ---------------------------------------------------------------------------
+// Connection pool
+// ---------------------------------------------------------------------------
 
-    -- Content gaps: queries that received low confidence with no matching docs
-    CREATE TABLE IF NOT EXISTS doc_gaps (
-      id               INTEGER PRIMARY KEY AUTOINCREMENT,
-      query            TEXT NOT NULL,
-      session_id       TEXT,
-      detected_intent  TEXT,
-      tools_called     TEXT,               -- JSON array of tool names
-      confidence_level TEXT,
-      response_text    TEXT,               -- first 500 chars of the response
-      created_at       TEXT DEFAULT (datetime('now')),
-      resolved         INTEGER NOT NULL DEFAULT 0  -- 0=unresolved, 1=docs_added, 2=dismissed
-    );
+let pool: Pool | null = null;
 
-    CREATE INDEX IF NOT EXISTS idx_gaps_resolved ON doc_gaps(resolved);
-    CREATE INDEX IF NOT EXISTS idx_gaps_created ON doc_gaps(created_at);
-
-    -- Content quality: sources that exist but are too low-signal to be useful
-    CREATE TABLE IF NOT EXISTS content_quality (
-      id               INTEGER PRIMARY KEY AUTOINCREMENT,
-      url              TEXT NOT NULL,
-      issue_type       TEXT NOT NULL,      -- 'demoted', 'stale', 'thin_content'
-      suggestion       TEXT,
-      occurrence_count INTEGER NOT NULL DEFAULT 1,
-      created_at       TEXT DEFAULT (datetime('now')),
-      updated_at       TEXT DEFAULT (datetime('now'))
-    );
-
-    CREATE UNIQUE INDEX IF NOT EXISTS idx_content_quality_url ON content_quality(url, issue_type);
-
-    CREATE VIRTUAL TABLE IF NOT EXISTS doc_chunks_fts USING fts5(
-      doc_title,
-      content,
-      content='doc_chunks',
-      content_rowid='rowid',
-      tokenize='porter unicode61'
-    );
-
-    CREATE TRIGGER IF NOT EXISTS doc_chunks_ai AFTER INSERT ON doc_chunks BEGIN
-      INSERT INTO doc_chunks_fts(rowid, doc_title, content)
-      VALUES (new.rowid, new.doc_title, new.content);
-    END;
-
-    CREATE TRIGGER IF NOT EXISTS doc_chunks_ad AFTER DELETE ON doc_chunks BEGIN
-      INSERT INTO doc_chunks_fts(doc_chunks_fts, rowid, doc_title, content)
-      VALUES ('delete', old.rowid, old.doc_title, old.content);
-    END;
-
-    CREATE TRIGGER IF NOT EXISTS doc_chunks_au AFTER UPDATE ON doc_chunks BEGIN
-      INSERT INTO doc_chunks_fts(doc_chunks_fts, rowid, doc_title, content)
-      VALUES ('delete', old.rowid, old.doc_title, old.content);
-      INSERT INTO doc_chunks_fts(rowid, doc_title, content)
-      VALUES (new.rowid, new.doc_title, new.content);
-    END;
-  `);
+export function getPool(): Pool {
+  if (!pool) throw new Error('Database not initialized. Call initDb() first.');
+  return pool;
 }
 
-export function getDb(): DatabaseSync {
-  if (!db) {
-    throw new Error('Database not initialized. Call initDb() first.');
+export async function initDb(): Promise<void> {
+  if (pool) return;
+
+  const config: PoolConfig = {
+    connectionString: process.env.DATABASE_URL,
+    max: 10,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 5000,
+  };
+
+  pool = new Pool(config);
+
+  pool.on('error', (err) => {
+    console.error('[DB] Unexpected pool error:', err.message);
+  });
+
+  // Verify connection
+  const client = await pool.connect();
+  try {
+    await client.query('SELECT 1');
+  } finally {
+    client.release();
   }
-  return db;
+
+  // Enable extensions
+  await pool.query('CREATE EXTENSION IF NOT EXISTS vector');
+  await pool.query('CREATE EXTENSION IF NOT EXISTS unaccent');
+
+  // Run DDL
+  await pool.query(SCHEMA_DDL);
+
+  console.log('[DB] PostgreSQL initialized');
 }
 
 export function isDbReady(): boolean {
-  return db !== null;
+  return pool !== null;
 }
 
-export function resetDb(): void {
-  const database = getDb();
-  database.exec(`
-    DELETE FROM doc_chunks;
-    DELETE FROM metadata;
-    INSERT INTO doc_chunks_fts(doc_chunks_fts) VALUES('rebuild');
-  `);
+export async function closeDb(): Promise<void> {
+  if (pool) {
+    await pool.end();
+    pool = null;
+  }
 }
 
-export function getIndexStats(): { chunks: number; lastBuild: string | null } {
-  const database = getDb();
+// ---------------------------------------------------------------------------
+// Core helpers
+// ---------------------------------------------------------------------------
 
-  const row = database.prepare('SELECT COUNT(*) as count FROM doc_chunks').get() as { count: number };
-  const meta = database.prepare("SELECT value FROM metadata WHERE key = 'last_build'").get() as
-    | { value: string }
-    | undefined;
+export async function resetDb(): Promise<void> {
+  const pool = getPool();
+  await pool.query('DELETE FROM doc_chunks');
+  await pool.query('DELETE FROM metadata');
+}
 
+export async function getIndexStats(): Promise<{ chunks: number; lastBuild: string | null }> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query('SELECT COUNT(*)::int as count FROM doc_chunks');
+  const { rows: metaRows } = await pool.query("SELECT value FROM metadata WHERE key = 'last_build'");
   return {
     chunks: row.count,
-    lastBuild: meta?.value ?? null,
+    lastBuild: metaRows[0]?.value ?? null,
   };
 }
 
@@ -178,32 +193,32 @@ export interface CacheEntry {
   hits: number;
 }
 
-export function invalidateCacheByChunkHashes(chunkHashes: string[]): void {
+export async function invalidateCacheByChunkHashes(chunkHashes: string[]): Promise<void> {
   if (chunkHashes.length === 0) return;
-  const database = getDb();
-  // Delete any cache entry whose chunk_hashes array contains any of the invalidated hashes
-  const stmt = database.prepare(`
-    DELETE FROM answer_cache
-    WHERE json_array_length(chunk_hashes) > 0
-    AND EXISTS (
-      SELECT 1 FROM json_each(chunk_hashes) AS je
-      WHERE je.value IN (${chunkHashes.map(() => '?').join(',')})
-    )
-  `);
-  stmt.run(...chunkHashes);
+  const pool = getPool();
+  const placeholders = chunkHashes.map((_, i) => `$${i + 1}`).join(',');
+  await pool.query(
+    `DELETE FROM answer_cache
+     WHERE jsonb_array_length(chunk_hashes) > 0
+     AND EXISTS (
+       SELECT 1 FROM jsonb_array_elements(chunk_hashes) AS je
+       WHERE je.value::text IN (${placeholders})
+     )`,
+    chunkHashes,
+  );
 }
 
-export function getCacheStats(): { totalEntries: number; totalHits: number } {
-  const database = getDb();
-  const row = database.prepare(
-    'SELECT COUNT(*) as totalEntries, COALESCE(SUM(hits), 0) as totalHits FROM answer_cache'
-  ).get() as { totalEntries: number; totalHits: number };
+export async function getCacheStats(): Promise<{ totalEntries: number; totalHits: number }> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query(
+    'SELECT COUNT(*)::int as "totalEntries", COALESCE(SUM(hits), 0)::int as "totalHits" FROM answer_cache',
+  );
   return row;
 }
 
-export function getCacheEntriesCount(): number {
-  const database = getDb();
-  const row = database.prepare('SELECT COUNT(*) as count FROM answer_cache').get() as { count: number };
+export async function getCacheEntriesCount(): Promise<number> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query('SELECT COUNT(*)::int as count FROM answer_cache');
   return row.count;
 }
 
@@ -222,21 +237,13 @@ export interface TokenUsageRecord {
   cachedInputTokens?: number;
 }
 
-export function saveTokenUsage(record: TokenUsageRecord): void {
-  const database = getDb();
-  const insert = database.prepare(`
-    INSERT INTO token_usage (session_id, user_id, model, agent_type, input_tokens, output_tokens, total_tokens, cached_input_tokens)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-  insert.run(
-    record.sessionId || null,
-    record.userId || null,
-    record.model,
-    record.agentType,
-    record.inputTokens,
-    record.outputTokens,
-    record.totalTokens,
-    record.cachedInputTokens || 0,
+export async function saveTokenUsage(record: TokenUsageRecord): Promise<void> {
+  const pool = getPool();
+  await pool.query(
+    `INSERT INTO token_usage (session_id, user_id, model, agent_type, input_tokens, output_tokens, total_tokens, cached_input_tokens)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+    [record.sessionId || null, record.userId || null, record.model, record.agentType,
+     record.inputTokens, record.outputTokens, record.totalTokens, record.cachedInputTokens || 0],
   );
 }
 
@@ -249,159 +256,108 @@ export interface TokenUsageByModel {
   totalCachedInputTokens: number;
 }
 
-export function getTokenUsageByModel(): TokenUsageByModel[] {
-  const database = getDb();
-  const rows = database.prepare(`
-    SELECT
-      model,
-      COUNT(*) as requestCount,
-      COALESCE(SUM(input_tokens), 0) as totalInputTokens,
-      COALESCE(SUM(output_tokens), 0) as totalOutputTokens,
-      COALESCE(SUM(total_tokens), 0) as totalTokens,
-      COALESCE(SUM(cached_input_tokens), 0) as totalCachedInputTokens
-    FROM token_usage
-    GROUP BY model
-    ORDER BY totalTokens DESC
-  `).all() as unknown as TokenUsageByModel[];
+export async function getTokenUsageByModel(): Promise<TokenUsageByModel[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT model, COUNT(*)::int as "requestCount",
+       COALESCE(SUM(input_tokens), 0)::int as "totalInputTokens",
+       COALESCE(SUM(output_tokens), 0)::int as "totalOutputTokens",
+       COALESCE(SUM(total_tokens), 0)::int as "totalTokens",
+       COALESCE(SUM(cached_input_tokens), 0)::int as "totalCachedInputTokens"
+     FROM token_usage GROUP BY model ORDER BY "totalTokens" DESC`,
+  );
   return rows;
 }
 
-export function getTokenUsageSummary(): {
+export async function getTokenUsageSummary(): Promise<{
   totalRequests: number;
   totalInputTokens: number;
   totalOutputTokens: number;
   totalTokens: number;
   totalCachedInputTokens: number;
   cachedPercentage: number;
-} {
-  const database = getDb();
-  const row = database.prepare(`
-    SELECT
-      COUNT(*) as totalRequests,
-      COALESCE(SUM(input_tokens), 0) as totalInputTokens,
-      COALESCE(SUM(output_tokens), 0) as totalOutputTokens,
-      COALESCE(SUM(total_tokens), 0) as totalTokens,
-      COALESCE(SUM(cached_input_tokens), 0) as totalCachedInputTokens
-    FROM token_usage
-  `).get() as {
-    totalRequests: number;
-    totalInputTokens: number;
-    totalOutputTokens: number;
-    totalTokens: number;
-    totalCachedInputTokens: number;
-  };
+}> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query(
+    `SELECT COUNT(*)::int as "totalRequests",
+       COALESCE(SUM(input_tokens), 0)::int as "totalInputTokens",
+       COALESCE(SUM(output_tokens), 0)::int as "totalOutputTokens",
+       COALESCE(SUM(total_tokens), 0)::int as "totalTokens",
+       COALESCE(SUM(cached_input_tokens), 0)::int as "totalCachedInputTokens"
+     FROM token_usage`,
+  );
+  const totalInput = Number(row.totalInputTokens);
+  const totalCached = Number(row.totalCachedInputTokens);
   return {
-    ...row,
-    cachedPercentage: row.totalInputTokens > 0
-      ? Math.round((row.totalCachedInputTokens / row.totalInputTokens) * 1000) / 10
-      : 0,
+    totalRequests: Number(row.totalRequests),
+    totalInputTokens: totalInput,
+    totalOutputTokens: Number(row.totalOutputTokens),
+    totalTokens: Number(row.totalTokens),
+    totalCachedInputTokens: totalCached,
+    cachedPercentage: totalInput > 0 ? Math.round((totalCached / totalInput) * 1000) / 10 : 0,
   };
 }
 
-export function getTokenUsageCount(): number {
-  const database = getDb();
-  const row = database.prepare('SELECT COUNT(*) as count FROM token_usage').get() as { count: number };
+export async function getTokenUsageCount(): Promise<number> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query('SELECT COUNT(*)::int as count FROM token_usage');
   return row.count;
 }
 
-export function getRecentTokenUsage(limit = 50): Array<{
-  id: number;
-  session_id: string | null;
-  model: string;
-  agent_type: string | null;
-  input_tokens: number;
-  output_tokens: number;
-  total_tokens: number;
-  cached_input_tokens: number;
-  created_at: string;
-}> {
-  const database = getDb();
-  return database.prepare(`
-    SELECT id, session_id, model, agent_type, input_tokens, output_tokens, total_tokens, cached_input_tokens, created_at
-    FROM token_usage
-    ORDER BY created_at DESC
-    LIMIT ?
-  `).all(limit) as Array<{
-    id: number;
-    session_id: string | null;
-    model: string;
-    agent_type: string | null;
-    input_tokens: number;
-    output_tokens: number;
-    total_tokens: number;
-    cached_input_tokens: number;
-    created_at: string;
-  }>;
+export async function getRecentTokenUsage(limit = 50): Promise<any[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT id, session_id, model, agent_type, input_tokens, output_tokens,
+       total_tokens, cached_input_tokens, created_at
+     FROM token_usage ORDER BY created_at DESC LIMIT $1`,
+    [limit],
+  );
+  return rows;
 }
 
 // ---------------------------------------------------------------------------
 // Content gap tracking
 // ---------------------------------------------------------------------------
 
-export function insertDocGap(gap: {
+export async function insertDocGap(gap: {
   query: string;
   sessionId?: string;
   detectedIntent?: string;
   toolsCalled?: string[];
   confidenceLevel: string;
   responseText: string;
-}): void {
-  const database = getDb();
-  const insert = database.prepare(`
-    INSERT INTO doc_gaps (query, session_id, detected_intent, tools_called, confidence_level, response_text)
-    VALUES (?, ?, ?, ?, ?, ?)
-  `);
-  insert.run(
-    gap.query,
-    gap.sessionId || null,
-    gap.detectedIntent || null,
-    gap.toolsCalled ? JSON.stringify(gap.toolsCalled) : null,
-    gap.confidenceLevel,
-    gap.responseText,
+}): Promise<void> {
+  const pool = getPool();
+  await pool.query(
+    `INSERT INTO doc_gaps (query, session_id, detected_intent, tools_called, confidence_level, response_text)
+     VALUES ($1, $2, $3, $4, $5, $6)`,
+    [gap.query, gap.sessionId || null, gap.detectedIntent || null,
+     gap.toolsCalled ? JSON.stringify(gap.toolsCalled) : null,
+     gap.confidenceLevel, gap.responseText],
   );
 }
 
-export function getDocGaps(limit = 100): Array<{
-  id: number;
-  query: string;
-  session_id: string | null;
-  detected_intent: string | null;
-  tools_called: string | null;
-  confidence_level: string | null;
-  response_text: string | null;
-  created_at: string;
-  resolved: number;
-}> {
-  const database = getDb();
-  return database.prepare(`
-    SELECT id, query, session_id, detected_intent, tools_called, confidence_level, response_text, created_at, resolved
-    FROM doc_gaps
-    WHERE resolved = 0
-    ORDER BY created_at DESC
-    LIMIT ?
-  `).all(limit) as Array<{
-    id: number;
-    query: string;
-    session_id: string | null;
-    detected_intent: string | null;
-    tools_called: string | null;
-    confidence_level: string | null;
-    response_text: string | null;
-    created_at: string;
-    resolved: number;
-  }>;
+export async function getDocGaps(limit = 100): Promise<any[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT id, query, session_id, detected_intent, tools_called, confidence_level,
+       response_text, created_at, resolved
+     FROM doc_gaps WHERE resolved = 0 ORDER BY created_at DESC LIMIT $1`,
+    [limit],
+  );
+  return rows;
 }
 
-export function resolveDocGap(id: number, status: 1 | 2): void {
-  const database = getDb();
-  database.prepare('UPDATE doc_gaps SET resolved = ? WHERE id = ?').run(status, id);
+export async function resolveDocGap(id: number, status: 1 | 2): Promise<void> {
+  const pool = getPool();
+  await pool.query('UPDATE doc_gaps SET resolved = $1 WHERE id = $2', [status, id]);
 }
 
-export function getDocGapsCount(): number {
-  const database = getDb();
-  const row = database.prepare(
-    "SELECT COUNT(*) as count FROM doc_gaps WHERE resolved = 0"
-  ).get() as { count: number };
+export async function getDocGapsCount(): Promise<number> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query(
+    'SELECT COUNT(*)::int as count FROM doc_gaps WHERE resolved = 0',
+  );
   return row.count;
 }
 
@@ -409,44 +365,29 @@ export function getDocGapsCount(): number {
 // Content quality tracking
 // ---------------------------------------------------------------------------
 
-export function upsertContentQuality(entry: {
+export async function upsertContentQuality(entry: {
   url: string;
   issueType: string;
   suggestion?: string;
-}): void {
-  const database = getDb();
-  database.prepare(`
-    INSERT INTO content_quality (url, issue_type, suggestion, occurrence_count)
-    VALUES (?, ?, ?, 1)
-    ON CONFLICT(url, issue_type) DO UPDATE SET
-      occurrence_count = occurrence_count + 1,
-      updated_at = datetime('now'),
-      suggestion = excluded.suggestion
-  `).run(entry.url, entry.issueType, entry.suggestion || null);
+}): Promise<void> {
+  const pool = getPool();
+  await pool.query(
+    `INSERT INTO content_quality (url, issue_type, suggestion, occurrence_count)
+     VALUES ($1, $2, $3, 1)
+     ON CONFLICT (url, issue_type) DO UPDATE SET
+       occurrence_count = content_quality.occurrence_count + 1,
+       updated_at = NOW(),
+       suggestion = EXCLUDED.suggestion`,
+    [entry.url, entry.issueType, entry.suggestion || null],
+  );
 }
 
-export function getContentQuality(limit = 50): Array<{
-  id: number;
-  url: string;
-  issue_type: string;
-  suggestion: string | null;
-  occurrence_count: number;
-  created_at: string;
-  updated_at: string;
-}> {
-  const database = getDb();
-  return database.prepare(`
-    SELECT id, url, issue_type, suggestion, occurrence_count, created_at, updated_at
-    FROM content_quality
-    ORDER BY occurrence_count DESC, updated_at DESC
-    LIMIT ?
-  `).all(limit) as Array<{
-    id: number;
-    url: string;
-    issue_type: string;
-    suggestion: string | null;
-    occurrence_count: number;
-    created_at: string;
-    updated_at: string;
-  }>;
+export async function getContentQuality(limit = 50): Promise<any[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT id, url, issue_type, suggestion, occurrence_count, created_at, updated_at
+     FROM content_quality ORDER BY occurrence_count DESC, updated_at DESC LIMIT $1`,
+    [limit],
+  );
+  return rows;
 }

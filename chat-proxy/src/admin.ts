@@ -5,7 +5,7 @@ import {fileURLToPath} from 'url';
 import {loadIndex, getIndexSize} from './rag.js';
 import {eventStore} from './event-store.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
-import {getDb, getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage, getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality} from './db.js';
+import {getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage, getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality, getPool} from './db.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -59,10 +59,11 @@ adminApp.post('/refresh-index', async c => {
     const start = Date.now();
     await loadIndex(true);
     // Invalidate semantic cache when doc index refreshes (sources may have changed)
-    invalidateSemanticCache();
+    invalidateSemanticCache().catch(() => {});
     const took = ((Date.now() - start) / 1000).toFixed(1);
-    console.log(`[Admin] Index refreshed: ${getIndexSize()} chunks in ${took}s`);
-    return c.json({ok: true, chunks: getIndexSize(), took: `${took}s`, updated: new Date().toISOString()});
+    const chunks = await getIndexSize();
+    console.log(`[Admin] Index refreshed: ${chunks} chunks in ${took}s`);
+    return c.json({ok: true, chunks, took: `${took}s`, updated: new Date().toISOString()});
   } catch (err) {
     return c.json({error: String(err)}, 500);
   }
@@ -70,14 +71,14 @@ adminApp.post('/refresh-index', async c => {
 
 // GET /admin/stats — index size, cache stats, and token usage summary
 adminApp.get('/stats', async c => {
-  const cacheStats = getCacheStats();
+  const cacheStats = await getCacheStats();
   const cacheConfig = getSemanticCacheConfig();
-  const tokenSummary = getTokenUsageSummary();
+  const tokenSummary = await getTokenUsageSummary();
   return c.json({
-    doc_chunks: getIndexSize(),
+    doc_chunks: await getIndexSize(),
     semantic_cache: {
       ...cacheStats,
-      entries: getCacheEntriesCount(),
+      entries: await getCacheEntriesCount(),
       config: cacheConfig,
     },
     token_usage: tokenSummary,
@@ -132,20 +133,21 @@ adminApp.get('/api/session/:id', c => {
 // ---------------------------------------------------------------------------
 
 // GET /admin/api/cache/entries — list cached entries
-adminApp.get('/api/cache/entries', c => {
+adminApp.get('/api/cache/entries', async c => {
   const limit = parseInt(c.req.query('limit') || '100', 10);
-  const db = getDb();
-  const rows = db.prepare(
+  const pool = getPool();
+  const { rows } = await pool.query(
     `SELECT id, query_text, agent, section_filter, confidence, created_at, hits, length(sse_events) as event_size
-     FROM answer_cache ORDER BY created_at DESC LIMIT ?`
-  ).all(limit);
+     FROM answer_cache ORDER BY created_at DESC LIMIT $1`,
+    [limit]
+  );
   return c.json({entries: rows});
 });
 
 // DELETE /admin/api/cache/:id — invalidate a specific cache entry
 adminApp.delete('/api/cache/:id', c => {
   const id = parseInt(c.req.param('id'), 10);
-  invalidateCacheEntry(id);
+  invalidateCacheEntry(id).catch(() => {});
   return c.json({ok: true, id});
 });
 
@@ -154,14 +156,14 @@ adminApp.delete('/api/cache/:id', c => {
 // ---------------------------------------------------------------------------
 
 // GET /admin/api/token-usage/by-model — aggregate tokens by model
-adminApp.get('/api/token-usage/by-model', c => {
-  return c.json({byModel: getTokenUsageByModel()});
+adminApp.get('/api/token-usage/by-model', async c => {
+  return c.json({byModel: await getTokenUsageByModel()});
 });
 
 // GET /admin/api/token-usage/recent — recent token usage entries
-adminApp.get('/api/token-usage/recent', c => {
+adminApp.get('/api/token-usage/recent', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
-  return c.json({entries: getRecentTokenUsage(limit)});
+  return c.json({entries: await getRecentTokenUsage(limit)});
 });
 
 // GET /admin/api/token-usage/live — in-memory buffer aggregation
@@ -174,9 +176,9 @@ adminApp.get('/api/token-usage/live', c => {
 // ---------------------------------------------------------------------------
 
 // GET /admin/api/doc-gaps — unresolved content gaps
-adminApp.get('/api/doc-gaps', c => {
+adminApp.get('/api/doc-gaps', async c => {
   const limit = parseInt(c.req.query('limit') || '100', 10);
-  return c.json({gaps: getDocGaps(limit)});
+  return c.json({gaps: await getDocGaps(limit)});
 });
 
 // PATCH /admin/api/doc-gaps/:id — mark resolved or dismissed
@@ -189,12 +191,12 @@ adminApp.patch('/api/doc-gaps/:id', async c => {
     return c.json({error: 'Invalid JSON body'}, 400);
   }
   const status = body.status === 'dismissed' ? 2 : 1;
-  resolveDocGap(id, status);
+  await resolveDocGap(id, status);
   return c.json({ok: true, id, resolved: status});
 });
 
 // GET /admin/api/content-quality — content quality issues
-adminApp.get('/api/content-quality', c => {
+adminApp.get('/api/content-quality', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
-  return c.json({issues: getContentQuality(limit)});
+  return c.json({issues: await getContentQuality(limit)});
 });
