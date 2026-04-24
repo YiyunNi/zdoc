@@ -6,6 +6,7 @@ import {loadIndex, getIndexSize} from './rag.js';
 import {eventStore} from './event-store.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
 import {getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage, getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality, getPool} from './db.js';
+import {listSessions, getSession} from './sessions.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -122,10 +123,43 @@ adminApp.get('/api/session/:id', c => {
   const sessionId = c.req.param('id');
   const allEvents = eventStore.getAll();
   const sessionEvents = allEvents.filter(e => e.sessionId === sessionId);
-  if (sessionEvents.length === 0) {
+
+  // Also check in-memory sessions for full message history
+  const memSession = getSession(sessionId);
+
+  if (sessionEvents.length === 0 && !memSession) {
     return c.json({error: 'Session not found', sessionId}, 404);
   }
-  return c.json({sessionId, events: sessionEvents});
+  return c.json({
+    sessionId,
+    events: sessionEvents,
+    messages: memSession?.messages ?? [],
+  });
+});
+
+// GET /admin/api/sessions — paginated session list
+adminApp.get('/api/sessions', c => {
+  const page = parseInt(c.req.query('page') || '1', 10);
+  const pageSize = parseInt(c.req.query('pageSize') || '20', 10);
+  const agent = c.req.query('agent');
+  return c.json(listSessions({page, pageSize, agent}));
+});
+
+// GET /admin/api/analytics/overview — aggregated dashboard metrics
+adminApp.get('/api/analytics/overview', c => {
+  return c.json(eventStore.getOverviewMetrics());
+});
+
+// GET /admin/api/analytics/trends — per-day time series data
+adminApp.get('/api/analytics/trends', c => {
+  const days = parseInt(c.req.query('days') || '7', 10);
+  return c.json(eventStore.getTrends(days));
+});
+
+// GET /admin/api/analytics/recent-activity — recent message events
+adminApp.get('/api/analytics/recent-activity', c => {
+  const limit = parseInt(c.req.query('limit') || '10', 10);
+  return c.json({entries: eventStore.getRecentActivity(limit)});
 });
 
 // ---------------------------------------------------------------------------

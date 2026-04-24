@@ -95,3 +95,42 @@ export function shouldInjectPageContext(session: Session, pageUrl?: string): boo
 export function getSessionCount(): number {
   return sessions.size;
 }
+
+export interface SessionListItem {
+  id: string;
+  messageCount: number;
+  createdAt: number;
+  lastActiveAt: number;
+  firstQuestion?: string;
+}
+
+export function listSessions(options?: {
+  page?: number;
+  pageSize?: number;
+  agent?: string;
+}): { sessions: SessionListItem[]; total: number } {
+  const page = options?.page ?? 1;
+  const pageSize = options?.pageSize ?? 20;
+
+  let all = Array.from(sessions.values())
+    .sort((a, b) => b.lastActiveAt - a.lastActiveAt);
+
+  const total = all.length;
+  const start = (page - 1) * pageSize;
+  const paged = all.slice(start, start + pageSize);
+
+  return {
+    sessions: paged.map(s => ({
+      id: s.id,
+      messageCount: s.messages.length,
+      createdAt: s.createdAt,
+      lastActiveAt: s.lastActiveAt,
+      firstQuestion: s.messages.find(m => m.role === 'user')?.content?.slice(0, 100),
+    })),
+    total,
+  };
+}
+
+export function getSession(id: string) {
+  return sessions.get(id);
+}

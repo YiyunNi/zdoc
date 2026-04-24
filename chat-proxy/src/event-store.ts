@@ -244,6 +244,124 @@ class EventStore {
     return this.count;
   }
 
+  /** Aggregate overview metrics for the dashboard. */
+  getOverviewMetrics() {
+    let conversations = new Set<string>();
+    let messages = 0;
+    let users = new Set<string>();
+    let thumbsUp = 0;
+    let thumbsDown = 0;
+    let highConfidence = 0;
+    let totalConfidence = 0;
+
+    for (let i = 0; i < this.count; i++) {
+      const idx = (this.head - 1 - i + this.maxSize) % this.maxSize;
+      const ev = this.buffer[idx];
+      conversations.add(ev.sessionId);
+      users.add(ev.userId);
+
+      if (ev.type === 'message') {
+        messages++;
+        const conf = ev.data.confidence;
+        if (conf === 'high' || conf === 'medium' || conf === 'low') {
+          totalConfidence++;
+          if (conf === 'high') highConfidence++;
+        }
+      }
+
+      if (ev.type === 'feedback') {
+        if (ev.data.rating === 'up') thumbsUp++;
+        else if (ev.data.rating === 'down') thumbsDown++;
+      }
+    }
+
+    return {
+      conversations: conversations.size,
+      messages,
+      distinctUsers: users.size,
+      avgConfidence: totalConfidence > 0 ? Math.round((highConfidence / totalConfidence) * 100) : 0,
+      thumbsUp,
+      thumbsDown,
+    };
+  }
+
+  /** Get daily trend data for the last N days. */
+  getTrends(days = 7): Record<string, {date: string; value: number}[]> {
+    const metrics = {
+      conversations: [] as {date: string; value: number}[],
+      messages: [] as {date: string; value: number}[],
+      users: [] as {date: string; value: number}[],
+      confidence: [] as {date: string; value: number}[],
+    };
+
+    // Build day buckets
+    const now = new Date();
+    const dayBuckets = new Map<string, {
+      sessions: Set<string>;
+      messages: number;
+      users: Set<string>;
+      highConf: number;
+      totalConf: number;
+    }>();
+
+    for (let d = days - 1; d >= 0; d--) {
+      const date = new Date(now);
+      date.setDate(date.getDate() - d);
+      const key = date.toISOString().slice(0, 10);
+      dayBuckets.set(key, {
+        sessions: new Set(),
+        messages: 0,
+        users: new Set(),
+        highConf: 0,
+        totalConf: 0,
+      });
+    }
+
+    // Aggregate events into day buckets
+    for (let i = 0; i < this.count; i++) {
+      const idx = (this.head - 1 - i + this.maxSize) % this.maxSize;
+      const ev = this.buffer[idx];
+      const dayKey = ev.timestamp.slice(0, 10);
+      const bucket = dayBuckets.get(dayKey);
+      if (!bucket) continue;
+
+      bucket.sessions.add(ev.sessionId);
+      bucket.users.add(ev.userId);
+
+      if (ev.type === 'message') {
+        bucket.messages++;
+        const conf = ev.data.confidence;
+        if (conf === 'high' || conf === 'medium' || conf === 'low') {
+          bucket.totalConf++;
+          if (conf === 'high') bucket.highConf++;
+        }
+      }
+    }
+
+    for (const [date, bucket] of dayBuckets) {
+      metrics.conversations.push({date, value: bucket.sessions.size});
+      metrics.messages.push({date, value: bucket.messages});
+      metrics.users.push({date, value: bucket.users.size});
+      metrics.confidence.push({
+        date,
+        value: bucket.totalConf > 0 ? Math.round((bucket.highConf / bucket.totalConf) * 100) : 0,
+      });
+    }
+
+    return metrics;
+  }
+
+  /** Get recent activity events for the dashboard feed. */
+  getRecentActivity(limit = 10): StoreEvent[] {
+    const result: StoreEvent[] = [];
+    for (let i = 0; i < this.count && result.length < limit; i++) {
+      const idx = (this.head - 1 - i + this.maxSize) % this.maxSize;
+      const ev = this.buffer[idx];
+      if (ev.type === 'message') result.push(ev);
+    }
+    return result;
+  }
+
   /** Aggregate token usage by model from message events. */
   getTokenUsage(): TokenUsageRow[] {
     const buckets = new Map<string, {

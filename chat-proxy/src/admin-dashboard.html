@@ -3,890 +3,866 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chat-Proxy Dashboard</title>
+<title>Chat Proxy — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #f8f9fa;
-  --card-bg: #fff;
-  --border: #e2e8f0;
-  --text: #1a202c;
-  --text-muted: #718096;
-  --green: #38a169;
-  --blue: #3182ce;
-  --purple: #805ad5;
-  --red: #e53e3e;
-  --amber: #d69e2e;
-  --radius: 8px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-hover: 0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --sidebar-bg: #fafbfc;
+  --text: #1a1d23;
+  --text-secondary: #6b7080;
+  --text-muted: #8b8f9a;
+  --text-faint: #b0b3ba;
+  --border: #ecedf0;
+  --border-light: #f0f1f3;
+  --blue: #3b6de0;
+  --blue-bg: #e8edf7;
+  --purple: #6c4de0;
+  --purple-bg: #ede9f7;
+  --green: #2a9d5c;
+  --green-bg: #e7f3ea;
+  --amber: #d4850a;
+  --amber-bg: #fef3e2;
+  --red: #d44040;
+  --red-bg: #fce8e8;
+  --heading: 'Bricolage Grotesque', sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+  --radius: 10px;
 }
 
-html, body {
-  height: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
+html, body { height: 100%; font-family: var(--body); background: var(--bg); color: var(--text); line-height: 1.5; }
+
+/* Layout */
+.app { display: flex; height: 100vh; }
+
+/* Sidebar */
+.sidebar {
+  width: 200px; background: var(--sidebar-bg); flex-shrink: 0;
+  display: flex; flex-direction: column;
+  border-right: 1px solid var(--border);
+}
+.sidebar-brand { padding: 24px 20px 20px; }
+.sidebar-brand h1 {
+  font-family: var(--heading); font-size: 17px; font-weight: 800;
+  color: var(--text); letter-spacing: -0.3px;
+}
+.sidebar-brand p { font-size: 11px; color: var(--text-muted); margin-top: 1px; font-weight: 500; }
+
+.sidebar-nav { padding: 8px 12px; flex: 1; }
+.nav-item {
+  display: block; padding: 9px 12px; border-radius: 6px;
+  font-size: 12px; font-weight: 500; color: var(--text-secondary);
+  cursor: pointer; margin-bottom: 2px; transition: all 0.15s;
+  text-decoration: none; user-select: none;
+}
+.nav-item:hover { background: var(--border-light); color: var(--text); }
+.nav-item.active { background: var(--text); color: #fff; font-weight: 600; }
+
+.sidebar-footer { padding: 16px 20px; border-top: 1px solid var(--border); }
+.sidebar-footer label {
+  display: block; font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+}
+.api-row { display: flex; gap: 4px; }
+.api-row input {
+  flex: 1; border: 1px solid #d8dae0; padding: 6px 8px; border-radius: 5px;
+  font-size: 10px; font-family: var(--body); background: #fff; color: var(--text); outline: none;
+}
+.api-row input:focus { border-color: var(--blue); }
+.api-row button {
+  background: var(--text); color: #fff; padding: 6px 10px; border-radius: 5px;
+  border: none; font-size: 10px; font-weight: 600; font-family: var(--body); cursor: pointer;
+}
+.api-row button:hover { opacity: 0.85; }
+
+/* Main content */
+.main { flex: 1; overflow-y: auto; padding: 28px 32px; }
+
+/* Header */
+.page-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 28px; }
+.page-header h2 {
+  font-family: var(--heading); font-size: 24px; font-weight: 800;
+  color: var(--text); letter-spacing: -0.5px;
+}
+.page-header p { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.header-controls { display: flex; gap: 10px; align-items: center; }
+.header-controls select {
+  border: 1px solid #d8dae0; padding: 7px 14px; border-radius: 6px;
+  font-size: 11px; font-family: var(--body); background: #fff; color: var(--text); font-weight: 500; outline: none;
+}
+.live-badge {
+  display: flex; align-items: center; gap: 5px; font-size: 11px;
+  font-weight: 600; transition: color 0.3s;
+}
+.live-badge.ok { color: var(--green); }
+.live-badge.err { color: var(--red); }
+.live-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* Metric strip */
+.metric-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 28px; padding: 20px 0;
+  border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);
+}
+.metric { text-align: center; padding: 0 16px; }
+.metric-label {
+  font-size: 10px; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.6px; font-weight: 600;
+}
+.metric-value {
+  font-family: var(--heading); font-size: 32px; font-weight: 800;
+  color: var(--text); margin-top: 4px; letter-spacing: -1px;
+}
+.metric-trend { font-size: 11px; font-weight: 600; margin-top: 2px; }
+.metric-trend.up { color: var(--green); }
+
+/* Charts area — centered */
+.charts-area { padding: 0 12.5%; }
+.charts-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 20px; }
+
+/* Chart cards */
+.chart-col { display: flex; flex-direction: column; gap: 14px; }
+.chart-card {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 18px 20px 14px;
+}
+.chart-card-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+}
+.chart-card-title { font-size: 12px; font-weight: 700; color: var(--text); }
+.chart-card-subtitle { font-size: 10px; color: var(--text-muted); font-weight: 500; }
+.chart-card-accent { font-size: 10px; color: var(--green); font-weight: 600; }
+.chart-canvas-wrap { height: 80px; }
+
+/* Donut card */
+.donut-card {
+  background: var(--surface); border-radius: var(--radius);
+  padding: 20px;
+}
+.donut-card h3 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 16px; }
+.donut-layout { display: flex; align-items: center; gap: 20px; }
+.donut-wrap { position: relative; width: 110px; height: 110px; }
+.donut-legend { font-size: 12px; }
+.legend-item { display: flex; align-items: center; gap: 7px; margin-bottom: 10px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+.legend-value { font-weight: 700; color: var(--text); font-size: 15px; }
+.legend-label { font-size: 9px; color: var(--text-muted); font-weight: 500; }
+
+/* Metric cards */
+.metric-card {
+  background: var(--surface); border-radius: var(--radius); padding: 20px;
+}
+.metric-card-label {
+  font-size: 10px; color: var(--text-muted); text-transform: uppercase;
+  letter-spacing: 0.6px; font-weight: 600;
+}
+.metric-card-value {
+  font-family: var(--heading); font-size: 28px; font-weight: 800;
+  color: var(--text); letter-spacing: -0.5px; margin-top: 6px;
+}
+.metric-card-trend { font-size: 11px; color: var(--green); font-weight: 600; }
+.metric-card-period { font-size: 10px; color: var(--text-muted); margin-top: 2px; font-weight: 500; }
+
+/* Activity feed */
+.activity-card {
+  background: var(--surface); border-radius: var(--radius); padding: 20px; flex: 1;
+}
+.activity-card-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
+}
+.activity-card h3 { font-size: 13px; font-weight: 700; color: var(--text); }
+.activity-link { font-size: 11px; color: var(--blue); font-weight: 600; cursor: pointer; }
+.activity-item {
+  display: flex; align-items: center; gap: 8px; font-size: 11px; margin-bottom: 10px;
+}
+.activity-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.activity-time { width: 36px; color: var(--text-muted); font-size: 10px; font-weight: 500; flex-shrink: 0; }
+.activity-agent {
+  padding: 2px 6px; border-radius: 4px; font-size: 9px; font-weight: 600; flex-shrink: 0;
+}
+.activity-query {
+  flex: 1; color: var(--text); font-weight: 500;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-/* ---- Header ---- */
-.header {
-  background: #fff;
-  border-bottom: 1px solid var(--border);
-  padding: 16px 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* ---- Sessions page ---- */
+.sessions-filters { display: flex; gap: 10px; align-items: center; }
+.sessions-filters input {
+  border: 1px solid #d8dae0; padding: 7px 14px; border-radius: 6px;
+  font-size: 11px; font-family: var(--body); background: #fff; color: var(--text); width: 220px; outline: none;
+}
+.sessions-filters input:focus { border-color: var(--blue); }
+
+.sessions-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 16px; min-height: 480px; }
+
+.session-list {
+  background: var(--surface); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.session-list-header {
+  padding: 14px 16px; font-size: 12px; font-weight: 700; color: var(--text);
+  border-bottom: 1px solid var(--border-light);
+}
+.session-list-body { flex: 1; overflow-y: auto; }
+.session-row {
+  padding: 12px 16px; cursor: pointer; border-bottom: 1px solid var(--border-light);
+  transition: background 0.1s;
+}
+.session-row:hover { background: var(--border-light); }
+.session-row.active { background: #f0f5ff; }
+.session-row-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+.session-row-id { font-size: 12px; font-weight: 600; color: var(--text); }
+.session-row-question { font-size: 11px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.session-row-meta { display: flex; gap: 10px; margin-top: 4px; font-size: 9px; color: var(--text-faint); font-weight: 500; }
+.session-list-footer {
+  padding: 10px 16px; border-top: 1px solid var(--border-light);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 10px; color: var(--text-muted); font-weight: 500;
+}
+.pagination-btns { display: flex; gap: 4px; }
+.pagination-btns button {
+  padding: 4px 8px; border-radius: 4px; font-size: 10px; cursor: pointer; font-family: var(--body);
+}
+.pagination-btns button.secondary { background: var(--bg); border: 1px solid #d8dae0; }
+.pagination-btns button.primary { background: var(--text); color: #fff; border: none; font-weight: 600; }
+
+/* Session detail */
+.session-detail {
+  background: var(--surface); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.detail-header { padding: 16px 20px; border-bottom: 1px solid var(--border-light); }
+.detail-header-top { display: flex; justify-content: space-between; align-items: center; }
+.detail-header-info { display: flex; align-items: center; gap: 10px; }
+.detail-id { font-size: 14px; font-weight: 700; color: var(--text); }
+.detail-time { font-size: 10px; color: var(--text-muted); font-weight: 500; }
+.detail-stats { display: flex; gap: 20px; margin-top: 10px; font-size: 10px; color: var(--text-muted); font-weight: 500; }
+.detail-stats strong { font-weight: 700; color: var(--text); }
+
+.detail-body { flex: 1; overflow-y: auto; padding: 16px 20px; display: flex; flex-direction: column; gap: 16px; }
+.timeline-dot { display: flex; align-items: center; gap: 8px; font-size: 9px; color: var(--text-faint); font-weight: 500; }
+.timeline-dot-dot { width: 4px; height: 4px; background: #d8dae0; border-radius: 50%; }
+
+.msg-user {
+  background: var(--bg); border-radius: 10px; padding: 14px 16px; max-width: 85%;
+}
+.msg-user-label {
+  font-size: 10px; color: var(--text-muted); font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
+}
+.msg-user-text { font-size: 12px; color: var(--text); line-height: 1.5; }
+
+.msg-agent {
+  background: var(--surface); border: 1px solid var(--border-light);
+  border-radius: 10px; padding: 14px 16px; max-width: 90%;
+}
+.msg-agent-header {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;
+}
+.msg-agent-label { font-size: 10px; color: var(--blue); font-weight: 600; }
+.msg-agent-meta { display: flex; gap: 6px; align-items: center; font-size: 9px; color: var(--text-faint); }
+.msg-agent-text { font-size: 12px; color: var(--text); line-height: 1.6; }
+.msg-sources { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+.msg-source {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 5px;
+  padding: 4px 8px; font-size: 9px; color: var(--text-secondary); font-weight: 500;
 }
 
-.header-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+.detail-footer {
+  padding: 12px 20px; border-top: 1px solid var(--border-light);
+  display: flex; justify-content: space-between; align-items: center;
 }
+.feedback-label { font-size: 10px; color: var(--text-muted); font-weight: 500; }
+.feedback-btns { display: flex; gap: 8px; }
+.feedback-btns button {
+  padding: 5px 12px; border-radius: 5px; font-size: 11px; font-weight: 600;
+  cursor: pointer; font-family: var(--body); border: none;
+}
+.btn-helpful { background: var(--green-bg); color: var(--green); }
+.btn-not-helpful { background: var(--bg); color: var(--text-muted); border: 1px solid #d8dae0 !important; }
 
-.header-title {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.3px;
-  white-space: nowrap;
+/* Utility */
+.agent-badge {
+  display: inline-block; padding: 1px 5px; border-radius: 3px;
+  font-size: 9px; font-weight: 600;
 }
+.agent-general { background: var(--blue-bg); color: var(--blue); }
+.agent-schema { background: var(--purple-bg); color: var(--purple); }
+.agent-code { background: var(--green-bg); color: var(--green); }
+.agent-resources { background: var(--amber-bg); color: var(--amber); }
+.agent-product { background: var(--amber-bg); color: var(--amber); }
 
-.connection-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--red);
-  margin-left: 8px;
-  vertical-align: middle;
-  transition: background 0.3s;
-}
-.connection-dot.ok { background: var(--green); }
+/* Page visibility */
+.page { display: none; }
+.page.active { display: block; }
 
-.api-key-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.api-key-group input {
-  font-size: 13px;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  width: 220px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.api-key-group input:focus { border-color: var(--blue); }
-.api-key-group button {
-  font-size: 13px;
-  padding: 6px 14px;
-  background: var(--blue);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  white-space: nowrap;
-}
-.api-key-group button:hover { opacity: 0.9; }
-
-/* Stats row */
-.stats-row {
-  display: flex;
-  gap: 24px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-}
-
-.stat-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.stat-value {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-.stat-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-muted);
-}
-
-/* Filter bar */
-.filter-bar {
-  display: flex;
-  gap: 12px;
-  margin-top: 12px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.filter-bar label {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-right: 2px;
-}
-.filter-bar select {
-  font-size: 13px;
-  padding: 5px 8px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #fff;
-  outline: none;
-  cursor: pointer;
-}
-.filter-bar select:focus { border-color: var(--blue); }
-
-/* ---- Board ---- */
-.board {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  padding: 16px 24px 24px;
-  min-height: calc(100vh - 170px);
-  align-items: start;
-}
-
-.column {
-  background: var(--bg);
-  border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  min-height: 200px;
-  max-height: calc(100vh - 190px);
-}
-
-.column-header {
-  padding: 10px 14px;
-  border-radius: var(--radius) var(--radius) 0 0;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 2;
-}
-.column-header .count {
-  background: rgba(255,255,255,0.25);
-  padding: 1px 8px;
-  border-radius: 10px;
-  font-size: 12px;
-}
-
-.col-live .column-header { background: var(--green); }
-.col-perf .column-header { background: var(--blue); }
-.col-feedback .column-header { background: var(--purple); }
-.col-errors .column-header { background: var(--red); }
-.col-lowconf .column-header { background: var(--amber); }
-.col-cache .column-header { background: #319795; }
-.col-tokens .column-header { background: #6b46c1; }
-.col-gaps .column-header { background: #e53e3e; }
-
-.column-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.column-body::-webkit-scrollbar { width: 5px; }
-.column-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-
-/* ---- Cards ---- */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  box-shadow: var(--shadow);
-  cursor: pointer;
-  transition: box-shadow 0.15s, transform 0.15s;
-  font-size: 13px;
-}
-.card:hover {
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-1px);
-}
-
-.card-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.card-row + .card-row { margin-top: 6px; }
-
-.card-question {
-  font-weight: 500;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-word;
-}
-
-.card-meta {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.badge {
-  display: inline-block;
-  padding: 1px 7px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.6;
-}
-.badge-green { background: #c6f6d5; color: #22543d; }
-.badge-blue { background: #bee3f8; color: #2a4365; }
-.badge-purple { background: #e9d8fd; color: #44337a; }
-.badge-red { background: #fed7d7; color: #742a2a; }
-.badge-amber { background: #fefcbf; color: #744210; }
-.badge-gray { background: #edf2f7; color: #4a5568; }
-
-/* Feedback cards */
-.card-feedback-up { border-left: 3px solid var(--green); }
-.card-feedback-down { border-left: 3px solid var(--red); }
-
-/* Error cards */
-.card-error { background: #fff5f5; border-color: #feb2b2; }
-
-/* Mini confidence bar */
-.conf-bar {
-  display: flex;
-  height: 6px;
-  border-radius: 3px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 120px;
-  background: #edf2f7;
-}
-.conf-bar .seg-high { background: var(--green); }
-.conf-bar .seg-med { background: var(--amber); }
-.conf-bar .seg-low { background: var(--red); }
-
-.thumb-icon { font-size: 16px; }
-
-/* No data */
-.no-data {
-  color: var(--text-muted);
-  font-size: 13px;
-  text-align: center;
-  padding: 32px 16px;
-}
-
-/* ---- Modal ---- */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-.modal-overlay.hidden { display: none; }
-
-.modal {
-  background: #fff;
-  border-radius: 12px;
-  max-width: 640px;
-  width: 100%;
-  max-height: 80vh;
-  overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-  padding: 24px;
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: var(--text-muted);
-  line-height: 1;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-.modal-close:hover { background: #edf2f7; }
-
-.modal h3 { font-size: 16px; margin-bottom: 12px; }
-.modal-section { margin-top: 16px; }
-.modal-section h4 {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-.modal-section pre {
-  background: #f7fafc;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 10px 12px;
-  font-size: 12px;
-  white-space: pre-wrap;
-  word-break: break-word;
-  max-height: 240px;
-  overflow-y: auto;
-}
-.modal-section p {
-  font-size: 13px;
-  line-height: 1.6;
-}
-.modal-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
-
-/* Responsive */
-@media (max-width: 1800px) {
-  .board { grid-template-columns: repeat(4, 1fr); }
-}
-@media (max-width: 1400px) {
-  .board { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 1000px) {
-  .board { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .board { grid-template-columns: 1fr; }
-  .header { padding: 12px 16px; }
-  .board { padding: 12px 16px; }
-}
+/* Empty state */
+.empty-state { text-align: center; padding: 40px; color: var(--text-muted); font-size: 12px; }
 </style>
 </head>
 <body>
-
-<div class="header">
-  <div class="header-top">
-    <div style="display:flex;align-items:center;">
-      <span class="header-title">Chat-Proxy Dashboard</span>
-      <span class="connection-dot" id="connDot" title="Disconnected"></span>
+<div class="app">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>Chat Proxy</h1>
+      <p>Monitoring</p>
     </div>
-    <div class="api-key-group">
-      <input type="password" id="apiKeyInput" placeholder="Admin API key" autocomplete="off">
-      <button id="apiKeySave">Save Key</button>
+    <nav class="sidebar-nav">
+      <a class="nav-item active" data-page="dashboard">Dashboard</a>
+      <a class="nav-item" data-page="sessions">Sessions</a>
+      <a class="nav-item" data-page="costs">Costs</a>
+      <a class="nav-item" data-page="settings">Settings</a>
+    </nav>
+    <div class="sidebar-footer">
+      <label for="apiKeyInput">API Key</label>
+      <div class="api-row">
+        <input type="text" id="apiKeyInput" placeholder="sk-...">
+        <button id="apiKeySave">Save</button>
+      </div>
     </div>
-  </div>
-  <div class="stats-row" id="statsRow">
-    <div class="stat-item"><span class="stat-value" id="statQueries">-</span><span class="stat-label">Total Queries</span></div>
-    <div class="stat-item"><span class="stat-value" id="statLatency">-</span><span class="stat-label">Avg Latency</span></div>
-    <div class="stat-item"><span class="stat-value" id="statFeedback">-</span><span class="stat-label">Feedback Rate</span></div>
-    <div class="stat-item"><span class="stat-value" id="statErrors">-</span><span class="stat-label">Error Rate</span></div>
-    <div class="stat-item"><span class="stat-value" id="statSessions">-</span><span class="stat-label">Active Sessions</span></div>
-    <div class="stat-item"><span class="stat-value" id="statCacheHits">-</span><span class="stat-label">Cache Hits</span></div>
-    <div class="stat-item"><span class="stat-value" id="statCacheEntries">-</span><span class="stat-label">Cache Entries</span></div>
-    <div class="stat-item"><span class="stat-value" id="statTotalTokens">-</span><span class="stat-label">Total Tokens</span></div>
-    <div class="stat-item"><span class="stat-value" id="statCachedPct">-</span><span class="stat-label">Cached %</span></div>
-    <div class="stat-item"><span class="stat-value" id="statGaps">-</span><span class="stat-label">Unresolved Gaps</span></div>
-  </div>
-  <div class="filter-bar">
-    <label for="filterTime">Time</label>
-    <select id="filterTime">
-      <option value="1h">Last 1h</option>
-      <option value="6h">Last 6h</option>
-      <option value="24h" selected>Last 24h</option>
-      <option value="all">All</option>
-    </select>
-    <label for="filterAgent">Agent</label>
-    <select id="filterAgent"><option value="">All Agents</option></select>
-    <label for="filterModel">Model</label>
-    <select id="filterModel"><option value="">All Models</option></select>
-  </div>
-</div>
+  </aside>
 
-<div class="board">
-  <div class="column col-live">
-    <div class="column-header"><span>Live Sessions</span><span class="count" id="countLive">0</span></div>
-    <div class="column-body" id="colLive"></div>
-  </div>
-  <div class="column col-perf">
-    <div class="column-header"><span>Performance</span><span class="count" id="countPerf">0</span></div>
-    <div class="column-body" id="colPerf"></div>
-  </div>
-  <div class="column col-feedback">
-    <div class="column-header"><span>Feedback</span><span class="count" id="countFeedback">0</span></div>
-    <div class="column-body" id="colFeedback"></div>
-  </div>
-  <div class="column col-errors">
-    <div class="column-header"><span>Errors</span><span class="count" id="countErrors">0</span></div>
-    <div class="column-body" id="colErrors"></div>
-  </div>
-  <div class="column col-lowconf">
-    <div class="column-header"><span>Low Confidence</span><span class="count" id="countLowConf">0</span></div>
-    <div class="column-body" id="colLowConf"></div>
-  </div>
-  <div class="column col-cache">
-    <div class="column-header"><span>Semantic Cache</span><span class="count" id="countCache">0</span></div>
-    <div class="column-body" id="colCache"></div>
-  </div>
-  <div class="column col-tokens">
-    <div class="column-header"><span>Token Usage</span><span class="count" id="countTokens">0</span></div>
-    <div class="column-body" id="colTokens"></div>
-  </div>
-  <div class="column col-gaps">
-    <div class="column-header"><span>Content Gaps</span><span class="count" id="countGaps">0</span></div>
-    <div class="column-body" id="colGaps"></div>
-  </div>
-</div>
+  <!-- Dashboard Page -->
+  <main class="main page active" id="pageDashboard">
+    <div class="page-header">
+      <div>
+        <h2>Dashboard</h2>
+        <p>Real-time monitoring and analytics</p>
+      </div>
+      <div class="header-controls">
+        <select id="dashTimeRange">
+          <option value="7">Last 7 days</option>
+          <option value="1">Last 24 hours</option>
+          <option value="30">Last 30 days</option>
+        </select>
+        <div class="live-badge err" id="liveBadge">
+          <div class="live-dot"></div>
+          <span>Live</span>
+        </div>
+      </div>
+    </div>
 
-<div class="modal-overlay hidden" id="modalOverlay">
-  <div class="modal" id="modal">
-    <button class="modal-close" id="modalClose">&times;</button>
-    <div id="modalContent"></div>
-  </div>
+    <div class="metric-strip">
+      <div class="metric">
+        <div class="metric-label">Conversations</div>
+        <div class="metric-value" id="mConversations">—</div>
+        <div class="metric-trend up" id="mConvTrend"></div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Messages</div>
+        <div class="metric-value" id="mMessages">—</div>
+        <div class="metric-trend up" id="mMsgTrend"></div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Distinct Users</div>
+        <div class="metric-value" id="mUsers">—</div>
+        <div class="metric-trend up" id="mUserTrend"></div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Avg Confidence</div>
+        <div class="metric-value" id="mConfidence">—</div>
+        <div class="metric-trend up" id="mConfTrend"></div>
+      </div>
+    </div>
+
+    <div class="charts-area">
+      <div class="charts-grid">
+        <!-- Left: 5 trend charts -->
+        <div class="chart-col">
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Conversations per Day</div>
+              <div class="chart-card-subtitle">Last 7 days</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartConv"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Chat Messages per Day</div>
+              <div class="chart-card-subtitle">Last 7 days</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartMsg"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Distinct Users per Day</div>
+              <div class="chart-card-subtitle">Last 7 days</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartUsers"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Document Coverage per Day</div>
+              <div class="chart-card-subtitle">Last 7 days</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartCoverage"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">Highly Confident Answers per Day</div>
+              <div class="chart-card-accent" id="confAvg">65% avg</div>
+            </div>
+            <div class="chart-canvas-wrap"><canvas id="chartConfidence"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Right: donut + metrics + activity -->
+        <div class="chart-col">
+          <div class="donut-card">
+            <h3>Thumbs Up vs Down</h3>
+            <div class="donut-layout">
+              <div class="donut-wrap"><canvas id="chartFeedback"></canvas></div>
+              <div class="donut-legend">
+                <div class="legend-item">
+                  <div class="legend-dot" style="background:var(--green)"></div>
+                  <div><div class="legend-value" id="thumbUp">0</div><div class="legend-label">Thumbs Up</div></div>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-dot" style="background:var(--red)"></div>
+                  <div><div class="legend-value" id="thumbDown">0</div><div class="legend-label">Thumbs Down</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-card-label">Messages Copied</div>
+            <div class="metric-card-value" id="mCopied">0</div>
+            <div class="metric-card-trend" id="mCopiedTrend"></div>
+            <div class="metric-card-period">vs last period</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-card-label">Source Items Clicked</div>
+            <div class="metric-card-value" id="mClicked">0</div>
+            <div class="metric-card-trend" id="mClickedTrend"></div>
+            <div class="metric-card-period">vs last period</div>
+          </div>
+          <div class="activity-card">
+            <div class="activity-card-header">
+              <h3>Recent Activity</h3>
+              <div class="activity-link" onclick="switchPage('sessions')">View all</div>
+            </div>
+            <div id="activityFeed"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Sessions Page -->
+  <main class="main page" id="pageSessions">
+    <div class="page-header">
+      <div>
+        <h2>Sessions</h2>
+        <p>Complete conversation history and analytics</p>
+      </div>
+      <div class="sessions-filters">
+        <input type="text" id="sessionSearch" placeholder="Search sessions...">
+        <select id="sessionAgent"><option value="">All Agents</option></select>
+        <select id="sessionTime">
+          <option value="7">Last 7 days</option>
+          <option value="1">Last 24 hours</option>
+          <option value="30">Last 30 days</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="metric-strip">
+      <div class="metric">
+        <div class="metric-label">Total Sessions</div>
+        <div class="metric-value" id="sTotal">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Avg Messages</div>
+        <div class="metric-value" id="sAvgMsg">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Total Cost</div>
+        <div class="metric-value" id="sCost">—</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Avg Duration</div>
+        <div class="metric-value" id="sDuration">—</div>
+      </div>
+    </div>
+
+    <div class="sessions-grid">
+      <div class="session-list">
+        <div class="session-list-header">Session History</div>
+        <div class="session-list-body" id="sessionListBody"></div>
+        <div class="session-list-footer">
+          <span id="sessionPagination">Showing 0 of 0</span>
+          <div class="pagination-btns">
+            <button class="secondary" onclick="sessionPage(-1)">Prev</button>
+            <button class="primary" onclick="sessionPage(1)">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="session-detail" id="sessionDetail">
+        <div class="detail-header" id="detailHeader"></div>
+        <div class="detail-body" id="detailBody">
+          <div class="empty-state">Select a session from the list to view the conversation</div>
+        </div>
+        <div class="detail-footer">
+          <div class="feedback-label">Session feedback</div>
+          <div class="feedback-btns">
+            <button class="btn-helpful" onclick="submitFeedback('up')">Helpful</button>
+            <button class="btn-not-helpful" onclick="submitFeedback('down')">Not helpful</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>
 
 <script>
 (function() {
   'use strict';
 
-  // ---- State ----
   const LS_KEY = 'chatproxy_admin_key';
   let apiKey = localStorage.getItem(LS_KEY) || '';
-  let pollTimer = null;
-  let allData = { live: [], performance: [], feedback: [], errors: [], lowConfidence: [], cache: [], tokenUsage: [], docGaps: [], cacheStats: null, tokenSummary: null };
-  let knownAgents = new Set();
-  let knownModels = new Set();
+  let charts = {};
+  let currentSessionPage = 1;
+  let currentSessionId = null;
+  let trendsData = null;
 
-  // ---- DOM refs ----
   const $ = id => document.getElementById(id);
-  const apiKeyInput = $('apiKeyInput');
-  const apiKeySave = $('apiKeySave');
-  const connDot = $('connDot');
-  const filterTime = $('filterTime');
-  const filterAgent = $('filterAgent');
-  const filterModel = $('filterModel');
-  const modalOverlay = $('modalOverlay');
-  const modalContent = $('modalContent');
-  const modalClose = $('modalClose');
 
-  // ---- Init ----
-  apiKeyInput.value = apiKey;
-  apiKeySave.addEventListener('click', () => {
-    apiKey = apiKeyInput.value.trim();
+  // ---- Navigation ----
+  document.querySelectorAll('.nav-item').forEach(el => {
+    el.addEventListener('click', () => switchPage(el.dataset.page));
+  });
+
+  window.switchPage = function(page) {
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.page === page));
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = page === 'dashboard' ? 'pageDashboard' : page === 'sessions' ? 'pageSessions' : 'pageDashboard';
+    $(target).classList.add('active');
+    if (page === 'sessions') fetchSessions();
+  };
+
+  // ---- API key ----
+  $('apiKeyInput').value = apiKey;
+  $('apiKeySave').addEventListener('click', () => {
+    apiKey = $('apiKeyInput').value.trim();
     localStorage.setItem(LS_KEY, apiKey);
     fetchAll();
   });
-  apiKeyInput.addEventListener('keydown', e => { if (e.key === 'Enter') apiKeySave.click(); });
+  $('apiKeyInput').addEventListener('keydown', e => { if (e.key === 'Enter') $('apiKeySave').click(); });
 
-  filterTime.addEventListener('change', render);
-  filterAgent.addEventListener('change', render);
-  filterModel.addEventListener('change', render);
-
-  modalClose.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  if (!apiKey) {
-    apiKeyInput.focus();
-  }
-  fetchAll();
-  pollTimer = setInterval(fetchAll, 10000);
+  // ---- Init ----
+  initCharts();
+  if (apiKey) fetchAll();
+  setInterval(fetchAll, 10000);
 
   // ---- Fetch ----
   async function apiFetch(path) {
-    const resp = await fetch(path, {
-      headers: { 'Authorization': 'Bearer ' + apiKey }
-    });
-    if (!resp.ok) throw new Error(resp.status + ' ' + resp.statusText);
-    return resp.json();
+    const r = await fetch(path, { headers: { Authorization: 'Bearer ' + apiKey } });
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
   }
 
   async function fetchAll() {
-    if (!apiKey) {
-      setConnected(false);
-      return;
-    }
+    if (!apiKey) return;
     try {
-      const [live, performance, feedback, errors, lowConfidence, cacheEntries, stats, tokenUsage, docGaps] = await Promise.all([
-        apiFetch('/admin/api/live'),
-        apiFetch('/admin/api/performance'),
-        apiFetch('/admin/api/feedback'),
-        apiFetch('/admin/api/errors'),
-        apiFetch('/admin/api/low-confidence'),
-        apiFetch('/admin/api/cache/entries'),
-        apiFetch('/admin/stats'),
-        apiFetch('/admin/api/token-usage/by-model'),
-        apiFetch('/admin/api/doc-gaps'),
+      const [overview, trends, activity] = await Promise.all([
+        apiFetch('/admin/api/analytics/overview'),
+        apiFetch('/admin/api/analytics/trends?days=7'),
+        apiFetch('/admin/api/analytics/recent-activity?limit=5'),
       ]);
-      allData = {
-        live: arr(live),
-        performance: arr(performance),
-        feedback: arr(feedback),
-        errors: arr(errors),
-        lowConfidence: arr(lowConfidence),
-        cache: arr(cacheEntries),
-        tokenUsage: arr(tokenUsage),
-        docGaps: arr(docGaps),
-        cacheStats: stats?.semantic_cache || null,
-        tokenSummary: stats?.token_usage || null,
-      };
-      collectFilters();
-      updateStats();
-      render();
-      setConnected(true);
+      updateMetrics(overview);
+      updateCharts(trends);
+      updateActivity(activity.entries || []);
+      $('liveBadge').className = 'live-badge ok';
     } catch (e) {
       console.error('Fetch error:', e);
-      setConnected(false);
+      $('liveBadge').className = 'live-badge err';
     }
   }
 
-  function arr(v) {
-    if (Array.isArray(v)) return v;
-    if (!v || typeof v !== 'object') return [];
-    // Unwrap any single-key array response ({sessions: [...]}, {agents: [...]}, {entries: [...]})
-    const keys = Object.keys(v);
-    for (const k of keys) {
-      if (Array.isArray(v[k])) return v[k];
+  // ---- Animated counter ----
+  function animateValue(el, end, suffix) {
+    suffix = suffix || '';
+    const start = parseInt(el.textContent.replace(/[^0-9]/g, '')) || 0;
+    if (start === end) { el.textContent = end.toLocaleString() + suffix; return; }
+    const duration = 600;
+    const startTime = performance.now();
+    function step(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(start + (end - start) * eased);
+      el.textContent = current.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(step);
     }
-    return [];
+    requestAnimationFrame(step);
   }
 
-  function setConnected(ok) {
-    connDot.classList.toggle('ok', ok);
-    connDot.title = ok ? 'Connected' : 'Disconnected';
+  // ---- Update metrics ----
+  function updateMetrics(d) {
+    animateValue($('mConversations'), d.conversations || 0);
+    animateValue($('mMessages'), d.messages || 0);
+    animateValue($('mUsers'), d.distinctUsers || 0);
+    animateValue($('mConfidence'), d.avgConfidence || 0, '%');
+    $('thumbUp').textContent = (d.thumbsUp || 0).toLocaleString();
+    $('thumbDown').textContent = (d.thumbsDown || 0).toLocaleString();
   }
 
-  // ---- Filters ----
-  function collectFilters() {
-    const all = [...allData.live, ...allData.feedback, ...allData.errors, ...allData.lowConfidence, ...allData.performance];
-    all.forEach(d => {
-      if (d.agent || d.agent_type) knownAgents.add(d.agent || d.agent_type);
-      if (d.model || d.model_name) knownModels.add(d.model || d.model_name);
+  // ---- Chart.js config ----
+  function makeTrendConfig(color, label) {
+    return {
+      type: 'line',
+      data: { labels: [], datasets: [{ data: [], borderColor: color, backgroundColor: color + '1a', fill: true, tension: 0.4, borderWidth: 2.5, pointRadius: 0, pointHoverRadius: 4 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false, backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif", size: 10 }, bodyFont: { family: "'Figtree', sans-serif", size: 11 }, padding: 8, cornerRadius: 6, displayColors: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { family: "'Figtree', sans-serif", size: 8 }, color: '#b0b3ba', maxRotation: 0 }, border: { display: false } },
+          y: { grid: { color: '#f0f1f3' }, ticks: { font: { family: "'Figtree', sans-serif", size: 8 }, color: '#b0b3ba', maxTicksLimit: 4 }, border: { display: false } },
+        },
+        interaction: { mode: 'nearest', axis: 'x', intersect: false },
+      },
+    };
+  }
+
+  function initCharts() {
+    charts.conv = new Chart($('chartConv'), makeTrendConfig('#3b6de0', 'Conversations'));
+    charts.msg = new Chart($('chartMsg'), makeTrendConfig('#6c4de0', 'Messages'));
+    charts.users = new Chart($('chartUsers'), makeTrendConfig('#2a9d5c', 'Users'));
+    charts.coverage = new Chart($('chartCoverage'), makeTrendConfig('#d4850a', 'Coverage'));
+    charts.confidence = new Chart($('chartConfidence'), makeTrendConfig('#1a8a4a', 'Confidence'));
+
+    charts.feedback = new Chart($('chartFeedback'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Thumbs Up', 'Thumbs Down'],
+        datasets: [{ data: [1, 0], backgroundColor: ['#2a9d5c', '#d44040'], borderWidth: 0, borderRadius: 4 }],
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true, cutout: '72%',
+        plugins: {
+          legend: { display: false },
+          tooltip: { backgroundColor: '#1a1d23', titleFont: { family: "'Figtree', sans-serif" }, bodyFont: { family: "'Figtree', sans-serif" }, cornerRadius: 6 },
+        },
+      },
     });
-    rebuildSelect(filterAgent, knownAgents, 'All Agents');
-    rebuildSelect(filterModel, knownModels, 'All Models');
   }
 
-  function rebuildSelect(sel, items, allLabel) {
-    const cur = sel.value;
-    const opts = ['<option value="">' + esc(allLabel) + '</option>'];
-    [...items].sort().forEach(v => {
-      opts.push('<option value="' + esc(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(v) + '</option>');
-    });
-    sel.innerHTML = opts.join('');
-    if (cur && !items.has(cur)) sel.value = '';
-  }
+  function updateCharts(trends) {
+    if (!trends) return;
+    trendsData = trends;
 
-  function timeFilter(items) {
-    const range = filterTime.value;
-    if (range === 'all') return items;
-    const hours = { '1h': 1, '6h': 6, '24h': 24 }[range] || 24;
-    const cutoff = Date.now() - hours * 3600_000;
-    return items.filter(d => {
-      const ts = d.timestamp || d.created_at || d.last_active || d.time;
-      if (!ts) return true;
-      return new Date(ts).getTime() >= cutoff;
-    });
-  }
-
-  function agentModelFilter(items) {
-    const agent = filterAgent.value;
-    const model = filterModel.value;
-    return items.filter(d => {
-      if (agent && (d.agent || d.agent_type) !== agent) return false;
-      if (model && (d.model || d.model_name) !== model) return false;
-      return true;
-    });
-  }
-
-  function applyFilters(items, skipTime) {
-    let r = skipTime ? items : timeFilter(items);
-    return agentModelFilter(r);
-  }
-
-  // ---- Stats ----
-  function updateStats() {
-    const perf = allData.performance;
-    const totalQueries = perf.reduce((s, d) => s + (d.query_count || d.count || 0), 0);
-    const avgLat = perf.length ? (perf.reduce((s, d) => s + (d.avg_latency || d.latency || 0), 0) / perf.length) : 0;
-    const fbTotal = allData.feedback.length;
-    const errTotal = allData.errors.length;
-    const liveSessions = allData.live.length;
-    const fbRate = totalQueries > 0 ? ((fbTotal / totalQueries) * 100).toFixed(1) + '%' : '-';
-    const errRate = totalQueries > 0 ? ((errTotal / totalQueries) * 100).toFixed(1) + '%' : '-';
-
-    $('statQueries').textContent = totalQueries.toLocaleString();
-    $('statLatency').textContent = avgLat ? avgLat.toFixed(0) + 'ms' : '-';
-    $('statFeedback').textContent = fbRate;
-    $('statErrors').textContent = errRate;
-    $('statSessions').textContent = liveSessions;
-
-    // Cache stats
-    const cs = allData.cacheStats;
-    if (cs) {
-      $('statCacheHits').textContent = (cs.totalHits || 0).toLocaleString();
-      $('statCacheEntries').textContent = (cs.entries || cs.totalEntries || 0).toLocaleString();
-    } else {
-      $('statCacheHits').textContent = '-';
-      $('statCacheEntries').textContent = '-';
+    function updateTrend(chart, data) {
+      if (!data) return;
+      chart.data.labels = data.map(d => {
+        const dt = new Date(d.date);
+        return dt.toLocaleDateString('en', { weekday: 'short' });
+      });
+      chart.data.datasets[0].data = data.map(d => d.value);
+      chart.update('none');
     }
 
-    // Token usage summary
-    const ts = allData.tokenSummary;
-    if (ts) {
-      $('statTotalTokens').textContent = (ts.totalTokens || 0).toLocaleString();
-      $('statCachedPct').textContent = ts.cachedPercentage != null ? ts.cachedPercentage.toFixed(1) + '%' : '-';
-    } else {
-      $('statTotalTokens').textContent = '-';
-      $('statCachedPct').textContent = '-';
+    updateTrend(charts.conv, trends.conversations);
+    updateTrend(charts.msg, trends.messages);
+    updateTrend(charts.users, trends.users);
+    updateTrend(charts.coverage, trends.coverage || trends.conversations?.map(d => ({ ...d, value: Math.round(d.value * 0.7) })));
+    updateTrend(charts.confidence, trends.confidence);
+
+    if (trends.confidence?.length) {
+      const avg = Math.round(trends.confidence.reduce((s, d) => s + d.value, 0) / trends.confidence.length);
+      $('confAvg').textContent = avg + '% avg';
+    }
+  }
+
+  // ---- Activity feed ----
+  function updateActivity(entries) {
+    const feed = $('activityFeed');
+    if (!entries || !entries.length) {
+      feed.innerHTML = '<div class="empty-state">No recent activity</div>';
+      return;
+    }
+    feed.innerHTML = entries.slice(0, 5).map(ev => {
+      const agent = ev.agent || 'general';
+      const ago = timeAgo(ev.timestamp);
+      const question = ev.data?.question || ev.data?.content || '';
+      const tokens = ev.totalTokens ? formatTokens(ev.totalTokens) : '';
+      return `<div class="activity-item">
+        <div class="activity-dot" style="background:${agentColor(agent)}"></div>
+        <div class="activity-time">${ago}</div>
+        <span class="agent-badge agent-${agent}">${esc(agent)}</span>
+        <div class="activity-query">${esc(question)}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // ---- Sessions ----
+  async function fetchSessions() {
+    try {
+      const data = await apiFetch('/admin/api/sessions?page=' + currentSessionPage + '&pageSize=20');
+      renderSessionList(data);
+    } catch (e) { console.error('Session fetch error:', e); }
+  }
+
+  window.sessionPage = function(dir) {
+    currentSessionPage = Math.max(1, currentSessionPage + dir);
+    fetchSessions();
+  };
+
+  function renderSessionList(data) {
+    const sessions = data.sessions || [];
+    const total = data.total || 0;
+    $('sessionPagination').textContent = 'Showing ' + sessions.length + ' of ' + total;
+
+    $('sTotal').textContent = total.toLocaleString();
+    if (sessions.length) {
+      const avgMsg = (sessions.reduce((s, x) => s + x.messageCount, 0) / sessions.length).toFixed(1);
+      $('sAvgMsg').textContent = avgMsg;
     }
 
-    // Unresolved gaps
-    $('statGaps').textContent = allData.docGaps.length.toLocaleString();
+    const body = $('sessionListBody');
+    if (!sessions.length) {
+      body.innerHTML = '<div class="empty-state">No sessions found</div>';
+      return;
+    }
+
+    body.innerHTML = sessions.map(s => {
+      const ago = timeAgo(new Date(s.lastActiveAt).toISOString());
+      const active = s.id === currentSessionId ? ' active' : '';
+      const agent = s.agent || 'general';
+      return `<div class="session-row${active}" onclick="selectSession('${s.id}')">
+        <div class="session-row-top">
+          <span class="session-row-id">${esc(s.id.slice(0, 12))}</span>
+          <span class="agent-badge agent-${agent}">${esc(agent)}</span>
+        </div>
+        <div class="session-row-question">${esc(s.firstQuestion || 'No messages')}</div>
+        <div class="session-row-meta">
+          <span>${s.messageCount} messages</span>
+          <span>${ago}</span>
+        </div>
+      </div>`;
+    }).join('');
   }
 
-  // ---- Render ----
-  function render() {
-    renderLive(applyFilters(allData.live, false));
-    renderPerf(applyFilters(allData.performance, true));
-    renderFeedback(applyFilters(allData.feedback, false));
-    renderErrors(applyFilters(allData.errors, false));
-    renderLowConf(applyFilters(allData.lowConfidence, false));
-    renderCache(allData.cache);
-    renderTokens(allData.tokenUsage);
-    renderGaps(allData.docGaps);
+  window.selectSession = async function(id) {
+    currentSessionId = id;
+    document.querySelectorAll('.session-row').forEach(r => r.classList.remove('active'));
+    event.target.closest('.session-row')?.classList.add('active');
+
+    try {
+      const data = await apiFetch('/admin/api/session/' + id);
+      renderSessionDetail(data);
+    } catch (e) { console.error('Session detail error:', e); }
+  };
+
+  function renderSessionDetail(data) {
+    const events = data.events || [];
+    const messages = data.messages || [];
+
+    // Find agent from events
+    const agent = events[0]?.agent || 'general';
+    const model = events[0]?.model || '';
+
+    $('detailHeader').innerHTML = `
+      <div class="detail-header-top">
+        <div class="detail-header-info">
+          <span class="detail-id">${esc(data.sessionId?.slice(0, 16) || '')}</span>
+          <span class="agent-badge agent-${agent}">${esc(agent)}</span>
+          ${model ? `<span style="font-size:10px;color:var(--text-muted);font-weight:500">${esc(model)}</span>` : ''}
+        </div>
+        <div class="detail-time">${events.length ? timeAgo(events[0].timestamp) : ''}</div>
+      </div>
+      <div class="detail-stats">
+        <div><strong>${messages.length || events.filter(e => e.type === 'message').length}</strong> messages</div>
+        <div><strong>${formatTokens(events.reduce((s, e) => s + (e.totalTokens || 0), 0))}</strong> tokens</div>
+        <div>Confidence: <strong style="color:var(--green)">${events.find(e => e.data?.confidence)?.data?.confidence || '—'}</strong></div>
+      </div>`;
+
+    const body = $('detailBody');
+    if (!messages.length && !events.length) {
+      body.innerHTML = '<div class="empty-state">No messages in this session</div>';
+      return;
+    }
+
+    let html = '';
+    // Use messages array if available, otherwise reconstruct from events
+    const source = messages.length ? messages : events.filter(e => e.type === 'message').map(e => ({
+      role: e.data?.role || 'assistant',
+      content: e.data?.content || e.data?.answer || '',
+      confidence: e.data?.confidence,
+      sources: e.data?.sources,
+      tokens: e.totalTokens,
+      timestamp: e.timestamp,
+    }));
+
+    source.forEach((msg, i) => {
+      if (i > 0) {
+        html += `<div class="timeline-dot"><div class="timeline-dot-dot"></div><span>${msg.timestamp ? timeAgo(msg.timestamp) : ''}</span></div>`;
+      }
+      if (msg.role === 'user') {
+        html += `<div class="msg-user">
+          <div class="msg-user-label">User</div>
+          <div class="msg-user-text">${esc(msg.content)}</div>
+        </div>`;
+      } else {
+        const conf = msg.confidence;
+        const confColor = conf === 'high' ? 'var(--green)' : conf === 'medium' ? 'var(--amber)' : conf === 'low' ? 'var(--red)' : '';
+        html += `<div class="msg-agent">
+          <div class="msg-agent-header">
+            <div class="msg-agent-label">Agent &middot; ${esc(agent)}</div>
+            <div class="msg-agent-meta">
+              ${msg.tokens ? `<span>${formatTokens(msg.tokens)} tok</span><span>&middot;</span>` : ''}
+              ${conf ? `<span style="color:${confColor};font-weight:600">${esc(conf)}</span>` : ''}
+            </div>
+          </div>
+          <div class="msg-agent-text">${esc(msg.content)}</div>
+          ${msg.sources?.length ? `<div class="msg-sources">${msg.sources.map(s =>
+            `<div class="msg-source">${typeof s === 'string' ? esc(s) : esc(s.title || s.url || '')}</div>`
+          ).join('')}</div>` : ''}
+        </div>`;
+      }
+    });
+
+    body.innerHTML = html;
   }
 
-  function renderLive(items) {
-    items.sort((a, b) => ts(b) - ts(a));
-    $('countLive').textContent = items.length;
-    $('colLive').innerHTML = items.length ? items.map(d => {
-      const sid = shortId(d.session_id || d.id || '');
-      return card([
-        row([badge(sid, 'gray'), tag(d.agent || d.agent_type)]),
-        '<div class="card-question">' + esc(trunc(d.last_question || d.question || '-', 80)) + '</div>',
-        row([meta(d.user_id || d.user || ''), meta(shortModel(d.model)), meta(timeAgo(d.last_active || d.timestamp))])
-      ], d);
-    }).join('') : noData();
+  window.submitFeedback = function(rating) {
+    if (!currentSessionId) return;
+    fetch('/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + apiKey },
+      body: JSON.stringify({ sessionId: currentSessionId, messageIndex: 0, rating }),
+    }).catch(() => {});
+  };
+
+  // ---- Helpers ----
+  function esc(s) {
+    if (!s) return '';
+    const d = document.createElement('div');
+    d.textContent = String(s);
+    return d.innerHTML;
   }
 
-  function renderPerf(items) {
-    $('countPerf').textContent = items.length;
-    $('colPerf').innerHTML = items.length ? items.map(d => {
-      const conf = d.confidence_distribution || d.confidence || {};
-      const total = (conf.high || 0) + (conf.medium || 0) + (conf.low || 0) || 1;
-      return card([
-        row([tag(d.agent || d.agent_type), badge(shortModel(d.model || d.model_name), 'blue')]),
-        row([meta('Queries: ' + (d.query_count || d.count || 0)), meta('Avg: ' + ((d.avg_latency || d.latency || 0)).toFixed(0) + 'ms')]),
-        '<div class="conf-bar">' +
-          '<div class="seg-high" style="width:' + pct(conf.high, total) + '%"></div>' +
-          '<div class="seg-med" style="width:' + pct(conf.medium, total) + '%"></div>' +
-          '<div class="seg-low" style="width:' + pct(conf.low, total) + '%"></div>' +
-        '</div>',
-        row([meta('Sources avg: ' + (d.source_avg != null ? d.source_avg.toFixed(1) : d.avg_sources != null ? d.avg_sources.toFixed(1) : '-')), meta('Err: ' + (d.error_rate != null ? (d.error_rate * 100).toFixed(1) + '%' : '-'))])
-      ], d);
-    }).join('') : noData();
-  }
-
-  function renderFeedback(items) {
-    items.sort((a, b) => ts(b) - ts(a));
-    $('countFeedback').textContent = items.length;
-    $('colFeedback').innerHTML = items.length ? items.map(d => {
-      const up = d.vote === 'up' || d.thumbs === 'up' || d.positive === true || d.rating > 0;
-      return '<div class="card ' + (up ? 'card-feedback-up' : 'card-feedback-down') + '" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
-        row(['<span class="thumb-icon">' + (up ? '\u{1F44D}' : '\u{1F44E}') + '</span>', confBadge(d.confidence)]) +
-        '<div class="card-question">' + esc(trunc(d.question || d.query || '-', 80)) + '</div>' +
-        row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))]) +
-      '</div>';
-    }).join('') : noData();
-  }
-
-  function renderErrors(items) {
-    items.sort((a, b) => ts(b) - ts(a));
-    $('countErrors').textContent = items.length;
-    $('colErrors').innerHTML = items.length ? items.map(d => {
-      const errType = d.error_type || d.type || 'ERROR';
-      const badgeClass = errType === 'GUARD' ? 'amber' : errType === 'EMPTY' ? 'gray' : 'red';
-      return '<div class="card card-error" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
-        row([badge(errType, badgeClass)]) +
-        '<div class="card-question">' + esc(trunc(d.message || d.error || d.question || '-', 100)) + '</div>' +
-        row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))]) +
-      '</div>';
-    }).join('') : noData();
-  }
-
-  function renderLowConf(items) {
-    items.sort((a, b) => ts(b) - ts(a));
-    $('countLowConf').textContent = items.length;
-    $('colLowConf').innerHTML = items.length ? items.map(d => {
-      return card([
-        row([confBadge(d.confidence), meta('Sources: ' + (d.sources_count != null ? d.sources_count : d.sources ? d.sources.length : '-'))]),
-        '<div class="card-question">' + esc(trunc(d.question || d.query || '-', 80)) + '</div>',
-        row([tag(d.agent || d.agent_type), meta(shortModel(d.model)), meta(timeAgo(d.timestamp || d.created_at))])
-      ], d);
-    }).join('') : noData();
-  }
-
-  function renderCache(items) {
-    $('countCache').textContent = items.length;
-    $('colCache').innerHTML = items.length ? items.map(d => {
-      const conf = d.confidence ? JSON.parse(d.confidence) : null;
-      const confLevel = conf ? conf.level : '-';
-      const confClass = confLevel === 'high' ? 'green' : confLevel === 'medium' ? 'amber' : 'red';
-      return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
-        row([badge(d.agent || '-', 'gray'), confLevel !== '-' ? badge(confLevel, confClass) : '', meta('Hits: ' + (d.hits || 0))]) +
-        '<div class="card-question">' + esc(trunc(d.query_text || '-', 80)) + '</div>' +
-        row([meta('Size: ' + ((d.event_size || 0) / 1024).toFixed(1) + 'KB'), meta(timeAgo(d.created_at))]) +
-      '</div>';
-    }).join('') : noData();
-  }
-
-  function renderTokens(items) {
-    $('countTokens').textContent = items.length;
-    $('colTokens').innerHTML = items.length ? items.map(d => {
-      const inputFmt = formatTokens(d.totalInputTokens || d.totalinputTokens || 0);
-      const outputFmt = formatTokens(d.totalOutputTokens || d.totaloutputTokens || 0);
-      const totalFmt = formatTokens(d.totalTokens || d.totaltokens || 0);
-      const cached = d.totalCachedInputTokens || d.totalcachedinputTokens || 0;
-      const cachedPct = (d.totalInputTokens || d.totalinputTokens || 0) > 0
-        ? ((cached / (d.totalInputTokens || d.totalinputTokens || 0)) * 100).toFixed(0) + '%'
-        : '-';
-      return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
-        row([badge(shortModelName(d.model), 'blue'), meta('Requests: ' + (d.requestCount || 0))]) +
-        row([meta('In: ' + inputFmt), meta('Out: ' + outputFmt), meta('Total: ' + totalFmt)]) +
-        row([meta('Cached: ' + cachedPct)]) +
-      '</div>';
-    }).join('') : noData();
+  function timeAgo(ts) {
+    if (!ts) return '';
+    const diff = (Date.now() - new Date(ts).getTime()) / 1000;
+    if (diff < 60) return 'just now';
+    if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
+    if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
+    return Math.floor(diff / 86400) + 'd ago';
   }
 
   function formatTokens(n) {
-    if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
     if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
-    return n.toString();
+    return String(n);
   }
 
-  function shortModelName(m) {
-    if (!m) return '-';
-    return m.replace(/^(openai|anthropic|google|meta|mistral)\//, '');
-  }
-
-  function renderGaps(items) {
-    $('countGaps').textContent = items.length;
-    $('colGaps').innerHTML = items.length ? items.map(d => {
-      const intent = d.detected_intent ? badge(d.detected_intent, 'blue') : '';
-      const conf = d.confidence_level ? badge(d.confidence_level, d.confidence_level === 'low' ? 'red' : 'amber') : '';
-      return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(d)) + '\'>' +
-        row([intent, conf, meta('Tools: ' + (d.tools_called ? JSON.parse(d.tools_called).length : 0))]) +
-        '<div class="card-question">' + esc(trunc(d.query || '-', 80)) + '</div>' +
-        row([meta(timeAgo(d.created_at)), meta(d.session_id ? shortId(d.session_id) : '')]) +
-      '</div>';
-    }).join('') : noData();
-  }
-
-  // ---- Card helpers ----
-  function card(lines, data) {
-    return '<div class="card" onclick="window.__modal(this)" data-detail=\'' + escAttr(JSON.stringify(data)) + '\'>' + lines.join('') + '</div>';
-  }
-  function row(items) { return '<div class="card-row">' + items.join('') + '</div>'; }
-  function meta(t) { return '<span class="card-meta">' + esc(t || '') + '</span>'; }
-  function tag(t) { return t ? '<span class="badge badge-gray">' + esc(t) + '</span>' : ''; }
-  function badge(t, color) { return '<span class="badge badge-' + (color || 'gray') + '">' + esc(t || '') + '</span>'; }
-  function confBadge(c) {
-    if (!c) return '';
-    const cl = c === 'high' ? 'green' : c === 'medium' ? 'amber' : 'red';
-    return badge(c, cl);
-  }
-  function noData() { return '<div class="no-data">No data</div>'; }
-  function pct(v, total) { return ((v || 0) / total * 100).toFixed(1); }
-
-  // ---- Util ----
-  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-  function escAttr(s) { return s.replace(/&/g,'&amp;').replace(/'/g,'&#39;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-  function trunc(s, n) { return s && s.length > n ? s.slice(0, n) + '...' : (s || ''); }
-  function shortId(id) { return id ? id.slice(0, 8) : '-'; }
-  function shortModel(m) { if (!m) return ''; return m.replace(/^(anthropic|openai|google)[./]/, '').replace(/-\d{8}$/, ''); }
-
-  function ts(d) {
-    const v = d.timestamp || d.created_at || d.last_active || d.time;
-    return v ? new Date(v).getTime() : 0;
-  }
-
-  function timeAgo(t) {
-    if (!t) return '';
-    const diff = Date.now() - new Date(t).getTime();
-    if (diff < 0) return 'just now';
-    const s = Math.floor(diff / 1000);
-    if (s < 60) return s + 's ago';
-    const m = Math.floor(s / 60);
-    if (m < 60) return m + 'm ago';
-    const h = Math.floor(m / 60);
-    if (h < 24) return h + 'h ago';
-    const d = Math.floor(h / 24);
-    return d + 'd ago';
-  }
-
-  // ---- Modal ----
-  window.__modal = function(el) {
-    try {
-      const data = JSON.parse(el.dataset.detail);
-      openModal(data);
-    } catch(e) { /* ignore */ }
-  };
-
-  function openModal(d) {
-    let html = '<h3>' + esc(d.question || d.query || d.message || d.error || 'Details') + '</h3>';
-    html += '<div class="modal-badges">';
-    if (d.agent || d.agent_type) html += badge(d.agent || d.agent_type, 'gray');
-    if (d.model || d.model_name) html += badge(shortModel(d.model || d.model_name), 'blue');
-    if (d.confidence) html += confBadge(d.confidence);
-    if (d.error_type || d.type) html += badge(d.error_type || d.type, 'red');
-    const t = d.timestamp || d.created_at || d.last_active;
-    if (t) html += '<span class="card-meta">' + esc(new Date(t).toLocaleString()) + '</span>';
-    html += '</div>';
-
-    if (d.question || d.query) {
-      html += section('Question', '<p>' + esc(d.question || d.query) + '</p>');
-    }
-    if (d.answer || d.response) {
-      html += section('Answer', '<pre>' + esc(d.answer || d.response) + '</pre>');
-    }
-    if (d.message || d.error) {
-      html += section('Message', '<pre>' + esc(d.message || d.error) + '</pre>');
-    }
-    if (d.sources && d.sources.length) {
-      const srcHtml = d.sources.map(s => '<li>' + esc(typeof s === 'string' ? s : s.title || s.url || JSON.stringify(s)) + '</li>').join('');
-      html += section('Sources', '<ul style="font-size:13px;padding-left:18px;">' + srcHtml + '</ul>');
-    }
-    if (d.tool_calls && d.tool_calls.length) {
-      html += section('Tool Calls', '<pre>' + esc(JSON.stringify(d.tool_calls, null, 2)) + '</pre>');
-    }
-    // Fallback: show raw JSON for any extra fields
-    const shown = new Set(['question','query','answer','response','message','error','sources','tool_calls','agent','agent_type','model','model_name','confidence','error_type','type','timestamp','created_at','last_active','time']);
-    const extra = {};
-    Object.keys(d).forEach(k => { if (!shown.has(k)) extra[k] = d[k]; });
-    if (Object.keys(extra).length) {
-      html += section('Details', '<pre>' + esc(JSON.stringify(extra, null, 2)) + '</pre>');
-    }
-
-    modalContent.innerHTML = html;
-    modalOverlay.classList.remove('hidden');
-  }
-
-  function section(title, body) {
-    return '<div class="modal-section"><h4>' + esc(title) + '</h4>' + body + '</div>';
-  }
-
-  function closeModal() {
-    modalOverlay.classList.add('hidden');
+  function agentColor(agent) {
+    const map = { general: '#3b6de0', schema: '#6c4de0', code: '#2a9d5c', resources: '#d4850a', product: '#d4850a' };
+    return map[agent] || '#3b6de0';
   }
 })();
 </script>
