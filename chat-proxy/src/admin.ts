@@ -11,7 +11,9 @@ import {
   getObsOverview, getObsTrends, getObsRecentActivity, getObsLiveSessions,
   getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
+  getObsUsers, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue,
 } from './db.js';
+import {resolveModel, createModelInstance} from './runtime-config.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -156,6 +158,75 @@ adminApp.get('/api/analytics/trends', async c => {
 adminApp.get('/api/analytics/recent-activity', async c => {
   const limit = parseInt(c.req.query('limit') || '10', 10);
   return c.json({entries: await getObsRecentActivity(limit)});
+});
+
+// GET /admin/api/analytics/users — user-aggregated session data
+adminApp.get('/api/analytics/users', async c => {
+  const page = parseInt(c.req.query('page') || '1', 10);
+  const pageSize = parseInt(c.req.query('pageSize') || '20', 10);
+  return c.json(await getObsUsers({page, pageSize}));
+});
+
+// GET /admin/api/analytics/token-trends — daily token aggregates
+adminApp.get('/api/analytics/token-trends', async c => {
+  const days = parseInt(c.req.query('days') || '7', 10);
+  return c.json(await getTokenTrends(days));
+});
+
+// ---------------------------------------------------------------------------
+// Runtime configuration
+// ---------------------------------------------------------------------------
+
+// GET /admin/api/config — runtime configuration readout
+adminApp.get('/api/config', async c => {
+  const [dbConfig, cacheConfig] = await Promise.all([
+    getRuntimeConfigAll(),
+    Promise.resolve(getSemanticCacheConfig()),
+  ]);
+  const {rows: [chunkCount]} = await getPool().query('SELECT COUNT(*)::int as count FROM doc_chunks');
+  const {rows: [lastBuild]} = await getPool().query("SELECT value FROM metadata WHERE key = 'last_build'");
+
+  return c.json({
+    models: dbConfig,
+    cache: cacheConfig,
+    index: {
+      totalChunks: chunkCount?.count || 0,
+      lastBuild: lastBuild?.value || null,
+      refreshInterval: process.env.INDEX_REFRESH_INTERVAL || '1800000',
+      sourceUrl: process.env.DOCS_SITE_URL || 'https://docs.zilliz.com',
+    },
+  });
+});
+
+// PUT /admin/api/config/:key — update provider/model for a config key
+adminApp.put('/api/config/:key', async c => {
+  const key = c.req.param('key');
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+  const provider = String(body.provider || 'openai-compatible');
+  const model = String(body.model || '');
+  if (!model) return c.json({error: 'model is required'}, 400);
+
+  await setRuntimeConfigValue(key, provider, model);
+  return c.json({ok: true, key, provider, model});
+});
+
+// POST /admin/api/config/:key/test — validate a provider+model works
+adminApp.post('/api/config/:key/test', async c => {
+  const key = c.req.param('key');
+  const {provider, model} = await resolveModel(key);
+  try {
+    const instance = createModelInstance(provider, model);
+    const {generateText} = await import('ai');
+    await generateText({model: instance, prompt: 'Say "ok"', maxOutputTokens: 5});
+    return c.json({ok: true, provider, model});
+  } catch (err) {
+    return c.json({ok: false, provider, model, error: String(err)}, 400);
+  }
 });
 
 // ---------------------------------------------------------------------------
