@@ -59,8 +59,8 @@ class EventStore {
     this.count = 0;
   }
 
-  push(event: Omit<StoreEvent, 'id'>): StoreEvent {
-    const full: StoreEvent = { ...event, id: randomUUID() };
+  push(event: Omit<StoreEvent, 'id'> & { id?: string }): StoreEvent {
+    const full: StoreEvent = { ...event, id: event.id ?? randomUUID() } as StoreEvent;
     this.buffer[this.head] = full;
     this.head = (this.head + 1) % this.maxSize;
     if (this.count < this.maxSize) this.count++;

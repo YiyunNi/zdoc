@@ -3,10 +3,15 @@ import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 import {loadIndex, getIndexSize} from './rag.js';
-import {eventStore} from './event-store.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
-import {getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage, getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality, getPool} from './db.js';
-import {listSessions, getSession} from './sessions.js';
+import {
+  getPool,
+  getTokenUsageByModel, getTokenUsageSummary, getTokenUsageCount, getRecentTokenUsage,
+  getDocGaps, resolveDocGap, getDocGapsCount, getContentQuality,
+  getObsOverview, getObsTrends, getObsRecentActivity, getObsLiveSessions,
+  getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
+  listObsSessions, getObsSessionDetail, getObsTokenUsage,
+} from './db.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -91,75 +96,66 @@ adminApp.get('/stats', async c => {
 // ---------------------------------------------------------------------------
 
 // GET /admin/api/live — active sessions
-adminApp.get('/api/live', c => {
-  return c.json({sessions: eventStore.getLive()});
+adminApp.get('/api/live', async c => {
+  return c.json({sessions: await getObsLiveSessions()});
 });
 
 // GET /admin/api/performance — per-agent/model stats
-adminApp.get('/api/performance', c => {
-  return c.json({agents: eventStore.getPerformance()});
+adminApp.get('/api/performance', async c => {
+  return c.json({agents: await getObsPerformance()});
 });
 
 // GET /admin/api/feedback — recent feedback entries
-adminApp.get('/api/feedback', c => {
+adminApp.get('/api/feedback', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
-  return c.json({entries: eventStore.getFeedback(limit)});
+  return c.json({entries: await getObsFeedback(limit)});
 });
 
 // GET /admin/api/errors — error events
-adminApp.get('/api/errors', c => {
+adminApp.get('/api/errors', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
-  return c.json({entries: eventStore.getErrors(limit)});
+  return c.json({entries: await getObsErrors(limit)});
 });
 
 // GET /admin/api/low-confidence — medium/low confidence answers
-adminApp.get('/api/low-confidence', c => {
+adminApp.get('/api/low-confidence', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
-  return c.json({entries: eventStore.getLowConfidence(limit)});
+  return c.json({entries: await getObsLowConfidence(limit)});
 });
 
 // GET /admin/api/session/:id — get all events for a session
-adminApp.get('/api/session/:id', c => {
+adminApp.get('/api/session/:id', async c => {
   const sessionId = c.req.param('id');
-  const allEvents = eventStore.getAll();
-  const sessionEvents = allEvents.filter(e => e.sessionId === sessionId);
-
-  // Also check in-memory sessions for full message history
-  const memSession = getSession(sessionId);
-
-  if (sessionEvents.length === 0 && !memSession) {
+  const detail = await getObsSessionDetail(sessionId);
+  if (detail.events.length === 0) {
     return c.json({error: 'Session not found', sessionId}, 404);
   }
-  return c.json({
-    sessionId,
-    events: sessionEvents,
-    messages: memSession?.messages ?? [],
-  });
+  return c.json(detail);
 });
 
 // GET /admin/api/sessions — paginated session list
-adminApp.get('/api/sessions', c => {
+adminApp.get('/api/sessions', async c => {
   const page = parseInt(c.req.query('page') || '1', 10);
   const pageSize = parseInt(c.req.query('pageSize') || '20', 10);
   const agent = c.req.query('agent');
-  return c.json(listSessions({page, pageSize, agent}));
+  return c.json(await listObsSessions({page, pageSize, agent}));
 });
 
 // GET /admin/api/analytics/overview — aggregated dashboard metrics
-adminApp.get('/api/analytics/overview', c => {
-  return c.json(eventStore.getOverviewMetrics());
+adminApp.get('/api/analytics/overview', async c => {
+  return c.json(await getObsOverview());
 });
 
 // GET /admin/api/analytics/trends — per-day time series data
-adminApp.get('/api/analytics/trends', c => {
+adminApp.get('/api/analytics/trends', async c => {
   const days = parseInt(c.req.query('days') || '7', 10);
-  return c.json(eventStore.getTrends(days));
+  return c.json(await getObsTrends(days));
 });
 
 // GET /admin/api/analytics/recent-activity — recent message events
-adminApp.get('/api/analytics/recent-activity', c => {
+adminApp.get('/api/analytics/recent-activity', async c => {
   const limit = parseInt(c.req.query('limit') || '10', 10);
-  return c.json({entries: eventStore.getRecentActivity(limit)});
+  return c.json({entries: await getObsRecentActivity(limit)});
 });
 
 // ---------------------------------------------------------------------------
@@ -200,9 +196,9 @@ adminApp.get('/api/token-usage/recent', async c => {
   return c.json({entries: await getRecentTokenUsage(limit)});
 });
 
-// GET /admin/api/token-usage/live — in-memory buffer aggregation
-adminApp.get('/api/token-usage/live', c => {
-  return c.json({byModel: eventStore.getTokenUsage()});
+// GET /admin/api/token-usage/live — token usage aggregation from DB
+adminApp.get('/api/token-usage/live', async c => {
+  return c.json({byModel: await getObsTokenUsage()});
 });
 
 // ---------------------------------------------------------------------------

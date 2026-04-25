@@ -1,5 +1,7 @@
 // In-memory feedback collection with statistics
 
+import {saveObsFeedback} from './db.js';
+
 export type FeedbackRating = 'up' | 'down';
 
 interface FeedbackEntry {
@@ -37,6 +39,9 @@ export function recordFeedback(
 
   if (rating === 'up') totalUp++;
   else totalDown++;
+
+  // Persist to PostgreSQL
+  saveObsFeedback({sessionId, messageIndex, rating, pageUrl}).catch(() => {});
 
   console.log(`[Feedback] ${rating} (session=${sessionId.slice(0, 8)}, msg=${messageIndex}) — totals: ${totalUp} up, ${totalDown} down`);
 }

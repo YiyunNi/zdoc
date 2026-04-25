@@ -39,6 +39,9 @@ describe('adminApp', () => {
       loadIndex: vi.fn().mockResolvedValue(undefined),
       getIndexSize: () => 42,
     }));
+    vi.doMock('./db.js', () => ({
+      getObsLiveSessions: vi.fn().mockResolvedValue([]),
+    }));
 
     const {adminApp} = await import('./admin.js');
     const res = await adminApp.request('/api/live', {

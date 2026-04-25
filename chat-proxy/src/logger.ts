@@ -2,9 +2,11 @@
 // Container orchestrator (CloudWatch, Datadog, etc.) collects stdout logs.
 // Event store powers the admin dashboard and S3 log sink.
 
+import {randomUUID} from 'crypto';
 import {eventStore} from './event-store.js';
 import type {StoreEvent} from './event-store.js';
 import type {TokenUsage} from './types.js';
+import {saveObsEvent, upsertObsSession} from './db.js';
 
 export function logEvent(
   sessionId: string,
@@ -15,6 +17,7 @@ export function logEvent(
 ): void {
   try {
     const timestamp = new Date().toISOString();
+    const id = randomUUID();
     console.log(JSON.stringify({
       type: 'event',
       timestamp,
@@ -25,8 +28,8 @@ export function logEvent(
       ...data,
     }));
 
-    // Push to in-memory event store for dashboard/S3
-    eventStore.push({
+    const event = {
+      id,
       timestamp,
       type: eventType as StoreEvent['type'],
       sessionId,
@@ -38,7 +41,38 @@ export function logEvent(
       outputTokens: typeof data.outputTokens === 'number' ? data.outputTokens : undefined,
       totalTokens: typeof data.totalTokens === 'number' ? data.totalTokens : undefined,
       cachedInputTokens: typeof data.cachedInputTokens === 'number' ? data.cachedInputTokens : undefined,
-    });
+    };
+
+    // Push to in-memory event store for dashboard/S3
+    eventStore.push(event);
+
+    // Persist to PostgreSQL
+    saveObsEvent({
+      id: event.id,
+      timestamp: event.timestamp,
+      eventType,
+      sessionId,
+      userId,
+      agent,
+      model: event.model,
+      data,
+      inputTokens: event.inputTokens,
+      outputTokens: event.outputTokens,
+      totalTokens: event.totalTokens,
+      cachedInputTokens: event.cachedInputTokens,
+    }).catch(() => {});
+
+    // Upsert session metadata on assistant message events
+    if (eventType === 'message' && data.role === 'assistant') {
+      upsertObsSession({
+        id: sessionId,
+        userId,
+        agent,
+        model: typeof data.model === 'string' ? data.model : undefined,
+        pageUrl: typeof data.pageUrl === 'string' ? data.pageUrl : undefined,
+        firstQuestion: typeof data.question === 'string' ? String(data.question).slice(0, 100) : undefined,
+      }).catch(() => {});
+    }
   } catch {
     // Fire and forget
   }
