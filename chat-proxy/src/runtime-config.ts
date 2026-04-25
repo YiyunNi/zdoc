@@ -1,6 +1,6 @@
 import { getRuntimeConfigValue, isDbReady } from './db.js';
 import { createOpenAI } from '@ai-sdk/openai';
-import type { LanguageModelV1 } from 'ai';
+import type { LanguageModel } from 'ai';
 
 // Env var fallbacks per config key
 const ENV_DEFAULTS: Record<string, { provider: string; modelEnv: string; defaultModel: string }> = {
@@ -36,7 +36,7 @@ export async function resolveModel(key: string): Promise<{ provider: string; mod
   return { provider: defaults.provider, model };
 }
 
-export function createModelInstance(provider: string, modelId: string): LanguageModelV1 {
+export function createModelInstance(provider: string, modelId: string): LanguageModel {
   switch (provider) {
     case 'bedrock': {
       // Lazy import to avoid requiring bedrock SDK when not used
@@ -58,7 +58,7 @@ export function createModelInstance(provider: string, modelId: string): Language
 }
 
 // Convenience: resolve + create in one call
-export async function getModel(key: string): Promise<LanguageModelV1> {
+export async function getModel(key: string): Promise<LanguageModel> {
   const { provider, model } = await resolveModel(key);
   return createModelInstance(provider, model);
 }
