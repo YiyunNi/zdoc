@@ -137,6 +137,9 @@ const SCHEMA_DDL = `
   CREATE INDEX IF NOT EXISTS idx_obs_sessions_agent ON obs_sessions(agent);
   CREATE INDEX IF NOT EXISTS idx_obs_sessions_user_id ON obs_sessions(user_id);
 
+  -- Migration: add user_meta column to existing obs_sessions tables
+  ALTER TABLE obs_sessions ADD COLUMN IF NOT EXISTS user_meta JSONB;
+
   -- obs_feedback: thumbs up/down ratings
   CREATE TABLE IF NOT EXISTS obs_feedback (
     id             SERIAL PRIMARY KEY,
