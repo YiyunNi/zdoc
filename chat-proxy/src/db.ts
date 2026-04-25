@@ -129,11 +129,13 @@ const SCHEMA_DDL = `
     message_count    INTEGER NOT NULL DEFAULT 0,
     first_question   TEXT,
     created_at       TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    last_active_at   TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    last_active_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    user_meta        JSONB
   );
 
   CREATE INDEX IF NOT EXISTS idx_obs_sessions_last_active ON obs_sessions(last_active_at DESC);
   CREATE INDEX IF NOT EXISTS idx_obs_sessions_agent ON obs_sessions(agent);
+  CREATE INDEX IF NOT EXISTS idx_obs_sessions_user_id ON obs_sessions(user_id);
 
   -- obs_feedback: thumbs up/down ratings
   CREATE TABLE IF NOT EXISTS obs_feedback (
@@ -149,6 +151,14 @@ const SCHEMA_DDL = `
   );
 
   CREATE INDEX IF NOT EXISTS idx_obs_feedback_created ON obs_feedback(created_at DESC);
+
+  -- runtime_config: editable model/provider configuration
+  CREATE TABLE IF NOT EXISTS runtime_config (
+    key        TEXT PRIMARY KEY,
+    provider   TEXT NOT NULL DEFAULT 'openai-compatible',
+    model      TEXT NOT NULL,
+    updated_at TIMESTAMPTZ DEFAULT NOW()
+  );
 `;
 
 // ---------------------------------------------------------------------------
@@ -480,19 +490,22 @@ export async function upsertObsSession(session: {
   model?: string;
   pageUrl?: string;
   firstQuestion?: string;
+  userMeta?: Record<string, unknown>;
 }): Promise<void> {
   const pool = getPool();
   await pool.query(
-    `INSERT INTO obs_sessions (id, user_id, agent, model, page_url, message_count, first_question, created_at, last_active_at)
-     VALUES ($1, $2, $3, $4, $5, 1, $6, NOW(), NOW())
+    `INSERT INTO obs_sessions (id, user_id, agent, model, page_url, message_count, first_question, user_meta, created_at, last_active_at)
+     VALUES ($1, $2, $3, $4, $5, 1, $6, $7, NOW(), NOW())
      ON CONFLICT (id) DO UPDATE SET
        last_active_at = NOW(),
        message_count = obs_sessions.message_count + 1,
        agent = EXCLUDED.agent,
        model = COALESCE(EXCLUDED.model, obs_sessions.model),
-       page_url = COALESCE(EXCLUDED.page_url, obs_sessions.page_url)`,
+       page_url = COALESCE(EXCLUDED.page_url, obs_sessions.page_url),
+       user_meta = COALESCE(EXCLUDED.user_meta, obs_sessions.user_meta)`,
     [session.id, session.userId, session.agent, session.model ?? null,
-     session.pageUrl ?? null, session.firstQuestion ?? null],
+     session.pageUrl ?? null, session.firstQuestion ?? null,
+     session.userMeta ? JSON.stringify(session.userMeta) : null],
   );
 }
 
@@ -560,12 +573,22 @@ export async function getObsOverview(): Promise<{
 
 export async function getObsTrends(days: number): Promise<Record<string, {date: string; value: number}[]>> {
   const pool = getPool();
-  const { rows } = await pool.query(
+
+  // Conversations: distinct sessions per day from obs_sessions
+  const { rows: sessionRows } = await pool.query(
+    `SELECT d::date::text as date, COUNT(DISTINCT s.id)::int as conversations
+     FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') d
+     LEFT JOIN obs_sessions s ON s.created_at::date = d::date
+     GROUP BY d ORDER BY d`,
+    [days],
+  );
+
+  // Messages, users, confidence from obs_events
+  const { rows: eventRows } = await pool.query(
     `SELECT
        d::date::text as date,
-       COUNT(DISTINCT e.session_id)::int as conversations,
        COUNT(e.id) FILTER (WHERE e.event_type = 'message')::int as messages,
-       COUNT(DISTINCT e.user_id)::int as users,
+       COUNT(DISTINCT e.user_id) FILTER (WHERE e.id IS NOT NULL)::int as users,
        COALESCE(ROUND(
          COUNT(e.id) FILTER (WHERE e.event_type = 'message' AND e.data->>'confidence' = 'high')
          * 100.0 / NULLIF(COUNT(e.id) FILTER (
@@ -577,11 +600,15 @@ export async function getObsTrends(days: number): Promise<Record<string, {date: 
      GROUP BY d ORDER BY d`,
     [days],
   );
+
+  // Merge: sessions data has conversations, events data has messages/users/confidence
+  const sessionMap = new Map(sessionRows.map((r: any) => [r.date, Number(r.conversations)]));
+
   return {
-    conversations: rows.map((r: any) => ({date: r.date, value: Number(r.conversations)})),
-    messages: rows.map((r: any) => ({date: r.date, value: Number(r.messages)})),
-    users: rows.map((r: any) => ({date: r.date, value: Number(r.users)})),
-    confidence: rows.map((r: any) => ({date: r.date, value: Number(r.confidence)})),
+    conversations: eventRows.map((r: any) => ({date: r.date, value: sessionMap.get(r.date) || 0})),
+    messages: eventRows.map((r: any) => ({date: r.date, value: Number(r.messages)})),
+    users: eventRows.map((r: any) => ({date: r.date, value: Number(r.users)})),
+    confidence: eventRows.map((r: any) => ({date: r.date, value: Number(r.confidence)})),
   };
 }
 
@@ -733,6 +760,104 @@ export async function listObsSessions(options: {
     })),
     total: Number(countRow.total),
   };
+}
+
+export async function getObsUsers(options: {
+  page: number;
+  pageSize: number;
+}): Promise<{ users: any[]; total: number }> {
+  const pool = getPool();
+
+  // Count distinct non-anonymous users
+  const { rows: [countRow] } = await pool.query(
+    `SELECT COUNT(DISTINCT CASE WHEN user_id != 'anonymous' THEN user_id END)::int as total
+     FROM obs_sessions`,
+  );
+
+  const offset = (options.page - 1) * options.pageSize;
+
+  // Aggregate sessions by user_id, exclude anonymous, sort by last active
+  const { rows } = await pool.query(
+    `SELECT
+       user_id,
+       COUNT(*)::int as session_count,
+       MIN(created_at) as first_active,
+       MAX(last_active_at) as last_active,
+       AVG(EXTRACT(EPOCH FROM (last_active_at - created_at)))::numeric as avg_duration_seconds,
+       (ARRAY_AGG(DISTINCT user_meta) FILTER (WHERE user_meta IS NOT NULL))[1] as user_meta,
+       ARRAY_AGG(ROW(first_question, agent, message_count, created_at) ORDER BY created_at DESC) as session_rows
+     FROM obs_sessions
+     WHERE user_id != 'anonymous'
+     GROUP BY user_id
+     ORDER BY MAX(last_active_at) DESC
+     LIMIT $1 OFFSET $2`,
+    [options.pageSize, offset],
+  );
+
+  const users = rows.map((r: any) => ({
+    userId: r.user_id,
+    sessionCount: Number(r.session_count),
+    firstActive: new Date(r.first_active).toISOString(),
+    lastActive: new Date(r.last_active).toISOString(),
+    avgDurationSeconds: Math.round(Number(r.avg_duration_seconds) || 0),
+    userMeta: r.user_meta ? (typeof r.user_meta === 'string' ? JSON.parse(r.user_meta) : r.user_meta) : null,
+    sessions: (r.session_rows || []).slice(0, 50).map((s: any) => ({
+      firstQuestion: s.f1,
+      agent: s.f2,
+      messageCount: Number(s.f3),
+      createdAt: new Date(s.f4).toISOString(),
+    })),
+    topics: (r.session_rows || []).slice(0, 5).map((s: any) => (s.f1 || '').slice(0, 80)),
+  }));
+
+  return { users, total: Number(countRow.total) };
+}
+
+export async function getTokenTrends(days: number): Promise<{date: string; inputTokens: number; outputTokens: number; cachedTokens: number}[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    `SELECT d::date::text as date,
+       COALESCE(SUM(input_tokens), 0)::bigint as "inputTokens",
+       COALESCE(SUM(output_tokens), 0)::bigint as "outputTokens",
+       COALESCE(SUM(cached_input_tokens), 0)::bigint as "cachedTokens"
+     FROM generate_series(CURRENT_DATE - ($1::int - 1), CURRENT_DATE, INTERVAL '1 day') d
+     LEFT JOIN token_usage t ON t.created_at::date = d::date
+     GROUP BY d ORDER BY d`,
+    [days],
+  );
+  return rows.map((r: any) => ({
+    date: r.date,
+    inputTokens: Number(r.inputTokens),
+    outputTokens: Number(r.outputTokens),
+    cachedTokens: Number(r.cachedTokens),
+  }));
+}
+
+export async function getRuntimeConfigAll(): Promise<{key: string; provider: string; model: string; updatedAt: string}[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    'SELECT key, provider, model, updated_at as "updatedAt" FROM runtime_config ORDER BY key',
+  );
+  return rows;
+}
+
+export async function getRuntimeConfigValue(key: string): Promise<{provider: string; model: string} | null> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query(
+    'SELECT provider, model FROM runtime_config WHERE key = $1',
+    [key],
+  );
+  return row ? { provider: row.provider, model: row.model } : null;
+}
+
+export async function setRuntimeConfigValue(key: string, provider: string, model: string): Promise<void> {
+  const pool = getPool();
+  await pool.query(
+    `INSERT INTO runtime_config (key, provider, model, updated_at)
+     VALUES ($1, $2, $3, NOW())
+     ON CONFLICT (key) DO UPDATE SET provider = EXCLUDED.provider, model = EXCLUDED.model, updated_at = NOW()`,
+    [key, provider, model],
+  );
 }
 
 export async function getObsSessionDetail(sessionId: string): Promise<{
