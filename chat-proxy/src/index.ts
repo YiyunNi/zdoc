@@ -386,6 +386,24 @@ app.post('/chat', async c => {
 
   const userId = body.userId || 'anonymous';
 
+  // Extract user metadata for observability
+  const userMeta: Record<string, unknown> = {};
+  const ua = c.req.header('user-agent');
+  if (ua) userMeta.user_agent = ua;
+  if (ip && ip !== 'unknown') {
+    userMeta.ip = ip;
+    try {
+      const { lookupGeo } = await import('./geoip.js');
+      const geo = await lookupGeo(ip);
+      if (geo) { userMeta.country = geo.country; userMeta.city = geo.city; }
+    } catch {}
+  }
+  const referer = c.req.header('referer');
+  if (referer) userMeta.referer = referer;
+  const acceptLanguage = c.req.header('accept-language');
+  if (acceptLanguage) userMeta.language = acceptLanguage;
+  if (body.screenResolution) userMeta.screen_resolution = body.screenResolution;
+
   // Session management
   const {session, isNew} = getOrCreateSession(body.sessionId);
   const windowedMessages = appendAndWindow(session, body.messages);
@@ -400,7 +418,7 @@ app.post('/chat', async c => {
         blocked: true,
         reason: guardResult.reason,
         message: lastUserMessage.content.slice(0, 200),
-      });
+      }, userMeta);
 
       return c.newResponse(
         new ReadableStream({
@@ -510,7 +528,7 @@ app.post('/chat', async c => {
             topics: routeResult.topics,
             model: activeModel,
             message: rawQuery.slice(0, 200),
-          });
+          }, userMeta);
 
           // Emit agent info (including model for observability)
           sendAndRecord('agent', JSON.stringify({
@@ -573,7 +591,7 @@ app.post('/chat', async c => {
               logEvent(session.id, userId, 'tool_call', agentConfig.type, {
                 tool: part.toolName,
                 args: (part as any).input ?? (part as any).args,
-              });
+              }, userMeta);
             } else if ((part as any).type === 'tool-result') {
               // Extract sources from any tool that returns doc URLs
               // AI SDK v6 fullStream uses .output for tool-result events
@@ -780,7 +798,7 @@ app.post('/chat', async c => {
             outputTokens: tokenUsage?.outputTokens,
             totalTokens: tokenUsage?.totalTokens,
             cachedInputTokens: tokenUsage?.cachedInputTokens,
-          });
+          }, userMeta);
 
           const tGround = Date.now() - tGroundStart;
           console.log(`[timing] route=${tRoute}ms llm=${tLlm}ms ground=${tGround}ms total=${Date.now() - tChatStart}ms tools=${toolsCalled.length} sources=${allSources.length}`);
@@ -840,7 +858,7 @@ app.post('/chat', async c => {
         } catch (err: unknown) {
           const message = err instanceof Error ? err.message : 'Internal server error';
           send('error', JSON.stringify({error: message}));
-          logEvent(session.id, userId, 'error', 'unknown', {error: message});
+          logEvent(session.id, userId, 'error', 'unknown', {error: message}, userMeta);
           recordLlmError(message);
 
           // Post-action for hard errors

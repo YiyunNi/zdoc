@@ -11,6 +11,7 @@ export interface ChatRequest {
   pageUrl?: string;
   sessionId?: string;
   userId?: string;
+  screenResolution?: string;
 }
 
 export interface Source {

@@ -14,6 +14,7 @@ export function logEvent(
   eventType: string,
   agent: string,
   data: Record<string, unknown>,
+  userMeta?: Record<string, unknown>,
 ): void {
   try {
     const timestamp = new Date().toISOString();
@@ -71,6 +72,7 @@ export function logEvent(
         model: typeof data.model === 'string' ? data.model : undefined,
         pageUrl: typeof data.pageUrl === 'string' ? data.pageUrl : undefined,
         firstQuestion: typeof data.question === 'string' ? String(data.question).slice(0, 100) : undefined,
+        userMeta,
       }).catch(() => {});
     }
   } catch {
