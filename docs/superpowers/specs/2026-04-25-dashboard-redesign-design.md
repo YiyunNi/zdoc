@@ -147,6 +147,7 @@ providers = {
 - Multiple providers can coexist (e.g., router uses OpenAI, chat uses Bedrock)
 - Provider credentials set via env vars (not editable in dashboard — security boundary)
 - Dashboard shows provider dropdown + model text input + test button per config row
+- Agent-specific overrides (`agent:general`, etc.) inherit both provider and model from `chat` when null. Setting only the model inherits the chat provider.
 - Env var fallback: if no `runtime_config` entry exists, use current env vars (zero-config migration)
 
 **Actions:**
@@ -206,13 +207,13 @@ The dashboard HTML loads without auth, and the API key input is awkward.
 
 ### New API endpoints
 - `GET /admin/api/analytics/users` — user-aggregated session data
-- `GET /admin/api/config` — runtime configuration readout
-- `PUT /admin/api/config/:key` — update model/provider config
+- `GET /admin/api/config` — runtime configuration readout (models, cache params, index stats)
+- `PUT /admin/api/config/:key` — update provider/model for a config key
+- `POST /admin/api/config/:key/test` — validate a provider+model works by sending a trivial request
 - `GET /admin/api/analytics/token-trends` — daily token aggregates
 
 ### Modified API endpoints
 - `GET /admin/api/analytics/trends` — fix conversations vs messages counting
-- `GET /admin/api/config` — return current models + cache config + index stats
 
 ### Frontend changes
 - `admin-dashboard.html` — redesign all three tabs, add login cover page
