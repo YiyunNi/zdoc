@@ -145,6 +145,7 @@ export function ChatProvider({chatEndpoint, children}: {chatEndpoint: string; ch
           pageUrl: location.pathname,
           sessionId: sessionIdRef.current,
           userId: getUserId(),
+          screenResolution: `${screen.width}x${screen.height}`,
         }),
         signal: abortRef.current.signal,
       });
