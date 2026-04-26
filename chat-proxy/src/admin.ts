@@ -2,7 +2,7 @@ import {Hono} from 'hono';
 import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
-import {loadIndex, getIndexSize} from './rag.js';
+import {loadIndex, getIndexSize, getIndexStatus} from './rag.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
 import {
   getPool,
@@ -12,8 +12,16 @@ import {
   getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
   getObsUsers, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue,
+  isDbReady,
 } from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
+import {getSessionCount} from './sessions.js';
+import {getStats} from './feedback.js';
+import {startedAt, llmHealth} from './health.js';
+import {getFeishuConfig, buildAuthorizeUrl, exchangeCodeForToken, fetchFeishuUserInfo, generateOAuthState} from './auth/feishu.js';
+import {isOAuthEnabled} from './auth/session.js';
+import {requireAuth, requireAdmin, getAuth, setSessionCookie, setStateCookie, clearStateCookie, clearSessionCookie, verifyStateCookie} from './auth/middleware.js';
+import {listAdmins, addAdmin, removeAdmin, healAdminProfile} from './auth/admin-users.js';
 
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || '';
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -37,19 +45,92 @@ adminApp.get('/dashboard', c => {
 });
 
 // ---------------------------------------------------------------------------
+// Auth routes (no prior auth required)
+// ---------------------------------------------------------------------------
+
+adminApp.get('/auth/config', c => {
+  return c.json({feishu_enabled: isOAuthEnabled()});
+});
+
+adminApp.get('/auth/feishu', async c => {
+  const cfg = getFeishuConfig();
+  if (!cfg || !cfg.redirectUri) {
+    return c.html('<html><body><h1>Feishu OAuth not configured</h1><p>Set FEISHU_APP_ID, FEISHU_APP_SECRET, and FEISHU_OAUTH_REDIRECT_URI.</p></body></html>', 503);
+  }
+  const state = generateOAuthState();
+  await setStateCookie(c, state);
+  return c.redirect(buildAuthorizeUrl(cfg, state));
+});
+
+adminApp.get('/auth/feishu/callback', async c => {
+  const code = c.req.query('code');
+  const state = c.req.query('state');
+  if (!code || !state) {
+    return c.html('<html><body><h1>Invalid callback</h1><p>Missing code or state.</p></body></html>', 400);
+  }
+
+  const validState = await verifyStateCookie(c, state);
+  await clearStateCookie(c);
+  if (!validState) {
+    return c.html('<html><body><h1>Invalid state</h1><p>CSRF validation failed.</p></body></html>', 403);
+  }
+
+  const cfg = getFeishuConfig();
+  if (!cfg) {
+    return c.html('<html><body><h1>OAuth not configured</h1></body></html>', 503);
+  }
+
+  try {
+    const tokens = await exchangeCodeForToken(cfg, code);
+    const user = await fetchFeishuUserInfo(tokens.access_token, cfg.host);
+    // Backfill placeholder admin names left over from ADMIN_BOOTSTRAP_OPEN_IDS seeding.
+    await healAdminProfile({
+      open_id: user.open_id,
+      name: user.name,
+      email: user.email,
+    }).catch(() => {});
+    await setSessionCookie(c, {
+      open_id: user.open_id,
+      name: user.name,
+      email: user.email,
+      avatar_url: user.avatar_url,
+    });
+    return c.redirect('/admin/dashboard');
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'OAuth callback failed';
+    return c.html(`<html><body><h1>Login failed</h1><p>${message}</p></body></html>`, 500);
+  }
+});
+
+adminApp.post('/auth/logout', async c => {
+  await clearSessionCookie(c);
+  return c.json({ok: true});
+});
+
+adminApp.get('/auth/me', requireAuth, c => {
+  const auth = getAuth(c)!;
+  if (auth.method === 'apikey') {
+    return c.json({role: 'admin', authMethod: 'apikey'});
+  }
+  return c.json({
+    open_id: auth.user?.open_id,
+    name: auth.user?.name,
+    email: auth.user?.email,
+    avatar_url: auth.user?.avatar_url,
+    role: auth.role,
+    authMethod: auth.method,
+  });
+});
+
+// ---------------------------------------------------------------------------
 // Auth middleware for API endpoints
 // ---------------------------------------------------------------------------
 
+adminApp.use('/api/*', requireAuth);
 adminApp.use('/api/*', async (c, next) => {
-  if (!ADMIN_API_KEY) {
-    return c.json({error: 'Admin API not configured (set ADMIN_API_KEY)'}, 503);
-  }
-  const authHeader = c.req.header('Authorization');
-  const token = authHeader?.replace('Bearer ', '');
-  if (token !== ADMIN_API_KEY) {
-    return c.json({error: 'Unauthorized'}, 401);
-  }
-  await next();
+  const m = c.req.method;
+  if (m === 'GET' || m === 'HEAD' || m === 'OPTIONS') return next();
+  return requireAdmin(c, next);
 });
 
 // ---------------------------------------------------------------------------
@@ -57,12 +138,7 @@ adminApp.use('/api/*', async (c, next) => {
 // ---------------------------------------------------------------------------
 
 // POST /admin/refresh-index — re-fetch llms.txt and rebuild BM25 index
-adminApp.post('/refresh-index', async c => {
-  // This endpoint also needs auth
-  if (!ADMIN_API_KEY) return c.json({error: 'Admin API not configured'}, 503);
-  const authHeader = c.req.header('Authorization');
-  if (authHeader?.replace('Bearer ', '') !== ADMIN_API_KEY) return c.json({error: 'Unauthorized'}, 401);
-
+adminApp.post('/refresh-index', requireAuth, requireAdmin, async c => {
   try {
     const start = Date.now();
     await loadIndex(true);
@@ -93,6 +169,84 @@ adminApp.get('/stats', async c => {
   });
 });
 
+// GET /admin/api/health — rich health data (formerly in public /health)
+adminApp.get('/api/health', async c => {
+  const now = Date.now();
+  const index = await getIndexStatus();
+  const dbOk = isDbReady();
+  let cacheStats = {totalEntries: 0, totalHits: 0};
+  let tokenSummary = {totalRequests: 0, totalInputTokens: 0, totalOutputTokens: 0, totalTokens: 0, totalCachedInputTokens: 0, cachedPercentage: 0};
+  let gapsCount = 0;
+
+  if (dbOk) {
+    try {
+      cacheStats = await getCacheStats();
+      tokenSummary = await getTokenUsageSummary();
+      gapsCount = await getDocGapsCount();
+    } catch { /* db may be locked */ }
+  }
+
+  const llmReady = llmHealth.lastSuccessAt !== null &&
+    (llmHealth.lastErrorAt === null || new Date(llmHealth.lastSuccessAt) > new Date(llmHealth.lastErrorAt));
+  const indexAgeMs = index.lastRefreshed ? now - new Date(index.lastRefreshed).getTime() : null;
+
+  return c.json({
+    ok: dbOk && (index.ready || index.chunks === 0),
+    startedAt,
+    uptime: Math.round((now - new Date(startedAt).getTime()) / 1000),
+    db: {ready: dbOk},
+    llm: {
+      ready: llmReady,
+      provider: process.env.AI_BASE_URL?.replace(/\/v\d+$/, '').replace(/^https?:\/\//, '') || '',
+      model: process.env.AI_MODEL || '',
+      lastSuccessAt: llmHealth.lastSuccessAt,
+      lastErrorAt: llmHealth.lastErrorAt,
+      lastError: llmHealth.lastError,
+      totalCalls: llmHealth.totalCalls,
+      totalErrors: llmHealth.totalErrors,
+    },
+    index: {
+      ...index,
+      ageMs: indexAgeMs,
+      ageHuman: indexAgeMs !== null ? `${Math.round(indexAgeMs / 60000)}m` : null,
+    },
+    sessions: getSessionCount(),
+    cache: cacheStats,
+    tokens: tokenSummary,
+    gaps: gapsCount,
+  });
+});
+
+// GET /admin/api/health/llm — live LLM connectivity check (makes a real API call)
+adminApp.get('/api/health/llm', async c => {
+  const {createOpenAI} = await import('@ai-sdk/openai');
+  const t0 = Date.now();
+  try {
+    const embeddingProvider = createOpenAI({
+      baseURL: process.env.AI_BASE_URL || 'https://api.openai.com/v1',
+      apiKey: process.env.AI_API_KEY || '',
+    });
+    const model = embeddingProvider.textEmbeddingModel(
+      process.env.SEMANTIC_EMBEDDING_MODEL || 'text-embedding-3-small'
+    );
+    await model.doEmbed({values: ['ping']});
+    return c.json({
+      ok: true,
+      provider: process.env.AI_BASE_URL || '',
+      model: process.env.AI_MODEL || '',
+      latencyMs: Date.now() - t0,
+    });
+  } catch (err) {
+    return c.json({
+      ok: false,
+      provider: process.env.AI_BASE_URL || '',
+      model: process.env.AI_MODEL || '',
+      latencyMs: Date.now() - t0,
+      error: (err as Error).message,
+    }, 502);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Dashboard API endpoints
 // ---------------------------------------------------------------------------
@@ -112,6 +266,9 @@ adminApp.get('/api/feedback', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
   return c.json({entries: await getObsFeedback(limit)});
 });
+
+// GET /admin/api/feedback/stats — feedback statistics
+adminApp.get('/api/feedback/stats', c => c.json(getStats()));
 
 // GET /admin/api/errors — error events
 adminApp.get('/api/errors', async c => {
@@ -300,4 +457,41 @@ adminApp.patch('/api/doc-gaps/:id', async c => {
 adminApp.get('/api/content-quality', async c => {
   const limit = parseInt(c.req.query('limit') || '50', 10);
   return c.json({issues: await getContentQuality(limit)});
+});
+
+// ---------------------------------------------------------------------------
+// Admin user management
+// ---------------------------------------------------------------------------
+
+adminApp.get('/api/admins', requireAuth, async c => {
+  return c.json({admins: await listAdmins()});
+});
+
+adminApp.post('/api/admins', requireAuth, requireAdmin, async c => {
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+  const openId = String(body.open_id || '');
+  const name = String(body.name || '');
+  if (!openId || !name) {
+    return c.json({error: 'open_id and name are required'}, 400);
+  }
+  const auth = getAuth(c)!;
+  const addedBy = auth.user?.open_id || 'apikey';
+  const admin = await addAdmin({
+    open_id: openId,
+    name,
+    email: body.email ? String(body.email) : null,
+    added_by: addedBy,
+  });
+  return c.json({ok: true, admin});
+});
+
+adminApp.delete('/api/admins/:open_id', requireAuth, requireAdmin, async c => {
+  const openId = c.req.param('open_id');
+  const removed = await removeAdmin(openId);
+  return c.json({ok: true, removed});
 });

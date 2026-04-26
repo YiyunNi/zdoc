@@ -3,7 +3,7 @@ import {cors} from 'hono/cors';
 import {streamText, stepCountIs} from 'ai';
 import {createOpenAI} from '@ai-sdk/openai';
 import type {ChatRequest} from './types.js';
-import {getOrCreateSession, appendAndWindow, shouldInjectPageContext, getSessionCount} from './sessions.js';
+import {getOrCreateSession, appendAndWindow, shouldInjectPageContext} from './sessions.js';
 import {checkGuard} from './guard.js';
 import {setActiveSectionFilter, setQueryEmbedding, searchDocs, getIndexStatus, getTitleByUrl} from './rag.js';
 import {splitParagraphs, scoreChunksPerParagraph} from './grounding.js';
@@ -14,7 +14,7 @@ import {getToolsForAgent, type ToolName} from './tools/index.js';
 import {logEvent, saveConversation, updateUserProfile} from './logger.js';
 import {adminApp} from './admin.js';
 import type {FeedbackRequest} from './types.js';
-import {recordFeedback, getStats} from './feedback.js';
+import {recordFeedback} from './feedback.js';
 import {inferSection} from './sources.js';
 import {loadRules, evaluatePrePrompt, evaluatePostResponse} from './hooks/index.js';
 import type {AgentType} from './types.js';
@@ -27,7 +27,8 @@ import {
   getSemanticCacheConfig,
 } from './semantic-cache.js';
 import type {TokenUsage} from './types.js';
-import {saveTokenUsage, isDbReady, getCacheStats, getTokenUsageSummary, getDocGapsCount} from './db.js';
+import {saveTokenUsage, isDbReady} from './db.js';
+import {startedAt, llmHealth, recordLlmSuccess, recordLlmError} from './health.js';
 import {handlePostAction} from './post-action-handler.js';
 
 const promptRules = loadRules(import.meta.url);
@@ -154,31 +155,6 @@ const RATE_LIMIT_WINDOW_MS = 60_000;
 const provider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
 
 // ---------------------------------------------------------------------------
-// LLM health tracking
-// ---------------------------------------------------------------------------
-
-const startedAt = new Date().toISOString();
-const llmHealth = {
-  lastSuccessAt: null as string | null,
-  lastErrorAt: null as string | null,
-  lastError: null as string | null,
-  totalCalls: 0,
-  totalErrors: 0,
-};
-
-export function recordLlmSuccess(): void {
-  llmHealth.lastSuccessAt = new Date().toISOString();
-  llmHealth.totalCalls++;
-}
-
-export function recordLlmError(message: string): void {
-  llmHealth.lastErrorAt = new Date().toISOString();
-  llmHealth.lastError = message;
-  llmHealth.totalCalls++;
-  llmHealth.totalErrors++;
-}
-
-// ---------------------------------------------------------------------------
 // Rate limiter (in-memory, per IP)
 // ---------------------------------------------------------------------------
 
@@ -238,8 +214,9 @@ app.use(
   '/admin/*',
   cors({
     origin: ALLOWED_ORIGINS,
-    allowMethods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
+    allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   }),
 );
 
@@ -259,17 +236,6 @@ app.get('/health', async c => {
   const now = Date.now();
   const index = await getIndexStatus();
   const dbOk = isDbReady();
-  let cacheStats = {totalEntries: 0, totalHits: 0};
-  let tokenSummary = {totalRequests: 0, totalInputTokens: 0, totalOutputTokens: 0, totalTokens: 0, totalCachedInputTokens: 0, cachedPercentage: 0};
-  let gapsCount = 0;
-
-  if (dbOk) {
-    try {
-      cacheStats = await getCacheStats();
-      tokenSummary = await getTokenUsageSummary();
-      gapsCount = await getDocGapsCount();
-    } catch { /* db may be locked */ }
-  }
 
   // LLM is considered "ready" if we've had at least one successful call
   // and no errors in the last 5 minutes
@@ -284,53 +250,15 @@ app.get('/health', async c => {
     startedAt,
     uptime: Math.round((now - new Date(startedAt).getTime()) / 1000),
     db: {ready: dbOk},
-    llm: {
-      ready: llmReady,
-      provider: AI_BASE_URL.replace(/\/v\d+$/, '').replace(/^https?:\/\//, ''),
-      model: AI_MODEL,
-      lastSuccessAt: llmHealth.lastSuccessAt,
-      lastErrorAt: llmHealth.lastErrorAt,
-      lastError: llmHealth.lastError,
-      totalCalls: llmHealth.totalCalls,
-      totalErrors: llmHealth.totalErrors,
-    },
+    llm: {ready: llmReady},
     index: {
-      ...index,
+      ready: index.ready,
+      chunks: index.chunks,
+      lastRefreshed: index.lastRefreshed,
       ageMs: indexAgeMs,
       ageHuman: indexAgeMs !== null ? `${Math.round(indexAgeMs / 60000)}m` : null,
     },
-    sessions: getSessionCount(),
-    cache: cacheStats,
-    tokens: tokenSummary,
-    gaps: gapsCount,
   });
-});
-
-// Live LLM connectivity check (makes a real API call)
-app.get('/health/llm', async c => {
-  const t0 = Date.now();
-  try {
-    // Lightweight embedding call to verify API key + connectivity
-    const embeddingProvider = createOpenAI({baseURL: AI_BASE_URL, apiKey: AI_API_KEY});
-    const model = embeddingProvider.textEmbeddingModel(
-      process.env.SEMANTIC_EMBEDDING_MODEL || 'text-embedding-3-small'
-    );
-    await model.doEmbed({values: ['ping']});
-    return c.json({
-      ok: true,
-      provider: AI_BASE_URL,
-      model: AI_MODEL,
-      latencyMs: Date.now() - t0,
-    });
-  } catch (err) {
-    return c.json({
-      ok: false,
-      provider: AI_BASE_URL,
-      model: AI_MODEL,
-      latencyMs: Date.now() - t0,
-      error: (err as Error).message,
-    }, 502);
-  }
 });
 
 // ---------------------------------------------------------------------------
@@ -919,12 +847,6 @@ app.post('/feedback', async c => {
 
   return c.json({ok: true});
 });
-
-// ---------------------------------------------------------------------------
-// GET /feedback/stats
-// ---------------------------------------------------------------------------
-
-app.get('/feedback/stats', c => c.json(getStats()));
 
 // ---------------------------------------------------------------------------
 // Admin routes

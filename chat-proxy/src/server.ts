@@ -15,13 +15,25 @@ const {app} = await import('./index.js');
 const {loadIndex} = await import('./rag.js');
 const {startSink} = await import('./log-sink.js');
 const {initDb} = await import('./db.js');
+const {isOAuthEnabled, getSessionSecret} = await import('./auth/session.js');
+const {ensureAdminUsersSchema, bootstrapAdmins} = await import('./auth/admin-users.js');
 
 const PORT = Number(process.env.PORT) || 8787;
 const INDEX_REFRESH_INTERVAL = Number(process.env.INDEX_REFRESH_INTERVAL) || 30 * 60 * 1000; // 30 min
 
 async function startup() {
+  // Validate Feishu OAuth configuration
+  if (isOAuthEnabled() && !getSessionSecret()) {
+    console.error('[Startup] FEISHU_APP_ID/FEISHU_APP_SECRET are set but ADMIN_SESSION_SECRET is missing. Aborting.');
+    process.exit(1);
+  }
+
   // Initialize PostgreSQL database
   await initDb();
+
+  // Ensure admin_users schema and bootstrap
+  await ensureAdminUsersSchema();
+  await bootstrapAdmins();
 
   // Load doc index from live site
   await loadIndex();

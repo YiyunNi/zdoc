@@ -59,6 +59,19 @@ vi.mock('./agents/index.js', () => ({
 vi.mock('./tools/index.js', () => ({
   getToolsForAgent: vi.fn(() => ({})),
 }));
+vi.mock(import('./db.js'), async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...actual as any,
+    saveTokenUsage: vi.fn(),
+    isDbReady: vi.fn(() => true),
+    getPool: vi.fn(() => ({query: vi.fn().mockResolvedValue({rows: []})})),
+    getCacheStats: vi.fn(() => ({totalEntries: 0, totalHits: 0})),
+    getTokenUsageSummary: vi.fn(() => ({totalRequests: 0, totalInputTokens: 0, totalOutputTokens: 0, totalTokens: 0, totalCachedInputTokens: 0, cachedPercentage: 0})),
+    getDocGapsCount: vi.fn(() => 0),
+  };
+});
+
 vi.mock('./feedback.js', () => ({
   recordFeedback: vi.fn(),
   getStats: vi.fn(() => ({totalUp: 10, totalDown: 2, total: 12, positiveRate: 83, recentFeedback: []})),
@@ -105,7 +118,13 @@ describe('HTTP Endpoints', () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body.ok).toBe(true);
-    expect(body.sessions).toBe(5);
+    expect(body.db).toEqual({ready: true});
+    expect(body.llm).toHaveProperty('ready');
+    expect(body.index).toHaveProperty('chunks');
+    expect(body).not.toHaveProperty('sessions');
+    expect(body).not.toHaveProperty('cache');
+    expect(body).not.toHaveProperty('tokens');
+    expect(body).not.toHaveProperty('gaps');
   });
 
   it('POST /chat with invalid JSON → 400', async () => {
@@ -202,14 +221,6 @@ describe('HTTP Endpoints', () => {
       body: JSON.stringify({sessionId: 's1'}),
     });
     expect(res.status).toBe(400);
-  });
-
-  it('GET /feedback/stats → stats object', async () => {
-    const res = await app.request('/feedback/stats');
-    expect(res.status).toBe(200);
-    const body = await res.json();
-    expect(body.totalUp).toBe(10);
-    expect(body.positiveRate).toBe(83);
   });
 
   it('rate limiting: 21st request → 429', async () => {
