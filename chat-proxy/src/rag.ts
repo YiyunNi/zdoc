@@ -537,6 +537,7 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
   const totalChunks = allChunks.length;
   let embedded = 0;
   let failed = 0;
+  embeddingProgress = { total: totalChunks, done: 0, failed: 0, active: true };
 
   console.log(`[RAG] Starting embedding backfill for ${totalChunks} chunks (batch size: ${EMBEDDING_BATCH_SIZE})`);
 
@@ -574,6 +575,11 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
         }
       }
 
+      if (embeddingProgress) {
+        embeddingProgress.done = embedded;
+        embeddingProgress.failed = failed;
+      }
+
       // Progress log every 200 chunks
       if ((i + batch.length) % 200 === 0 || i + batch.length >= totalChunks) {
         console.log(`[RAG] Embedding progress: ${Math.min(i + batch.length, totalChunks)}/${totalChunks} (embedded: ${embedded}, failed: ${failed})`);
@@ -585,9 +591,20 @@ async function backfillEmbeddings(allChunks: ParsedChunk[]): Promise<void> {
   }
 
   console.log(`[RAG] Embedding backfill complete: ${embedded} embedded, ${failed} failed out of ${totalChunks}`);
+  if (embeddingProgress) {
+    embeddingProgress.done = embedded;
+    embeddingProgress.failed = failed;
+    embeddingProgress.active = false;
+  }
 }
 
 let indexLoading = false;
+
+let embeddingProgress: {total: number; done: number; failed: number; active: boolean} | null = null;
+
+export function getEmbeddingProgress() {
+  return embeddingProgress;
+}
 
 async function fetchWithRetry(url: string, retries = 3): Promise<Response> {
   for (let i = 0; i < retries; i++) {

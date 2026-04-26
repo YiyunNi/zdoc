@@ -520,6 +520,8 @@ input, select { font-family: var(--body); }
 @media (max-width: 900px) { .settings-grid { grid-template-columns: 1fr; } }
 .settings-card { background: var(--surface); border-radius: var(--radius); padding: 18px 20px; }
 .settings-card h3 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 14px; font-family: var(--heading); }
+.settings-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.settings-card-header h3 { margin-bottom: 0; }
 
 .config-row {
   display: grid; grid-template-columns: 100px 1fr auto;
@@ -559,6 +561,14 @@ input, select { font-family: var(--body); }
 .test-result.ok { background: var(--green-bg); color: var(--green); }
 .test-result.err { background: var(--red-bg); color: var(--red); }
 .test-result.pending { background: var(--bg); color: var(--text-muted); }
+
+.env-tag {
+  display: inline-block; margin-left: 6px;
+  font-size: 9px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase;
+  padding: 1px 5px; border-radius: 3px;
+  background: var(--bg); color: var(--text-muted); border: 1px solid var(--border-light);
+}
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
 
 .kv-list { display: flex; flex-direction: column; gap: 8px; font-size: 11px; }
 .kv-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
@@ -930,20 +940,48 @@ input, select { font-family: var(--body); }
 
       <div class="settings-grid">
         <div class="settings-card">
-          <h3>Provider Profiles</h3>
-          <div class="subtitle">AI provider credentials</div>
-          <div id="providerProfilesBody">
-            <div class="empty-state">Loading…</div>
+          <div class="settings-card-header">
+            <div>
+              <h3>Provider Profiles</h3>
+              <div class="subtitle">AI provider credentials</div>
+            </div>
+            <button type="button" class="btn primary" id="btnOpenProviderModal" data-require-admin>Add</button>
           </div>
-          <button type="button" class="btn primary" id="btnOpenProviderModal" data-require-admin style="margin-top:12px">Add Provider Profile</button>
+          <div class="cs-table-wrap">
+            <table class="cs-table refined" id="providerProfilesTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Provider</th>
+                  <th>Endpoint</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
         <div class="settings-card">
-          <h3>OAuth Profiles</h3>
-          <div class="subtitle">Feishu OAuth configurations</div>
-          <div id="oauthProfilesBody">
-            <div class="empty-state">Loading…</div>
+          <div class="settings-card-header">
+            <div>
+              <h3>OAuth Profiles</h3>
+              <div class="subtitle">Feishu OAuth configurations</div>
+            </div>
+            <button type="button" class="btn primary" id="btnOpenOAuthModal" data-require-admin>Add</button>
           </div>
-          <button type="button" class="btn primary" id="btnOpenOAuthModal" data-require-admin style="margin-top:12px">Add OAuth Profile</button>
+          <div class="cs-table-wrap">
+            <table class="cs-table refined" id="oauthProfilesTable">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Provider</th>
+                  <th>App ID</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </div>
 
@@ -1022,6 +1060,7 @@ input, select { font-family: var(--body); }
   let apiKey = sessionStorage.getItem(SS_KEY) || '';
   let charts = {};
   let refreshTimer = null;
+  let editingModelKey = null;
 
   // Users tab state
   let usersPage = 1;
@@ -1347,7 +1386,7 @@ input, select { font-family: var(--body); }
     const page = getCurrentPage();
     if (page === 'dashboard') fetchDashboard();
     else if (page === 'users') fetchUsers();
-    else if (page === 'costs') fetchCosts();
+    else if (page === 'costs' && !editingModelKey) fetchCosts();
   }
 
   // ------------------------------------------------------------------
@@ -1810,7 +1849,7 @@ input, select { font-family: var(--body); }
           apiFetch('/admin/api/provider-profiles'),
           apiFetch('/admin/api/oauth-profiles'),
         ]);
-        renderModelConfig(config.models || [], providerProfiles || []);
+        renderModelConfig(config.models || [], providerProfiles || [], config.resolved || []);
         renderCacheConfig(config.cache, config.index);
         renderGaps(gaps.gaps || []);
         renderQuality(quality.issues || []);
@@ -1865,27 +1904,54 @@ input, select { font-family: var(--body); }
   }
 
   // Settings: model config rows
-  const PROVIDER_OPTIONS = ['openai-compatible', 'bedrock'];
   const CONFIG_KEYS = ['chat', 'router', 'grounding', 'rewrite', 'embedding',
                        'agent:general', 'agent:schema', 'agent:resources', 'agent:product', 'agent:code'];
   let providerProfileList = [];
 
-  function renderModelConfig(rows, profiles) {
+  // Per-profile model list cache (5 min TTL). Cleared when a profile is mutated.
+  const MODEL_CACHE_TTL_MS = 5 * 60 * 1000;
+  const modelListCache = new Map();
+  function getCachedModels(profileName) {
+    const e = modelListCache.get(profileName);
+    if (!e) return null;
+    if (Date.now() - e.fetchedAt > MODEL_CACHE_TTL_MS) {
+      modelListCache.delete(profileName);
+      return null;
+    }
+    return e.models;
+  }
+  function setCachedModels(profileName, models) {
+    modelListCache.set(profileName, {models, fetchedAt: Date.now()});
+  }
+  function invalidateModelCache(profileName) {
+    if (profileName) modelListCache.delete(profileName);
+    else modelListCache.clear();
+  }
+
+  function renderModelConfig(rows, profiles, resolved) {
     providerProfileList = profiles || [];
-    const map = new Map(rows.map(r => [r.key, r]));
+    const map = new Map((rows || []).map(r => [r.key, r]));
+    const resolvedMap = new Map((resolved || []).map(r => [r.key, r]));
     const body = $('modelConfigBody');
     body.innerHTML = CONFIG_KEYS.map(key => {
       const row = map.get(key);
-      const provider = row ? row.provider : '';
-      const model = row ? row.model : '';
-      const profileName = row ? (row.profileName || '') : '';
-      const profileLabel = profileName ? ' @' + profileName : '';
+      const eff = resolvedMap.get(key);
+      let display;
+      if (row) {
+        const profileLabel = row.profileName
+          ? ' @' + esc(row.profileName)
+          : ' <span class="env-tag" title="Resolved from environment defaults">env default</span>';
+        display = '<span class="provider">' + esc(row.provider) + '</span>' + esc(row.model) + profileLabel;
+      } else if (eff && eff.model) {
+        display = '<span class="provider">' + esc(eff.provider) + '</span>' + esc(eff.model) +
+                  '<span class="env-tag" title="Resolved from environment defaults">env default</span>';
+      } else {
+        display = '<span style="color:var(--text-muted);font-style:italic">inherits</span>';
+      }
       return (
         '<div class="config-row" data-key="' + esc(key) + '">' +
           '<div class="config-key">' + esc(key) + '</div>' +
-          '<div class="config-value-display" data-display="' + esc(key) + '">' +
-            (row ? '<span class="provider">' + esc(provider) + '</span>' + esc(model) + esc(profileLabel) : '<span style="color:var(--text-muted);font-style:italic">inherits</span>') +
-          '</div>' +
+          '<div class="config-value-display" data-display="' + esc(key) + '">' + display + '</div>' +
           '<div>' +
             '<button class="btn ghost" data-edit="' + esc(key) + '">Edit</button>' +
           '</div>' +
@@ -1898,21 +1964,60 @@ input, select { font-family: var(--body); }
     });
   }
 
+  // Build <option> HTML for the model select. If savedModel is set but missing
+  // from `models`, prepend it as a marked, selected option so it stays visible.
+  function buildModelOptions(savedModel, models) {
+    const opts = [];
+    const ids = new Set((models || []).map(m => m.id));
+    if (savedModel && !ids.has(savedModel)) {
+      opts.push('<option value="' + esc(savedModel) + '" selected>' + esc(savedModel) + ' (saved, not in list)</option>');
+    }
+    (models || []).forEach(m => {
+      const label = m.name && m.name !== m.id ? m.id + ' — ' + m.name : m.id;
+      opts.push('<option value="' + esc(m.id) + '"' + (m.id === savedModel ? ' selected' : '') + '>' + esc(label) + '</option>');
+    });
+    return opts.join('');
+  }
+
   function beginEditModelRow(key, current) {
+    editingModelKey = key;
     const row = document.querySelector('.config-row[data-key="' + CSS.escape(key) + '"]');
     if (!row) return;
-    const provider = current ? current.provider : 'openai-compatible';
-    const model = current ? current.model : '';
-    const profileName = current ? (current.profileName || '') : '';
-    const profileOptions = providerProfileList.map(p => '<option value="' + esc(p.name) + '"' + (p.name === profileName ? ' selected' : '') + '>' + esc(p.name) + '</option>').join('');
+    let provider = current ? current.provider : 'openai-compatible';
+    const savedModel = current ? current.model : '';
+    // No DB profile = env default; user can switch to a real profile via dropdown.
+    const profileName = (current && current.profileName) ? current.profileName : 'env default';
+
+    // Resolve initial provider from selected profile if any, otherwise current row.
+    const initialProfile = providerProfileList.find(p => p.name === profileName);
+    if (initialProfile) provider = initialProfile.provider_type;
+
+    const profileOptions = providerProfileList.map(p =>
+      '<option value="' + esc(p.name) + '"' + (p.name === profileName ? ' selected' : '') + '>' + esc(p.name) + '</option>'
+    ).join('');
+
+    // Initial model dropdown: cached models if available for the selected profile,
+    // otherwise just the saved value plus a "click Test" placeholder.
+    const cached = profileName ? getCachedModels(profileName) : null;
+    let modelOptionsHtml;
+    if (cached) {
+      modelOptionsHtml = buildModelOptions(savedModel, cached);
+    } else {
+      const opts = [];
+      if (savedModel) {
+        opts.push('<option value="' + esc(savedModel) + '" selected>' + esc(savedModel) + '</option>');
+      }
+      opts.push('<option value="" disabled' + (savedModel ? '' : ' selected') + '>— click Test to load models —</option>');
+      modelOptionsHtml = opts.join('');
+    }
+
     row.innerHTML =
       '<div class="config-key">' + esc(key) + '</div>' +
       '<div class="config-edit-row">' +
-        '<select id="prov_' + esc(key) + '">' +
-          PROVIDER_OPTIONS.map(p => '<option value="' + esc(p) + '"' + (p === provider ? ' selected' : '') + '>' + esc(p) + '</option>').join('') +
-        '</select>' +
-        '<input id="mod_' + esc(key) + '" placeholder="model id" value="' + esc(model) + '" />' +
-        '<select id="prof_' + esc(key) + '"><option value="">— profile —</option>' + profileOptions + '</select>' +
+        '<input type="hidden" id="prov_' + esc(key) + '" value="' + esc(provider) + '" />' +
+        '<span id="prov_label_' + esc(key) + '" style="font-size:10px;color:var(--text-muted);padding:5px 8px;border:1px solid #d8dae0;border-radius:5px;background:#f8f9fb;white-space:nowrap;">' + esc(provider) + '</span>' +
+        '<select id="mod_' + esc(key) + '">' + modelOptionsHtml + '</select>' +
+        '<select id="prof_' + esc(key) + '">' + profileOptions + '</select>' +
         '<span class="test-result" id="testres_' + esc(key) + '" style="display:none"></span>' +
       '</div>' +
       '<div style="display:flex;gap:6px">' +
@@ -1923,12 +2028,53 @@ input, select { font-family: var(--body); }
 
     row.querySelector('button[data-save]').addEventListener('click', () => saveModelRow(key));
     row.querySelector('button[data-test]').addEventListener('click', () => testModelRow(key));
-    row.querySelector('button[data-cancel]').addEventListener('click', () => fetchCosts());
+    row.querySelector('button[data-cancel]').addEventListener('click', () => { editingModelKey = null; fetchCosts(); });
+
+    const profSelect = $('prof_' + key);
+    if (profSelect) {
+      profSelect.addEventListener('change', () => {
+        const selected = providerProfileList.find(p => p.name === profSelect.value);
+        const newProvider = selected ? selected.provider_type : 'openai-compatible';
+        const provInput = $('prov_' + key);
+        const provLabel = $('prov_label_' + key);
+        if (provInput) provInput.value = newProvider;
+        if (provLabel) provLabel.textContent = newProvider;
+
+        // Re-populate model select: from cache if available, otherwise show
+        // saved value + click-test placeholder.
+        const modSelect = $('mod_' + key);
+        if (modSelect) {
+          const cur = $('mod_' + key).value;
+          const cachedForProfile = profSelect.value ? getCachedModels(profSelect.value) : null;
+          if (cachedForProfile) {
+            modSelect.innerHTML = buildModelOptions(cur || savedModel, cachedForProfile);
+          } else {
+            const opts = [];
+            const v = cur || savedModel;
+            if (v) opts.push('<option value="' + esc(v) + '" selected>' + esc(v) + '</option>');
+            opts.push('<option value="" disabled' + (v ? '' : ' selected') + '>— click Test to load models —</option>');
+            modSelect.innerHTML = opts.join('');
+          }
+        }
+
+        // Toggle Test button enabled state.
+        const testBtn = row.querySelector('button[data-test]');
+        if (testBtn) {
+          if (profSelect.value) {
+            testBtn.removeAttribute('disabled');
+            testBtn.removeAttribute('title');
+          } else {
+            testBtn.setAttribute('disabled', '');
+            testBtn.setAttribute('title', 'Select a profile to test');
+          }
+        }
+      });
+    }
   }
 
   async function saveModelRow(key) {
     const provider = $('prov_' + key).value;
-    const model = $('mod_' + key).value.trim();
+    const model = ($('mod_' + key).value || '').trim();
     const profileName = $('prof_' + key).value;
     if (!model) {
       const el = $('testres_' + key);
@@ -1943,6 +2089,7 @@ input, select { font-family: var(--body); }
       await apiFetch('/admin/api/config/' + encodeURIComponent(key), {
         method: 'PUT', body: JSON.stringify(body),
       });
+      editingModelKey = null;
       fetchCosts();
     } catch (e) {
       const el = $('testres_' + key);
@@ -1953,22 +2100,40 @@ input, select { font-family: var(--body); }
   }
 
   async function testModelRow(key) {
+    const profSelect = $('prof_' + key);
+    const profileName = profSelect ? profSelect.value : '';
     const el = $('testres_' + key);
     el.style.display = 'inline-block';
+    if (!profileName) {
+      el.className = 'test-result err';
+      el.textContent = 'Select a profile first';
+      return;
+    }
     el.className = 'test-result pending';
     el.textContent = 'Testing…';
     try {
-      const r = await apiFetch('/admin/api/config/' + encodeURIComponent(key) + '/test', { method: 'POST' });
-      if (r && r.ok) {
+      const r = await apiFetch('/admin/api/provider-profiles/' + encodeURIComponent(profileName) + '/list-models', { method: 'POST' });
+      if (r && r.ok && Array.isArray(r.models)) {
+        setCachedModels(profileName, r.models);
+        const modSelect = $('mod_' + key);
+        const savedModel = ($('mod_' + key).value || '').trim();
+        if (modSelect) {
+          modSelect.innerHTML = buildModelOptions(savedModel, r.models);
+        }
         el.className = 'test-result ok';
-        el.textContent = 'OK';
+        el.textContent = 'Loaded ' + r.models.length + ' model' + (r.models.length === 1 ? '' : 's');
+        el.title = '';
       } else {
         el.className = 'test-result err';
-        el.textContent = (r && r.error) ? String(r.error).slice(0, 60) : 'Failed';
+        const msg = (r && r.error) ? String(r.error) : 'Failed';
+        el.textContent = msg.slice(0, 80);
+        el.title = msg;
       }
     } catch (e) {
       el.className = 'test-result err';
-      el.textContent = (e.message || 'Failed').slice(0, 60);
+      const msg = e.message || 'Failed';
+      el.textContent = msg.slice(0, 80);
+      el.title = msg;
     }
   }
 
@@ -2076,33 +2241,39 @@ input, select { font-family: var(--body); }
 
   // Provider profiles
   function renderProviderProfiles(profiles) {
-    const body = $('providerProfilesBody');
-    if (!body) return;
+    const table = $('providerProfilesTable');
+    if (!table) return;
+    const tbody = table.querySelector('tbody');
     if (profiles.length === 0) {
-      body.innerHTML = '<div class="empty-state">No provider profiles configured</div>';
-    } else {
-      body.innerHTML = profiles.map(p =>
-        '<div class="config-row" data-pp="' + esc(p.name) + '">' +
-          '<div class="config-key">' + esc(p.name) + '</div>' +
-          '<div class="config-value-display">' +
-            '<span class="provider">' + esc(p.provider_type) + '</span>' +
-            (p.base_url ? esc(p.base_url) : (p.region ? 'region ' + esc(p.region) : '')) +
-          '</div>' +
-          '<div>' +
-            '<button class="btn ghost" data-remove-pp="' + esc(p.name) + '" data-require-admin>Remove</button>' +
-          '</div>' +
-        '</div>'
-      ).join('');
-      body.querySelectorAll('button[data-remove-pp]').forEach(btn => {
-        btn.addEventListener('click', () => deleteProviderProfile(btn.dataset.removePp));
-      });
+      tbody.innerHTML = '<tr><td colspan="4" class="empty-state">No provider profiles configured</td></tr>';
+      return;
     }
+    tbody.innerHTML = profiles.map(p => {
+      const endpoint = p.base_url ? p.base_url : (p.region ? 'region ' + p.region : '—');
+      const isEnv = p.is_env === true;
+      const nameCell = isEnv
+        ? esc(p.name) + ' <span class="chip chip-neutral">env</span>'
+        : esc(p.name);
+      const actionCell = isEnv
+        ? '<span class="cell-meta" title="Reserved — derived from environment variables">reserved</span>'
+        : '<button class="btn ghost" data-remove-pp="' + esc(p.name) + '" data-require-admin>Remove</button>';
+      return '<tr data-pp="' + esc(p.name) + '">' +
+        '<td class="cell-primary">' + nameCell + '</td>' +
+        '<td><span class="chip chip-blue">' + esc(p.provider_type) + '</span></td>' +
+        '<td class="cell-meta">' + esc(endpoint) + '</td>' +
+        '<td class="cell-actions">' + actionCell + '</td>' +
+      '</tr>';
+    }).join('');
+    tbody.querySelectorAll('button[data-remove-pp]').forEach(btn => {
+      btn.addEventListener('click', () => deleteProviderProfile(btn.dataset.removePp));
+    });
   }
 
   async function deleteProviderProfile(name) {
     if (!confirm('Delete provider profile "' + name + '"?')) return;
     try {
       await apiFetch('/admin/api/provider-profiles/' + encodeURIComponent(name), { method: 'DELETE' });
+      invalidateModelCache(name);
       fetchCosts();
     } catch (e) {
       alert(e.message || 'Delete failed');
@@ -2116,10 +2287,12 @@ input, select { font-family: var(--body); }
     $('ppAccessKeyField').style.display = isBedrock ? 'block' : 'none';
     $('ppSecretKeyField').style.display = isBedrock ? 'block' : 'none';
     $('ppSessionTokenField').style.display = isBedrock ? 'block' : 'none';
+    $('ppBaseUrlField').style.display = isBedrock ? 'none' : 'block';
+    $('ppRegionField').style.display = isBedrock ? 'block' : 'none';
   }
-  if ($('ppType')) {
-    $('ppType').addEventListener('change', updateProviderCredentialFields);
-  }
+  document.addEventListener('change', (e) => {
+    if (e.target.id === 'ppType') updateProviderCredentialFields();
+  });
 
   function openProviderModal() {
     $('providerModal').classList.add('active');
@@ -2128,82 +2301,77 @@ input, select { font-family: var(--body); }
   }
   function closeProviderModal() {
     $('providerModal').classList.remove('active');
-    $('ppName').value = '';
-    $('ppApiKey').value = '';
-    $('ppAccessKey').value = '';
-    $('ppSecretKey').value = '';
-    $('ppSessionToken').value = '';
-    $('ppBaseUrl').value = '';
-    $('ppRegion').value = '';
+    const fields = ['ppName','ppApiKey','ppAccessKey','ppSecretKey','ppSessionToken','ppBaseUrl','ppRegion'];
+    fields.forEach(id => { const el = $(id); if (el) el.value = ''; });
   }
   if ($('btnOpenProviderModal')) {
     $('btnOpenProviderModal').addEventListener('click', openProviderModal);
   }
-  if ($('btnCancelProviderModal')) {
-    $('btnCancelProviderModal').addEventListener('click', closeProviderModal);
-  }
-  if ($('providerModal')) {
-    $('providerModal').addEventListener('click', (e) => {
-      if (e.target === $('providerModal')) closeProviderModal();
-    });
+  async function handleAddProvider() {
+    const name = $('ppName').value.trim();
+    const provider_type = $('ppType').value;
+    const base_url = $('ppBaseUrl').value.trim() || null;
+    const region = $('ppRegion').value.trim() || null;
+    let credentials;
+    if (provider_type === 'bedrock') {
+      const access_key_id = $('ppAccessKey').value.trim();
+      const secret_access_key = $('ppSecretKey').value.trim();
+      const session_token = $('ppSessionToken').value.trim() || undefined;
+      if (!access_key_id || !secret_access_key) { alert('Access key ID and secret access key required'); return; }
+      credentials = { access_key_id, secret_access_key };
+      if (session_token) credentials.session_token = session_token;
+    } else {
+      const api_key = $('ppApiKey').value.trim();
+      if (!api_key) { alert('API key required'); return; }
+      credentials = { api_key };
+    }
+    try {
+      await apiFetch('/admin/api/provider-profiles', {
+        method: 'POST',
+        body: JSON.stringify({ name, provider_type, base_url, region, credentials }),
+      });
+      invalidateModelCache(name);
+      closeProviderModal();
+      fetchCosts();
+    } catch (e) {
+      alert(e.message || 'Add failed');
+    }
   }
 
-  if ($('btnAddProvider')) {
-    $('btnAddProvider').addEventListener('click', async () => {
-      const name = $('ppName').value.trim();
-      const provider_type = $('ppType').value;
-      const base_url = $('ppBaseUrl').value.trim() || null;
-      const region = $('ppRegion').value.trim() || null;
-      let credentials;
-      if (provider_type === 'bedrock') {
-        const access_key_id = $('ppAccessKey').value.trim();
-        const secret_access_key = $('ppSecretKey').value.trim();
-        const session_token = $('ppSessionToken').value.trim() || undefined;
-        if (!access_key_id || !secret_access_key) { alert('Access key ID and secret access key required'); return; }
-        credentials = { access_key_id, secret_access_key };
-        if (session_token) credentials.session_token = session_token;
-      } else {
-        const api_key = $('ppApiKey').value.trim();
-        if (!api_key) { alert('API key required'); return; }
-        credentials = { api_key };
-      }
-      try {
-        await apiFetch('/admin/api/provider-profiles', {
-          method: 'POST',
-          body: JSON.stringify({ name, provider_type, base_url, region, credentials }),
-        });
-        closeProviderModal();
-        fetchCosts();
-      } catch (e) {
-        alert(e.message || 'Add failed');
-      }
-    });
-  }
+  // Modal interactions via event delegation (elements are parsed after this script)
+  document.addEventListener('click', (e) => {
+    if (e.target.id === 'btnCancelProviderModal') { closeProviderModal(); return; }
+    if (e.target.id === 'btnAddProvider') { handleAddProvider(); return; }
+    const providerModal = $('providerModal');
+    if (providerModal && e.target === providerModal) { closeProviderModal(); }
+  });
 
   // OAuth profiles
   function renderOAuthProfiles(profiles) {
-    const body = $('oauthProfilesBody');
-    if (!body) return;
+    const table = $('oauthProfilesTable');
+    if (!table) return;
+    const tbody = table.querySelector('tbody');
     if (profiles.length === 0) {
-      body.innerHTML = '<div class="empty-state">No OAuth profiles configured</div>';
-    } else {
-      body.innerHTML = profiles.map(p =>
-        '<div class="config-row" data-op="' + esc(p.name) + '">' +
-          '<div class="config-key">' + esc(p.name) + (p.is_active ? ' <span style="color:var(--green);font-size:10px">active</span>' : '') + '</div>' +
-          '<div class="config-value-display">' + esc(p.provider_type) + ' · ' + esc(p.app_id) + '</div>' +
-          '<div style="display:flex;gap:6px">' +
-            (p.is_active ? '' : '<button class="btn primary" data-activate-op="' + esc(p.name) + '" data-require-admin>Activate</button>') +
-            '<button class="btn ghost" data-remove-op="' + esc(p.name) + '" data-require-admin>Remove</button>' +
-          '</div>' +
-        '</div>'
-      ).join('');
-      body.querySelectorAll('button[data-remove-op]').forEach(btn => {
-        btn.addEventListener('click', () => deleteOAuthProfile(btn.dataset.removeOp));
-      });
-      body.querySelectorAll('button[data-activate-op]').forEach(btn => {
-        btn.addEventListener('click', () => activateOAuthProfile(btn.dataset.activateOp));
-      });
+      tbody.innerHTML = '<tr><td colspan="4" class="empty-state">No OAuth profiles configured</td></tr>';
+      return;
     }
+    tbody.innerHTML = profiles.map(p => {
+      const activeChip = p.is_active ? ' <span class="chip chip-green">active</span>' : '';
+      const actions = (p.is_active ? '' : '<button class="btn primary" data-activate-op="' + esc(p.name) + '" data-require-admin>Activate</button> ') +
+        '<button class="btn ghost" data-remove-op="' + esc(p.name) + '" data-require-admin>Remove</button>';
+      return '<tr data-op="' + esc(p.name) + '">' +
+        '<td class="cell-primary">' + esc(p.name) + activeChip + '</td>' +
+        '<td><span class="chip chip-blue">' + esc(p.provider_type) + '</span></td>' +
+        '<td class="cell-meta">' + esc(p.app_id) + '</td>' +
+        '<td class="cell-actions">' + actions + '</td>' +
+      '</tr>';
+    }).join('');
+    tbody.querySelectorAll('button[data-remove-op]').forEach(btn => {
+      btn.addEventListener('click', () => deleteOAuthProfile(btn.dataset.removeOp));
+    });
+    tbody.querySelectorAll('button[data-activate-op]').forEach(btn => {
+      btn.addEventListener('click', () => activateOAuthProfile(btn.dataset.activateOp));
+    });
   }
 
   async function deleteOAuthProfile(name) {
@@ -2230,50 +2398,70 @@ input, select { font-family: var(--body); }
   }
   function closeOAuthModal() {
     $('oauthModal').classList.remove('active');
-    $('opName').value = '';
-    $('opAppId').value = '';
-    $('opAppSecret').value = '';
-    $('opHost').value = '';
-    $('opRedirectUri').value = '';
+    const fields = ['opName','opAppId','opAppSecret','opHost','opRedirectUri'];
+    fields.forEach(id => { const el = $(id); if (el) el.value = ''; });
   }
   if ($('btnOpenOAuthModal')) {
     $('btnOpenOAuthModal').addEventListener('click', openOAuthModal);
   }
-  if ($('btnCancelOAuthModal')) {
-    $('btnCancelOAuthModal').addEventListener('click', closeOAuthModal);
-  }
-  if ($('oauthModal')) {
-    $('oauthModal').addEventListener('click', (e) => {
-      if (e.target === $('oauthModal')) closeOAuthModal();
-    });
+  async function handleAddOAuth() {
+    const name = $('opName').value.trim();
+    const app_id = $('opAppId').value.trim();
+    const app_secret = $('opAppSecret').value.trim();
+    const host = $('opHost').value.trim() || null;
+    const redirect_uri = $('opRedirectUri').value.trim() || null;
+    if (!name || !app_id || !app_secret) { alert('Name, app_id, and app_secret required'); return; }
+    try {
+      await apiFetch('/admin/api/oauth-profiles', {
+        method: 'POST',
+        body: JSON.stringify({ name, provider_type: 'feishu', app_id, host, redirect_uri, credentials: { app_secret } }),
+      });
+      closeOAuthModal();
+      fetchCosts();
+    } catch (e) {
+      alert(e.message || 'Add failed');
+    }
   }
 
-  if ($('btnAddOAuth')) {
-    $('btnAddOAuth').addEventListener('click', async () => {
-      const name = $('opName').value.trim();
-      const app_id = $('opAppId').value.trim();
-      const app_secret = $('opAppSecret').value.trim();
-      const host = $('opHost').value.trim() || null;
-      const redirect_uri = $('opRedirectUri').value.trim() || null;
-      if (!name || !app_id || !app_secret) { alert('Name, app_id, and app_secret required'); return; }
-      try {
-        await apiFetch('/admin/api/oauth-profiles', {
-          method: 'POST',
-          body: JSON.stringify({ name, provider_type: 'feishu', app_id, host, redirect_uri, credentials: { app_secret } }),
-        });
-        closeOAuthModal();
-        fetchCosts();
-      } catch (e) {
-        alert(e.message || 'Add failed');
-      }
-    });
-  }
+  // Modal interactions via event delegation (elements are parsed after this script)
+  document.addEventListener('click', (e) => {
+    if (e.target.id === 'btnCancelOAuthModal') { closeOAuthModal(); return; }
+    if (e.target.id === 'btnAddOAuth') { handleAddOAuth(); return; }
+    const oauthModal = $('oauthModal');
+    if (oauthModal && e.target === oauthModal) { closeOAuthModal(); }
+  });
+
+  // Close modals on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if ($('providerModal') && $('providerModal').classList.contains('active')) closeProviderModal();
+      if ($('oauthModal') && $('oauthModal').classList.contains('active')) closeOAuthModal();
+    }
+  });
 
   // Action buttons
   $('btnRefreshIndex').addEventListener('click', async () => {
     const status = $('actionStatus');
     status.className = 'action-status';
     status.textContent = 'Refreshing index…';
+    let pollInterval = null;
+    function stopPolling() {
+      if (pollInterval) { clearInterval(pollInterval); pollInterval = null; }
+    }
+    async function pollEmbedding() {
+      try {
+        const s = await apiFetch('/admin/stats');
+        const em = s && s.embedding;
+        if (em && em.active) {
+          status.className = 'action-status';
+          status.textContent = 'Embedding: ' + em.done + '/' + em.total + ' done' + (em.failed ? ' · ' + em.failed + ' failed' : '');
+        } else if (em && !em.active && em.total > 0) {
+          status.className = 'action-status ok';
+          status.textContent = 'Embedding complete: ' + em.done + '/' + em.total + ' done' + (em.failed ? ' · ' + em.failed + ' failed' : '');
+          stopPolling();
+        }
+      } catch {}
+    }
     try {
       const r = await fetch('/admin/refresh-index', {
         method: 'POST', headers: { Authorization: 'Bearer ' + apiKey },
@@ -2283,9 +2471,15 @@ input, select { font-family: var(--body); }
       const j = await r.json();
       status.className = 'action-status ok';
       status.textContent = 'Refreshed · ' + (j.chunks || 0) + ' chunks · ' + (j.took || '');
+      // Start polling for embedding progress
+      pollEmbedding();
+      pollInterval = setInterval(pollEmbedding, 2000);
+      // Stop polling after 5 minutes just in case
+      setTimeout(stopPolling, 5 * 60 * 1000);
     } catch (e) {
       status.className = 'action-status err';
       status.textContent = 'Failed: ' + (e.message || 'unknown');
+      stopPolling();
     }
   });
 
@@ -2436,11 +2630,11 @@ input, select { font-family: var(--body); }
         <option value="bedrock">bedrock</option>
       </select>
     </div>
-    <div class="modal-field">
+    <div class="modal-field" id="ppBaseUrlField">
       <label>Base URL</label>
       <input type="text" id="ppBaseUrl" placeholder="https://api.example.com/v1 (optional)" />
     </div>
-    <div class="modal-field">
+    <div class="modal-field" id="ppRegionField" style="display:none">
       <label>Region</label>
       <input type="text" id="ppRegion" placeholder="us-east-1 (optional)" />
     </div>

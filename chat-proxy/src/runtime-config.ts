@@ -29,6 +29,8 @@ const ENV_DEFAULTS: Record<string, { provider: string; modelEnv: string; default
   'agent:code':     { provider: 'openai-compatible', modelEnv: 'CODE_MODEL',          defaultModel: '' },
 };
 
+export const CONFIG_KEYS = Object.keys(ENV_DEFAULTS);
+
 // ---------------------------------------------------------------------------
 // resolveModel — returns ResolvedModel with profile credentials or env fallback
 // ---------------------------------------------------------------------------

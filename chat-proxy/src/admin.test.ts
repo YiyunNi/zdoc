@@ -268,7 +268,7 @@ describe('adminApp', () => {
     delete process.env.FEISHU_APP_SECRET;
   });
 
-  it('GET /api/provider-profiles returns profiles array', async () => {
+  it('GET /api/provider-profiles returns env default first, then DB profiles', async () => {
     process.env.ADMIN_API_KEY = 'secret-key';
     vi.doMock('./db.js', () => createDbMock({
       listProviderProfiles: vi.fn().mockResolvedValue([
@@ -283,7 +283,9 @@ describe('adminApp', () => {
     expect(res.status).toBe(200);
     const body = await res.json() as any;
     expect(body).toBeInstanceOf(Array);
-    expect(body[0].name).toBe('openai');
+    expect(body[0].name).toBe('env default');
+    expect(body[0].is_env).toBe(true);
+    expect(body[1].name).toBe('openai');
     process.env.ADMIN_API_KEY = '';
   });
 

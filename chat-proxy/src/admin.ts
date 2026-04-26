@@ -2,7 +2,7 @@ import {Hono} from 'hono';
 import {readFileSync} from 'fs';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
-import {loadIndex, getIndexSize, getIndexStatus} from './rag.js';
+import {loadIndex, getIndexSize, getIndexStatus, getEmbeddingProgress} from './rag.js';
 import {invalidateSemanticCache, getCacheStats, getCacheEntriesCount, getSemanticCacheConfig, invalidateCacheEntry} from './semantic-cache.js';
 import {
   getPool,
@@ -16,7 +16,8 @@ import {
   listProviderProfiles, getProviderProfile, upsertProviderProfile, deleteProviderProfile,
   listOAuthProfiles, getActiveOAuthProfile, upsertOAuthProfile, setOAuthProfileActive, deleteOAuthProfile,
 } from './db.js';
-import {resolveModel, createModelInstance} from './runtime-config.js';
+import {resolveModel, createModelInstance, CONFIG_KEYS} from './runtime-config.js';
+import {listModelsForProfile} from './provider-models.js';
 import {getSessionCount} from './sessions.js';
 import {getStats} from './feedback.js';
 import {startedAt, llmHealth} from './health.js';
@@ -168,6 +169,7 @@ adminApp.get('/stats', async c => {
       config: cacheConfig,
     },
     token_usage: tokenSummary,
+    embedding: getEmbeddingProgress(),
   });
 });
 
@@ -338,15 +340,24 @@ adminApp.get('/api/analytics/token-trends', async c => {
 
 // GET /admin/api/config — runtime configuration readout
 adminApp.get('/api/config', async c => {
-  const [dbConfig, cacheConfig] = await Promise.all([
+  const [dbConfig, cacheConfig, resolvedEntries] = await Promise.all([
     getRuntimeConfigAll(),
     Promise.resolve(getSemanticCacheConfig()),
+    Promise.all(CONFIG_KEYS.map(async k => {
+      try {
+        const r = await resolveModel(k);
+        return {key: k, source: r.source, provider: r.provider, model: r.model};
+      } catch {
+        return {key: k, source: 'env', provider: 'openai-compatible', model: ''};
+      }
+    })),
   ]);
   const {rows: [chunkCount]} = await getPool().query('SELECT COUNT(*)::int as count FROM doc_chunks');
   const {rows: [lastBuild]} = await getPool().query("SELECT value FROM metadata WHERE key = 'last_build'");
 
   return c.json({
     models: dbConfig,
+    resolved: resolvedEntries,
     cache: cacheConfig,
     index: {
       totalChunks: chunkCount?.count || 0,
@@ -369,7 +380,9 @@ adminApp.put('/api/config/:key', requireAuth, requireAdmin, async c => {
   const provider = String(body.provider || 'openai-compatible');
   const model = String(body.model || '');
   if (!model) return c.json({error: 'model is required'}, 400);
-  const profileName = body.profileName ? String(body.profileName) : null;
+  const rawProfile = body.profileName ? String(body.profileName) : null;
+  // 'env default' is a synthetic profile — store as null in DB so resolution falls back to env.
+  const profileName = rawProfile === 'env default' ? null : rawProfile;
 
   await setRuntimeConfigValue(key, provider, model, profileName);
   return c.json({ok: true, key, provider, model, profileName});
@@ -503,8 +516,40 @@ adminApp.delete('/api/admins/:open_id', requireAuth, requireAdmin, async c => {
 // Provider profiles
 // ---------------------------------------------------------------------------
 
+// Synthetic profile name representing env-var fallback. Reserved — cannot be
+// created/edited/deleted; treated specially by list-models and PUT /api/config/:key.
+const ENV_DEFAULT_NAME = 'env default';
+
+function buildEnvDefaultDisplay() {
+  return {
+    name: ENV_DEFAULT_NAME,
+    provider_type: 'openai-compatible',
+    base_url: process.env.AI_BASE_URL || 'https://api.openai.com/v1',
+    region: null as string | null,
+    credentials: {} as Record<string, string>,
+    notes: 'Falls back to env vars (AI_BASE_URL, AI_API_KEY)',
+    is_env: true,
+    created_at: '',
+    updated_at: '',
+  };
+}
+
+function buildEnvDefaultProfileFull() {
+  return {
+    name: ENV_DEFAULT_NAME,
+    provider_type: 'openai-compatible',
+    base_url: process.env.AI_BASE_URL || 'https://api.openai.com/v1',
+    region: null as string | null,
+    credentials: {api_key: process.env.AI_API_KEY || ''},
+    notes: null as string | null,
+    created_at: '',
+    updated_at: '',
+  };
+}
+
 adminApp.get('/api/provider-profiles', requireAuth, async c => {
-  return c.json(await listProviderProfiles());
+  const profiles = await listProviderProfiles();
+  return c.json([buildEnvDefaultDisplay(), ...profiles]);
 });
 
 adminApp.post('/api/provider-profiles', requireAuth, requireAdmin, async c => {
@@ -516,6 +561,9 @@ adminApp.post('/api/provider-profiles', requireAuth, requireAdmin, async c => {
   }
   const name = String(body.name || '').trim();
   if (!name) return c.json({error: 'name is required'}, 400);
+  if (name === ENV_DEFAULT_NAME) {
+    return c.json({error: '"env default" is a reserved profile name'}, 400);
+  }
 
   const credentials: Record<string, string> = {};
   if (typeof body.credentials === 'object' && body.credentials !== null) {
@@ -538,6 +586,9 @@ adminApp.post('/api/provider-profiles', requireAuth, requireAdmin, async c => {
 
 adminApp.put('/api/provider-profiles/:name', requireAuth, requireAdmin, async c => {
   const name = c.req.param('name');
+  if (name === ENV_DEFAULT_NAME) {
+    return c.json({error: '"env default" is a reserved profile and cannot be edited'}, 400);
+  }
   let body: Record<string, unknown>;
   try {
     body = await c.req.json();
@@ -566,8 +617,32 @@ adminApp.put('/api/provider-profiles/:name', requireAuth, requireAdmin, async c 
 
 adminApp.delete('/api/provider-profiles/:name', requireAuth, requireAdmin, async c => {
   const name = c.req.param('name');
+  if (name === ENV_DEFAULT_NAME) {
+    return c.json({error: '"env default" is a reserved profile and cannot be removed'}, 400);
+  }
   await deleteProviderProfile(name);
   return c.json({ok: true});
+});
+
+// POST /admin/api/provider-profiles/:name/list-models — list available models
+// from the profile's provider (also serves as a credential test: HTTP 200 = good).
+// Special case: name === ENV_DEFAULT_NAME builds a synthetic profile from env vars.
+adminApp.post('/api/provider-profiles/:name/list-models', requireAuth, requireAdmin, async c => {
+  const name = c.req.param('name');
+  const profile = name === ENV_DEFAULT_NAME
+    ? buildEnvDefaultProfileFull()
+    : await getProviderProfile(name);
+  if (!profile) return c.json({ok: false, error: 'Profile not found'}, 404);
+  if (name === ENV_DEFAULT_NAME && !profile.credentials.api_key) {
+    return c.json({ok: false, provider: profile.provider_type, error: 'AI_API_KEY env var is not set'}, 400);
+  }
+  try {
+    const models = await listModelsForProfile(profile);
+    return c.json({ok: true, provider: profile.provider_type, models});
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return c.json({ok: false, provider: profile.provider_type, error: msg}, 400);
+  }
 });
 
 // ---------------------------------------------------------------------------
