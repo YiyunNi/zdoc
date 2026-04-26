@@ -1,5 +1,36 @@
 import {describe, it, expect, vi, beforeEach} from 'vitest';
 
+function createDbMock(overrides: Record<string, unknown> = {}) {
+  return {
+    getPool: () => ({query: vi.fn().mockResolvedValue({rows: []})}),
+    isDbReady: () => true,
+    getTokenUsageByModel: vi.fn().mockResolvedValue([]),
+    getTokenUsageSummary: vi.fn().mockResolvedValue([]),
+    getTokenUsageCount: vi.fn().mockResolvedValue(0),
+    getRecentTokenUsage: vi.fn().mockResolvedValue([]),
+    getDocGaps: vi.fn().mockResolvedValue([]),
+    resolveDocGap: vi.fn().mockResolvedValue(undefined),
+    getDocGapsCount: vi.fn().mockResolvedValue(0),
+    getContentQuality: vi.fn().mockResolvedValue([]),
+    getObsOverview: vi.fn().mockResolvedValue({}),
+    getObsTrends: vi.fn().mockResolvedValue({conversations: [], messages: [], users: [], confidence: []}),
+    getObsRecentActivity: vi.fn().mockResolvedValue([]),
+    getObsLiveSessions: vi.fn().mockResolvedValue([]),
+    getObsPerformance: vi.fn().mockResolvedValue([]),
+    getObsFeedback: vi.fn().mockResolvedValue([]),
+    getObsErrors: vi.fn().mockResolvedValue([]),
+    getObsLowConfidence: vi.fn().mockResolvedValue([]),
+    listObsSessions: vi.fn().mockResolvedValue([]),
+    getObsSessionDetail: vi.fn().mockResolvedValue(null),
+    getObsTokenUsage: vi.fn().mockResolvedValue([]),
+    getObsUsers: vi.fn().mockResolvedValue({users: [], total: 0}),
+    getTokenTrends: vi.fn().mockResolvedValue([]),
+    getRuntimeConfigAll: vi.fn().mockResolvedValue([]),
+    setRuntimeConfigValue: vi.fn().mockResolvedValue(undefined),
+    ...overrides,
+  };
+}
+
 describe('adminApp', () => {
   beforeEach(() => {
     vi.resetModules();
@@ -89,5 +120,151 @@ describe('adminApp', () => {
     });
     expect(res.status).toBe(200);
     process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /auth/config returns feishu_enabled false when OAuth not configured', async () => {
+    delete process.env.FEISHU_APP_ID;
+    delete process.env.FEISHU_APP_SECRET;
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/auth/config');
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.feishu_enabled).toBe(false);
+  });
+
+  it('GET /auth/config returns feishu_enabled true when OAuth configured', async () => {
+    process.env.FEISHU_APP_ID = 'cli_xxx';
+    process.env.FEISHU_APP_SECRET = 'secret';
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/auth/config');
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.feishu_enabled).toBe(true);
+    delete process.env.FEISHU_APP_ID;
+    delete process.env.FEISHU_APP_SECRET;
+  });
+
+  it('GET /auth/feishu returns 503 when OAuth not configured', async () => {
+    delete process.env.FEISHU_APP_ID;
+    delete process.env.FEISHU_APP_SECRET;
+    delete process.env.FEISHU_OAUTH_REDIRECT_URI;
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/auth/feishu');
+    expect(res.status).toBe(503);
+  });
+
+  it('GET /auth/me returns 401 without credentials', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/auth/me');
+    expect(res.status).toBe(401);
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /auth/me returns admin role with valid API key', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/auth/me', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.role).toBe('admin');
+    expect(body.authMethod).toBe('apikey');
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('POST /auth/logout returns ok', async () => {
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/auth/logout', {method: 'POST'});
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.ok).toBe(true);
+  });
+
+  it('GET /api/admins returns 401 without auth', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    delete process.env.FEISHU_APP_ID;
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/admins');
+    expect(res.status).toBe(401);
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /api/admins returns admins list with API key', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock());
+    vi.doMock('./auth/admin-users.js', () => ({
+      listAdmins: vi.fn().mockResolvedValue([
+        {open_id: 'ou_1', name: 'Alice', email: 'a@example.com', added_at: '2026-01-01', added_by: 'bootstrap'},
+      ]),
+      addAdmin: vi.fn(),
+      removeAdmin: vi.fn(),
+      healAdminProfile: vi.fn(),
+      isAdminOpenId: vi.fn().mockResolvedValue(true),
+    }));
+    vi.doMock('./rag.js', () => ({
+      loadIndex: vi.fn(),
+      getIndexSize: () => 42,
+    }));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/admins', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.admins).toBeInstanceOf(Array);
+    expect(body.admins[0].name).toBe('Alice');
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('POST /api/admins returns 403 for non-admin role', async () => {
+    process.env.ADMIN_API_KEY = '';
+    process.env.ADMIN_SESSION_SECRET = 'session-secret';
+    process.env.FEISHU_APP_ID = 'cli_xxx';
+    process.env.FEISHU_APP_SECRET = 'secret';
+
+    const {signSession} = await import('./auth/session.js');
+    const token = signSession({
+      open_id: 'ou_viewer',
+      name: 'Viewer',
+      iat: Math.floor(Date.now() / 1000),
+      exp: Math.floor(Date.now() / 1000) + 3600,
+    }, 'session-secret');
+
+    // Mock hono/cookie so getSignedCookie returns our raw token (bypassing Hono's signing layer)
+    vi.doMock('hono/cookie', () => ({
+      getSignedCookie: vi.fn().mockResolvedValue(token),
+      setSignedCookie: vi.fn(),
+      deleteCookie: vi.fn(),
+    }));
+
+    vi.doMock('./db.js', () => createDbMock());
+    vi.doMock('./auth/admin-users.js', () => ({
+      listAdmins: vi.fn(),
+      addAdmin: vi.fn(),
+      removeAdmin: vi.fn(),
+      healAdminProfile: vi.fn(),
+      isAdminOpenId: vi.fn().mockResolvedValue(false),
+    }));
+    vi.doMock('./rag.js', () => ({
+      loadIndex: vi.fn(),
+      getIndexSize: () => 42,
+    }));
+
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/admins', {
+      method: 'POST',
+      headers: {
+        Cookie: `__admin_session=${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({open_id: 'ou_new', name: 'New'}),
+    });
+    expect(res.status).toBe(403);
+
+    delete process.env.ADMIN_SESSION_SECRET;
+    delete process.env.FEISHU_APP_ID;
+    delete process.env.FEISHU_APP_SECRET;
   });
 });
