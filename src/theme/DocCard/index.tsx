@@ -110,6 +110,8 @@ export default function DocCard({
       return <CardLink item={item} headingLevel={headingLevel} />;
     case 'category':
       return <CardCategory item={item} headingLevel={headingLevel} />;
+    case 'html':
+      return null;
     default:
       throw new Error(`unknown item type ${JSON.stringify(item)}`);
   }

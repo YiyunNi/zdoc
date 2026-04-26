@@ -1,6 +1,7 @@
 import React, {type ReactNode, useRef, useState, useEffect} from 'react';
 import clsx from 'clsx';
 import {
+  useDocsSidebar,
   useCurrentSidebarSiblings,
   filterDocCardListItems,
 } from '@docusaurus/plugin-content-docs/client';
@@ -33,9 +34,17 @@ function useDetectedHeadingLevel(
   return level;
 }
 
-function DocCardListForCurrentSidebarCategory(props: Props) {
+function DocCardListWithSidebar(props: Props) {
   const items = useCurrentSidebarSiblings();
   return <DocCardList items={items} className={props.className} />;
+}
+
+function DocCardListForCurrentSidebarCategory(props: Props) {
+  const sidebar = useDocsSidebar();
+  if (!sidebar) {
+    return null;
+  }
+  return <DocCardListWithSidebar {...props} />;
 }
 
 export default function DocCardList(props: Props): ReactNode {

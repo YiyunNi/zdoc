@@ -2,7 +2,6 @@ import React, {type ReactNode, useState, useRef, useCallback, useEffect} from 'r
 import {useLocation} from '@docusaurus/router';
 import {useDocsSidebar} from '@docusaurus/plugin-content-docs/client';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import BackToTopButton from '@theme/BackToTopButton';
 import DocRootLayoutSidebar from '@theme/DocRoot/Layout/Sidebar';
 import DocRootLayoutMain from '@theme/DocRoot/Layout/Main';
@@ -166,95 +165,91 @@ export default function DocRootLayout({children}: Props): ReactNode {
   const chatEndpoint = (siteConfig.customFields?.chatEndpoint as string) || '/api/chat';
 
   return (
-    <BrowserOnly fallback={<div className={styles.docsWrapper} />}>
-      {() => (
-        <ChatProvider chatEndpoint={chatEndpoint}>
-          <div className={styles.docsWrapper}>
-            <BackToTopButton />
+    <ChatProvider chatEndpoint={chatEndpoint}>
+      <div className={styles.docsWrapper}>
+        <BackToTopButton />
 
-            {/* Secondary navbar — full width, above 3-pane area */}
-            <SecondaryNavbar />
+        {/* Secondary navbar — full width, above 3-pane area */}
+        <SecondaryNavbar />
 
-            {/* 3-pane content area */}
-            <div className={styles.docRoot}>
-              {/* Pane 1: Chat */}
-              <div className={styles.chatPane} style={{width: chatWidth, minWidth: CHAT_MIN_WIDTH}}>
-                <ChatPanel
-                  isExpanded={false}
-                  onToggle={() => setIsChatExpanded(true)}
-                />
-              </div>
-
-              {/* Drag-to-resize handle between chat and sidebar */}
-              <div
-                className={styles.chatResizeHandle}
-                onMouseDown={onMouseDown}
-                onKeyDown={onKeyDown}
-                role="separator"
-                aria-orientation="vertical"
-                aria-label="Resize chat panel"
-                aria-valuenow={chatWidth}
-                aria-valuemin={CHAT_MIN_WIDTH}
-                aria-valuemax={CHAT_MAX_WIDTH}
-                tabIndex={0}
-              />
-
-              {/* Pane 2: Sidebar */}
-              {sidebar && (
-                <DocRootLayoutSidebar
-                  sidebar={sidebar.items}
-                  hiddenSidebarContainer={hiddenSidebarContainer}
-                  setHiddenSidebarContainer={setHiddenSidebarContainer}
-                  hiddenSidebar={hiddenSidebar}
-                  setHiddenSidebar={setHiddenSidebar}
-                />
-              )}
-
-              {/* Pane 3: Content — click to collapse sidebar */}
-              {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
-              <div
-                style={{display: 'contents'}}
-                onMouseDown={() => {
-                  if (!hiddenSidebarContainer) {
-                    setHiddenSidebarContainer(true);
-                    setHiddenSidebar(true);
-                  }
-                }}>
-                <DocRootLayoutMain hiddenSidebarContainer={hiddenSidebarContainer}>
-                  {children}
-                </DocRootLayoutMain>
-              </div>
-            </div>
-
-            {/* Expanded chat overlay */}
-            {isChatExpanded && (
-              <div className={styles.chatOverlay}>
-                <ChatPanel
-                  isExpanded={true}
-                  onToggle={() => setIsChatExpanded(false)}
-                />
-              </div>
-            )}
-
-            {/* Mobile chat FAB */}
-            <button
-              className={styles.mobileChatFab}
-              onClick={() => setIsChatExpanded(prev => !prev)}
-              title={isChatExpanded ? 'Close chat' : 'Open chat'}
-              aria-label={isChatExpanded ? 'Close chat' : 'Open chat'}>
-              {isChatExpanded ? (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              ) : (
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                </svg>
-              )}
-            </button>
+        {/* 3-pane content area */}
+        <div className={styles.docRoot}>
+          {/* Pane 1: Chat */}
+          <div className={styles.chatPane} style={{width: chatWidth, minWidth: CHAT_MIN_WIDTH}}>
+            <ChatPanel
+              isExpanded={false}
+              onToggle={() => setIsChatExpanded(true)}
+            />
           </div>
-        </ChatProvider>
-      )}
-    </BrowserOnly>
+
+          {/* Drag-to-resize handle between chat and sidebar */}
+          <div
+            className={styles.chatResizeHandle}
+            onMouseDown={onMouseDown}
+            onKeyDown={onKeyDown}
+            role="separator"
+            aria-orientation="vertical"
+            aria-label="Resize chat panel"
+            aria-valuenow={chatWidth}
+            aria-valuemin={CHAT_MIN_WIDTH}
+            aria-valuemax={CHAT_MAX_WIDTH}
+            tabIndex={0}
+          />
+
+          {/* Pane 2: Sidebar */}
+          {sidebar && (
+            <DocRootLayoutSidebar
+              sidebar={sidebar.items}
+              hiddenSidebarContainer={hiddenSidebarContainer}
+              setHiddenSidebarContainer={setHiddenSidebarContainer}
+              hiddenSidebar={hiddenSidebar}
+              setHiddenSidebar={setHiddenSidebar}
+            />
+          )}
+
+          {/* Pane 3: Content — click to collapse sidebar */}
+          {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+          <div
+            style={{display: 'contents'}}
+            onMouseDown={() => {
+              if (!hiddenSidebarContainer) {
+                setHiddenSidebarContainer(true);
+                setHiddenSidebar(true);
+              }
+            }}>
+            <DocRootLayoutMain hiddenSidebarContainer={hiddenSidebarContainer}>
+              {children}
+            </DocRootLayoutMain>
+          </div>
+        </div>
+
+        {/* Expanded chat overlay */}
+        {isChatExpanded && (
+          <div className={styles.chatOverlay}>
+            <ChatPanel
+              isExpanded={true}
+              onToggle={() => setIsChatExpanded(false)}
+            />
+          </div>
+        )}
+
+        {/* Mobile chat FAB */}
+        <button
+          className={styles.mobileChatFab}
+          onClick={() => setIsChatExpanded(prev => !prev)}
+          title={isChatExpanded ? 'Close chat' : 'Open chat'}
+          aria-label={isChatExpanded ? 'Close chat' : 'Open chat'}>
+          {isChatExpanded ? (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          )}
+        </button>
+      </div>
+    </ChatProvider>
   );
 }
