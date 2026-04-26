@@ -577,6 +577,36 @@ input, select { font-family: var(--body); }
 .action-status.ok { color: var(--green); }
 .action-status.err { color: var(--red); }
 
+.settings-card .subtitle { font-size: 10px; color: var(--text-muted); margin-bottom: 14px; font-weight: 500; }
+
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.35);
+  display: none; align-items: center; justify-content: center; padding: 24px;
+}
+.modal-backdrop.active { display: flex; }
+.modal-card {
+  width: 100%; max-width: 480px;
+  background: var(--surface); border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.modal-card h4 {
+  font-family: var(--heading); font-size: 16px; font-weight: 700;
+  margin-bottom: 16px; color: var(--text);
+}
+.modal-field { margin-bottom: 12px; }
+.modal-field label {
+  display: block; font-size: 11px; font-weight: 600;
+  color: var(--text-secondary); margin-bottom: 4px;
+}
+.modal-field input, .modal-field select {
+  width: 100%; border: 1px solid #d8dae0; padding: 8px 10px;
+  border-radius: 6px; font-size: 12px; background: #fff; color: var(--text); outline: none;
+}
+.modal-field input:focus, .modal-field select:focus { border-color: var(--blue); }
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+
 /* Tabs visibility */
 .page { display: none; }
 .page.active { display: block; }
@@ -905,20 +935,7 @@ input, select { font-family: var(--body); }
           <div id="providerProfilesBody">
             <div class="empty-state">Loading…</div>
           </div>
-          <div class="admin-add-row" id="providerAddRow" style="margin-top:12px;display:none;">
-            <input type="text" id="ppName" placeholder="name" />
-            <select id="ppType">
-              <option value="openai-compatible">openai-compatible</option>
-              <option value="bedrock">bedrock</option>
-            </select>
-            <input type="text" id="ppBaseUrl" placeholder="base url (optional)" />
-            <input type="text" id="ppRegion" placeholder="region (optional)" />
-            <input type="text" id="ppApiKey" placeholder="api_key" style="display:none" />
-            <input type="text" id="ppAccessKey" placeholder="access_key_id" style="display:none" />
-            <input type="text" id="ppSecretKey" placeholder="secret_access_key" style="display:none" />
-            <input type="text" id="ppSessionToken" placeholder="session_token (optional)" style="display:none" />
-            <button class="btn primary" id="btnAddProvider" data-require-admin>Add</button>
-          </div>
+          <button type="button" class="btn primary" id="btnOpenProviderModal" data-require-admin style="margin-top:12px">Add Provider Profile</button>
         </div>
         <div class="settings-card">
           <h3>OAuth Profiles</h3>
@@ -926,14 +943,7 @@ input, select { font-family: var(--body); }
           <div id="oauthProfilesBody">
             <div class="empty-state">Loading…</div>
           </div>
-          <div class="admin-add-row" id="oauthAddRow" style="margin-top:12px;display:none;">
-            <input type="text" id="opName" placeholder="name" />
-            <input type="text" id="opAppId" placeholder="app_id" />
-            <input type="text" id="opAppSecret" placeholder="app_secret" />
-            <input type="text" id="opHost" placeholder="host (optional)" />
-            <input type="text" id="opRedirectUri" placeholder="redirect_uri (optional)" />
-            <button class="btn primary" id="btnAddOAuth" data-require-admin>Add</button>
-          </div>
+          <button type="button" class="btn primary" id="btnOpenOAuthModal" data-require-admin style="margin-top:12px">Add OAuth Profile</button>
         </div>
       </div>
 
@@ -2087,7 +2097,6 @@ input, select { font-family: var(--body); }
         btn.addEventListener('click', () => deleteProviderProfile(btn.dataset.removePp));
       });
     }
-    $('providerAddRow').style.display = 'flex';
   }
 
   async function deleteProviderProfile(name) {
@@ -2103,14 +2112,40 @@ input, select { font-family: var(--body); }
   function updateProviderCredentialFields() {
     const type = $('ppType').value;
     const isBedrock = type === 'bedrock';
-    $('ppApiKey').style.display = isBedrock ? 'none' : '';
-    $('ppAccessKey').style.display = isBedrock ? '' : 'none';
-    $('ppSecretKey').style.display = isBedrock ? '' : 'none';
-    $('ppSessionToken').style.display = isBedrock ? '' : 'none';
+    $('ppApiKeyField').style.display = isBedrock ? 'none' : 'block';
+    $('ppAccessKeyField').style.display = isBedrock ? 'block' : 'none';
+    $('ppSecretKeyField').style.display = isBedrock ? 'block' : 'none';
+    $('ppSessionTokenField').style.display = isBedrock ? 'block' : 'none';
   }
   if ($('ppType')) {
     $('ppType').addEventListener('change', updateProviderCredentialFields);
+  }
+
+  function openProviderModal() {
+    $('providerModal').classList.add('active');
+    $('ppType').value = 'openai-compatible';
     updateProviderCredentialFields();
+  }
+  function closeProviderModal() {
+    $('providerModal').classList.remove('active');
+    $('ppName').value = '';
+    $('ppApiKey').value = '';
+    $('ppAccessKey').value = '';
+    $('ppSecretKey').value = '';
+    $('ppSessionToken').value = '';
+    $('ppBaseUrl').value = '';
+    $('ppRegion').value = '';
+  }
+  if ($('btnOpenProviderModal')) {
+    $('btnOpenProviderModal').addEventListener('click', openProviderModal);
+  }
+  if ($('btnCancelProviderModal')) {
+    $('btnCancelProviderModal').addEventListener('click', closeProviderModal);
+  }
+  if ($('providerModal')) {
+    $('providerModal').addEventListener('click', (e) => {
+      if (e.target === $('providerModal')) closeProviderModal();
+    });
   }
 
   if ($('btnAddProvider')) {
@@ -2137,13 +2172,7 @@ input, select { font-family: var(--body); }
           method: 'POST',
           body: JSON.stringify({ name, provider_type, base_url, region, credentials }),
         });
-        $('ppName').value = '';
-        $('ppApiKey').value = '';
-        $('ppAccessKey').value = '';
-        $('ppSecretKey').value = '';
-        $('ppSessionToken').value = '';
-        $('ppBaseUrl').value = '';
-        $('ppRegion').value = '';
+        closeProviderModal();
         fetchCosts();
       } catch (e) {
         alert(e.message || 'Add failed');
@@ -2175,7 +2204,6 @@ input, select { font-family: var(--body); }
         btn.addEventListener('click', () => activateOAuthProfile(btn.dataset.activateOp));
       });
     }
-    $('oauthAddRow').style.display = 'flex';
   }
 
   async function deleteOAuthProfile(name) {
@@ -2197,6 +2225,29 @@ input, select { font-family: var(--body); }
     }
   }
 
+  function openOAuthModal() {
+    $('oauthModal').classList.add('active');
+  }
+  function closeOAuthModal() {
+    $('oauthModal').classList.remove('active');
+    $('opName').value = '';
+    $('opAppId').value = '';
+    $('opAppSecret').value = '';
+    $('opHost').value = '';
+    $('opRedirectUri').value = '';
+  }
+  if ($('btnOpenOAuthModal')) {
+    $('btnOpenOAuthModal').addEventListener('click', openOAuthModal);
+  }
+  if ($('btnCancelOAuthModal')) {
+    $('btnCancelOAuthModal').addEventListener('click', closeOAuthModal);
+  }
+  if ($('oauthModal')) {
+    $('oauthModal').addEventListener('click', (e) => {
+      if (e.target === $('oauthModal')) closeOAuthModal();
+    });
+  }
+
   if ($('btnAddOAuth')) {
     $('btnAddOAuth').addEventListener('click', async () => {
       const name = $('opName').value.trim();
@@ -2210,9 +2261,7 @@ input, select { font-family: var(--body); }
           method: 'POST',
           body: JSON.stringify({ name, provider_type: 'feishu', app_id, host, redirect_uri, credentials: { app_secret } }),
         });
-        $('opName').value = '';
-        $('opAppId').value = '';
-        $('opAppSecret').value = '';
+        closeOAuthModal();
         fetchCosts();
       } catch (e) {
         alert(e.message || 'Add failed');
@@ -2371,5 +2420,83 @@ input, select { font-family: var(--body); }
   })();
 })();
 </script>
+
+<!-- Provider Profile Modal -->
+<div class="modal-backdrop" id="providerModal">
+  <div class="modal-card">
+    <h4>Add Provider Profile</h4>
+    <div class="modal-field">
+      <label>Name</label>
+      <input type="text" id="ppName" placeholder="e.g. openai-prod" />
+    </div>
+    <div class="modal-field">
+      <label>Provider Type</label>
+      <select id="ppType">
+        <option value="openai-compatible">openai-compatible</option>
+        <option value="bedrock">bedrock</option>
+      </select>
+    </div>
+    <div class="modal-field">
+      <label>Base URL</label>
+      <input type="text" id="ppBaseUrl" placeholder="https://api.example.com/v1 (optional)" />
+    </div>
+    <div class="modal-field">
+      <label>Region</label>
+      <input type="text" id="ppRegion" placeholder="us-east-1 (optional)" />
+    </div>
+    <div class="modal-field" id="ppApiKeyField">
+      <label>API Key</label>
+      <input type="text" id="ppApiKey" placeholder="sk-..." />
+    </div>
+    <div class="modal-field" id="ppAccessKeyField" style="display:none">
+      <label>Access Key ID</label>
+      <input type="text" id="ppAccessKey" placeholder="AKIA..." />
+    </div>
+    <div class="modal-field" id="ppSecretKeyField" style="display:none">
+      <label>Secret Access Key</label>
+      <input type="text" id="ppSecretKey" placeholder="..." />
+    </div>
+    <div class="modal-field" id="ppSessionTokenField" style="display:none">
+      <label>Session Token (optional)</label>
+      <input type="text" id="ppSessionToken" placeholder="..." />
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn ghost" id="btnCancelProviderModal">Cancel</button>
+      <button type="button" class="btn primary" id="btnAddProvider" data-require-admin>Add</button>
+    </div>
+  </div>
+</div>
+
+<!-- OAuth Profile Modal -->
+<div class="modal-backdrop" id="oauthModal">
+  <div class="modal-card">
+    <h4>Add OAuth Profile</h4>
+    <div class="modal-field">
+      <label>Name</label>
+      <input type="text" id="opName" placeholder="e.g. feishu-prod" />
+    </div>
+    <div class="modal-field">
+      <label>App ID</label>
+      <input type="text" id="opAppId" placeholder="cli_..." />
+    </div>
+    <div class="modal-field">
+      <label>App Secret</label>
+      <input type="text" id="opAppSecret" placeholder="..." />
+    </div>
+    <div class="modal-field">
+      <label>Host</label>
+      <input type="text" id="opHost" placeholder="https://open.feishu.cn (optional)" />
+    </div>
+    <div class="modal-field">
+      <label>Redirect URI</label>
+      <input type="text" id="opRedirectUri" placeholder="https://example.com/callback (optional)" />
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn ghost" id="btnCancelOAuthModal">Cancel</button>
+      <button type="button" class="btn primary" id="btnAddOAuth" data-require-admin>Add</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
