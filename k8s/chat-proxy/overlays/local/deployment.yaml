@@ -73,3 +73,33 @@ spec:
             secretKeyRef:
               name: chat-proxy-secrets
               key: ADMIN_API_KEY
+        - name: FEISHU_APP_ID
+          valueFrom:
+            secretKeyRef:
+              name: chat-proxy-secrets
+              key: FEISHU_APP_ID
+        - name: FEISHU_APP_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-proxy-secrets
+              key: FEISHU_APP_SECRET
+        - name: FEISHU_HOST
+          valueFrom:
+            secretKeyRef:
+              name: chat-proxy-secrets
+              key: FEISHU_HOST
+        - name: FEISHU_OAUTH_REDIRECT_URI
+          valueFrom:
+            secretKeyRef:
+              name: chat-proxy-secrets
+              key: FEISHU_OAUTH_REDIRECT_URI
+        - name: ADMIN_SESSION_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-proxy-secrets
+              key: ADMIN_SESSION_SECRET
+        - name: ADMIN_BOOTSTRAP_OPEN_IDS
+          valueFrom:
+            secretKeyRef:
+              name: chat-proxy-secrets
+              key: ADMIN_BOOTSTRAP_OPEN_IDS
