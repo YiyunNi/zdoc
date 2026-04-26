@@ -900,6 +900,42 @@ input, select { font-family: var(--body); }
 
       <div class="settings-grid">
         <div class="settings-card">
+          <h3>Provider Profiles</h3>
+          <div class="subtitle">AI provider credentials</div>
+          <div id="providerProfilesBody">
+            <div class="empty-state">Loading…</div>
+          </div>
+          <div class="admin-add-row" id="providerAddRow" style="margin-top:12px;display:none;">
+            <input type="text" id="ppName" placeholder="name" />
+            <select id="ppType">
+              <option value="openai-compatible">openai-compatible</option>
+              <option value="bedrock">bedrock</option>
+            </select>
+            <input type="text" id="ppBaseUrl" placeholder="base url (optional)" />
+            <input type="text" id="ppRegion" placeholder="region (optional)" />
+            <input type="text" id="ppCred" placeholder="api_key or access_key_id" />
+            <button class="btn primary" id="btnAddProvider" data-require-admin>Add</button>
+          </div>
+        </div>
+        <div class="settings-card">
+          <h3>OAuth Profiles</h3>
+          <div class="subtitle">Feishu OAuth configurations</div>
+          <div id="oauthProfilesBody">
+            <div class="empty-state">Loading…</div>
+          </div>
+          <div class="admin-add-row" id="oauthAddRow" style="margin-top:12px;display:none;">
+            <input type="text" id="opName" placeholder="name" />
+            <input type="text" id="opAppId" placeholder="app_id" />
+            <input type="text" id="opAppSecret" placeholder="app_secret" />
+            <input type="text" id="opHost" placeholder="host (optional)" />
+            <input type="text" id="opRedirectUri" placeholder="redirect_uri (optional)" />
+            <button class="btn primary" id="btnAddOAuth" data-require-admin>Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="settings-grid">
+        <div class="settings-card">
           <h3>Unresolved Gaps</h3>
           <div class="subtitle">Queries returned with low confidence in the last 7 days</div>
           <div class="cs-table-wrap">
@@ -1754,15 +1790,19 @@ input, select { font-family: var(--body); }
       }
     } else {
       try {
-        const [config, gaps, quality] = await Promise.all([
+        const [config, gaps, quality, providerProfiles, oauthProfiles] = await Promise.all([
           apiFetch('/admin/api/config'),
           apiFetch('/admin/api/doc-gaps?limit=20'),
           apiFetch('/admin/api/content-quality?limit=20'),
+          apiFetch('/admin/api/provider-profiles'),
+          apiFetch('/admin/api/oauth-profiles'),
         ]);
-        renderModelConfig(config.models || []);
+        renderModelConfig(config.models || [], providerProfiles || []);
         renderCacheConfig(config.cache, config.index);
         renderGaps(gaps.gaps || []);
         renderQuality(quality.issues || []);
+        renderProviderProfiles(providerProfiles || []);
+        renderOAuthProfiles(oauthProfiles || []);
         fetchAdmins();
         $('adminsSection').style.display = 'block';
       } catch (e) {
@@ -1815,20 +1855,23 @@ input, select { font-family: var(--body); }
   const PROVIDER_OPTIONS = ['openai-compatible', 'bedrock'];
   const CONFIG_KEYS = ['chat', 'router', 'grounding', 'rewrite', 'embedding',
                        'agent:general', 'agent:schema', 'agent:resources', 'agent:product', 'agent:code'];
+  let providerProfileList = [];
 
-  function renderModelConfig(rows) {
-    // Map of existing config
+  function renderModelConfig(rows, profiles) {
+    providerProfileList = profiles || [];
     const map = new Map(rows.map(r => [r.key, r]));
     const body = $('modelConfigBody');
     body.innerHTML = CONFIG_KEYS.map(key => {
       const row = map.get(key);
       const provider = row ? row.provider : '';
       const model = row ? row.model : '';
+      const profileName = row ? (row.profileName || '') : '';
+      const profileLabel = profileName ? ' @' + profileName : '';
       return (
         '<div class="config-row" data-key="' + esc(key) + '">' +
           '<div class="config-key">' + esc(key) + '</div>' +
           '<div class="config-value-display" data-display="' + esc(key) + '">' +
-            (row ? '<span class="provider">' + esc(provider) + '</span>' + esc(model) : '<span style="color:var(--text-muted);font-style:italic">inherits</span>') +
+            (row ? '<span class="provider">' + esc(provider) + '</span>' + esc(model) + esc(profileLabel) : '<span style="color:var(--text-muted);font-style:italic">inherits</span>') +
           '</div>' +
           '<div>' +
             '<button class="btn ghost" data-edit="' + esc(key) + '">Edit</button>' +
@@ -1847,6 +1890,8 @@ input, select { font-family: var(--body); }
     if (!row) return;
     const provider = current ? current.provider : 'openai-compatible';
     const model = current ? current.model : '';
+    const profileName = current ? (current.profileName || '') : '';
+    const profileOptions = providerProfileList.map(p => '<option value="' + esc(p.name) + '"' + (p.name === profileName ? ' selected' : '') + '>' + esc(p.name) + '</option>').join('');
     row.innerHTML =
       '<div class="config-key">' + esc(key) + '</div>' +
       '<div class="config-edit-row">' +
@@ -1854,6 +1899,7 @@ input, select { font-family: var(--body); }
           PROVIDER_OPTIONS.map(p => '<option value="' + esc(p) + '"' + (p === provider ? ' selected' : '') + '>' + esc(p) + '</option>').join('') +
         '</select>' +
         '<input id="mod_' + esc(key) + '" placeholder="model id" value="' + esc(model) + '" />' +
+        '<select id="prof_' + esc(key) + '"><option value="">— profile —</option>' + profileOptions + '</select>' +
         '<span class="test-result" id="testres_' + esc(key) + '" style="display:none"></span>' +
       '</div>' +
       '<div style="display:flex;gap:6px">' +
@@ -1870,6 +1916,7 @@ input, select { font-family: var(--body); }
   async function saveModelRow(key) {
     const provider = $('prov_' + key).value;
     const model = $('mod_' + key).value.trim();
+    const profileName = $('prof_' + key).value;
     if (!model) {
       const el = $('testres_' + key);
       el.style.display = 'inline-block';
@@ -1878,8 +1925,10 @@ input, select { font-family: var(--body); }
       return;
     }
     try {
+      const body = { provider, model };
+      if (profileName) body.profileName = profileName;
       await apiFetch('/admin/api/config/' + encodeURIComponent(key), {
-        method: 'PUT', body: JSON.stringify({ provider, model }),
+        method: 'PUT', body: JSON.stringify(body),
       });
       fetchCosts();
     } catch (e) {
@@ -2010,6 +2059,136 @@ input, select { font-family: var(--body); }
         '<td class="num cell-count">' + (Number(q.occurrence_count) || 0).toLocaleString() + '</td>' +
       '</tr>';
     }).join('');
+  }
+
+  // Provider profiles
+  function renderProviderProfiles(profiles) {
+    const body = $('providerProfilesBody');
+    if (!body) return;
+    if (profiles.length === 0) {
+      body.innerHTML = '<div class="empty-state">No provider profiles configured</div>';
+    } else {
+      body.innerHTML = profiles.map(p =>
+        '<div class="config-row" data-pp="' + esc(p.name) + '">' +
+          '<div class="config-key">' + esc(p.name) + '</div>' +
+          '<div class="config-value-display">' +
+            '<span class="provider">' + esc(p.provider_type) + '</span>' +
+            (p.base_url ? esc(p.base_url) : (p.region ? 'region ' + esc(p.region) : '')) +
+          '</div>' +
+          '<div>' +
+            '<button class="btn ghost" data-remove-pp="' + esc(p.name) + '" data-require-admin>Remove</button>' +
+          '</div>' +
+        '</div>'
+      ).join('');
+      body.querySelectorAll('button[data-remove-pp]').forEach(btn => {
+        btn.addEventListener('click', () => deleteProviderProfile(btn.dataset.removePp));
+      });
+    }
+    $('providerAddRow').style.display = 'flex';
+  }
+
+  async function deleteProviderProfile(name) {
+    if (!confirm('Delete provider profile "' + name + '"?')) return;
+    try {
+      await apiFetch('/admin/api/provider-profiles/' + encodeURIComponent(name), { method: 'DELETE' });
+      fetchCosts();
+    } catch (e) {
+      alert(e.message || 'Delete failed');
+    }
+  }
+
+  if ($('btnAddProvider')) {
+    $('btnAddProvider').addEventListener('click', async () => {
+      const name = $('ppName').value.trim();
+      const provider_type = $('ppType').value;
+      const base_url = $('ppBaseUrl').value.trim() || null;
+      const region = $('ppRegion').value.trim() || null;
+      const cred = $('ppCred').value.trim();
+      if (!name || !cred) { alert('Name and credential required'); return; }
+      const credentials = provider_type === 'bedrock'
+        ? { access_key_id: cred }
+        : { api_key: cred };
+      try {
+        await apiFetch('/admin/api/provider-profiles', {
+          method: 'POST',
+          body: JSON.stringify({ name, provider_type, base_url, region, credentials }),
+        });
+        $('ppName').value = '';
+        $('ppCred').value = '';
+        fetchCosts();
+      } catch (e) {
+        alert(e.message || 'Add failed');
+      }
+    });
+  }
+
+  // OAuth profiles
+  function renderOAuthProfiles(profiles) {
+    const body = $('oauthProfilesBody');
+    if (!body) return;
+    if (profiles.length === 0) {
+      body.innerHTML = '<div class="empty-state">No OAuth profiles configured</div>';
+    } else {
+      body.innerHTML = profiles.map(p =>
+        '<div class="config-row" data-op="' + esc(p.name) + '">' +
+          '<div class="config-key">' + esc(p.name) + (p.is_active ? ' <span style="color:var(--green);font-size:10px">active</span>' : '') + '</div>' +
+          '<div class="config-value-display">' + esc(p.provider_type) + ' · ' + esc(p.app_id) + '</div>' +
+          '<div style="display:flex;gap:6px">' +
+            (p.is_active ? '' : '<button class="btn primary" data-activate-op="' + esc(p.name) + '" data-require-admin>Activate</button>') +
+            '<button class="btn ghost" data-remove-op="' + esc(p.name) + '" data-require-admin>Remove</button>' +
+          '</div>' +
+        '</div>'
+      ).join('');
+      body.querySelectorAll('button[data-remove-op]').forEach(btn => {
+        btn.addEventListener('click', () => deleteOAuthProfile(btn.dataset.removeOp));
+      });
+      body.querySelectorAll('button[data-activate-op]').forEach(btn => {
+        btn.addEventListener('click', () => activateOAuthProfile(btn.dataset.activateOp));
+      });
+    }
+    $('oauthAddRow').style.display = 'flex';
+  }
+
+  async function deleteOAuthProfile(name) {
+    if (!confirm('Delete OAuth profile "' + name + '"?')) return;
+    try {
+      await apiFetch('/admin/api/oauth-profiles/' + encodeURIComponent(name), { method: 'DELETE' });
+      fetchCosts();
+    } catch (e) {
+      alert(e.message || 'Delete failed');
+    }
+  }
+
+  async function activateOAuthProfile(name) {
+    try {
+      await apiFetch('/admin/api/oauth-profiles/' + encodeURIComponent(name) + '/activate', { method: 'POST' });
+      fetchCosts();
+    } catch (e) {
+      alert(e.message || 'Activate failed');
+    }
+  }
+
+  if ($('btnAddOAuth')) {
+    $('btnAddOAuth').addEventListener('click', async () => {
+      const name = $('opName').value.trim();
+      const app_id = $('opAppId').value.trim();
+      const app_secret = $('opAppSecret').value.trim();
+      const host = $('opHost').value.trim() || null;
+      const redirect_uri = $('opRedirectUri').value.trim() || null;
+      if (!name || !app_id || !app_secret) { alert('Name, app_id, and app_secret required'); return; }
+      try {
+        await apiFetch('/admin/api/oauth-profiles', {
+          method: 'POST',
+          body: JSON.stringify({ name, provider_type: 'feishu', app_id, host, redirect_uri, credentials: { app_secret } }),
+        });
+        $('opName').value = '';
+        $('opAppId').value = '';
+        $('opAppSecret').value = '';
+        fetchCosts();
+      } catch (e) {
+        alert(e.message || 'Add failed');
+      }
+    });
   }
 
   // Action buttons

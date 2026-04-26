@@ -13,6 +13,8 @@ import {
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
   getObsUsers, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue,
   isDbReady,
+  listProviderProfiles, getProviderProfile, upsertProviderProfile, deleteProviderProfile,
+  listOAuthProfiles, getActiveOAuthProfile, upsertOAuthProfile, setOAuthProfileActive, deleteOAuthProfile,
 } from './db.js';
 import {resolveModel, createModelInstance} from './runtime-config.js';
 import {getSessionCount} from './sessions.js';
@@ -355,8 +357,8 @@ adminApp.get('/api/config', async c => {
   });
 });
 
-// PUT /admin/api/config/:key — update provider/model for a config key
-adminApp.put('/api/config/:key', async c => {
+// PUT /admin/api/config/:key — update provider/model/profile for a config key
+adminApp.put('/api/config/:key', requireAuth, requireAdmin, async c => {
   const key = c.req.param('key');
   let body: Record<string, unknown>;
   try {
@@ -367,9 +369,10 @@ adminApp.put('/api/config/:key', async c => {
   const provider = String(body.provider || 'openai-compatible');
   const model = String(body.model || '');
   if (!model) return c.json({error: 'model is required'}, 400);
+  const profileName = body.profileName ? String(body.profileName) : null;
 
-  await setRuntimeConfigValue(key, provider, model);
-  return c.json({ok: true, key, provider, model});
+  await setRuntimeConfigValue(key, provider, model, profileName);
+  return c.json({ok: true, key, provider, model, profileName});
 });
 
 // POST /admin/api/config/:key/test — validate a provider+model works
@@ -494,4 +497,149 @@ adminApp.delete('/api/admins/:open_id', requireAuth, requireAdmin, async c => {
   const openId = c.req.param('open_id');
   const removed = await removeAdmin(openId);
   return c.json({ok: true, removed});
+});
+
+// ---------------------------------------------------------------------------
+// Provider profiles
+// ---------------------------------------------------------------------------
+
+adminApp.get('/api/provider-profiles', requireAuth, async c => {
+  return c.json(await listProviderProfiles());
+});
+
+adminApp.post('/api/provider-profiles', requireAuth, requireAdmin, async c => {
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+  const name = String(body.name || '').trim();
+  if (!name) return c.json({error: 'name is required'}, 400);
+
+  const credentials: Record<string, string> = {};
+  if (typeof body.credentials === 'object' && body.credentials !== null) {
+    for (const [k, v] of Object.entries(body.credentials)) {
+      if (typeof v === 'string') credentials[k] = v;
+    }
+  }
+
+  await upsertProviderProfile({
+    name,
+    provider_type: String(body.provider_type || 'openai-compatible'),
+    base_url: body.base_url ? String(body.base_url) : null,
+    region: body.region ? String(body.region) : null,
+    credentials,
+    notes: body.notes ? String(body.notes) : null,
+  });
+  const profile = await getProviderProfile(name);
+  return c.json({ok: true, profile});
+});
+
+adminApp.put('/api/provider-profiles/:name', requireAuth, requireAdmin, async c => {
+  const name = c.req.param('name');
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+
+  const credentials: Record<string, string> = {};
+  if (typeof body.credentials === 'object' && body.credentials !== null) {
+    for (const [k, v] of Object.entries(body.credentials)) {
+      if (typeof v === 'string') credentials[k] = v;
+    }
+  }
+
+  await upsertProviderProfile({
+    name,
+    provider_type: String(body.provider_type || 'openai-compatible'),
+    base_url: body.base_url ? String(body.base_url) : null,
+    region: body.region ? String(body.region) : null,
+    credentials,
+    notes: body.notes ? String(body.notes) : null,
+  });
+  const profile = await getProviderProfile(name);
+  return c.json({ok: true, profile});
+});
+
+adminApp.delete('/api/provider-profiles/:name', requireAuth, requireAdmin, async c => {
+  const name = c.req.param('name');
+  await deleteProviderProfile(name);
+  return c.json({ok: true});
+});
+
+// ---------------------------------------------------------------------------
+// OAuth profiles
+// ---------------------------------------------------------------------------
+
+adminApp.get('/api/oauth-profiles', requireAuth, async c => {
+  return c.json(await listOAuthProfiles());
+});
+
+adminApp.post('/api/oauth-profiles', requireAuth, requireAdmin, async c => {
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+  const name = String(body.name || '').trim();
+  if (!name) return c.json({error: 'name is required'}, 400);
+
+  const oauthCreds = typeof body.credentials === 'object' && body.credentials !== null
+    ? { app_secret: String((body.credentials as Record<string, unknown>).app_secret || '') }
+    : { app_secret: '' };
+
+  await upsertOAuthProfile({
+    name,
+    provider_type: String(body.provider_type || 'feishu'),
+    host: body.host ? String(body.host) : null,
+    redirect_uri: body.redirect_uri ? String(body.redirect_uri) : null,
+    app_id: String(body.app_id || ''),
+    credentials: oauthCreds,
+    notes: body.notes ? String(body.notes) : null,
+    is_active: typeof body.is_active === 'boolean' ? body.is_active : false,
+  });
+  return c.json({ok: true});
+});
+
+adminApp.put('/api/oauth-profiles/:name', requireAuth, requireAdmin, async c => {
+  const name = c.req.param('name');
+  let body: Record<string, unknown>;
+  try {
+    body = await c.req.json();
+  } catch {
+    return c.json({error: 'Invalid JSON body'}, 400);
+  }
+
+  const oauthCreds = typeof body.credentials === 'object' && body.credentials !== null
+    ? { app_secret: String((body.credentials as Record<string, unknown>).app_secret || '') }
+    : { app_secret: '' };
+
+  await upsertOAuthProfile({
+    name,
+    provider_type: String(body.provider_type || 'feishu'),
+    host: body.host ? String(body.host) : null,
+    redirect_uri: body.redirect_uri ? String(body.redirect_uri) : null,
+    app_id: String(body.app_id || ''),
+    credentials: oauthCreds,
+    notes: body.notes ? String(body.notes) : null,
+    is_active: typeof body.is_active === 'boolean' ? body.is_active : false,
+  });
+  return c.json({ok: true});
+});
+
+adminApp.post('/api/oauth-profiles/:name/activate', requireAuth, requireAdmin, async c => {
+  const name = c.req.param('name');
+  await setOAuthProfileActive(name);
+  const active = await getActiveOAuthProfile('feishu');
+  return c.json({ok: true, active});
+});
+
+adminApp.delete('/api/oauth-profiles/:name', requireAuth, requireAdmin, async c => {
+  const name = c.req.param('name');
+  await deleteOAuthProfile(name);
+  return c.json({ok: true});
 });

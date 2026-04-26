@@ -267,4 +267,108 @@ describe('adminApp', () => {
     delete process.env.FEISHU_APP_ID;
     delete process.env.FEISHU_APP_SECRET;
   });
+
+  it('GET /api/provider-profiles returns profiles array', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      listProviderProfiles: vi.fn().mockResolvedValue([
+        {name: 'openai', provider_type: 'openai-compatible', base_url: 'https://api.openai.com/v1', region: null, credentials: {api_key: '***'}, notes: null, created_at: '2026-01-01', updated_at: '2026-01-01'},
+      ]),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/provider-profiles', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body).toBeInstanceOf(Array);
+    expect(body[0].name).toBe('openai');
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('POST /api/provider-profiles creates a profile', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      upsertProviderProfile: vi.fn().mockResolvedValue(undefined),
+      getProviderProfile: vi.fn().mockResolvedValue({name: 'bedrock', provider_type: 'bedrock', region: 'us-east-1', base_url: null, credentials: {access_key_id: '***'}, notes: 'test', created_at: '2026-01-01', updated_at: '2026-01-01'}),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/provider-profiles', {
+      method: 'POST',
+      headers: {Authorization: 'Bearer secret-key', 'Content-Type': 'application/json'},
+      body: JSON.stringify({name: 'bedrock', provider_type: 'bedrock', region: 'us-east-1', credentials: {access_key_id: 'AKIA'}, notes: 'test'}),
+    });
+    expect(res.status).toBe(200);
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('DELETE /api/provider-profiles/:name removes a profile', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      deleteProviderProfile: vi.fn().mockResolvedValue(undefined),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/provider-profiles/old', {
+      method: 'DELETE',
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('GET /api/oauth-profiles returns profiles array', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      listOAuthProfiles: vi.fn().mockResolvedValue([
+        {name: 'feishu-prod', provider_type: 'feishu', is_active: true, host: 'https://open.feishu.cn', redirect_uri: 'https://example.com/callback', app_id: 'cli_xxx', credentials: {app_secret: '***'}, notes: null, created_at: '2026-01-01', updated_at: '2026-01-01'},
+      ]),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/oauth-profiles', {
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body).toBeInstanceOf(Array);
+    expect(body[0].name).toBe('feishu-prod');
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('POST /api/oauth-profiles/:name/activate sets active profile', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      setOAuthProfileActive: vi.fn().mockResolvedValue(undefined),
+      getActiveOAuthProfile: vi.fn().mockResolvedValue({name: 'feishu-prod', provider_type: 'feishu', is_active: true, host: 'https://open.feishu.cn', redirect_uri: 'https://example.com/callback', app_id: 'cli_xxx', credentials: {app_secret: '***'}, notes: null, created_at: '2026-01-01', updated_at: '2026-01-01'}),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/oauth-profiles/feishu-prod/activate', {
+      method: 'POST',
+      headers: {Authorization: 'Bearer secret-key'},
+    });
+    expect(res.status).toBe(200);
+    process.env.ADMIN_API_KEY = '';
+  });
+
+  it('PUT /api/config/:key stores profileName', async () => {
+    process.env.ADMIN_API_KEY = 'secret-key';
+    vi.doMock('./db.js', () => createDbMock({
+      setRuntimeConfigValue: vi.fn().mockResolvedValue(undefined),
+    }));
+    vi.doMock('./rag.js', () => ({loadIndex: vi.fn(), getIndexSize: () => 42}));
+    const {adminApp} = await import('./admin.js');
+    const res = await adminApp.request('/api/config/chat', {
+      method: 'PUT',
+      headers: {Authorization: 'Bearer secret-key', 'Content-Type': 'application/json'},
+      body: JSON.stringify({provider: 'bedrock', model: 'claude-3', profileName: 'my-provider'}),
+    });
+    expect(res.status).toBe(200);
+    const body = await res.json() as any;
+    expect(body.profileName).toBe('my-provider');
+    process.env.ADMIN_API_KEY = '';
+  });
 });
