@@ -5,7 +5,7 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm install
 COPY tsconfig.json ./
 COPY src/ ./src/
 RUN pnpm exec tsc && cp src/admin-dashboard.html dist/ && pnpm prune --prod
@@ -29,6 +29,8 @@ ARG GROUNDING_MODEL
 ARG LOG_S3_ENABLED
 ARG AWS_REGION
 ARG AWS_BUCKET
+ARG FEISHU_OAUTH_REDIRECT_URI
+ARG ADMIN_BOOTSTRAP_OPEN_IDS
 
 ENV AI_BASE_URL=${AI_BASE_URL} \
     AI_MODEL=${AI_MODEL} \
@@ -41,7 +43,9 @@ ENV AI_BASE_URL=${AI_BASE_URL} \
     GROUNDING_MODEL=${GROUNDING_MODEL} \
     LOG_S3_ENABLED=${LOG_S3_ENABLED} \
     AWS_REGION=${AWS_REGION} \
-    AWS_BUCKET=${AWS_BUCKET}
+    AWS_BUCKET=${AWS_BUCKET} \
+    FEISHU_OAUTH_REDIRECT_URI=${FEISHU_OAUTH_REDIRECT_URI} \
+    ADMIN_BOOTSTRAP_OPEN_IDS=${ADMIN_BOOTSTRAP_OPEN_IDS}
 
 # Sensitive secrets injected at runtime via k8s Secret (AVP):
 # DATABASE_URL, AI_API_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, ADMIN_API_KEY
