@@ -918,6 +918,11 @@ export async function setRuntimeConfigValue(key: string, provider: string, model
   }
 }
 
+export async function deleteRuntimeConfigValue(key: string): Promise<void> {
+  const pool = getPool();
+  await pool.query('DELETE FROM runtime_config WHERE key = $1', [key]);
+}
+
 // ---------------------------------------------------------------------------
 // Provider profile CRUD
 // ---------------------------------------------------------------------------

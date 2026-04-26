@@ -1948,11 +1948,16 @@ input, select { font-family: var(--body); }
       } else {
         display = '<span style="color:var(--text-muted);font-style:italic">inherits</span>';
       }
+      const hasDbRow = map.has(key);
+      const restoreBtn = hasDbRow
+        ? '<button class="btn ghost" data-restore="' + esc(key) + '">Restore</button> '
+        : '';
       return (
         '<div class="config-row" data-key="' + esc(key) + '">' +
           '<div class="config-key">' + esc(key) + '</div>' +
           '<div class="config-value-display" data-display="' + esc(key) + '">' + display + '</div>' +
           '<div>' +
+            restoreBtn +
             '<button class="btn ghost" data-edit="' + esc(key) + '">Edit</button>' +
           '</div>' +
         '</div>'
@@ -1962,6 +1967,19 @@ input, select { font-family: var(--body); }
     body.querySelectorAll('button[data-edit]').forEach(btn => {
       btn.addEventListener('click', () => beginEditModelRow(btn.dataset.edit, map.get(btn.dataset.edit)));
     });
+    body.querySelectorAll('button[data-restore]').forEach(btn => {
+      btn.addEventListener('click', () => restoreModelRow(btn.dataset.restore));
+    });
+  }
+
+  async function restoreModelRow(key) {
+    if (!confirm('Restore "' + key + '" to environment defaults?')) return;
+    try {
+      await apiFetch('/admin/api/config/' + encodeURIComponent(key), { method: 'DELETE' });
+      fetchCosts();
+    } catch (e) {
+      alert(e.message || 'Restore failed');
+    }
   }
 
   // Build <option> HTML for the model select. If savedModel is set but missing
@@ -2255,7 +2273,7 @@ input, select { font-family: var(--body); }
         ? esc(p.name) + ' <span class="chip chip-neutral">env</span>'
         : esc(p.name);
       const actionCell = isEnv
-        ? '<span class="cell-meta" title="Reserved — derived from environment variables">reserved</span>'
+        ? '<button class="btn ghost" disabled title="Reserved — derived from environment variables">Remove</button>'
         : '<button class="btn ghost" data-remove-pp="' + esc(p.name) + '" data-require-admin>Remove</button>';
       return '<tr data-pp="' + esc(p.name) + '">' +
         '<td class="cell-primary">' + nameCell + '</td>' +

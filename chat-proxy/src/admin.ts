@@ -11,7 +11,7 @@ import {
   getObsOverview, getObsTrends, getObsRecentActivity, getObsLiveSessions,
   getObsPerformance, getObsFeedback, getObsErrors, getObsLowConfidence,
   listObsSessions, getObsSessionDetail, getObsTokenUsage,
-  getObsUsers, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue,
+  getObsUsers, getTokenTrends, getRuntimeConfigAll, setRuntimeConfigValue, deleteRuntimeConfigValue,
   isDbReady,
   listProviderProfiles, getProviderProfile, upsertProviderProfile, deleteProviderProfile,
   listOAuthProfiles, getActiveOAuthProfile, upsertOAuthProfile, setOAuthProfileActive, deleteOAuthProfile,
@@ -386,6 +386,12 @@ adminApp.put('/api/config/:key', requireAuth, requireAdmin, async c => {
 
   await setRuntimeConfigValue(key, provider, model, profileName);
   return c.json({ok: true, key, provider, model, profileName});
+});
+
+adminApp.delete('/api/config/:key', requireAuth, requireAdmin, async c => {
+  const key = c.req.param('key');
+  await deleteRuntimeConfigValue(key);
+  return c.json({ok: true});
 });
 
 // POST /admin/api/config/:key/test — validate a provider+model works

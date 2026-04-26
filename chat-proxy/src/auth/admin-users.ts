@@ -91,12 +91,14 @@ export async function bootstrapAdmins(): Promise<void> {
   if (!raw) return;
   const ids = raw.split(',').map(s => s.trim()).filter(Boolean);
   if (ids.length === 0) return;
+  const pool = getPool();
   for (const openId of ids) {
-    await addAdmin({
-      open_id: openId,
-      name: openId,
-      added_by: 'bootstrap',
-    }).catch(() => {});
+    await pool.query(
+      `INSERT INTO admin_users (open_id, name, email, added_by)
+       VALUES ($1, $2, NULL, $3)
+       ON CONFLICT (open_id) DO NOTHING`,
+      [openId, openId, 'bootstrap'],
+    ).catch(() => {});
   }
   console.log(`[Auth] Bootstrapped ${ids.length} admin(s)`);
 }
