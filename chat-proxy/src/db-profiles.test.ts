@@ -18,11 +18,15 @@ import {
   getRuntimeConfigValue,
 } from './db.js';
 
+const hasDb = !!process.env.DATABASE_URL;
+
 beforeAll(async () => {
+  if (!hasDb) return;
   await initDb();
 });
 
 afterAll(async () => {
+  if (!hasDb) return;
   await closeDb();
 });
 
@@ -34,7 +38,7 @@ async function cleanTables(): Promise<void> {
   await pool.query('DELETE FROM provider_profiles');
 }
 
-describe('Provider profiles', () => {
+describe.skipIf(!hasDb)('Provider profiles', () => {
   it('upsert + list returns masked credentials', async () => {
     await cleanTables();
 
@@ -170,7 +174,7 @@ describe('Provider profiles', () => {
   });
 });
 
-describe('OAuth profiles', () => {
+describe.skipIf(!hasDb)('OAuth profiles', () => {
   it('upsert + list returns masked credentials', async () => {
     await cleanTables();
 
@@ -284,7 +288,7 @@ describe('OAuth profiles', () => {
   });
 });
 
-describe('Runtime config with profile_name', () => {
+describe.skipIf(!hasDb)('Runtime config with profile_name', () => {
   it('setRuntimeConfigValue with profileName round-trips', async () => {
     await cleanTables();
 
