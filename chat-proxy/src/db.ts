@@ -1,5 +1,6 @@
 import { Pool } from 'pg';
 import type { PoolConfig } from 'pg';
+import { encryptSecret, decryptSecret } from './crypto.js';
 
 // ---------------------------------------------------------------------------
 // PostgreSQL schema DDL
@@ -162,6 +163,50 @@ const SCHEMA_DDL = `
     model      TEXT NOT NULL,
     updated_at TIMESTAMPTZ DEFAULT NOW()
   );
+
+  -- admin_users: Feishu OAuth users with admin privileges
+  CREATE TABLE IF NOT EXISTS admin_users (
+    open_id    TEXT PRIMARY KEY,
+    name       TEXT NOT NULL,
+    email      TEXT,
+    added_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    added_by   TEXT NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS idx_admin_users_added_at ON admin_users(added_at DESC);
+
+  -- provider_profiles: encrypted credential profiles for AI providers
+  CREATE TABLE IF NOT EXISTS provider_profiles (
+    name           TEXT PRIMARY KEY,
+    provider_type  TEXT NOT NULL CHECK (provider_type IN ('openai-compatible','bedrock')),
+    base_url       TEXT,
+    region         TEXT,
+    credentials    JSONB NOT NULL,
+    notes          TEXT,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  );
+
+  -- Allow runtime_config rows to reference a provider profile
+  ALTER TABLE runtime_config ADD COLUMN IF NOT EXISTS profile_name TEXT
+    REFERENCES provider_profiles(name) ON DELETE SET NULL;
+
+  -- oauth_profiles: encrypted credential profiles for OAuth providers
+  CREATE TABLE IF NOT EXISTS oauth_profiles (
+    name           TEXT PRIMARY KEY,
+    provider_type  TEXT NOT NULL CHECK (provider_type IN ('feishu')),
+    is_active      BOOLEAN NOT NULL DEFAULT FALSE,
+    host           TEXT,
+    redirect_uri   TEXT,
+    app_id         TEXT NOT NULL,
+    credentials    JSONB NOT NULL,
+    notes          TEXT,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+  );
+
+  -- Enforce: at most one active row per provider_type
+  CREATE UNIQUE INDEX IF NOT EXISTS idx_oauth_profiles_active
+    ON oauth_profiles(provider_type) WHERE is_active = TRUE;
 `;
 
 // ---------------------------------------------------------------------------
@@ -374,7 +419,7 @@ export async function getRecentTokenUsage(limit = 50): Promise<any[]> {
   const { rows } = await pool.query(
     `SELECT id, session_id, model, agent_type, input_tokens, output_tokens,
        total_tokens, cached_input_tokens, created_at
-     FROM token_usage ORDER BY created_at DESC LIMIT $1`,
+     FROM token_usage ORDER BY created_at DESC LIMIT $1::int`,
     [limit],
   );
   return rows;
@@ -407,7 +452,7 @@ export async function getDocGaps(limit = 100): Promise<any[]> {
   const { rows } = await pool.query(
     `SELECT id, query, session_id, detected_intent, tools_called, confidence_level,
        response_text, created_at, resolved
-     FROM doc_gaps WHERE resolved = 0 ORDER BY created_at DESC LIMIT $1`,
+     FROM doc_gaps WHERE resolved = 0 ORDER BY created_at DESC LIMIT $1::int`,
     [limit],
   );
   return rows;
@@ -451,7 +496,7 @@ export async function getContentQuality(limit = 50): Promise<any[]> {
   const pool = getPool();
   const { rows } = await pool.query(
     `SELECT id, url, issue_type, suggestion, occurrence_count, created_at, updated_at
-     FROM content_quality ORDER BY occurrence_count DESC, updated_at DESC LIMIT $1`,
+     FROM content_quality ORDER BY occurrence_count DESC, updated_at DESC LIMIT $1::int`,
     [limit],
   );
   return rows;
@@ -621,7 +666,7 @@ export async function getObsRecentActivity(limit: number): Promise<any[]> {
     `SELECT id, timestamp, event_type as type, session_id, user_id, agent, model,
        data, input_tokens, output_tokens, total_tokens, cached_input_tokens
      FROM obs_events WHERE event_type = 'message'
-     ORDER BY timestamp DESC LIMIT $1`,
+     ORDER BY timestamp DESC LIMIT $1::int`,
     [limit],
   );
   return rows.map(normalizeObsEvent);
@@ -700,7 +745,7 @@ export async function getObsFeedback(limit: number): Promise<any[]> {
     `SELECT id, timestamp, 'feedback' as type, session_id, user_id, agent, model,
        data, input_tokens, output_tokens, total_tokens, cached_input_tokens
      FROM obs_events WHERE event_type = 'feedback'
-     ORDER BY timestamp DESC LIMIT $1`,
+     ORDER BY timestamp DESC LIMIT $1::int`,
     [limit],
   );
   return rows.map(normalizeObsEvent);
@@ -713,7 +758,7 @@ export async function getObsErrors(limit: number): Promise<any[]> {
        data, input_tokens, output_tokens, total_tokens, cached_input_tokens
      FROM obs_events
      WHERE event_type = 'error' OR data->>'blocked' = 'true' OR data->>'content' = ''
-     ORDER BY timestamp DESC LIMIT $1`,
+     ORDER BY timestamp DESC LIMIT $1::int`,
     [limit],
   );
   return rows.map(normalizeObsEvent);
@@ -726,7 +771,7 @@ export async function getObsLowConfidence(limit: number): Promise<any[]> {
        data, input_tokens, output_tokens, total_tokens, cached_input_tokens
      FROM obs_events
      WHERE event_type = 'message' AND data->>'confidence' IN ('medium', 'low')
-     ORDER BY timestamp DESC LIMIT $1`,
+     ORDER BY timestamp DESC LIMIT $1::int`,
     [limit],
   );
   return rows.map(normalizeObsEvent);
@@ -738,10 +783,11 @@ export async function listObsSessions(options: {
   agent?: string;
 }): Promise<{ sessions: any[]; total: number }> {
   const pool = getPool();
-  const where = options.agent ? `WHERE agent = $3` : '';
+  const countWhere = options.agent ? `WHERE agent = $1` : '';
+  const listWhere = options.agent ? `WHERE agent = $3` : '';
   const countParams = options.agent ? [options.agent] : [];
   const { rows: [countRow] } = await pool.query(
-    `SELECT COUNT(*)::int as total FROM obs_sessions ${where}`,
+    `SELECT COUNT(*)::int as total FROM obs_sessions ${countWhere}`,
     countParams,
   );
   const params: any[] = [options.pageSize, (options.page - 1) * options.pageSize];
@@ -749,8 +795,8 @@ export async function listObsSessions(options: {
   const { rows } = await pool.query(
     `SELECT id, user_id, agent, model, page_url, message_count, first_question,
        created_at, last_active_at
-     FROM obs_sessions ${where}
-     ORDER BY last_active_at DESC LIMIT $1 OFFSET $2`,
+     FROM obs_sessions ${listWhere}
+     ORDER BY last_active_at DESC LIMIT $1::int OFFSET $2::int`,
     params,
   );
   return {
@@ -788,12 +834,12 @@ export async function getObsUsers(options: {
        MAX(last_active_at) as last_active,
        AVG(EXTRACT(EPOCH FROM (last_active_at - created_at)))::numeric as avg_duration_seconds,
        (ARRAY_AGG(DISTINCT user_meta) FILTER (WHERE user_meta IS NOT NULL))[1] as user_meta,
-       ARRAY_AGG(ROW(first_question, agent, message_count, created_at) ORDER BY created_at DESC) as session_rows
+       COALESCE(JSON_AGG(JSON_BUILD_OBJECT('first_question', first_question, 'agent', agent, 'message_count', message_count, 'created_at', created_at) ORDER BY created_at DESC) FILTER (WHERE first_question IS NOT NULL), '[]'::json) as session_rows
      FROM obs_sessions
      WHERE user_id != 'anonymous'
      GROUP BY user_id
      ORDER BY MAX(last_active_at) DESC
-     LIMIT $1 OFFSET $2`,
+     LIMIT $1::int OFFSET $2::int`,
     [options.pageSize, offset],
   );
 
@@ -805,12 +851,12 @@ export async function getObsUsers(options: {
     avgDurationSeconds: Math.round(Number(r.avg_duration_seconds) || 0),
     userMeta: r.user_meta ? (typeof r.user_meta === 'string' ? JSON.parse(r.user_meta) : r.user_meta) : null,
     sessions: (r.session_rows || []).slice(0, 50).map((s: any) => ({
-      firstQuestion: s.f1,
-      agent: s.f2,
-      messageCount: Number(s.f3),
-      createdAt: new Date(s.f4).toISOString(),
+      firstQuestion: s.first_question,
+      agent: s.agent,
+      messageCount: Number(s.message_count),
+      createdAt: new Date(s.created_at).toISOString(),
     })),
-    topics: (r.session_rows || []).slice(0, 5).map((s: any) => (s.f1 || '').slice(0, 80)),
+    topics: (r.session_rows || []).slice(0, 5).map((s: any) => (s.first_question || '').slice(0, 80)),
   }));
 
   return { users, total: Number(countRow.total) };
@@ -836,31 +882,300 @@ export async function getTokenTrends(days: number): Promise<{date: string; input
   }));
 }
 
-export async function getRuntimeConfigAll(): Promise<{key: string; provider: string; model: string; updatedAt: string}[]> {
+export async function getRuntimeConfigAll(): Promise<{key: string; provider: string; model: string; profileName: string | null; updatedAt: string}[]> {
   const pool = getPool();
   const { rows } = await pool.query(
-    'SELECT key, provider, model, updated_at as "updatedAt" FROM runtime_config ORDER BY key',
+    'SELECT key, provider, model, profile_name as "profileName", updated_at as "updatedAt" FROM runtime_config ORDER BY key',
   );
   return rows;
 }
 
-export async function getRuntimeConfigValue(key: string): Promise<{provider: string; model: string} | null> {
+export async function getRuntimeConfigValue(key: string): Promise<{provider: string; model: string; profileName: string | null} | null> {
   const pool = getPool();
   const { rows: [row] } = await pool.query(
-    'SELECT provider, model FROM runtime_config WHERE key = $1',
+    'SELECT provider, model, profile_name as "profileName" FROM runtime_config WHERE key = $1',
     [key],
   );
-  return row ? { provider: row.provider, model: row.model } : null;
+  return row ? { provider: row.provider, model: row.model, profileName: row.profileName } : null;
 }
 
-export async function setRuntimeConfigValue(key: string, provider: string, model: string): Promise<void> {
+export async function setRuntimeConfigValue(key: string, provider: string, model: string, profileName?: string | null): Promise<void> {
   const pool = getPool();
-  await pool.query(
-    `INSERT INTO runtime_config (key, provider, model, updated_at)
-     VALUES ($1, $2, $3, NOW())
-     ON CONFLICT (key) DO UPDATE SET provider = EXCLUDED.provider, model = EXCLUDED.model, updated_at = NOW()`,
-    [key, provider, model],
+  if (profileName !== undefined) {
+    await pool.query(
+      `INSERT INTO runtime_config (key, provider, model, profile_name, updated_at)
+       VALUES ($1, $2, $3, $4, NOW())
+       ON CONFLICT (key) DO UPDATE SET provider = EXCLUDED.provider, model = EXCLUDED.model, profile_name = EXCLUDED.profile_name, updated_at = NOW()`,
+      [key, provider, model, profileName],
+    );
+  } else {
+    await pool.query(
+      `INSERT INTO runtime_config (key, provider, model, updated_at)
+       VALUES ($1, $2, $3, NOW())
+       ON CONFLICT (key) DO UPDATE SET provider = EXCLUDED.provider, model = EXCLUDED.model, updated_at = NOW()`,
+      [key, provider, model],
+    );
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Provider profile CRUD
+// ---------------------------------------------------------------------------
+
+export async function listProviderProfiles(): Promise<{
+  name: string;
+  provider_type: string;
+  base_url: string | null;
+  region: string | null;
+  credentials: Record<string, string>;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+}[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    'SELECT name, provider_type, base_url, region, credentials, notes, created_at, updated_at FROM provider_profiles ORDER BY name',
   );
+  return rows.map((r: any) => {
+    const masked: Record<string, string> = {};
+    if (r.provider_type === 'openai-compatible') {
+      masked.api_key = '***';
+    } else if (r.provider_type === 'bedrock') {
+      masked.access_key_id = '***';
+      masked.secret_access_key = '***';
+      masked.session_token = '***';
+    }
+    return {
+      name: r.name,
+      provider_type: r.provider_type,
+      base_url: r.base_url,
+      region: r.region,
+      credentials: masked,
+      notes: r.notes,
+      created_at: r.created_at,
+      updated_at: r.updated_at,
+    };
+  });
+}
+
+export async function getProviderProfile(name: string): Promise<{
+  name: string;
+  provider_type: string;
+  base_url: string | null;
+  region: string | null;
+  credentials: Record<string, string>;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+} | null> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query(
+    'SELECT name, provider_type, base_url, region, credentials, notes, created_at, updated_at FROM provider_profiles WHERE name = $1',
+    [name],
+  );
+  if (!row) return null;
+
+  const envelope = row.credentials as { iv: string; tag: string; ciphertext: string };
+  const plaintext = decryptSecret(envelope, 'chat-proxy:provider-profile:v1');
+  const credentials = JSON.parse(plaintext) as Record<string, string>;
+
+  return {
+    name: row.name,
+    provider_type: row.provider_type,
+    base_url: row.base_url,
+    region: row.region,
+    credentials,
+    notes: row.notes,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
+  };
+}
+
+export async function upsertProviderProfile(params: {
+  name: string;
+  provider_type: string;
+  base_url?: string | null;
+  region?: string | null;
+  credentials: Record<string, string>;
+  notes?: string | null;
+}): Promise<void> {
+  const pool = getPool();
+  const encrypted = encryptSecret(JSON.stringify(params.credentials), 'chat-proxy:provider-profile:v1');
+  await pool.query(
+    `INSERT INTO provider_profiles (name, provider_type, base_url, region, credentials, notes, updated_at)
+     VALUES ($1, $2, $3, $4, $5, $6, NOW())
+     ON CONFLICT (name) DO UPDATE SET
+       provider_type = EXCLUDED.provider_type,
+       base_url = EXCLUDED.base_url,
+       region = EXCLUDED.region,
+       credentials = EXCLUDED.credentials,
+       notes = EXCLUDED.notes,
+       updated_at = NOW()`,
+    [params.name, params.provider_type, params.base_url ?? null, params.region ?? null,
+     JSON.stringify(encrypted), params.notes ?? null],
+  );
+}
+
+export async function deleteProviderProfile(name: string): Promise<void> {
+  const pool = getPool();
+  await pool.query('DELETE FROM provider_profiles WHERE name = $1', [name]);
+}
+
+export async function getProviderProfileForRuntimeKey(key: string): Promise<{
+  name: string;
+  provider_type: string;
+  base_url: string | null;
+  region: string | null;
+  credentials: Record<string, string>;
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+} | null> {
+  const config = await getRuntimeConfigValue(key);
+  if (!config || !config.profileName) return null;
+  return getProviderProfile(config.profileName);
+}
+
+// ---------------------------------------------------------------------------
+// OAuth profile CRUD
+// ---------------------------------------------------------------------------
+
+export async function listOAuthProfiles(): Promise<{
+  name: string;
+  provider_type: string;
+  is_active: boolean;
+  host: string | null;
+  redirect_uri: string | null;
+  app_id: string;
+  credentials: { app_secret: string };
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+}[]> {
+  const pool = getPool();
+  const { rows } = await pool.query(
+    'SELECT name, provider_type, is_active, host, redirect_uri, app_id, credentials, notes, created_at, updated_at FROM oauth_profiles ORDER BY name',
+  );
+  return rows.map((r: any) => ({
+    name: r.name,
+    provider_type: r.provider_type,
+    is_active: r.is_active,
+    host: r.host,
+    redirect_uri: r.redirect_uri,
+    app_id: r.app_id,
+    credentials: { app_secret: '***' },
+    notes: r.notes,
+    created_at: r.created_at,
+    updated_at: r.updated_at,
+  }));
+}
+
+export async function getActiveOAuthProfile(providerType: string): Promise<{
+  name: string;
+  provider_type: string;
+  is_active: boolean;
+  host: string | null;
+  redirect_uri: string | null;
+  app_id: string;
+  credentials: { app_secret: string };
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+} | null> {
+  const pool = getPool();
+  const { rows: [row] } = await pool.query(
+    'SELECT name, provider_type, is_active, host, redirect_uri, app_id, credentials, notes, created_at, updated_at FROM oauth_profiles WHERE provider_type = $1 AND is_active = TRUE',
+    [providerType],
+  );
+  if (!row) return null;
+
+  const envelope = row.credentials as { iv: string; tag: string; ciphertext: string };
+  const plaintext = decryptSecret(envelope, 'chat-proxy:oauth-profile:v1');
+  const credentials = JSON.parse(plaintext) as { app_secret: string };
+
+  return {
+    name: row.name,
+    provider_type: row.provider_type,
+    is_active: row.is_active,
+    host: row.host,
+    redirect_uri: row.redirect_uri,
+    app_id: row.app_id,
+    credentials,
+    notes: row.notes,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
+  };
+}
+
+export async function upsertOAuthProfile(params: {
+  name: string;
+  provider_type: string;
+  host?: string | null;
+  redirect_uri?: string | null;
+  app_id: string;
+  credentials: { app_secret: string };
+  is_active?: boolean;
+  notes?: string | null;
+}): Promise<void> {
+  const pool = getPool();
+  const encrypted = encryptSecret(JSON.stringify(params.credentials), 'chat-proxy:oauth-profile:v1');
+  await pool.query(
+    `INSERT INTO oauth_profiles (name, provider_type, is_active, host, redirect_uri, app_id, credentials, notes, updated_at)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, NOW())
+     ON CONFLICT (name) DO UPDATE SET
+       provider_type = EXCLUDED.provider_type,
+       is_active = EXCLUDED.is_active,
+       host = EXCLUDED.host,
+       redirect_uri = EXCLUDED.redirect_uri,
+       app_id = EXCLUDED.app_id,
+       credentials = EXCLUDED.credentials,
+       notes = EXCLUDED.notes,
+       updated_at = NOW()`,
+    [params.name, params.provider_type, params.is_active ?? false,
+     params.host ?? null, params.redirect_uri ?? null, params.app_id,
+     JSON.stringify(encrypted), params.notes ?? null],
+  );
+}
+
+export async function setOAuthProfileActive(name: string): Promise<void> {
+  const pool = getPool();
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+
+    // Look up provider_type for the named profile
+    const { rows: [profile] } = await client.query(
+      'SELECT provider_type FROM oauth_profiles WHERE name = $1',
+      [name],
+    );
+    if (!profile) {
+      throw new Error(`OAuth profile not found: ${name}`);
+    }
+
+    // Clear is_active for all rows of the same provider_type
+    await client.query(
+      'UPDATE oauth_profiles SET is_active = FALSE WHERE provider_type = $1 AND is_active = TRUE',
+      [profile.provider_type],
+    );
+
+    // Set is_active = TRUE for the named row
+    await client.query(
+      'UPDATE oauth_profiles SET is_active = TRUE WHERE name = $1',
+      [name],
+    );
+
+    await client.query('COMMIT');
+  } catch (err) {
+    await client.query('ROLLBACK');
+    throw err;
+  } finally {
+    client.release();
+  }
+}
+
+export async function deleteOAuthProfile(name: string): Promise<void> {
+  const pool = getPool();
+  await pool.query('DELETE FROM oauth_profiles WHERE name = $1', [name]);
 }
 
 export async function getObsSessionDetail(sessionId: string): Promise<{
