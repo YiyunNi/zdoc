@@ -4,7 +4,7 @@ import { resolve } from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/dashboard/',
+  base: '/admin/dashboard/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,

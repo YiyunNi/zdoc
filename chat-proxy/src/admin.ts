@@ -52,6 +52,7 @@ adminApp.get('/dashboard', c => {
 
 adminApp.use('/dashboard/*', serveStatic({
   root: join(__dirname, '../dashboard/dist'),
+  rewriteRequestPath: (path) => path.replace(/^\/admin\/dashboard\//, '/'),
 }));
 
 // ---------------------------------------------------------------------------

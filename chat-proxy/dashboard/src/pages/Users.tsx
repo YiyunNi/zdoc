@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { api } from '../api';
 import UsersList from '../components/UsersList';
 import SessionDetail from '../components/SessionDetail';
+import { useInterval } from '../hooks/useInterval';
+import { formatDuration, formatNumber } from '../lib/formatters';
 
 interface Session {
   firstQuestion: string;
@@ -30,34 +32,37 @@ export default function Users(): React.ReactElement {
   const [error, setError] = useState('');
   const pageSize = 10;
 
-  // Extract available countries for filter
   const [countries, setCountries] = useState<string[]>([]);
 
-  useEffect(() => {
-    async function fetchUsers() {
-      setLoading(true);
-      try {
-        const res = await api.getUsers(page, pageSize, countryFilter || undefined);
-        setUsers(res.users || []);
-        setTotal(res.total || 0);
+  async function fetchUsers() {
+    setLoading(true);
+    try {
+      const res = await api.getUsers(page, pageSize, countryFilter || undefined);
+      setUsers(res.users || []);
+      setTotal(res.total || 0);
 
-        // Extract countries from all users for the filter dropdown
-        if (!countryFilter) {
-          const allRes = await api.getUsers(1, 9999);
-          const geoSet = new Set<string>();
-          (allRes.users || []).forEach((u: User) => {
-            if (u.userMeta?.country) geoSet.add(u.userMeta.country);
-          });
-          setCountries(Array.from(geoSet).sort());
-        }
-      } catch (e: any) {
-        setError(e.message || 'Failed to load users');
-      } finally {
-        setLoading(false);
+      if (!countryFilter) {
+        const allRes = await api.getUsers(1, 9999);
+        const geoSet = new Set<string>();
+        (allRes.users || []).forEach((u: User) => {
+          if (u.userMeta?.country) geoSet.add(u.userMeta.country);
+        });
+        setCountries(Array.from(geoSet).sort());
       }
+    } catch (e: any) {
+      setError(e.message || 'Failed to load users');
+    } finally {
+      setLoading(false);
     }
+  }
+
+  useEffect(() => {
     fetchUsers();
   }, [page, countryFilter]);
+
+  const fetchRef = useRef(fetchUsers);
+  fetchRef.current = fetchUsers;
+  useInterval(() => fetchRef.current(), 10000);
 
   const handleSelectSession = (userId: string, sessionIndex: number) => {
     setSelectedSessionId(`${userId}__${sessionIndex}`);
@@ -66,6 +71,12 @@ export default function Users(): React.ReactElement {
   const start = (page - 1) * pageSize + 1;
   const end = Math.min(start + users.length - 1, total);
 
+  const totalSessions = users.reduce((sum, u) => sum + (u.sessionCount || 0), 0);
+  const avgSessions = total > 0 ? (totalSessions / total).toFixed(1) : '0';
+  const avgDuration = users.length > 0
+    ? users.reduce((sum, u) => sum + (u.avgDurationSeconds || 0), 0) / users.length
+    : 0;
+
   return (
     <div>
       <div style={{ marginBottom: 28 }}>
@@ -73,6 +84,21 @@ export default function Users(): React.ReactElement {
           Users & Sessions
         </h2>
         <p style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>Conversations grouped by user</p>
+      </div>
+
+      {/* Metric strip */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        marginBottom: 28,
+        padding: '20px 0',
+        borderTop: '1px solid var(--border-light)',
+        borderBottom: '1px solid var(--border-light)',
+      }}>
+        <Metric label="Total Users" value={formatNumber(total)} />
+        <Metric label="Total Sessions" value={formatNumber(totalSessions)} />
+        <Metric label="Avg Sessions/User" value={avgSessions} />
+        <Metric label="Avg Duration" value={formatDuration(avgDuration)} />
       </div>
 
       <div style={{
@@ -126,6 +152,19 @@ export default function Users(): React.ReactElement {
 
         {/* Right panel */}
         <SessionDetail sessionId={selectedSessionId} users={users} />
+      </div>
+    </div>
+  );
+}
+
+function Metric({ label, value }: { label: string; value: number | string }): React.ReactElement {
+  return (
+    <div style={{ textAlign: 'center', padding: '0 16px' }}>
+      <div style={{ fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.6px', fontWeight: 600 }}>
+        {label}
+      </div>
+      <div style={{ fontFamily: 'var(--heading)', fontSize: 32, fontWeight: 800, marginTop: 4, letterSpacing: '-1px' }}>
+        {typeof value === 'number' ? value.toLocaleString() : value}
       </div>
     </div>
   );

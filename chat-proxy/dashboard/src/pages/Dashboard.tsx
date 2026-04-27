@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { api } from '../api';
 import GeoChart from '../components/GeoChart';
+import TrendChart from '../components/TrendChart';
+import FeedbackChart from '../components/FeedbackChart';
+import { useInterval } from '../hooks/useInterval';
+import { useLiveStatus } from '../hooks/useLiveStatus';
 
 interface OverviewData {
   conversations?: number;
@@ -39,45 +43,67 @@ interface UserData {
   userMeta?: { country?: string };
 }
 
+interface FeedbackStats {
+  up: number;
+  down: number;
+}
+
 export default function Dashboard(): React.ReactElement {
   const [overview, setOverview] = useState<OverviewData | null>(null);
-  const [, setTrends] = useState<TrendData[]>([]);
-  const [live, setLive] = useState<LiveSession[]>([]);
+  const [trends, setTrends] = useState<TrendData[]>([]);
+  const [, setLive] = useState<LiveSession[]>([]);
   const [activity, setActivity] = useState<ActivityItem[]>([]);
   const [geoData, setGeoData] = useState<{ country: string; sessions: number }[]>([]);
+  const [feedback, setFeedback] = useState<FeedbackStats>({ up: 0, down: 0 });
+  const [trendDays, setTrendDays] = useState(7);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const { live: liveCount, ok: liveOk } = useLiveStatus();
+
+  async function fetchAll() {
+    try {
+      const [overviewRes, trendsRes, liveRes, activityRes, usersRes, feedbackRes] = await Promise.all([
+        api.getOverview(),
+        api.getTrends(trendDays),
+        api.getLive(),
+        api.getRecentActivity(8),
+        api.getUsers(1, 9999),
+        api.getFeedbackStats(),
+      ]);
+      setOverview(overviewRes);
+      setTrends(trendsRes);
+      setLive(liveRes.sessions || []);
+      setActivity(activityRes.entries || []);
+      setFeedback(feedbackRes || { up: 0, down: 0 });
+
+      const geoMap = new Map<string, number>();
+      (usersRes.users || []).forEach((u: UserData) => {
+        const country = u.userMeta?.country || 'Unknown';
+        geoMap.set(country, (geoMap.get(country) || 0) + (u.sessionCount || 0));
+      });
+      setGeoData(Array.from(geoMap.entries()).map(([country, sessions]) => ({ country, sessions })));
+    } catch (e: any) {
+      setError(e.message || 'Failed to load dashboard');
+    } finally {
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
-    async function fetchAll() {
-      try {
-        const [overviewRes, trendsRes, liveRes, activityRes, usersRes] = await Promise.all([
-          api.getOverview(),
-          api.getTrends(7),
-          api.getLive(),
-          api.getRecentActivity(8),
-          api.getUsers(1, 9999),
-        ]);
-        setOverview(overviewRes);
-        setTrends(trendsRes);
-        setLive(liveRes.sessions || []);
-        setActivity(activityRes);
-
-        // Aggregate geo data from users
-        const geoMap = new Map<string, number>();
-        (usersRes.users || []).forEach((u: UserData) => {
-          const country = u.userMeta?.country || 'Unknown';
-          geoMap.set(country, (geoMap.get(country) || 0) + (u.sessionCount || 0));
-        });
-        setGeoData(Array.from(geoMap.entries()).map(([country, sessions]) => ({ country, sessions })));
-      } catch (e: any) {
-        setError(e.message || 'Failed to load dashboard');
-      } finally {
-        setLoading(false);
-      }
-    }
+    setLoading(true);
     fetchAll();
-  }, []);
+  }, [trendDays]);
+
+  const fetchRef = useRef(fetchAll);
+  fetchRef.current = fetchAll;
+  useInterval(() => fetchRef.current(), 10000);
+
+  const trendData = {
+    conversations: trends.map((t: TrendData) => ({ date: t.date, value: t.conversations || 0 })),
+    messages: trends.map((t: TrendData) => ({ date: t.date, value: t.messages || 0 })),
+    users: trends.map((t: TrendData) => ({ date: t.date, value: t.users || 0 })),
+    confidence: trends.map((t: TrendData) => ({ date: t.date, value: Math.round((t.highConfidence || 0) * 100) })),
+  };
 
   if (loading) return <div style={{ padding: 40, textAlign: 'center', color: 'var(--text-muted)' }}>Loading…</div>;
   if (error) return <div style={{ padding: 40, textAlign: 'center', color: 'var(--red)' }}>{error}</div>;
@@ -105,23 +131,61 @@ export default function Dashboard(): React.ReactElement {
       </div>
 
       {/* Charts */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+        <span style={{ fontSize: 12, fontWeight: 700 }}>Trends</span>
+        <select
+          value={trendDays}
+          onChange={e => setTrendDays(Number(e.target.value))}
+          style={{ fontSize: 11, padding: '4px 8px', borderRadius: 4, border: '1px solid #d8dae0' }}
+        >
+          <option value={1}>Last 24 hours</option>
+          <option value={7}>Last 7 days</option>
+          <option value={30}>Last 30 days</option>
+        </select>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: 20, marginBottom: 20 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-          <ChartCard title="Conversations / day" />
-          <ChartCard title="Messages / day" />
+          <ChartCard title="Conversations / day">
+            <TrendChart data={trendData.conversations} color="var(--blue)" />
+          </ChartCard>
+          <ChartCard title="Messages / day">
+            <TrendChart data={trendData.messages} color="var(--purple)" />
+          </ChartCard>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
           <ChartCard title="Geo Breakdown">
             <GeoChart data={geoData} />
           </ChartCard>
+          <ChartCard title="Feedback">
+            <FeedbackChart up={feedback.up} down={feedback.down} />
+          </ChartCard>
         </div>
+      </div>
+
+      {/* Users / Confidence row */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 20 }}>
+        <ChartCard title="Users / day">
+          <TrendChart data={trendData.users} color="var(--green)" />
+        </ChartCard>
+        <ChartCard title="High Confidence % / day">
+          <TrendChart data={trendData.confidence} color="var(--amber)" />
+        </ChartCard>
       </div>
 
       {/* Live sessions + Activity */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 20 }}>
         <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius)', padding: 20 }}>
           <h3 style={{ fontSize: 13, fontWeight: 700, marginBottom: 12 }}>Active Sessions</h3>
-          <div style={{ fontSize: 28, fontWeight: 800, fontFamily: 'var(--heading)' }}>{live.length}</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{
+              fontSize: 28, fontWeight: 800, fontFamily: 'var(--heading)'
+            }}>{liveCount}</div>
+            <span style={{
+              display: 'inline-block', width: 8, height: 8, borderRadius: '50%',
+              background: liveOk ? 'var(--green)' : 'var(--red)',
+              boxShadow: liveOk ? '0 0 0 4px var(--green-bg)' : '0 0 0 4px var(--red-bg)',
+            }} />
+          </div>
           <p style={{ fontSize: 10, color: 'var(--text-muted)' }}>Currently active</p>
         </div>
         <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius)', padding: 20 }}>

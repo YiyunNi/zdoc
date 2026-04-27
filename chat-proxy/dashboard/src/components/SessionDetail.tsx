@@ -32,7 +32,7 @@ interface ApiEvent {
     content?: string;
     answer?: string;
     confidence?: 'high' | 'medium' | 'low';
-    sources?: Array<{ title: string; url: string; section?: string }>;
+    sources?: Array<string | { title: string; url: string; section?: string }>;
   };
 }
 
@@ -90,12 +90,22 @@ export default function SessionDetail({ sessionId, users }: SessionDetailProps):
 
     return data.events
       .filter(e => e.type === 'message')
-      .map(e => ({
-        role: e.data?.role || 'assistant',
-        text: e.data?.content || e.data?.answer || '',
-        confidence: e.data?.confidence,
-        sources: e.data?.sources,
-      }));
+      .map(e => {
+        const rawSources = e.data?.sources;
+        const sources = Array.isArray(rawSources)
+          ? rawSources.map((s: any) =>
+              typeof s === 'string'
+                ? { title: s, url: s }
+                : { title: s.title || s.url || '', url: s.url || '', section: s.section }
+            )
+          : undefined;
+        return {
+          role: e.data?.role || 'assistant',
+          text: e.data?.content || e.data?.answer || '',
+          confidence: e.data?.confidence,
+          sources,
+        };
+      });
   }, [data]);
 
   const totalTokens = data?.events?.reduce((sum, e) => sum + (e.totalTokens || 0), 0) || 0;

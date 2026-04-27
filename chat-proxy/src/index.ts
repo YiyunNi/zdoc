@@ -720,7 +720,7 @@ app.post('/chat', async c => {
             confidence,
             toolsCalled,
             sourceCount: allSources.length,
-            sources: allSources.map(s => s.url),
+            sources: allSources.map(s => ({ title: s.title, url: s.url, section: s.section })),
             pageUrl: body.pageUrl,
             inputTokens: tokenUsage?.inputTokens,
             outputTokens: tokenUsage?.outputTokens,
