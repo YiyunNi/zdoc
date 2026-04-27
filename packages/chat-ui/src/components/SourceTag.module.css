@@ -1,0 +1,29 @@
+.tag {
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.tagByoc {
+  background: #ede9f7;
+  color: #6c4de0;
+}
+
+.tagCloud {
+  background: #e8edf7;
+  color: #3b6de0;
+}
+
+.tagApi {
+  background: #e7f3ea;
+  color: #2a9d5c;
+}
+
+.tagExternal {
+  background: #f0f1f3;
+  color: #6b7080;
+}
